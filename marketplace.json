@@ -1,0 +1,39 @@
+{
+  "name": "plugins-mx",
+  "displayName": "Plugins MX — Operación diaria México y LATAM",
+  "description": "Plugins de Claude Code y skills standalone para operación diaria de PyMEs y profesionistas en México: CFDI 4.0, WhatsApp Business, cobranza MXN, cumplimiento LFPDPPP, y verticales por industria.",
+  "version": "0.1.0",
+  "maintainer": {
+    "name": "Elias",
+    "email": "elias@cipreholding.com"
+  },
+  "plugins": [
+    {
+      "name": "core-mexico",
+      "path": "./core-mexico",
+      "required": true,
+      "description": "Base mexicana: CFDI, IVA, retenciones, RFC, WhatsApp Business templates, LFPDPPP, formato MXN. Instalación obligatoria como dependencia de todos los verticales."
+    }
+  ],
+  "comingSoon": [
+    "freelancers-mx",
+    "agencia-marketing-mx",
+    "colegios-mx",
+    "talleres-mx",
+    "salon-mx",
+    "veterinaria-mx",
+    "ecommerce-mx",
+    "wedding-planner-mx",
+    "agente-seguros-mx",
+    "servicios-domicilio-mx",
+    "clinica-salud-mx",
+    "restaurante-mx",
+    "inmobiliaria-mx",
+    "refaccionaria-mx",
+    "constructora-mx",
+    "despacho-legal-mx",
+    "contadores-mx",
+    "profesionista-salud-mx",
+    "microdrama-latam"
+  ]
+}
