@@ -70,6 +70,21 @@
         "BANXICO_CEP_PLAYWRIGHT": "${BANXICO_CEP_PLAYWRIGHT:-}"
       },
       "disabled": false
+    },
+    "sat_portal": {
+      "_comment": "MCP propio mp_sat_portal: 4 tools públicos (padrón, 69-B, 69, verifica CFDI) intentan HTTP real + fallback mock; 1 tool local (validar UUID); 6 tools con auth en modo mock (path Playwright + e.firma no implementado); 1 tool de escritura siempre simulada por seguridad. Sin SAT_RFC/SAT_CIEC/SAT_EFIRMA_CERT corre 100% mock.",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_sat_portal.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}",
+        "SAT_RFC": "${SAT_RFC:-}",
+        "SAT_CIEC": "${SAT_CIEC:-}",
+        "SAT_EFIRMA_CERT": "${SAT_EFIRMA_CERT:-}",
+        "SAT_EFIRMA_KEY": "${SAT_EFIRMA_KEY:-}",
+        "SAT_EFIRMA_PASSWORD": "${SAT_EFIRMA_PASSWORD:-}"
+      },
+      "disabled": false
     }
   }
 }
