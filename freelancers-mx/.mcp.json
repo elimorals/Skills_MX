@@ -1,0 +1,33 @@
+{
+  "_comment": "Placeholder de MCP servers para freelancers-mx. Por default, todos los skills funcionan contra mocks. Activa el server real exportando las variables de entorno correspondientes.",
+  "mcpServers": {
+    "facturama": {
+      "_comment": "PAC para timbrado de CFDI 4.0. Sandbox gratis en facturama.mx",
+      "command": "npx",
+      "args": ["-y", "@facturama/mcp-server"],
+      "env": {
+        "FACTURAMA_API_KEY": "${FACTURAMA_API_KEY:-mock}",
+        "FACTURAMA_ENV": "${FACTURAMA_ENV:-sandbox}"
+      },
+      "disabled": true
+    },
+    "notion": {
+      "_comment": "CRM ligero para fichas de cliente. Opcional.",
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": {
+        "NOTION_TOKEN": "${NOTION_TOKEN:-}"
+      },
+      "disabled": true
+    },
+    "stripe": {
+      "_comment": "Para cobranza con tarjeta o suscripciones. Opcional.",
+      "command": "npx",
+      "args": ["-y", "@stripe/mcp-server"],
+      "env": {
+        "STRIPE_API_KEY": "${STRIPE_API_KEY:-mock}"
+      },
+      "disabled": true
+    }
+  }
+}

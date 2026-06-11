@@ -1,0 +1,46 @@
+{
+  "name": "freelancers-mx",
+  "displayName": "Freelancers MX — Toolkit para profesionistas independientes",
+  "description": "Plugin para freelancers, consultores y agencias unipersonales operando en México. Cubre cotizaciones MXN con IVA y retenciones correctas, propuestas comerciales con scope/deliverables/payment terms, cobranza profesional (5 etapas de escalamiento), onboarding de cliente con captura fiscal completa, y cálculo de pago provisional ISR para regímenes PFAE y RESICO. Construido sobre core-mexico para CFDI 4.0, IVA/retenciones, validación RFC y WhatsApp Business.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elias",
+    "email": "elias@cipreholding.com"
+  },
+  "keywords": [
+    "freelancer",
+    "freelance",
+    "consultor",
+    "consultoria",
+    "mexico",
+    "cotizacion",
+    "propuesta",
+    "cobranza",
+    "RESICO",
+    "PFAE"
+  ],
+  "skills": [
+    "skills/cotizacion-mxn",
+    "skills/propuesta-comercial",
+    "skills/cobranza-seguimiento",
+    "skills/cliente-onboarding",
+    "skills/freelance-tax-mx",
+    "skills/cfdi-emision",
+    "skills/iva-retenciones-mx",
+    "skills/rfc-validacion",
+    "skills/whatsapp-business-mx",
+    "skills/compliance-lfpdppp",
+    "skills/mxn-formato"
+  ],
+  "commands": [
+    "commands/cotizar.md",
+    "commands/propuesta.md",
+    "commands/cobranza.md",
+    "commands/onboarding.md",
+    "commands/pago-provisional.md"
+  ],
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "requires": ["core-mexico"]
+  }
+}
