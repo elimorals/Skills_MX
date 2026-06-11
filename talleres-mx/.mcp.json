@@ -1,0 +1,44 @@
+{
+  "_comment": "MCP servers para talleres-mx. Default: todos disabled, mockeables.",
+  "mcpServers": {
+    "facturama": {
+      "_comment": "PAC para CFDI de servicios + refacciones.",
+      "command": "npx",
+      "args": ["-y", "@facturama/mcp-server"],
+      "env": {
+        "FACTURAMA_API_KEY": "${FACTURAMA_API_KEY:-mock}",
+        "FACTURAMA_ENV": "${FACTURAMA_ENV:-sandbox}"
+      },
+      "disabled": true
+    },
+    "whatsapp-business": {
+      "_comment": "Para autorización + comunicación cliente.",
+      "command": "npx",
+      "args": ["-y", "@gupshup/mcp-whatsapp"],
+      "env": {
+        "GUPSHUP_API_KEY": "${GUPSHUP_API_KEY:-mock}"
+      },
+      "disabled": true
+    },
+    "mercadolibre": {
+      "_comment": "Si el taller vende refacciones en MELI. Custom server requerido.",
+      "command": "node",
+      "args": ["./mcp-servers/mercadolibre.js"],
+      "env": {
+        "ML_APP_ID": "${ML_APP_ID:-mock}",
+        "ML_SECRET": "${ML_SECRET:-mock}",
+        "ML_REFRESH_TOKEN": "${ML_REFRESH_TOKEN:-mock}"
+      },
+      "disabled": true
+    },
+    "stripe": {
+      "_comment": "Cobro con tarjeta y links de pago.",
+      "command": "npx",
+      "args": ["-y", "@stripe/mcp-server"],
+      "env": {
+        "STRIPE_API_KEY": "${STRIPE_API_KEY:-mock}"
+      },
+      "disabled": true
+    }
+  }
+}
