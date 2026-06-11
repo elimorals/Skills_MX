@@ -51,11 +51,14 @@ skillkit install cfdi-emision   # desde _shared/
 
 | Componente | Estado |
 |---|---|
-| `_shared/cfdi-emision` | Skill de referencia (calidad producción) |
-| `_shared/iva-retenciones-mx` | Scaffold pendiente |
-| `_shared/rfc-validacion` | Scaffold pendiente |
-| `core-mexico` plugin | Manifest creado |
-| Primer vertical | Por confirmar con usuario |
+| `_shared/` | 6 skills compartidos con references/ bundleados |
+| `core-mexico` | Plugin base con 3 commands |
+| `freelancers-mx` | 5 skills propios + 5 commands |
+| `agencia-marketing-mx` | 5 skills propios + 4 commands |
+| `colegios-mx` | 4 skills propios + 4 commands |
+| `talleres-mx` | 4 skills propios + 4 commands |
+| **Total skills** | **54 (lint-passing)** |
+| **Verticales pendientes** | 15+ (ver `marketplace.json > comingSoon`) |
 
 ## Convenciones
 

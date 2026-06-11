@@ -13,13 +13,29 @@
       "path": "./core-mexico",
       "required": true,
       "description": "Base mexicana: CFDI, IVA, retenciones, RFC, WhatsApp Business templates, LFPDPPP, formato MXN. Instalación obligatoria como dependencia de todos los verticales."
+    },
+    {
+      "name": "freelancers-mx",
+      "path": "./freelancers-mx",
+      "description": "Cotizaciones MXN, propuestas comerciales, cobranza escalada, onboarding fiscal, pago provisional ISR (PFAE/RESICO)."
+    },
+    {
+      "name": "agencia-marketing-mx",
+      "path": "./agencia-marketing-mx",
+      "description": "Reportes mensuales por canal, optimización Meta Ads con detección de fatiga, copy mexicano, community management, briefs creativos."
+    },
+    {
+      "name": "colegios-mx",
+      "path": "./colegios-mx",
+      "description": "Cobranza de colegiaturas, comunicación masiva a padres via WhatsApp, constancias académicas SEP-compliant, CFDI D10 deducible."
+    },
+    {
+      "name": "talleres-mx",
+      "path": "./talleres-mx",
+      "description": "Diagnóstico-cotización-autorización-OT-garantía con bitácora auditada PROFECO, autorización por WhatsApp con fotos/video."
     }
   ],
   "comingSoon": [
-    "freelancers-mx",
-    "agencia-marketing-mx",
-    "colegios-mx",
-    "talleres-mx",
     "salon-mx",
     "veterinaria-mx",
     "ecommerce-mx",
