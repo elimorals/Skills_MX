@@ -24,6 +24,17 @@
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
       },
       "disabled": false
+    },
+    "mercadopago": {
+      "_comment": "MCP propio mp_mercado_pago: payment links + webhook signature validation HMAC + refunds. Pasarela dominante en LATAM. Mock-friendly.",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_mercado_pago.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "MERCADOPAGO_ACCESS_TOKEN": "${MERCADOPAGO_ACCESS_TOKEN:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
     }
   }
 }

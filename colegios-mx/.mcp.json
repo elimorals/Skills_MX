@@ -25,6 +25,17 @@
       },
       "disabled": false
     },
+    "mercadopago": {
+      "_comment": "MCP propio mp_mercado_pago: payment links recurrentes (colegiaturas mensuales), webhook validation, refunds. Crítico para automatizar cobranza mensual.",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_mercado_pago.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "MERCADOPAGO_ACCESS_TOKEN": "${MERCADOPAGO_ACCESS_TOKEN:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    },
     "whatsapp-business": {
       "_comment": "Provider para envío masivo de templates (Gupshup, Twilio, Meta Cloud).",
       "command": "npx",

@@ -9,6 +9,8 @@ Versioning: [Semantic Versioning](https://semver.org).
 
 ### Added
 - `.mcp.json` con `banxico` MCP propio activo por default (modo mock sin credenciales). Implementación en `mcp-servers/mp_banxico/` con 7 tools (TC DOF, UMA, INPC, TIIE, conversión).
+- `.mcp.json` con `facturama` MCP propio activo por default. Implementación en `mcp-servers/mp_facturama_extendido/` con 8 tools (validación local pre-timbrado, timbrar, cancelar, consultar estatus, descargar XML/PDF, buscar, catálogos).
+- `.mcp.json` con `mercadopago` MCP propio activo por default. Implementación en `mcp-servers/mp_mercado_pago/` con 9 tools (create_preference, get_payment, list_payments, refund, cancel, validate_webhook_signature HMAC-SHA256, listar_catalogos).
 - Subagent `validador-cfdi-batch` para auditar lotes grandes de CFDIs
 - References bundleados: regímenes fiscales completo, complementos CFDI, integración SAT, ARCO, Banxico, tono MX
 
