@@ -59,6 +59,17 @@
         "CURP_RENAPO_PLAYWRIGHT": "${CURP_RENAPO_PLAYWRIGHT:-}"
       },
       "disabled": false
+    },
+    "banxico_cep": {
+      "_comment": "MCP propio mp_banxico_cep: validación CLABE + CEP SPEI. 4 de 8 tools son 100% locales (CLABE/parseo). Las remotas arrancan en mock (Banxico no tiene API). Cierra el ciclo CFDI→pago→conciliación.",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_banxico_cep.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}",
+        "BANXICO_CEP_PLAYWRIGHT": "${BANXICO_CEP_PLAYWRIGHT:-}"
+      },
+      "disabled": false
     }
   }
 }

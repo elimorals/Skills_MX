@@ -36,6 +36,17 @@
       },
       "disabled": false
     },
+    "banxico_cep": {
+      "_comment": "MCP propio mp_banxico_cep: validación CLABE + CEP (Constancia Pago Electrónico SPEI). 4 de 8 tools son 100% locales (CLABE, parseo). Las que tocan Banxico arrancan en mock. Crítico para conciliación cobros SPEI ↔ CFDIs en cierre fiscal mensual.",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_banxico_cep.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}",
+        "BANXICO_CEP_PLAYWRIGHT": "${BANXICO_CEP_PLAYWRIGHT:-}"
+      },
+      "disabled": false
+    },
     "notion": {
       "_comment": "CRM ligero para fichas de cliente. Opcional.",
       "command": "npx",
