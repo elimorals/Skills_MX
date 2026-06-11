@@ -25,6 +25,17 @@
       },
       "disabled": false
     },
+    "mercadopago": {
+      "_comment": "MCP propio mp_mercado_pago: payment links para anticipos + cobro al recoger auto, webhook validation. Mock-friendly.",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_mercado_pago.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "MERCADOPAGO_ACCESS_TOKEN": "${MERCADOPAGO_ACCESS_TOKEN:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    },
     "whatsapp-business": {
       "_comment": "Para autorización + comunicación cliente.",
       "command": "npx",
