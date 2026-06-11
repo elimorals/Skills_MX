@@ -1,0 +1,102 @@
+[
+  {
+    "query": "el cliente me dio este RFC: MAJG800101XYZ ¿está bien?",
+    "should_trigger": true,
+    "rationale": "Validación directa de RFC PF"
+  },
+  {
+    "query": "puedes verificar este RFC: IBM970131DRA",
+    "should_trigger": true,
+    "rationale": "RFC PM con guion"
+  },
+  {
+    "query": "tengo una lista de 50 clientes con RFCs ¿los puedes validar todos?",
+    "should_trigger": true,
+    "rationale": "Validación masiva"
+  },
+  {
+    "query": "validate this Mexican RFC: PERA800101ABC",
+    "should_trigger": true,
+    "rationale": "Inglés con término técnico"
+  },
+  {
+    "query": "el SAT me dice que mi RFC no existe ¿lo verifico?",
+    "should_trigger": true,
+    "rationale": "Verificación contra padrón SAT"
+  },
+  {
+    "query": "este RFC es de mi cuñado: PUTO850101ABC",
+    "should_trigger": true,
+    "rationale": "Caso palabra inconveniente - debe alertar"
+  },
+  {
+    "query": "necesito timbrar un CFDI ¿qué uso le pongo?",
+    "should_trigger": false,
+    "rationale": "Es emisión CFDI, no validación RFC"
+  },
+  {
+    "query": "el CURP de mi hijo es MASJ080101HDFRDV03 ¿está bien?",
+    "should_trigger": false,
+    "rationale": "CURP es distinto de RFC"
+  },
+  {
+    "query": "el cliente quiere factura pero no tiene RFC",
+    "should_trigger": true,
+    "rationale": "Caso RFC genérico XAXX/XEXX"
+  },
+  {
+    "query": "qué uso de CFDI lleva un cliente PFAE",
+    "should_trigger": false,
+    "rationale": "Pregunta de UsoCFDI, no validación RFC"
+  },
+  {
+    "query": "es válido el RFC XAXX010101000 para todos los casos?",
+    "should_trigger": true,
+    "rationale": "RFC genérico - tiene restricciones"
+  },
+  {
+    "query": "cómo se calcula la homoclave del RFC",
+    "should_trigger": true,
+    "rationale": "Estructura del RFC parte del skill"
+  },
+  {
+    "query": "necesito el contrato de servicios con cláusulas correctas",
+    "should_trigger": false,
+    "rationale": "Contrato, no RFC"
+  },
+  {
+    "query": "checa si AAA010101AAA es un RFC válido",
+    "should_trigger": true,
+    "rationale": "Validación estructural directa"
+  },
+  {
+    "query": "buscar en el 69-B si mi proveedor está en lista negra",
+    "should_trigger": true,
+    "rationale": "Verificación 69-B EFOS"
+  },
+  {
+    "query": "tax ID validation USA para mi cliente americano",
+    "should_trigger": false,
+    "rationale": "Tax ID EE.UU. (EIN), no RFC"
+  },
+  {
+    "query": "DNI argentino de mi cliente para facturar desde acá",
+    "should_trigger": false,
+    "rationale": "DNI argentino, no RFC"
+  },
+  {
+    "query": "este formato me lo dio el sat es válido: MAJ-800101-ABC",
+    "should_trigger": true,
+    "rationale": "RFC con separadores guión"
+  },
+  {
+    "query": "necesito el aviso de privacidad",
+    "should_trigger": false,
+    "rationale": "Compliance, no RFC"
+  },
+  {
+    "query": "el cliente no me da su RFC y necesito facturarle",
+    "should_trigger": true,
+    "rationale": "Caso público general / genérico"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "query": "el CPA de mi cliente subió 40% en la última semana en Meta",
+    "should_trigger": true,
+    "rationale": "Caso típico optimización Meta"
+  },
+  {
+    "query": "necesito auditar la cuenta de Meta de Cinepolis",
+    "should_trigger": true,
+    "rationale": "Auditoría directa"
+  },
+  {
+    "query": "los creativos están cansados, ¿cómo lo detecto?",
+    "should_trigger": true,
+    "rationale": "Fatiga creativa"
+  },
+  {
+    "query": "review the Facebook Ads account for fatigue and audience saturation",
+    "should_trigger": true,
+    "rationale": "Inglés con keywords del skill"
+  },
+  {
+    "query": "frequency de mis ads pasó de 2 a 4.5",
+    "should_trigger": true,
+    "rationale": "Métrica que indica fatiga"
+  },
+  {
+    "query": "necesito escribir copy para nueva campaña",
+    "should_trigger": false,
+    "rationale": "Copy es otro skill"
+  },
+  {
+    "query": "el reporte mensual del cliente para abril",
+    "should_trigger": false,
+    "rationale": "Reporte mensual, otro skill"
+  },
+  {
+    "query": "configurar Pixel desde cero",
+    "should_trigger": true,
+    "rationale": "Tracking — parte del checklist del skill"
+  },
+  {
+    "query": "no estamos saliendo de learning phase con el ad set nuevo",
+    "should_trigger": true,
+    "rationale": "Learning phase problema"
+  },
+  {
+    "query": "brief creativo para nuevo lanzamiento",
+    "should_trigger": false,
+    "rationale": "Briefing creativo, otro skill"
+  },
+  {
+    "query": "necesito respuesta a un comentario negativo en Instagram",
+    "should_trigger": false,
+    "rationale": "Community management, otro skill"
+  },
+  {
+    "query": "Google Ads está dando peor que Meta, ¿por qué?",
+    "should_trigger": false,
+    "rationale": "Google Ads, no Meta. Aunque puede triggear ambos."
+  },
+  {
+    "query": "redistribuir presupuesto entre campañas Meta",
+    "should_trigger": true,
+    "rationale": "Optimización allocation"
+  },
+  {
+    "query": "Advantage+ Shopping vale la pena para ecommerce de 500 SKUs?",
+    "should_trigger": true,
+    "rationale": "Configuración de campañas avanzada"
+  },
+  {
+    "query": "mi EMQ score está en 4, ¿cómo lo subo?",
+    "should_trigger": true,
+    "rationale": "Event match quality del checklist"
+  },
+  {
+    "query": "necesito facturar al cliente",
+    "should_trigger": false,
+    "rationale": "Facturación, no Meta"
+  },
+  {
+    "query": "TikTok Ads performance está plano",
+    "should_trigger": false,
+    "rationale": "TikTok, no Meta"
+  },
+  {
+    "query": "auditoría completa de Meta + Google + TikTok",
+    "should_trigger": true,
+    "rationale": "Auditoría multi-canal, Meta es parte"
+  },
+  {
+    "query": "cobranza al cliente que se atrasó",
+    "should_trigger": false,
+    "rationale": "Cobranza"
+  },
+  {
+    "query": "ROAS de mi cliente está en 1.2 y target es 3.0",
+    "should_trigger": true,
+    "rationale": "Optimización ROAS"
+  }
+]

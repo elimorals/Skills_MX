@@ -214,6 +214,37 @@ Este skill **no sustituye contador certificado**. Para:
 
 Derivar a contador. El skill da una base sólida; el contador valida y firma.
 
+## ⚠ Riesgo regulatorio CRÍTICO — verificación vigente obligatoria
+
+Este es el skill con **mayor riesgo regulatorio del monorepo**. Un cálculo incorrecto puede generar:
+- Multa SAT por pago insuficiente (8% del omitido más recargos)
+- Discrepancia fiscal con consecuencias mayores
+- Sanción profesional al contador firmante (si aplica)
+
+**Datos que DEBES verificar antes de cualquier uso real**:
+
+1. **Tarifa Art. 96 LISR** (los 11 rangos con cuota fija y % sobre excedente): se actualiza **anualmente** por inflación. Los valores citados en este skill ($8,952.49, $75,984.55, etc.) **probablemente están desactualizados**. Descargar la tarifa vigente del portal SAT del ejercicio fiscal en curso.
+
+2. **Tasas RESICO PF** (1.0, 1.1, 1.5, 2.0, 2.5%): validar contra RMF vigente.
+
+3. **Topes de deducción personal Art. 151 LISR**:
+   - Tope global: el menor entre 5 UMAs anuales y 15% del ingreso. La UMA se actualiza anualmente.
+   - Topes específicos de colegiaturas (preescolar $14,200, primaria $12,900, secundaria $19,900, prepa técnica $17,100, prepa general $24,500): **valores históricos**. Verificar vigentes.
+
+4. **Forma de pago para deducción**: efectivo NO califica para deducciones personales (excepto algunos casos). Verificar excepciones vigentes.
+
+5. **Coeficiente de utilidad PFAE**: el cálculo del pago provisional PFAE usa el coeficiente del ejercicio anterior. El skill no calcula automáticamente este coeficiente — debe proveerse.
+
+6. **Tope para depósitos en efectivo reportables** ($15,000 MXN/mes): verificar circular vigente.
+
+7. **Plazo del pago provisional** (día 17 del mes siguiente): estable pero confirmar que no cambió en el ejercicio.
+
+**Antes de exponer a cliente**:
+- Validar al menos UN pago provisional contra cálculo manual de contador certificado.
+- Hacerlo con un caso real con datos verificables.
+- Documentar la discrepancia (si la hay) y ajustar el skill.
+- Después de 3 cálculos seguidos sin discrepancia, considerar el skill apto para asistencia (siempre con disclaimer al usuario final de que el contador valida).
+
 ## Integración
 
 - `cfdi-emision`: para entender el flujo del CFDI.

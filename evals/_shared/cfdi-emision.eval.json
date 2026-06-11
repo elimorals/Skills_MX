@@ -1,0 +1,112 @@
+[
+  {
+    "query": "necesito emitir factura por un servicio que le presté a mi cliente Coca-Cola SA por $35,000 más IVA",
+    "should_trigger": true,
+    "rationale": "Caso clásico de emisión de CFDI para PM"
+  },
+  {
+    "query": "el cliente me pidió CFDI, ¿cómo lo emito?",
+    "should_trigger": true,
+    "rationale": "Trigger directo con la sigla CFDI"
+  },
+  {
+    "query": "tengo que timbrar 3 facturas de ventas del mes",
+    "should_trigger": true,
+    "rationale": "Verbo 'timbrar' es trigger explícito"
+  },
+  {
+    "query": "necesito cancelar el CFDI con folio abc-1234 por error en el RFC",
+    "should_trigger": true,
+    "rationale": "Cancelación con motivo es parte del skill"
+  },
+  {
+    "query": "issue an invoice for my US client who paid in USD for consulting services",
+    "should_trigger": true,
+    "rationale": "Tipico caso de exportación de servicios con tasa 0%; description en inglés con sinónimos debe triggear"
+  },
+  {
+    "query": "el cliente XXXX no me ha pagado, ¿qué hago?",
+    "should_trigger": false,
+    "rationale": "Es cobranza, no emisión de CFDI"
+  },
+  {
+    "query": "necesito hacer una cotización para un cliente nuevo",
+    "should_trigger": false,
+    "rationale": "Cotización no se timbra; es otro skill"
+  },
+  {
+    "query": "voy a pagar el provisional de marzo, ¿cuánto me toca?",
+    "should_trigger": false,
+    "rationale": "Pago provisional ISR, no emisión de CFDI"
+  },
+  {
+    "query": "me pidieron factura A en Argentina, ¿les puedo emitir desde México?",
+    "should_trigger": false,
+    "rationale": "Factura de Argentina (AFIP) no es CFDI mexicano"
+  },
+  {
+    "query": "necesito refacturar el mes pasado a otro RFC porque me dieron mal los datos",
+    "should_trigger": true,
+    "rationale": "Sustitución de CFDI es caso edge cubierto"
+  },
+  {
+    "query": "cómo facturo un anticipo que ya me dieron pero todavía no defino el proyecto final",
+    "should_trigger": true,
+    "rationale": "Caso anticipo - flujo de 3 CFDIs"
+  },
+  {
+    "query": "el cliente paga en partes, ¿qué método de pago va en el CFDI?",
+    "should_trigger": true,
+    "rationale": "PUE vs PPD es decisión del skill"
+  },
+  {
+    "query": "qué uso de CFDI le pongo a una factura para un cliente que es persona moral con régimen 601",
+    "should_trigger": true,
+    "rationale": "Catálogo UsoCFDI es del skill"
+  },
+  {
+    "query": "el RFC del cliente está mal, ¿cómo lo valido antes de timbrar?",
+    "should_trigger": false,
+    "rationale": "Validación RFC es otro skill (rfc-validacion). Pero podría triggear ambos. Marginal."
+  },
+  {
+    "query": "necesito el aviso de privacidad para mi sitio web",
+    "should_trigger": false,
+    "rationale": "Compliance LFPDPPP, no CFDI"
+  },
+  {
+    "query": "cómo cobro intereses moratorios a un cliente que se atrasó 60 días",
+    "should_trigger": false,
+    "rationale": "Cobranza, no CFDI"
+  },
+  {
+    "query": "vendo ropa en el tianguis y me piden ticket, ¿necesito CFDI?",
+    "should_trigger": true,
+    "rationale": "Caso factura global a público en general"
+  },
+  {
+    "query": "el sistema dice 'método pago invalido' al timbrar, ¿qué le pongo?",
+    "should_trigger": true,
+    "rationale": "Debugging típico de CFDI"
+  },
+  {
+    "query": "comprobante simple de pago sin valor fiscal para mi compa",
+    "should_trigger": false,
+    "rationale": "Explícitamente NO fiscal, no triggear"
+  },
+  {
+    "query": "tengo que emitir el complemento de pago del CFDI que emití en PPD el mes pasado",
+    "should_trigger": true,
+    "rationale": "REP es parte del skill"
+  },
+  {
+    "query": "puedes mandarme las plantillas de WhatsApp para confirmar citas",
+    "should_trigger": false,
+    "rationale": "Templates WhatsApp Business, otro skill"
+  },
+  {
+    "query": "el CFDI quedó timbrado pero cancelaron el pago, ¿lo cancelo o le pongo en cero?",
+    "should_trigger": true,
+    "rationale": "Caso de cancelación o ajuste"
+  }
+]

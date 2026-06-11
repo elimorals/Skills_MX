@@ -1,0 +1,102 @@
+[
+  {
+    "query": "necesito cotizar a Bimbo SA un proyecto de 3 meses de migración a AWS por unos 150 mil pesos",
+    "should_trigger": true,
+    "rationale": "Caso clásico cotización a PM grande"
+  },
+  {
+    "query": "me piden presupuesto para hacer una landing page",
+    "should_trigger": true,
+    "rationale": "Trigger 'presupuesto'"
+  },
+  {
+    "query": "el cliente quiere saber cuánto le voy a cobrar por el diseño del logo",
+    "should_trigger": true,
+    "rationale": "Cotización implícita"
+  },
+  {
+    "query": "send me a quote for the SEO project",
+    "should_trigger": true,
+    "rationale": "Inglés con 'quote'"
+  },
+  {
+    "query": "necesito hacer la propuesta económica para el proyecto del retainer mensual",
+    "should_trigger": true,
+    "rationale": "'Propuesta económica' es sinónimo"
+  },
+  {
+    "query": "facturar al cliente lo que ya hicimos del mes",
+    "should_trigger": false,
+    "rationale": "Es facturación CFDI, no cotización"
+  },
+  {
+    "query": "el cliente no me ha pagado la factura de marzo",
+    "should_trigger": false,
+    "rationale": "Cobranza, no cotización"
+  },
+  {
+    "query": "dame el detalle del contrato marco que firmé",
+    "should_trigger": false,
+    "rationale": "Es onboarding/contrato, no cotización"
+  },
+  {
+    "query": "qué le pongo de IVA si el cliente es persona moral",
+    "should_trigger": false,
+    "rationale": "Es cálculo de impuestos (iva-retenciones-mx)"
+  },
+  {
+    "query": "necesito una propuesta formal de 10 páginas con SOW para licitación de SEMARNAT",
+    "should_trigger": false,
+    "rationale": "Es propuesta-comercial (otra escala) no cotización simple. Aunque marginalmente puede triggear ambos"
+  },
+  {
+    "query": "preparar un quote sencillo para un proyecto chico de 2 días",
+    "should_trigger": true,
+    "rationale": "Cotización simple"
+  },
+  {
+    "query": "calculo de pago provisional del mes",
+    "should_trigger": false,
+    "rationale": "Fiscal mensual, no cotización"
+  },
+  {
+    "query": "cuánto le cobro a este cliente por una semana de trabajo intensivo",
+    "should_trigger": true,
+    "rationale": "Decisión de pricing + formatear como cotización"
+  },
+  {
+    "query": "hazme un budget para fotografía de producto para 30 SKUs",
+    "should_trigger": true,
+    "rationale": "Budget = presupuesto = cotización"
+  },
+  {
+    "query": "cambio de scope, necesito recotizar",
+    "should_trigger": true,
+    "rationale": "Recotización es parte del flujo"
+  },
+  {
+    "query": "ya cerré con el cliente, ahora le mando factura",
+    "should_trigger": false,
+    "rationale": "Facturación, no cotización (la cotización ya fue)"
+  },
+  {
+    "query": "el cliente quiere bajar el precio 20%, ¿cómo le respondo?",
+    "should_trigger": true,
+    "rationale": "Iteración de cotización"
+  },
+  {
+    "query": "necesito sumar todos los CFDIs del año",
+    "should_trigger": false,
+    "rationale": "Es contabilidad/declaración"
+  },
+  {
+    "query": "cómo respondo al cliente que no autorizó la cotización",
+    "should_trigger": false,
+    "rationale": "Es seguimiento comercial, no nueva cotización"
+  },
+  {
+    "query": "presupuesto para construir una API de 5 endpoints en 2 semanas",
+    "should_trigger": true,
+    "rationale": "Cotización técnica"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "name": "Validación crítica: MétodoPago PUE con FormaPago 99 — debe rechazar",
+  "input": {
+    "comprobante": {
+      "metodo_pago": "PUE",
+      "forma_pago": "99"
+    }
+  },
+  "expected_output": {
+    "validaciones_locales_pasadas": false,
+    "errores": [
+      "Inconsistencia: MétodoPago = PUE requiere FormaPago específico (01-31), no 99. 99 'Por definir' es solo válido cuando MétodoPago = PPD."
+    ],
+    "accion_recomendada": "Corregir FormaPago o cambiar MétodoPago a PPD."
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Regla de validación SAT",
+  "notas": "Test crítico de la validación más comúnmente equivocada por sistemas."
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "query": "el cliente del Jetta no contesta el WhatsApp para autorizar el cambio de balatas",
+    "should_trigger": true,
+    "rationale": "Autorización pendiente directa"
+  },
+  {
+    "query": "ya autorizó el cliente, mándale el mensaje de confirmación",
+    "should_trigger": true,
+    "rationale": "Registro de autorización"
+  },
+  {
+    "query": "qué le mando al cliente con la cotización para que apruebe",
+    "should_trigger": true,
+    "rationale": "Envío inicial cotización"
+  },
+  {
+    "query": "encontramos algo más al desarmar, ¿cómo le pido autorización?",
+    "should_trigger": true,
+    "rationale": "Autorización adicional"
+  },
+  {
+    "query": "3 días sin respuesta del cliente, ¿qué procede?",
+    "should_trigger": true,
+    "rationale": "Escalación por no respuesta"
+  },
+  {
+    "query": "hacer diagnóstico nuevo de un Jetta 2018",
+    "should_trigger": false,
+    "rationale": "Es diagnóstico, no autorización"
+  },
+  {
+    "query": "abrir OT formal con firmas",
+    "should_trigger": false,
+    "rationale": "Es orden de trabajo, no autorización inicial"
+  },
+  {
+    "query": "el cliente reclama por falla en garantía",
+    "should_trigger": false,
+    "rationale": "Es garantía, no autorización"
+  },
+  {
+    "query": "emitir CFDI por el servicio terminado",
+    "should_trigger": false,
+    "rationale": "Es facturación al cierre"
+  },
+  {
+    "query": "el cliente respondió 'apruebo urgentes nomás'",
+    "should_trigger": true,
+    "rationale": "Interpretación + registro"
+  },
+  {
+    "query": "el cliente pregunta si los rotores son necesarios",
+    "should_trigger": true,
+    "rationale": "Respuesta a consulta técnica del cliente"
+  },
+  {
+    "query": "auto detenido 10 días sin autorización",
+    "should_trigger": true,
+    "rationale": "Política de auto detenido"
+  },
+  {
+    "query": "envía cotización por WhatsApp del Civic con video del problema",
+    "should_trigger": true,
+    "rationale": "Envío inicial con video"
+  },
+  {
+    "query": "cómo le explico al cliente que está bien si es mejor cambiar el rotor",
+    "should_trigger": false,
+    "rationale": "Más diagnóstico técnico que autorización"
+  },
+  {
+    "query": "necesito el formato de orden de trabajo",
+    "should_trigger": false,
+    "rationale": "Es OT, otro skill"
+  },
+  {
+    "query": "el cliente quiere recoger el auto sin autorizar nada",
+    "should_trigger": true,
+    "rationale": "Caso de no autorización + cobro de diagnóstico"
+  },
+  {
+    "query": "PROFECO me llegó por queja del cliente del mes pasado",
+    "should_trigger": false,
+    "rationale": "Es defensa PROFECO, no autorización in-progress"
+  },
+  {
+    "query": "siguiente paso de cobranza de Bimbo",
+    "should_trigger": false,
+    "rationale": "Cobranza, no autorización"
+  },
+  {
+    "query": "cuál fue la última respuesta del cliente de Camargo en la OT-1234",
+    "should_trigger": true,
+    "rationale": "Consulta a bitácora"
+  },
+  {
+    "query": "necesito modificar la cotización original del cliente",
+    "should_trigger": true,
+    "rationale": "Modificación + re-autorización"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "name": "Cancelación de CFDI con motivo 01 (error con relación)",
+  "input": {
+    "uuid_a_cancelar": "abc12345-6789-0123-4567-89abcdef0123",
+    "motivo_cancelacion": "01",
+    "folio_sustituto": "def67890-1234-5678-9abc-def012345678",
+    "dias_desde_emision": 5,
+    "monto_cfdi": 11600.00
+  },
+  "expected_output": {
+    "requiere_aceptacion_receptor": true,
+    "razon_aceptacion": "Más de 72h (5 días) Y monto > $1,000 MXN: requiere aceptación del receptor vía buzón tributario.",
+    "plazo_respuesta_receptor": "3 días hábiles",
+    "default_si_no_responde": "se considera aceptada",
+    "validaciones_locales_pasadas": true
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "RMF — reglas de cancelación vigentes",
+  "notas": "Motivo 01 requiere referenciar folio sustituto. Verificar política vigente."
+}

@@ -1,0 +1,19 @@
+{
+  "name": "RFC genérico de público en general nacional",
+  "input": "XAXX010101000",
+  "expected_output": {
+    "rfc_input": "XAXX010101000",
+    "rfc_normalizado": "XAXX010101000",
+    "tipo": "PF",
+    "valido_estructura": true,
+    "fecha_embebida": "2001-01-01",
+    "es_generico": true,
+    "subtipo_generico": "publico_general_nacional",
+    "alertas": [
+      "RFC genérico válido solo como receptor con UsoCFDI = S01 en factura global de público en general."
+    ]
+  },
+  "vigencia_validada": "2026-06-11",
+  "fuente_verificacion": "Catálogo SAT — RFC genéricos",
+  "notas": "Caso especial: pasa estructura por excepción del SAT."
+}

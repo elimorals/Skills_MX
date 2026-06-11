@@ -114,5 +114,24 @@ Este skill alimenta el nodo `Impuestos` del payload que pasa a `cfdi-emision`. N
 - LIVA Art. 1-A — supuestos de retención.
 - Decreto región fronteriza norte (vigente desde 2019, prorrogado) — listado de municipios.
 - Resolución Miscelánea Fiscal anual — tasas RESICO actualizadas.
+- `references/matriz-retenciones.md` — escenarios por emisor × receptor × giro
 
-*(Catálogo detallado de tasas por escenario pendiente en `references/matriz-retenciones.md`).*
+## ⚠ Datos que requieren verificación vigente antes de producción
+
+Este skill cita tasas y reglas fiscales que se actualizan periódicamente. **NO usar para declaraciones reales sin validar con fuente oficial vigente o contador certificado**:
+
+1. **Tasas RESICO PF** (1.00%, 1.10%, 1.50%, 2.00%, 2.50% por rangos): validar contra Resolución Miscelánea Fiscal del ejercicio actual. Los rangos de ingresos por tasa también se actualizan.
+
+2. **Tasas RESICO PM**: este skill las menciona pero no las detalla. Verificar tarifa específica del ejercicio.
+
+3. **Retención REPSE 6% IVA** (Art. 1-A Frac. IV LIVA): vigente desde 2021. Confirmar si hubo modificaciones.
+
+4. **Decreto región fronteriza norte y sur**: prorrogado periódicamente. Validar vigencia del decreto y lista de municipios actualizada (puede haber adiciones/bajas).
+
+5. **Retenciones tradicionales** (10% ISR + 10.6667% IVA para servicios profesionales PF→PM): estables hace años pero confirmar que no hubo reforma reciente al Art. 106 LISR.
+
+6. **Autotransporte (4% ISR + 4% IVA)**: confirmar Art. 1-A LIVA vigente.
+
+7. **Tope efectivo deducibilidad** ($2,000 MXN): aplica para deducción de gastos en efectivo, confirmar vigente.
+
+**Antes de exponer a cliente**: hacer cálculo de prueba en una declaración real y comparar contra el resultado del SAT vía portal.

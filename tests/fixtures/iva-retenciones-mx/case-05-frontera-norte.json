@@ -1,0 +1,32 @@
+{
+  "name": "Emisor en Tijuana (frontera norte) — IVA 8% aplica al emisor, no por geografía del cliente",
+  "input": {
+    "emisor": {
+      "regimen": "626",
+      "tipo": "PM",
+      "ubicacion": "Tijuana, BC",
+      "frontera_norte": true
+    },
+    "receptor": {
+      "regimen": "601",
+      "tipo": "PM",
+      "ubicacion": "CDMX"
+    },
+    "concepto": {
+      "tipo": "venta_bien",
+      "monto_base": 10000.00
+    }
+  },
+  "expected_output": {
+    "subtotal": 10000.00,
+    "impuestos_trasladados": [
+      {"tipo": "IVA", "tasa_factor": "Tasa", "tasa": 0.08, "importe": 800.00, "razon": "Emisor en región fronteriza norte (decreto)"}
+    ],
+    "impuestos_retenidos": [],
+    "total_comprobante": 10800.00,
+    "neto_a_pagar_emisor": 10800.00
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Decreto región fronteriza norte vigente — verificar lista de municipios y plazo",
+  "notas": "El IVA 8% aplica por geografía del emisor (no del cliente). Tijuana SÍ está en el decreto."
+}
