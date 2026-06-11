@@ -29,7 +29,7 @@ where = ["."]
 include = ["shared*", "mp_*"]
 
 [tool.pytest.ini_options]
-testpaths = ["shared/tests", "mp_banxico/tests"]
+testpaths = ["shared/tests", "mp_banxico/tests", "mp_facturama_extendido/tests"]
 python_files = ["test_*.py"]
 asyncio_mode = "auto"
 pythonpath = ["."]

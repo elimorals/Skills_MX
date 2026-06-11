@@ -1,15 +1,29 @@
 {
-  "_comment": "MCP servers para colegios-mx. Default: todos disabled, mockeables.",
+  "_comment": "MCP servers para colegios-mx. banxico activo por default; el resto requiere credenciales.",
   "mcpServers": {
-    "facturama": {
-      "_comment": "PAC para timbrado CFDI con complemento InsEduc.",
-      "command": "npx",
-      "args": ["-y", "@facturama/mcp-server"],
+    "banxico": {
+      "_comment": "Tipos de cambio DOF para becarios/intercambios con pagos en USD (colegios internacionales).",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_banxico.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
       "env": {
-        "FACTURAMA_API_KEY": "${FACTURAMA_API_KEY:-mock}",
-        "FACTURAMA_ENV": "${FACTURAMA_ENV:-sandbox}"
+        "BANXICO_TOKEN": "${BANXICO_TOKEN:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
       },
-      "disabled": true
+      "disabled": false
+    },
+    "facturama": {
+      "_comment": "MCP propio mp_facturama_extendido: validación local + timbrado CFDI 4.0. Complemento InsEduc pendiente de implementar.",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_facturama_extendido.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "FACTURAMA_USER": "${FACTURAMA_USER:-}",
+        "FACTURAMA_PASSWORD": "${FACTURAMA_PASSWORD:-}",
+        "FACTURAMA_ENV": "${FACTURAMA_ENV:-sandbox}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
     },
     "whatsapp-business": {
       "_comment": "Provider para envío masivo de templates (Gupshup, Twilio, Meta Cloud).",

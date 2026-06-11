@@ -8,8 +8,12 @@ Versioning: [Semantic Versioning](https://semver.org).
 ## [Unreleased]
 
 ### Added
+- `.mcp.json` con `banxico` MCP propio activo por default (modo mock sin credenciales). Implementación en `mcp-servers/mp_banxico/` con 7 tools (TC DOF, UMA, INPC, TIIE, conversión).
 - Subagent `validador-cfdi-batch` para auditar lotes grandes de CFDIs
 - References bundleados: regímenes fiscales completo, complementos CFDI, integración SAT, ARCO, Banxico, tono MX
+
+### Changed
+- `mxn-formato` actualizado para documentar tools del MCP `banxico` directamente, en lugar de solo mencionar Banxico en abstracto.
 
 ### Changed
 - `cfdi-emision`: agregada sección de datos a verificar vigentes

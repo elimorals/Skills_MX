@@ -99,12 +99,24 @@ Reglas para contratos:
 
 ## Conversión a otras monedas
 
-Para conversión MXN ↔ USD/EUR/CAD/JPY:
+Para conversión MXN ↔ USD/EUR/GBP/CAD/JPY:
 1. Tipo de cambio del **Diario Oficial de la Federación (DOF)** publicado por Banxico.
-2. URL: `https://www.banxico.org.mx/SieAPIRest/` para consulta vía API o `dof.gob.mx` para histórico.
-3. SAT requiere usar el DOF del día hábil anterior al acto que se factura (no el del día mismo, salvo casos específicos).
+2. SAT requiere usar el TC del día hábil **anterior** al acto que se factura (no el del día mismo).
 
-Si la integración con Banxico está mockeada (modo default), este skill devuelve el último tipo de cambio conocido con marca `simulated: true` y advierte al usuario de actualizar antes de finalizar documento legal.
+### MCP disponible: `banxico`
+
+El MCP `banxico` (en `mcp-servers/mp_banxico/`) provee tools directos:
+
+- `banxico_get_tc_dof(moneda, fecha)` — TC para fecha específica (ajusta a día hábil anterior si la fecha cae en fin de semana o feriado mexicano)
+- `banxico_get_tc_dia_habil_anterior(moneda, fecha_referencia)` — la regla SAT para CFDI: TC del día hábil estrictamente anterior a la fecha del comprobante
+- `banxico_convertir_monto(monto, de_moneda, a_moneda, fecha)` — conversión completa con precisión decimal
+
+Si `BANXICO_TOKEN` no está configurado, los tools regresan valores plausibles marcados con `simulated: true`. Para producción, registrar token gratuito en https://www.banxico.org.mx/SieAPIRest/service/v1/token.
+
+El MCP maneja automáticamente:
+- Feriados bancarios mexicanos (incluyendo Semana Santa calculada vía algoritmo de Gauss)
+- Cache de 24h para TC (los publicados ya no cambian)
+- Bitácora de cada consulta en `~/.local/share/plugins-mx/audit-log/banxico_mcp/`
 
 ## Salida esperada
 
