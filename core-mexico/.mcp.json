@@ -35,6 +35,19 @@
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
       },
       "disabled": false
+    },
+    "mercadolibre": {
+      "_comment": "MCP propio mp_mercado_libre: gestión de listings, precios, stock, órdenes, mensajes y preguntas ML. Marketplace dominante en LATAM, sin MCP oficial. Mock-friendly.",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_mercado_libre.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "ML_APP_ID": "${ML_APP_ID:-}",
+        "ML_SECRET": "${ML_SECRET:-}",
+        "ML_REFRESH_TOKEN": "${ML_REFRESH_TOKEN:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
     }
   }
 }
