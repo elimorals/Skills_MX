@@ -1,0 +1,44 @@
+{
+  "name": "agencia-marketing-mx",
+  "displayName": "Agencia Marketing MX",
+  "description": "Plugin para agencias de marketing digital operando en México. Genera reportes mensuales de cliente con KPIs por canal, optimiza campañas de Meta/Google/TikTok con detección de fatiga creativa, escribe copy mexicano que convierte (evita 'español neutro' robótico), gestiona community management con tono de marca, y estructura briefings creativos. Construido sobre core-mexico para facturación, cobranza y compliance.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elias",
+    "email": "elias@cipreholding.com"
+  },
+  "keywords": [
+    "agencia",
+    "marketing",
+    "digital",
+    "mexico",
+    "meta-ads",
+    "google-ads",
+    "tiktok-ads",
+    "community-management",
+    "copy"
+  ],
+  "skills": [
+    "skills/reporte-mensual-cliente",
+    "skills/meta-ads-optimization",
+    "skills/copy-mexicano",
+    "skills/community-management-mx",
+    "skills/briefing-creativo",
+    "skills/cfdi-emision",
+    "skills/iva-retenciones-mx",
+    "skills/rfc-validacion",
+    "skills/whatsapp-business-mx",
+    "skills/compliance-lfpdppp",
+    "skills/mxn-formato"
+  ],
+  "commands": [
+    "commands/reporte.md",
+    "commands/auditoria-cuenta.md",
+    "commands/copy.md",
+    "commands/brief.md"
+  ],
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "requires": ["core-mexico"]
+  }
+}

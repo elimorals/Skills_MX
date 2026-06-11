@@ -1,0 +1,43 @@
+{
+  "_comment": "MCP servers para agencia-marketing-mx. Default: todos disabled, mockeables.",
+  "mcpServers": {
+    "meta-ads": {
+      "_comment": "Meta Marketing API. Requiere access token con permisos ads_read y ads_management.",
+      "command": "node",
+      "args": ["./mcp-servers/meta-ads.js"],
+      "env": {
+        "META_ACCESS_TOKEN": "${META_ACCESS_TOKEN:-mock}",
+        "META_AD_ACCOUNT_ID": "${META_AD_ACCOUNT_ID:-mock}"
+      },
+      "disabled": true
+    },
+    "google-ads": {
+      "_comment": "Google Ads API. Requiere credentials.json + customer ID.",
+      "command": "node",
+      "args": ["./mcp-servers/google-ads.js"],
+      "env": {
+        "GOOGLE_ADS_CUSTOMER_ID": "${GOOGLE_ADS_CUSTOMER_ID:-mock}",
+        "GOOGLE_ADS_CREDENTIALS_PATH": "${GOOGLE_ADS_CREDENTIALS_PATH:-mock}"
+      },
+      "disabled": true
+    },
+    "tiktok-ads": {
+      "_comment": "TikTok Marketing API.",
+      "command": "node",
+      "args": ["./mcp-servers/tiktok-ads.js"],
+      "env": {
+        "TIKTOK_ACCESS_TOKEN": "${TIKTOK_ACCESS_TOKEN:-mock}"
+      },
+      "disabled": true
+    },
+    "ga4": {
+      "_comment": "Google Analytics 4 Data API.",
+      "command": "npx",
+      "args": ["-y", "@google-analytics/mcp-server"],
+      "env": {
+        "GA4_PROPERTY_ID": "${GA4_PROPERTY_ID:-mock}"
+      },
+      "disabled": true
+    }
+  }
+}
