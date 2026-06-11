@@ -1,0 +1,48 @@
+# Credenciales y secretos — NUNCA commitear
+.env
+.env.*
+!.env.example
+.mcp.local.json
+.claude/local-settings.json
+secrets/
+*.pem
+*.key
+*.p12
+*.cer
+
+# Archivos de prueba generados
+cfdi/*.xml
+cfdi/*.pdf
+output/
+tmp/
+*.tmp
+
+# IDE y SO
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Builds
+dist/
+build/
+
+# Memoria/sesión local del usuario (no es código)
+.remember/
