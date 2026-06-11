@@ -48,6 +48,17 @@
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
       },
       "disabled": false
+    },
+    "curp_renapo": {
+      "_comment": "MCP propio mp_curp_renapo: validación estructural CURP + consulta RENAPO. 8 de 9 tools son 100% locales (sin red). Útil universal porque colegios, salud, RH, migración usan CURP.",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_curp_renapo.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}",
+        "CURP_RENAPO_PLAYWRIGHT": "${CURP_RENAPO_PLAYWRIGHT:-}"
+      },
+      "disabled": false
     }
   }
 }
