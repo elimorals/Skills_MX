@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://plugins-mx/schemas/ficha-cliente.schema.json",
+  "title": "Ficha de Cliente",
+  "description": "Estructura de datos de un cliente capturado vía cliente-onboarding.",
+  "type": "object",
+  "required": ["id", "fecha_creacion", "fiscal", "contacto"],
+  "properties": {
+    "id": {"type": "string"},
+    "fecha_creacion": {"type": "string", "format": "date"},
+    "fiscal": {
+      "type": "object",
+      "required": ["razon_social", "rfc", "tipo", "regimen_fiscal"],
+      "properties": {
+        "razon_social": {"type": "string"},
+        "rfc": {"type": "string", "pattern": "^[A-ZÑ&]{3,4}\\d{6}[A-Z0-9]{3}$"},
+        "tipo": {"type": "string", "enum": ["PF", "PM"]},
+        "regimen_fiscal": {"type": "string"},
+        "uso_cfdi_preferido": {"type": "string"},
+        "domicilio_fiscal": {
+          "type": "object",
+          "required": ["cp"],
+          "properties": {
+            "calle": {"type": "string"},
+            "numero_exterior": {"type": "string"},
+            "numero_interior": {"type": "string"},
+            "colonia": {"type": "string"},
+            "municipio_alcaldia": {"type": "string"},
+            "estado": {"type": "string"},
+            "cp": {"type": "string", "pattern": "^\\d{5}$"}
+          }
+        },
+        "constancia_situacion_fiscal_url": {"type": "string", "format": "uri"}
+      }
+    },
+    "contacto": {
+      "type": "object",
+      "required": ["decisor"],
+      "properties": {
+        "decisor": {"$ref": "#/$defs/Persona"},
+        "operativo": {"$ref": "#/$defs/Persona"},
+        "facturacion": {
+          "type": "object",
+          "properties": {
+            "email_envio_cfdi": {"type": "string", "format": "email"},
+            "requiere_orden_compra_previa": {"type": "boolean"}
+          }
+        }
+      }
+    },
+    "comercial": {
+      "type": "object",
+      "properties": {
+        "fuente": {"type": "string", "enum": ["referido", "linkedin", "web", "evento", "otro"]},
+        "industria": {"type": "string"},
+        "tamano_empresa": {"type": "string", "enum": ["1-10", "11-50", "51-200", "201-1000", "1000+"]},
+        "proyectos_iniciales": {"type": "array", "items": {"type": "string"}},
+        "esquema_pago_acordado": {
+          "type": "object",
+          "properties": {
+            "metodo": {"type": "string", "enum": ["PUE", "PPD"]},
+            "forma_pago_default": {"type": "string"},
+            "plazo_dias": {"type": "integer", "minimum": 0},
+            "anticipo_porcentaje": {"type": "number", "minimum": 0, "maximum": 100},
+            "moneda": {"type": "string"}
+          }
+        },
+        "tipo_relacion": {"type": "string", "enum": ["proyecto_unico", "retainer_mensual", "hora_demanda"]}
+      }
+    },
+    "operativo": {
+      "type": "object",
+      "properties": {
+        "canal_comunicacion_preferido": {"type": "string"},
+        "tono_marca_cliente": {"type": "string"},
+        "stakeholders": {"type": "array", "items": {"type": "string"}},
+        "notas_internas": {"type": "string"}
+      }
+    },
+    "compliance": {
+      "type": "object",
+      "properties": {
+        "aviso_privacidad_aceptado": {"type": "boolean"},
+        "fecha_aceptacion": {"type": "string", "format": "date"},
+        "consentimiento_marketing": {"type": "boolean"},
+        "rfc_validado_estructura": {"type": "boolean"},
+        "rfc_validado_padron_sat": {"type": ["boolean", "null"]}
+      }
+    }
+  },
+  "$defs": {
+    "Persona": {
+      "type": "object",
+      "required": ["nombre"],
+      "properties": {
+        "nombre": {"type": "string"},
+        "cargo": {"type": "string"},
+        "email": {"type": "string", "format": "email"},
+        "telefono": {"type": "string"},
+        "whatsapp_business": {"type": "boolean"}
+      }
+    }
+  }
+}

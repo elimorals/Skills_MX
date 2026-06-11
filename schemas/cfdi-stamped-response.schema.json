@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://plugins-mx/schemas/cfdi-stamped-response.schema.json",
+  "title": "CFDI Stamped Response",
+  "description": "Response del PAC al timbrar un CFDI exitosamente (real o simulado).",
+  "type": "object",
+  "required": ["exito"],
+  "properties": {
+    "simulated": {
+      "type": "boolean",
+      "description": "true si es respuesta mock"
+    },
+    "exito": {
+      "type": "boolean"
+    },
+    "uuid": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+      "description": "Folio fiscal otorgado por el SAT"
+    },
+    "fecha_timbrado": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sello_sat": {
+      "type": "string"
+    },
+    "sello_emisor": {
+      "type": "string"
+    },
+    "cadena_original_complemento": {
+      "type": "string"
+    },
+    "xml_timbrado": {
+      "type": "string"
+    },
+    "errores": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "advertencias": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "if": {"properties": {"exito": {"const": true}}},
+  "then": {"required": ["uuid", "fecha_timbrado", "sello_sat"]},
+  "else": {"required": ["errores"]}
+}

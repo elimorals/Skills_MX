@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://plugins-mx/schemas/freelance-tax-output.schema.json",
+  "title": "Freelance Tax Output",
+  "description": "Output del skill freelance-tax-mx: cálculo de pago provisional ISR.",
+  "type": "object",
+  "required": ["regimen", "mes", "isr_a_pagar_sat"],
+  "properties": {
+    "regimen": {
+      "type": "string",
+      "enum": ["RESICO_PF", "RESICO_PM", "PFAE", "ASIMILADOS_SUELDOS"]
+    },
+    "ejercicio_fiscal": {"type": "integer", "minimum": 2020},
+    "mes": {"type": "string"},
+    "ingresos_cobrados": {"type": "number", "minimum": 0},
+    "gastos_deducibles": {"type": "number", "minimum": 0, "description": "Solo aplica para PFAE"},
+    "utilidad_fiscal": {"type": "number", "description": "Solo aplica para PFAE"},
+    "tarifa_aplicada": {
+      "type": "object",
+      "properties": {
+        "rango": {"type": "string"},
+        "tasa": {"type": "number"},
+        "cuota_fija": {"type": "number"},
+        "porcentaje_excedente": {"type": "number"}
+      }
+    },
+    "isr_causado": {"type": "number"},
+    "retenciones_acreditables": {"type": "number"},
+    "pagos_provisionales_anteriores": {"type": "number"},
+    "isr_a_pagar_sat": {"type": "number"},
+    "plazo_pago": {"type": "string", "description": "Fecha límite (típicamente día 17 del mes siguiente)"},
+    "mecanismo_pago": {"type": "string"},
+    "alertas": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "proyeccion_anual": {
+      "type": "object",
+      "properties": {
+        "ingresos_proyectados": {"type": "number"},
+        "isr_estimado_anual": {"type": "number"},
+        "isr_ya_pagado_acumulado": {"type": "number"},
+        "saldo_a_favor_proyectado": {"type": "number"}
+      }
+    },
+    "fuente_vigencia_pendiente": {"type": "boolean"}
+  }
+}

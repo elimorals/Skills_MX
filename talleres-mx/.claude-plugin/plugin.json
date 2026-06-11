@@ -35,6 +35,9 @@
     "commands/orden-trabajo.md",
     "commands/garantia.md"
   ],
+  "agents": [
+    "agents/defensor-profeco.md"
+  ],
   "compatibility": {
     "claudeCode": ">=1.0.0",
     "requires": ["core-mexico"]

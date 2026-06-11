@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://plugins-mx/schemas/iva-retenciones-output.schema.json",
+  "title": "IVA y Retenciones Output",
+  "description": "Output del skill iva-retenciones-mx: cálculo de IVA y retenciones para una operación.",
+  "type": "object",
+  "required": ["subtotal", "impuestos_trasladados", "total_comprobante", "neto_a_pagar_emisor"],
+  "properties": {
+    "escenario": {
+      "type": "string",
+      "description": "Descripción del escenario calculado"
+    },
+    "subtotal": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Monto base antes de impuestos"
+    },
+    "impuestos_trasladados": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/Impuesto"},
+      "description": "IVA u otros impuestos que se cobran al cliente"
+    },
+    "impuestos_retenidos": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/Impuesto"},
+      "description": "ISR e IVA que el receptor retiene al emisor"
+    },
+    "total_comprobante": {
+      "type": "number",
+      "description": "Total del CFDI (subtotal + trasladados, sin restar retenciones)"
+    },
+    "neto_a_pagar_emisor": {
+      "type": "number",
+      "description": "Lo que efectivamente recibe el emisor (total - retenciones)"
+    },
+    "alertas": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "fuente_vigencia_pendiente": {
+      "type": "boolean",
+      "description": "Si los datos requieren verificación contra fuente vigente"
+    }
+  },
+  "$defs": {
+    "Impuesto": {
+      "type": "object",
+      "required": ["tipo", "importe"],
+      "properties": {
+        "tipo": {
+          "type": "string",
+          "enum": ["IVA", "ISR", "IEPS"]
+        },
+        "tasa_factor": {
+          "type": "string",
+          "enum": ["Tasa", "Cuota", "Exento"]
+        },
+        "tasa": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "importe": {
+          "type": "number",
+          "minimum": 0
+        },
+        "razon": {
+          "type": "string",
+          "description": "Fundamento legal o explicación"
+        }
+      }
+    }
+  }
+}
