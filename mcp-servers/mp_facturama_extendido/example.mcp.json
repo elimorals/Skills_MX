@@ -1,0 +1,17 @@
+{
+  "_comment": "Ejemplo de configuración para agregar mp_facturama_extendido a un plugin de Claude Code. Copiar a <plugin>/.mcp.json o fusionar con mcpServers existente.",
+  "mcpServers": {
+    "facturama": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_facturama_extendido.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "FACTURAMA_USER": "${FACTURAMA_USER:-}",
+        "FACTURAMA_PASSWORD": "${FACTURAMA_PASSWORD:-}",
+        "FACTURAMA_ENV": "${FACTURAMA_ENV:-sandbox}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}

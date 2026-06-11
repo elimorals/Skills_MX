@@ -8,7 +8,7 @@ Servidores MCP (Model Context Protocol) construidos a medida para servicios mexi
 |---|---|---|---|
 | `shared/` (utilidades) | ✅ producción | 51 ✓ | Cache + bitácora + mock + errores |
 | `mp_banxico` | ✅ producción (mock + real) | 60 ✓ | Tipos de cambio DOF, UMA, INPC, TIIE |
-| `mp_facturama_extendido` | 🚧 pendiente | — | CFDI 4.0 + complementos |
+| `mp_facturama_extendido` | ✅ producción (mock + real) | 88 ✓ | CFDI 4.0: validación local + timbrado + cancelación + búsqueda + descargas |
 | `mp_mercado_libre` | 🚧 pendiente | — | Listings, orders, mensajes |
 | `mp_mercado_pago` | 🚧 pendiente | — | Payment links, webhooks, refunds |
 | `mp_curp_renapo` | 🚧 pendiente | — | Validación CURP estructural + RENAPO |

@@ -1,0 +1,29 @@
+{
+  "_comment": "MCPs base para core-mexico. Como este plugin lo heredan todos los verticales, aquí van solo los MCPs realmente universales: TC de Banxico (CFDI multimoneda), WhatsApp Business (canal universal), PAC (CFDI). Cada vertical agrega los suyos.",
+  "mcpServers": {
+    "banxico": {
+      "_comment": "Tipos de cambio DOF (USD/EUR/GBP/CAD/JPY) + UMA + INPC + TIIE28. Sin BANXICO_TOKEN corre en modo mock con valores plausibles. Token gratis en https://www.banxico.org.mx/SieAPIRest/service/v1/token",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_banxico.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "BANXICO_TOKEN": "${BANXICO_TOKEN:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    },
+    "facturama": {
+      "_comment": "MCP propio mp_facturama_extendido: validación local + timbrado + cancelación CFDI 4.0. Mock-friendly. Activo por default.",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_facturama_extendido.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "FACTURAMA_USER": "${FACTURAMA_USER:-}",
+        "FACTURAMA_PASSWORD": "${FACTURAMA_PASSWORD:-}",
+        "FACTURAMA_ENV": "${FACTURAMA_ENV:-sandbox}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}

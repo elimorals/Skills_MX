@@ -1,6 +1,17 @@
 {
-  "_comment": "MCP servers para agencia-marketing-mx. Default: todos disabled, mockeables.",
+  "_comment": "MCP servers para agencia-marketing-mx. banxico activo por default; el resto requiere credenciales.",
   "mcpServers": {
+    "banxico": {
+      "_comment": "Tipos de cambio DOF para cotizaciones a clientes con facturación en USD (campañas internacionales).",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_banxico.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "BANXICO_TOKEN": "${BANXICO_TOKEN:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    },
     "meta-ads": {
       "_comment": "Meta Marketing API. Requiere access token con permisos ads_read y ads_management.",
       "command": "node",
