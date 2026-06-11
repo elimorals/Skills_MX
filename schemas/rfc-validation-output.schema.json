@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://plugins-mx/schemas/rfc-validation-output.schema.json",
+  "title": "RFC Validation Output",
+  "description": "Output del skill rfc-validacion: estructura de validación estructural de un RFC mexicano.",
+  "type": "object",
+  "required": ["rfc_input", "rfc_normalizado", "valido_estructura"],
+  "properties": {
+    "rfc_input": {
+      "type": "string",
+      "description": "RFC tal como lo proporcionó el usuario (sin normalizar)"
+    },
+    "rfc_normalizado": {
+      "type": "string",
+      "pattern": "^[A-ZÑ&]{3,4}\\d{6}[A-Z0-9]{3}$",
+      "description": "RFC normalizado: mayúsculas, sin guiones ni espacios"
+    },
+    "tipo": {
+      "type": ["string", "null"],
+      "enum": ["PF", "PM", null],
+      "description": "Tipo de persona: PF (13 chars) o PM (12 chars)"
+    },
+    "valido_estructura": {
+      "type": "boolean",
+      "description": "Si la estructura es válida según regex y validaciones (NO valida existencia en padrón SAT)"
+    },
+    "fecha_embebida": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Fecha derivada de los 6 dígitos centrales (ISO YYYY-MM-DD)"
+    },
+    "es_generico": {
+      "type": "boolean",
+      "description": "Si es RFC genérico (XAXX o XEXX)"
+    },
+    "subtipo_generico": {
+      "type": ["string", "null"],
+      "enum": ["publico_general_nacional", "publico_general_extranjero", null]
+    },
+    "alertas": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Alertas: pasa validación pero hay observaciones (ej. palabra inconveniente)"
+    },
+    "errores": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Razones por las que no pasa validación"
+    },
+    "verificacion_sat": {
+      "type": "object",
+      "description": "Resultado de consulta al padrón SAT (si la integración está disponible)",
+      "properties": {
+        "consultada": {"type": "boolean"},
+        "razon": {"type": "string"},
+        "existe_padron": {"type": ["boolean", "null"]},
+        "activo": {"type": ["boolean", "null"]},
+        "en_lista_69b": {"type": ["boolean", "null"]},
+        "categoria_69b": {
+          "type": ["string", "null"],
+          "enum": ["definitivo", "presunto", "desvirtuado", "sentencia_favorable", null]
+        }
+      }
+    }
+  }
+}

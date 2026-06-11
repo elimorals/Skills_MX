@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://plugins-mx/schemas/cfdi-payload.schema.json",
+  "title": "CFDI 4.0 Payload",
+  "description": "Estructura del payload intermedio para construir un CFDI 4.0 antes de enviarlo al PAC.",
+  "type": "object",
+  "required": ["emisor", "receptor", "comprobante", "conceptos"],
+  "properties": {
+    "emisor": {
+      "type": "object",
+      "required": ["rfc", "razon_social", "regimen_fiscal", "cp_lugar_expedicion"],
+      "properties": {
+        "rfc": {"type": "string", "pattern": "^[A-ZÑ&]{3,4}\\d{6}[A-Z0-9]{3}$"},
+        "razon_social": {"type": "string", "minLength": 1},
+        "regimen_fiscal": {
+          "type": "string",
+          "enum": ["601", "603", "605", "606", "607", "608", "610", "611", "612", "614", "615", "616", "620", "621", "622", "623", "624", "625", "626"]
+        },
+        "cp_lugar_expedicion": {"type": "string", "pattern": "^\\d{5}$"}
+      }
+    },
+    "receptor": {
+      "type": "object",
+      "required": ["rfc", "nombre", "regimen_fiscal", "cp_domicilio", "uso_cfdi"],
+      "properties": {
+        "rfc": {"type": "string", "pattern": "^[A-ZÑ&]{3,4}\\d{6}[A-Z0-9]{3}$"},
+        "nombre": {"type": "string", "minLength": 1},
+        "regimen_fiscal": {"type": "string"},
+        "cp_domicilio": {"type": "string", "pattern": "^\\d{5}$"},
+        "uso_cfdi": {
+          "type": "string",
+          "enum": ["G01", "G02", "G03", "I01", "I02", "I03", "I04", "I05", "I06", "I07", "I08", "D01", "D02", "D03", "D04", "D05", "D06", "D07", "D08", "D09", "D10", "S01", "CP01", "CN01"]
+        },
+        "residencia_fiscal": {"type": "string", "description": "Código ISO país (solo para receptor extranjero)"},
+        "num_reg_id_trib": {"type": "string", "description": "ID fiscal del país (solo extranjero)"}
+      }
+    },
+    "comprobante": {
+      "type": "object",
+      "required": ["tipo_comprobante", "moneda", "metodo_pago", "forma_pago", "exportacion"],
+      "properties": {
+        "tipo_comprobante": {"type": "string", "enum": ["I", "E", "T", "N", "P"]},
+        "moneda": {"type": "string", "minLength": 3, "maxLength": 3},
+        "tipo_cambio": {"type": "number", "exclusiveMinimum": 0},
+        "metodo_pago": {"type": "string", "enum": ["PUE", "PPD"]},
+        "forma_pago": {
+          "type": "string",
+          "enum": ["01", "02", "03", "04", "05", "06", "08", "12", "13", "14", "15", "17", "23", "24", "25", "26", "27", "28", "29", "30", "31", "99"]
+        },
+        "exportacion": {"type": "string", "enum": ["01", "02", "03", "04"]},
+        "lugar_expedicion": {"type": "string", "pattern": "^\\d{5}$"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"metodo_pago": {"const": "PUE"}}},
+          "then": {
+            "properties": {"forma_pago": {"not": {"const": "99"}}}
+          }
+        },
+        {
+          "if": {"properties": {"metodo_pago": {"const": "PPD"}}},
+          "then": {
+            "properties": {"forma_pago": {"const": "99"}}
+          }
+        }
+      ]
+    },
+    "conceptos": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["clave_prod_serv", "descripcion", "clave_unidad", "cantidad", "valor_unitario", "importe", "objeto_imp"],
+        "properties": {
+          "clave_prod_serv": {"type": "string", "pattern": "^\\d{8}$"},
+          "descripcion": {"type": "string", "minLength": 1},
+          "clave_unidad": {"type": "string"},
+          "cantidad": {"type": "number", "exclusiveMinimum": 0},
+          "valor_unitario": {"type": "number", "minimum": 0},
+          "importe": {"type": "number", "minimum": 0},
+          "descuento": {"type": "number", "minimum": 0},
+          "objeto_imp": {"type": "string", "enum": ["01", "02", "03", "04"]},
+          "impuestos": {"type": "object"}
+        }
+      }
+    },
+    "impuestos": {
+      "type": "object",
+      "properties": {
+        "trasladados": {"type": "array"},
+        "retenidos": {"type": "array"},
+        "total_trasladados": {"type": "number"},
+        "total_retenidos": {"type": "number"}
+      }
+    },
+    "complemento": {
+      "type": "object",
+      "description": "Complementos adicionales (Pagos20, InsEduc, CartaPorte, etc.)"
+    }
+  }
+}

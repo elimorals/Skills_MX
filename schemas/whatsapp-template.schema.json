@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://plugins-mx/schemas/whatsapp-template.schema.json",
+  "title": "WhatsApp Business Template",
+  "description": "Estructura de template para WhatsApp Business Platform (Meta).",
+  "type": "object",
+  "required": ["name", "language", "category", "components"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Nombre interno del template en snake_case"
+    },
+    "language": {
+      "type": "string",
+      "enum": ["es_MX", "es", "en", "en_US", "pt_BR", "pt"]
+    },
+    "category": {
+      "type": "string",
+      "enum": ["UTILITY", "MARKETING", "AUTHENTICATION"]
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {"type": "string", "enum": ["HEADER", "BODY", "FOOTER", "BUTTONS"]},
+          "format": {"type": "string", "enum": ["TEXT", "IMAGE", "VIDEO", "DOCUMENT", "LOCATION"]},
+          "text": {"type": "string"},
+          "example": {
+            "type": "object",
+            "properties": {
+              "header_text": {"type": "array"},
+              "body_text": {"type": "array"}
+            }
+          },
+          "buttons": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {"type": "string", "enum": ["QUICK_REPLY", "URL", "PHONE_NUMBER", "OTP"]},
+                "text": {"type": "string"},
+                "url": {"type": "string"},
+                "phone_number": {"type": "string"},
+                "otp_type": {"type": "string", "enum": ["COPY_CODE", "ONE_TAP", "ZERO_TAP"]}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

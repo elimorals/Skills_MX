@@ -31,6 +31,9 @@
     "commands/format-mxn.md",
     "commands/timbrar-cfdi.md"
   ],
+  "agents": [
+    "agents/validador-cfdi-batch.md"
+  ],
   "compatibility": {
     "claudeCode": ">=1.0.0"
   }

@@ -39,6 +39,10 @@
     "commands/onboarding.md",
     "commands/pago-provisional.md"
   ],
+  "agents": [
+    "agents/auditor-fiscal-mensual.md",
+    "agents/revisor-cobranza-cartera.md"
+  ],
   "compatibility": {
     "claudeCode": ">=1.0.0",
     "requires": ["core-mexico"]
