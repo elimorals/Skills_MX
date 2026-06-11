@@ -1,0 +1,34 @@
+{
+  "_comment": "MCP servers para colegios-mx. Default: todos disabled, mockeables.",
+  "mcpServers": {
+    "facturama": {
+      "_comment": "PAC para timbrado CFDI con complemento InsEduc.",
+      "command": "npx",
+      "args": ["-y", "@facturama/mcp-server"],
+      "env": {
+        "FACTURAMA_API_KEY": "${FACTURAMA_API_KEY:-mock}",
+        "FACTURAMA_ENV": "${FACTURAMA_ENV:-sandbox}"
+      },
+      "disabled": true
+    },
+    "whatsapp-business": {
+      "_comment": "Provider para envío masivo de templates (Gupshup, Twilio, Meta Cloud).",
+      "command": "npx",
+      "args": ["-y", "@gupshup/mcp-whatsapp"],
+      "env": {
+        "GUPSHUP_API_KEY": "${GUPSHUP_API_KEY:-mock}",
+        "GUPSHUP_APP_NAME": "${GUPSHUP_APP_NAME:-mock}"
+      },
+      "disabled": true
+    },
+    "stripe": {
+      "_comment": "Cobro de colegiaturas con tarjeta. Mercado Pago alternativa para MX.",
+      "command": "npx",
+      "args": ["-y", "@stripe/mcp-server"],
+      "env": {
+        "STRIPE_API_KEY": "${STRIPE_API_KEY:-mock}"
+      },
+      "disabled": true
+    }
+  }
+}
