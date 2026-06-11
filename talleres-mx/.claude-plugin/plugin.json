@@ -1,0 +1,42 @@
+{
+  "name": "talleres-mx",
+  "displayName": "Talleres MX — Servicios automotrices",
+  "description": "Plugin para talleres mecánicos, servicios automotrices, electromecánicos y refaccionarias con servicio en México. Flujo diagnóstico → cotización → autorización del cliente → orden de trabajo → entrega con garantía, todo orquestado por WhatsApp Business para que cliente apruebe trabajos remotamente con foto/video del problema. Cubre garantías de servicio (PROFECO 30-90 días mínimo según tipo), órdenes de trabajo con desglose mano de obra + refacciones, manejo de refacciones con CFDI a tu RFC para deducción del cliente, política de auto detenido y manejo de objeción. Construido sobre core-mexico.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elias",
+    "email": "elias@cipreholding.com"
+  },
+  "keywords": [
+    "taller",
+    "mecanico",
+    "automotriz",
+    "servicio",
+    "refacciones",
+    "diagnostico",
+    "mexico",
+    "PROFECO"
+  ],
+  "skills": [
+    "skills/diagnostico-cotizacion",
+    "skills/autorizacion-cliente-wa",
+    "skills/garantia-servicio",
+    "skills/orden-trabajo",
+    "skills/cfdi-emision",
+    "skills/iva-retenciones-mx",
+    "skills/rfc-validacion",
+    "skills/whatsapp-business-mx",
+    "skills/compliance-lfpdppp",
+    "skills/mxn-formato"
+  ],
+  "commands": [
+    "commands/nuevo-diagnostico.md",
+    "commands/autorizacion.md",
+    "commands/orden-trabajo.md",
+    "commands/garantia.md"
+  ],
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "requires": ["core-mexico"]
+  }
+}
