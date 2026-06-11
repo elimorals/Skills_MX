@@ -1,0 +1,15 @@
+{
+  "_comment": "Ejemplo de configuración para agregar mp_banxico a un plugin de Claude Code. Copiar a <plugin>/.mcp.json o fusionar con mcpServers existente.",
+  "mcpServers": {
+    "banxico": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_banxico.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "BANXICO_TOKEN": "${BANXICO_TOKEN:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}
