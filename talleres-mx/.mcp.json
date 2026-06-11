@@ -46,15 +46,17 @@
       "disabled": true
     },
     "mercadolibre": {
-      "_comment": "Si el taller vende refacciones en MELI. Custom server requerido.",
-      "command": "node",
-      "args": ["./mcp-servers/mercadolibre.js"],
+      "_comment": "MCP propio mp_mercado_libre: gestión de listings, precios, stock, órdenes y mensajes ML. Útil si el taller vende refacciones. Mock-friendly.",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_mercado_libre.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
       "env": {
-        "ML_APP_ID": "${ML_APP_ID:-mock}",
-        "ML_SECRET": "${ML_SECRET:-mock}",
-        "ML_REFRESH_TOKEN": "${ML_REFRESH_TOKEN:-mock}"
+        "ML_APP_ID": "${ML_APP_ID:-}",
+        "ML_SECRET": "${ML_SECRET:-}",
+        "ML_REFRESH_TOKEN": "${ML_REFRESH_TOKEN:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
       },
-      "disabled": true
+      "disabled": false
     },
     "stripe": {
       "_comment": "Cobro con tarjeta y links de pago.",

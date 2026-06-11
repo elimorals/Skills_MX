@@ -1,0 +1,17 @@
+{
+  "_comment": "Ejemplo de configuración para agregar mp_mercado_libre a un plugin de Claude Code. Copiar a <plugin>/.mcp.json o fusionar con mcpServers existente. Sin credenciales corre en modo mock con datos determinísticos.",
+  "mcpServers": {
+    "mercadolibre": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_mercado_libre.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "ML_APP_ID": "${ML_APP_ID:-}",
+        "ML_SECRET": "${ML_SECRET:-}",
+        "ML_REFRESH_TOKEN": "${ML_REFRESH_TOKEN:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}
