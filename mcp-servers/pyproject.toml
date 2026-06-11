@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plugins-mx-mcp-servers"
+version = "0.1.0"
+description = "MCP servers for plugins-mx monorepo (México operativo agéntico)"
+requires-python = ">=3.10"
+authors = [{ name = "Elias", email = "elias@cipreholding.com" }]
+license = { text = "Proprietary" }
+readme = "README.md"
+
+dependencies = [
+    "httpx>=0.27,<1.0",
+    "pydantic>=2.7,<3.0",
+    "mcp>=1.0,<2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<9.0",
+    "pytest-asyncio>=0.23,<1.0",
+    "respx>=0.21,<1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["shared*", "mp_*"]
+
+[tool.pytest.ini_options]
+testpaths = ["shared/tests", "mp_banxico/tests"]
+python_files = ["test_*.py"]
+asyncio_mode = "auto"
+pythonpath = ["."]
