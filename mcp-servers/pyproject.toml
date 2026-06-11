@@ -36,6 +36,7 @@ testpaths = [
     "mp_mercado_pago/tests",
     "mp_mercado_libre/tests",
     "mp_curp_renapo/tests",
+    "mp_banxico_cep/tests",
 ]
 python_files = ["test_*.py"]
 asyncio_mode = "auto"

@@ -1,0 +1,15 @@
+{
+  "_comment": "Configuración para agregar mp_banxico_cep a un plugin de Claude Code. Las 4 herramientas locales (CLABE, parseo clave rastreo, lookup banco) son SIEMPRE reales. Las 4 que tocan Banxico arrancan en mock determinístico — para modo real exportar BANXICO_CEP_PLAYWRIGHT=1 (todavía no implementado).",
+  "mcpServers": {
+    "banxico_cep": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_banxico_cep.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}",
+        "BANXICO_CEP_PLAYWRIGHT": "${BANXICO_CEP_PLAYWRIGHT:-}"
+      },
+      "disabled": false
+    }
+  }
+}

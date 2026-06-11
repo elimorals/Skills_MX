@@ -12,7 +12,7 @@ Servidores MCP (Model Context Protocol) construidos a medida para servicios mexi
 | `mp_mercado_pago` | ✅ producción (mock + real) | 75 ✓ | Payment links + webhook HMAC validation + refunds + cancel |
 | `mp_mercado_libre` | ✅ producción (mock + real) | 63 ✓ | Listings, precios, stock, órdenes, mensajes, preguntas, reputación |
 | `mp_curp_renapo` | ✅ producción (estructural real, RENAPO mock) | 58 ✓ | Validación CURP estructural + dígito verificador + generación reversa + consulta RENAPO (mock) |
-| `mp_banxico_cep` | 🚧 pendiente | — | CEP para conciliación SPEI |
+| `mp_banxico_cep` | ✅ producción (CLABE real, CEP mock) | 53 ✓ | Validación CLABE 18 dígitos + decodificación banco/plaza + parseo claves rastreo SPEI + CEP (mock) |
 | `mp_sat_portal_playwright` | 🚧 pendiente | — | CSF, padrón, 69-B, Buzón |
 
 Roadmap completo: `../Downloads/plugins-mx-planeacion-mcps-agentica.md`.
