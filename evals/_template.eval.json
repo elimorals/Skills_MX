@@ -1,0 +1,16 @@
+[
+  {
+    "_comment": "Plantilla para crear evals nuevos. Copia este archivo, renómbralo como <skill>.eval.json, y reemplaza los prompts. Mínimo 10 should_trigger:true + 10 should_trigger:false = 20 total. Apunta a 24+ para mayor robustez.",
+    "_estructura": "Cada eval tiene: query (string realista), should_trigger (bool), rationale (string explicando por qué)",
+    "_buenas_practicas": [
+      "Realistas: como hablaría el usuario real, con typos ocasionales, abreviaciones, mezcla español/inglés cuando aplique",
+      "Near-misses en negativos: prompts que comparten keywords con el skill pero no deben triggear",
+      "Variedad de formalidad: algunos prompts formales, otros casuales",
+      "Cubrir casos edge: si el skill maneja un caso edge documentado, debe haber un prompt para él",
+      "Cubrir el competidor: si hay otro skill con dominio adyacente, incluir prompts que pertenezcan al otro skill (should_trigger:false para este)"
+    ],
+    "query": "ejemplo de prompt should_trigger:true del usuario realista con detalle y contexto",
+    "should_trigger": true,
+    "rationale": "explicación breve de por qué este prompt debería triggear el skill"
+  }
+]

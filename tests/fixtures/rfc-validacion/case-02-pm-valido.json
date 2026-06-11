@@ -1,0 +1,16 @@
+{
+  "name": "RFC PM estructuralmente válido con guiones",
+  "input": "IBM-970131-DRA",
+  "expected_output": {
+    "rfc_input": "IBM-970131-DRA",
+    "rfc_normalizado": "IBM970131DRA",
+    "tipo": "PM",
+    "valido_estructura": true,
+    "fecha_embebida": "1997-01-31",
+    "es_generico": false,
+    "alertas": []
+  },
+  "vigencia_validada": "2026-06-11",
+  "fuente_verificacion": "Estructura RFC PM estable",
+  "notas": "Normalización quita guiones."
+}

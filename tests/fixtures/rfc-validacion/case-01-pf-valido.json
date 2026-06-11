@@ -1,0 +1,16 @@
+{
+  "name": "RFC PF estructuralmente válido",
+  "input": "MAJG800101XYZ",
+  "expected_output": {
+    "rfc_input": "MAJG800101XYZ",
+    "rfc_normalizado": "MAJG800101XYZ",
+    "tipo": "PF",
+    "valido_estructura": true,
+    "fecha_embebida": "1980-01-01",
+    "es_generico": false,
+    "alertas": []
+  },
+  "vigencia_validada": "2026-06-11",
+  "fuente_verificacion": "Estructura RFC: regla estable desde reforma fiscal 2004",
+  "notas": "Caso happy path."
+}

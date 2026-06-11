@@ -1,0 +1,102 @@
+[
+  {
+    "query": "necesito calcular el pago provisional de marzo, estoy en RESICO PF",
+    "should_trigger": true,
+    "rationale": "Trigger directo"
+  },
+  {
+    "query": "cuánto me toca pagar al SAT el día 17",
+    "should_trigger": true,
+    "rationale": "Pago provisional implícito"
+  },
+  {
+    "query": "voy a hacer la declaración anual, ¿qué deducciones meto?",
+    "should_trigger": true,
+    "rationale": "Declaración anual + deducciones personales"
+  },
+  {
+    "query": "mi cliente me retuvo 10% ¿puedo acreditarlo?",
+    "should_trigger": true,
+    "rationale": "Caso retención acreditable"
+  },
+  {
+    "query": "los gastos de mi viaje a Cancún ¿son deducibles?",
+    "should_trigger": true,
+    "rationale": "Deducciones PFAE"
+  },
+  {
+    "query": "qué uso CFDI le pongo cuando facturo a un cliente",
+    "should_trigger": false,
+    "rationale": "Es emisión CFDI, no cálculo fiscal"
+  },
+  {
+    "query": "el cliente quiere CFDI por colegiatura",
+    "should_trigger": false,
+    "rationale": "CFDI específico de colegio, no impuestos del freelancer"
+  },
+  {
+    "query": "el contador me dice que tengo saldo a favor del año pasado",
+    "should_trigger": true,
+    "rationale": "Análisis de saldo fiscal"
+  },
+  {
+    "query": "estoy en sueldos y salarios y quiero pasarme a PFAE",
+    "should_trigger": true,
+    "rationale": "Cambio de régimen, análisis fiscal"
+  },
+  {
+    "query": "soy PM y necesito calcular el ISR de la empresa",
+    "should_trigger": false,
+    "rationale": "PM no es freelance-tax-mx; otra cosa"
+  },
+  {
+    "query": "depositó un cliente en mi cuenta pero no le facturé",
+    "should_trigger": true,
+    "rationale": "Alerta de discrepancia ingresos vs CFDIs"
+  },
+  {
+    "query": "necesito la matriz de retenciones por tipo de servicio",
+    "should_trigger": false,
+    "rationale": "Es iva-retenciones-mx, no freelance-tax"
+  },
+  {
+    "query": "qué pasa si no presento provisional este mes",
+    "should_trigger": true,
+    "rationale": "Consecuencias fiscales"
+  },
+  {
+    "query": "cómo deduzco la colegiatura del kínder de mis hijos en mi declaración",
+    "should_trigger": true,
+    "rationale": "Deducción personal Art. 151"
+  },
+  {
+    "query": "mi cliente extranjero me pagó en USD, ¿cómo convierto?",
+    "should_trigger": true,
+    "rationale": "TC para pago provisional"
+  },
+  {
+    "query": "cuánto deduzco de colegiaturas de mi hijo de prepa",
+    "should_trigger": true,
+    "rationale": "Tope deducción por nivel"
+  },
+  {
+    "query": "el SAT me citó por discrepancia fiscal",
+    "should_trigger": false,
+    "rationale": "Asunto legal de auditoría, requiere contador formal"
+  },
+  {
+    "query": "necesito invoicearle a mi cliente de Texas",
+    "should_trigger": false,
+    "rationale": "CFDI/cotización extranjera, no fiscal mensual"
+  },
+  {
+    "query": "necesito proyectar mis impuestos del año completo",
+    "should_trigger": true,
+    "rationale": "Estimación anual"
+  },
+  {
+    "query": "registrar nuevo gasto con CFDI a mi RFC",
+    "should_trigger": false,
+    "rationale": "Registro de gasto, contabilidad — adyacente pero no es el skill"
+  }
+]

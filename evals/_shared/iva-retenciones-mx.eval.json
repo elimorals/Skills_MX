@@ -1,0 +1,102 @@
+[
+  {
+    "query": "soy PFAE y le voy a facturar a Telmex $50,000 ¿cuánto me retienen?",
+    "should_trigger": true,
+    "rationale": "Caso clásico retención profesional PF->PM"
+  },
+  {
+    "query": "estoy en RESICO PF y mi cliente es una empresa, ¿me retiene IVA?",
+    "should_trigger": true,
+    "rationale": "Caso RESICO PF retención reducida"
+  },
+  {
+    "query": "qué tasa de IVA aplica si estoy en Tijuana facturando a CDMX",
+    "should_trigger": true,
+    "rationale": "Caso región fronteriza (emisor frontera, no por destino)"
+  },
+  {
+    "query": "calcular impuestos de un servicio de $25,000 en RESICO con cliente extranjero",
+    "should_trigger": true,
+    "rationale": "Calculo + caso exportación servicios"
+  },
+  {
+    "query": "facturo arrendamiento a una constructora ¿qué retenciones aplican?",
+    "should_trigger": true,
+    "rationale": "Caso arrendamiento 606"
+  },
+  {
+    "query": "cómo emito CFDI con régimen 612",
+    "should_trigger": false,
+    "rationale": "Es más emisión que retenciones (puede triggear ambos pero principal es cfdi-emision)"
+  },
+  {
+    "query": "necesito factura de FedEx por el envío que pagué",
+    "should_trigger": false,
+    "rationale": "Recibir factura, no calcular retenciones"
+  },
+  {
+    "query": "el cliente me dice que no me va a retener ¿está bien?",
+    "should_trigger": true,
+    "rationale": "Validar si aplica retención"
+  },
+  {
+    "query": "una asociación civil me contrató ¿cómo le facturo?",
+    "should_trigger": true,
+    "rationale": "Caso AC régimen 603"
+  },
+  {
+    "query": "presto servicios a Stripe en USA ¿cómo manejo los impuestos?",
+    "should_trigger": true,
+    "rationale": "Servicios al extranjero, tasa 0%"
+  },
+  {
+    "query": "el SAT me notificó que no acredité retenciones del año pasado",
+    "should_trigger": false,
+    "rationale": "Es declaración/contabilidad, no cálculo de retenciones nuevo"
+  },
+  {
+    "query": "cuánto me deduce el contador de IVA acreditable",
+    "should_trigger": false,
+    "rationale": "Es contabilidad/declaración, no cálculo de retenciones operativo"
+  },
+  {
+    "query": "tengo un cliente exento de IVA ¿qué tasa pongo en el CFDI?",
+    "should_trigger": true,
+    "rationale": "Cubre tasa 0/exento del skill"
+  },
+  {
+    "query": "soy autotransportista de carga, mi cliente es PM ¿cuál es la retención?",
+    "should_trigger": true,
+    "rationale": "Caso específico autotransporte (4% ISR + 4% IVA)"
+  },
+  {
+    "query": "me quieren retener REPSE pero no soy outsourcing",
+    "should_trigger": true,
+    "rationale": "Tema REPSE 6% retención IVA"
+  },
+  {
+    "query": "necesito el listado de claves del SAT del producto que voy a vender",
+    "should_trigger": false,
+    "rationale": "ClaveProdServ es otro tema, no retenciones"
+  },
+  {
+    "query": "voy a vender mi auto ¿hay IVA?",
+    "should_trigger": false,
+    "rationale": "Venta de activo personal, no transacción de servicio o producto comercial"
+  },
+  {
+    "query": "el ingeniero subcontratista me factura ¿yo retengo o él?",
+    "should_trigger": true,
+    "rationale": "Análisis de obligación de retener"
+  },
+  {
+    "query": "le vendo medicamentos a una farmacia ¿tasa 0 o exento?",
+    "should_trigger": true,
+    "rationale": "Caso típico distinción 0 vs exento"
+  },
+  {
+    "query": "estoy en frontera norte ¿la tasa 8 aplica a mis exportaciones también?",
+    "should_trigger": true,
+    "rationale": "Caso frontera + exportación combinado"
+  }
+]

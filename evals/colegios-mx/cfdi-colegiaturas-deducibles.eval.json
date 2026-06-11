@@ -1,0 +1,102 @@
+[
+  {
+    "query": "necesito facturar la colegiatura de marzo de la familia Rodríguez",
+    "should_trigger": true,
+    "rationale": "CFDI colegiatura directo"
+  },
+  {
+    "query": "el papá me pide CFDI para deducir las colegiaturas",
+    "should_trigger": true,
+    "rationale": "Deducibilidad Art. 151 D10"
+  },
+  {
+    "query": "voy a emitir el CFDI con uso D10",
+    "should_trigger": true,
+    "rationale": "Uso CFDI específico de colegiatura"
+  },
+  {
+    "query": "necesito el complemento educativo con CURP del alumno",
+    "should_trigger": true,
+    "rationale": "Complemento InsEduc"
+  },
+  {
+    "query": "cuál es el tope de deducción de primaria",
+    "should_trigger": true,
+    "rationale": "Tope Art. 151 por nivel"
+  },
+  {
+    "query": "el papá pagó en efectivo, ¿le puedo dar CFDI deducible?",
+    "should_trigger": true,
+    "rationale": "Caso crítico: efectivo no califica"
+  },
+  {
+    "query": "constancia de servicios educativos del año pasado",
+    "should_trigger": true,
+    "rationale": "Constancia anual fiscal"
+  },
+  {
+    "query": "padres divorciados, ¿a quién facturo?",
+    "should_trigger": true,
+    "rationale": "Caso edge padres separados"
+  },
+  {
+    "query": "necesito constancia de estudios",
+    "should_trigger": false,
+    "rationale": "Es constancia académica, otro skill"
+  },
+  {
+    "query": "boleta de calificaciones del bimestre",
+    "should_trigger": false,
+    "rationale": "Es boleta académica, no CFDI"
+  },
+  {
+    "query": "el papá no ha pagado, ¿cómo cobro?",
+    "should_trigger": false,
+    "rationale": "Cobranza, no CFDI"
+  },
+  {
+    "query": "mandar aviso de junta a los padres",
+    "should_trigger": false,
+    "rationale": "Comunicación, no CFDI"
+  },
+  {
+    "query": "factura por curso de natación extra escolar",
+    "should_trigger": false,
+    "rationale": "Servicio no deducible por Art. 151 — facturar pero NO con D10"
+  },
+  {
+    "query": "deducción de transporte escolar de mi hijo",
+    "should_trigger": false,
+    "rationale": "Fracción IX (transporte) diferente de VIII (colegiaturas)"
+  },
+  {
+    "query": "CFDI por inscripción anual",
+    "should_trigger": true,
+    "rationale": "Inscripción NO es deducible — alertar al usuario"
+  },
+  {
+    "query": "tuition invoice for school year for Mexican parents",
+    "should_trigger": true,
+    "rationale": "Inglés"
+  },
+  {
+    "query": "el alumno se cambió de colegio a mitad de ciclo",
+    "should_trigger": true,
+    "rationale": "Caso CFDI parcial"
+  },
+  {
+    "query": "necesito el aviso de privacidad del colegio",
+    "should_trigger": false,
+    "rationale": "Compliance"
+  },
+  {
+    "query": "matricular un nuevo alumno",
+    "should_trigger": false,
+    "rationale": "Inscripción operativa, no CFDI"
+  },
+  {
+    "query": "comprobante de pago de colegiatura para mi declaración anual",
+    "should_trigger": true,
+    "rationale": "El padre pide CFDI para anual"
+  }
+]

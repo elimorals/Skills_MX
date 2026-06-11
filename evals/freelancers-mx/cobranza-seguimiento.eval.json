@@ -1,0 +1,102 @@
+[
+  {
+    "query": "Bimbo no me ha pagado la factura del 15 de marzo ya pasaron 20 días",
+    "should_trigger": true,
+    "rationale": "Cobranza directa"
+  },
+  {
+    "query": "cliente atrasado, ¿qué mensaje le mando?",
+    "should_trigger": true,
+    "rationale": "Trigger 'atrasado'"
+  },
+  {
+    "query": "cómo cobro a mi cliente que no responde el WhatsApp",
+    "should_trigger": true,
+    "rationale": "Cobranza con WhatsApp"
+  },
+  {
+    "query": "el cliente no me paga, ¿demando?",
+    "should_trigger": true,
+    "rationale": "Escalación legal"
+  },
+  {
+    "query": "necesito cotizar nuevo trabajo a este mismo cliente",
+    "should_trigger": false,
+    "rationale": "Es cotización, no cobranza"
+  },
+  {
+    "query": "el cliente ya pagó, mándale el CFDI",
+    "should_trigger": false,
+    "rationale": "Es facturación post-cobro"
+  },
+  {
+    "query": "ya me debe 90 días, ¿cómo procedo?",
+    "should_trigger": true,
+    "rationale": "Cobranza en etapa tardía"
+  },
+  {
+    "query": "recordatorio amable al cliente del pago del mes",
+    "should_trigger": true,
+    "rationale": "Cobranza etapa 1"
+  },
+  {
+    "query": "necesito carta formal de requerimiento",
+    "should_trigger": true,
+    "rationale": "Cobranza etapa 4"
+  },
+  {
+    "query": "el cliente ofrece pagar a 6 meses, ¿acepto?",
+    "should_trigger": true,
+    "rationale": "Convenio de pago"
+  },
+  {
+    "query": "calcular intereses moratorios al 3% mensual por 45 días",
+    "should_trigger": true,
+    "rationale": "Cálculo de moras"
+  },
+  {
+    "query": "follow-up email para el cliente que no contestó la propuesta",
+    "should_trigger": false,
+    "rationale": "Follow-up de propuesta, no cobranza"
+  },
+  {
+    "query": "el cliente está pagando con tarjeta vencida, ¿cómo le digo?",
+    "should_trigger": true,
+    "rationale": "Caso de cobranza por falla en medio de pago"
+  },
+  {
+    "query": "necesito el aviso de privacidad del despacho",
+    "should_trigger": false,
+    "rationale": "Compliance, no cobranza"
+  },
+  {
+    "query": "el cliente me amenaza con denunciarme, ¿qué hago?",
+    "should_trigger": false,
+    "rationale": "Asunto legal específico, no cobranza estándar"
+  },
+  {
+    "query": "cobranza extrajudicial con despacho de abogados",
+    "should_trigger": true,
+    "rationale": "Etapa 5 cobranza"
+  },
+  {
+    "query": "hacer reportes de los CFDIs cobrados del mes",
+    "should_trigger": false,
+    "rationale": "Contabilidad/reporte interno"
+  },
+  {
+    "query": "el cliente con quien firmé contrato marco se está retrasando con todos los pagos",
+    "should_trigger": true,
+    "rationale": "Cobranza multi-factura"
+  },
+  {
+    "query": "cómo doy de baja a un cliente al que ya no le voy a vender",
+    "should_trigger": false,
+    "rationale": "Decisión comercial, no cobranza"
+  },
+  {
+    "query": "es mi mejor cliente pero me debe 2 meses, no quiero perderlo",
+    "should_trigger": true,
+    "rationale": "Cobranza con foco relacional"
+  }
+]

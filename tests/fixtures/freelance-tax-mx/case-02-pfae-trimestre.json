@@ -1,0 +1,32 @@
+{
+  "name": "PFAE — pago provisional acumulado de marzo con ingresos $300,000 y gastos $80,000",
+  "input": {
+    "regimen": "612_PFAE",
+    "ejercicio_fiscal": 2026,
+    "mes_acumulado_hasta": "marzo",
+    "ingresos_acumulados": 300000.00,
+    "gastos_deducibles_acumulados": 80000.00,
+    "pagos_provisionales_anteriores": 18000.00,
+    "retenciones_acumuladas": 6000.00
+  },
+  "expected_output": {
+    "regimen": "PFAE (612)",
+    "utilidad_fiscal_acumulada": 220000.00,
+    "tarifa_aplicada": {
+      "rango": "185,852.58 - 374,837.88 MXN",
+      "cuota_fija": 19682.13,
+      "porcentaje_excedente": 0.2136,
+      "excedente": 34147.43,
+      "isr_excedente": 7293.89
+    },
+    "isr_ejercicio_acumulado": 26976.02,
+    "menos_pagos_anteriores": 18000.00,
+    "menos_retenciones": 6000.00,
+    "isr_a_pagar_este_mes": 2976.02,
+    "plazo_pago": "día 17 del mes siguiente",
+    "alertas": []
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Tarifa Art. 96 LISR vigente 2026 — los rangos y cuotas se actualizan anualmente",
+  "notas": "ALTO RIESGO: la tarifa citada en el skill es de mi training data. Es muy probable que los valores estén desactualizados por la actualización anual por inflación. Verificar antes de uso."
+}

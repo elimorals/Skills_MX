@@ -1,0 +1,58 @@
+{
+  "name": "CFDI clásico de servicios profesionales PFAE → PM",
+  "input": {
+    "emisor": {
+      "rfc": "MAJG800101XYZ",
+      "razon_social": "Juan Martínez Gómez",
+      "regimen_fiscal": "612",
+      "cp_lugar_expedicion": "06700"
+    },
+    "receptor": {
+      "rfc": "IBM970131DRA",
+      "nombre": "IBM de México SA",
+      "regimen_fiscal": "601",
+      "cp_domicilio": "11520",
+      "uso_cfdi": "G03"
+    },
+    "comprobante": {
+      "tipo_comprobante": "I",
+      "moneda": "MXN",
+      "metodo_pago": "PUE",
+      "forma_pago": "03",
+      "exportacion": "01"
+    },
+    "conceptos": [
+      {
+        "clave_prod_serv": "80141600",
+        "descripcion": "Servicios de consultoría empresarial — mes de marzo 2026",
+        "clave_unidad": "E48",
+        "cantidad": 1,
+        "valor_unitario": 10000.00,
+        "importe": 10000.00,
+        "objeto_imp": "02"
+      }
+    ]
+  },
+  "expected_output_payload_simplificado": {
+    "subtotal": 10000.00,
+    "impuestos_trasladados": [{"tipo": "IVA", "tasa": 0.16, "importe": 1600.00}],
+    "impuestos_retenidos": [
+      {"tipo": "ISR", "importe": 1000.00},
+      {"tipo": "IVA", "importe": 1066.67}
+    ],
+    "total": 11600.00,
+    "neto_a_pagar_emisor": 9533.33,
+    "validaciones_locales_pasadas": true,
+    "alertas": []
+  },
+  "expected_simulated_response": {
+    "simulated": true,
+    "uuid": "<8-4-4-4-12 hex generado>",
+    "fecha_timbrado": "<ISO timestamp>",
+    "sello_sat": "<simulado>",
+    "cadena_original": "<simulada>"
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Validar contra Facturama sandbox antes de uso real",
+  "notas": "Caso de prueba más común. Si esto no pasa por el PAC real, el skill necesita ajustes."
+}

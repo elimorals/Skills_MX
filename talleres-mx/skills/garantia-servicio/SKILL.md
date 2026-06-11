@@ -203,3 +203,23 @@ Cuando se invoca para "generar certificado de garantía de OT-XXXX":
 - `diagnostico-cotizacion`: si reclamo NO cubierto, genera nueva cotización.
 - `compliance-lfpdppp`: el expediente contiene datos del cliente.
 - `whatsapp-business-mx`: templates para comunicación durante el reclamo.
+
+## ⚠ Datos que requieren verificación vigente
+
+1. **NMX-D-003-IMNC** (Norma Mexicana de talleres automotrices): vigencia y contenido actual. Cité de memoria.
+
+2. **Plazos PROFECO** (30 días mano de obra, 90 días refacciones): citados como "mínimo legal". Verificar:
+   - Reglamento de la LFPC vigente.
+   - Norma específica para servicios automotrices.
+   - Acuerdos publicados por PROFECO sobre garantía mínima.
+
+3. **Procedimientos de queja PROFECO**: plazos (citatorio 15-30 días, audiencia conciliatoria, procedimiento administrativo) son aproximados. PROFECO puede haber actualizado.
+
+4. **Multas potenciales** ($1k a $1M+): rangos varían según reforma de la LFPC. Confirmar.
+
+5. **Política de auto en abandono** (60-90 días): tiene base legal específica que requiere revisión por abogado para implementar correctamente. El skill da el marco general, no la implementación legalmente blindada.
+
+**Antes de exponer a cliente**:
+- Validar con abogado especializado en defensa del consumidor.
+- Imprimir certificado de garantía y validar texto con jurídico.
+- Documentar caso de prueba ficticio (sin nombres reales) y simular flujo de queja PROFECO.

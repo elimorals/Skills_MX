@@ -1,0 +1,16 @@
+{
+  "name": "RFC con fecha embebida inválida (mes 13)",
+  "input": "MAJG891332ABC",
+  "expected_output": {
+    "rfc_input": "MAJG891332ABC",
+    "rfc_normalizado": "MAJG891332ABC",
+    "tipo": "PF",
+    "valido_estructura": false,
+    "errores": [
+      "Fecha embebida inválida: el mes 13 no existe"
+    ]
+  },
+  "vigencia_validada": "2026-06-11",
+  "fuente_verificacion": "Validación de fecha",
+  "notas": "Detección de error estructural en fecha."
+}

@@ -1,0 +1,29 @@
+{
+  "name": "RESICO PF — pago provisional con ingresos $80,000 del mes y retenciones acreditables",
+  "input": {
+    "regimen": "626_PF",
+    "ejercicio_fiscal": 2026,
+    "mes": "marzo",
+    "ingresos_cobrados_mes": 80000.00,
+    "moneda": "MXN",
+    "retenciones_recibidas_mes": [
+      {"tipo": "ISR", "importe": 1000.00, "cfdi_folio": "abc-1234"}
+    ]
+  },
+  "expected_output": {
+    "regimen": "RESICO PF (626)",
+    "ingresos_cobrados": 80000.00,
+    "tarifa_aplicada": {
+      "rango": "hasta 83,333 MXN/mes",
+      "tasa": 0.015
+    },
+    "isr_causado": 1200.00,
+    "retenciones_acreditables": 1000.00,
+    "isr_a_pagar_sat": 200.00,
+    "plazo_pago": "día 17 del mes siguiente",
+    "alertas": []
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "RMF — confirmar rangos de tarifa RESICO PF vigentes 2026",
+  "notas": "PRECAUCIÓN: las tasas y rangos pueden haber sido actualizados en RMF 2026. Validar antes de uso real."
+}

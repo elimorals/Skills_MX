@@ -199,3 +199,30 @@ Cuando el usuario pide "facturar colegiatura de [familia] de [mes]":
 - `rfc-validacion`: validar receptor.
 - `cobranza-colegiaturas`: el CFDI se emite contra cobro efectivo.
 - `comunicacion-padres-wa`: notificar al padre que su CFDI ya está listo.
+
+## ⚠ Datos que requieren verificación vigente antes de producción
+
+Este skill tiene **alto riesgo regulatorio** (fiscal + educativo). Sin estos datos verificados, los padres no podrán deducir y el colegio queda mal:
+
+1. **Topes de deducción por nivel** (preescolar $14,200, primaria $12,900, secundaria $19,900, prepa técnica $17,100, prepa general $24,500): **valores históricos de mi training**. **Verificar vigentes** en RMF y portal SAT. Si los topes vigentes son distintos, la deducción del padre se calcula mal.
+
+2. **Complemento InsEduc**: verificar versión vigente (1.0 o posterior). El XSD del complemento puede tener actualizaciones.
+
+3. **autoRVOE**: verificar formato del número de RVOE actual. Algunos estados usan formato distinto.
+
+4. **CURP del alumno**: validar contra RENAPO. Si el CURP no está bien registrado, la deducción no procede.
+
+5. **ClaveProdServ educación** (86111600 preescolar, 86111700 primaria, 86111800 secundaria, 86111900 profesional técnico, 86121500 educación profesional/prepa): verificar contra catálogo c_ClaveProdServ vigente del SAT.
+
+6. **Pago en efectivo NO deducible** para servicios educativos: regla estable pero confirmar excepciones.
+
+7. **Exclusiones**:
+   - Universidad NO deducible vía Art. 151: verificar si hubo reforma.
+   - Inscripción NO deducible: verificar.
+   - Cursos extracurriculares NO deducibles salvo programa oficial: verificar.
+
+**Antes de exponer a cliente**:
+- Validar con contador especializado en educación que el flujo es correcto.
+- Hacer timbrado de prueba contra PAC sandbox con un CFDI de colegiatura real.
+- Verificar que el complemento InsEduc valida correctamente.
+- Validar que la constancia anual de servicios educativos cumple requisitos para deducción del padre.

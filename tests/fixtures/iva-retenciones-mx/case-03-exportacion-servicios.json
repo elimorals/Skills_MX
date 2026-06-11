@@ -1,0 +1,35 @@
+{
+  "name": "PFAE 612 factura servicios a cliente USA — exportación tasa 0%",
+  "input": {
+    "emisor": {
+      "regimen": "612",
+      "tipo": "PF"
+    },
+    "receptor": {
+      "regimen": null,
+      "tipo": "extranjero",
+      "pais_residencia": "USA",
+      "rfc_generico": "XEXX010101000"
+    },
+    "concepto": {
+      "tipo": "servicio_profesional",
+      "monto_base": 10000.00,
+      "aprovechamiento": "extranjero",
+      "moneda": "USD",
+      "tipo_cambio_dof": 18.50
+    }
+  },
+  "expected_output": {
+    "subtotal": 10000.00,
+    "impuestos_trasladados": [
+      {"tipo": "IVA", "tasa_factor": "Tasa", "tasa": 0.0, "importe": 0.00}
+    ],
+    "impuestos_retenidos": [],
+    "total_comprobante": 10000.00,
+    "neto_a_pagar_emisor": 10000.00,
+    "notas_adicionales": "El nodo IVA SÍ existe con valor 0.00 (no es exento). Emisor sí acumula IVA acreditable de gastos."
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "LIVA Art. 29 — exportación de servicios",
+  "notas": "Diferencia con exento: tasa 0% acumula IVA acreditable, exento no. Skill debe distinguir."
+}

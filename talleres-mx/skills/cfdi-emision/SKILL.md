@@ -188,12 +188,27 @@ Cuando termines, presenta al usuario:
 
 ## Referencias bundleadas
 
-Para datos detallados de catálogos (todas las claves UsoCFDI, FormaPago, RegimenFiscal, ClaveProdServ comunes), consulta:
-- `references/catalogos-sat.md` — catálogos completos con vigencia
-- `references/regimenes-fiscales.md` — matriz de regímenes y UsoCFDI compatibles
-- `references/casos-edge-cfdi.md` — patrones para anticipos, exportación, refacturación
+Para datos detallados de catálogos, consulta:
+- `references/catalogos-sat.md` — UsoCFDI, FormaPago, RegimenFiscal, TipoDeComprobante, ObjetoImp, Exportacion, ClaveUnidad, ClaveProdServ patrones por giro, Moneda, TipoRelacion
+- `references/casos-edge-cfdi.md` — anticipos (3 CFDIs), exportación servicios, factura global, refacturación, REP, honorarios médicos, nota de crédito, redondeo
 
-*(Pendiente de bundlear — placeholders por crear en siguiente iteración).*
+## ⚠ Datos que requieren verificación vigente antes de producción
+
+Este skill cita información del SAT que puede haber sido actualizada después de la fecha de mi training data. **NO usar en producción sin verificar contra el portal SAT actual**:
+
+1. **Catálogos SAT** (`references/catalogos-sat.md`): el SAT actualiza claves periódicamente. Validar contra:
+   - https://www.sat.gob.mx (catálogos descargables del Anexo 20 vigente)
+   - Validador del proveedor PAC que uses (Facturama, SW Sapien, etc. mantienen catálogos actualizados)
+
+2. **Reglas de cancelación**: los motivos 01-04 y plazos (72h sin aceptación / >$1,000 con aceptación) pueden haber cambiado en Resolución Miscelánea Fiscal vigente.
+
+3. **Versión del Anexo 20**: confirmar que la versión activa sigue siendo CFDI 4.0 (vigente desde abr 2023). Cambios a 4.1+ requieren actualizar este skill.
+
+4. **Complementos**: si el caso de uso requiere un complemento específico (Pagos2.0, Nómina1.2, Carta Porte 3.0, INE, Comercio Exterior, etc.), verificar versión vigente del complemento. **Este skill cubre el CFDI base; los complementos requieren skills adicionales o referencias específicas.**
+
+5. **Forma de pago**: la clave 99 "Por definir" puede tener restricciones nuevas en la RMF actual.
+
+**Antes de exponer este skill a cliente real**: descargar los catálogos del Anexo 20 vigente, actualizar `catalogos-sat.md`, y correr al menos un timbrado de prueba contra PAC sandbox (Facturama tiene sandbox gratuito).
 
 ## Tono de comunicación con el usuario final
 

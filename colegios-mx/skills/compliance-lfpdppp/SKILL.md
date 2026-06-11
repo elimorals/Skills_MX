@@ -112,3 +112,26 @@ Para revisar un aviso existente:
 Este skill no sustituye asesoría legal especializada. Para empresas grandes, sectores muy regulados (salud hospitalaria, banca, telecomunicaciones), o demandas activas, derivar a un abogado de protección de datos certificado.
 
 Las multas del INAI van de ~$11k MXN (faltas menores) hasta $14M MXN (faltas graves repetidas). El daño reputacional suele ser mayor.
+
+## ⚠ Datos que requieren verificación vigente
+
+1. **Reformas LFPDPPP post-2017**: confirmar que el contenido refleja modificaciones de los últimos años.
+
+2. **Multas INAI** ($11k a $14M MXN): rangos pueden haber actualizado.
+
+3. **Plazo de 20 días hábiles para ARCO**: estable pero confirmar.
+
+4. **Notificación de vulneraciones**: la obligación específica al INAI vs solo al titular puede tener actualizaciones.
+
+5. **Tratamiento de datos transfronterizos**: las reglas sobre transferencia internacional con países de nivel de protección menor pueden tener cláusulas tipo actualizadas por INAI.
+
+6. **Plantillas de aviso por sector** (`references/aviso-privacidad-plantillas.md`): basadas en patrones comunes, no en plantilla oficial INAI. Validar con abogado.
+
+7. **Sectores específicos**:
+   - **Salud**: la NOM-024 puede tener actualización; la PFPDPPP-Salud tiene guías específicas.
+   - **Educación**: tratamiento de datos de menores tiene matices que esta plantilla cubre genéricamente.
+   - **Financiero**: la regulación CNBV/CONDUSEF agrega obligaciones que este skill NO cubre.
+
+**Antes de exponer a cliente**:
+- Para sectores regulados: derivar a abogado especializado.
+- Para PyMEs no reguladas: el contenido es razonable como punto de partida pero recomendar revisión legal antes de publicar aviso en sitio web.

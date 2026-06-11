@@ -227,3 +227,20 @@ Cuando el usuario pida "siguiente paso de cobranza para [cliente X]":
 **Formal al final** porque ya es proceso documentado.
 
 Nunca: enojado, sarcástico, victimista. Eso baja tu profesionalismo y debilita tu posición.
+
+## ⚠ Datos que requieren verificación vigente
+
+1. **Tasa moratoria legal supletoria**: 6% anual mercantil (Art. 362 CCom), 9% anual civil (Art. 2395 CCDF). Estables hace décadas pero confirmar que no hubo reforma reciente.
+
+2. **Carta formal de requerimiento**: la redacción típica que escribí es aceptable, pero **no fue revisada por abogado mercantil mexicano**. Antes de usarla en disputa real:
+   - Validar con abogado que cumple requisitos para servir como prueba en juicio mercantil ejecutivo.
+   - Confirmar formato de entrega (correo certificado Mexpost vs notificación notarial vs entrega personal con acuse).
+   - Confirmar contenido conforme jurisdicción específica.
+
+3. **Tasa convencional usurera**: los tribunales han fijado umbrales (Tesis 1a./J. 47/2014). Confirmar si hubo tesis posteriores que cambien el criterio.
+
+4. **Procedimiento juicio mercantil ejecutivo**: requiere documento específico (pagaré, CFDI con ciertas características). Verificar con despacho qué documentos son ejecutivos.
+
+5. **Cobranza con WhatsApp y LFPDPPP**: el uso intensivo de WhatsApp para cobranza puede tener implicaciones de protección de datos. Verificar.
+
+**Antes de usar Etapa 4-5 con cliente real**: validar con abogado o despacho de cobranza.

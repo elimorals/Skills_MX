@@ -1,0 +1,30 @@
+{
+  "name": "PFAE 612 factura a otra PF sin retenciones",
+  "input": {
+    "emisor": {
+      "regimen": "612",
+      "tipo": "PF"
+    },
+    "receptor": {
+      "regimen": "626",
+      "tipo": "PF"
+    },
+    "concepto": {
+      "tipo": "servicio_profesional",
+      "monto_base": 5000.00,
+      "ubicacion_emisor": "CDMX"
+    }
+  },
+  "expected_output": {
+    "subtotal": 5000.00,
+    "impuestos_trasladados": [
+      {"tipo": "IVA", "tasa_factor": "Tasa", "tasa": 0.16, "importe": 800.00}
+    ],
+    "impuestos_retenidos": [],
+    "total_comprobante": 5800.00,
+    "neto_a_pagar_emisor": 5800.00
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "LISR — PF no retiene a PF",
+  "notas": "Regla simple: solo PMs retienen a PFs."
+}

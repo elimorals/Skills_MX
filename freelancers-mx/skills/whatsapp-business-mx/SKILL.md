@@ -150,3 +150,25 @@ Cuando el usuario pida un template:
 
 - Skills verticales (`colegios-mx`, `salon-mx`, etc.) construyen flows que usan este skill para sus templates específicos.
 - Integra con `compliance-lfpdppp`: cualquier template MARKETING requiere demostrar opt-in del usuario (registro de consentimiento).
+
+## ⚠ Datos que requieren verificación vigente
+
+1. **Tarifas Meta** ($0.03-0.09 USD por conversación): Meta actualiza precios por país y categoría. Validar en pricing.meta.com vigente para México.
+
+2. **Categorías UTILITY vs MARKETING vs AUTHENTICATION**: Meta cambia reglas de categorización periódicamente. Lo que era UTILITY hace 6 meses puede ahora ser MARKETING.
+
+3. **Reglas de aprobación**: Meta endurece políticas regularmente. Templates que pasaban hace 6 meses pueden rechazarse hoy.
+
+4. **Calidad de cuenta (Quality Rating)**: criterios pueden actualizar.
+
+5. **Templates de la biblioteca** (`references/templates-aprobados.md`): ninguno ha sido **realmente sometido al flujo de aprobación de Meta**. Son aproximaciones basadas en patrones que típicamente aprueban. **Antes de uso en producción**: subirlos al Business Manager y obtener aprobación real.
+
+6. **Ventana de 24 horas**: política central pero puede tener excepciones nuevas (ej. para ciertas industrias o casos de servicio al cliente).
+
+7. **OTP / Authentication**: Meta tiene flujo específico que cambia anualmente.
+
+**Antes de exponer a cliente**:
+- Crear cuenta sandbox Meta Business Manager.
+- Subir 3-5 templates como prueba y observar tasa de aprobación.
+- Documentar rechazos y ajustar lineamientos.
+- Validar con CM senior con cuenta activa que los tonos sugeridos son contemporáneos.
