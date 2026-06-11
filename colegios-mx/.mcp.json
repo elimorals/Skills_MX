@@ -36,6 +36,17 @@
       },
       "disabled": false
     },
+    "curp_renapo": {
+      "_comment": "MCP propio mp_curp_renapo: validación estructural CURP (alumnos), generación reversa desde datos, batch para limpieza de bases, consulta RENAPO mock. 8 de 9 tools son 100% reales (local, sin red).",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_curp_renapo.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}",
+        "CURP_RENAPO_PLAYWRIGHT": "${CURP_RENAPO_PLAYWRIGHT:-}"
+      },
+      "disabled": false
+    },
     "whatsapp-business": {
       "_comment": "Provider para envío masivo de templates (Gupshup, Twilio, Meta Cloud).",
       "command": "npx",

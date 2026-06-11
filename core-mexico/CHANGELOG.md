@@ -12,6 +12,7 @@ Versioning: [Semantic Versioning](https://semver.org).
 - `.mcp.json` con `facturama` MCP propio activo por default. Implementación en `mcp-servers/mp_facturama_extendido/` con 8 tools (validación local pre-timbrado, timbrar, cancelar, consultar estatus, descargar XML/PDF, buscar, catálogos).
 - `.mcp.json` con `mercadopago` MCP propio activo por default. Implementación en `mcp-servers/mp_mercado_pago/` con 9 tools (create_preference, get_payment, list_payments, refund, cancel, validate_webhook_signature HMAC-SHA256, listar_catalogos).
 - `.mcp.json` con `mercadolibre` MCP propio activo por default (no hay MCP oficial). Implementación en `mcp-servers/mp_mercado_libre/` con 15 tools (get_me, list_items, get_item con flags derivados, update_price, update_stock, pause/activate, list_orders, get_order, list/send messages, list/answer questions, get_seller_reputation, listar_catalogos). OAuth 2.0 con refresh automático y rotation handling.
+- `.mcp.json` con `curp_renapo` MCP propio activo por default. Implementación en `mcp-servers/mp_curp_renapo/` con 9 tools (validar_estructura, derivar_fecha/sexo/estado, validar_lote, generar_desde_datos, consultar_renapo, descargar_constancia_renapo, listar_catalogos). 8 de 9 tools son 100% locales (regex + dígito verificador SAT, sin red). RENAPO en modo mock — Playwright + CAPTCHA pendientes.
 - Subagent `validador-cfdi-batch` para auditar lotes grandes de CFDIs
 - References bundleados: regímenes fiscales completo, complementos CFDI, integración SAT, ARCO, Banxico, tono MX
 

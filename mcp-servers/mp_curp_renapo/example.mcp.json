@@ -1,0 +1,15 @@
+{
+  "_comment": "Ejemplo de configuración para agregar mp_curp_renapo a un plugin de Claude Code. Sin envs corre en modo mock. La validación estructural (8 de 9 tools) funciona 100% local SIEMPRE — solo curp_consultar_renapo y curp_descargar_constancia_renapo necesitan Playwright (todavía no integrado).",
+  "mcpServers": {
+    "curp_renapo": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_curp_renapo.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}",
+        "CURP_RENAPO_PLAYWRIGHT": "${CURP_RENAPO_PLAYWRIGHT:-}"
+      },
+      "disabled": false
+    }
+  }
+}
