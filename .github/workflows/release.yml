@@ -6,6 +6,10 @@ on:
       - 'v*'
       - '*-v*'   # ej: core-mexico-v0.2.0
 
+# Mínimo privilegio — solo lectura para validación pre-release.
+permissions:
+  contents: read
+
 jobs:
   validate-release:
     name: Validar release antes de publicar

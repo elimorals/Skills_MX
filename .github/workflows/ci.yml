@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+# Mínimo privilegio explícito — todos los jobs solo leen.
+permissions:
+  contents: read
+
 jobs:
   lint-skills:
     name: Lint SKILL.md
