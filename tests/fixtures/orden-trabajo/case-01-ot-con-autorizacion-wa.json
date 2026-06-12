@@ -1,0 +1,73 @@
+{
+  "name": "Orden de trabajo con autorización WhatsApp evidenciada (defensa PROFECO)",
+  "input": {
+    "orden_id": "OT-2026-0342",
+    "cliente": {
+      "nombre": "Pedro Ramírez",
+      "contacto_wa": "+5215512345678"
+    },
+    "vehiculo": {
+      "marca": "Volkswagen",
+      "modelo": "Jetta",
+      "anio": 2020,
+      "placas": "ABC1234",
+      "kilometraje_entrada": 78500
+    },
+    "diagnostico": {
+      "mecanico_responsable": "Juan Pérez",
+      "fallas_reportadas": [
+        "Ruido al frenar (chirrido metálico)",
+        "Pedal de freno bajo"
+      ],
+      "diagnosticos_tecnicos": [
+        "Pastillas delanteras desgastadas al 90%",
+        "Balatas traseras al 75%",
+        "Discos con desgaste irregular (rectificación posible)"
+      ],
+      "fotos_video_evidencia": [
+        "fotos/OT-2026-0342/pastillas-desgastadas.jpg",
+        "fotos/OT-2026-0342/discos-rayados.jpg"
+      ]
+    },
+    "trabajos_propuestos_autorizados": [
+      {
+        "descripcion": "Cambio de pastillas delanteras (Brembo)",
+        "tipo": "mixto",
+        "costo": 1800,
+        "tiempo_estimado_hrs": 1.5,
+        "autorizado_por": "Pedro Ramírez",
+        "fecha_autorizacion": "2026-06-12T10:32:15-06:00",
+        "canal_autorizacion": "whatsapp",
+        "evidencia_autorizacion": "screenshots/OT-2026-0342/autorizacion-wa.png"
+      },
+      {
+        "descripcion": "Cambio de balatas traseras (TRW)",
+        "tipo": "mixto",
+        "costo": 1200,
+        "tiempo_estimado_hrs": 1,
+        "autorizado_por": "Pedro Ramírez",
+        "fecha_autorizacion": "2026-06-12T10:33:02-06:00",
+        "canal_autorizacion": "whatsapp",
+        "evidencia_autorizacion": "screenshots/OT-2026-0342/autorizacion-wa.png"
+      }
+    ],
+    "fecha_apertura": "2026-06-12",
+    "fecha_entrega_estimada": "2026-06-12"
+  },
+  "expected_output": {
+    "presupuesto": {
+      "subtotal": 3000,
+      "iva": 480,
+      "total": 3480
+    },
+    "estado": "autorizado_en_curso",
+    "bitacora_wa_archivada": true,
+    "fotos_archivadas": true
+  },
+  "validations": [
+    "Cada trabajo con autorización explícita por canal documentado",
+    "Evidencia screenshot WhatsApp guardada por trabajo",
+    "Diagnóstico técnico separado de fallas reportadas",
+    "Estado consistente con autorización recibida"
+  ]
+}

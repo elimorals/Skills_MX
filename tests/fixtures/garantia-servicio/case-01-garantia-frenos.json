@@ -1,0 +1,66 @@
+{
+  "name": "Certificado de garantía — cambio de pastillas + balatas (PROFECO compliant)",
+  "input": {
+    "orden_trabajo": "OT-2026-0342",
+    "cliente": {
+      "nombre": "Pedro Ramírez",
+      "rfc": "RAMP800515ABC",
+      "contacto": "+5215512345678"
+    },
+    "vehiculo": {
+      "marca": "Volkswagen",
+      "modelo": "Jetta",
+      "anio": 2020,
+      "placas": "ABC1234",
+      "vin": "1VWAH7A30LC012345",
+      "kilometraje_entrada": 78500,
+      "kilometraje_salida": 78502
+    },
+    "servicios_realizados": [
+      {
+        "descripcion": "Cambio de pastillas de freno delanteras",
+        "tipo": "mixto",
+        "marca_refaccion": "Brembo",
+        "modelo_refaccion": "P85046",
+        "garantia_aplicable_dias": 90,
+        "garantia_aplicable_km": 20000
+      },
+      {
+        "descripcion": "Cambio de balatas traseras",
+        "tipo": "mixto",
+        "marca_refaccion": "TRW",
+        "modelo_refaccion": "GDB1773",
+        "garantia_aplicable_dias": 90,
+        "garantia_aplicable_km": 20000
+      },
+      {
+        "descripcion": "Rectificación de discos",
+        "tipo": "mano_obra",
+        "garantia_aplicable_dias": 30
+      }
+    ],
+    "fecha_servicio": "2026-06-12"
+  },
+  "expected_output": {
+    "plazos_garantia": {
+      "mano_obra_dias": 30,
+      "refacciones_dias": 90,
+      "fecha_vencimiento_mano_obra": "2026-07-12",
+      "fecha_vencimiento_refacciones": "2026-09-10"
+    },
+    "exclusiones_minimas": [
+      "Uso indebido del vehículo",
+      "Falta de mantenimiento preventivo subsecuente",
+      "Modificaciones por terceros",
+      "Desgaste normal por kilometraje > 20000 km"
+    ],
+    "procedimiento_reclamo_documentado": true,
+    "validacion_legal_profeco_pendiente": true
+  },
+  "validations": [
+    "Plazo mano obra >= 30 días (LFPC)",
+    "Plazo refacciones >= 90 días",
+    "Marca y modelo de refacción documentados (defensa PROFECO)",
+    "Firma cliente requerida"
+  ]
+}

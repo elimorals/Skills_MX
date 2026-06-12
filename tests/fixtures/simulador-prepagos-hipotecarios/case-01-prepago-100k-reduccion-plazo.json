@@ -1,0 +1,38 @@
+{
+  "name": "Pre-pago $100k a crédito BBVA año 4 — modalidad reducción plazo",
+  "input": {
+    "credito": {
+      "tipo": "bancario",
+      "banco": "BBVA",
+      "monto_original": 1500000,
+      "fecha_inicio": "2022-03-01",
+      "plazo_meses_original": 240,
+      "tasa_anual_pct": 10.5,
+      "pagos_realizados": 51,
+      "saldo_actual": 1380000,
+      "pago_mensual": 14580,
+      "esquema": "tradicional"
+    },
+    "prepago_propuesto": {
+      "monto": 100000,
+      "modalidad": "reduccion_plazo"
+    },
+    "fecha_prepago": "2026-07-15"
+  },
+  "expected_output_approximate": {
+    "saldo_nuevo": 1280000,
+    "pago_mensual_nuevo": 14580,
+    "plazo_nuevo_meses": 163,
+    "plazo_ahorrado_meses": 21,
+    "ahorro_intereses_total_mxn_approx": 206000,
+    "comision_bbva_pct": 1,
+    "comision_bbva_mxn": 1000,
+    "ahorro_neto_post_comision": 205000
+  },
+  "validations": [
+    "Reducción plazo siempre mejor que reducción pago para ahorro neto",
+    "Aplicar comisión si banco lo cobra primeros 3 años",
+    "Modalidad debe ser explícita (reduccion_plazo vs reduccion_pago_mensual)",
+    "Output incluye visualización del antes/después"
+  ]
+}

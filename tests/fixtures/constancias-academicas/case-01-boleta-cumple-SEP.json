@@ -1,0 +1,55 @@
+{
+  "name": "Boleta bimestral primaria — particular con CCT federal + autorización SEP",
+  "input": {
+    "tipo": "boleta",
+    "alumno": {
+      "nombre": "Sofía Pérez Hernández",
+      "curp": "PEHS150301HDFRZG02",
+      "matricula": "PRIM-2025-042",
+      "fecha_nacimiento": "2015-03-01",
+      "padre_madre_tutor_rfc": "PERA850115ABC"
+    },
+    "institucion": {
+      "nombre": "Colegio Reforma SC",
+      "cct": "09PPR2345Z",
+      "rvoe": "RVOE-2018-0234",
+      "autorizacion_estatal": null,
+      "rfc_emisor": "CRE850301XYZ",
+      "estado": "Ciudad de México"
+    },
+    "ciclo_escolar": "2025-2026",
+    "grado": "5to primaria",
+    "grupo": "A",
+    "bimestre": 3,
+    "calificaciones": [
+      {"asignatura": "Español", "calificacion": 9.2, "bimestre": 3},
+      {"asignatura": "Matemáticas", "calificacion": 8.5, "bimestre": 3},
+      {"asignatura": "Ciencias Naturales", "calificacion": 9.0, "bimestre": 3},
+      {"asignatura": "Historia", "calificacion": 8.7, "bimestre": 3},
+      {"asignatura": "Geografía", "calificacion": 8.5, "bimestre": 3},
+      {"asignatura": "Formación Cívica", "calificacion": 9.5, "bimestre": 3},
+      {"asignatura": "Educación Física", "calificacion": 10.0, "bimestre": 3},
+      {"asignatura": "Inglés", "calificacion": 8.8, "bimestre": 3}
+    ],
+    "fecha_emision": "2026-04-15",
+    "folio": "BOL-2025-2026-B3-042",
+    "firma_director": "Lic. Ana Sánchez",
+    "sello": "sello-digital-colegio-reforma.png"
+  },
+  "expected_output": {
+    "validacion_sep_local": true,
+    "promedio_bimestre": 9.025,
+    "estado_adeudo": {
+      "tiene_adeudo": false
+    },
+    "deducibilidad_aplicable": true,
+    "tope_aplicable_anual_mxn": 12900
+  },
+  "validations": [
+    "CCT con formato válido 9 caracteres",
+    "RVOE federal presente o autorización estatal",
+    "CURP del alumno validada",
+    "RFC del padre/tutor con formato correcto",
+    "Tope decreto colegiaturas vigente aplicado"
+  ]
+}

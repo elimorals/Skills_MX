@@ -1,0 +1,26 @@
+{
+  "name": "Due diligence — cliente en 69-B DEFINITIVO → STOP inmediato",
+  "input": {
+    "rfc": "FAC900101ZZZ",
+    "nombre_aceptado": "Empresa Fantasma SA"
+  },
+  "simulated_responses": {
+    "estructura": {"valido": true, "tipo": "PM"},
+    "padron": {"en_padron": true, "razon_social": "EMPRESA FANTASMA SA", "regimen": "601", "status": "activo"},
+    "lista69b": {"en_69b": true, "estado": "definitivo", "fecha_publicacion": "2025-09-15"}
+  },
+  "expected_output": {
+    "veredicto": "STOP",
+    "razon": "RFC en 69-B DEFINITIVO: operar con este cliente expone a no deducibilidad e incluso multas",
+    "score": 0,
+    "recomendaciones_implicitas": [
+      "NO aceptar al cliente",
+      "Documentar razón en bitácora"
+    ]
+  },
+  "validations": [
+    "Veredicto STOP inmediato sin importar otros checks",
+    "Score = 0 cuando 69-B definitivo",
+    "Razón explícita en respuesta"
+  ]
+}
