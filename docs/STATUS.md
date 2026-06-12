@@ -27,7 +27,7 @@
 | Capa | Hecho | Faltante | % completado |
 |---|---|---|---|
 | MCP servers | 25 + esqueleto SAT Playwright | 6 críticos + 10 secundarios | ~73% |
-| Plugins verticales | 12 (+pf-anual-mx) | 14 TOP del research | ~46% |
+| Plugins verticales | 13 (+arrendador) | 13 TOP del research | ~50% |
 | Workflows | 7 | 5-7 | ~58% |
 | Hooks | 1 git + 13 runtime ✅ | 0 | 100% |
 | Crons | 2 | 28 | ~7% |
@@ -133,7 +133,7 @@ Después de specs: codificar los 3 (en este orden).
 
 #### Tier 1 (score >= 9.0) — REQUIEREN SPEC
 - [x] `pf-anual-mx` — 2026-06-12 — score 9.5/10 — 5M declarantes — plugin.json + 8 skills + 5 commands + workflow `workflow-pf-anual-completa` + README — pendiente: librerías PDF + validación contador (humano)
-- [ ] `arrendador-residencial-mx` — score 9.3/10 — 2M arrendadores — **REQUIERE SPEC** → `docs/specs/06-vertical-arrendador-residencial-mx.md`
+- [x] `arrendador-residencial-mx` — 2026-06-12 — score 9.3/10 — 2M arrendadores — plugin.json + 8 skills + 5 commands + `workflow-cobranza-renta-mensual` + README — pendiente: validación legal CDMX vs estados (humano) + librería PDF
 - [ ] `tramites-vehiculares-mx` — score 9.0/10 — 40M vehículos
 
 #### Tier 2 (score 8.0-8.9)
