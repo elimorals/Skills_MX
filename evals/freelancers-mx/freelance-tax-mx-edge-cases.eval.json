@@ -1,0 +1,102 @@
+[
+  {
+    "query": "tengo sueldo de empresa y además facturo aparte como PFAE",
+    "should_trigger": true,
+    "rationale": "Régimen mixto: salarios + actividad empresarial. Cubierto por freelance-tax-mx con cálculo de ingresos acumulables múltiples patrones"
+  },
+  {
+    "query": "estoy en RESICO pero pasé de 3.5 millones este año",
+    "should_trigger": true,
+    "rationale": "Salida obligatoria de RESICO al rebasar tope. Skill debe alertar y proyectar PFAE para resto del ejercicio"
+  },
+  {
+    "query": "cambié de PFAE a RESICO en julio, cómo calculo",
+    "should_trigger": true,
+    "rationale": "Cambio de régimen mid-año requiere cálculo seccionado: enero-junio PFAE, julio-diciembre RESICO"
+  },
+  {
+    "query": "cliente extranjero me paga en USD necesito el cálculo de mi provisional",
+    "should_trigger": true,
+    "rationale": "Ingreso multimoneda con TC DOF aplicable. freelance-tax-mx + mp_banxico TC"
+  },
+  {
+    "query": "tuve pérdida fiscal el año pasado puedo amortizarla",
+    "should_trigger": true,
+    "rationale": "Amortización de pérdidas fiscales 10 años Art. 57 LISR. freelance-tax-mx debe contemplar saldo pendiente de aplicar"
+  },
+  {
+    "query": "pago provisional con coeficiente PFAE",
+    "should_trigger": true,
+    "rationale": "Método de coeficiente para PFAE (utilidad fiscal / ingresos del ejercicio anterior)"
+  },
+  {
+    "query": "retención que me hicieron en factura es ISR o IVA",
+    "should_trigger": true,
+    "rationale": "Aclaración de retenciones que aplican según régimen receptor — directo a freelance-tax-mx + iva-retenciones-mx"
+  },
+  {
+    "query": "cuánto puedo deducir de aportación SAR voluntaria",
+    "should_trigger": true,
+    "rationale": "Art. 151 fracc. V LISR — tope 10% ingresos o 5 UMA anual. freelance-tax-mx con deducciones personales"
+  },
+  {
+    "query": "necesito mi pago de octubre",
+    "should_trigger": true,
+    "rationale": "Pago provisional mensual — trigger directo"
+  },
+  {
+    "query": "ya pasó día 17 cuánto recargo me genera",
+    "should_trigger": true,
+    "rationale": "Cálculo de recargos por mora (1.47% mensual). Cubre escenario de pago extemporáneo"
+  },
+  {
+    "query": "facturación electrónica honduras",
+    "should_trigger": false,
+    "rationale": "Fuera de jurisdicción MX. NO triggear freelance-tax-mx (es específico SAT MX)"
+  },
+  {
+    "query": "ISR de mi sociedad anónima",
+    "should_trigger": false,
+    "rationale": "PM régimen 601 NO cubierto por freelance-tax-mx (que es PF). Pertenecería a otro skill"
+  },
+  {
+    "query": "Impuesto Predial",
+    "should_trigger": false,
+    "rationale": "Impuesto estatal/municipal, NO ISR federal. NO triggear freelance-tax-mx"
+  },
+  {
+    "query": "calcular IETU 2007",
+    "should_trigger": false,
+    "rationale": "Impuesto derogado en 2014. Fuera de scope vigente"
+  },
+  {
+    "query": "salario mínimo profesional 2026",
+    "should_trigger": false,
+    "rationale": "Tema laboral, no fiscal directo. Diferenciar de nómina/SDI"
+  },
+  {
+    "query": "cómo se calcula mi quincena en empresa",
+    "should_trigger": false,
+    "rationale": "Régimen 605 salario asalariado, lo lleva el patrón. NO freelance-tax-mx"
+  },
+  {
+    "query": "qué es el RFC",
+    "should_trigger": false,
+    "rationale": "Pregunta sobre RFC, NO sobre cálculo fiscal. Va a rfc-validacion"
+  },
+  {
+    "query": "cobranza a mi cliente moroso",
+    "should_trigger": false,
+    "rationale": "Cobranza, no fiscal. Va a cobranza-seguimiento"
+  },
+  {
+    "query": "facturar a mi cliente nuevo",
+    "should_trigger": false,
+    "rationale": "Emisión CFDI, va a cfdi-emision, no a freelance-tax-mx"
+  },
+  {
+    "query": "soy estudiante sin RFC",
+    "should_trigger": false,
+    "rationale": "Sin obligación fiscal. NO triggear freelance-tax-mx"
+  }
+]
