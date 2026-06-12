@@ -74,8 +74,14 @@ if [ ! -f "$SCHEMA_PATH" ]; then
   exit 0
 fi
 
-# Validar con jsonschema (Python)
-RESULT=$(python3 - "$SCHEMA_PATH" <<PYEOF 2>&1
+# ⚠ Seguridad: pasar $CONTENT por archivo temporal — NUNCA interpolar en cuerpo Python.
+# Heredoc con delimitador citado <<'PYEOF' deshabilita expansión $VAR / $(...) / backticks.
+# Esto previene code injection si el output incluye triple comilla o expansión shell.
+TMP_CONTENT=$(mktemp)
+trap 'rm -f "$TMP_CONTENT"' EXIT
+printf '%s' "$CONTENT" > "$TMP_CONTENT"
+
+RESULT=$(python3 - "$SCHEMA_PATH" "$TMP_CONTENT" <<'PYEOF' 2>&1
 import json
 import sys
 try:
@@ -85,7 +91,10 @@ except ImportError:
     sys.exit(0)
 
 schema_path = sys.argv[1]
-content = """$CONTENT"""
+content_path = sys.argv[2]
+
+with open(content_path) as f:
+    content = f.read()
 
 with open(schema_path) as f:
     schema = json.load(f)
