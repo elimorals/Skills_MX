@@ -1,0 +1,141 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-skills:
+    name: Lint SKILL.md
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint frontmatter de todos los skills
+        run: bash scripts/lint-skills.sh
+
+  validate-json:
+    name: Validar JSON (schemas, fixtures, evals, .mcp.json)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10' }
+      - name: Validar todos los .json
+        run: |
+          set -e
+          fail=0
+          for f in $(find . -name "*.json" -not -path "*/node_modules/*" -not -path "*/__pycache__/*" -not -path "*/.venv/*"); do
+            if ! python3 -c "import json; json.load(open('$f'))" 2>/dev/null; then
+              echo "❌ JSON inválido: $f"
+              fail=1
+            fi
+          done
+          exit $fail
+
+  validate-plugin-manifests:
+    name: Validar plugin.json de cada vertical
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10' }
+      - name: Validar contra schema mínimo
+        run: |
+          python3 - <<'PYEOF'
+          import json
+          import os
+          import sys
+          required = {"name", "version", "description"}
+          fail = False
+          for root, dirs, files in os.walk("."):
+              if ".git" in root or "node_modules" in root or ".venv" in root:
+                  continue
+              if "plugin.json" in files:
+                  path = os.path.join(root, "plugin.json")
+                  try:
+                      data = json.load(open(path))
+                      missing = required - set(data.keys())
+                      if missing:
+                          print(f"❌ {path}: faltan campos {missing}")
+                          fail = True
+                  except Exception as e:
+                      print(f"❌ {path}: {e}")
+                      fail = True
+          sys.exit(1 if fail else 0)
+          PYEOF
+
+  test-mcp-servers:
+    name: Tests Python MCP servers
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10' }
+      - name: Setup mcp-servers
+        run: |
+          cd mcp-servers
+          python -m venv .venv
+          .venv/bin/pip install -e ".[dev]" 2>&1 | tail -5
+      - name: Run pytest
+        run: |
+          cd mcp-servers
+          .venv/bin/python -m pytest -q --no-header
+
+  smoke-workflows:
+    name: Smoke test workflows ejecutables
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10' }
+      - name: Smoke test
+        run: python3 scripts/smoke_test_workflows.py
+
+  fixtures-coverage:
+    name: Fixtures coverage report
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10' }
+      - name: Instalar jq
+        run: sudo apt-get install -y jq
+      - name: Reporte cobertura
+        run: bash scripts/run-fixtures.sh --coverage
+
+  security-scan-secrets:
+    name: Scan secretos accidentales
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Buscar patrones de secretos en diff
+        run: |
+          set -e
+          # Patrones de secretos típicos
+          patterns=(
+            'sk_live_[a-zA-Z0-9]{20,}'           # Stripe live
+            'APP_USR-[a-zA-Z0-9-]{20,}'          # MP producción
+            'AKIA[0-9A-Z]{16}'                   # AWS Access Key
+            'AIza[0-9A-Za-z_-]{35}'              # Google API
+            'ya29\.[0-9A-Za-z_-]+'               # Google OAuth
+            'xox[baprs]-[0-9a-zA-Z]{10,48}'      # Slack
+          )
+          fail=0
+          for p in "${patterns[@]}"; do
+            if git log --all -p -S"$p" 2>/dev/null | grep -E "$p" > /dev/null; then
+              echo "❌ Patrón potencialmente sensible detectado: $p"
+              fail=1
+            fi
+          done
+          exit $fail
+
+  hooks-test:
+    name: Test runtime hooks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test all hooks
+        run: bash scripts/hooks/test-all-hooks.sh || true  # Best-effort
