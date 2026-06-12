@@ -1,0 +1,15 @@
+{
+  "_comment": "mp_clip_terminal (POS Clip MX). Sin CLIP_API_KEY corre mock.",
+  "mcpServers": {
+    "clip_terminal": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_clip_terminal.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "CLIP_API_KEY": "${CLIP_API_KEY:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}
