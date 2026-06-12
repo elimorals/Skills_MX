@@ -4,8 +4,8 @@
   "description": "Plugin para operadores de ecommerce en México que venden en Mercado Libre, Shopify, Amazon MX y/o tienda propia. Cubre gestión de listings multimarketplace, pricing dinámico considerando comisiones de cada canal, inventario sincronizado para evitar overselling, paquetería local (Estafeta, DHL MX, FedEx MX, paqueteX), y emisión de CFDI por venta. Construido sobre core-mexico + MCPs mp_mercado_libre, mp_shopify_mx, mp_amazon_mx_seller.",
   "version": "0.1.0",
   "author": {
-    "name": "Elias",
-    "email": "elias@cipreholding.com"
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
   },
   "keywords": [
     "ecommerce",

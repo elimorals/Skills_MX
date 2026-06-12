@@ -3,7 +3,7 @@
   "displayName": "Conductor Plataforma MX",
   "description": "Plugin para conductores de plataformas digitales (Uber, DiDi, Cabify, InDriver) en México. Cubre tracking de ingresos por plataforma, cálculo fiscal específico (régimen 626 RESICO PF típicamente, retención plataforma al 8% ISR + 8% IVA art. 113-A LISR), CFDI de retención que la plataforma emite, deducciones específicas (gasolina, mantenimiento auto, app subscriptions), IMSS-PIA (Programa de Incorporación Anticipada), y aviso anual al SAT del régimen. Score original del research: 8.8/10. Mercado: 1M+ conductores MX.",
   "version": "0.1.0",
-  "author": {"name": "Elias", "email": "elias@cipreholding.com"},
+  "author": {"name": "Elías Rashid Morales Mendoza", "email": "elimoralsmendox@gmail.com"},
   "keywords": ["uber", "didi", "cabify", "indriver", "conductor", "chofer", "RESICO", "art-113-A-LISR", "IMSS-PIA"],
   "skills": [
     "skills/dashboard-conductor",

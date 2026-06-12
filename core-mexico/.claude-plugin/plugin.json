@@ -4,8 +4,8 @@
   "description": "Plugin base con capacidades fundamentales para operación en México: emisión de CFDI 4.0, cálculo de IVA y retenciones, validación de RFC, formato de moneda MXN, templates de WhatsApp Business, y cumplimiento LFPDPPP. Dependencia obligatoria de todos los plugins verticales del monorepo plugins-mx.",
   "version": "0.1.0",
   "author": {
-    "name": "Elias",
-    "email": "elias@cipreholding.com"
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
   },
   "keywords": [
     "mexico",

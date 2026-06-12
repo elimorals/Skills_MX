@@ -7,7 +7,7 @@ name = "plugins-mx-webhooks"
 version = "0.1.0"
 description = "Webhook receiver para plugins-mx (FastAPI + 12 handlers)"
 requires-python = ">=3.10"
-authors = [{ name = "Elias", email = "elias@cipreholding.com" }]
+authors = [{ name = "Elías Rashid Morales Mendoza", email = "elimoralsmendox@gmail.com" }]
 license = { text = "Proprietary" }
 readme = "README.md"
 

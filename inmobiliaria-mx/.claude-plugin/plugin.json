@@ -4,8 +4,8 @@
   "description": "Plugin para corredores inmobiliarios, brokers, agencias inmobiliarias e inmobiliarias en México. Cubre contratos de arrendamiento residencial y comercial siguiendo Código Civil Federal y Código Civil CDMX, screening de inquilinos con Buró + referencias + ingresos, análisis de comparables de zona, ficha del inmueble con datos catastrales, cálculo de comisiones de corredor y honorarios. Construido sobre core-mexico + mp_inmuebles24 + mp_vivanuncios.",
   "version": "0.1.0",
   "author": {
-    "name": "Elias",
-    "email": "elias@cipreholding.com"
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
   },
   "keywords": [
     "inmobiliaria",

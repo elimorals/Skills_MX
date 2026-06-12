@@ -7,7 +7,7 @@ name = "plugins-mx-mcp-servers"
 version = "0.1.0"
 description = "MCP servers for plugins-mx monorepo (México operativo agéntico)"
 requires-python = ">=3.10"
-authors = [{ name = "Elias", email = "elias@cipreholding.com" }]
+authors = [{ name = "Elías Rashid Morales Mendoza", email = "elimoralsmendox@gmail.com" }]
 license = { text = "Proprietary" }
 readme = "README.md"
 

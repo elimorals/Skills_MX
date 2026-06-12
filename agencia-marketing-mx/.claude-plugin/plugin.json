@@ -4,8 +4,8 @@
   "description": "Plugin para agencias de marketing digital operando en México. Genera reportes mensuales de cliente con KPIs por canal, optimiza campañas de Meta/Google/TikTok con detección de fatiga creativa, escribe copy mexicano que convierte (evita 'español neutro' robótico), gestiona community management con tono de marca, y estructura briefings creativos. Construido sobre core-mexico para facturación, cobranza y compliance.",
   "version": "0.1.0",
   "author": {
-    "name": "Elias",
-    "email": "elias@cipreholding.com"
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
   },
   "keywords": [
     "agencia",

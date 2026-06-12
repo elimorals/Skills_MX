@@ -400,7 +400,7 @@ Del research, requieren scaffold de plugin nuevo:
 5. Mover el próximo item recomendado si lo concluiste
 
 ### Al empezar a trabajar en algo
-1. Cambiar `[ ]` → `[~ Elias 2026-06-11]`
+1. Cambiar `[ ]` → `[~ Elías 2026-06-11]`
 2. Si requiere spec y no existe: crear primero el spec en `docs/specs/`
 
 ### Al bloquear algo

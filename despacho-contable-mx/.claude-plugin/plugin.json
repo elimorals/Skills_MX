@@ -3,7 +3,7 @@
   "displayName": "Despacho Contable MX",
   "description": "Plugin para contadores y despachos contables en México que llevan la contabilidad de N clientes (PF + PM). Cubre gestión multi-RFC, calendario fiscal por cliente (pagos provisionales, anuales, IMSS, IDSE), facturación recurrente del despacho, comunicación con clientes, y dashboard ejecutivo del despacho. Score: 7.9/10. Mercado: ~40k despachos en MX.",
   "version": "0.1.0",
-  "author": {"name": "Elias", "email": "elias@cipreholding.com"},
+  "author": {"name": "Elías Rashid Morales Mendoza", "email": "elimoralsmendox@gmail.com"},
   "keywords": ["contador", "despacho", "contable", "multi-cliente", "calendario-fiscal", "iva-iret", "pago-provisional"],
   "skills": [
     "skills/gestion-clientes-multi-rfc",

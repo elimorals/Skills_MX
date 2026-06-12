@@ -3,7 +3,7 @@
   "displayName": "Tienda Omnicanal MX",
   "description": "Plugin para tiendas mexicanas que venden en múltiples canales simultáneamente: ecommerce propio + Mercado Libre + Amazon MX + Shopify + tienda física. Resuelve la sincronización de inventario en tiempo real, pricing dinámico por canal con margen objetivo, órdenes consolidadas en un solo inbox, devoluciones cruzadas (compré online recojo en tienda), y dashboard unificado de ingresos. Extiende ecommerce-mx con orquestación multi-canal. Score original del research: 8.5/10. Mercado: 500k tiendas con presencia multi-canal.",
   "version": "0.1.0",
-  "author": {"name": "Elias", "email": "elias@cipreholding.com"},
+  "author": {"name": "Elías Rashid Morales Mendoza", "email": "elimoralsmendox@gmail.com"},
   "keywords": ["omnicanal", "multicanal", "ecommerce", "mercadolibre", "amazon", "shopify", "tienda-fisica", "sync-inventario", "mexico"],
   "skills": [
     "skills/dashboard-omnicanal",

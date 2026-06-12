@@ -4,8 +4,8 @@
   "description": "Plugin para restaurantes tradicionales, dark kitchens, cafeterías de especialidad, bares y food trucks en México. Cubre ingeniería de menú (margen + popularidad), control de inventario con merma proyectada, distribución de propinas a meseros (10% propinable cliente, 100% empleado), integración con aggregators delivery (Rappi, DiDi Food, UberEats) con sus comisiones distintas (25-35%), y emisión de CFDI público global B2C consolidado. Construido sobre core-mexico.",
   "version": "0.1.0",
   "author": {
-    "name": "Elias",
-    "email": "elias@cipreholding.com"
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
   },
   "keywords": [
     "restaurante",

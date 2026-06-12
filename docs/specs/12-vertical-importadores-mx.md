@@ -2,7 +2,7 @@
 spec: "vertical-importadores-mx"
 estado: "DRAFT"
 creado: "2026-06-12"
-autor: "Elias"
+autor: "Elías Rashid Morales Mendoza"
 ultima_actualizacion: "2026-06-12"
 esfuerzo_estimado_horas: [400, 700]
 prioridad: "tier-1"

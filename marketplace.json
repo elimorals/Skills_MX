@@ -4,8 +4,8 @@
   "description": "Plugins de Claude Code y skills standalone para operación diaria de PyMEs y profesionistas en México: CFDI 4.0, WhatsApp Business, cobranza MXN, cumplimiento LFPDPPP, y verticales por industria.",
   "version": "0.1.0",
   "maintainer": {
-    "name": "Elias",
-    "email": "elias@cipreholding.com"
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
   },
   "plugins": [
     {

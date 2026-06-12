@@ -4,8 +4,8 @@
   "description": "Plugin dedicado al arrendador residencial mexicano (PF dueño de 1-10 propiedades). Distinto a inmobiliaria-mx (corredores): aquí el usuario es el dueño directo. Cubre screening de inquilinos con Buró de Crédito (con autorización LFPDPPP), contrato CCDF/CCF residencial, cobranza mensual escalada (sin quemar la relación continua), CFDI mensual uso D04 (casa habitación) régimen 612 o 626, actualización anual de renta por INPC, tracking de gastos deducibles (predial, mantenimiento), y cierre de contrato. Score original del research: 9.3/10. Mercado: ~2M arrendadores.",
   "version": "0.1.0",
   "author": {
-    "name": "Elias",
-    "email": "elias@cipreholding.com"
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
   },
   "keywords": [
     "arrendamiento",

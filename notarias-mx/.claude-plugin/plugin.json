@@ -3,7 +3,7 @@
   "displayName": "Notarías MX",
   "description": "Plugin para notarías y oficinas notariales en México. Cubre agenda citas notariales, registro de escrituras (compraventa, testamento, poder, sociedad), cálculo ISABI (Impuesto Sobre Adquisición Bienes Inmuebles) + DOF (Derechos sobre Operaciones Financieras) por estado, honorarios notariales, cobranza, dashboard. Score research: 8.0/10. Mercado: ~5,500 notarías en MX.",
   "version": "0.1.0",
-  "author": {"name": "Elias", "email": "elias@cipreholding.com"},
+  "author": {"name": "Elías Rashid Morales Mendoza", "email": "elimoralsmendox@gmail.com"},
   "keywords": ["notaria", "notario", "escritura", "testamento", "ISABI", "compraventa", "poderes", "sociedad"],
   "skills": [
     "skills/agenda-citas-notariales",

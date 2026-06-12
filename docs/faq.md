@@ -193,7 +193,7 @@ A definir. Por ahora: GitHub Issues (si es público) o contacto directo con el m
 
 ### ¿Quién mantiene esto?
 
-Elias (`elias@cipreholding.com`). Más detalles en `marketplace.json` o `plugin.json` de cada plugin.
+Elías Rashid Morales Mendoza (`elimoralsmendox@gmail.com`). Más detalles en `marketplace.json` o `plugin.json` de cada plugin.
 
 ---
 

@@ -280,7 +280,7 @@ Cada sesión que cierre un módulo debe actualizar `docs/STATUS.md`:
 
 Convención de checks:
 - `[ ]` pendiente
-- `[~ Elias 2026-06-11]` en progreso
+- `[~ Elías 2026-06-11]` en progreso
 - `[x]` hecho (fecha + commit + nota corta)
 - `[!]` bloqueado (con razón)
 - `[-]` descartado (con razón)
@@ -378,6 +378,6 @@ Empieza por `docs/INDEX.md`. Documentos clave:
 
 ## Licencia y autor
 
-- **Autor**: Elias (elias@cipreholding.com)
+- **Autor**: Elías Rashid Morales Mendoza (elimoralsmendox@gmail.com)
 - **Licencia**: Proprietary (uso interno + clientes implementación)
 - **Repositorio**: https://github.com/elimorals/Skills_MX

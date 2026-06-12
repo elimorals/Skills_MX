@@ -4,8 +4,8 @@
   "description": "Plugin para salones de belleza, estéticas, spas y barberías en México. Cubre gestión de agenda (citas, no-shows, walk-ins), tarifario por servicio con cálculo de comisiones por estilista, paquetes y membresías recurrentes, recordatorios WhatsApp para no-shows, retención de clientes con programa de loyalty, y emisión de CFDI por servicio. Construido sobre core-mexico.",
   "version": "0.1.0",
   "author": {
-    "name": "Elias",
-    "email": "elias@cipreholding.com"
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
   },
   "keywords": [
     "salon",

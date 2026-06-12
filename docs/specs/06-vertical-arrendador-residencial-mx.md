@@ -2,7 +2,7 @@
 spec: "vertical-arrendador-residencial-mx"
 estado: "DRAFT"
 creado: "2026-06-11"
-autor: "Elias"
+autor: "Elías Rashid Morales Mendoza"
 ultima_actualizacion: "2026-06-11"
 esfuerzo_estimado_horas: [280, 450]
 prioridad: "tier-1"

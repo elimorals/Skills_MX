@@ -4,8 +4,8 @@
   "description": "Plugin para colegios, kinders, primarias, secundarias y prepas privadas operando en México. Cobranza profesional de colegiaturas con escalado a padres morosos (templates específicos por etapa), comunicación masiva con padres vía WhatsApp Business templates (avisos, calificaciones, juntas, eventos), generación de constancias académicas conforme SEP/CCT, y emisión de CFDI de colegiaturas con uso D10 cumpliendo Art. 151 LISR para deducibilidad por padres. Construido sobre core-mexico.",
   "version": "0.1.0",
   "author": {
-    "name": "Elias",
-    "email": "elias@cipreholding.com"
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
   },
   "keywords": [
     "colegio",

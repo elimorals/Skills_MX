@@ -4,8 +4,8 @@
   "description": "Plugin para talleres mecánicos, servicios automotrices, electromecánicos y refaccionarias con servicio en México. Flujo diagnóstico → cotización → autorización del cliente → orden de trabajo → entrega con garantía, todo orquestado por WhatsApp Business para que cliente apruebe trabajos remotamente con foto/video del problema. Cubre garantías de servicio (PROFECO 30-90 días mínimo según tipo), órdenes de trabajo con desglose mano de obra + refacciones, manejo de refacciones con CFDI a tu RFC para deducción del cliente, política de auto detenido y manejo de objeción. Construido sobre core-mexico.",
   "version": "0.1.0",
   "author": {
-    "name": "Elias",
-    "email": "elias@cipreholding.com"
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
   },
   "keywords": [
     "taller",

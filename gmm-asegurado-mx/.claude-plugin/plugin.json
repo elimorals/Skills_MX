@@ -3,7 +3,7 @@
   "displayName": "GMM Asegurado MX",
   "description": "Plugin para el asegurado de Gastos Médicos Mayores (GMM) en México. Cubre status de póliza vigente, cálculo deducible + coaseguro al usar, autorizaciones médicas pre-evento, comparador de aseguradoras (GNP, AXA, MetLife, MAPFRE, Banorte), renovación anual, declaración hospitalización. Mercado: ~7M asegurados GMM individuales. Score: 7.5/10.",
   "version": "0.1.0",
-  "author": {"name": "Elias", "email": "elias@cipreholding.com"},
+  "author": {"name": "Elías Rashid Morales Mendoza", "email": "elimoralsmendox@gmail.com"},
   "keywords": ["gmm", "gastos-medicos", "asegurado", "deducible", "coaseguro", "poliza", "renovacion"],
   "skills": [
     "skills/dashboard-poliza-gmm",

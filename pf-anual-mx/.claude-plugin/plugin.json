@@ -4,8 +4,8 @@
   "description": "Plugin dedicado para la declaración anual ISR de personas físicas en México. Cubre los 3 regímenes principales (PFAE 612, RESICO PF 626, Asalariado+honorarios 605+612). Orquesta recopilación masiva de CFDIs del año via mp_sat_portal, identificación automática de deducciones personales aplicables (Art. 151 LISR), cálculo ISR con tarifa Art. 96, cruces con bancos para detectar depósitos sin facturar, y generación de borrador presentable. Genera revenue desde abril (deadline 30 abril). Mercado: ~5M declarantes anuales obligados. Score original del research: 9.5/10.",
   "version": "0.1.0",
   "author": {
-    "name": "Elias",
-    "email": "elias@cipreholding.com"
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
   },
   "keywords": [
     "declaracion-anual",
