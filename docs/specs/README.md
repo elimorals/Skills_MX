@@ -42,6 +42,15 @@ Usa `_template.md` como base. Cada spec debe responder:
 | 04 | [hooks-runtime-claude-code](04-hooks-runtime-claude-code.md) | ✅ DRAFT | 13 hooks |
 | 05 | [vertical-pf-anual-mx](05-vertical-pf-anual-mx.md) | ✅ DRAFT | Vertical score 9.5 |
 | 06 | [vertical-arrendador-residencial-mx](06-vertical-arrendador-residencial-mx.md) | ✅ DRAFT | Vertical score 9.3 |
+| 07 | [vertical-telemedicina-mx](07-vertical-telemedicina-mx.md) | ✅ DRAFT | Área no cubierta — telemedicina + COFEPRIS + NOM-004 |
+| 08 | [vertical-nomina-pymes-mx](08-vertical-nomina-pymes-mx.md) | ✅ DRAFT | Área no cubierta — CFDI Nómina 4.0 + IMSS-SUA-IDSE |
+| 09 | [vertical-cripto-fiscal-mx](09-vertical-cripto-fiscal-mx.md) | ✅ DRAFT | Área no cubierta — cripto + CARF 2026 |
+| 10 | [vertical-educacion-particular-b2c-mx](10-vertical-educacion-particular-b2c-mx.md) | ✅ DRAFT | Área no cubierta — cursos online + CFDI D10/G03 |
+| 11 | [vertical-donatarias-ongs-mx](11-vertical-donatarias-ongs-mx.md) | ✅ DRAFT | Área no cubierta — donatarias autorizadas + transparencia |
+| 12 | [vertical-importadores-mx](12-vertical-importadores-mx.md) | ✅ DRAFT | Área no cubierta — pedimentos + IVA + IMMEX |
+| 13 | [vertical-sucesion-empresa-familiar-mx](13-vertical-sucesion-empresa-familiar-mx.md) | ✅ DRAFT | Área no cubierta — sucesión + donaciones + protocolo familiar |
+| 14 | [vertical-crowdfunding-itf-mx](14-vertical-crowdfunding-itf-mx.md) | ✅ DRAFT | Área no cubierta — Ley Fintech + IFC + P2P |
+| 15 | [vertical-energia-solar-pyme-mx](15-vertical-energia-solar-pyme-mx.md) | ✅ DRAFT | Área no cubierta — CFE bidireccional + net metering + GDMTH |
 
 ## Workflow recomendado
 
