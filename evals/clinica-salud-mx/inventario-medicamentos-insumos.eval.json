@@ -1,0 +1,87 @@
+[
+  {
+    "query": "inventario medicamentos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "stock clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "caducidades",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "control psicotropicos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "inventario medicamentos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "como inventario medicamentos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "stock clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "como stock clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "caducidades",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "como caducidades",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "que es inventario",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "que es stock",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-medicamentos-insumos"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-medicamentos-insumos"
+  }
+]

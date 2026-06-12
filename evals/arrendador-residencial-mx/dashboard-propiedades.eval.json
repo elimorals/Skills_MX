@@ -1,0 +1,97 @@
+[
+  {
+    "query": "como van mis rentas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-propiedades"
+  },
+  {
+    "query": "status propiedades",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-propiedades"
+  },
+  {
+    "query": "dashboard arrendador",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-propiedades"
+  },
+  {
+    "query": "mis propiedades",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-propiedades"
+  },
+  {
+    "query": "como van mis rentas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-propiedades"
+  },
+  {
+    "query": "como como van mis rentas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-propiedades"
+  },
+  {
+    "query": "status propiedades",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-propiedades"
+  },
+  {
+    "query": "como status propiedades",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-propiedades"
+  },
+  {
+    "query": "dashboard arrendador",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-propiedades"
+  },
+  {
+    "query": "como dashboard arrendador",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-propiedades"
+  },
+  {
+    "query": "inmobiliarias administradoras (eso es inmobiliaria-mx)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-propiedades"
+  },
+  {
+    "query": "que es como",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-propiedades"
+  },
+  {
+    "query": "que es status",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-propiedades"
+  },
+  {
+    "query": "que es dashboard",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-propiedades"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-propiedades"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-propiedades"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-propiedades"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-propiedades"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-propiedades"
+  }
+]

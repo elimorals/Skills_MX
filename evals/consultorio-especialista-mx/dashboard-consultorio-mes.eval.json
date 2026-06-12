@@ -1,0 +1,92 @@
+[
+  {
+    "query": "dashboard consultorio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-consultorio-mes"
+  },
+  {
+    "query": "como va mi mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-consultorio-mes"
+  },
+  {
+    "query": "estadisticas pacientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-consultorio-mes"
+  },
+  {
+    "query": "ingresos medico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-consultorio-mes"
+  },
+  {
+    "query": "dashboard consultorio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-consultorio-mes"
+  },
+  {
+    "query": "como dashboard consultorio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-consultorio-mes"
+  },
+  {
+    "query": "como va mi mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-consultorio-mes"
+  },
+  {
+    "query": "como como va mi mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-consultorio-mes"
+  },
+  {
+    "query": "estadisticas pacientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-consultorio-mes"
+  },
+  {
+    "query": "como estadisticas pacientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-consultorio-mes"
+  },
+  {
+    "query": "que es dashboard",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-consultorio-mes"
+  },
+  {
+    "query": "que es como",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-consultorio-mes"
+  },
+  {
+    "query": "que es estadisticas",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-consultorio-mes"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-consultorio-mes"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-consultorio-mes"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-consultorio-mes"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-consultorio-mes"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-consultorio-mes"
+  }
+]

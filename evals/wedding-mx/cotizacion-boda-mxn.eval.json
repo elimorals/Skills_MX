@@ -1,0 +1,97 @@
+[
+  {
+    "query": "cotizar boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cotizacion-boda-mxn"
+  },
+  {
+    "query": "presupuesto evento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cotizacion-boda-mxn"
+  },
+  {
+    "query": "cuánto cuesta una boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cotizacion-boda-mxn"
+  },
+  {
+    "query": "paquete invitados",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cotizacion-boda-mxn"
+  },
+  {
+    "query": "evento privado mx",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cotizacion-boda-mxn"
+  },
+  {
+    "query": "cotizar boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cotizacion-boda-mxn"
+  },
+  {
+    "query": "como cotizar boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cotizacion-boda-mxn"
+  },
+  {
+    "query": "presupuesto evento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cotizacion-boda-mxn"
+  },
+  {
+    "query": "como presupuesto evento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cotizacion-boda-mxn"
+  },
+  {
+    "query": "cuánto cuesta una boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cotizacion-boda-mxn"
+  },
+  {
+    "query": "timeline (otro skill) ni contratos (contrato-boda-pf-pm)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cotizacion-boda-mxn"
+  },
+  {
+    "query": "que es cotizar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cotizacion-boda-mxn"
+  },
+  {
+    "query": "que es presupuesto",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cotizacion-boda-mxn"
+  },
+  {
+    "query": "que es cuánto",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cotizacion-boda-mxn"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cotizacion-boda-mxn"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cotizacion-boda-mxn"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cotizacion-boda-mxn"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cotizacion-boda-mxn"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cotizacion-boda-mxn"
+  }
+]

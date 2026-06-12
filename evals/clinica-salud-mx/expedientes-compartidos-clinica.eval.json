@@ -1,0 +1,87 @@
+[
+  {
+    "query": "compartir expediente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "expediente compartido",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "otro medico vea historial",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "compartir expediente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "como compartir expediente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "expediente compartido",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "como expediente compartido",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "otro medico vea historial",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "como otro medico vea historial",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "que es compartir",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "que es expediente",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "que es otro",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expedientes-compartidos-clinica"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expedientes-compartidos-clinica"
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "query": "cómo me fue esta semana",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-conductor"
+  },
+  {
+    "query": "dashboard chofer",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-conductor"
+  },
+  {
+    "query": "ingresos plataforma",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-conductor"
+  },
+  {
+    "query": "ganancia semana",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-conductor"
+  },
+  {
+    "query": "cómo me fue esta semana",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-conductor"
+  },
+  {
+    "query": "como cómo me fue esta semana",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-conductor"
+  },
+  {
+    "query": "dashboard chofer",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-conductor"
+  },
+  {
+    "query": "como dashboard chofer",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-conductor"
+  },
+  {
+    "query": "ingresos plataforma",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-conductor"
+  },
+  {
+    "query": "como ingresos plataforma",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-conductor"
+  },
+  {
+    "query": "fines fiscales formales (eso es calculo-fiscal-conductor)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-conductor"
+  },
+  {
+    "query": "que es cómo",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-conductor"
+  },
+  {
+    "query": "que es dashboard",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-conductor"
+  },
+  {
+    "query": "que es ingresos",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-conductor"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-conductor"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-conductor"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-conductor"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-conductor"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-conductor"
+  }
+]

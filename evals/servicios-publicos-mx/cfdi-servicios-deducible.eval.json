@@ -1,0 +1,87 @@
+[
+  {
+    "query": "cfdi cfe",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-servicios-deducible"
+  },
+  {
+    "query": "cfdi servicios deducible",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-servicios-deducible"
+  },
+  {
+    "query": "factura electricidad deducir",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-servicios-deducible"
+  },
+  {
+    "query": "cfdi cfe",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-servicios-deducible"
+  },
+  {
+    "query": "como cfdi cfe",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-servicios-deducible"
+  },
+  {
+    "query": "cfdi servicios deducible",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-servicios-deducible"
+  },
+  {
+    "query": "como cfdi servicios deducible",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-servicios-deducible"
+  },
+  {
+    "query": "factura electricidad deducir",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-servicios-deducible"
+  },
+  {
+    "query": "como factura electricidad deducir",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-servicios-deducible"
+  },
+  {
+    "query": "que es cfdi",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-servicios-deducible"
+  },
+  {
+    "query": "que es cfdi",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-servicios-deducible"
+  },
+  {
+    "query": "que es factura",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-servicios-deducible"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-servicios-deducible"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-servicios-deducible"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-servicios-deducible"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-servicios-deducible"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-servicios-deducible"
+  }
+]

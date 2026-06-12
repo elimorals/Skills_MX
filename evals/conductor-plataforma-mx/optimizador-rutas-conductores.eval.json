@@ -1,0 +1,92 @@
+[
+  {
+    "query": "donde conducir",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-rutas-conductores"
+  },
+  {
+    "query": "mejor zona",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-rutas-conductores"
+  },
+  {
+    "query": "horas pico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-rutas-conductores"
+  },
+  {
+    "query": "optimizar viajes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-rutas-conductores"
+  },
+  {
+    "query": "donde conducir",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-rutas-conductores"
+  },
+  {
+    "query": "como donde conducir",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-rutas-conductores"
+  },
+  {
+    "query": "mejor zona",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-rutas-conductores"
+  },
+  {
+    "query": "como mejor zona",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-rutas-conductores"
+  },
+  {
+    "query": "horas pico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-rutas-conductores"
+  },
+  {
+    "query": "como horas pico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-rutas-conductores"
+  },
+  {
+    "query": "que es donde",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-rutas-conductores"
+  },
+  {
+    "query": "que es mejor",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-rutas-conductores"
+  },
+  {
+    "query": "que es horas",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-rutas-conductores"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-rutas-conductores"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-rutas-conductores"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-rutas-conductores"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-rutas-conductores"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-rutas-conductores"
+  }
+]

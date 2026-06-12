@@ -1,0 +1,87 @@
+[
+  {
+    "query": "avisar a todos los clientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comunicacion-clientes-batch"
+  },
+  {
+    "query": "comunicacion masiva",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comunicacion-clientes-batch"
+  },
+  {
+    "query": "reforma fiscal aviso",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comunicacion-clientes-batch"
+  },
+  {
+    "query": "avisar a todos los clientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comunicacion-clientes-batch"
+  },
+  {
+    "query": "como avisar a todos los clientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comunicacion-clientes-batch"
+  },
+  {
+    "query": "comunicacion masiva",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comunicacion-clientes-batch"
+  },
+  {
+    "query": "como comunicacion masiva",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comunicacion-clientes-batch"
+  },
+  {
+    "query": "reforma fiscal aviso",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comunicacion-clientes-batch"
+  },
+  {
+    "query": "como reforma fiscal aviso",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comunicacion-clientes-batch"
+  },
+  {
+    "query": "que es avisar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comunicacion-clientes-batch"
+  },
+  {
+    "query": "que es comunicacion",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comunicacion-clientes-batch"
+  },
+  {
+    "query": "que es reforma",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comunicacion-clientes-batch"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comunicacion-clientes-batch"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comunicacion-clientes-batch"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comunicacion-clientes-batch"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comunicacion-clientes-batch"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comunicacion-clientes-batch"
+  }
+]

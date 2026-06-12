@@ -1,0 +1,97 @@
+[
+  {
+    "query": "cuándo verifico mi auto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de verificacion-vehicular"
+  },
+  {
+    "query": "verificación pendiente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de verificacion-vehicular"
+  },
+  {
+    "query": "calendario verificación",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de verificacion-vehicular"
+  },
+  {
+    "query": "holograma",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de verificacion-vehicular"
+  },
+  {
+    "query": "cuándo verifico mi auto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de verificacion-vehicular"
+  },
+  {
+    "query": "como cuándo verifico mi auto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de verificacion-vehicular"
+  },
+  {
+    "query": "verificación pendiente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de verificacion-vehicular"
+  },
+  {
+    "query": "como verificación pendiente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de verificacion-vehicular"
+  },
+  {
+    "query": "calendario verificación",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de verificacion-vehicular"
+  },
+  {
+    "query": "como calendario verificación",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de verificacion-vehicular"
+  },
+  {
+    "query": "vehículos comerciales pesados (otra normativa)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de verificacion-vehicular"
+  },
+  {
+    "query": "que es cuándo",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de verificacion-vehicular"
+  },
+  {
+    "query": "que es verificación",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de verificacion-vehicular"
+  },
+  {
+    "query": "que es calendario",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de verificacion-vehicular"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de verificacion-vehicular"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de verificacion-vehicular"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de verificacion-vehicular"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de verificacion-vehicular"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de verificacion-vehicular"
+  }
+]

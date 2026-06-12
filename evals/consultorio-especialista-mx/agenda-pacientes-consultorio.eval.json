@@ -1,0 +1,92 @@
+[
+  {
+    "query": "agenda consultorio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "citas pacientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "programar cita",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "calendario consultas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "agenda consultorio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "como agenda consultorio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "citas pacientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "como citas pacientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "programar cita",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "como programar cita",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "que es agenda",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "que es citas",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "que es programar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-pacientes-consultorio"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-pacientes-consultorio"
+  }
+]

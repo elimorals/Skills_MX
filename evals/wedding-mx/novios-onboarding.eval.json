@@ -1,0 +1,97 @@
+[
+  {
+    "query": "novios nuevos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de novios-onboarding"
+  },
+  {
+    "query": "onboarding evento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de novios-onboarding"
+  },
+  {
+    "query": "primera reunión",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de novios-onboarding"
+  },
+  {
+    "query": "brief boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de novios-onboarding"
+  },
+  {
+    "query": "capturar visión",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de novios-onboarding"
+  },
+  {
+    "query": "novios nuevos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de novios-onboarding"
+  },
+  {
+    "query": "como novios nuevos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de novios-onboarding"
+  },
+  {
+    "query": "onboarding evento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de novios-onboarding"
+  },
+  {
+    "query": "como onboarding evento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de novios-onboarding"
+  },
+  {
+    "query": "primera reunión",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de novios-onboarding"
+  },
+  {
+    "query": "contratos (contrato-boda-pf-pm) ni timeline (otro skill)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de novios-onboarding"
+  },
+  {
+    "query": "que es novios",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de novios-onboarding"
+  },
+  {
+    "query": "que es onboarding",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de novios-onboarding"
+  },
+  {
+    "query": "que es primera",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de novios-onboarding"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de novios-onboarding"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de novios-onboarding"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de novios-onboarding"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de novios-onboarding"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de novios-onboarding"
+  }
+]

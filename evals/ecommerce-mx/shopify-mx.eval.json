@@ -1,0 +1,97 @@
+[
+  {
+    "query": "shopify méxico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de shopify-mx"
+  },
+  {
+    "query": "tienda en línea mx",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de shopify-mx"
+  },
+  {
+    "query": "configurar shopify mx",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de shopify-mx"
+  },
+  {
+    "query": "gateway conekta shopify",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de shopify-mx"
+  },
+  {
+    "query": "paqueterías shopify",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de shopify-mx"
+  },
+  {
+    "query": "cfdi shopify",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de shopify-mx"
+  },
+  {
+    "query": "shopify méxico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de shopify-mx"
+  },
+  {
+    "query": "como shopify méxico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de shopify-mx"
+  },
+  {
+    "query": "tienda en línea mx",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de shopify-mx"
+  },
+  {
+    "query": "como tienda en línea mx",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de shopify-mx"
+  },
+  {
+    "query": "shopify de otros países (es genérico) — este es solo para operación mx",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de shopify-mx"
+  },
+  {
+    "query": "que es shopify",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de shopify-mx"
+  },
+  {
+    "query": "que es tienda",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de shopify-mx"
+  },
+  {
+    "query": "que es configurar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de shopify-mx"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de shopify-mx"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de shopify-mx"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de shopify-mx"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de shopify-mx"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de shopify-mx"
+  }
+]

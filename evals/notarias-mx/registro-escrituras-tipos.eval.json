@@ -1,0 +1,87 @@
+[
+  {
+    "query": "registro escrituras",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de registro-escrituras-tipos"
+  },
+  {
+    "query": "protocolo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de registro-escrituras-tipos"
+  },
+  {
+    "query": "folio notarial",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de registro-escrituras-tipos"
+  },
+  {
+    "query": "libro escrituras",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de registro-escrituras-tipos"
+  },
+  {
+    "query": "registro escrituras",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de registro-escrituras-tipos"
+  },
+  {
+    "query": "como registro escrituras",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de registro-escrituras-tipos"
+  },
+  {
+    "query": "protocolo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de registro-escrituras-tipos"
+  },
+  {
+    "query": "como protocolo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de registro-escrituras-tipos"
+  },
+  {
+    "query": "folio notarial",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de registro-escrituras-tipos"
+  },
+  {
+    "query": "como folio notarial",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de registro-escrituras-tipos"
+  },
+  {
+    "query": "que es registro",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de registro-escrituras-tipos"
+  },
+  {
+    "query": "que es folio",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de registro-escrituras-tipos"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de registro-escrituras-tipos"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de registro-escrituras-tipos"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de registro-escrituras-tipos"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de registro-escrituras-tipos"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de registro-escrituras-tipos"
+  }
+]

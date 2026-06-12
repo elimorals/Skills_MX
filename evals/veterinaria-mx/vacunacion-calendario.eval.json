@@ -1,0 +1,92 @@
+[
+  {
+    "query": "vacunar mascota",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de vacunacion-calendario"
+  },
+  {
+    "query": "calendario vacunas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de vacunacion-calendario"
+  },
+  {
+    "query": "refuerzo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de vacunacion-calendario"
+  },
+  {
+    "query": "cachorro plan",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de vacunacion-calendario"
+  },
+  {
+    "query": "próxima vacuna",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de vacunacion-calendario"
+  },
+  {
+    "query": "vacunación obligatoria",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de vacunacion-calendario"
+  },
+  {
+    "query": "vacunar mascota",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de vacunacion-calendario"
+  },
+  {
+    "query": "como vacunar mascota",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de vacunacion-calendario"
+  },
+  {
+    "query": "calendario vacunas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de vacunacion-calendario"
+  },
+  {
+    "query": "como calendario vacunas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de vacunacion-calendario"
+  },
+  {
+    "query": "expediente completo (expediente-clinico-mascota) ni urgencias",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de vacunacion-calendario"
+  },
+  {
+    "query": "que es vacunar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de vacunacion-calendario"
+  },
+  {
+    "query": "que es calendario",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de vacunacion-calendario"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de vacunacion-calendario"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de vacunacion-calendario"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de vacunacion-calendario"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de vacunacion-calendario"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de vacunacion-calendario"
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "query": "cfdi público general",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-publico-global"
+  },
+  {
+    "query": "factura sin rfc",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-publico-global"
+  },
+  {
+    "query": "cliente no pidió factura",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-publico-global"
+  },
+  {
+    "query": "cierre mensual ventas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-publico-global"
+  },
+  {
+    "query": "cfdi público general",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-publico-global"
+  },
+  {
+    "query": "como cfdi público general",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-publico-global"
+  },
+  {
+    "query": "factura sin rfc",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-publico-global"
+  },
+  {
+    "query": "como factura sin rfc",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-publico-global"
+  },
+  {
+    "query": "cliente no pidió factura",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-publico-global"
+  },
+  {
+    "query": "como cliente no pidió factura",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-publico-global"
+  },
+  {
+    "query": "cfdi individual al cliente (cfdi-emision) ni para b2b",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-publico-global"
+  },
+  {
+    "query": "que es cfdi",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-publico-global"
+  },
+  {
+    "query": "que es factura",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-publico-global"
+  },
+  {
+    "query": "que es cliente",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-publico-global"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-publico-global"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-publico-global"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-publico-global"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-publico-global"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-publico-global"
+  }
+]

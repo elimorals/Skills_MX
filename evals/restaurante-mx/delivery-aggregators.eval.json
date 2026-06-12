@@ -1,0 +1,87 @@
+[
+  {
+    "query": "rappi",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de delivery-aggregators"
+  },
+  {
+    "query": "didi food",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de delivery-aggregators"
+  },
+  {
+    "query": "ubereats",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de delivery-aggregators"
+  },
+  {
+    "query": "aggregator",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de delivery-aggregators"
+  },
+  {
+    "query": "comisión delivery",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de delivery-aggregators"
+  },
+  {
+    "query": "conciliar pagos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de delivery-aggregators"
+  },
+  {
+    "query": "devoluciones delivery",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de delivery-aggregators"
+  },
+  {
+    "query": "rappi",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de delivery-aggregators"
+  },
+  {
+    "query": "como rappi",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de delivery-aggregators"
+  },
+  {
+    "query": "didi food",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de delivery-aggregators"
+  },
+  {
+    "query": "ingeniería menú (otro skill) ni inventario",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de delivery-aggregators"
+  },
+  {
+    "query": "que es didi",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de delivery-aggregators"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de delivery-aggregators"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de delivery-aggregators"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de delivery-aggregators"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de delivery-aggregators"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de delivery-aggregators"
+  }
+]

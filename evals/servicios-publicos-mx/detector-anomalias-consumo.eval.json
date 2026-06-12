@@ -1,0 +1,92 @@
+[
+  {
+    "query": "consumo raro",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-anomalias-consumo"
+  },
+  {
+    "query": "sobrecargo cfe",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-anomalias-consumo"
+  },
+  {
+    "query": "fuga agua",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-anomalias-consumo"
+  },
+  {
+    "query": "anomalia factura",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-anomalias-consumo"
+  },
+  {
+    "query": "consumo raro",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-anomalias-consumo"
+  },
+  {
+    "query": "como consumo raro",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-anomalias-consumo"
+  },
+  {
+    "query": "sobrecargo cfe",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-anomalias-consumo"
+  },
+  {
+    "query": "como sobrecargo cfe",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-anomalias-consumo"
+  },
+  {
+    "query": "fuga agua",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-anomalias-consumo"
+  },
+  {
+    "query": "como fuga agua",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-anomalias-consumo"
+  },
+  {
+    "query": "que es consumo",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-anomalias-consumo"
+  },
+  {
+    "query": "que es sobrecargo",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-anomalias-consumo"
+  },
+  {
+    "query": "que es fuga",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-anomalias-consumo"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-anomalias-consumo"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-anomalias-consumo"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-anomalias-consumo"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-anomalias-consumo"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-anomalias-consumo"
+  }
+]

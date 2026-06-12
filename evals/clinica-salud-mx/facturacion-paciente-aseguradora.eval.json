@@ -1,0 +1,87 @@
+[
+  {
+    "query": "facturar paciente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "factura aseguradora",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "gmm clínica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "facturar paciente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "como facturar paciente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "factura aseguradora",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "como factura aseguradora",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "gmm clínica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "como gmm clínica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "que es facturar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "que es factura",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "que es gmm",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-paciente-aseguradora"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-paciente-aseguradora"
+  }
+]

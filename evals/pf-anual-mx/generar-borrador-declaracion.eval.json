@@ -1,0 +1,97 @@
+[
+  {
+    "query": "generar borrador",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de generar-borrador-declaracion"
+  },
+  {
+    "query": "dame pdf declaración",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de generar-borrador-declaracion"
+  },
+  {
+    "query": "exporta cálculo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de generar-borrador-declaracion"
+  },
+  {
+    "query": "imprime declaración",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de generar-borrador-declaracion"
+  },
+  {
+    "query": "generar borrador",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de generar-borrador-declaracion"
+  },
+  {
+    "query": "como generar borrador",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de generar-borrador-declaracion"
+  },
+  {
+    "query": "dame pdf declaración",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de generar-borrador-declaracion"
+  },
+  {
+    "query": "como dame pdf declaración",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de generar-borrador-declaracion"
+  },
+  {
+    "query": "exporta cálculo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de generar-borrador-declaracion"
+  },
+  {
+    "query": "como exporta cálculo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de generar-borrador-declaracion"
+  },
+  {
+    "query": "presentar al sat (eso es manual vía declarasat del usuario)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de generar-borrador-declaracion"
+  },
+  {
+    "query": "que es generar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de generar-borrador-declaracion"
+  },
+  {
+    "query": "que es dame",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de generar-borrador-declaracion"
+  },
+  {
+    "query": "que es exporta",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de generar-borrador-declaracion"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de generar-borrador-declaracion"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de generar-borrador-declaracion"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de generar-borrador-declaracion"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de generar-borrador-declaracion"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de generar-borrador-declaracion"
+  }
+]

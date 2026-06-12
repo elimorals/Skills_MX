@@ -1,0 +1,97 @@
+[
+  {
+    "query": "tarifario veterinario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tarifario-servicios-vet"
+  },
+  {
+    "query": "cuánto cobrar",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tarifario-servicios-vet"
+  },
+  {
+    "query": "precios vet",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tarifario-servicios-vet"
+  },
+  {
+    "query": "costo cirugía",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tarifario-servicios-vet"
+  },
+  {
+    "query": "precio esterilización",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tarifario-servicios-vet"
+  },
+  {
+    "query": "hospitalización mascota",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tarifario-servicios-vet"
+  },
+  {
+    "query": "tarifario veterinario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tarifario-servicios-vet"
+  },
+  {
+    "query": "como tarifario veterinario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tarifario-servicios-vet"
+  },
+  {
+    "query": "cuánto cobrar",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tarifario-servicios-vet"
+  },
+  {
+    "query": "como cuánto cobrar",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tarifario-servicios-vet"
+  },
+  {
+    "query": "urgencias (urgencias-protocolo) ni cotizaciones individuales (otro skill)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tarifario-servicios-vet"
+  },
+  {
+    "query": "que es tarifario",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tarifario-servicios-vet"
+  },
+  {
+    "query": "que es cuánto",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tarifario-servicios-vet"
+  },
+  {
+    "query": "que es precios",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tarifario-servicios-vet"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tarifario-servicios-vet"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tarifario-servicios-vet"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tarifario-servicios-vet"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tarifario-servicios-vet"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tarifario-servicios-vet"
+  }
+]

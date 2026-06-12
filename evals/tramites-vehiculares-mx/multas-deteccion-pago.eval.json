@@ -1,0 +1,97 @@
+[
+  {
+    "query": "buscar multas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de multas-deteccion-pago"
+  },
+  {
+    "query": "multas pendientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de multas-deteccion-pago"
+  },
+  {
+    "query": "cuánto debo de multas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de multas-deteccion-pago"
+  },
+  {
+    "query": "multas auto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de multas-deteccion-pago"
+  },
+  {
+    "query": "buscar multas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de multas-deteccion-pago"
+  },
+  {
+    "query": "como buscar multas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de multas-deteccion-pago"
+  },
+  {
+    "query": "multas pendientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de multas-deteccion-pago"
+  },
+  {
+    "query": "como multas pendientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de multas-deteccion-pago"
+  },
+  {
+    "query": "cuánto debo de multas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de multas-deteccion-pago"
+  },
+  {
+    "query": "como cuánto debo de multas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de multas-deteccion-pago"
+  },
+  {
+    "query": "infracciones de hacienda federal o de profepa",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de multas-deteccion-pago"
+  },
+  {
+    "query": "que es buscar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de multas-deteccion-pago"
+  },
+  {
+    "query": "que es multas",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de multas-deteccion-pago"
+  },
+  {
+    "query": "que es cuánto",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de multas-deteccion-pago"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de multas-deteccion-pago"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de multas-deteccion-pago"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de multas-deteccion-pago"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de multas-deteccion-pago"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de multas-deteccion-pago"
+  }
+]

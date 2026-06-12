@@ -1,0 +1,87 @@
+[
+  {
+    "query": "deducibles medicos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "acumular cfdis salud",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "declaracion anual medicos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "deducibles medicos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "como deducibles medicos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "acumular cfdis salud",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "como acumular cfdis salud",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "declaracion anual medicos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "como declaracion anual medicos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "que es deducibles",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "que es acumular",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "que es declaracion",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdis-medicos-deducibles-acumulados"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdis-medicos-deducibles-acumulados"
+  }
+]

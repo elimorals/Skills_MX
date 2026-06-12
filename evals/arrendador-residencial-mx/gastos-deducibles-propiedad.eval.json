@@ -1,0 +1,97 @@
+[
+  {
+    "query": "gastos deducibles propiedad",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "deducciones arrendamiento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "qué puedo deducir",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "declaración arrendador",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "gastos deducibles propiedad",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "como gastos deducibles propiedad",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "deducciones arrendamiento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "como deducciones arrendamiento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "qué puedo deducir",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "como qué puedo deducir",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "deducciones personales (art",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "que es gastos",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "que es deducciones",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "que es qué",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-propiedad"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-propiedad"
+  }
+]

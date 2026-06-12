@@ -1,0 +1,92 @@
+[
+  {
+    "query": "ajustar precios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "pricing canal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "comisión ml afecta precio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "margen objetivo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "ajustar precios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "como ajustar precios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "pricing canal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "como pricing canal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "comisión ml afecta precio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "como comisión ml afecta precio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "que es ajustar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "que es pricing",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "que es comisión",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-por-canal"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-por-canal"
+  }
+]

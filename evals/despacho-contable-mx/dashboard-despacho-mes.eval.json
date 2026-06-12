@@ -1,0 +1,87 @@
+[
+  {
+    "query": "dashboard despacho",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-despacho-mes"
+  },
+  {
+    "query": "status despacho",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-despacho-mes"
+  },
+  {
+    "query": "kpis contable",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-despacho-mes"
+  },
+  {
+    "query": "dashboard despacho",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-despacho-mes"
+  },
+  {
+    "query": "como dashboard despacho",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-despacho-mes"
+  },
+  {
+    "query": "status despacho",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-despacho-mes"
+  },
+  {
+    "query": "como status despacho",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-despacho-mes"
+  },
+  {
+    "query": "kpis contable",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-despacho-mes"
+  },
+  {
+    "query": "como kpis contable",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-despacho-mes"
+  },
+  {
+    "query": "que es dashboard",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-despacho-mes"
+  },
+  {
+    "query": "que es status",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-despacho-mes"
+  },
+  {
+    "query": "que es kpis",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-despacho-mes"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-despacho-mes"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-despacho-mes"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-despacho-mes"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-despacho-mes"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-despacho-mes"
+  }
+]

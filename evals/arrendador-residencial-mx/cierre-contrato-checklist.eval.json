@@ -1,0 +1,97 @@
+[
+  {
+    "query": "cierre contrato",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cierre-contrato-checklist"
+  },
+  {
+    "query": "inquilino se va",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cierre-contrato-checklist"
+  },
+  {
+    "query": "fin de contrato",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cierre-contrato-checklist"
+  },
+  {
+    "query": "devolver depósito",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cierre-contrato-checklist"
+  },
+  {
+    "query": "renovación contrato",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cierre-contrato-checklist"
+  },
+  {
+    "query": "cierre contrato",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cierre-contrato-checklist"
+  },
+  {
+    "query": "como cierre contrato",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cierre-contrato-checklist"
+  },
+  {
+    "query": "inquilino se va",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cierre-contrato-checklist"
+  },
+  {
+    "query": "como inquilino se va",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cierre-contrato-checklist"
+  },
+  {
+    "query": "fin de contrato",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cierre-contrato-checklist"
+  },
+  {
+    "query": "terminación anticipada (eso requiere protocolo distinto)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cierre-contrato-checklist"
+  },
+  {
+    "query": "que es cierre",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cierre-contrato-checklist"
+  },
+  {
+    "query": "que es inquilino",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cierre-contrato-checklist"
+  },
+  {
+    "query": "que es fin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cierre-contrato-checklist"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cierre-contrato-checklist"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cierre-contrato-checklist"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cierre-contrato-checklist"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cierre-contrato-checklist"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cierre-contrato-checklist"
+  }
+]

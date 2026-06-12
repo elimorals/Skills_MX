@@ -1,0 +1,87 @@
+[
+  {
+    "query": "emitir receta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de receta-electronica-cofepris"
+  },
+  {
+    "query": "prescribir",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de receta-electronica-cofepris"
+  },
+  {
+    "query": "receta electronica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de receta-electronica-cofepris"
+  },
+  {
+    "query": "receta cofepris",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de receta-electronica-cofepris"
+  },
+  {
+    "query": "emitir receta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de receta-electronica-cofepris"
+  },
+  {
+    "query": "como emitir receta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de receta-electronica-cofepris"
+  },
+  {
+    "query": "prescribir",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de receta-electronica-cofepris"
+  },
+  {
+    "query": "como prescribir",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de receta-electronica-cofepris"
+  },
+  {
+    "query": "receta electronica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de receta-electronica-cofepris"
+  },
+  {
+    "query": "como receta electronica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de receta-electronica-cofepris"
+  },
+  {
+    "query": "que es emitir",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de receta-electronica-cofepris"
+  },
+  {
+    "query": "que es receta",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de receta-electronica-cofepris"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de receta-electronica-cofepris"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de receta-electronica-cofepris"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de receta-electronica-cofepris"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de receta-electronica-cofepris"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de receta-electronica-cofepris"
+  }
+]

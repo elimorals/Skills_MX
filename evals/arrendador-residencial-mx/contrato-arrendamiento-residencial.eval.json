@@ -1,0 +1,97 @@
+[
+  {
+    "query": "generar contrato arrendamiento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "contrato renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "contrato inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "generar contrato arrendamiento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "como generar contrato arrendamiento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "contrato renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "como contrato renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "contrato inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "como contrato inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "arrendamiento comercial (local",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "oficina — vertical aparte) ni para predios rústicos",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "que es generar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "que es contrato",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "que es contrato",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-residencial"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-residencial"
+  }
+]

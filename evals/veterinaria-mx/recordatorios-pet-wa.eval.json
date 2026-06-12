@@ -1,0 +1,97 @@
+[
+  {
+    "query": "template wa veterinaria",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recordatorios-pet-wa"
+  },
+  {
+    "query": "mandar recordatorio mascota",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recordatorios-pet-wa"
+  },
+  {
+    "query": "mensaje dueño",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recordatorios-pet-wa"
+  },
+  {
+    "query": "comunicación clínica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recordatorios-pet-wa"
+  },
+  {
+    "query": "template wa veterinaria",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recordatorios-pet-wa"
+  },
+  {
+    "query": "como template wa veterinaria",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recordatorios-pet-wa"
+  },
+  {
+    "query": "mandar recordatorio mascota",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recordatorios-pet-wa"
+  },
+  {
+    "query": "como mandar recordatorio mascota",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recordatorios-pet-wa"
+  },
+  {
+    "query": "mensaje dueño",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recordatorios-pet-wa"
+  },
+  {
+    "query": "como mensaje dueño",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recordatorios-pet-wa"
+  },
+  {
+    "query": "urgencias (urgencias-protocolo) ni vacunas standalone (vacunacion-calendario)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recordatorios-pet-wa"
+  },
+  {
+    "query": "que es template",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recordatorios-pet-wa"
+  },
+  {
+    "query": "que es mandar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recordatorios-pet-wa"
+  },
+  {
+    "query": "que es mensaje",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recordatorios-pet-wa"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recordatorios-pet-wa"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recordatorios-pet-wa"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recordatorios-pet-wa"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recordatorios-pet-wa"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recordatorios-pet-wa"
+  }
+]

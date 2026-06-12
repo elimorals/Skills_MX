@@ -1,0 +1,87 @@
+[
+  {
+    "query": "agenda clinica multimedico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-multi-medico"
+  },
+  {
+    "query": "asignar paciente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-multi-medico"
+  },
+  {
+    "query": "ver disponibilidad medicos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-multi-medico"
+  },
+  {
+    "query": "agenda clinica multimedico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-multi-medico"
+  },
+  {
+    "query": "como agenda clinica multimedico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-multi-medico"
+  },
+  {
+    "query": "asignar paciente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-multi-medico"
+  },
+  {
+    "query": "como asignar paciente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-multi-medico"
+  },
+  {
+    "query": "ver disponibilidad medicos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-multi-medico"
+  },
+  {
+    "query": "como ver disponibilidad medicos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-multi-medico"
+  },
+  {
+    "query": "que es agenda",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-multi-medico"
+  },
+  {
+    "query": "que es asignar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-multi-medico"
+  },
+  {
+    "query": "que es ver",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-multi-medico"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-multi-medico"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-multi-medico"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-multi-medico"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-multi-medico"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-multi-medico"
+  }
+]

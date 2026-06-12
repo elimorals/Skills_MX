@@ -1,0 +1,72 @@
+[
+  {
+    "query": "rfc validacion",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de rfc-validacion"
+  },
+  {
+    "query": "rfc validacion",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de rfc-validacion"
+  },
+  {
+    "query": "como rfc validacion",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de rfc-validacion"
+  },
+  {
+    "query": "curp (es otra cosa",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de rfc-validacion"
+  },
+  {
+    "query": "18 caracteres distintos) ni para identificaciones de otros países",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de rfc-validacion"
+  },
+  {
+    "query": "que es rfc",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de rfc-validacion"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de rfc-validacion"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de rfc-validacion"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de rfc-validacion"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de rfc-validacion"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de rfc-validacion"
+  },
+  {
+    "query": "ayúdame con rfc validacion",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con rfc validacion",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con rfc validacion",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "query": "alertas deadline anual",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de alertas-deadline-anual"
+  },
+  {
+    "query": "alertas deadline anual",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de alertas-deadline-anual"
+  },
+  {
+    "query": "como alertas deadline anual",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de alertas-deadline-anual"
+  },
+  {
+    "query": "deadlines mensuales (eso es del core)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de alertas-deadline-anual"
+  },
+  {
+    "query": "que es alertas",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de alertas-deadline-anual"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de alertas-deadline-anual"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de alertas-deadline-anual"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de alertas-deadline-anual"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de alertas-deadline-anual"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de alertas-deadline-anual"
+  },
+  {
+    "query": "ayúdame con alertas deadline anual",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con alertas deadline anual",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con alertas deadline anual",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con alertas deadline anual",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  }
+]

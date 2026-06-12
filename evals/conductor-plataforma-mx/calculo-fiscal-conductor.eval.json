@@ -1,0 +1,92 @@
+[
+  {
+    "query": "cuánto pago de impuestos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-fiscal-conductor"
+  },
+  {
+    "query": "calcular isr chofer",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-fiscal-conductor"
+  },
+  {
+    "query": "pago provisional mensual",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-fiscal-conductor"
+  },
+  {
+    "query": "retenciones art 113-a",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-fiscal-conductor"
+  },
+  {
+    "query": "cuánto pago de impuestos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-fiscal-conductor"
+  },
+  {
+    "query": "como cuánto pago de impuestos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-fiscal-conductor"
+  },
+  {
+    "query": "calcular isr chofer",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-fiscal-conductor"
+  },
+  {
+    "query": "como calcular isr chofer",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-fiscal-conductor"
+  },
+  {
+    "query": "pago provisional mensual",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-fiscal-conductor"
+  },
+  {
+    "query": "como pago provisional mensual",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-fiscal-conductor"
+  },
+  {
+    "query": "que es cuánto",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-fiscal-conductor"
+  },
+  {
+    "query": "que es calcular",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-fiscal-conductor"
+  },
+  {
+    "query": "que es pago",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-fiscal-conductor"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-fiscal-conductor"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-fiscal-conductor"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-fiscal-conductor"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-fiscal-conductor"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-fiscal-conductor"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "query": "trabajar mexico extranjero",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "permiso trabajo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "rfc extranjero",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "digital nomad fiscal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "trabajar mexico extranjero",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "como trabajar mexico extranjero",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "permiso trabajo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "como permiso trabajo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "rfc extranjero",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "como rfc extranjero",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "que es trabajar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "que es permiso",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "que es rfc",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de asesoria-laboral-extranjero"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de asesoria-laboral-extranjero"
+  }
+]

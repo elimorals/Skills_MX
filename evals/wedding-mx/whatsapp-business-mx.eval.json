@@ -1,0 +1,97 @@
+[
+  {
+    "query": "whatsapp template",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de whatsapp-business-mx"
+  },
+  {
+    "query": "plantilla whatsapp",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de whatsapp-business-mx"
+  },
+  {
+    "query": "mensaje masivo whatsapp",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de whatsapp-business-mx"
+  },
+  {
+    "query": "notificación a clientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de whatsapp-business-mx"
+  },
+  {
+    "query": "recordatorio automatizado",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de whatsapp-business-mx"
+  },
+  {
+    "query": "whatsapp business api",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de whatsapp-business-mx"
+  },
+  {
+    "query": "send template",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de whatsapp-business-mx"
+  },
+  {
+    "query": "broadcast",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de whatsapp-business-mx"
+  },
+  {
+    "query": "whatsapp template",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de whatsapp-business-mx"
+  },
+  {
+    "query": "como whatsapp template",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de whatsapp-business-mx"
+  },
+  {
+    "query": "whatsapp personal/grupos personales (eso es contra tos) ni para sms o llamadas",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de whatsapp-business-mx"
+  },
+  {
+    "query": "que es whatsapp",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de whatsapp-business-mx"
+  },
+  {
+    "query": "que es plantilla",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de whatsapp-business-mx"
+  },
+  {
+    "query": "que es mensaje",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de whatsapp-business-mx"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de whatsapp-business-mx"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de whatsapp-business-mx"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de whatsapp-business-mx"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de whatsapp-business-mx"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de whatsapp-business-mx"
+  }
+]

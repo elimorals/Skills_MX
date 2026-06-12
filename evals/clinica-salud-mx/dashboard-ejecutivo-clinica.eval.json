@@ -1,0 +1,87 @@
+[
+  {
+    "query": "dashboard clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "director clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "kpis clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "dashboard clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "como dashboard clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "director clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "como director clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "kpis clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "como kpis clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "que es dashboard",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "que es director",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "que es kpis",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-ejecutivo-clinica"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-ejecutivo-clinica"
+  }
+]

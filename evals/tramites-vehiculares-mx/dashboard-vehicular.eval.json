@@ -1,0 +1,97 @@
+[
+  {
+    "query": "status auto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-vehicular"
+  },
+  {
+    "query": "dashboard vehículo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-vehicular"
+  },
+  {
+    "query": "cómo está mi carro",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-vehicular"
+  },
+  {
+    "query": "obligaciones vehículo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-vehicular"
+  },
+  {
+    "query": "status auto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-vehicular"
+  },
+  {
+    "query": "como status auto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-vehicular"
+  },
+  {
+    "query": "dashboard vehículo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-vehicular"
+  },
+  {
+    "query": "como dashboard vehículo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-vehicular"
+  },
+  {
+    "query": "cómo está mi carro",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-vehicular"
+  },
+  {
+    "query": "como cómo está mi carro",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-vehicular"
+  },
+  {
+    "query": "reparaciones (talleres-mx)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-vehicular"
+  },
+  {
+    "query": "que es status",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-vehicular"
+  },
+  {
+    "query": "que es dashboard",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-vehicular"
+  },
+  {
+    "query": "que es cómo",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-vehicular"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-vehicular"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-vehicular"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-vehicular"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-vehicular"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-vehicular"
+  }
+]

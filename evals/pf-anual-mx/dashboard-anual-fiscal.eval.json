@@ -1,0 +1,72 @@
+[
+  {
+    "query": "dashboard anual fiscal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-anual-fiscal"
+  },
+  {
+    "query": "dashboard anual fiscal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-anual-fiscal"
+  },
+  {
+    "query": "como dashboard anual fiscal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-anual-fiscal"
+  },
+  {
+    "query": "pago provisional mensual (eso es cierre-fiscal-mensual del core-mexico)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-anual-fiscal"
+  },
+  {
+    "query": "que es dashboard",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-anual-fiscal"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-anual-fiscal"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-anual-fiscal"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-anual-fiscal"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-anual-fiscal"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-anual-fiscal"
+  },
+  {
+    "query": "ayúdame con dashboard anual fiscal",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con dashboard anual fiscal",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con dashboard anual fiscal",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con dashboard anual fiscal",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  }
+]

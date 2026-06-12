@@ -1,0 +1,92 @@
+[
+  {
+    "query": "precio noche",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "tarifa airbnb",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "optimizar precio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "pricing dinamico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "precio noche",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "como precio noche",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "tarifa airbnb",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "como tarifa airbnb",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "optimizar precio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "como optimizar precio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "que es precio",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "que es tarifa",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "que es optimizar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-airbnb"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de pricing-dinamico-airbnb"
+  }
+]

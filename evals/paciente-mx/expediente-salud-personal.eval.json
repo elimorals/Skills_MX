@@ -1,0 +1,87 @@
+[
+  {
+    "query": "mi expediente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-salud-personal"
+  },
+  {
+    "query": "historia clinica personal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-salud-personal"
+  },
+  {
+    "query": "mis antecedentes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-salud-personal"
+  },
+  {
+    "query": "mi expediente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-salud-personal"
+  },
+  {
+    "query": "como mi expediente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-salud-personal"
+  },
+  {
+    "query": "historia clinica personal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-salud-personal"
+  },
+  {
+    "query": "como historia clinica personal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-salud-personal"
+  },
+  {
+    "query": "mis antecedentes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-salud-personal"
+  },
+  {
+    "query": "como mis antecedentes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-salud-personal"
+  },
+  {
+    "query": "que es mi",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-salud-personal"
+  },
+  {
+    "query": "que es historia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-salud-personal"
+  },
+  {
+    "query": "que es mis",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-salud-personal"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-salud-personal"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-salud-personal"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-salud-personal"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-salud-personal"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-salud-personal"
+  }
+]

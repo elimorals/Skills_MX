@@ -1,0 +1,87 @@
+[
+  {
+    "query": "mis citas medicas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-personal"
+  },
+  {
+    "query": "agenda paciente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-personal"
+  },
+  {
+    "query": "proxima consulta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-personal"
+  },
+  {
+    "query": "mis citas medicas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-personal"
+  },
+  {
+    "query": "como mis citas medicas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-personal"
+  },
+  {
+    "query": "agenda paciente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-personal"
+  },
+  {
+    "query": "como agenda paciente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-personal"
+  },
+  {
+    "query": "proxima consulta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-personal"
+  },
+  {
+    "query": "como proxima consulta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-personal"
+  },
+  {
+    "query": "que es mis",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-personal"
+  },
+  {
+    "query": "que es agenda",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-personal"
+  },
+  {
+    "query": "que es proxima",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-personal"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-personal"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-personal"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-personal"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-personal"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-personal"
+  }
+]

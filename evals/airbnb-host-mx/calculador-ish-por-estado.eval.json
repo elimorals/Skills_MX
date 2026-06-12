@@ -1,0 +1,72 @@
+[
+  {
+    "query": "impuesto hospedaje",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculador-ish-por-estado"
+  },
+  {
+    "query": "hospedaje estatal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculador-ish-por-estado"
+  },
+  {
+    "query": "impuesto hospedaje",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculador-ish-por-estado"
+  },
+  {
+    "query": "como impuesto hospedaje",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculador-ish-por-estado"
+  },
+  {
+    "query": "hospedaje estatal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculador-ish-por-estado"
+  },
+  {
+    "query": "como hospedaje estatal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculador-ish-por-estado"
+  },
+  {
+    "query": "que es impuesto",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculador-ish-por-estado"
+  },
+  {
+    "query": "que es hospedaje",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculador-ish-por-estado"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculador-ish-por-estado"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculador-ish-por-estado"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculador-ish-por-estado"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculador-ish-por-estado"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculador-ish-por-estado"
+  },
+  {
+    "query": "ayúdame con calculador ish por estado",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  }
+]

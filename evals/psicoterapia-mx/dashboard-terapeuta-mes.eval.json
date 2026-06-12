@@ -1,0 +1,87 @@
+[
+  {
+    "query": "dashboard terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "status psicologia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "mi mes psicologo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "dashboard terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "como dashboard terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "status psicologia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "como status psicologia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "mi mes psicologo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "como mi mes psicologo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "que es dashboard",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "que es status",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "que es mi",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-terapeuta-mes"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-terapeuta-mes"
+  }
+]

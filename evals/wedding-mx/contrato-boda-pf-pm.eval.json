@@ -1,0 +1,97 @@
+[
+  {
+    "query": "contrato boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-boda-pf-pm"
+  },
+  {
+    "query": "contrato wedding planner",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-boda-pf-pm"
+  },
+  {
+    "query": "cláusulas evento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-boda-pf-pm"
+  },
+  {
+    "query": "formalizar planner",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-boda-pf-pm"
+  },
+  {
+    "query": "contrato boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-boda-pf-pm"
+  },
+  {
+    "query": "como contrato boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-boda-pf-pm"
+  },
+  {
+    "query": "contrato wedding planner",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-boda-pf-pm"
+  },
+  {
+    "query": "como contrato wedding planner",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-boda-pf-pm"
+  },
+  {
+    "query": "cláusulas evento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-boda-pf-pm"
+  },
+  {
+    "query": "como cláusulas evento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-boda-pf-pm"
+  },
+  {
+    "query": "cotizaciones (cotizacion-boda-mxn) ni timeline (otro skill)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-boda-pf-pm"
+  },
+  {
+    "query": "que es contrato",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-boda-pf-pm"
+  },
+  {
+    "query": "que es contrato",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-boda-pf-pm"
+  },
+  {
+    "query": "que es cláusulas",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-boda-pf-pm"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-boda-pf-pm"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-boda-pf-pm"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-boda-pf-pm"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-boda-pf-pm"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-boda-pf-pm"
+  }
+]

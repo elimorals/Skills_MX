@@ -1,0 +1,87 @@
+[
+  {
+    "query": "urgencia mascota",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de urgencias-protocolo"
+  },
+  {
+    "query": "accidente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de urgencias-protocolo"
+  },
+  {
+    "query": "atropellado",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de urgencias-protocolo"
+  },
+  {
+    "query": "intoxicación",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de urgencias-protocolo"
+  },
+  {
+    "query": "sangrado",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de urgencias-protocolo"
+  },
+  {
+    "query": "dificultad respiratoria",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de urgencias-protocolo"
+  },
+  {
+    "query": "convulsión",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de urgencias-protocolo"
+  },
+  {
+    "query": "parto distócico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de urgencias-protocolo"
+  },
+  {
+    "query": "urgencia mascota",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de urgencias-protocolo"
+  },
+  {
+    "query": "como urgencia mascota",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de urgencias-protocolo"
+  },
+  {
+    "query": "consulta no urgente (tarifario-servicios-vet)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de urgencias-protocolo"
+  },
+  {
+    "query": "que es urgencia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de urgencias-protocolo"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de urgencias-protocolo"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de urgencias-protocolo"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de urgencias-protocolo"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de urgencias-protocolo"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de urgencias-protocolo"
+  }
+]

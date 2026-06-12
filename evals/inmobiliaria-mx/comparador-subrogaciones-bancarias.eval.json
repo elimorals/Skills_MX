@@ -1,0 +1,97 @@
+[
+  {
+    "query": "subrogar hipoteca",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "mejor tasa hipoteca",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "cambiar banco hipotecario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "comparar hipotecas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "subrogar hipoteca",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "como subrogar hipoteca",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "mejor tasa hipoteca",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "como mejor tasa hipoteca",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "cambiar banco hipotecario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "como cambiar banco hipotecario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "tramitar la subrogación (eso es proceso bancario)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "que es subrogar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "que es mejor",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "que es cambiar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-subrogaciones-bancarias"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-subrogaciones-bancarias"
+  }
+]

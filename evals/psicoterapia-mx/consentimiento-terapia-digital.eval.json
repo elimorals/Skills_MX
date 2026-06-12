@@ -1,0 +1,87 @@
+[
+  {
+    "query": "consentimiento terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de consentimiento-terapia-digital"
+  },
+  {
+    "query": "contrato terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de consentimiento-terapia-digital"
+  },
+  {
+    "query": "primera sesion",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de consentimiento-terapia-digital"
+  },
+  {
+    "query": "consentimiento terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de consentimiento-terapia-digital"
+  },
+  {
+    "query": "como consentimiento terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de consentimiento-terapia-digital"
+  },
+  {
+    "query": "contrato terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de consentimiento-terapia-digital"
+  },
+  {
+    "query": "como contrato terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de consentimiento-terapia-digital"
+  },
+  {
+    "query": "primera sesion",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de consentimiento-terapia-digital"
+  },
+  {
+    "query": "como primera sesion",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de consentimiento-terapia-digital"
+  },
+  {
+    "query": "que es consentimiento",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de consentimiento-terapia-digital"
+  },
+  {
+    "query": "que es contrato",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de consentimiento-terapia-digital"
+  },
+  {
+    "query": "que es primera",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de consentimiento-terapia-digital"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de consentimiento-terapia-digital"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de consentimiento-terapia-digital"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de consentimiento-terapia-digital"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de consentimiento-terapia-digital"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de consentimiento-terapia-digital"
+  }
+]

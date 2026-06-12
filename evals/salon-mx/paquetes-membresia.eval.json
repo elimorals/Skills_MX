@@ -1,0 +1,92 @@
+[
+  {
+    "query": "paquete servicios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paquetes-membresia"
+  },
+  {
+    "query": "membresía",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paquetes-membresia"
+  },
+  {
+    "query": "suscripción salón",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paquetes-membresia"
+  },
+  {
+    "query": "mensualidad spa",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paquetes-membresia"
+  },
+  {
+    "query": "bono prepago",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paquetes-membresia"
+  },
+  {
+    "query": "anualidad vip",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paquetes-membresia"
+  },
+  {
+    "query": "paquete servicios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paquetes-membresia"
+  },
+  {
+    "query": "como paquete servicios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paquetes-membresia"
+  },
+  {
+    "query": "membresía",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paquetes-membresia"
+  },
+  {
+    "query": "como membresía",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paquetes-membresia"
+  },
+  {
+    "query": "servicios sueltos (servicios-tarifario) ni loyalty puntos (retencion-clientes-loyalty)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paquetes-membresia"
+  },
+  {
+    "query": "que es paquete",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paquetes-membresia"
+  },
+  {
+    "query": "que es suscripción",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paquetes-membresia"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paquetes-membresia"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paquetes-membresia"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paquetes-membresia"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paquetes-membresia"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paquetes-membresia"
+  }
+]

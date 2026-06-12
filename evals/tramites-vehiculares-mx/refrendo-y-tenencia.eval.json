@@ -1,0 +1,82 @@
+[
+  {
+    "query": "refrendo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de refrendo-y-tenencia"
+  },
+  {
+    "query": "tenencia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de refrendo-y-tenencia"
+  },
+  {
+    "query": "cuánto pago de placas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de refrendo-y-tenencia"
+  },
+  {
+    "query": "pago anual auto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de refrendo-y-tenencia"
+  },
+  {
+    "query": "refrendo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de refrendo-y-tenencia"
+  },
+  {
+    "query": "como refrendo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de refrendo-y-tenencia"
+  },
+  {
+    "query": "tenencia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de refrendo-y-tenencia"
+  },
+  {
+    "query": "como tenencia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de refrendo-y-tenencia"
+  },
+  {
+    "query": "cuánto pago de placas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de refrendo-y-tenencia"
+  },
+  {
+    "query": "como cuánto pago de placas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de refrendo-y-tenencia"
+  },
+  {
+    "query": "que es cuánto",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de refrendo-y-tenencia"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de refrendo-y-tenencia"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de refrendo-y-tenencia"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de refrendo-y-tenencia"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de refrendo-y-tenencia"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de refrendo-y-tenencia"
+  }
+]

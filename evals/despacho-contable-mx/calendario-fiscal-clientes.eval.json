@@ -1,0 +1,87 @@
+[
+  {
+    "query": "calendario fiscal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calendario-fiscal-clientes"
+  },
+  {
+    "query": "obligaciones clientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calendario-fiscal-clientes"
+  },
+  {
+    "query": "deadlines del mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calendario-fiscal-clientes"
+  },
+  {
+    "query": "calendario fiscal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calendario-fiscal-clientes"
+  },
+  {
+    "query": "como calendario fiscal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calendario-fiscal-clientes"
+  },
+  {
+    "query": "obligaciones clientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calendario-fiscal-clientes"
+  },
+  {
+    "query": "como obligaciones clientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calendario-fiscal-clientes"
+  },
+  {
+    "query": "deadlines del mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calendario-fiscal-clientes"
+  },
+  {
+    "query": "como deadlines del mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calendario-fiscal-clientes"
+  },
+  {
+    "query": "que es calendario",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calendario-fiscal-clientes"
+  },
+  {
+    "query": "que es obligaciones",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calendario-fiscal-clientes"
+  },
+  {
+    "query": "que es deadlines",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calendario-fiscal-clientes"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calendario-fiscal-clientes"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calendario-fiscal-clientes"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calendario-fiscal-clientes"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calendario-fiscal-clientes"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calendario-fiscal-clientes"
+  }
+]

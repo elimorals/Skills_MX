@@ -1,0 +1,87 @@
+[
+  {
+    "query": "vence mi residencia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-vigencias-migra"
+  },
+  {
+    "query": "renovar visa",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-vigencias-migra"
+  },
+  {
+    "query": "renovacion migratoria",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-vigencias-migra"
+  },
+  {
+    "query": "vence mi residencia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-vigencias-migra"
+  },
+  {
+    "query": "como vence mi residencia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-vigencias-migra"
+  },
+  {
+    "query": "renovar visa",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-vigencias-migra"
+  },
+  {
+    "query": "como renovar visa",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-vigencias-migra"
+  },
+  {
+    "query": "renovacion migratoria",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-vigencias-migra"
+  },
+  {
+    "query": "como renovacion migratoria",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-vigencias-migra"
+  },
+  {
+    "query": "que es vence",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-vigencias-migra"
+  },
+  {
+    "query": "que es renovar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-vigencias-migra"
+  },
+  {
+    "query": "que es renovacion",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-vigencias-migra"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-vigencias-migra"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-vigencias-migra"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-vigencias-migra"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-vigencias-migra"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-vigencias-migra"
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "query": "renovar gmm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-poliza-anual"
+  },
+  {
+    "query": "vencimiento poliza",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-poliza-anual"
+  },
+  {
+    "query": "renovacion seguro medico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-poliza-anual"
+  },
+  {
+    "query": "renovar gmm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-poliza-anual"
+  },
+  {
+    "query": "como renovar gmm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-poliza-anual"
+  },
+  {
+    "query": "vencimiento poliza",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-poliza-anual"
+  },
+  {
+    "query": "como vencimiento poliza",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-poliza-anual"
+  },
+  {
+    "query": "renovacion seguro medico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-poliza-anual"
+  },
+  {
+    "query": "como renovacion seguro medico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de renovacion-poliza-anual"
+  },
+  {
+    "query": "que es renovar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-poliza-anual"
+  },
+  {
+    "query": "que es vencimiento",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-poliza-anual"
+  },
+  {
+    "query": "que es renovacion",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-poliza-anual"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-poliza-anual"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-poliza-anual"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-poliza-anual"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-poliza-anual"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de renovacion-poliza-anual"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "query": "tarifario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de servicios-tarifario"
+  },
+  {
+    "query": "precios salón",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de servicios-tarifario"
+  },
+  {
+    "query": "cuánto cobrar",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de servicios-tarifario"
+  },
+  {
+    "query": "listado servicios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de servicios-tarifario"
+  },
+  {
+    "query": "add-ons",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de servicios-tarifario"
+  },
+  {
+    "query": "escalonado por cabello",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de servicios-tarifario"
+  },
+  {
+    "query": "tarifario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de servicios-tarifario"
+  },
+  {
+    "query": "como tarifario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de servicios-tarifario"
+  },
+  {
+    "query": "precios salón",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de servicios-tarifario"
+  },
+  {
+    "query": "como precios salón",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de servicios-tarifario"
+  },
+  {
+    "query": "agenda (otro skill agenda-citas-salon) ni comisiones (otro skill)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de servicios-tarifario"
+  },
+  {
+    "query": "que es precios",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de servicios-tarifario"
+  },
+  {
+    "query": "que es cuánto",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de servicios-tarifario"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de servicios-tarifario"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de servicios-tarifario"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de servicios-tarifario"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de servicios-tarifario"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de servicios-tarifario"
+  }
+]

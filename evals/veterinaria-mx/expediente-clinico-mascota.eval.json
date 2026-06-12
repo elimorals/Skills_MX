@@ -1,0 +1,97 @@
+[
+  {
+    "query": "expediente mascota",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-mascota"
+  },
+  {
+    "query": "historial paciente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-mascota"
+  },
+  {
+    "query": "consulta veterinaria",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-mascota"
+  },
+  {
+    "query": "ficha pet",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-mascota"
+  },
+  {
+    "query": "mascota nueva",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-mascota"
+  },
+  {
+    "query": "alergia mascota",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-mascota"
+  },
+  {
+    "query": "expediente mascota",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-mascota"
+  },
+  {
+    "query": "como expediente mascota",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-mascota"
+  },
+  {
+    "query": "historial paciente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-mascota"
+  },
+  {
+    "query": "como historial paciente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-mascota"
+  },
+  {
+    "query": "vacunación standalone (vacunacion-calendario) ni urgencias (urgencias-protocolo)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-mascota"
+  },
+  {
+    "query": "que es expediente",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-mascota"
+  },
+  {
+    "query": "que es historial",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-mascota"
+  },
+  {
+    "query": "que es consulta",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-mascota"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-mascota"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-mascota"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-mascota"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-mascota"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-mascota"
+  }
+]

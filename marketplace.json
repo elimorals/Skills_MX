@@ -1,8 +1,8 @@
 {
   "name": "plugins-mx",
   "displayName": "Plugins MX — Operación diaria México y LATAM",
-  "description": "Plugins de Claude Code y skills standalone para operación diaria de PyMEs y profesionistas en México: CFDI 4.0, WhatsApp Business, cobranza MXN, cumplimiento LFPDPPP, y verticales por industria.",
-  "version": "0.1.0",
+  "description": "Plugins de Claude Code, MCP servers y skills standalone para operación diaria de PyMEs y profesionistas en México: CFDI 4.0, WhatsApp Business, cobranza MXN, cumplimiento LFPDPPP, salud, fiscal, inmobiliaria, importación, y verticales especializados.",
+  "version": "0.2.0",
   "maintainer": {
     "name": "Elías Rashid Morales Mendoza",
     "email": "elimoralsmendox@gmail.com"
@@ -17,39 +17,174 @@
     {
       "name": "freelancers-mx",
       "path": "./freelancers-mx",
-      "description": "Cotizaciones MXN, propuestas comerciales, cobranza escalada, onboarding fiscal, pago provisional ISR (PFAE/RESICO)."
+      "description": "Cotizaciones MXN, propuestas comerciales, cobranza escalada, onboarding fiscal, pago provisional ISR (PFAE/RESICO), validador auditorías SAT, retenciones no acreditadas."
     },
     {
       "name": "agencia-marketing-mx",
       "path": "./agencia-marketing-mx",
-      "description": "Reportes mensuales por canal, optimización Meta Ads con detección de fatiga, copy mexicano, community management, briefs creativos."
+      "description": "Reportes mensuales por canal, optimización Meta Ads, copy mexicano, community management, briefs creativos, workflow respuesta a crisis."
     },
     {
       "name": "colegios-mx",
       "path": "./colegios-mx",
-      "description": "Cobranza de colegiaturas, comunicación masiva a padres via WhatsApp, constancias académicas SEP-compliant, CFDI D10 deducible."
+      "description": "Cobranza colegiaturas, comunicación masiva padres WhatsApp, constancias SEP, CFDI D10 deducible, validador requisitos deducibilidad."
     },
     {
       "name": "talleres-mx",
       "path": "./talleres-mx",
-      "description": "Diagnóstico-cotización-autorización-OT-garantía con bitácora auditada PROFECO, autorización por WhatsApp con fotos/video."
+      "description": "Diagnóstico-cotización-autorización-OT-garantía con bitácora auditada PROFECO, autorización WhatsApp con fotos/video."
+    },
+    {
+      "name": "ecommerce-mx",
+      "path": "./ecommerce-mx",
+      "description": "ML listings + pricing, Shopify MX, inventario multicanal, paqueterías, cierre ventas multicanal."
+    },
+    {
+      "name": "salon-mx",
+      "path": "./salon-mx",
+      "description": "Agenda + no-shows, tarifario, comisiones estilistas, membresías, loyalty."
+    },
+    {
+      "name": "veterinaria-mx",
+      "path": "./veterinaria-mx",
+      "description": "Expediente clínico, vacunación, urgencias 24h, tarifario vet, recordatorios pet."
+    },
+    {
+      "name": "wedding-mx",
+      "path": "./wedding-mx",
+      "description": "Cotización boda, timeline D-365→D+30, proveedores, onboarding novios, contrato."
+    },
+    {
+      "name": "restaurante-mx",
+      "path": "./restaurante-mx",
+      "description": "Ingeniería menú BCG, inventario merma, propinas (Art. 346 LFT), delivery aggregators, CFDI global."
+    },
+    {
+      "name": "inmobiliaria-mx",
+      "path": "./inmobiliaria-mx",
+      "description": "Contrato arrendamiento corredores, screening inquilinos, comparables zona, ficha inmueble, comisiones, simulador pre-pagos hipoteca, comparador subrogaciones."
+    },
+    {
+      "name": "pf-anual-mx",
+      "path": "./pf-anual-mx",
+      "description": "Declaración anual ISR persona física. Mercado: 5M+ declarantes. Score research: 9.5/10. Dashboard año, recopilación CFDIs masiva, deducciones personales Art. 151, cálculo Art. 96 LISR, borrador PDF, seguimiento devolución."
+    },
+    {
+      "name": "arrendador-residencial-mx",
+      "path": "./arrendador-residencial-mx",
+      "description": "Arrendador residencial PF (dueño 1-10 propiedades). Score 9.3/10. Dashboard propiedades, screening Buró, contrato CCDF, cobranza renta empática, CFDI uso D04, actualización INPC, gastos deducibles, depósito en garantía."
+    },
+    {
+      "name": "tramites-vehiculares-mx",
+      "path": "./tramites-vehiculares-mx",
+      "description": "Gestión vehicular: multas municipales, verificación, refrendo, tenencia, placas, optimizador Hoy No Circula, comparador seguros automotrices."
+    },
+    {
+      "name": "conductor-plataforma-mx",
+      "path": "./conductor-plataforma-mx",
+      "description": "Conductor Uber/DiDi/Cabify. Ingresos consolidados, cálculo fiscal Art. 113-A LISR, deducciones, IMSS-PIA, optimizador rutas."
+    },
+    {
+      "name": "airbnb-host-mx",
+      "path": "./airbnb-host-mx",
+      "description": "Host Airbnb/Vrbo. Dashboard ocupación, fiscal Art. 113-A, ISH por estado, cumplimiento RAB CDMX, pricing dinámico, gastos deducibles."
+    },
+    {
+      "name": "tienda-omnicanal-mx",
+      "path": "./tienda-omnicanal-mx",
+      "description": "Tienda multi-canal. Sync inventario ML+Amazon+Shopify+físico, pricing dinámico por canal, órdenes unificadas, devoluciones cruzadas."
+    },
+    {
+      "name": "consultorio-especialista-mx",
+      "path": "./consultorio-especialista-mx",
+      "description": "Médico especialista presencial. Agenda, expediente NOM-004, receta COFEPRIS, cobranza con seguros, dashboard mensual."
+    },
+    {
+      "name": "clinica-salud-mx",
+      "path": "./clinica-salud-mx",
+      "description": "Clínica multi-médico. Agenda compartida, expedientes compartidos con audit, facturación dual paciente/aseguradora, inventario medicamentos, dashboard ejecutivo."
+    },
+    {
+      "name": "notarias-mx",
+      "path": "./notarias-mx",
+      "description": "Notarías: agenda citas notariales, registro escrituras, cálculo ISABI, honorarios arancel, dashboard mensual."
+    },
+    {
+      "name": "despacho-contable-mx",
+      "path": "./despacho-contable-mx",
+      "description": "Despacho contable multi-cliente. Gestión multi-RFC, calendario fiscal por cliente, facturación recurrente, comunicación batch, dashboard."
+    },
+    {
+      "name": "psicoterapia-mx",
+      "path": "./psicoterapia-mx",
+      "description": "Psicólogo en práctica privada. Sesiones con cifrado LGPDPPSO, consentimiento digital, cobranza empática, gestión confidencial, dashboard."
+    },
+    {
+      "name": "servicios-publicos-mx",
+      "path": "./servicios-publicos-mx",
+      "description": "Gestión integral servicios: CFE, agua, predial, gas. Dashboard, alertas vencimientos, detector anomalías consumo, batch pagos, CFDI deducible."
+    },
+    {
+      "name": "migracion-extranjeros-mx",
+      "path": "./migracion-extranjeros-mx",
+      "description": "Extranjeros residentes MX. Trámites INM, renovaciones, regularización, seguimiento trámites, asesoría laboral, dashboard migratorio."
+    },
+    {
+      "name": "gmm-asegurado-mx",
+      "path": "./gmm-asegurado-mx",
+      "description": "Asegurado GMM. Dashboard póliza, cálculo deducible/coaseguro, autorización pre-evento, comparador aseguradoras, renovación anual."
+    },
+    {
+      "name": "paciente-mx",
+      "path": "./paciente-mx",
+      "description": "Paciente / consumidor salud. Agenda multi-médico, expediente personal, tracking medicamentos, estudios laboratorio, CFDIs deducibles acumulados."
     }
   ],
-  "comingSoon": [
-    "salon-mx",
-    "veterinaria-mx",
-    "ecommerce-mx",
-    "wedding-planner-mx",
-    "agente-seguros-mx",
-    "servicios-domicilio-mx",
-    "clinica-salud-mx",
-    "restaurante-mx",
-    "inmobiliaria-mx",
-    "refaccionaria-mx",
-    "constructora-mx",
-    "despacho-legal-mx",
-    "contadores-mx",
-    "profesionista-salud-mx",
-    "microdrama-latam"
+  "specsDisenados": [
+    {
+      "name": "telemedicina-mx",
+      "spec": "docs/specs/07-vertical-telemedicina-mx.md",
+      "estado": "DRAFT — esfuerzo 280-460h"
+    },
+    {
+      "name": "nomina-pymes-mx",
+      "spec": "docs/specs/08-vertical-nomina-pymes-mx.md",
+      "estado": "DRAFT — esfuerzo 355-560h"
+    },
+    {
+      "name": "cripto-fiscal-mx",
+      "spec": "docs/specs/09-vertical-cripto-fiscal-mx.md",
+      "estado": "DRAFT — esfuerzo 255-405h"
+    },
+    {
+      "name": "educacion-particular-b2c-mx",
+      "spec": "docs/specs/10-vertical-educacion-particular-b2c-mx.md",
+      "estado": "DRAFT — esfuerzo 230-380h"
+    },
+    {
+      "name": "donatarias-ongs-mx",
+      "spec": "docs/specs/11-vertical-donatarias-ongs-mx.md",
+      "estado": "DRAFT — esfuerzo 280-450h"
+    },
+    {
+      "name": "importadores-mx",
+      "spec": "docs/specs/12-vertical-importadores-mx.md",
+      "estado": "DRAFT — esfuerzo 355-565h"
+    },
+    {
+      "name": "sucesion-empresa-familiar-mx",
+      "spec": "docs/specs/13-vertical-sucesion-empresa-familiar-mx.md",
+      "estado": "DRAFT — esfuerzo 340-555h"
+    },
+    {
+      "name": "crowdfunding-itf-mx",
+      "spec": "docs/specs/14-vertical-crowdfunding-itf-mx.md",
+      "estado": "DRAFT — esfuerzo 400-650h"
+    },
+    {
+      "name": "energia-solar-pyme-mx",
+      "spec": "docs/specs/15-vertical-energia-solar-pyme-mx.md",
+      "estado": "DRAFT — esfuerzo 250-415h"
+    }
   ]
 }

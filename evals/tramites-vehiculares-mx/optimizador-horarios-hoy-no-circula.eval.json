@@ -1,0 +1,87 @@
+[
+  {
+    "query": "hoy no circula",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "no circula mi auto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "calendario restriccion",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "hoy no circula",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "como hoy no circula",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "no circula mi auto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "como no circula mi auto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "calendario restriccion",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "como calendario restriccion",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "que es hoy",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "que es no",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "que es calendario",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-horarios-hoy-no-circula"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de optimizador-horarios-hoy-no-circula"
+  }
+]
