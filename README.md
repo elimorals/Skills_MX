@@ -2,21 +2,28 @@
 
 Monorepo de **plugins de Claude Code**, **MCP servers** y **skills standalone** para operación diaria de PyMEs y profesionistas en México. Cubre fiscal (CFDI 4.0, SAT, IMSS, INFONAVIT), pagos (TDC, OXXO, SPEI, transferencia), marketplaces (ML, Shopify, Amazon MX), municipales (CDMX, EdoMex, MTY), inmobiliaria, salud veterinaria, eventos, restaurantes, salones y más.
 
-## Estado a 2026-06-11
+## Estado a 2026-06-12 (reconciliado con filesystem)
 
-| Capa | Cantidad | Notas |
+| Capa | Cantidad real | Notas |
 |---|---|---|
-| **Plugins verticales** | 11 | core-mexico + 10 verticales |
-| **MCP servers** | 25 | Mock-first, 872 tests verdes |
-| **Workflows multinivel** | 7 | Agents + comandos slash |
-| **Skills lint-passing** | 120 | 6 `_shared/` + 114 verticales |
-| **Comandos slash** | 52+ | Distribuidos en plugins |
-| **Evals (.eval.json)** | 25 | Calibración de triggering |
-| **Fixtures de prueba** | 38 | Casos determinísticos |
-| **Scripts ejecutables** | 13 | lint, sync, hooks, crons, validadores |
-| **Documentos** | 23 | Arquitectura, roadmap, vertical guides |
+| **Plugins verticales** | **35** | core-mexico + 34 verticales (11 originales + 24 nuevos: TOP del research + áreas no cubiertas specs 07-15) |
+| **MCP servers** | **40** | Mock-first, 92 archivos de test, FastMCP + Python |
+| **Workflows declarados** | **23 (markdown)** | ⚠ 0 implementados como código ejecutable — son plantillas en `docs/` |
+| **Skills (SKILL.md)** | **275** | 6 `_shared/` + 269 distribuidos en verticales |
+| **Comandos slash** | **37 directorios `commands/`** | Distribuidos en plugins |
+| **Hooks runtime CC** | **15** | PreToolUse (5) + PostToolUse (4) + SessionStart (4) + Stop (1) + `_lib.sh` |
+| **Hook git** | **1** | pre-commit (lint + JSON + tests MCP) |
+| **Crons activos** | **2** | Banxico TCs (diario L-V) + SAT listas 69 (lunes) |
+| **Specs detallados** | **15 + `_template.md`** | docs/specs/ — 6 infraestructura/MCPs + 9 verticales |
+| **Evals (.eval.json)** | **181** | Ratio 0.66/skill (objetivo 0.8); faltan críticos: `freelance-tax-mx`, `cfdi-colegiaturas-deducibles`, `pf-anual-mx` |
+| **Fixtures de prueba** | **38** | Objetivo 50-100 |
+| **Webhook receiver** | **V1 local + 12 handlers** | FastAPI + validators + idempotency SQLite + audit JSONL; V2 deploy pendiente |
+| **Scripts ejecutables** | **13+** | lint, sync, hooks, crons, validadores |
+| **Documentación** | **25** docs | Arquitectura, roadmap, vertical guides, gap analysis, análisis profundo |
 
 ⚠ **Score honesto promedio**: 4.7/9 (scaffolding denso, lint-passing, no producción). Para llegar a 7.5/9 falta validación experta (capa 3) — ver `docs/estado-real.md` y `docs/plan-afinacion.md`.
+
+⚠ **Gap silencioso descubierto 2026-06-12**: los 23 "workflows multinivel" reportados son **plantillas markdown declarativas en `docs/`**, no código ejecutable con `Workflow.workflow()` / `phase()` / `parallel()`. Convertirlos a código real es un Tier 1 pendiente (200-300h). Ver [docs/analisis-profundo-2026-06.md](docs/analisis-profundo-2026-06.md) §3.7 y §7.
 
 ---
 
@@ -107,52 +114,88 @@ plugins-mx/
 
 ---
 
-## Plugins verticales (11)
+## Plugins verticales (35)
 
-| Plugin | Skills propios | Comandos | Casos de uso |
-|---|---|---|---|
-| **`core-mexico`** | — (hereda 6 `_shared/`) | 6 | Base obligatoria: CFDI, WA, RFC, fiscal |
-| **`freelancers-mx`** | 5 | 8 | Cotización, propuesta, cobranza, onboarding, ISR provisional, declaración anual |
-| **`agencia-marketing-mx`** | 5 | 4 | Reportes Meta Ads, copy MX, CM, brief creativo, optimización |
-| **`colegios-mx`** | 4 | 4 | Cobranza colegiaturas, comunicación padres WA, constancias SEP, CFDI D10 |
-| **`talleres-mx`** | 4 | 4 | Diagnóstico + cotización, autorización WA, garantía PROFECO, orden de trabajo |
-| **`ecommerce-mx`** | 5 | 5 | ML listings + pricing, Shopify MX, inventario multicanal, paqueterías, cierre ventas |
-| **`salon-mx`** | 5 | 4 | Agenda + no-shows, tarifario, comisiones estilistas, membresías, loyalty |
-| **`veterinaria-mx`** | 5 | 4 | Expediente clínico, vacunación, urgencias 24h, tarifario vet, recordatorios pet |
-| **`wedding-mx`** | 5 | 4 | Cotización boda, timeline D-365→D+30, proveedores, onboarding novios, contrato |
-| **`restaurante-mx`** | 5 | 4 | Ingeniería menú BCG, inventario merma, propinas (Art. 346 LFT), delivery aggregators, CFDI global |
-| **`inmobiliaria-mx`** | 5 | 4 | Contrato arrendamiento, screening inquilinos, comparables zona, ficha inmueble, comisiones |
+### Originales (11)
+
+| Plugin | Casos de uso |
+|---|---|
+| **`core-mexico`** | Base obligatoria: CFDI, WA, RFC, fiscal (hereda 6 `_shared/`) |
+| **`freelancers-mx`** | Cotización, propuesta, cobranza, onboarding, ISR provisional, declaración anual |
+| **`agencia-marketing-mx`** | Reportes Meta Ads, copy MX, CM, brief creativo, optimización |
+| **`colegios-mx`** | Cobranza colegiaturas, comunicación padres WA, constancias SEP, CFDI D10 |
+| **`talleres-mx`** | Diagnóstico + cotización, autorización WA, garantía PROFECO, orden de trabajo |
+| **`ecommerce-mx`** | ML listings + pricing, Shopify MX, inventario multicanal, paqueterías, cierre ventas |
+| **`salon-mx`** | Agenda + no-shows, tarifario, comisiones estilistas, membresías, loyalty |
+| **`veterinaria-mx`** | Expediente clínico, vacunación, urgencias 24h, tarifario vet, recordatorios pet |
+| **`wedding-mx`** | Cotización boda, timeline D-365→D+30, proveedores, onboarding novios, contrato |
+| **`restaurante-mx`** | Ingeniería menú BCG, inventario merma, propinas (Art. 346 LFT), delivery, CFDI global |
+| **`inmobiliaria-mx`** | Contrato arrendamiento, screening inquilinos, comparables zona, ficha, comisiones |
+
+### TOP del research scaffoldeados (15)
+
+| Plugin | Score research | Mercado MX |
+|---|---|---|
+| **`pf-anual-mx`** | 9.5/10 | ~5M declarantes anuales |
+| **`arrendador-residencial-mx`** | 9.3/10 | ~2M arrendadores 1-5 propiedades |
+| **`tramites-vehiculares-mx`** | 9.0/10 | ~40M vehículos (multas/predial/tenencia/refrendo) |
+| **`conductor-plataforma-mx`** | 8.8/10 | ~1M conductores Uber/DiDi (régimen 625) |
+| **`tienda-omnicanal-mx`** | 8.5/10 | ~500k tiendas (sync ML + Shopify + Amazon) |
+| **`consultorio-especialista-mx`** | 8.3/10 | ~70k especialistas privados |
+| **`clinica-salud-mx`** | 8.3/10 | ~20k clínicas privadas |
+| **`airbnb-host-mx`** | 8.2/10 | ~100k anfitriones (CFDI + ISH + régimen 625) |
+| **`notarias-mx`** | 8.0/10 | ~5.5k notarios |
+| **`despacho-contable-mx`** | 7.9/10 | ~10k despachos |
+| **`psicoterapia-mx`** | 7.8/10 | ~40k psicólogos privados |
+| **`servicios-publicos-mx`** | 7.8/10 | CFE + agua + gas + predial multi-municipio |
+| **`migracion-extranjeros-mx`** | 7.5/10 | ~1.5M residentes extranjeros |
+| **`gmm-asegurado-mx`** | 7.5/10 | ~7M pólizas GMM activas |
+| **`paciente-mx`** | 7.5/10 | Expediente médico personal agregado |
+
+### Áreas no cubiertas (specs 07-15) (9)
+
+| Plugin | Spec |
+|---|---|
+| **`telemedicina-mx`** | spec 07 — telemedicina + COFEPRIS + NOM-004 |
+| **`nomina-pymes-mx`** | spec 08 — CFDI Nómina 4.0 + IMSS-SUA-IDSE |
+| **`cripto-fiscal-mx`** | spec 09 — cripto + CARF 2026 |
+| **`educacion-particular-b2c-mx`** | spec 10 — cursos online + CFDI D10/G03 |
+| **`donatarias-ongs-mx`** | spec 11 — donatarias autorizadas + transparencia |
+| **`importadores-mx`** | spec 12 — pedimentos + IVA + IMMEX |
+| **`sucesion-empresa-familiar-mx`** | spec 13 — sucesión + donaciones + protocolo familiar |
+| **`crowdfunding-itf-mx`** | spec 14 — Ley Fintech + IFC + P2P |
+| **`energia-solar-pyme-mx`** | spec 15 — CFE bidireccional + net metering + GDMTH |
 
 ---
 
-## MCP servers (25)
+## MCP servers (40)
 
-### Mock + API REST real
+### Tier S — Producción crítica (7)
 
 | MCP | Tools | Estado |
 |---|---|---|
-| `mp_banxico` | TCs DOF, UMA, INPC, TIIE | ✅ producción |
-| `mp_facturama_extendido` | Timbrar, cancelar, búsqueda CFDI | ✅ producción |
-| `mp_mercado_pago` | Pagos, refunds, webhook HMAC | ✅ producción |
-| `mp_conekta` | Órdenes, charges, refunds, suscripciones | ✅ producción |
-| `mp_mercado_libre` | Listings, órdenes, mensajes, reputación | ✅ producción |
-| `mp_shopify_mx` | Products, inventory, orders, fulfillment | ✅ producción |
-| `mp_bitso` | Ticker, balance, ledger, fundings | ✅ producción + ISR calc |
-| `mp_curp_renapo` | Validación CURP + RENAPO | ✅ producción |
-| `mp_banxico_cep` | CLABE + CEP SPEI | ✅ producción |
-| `mp_trustly_mx` | Open banking pagos | ✅ producción |
-| `mp_clip_terminal` | POS Clip MX | ✅ producción |
-| `mp_cabify_business` | Movilidad B2B | ✅ producción |
+| `mp_banxico` | TCs DOF, UMA, INPC, TIIE | ✅ REST real |
+| `mp_facturama_extendido` | Timbrar, cancelar, búsqueda CFDI, complementos | ✅ REST real (sandbox + prod) |
+| `mp_mercado_pago` | Pagos, refunds, webhook HMAC | ✅ REST real |
+| `mp_mercado_libre` | Listings, órdenes, mensajes, reputación | ✅ REST real |
+| `mp_curp_renapo` | Validación CURP estructural + RENAPO Playwright | ✅ Estructural real, RENAPO stub |
+| `mp_banxico_cep` | CLABE + CEP SPEI | ✅ REST/form-POST |
+| `mp_sat_portal` | Padrón, 69-B EFOS, 69, CSF, Buzón, CFDI verifica | ⚠ Esqueleto Playwright + 4/11 HTTP públicos reales |
 
-### Mock + HTTP público parcial / Playwright stub
+### Tier A — Pasarelas alternativas + escritura (4)
 
-| MCP | Tools | Estado real |
+| MCP | Tools | Estado |
 |---|---|---|
-| `mp_sat_portal` | Padrón, 69-B EFOS, 69, CSF, Buzón, CFDI verifica | 4/11 públicos reales, 7 mock |
-| `mp_amazon_mx_seller` | Listings, inventory, orders, fees | Mock (LWA+AWSSig V4 no impl) |
-| `mp_aspel_contpaqi` | Pólizas, balanza, P&L, Balance General | Mock + parser CSV exports |
-| `mp_softrestaurant` | Corte Z, ventas, platillos, meseros | Mock + parser CSV exports |
-| `mp_bancos_mx` | Estado cuenta, movimientos, verificar pago | Mock (Playwright real pendiente) |
+| `mp_conekta` | Órdenes, charges, refunds, suscripciones | ✅ REST real |
+| `mp_aspel_contpaqi` | Pólizas, balanza, P&L | Mock + parser CSV exports |
+| `mp_shopify_mx` | Products, inventory, orders, fulfillment | ✅ REST real |
+| `mp_bitso` | Ticker, balance, ledger, fundings + ISR calc | ✅ REST real |
+
+### Tier B — Playwright stub mock-first (9)
+
+| MCP | Tools | Estado |
+|---|---|---|
+| `mp_bancos_mx` | Estado cuenta, movimientos, verificar pago | ⚠ Esqueleto Playwright (BBVA/Banamex/Santander/Banorte) — falta scraping real |
 | `mp_imss_patronal` | IDSE alta/baja, cédula, EMCR, SBC | Mock |
 | `mp_infonavit_patronal` | Créditos, EMIS, descuentos | Mock |
 | `mp_cdmx_municipal` | Predial, tenencia, multas, hoy no circula | Mock |
@@ -160,38 +203,104 @@ plugins-mx/
 | `mp_monterrey_municipal` | Predial AMM + multas NL + aire | Mock |
 | `mp_inmuebles24` | Buscar, detalle, comparables, publicar | Mock |
 | `mp_vivanuncios` | Multi-categoría (autos/inmuebles/empleos) | Mock |
-| `mp_buro_credito_personal` | Score, reporte, alertas — **compliance integrada** | Mock + autorización obligatoria |
+| `mp_buro_credito_personal` | Score, reporte, alertas — compliance integrada | Mock + autorización obligatoria |
+
+### Tier B — REST + parsers (5)
+
+| MCP | Tools | Estado |
+|---|---|---|
+| `mp_trustly_mx` | Open banking pagos directos | Mock + REST stub |
+| `mp_clip_terminal` | POS Clip MX | Mock + REST stub |
+| `mp_cabify_business` | Movilidad B2B + factura mensual | Mock + REST stub |
+| `mp_amazon_mx_seller` | Listings, inventory, orders, fees | Mock (LWA+AWSSig V4 no impl) |
+| `mp_softrestaurant` | Corte Z, ventas, platillos, meseros | Mock + parser CSV exports |
+
+### Delivery aggregators (3)
+
+| MCP | Estado |
+|---|---|
+| `mp_rappi_partners` | Mock (clonado de patrón mp_mercado_libre) |
+| `mp_didi_food_partners` | Mock |
+| `mp_uber_eats_partners` | Mock |
+
+### Municipales + servicios extendidos (12 nuevos)
+
+| MCP | Categoría |
+|---|---|
+| `mp_cfe_facturacion` | Servicios públicos — recibos CFE + facturación |
+| `mp_telmex_facturacion` | Servicios públicos — Telmex |
+| `mp_clabe_validador_oficial` | Identidad bancaria — CNBV reverso CLABE |
+| `mp_paypal_mx` | Pasarela alternativa |
+| `mp_klap` | POS alterno |
+| `mp_kueski` | Crédito al consumo (Buy-Now-Pay-Later) |
+| `mp_didi_partners` | Movilidad (≠ DiDi Food) |
+| `mp_guadalajara_municipal` | Predial + multas GDL |
+| `mp_merida_municipal` | Predial + multas Mérida |
+| `mp_puebla_municipal` | Predial + multas Puebla |
+| `mp_queretaro_municipal` | Predial + multas Querétaro |
+| `mp_tijuana_municipal` | Predial + multas Tijuana |
 
 Detalles en `mcp-servers/README.md`.
 
 ---
 
-## Workflows multinivel (7)
+## Workflows multinivel (23 declarados / 0 ejecutables)
 
-| # | Workflow | Plugin | Comando |
+⚠ **Gap descubierto 2026-06-12**: los workflows existen como **plantillas markdown declarativas** en `docs/specs/`, `docs/flujos-operativos.md` y `plugins-mx-planeacion-mcps-agentica.md §7`. Para ser ejecutables deberían ser scripts del skill `Workflow` con sintaxis `phase()` / `parallel()` / `pipeline()`. Ver [docs/analisis-profundo-2026-06.md](docs/analisis-profundo-2026-06.md) §3.7.
+
+### Workflows declarados
+
+| # | Workflow | Plugin/spec | Comando declarado |
 |---|---|---|---|
 | 1 | `cfdi-emision-completa` | core-mexico | `/core:emitir-y-notificar` |
 | 2 | `pago-conciliacion` | core-mexico | `/core:conciliar-pago` |
 | 3 | `cobranza-multinivel` | freelancers-mx | `/freelancers:cobranza-mensual` |
 | 4 | `cierre-fiscal-mensual` | core-mexico | `/freelancers:cierre-fiscal` |
-| 5 | `due-diligence-cliente` | core-mexico | `/core:due-diligence` |
+| 5 | `due-diligence-cliente-nuevo` | core-mexico | `/core:due-diligence` |
 | 6 | `sync-multicanal` | ecommerce-mx | `/ecommerce:sync-inventario` |
-| 7 | `pf-anual-completa` | core-mexico | `/freelancers:declaracion-anual` |
+| 7 | `pf-anual-completa` | pf-anual-mx | `/pf-anual:completa` |
+| 8 | `monitoreo-diario-vehicular` | tramites-vehiculares-mx | cron-driven |
+| 9 | `respuesta-crisis-cm` | agencia-marketing-mx | manual |
+| 10 | `conciliacion-bancaria-mensual` | freelancers-mx | cron día 14 |
+| 11-23 | Variantes por vertical (cobranza-renta, telemedicina-consulta, donativo-anual, etc.) | Específicos | — |
 
-Cada workflow coordina 3-6 MCPs + skills + bitácora trazable.
+**Esfuerzo para convertir todos a código ejecutable**: ~200-300h (25-40h por workflow × 8 prioritarios).
 
 ---
 
 ## Hooks + crons activos
 
-### Hooks de git
+### Hooks git (1)
 - `pre-commit`: lint-skills.sh + validación JSON + tests MCP (vía `scripts/pre-commit.sh`)
+
+### Hooks runtime Claude Code (15)
+
+Configurados en `.claude/settings.json` + scripts en `scripts/hooks/`:
+
+| Tipo | Hooks |
+|---|---|
+| **PreToolUse** (5) | `pre-timbrado-validation`, `confirmar-envio-masivo-wa`, `validar-cfdi-payload`, `validar-ficha-cliente`, `bitacora-mcp-calls` |
+| **PostToolUse** (4) | `backup-cfdi-automatico`, `alert-cancelaciones-frecuentes`, `actualizar-tc-banxico`, `sincronizar-shared-post-edit` |
+| **SessionStart** (4) | `contexto-inicial-sesion` (orquestador), `dashboard-cobranza-pendiente`, `alerta-pago-provisional`, `cfdi-vencimientos` |
+| **Stop** (1) | `cleanup-sesion` |
+| **Shared lib** | `_lib.sh` |
+| **Test** | `test-all-hooks.sh` (18/18 invocaciones OK) |
 
 ### Crons configurados (macOS launchd + Linux crontab)
 - **Diario L-V 10:00** — `refresh-banxico-tcs.sh` (TCs DOF USD/EUR/GBP/CAD/JPY)
 - **Lunes 09:00** — `refresh-sat-listas-69.sh` (69-B EFOS + 69 incumplidos)
+- ⚠ **Pendientes**: ~28 crons del plan (cobranza-recurrente, pre-cierre-fiscal, dashboard-semanal, etc.)
 
 Configurar con `bash scripts/install-hooks.sh` (git hooks) + cargar plist macOS o `crontab.linux`.
+
+### Webhook receiver (V1 local)
+- FastAPI app en `webhooks/app/`
+- 12 handlers: Stripe, MP, Conekta, Facturama, Meta WhatsApp, GitHub, Calendly, Typeform, ML, Banxico CEP, IMSS, CONDUSEF
+- Validators HMAC + Bearer + IP allowlist
+- Idempotencia SQLite + memoria
+- Audit log JSONL append-only
+- Tests: 29/29 pasando
+- ⚠ **V2 pendiente**: deploy producción HTTPS público + retry queue async
 
 ---
 
