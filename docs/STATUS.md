@@ -101,10 +101,7 @@ Después de specs: codificar los 3 (en este orden).
 
 #### Playwright real (path completo)
 - [~] `mp_sat_portal` Playwright real — **ESQUELETO CODIFICADO 2026-06-12**: `efirma_loader.py` + `playwright_client.py` + 20 tests; falta scraping selectores reales (humano). Setup: `mcp-servers/mp_sat_portal/SETUP_PLAYWRIGHT_REAL.md`
-- [ ] `mp_bancos_mx` Playwright real BBVA — 60-100h — **REQUIERE SPEC** → `docs/specs/03-bancos-mx-playwright-real.md`
-- [ ] `mp_bancos_mx` Playwright real Banamex — 60-100h
-- [ ] `mp_bancos_mx` Playwright real Santander — 60-100h
-- [ ] `mp_bancos_mx` Playwright real Banorte — 60-100h
+- [~] `mp_bancos_mx` Playwright real 4 bancos — **ESQUELETO CODIFICADO 2026-06-12**: base class + 4 drivers (BBVA, Banamex, Santander, Banorte) + schema `Movimiento` + helper TOTP Banorte + 12 tests; falta `_real_login()` y scraping (humano). Setup: `mcp-servers/mp_bancos_mx/SETUP_PLAYWRIGHT_REAL.md`
 - [ ] `mp_imss_patronal` Playwright real con e.firma — 100-150h
 - [ ] `mp_infonavit_patronal` Playwright real — 60-100h
 
