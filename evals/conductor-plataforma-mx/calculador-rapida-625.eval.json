@@ -1,0 +1,22 @@
+[
+  {"query": "ISR conductor Uber régimen 625", "should_trigger": true, "rationale": "Régimen 625 plataformas — match directo"},
+  {"query": "DiDi cálculo impuesto mensual", "should_trigger": true, "rationale": "DiDi régimen 625"},
+  {"query": "retención plataforma definitiva o acumular", "should_trigger": true, "rationale": "Decisión clave del régimen 625"},
+  {"query": "deducciones gasolina conductor", "should_trigger": true, "rationale": "Deducciones específicas conductor"},
+  {"query": "ISR Uber definitiva", "should_trigger": true, "rationale": "Modalidad definitiva del 625"},
+  {"query": "retención 2.1% conductor", "should_trigger": true, "rationale": "Tasa retención Uber"},
+  {"query": "Uber Eats repartidor impuestos", "should_trigger": true, "rationale": "Repartidor también 625"},
+  {"query": "conductor plataforma anual declaración", "should_trigger": true, "rationale": "Decisión anual del régimen"},
+  {"query": "régimen 625 ingresos por plataformas tecnológicas", "should_trigger": true, "rationale": "Nombre completo del régimen"},
+  {"query": "ISR rappi conductor", "should_trigger": true, "rationale": "Rappi conductor"},
+  {"query": "ISR sueldos asalariado", "should_trigger": false, "rationale": "Régimen 605, no 625"},
+  {"query": "factura cliente directo", "should_trigger": false, "rationale": "PFAE, no plataforma"},
+  {"query": "RESICO 1.25%", "should_trigger": false, "rationale": "RESICO PF, no 625"},
+  {"query": "anual pf-anual-mx", "should_trigger": false, "rationale": "Workflow anual, no skill cálculo conductor"},
+  {"query": "cobranza cliente", "should_trigger": false, "rationale": "Cobranza, no conductor"},
+  {"query": "freelance tax", "should_trigger": false, "rationale": "Régimen 612 o 626, no 625"},
+  {"query": "agente seguros comisiones", "should_trigger": false, "rationale": "Otro régimen"},
+  {"query": "predial CDMX", "should_trigger": false, "rationale": "Impuesto municipal"},
+  {"query": "IVA mensual general", "should_trigger": false, "rationale": "IVA, no ISR 625"},
+  {"query": "honorarios médicos", "should_trigger": false, "rationale": "Otro tipo de ingreso"}
+]

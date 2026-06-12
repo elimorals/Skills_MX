@@ -1,0 +1,35 @@
+{
+  "name": "Reclamo garantía — Caso A cubierto (refacción falló en plazo, atender sin costo)",
+  "input": {
+    "ot_original": "OT-2026-0342",
+    "motivo_reclamo": "Ruido al frenar reapareció a los 45 días",
+    "fecha_reclamo": "2026-07-27",
+    "cliente_contacto": "+5215512345678",
+    "gravedad": "media"
+  },
+  "simulated_state": {
+    "ot_original_data": {
+      "fecha_entrega": "2026-06-12",
+      "garantia_refacciones_dias": 90,
+      "servicios": ["Cambio pastillas Brembo P85046"]
+    }
+  },
+  "expected_phases_completed": [
+    "Validar vigencia", "Diagnóstico", "Comunicación", "Resolución", "Documentación"
+  ],
+  "expected_output_approximate": {
+    "vigencia_aplicable": true,
+    "plazo_restante_dias_aprox": 45,
+    "caso": "A",
+    "costo_cliente": 0,
+    "proteccion_profeco_armada": true,
+    "documentos_generados": ["reclamo.json", "vigencia.json", "diagnostico.json", "comunicacion-cliente.json", "resolucion.json", "defensa-profeco.md"]
+  },
+  "validations": [
+    "Vigencia: 45 días post-entrega < 90 días plazo refacciones → SI cubierto",
+    "Caso A → reparación sin costo al cliente",
+    "Mensaje al cliente cordial confirmando reparación gratis",
+    "Defensa PROFECO documentada con todo el flujo",
+    "Bitácora WA archivada para futura referencia"
+  ]
+}

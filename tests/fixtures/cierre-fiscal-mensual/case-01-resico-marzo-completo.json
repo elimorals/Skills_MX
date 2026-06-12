@@ -1,0 +1,27 @@
+{
+  "name": "Cierre fiscal RESICO PF — marzo 2026 sin alertas críticas",
+  "input": {
+    "rfc": "MAJG800101XYZ",
+    "ejercicio": 2026,
+    "mes": 3,
+    "regimen": "RESICO_PF",
+    "incluir_buzon": true
+  },
+  "expected_phases_completed": ["Recopilación", "Cruce", "Detección", "Cálculo", "Validación", "Output"],
+  "expected_output_approximate": {
+    "pago_provisional": {
+      "isr_calculado_aprox": 1500,
+      "tasa_aplicada": "1.5%",
+      "vigencia_validada": false,
+      "fecha_limite": "2026-04-17"
+    },
+    "alertas_count_max": 2,
+    "reportes_generados": ["fiscal/2026-03-pago-provisional.md", "fiscal/2026-03-alertas.md"]
+  },
+  "validations": [
+    "Pago provisional con tasa de RESICO PF aplicada",
+    "Fecha límite día 17 mes siguiente",
+    "vigencia_validada=false (pendiente contador)",
+    "Sin alertas críticas para caso happy path"
+  ]
+}

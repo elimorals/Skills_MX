@@ -1,0 +1,30 @@
+{
+  "name": "Emisión CFDI tras pago Stripe a público en general",
+  "input": {
+    "source": "stripe",
+    "event_id": "evt_test_001",
+    "monto": 850.00,
+    "fecha_pago": "2026-06-12",
+    "external_reference": "ORD-2026-042",
+    "cliente_rfc": null,
+    "cliente_email": null,
+    "cliente_wa": null
+  },
+  "expected_phases_completed": ["Lookup cliente", "Validar deducibilidad", "Emisión", "Distribución"],
+  "expected_output_approximate": {
+    "cfdi_uuid_generado": true,
+    "cliente_rfc": "XAXX010101000",
+    "monto": 850,
+    "enviado_wa": false,
+    "enviado_email": false,
+    "persistido": true
+  },
+  "validations": [
+    "Cliente RFC = XAXX010101000 (público en general) cuando no se especifica",
+    "UsoCFDI default G03",
+    "MetodoPago PUE (ya cobrado vía Stripe)",
+    "FormaPago = 04 (TDC vía Stripe)",
+    "CFDI persistido en filesystem",
+    "No envío WA/email cuando no hay contactos"
+  ]
+}

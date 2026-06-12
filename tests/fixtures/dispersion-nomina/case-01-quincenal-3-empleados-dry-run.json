@@ -1,0 +1,40 @@
+{
+  "name": "Dispersión nómina quincenal 3 empleados — modo dry-run (sin tocar banco)",
+  "input": {
+    "periodo": "2026-Q12",
+    "tipo": "ordinaria",
+    "empresa_rfc": "TVE850301XYZ",
+    "dry_run": true
+  },
+  "simulated_state": {
+    "empresa": {
+      "csd_vigente": true,
+      "efirma_vigente": true,
+      "cuenta_bancaria_ok": true
+    },
+    "empleados": [
+      {"rfc": "AAA800101A11", "nombre": "Ana", "sueldo_quincenal": 8000, "isr": 320, "imss": 190, "neto": 7490, "clabe": "012180001234567890"},
+      {"rfc": "BBB820505B22", "nombre": "Beto", "sueldo_quincenal": 12000, "isr": 720, "imss": 285, "neto": 10995, "clabe": "012180009876543210"},
+      {"rfc": "CCC780915C33", "nombre": "Carla", "sueldo_quincenal": 15000, "isr": 1050, "imss": 356, "neto": 13594, "clabe": "012180005432167890"}
+    ]
+  },
+  "expected_phases_completed": [
+    "Validación empresa", "Cálculo empleados", "Timbrado CFDIs",
+    "Lote SPEI", "Dispersión", "Bitácora"
+  ],
+  "expected_output_approximate": {
+    "empleados_procesados": 3,
+    "cfdis_timbrados": 3,
+    "total_neto_dispersado": 32079,
+    "dry_run": true,
+    "dispersion_ejecutada": false
+  },
+  "validations": [
+    "dry_run=true por DEFAULT (seguridad)",
+    "Dispersión NO ejecutada en dry_run",
+    "Lote SPEI construido pero archivo guardado sin enviar",
+    "CFDIs timbrados por cada empleado",
+    "CLABEs validadas antes de incluir en lote",
+    "Bitácora completa de cada empleado"
+  ]
+}
