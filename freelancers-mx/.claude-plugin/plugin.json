@@ -39,7 +39,8 @@
     "commands/onboarding.md",
     "commands/pago-provisional.md",
     "commands/cobranza-mensual.md",
-    "commands/cierre-fiscal.md"
+    "commands/cierre-fiscal.md",
+    "commands/declaracion-anual.md"
   ],
   "agents": [
     "agents/auditor-fiscal-mensual.md",
