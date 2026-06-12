@@ -1,0 +1,45 @@
+{
+  "name": "salon-mx",
+  "displayName": "Salon MX — Estéticas, spas, barberías premium",
+  "description": "Plugin para salones de belleza, estéticas, spas y barberías en México. Cubre gestión de agenda (citas, no-shows, walk-ins), tarifario por servicio con cálculo de comisiones por estilista, paquetes y membresías recurrentes, recordatorios WhatsApp para no-shows, retención de clientes con programa de loyalty, y emisión de CFDI por servicio. Construido sobre core-mexico.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elias",
+    "email": "elias@cipreholding.com"
+  },
+  "keywords": [
+    "salon",
+    "estetica",
+    "spa",
+    "barberia",
+    "belleza",
+    "mexico",
+    "agenda-citas",
+    "comisiones-estilistas",
+    "loyalty",
+    "no-shows"
+  ],
+  "skills": [
+    "skills/agenda-citas-salon",
+    "skills/servicios-tarifario",
+    "skills/comisiones-estilistas",
+    "skills/paquetes-membresia",
+    "skills/retencion-clientes-loyalty",
+    "skills/cfdi-emision",
+    "skills/iva-retenciones-mx",
+    "skills/rfc-validacion",
+    "skills/whatsapp-business-mx",
+    "skills/compliance-lfpdppp",
+    "skills/mxn-formato"
+  ],
+  "commands": [
+    "commands/agendar-cita.md",
+    "commands/cierre-dia-salon.md",
+    "commands/recordatorio-no-show.md",
+    "commands/calcular-comisiones.md"
+  ],
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "requires": ["core-mexico"]
+  }
+}
