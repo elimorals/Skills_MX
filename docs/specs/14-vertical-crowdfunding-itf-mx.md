@@ -2,7 +2,7 @@
 spec: "vertical-crowdfunding-itf-mx"
 estado: "DRAFT"
 creado: "2026-06-12"
-autor: "Elias"
+autor: "Elías Rashid Morales Mendoza"
 ultima_actualizacion: "2026-06-12"
 esfuerzo_estimado_horas: [350, 580]
 prioridad: "tier-3"

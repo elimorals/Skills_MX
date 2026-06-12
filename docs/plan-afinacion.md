@@ -4,7 +4,7 @@ Roadmap concreto semana a semana para llevar cada vertical de **4.5/9 puntos** (
 
 ## Supuestos del plan
 
-- Trabajas tú (Elias) en estos plugins **part-time**, ~10-15 horas/semana por vertical activo.
+- Trabajas tú (Elías Rashid) en estos plugins **part-time**, ~10-15 horas/semana por vertical activo.
 - No hay equipo todavía; cuando aparezca, los plazos se reducen.
 - Se prioriza UN vertical a la vez para no diluir esfuerzo.
 - Conseguir partner del sector toma ~2-4 semanas en paralelo a la afinación técnica.

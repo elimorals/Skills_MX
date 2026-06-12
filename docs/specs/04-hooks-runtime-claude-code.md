@@ -2,7 +2,7 @@
 spec: "hooks-runtime-claude-code"
 estado: "DRAFT"
 creado: "2026-06-11"
-autor: "Elias"
+autor: "Elías Rashid Morales Mendoza"
 ultima_actualizacion: "2026-06-11"
 esfuerzo_estimado_horas: [40, 80]
 prioridad: "tier-1"

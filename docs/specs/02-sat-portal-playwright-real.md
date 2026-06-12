@@ -2,7 +2,7 @@
 spec: "sat-portal-playwright-real"
 estado: "DRAFT"
 creado: "2026-06-11"
-autor: "Elias"
+autor: "Elías Rashid Morales Mendoza"
 ultima_actualizacion: "2026-06-11"
 esfuerzo_estimado_horas: [100, 200]
 prioridad: "tier-1"
