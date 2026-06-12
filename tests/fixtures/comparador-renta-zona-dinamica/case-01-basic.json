@@ -1,0 +1,17 @@
+{
+  "name": "comparador-renta-zona-dinamica - caso basico de regresion",
+  "pattern_template": "generic",
+  "input": {
+    "parametros_basicos": {}
+  },
+  "expected_output": {
+    "output_estructurado": true,
+    "completitud_minima": true
+  },
+  "validations": [
+    "Output cumple schema esperado",
+    "Documentacion de validez",
+    "Marca incertidumbres"
+  ],
+  "notes": "Fixture generado con plantilla. Reemplazar input/expected con caso real al validarse el primer caso real de produccion."
+}

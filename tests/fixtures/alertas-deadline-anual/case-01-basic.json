@@ -1,0 +1,20 @@
+{
+  "name": "alertas-deadline-anual - caso basico de regresion",
+  "pattern_template": "recordatorio",
+  "input": {
+    "evento": "pago_provisional",
+    "fecha_evento": "2026-07-17",
+    "canal": "whatsapp"
+  },
+  "expected_output": {
+    "recordatorios_programados": true,
+    "cadencia_correcta": true,
+    "mensaje_personalizado": true
+  },
+  "validations": [
+    "Cadencia anti-spam",
+    "Personalizacion por destinatario",
+    "Canal aprobado/opt-in"
+  ],
+  "notes": "Fixture generado con plantilla. Reemplazar input/expected con caso real al validarse el primer caso real de produccion."
+}

@@ -1,0 +1,22 @@
+{
+  "name": "agenda-cuidadores - caso basico de regresion",
+  "pattern_template": "agenda",
+  "input": {
+    "fecha": "2026-07-15",
+    "duracion_minutos": 30,
+    "tipo": "primera_vez",
+    "cliente_id": "CLI001"
+  },
+  "expected_output": {
+    "slot_asignado": true,
+    "recordatorio_programado": true,
+    "conflictos_revisados": true,
+    "confirmacion_enviada_canal": "whatsapp"
+  },
+  "validations": [
+    "Slot dentro de horario laboral",
+    "Buffer entre citas respetado",
+    "Sin conflictos con citas existentes"
+  ],
+  "notes": "Fixture generado con plantilla. Reemplazar input/expected con caso real al validarse el primer caso real de produccion."
+}

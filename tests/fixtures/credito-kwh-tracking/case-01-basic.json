@@ -1,0 +1,20 @@
+{
+  "name": "credito-kwh-tracking - caso basico de regresion",
+  "pattern_template": "tracker",
+  "input": {
+    "entidad_id": "E001",
+    "estado_actual": "inicial",
+    "historico": []
+  },
+  "expected_output": {
+    "estado_actualizado": true,
+    "siguiente_revision_agendada": true,
+    "alertas_si_estancado": true
+  },
+  "validations": [
+    "Estado bien definido",
+    "Tiempo objetivo por etapa",
+    "Escalacion si excede tiempo"
+  ],
+  "notes": "Fixture generado con plantilla. Reemplazar input/expected con caso real al validarse el primer caso real de produccion."
+}
