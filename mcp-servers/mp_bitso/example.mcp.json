@@ -1,0 +1,17 @@
+{
+  "_comment": "Configuración mp_bitso. Endpoints públicos (ticker, order_book, available_books) corren sin auth. Endpoints privados (balance, ledger, fundings) requieren BITSO_API_KEY + BITSO_API_SECRET. Sandbox vía BITSO_ENV=sandbox. Sin credenciales corre 100% mock.",
+  "mcpServers": {
+    "bitso": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_bitso.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "BITSO_API_KEY": "${BITSO_API_KEY:-}",
+        "BITSO_API_SECRET": "${BITSO_API_SECRET:-}",
+        "BITSO_ENV": "${BITSO_ENV:-production}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}
