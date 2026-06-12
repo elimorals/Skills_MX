@@ -15,6 +15,7 @@ Mapa completo de la documentación del monorepo. Si llegas nuevo, empieza por **
 | Documento | Propósito |
 |---|---|
 | [estado-real.md](estado-real.md) | Auditoría honesta: score 4.7/9 promedio, riesgo por skill |
+| [gap-analysis-2026-06.md](gap-analysis-2026-06.md) | Gap vs planeación original: 6 MCPs, 15 verticales, 13 hooks, 28 crons, 12 webhooks faltantes (~7,780-10,740h) |
 | [plan-afinacion.md](plan-afinacion.md) | Roadmap 36 semanas para llevar a producción-grade |
 | [roadmap.md](roadmap.md) | Visión a 12 meses: nuevos verticales, integraciones, ecosistema |
 
