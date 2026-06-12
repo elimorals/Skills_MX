@@ -1,0 +1,18 @@
+{
+  "_comentario": "Cuotas IMSS obrero-patronales — ejercicio 2026. % sobre SBC (Salario Base de Cotización). VALIDAR contra LSS vigente.",
+  "factor_integracion_minimo": 1.0452,
+  "uma_diario_2026": 113.14,
+  "sbc_minimo_diario": 248.93,
+  "sbc_maximo_diario_25_umas": 2828.50,
+  "ramos": {
+    "enfermedades_y_maternidad_prestaciones_en_especie_obrero": {"pct_obrero": 0.0025, "pct_patron_fijo_sbc": 0.0204},
+    "enfermedades_y_maternidad_prestaciones_dinero": {"pct_obrero": 0.0025, "pct_patron": 0.0070},
+    "invalidez_y_vida": {"pct_obrero": 0.00625, "pct_patron": 0.01750},
+    "riesgos_de_trabajo": {"pct_obrero": 0.0000, "pct_patron_variable_clase": "0.50% a 7.58% según clase"},
+    "guarderias_y_prestaciones_sociales": {"pct_obrero": 0.0000, "pct_patron": 0.0100},
+    "retiro": {"pct_obrero": 0.0000, "pct_patron": 0.0200},
+    "cesantia_y_vejez": {"pct_obrero": 0.01125, "pct_patron": 0.03150}
+  },
+  "infonavit": {"pct_obrero": 0.0000, "pct_patron": 0.0500},
+  "advertencia": "Cuotas cambian anualmente. Validar enero de cada año contra LSS vigente."
+}
