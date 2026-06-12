@@ -1,0 +1,17 @@
+{
+  "_comment": "MCPs para ecommerce-mx. Hereda core-mexico (banxico, facturama, mercadopago, conekta, sat_portal, mercadolibre, banxico_cep, aspel_contpaqi, curp_renapo) y agrega mp_shopify_mx específico del vertical.",
+  "mcpServers": {
+    "shopify_mx": {
+      "_comment": "MCP propio mp_shopify_mx: wrapper específico MX sobre Shopify Admin API. Sin SHOPIFY_ACCESS_TOKEN corre mock. Define SHOPIFY_SHOP=mitienda.myshopify.com y SHOPIFY_ACCESS_TOKEN para path real.",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_shopify_mx.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "SHOPIFY_SHOP": "${SHOPIFY_SHOP:-}",
+        "SHOPIFY_ACCESS_TOKEN": "${SHOPIFY_ACCESS_TOKEN:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}

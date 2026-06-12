@@ -36,7 +36,8 @@
   "agents": [
     "agents/validador-cfdi-batch.md",
     "agents/workflow-cfdi-emision-completa.md",
-    "agents/workflow-pago-conciliacion.md"
+    "agents/workflow-pago-conciliacion.md",
+    "agents/workflow-cierre-fiscal-mensual.md"
   ],
   "compatibility": {
     "claudeCode": ">=1.0.0"

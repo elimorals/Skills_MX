@@ -38,7 +38,8 @@
     "commands/cobranza.md",
     "commands/onboarding.md",
     "commands/pago-provisional.md",
-    "commands/cobranza-mensual.md"
+    "commands/cobranza-mensual.md",
+    "commands/cierre-fiscal.md"
   ],
   "agents": [
     "agents/auditor-fiscal-mensual.md",
