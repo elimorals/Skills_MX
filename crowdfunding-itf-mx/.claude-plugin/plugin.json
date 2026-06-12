@@ -1,0 +1,37 @@
+{
+  "name": "crowdfunding-itf-mx",
+  "displayName": "Crowdfunding ITF MX",
+  "description": "Plugin para participantes en plataformas IFC (Instituciones Financiamiento Colectivo) reguladas por Ley Fintech. Cubre 3 perfiles: emprendedor solicitante, inversor P2P, operador IFC. Comparador plataformas, fiscal rendimientos, tope $100k PF, compliance CNBV. Score 7.5/10.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
+  },
+  "keywords": [
+    "crowdfunding",
+    "IFC",
+    "Ley-Fintech",
+    "CNBV",
+    "P2P",
+    "ITF",
+    "tope-100k"
+  ],
+  "skills": [
+    "skills/dashboard-portfolio-p2p",
+    "skills/simulador-costo-financiamiento-cf",
+    "skills/catalogo-ifc-autorizadas",
+    "skills/fiscal-rendimientos-p2p",
+    "skills/compliance-tope-100k-pf"
+  ],
+  "commands": [
+    "commands/dashboard.md",
+    "commands/simulador.md",
+    "commands/catalogo.md",
+    "commands/fiscal.md"
+  ],
+  "dependencies": {
+    "plugins": [
+      "core-mexico"
+    ]
+  }
+}

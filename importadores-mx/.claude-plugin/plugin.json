@@ -1,0 +1,38 @@
+{
+  "name": "importadores-mx",
+  "displayName": "Importadores MX",
+  "description": "Plugin para PYMES importadoras: cotizador pre-importación (IGI + IVA + DTA + prevalidación), catálogo TIGIE, comparador INCOTERMS, tracking pedimentos, acreditación IVA, compliance padrón importadores, IMMEX básico. Score 7.5/10. Mercado: 50k importadores.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
+  },
+  "keywords": [
+    "importador",
+    "pedimento",
+    "TIGIE",
+    "INCOTERMS",
+    "IVA-importacion",
+    "IMMEX",
+    "RGCE",
+    "agente-aduanal"
+  ],
+  "skills": [
+    "skills/cotizador-pre-importacion",
+    "skills/catalogo-tigie-busqueda",
+    "skills/comparador-incoterms",
+    "skills/pedimento-tracker",
+    "skills/acreditacion-iva-importacion"
+  ],
+  "commands": [
+    "commands/cotizador.md",
+    "commands/catalogo.md",
+    "commands/comparador.md",
+    "commands/pedimento.md"
+  ],
+  "dependencies": {
+    "plugins": [
+      "core-mexico"
+    ]
+  }
+}

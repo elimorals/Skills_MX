@@ -1,0 +1,37 @@
+{
+  "name": "sucesion-empresa-familiar-mx",
+  "displayName": "Sucesión y Empresa Familiar MX",
+  "description": "Plugin para familias mexicanas con patrimonio significativo: diagnóstico patrimonial, simulador donación vs herencia vs trust, cálculo ISR donaciones por relación familiar (cónyuges + ascendientes/descendientes EXENTOS), plan testamentario, protocolo familiar. Score 7.5/10. Mercado: ~500k familias.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
+  },
+  "keywords": [
+    "sucesion",
+    "herencia",
+    "donacion",
+    "testamento",
+    "empresa-familiar",
+    "Art-93-LISR",
+    "patrimonio"
+  ],
+  "skills": [
+    "skills/diagnostico-patrimonial-familiar",
+    "skills/simulador-donacion-vs-herencia",
+    "skills/calculo-isr-donaciones",
+    "skills/plan-testamentario-distribucion",
+    "skills/protocolo-familiar-template"
+  ],
+  "commands": [
+    "commands/diagnostico.md",
+    "commands/simulador.md",
+    "commands/calculo.md",
+    "commands/plan.md"
+  ],
+  "dependencies": {
+    "plugins": [
+      "core-mexico"
+    ]
+  }
+}

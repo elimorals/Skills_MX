@@ -1,0 +1,38 @@
+{
+  "name": "educacion-particular-b2c-mx",
+  "displayName": "Educación Particular B2C MX",
+  "description": "Plugin para creadores de cursos online B2C en México (tutores, academias, bootcamps, coaches). Inscripción alumnos, CFDI mensual G03 (o D10 con IEDU si RVOE), cobranza recurrente, tracking progreso, certificados PDF. Score 7.5/10. Mercado: 80k creadores.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
+  },
+  "keywords": [
+    "cursos",
+    "tutor",
+    "academia",
+    "online",
+    "G03",
+    "D10",
+    "IEDU",
+    "B2C"
+  ],
+  "skills": [
+    "skills/dashboard-academia-online",
+    "skills/inscripcion-alumno-curso",
+    "skills/cfdi-mensualidad-curso",
+    "skills/cobranza-recurrente-cursos",
+    "skills/emision-certificado-pdf"
+  ],
+  "commands": [
+    "commands/dashboard.md",
+    "commands/inscripcion.md",
+    "commands/cfdi.md",
+    "commands/cobranza.md"
+  ],
+  "dependencies": {
+    "plugins": [
+      "core-mexico"
+    ]
+  }
+}
