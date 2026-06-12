@@ -1,0 +1,46 @@
+{
+  "name": "pf-anual-mx",
+  "displayName": "Declaración Anual PF — México",
+  "description": "Plugin dedicado para la declaración anual ISR de personas físicas en México. Cubre los 3 regímenes principales (PFAE 612, RESICO PF 626, Asalariado+honorarios 605+612). Orquesta recopilación masiva de CFDIs del año via mp_sat_portal, identificación automática de deducciones personales aplicables (Art. 151 LISR), cálculo ISR con tarifa Art. 96, cruces con bancos para detectar depósitos sin facturar, y generación de borrador presentable. Genera revenue desde abril (deadline 30 abril). Mercado: ~5M declarantes anuales obligados. Score original del research: 9.5/10.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elias",
+    "email": "elias@cipreholding.com"
+  },
+  "keywords": [
+    "declaracion-anual",
+    "ISR",
+    "PFAE",
+    "RESICO",
+    "deducciones-personales",
+    "mexico",
+    "SAT",
+    "Art.151",
+    "Art.96-LISR"
+  ],
+  "skills": [
+    "skills/dashboard-anual-fiscal",
+    "skills/recopilar-cfdis-anuales",
+    "skills/cruzar-bancos-vs-cfdis",
+    "skills/identificar-deducciones-personales",
+    "skills/calculadora-isr-anual",
+    "skills/generar-borrador-declaracion",
+    "skills/seguimiento-devolucion-sat",
+    "skills/alertas-deadline-anual"
+  ],
+  "commands": [
+    "commands/dashboard.md",
+    "commands/recopilar.md",
+    "commands/calcular.md",
+    "commands/borrador.md",
+    "commands/status-devolucion.md"
+  ],
+  "agents": [
+    "agents/workflow-pf-anual-completa.md"
+  ],
+  "dependencies": {
+    "plugins": [
+      "core-mexico"
+    ]
+  }
+}
