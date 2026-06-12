@@ -1,0 +1,47 @@
+{
+  "name": "arrendador-residencial-mx",
+  "displayName": "Arrendador Residencial MX",
+  "description": "Plugin dedicado al arrendador residencial mexicano (PF dueño de 1-10 propiedades). Distinto a inmobiliaria-mx (corredores): aquí el usuario es el dueño directo. Cubre screening de inquilinos con Buró de Crédito (con autorización LFPDPPP), contrato CCDF/CCF residencial, cobranza mensual escalada (sin quemar la relación continua), CFDI mensual uso D04 (casa habitación) régimen 612 o 626, actualización anual de renta por INPC, tracking de gastos deducibles (predial, mantenimiento), y cierre de contrato. Score original del research: 9.3/10. Mercado: ~2M arrendadores.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elias",
+    "email": "elias@cipreholding.com"
+  },
+  "keywords": [
+    "arrendamiento",
+    "arrendador",
+    "renta",
+    "inquilino",
+    "residencial",
+    "mexico",
+    "CCDF",
+    "INPC",
+    "buro-credito",
+    "uso-D04"
+  ],
+  "skills": [
+    "skills/dashboard-propiedades",
+    "skills/screening-inquilino-completo",
+    "skills/contrato-arrendamiento-residencial",
+    "skills/cobranza-mensual-renta",
+    "skills/cfdi-arrendamiento-mensual",
+    "skills/actualizacion-renta-anual",
+    "skills/gastos-deducibles-propiedad",
+    "skills/cierre-contrato-checklist"
+  ],
+  "commands": [
+    "commands/dashboard.md",
+    "commands/screening.md",
+    "commands/contrato.md",
+    "commands/facturar-mes.md",
+    "commands/cobranza.md"
+  ],
+  "agents": [
+    "agents/workflow-cobranza-renta-mensual.md"
+  ],
+  "dependencies": {
+    "plugins": [
+      "core-mexico"
+    ]
+  }
+}
