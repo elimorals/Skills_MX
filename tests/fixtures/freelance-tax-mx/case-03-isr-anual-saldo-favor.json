@@ -1,0 +1,36 @@
+{
+  "name": "Declaración anual PFAE — Saldo a favor por sobre-pagar provisionales",
+  "input": {
+    "rfc": "MAJG800101XYZ",
+    "ejercicio": 2025,
+    "regimen": "PFAE_612",
+    "ingresos_acumulables_anuales_mxn": 1200000.00,
+    "deducciones_acumulables_anuales_mxn": 280000.00,
+    "deducciones_personales_anuales_mxn": 145000.00,
+    "pagos_provisionales_acumulados_mxn": 165000.00,
+    "isr_retenido_acumulado_mxn": 24000.00
+  },
+  "expected_output": {
+    "calculo_anual": {
+      "utilidad_fiscal_mxn": 775000.00,
+      "isr_anual_calculado_mxn": 161250.00,
+      "pagos_provisionales_mxn": 165000.00,
+      "isr_retenido_mxn": 24000.00,
+      "diferencia_mxn": -27750.00,
+      "resultado": "SALDO_A_FAVOR_27750"
+    },
+    "siguientes_pasos": [
+      "Solicitar devolución vía portal SAT",
+      "Adjuntar todos los CFDIs deducidos",
+      "Tiempo estimado devolución: 40-60 días naturales",
+      "SAT puede solicitar aclaraciones para montos > $50k"
+    ],
+    "advertencias": [
+      "Vigencia tarifas validar 2025",
+      "Deducciones personales topadas a 5 UMAs anuales o 15% ingresos (lo menor)"
+    ],
+    "vigencia_validada": false
+  },
+  "fuente_verificacion": "LISR Art. 96 + Art. 151",
+  "notas": "Saldo a favor es común para PFAE que paga provisionales basados en mes anterior y declara con anualidad corrida."
+}

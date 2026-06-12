@@ -1,0 +1,102 @@
+[
+  {
+    "query": "cerré un cliente nuevo, qué le pido para empezar a trabajar",
+    "should_trigger": true,
+    "rationale": "Onboarding cliente nuevo"
+  },
+  {
+    "query": "checklist datos fiscales para nuevo cliente PM",
+    "should_trigger": true,
+    "rationale": "Captura RFC, razón social, domicilio fiscal"
+  },
+  {
+    "query": "necesito firmar contrato con mi cliente nuevo",
+    "should_trigger": true,
+    "rationale": "Contrato marco onboarding"
+  },
+  {
+    "query": "como organizo la primera reunión con cliente nuevo",
+    "should_trigger": true,
+    "rationale": "Kickoff meeting"
+  },
+  {
+    "query": "qué documentos pido a mi cliente B2B",
+    "should_trigger": true,
+    "rationale": "Documentos onboarding B2B"
+  },
+  {
+    "query": "necesito su constancia de situación fiscal",
+    "should_trigger": true,
+    "rationale": "CSF parte de onboarding"
+  },
+  {
+    "query": "como creo carpeta de cliente nuevo en mi sistema",
+    "should_trigger": true,
+    "rationale": "Estructura carpeta cliente"
+  },
+  {
+    "query": "que datos pongo en el aviso de privacidad para cliente",
+    "should_trigger": false,
+    "rationale": "Aviso privacidad LFPDPPP, no onboarding directo"
+  },
+  {
+    "query": "como hago el due-diligence de mi cliente nuevo",
+    "should_trigger": false,
+    "rationale": "Due-diligence cliente — workflow separado"
+  },
+  {
+    "query": "cuanto facturar a mi cliente nuevo en su primer mes",
+    "should_trigger": false,
+    "rationale": "Cotización (otro skill)"
+  },
+  {
+    "query": "necesito su email y wa para mandarle el contrato",
+    "should_trigger": true,
+    "rationale": "Datos contacto onboarding"
+  },
+  {
+    "query": "qué información de la empresa cliente requiere mi contrato",
+    "should_trigger": true,
+    "rationale": "Datos para contrato"
+  },
+  {
+    "query": "como se llama el documento que necesito firmar con el cliente",
+    "should_trigger": true,
+    "rationale": "Contrato marco / acuerdo"
+  },
+  {
+    "query": "necesito hacer reunión con mi equipo",
+    "should_trigger": false,
+    "rationale": "Reunión interna, no onboarding cliente"
+  },
+  {
+    "query": "el cliente quiere saber mi proceso paso a paso",
+    "should_trigger": true,
+    "rationale": "Walk-through del proceso al cliente"
+  },
+  {
+    "query": "necesito CRM para registrar mis clientes",
+    "should_trigger": true,
+    "rationale": "Onboarding incluye registro CRM"
+  },
+  {
+    "query": "consejos para retener clientes existentes",
+    "should_trigger": false,
+    "rationale": "Retención, no onboarding"
+  },
+  {
+    "query": "mi cliente quiere conocer mi equipo, agendar intro",
+    "should_trigger": true,
+    "rationale": "Onboarding: presentaciones equipo"
+  },
+  {
+    "query": "como personalizo la bienvenida al cliente nuevo",
+    "should_trigger": true,
+    "rationale": "Welcome experience cliente"
+  },
+  {
+    "query": "el cliente no quiere darme sus datos fiscales",
+    "should_trigger": true,
+    "rationale": "Edge case: tutor pasivo en onboarding"
+  }
+]

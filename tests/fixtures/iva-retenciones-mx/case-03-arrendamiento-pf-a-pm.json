@@ -1,0 +1,37 @@
+{
+  "name": "Arrendamiento comercial — PF arrenda a PM",
+  "input": {
+    "emisor": {
+      "tipo": "PF",
+      "regimen_fiscal": "612 (Arrendamiento)",
+      "rfc": "ARR800101XYZ"
+    },
+    "receptor": {
+      "tipo": "PM",
+      "regimen_fiscal": "601 (General PM)",
+      "rfc": "IBM970131DRA"
+    },
+    "subtotal_mxn": 25000.00,
+    "tipo_servicio": "arrendamiento_comercial",
+    "modalidad": "comercial",
+    "es_residencial": false
+  },
+  "expected_output": {
+    "iva_trasladado_mxn": 4000.00,
+    "iva_retenido_mxn": 2666.67,
+    "iva_retenido_porcentaje": 0.6667,
+    "isr_retenido_mxn": 2500.00,
+    "isr_retenido_porcentaje": 0.10,
+    "total_cfdi_mxn": 29000.00,
+    "neto_al_arrendador_mxn": 23833.33,
+    "validaciones_locales_pasadas": true,
+    "fundamento_legal": [
+      "Art. 1-A LIVA — IVA 16% en arrendamiento comercial (no exento)",
+      "Art. 113 LISR — retención 10% ISR arrendamientos PF a PM"
+    ],
+    "alertas": []
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "LIVA + LISR vigentes",
+  "notas": "Arrendamiento RESIDENCIAL es exento de IVA (Art. 9-XII LIVA), comercial NO."
+}

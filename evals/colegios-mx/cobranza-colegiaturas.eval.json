@@ -1,0 +1,102 @@
+[
+  {
+    "query": "tengo padres que no pagan colegiatura este mes",
+    "should_trigger": true,
+    "rationale": "Cobranza colegiaturas escolar"
+  },
+  {
+    "query": "como cobro la mensualidad atrasada sin perder al alumno",
+    "should_trigger": true,
+    "rationale": "Equilibrio cobranza - retención alumno"
+  },
+  {
+    "query": "padre lleva 3 meses sin pagar, puedo retener calificaciones",
+    "should_trigger": true,
+    "rationale": "Política retención SEP"
+  },
+  {
+    "query": "que recargo cobro por mora",
+    "should_trigger": true,
+    "rationale": "Recargo moratorio escolar"
+  },
+  {
+    "query": "necesito redactar carta de cobranza profesional",
+    "should_trigger": true,
+    "rationale": "Comunicación cobranza"
+  },
+  {
+    "query": "convenio de pago con padres morosos",
+    "should_trigger": true,
+    "rationale": "Convenios reestructura"
+  },
+  {
+    "query": "el padre quiere descuento por pago anticipado",
+    "should_trigger": true,
+    "rationale": "Pronto pago colegiaturas"
+  },
+  {
+    "query": "como hago publicidad para nuevos alumnos",
+    "should_trigger": false,
+    "rationale": "Marketing, no cobranza"
+  },
+  {
+    "query": "necesito mandar recordatorio masivo a padres",
+    "should_trigger": true,
+    "rationale": "Recordatorios WA cobranza"
+  },
+  {
+    "query": "cliente moroso 6 meses, qué procedimiento legal sigo",
+    "should_trigger": true,
+    "rationale": "Cobranza extrajudicial"
+  },
+  {
+    "query": "como organizo el calendario escolar",
+    "should_trigger": false,
+    "rationale": "Calendario, no cobranza"
+  },
+  {
+    "query": "que política aplicar con familia con problemas económicos reales",
+    "should_trigger": true,
+    "rationale": "Casos especiales cobranza humanizada"
+  },
+  {
+    "query": "necesito factura para el padre",
+    "should_trigger": false,
+    "rationale": "CFDI colegiaturas (otro skill)"
+  },
+  {
+    "query": "cliente pide refrendo de inscripción del próximo año",
+    "should_trigger": false,
+    "rationale": "Inscripción, no cobranza"
+  },
+  {
+    "query": "como contacto a padres morosos sin pelearme con ellos",
+    "should_trigger": true,
+    "rationale": "Tono cobranza relación continua"
+  },
+  {
+    "query": "que descuento ofrezco a un padre que paga el año completo upfront",
+    "should_trigger": true,
+    "rationale": "Pronto pago"
+  },
+  {
+    "query": "necesito constancia de estudios",
+    "should_trigger": false,
+    "rationale": "Constancia (otro skill)"
+  },
+  {
+    "query": "padre cancela inscripción a mitad de año",
+    "should_trigger": true,
+    "rationale": "Cancelación + reembolso parcial"
+  },
+  {
+    "query": "como saco reporte de morosidad mensual",
+    "should_trigger": true,
+    "rationale": "Reporting cartera vencida"
+  },
+  {
+    "query": "como manejo cobranza si el padre vive en otra ciudad",
+    "should_trigger": true,
+    "rationale": "Cobranza remota"
+  }
+]

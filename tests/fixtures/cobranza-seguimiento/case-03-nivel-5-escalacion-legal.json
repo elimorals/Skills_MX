@@ -1,0 +1,46 @@
+{
+  "name": "Cobranza Nivel 5 — Escalación legal (D+60+)",
+  "input": {
+    "cliente": "Cliente Moroso SA",
+    "factura": {
+      "uuid": "EFGH-5678-...",
+      "folio": "F-2026-0042",
+      "monto_mxn": 250000.00,
+      "fecha_emision": "2026-02-01",
+      "fecha_vencimiento": "2026-03-03",
+      "metodo_pago": "PPD"
+    },
+    "dias_vencidos": 65,
+    "comunicaciones_previas_count": 8,
+    "respuestas_cliente": 1,
+    "carta_formal_enviada": true,
+    "ofrecimiento_plan_pago": "rechazado",
+    "historial_cliente": {
+      "no_shows_pago_previos": 2,
+      "comportamiento": "moroso_crónico"
+    }
+  },
+  "expected_output": {
+    "nivel_asignado": 5,
+    "razon_nivel": "D+65 + cliente moroso crónico + plan rechazado",
+    "accion_recomendada": "ESCALACIÓN LEGAL CRÍTICA",
+    "alertas_criticas": [
+      "Monto significativo ($250k) — vale la pena litigio",
+      "Cliente con histórico de morosidad — patrón claro",
+      "Plan de pago rechazado — sin voluntad de cooperar"
+    ],
+    "siguientes_pasos_obligatorios": [
+      "1. Contratar abogado mercantilista especializado en cobranza",
+      "2. Demanda en Juicio Ejecutivo Mercantil (vía rápida)",
+      "3. Suspender servicios al cliente",
+      "4. Reportar a Buró de Crédito (con autorización si tiene)",
+      "5. Considerar venta de cartera a despacho cobranza (descuento 30-50%)"
+    ],
+    "costo_estimado_litigio_mxn": 25000,
+    "probabilidad_recuperacion": "alta_si_hay_solvencia",
+    "tiempo_estimado_meses": 6
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Código de Comercio + LFPC",
+  "notas": "Nivel 5 = recurso de última instancia. La probabilidad depende totalmente de la solvencia del cliente."
+}

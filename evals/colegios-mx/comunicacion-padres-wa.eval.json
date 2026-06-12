@@ -1,0 +1,102 @@
+[
+  {
+    "query": "necesito mandar aviso a padres por whatsapp business",
+    "should_trigger": true,
+    "rationale": "Comunicación padres WA"
+  },
+  {
+    "query": "template para suspensión de clases por contingencia",
+    "should_trigger": true,
+    "rationale": "Aviso urgente padres"
+  },
+  {
+    "query": "como aviso a 200 padres del cambio de horario",
+    "should_trigger": true,
+    "rationale": "Mensaje masivo padres"
+  },
+  {
+    "query": "necesito invitar a padres a junta del consejo",
+    "should_trigger": true,
+    "rationale": "Junta de padres comunicación"
+  },
+  {
+    "query": "como notifico a un padre que su hijo se peleó",
+    "should_trigger": true,
+    "rationale": "Comunicación sensible 1:1"
+  },
+  {
+    "query": "manda recordatorio de evento escolar",
+    "should_trigger": true,
+    "rationale": "Comunicación eventos"
+  },
+  {
+    "query": "padres quieren saber resultados de evaluación",
+    "should_trigger": true,
+    "rationale": "Reporte académico vía WA"
+  },
+  {
+    "query": "como organizo el calendario académico",
+    "should_trigger": false,
+    "rationale": "Calendario, no comunicación"
+  },
+  {
+    "query": "padre quiere agendar reunión con dirección",
+    "should_trigger": true,
+    "rationale": "Agendamiento padres"
+  },
+  {
+    "query": "necesito manuales de procedimiento internos",
+    "should_trigger": false,
+    "rationale": "Procesos internos, no comunicación padres"
+  },
+  {
+    "query": "como aviso del aumento de colegiatura",
+    "should_trigger": true,
+    "rationale": "Anuncio aumento — tono sensible"
+  },
+  {
+    "query": "padres no leen los mensajes, como mejoro engagement",
+    "should_trigger": true,
+    "rationale": "Engagement WA padres"
+  },
+  {
+    "query": "necesito grabar video del evento",
+    "should_trigger": false,
+    "rationale": "Producción contenido, no comunicación"
+  },
+  {
+    "query": "como envío reporte de calificaciones por whatsapp",
+    "should_trigger": true,
+    "rationale": "Distribución académica WA"
+  },
+  {
+    "query": "padres preguntan por bullying en clase",
+    "should_trigger": true,
+    "rationale": "Comunicación crisis sensible"
+  },
+  {
+    "query": "necesito hacer encuesta de satisfacción a padres",
+    "should_trigger": true,
+    "rationale": "NPS / encuesta padres WA"
+  },
+  {
+    "query": "cómo facturo la colegiatura",
+    "should_trigger": false,
+    "rationale": "CFDI, no comunicación"
+  },
+  {
+    "query": "padres del consejo quieren ver propuestas",
+    "should_trigger": true,
+    "rationale": "Comunicación consejo padres"
+  },
+  {
+    "query": "necesito un sistema de gestión escolar",
+    "should_trigger": false,
+    "rationale": "SIS, no comunicación específica"
+  },
+  {
+    "query": "mensaje día de las madres a todas las mamás",
+    "should_trigger": true,
+    "rationale": "Comunicación celebración escolar"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "query": "necesito hacer una propuesta para un nuevo cliente de consultoría",
+    "should_trigger": true,
+    "rationale": "Propuesta comercial freelance"
+  },
+  {
+    "query": "como estructuro mi propuesta de servicios profesionales",
+    "should_trigger": true,
+    "rationale": "Estructura propuesta SOW"
+  },
+  {
+    "query": "cuanto debo poner de anticipo en mi propuesta",
+    "should_trigger": true,
+    "rationale": "Términos de pago en propuesta"
+  },
+  {
+    "query": "el cliente quiere revisar el alcance antes de aceptar mi propuesta",
+    "should_trigger": true,
+    "rationale": "Scope of work, deliverables"
+  },
+  {
+    "query": "cláusula de cancelación para mi propuesta",
+    "should_trigger": true,
+    "rationale": "T&Cs en propuesta comercial"
+  },
+  {
+    "query": "necesito formato de propuesta en PDF profesional",
+    "should_trigger": true,
+    "rationale": "Plantilla propuesta"
+  },
+  {
+    "query": "como cobro retainer mensual al cliente",
+    "should_trigger": true,
+    "rationale": "Modelo retainer en propuesta"
+  },
+  {
+    "query": "el cliente quiere negociar mi precio, qué hago",
+    "should_trigger": true,
+    "rationale": "Negociación de propuesta"
+  },
+  {
+    "query": "necesito emitir el CFDI por el servicio que ya cobré",
+    "should_trigger": false,
+    "rationale": "CFDI no propuesta"
+  },
+  {
+    "query": "como me cobro los honorarios de auditoría",
+    "should_trigger": true,
+    "rationale": "Propuesta servicios profesionales"
+  },
+  {
+    "query": "necesito enviar cotización rápida sin contrato",
+    "should_trigger": false,
+    "rationale": "Cotización (otro skill cotizacion-mxn)"
+  },
+  {
+    "query": "el cliente me pide entregables mensuales en mi propuesta",
+    "should_trigger": true,
+    "rationale": "Deliverables y milestones"
+  },
+  {
+    "query": "necesito agregar cláusula de propiedad intelectual",
+    "should_trigger": true,
+    "rationale": "IP clauses en propuesta"
+  },
+  {
+    "query": "que pongo en la sección 'sobre nosotros' de mi propuesta",
+    "should_trigger": true,
+    "rationale": "Estructura propuesta comercial"
+  },
+  {
+    "query": "como hago seguimiento a la propuesta que mandé",
+    "should_trigger": true,
+    "rationale": "Follow-up post-propuesta"
+  },
+  {
+    "query": "necesito armar pitch deck",
+    "should_trigger": false,
+    "rationale": "Pitch deck es distinto (más visual, less SOW)"
+  },
+  {
+    "query": "modificar el alcance porque cliente añadió requerimientos",
+    "should_trigger": true,
+    "rationale": "Change request scope"
+  },
+  {
+    "query": "necesito mi declaración fiscal anual",
+    "should_trigger": false,
+    "rationale": "Fiscal, no propuesta"
+  },
+  {
+    "query": "como pongo las condiciones de pago en mi propuesta",
+    "should_trigger": true,
+    "rationale": "Payment terms"
+  },
+  {
+    "query": "incluir SLA en la propuesta de soporte técnico",
+    "should_trigger": true,
+    "rationale": "SLA cláusulas de servicio"
+  }
+]

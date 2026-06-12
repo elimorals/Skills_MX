@@ -1,0 +1,102 @@
+[
+  {
+    "query": "necesito generar constancia de estudios para alumno",
+    "should_trigger": true,
+    "rationale": "Constancia académica SEP"
+  },
+  {
+    "query": "padre pide constancia de inscripción para visa de su hijo",
+    "should_trigger": true,
+    "rationale": "Constancia uso externo"
+  },
+  {
+    "query": "constancia de buena conducta",
+    "should_trigger": true,
+    "rationale": "Tipo constancia"
+  },
+  {
+    "query": "alumno se va a transferir a otro colegio, qué le doy",
+    "should_trigger": true,
+    "rationale": "Constancia + boleta transfer"
+  },
+  {
+    "query": "necesito constancia con CCT y RVOE",
+    "should_trigger": true,
+    "rationale": "Datos oficiales SEP"
+  },
+  {
+    "query": "como genero constancia de calificaciones del semestre",
+    "should_trigger": true,
+    "rationale": "Constancia académica"
+  },
+  {
+    "query": "padre me pide constancia bilingüe inglés-español",
+    "should_trigger": true,
+    "rationale": "Constancia multi-idioma"
+  },
+  {
+    "query": "como cobro la colegiatura atrasada",
+    "should_trigger": false,
+    "rationale": "Cobranza (otro skill)"
+  },
+  {
+    "query": "constancia debe tener sello del director",
+    "should_trigger": true,
+    "rationale": "Validación constancia"
+  },
+  {
+    "query": "alumno no aprobó, puede pedir constancia",
+    "should_trigger": true,
+    "rationale": "Constancia con observación"
+  },
+  {
+    "query": "necesito facturar colegiatura",
+    "should_trigger": false,
+    "rationale": "CFDI, no constancia"
+  },
+  {
+    "query": "constancia con apostilla para Brasil",
+    "should_trigger": true,
+    "rationale": "Constancia internacional + apostilla"
+  },
+  {
+    "query": "padre quiere constancia urgente para mañana",
+    "should_trigger": true,
+    "rationale": "Plazo constancia urgente"
+  },
+  {
+    "query": "alumno fallecido, padres piden constancia simbólica",
+    "should_trigger": true,
+    "rationale": "Constancia sensible"
+  },
+  {
+    "query": "como hago publicidad",
+    "should_trigger": false,
+    "rationale": "Marketing, no constancia"
+  },
+  {
+    "query": "necesito reporte mensual de inscripciones",
+    "should_trigger": false,
+    "rationale": "Reportes admin, no constancia individual"
+  },
+  {
+    "query": "el alumno está en proceso disciplinario, le doy constancia",
+    "should_trigger": true,
+    "rationale": "Caso edge"
+  },
+  {
+    "query": "constancia para SAR / SEP de tutor docente",
+    "should_trigger": true,
+    "rationale": "Constancia docentes"
+  },
+  {
+    "query": "necesito controlar lista de espera de inscripciones",
+    "should_trigger": false,
+    "rationale": "Inscripciones, no constancias"
+  },
+  {
+    "query": "alumno extranjero pide constancia para revalidar en su país",
+    "should_trigger": true,
+    "rationale": "Revalidación internacional"
+  }
+]

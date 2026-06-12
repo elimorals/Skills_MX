@@ -1,0 +1,26 @@
+{
+  "name": "Template rechazado por Meta — diagnóstico y corrección",
+  "input": {
+    "template_propuesto": "Hola, ¿cómo estás? Vimos que no has comprado en un tiempo. Te ofrecemos esto que te va a encantar: {{1}}",
+    "razon_rechazo_meta": "Demasiado vaga y suena spam"
+  },
+  "expected_output": {
+    "evaluacion": "rechazado_correctamente_por_meta",
+    "problemas_detectados": [
+      "Sin contexto específico (¿quién es la marca?)",
+      "Apertura genérica sospechosa para Meta",
+      "'que te va a encantar' es marketing language pero categorizado UTILITY?",
+      "Solo 1 variable — no se sabe qué prometen"
+    ],
+    "version_mejorada_sugerida": "Hola {{1}} 🛍️ Tu carrito en {{2}} tiene productos esperando. Termina tu compra antes de {{3}} y disfruta envío gratis: {{4}}",
+    "categoria_correcta": "MARKETING (requiere opt-in)",
+    "tasa_aprobacion_estimada_mejorada": "media-alta",
+    "alertas": [
+      "Templates genéricos = rechazo automático",
+      "Incluir contexto específico de marca + acción concreta"
+    ]
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Política Meta y mejores prácticas WhatsApp Business 2026",
+  "notas": "Templates rechazados pueden ser apelados pero pierdes tiempo. Mejor diseñar bien desde inicio."
+}

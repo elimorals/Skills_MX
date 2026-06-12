@@ -1,0 +1,102 @@
+[
+  {
+    "query": "necesito un template de whatsapp para confirmar cita médica",
+    "should_trigger": true,
+    "rationale": "Template WhatsApp Business"
+  },
+  {
+    "query": "qué tipo de template aprueba Meta para recordatorio de pago",
+    "should_trigger": true,
+    "rationale": "UTILITY vs MARKETING — clasificación Meta"
+  },
+  {
+    "query": "cuanto cuesta mandar mensajes por whatsapp business en mexico",
+    "should_trigger": true,
+    "rationale": "Tarifas WA Business MX"
+  },
+  {
+    "query": "me bajó la calidad de mi numero whatsapp business, qué hago",
+    "should_trigger": true,
+    "rationale": "Quality rating recovery"
+  },
+  {
+    "query": "ejemplo de mensaje masivo a 500 clientes sin que Meta me bloquee",
+    "should_trigger": true,
+    "rationale": "Best practices anti-bloqueo Meta"
+  },
+  {
+    "query": "como configuro respuestas automáticas en whatsapp business",
+    "should_trigger": true,
+    "rationale": "Configuración WA Business"
+  },
+  {
+    "query": "Meta me rechazó mi template, por qué",
+    "should_trigger": true,
+    "rationale": "Razones rechazo templates Meta"
+  },
+  {
+    "query": "diferencia entre whatsapp business app y whatsapp business api",
+    "should_trigger": true,
+    "rationale": "App vs API platform — distinción clave"
+  },
+  {
+    "query": "necesito un template UTILITY para confirmar entrega de pedido",
+    "should_trigger": true,
+    "rationale": "Categoría UTILITY (transaccional)"
+  },
+  {
+    "query": "mi cliente quiere que le ponga mensaje promocional con descuento",
+    "should_trigger": true,
+    "rationale": "MARKETING template — reglas distintas"
+  },
+  {
+    "query": "como integro whatsapp con mi sistema de facturas",
+    "should_trigger": false,
+    "rationale": "Integración técnica + CFDI, no skill WhatsApp templates"
+  },
+  {
+    "query": "necesito comprar telefono nuevo",
+    "should_trigger": false,
+    "rationale": "No es WhatsApp Business"
+  },
+  {
+    "query": "como saco un reporte de mensajes enviados desde whatsapp business api",
+    "should_trigger": true,
+    "rationale": "Reporting WA Business API"
+  },
+  {
+    "query": "telegram tiene mejor api que whatsapp",
+    "should_trigger": false,
+    "rationale": "Telegram, no WhatsApp"
+  },
+  {
+    "query": "puedo cobrar por whatsapp pay",
+    "should_trigger": false,
+    "rationale": "WhatsApp Pay no aplica en MX, no es skill template"
+  },
+  {
+    "query": "como funcionan los chatbots de whatsapp",
+    "should_trigger": true,
+    "rationale": "Bots WA conectados al API"
+  },
+  {
+    "query": "necesito mandar emails masivos",
+    "should_trigger": false,
+    "rationale": "Email, no WhatsApp"
+  },
+  {
+    "query": "que opt-in necesito para mandar marketing a mis clientes",
+    "should_trigger": true,
+    "rationale": "Opt-in Meta MARKETING templates"
+  },
+  {
+    "query": "como traduzco mi template para audiencia mexicana",
+    "should_trigger": true,
+    "rationale": "Localización tono MX en templates"
+  },
+  {
+    "query": "necesito hablar por SMS no whatsapp",
+    "should_trigger": false,
+    "rationale": "SMS, no WhatsApp"
+  }
+]

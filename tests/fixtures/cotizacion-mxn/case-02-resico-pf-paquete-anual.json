@@ -1,0 +1,48 @@
+{
+  "name": "Cotización RESICO PF — paquete anual sin retenciones",
+  "input": {
+    "emisor": {
+      "tipo": "PF",
+      "regimen": "626 (RESICO PF)",
+      "rfc": "MAJG800101XYZ"
+    },
+    "cliente": {
+      "tipo": "PM",
+      "rfc": "IBM970131DRA"
+    },
+    "concepto": "Asesoría de marketing — Año 2026 (paquete anual)",
+    "monto_mensual_mxn": 8000.00,
+    "meses": 12,
+    "subtotal_anual_mxn": 96000.00,
+    "descuento_pago_anual_upfront": 0.10
+  },
+  "expected_output": {
+    "cotizacion_total": {
+      "subtotal_anual_mxn": 96000.00,
+      "descuento_pago_anual": 9600.00,
+      "subtotal_con_descuento": 86400.00,
+      "iva_trasladado_mxn": 13824.00,
+      "iva_retenido_mxn": 0.00,
+      "isr_retenido_mxn": 0.00,
+      "total_a_cobrar_mxn": 100224.00,
+      "neto_recibido_emisor_mxn": 100224.00
+    },
+    "ventajas_resico_pf": [
+      "Sin retenciones (más cash flow al emisor)",
+      "Tasa ISR baja (1-2.5%) directa",
+      "Sin papeleo de comprobante de retenciones"
+    ],
+    "documentos_a_emitir": [
+      "CFDI tipo I por monto anual completo + descuento",
+      "Si meses individuales: 12 CFDIs tipo I"
+    ],
+    "validaciones_locales_pasadas": true,
+    "alertas": [
+      "Recordar que tope RESICO PF es $3.5M/año — verificar no rebasar",
+      "Emisor debe declarar ISR mensual con su tasa RESICO"
+    ]
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "LISR Art. 113-G + RMF",
+  "notas": "RESICO PF ideal para freelancers con clientes recurrentes — más simple administrativamente."
+}
