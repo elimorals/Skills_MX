@@ -1,0 +1,179 @@
+# webhooks/ — plugins-mx webhook receiver
+
+Servidor HTTP que recibe webhooks de 12 servicios externos, valida firma,
+maneja idempotencia y dispara handlers que invocan workflows del repo.
+
+> 📐 **Spec**: ver [`docs/specs/01-webhook-receiver.md`](../docs/specs/01-webhook-receiver.md)
+
+## Estado actual
+
+| Componente | Estado |
+|---|---|
+| FastAPI app + routes | ✅ |
+| 12 handlers (Stripe, MP, Conekta, Facturama, Meta WA, GitHub, Calendly, Typeform, ML, Banxico CEP, IMSS, CONDUSEF) | ✅ |
+| Validadores HMAC (Stripe, MP, Conekta, GitHub, Meta WA) | ✅ |
+| Validadores genéricos (Bearer + IP allowlist) | ✅ |
+| Idempotencia (memory + SQLite) | ✅ |
+| Audit log append-only | ✅ |
+| Endpoint admin `/webhooks/recent` | ✅ |
+| Tests (~25 casos) | ✅ |
+| Retry queue async | ⏳ V2 (los handlers actuales son síncronos best-effort) |
+| Deployment Cloudflare Workers | ⏳ V2 |
+| Integración real con workflows del monorepo (cola/MCP/CLI) | ⏳ V2 |
+
+## Quickstart
+
+```bash
+cd webhooks/
+python -m venv .venv && source .venv/bin/activate
+pip install -e ".[dev]"
+
+# Modo mock (default) — no requiere ningún secret
+uvicorn app.main:app --reload --port 8787
+
+# Smoke test:
+curl -X POST http://localhost:8787/webhooks/stripe \
+     -H 'content-type: application/json' \
+     -d '{"id":"evt_test","type":"payment_intent.succeeded","data":{"object":{"amount_received":12345}}}'
+```
+
+Respuesta esperada:
+
+```json
+{
+  "ok": true,
+  "source": "stripe",
+  "event_id_hash": "...",
+  "action": "registrar_pago_y_timbrar_cfdi",
+  "target_workflow": "workflow-pago-conciliacion",
+  "notes": ["amount_received=12345"],
+  "signature_reason": "mock"
+}
+```
+
+## Tests
+
+```bash
+cd webhooks/
+pytest -q
+```
+
+## Modo mock vs producción
+
+- `PLUGINS_MX_WEBHOOKS_MODE=mock` (default): firmas se aceptan si no hay secret configurado. Útil para desarrollo y CI.
+- `PLUGINS_MX_WEBHOOKS_MODE=production`: TODA firma se valida estrictamente. Sin secret → rechaza.
+
+## Endpoints
+
+| Endpoint | Auth | Acción |
+|---|---|---|
+| `GET /webhooks/health` | — | Liveness probe |
+| `POST /webhooks/{source}` | firma del servicio | Recibe webhook, valida, despacha |
+| `GET /webhooks/recent` | `X-Admin-Key` | Audit log últimos N (default 100) |
+
+`source` ∈ `stripe | mercadopago | conekta | facturama | meta_whatsapp | github | calendly | typeform | mercadolibre | banxico_cep | imss_buzon | condusef`.
+
+## Códigos de respuesta
+
+| Código | Cuándo |
+|---|---|
+| 202 Accepted | Webhook procesado + handler ejecutado |
+| 401 Unauthorized | Firma inválida / token incorrecto / IP fuera de allowlist |
+| 409 Conflict | Event_id ya procesado (idempotencia) |
+| 404 Not Found | Source desconocido |
+
+## Pasos que requieren intervención humana (NO codificables)
+
+Una vez que tengas keys reales y quieras pasar a `production`, hay que:
+
+### 1. Obtener webhook secrets de cada panel
+
+- **Stripe**: dashboard.stripe.com/webhooks → crear endpoint → copiar signing secret (`whsec_...`)
+- **Mercado Pago**: panel.mercadopago.com.mx → tu app → notificaciones → webhook secret
+- **Conekta**: dashboard.conekta.com → webhooks → "Firma del webhook" (activar y copiar)
+- **Facturama**: definir tu propio Bearer + lista de IPs origen del servicio
+- **Meta WhatsApp**: developers.facebook.com → app → WhatsApp → configuración → App Secret
+- **GitHub**: repo → settings → webhooks → secret (string que vos defines)
+- **Calendly**: developer.calendly.com → webhooks → secret
+- **Typeform**: admin.typeform.com → workspace → webhooks secret
+- **Mercado Libre**: panel ML → tu app → notificaciones → IPs origen (no HMAC)
+
+### 2. Configurar la URL del receiver
+
+Necesitas exponer este servicio en HTTPS público. Opciones:
+
+- **Cloudflare Workers** (recomendado por gratis hasta 100k req/día) — pendiente migración
+- **VPS + nginx + Let's Encrypt**
+- **Railway / Fly.io / Render** (servicios PaaS)
+- **ngrok** para desarrollo local
+
+Las URLs serían:
+
+```
+https://webhooks.tudominio.com/webhooks/stripe
+https://webhooks.tudominio.com/webhooks/mercadopago
+...
+```
+
+### 3. Registrar la URL en cada panel del servicio
+
+Cada panel pide la URL del endpoint y los eventos a suscribir. Eventos relevantes:
+
+- **Stripe**: `payment_intent.succeeded`, `charge.refunded`, `invoice.payment_succeeded`
+- **Mercado Pago**: `payment`, `merchant_order`
+- **Conekta**: `charge.paid`, `charge.refunded`, `order.paid`
+- **Meta WhatsApp**: `messages`, `message_template_status_update`
+- **GitHub**: `push`, `pull_request`
+- **Calendly**: `invitee.created`, `invitee.canceled`
+- **Typeform**: `form_response`
+- **Mercado Libre**: `orders_v2`, `payments`, `questions`, `items`
+
+### 4. Setear las env vars en producción
+
+```bash
+PLUGINS_MX_WEBHOOKS_MODE=production
+PLUGINS_MX_WEBHOOKS_ADMIN_KEY=<algo-fuerte-random-32+ chars>
+STRIPE_WEBHOOK_SECRET=whsec_...
+MERCADOPAGO_WEBHOOK_SECRET=...
+CONEKTA_WEBHOOK_SECRET=...
+... etc
+```
+
+### 5. Integración con workflows del monorepo (V2)
+
+Actualmente los handlers solo retornan `action` + `target_workflow` — **no invocan los workflows en sí**. La integración real puede hacerse via:
+
+- **Cola** (Redis/SQS): handler encola → worker en monorepo procesa
+- **HTTP**: handler POSTea a un endpoint del monorepo
+- **Filesystem**: handler escribe a directorio que Claude Code monitorea
+- **MCP**: handler invoca tools del repo via MCP protocol
+
+Esta decisión queda pendiente para V2 — depende de dónde corra el monorepo (mismo VPS, separado, etc.).
+
+## Estructura
+
+```
+webhooks/
+├── pyproject.toml
+├── .env.example
+├── README.md
+└── app/
+    ├── main.py           # FastAPI app factory
+    ├── config.py         # pydantic-settings desde .env
+    ├── idempotency.py    # memory + SQLite stores
+    ├── audit.py          # JSONL append-only
+    ├── routes/
+    │   ├── health.py
+    │   ├── webhooks.py   # endpoint dispatcher
+    │   └── admin.py      # /webhooks/recent
+    ├── validators/       # 1 por servicio
+    └── handlers/         # 1 por servicio + dispatch.py
+└── tests/                # ~25 tests
+```
+
+## Limitaciones conocidas
+
+- **Sin retry queue**: si el handler tarda mucho, el cliente puede timeout-ear y reintentar. La idempotencia evita procesar dos veces, pero un servicio que reintenta agresivamente sí puede generar carga.
+- **Sin rate limiting**: trivial agregar con `slowapi` cuando sea necesario.
+- **Calendly/Typeform**: usamos Bearer simple; sus firmas HMAC oficiales se pueden agregar fácil después (similar a Stripe).
+- **Mercado Libre**: solo IP allowlist; sin firma HMAC oficial.
