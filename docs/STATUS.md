@@ -26,7 +26,7 @@
 
 | Capa | Hecho | Faltante | % completado |
 |---|---|---|---|
-| MCP servers | 25 | 6 críticos + 10 secundarios | ~70% |
+| MCP servers | 25 + esqueleto SAT Playwright | 6 críticos + 10 secundarios | ~73% |
 | Plugins verticales | 11 | 15 TOP del research | ~42% |
 | Workflows | 7 | 5-7 | ~58% |
 | Hooks | 1 git + 13 runtime ✅ | 0 | 100% |
@@ -100,7 +100,7 @@ Después de specs: codificar los 3 (en este orden).
 - [ ] `mp_uber_eats_partners` — 80-120h — clonar patrón
 
 #### Playwright real (path completo)
-- [ ] `mp_sat_portal` Playwright real — 100-200h — **REQUIERE SPEC** → `docs/specs/02-sat-portal-playwright-real.md`
+- [~] `mp_sat_portal` Playwright real — **ESQUELETO CODIFICADO 2026-06-12**: `efirma_loader.py` + `playwright_client.py` + 20 tests; falta scraping selectores reales (humano). Setup: `mcp-servers/mp_sat_portal/SETUP_PLAYWRIGHT_REAL.md`
 - [ ] `mp_bancos_mx` Playwright real BBVA — 60-100h — **REQUIERE SPEC** → `docs/specs/03-bancos-mx-playwright-real.md`
 - [ ] `mp_bancos_mx` Playwright real Banamex — 60-100h
 - [ ] `mp_bancos_mx` Playwright real Santander — 60-100h
