@@ -1,0 +1,23 @@
+{
+  "name": "ISR salario empleado mensual $25,000 — tarifa Art. 96 LISR",
+  "input": {
+    "sueldo_mensual_bruto": 25000,
+    "periodicidad": "mensual",
+    "subsidio_empleo_aplica": false
+  },
+  "expected_output_approximate": {
+    "rango_aplicado": "$8,952.50 a $75,984.55",
+    "cuota_fija_aprox": 171.88,
+    "porcentaje_sobre_excedente": 6.40,
+    "excedente_aprox": 16047.50,
+    "isr_retencion_mensual_aprox": 1198,
+    "subsidio_empleo_aplicado": 0
+  },
+  "validations": [
+    "Tarifa Art. 96 LISR aplicada correctamente al rango",
+    "Cálculo: cuota fija + (excedente × %)",
+    "Subsidio empleo solo aplica si sueldo < ~$8,952.49",
+    "Importe redondeado a 2 decimales",
+    "Tarifa VERIFICAR contra RMF 2026 vigente"
+  ]
+}

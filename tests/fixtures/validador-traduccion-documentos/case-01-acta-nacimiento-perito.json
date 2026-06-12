@@ -1,0 +1,26 @@
+{
+  "name": "Validador traducción perito — acta nacimiento extranjera para INM",
+  "input": {
+    "documento": "Birth certificate USA - Texas",
+    "idioma_origen": "EN",
+    "idioma_destino": "ES",
+    "uso": "tramite_INM_residencia"
+  },
+  "expected_output": {
+    "requiere_perito_traductor_oficial": true,
+    "lista_peritos_certificados_zona": ["Lic. María González - TX/ES", "Dr. Roberto Pérez - EN/ES"],
+    "costo_aproximado_mxn": 800,
+    "tiempo_aproximado_dias": 5,
+    "validaciones_post_traduccion": [
+      "Apostille del documento original",
+      "Firma perito certificado",
+      "Sello perito",
+      "Coincidencia datos personales"
+    ]
+  },
+  "validations": [
+    "INM requiere perito oficial (NO traducción simple)",
+    "Apostille del país de origen necesaria",
+    "Lista actualizada de peritos por jurisdicción"
+  ]
+}

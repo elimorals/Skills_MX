@@ -1,0 +1,23 @@
+{
+  "name": "Exportar cédula SUA + IDSE marzo 2026 — 12 empleados activos",
+  "input": {
+    "empresa_rfc": "EMP850101XYZ",
+    "periodo": "2026-03",
+    "empleados_activos_count": 12,
+    "movimientos_mes": [
+      {"tipo": "alta", "empleado_rfc": "AAA800101A11", "fecha": "2026-03-15"},
+      {"tipo": "baja", "empleado_rfc": "BBB820505B22", "fecha": "2026-03-22"}
+    ]
+  },
+  "expected_output": {
+    "archivos_generados": ["cedula_sua_2026-03.txt", "afi_03_lote_marzo.txt"],
+    "total_cuotas_imss_patronales_mxn_aprox": 90000,
+    "movimientos_idse_enviados": 2,
+    "plazo_pago_imss": "2026-04-17"
+  },
+  "validations": [
+    "Formato SUA estándar SAT",
+    "Movimientos IDSE en plazo (5 días hábiles)",
+    "Cuotas calculadas con SBC actualizado"
+  ]
+}

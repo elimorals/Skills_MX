@@ -1,0 +1,33 @@
+{
+  "name": "Cuotas IMSS mensuales para empleado SBC $25,000",
+  "input": {
+    "salario_diario_integrado": 833.33,
+    "salario_mensual": 25000,
+    "categoria_riesgo": "I",
+    "dias_periodo": 30
+  },
+  "expected_output_approximate": {
+    "cuota_obrero": {
+      "enfermedad_maternidad_pct": 0.25,
+      "invalidez_vida_pct": 0.625,
+      "cesantia_vejez_pct": 1.125,
+      "total_obrero_mensual_aprox": 500
+    },
+    "cuota_patron": {
+      "enfermedad_maternidad_pct": 20.40,
+      "riesgos_trabajo_pct_claseI": 0.54355,
+      "invalidez_vida_pct": 1.75,
+      "cesantia_vejez_pct": 3.150,
+      "guarderias_pct": 1.00,
+      "infonavit_pct": 5.00,
+      "total_patron_mensual_aprox": 7500
+    },
+    "total_imss_mensual": 8000
+  },
+  "validations": [
+    "Obrero ~2.0% del SBC mensual",
+    "Patrón ~30% del SBC mensual",
+    "Categoría I riesgo bajo (oficina típica)",
+    "INFONAVIT 5% incluido en patrón"
+  ]
+}

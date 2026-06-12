@@ -1,0 +1,24 @@
+{
+  "name": "Cobranza etapa 3 — cliente reincidente, 22 días mora",
+  "input": {
+    "cliente_rfc": "ABC850301XYZ",
+    "factura_uuid": "12345678-90ab-cdef-1234-567890abcdef",
+    "monto_adeudo": 35000,
+    "fecha_emision_cfdi": "2026-05-20",
+    "dias_mora": 22,
+    "historial_cliente": "reincidente"
+  },
+  "expected_output": {
+    "etapa": "etapa_3_propuesta_pago_parcial",
+    "canal": "whatsapp",
+    "tono": "formal",
+    "mensaje_incluye": ["propuesta pago parcial", "fecha límite", "alternativas"],
+    "siguiente_revision_dias": 7
+  },
+  "validations": [
+    "Reincidente sube 1 etapa (de etapa 3 hubiera bajado a 2 si limpio)",
+    "Etapa 3 propone pago parcial",
+    "Canal WA todavía (no formal email hasta etapa 4)",
+    "Tono formal pero no severo"
+  ]
+}

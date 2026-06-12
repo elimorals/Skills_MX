@@ -1,0 +1,15 @@
+{
+  "name": "Validador auditorías SAT pendientes — revisión electrónica en curso",
+  "input": {
+    "rfc": "ABC850301XYZ",
+    "ejercicio_revisado": 2024
+  },
+  "expected_output": {
+    "auditorias_activas": [
+      {"tipo": "revision_electronica", "folio": "RE-2026-12345", "estado": "respuesta_pendiente", "dias_para_responder": 8, "documentos_requeridos": ["balanza_diciembre_2024", "extractos_bancarios"]}
+    ],
+    "alertas_criticas": ["8 días para responder requerimiento — preparar documentación"],
+    "siguiente_paso": "Reunir balanza y extractos antes de día 10"
+  },
+  "validations": ["Tipo de auditoría documentado", "Plazo legal calculado", "Alertas con urgencia explícita"]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Detector saldos a favor — $15k ejercicio 2023 olvidado",
+  "input": {
+    "rfc": "ABC850301XYZ",
+    "csf_descargada": true,
+    "buscar_anios_atras": 3
+  },
+  "expected_output": {
+    "saldos_detectados": [
+      {"ejercicio": 2023, "monto": 15400, "fecha_caduca_solicitud": "2028-04-30", "estatus": "no_solicitado"}
+    ],
+    "monto_total_recuperable_mxn": 15400,
+    "recomendacion": "Solicitar devolución antes de abril 2028 (5 años post declaración)"
+  },
+  "validations": ["Saldos a favor de ejercicios pasados detectados", "Plazo 5 años para solicitar", "Estatus NO solicitado/parcialmente solicitado/devuelto"]
+}

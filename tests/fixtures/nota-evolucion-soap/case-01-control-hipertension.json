@@ -1,0 +1,32 @@
+{
+  "name": "Nota evolución SOAP — control mensual hipertensión",
+  "input": {
+    "paciente_id": "PAC-2026-042",
+    "fecha_consulta": "2026-06-15",
+    "datos_clinicos": {
+      "TA_sistolica": 145,
+      "TA_diastolica": 92,
+      "FC": 78,
+      "peso_kg": 88.5
+    },
+    "subjetivo": "Refiere mejoría — sin cefaleas la última semana",
+    "objetivo": "TA 145/92 (vs 158/95 hace 1 mes). Examen físico sin hallazgos relevantes.",
+    "medicamentos_actuales": ["Losartán 50mg c/24h", "HCTZ 25mg c/24h"]
+  },
+  "expected_output": {
+    "estructura_soap": {
+      "S_subjetivo": "completo",
+      "O_objetivo": "completo con signos vitales",
+      "A_analisis": "Hipertensión arterial sistémica grado 1, en mejoría",
+      "P_plan": "Continuar tratamiento, control en 1 mes, considerar agregar inhibidor ECA si no mejora"
+    },
+    "alertas": [],
+    "siguiente_cita_recomendada": "2026-07-15"
+  },
+  "validations": [
+    "Formato SOAP completo",
+    "Comparativa con consulta anterior",
+    "Plan con tiempo de seguimiento específico",
+    "Sin alertas críticas para este caso"
+  ]
+}

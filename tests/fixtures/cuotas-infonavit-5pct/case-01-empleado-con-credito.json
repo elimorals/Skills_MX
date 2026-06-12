@@ -1,0 +1,18 @@
+{
+  "name": "INFONAVIT 5% patronal + descuento empleado con crédito activo",
+  "input": {
+    "sbc_mensual": 25000,
+    "trabajador_credito_activo": true,
+    "porcentaje_descuento_credito": 0.20
+  },
+  "expected_output": {
+    "aportacion_patronal_5pct_mxn": 1250,
+    "descuento_credito_trabajador_mxn": 5000,
+    "total_a_pagar_al_infonavit_mxn": 6250
+  },
+  "validations": [
+    "Patronal 5% del SBC",
+    "Descuento por crédito proporcional a salario",
+    "INFONAVIT retiene crédito + aporta 5%"
+  ]
+}

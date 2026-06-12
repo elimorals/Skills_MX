@@ -1,0 +1,43 @@
+{
+  "name": "Alta de empleado nuevo en empresa con todos los pasos",
+  "input": {
+    "empleado": {
+      "nombre": "Ana López García",
+      "rfc": "LOGA850301ABC",
+      "curp": "LOGA850301MDFPRN02",
+      "nss": "12345678901",
+      "fecha_ingreso": "2026-07-01",
+      "salario_diario_integrado": 833.33,
+      "puesto": "Desarrolladora",
+      "categoria_riesgo": "I",
+      "clabe": "012180001234567890"
+    },
+    "empresa_rfc": "EMP850101XYZ"
+  },
+  "expected_phases": [
+    "validar_rfc_curp_nss",
+    "alta_idse_imss",
+    "afiliacion_infonavit_si_aplica",
+    "configurar_cfdi_nomina_recurrente",
+    "agendar_primera_quincena",
+    "documentar_contrato_laboral"
+  ],
+  "expected_output": {
+    "empleado_activo": true,
+    "fecha_efectiva_imss": "2026-07-01",
+    "primer_periodo_nomina": "2026-Q14",
+    "documentos_generados": [
+      "contrato_laboral.pdf",
+      "afi_03_idse.txt",
+      "aviso_inscripcion_imss.json",
+      "configuracion_cfdi_nomina.json"
+    ]
+  },
+  "validations": [
+    "RFC + CURP + NSS validados antes de alta",
+    "IDSE alta enviada en ≤ 5 días hábiles (Art. 15 LSS)",
+    "INFONAVIT solo si tiene crédito activo",
+    "CLABE validada para futuras dispersiones",
+    "Contrato laboral generado conforme LFT"
+  ]
+}

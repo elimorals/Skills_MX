@@ -1,0 +1,29 @@
+{
+  "name": "Devolución depósito garantía fin de contrato — descuentos por daños",
+  "input": {
+    "deposito_original_mxn": 24000,
+    "fecha_recepcion": "2024-07-01",
+    "fecha_devolucion_propuesta": "2026-06-30",
+    "danos_imputables_inquilino": [
+      {"descripcion": "Reparación pared dañada", "monto": 3500, "cotizacion_archivada": true},
+      {"descripcion": "Limpieza profunda", "monto": 2200, "cotizacion_archivada": true}
+    ],
+    "renta_pendiente_mxn": 0
+  },
+  "expected_output": {
+    "monto_devuelto_mxn": 18300,
+    "descuentos_aplicados": [
+      {"concepto": "Pared dañada", "monto": 3500},
+      {"concepto": "Limpieza profunda", "monto": 2200}
+    ],
+    "carta_devolucion_generada": true,
+    "plazo_legal_devolucion_dias": 30,
+    "validacion_legal_pendiente": "abogado mercantilista debe validar carta"
+  },
+  "validations": [
+    "Devolución = depósito - daños imputables - renta pendiente",
+    "Cotizaciones archivadas para defensa",
+    "Plazo de 30 días post salida del inquilino",
+    "Carta firmada por ambas partes"
+  ]
+}
