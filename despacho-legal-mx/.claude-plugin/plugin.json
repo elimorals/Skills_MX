@@ -1,0 +1,47 @@
+{
+  "name": "despacho-legal-mx",
+  "displayName": "Despacho Legal MX — Abogados y notarías",
+  "description": "Plugin para despachos jurídicos en México: facturación a clientes corporativos y PFs con honorarios CFDI D01 (régimen 612 PFAE) o servicios CFDI G03, gestión de retenciones específicas del régimen, contratos de prestación de servicios profesionales con cláusulas mercantiles vigentes, expediente de cliente con resguardo LFPDPPP (datos sensibles requieren consentimiento expreso por sector legal), seguimiento de procesos judiciales con bitácora de actuaciones, cobranza escalonada para defensa/litigios con tarifas de éxito (cuota litis). Cubre abogados litigantes, fiscalistas, mercantilistas, laboralistas. Construido sobre core-mexico.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
+  },
+  "keywords": [
+    "despacho-legal",
+    "abogado",
+    "litigio",
+    "fiscal",
+    "mercantil",
+    "notaria",
+    "honorarios",
+    "cuota-litis",
+    "mexico"
+  ],
+  "skills": [
+    "skills/expediente-cliente-legal",
+    "skills/contrato-prestacion-servicios-legales",
+    "skills/cfdi-honorarios-d01",
+    "skills/cobranza-litigio",
+    "skills/bitacora-actuaciones",
+    "skills/cfdi-emision",
+    "skills/iva-retenciones-mx",
+    "skills/rfc-validacion",
+    "skills/whatsapp-business-mx",
+    "skills/compliance-lfpdppp",
+    "skills/mxn-formato"
+  ],
+  "commands": [
+    "commands/expediente-nuevo.md",
+    "commands/registrar-actuacion.md",
+    "commands/facturar-honorarios.md",
+    "commands/cobranza-litigio.md"
+  ],
+  "agents": [
+    "agents/redactor-promociones.md"
+  ],
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "requires": ["core-mexico"]
+  }
+}
