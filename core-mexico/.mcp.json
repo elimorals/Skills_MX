@@ -97,6 +97,18 @@
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
       },
       "disabled": false
+    },
+    "aspel_contpaqi": {
+      "_comment": "MCP propio mp_aspel_contpaqi: integración contable Aspel COI / ContPAQi. ERPs locales sin API REST — este MCP parsea CSV exports. Sin ASPEL_EXPORTS_DIR corre mock con datos demo. 9 tools (pólizas, balanza, catálogo cuentas, P&L, Balance General, parser inline, instrucciones de configuración).",
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_aspel_contpaqi.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "ASPEL_EXPORTS_DIR": "${ASPEL_EXPORTS_DIR:-}",
+        "CONTPAQI_AGENT_URL": "${CONTPAQI_AGENT_URL:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
     }
   }
 }

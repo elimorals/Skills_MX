@@ -39,6 +39,7 @@ testpaths = [
     "mp_banxico_cep/tests",
     "mp_sat_portal/tests",
     "mp_conekta/tests",
+    "mp_aspel_contpaqi/tests",
 ]
 python_files = ["test_*.py"]
 asyncio_mode = "auto"
