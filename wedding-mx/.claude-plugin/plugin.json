@@ -1,0 +1,45 @@
+{
+  "name": "wedding-mx",
+  "displayName": "Wedding MX — Wedding planners y proveedores de bodas",
+  "description": "Plugin para wedding planners, proveedores de bodas (banquete, decoración, música, video) y haciendas-de-eventos en México. Cubre cotización de boda completa con desglose (300-500 invitados promedio MX), timeline operativo del evento (D-90 a D+30), gestión de proveedores con presupuesto vs gastado, onboarding novios con captura fiscal completa, contrato de servicios PF/PM con cláusulas anti-cancelación. Construido sobre core-mexico.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elias",
+    "email": "elias@cipreholding.com"
+  },
+  "keywords": [
+    "wedding",
+    "boda",
+    "wedding-planner",
+    "novios",
+    "evento",
+    "mexico",
+    "banquete",
+    "proveedores-evento",
+    "timeline-boda",
+    "contrato-servicios"
+  ],
+  "skills": [
+    "skills/cotizacion-boda-mxn",
+    "skills/timeline-evento",
+    "skills/proveedores-bda",
+    "skills/novios-onboarding",
+    "skills/contrato-boda-pf-pm",
+    "skills/cfdi-emision",
+    "skills/iva-retenciones-mx",
+    "skills/rfc-validacion",
+    "skills/whatsapp-business-mx",
+    "skills/compliance-lfpdppp",
+    "skills/mxn-formato"
+  ],
+  "commands": [
+    "commands/cotizar-boda.md",
+    "commands/timeline-boda.md",
+    "commands/onboarding-novios.md",
+    "commands/contrato-evento.md"
+  ],
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "requires": ["core-mexico"]
+  }
+}
