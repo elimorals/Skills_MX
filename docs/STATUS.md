@@ -29,7 +29,7 @@
 | MCP servers | 25 | 6 críticos + 10 secundarios | ~70% |
 | Plugins verticales | 11 | 15 TOP del research | ~42% |
 | Workflows | 7 | 5-7 | ~58% |
-| Hooks | 1 | 13 | ~7% |
+| Hooks | 1 git + 13 runtime ✅ | 0 | 100% |
 | Crons | 2 | 28 | ~7% |
 | Webhooks | 1 receiver + 12 handlers V1 | retry queue + deploy | ~75% |
 | Skills nuevos del research | 0 | 24 | 0% |
@@ -182,28 +182,33 @@ Después de specs: codificar los 3 (en este orden).
 
 ---
 
-## 4. Hooks (1/14)
+## 4. Hooks (14/14) ✅
 
-### ✅ Construidos (1)
+→ Spec: `docs/specs/04-hooks-runtime-claude-code.md`
+→ Código: `scripts/hooks/` + `.claude/settings.json`
+→ Smoke test: 18/18 invocaciones OK
+
+### ✅ Construidos
 - [x] `pre-commit` (git) — lint + JSON + tests MCP — 2026-06-11 — commit `00c178a`
+- [x] `pre-timbrado-validation` (PreToolUse, bloquea) — 2026-06-12
+- [x] `confirmar-envio-masivo-wa` (PreToolUse, warn) — 2026-06-12
+- [x] `validar-cfdi-payload` (PreToolUse, bloquea si JSON roto) — 2026-06-12
+- [x] `validar-ficha-cliente` (PreToolUse Write/Edit, warn) — 2026-06-12
+- [x] `bitacora-mcp-calls` (PreToolUse mp_*, log) — 2026-06-12
+- [x] `backup-cfdi-automatico` (PostToolUse timbrado) — 2026-06-12
+- [x] `alert-cancelaciones-frecuentes` (PostToolUse cancelación) — 2026-06-12
+- [x] `actualizar-tc-banxico` (PostToolUse banxico) — 2026-06-12
+- [x] `sincronizar-shared-post-edit` (PostToolUse Edit/Write) — 2026-06-12
+- [x] `contexto-inicial-sesion` (SessionStart orquestador) — 2026-06-12
+- [x] `dashboard-cobranza-pendiente` (SessionStart sub-hook) — 2026-06-12
+- [x] `alerta-pago-provisional` (SessionStart sub-hook) — 2026-06-12
+- [x] `cfdi-vencimientos` (SessionStart sub-hook) — 2026-06-12
+- [x] `cleanup-sesion` (Stop) — 2026-06-12
 
-### ❌ Pendientes — REQUIEREN SPEC GENERAL
-→ `docs/specs/04-hooks-runtime-claude-code.md`
-
-#### Hooks Claude Code (runtime)
-- [ ] `backup-cfdi-automatico` (PostToolUse)
-- [ ] `validar-ficha-cliente` (Write validation)
-- [ ] `pre-timbrado-validation` (PreToolUse)
-- [ ] `bitacora-mcp-calls` (Post MCP)
-- [ ] `alert-cancelaciones-frecuentes` (Post CFDIs)
-- [ ] `dashboard-cobranza-pendiente` (SessionStart)
-- [ ] `alerta-pago-provisional` (SessionStart)
-- [ ] `cfdi-vencimientos` (SessionStart)
-- [ ] `actualizar-tc-banxico` (SessionStart)
-- [ ] `validar-cfdi-payload` (PreToolUse)
-- [ ] `confirmar-envio-masivo-whatsapp` (PreToolUse)
-- [ ] `sincronizar-shared-pre-commit` (Stop)
-- [ ] `backup-sesion` (Stop)
+### V2 pendiente
+- [ ] Métricas de uso por hook (cuántas veces dispara cada uno)
+- [ ] Persistencia configurable de hook-events.jsonl
+- [ ] Confirmación interactiva real (requiere integración Claude Code más profunda)
 
 ---
 
