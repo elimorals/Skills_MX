@@ -1,0 +1,49 @@
+{
+  "name": "ecommerce-mx",
+  "displayName": "Ecommerce MX — Marketplaces y omnichannel mexicanos",
+  "description": "Plugin para operadores de ecommerce en México que venden en Mercado Libre, Shopify, Amazon MX y/o tienda propia. Cubre gestión de listings multimarketplace, pricing dinámico considerando comisiones de cada canal, inventario sincronizado para evitar overselling, paquetería local (Estafeta, DHL MX, FedEx MX, paqueteX), y emisión de CFDI por venta. Construido sobre core-mexico + MCPs mp_mercado_libre, mp_shopify_mx, mp_amazon_mx_seller.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elias",
+    "email": "elias@cipreholding.com"
+  },
+  "keywords": [
+    "ecommerce",
+    "mercado-libre",
+    "shopify",
+    "amazon-mx",
+    "omnichannel",
+    "paqueteria",
+    "inventario",
+    "marketplace",
+    "mexico",
+    "ventas-online"
+  ],
+  "skills": [
+    "skills/mercado-libre-listings",
+    "skills/mercado-libre-pricing",
+    "skills/shopify-mx",
+    "skills/inventario-multicanal",
+    "skills/paqueteria-mx",
+    "skills/cfdi-emision",
+    "skills/iva-retenciones-mx",
+    "skills/rfc-validacion",
+    "skills/whatsapp-business-mx",
+    "skills/compliance-lfpdppp",
+    "skills/mxn-formato"
+  ],
+  "commands": [
+    "commands/sync-inventario.md",
+    "commands/optimizar-pricing.md",
+    "commands/publicar-listing.md",
+    "commands/cotizar-envio.md",
+    "commands/cierre-ventas.md"
+  ],
+  "agents": [
+    "agents/workflow-sync-multicanal.md"
+  ],
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "requires": ["core-mexico"]
+  }
+}
