@@ -1,0 +1,19 @@
+{
+  "name": "calculo-deducible-coaseguro - caso basico de regresion",
+  "pattern_template": "calculador",
+  "input": {
+    "monto_base": 10000,
+    "parametros_adicionales": {}
+  },
+  "expected_output": {
+    "resultado_numerico": true,
+    "desglose_calculo": true,
+    "unidad_correcta": "MXN"
+  },
+  "validations": [
+    "Calculo verificable paso a paso",
+    "Unidades correctas",
+    "Marca vigencia_validada si depende de tarifas externas"
+  ],
+  "notes": "Fixture generado con plantilla. Reemplazar input/expected con caso real al validarse el primer caso real de produccion."
+}

@@ -1,0 +1,25 @@
+{
+  "name": "contrato-obra-precio-alzado - caso basico de regresion",
+  "pattern_template": "contrato",
+  "input": {
+    "partes": [
+      "A",
+      "B"
+    ],
+    "objeto": "Servicios",
+    "monto": 50000,
+    "plazo_meses": 12
+  },
+  "expected_output": {
+    "clausulas_minimas_presentes": true,
+    "jurisdiccion_definida": true,
+    "firma_pendiente": true,
+    "validacion_legal_pendiente": true
+  },
+  "validations": [
+    "Clausulas mercantiles minimas",
+    "Jurisdiccion explicita",
+    "Validacion abogado pendiente (no auto)"
+  ],
+  "notes": "Fixture generado con plantilla. Reemplazar input/expected con caso real al validarse el primer caso real de produccion."
+}

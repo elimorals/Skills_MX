@@ -1,0 +1,23 @@
+{
+  "name": "cfdis-medicos-deducibles-acumulados - caso basico de regresion",
+  "pattern_template": "cfdi",
+  "input": {
+    "rfc_emisor": "EJM850301XYZ",
+    "rfc_receptor": "CLI850301ABC",
+    "monto_base": 10000,
+    "concepto": "Servicio profesional"
+  },
+  "expected_output": {
+    "cfdi_generado": true,
+    "uuid_formato_valido": true,
+    "iva_calculado": true,
+    "total_correcto": true
+  },
+  "validations": [
+    "UUID generado con formato 8-4-4-4-12",
+    "IVA 16% trasladado correctamente",
+    "Retenciones segun regimen",
+    "Catalogos SAT vigentes aplicados"
+  ],
+  "notes": "Fixture generado con plantilla. Reemplazar input/expected con caso real al validarse el primer caso real de produccion."
+}

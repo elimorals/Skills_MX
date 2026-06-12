@@ -1,0 +1,23 @@
+{
+  "name": "cobranza-recurrente-cursos - caso basico de regresion",
+  "pattern_template": "cobranza",
+  "input": {
+    "cliente_rfc": "CLI850301ABC",
+    "monto_adeudo": 15000,
+    "dias_mora": 10,
+    "historial_cliente": "limpio"
+  },
+  "expected_output": {
+    "etapa_asignada": true,
+    "canal_recomendado": true,
+    "mensaje_generado": true,
+    "siguiente_revision": true
+  },
+  "validations": [
+    "Etapa segun dias de mora",
+    "Tono progresivamente formal",
+    "Documentacion para defensa legal",
+    "Cliente limpio baja 1 etapa"
+  ],
+  "notes": "Fixture generado con plantilla. Reemplazar input/expected con caso real al validarse el primer caso real de produccion."
+}

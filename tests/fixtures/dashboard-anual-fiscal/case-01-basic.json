@@ -1,0 +1,20 @@
+{
+  "name": "dashboard-anual-fiscal - caso basico de regresion",
+  "pattern_template": "dashboard",
+  "input": {
+    "periodo": "2026-03",
+    "datos_fuente": []
+  },
+  "expected_output": {
+    "kpis_calculados": true,
+    "comparativa_periodo_anterior": true,
+    "alertas_destacadas": true,
+    "pdf_generado": true
+  },
+  "validations": [
+    "KPIs con direccion",
+    "Comparativa vs periodo anterior",
+    "Alertas accionables"
+  ],
+  "notes": "Fixture generado con plantilla. Reemplazar input/expected con caso real al validarse el primer caso real de produccion."
+}
