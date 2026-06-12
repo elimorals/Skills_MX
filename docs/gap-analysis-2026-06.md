@@ -1,18 +1,29 @@
-# Gap analysis — junio 2026
+# Gap analysis — junio 2026 (reconciliado 2026-06-12)
 
 **Propósito**: identificar exactamente qué falta por construir comparando el estado actual del monorepo contra los documentos de planeación original (`plugins-mx-research-problemas-no-resueltos.md` y `plugins-mx-planeacion-mcps-agentica.md`).
 
 **Audiencia**: stakeholders, contribuyentes, planeación de roadmap.
 
-**Pre-lectura**: [estado-real.md](estado-real.md), [roadmap.md](roadmap.md), [plan-afinacion.md](plan-afinacion.md).
+**Pre-lectura**: [analisis-profundo-2026-06.md](analisis-profundo-2026-06.md), [estado-real.md](estado-real.md), [roadmap.md](roadmap.md), [plan-afinacion.md](plan-afinacion.md).
+
+> ⚠ **Reconciliación 2026-06-12**: este documento subestimaba el filesystem real. Datos corregidos contra `find`/`ls` directos. Detalle en [analisis-profundo-2026-06.md §3](analisis-profundo-2026-06.md).
 
 ---
 
-## TL;DR
+## TL;DR (actualizado 2026-06-12)
 
-Tenemos **25 MCPs, 11 plugins, 7 workflows, 120 skills, 25 evals, 38 fixtures**. Los planes originales describen un universo de **TOP 20 verticales + 30+ skills específicos del research + 12 webhooks + 15+ hooks + 30+ crons**.
+Tenemos **40 MCPs, 35 plugins, 23 workflows declarados (0 ejecutables), 275 skills, 181 evals, 38 fixtures, 15 specs, 15 hooks runtime + 1 git, webhook receiver V1 + 12 handlers**.
 
-**Esfuerzo restante estimado**: 6,250-8,600 horas (8-11 meses con equipo 3-4 personas, o $3.1M-4.3M MXN @ $500/h).
+Los planes originales describen un universo de **TOP 20 verticales + 65+ totales del research + 21 MCPs base + 10 áreas Playwright + 8 workflows ejecutables + 15+ hooks + 30+ crons + 12 webhooks**.
+
+**Esfuerzo restante para MVP comercializable (Tier 1)**: 1,000-1,500h dev + $30-65k MXN consultorías (4 meses).
+
+**Esfuerzo total para cubrir todo el universo del research**: 8,000-12,000h adicionales (8-15 meses con equipo 3-4 personas).
+
+**Gaps críticos descubiertos 2026-06-12**:
+1. **23 workflows como markdown, 0 ejecutables como código** (conversión: 200-300h).
+2. **Playwright real en SAT y bancos = esqueletos**, no scraping real (300-500h conjunto).
+3. **0 validaciones expertas firmadas** (bloqueador no-codificable: $26-64k MXN consultorías + partners).
 
 **Lo no-codificable** (capa 3): validación experta con contador, abogado mercantilista, abogado defensa consumidor, abogado educativo, partners del sector. Sin esto los skills críticos no son producción-grade.
 
@@ -20,9 +31,14 @@ Tenemos **25 MCPs, 11 plugins, 7 workflows, 120 skills, 25 evals, 38 fixtures**.
 
 ## 1. MCPs pendientes
 
-### Construidos (25/21+ planeados)
+### Construidos (40/21+ planeados) ✅ por encima del plan
 
-Por encima del plan original (incluye bonus: `mp_clip_terminal`, `mp_trustly_mx`, `mp_cabify_business`, `mp_vivanuncios`).
+Tier S (7): banxico, facturama_extendido, mercado_pago, mercado_libre, curp_renapo, banxico_cep, sat_portal.
+Tier A (4): conekta, aspel_contpaqi, shopify_mx, bitso.
+Tier B Playwright stub (9): bancos_mx, imss_patronal, infonavit_patronal, cdmx/edomex/monterrey/guadalajara/merida/puebla/queretaro/tijuana municipal, inmuebles24, vivanuncios, buro_credito_personal.
+Tier B REST + parsers (5): trustly_mx, clip_terminal, cabify_business, amazon_mx_seller, softrestaurant.
+Delivery aggregators (3): rappi_partners, didi_food_partners, uber_eats_partners.
+Servicios + identidad extras (12): cfe_facturacion, telmex_facturacion, clabe_validador_oficial, paypal_mx, klap, kueski, didi_partners, 5 municipales adicionales.
 
 ### Faltantes críticos
 
@@ -43,87 +59,108 @@ Por encima del plan original (incluye bonus: `mp_clip_terminal`, `mp_trustly_mx`
 
 ## 2. Verticales pendientes
 
-### Estado actual (11/20 TOP del research)
+### Estado actual reconciliado (35 scaffoldeados / ~65 del universo del research)
 
-✅ Hechos: core-mexico, freelancers-mx, agencia-marketing-mx, colegios-mx, talleres-mx, ecommerce-mx, salon-mx, veterinaria-mx, wedding-mx, restaurante-mx, inmobiliaria-mx.
+✅ **TOP del research scaffoldeados (15)**: pf-anual-mx, arrendador-residencial-mx, tramites-vehiculares-mx, conductor-plataforma-mx, tienda-omnicanal-mx, consultorio-especialista-mx, clinica-salud-mx, airbnb-host-mx, notarias-mx, despacho-contable-mx, psicoterapia-mx, servicios-publicos-mx, migracion-extranjeros-mx, gmm-asegurado-mx, paciente-mx.
 
-### TOP 20 del research que NO existen
+✅ **Áreas no cubiertas scaffoldeadas (9, specs 07-15)**: telemedicina-mx, nomina-pymes-mx, cripto-fiscal-mx, educacion-particular-b2c-mx, donatarias-ongs-mx, importadores-mx, sucesion-empresa-familiar-mx, crowdfunding-itf-mx, energia-solar-pyme-mx.
 
-| # | Vertical | Score | Mercado MX |
-|---|---|---|---|
-| 1 | `pf-anual-mx` | 9.5/10 | ~5M declarantes anuales |
-| 2 | `arrendador-residencial-mx` | 9.3/10 | ~2M arrendadores |
-| 3 | `tramites-vehiculares-mx` | 9.0/10 | ~40M vehículos |
-| 4 | `conductor-plataforma-mx` | 8.8/10 | ~1M conductores Uber/DiDi |
-| 5 | `tienda-omnicanal-mx` | 8.5/10 | ~500k tiendas |
-| 6 | `consultorio-especialista-mx` | 8.3/10 | ~300k consultorios |
-| 7 | `airbnb-host-mx` | 8.2/10 | ~50k hosts |
-| 8 | `notarias-mx` | 8.0/10 | ~3,500 notarías |
-| 9 | `servicios-publicos-mx` | 7.8/10 | ~30M cuentas CFE+agua |
-| 10 | `despacho-contable-mx` | 7.9/10 | ~50k despachos |
-| 11 | `psicoterapia-mx` | 7.8/10 | ~50k terapeutas |
-| 12 | `migracion-extranjeros-mx` | 7.5/10 | ~1.5M migrantes |
-| 13 | `gmm-asegurado-mx` | 7.5/10 | ~10M asegurados |
-| 14 | `paciente-mx` | 7.5/10 | (todos) |
-| 15 | `geriatria-cuidado-mayor-mx` | 7.5/10 | ~15M mayores 65+ |
-| 16 | `laboratorio-clinico-mx` | 7.3/10 | ~50k labs |
-| 17 | `nutricion-mx` | 7.0/10 | ~30k nutricionistas |
-| 18 | `centro-capacitacion-mx` | 7.0/10 | ~5k bootcamps |
-| 19 | `tutor-individual-mx` | 7.0/10 | ~200k tutores |
-| 20 | `clinica-salud-mx` | 8.3/10 | ~20k clínicas (incluye PME) |
+✅ **Originales (11)**: core-mexico, freelancers-mx, agencia-marketing-mx, colegios-mx, talleres-mx, ecommerce-mx, salon-mx, veterinaria-mx, wedding-mx, restaurante-mx, inmobiliaria-mx.
 
-**Esfuerzo por vertical**: 200-400h (scaffolding) + 100-200h (afinación con partner del sector) = 300-600h cada uno.
+### Verticales del research aún SIN scaffold (~10)
 
-**Total esfuerzo verticales TOP 20 faltantes (15)**: 4,000-5,000 horas (~10-15 meses con un dev full-time).
+| Vertical | Score | Mercado |
+|---|---|---|
+| `geriatria-cuidado-mayor-mx` | 7.5/10 | ~15M mayores 65+ |
+| `laboratorio-clinico-mx` | 7.3/10 | ~50k labs |
+| `nutricion-mx` | 7.0/10 | ~30k nutricionistas |
+| `tutor-individual-mx` | 7.0/10 | ~200k tutores |
+| `centro-capacitacion-mx` | 7.0/10 | ~5k bootcamps |
+| `mantenimiento-hogar-mx` | 7.0/10 | universal |
+| `compraventa-inmueble-personal-mx` | 7.2/10 | ~700k transacciones/año |
+| `repartidores-delivery-mx` | 7.0/10 | ~300k repartidores |
+| `agentes-inmobiliarios-b2b-mx` | 7.0/10 | nicho |
+| `marketplace-b2b-servicios` | 7.0/10 | producto completo |
+
+**Esfuerzo restante para scaffoldear los ~10 faltantes**: 2,000-4,000h (200-400h/vertical).
+
+### Esfuerzo crítico real: afinación + validación experta
+
+**El bloqueador NO es scaffolding nuevo** — son los 35 existentes que están en 4.7/9 promedio (`estado-real.md`). Llevarlos a producción-grade (≥7.5/9):
+
+- 300-400h dogfooding + iteración por vertical
+- 1 partner del sector validando (revenue share o consultoría)
+- 1 experto regulado por vertical de riesgo alto (contador, abogado)
+
+**Total para llevar 4 verticales a producción** (sugerido `plan-afinacion.md`): ~1,000-1,600h.
+
+**Total para los 35 scaffoldeados a producción**: ~10,000-14,000h.
 
 ---
 
 ## 3. Workflows pendientes
 
-### Construidos (7/8+)
+### Estado real reconciliado 2026-06-12
 
-`cfdi-emision-completa`, `pago-conciliacion`, `cobranza-multinivel`, `cierre-fiscal-mensual`, `sync-multicanal`, `due-diligence-cliente`, `pf-anual-completa`.
+**Declarados como markdown**: 23.
+**Ejecutables como código (`Workflow.workflow()` / `phase()` / `parallel()`)**: **0**.
 
-### Faltantes
+⚠ **Este es el gap más invisible del proyecto**. Tanto la versión previa de este documento como STATUS.md decían "7 workflows construidos" — pero `find . -type d -name "workflow-*"` devuelve cero. Los workflows son tablas markdown en `docs/specs/`, `docs/flujos-operativos.md` y el doc de planeación.
 
-| Workflow | Spec | Esfuerzo |
+### Conversión markdown → código (prioridad)
+
+| Workflow | Estado actual | Esfuerzo |
 |---|---|---|
-| `emitir-cfdi-tras-pago` (webhook handler) | Sección 8.1 | 20-40h |
-| `monitoreo-diario-vehicular` | 7.6 | 30-50h |
-| `respuesta-crisis-cm` | 7.7 | 20-40h |
-| `conciliacion-bancaria-mensual` | 7.2 | 40-60h |
-| `verificar-conciliacion-5dia` | Cron 9.1 | 20-30h |
-| `dashboard-cartera-semanal` | Cron 9.1 | 15-25h |
-| `procesar-wa-pendientes` | Cron 9.1 | 30-50h |
-| `pago-provisional-validator` | Implícito | 15-25h |
+| `cierre-fiscal-mensual` | Markdown ✅ (planeación §7.1) | 30-40h |
+| `pf-anual-completa` | Markdown ✅ | 30-40h |
+| `cfdi-emision-completa` | Markdown ✅ | 25-35h |
+| `due-diligence-cliente-nuevo` | Markdown ✅ (planeación §7.2) | 25-35h |
+| `cobranza-multinivel` | Markdown ✅ | 25-35h |
+| `pago-conciliacion` | Markdown ✅ | 20-30h |
+| `sync-multicanal` (ecommerce) | Markdown ✅ | 25-35h |
+| `conciliacion-bancaria-mensual` | Markdown parcial | 40-60h |
 
-**Total esfuerzo workflows**: 210-360 horas.
+**Esfuerzo total conversión**: 200-300h.
+
+### Workflows nuevos faltantes (markdown + código)
+
+| Workflow | Esfuerzo total |
+|---|---|
+| `emitir-cfdi-tras-pago` (webhook handler) | 20-40h |
+| `monitoreo-diario-vehicular` | 30-50h |
+| `respuesta-crisis-cm` | 20-40h |
+| `verificar-conciliacion-5dia` (cron) | 20-30h |
+| `dashboard-cartera-semanal` (cron) | 15-25h |
+| `procesar-wa-pendientes` (cron) | 30-50h |
+| `pago-provisional-validator` | 15-25h |
+
+**Total esfuerzo workflows**: 350-560 horas.
 
 ---
 
-## 4. Hooks pendientes
+## 4. Hooks (reconciliado 2026-06-12) ✅ 100% V1
 
-### Construidos (1/15+)
+### Construidos (15 runtime + 1 git + `_lib.sh`)
 
-`scripts/pre-commit.sh` — lint + JSON + tests MCP.
+**Git (1)**: `scripts/pre-commit.sh`.
 
-### Planeados sección 8 del doc de planeación
+**PreToolUse (5)**: `pre-timbrado-validation`, `confirmar-envio-masivo-wa`, `validar-cfdi-payload`, `validar-ficha-cliente`, `bitacora-mcp-calls`.
 
-1. `backup-cfdi-automatico` (PostToolUse)
-2. `validar-ficha-cliente` (Write validation)
-3. `pre-timbrado-validation` (PreToolUse)
-4. `bitacora-mcp-calls` (Post MCP)
-5. `alert-cancelaciones-frecuentes` (Post CFDIs)
-6. `dashboard-cobranza-pendiente` (SessionStart)
-7. `alerta-pago-provisional` (SessionStart)
-8. `cfdi-vencimientos` (SessionStart)
-9. `actualizar-tc-banxico` (SessionStart)
-10. `validar-cfdi-payload` (PreToolUse)
-11. `confirmar-envio-masivo-whatsapp` (PreToolUse)
-12. `sincronizar-shared-pre-commit` (Stop)
-13. `backup-sesion` (Stop)
+**PostToolUse (4)**: `backup-cfdi-automatico`, `alert-cancelaciones-frecuentes`, `actualizar-tc-banxico`, `sincronizar-shared-post-edit`.
 
-**Total esfuerzo hooks**: 40-80 horas (4-6h por hook).
+**SessionStart (4)**: `contexto-inicial-sesion` (orquestador), `dashboard-cobranza-pendiente`, `alerta-pago-provisional`, `cfdi-vencimientos`.
+
+**Stop (1)**: `cleanup-sesion`.
+
+Smoke test: 18/18 invocaciones OK.
+
+### V2 pendiente (opcional)
+
+- Métricas de uso por hook
+- Persistencia configurable de `hook-events.jsonl`
+- Confirmación interactiva real (requiere integración Claude Code más profunda)
+
+**Esfuerzo V2**: 40-60h.
 
 ---
 
@@ -278,25 +315,32 @@ El research describe ~30 problemas operativos. ~24 NO tienen skill correspondien
 
 ---
 
-## Resumen ejecutivo del gap
+## Resumen ejecutivo del gap (reconciliado 2026-06-12)
 
-| Categoría | Hecho | Planeado | Faltante | Esfuerzo |
+| Categoría | Hecho (real) | Planeado | Faltante | Esfuerzo |
 |---|---|---|---|---|
-| MCPs | 25 | 21+ | 6 críticos | 800-1,200h |
-| Verticales TOP | 11 | 20+ | 15+ | 4,000-5,000h |
-| Workflows | 7 | 8+ | 5-7 | 210-360h |
-| Hooks | 1 | 15+ | 13 | 40-80h |
-| Crons | 2 | 30+ | 27-28 | 50-100h |
-| Webhooks | 0 | 12 | 12 | 100-150h |
-| Skills nuevos | 120 | +24 | 24 | 300-400h |
-| Evals | 25 | 160-385 | 135-360 | 150-250h |
-| Docs | 23 | ~35 | 12 | 100-150h |
-| Áreas no cubiertas | 0 | 10 | 10 | 2,030-3,050h |
-| **TOTAL** | | | | **~7,780-10,740h** |
+| MCPs | **40** | 21+ | path real Playwright SAT + bancos | 300-500h |
+| Verticales scaffoldeados | **35** | 20+ TOP + 10 áreas | ~10 del research | 2,000-4,000h scaffolding |
+| Verticales en producción-grade | **0** | 4 (plan-afinacion) | 4 con score ≥7.5/9 | 1,000-1,600h + $26-64k MXN |
+| Workflows declarados markdown | **23** | 8+ | 0 | ✅ |
+| Workflows como código ejecutable | **0** | 8+ | 8 | 200-300h |
+| Hooks runtime CC | **15** ✅ | 15+ | V2 opcional | 40-60h |
+| Hook git | **1** ✅ | 1 | 0 | — |
+| Crons | **2** | 30+ | 28 | 50-100h |
+| Webhook receiver | **V1 + 12 handlers** | 12 + receiver | V2 deploy producción + retry queue | 80-120h |
+| Skills (SKILL.md) | **275** | ~150 esperados | ~50 del universo del research | 600-1,000h |
+| Specs detallados | **15** ✅ | ~10 esperados | 0 | — |
+| Evals | **181** | 160-385 | 0-200 (cubre rango bajo) | 100-200h |
+| Docs | **25** | ~35 | ~10 (incluye guías por vertical nuevo) | 80-120h |
+| Validaciones expertas firmadas | **0** | 4+ verticales | TODOS los críticos | $26-64k MXN + tiempo humano |
+| **TOTAL Tier 1 (MVP comercializable 4 meses)** | | | | **~1,000-1,500h + $30-65k MXN** |
+| **TOTAL hasta cubrir universo del research** | | | | **~8,000-12,000h adicionales** |
 
-**Equivalente**: 8-11 meses con equipo 3-4 personas.
+**Equivalente Tier 1**: 4 meses con dedicación part-time + consultorías clave.
 
-**Monetario**: $3.9M-5.4M MXN @ $500/h desarrollo.
+**Equivalente total**: 8-15 meses con equipo 3-4 personas.
+
+**Monetario total**: $4M-6M MXN @ $500/h desarrollo + $30-100k MXN consultorías expertas.
 
 ---
 

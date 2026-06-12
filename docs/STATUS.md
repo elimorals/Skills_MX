@@ -1,8 +1,10 @@
 # STATUS — Estado del proyecto plugins-mx
 
 > **Documento vivo.** Cada sesión que cierre un módulo, sub-módulo o entrega debe actualizar este archivo.
-> Última actualización: **2026-06-11**
+> Última actualización: **2026-06-12** (reconciliación con filesystem)
 > Próxima revisión sugerida: al cierre de cada sesión productiva.
+
+> ⚠ **Nota 2026-06-12**: este documento estaba subestimando el filesystem real. Reconciliación completa hecha. Detalle de los hallazgos en [analisis-profundo-2026-06.md](analisis-profundo-2026-06.md).
 
 ---
 
@@ -22,36 +24,49 @@
 
 ---
 
-## Resumen de progreso global
+## Resumen de progreso global (reconciliado 2026-06-12)
 
-| Capa | Hecho | Faltante | % completado |
-|---|---|---|---|
-| MCP servers | **40** (+12 secundarios + 3 delivery aggregators) + esqueletos SAT/bancos Playwright | path real Playwright | **~92%** |
-| Plugins verticales | **27** (+15 nuevos en últimas sesiones) | 9 áreas no cubiertas (specs 07-15) | **~75%** |
-| Workflows | **23** (+11 nuevos) | 0 base, V2 opcional | **~95%** |
-| Hooks | 1 git + 14 runtime ✅ | 0 | **100%** |
-| Crons | **27** (+25 desde inicio) | extras por vertical | **~85%** |
-| Webhooks | 1 receiver V1 + 12 handlers | retry queue + deploy | ~75% |
-| Skills | **220** lint OK (+100 desde inicio) | de specs 07-15 | ~85% |
-| Specs detallados | **15** (+9 áreas no cubiertas) | 0 | **100%** |
-| Evals | **181** (+156 generados) | refinamiento manual | **~50%** |
-| Fixtures | 38 | 50-100 objetivo | ~38-76% |
-| Tests Python | **80** (+78 nuevos) | de specs no implementados | ~70% |
-| Documentación | 24+ | actualizar STATUS continuo | ~75% |
-| Áreas no cubiertas | 9 specs ✅ / 0 implementadas | 9 implementaciones | 50% (specs ✅, código ❌) |
+| Capa | Hecho (filesystem real) | Faltante | % completado | Notas |
+|---|---|---|---|---|
+| **MCP servers** | **40** | path real Playwright (SAT + bancos) | ~92% scaffolding / ~30% Playwright real | 92 archivos test |
+| **Plugins verticales** | **35** (core + 34) | ~30 del research (geriatría, lab clínico, nutrición, tutor, etc.) | ~54% universo del research | Scaffolding promedio 4.7/9 |
+| **Workflows declarados markdown** | **23** | conversión a código ejecutable | ~100% declarados | ⚠ |
+| **Workflows como código ejecutable** | **0** | 8 prioritarios | **0%** | ⚠ Gap silencioso descubierto 2026-06-12 |
+| **Hooks runtime CC** | **15** + `_lib.sh` | V2 (métricas, persistencia) | 100% V1 ✅ | PreToolUse 5 + PostToolUse 4 + SessionStart 4 + Stop 1 + test |
+| **Hook git** | **1** (pre-commit) | 0 | 100% ✅ | |
+| **Crons activos** | **2** (Banxico TCs + SAT listas) | ~28 del plan (cobranza, pre-cierre, etc.) | ~7% | |
+| **Webhook receiver** | **V1 local + 12 handlers** | V2 producción + retry queue | ~75% | 29/29 tests pasando |
+| **Skills (`SKILL.md`)** | **275** (6 `_shared/` + 269) | críticos sin partner (~50) | ~85% lint / ~52% producción | |
+| **Specs detallados** | **15** + `_template.md` | 0 (cobertura completa) | 100% ✅ | 6 infra + 9 verticales |
+| **Evals (`.eval.json`)** | **181** | críticos (`freelance-tax-mx`, `cfdi-colegiaturas-deducibles`, `pf-anual-mx`) | **66% del ratio objetivo** (160-385) | Ratio 0.66/skill, objetivo 0.8 |
+| **Fixtures** | 38 | 50-100 objetivo | ~38-76% | |
+| **Tests Python (archivos)** | **92** | de specs no implementados | ~70% | |
+| **Documentación (docs/)** | **25** docs | actualización continua | ~80% | Incluye análisis profundo 2026-06-12 |
+| **Validaciones expertas firmadas** | **0** | contador, abogado mercantil, abogado defensa consumidor, abogado educativo | **0%** | Bloqueador no-codificable |
 
-**Esfuerzo restante estimado**: 7,780-10,740 horas.
+**Esfuerzo restante hasta MVP comercializable (Tier 1)**: 1,000-1,500h dev + $30-65k MXN consultorías + 1 partner por vertical TOP.
+
+**Esfuerzo total hasta cubrir universo del research**: 8,000-12,000h adicionales.
 
 ---
 
-## Próximo item recomendado
+## Próximo item recomendado (8 semanas — 2026-06-12)
 
-`[ ]` **Tier 1 — MVP comercializable (4 meses)**:
-- Spec detallado de **webhook receiver** (`docs/specs/01-webhook-receiver.md`)
-- Spec detallado de **SAT Playwright real** (`docs/specs/02-sat-portal-playwright-real.md`)
-- Spec detallado de **vertical pf-anual-mx** (`docs/specs/05-vertical-pf-anual-mx.md`)
+Plan reconciliado tras descubrir gaps invisibles (workflows-markdown, validaciones expertas faltantes). Ver [analisis-profundo-2026-06.md](analisis-profundo-2026-06.md) §8.
 
-Después de specs: codificar los 3 (en este orden).
+| Sem | Tarea | Bloqueador / motivo | Esfuerzo |
+|---|---|---|---|
+| 1 | `[~]` Reconciliar README + STATUS + gap-analysis con filesystem real + commit | Sin esto las decisiones se toman sobre cifras erróneas | 2-4h |
+| 1-3 | `[ ]` Implementar Playwright real `mp_sat_portal` (selectores + e.firma loader) | Bloquea `pf-anual-mx`, descarga masiva CFDIs, Buzón Tributario | 100-200h |
+| 2-4 | `[ ]` Conseguir contador certificado para validar `freelance-tax-mx` + `pf-anual-mx` | "Calendar-time" — arrancar ya antes de marzo 2027 | $3-8k MXN + 4-6h |
+| 3-5 | `[ ]` Implementar 2 workflows como código real: `cierre-fiscal-mensual` + `pf-anual-completa` | Sin esto los workflows declarados no se pueden ejecutar | 50-80h |
+| 4-6 | `[ ]` Webhook receiver V2 producción (Cloudflare Workers o Railway) + retry queue async | Sin HTTPS pública no llegan webhooks reales | 80-120h |
+| 6-8 | `[ ]` Dogfooding `pf-anual-mx` con declaración personal real | Caso ideal antes de temporada anual 2027 | 20-40h |
+
+### Lo que NO recomiendo seguir haciendo
+- Scaffoldear más verticales (ya hay 35 — más del 50% del universo).
+- Construir MCPs nuevos Tier B sin que un vertical real los consuma.
+- Sumar evals genéricos — generar los críticos faltantes.
 
 ---
 
@@ -113,64 +128,98 @@ Después de specs: codificar los 3 (en este orden).
 
 ---
 
-## 2. Plugins verticales (11/26 del research)
+## 2. Plugins verticales (35 scaffoldeados — reconciliado 2026-06-12)
 
-### ✅ Construidos (11)
+### ✅ Scaffoldeados — Originales (11)
 
-| Plugin | Skills propios | Comandos | Estado |
-|---|---|---|---|
-| [x] `core-mexico` | 6 `_shared/` | 6 | Producción base |
-| [x] `freelancers-mx` | 5 | 8 | Scaffolding denso |
-| [x] `agencia-marketing-mx` | 5 | 4 | Scaffolding |
-| [x] `colegios-mx` | 4 | 4 | Scaffolding (riesgo regulatorio alto) |
-| [x] `talleres-mx` | 4 | 4 | Scaffolding |
-| [x] `ecommerce-mx` | 5 | 5 | Scaffolding — 2026-06-11 |
-| [x] `salon-mx` | 5 | 4 | Scaffolding — 2026-06-11 |
-| [x] `veterinaria-mx` | 5 | 4 | Scaffolding — 2026-06-11 |
-| [x] `wedding-mx` | 5 | 4 | Scaffolding — 2026-06-11 |
-| [x] `restaurante-mx` | 5 | 4 | Scaffolding — 2026-06-11 |
-| [x] `inmobiliaria-mx` | 5 | 4 | Scaffolding — 2026-06-11 |
+| Plugin | Estado |
+|---|---|
+| [x] `core-mexico` | Producción base |
+| [x] `freelancers-mx` | Scaffolding denso |
+| [x] `agencia-marketing-mx` | Scaffolding |
+| [x] `colegios-mx` | Scaffolding (riesgo regulatorio alto) |
+| [x] `talleres-mx` | Scaffolding |
+| [x] `ecommerce-mx` | Scaffolding |
+| [x] `salon-mx` | Scaffolding |
+| [x] `veterinaria-mx` | Scaffolding |
+| [x] `wedding-mx` | Scaffolding |
+| [x] `restaurante-mx` | Scaffolding |
+| [x] `inmobiliaria-mx` | Scaffolding |
 
-### ❌ Pendientes (TOP 15 del research, score >= 7.5)
+### ✅ Scaffoldeados — TOP del research (15)
 
-#### Tier 1 (score >= 9.0) — REQUIEREN SPEC
-- [x] `pf-anual-mx` — 2026-06-12 — score 9.5/10 — 5M declarantes — plugin.json + 8 skills + 5 commands + workflow `workflow-pf-anual-completa` + README — pendiente: librerías PDF + validación contador (humano)
-- [x] `arrendador-residencial-mx` — 2026-06-12 — score 9.3/10 — 2M arrendadores — plugin.json + 8 skills + 5 commands + `workflow-cobranza-renta-mensual` + README — pendiente: validación legal CDMX vs estados (humano) + librería PDF
-- [ ] `tramites-vehiculares-mx` — score 9.0/10 — 40M vehículos
+| Plugin | Score | Estado afinación |
+|---|---|---|
+| [x] `pf-anual-mx` | 9.5/10 | Scaffold + spec 05 — pendiente: backend Playwright SAT + contador (humano) |
+| [x] `arrendador-residencial-mx` | 9.3/10 | Scaffold + spec 06 — pendiente: validación legal CDMX (humano) |
+| [x] `tramites-vehiculares-mx` | 9.0/10 | Scaffold |
+| [x] `conductor-plataforma-mx` | 8.8/10 | Scaffold + agents |
+| [x] `tienda-omnicanal-mx` | 8.5/10 | Scaffold |
+| [x] `consultorio-especialista-mx` | 8.3/10 | Scaffold |
+| [x] `clinica-salud-mx` | 8.3/10 | Scaffold |
+| [x] `airbnb-host-mx` | 8.2/10 | Scaffold (sin agents — débil) |
+| [x] `notarias-mx` | 8.0/10 | Scaffold |
+| [x] `despacho-contable-mx` | 7.9/10 | Scaffold |
+| [x] `psicoterapia-mx` | 7.8/10 | Scaffold |
+| [x] `servicios-publicos-mx` | 7.8/10 | Scaffold (CFE, agua, predial) |
+| [x] `migracion-extranjeros-mx` | 7.5/10 | Scaffold |
+| [x] `gmm-asegurado-mx` | 7.5/10 | Scaffold |
+| [x] `paciente-mx` | 7.5/10 | Scaffold |
 
-#### Tier 2 (score 8.0-8.9)
-- [ ] `conductor-plataforma-mx` — 8.8/10 — 1M conductores Uber/DiDi
-- [ ] `tienda-omnicanal-mx` — 8.5/10 — 500k tiendas (puede ser extensión de ecommerce-mx)
-- [ ] `consultorio-especialista-mx` — 8.3/10 — clonar veterinaria-mx pattern
-- [ ] `clinica-salud-mx` — 8.3/10
-- [ ] `airbnb-host-mx` — 8.2/10
-- [ ] `notarias-mx` — 8.0/10
+### ✅ Scaffoldeados — Áreas no cubiertas (specs 07-15) (9)
 
-#### Tier 3 (score 7.5-7.9)
-- [ ] `despacho-contable-mx` — 7.9/10
-- [ ] `psicoterapia-mx` — 7.8/10
-- [ ] `servicios-publicos-mx` — 7.8/10 — CFE, agua, predial
-- [ ] `migracion-extranjeros-mx` — 7.5/10
-- [ ] `gmm-asegurado-mx` — 7.5/10
-- [ ] `paciente-mx` — 7.5/10
-- [ ] `geriatria-cuidado-mayor-mx` — 7.5/10
-- [ ] `laboratorio-clinico-mx` — 7.3/10
+| Plugin | Spec | Tema |
+|---|---|---|
+| [x] `telemedicina-mx` | 07 | COFEPRIS + NOM-004 |
+| [x] `nomina-pymes-mx` | 08 | CFDI Nómina 4.0 + IMSS-SUA-IDSE |
+| [x] `cripto-fiscal-mx` | 09 | Cripto + CARF 2026 |
+| [x] `educacion-particular-b2c-mx` | 10 | Cursos online + CFDI D10/G03 |
+| [x] `donatarias-ongs-mx` | 11 | Donatarias autorizadas + transparencia |
+| [x] `importadores-mx` | 12 | Pedimentos + IVA + IMMEX |
+| [x] `sucesion-empresa-familiar-mx` | 13 | Sucesión + donaciones + protocolo familiar |
+| [x] `crowdfunding-itf-mx` | 14 | Ley Fintech + IFC + P2P |
+| [x] `energia-solar-pyme-mx` | 15 | CFE bidireccional + net metering + GDMTH |
+
+### ❌ Pendientes — del research, NO scaffoldeados
+
+| Vertical | Score | Mercado MX |
+|---|---|---|
+| [ ] `geriatria-cuidado-mayor-mx` | 7.5/10 | ~15M mayores 65+ |
+| [ ] `laboratorio-clinico-mx` | 7.3/10 | ~50k labs |
+| [ ] `nutricion-mx` | 7.0/10 | ~30k nutricionistas |
+| [ ] `tutor-individual-mx` | 7.0/10 | ~200k tutores |
+| [ ] `centro-capacitacion-mx` | 7.0/10 | ~5k bootcamps |
+| [ ] `mantenimiento-hogar-mx` | 7.0/10 | universal |
+| [ ] `compraventa-inmueble-mx` | 7.2/10 | ~700k transacciones/año |
+| [ ] Otros (repartidores delivery, IMSS asegurado, INE, universidades, agentes inmobiliarios B2B, etc.) | 6.0-7.5 | varios |
+
+**Score honesto vs producción**: ningún vertical scaffoldeado pasa de 4.7/9 promedio sin validación experta. Ver [estado-real.md](estado-real.md).
 
 ---
 
-## 3. Workflows (7/12+)
+## 3. Workflows (23 declarados markdown / 0 ejecutables como código)
 
-### ✅ Construidos (7)
-- [x] `workflow-cfdi-emision-completa` — 2026-06-11
-- [x] `workflow-pago-conciliacion` — 2026-06-11
-- [x] `workflow-cobranza-multinivel` — 2026-06-11
-- [x] `workflow-cierre-fiscal-mensual` — 2026-06-11
-- [x] `workflow-due-diligence-cliente` — 2026-06-11
-- [x] `workflow-sync-multicanal` (ecommerce-mx) — 2026-06-11
-- [x] `workflow-pf-anual-completa` — 2026-06-11
+⚠ **Gap silencioso descubierto 2026-06-12**: los workflows existen como **plantillas markdown declarativas**, no como scripts ejecutables del skill `Workflow` con `phase()` / `parallel()` / `pipeline()`. Ningún cron puede dispararlos hoy.
 
-### ❌ Pendientes
-- [ ] `emitir-cfdi-tras-pago` (webhook handler) — 20-40h — Spec 01 lo cubre
+### Declarados como markdown (23)
+
+- [~] `workflow-cfdi-emision-completa` — markdown, falta código
+- [~] `workflow-pago-conciliacion` — markdown
+- [~] `workflow-cobranza-multinivel` — markdown
+- [~] `workflow-cierre-fiscal-mensual` — markdown
+- [~] `workflow-due-diligence-cliente` — markdown
+- [~] `workflow-sync-multicanal` (ecommerce-mx) — markdown
+- [~] `workflow-pf-anual-completa` — markdown
+- [~] +16 más (cobranza-renta, telemedicina-consulta, donativo-anual, importacion-pedimento, sucesion-protocolo, crowdfunding-aporte, solar-conexion-cfe, etc.)
+
+### ❌ Pendientes — código real
+
+Prioritarios para 8 semanas próximas:
+- [ ] `cierre-fiscal-mensual` como código Workflow — 30-40h
+- [ ] `pf-anual-completa` como código Workflow — 30-40h
+
+Resto del plan:
+- [ ] `emitir-cfdi-tras-pago` (webhook handler) — 20-40h
 - [ ] `monitoreo-diario-vehicular` — 30-50h
 - [ ] `respuesta-crisis-cm` — 20-40h
 - [ ] `conciliacion-bancaria-mensual` — 40-60h
@@ -178,6 +227,8 @@ Después de specs: codificar los 3 (en este orden).
 - [ ] `dashboard-cartera-semanal` — 15-25h
 - [ ] `procesar-wa-pendientes` — 30-50h
 - [ ] `pago-provisional-validator` — 15-25h
+
+**Esfuerzo conversión total**: ~200-300h.
 
 ---
 
@@ -307,11 +358,20 @@ Ver `webhooks/README.md` sección "Pasos que requieren intervención humana":
 
 ---
 
-## 8. Evals (25/160-385)
+## 8. Evals (181/160-385)
 
-- [x] 25 archivos `.eval.json` cubren skills críticos — 2026-06-11
+- [x] 181 archivos `.eval.json` — **ratio 0.66 evals/skill** (objetivo 0.8 = 220+)
 
-### ❌ Pendientes (~135-360)
+### ❌ Críticos faltantes (alta prioridad)
+
+| Skill | Riesgo | Por qué crítico |
+|---|---|---|
+| [ ] `freelance-tax-mx` | 🚨 Muy alto | Cálculo ISR PFAE/RESICO — error → multa SAT al usuario |
+| [ ] `cfdi-colegiaturas-deducibles` | Alto | Topes Art. 151 LISR — datos pueden estar desactualizados |
+| [ ] `pf-anual-completa` (workflow) | 🚨 Muy alto | Declaración anual |
+| [ ] `cfdi-emision` | Alto | CFDI 4.0 obligatorio — error → CFDI rechazado por SAT |
+
+### ❌ Resto (~30-200 según scope)
 Patrón establecido. Acumular según se construyan skills/MCPs nuevos.
 
 ---
@@ -375,20 +435,32 @@ Patrón establecido. Acumular según se construyan skills/MCPs nuevos.
 
 ---
 
-## 11. Áreas no cubiertas (0/10)
+## 11. Áreas no cubiertas — scaffoldeadas via specs 07-15 (9/9 ✅)
 
-Del research, requieren scaffold de plugin nuevo:
+Reconciliado 2026-06-12: todas las áreas no cubiertas YA están scaffoldeadas. Falta afinación + validación experta.
 
-- [ ] Gestión pólizas seguros (auto/GMM/vida) — score 7.5
-- [ ] Auditoría fiscal automatizada — score 8.0
-- [ ] Optimización trámites burocráticos aggregator — score 7.5
-- [ ] Telemedicina + recetas digitales — score 7.2 (requiere COFEPRIS)
-- [ ] Gestor cripto multi-exchange + fiscal — score 6.8
+- [x] `telemedicina-mx` — spec 07 (COFEPRIS + NOM-004)
+- [x] `nomina-pymes-mx` — spec 08 (CFDI Nómina 4.0 + IMSS-SUA-IDSE)
+- [x] `cripto-fiscal-mx` — spec 09 (cripto + CARF 2026)
+- [x] `educacion-particular-b2c-mx` — spec 10 (cursos online)
+- [x] `donatarias-ongs-mx` — spec 11 (donatarias autorizadas)
+- [x] `importadores-mx` — spec 12 (pedimentos + IMMEX)
+- [x] `sucesion-empresa-familiar-mx` — spec 13 (protocolo familiar)
+- [x] `crowdfunding-itf-mx` — spec 14 (Ley Fintech)
+- [x] `energia-solar-pyme-mx` — spec 15 (CFE bidireccional + GDMTH)
+
+### Áreas restantes del research aún SIN scaffold
+
+- [ ] Geriatría + cuidado adultos mayores — score 7.5
+- [ ] Laboratorio clínico — score 7.3
+- [ ] Nutrición privada — score 7.0
+- [ ] Tutor individual — score 7.0
+- [ ] Centros capacitación — score 7.0
+- [ ] Mantenimiento hogar — score 7.0
+- [ ] Compraventa inmueble personal — score 7.2
 - [ ] Marketplace B2B servicios — score 7.0 (producto completo)
-- [ ] Community management automatizado PyMEs — score 7.3
-- [ ] Nómina simplificada ISR/IMSS/INFONAVIT — score 7.4
-- [ ] Reporte rentabilidad por cliente/producto — score 7.2
-- [ ] Contratos templates por estado — score 7.0
+- [ ] Repartidores delivery — score 7.0
+- [ ] Agentes inmobiliarios B2B — score 7.0
 
 ---
 
