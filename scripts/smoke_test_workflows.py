@@ -30,6 +30,11 @@ WORKFLOWS = [
     REPO_ROOT / "core-mexico" / "workflows" / "due-diligence-cliente.workflow.js",
     REPO_ROOT / "core-mexico" / "workflows" / "pago-conciliacion.workflow.js",
     REPO_ROOT / "freelancers-mx" / "workflows" / "cobranza-multinivel.workflow.js",
+    REPO_ROOT / "tramites-vehiculares-mx" / "workflows" / "monitoreo-diario-vehicular.workflow.js",
+    REPO_ROOT / "agencia-marketing-mx" / "workflows" / "respuesta-crisis-cm.workflow.js",
+    REPO_ROOT / "core-mexico" / "workflows" / "emitir-cfdi-tras-pago.workflow.js",
+    REPO_ROOT / "core-mexico" / "workflows" / "validacion-cfdis-historico.workflow.js",
+    REPO_ROOT / "freelancers-mx" / "workflows" / "migracion-rfc-a-otro-regimen.workflow.js",
     REPO_ROOT / "pf-anual-mx" / "workflows" / "pf-anual-completa.workflow.js",
 ]
 
