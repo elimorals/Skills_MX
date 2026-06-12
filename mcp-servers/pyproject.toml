@@ -42,6 +42,7 @@ testpaths = [
     "mp_aspel_contpaqi/tests",
     "mp_shopify_mx/tests",
     "mp_bitso/tests",
+    "mp_bancos_mx/tests",
 ]
 python_files = ["test_*.py"]
 asyncio_mode = "auto"

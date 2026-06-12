@@ -1,0 +1,21 @@
+{
+  "_comment": "Configuración mp_bancos_mx. Mock-first. Path Playwright real NO implementado. Para usar real (a futuro): credenciales por banco (BBVA_USUARIO, BBVA_PASSWORD, etc.) + PLUGINS_MX_PLAYWRIGHT_REAL=1 + parser específico del portal mantenido al día.",
+  "mcpServers": {
+    "bancos_mx": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_bancos_mx.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "BANCOS_MX_USUARIO": "${BANCOS_MX_USUARIO:-}",
+        "BANCOS_MX_PASSWORD": "${BANCOS_MX_PASSWORD:-}",
+        "BBVA_USUARIO": "${BBVA_USUARIO:-}",
+        "BBVA_PASSWORD": "${BBVA_PASSWORD:-}",
+        "BANAMEX_USUARIO": "${BANAMEX_USUARIO:-}",
+        "BANAMEX_PASSWORD": "${BANAMEX_PASSWORD:-}",
+        "PLUGINS_MX_PLAYWRIGHT_REAL": "${PLUGINS_MX_PLAYWRIGHT_REAL:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}

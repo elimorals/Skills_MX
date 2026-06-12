@@ -1,0 +1,18 @@
+{
+  "_comment": "mp_imss_patronal (IMSS Desde su Empresa). Mock-first. Path real requiere e.firma o NPIE — no implementado todavía.",
+  "mcpServers": {
+    "imss_patronal": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_imss_patronal.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "IMSS_RFC_PATRONAL": "${IMSS_RFC_PATRONAL:-}",
+        "IMSS_NPIE_PATH": "${IMSS_NPIE_PATH:-}",
+        "IMSS_EFIRMA_CERT": "${IMSS_EFIRMA_CERT:-}",
+        "PLUGINS_MX_PLAYWRIGHT_REAL": "${PLUGINS_MX_PLAYWRIGHT_REAL:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}
