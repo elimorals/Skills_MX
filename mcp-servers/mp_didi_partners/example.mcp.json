@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "didi_partners": {
+      "command": "python",
+      "args": ["-m", "mp_didi_partners.server"],
+      "env": {
+        "DIDI_DRIVER_TOKEN": "${{ DIDI_DRIVER_TOKEN:- }}"
+      }
+    }
+  }
+}

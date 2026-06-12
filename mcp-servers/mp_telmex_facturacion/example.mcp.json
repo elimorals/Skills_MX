@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "telmex_fact": {
+      "command": "python",
+      "args": ["-m", "mp_telmex_facturacion.server"],
+      "env": {
+        "TELMEX_RFC": "${{ TELMEX_RFC:- }}",
+        "TELMEX_PASSWORD": "${{ TELMEX_PASSWORD:- }}"
+      }
+    }
+  }
+}

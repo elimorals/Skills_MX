@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "clabe_validador": {
+      "command": "python",
+      "args": ["-m", "mp_clabe_validador_oficial.server"]
+    }
+  }
+}

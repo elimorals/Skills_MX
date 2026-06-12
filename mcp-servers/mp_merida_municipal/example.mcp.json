@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "merida_mun": {
+      "command": "python",
+      "args": ["-m", "mp_merida_municipal.server"]
+    }
+  }
+}

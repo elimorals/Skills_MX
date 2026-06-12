@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "cfe_fact": {
+      "command": "python",
+      "args": ["-m", "mp_cfe_facturacion.server"],
+      "env": {
+        "CFE_RPU": "${{ CFE_RPU:- }}",
+        "CFE_PASSWORD": "${{ CFE_PASSWORD:- }}"
+      }
+    }
+  }
+}

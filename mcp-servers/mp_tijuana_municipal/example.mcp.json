@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "tijuana_mun": {
+      "command": "python",
+      "args": ["-m", "mp_tijuana_municipal.server"]
+    }
+  }
+}

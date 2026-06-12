@@ -65,6 +65,18 @@ testpaths = [
     "mp_rappi_partners/tests",
     "mp_didi_food_partners/tests",
     "mp_uber_eats_partners/tests",
+    "mp_didi_partners/tests",
+    "mp_clabe_validador_oficial/tests",
+    "mp_paypal_mx/tests",
+    "mp_kueski/tests",
+    "mp_klap/tests",
+    "mp_guadalajara_municipal/tests",
+    "mp_puebla_municipal/tests",
+    "mp_queretaro_municipal/tests",
+    "mp_tijuana_municipal/tests",
+    "mp_merida_municipal/tests",
+    "mp_telmex_facturacion/tests",
+    "mp_cfe_facturacion/tests",
 ]
 python_files = ["test_*.py"]
 asyncio_mode = "auto"

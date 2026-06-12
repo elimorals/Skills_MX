@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "queretaro_mun": {
+      "command": "python",
+      "args": ["-m", "mp_queretaro_municipal.server"]
+    }
+  }
+}

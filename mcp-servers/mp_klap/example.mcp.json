@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "klap": {
+      "command": "python",
+      "args": ["-m", "mp_klap.server"],
+      "env": {
+        "KLAP_API_KEY": "${{ KLAP_API_KEY:- }}"
+      }
+    }
+  }
+}

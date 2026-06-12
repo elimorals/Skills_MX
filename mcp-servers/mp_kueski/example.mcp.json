@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "kueski": {
+      "command": "python",
+      "args": ["-m", "mp_kueski.server"],
+      "env": {
+        "KUESKI_API_KEY": "${{ KUESKI_API_KEY:- }}"
+      }
+    }
+  }
+}
