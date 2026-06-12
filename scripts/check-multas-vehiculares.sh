@@ -39,7 +39,14 @@ while IFS= read -r line; do
         continue
     fi
 
-    # Por entidad llamar el MCP correspondiente
+    # Validar formato placa contra regex estricto (anti-inyección).
+    # Las placas mexicanas son alfanuméricas + guiones, 5-10 chars.
+    if ! [[ "$placa" =~ ^[A-Z0-9-]{5,10}$ ]]; then
+        echo "  ⚠ placa malformada en tracker, saltada"
+        continue
+    fi
+
+    # Por entidad llamar el MCP correspondiente (allowlist explícito)
     mcp_modulo=""
     case "$entidad" in
         cdmx) mcp_modulo="mp_cdmx_municipal" ;;
@@ -50,18 +57,20 @@ while IFS= read -r line; do
 
     count_total=$((count_total+1))
 
-    # Invocar via Python directo (consulta_multas tool)
-    result=$(.venv/bin/python -c "
-import sys, json
-sys.path.insert(0, '.')
+    # Invocar Python con código ESTÁTICO. Variables externas pasan via env vars
+    # (PLACA, MODULO) y se leen con os.environ. Esto evita inyección de código
+    # si el tracker JSON fuera modificado por un atacante.
+    result=$(PLACA="$placa" MODULO="$mcp_modulo" .venv/bin/python -c '
+import os, json, importlib
 try:
-    from $mcp_modulo.client import Client  # nombre genérico, ajustar si difiere
-    c = Client()
-    r = c.consultar_multas('$placa') if hasattr(c, 'consultar_multas') else {'multas': []}
+    mod = importlib.import_module(os.environ["MODULO"] + ".client")
+    c = mod.Client()
+    placa_in = os.environ["PLACA"]
+    r = c.consultar_multas(placa_in) if hasattr(c, "consultar_multas") else {"multas": []}
     print(json.dumps(r))
 except Exception as e:
-    print(json.dumps({'error': str(e), 'multas': []}))
-" 2>/dev/null) || result='{"multas":[]}'
+    print(json.dumps({"error": str(e), "multas": []}))
+' 2>/dev/null) || result='{"multas":[]}'
 
     multas=$(echo "$result" | jq -r '.multas | length // 0' 2>/dev/null || echo 0)
     if [ "$multas" -gt 0 ]; then
