@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "uber_eats_partners": {
+      "command": "python",
+      "args": ["-m", "mp_uber_eats_partners.server"],
+      "env": {
+        "UBER_EATS_CLIENT_ID": "${UBER_EATS_CLIENT_ID:-}",
+        "UBER_EATS_CLIENT_SECRET": "${UBER_EATS_CLIENT_SECRET:-}",
+        "UBER_EATS_STORE_ID": "${UBER_EATS_STORE_ID:-}"
+      }
+    }
+  }
+}
