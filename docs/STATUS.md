@@ -27,7 +27,7 @@
 | Capa | Hecho | Faltante | % completado |
 |---|---|---|---|
 | MCP servers | 25 + esqueleto SAT Playwright | 6 críticos + 10 secundarios | ~73% |
-| Plugins verticales | 11 | 15 TOP del research | ~42% |
+| Plugins verticales | 12 (+pf-anual-mx) | 14 TOP del research | ~46% |
 | Workflows | 7 | 5-7 | ~58% |
 | Hooks | 1 git + 13 runtime ✅ | 0 | 100% |
 | Crons | 2 | 28 | ~7% |
@@ -132,7 +132,7 @@ Después de specs: codificar los 3 (en este orden).
 ### ❌ Pendientes (TOP 15 del research, score >= 7.5)
 
 #### Tier 1 (score >= 9.0) — REQUIEREN SPEC
-- [ ] `pf-anual-mx` — score 9.5/10 — 5M declarantes — **REQUIERE SPEC** → `docs/specs/05-vertical-pf-anual-mx.md`
+- [x] `pf-anual-mx` — 2026-06-12 — score 9.5/10 — 5M declarantes — plugin.json + 8 skills + 5 commands + workflow `workflow-pf-anual-completa` + README — pendiente: librerías PDF + validación contador (humano)
 - [ ] `arrendador-residencial-mx` — score 9.3/10 — 2M arrendadores — **REQUIERE SPEC** → `docs/specs/06-vertical-arrendador-residencial-mx.md`
 - [ ] `tramites-vehiculares-mx` — score 9.0/10 — 40M vehículos
 
