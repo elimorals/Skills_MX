@@ -37,11 +37,13 @@
     "commands/propuesta.md",
     "commands/cobranza.md",
     "commands/onboarding.md",
-    "commands/pago-provisional.md"
+    "commands/pago-provisional.md",
+    "commands/cobranza-mensual.md"
   ],
   "agents": [
     "agents/auditor-fiscal-mensual.md",
-    "agents/revisor-cobranza-cartera.md"
+    "agents/revisor-cobranza-cartera.md",
+    "agents/workflow-cobranza-multinivel.md"
   ],
   "compatibility": {
     "claudeCode": ">=1.0.0",

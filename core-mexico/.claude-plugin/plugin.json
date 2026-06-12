@@ -29,10 +29,14 @@
   "commands": [
     "commands/validar-rfc.md",
     "commands/format-mxn.md",
-    "commands/timbrar-cfdi.md"
+    "commands/timbrar-cfdi.md",
+    "commands/emitir-y-notificar.md",
+    "commands/conciliar-pago.md"
   ],
   "agents": [
-    "agents/validador-cfdi-batch.md"
+    "agents/validador-cfdi-batch.md",
+    "agents/workflow-cfdi-emision-completa.md",
+    "agents/workflow-pago-conciliacion.md"
   ],
   "compatibility": {
     "claudeCode": ">=1.0.0"
