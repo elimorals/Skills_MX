@@ -1,0 +1,15 @@
+{
+  "_comment": "mp_cabify_business (movilidad B2B MX). Sin CABIFY_API_KEY corre mock.",
+  "mcpServers": {
+    "cabify_business": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_cabify_business.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "CABIFY_API_KEY": "${CABIFY_API_KEY:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_comment": "mp_trustly_mx (open banking MX). Sin TRUSTLY_API_KEY corre mock. Sandbox: key_test_*, Producción: key_live_*.",
+  "mcpServers": {
+    "trustly_mx": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_trustly_mx.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "TRUSTLY_API_KEY": "${TRUSTLY_API_KEY:-}",
+        "TRUSTLY_ENV": "${TRUSTLY_ENV:-sandbox}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}

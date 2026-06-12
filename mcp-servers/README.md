@@ -27,6 +27,11 @@ Servidores MCP (Model Context Protocol) construidos a medida para servicios mexi
 | `mp_inmuebles24` | ✅ scaffolding mock (Playwright stub) | — | Búsqueda inmuebles, detalle, comparables zona, publicar listing |
 | `mp_vivanuncios` | ✅ scaffolding mock (Playwright stub) | — | Búsqueda multi-categoría, detalle, publicar anuncio |
 | `mp_buro_credito_personal` | ⚠ scaffolding mock + compliance | — | Score, reporte completo, alertas — REQUIERE autorización formal del titular |
+| `mp_trustly_mx` | ✅ producción (mock + API REST) | — | Open banking MX: pagos por transferencia directa con autorización del banco del cliente |
+| `mp_clip_terminal` | ✅ producción (mock + API REST) | — | POS Clip MX: charges, refunds, status terminal, settlement T+1 |
+| `mp_cabify_business` | ✅ producción (mock + API REST) | — | Movilidad B2B: agendar viajes, listar, cancelar, factura mensual |
+| `mp_amazon_mx_seller` | ✅ scaffolding mock (LWA+AWSSigV4 no implementado) | — | Amazon MX SP-API: listings, inventory, orders, fees |
+| `mp_softrestaurant` | ✅ scaffolding mock + parser CSV | — | POS Soft Restaurant: corte Z, ventas, platillos, meseros, inventario |
 
 Roadmap completo: `../Downloads/plugins-mx-planeacion-mcps-agentica.md`.
 

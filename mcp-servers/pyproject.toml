@@ -51,6 +51,11 @@ testpaths = [
     "mp_inmuebles24/tests",
     "mp_vivanuncios/tests",
     "mp_buro_credito_personal/tests",
+    "mp_trustly_mx/tests",
+    "mp_clip_terminal/tests",
+    "mp_cabify_business/tests",
+    "mp_amazon_mx_seller/tests",
+    "mp_softrestaurant/tests",
 ]
 python_files = ["test_*.py"]
 asyncio_mode = "auto"
