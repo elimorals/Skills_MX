@@ -1,0 +1,102 @@
+[
+  {
+    "query": "riesgo carf 2026",
+    "should_trigger": true,
+    "rationale": "Nombre literal del skill"
+  },
+  {
+    "query": "como riesgo",
+    "should_trigger": true,
+    "rationale": "Pregunta directa"
+  },
+  {
+    "query": "necesito riesgo",
+    "should_trigger": true,
+    "rationale": "Necesidad explicita"
+  },
+  {
+    "query": "automatizar riesgo",
+    "should_trigger": true,
+    "rationale": "Automatizacion"
+  },
+  {
+    "query": "ayuda con riesgo",
+    "should_trigger": true,
+    "rationale": "Solicitud"
+  },
+  {
+    "query": "workflow riesgo",
+    "should_trigger": true,
+    "rationale": "Workflow"
+  },
+  {
+    "query": "riesgo carf",
+    "should_trigger": true,
+    "rationale": "Sinonimo"
+  },
+  {
+    "query": "info sobre riesgo",
+    "should_trigger": true,
+    "rationale": "Info generica"
+  },
+  {
+    "query": "info sobre riesgo",
+    "should_trigger": true,
+    "rationale": "Info generica"
+  },
+  {
+    "query": "info sobre riesgo",
+    "should_trigger": true,
+    "rationale": "Info generica"
+  },
+  {
+    "query": "tutorial Python",
+    "should_trigger": false,
+    "rationale": "Programacion fuera scope"
+  },
+  {
+    "query": "receta cocina",
+    "should_trigger": false,
+    "rationale": "Fuera scope"
+  },
+  {
+    "query": "horoscopo dia",
+    "should_trigger": false,
+    "rationale": "Fuera total"
+  },
+  {
+    "query": "configurar Wi-Fi",
+    "should_trigger": false,
+    "rationale": "IT generico"
+  },
+  {
+    "query": "comprar bitcoin asesoria",
+    "should_trigger": false,
+    "rationale": "Asesoria inversion fuera"
+  },
+  {
+    "query": "salario minimo profesional",
+    "should_trigger": false,
+    "rationale": "Laboral generico"
+  },
+  {
+    "query": "registro civil acta nacimiento",
+    "should_trigger": false,
+    "rationale": "Tramite civil"
+  },
+  {
+    "query": "clima mexico manana",
+    "should_trigger": false,
+    "rationale": "Pronostico fuera"
+  },
+  {
+    "query": "traduccion ingles texto",
+    "should_trigger": false,
+    "rationale": "Traduccion generica"
+  },
+  {
+    "query": "encontrar restaurante cerca",
+    "should_trigger": false,
+    "rationale": "Geolocalizacion"
+  }
+]

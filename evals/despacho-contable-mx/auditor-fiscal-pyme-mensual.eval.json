@@ -1,0 +1,97 @@
+[
+  {
+    "query": "\"auditoría fiscal mensual\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "\"revisión sat preventiva\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "\"auditor contable\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "\"análisis fiscal pyme\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "\"validar declaración\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "\"auditoría fiscal mensual\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "como \"auditoría fiscal mensual\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "\"revisión sat preventiva\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "como \"revisión sat preventiva\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "\"auditor contable\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "declaración anual (usar pf-anual-completa) ni para defensa sat ya iniciada (eso es auditoría correctiva)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "que es \"auditoría",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "que es \"revisión",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "que es \"auditor",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de auditor-fiscal-pyme-mensual"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de auditor-fiscal-pyme-mensual"
+  }
+]

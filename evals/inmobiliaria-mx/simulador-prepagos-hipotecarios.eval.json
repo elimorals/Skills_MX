@@ -1,0 +1,97 @@
+[
+  {
+    "query": "\"prepagar hipoteca\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "\"abonar a capital\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "\"ahorro intereses hipoteca\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "\"amortización crédito\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "\"infonavit prepago\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "\"reducir plazo hipoteca\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "\"prepagar hipoteca\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "como \"prepagar hipoteca\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "\"abonar a capital\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "como \"abonar a capital\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "refinanciamiento total (usar comparador-subrogaciones-bancarias) ni para liquidación a fin de plazo",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "que es \"prepagar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "que es \"abonar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "que es \"ahorro",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-prepagos-hipotecarios"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-prepagos-hipotecarios"
+  }
+]

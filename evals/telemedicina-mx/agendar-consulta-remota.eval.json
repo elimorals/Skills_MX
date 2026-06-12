@@ -1,0 +1,102 @@
+[
+  {
+    "query": "agendar consulta remota",
+    "should_trigger": true,
+    "rationale": "Nombre literal del skill"
+  },
+  {
+    "query": "como agendar",
+    "should_trigger": true,
+    "rationale": "Pregunta directa"
+  },
+  {
+    "query": "necesito agendar",
+    "should_trigger": true,
+    "rationale": "Necesidad explicita"
+  },
+  {
+    "query": "automatizar agendar",
+    "should_trigger": true,
+    "rationale": "Automatizacion"
+  },
+  {
+    "query": "agendar cita",
+    "should_trigger": true,
+    "rationale": "Agenda"
+  },
+  {
+    "query": "horario disponible",
+    "should_trigger": true,
+    "rationale": "Slots"
+  },
+  {
+    "query": "confirmar consulta",
+    "should_trigger": true,
+    "rationale": "Confirmacion"
+  },
+  {
+    "query": "info sobre agendar",
+    "should_trigger": true,
+    "rationale": "Info generica"
+  },
+  {
+    "query": "info sobre agendar",
+    "should_trigger": true,
+    "rationale": "Info generica"
+  },
+  {
+    "query": "info sobre agendar",
+    "should_trigger": true,
+    "rationale": "Info generica"
+  },
+  {
+    "query": "predial CDMX 2026",
+    "should_trigger": false,
+    "rationale": "Tramite municipal"
+  },
+  {
+    "query": "tutorial Python",
+    "should_trigger": false,
+    "rationale": "Programacion fuera scope"
+  },
+  {
+    "query": "receta cocina",
+    "should_trigger": false,
+    "rationale": "Fuera scope"
+  },
+  {
+    "query": "horoscopo dia",
+    "should_trigger": false,
+    "rationale": "Fuera total"
+  },
+  {
+    "query": "configurar Wi-Fi",
+    "should_trigger": false,
+    "rationale": "IT generico"
+  },
+  {
+    "query": "comprar bitcoin asesoria",
+    "should_trigger": false,
+    "rationale": "Asesoria inversion fuera"
+  },
+  {
+    "query": "salario minimo profesional",
+    "should_trigger": false,
+    "rationale": "Laboral generico"
+  },
+  {
+    "query": "registro civil acta nacimiento",
+    "should_trigger": false,
+    "rationale": "Tramite civil"
+  },
+  {
+    "query": "clima mexico manana",
+    "should_trigger": false,
+    "rationale": "Pronostico fuera"
+  },
+  {
+    "query": "traduccion ingles texto",
+    "should_trigger": false,
+    "rationale": "Traduccion generica"
+  }
+]

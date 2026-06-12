@@ -1,0 +1,97 @@
+[
+  {
+    "query": "\"responder reseña\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de manejo-resenas-hosts"
+  },
+  {
+    "query": "\"mala calificación huésped\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de manejo-resenas-hosts"
+  },
+  {
+    "query": "\"manejo reviews\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de manejo-resenas-hosts"
+  },
+  {
+    "query": "\"mejorar puntuación airbnb\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de manejo-resenas-hosts"
+  },
+  {
+    "query": "\"reseña negativa\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de manejo-resenas-hosts"
+  },
+  {
+    "query": "\"responder reseña\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de manejo-resenas-hosts"
+  },
+  {
+    "query": "como \"responder reseña\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de manejo-resenas-hosts"
+  },
+  {
+    "query": "\"mala calificación huésped\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de manejo-resenas-hosts"
+  },
+  {
+    "query": "como \"mala calificación huésped\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de manejo-resenas-hosts"
+  },
+  {
+    "query": "\"manejo reviews\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de manejo-resenas-hosts"
+  },
+  {
+    "query": "reportes del huésped al anfitrión (eso es bidireccional pero requiere otra perspectiva)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de manejo-resenas-hosts"
+  },
+  {
+    "query": "que es \"responder",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de manejo-resenas-hosts"
+  },
+  {
+    "query": "que es \"mala",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de manejo-resenas-hosts"
+  },
+  {
+    "query": "que es \"manejo",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de manejo-resenas-hosts"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de manejo-resenas-hosts"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de manejo-resenas-hosts"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de manejo-resenas-hosts"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de manejo-resenas-hosts"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de manejo-resenas-hosts"
+  }
+]
