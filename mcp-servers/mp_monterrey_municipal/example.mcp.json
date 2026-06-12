@@ -1,0 +1,17 @@
+{
+  "_comment": "mp_monterrey_municipal. Cubre área metropolitana de Monterrey (9 municipios).",
+  "mcpServers": {
+    "monterrey_municipal": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_monterrey_municipal.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "NL_USUARIO": "${NL_USUARIO:-}",
+        "NL_PASSWORD": "${NL_PASSWORD:-}",
+        "PLUGINS_MX_PLAYWRIGHT_REAL": "${PLUGINS_MX_PLAYWRIGHT_REAL:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}

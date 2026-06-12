@@ -18,6 +18,15 @@ Servidores MCP (Model Context Protocol) construidos a medida para servicios mexi
 | `mp_aspel_contpaqi` | ✅ producción (mock + parser CSV exports) | — | Pólizas, balanza, catálogo cuentas, P&L, Balance General — Aspel COI/ContPAQi sin API REST |
 | `mp_shopify_mx` | ✅ producción (mock + Shopify Admin API real) | — | Wrapper específico MX: products, inventory, orders, fulfillment, customers + calculadora IVA región |
 | `mp_bitso` | ✅ producción (mock + sandbox/prod real con HMAC auth) | — | Exchange cripto-fiat MX: ticker, order book, balance, ledger, fundings, retiros + calculadora ISR Art. 142 LISR |
+| `mp_bancos_mx` | ✅ scaffolding mock (Playwright stub) | — | Portales bancarios MX: BBVA, Banamex, Santander, Banorte, HSBC (estado cuenta, movimientos, verificar pago) |
+| `mp_imss_patronal` | ✅ scaffolding mock (Playwright stub) | — | IDSE: avisos, alta/baja, cédula autodeterminación, EMCR, SBC, padrón |
+| `mp_infonavit_patronal` | ✅ scaffolding mock (Playwright stub) | — | Créditos trabajadores, EMIS, descuentos mensuales, avisos |
+| `mp_cdmx_municipal` | ✅ scaffolding mock (Playwright stub) | — | Predial, tenencia, multas, hoy no circula CDMX |
+| `mp_edomex_municipal` | ✅ scaffolding mock (Playwright stub) | — | Predial por municipio EdoMex, tenencia, multas |
+| `mp_monterrey_municipal` | ✅ scaffolding mock (Playwright stub) | — | Predial AMM (9 municipios), multas NL, calidad aire |
+| `mp_inmuebles24` | ✅ scaffolding mock (Playwright stub) | — | Búsqueda inmuebles, detalle, comparables zona, publicar listing |
+| `mp_vivanuncios` | ✅ scaffolding mock (Playwright stub) | — | Búsqueda multi-categoría, detalle, publicar anuncio |
+| `mp_buro_credito_personal` | ⚠ scaffolding mock + compliance | — | Score, reporte completo, alertas — REQUIERE autorización formal del titular |
 
 Roadmap completo: `../Downloads/plugins-mx-planeacion-mcps-agentica.md`.
 
