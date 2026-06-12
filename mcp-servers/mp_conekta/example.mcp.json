@@ -1,0 +1,16 @@
+{
+  "_comment": "Configuración para agregar mp_conekta a un plugin de Claude Code. Sin CONEKTA_API_KEY corre en modo mock con respuestas plausibles. La key sandbox empieza con 'key_test_', producción 'key_live_'. El sandbox vs producción se detecta automáticamente por el prefijo. CONEKTA_WEBHOOK_SECRET es OPCIONAL — solo necesario si vas a validar webhooks entrantes (recomendado).",
+  "mcpServers": {
+    "conekta": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_conekta.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "CONEKTA_API_KEY": "${CONEKTA_API_KEY:-}",
+        "CONEKTA_WEBHOOK_SECRET": "${CONEKTA_WEBHOOK_SECRET:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}

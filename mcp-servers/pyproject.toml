@@ -38,6 +38,7 @@ testpaths = [
     "mp_curp_renapo/tests",
     "mp_banxico_cep/tests",
     "mp_sat_portal/tests",
+    "mp_conekta/tests",
 ]
 python_files = ["test_*.py"]
 asyncio_mode = "auto"
