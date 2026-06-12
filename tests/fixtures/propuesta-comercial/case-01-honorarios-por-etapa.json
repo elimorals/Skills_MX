@@ -1,0 +1,42 @@
+{
+  "name": "Propuesta comercial — proyecto web por 3 etapas con anticipo",
+  "input": {
+    "cliente_rfc": "EMP850101XYZ",
+    "scope": {
+      "resumen_ejecutivo": "Diseño + desarrollo + lanzamiento sitio web corporativo con CMS",
+      "objetivos": ["Sitio responsive", "CMS editable cliente", "SEO técnico"]
+    },
+    "entregables": [
+      {"nombre": "Wireframes + design", "fecha_estimada": "2026-07-15"},
+      {"nombre": "Desarrollo + CMS", "fecha_estimada": "2026-09-30"},
+      {"nombre": "Lanzamiento + transferencia", "fecha_estimada": "2026-10-31"}
+    ],
+    "honorarios_total": 120000,
+    "modelo": "por_etapa",
+    "anticipo_pct": 0.30
+  },
+  "expected_output": {
+    "honorarios": {
+      "modelo": "por_etapa",
+      "total": 120000,
+      "moneda": "MXN",
+      "anticipo": 36000,
+      "etapas": [
+        {"nombre": "Wireframes + design", "monto": 30000, "hito_disparador": "Aprobación cliente"},
+        {"nombre": "Desarrollo + CMS", "monto": 36000, "hito_disparador": "QA cliente"},
+        {"nombre": "Lanzamiento + transferencia", "monto": 18000, "hito_disparador": "Sitio en producción"}
+      ]
+    },
+    "vigencia_dias": 15,
+    "condiciones_legales": {
+      "propiedad_intelectual": "Cliente recibe propiedad post-pago total",
+      "limitacion_responsabilidad": "Limitada a monto pagado"
+    }
+  },
+  "validations": [
+    "Anticipo = 30% del total",
+    "Suma etapas + anticipo = total",
+    "Cada etapa con hito disparador",
+    "Condiciones legales mínimas presentes"
+  ]
+}

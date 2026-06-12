@@ -1,0 +1,24 @@
+{
+  "name": "e.firma vence en 45 días — agendar renovación",
+  "input": {
+    "rfc": "ABC850301XYZ",
+    "fecha_vencimiento_actual": "2026-07-27"
+  },
+  "expected_output": {
+    "dias_para_vencer": 45,
+    "urgencia": "alta",
+    "accion_recomendada": "Agendar cita SAT YA (tiempo espera típico 4-8 semanas)",
+    "documentos_requeridos_renovacion": [
+      "INE vigente",
+      "Comprobante domicilio últimos 3 meses",
+      "Acuse anterior e.firma",
+      "Memoria USB para nuevos archivos"
+    ],
+    "modalidad_renovacion_disponible": "online_si_no_vencida"
+  },
+  "validations": [
+    "<60 días = alta urgencia (margen para cita)",
+    "Renovación online posible solo si NO vencida",
+    "Vencida = trámite presencial nuevo registro"
+  ]
+}

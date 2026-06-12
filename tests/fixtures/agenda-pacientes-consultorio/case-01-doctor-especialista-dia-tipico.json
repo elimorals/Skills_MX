@@ -1,0 +1,27 @@
+{
+  "name": "Agenda día típico endocrinólogo — 8 slots con buffer",
+  "input": {
+    "doctor": "Dr. Hernández - Endocrinólogo",
+    "fecha": "2026-06-15",
+    "horario_inicio": "09:00",
+    "horario_fin": "14:00",
+    "duracion_consulta_min": 30,
+    "buffer_entre_consultas_min": 10,
+    "tipo_consulta_default": "primera_vez"
+  },
+  "expected_output": {
+    "slots_disponibles": 7,
+    "slots_calculados": [
+      "09:00", "09:40", "10:20", "11:00", "11:40", "12:20", "13:00"
+    ],
+    "buffer_total_minutos": 60,
+    "consulta_primera_vez_recomendada_min": 45,
+    "consulta_seguimiento_recomendada_min": 20
+  },
+  "validations": [
+    "Slot = duración + buffer (30 + 10 = 40 min)",
+    "8 horas - 60 min buffer = 7 slots posibles",
+    "Primera vez recomendada 45 min (más larga que default)",
+    "Seguimiento típicamente 20 min"
+  ]
+}

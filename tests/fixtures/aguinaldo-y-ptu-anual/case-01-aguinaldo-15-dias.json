@@ -1,0 +1,22 @@
+{
+  "name": "Aguinaldo 15 días salario base mínimo LFT — trabajador todo el año",
+  "input": {
+    "salario_diario_base": 833.33,
+    "dias_trabajados": 365,
+    "dias_aguinaldo_minimos_lft": 15,
+    "ejercicio": 2026
+  },
+  "expected_output": {
+    "aguinaldo_base": 12500,
+    "isr_aplicable_a_aguinaldo": "tarifa anual con prorrata mensual Art. 96",
+    "dias_proporcionales": 15,
+    "fecha_limite_pago": "2026-12-20",
+    "exencion_uma_aplicable": "30 UMA exentas del ISR (Art. 93 fracc. XIV LISR)"
+  },
+  "validations": [
+    "15 días = mínimo LFT Art. 87",
+    "Si trabajador < 1 año: proporcional",
+    "Pago antes del 20 diciembre",
+    "Exención 30 UMA del aguinaldo en ISR"
+  ]
+}

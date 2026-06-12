@@ -1,0 +1,27 @@
+{
+  "name": "Detector CFDI duplicado — mismo monto, mismo receptor, mismo mes",
+  "input": {
+    "ejercicio": 2026,
+    "mes": 3,
+    "cfdis": [
+      {"uuid": "11111111-1111-1111-1111-111111111111", "fecha": "2026-03-05", "receptor": "CLI001", "total": 12500},
+      {"uuid": "22222222-2222-2222-2222-222222222222", "fecha": "2026-03-15", "receptor": "CLI001", "total": 12500},
+      {"uuid": "33333333-3333-3333-3333-333333333333", "fecha": "2026-03-15", "receptor": "CLI001", "total": 12500}
+    ]
+  },
+  "expected_output": {
+    "duplicados_detectados": [
+      {
+        "uuids_relacionados": ["22222222-2222-2222-2222-222222222222", "33333333-3333-3333-3333-333333333333"],
+        "razon_sospecha": "Mismo receptor + mismo monto + misma fecha exacta",
+        "accion_recomendada": "Verificar uno como duplicado y cancelar con motivo 02"
+      }
+    ],
+    "alertas_criticas": ["1 duplicado posible detectado en marzo 2026"]
+  },
+  "validations": [
+    "Mismo (receptor + monto + fecha) → sospecha duplicado",
+    "Mismo receptor + monto en diferentes fechas → NO sospecha (servicios regulares)",
+    "Plazo de cancelación: 72h con aceptación receptor"
+  ]
+}

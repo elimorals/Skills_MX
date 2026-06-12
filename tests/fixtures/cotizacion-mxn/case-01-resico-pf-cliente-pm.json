@@ -1,0 +1,34 @@
+{
+  "name": "Cotización RESICO PF emisor → cliente PM con retención 1.25% ISR",
+  "input": {
+    "emisor": {
+      "rfc": "MAJG800101XYZ",
+      "regimen": "626"
+    },
+    "receptor": {
+      "rfc": "EMP850101XYZ",
+      "regimen": "601",
+      "tipo": "PM"
+    },
+    "concepto": {
+      "descripcion": "Consultoría empresarial — mes",
+      "monto_base": 30000
+    },
+    "moneda": "MXN"
+  },
+  "expected_output": {
+    "subtotal": 30000,
+    "iva_trasladado": 4800,
+    "isr_retenido": 375,
+    "iva_retenido": 0,
+    "total": 34800,
+    "neto_a_recibir_emisor": 34425,
+    "regimen_emisor_aplicado": "626"
+  },
+  "validations": [
+    "RESICO PF emisor → PM receptor retiene 1.25% ISR sobre subtotal",
+    "IVA traslada 16% pero NO se retiene (RESICO no genera retención IVA)",
+    "Total = subtotal + IVA",
+    "Neto = total - ISR retenido"
+  ]
+}

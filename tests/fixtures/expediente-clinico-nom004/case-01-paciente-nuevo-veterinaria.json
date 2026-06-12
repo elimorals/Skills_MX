@@ -1,0 +1,42 @@
+{
+  "name": "Expediente clínico NOM-004 — paciente nuevo perro adulto",
+  "input": {
+    "tipo_paciente": "canino",
+    "nombre": "Max",
+    "raza": "Labrador",
+    "edad": 5,
+    "sexo": "macho",
+    "peso_kg": 28.5,
+    "tutor": {
+      "nombre": "Juan Pérez",
+      "rfc": "PEJU800101ABC",
+      "contacto": "+5215512345678"
+    },
+    "motivo_consulta": "Cojera pata trasera izquierda"
+  },
+  "expected_output": {
+    "expediente_id": "EXP-2026-...",
+    "secciones_creadas": [
+      "identificacion",
+      "antecedentes_familiares",
+      "antecedentes_no_patologicos",
+      "antecedentes_patologicos",
+      "padecimiento_actual",
+      "exploracion_fisica",
+      "diagnosticos",
+      "tratamiento",
+      "evolucion"
+    ],
+    "compliance": {
+      "nom_004": true,
+      "lfpdppp_aviso": "firmado_pendiente"
+    }
+  },
+  "validations": [
+    "Todas las secciones NOM-004 presentes",
+    "Tutor RFC validado",
+    "Aviso de privacidad pendiente de firma documentado",
+    "Identificación del paciente única",
+    "Sistema de foliado consistente"
+  ]
+}

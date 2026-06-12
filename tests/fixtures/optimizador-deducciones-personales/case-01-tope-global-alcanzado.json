@@ -1,0 +1,31 @@
+{
+  "name": "Optimizador deducciones personales — usuario excede tope global 5 UMA",
+  "input": {
+    "ejercicio": 2025,
+    "ingresos_acumulables_mxn": 580000,
+    "deducciones_propuestas": {
+      "honorarios_medicos": 45000,
+      "colegiaturas_primaria": 12900,
+      "colegiaturas_secundaria": 19900,
+      "donativos": 25000,
+      "sar_voluntario": 35000,
+      "primas_gmm": 28000,
+      "intereses_hipotecarios_reales": 18000
+    }
+  },
+  "expected_output_approximate": {
+    "deducciones_solicitadas_mxn": 183800,
+    "tope_global_aplicable": "5 UMA o 15% ingresos, el menor",
+    "tope_5_uma_2025_mxn_aprox": 188100,
+    "tope_15_pct_ingresos_mxn": 87000,
+    "tope_que_aplica_mxn": 87000,
+    "deducciones_aceptadas_mxn": 87000,
+    "monto_excedido_mxn": 96800,
+    "sugerencia": "Las deducciones exceden el tope. Recomendado priorizar: SAR (mayor beneficio) + médicos (urgente) + colegiaturas (firmes) — donativos y GMM al margen"
+  },
+  "validations": [
+    "Tope global = el MENOR entre 5 UMA y 15% ingresos",
+    "Skill prioriza categorías por valor relativo",
+    "Recomendación accionable al usuario"
+  ]
+}
