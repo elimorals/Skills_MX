@@ -1,0 +1,45 @@
+{
+  "name": "inmobiliaria-mx",
+  "displayName": "Inmobiliaria MX — Corredores e inmobiliarias",
+  "description": "Plugin para corredores inmobiliarios, brokers, agencias inmobiliarias e inmobiliarias en México. Cubre contratos de arrendamiento residencial y comercial siguiendo Código Civil Federal y Código Civil CDMX, screening de inquilinos con Buró + referencias + ingresos, análisis de comparables de zona, ficha del inmueble con datos catastrales, cálculo de comisiones de corredor y honorarios. Construido sobre core-mexico + mp_inmuebles24 + mp_vivanuncios.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elias",
+    "email": "elias@cipreholding.com"
+  },
+  "keywords": [
+    "inmobiliaria",
+    "corredor",
+    "broker",
+    "renta",
+    "venta",
+    "arrendamiento",
+    "mexico",
+    "screening-inquilinos",
+    "comparables-zona",
+    "comisiones-corredor"
+  ],
+  "skills": [
+    "skills/contrato-arrendamiento-mx",
+    "skills/screening-inquilinos",
+    "skills/comparables-zona",
+    "skills/ficha-inmueble",
+    "skills/comisiones-corredor",
+    "skills/cfdi-emision",
+    "skills/iva-retenciones-mx",
+    "skills/rfc-validacion",
+    "skills/whatsapp-business-mx",
+    "skills/compliance-lfpdppp",
+    "skills/mxn-formato"
+  ],
+  "commands": [
+    "commands/contrato-renta.md",
+    "commands/screen-inquilino.md",
+    "commands/comparables-zona.md",
+    "commands/comisiones-mes.md"
+  ],
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "requires": ["core-mexico"]
+  }
+}
