@@ -1,0 +1,22 @@
+[
+  {"query": "evaluar candidato inquilino", "should_trigger": true, "rationale": "Scoring inquilino — match directo"},
+  {"query": "score inquilino rentar departamento", "should_trigger": true, "rationale": "Score arrendador residencial"},
+  {"query": "validar candidato renta", "should_trigger": true, "rationale": "Validación inquilino"},
+  {"query": "screening inquilino IA", "should_trigger": true, "rationale": "Screening + IA"},
+  {"query": "buró crédito candidato inquilino", "should_trigger": true, "rationale": "Buró como señal de scoring"},
+  {"query": "rechazar inquilino malo", "should_trigger": true, "rationale": "Decisión basada en score ROJO"},
+  {"query": "ingresos comprobables 3x renta", "should_trigger": true, "rationale": "Regla 3x mencionada en scoring"},
+  {"query": "referencias arrendador anterior", "should_trigger": true, "rationale": "Señal formal del scoring"},
+  {"query": "depósito 2 meses garantía", "should_trigger": true, "rationale": "Recomendación según score AMARILLO"},
+  {"query": "candidato VERDE AMARILLO ROJO renta", "should_trigger": true, "rationale": "Categorías del scoring"},
+  {"query": "buró crédito mi puntaje", "should_trigger": false, "rationale": "Score propio, no de candidato"},
+  {"query": "cobranza inquilino moroso", "should_trigger": false, "rationale": "Cobranza, no scoring inicial"},
+  {"query": "subir renta INPC", "should_trigger": false, "rationale": "Ajuste renta, no scoring"},
+  {"query": "contrato arrendamiento CDMX", "should_trigger": false, "rationale": "Contrato, no scoring"},
+  {"query": "scoring crédito hipotecario", "should_trigger": false, "rationale": "Hipoteca, no arrendamiento"},
+  {"query": "compraventa inmueble valuación", "should_trigger": false, "rationale": "Venta, no renta"},
+  {"query": "calcular ISR renta", "should_trigger": false, "rationale": "Fiscal arrendador, no scoring inquilino"},
+  {"query": "depósito garantía devolución", "should_trigger": false, "rationale": "Cierre contrato, no scoring inicial"},
+  {"query": "comparable renta zona", "should_trigger": false, "rationale": "Comparable precio, no inquilino"},
+  {"query": "evaluar empleado nuevo", "should_trigger": false, "rationale": "Laboral, no arrendamiento"}
+]

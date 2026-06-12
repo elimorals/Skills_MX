@@ -1,0 +1,22 @@
+[
+  {"query": "timbrar nómina quincena", "should_trigger": true, "rationale": "Match directo emisión CFDI Nómina quincenal"},
+  {"query": "dispersar raya semanal", "should_trigger": true, "rationale": "Construcción/manufactura pagos semanales con CFDI Nómina"},
+  {"query": "CFDI tipo N empleados", "should_trigger": true, "rationale": "Comprobante tipo Nómina"},
+  {"query": "calcular ISR sueldos empleados", "should_trigger": true, "rationale": "Cálculo ISR mensualizado tarifa Art. 96 para nómina"},
+  {"query": "subsidio empleo Art 96", "should_trigger": true, "rationale": "Subsidio para ingresos bajos en nómina"},
+  {"query": "complemento nomina 1.2", "should_trigger": true, "rationale": "Versión 1.2 del complemento Nómina vigente"},
+  {"query": "aguinaldo proporcional CFDI", "should_trigger": true, "rationale": "CFDI tipo E (extraordinaria) por aguinaldo"},
+  {"query": "finiquito empleado renuncia", "should_trigger": true, "rationale": "CFDI Nómina tipo F finiquito"},
+  {"query": "PTU reparto utilidades", "should_trigger": true, "rationale": "CFDI Nómina extraordinaria por PTU"},
+  {"query": "horas extras Art 67 LFT", "should_trigger": true, "rationale": "Cálculo de extras + reflejado en CFDI Nómina"},
+  {"query": "factura honorarios freelancer", "should_trigger": false, "rationale": "Honorarios PFAE NO es nómina — CFDI tipo I"},
+  {"query": "CFDI servicios prestados", "should_trigger": false, "rationale": "Servicios profesionales NO subordinados"},
+  {"query": "cobro a cliente", "should_trigger": false, "rationale": "Cobranza, no nómina"},
+  {"query": "factura proveedor", "should_trigger": false, "rationale": "Recibido, no emitido nómina"},
+  {"query": "ISR anual personal", "should_trigger": false, "rationale": "PF anual, no quincena"},
+  {"query": "RESICO pago provisional", "should_trigger": false, "rationale": "RESICO PF, no nómina"},
+  {"query": "predial CDMX", "should_trigger": false, "rationale": "Impuesto municipal"},
+  {"query": "IVA mensual declaración", "should_trigger": false, "rationale": "Declaración IVA, distinto a nómina"},
+  {"query": "cuotas IMSS patrón mensual", "should_trigger": false, "rationale": "Cuotas IMSS, va a otro skill cuotas-imss-sbc"},
+  {"query": "alta empleado nuevo", "should_trigger": false, "rationale": "Alta IDSE, va a otro skill alta-empleado-completa"}
+]

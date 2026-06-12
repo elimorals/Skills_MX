@@ -1,0 +1,29 @@
+{
+  "name": "Anual PFAE 2025 — saldo a favor moderado $25k",
+  "input": {
+    "rfc": "MAJG800101XYZ",
+    "ejercicio": 2025,
+    "regimen": "PFAE_612",
+    "incluir_bancos": true
+  },
+  "expected_phases_completed": [
+    "Validación", "CFDIs", "Deducciones", "Bancos", "ISR", "Riesgo", "Borrador", "Tracker"
+  ],
+  "expected_output_approximate": {
+    "isr_causado_mxn_aprox": 145000,
+    "pagos_provisionales_aprox": 170000,
+    "diferencia_mxn_aprox": 25000,
+    "resultado": "SALDO_A_FAVOR",
+    "pdf_borrador_generado": true,
+    "alertas_criticas_count_max": 1,
+    "vigencia_validada": false,
+    "recomendaciones_count_min": 4
+  },
+  "validations": [
+    "Resultado SALDO_A_FAVOR cuando ISR < pagos provisionales",
+    "Saldo $25-50k NO dispara alerta crítica (< $50k threshold)",
+    "PDF borrador presentable",
+    "Recomendaciones incluyen contador + CLABE devolución",
+    "vigencia_validada=false hasta firma contador"
+  ]
+}

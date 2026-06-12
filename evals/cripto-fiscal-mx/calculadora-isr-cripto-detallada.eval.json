@@ -1,0 +1,22 @@
+[
+  {"query": "ISR ganancias cripto", "should_trigger": true, "rationale": "Cálculo ISR sobre ganancias crypto"},
+  {"query": "Bitso ganancias declarar", "should_trigger": true, "rationale": "Bitso exchange MX cripto"},
+  {"query": "Bitcoin venta utilidad fiscal", "should_trigger": true, "rationale": "Cálculo BTC utilidad"},
+  {"query": "stablecoin USDC ganancias", "should_trigger": true, "rationale": "Stablecoins también gravables"},
+  {"query": "CARF 2026 cripto reporte", "should_trigger": true, "rationale": "Common Reporting Framework cripto 2026"},
+  {"query": "FIFO LIFO costo cripto", "should_trigger": true, "rationale": "Métodos de costeo cripto"},
+  {"query": "swap entre cryptos isr", "should_trigger": true, "rationale": "Operaciones swap cripto"},
+  {"query": "staking ingresos cripto fiscal", "should_trigger": true, "rationale": "Staking como ingreso"},
+  {"query": "airdrop tokens ISR", "should_trigger": true, "rationale": "Airdrops como ingreso"},
+  {"query": "NFT venta utilidad fiscal", "should_trigger": true, "rationale": "NFTs en régimen cripto"},
+  {"query": "ISR sueldos", "should_trigger": false, "rationale": "Salarios no cripto"},
+  {"query": "RESICO PF 1.25%", "should_trigger": false, "rationale": "RESICO ingresos fiat, no cripto específico"},
+  {"query": "factura cliente fiat", "should_trigger": false, "rationale": "CFDI fiat tradicional"},
+  {"query": "cobranza moroso", "should_trigger": false, "rationale": "Cobranza no cripto"},
+  {"query": "ISH Airbnb", "should_trigger": false, "rationale": "Hospedaje no cripto"},
+  {"query": "predial inmueble", "should_trigger": false, "rationale": "Municipal no cripto"},
+  {"query": "régimen 625 plataformas", "should_trigger": false, "rationale": "Otro régimen federal"},
+  {"query": "anual PF", "should_trigger": false, "rationale": "Workflow anual, no cálculo cripto específico"},
+  {"query": "comprar bitcoin recomendación", "should_trigger": false, "rationale": "Asesoría inversión, no fiscal"},
+  {"query": "wallet Trezor configurar", "should_trigger": false, "rationale": "Hardware wallet, no fiscal"}
+]
