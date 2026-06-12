@@ -1,0 +1,97 @@
+[
+  {
+    "query": "ingeniería menú",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de menu-ingenieria-margen"
+  },
+  {
+    "query": "qué platos quitar",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de menu-ingenieria-margen"
+  },
+  {
+    "query": "plato más rentable",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de menu-ingenieria-margen"
+  },
+  {
+    "query": "food cost",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de menu-ingenieria-margen"
+  },
+  {
+    "query": "margen restaurante",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de menu-ingenieria-margen"
+  },
+  {
+    "query": "optimizar menú",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de menu-ingenieria-margen"
+  },
+  {
+    "query": "ingeniería menú",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de menu-ingenieria-margen"
+  },
+  {
+    "query": "como ingeniería menú",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de menu-ingenieria-margen"
+  },
+  {
+    "query": "qué platos quitar",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de menu-ingenieria-margen"
+  },
+  {
+    "query": "como qué platos quitar",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de menu-ingenieria-margen"
+  },
+  {
+    "query": "inventario (otro skill) ni delivery aggregators",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de menu-ingenieria-margen"
+  },
+  {
+    "query": "que es ingeniería",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de menu-ingenieria-margen"
+  },
+  {
+    "query": "que es qué",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de menu-ingenieria-margen"
+  },
+  {
+    "query": "que es plato",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de menu-ingenieria-margen"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de menu-ingenieria-margen"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de menu-ingenieria-margen"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de menu-ingenieria-margen"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de menu-ingenieria-margen"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de menu-ingenieria-margen"
+  }
+]

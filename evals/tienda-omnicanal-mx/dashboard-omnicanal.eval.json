@@ -1,0 +1,97 @@
+[
+  {
+    "query": "dashboard tienda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-omnicanal"
+  },
+  {
+    "query": "ventas multicanal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-omnicanal"
+  },
+  {
+    "query": "como van mis canales",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-omnicanal"
+  },
+  {
+    "query": "status omnicanal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-omnicanal"
+  },
+  {
+    "query": "dashboard tienda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-omnicanal"
+  },
+  {
+    "query": "como dashboard tienda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-omnicanal"
+  },
+  {
+    "query": "ventas multicanal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-omnicanal"
+  },
+  {
+    "query": "como ventas multicanal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-omnicanal"
+  },
+  {
+    "query": "como van mis canales",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-omnicanal"
+  },
+  {
+    "query": "como como van mis canales",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-omnicanal"
+  },
+  {
+    "query": "vista de un solo canal (eso es skills específicos de ecommerce-mx)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-omnicanal"
+  },
+  {
+    "query": "que es dashboard",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-omnicanal"
+  },
+  {
+    "query": "que es ventas",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-omnicanal"
+  },
+  {
+    "query": "que es como",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-omnicanal"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-omnicanal"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-omnicanal"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-omnicanal"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-omnicanal"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-omnicanal"
+  }
+]

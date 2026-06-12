@@ -1,0 +1,87 @@
+[
+  {
+    "query": "pre-autorizacion gmm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "autorizacion aseguradora",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "cirugia programada",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "pre-autorizacion gmm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "como pre-autorizacion gmm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "autorizacion aseguradora",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "como autorizacion aseguradora",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "cirugia programada",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "como cirugia programada",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "que es pre-autorizacion",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "que es autorizacion",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "que es cirugia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de autorizacion-medica-pre-evento"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de autorizacion-medica-pre-evento"
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "query": "status tramite inm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "donde va mi residencia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "en que va mi visa",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "status tramite inm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "como status tramite inm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "donde va mi residencia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "como donde va mi residencia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "en que va mi visa",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "como en que va mi visa",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "que es status",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "que es donde",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "que es en",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-tramites-migratorios"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-tramites-migratorios"
+  }
+]

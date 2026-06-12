@@ -1,0 +1,97 @@
+[
+  {
+    "query": "ficha inmueble",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ficha-inmueble"
+  },
+  {
+    "query": "descripción casa para venta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ficha-inmueble"
+  },
+  {
+    "query": "datos catastrales",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ficha-inmueble"
+  },
+  {
+    "query": "foto inmueble",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ficha-inmueble"
+  },
+  {
+    "query": "ficha inmueble",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ficha-inmueble"
+  },
+  {
+    "query": "como ficha inmueble",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ficha-inmueble"
+  },
+  {
+    "query": "descripción casa pa venta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ficha-inmueble"
+  },
+  {
+    "query": "como descripción casa para venta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ficha-inmueble"
+  },
+  {
+    "query": "datos catastrales",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ficha-inmueble"
+  },
+  {
+    "query": "como datos catastrales",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ficha-inmueble"
+  },
+  {
+    "query": "comparables (otro skill) ni contratos (otro skill)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ficha-inmueble"
+  },
+  {
+    "query": "que es ficha",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ficha-inmueble"
+  },
+  {
+    "query": "que es descripción",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ficha-inmueble"
+  },
+  {
+    "query": "que es datos",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ficha-inmueble"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ficha-inmueble"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ficha-inmueble"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ficha-inmueble"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ficha-inmueble"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ficha-inmueble"
+  }
+]

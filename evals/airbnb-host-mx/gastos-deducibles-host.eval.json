@@ -1,0 +1,87 @@
+[
+  {
+    "query": "deducciones airbnb",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-host"
+  },
+  {
+    "query": "qué puedo deducir host",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-host"
+  },
+  {
+    "query": "gastos deducibles hospedaje",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-host"
+  },
+  {
+    "query": "deducciones airbnb",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-host"
+  },
+  {
+    "query": "como deducciones airbnb",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-host"
+  },
+  {
+    "query": "qué puedo deducir host",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-host"
+  },
+  {
+    "query": "como qué puedo deducir host",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-host"
+  },
+  {
+    "query": "gastos deducibles hospedaje",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-host"
+  },
+  {
+    "query": "como gastos deducibles hospedaje",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gastos-deducibles-host"
+  },
+  {
+    "query": "que es deducciones",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-host"
+  },
+  {
+    "query": "que es qué",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-host"
+  },
+  {
+    "query": "que es gastos",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-host"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-host"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-host"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-host"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-host"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gastos-deducibles-host"
+  }
+]

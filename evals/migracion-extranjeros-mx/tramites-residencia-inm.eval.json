@@ -1,0 +1,92 @@
+[
+  {
+    "query": "residencia mexico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-residencia-inm"
+  },
+  {
+    "query": "inm tramite",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-residencia-inm"
+  },
+  {
+    "query": "visa residente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-residencia-inm"
+  },
+  {
+    "query": "cambiar condicion migratoria",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-residencia-inm"
+  },
+  {
+    "query": "residencia mexico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-residencia-inm"
+  },
+  {
+    "query": "como residencia mexico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-residencia-inm"
+  },
+  {
+    "query": "inm tramite",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-residencia-inm"
+  },
+  {
+    "query": "como inm tramite",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-residencia-inm"
+  },
+  {
+    "query": "visa residente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-residencia-inm"
+  },
+  {
+    "query": "como visa residente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-residencia-inm"
+  },
+  {
+    "query": "que es residencia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-residencia-inm"
+  },
+  {
+    "query": "que es inm",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-residencia-inm"
+  },
+  {
+    "query": "que es visa",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-residencia-inm"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-residencia-inm"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-residencia-inm"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-residencia-inm"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-residencia-inm"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-residencia-inm"
+  }
+]

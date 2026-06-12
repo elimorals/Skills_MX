@@ -1,0 +1,87 @@
+[
+  {
+    "query": "cita notarial",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-notariales"
+  },
+  {
+    "query": "agendar escritura",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-notariales"
+  },
+  {
+    "query": "programar firma",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-notariales"
+  },
+  {
+    "query": "cita notarial",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-notariales"
+  },
+  {
+    "query": "como cita notarial",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-notariales"
+  },
+  {
+    "query": "agendar escritura",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-notariales"
+  },
+  {
+    "query": "como agendar escritura",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-notariales"
+  },
+  {
+    "query": "programar firma",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-notariales"
+  },
+  {
+    "query": "como programar firma",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-notariales"
+  },
+  {
+    "query": "que es cita",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-notariales"
+  },
+  {
+    "query": "que es agendar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-notariales"
+  },
+  {
+    "query": "que es programar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-notariales"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-notariales"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-notariales"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-notariales"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-notariales"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-notariales"
+  }
+]

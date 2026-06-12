@@ -1,0 +1,72 @@
+[
+  {
+    "query": "cruzar bancos vs cfdis",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cruzar-bancos-vs-cfdis"
+  },
+  {
+    "query": "cruzar bancos vs cfdis",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cruzar-bancos-vs-cfdis"
+  },
+  {
+    "query": "como cruzar bancos vs cfdis",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cruzar-bancos-vs-cfdis"
+  },
+  {
+    "query": "conciliar pagos puntuales (mp_banxico_cep es para eso)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cruzar-bancos-vs-cfdis"
+  },
+  {
+    "query": "que es cruzar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cruzar-bancos-vs-cfdis"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cruzar-bancos-vs-cfdis"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cruzar-bancos-vs-cfdis"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cruzar-bancos-vs-cfdis"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cruzar-bancos-vs-cfdis"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cruzar-bancos-vs-cfdis"
+  },
+  {
+    "query": "ayúdame con cruzar bancos vs cfdis",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con cruzar bancos vs cfdis",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con cruzar bancos vs cfdis",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con cruzar bancos vs cfdis",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  }
+]

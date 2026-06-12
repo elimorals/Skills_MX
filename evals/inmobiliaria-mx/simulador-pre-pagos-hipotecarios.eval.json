@@ -1,0 +1,92 @@
+[
+  {
+    "query": "prepago hipoteca",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "pagar anticipado credito vivienda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "conviene prepagar",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "simular hipoteca",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "prepago hipoteca",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "como prepago hipoteca",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "pagar anticipado credito vivienda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "como pagar anticipado credito vivienda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "conviene prepagar",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "como conviene prepagar",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "que es prepago",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "que es pagar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "que es conviene",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-pre-pagos-hipotecarios"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de simulador-pre-pagos-hipotecarios"
+  }
+]

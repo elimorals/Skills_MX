@@ -1,0 +1,102 @@
+[
+  {
+    "query": "aviso de privacidad",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de compliance-lfpdppp"
+  },
+  {
+    "query": "lfpdppp",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de compliance-lfpdppp"
+  },
+  {
+    "query": "inai",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de compliance-lfpdppp"
+  },
+  {
+    "query": "datos personales",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de compliance-lfpdppp"
+  },
+  {
+    "query": "derechos arco",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de compliance-lfpdppp"
+  },
+  {
+    "query": "transferencia de datos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de compliance-lfpdppp"
+  },
+  {
+    "query": "consentimiento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de compliance-lfpdppp"
+  },
+  {
+    "query": "gdpr mexico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de compliance-lfpdppp"
+  },
+  {
+    "query": "aviso de privacidad",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de compliance-lfpdppp"
+  },
+  {
+    "query": "como aviso de privacidad",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de compliance-lfpdppp"
+  },
+  {
+    "query": "gdpr europeo (otra ley)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de compliance-lfpdppp"
+  },
+  {
+    "query": "ccpa california (otra ley)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de compliance-lfpdppp"
+  },
+  {
+    "query": "ni para datos en posesión de gobierno (esa es lgpdppso",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de compliance-lfpdppp"
+  },
+  {
+    "query": "otra ley distinta)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de compliance-lfpdppp"
+  },
+  {
+    "query": "que es aviso",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de compliance-lfpdppp"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de compliance-lfpdppp"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de compliance-lfpdppp"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de compliance-lfpdppp"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de compliance-lfpdppp"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de compliance-lfpdppp"
+  }
+]

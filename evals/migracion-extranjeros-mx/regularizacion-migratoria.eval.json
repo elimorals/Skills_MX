@@ -1,0 +1,92 @@
+[
+  {
+    "query": "sin papeles",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de regularizacion-migratoria"
+  },
+  {
+    "query": "irregular mexico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de regularizacion-migratoria"
+  },
+  {
+    "query": "fmm vencido",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de regularizacion-migratoria"
+  },
+  {
+    "query": "regularizar migratoria",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de regularizacion-migratoria"
+  },
+  {
+    "query": "sin papeles",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de regularizacion-migratoria"
+  },
+  {
+    "query": "como sin papeles",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de regularizacion-migratoria"
+  },
+  {
+    "query": "irregular mexico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de regularizacion-migratoria"
+  },
+  {
+    "query": "como irregular mexico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de regularizacion-migratoria"
+  },
+  {
+    "query": "fmm vencido",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de regularizacion-migratoria"
+  },
+  {
+    "query": "como fmm vencido",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de regularizacion-migratoria"
+  },
+  {
+    "query": "que es sin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de regularizacion-migratoria"
+  },
+  {
+    "query": "que es irregular",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de regularizacion-migratoria"
+  },
+  {
+    "query": "que es fmm",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de regularizacion-migratoria"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de regularizacion-migratoria"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de regularizacion-migratoria"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de regularizacion-migratoria"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de regularizacion-migratoria"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de regularizacion-migratoria"
+  }
+]

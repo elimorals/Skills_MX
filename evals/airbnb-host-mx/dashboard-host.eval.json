@@ -1,0 +1,92 @@
+[
+  {
+    "query": "cómo va mi airbnb",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-host"
+  },
+  {
+    "query": "dashboard host",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-host"
+  },
+  {
+    "query": "ocupación mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-host"
+  },
+  {
+    "query": "ingresos hospedaje",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-host"
+  },
+  {
+    "query": "cómo va mi airbnb",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-host"
+  },
+  {
+    "query": "como cómo va mi airbnb",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-host"
+  },
+  {
+    "query": "dashboard host",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-host"
+  },
+  {
+    "query": "como dashboard host",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-host"
+  },
+  {
+    "query": "ocupación mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-host"
+  },
+  {
+    "query": "como ocupación mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-host"
+  },
+  {
+    "query": "que es cómo",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-host"
+  },
+  {
+    "query": "que es dashboard",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-host"
+  },
+  {
+    "query": "que es ocupación",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-host"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-host"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-host"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-host"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-host"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-host"
+  }
+]

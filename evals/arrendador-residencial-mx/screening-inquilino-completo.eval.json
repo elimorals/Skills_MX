@@ -1,0 +1,87 @@
+[
+  {
+    "query": "evalúa este inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilino-completo"
+  },
+  {
+    "query": "screening",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilino-completo"
+  },
+  {
+    "query": "validar candidato renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilino-completo"
+  },
+  {
+    "query": "buro inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilino-completo"
+  },
+  {
+    "query": "evalúa este inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilino-completo"
+  },
+  {
+    "query": "como evalúa este inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilino-completo"
+  },
+  {
+    "query": "screening",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilino-completo"
+  },
+  {
+    "query": "como screening",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilino-completo"
+  },
+  {
+    "query": "validar candidato renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilino-completo"
+  },
+  {
+    "query": "como validar candidato renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilino-completo"
+  },
+  {
+    "query": "que es evalúa",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilino-completo"
+  },
+  {
+    "query": "que es validar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilino-completo"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilino-completo"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilino-completo"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilino-completo"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilino-completo"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilino-completo"
+  }
+]

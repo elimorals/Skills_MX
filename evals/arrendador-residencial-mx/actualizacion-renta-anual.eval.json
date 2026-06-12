@@ -1,0 +1,97 @@
+[
+  {
+    "query": "actualizar renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de actualizacion-renta-anual"
+  },
+  {
+    "query": "incrementar renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de actualizacion-renta-anual"
+  },
+  {
+    "query": "aniversario contrato",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de actualizacion-renta-anual"
+  },
+  {
+    "query": "ajuste anual renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de actualizacion-renta-anual"
+  },
+  {
+    "query": "actualizar renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de actualizacion-renta-anual"
+  },
+  {
+    "query": "como actualizar renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de actualizacion-renta-anual"
+  },
+  {
+    "query": "incrementar renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de actualizacion-renta-anual"
+  },
+  {
+    "query": "como incrementar renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de actualizacion-renta-anual"
+  },
+  {
+    "query": "aniversario contrato",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de actualizacion-renta-anual"
+  },
+  {
+    "query": "como aniversario contrato",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de actualizacion-renta-anual"
+  },
+  {
+    "query": "renovación de contrato completo (eso es contrato-arrendamiento-residencial)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de actualizacion-renta-anual"
+  },
+  {
+    "query": "que es actualizar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de actualizacion-renta-anual"
+  },
+  {
+    "query": "que es incrementar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de actualizacion-renta-anual"
+  },
+  {
+    "query": "que es aniversario",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de actualizacion-renta-anual"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de actualizacion-renta-anual"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de actualizacion-renta-anual"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de actualizacion-renta-anual"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de actualizacion-renta-anual"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de actualizacion-renta-anual"
+  }
+]

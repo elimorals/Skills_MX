@@ -1,0 +1,87 @@
+[
+  {
+    "query": "comparar gmm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "mejor seguro medico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "cotizar gmm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "comparar gmm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "como comparar gmm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "mejor seguro medico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "como mejor seguro medico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "cotizar gmm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "como cotizar gmm",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "que es comparar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "que es mejor",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "que es cotizar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-aseguradoras-gmm"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-aseguradoras-gmm"
+  }
+]

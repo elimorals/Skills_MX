@@ -1,0 +1,92 @@
+[
+  {
+    "query": "loyalty",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de retencion-clientes-loyalty"
+  },
+  {
+    "query": "puntos cliente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de retencion-clientes-loyalty"
+  },
+  {
+    "query": "programa referidos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de retencion-clientes-loyalty"
+  },
+  {
+    "query": "churn",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de retencion-clientes-loyalty"
+  },
+  {
+    "query": "retención",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de retencion-clientes-loyalty"
+  },
+  {
+    "query": "no me visitan",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de retencion-clientes-loyalty"
+  },
+  {
+    "query": "clientes inactivos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de retencion-clientes-loyalty"
+  },
+  {
+    "query": "loyalty",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de retencion-clientes-loyalty"
+  },
+  {
+    "query": "como loyalty",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de retencion-clientes-loyalty"
+  },
+  {
+    "query": "puntos cliente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de retencion-clientes-loyalty"
+  },
+  {
+    "query": "paquetes prepago (paquetes-membresia) ni cita individual (agenda-citas-salon)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de retencion-clientes-loyalty"
+  },
+  {
+    "query": "que es puntos",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de retencion-clientes-loyalty"
+  },
+  {
+    "query": "que es programa",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de retencion-clientes-loyalty"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de retencion-clientes-loyalty"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de retencion-clientes-loyalty"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de retencion-clientes-loyalty"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de retencion-clientes-loyalty"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de retencion-clientes-loyalty"
+  }
+]

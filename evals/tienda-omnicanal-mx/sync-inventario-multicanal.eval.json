@@ -1,0 +1,97 @@
+[
+  {
+    "query": "sincronizar inventario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sync-inventario-multicanal"
+  },
+  {
+    "query": "stock multicanal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sync-inventario-multicanal"
+  },
+  {
+    "query": "evitar overselling",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sync-inventario-multicanal"
+  },
+  {
+    "query": "sync canales",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sync-inventario-multicanal"
+  },
+  {
+    "query": "sincronizar inventario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sync-inventario-multicanal"
+  },
+  {
+    "query": "como sincronizar inventario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sync-inventario-multicanal"
+  },
+  {
+    "query": "stock multicanal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sync-inventario-multicanal"
+  },
+  {
+    "query": "como stock multicanal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sync-inventario-multicanal"
+  },
+  {
+    "query": "evitar overselling",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sync-inventario-multicanal"
+  },
+  {
+    "query": "como evitar overselling",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sync-inventario-multicanal"
+  },
+  {
+    "query": "inventario único (eso es ecommerce-mx tradicional)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sync-inventario-multicanal"
+  },
+  {
+    "query": "que es sincronizar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sync-inventario-multicanal"
+  },
+  {
+    "query": "que es stock",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sync-inventario-multicanal"
+  },
+  {
+    "query": "que es evitar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sync-inventario-multicanal"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sync-inventario-multicanal"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sync-inventario-multicanal"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sync-inventario-multicanal"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sync-inventario-multicanal"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sync-inventario-multicanal"
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "query": "descargar cfdis del año",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "recopilar facturas 2025",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "descarga masiva",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "bajar cfdis del sat",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "obtener todos los cfdis",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "descargar cfdis del año",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "como descargar cfdis del año",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "recopilar facturas 2025",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "como recopilar facturas 2025",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "descarga masiva",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "descarga mensual (usar mp_sat_portal directamente)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "que es descargar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "que es recopilar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "que es descarga",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recopilar-cfdis-anuales"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de recopilar-cfdis-anuales"
+  }
+]

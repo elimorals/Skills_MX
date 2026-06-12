@@ -1,0 +1,87 @@
+[
+  {
+    "query": "facturar clientes despacho",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "mensualidad clientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "cobranza honorarios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "facturar clientes despacho",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "como facturar clientes despacho",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "mensualidad clientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "como mensualidad clientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "cobranza honorarios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "como cobranza honorarios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "que es facturar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "que es mensualidad",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "que es cobranza",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-recurrente-despacho"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de facturacion-recurrente-despacho"
+  }
+]

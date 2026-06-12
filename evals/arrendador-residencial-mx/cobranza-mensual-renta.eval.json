@@ -1,0 +1,97 @@
+[
+  {
+    "query": "cobranza renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-mensual-renta"
+  },
+  {
+    "query": "cobrar inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-mensual-renta"
+  },
+  {
+    "query": "recordar pago",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-mensual-renta"
+  },
+  {
+    "query": "inquilino no paga",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-mensual-renta"
+  },
+  {
+    "query": "ya me debe x días",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-mensual-renta"
+  },
+  {
+    "query": "cobranza renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-mensual-renta"
+  },
+  {
+    "query": "como cobranza renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-mensual-renta"
+  },
+  {
+    "query": "cobrar inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-mensual-renta"
+  },
+  {
+    "query": "como cobrar inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-mensual-renta"
+  },
+  {
+    "query": "recordar pago",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-mensual-renta"
+  },
+  {
+    "query": "cobranza b2b (eso es freelancers-mx/cobranza-seguimiento)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-mensual-renta"
+  },
+  {
+    "query": "que es cobranza",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-mensual-renta"
+  },
+  {
+    "query": "que es cobrar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-mensual-renta"
+  },
+  {
+    "query": "que es recordar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-mensual-renta"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-mensual-renta"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-mensual-renta"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-mensual-renta"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-mensual-renta"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-mensual-renta"
+  }
+]

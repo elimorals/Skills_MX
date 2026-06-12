@@ -1,0 +1,97 @@
+[
+  {
+    "query": "alta placas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-placas-tarjeta"
+  },
+  {
+    "query": "reposición tarjeta circulación",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-placas-tarjeta"
+  },
+  {
+    "query": "baja vehículo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-placas-tarjeta"
+  },
+  {
+    "query": "cambio propietario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-placas-tarjeta"
+  },
+  {
+    "query": "alta placas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-placas-tarjeta"
+  },
+  {
+    "query": "como alta placas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-placas-tarjeta"
+  },
+  {
+    "query": "reposición tarjeta circulación",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-placas-tarjeta"
+  },
+  {
+    "query": "como reposición tarjeta circulación",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-placas-tarjeta"
+  },
+  {
+    "query": "baja vehículo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-placas-tarjeta"
+  },
+  {
+    "query": "como baja vehículo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de tramites-placas-tarjeta"
+  },
+  {
+    "query": "multas/verificación/refrendo (son skills dedicados)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-placas-tarjeta"
+  },
+  {
+    "query": "que es alta",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-placas-tarjeta"
+  },
+  {
+    "query": "que es reposición",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-placas-tarjeta"
+  },
+  {
+    "query": "que es baja",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-placas-tarjeta"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-placas-tarjeta"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-placas-tarjeta"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-placas-tarjeta"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-placas-tarjeta"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de tramites-placas-tarjeta"
+  }
+]

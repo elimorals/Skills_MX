@@ -1,0 +1,92 @@
+[
+  {
+    "query": "devolución cruzada",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "cliente devuelve en tienda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "refund cross-channel",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "nota credito devolucion",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "devolución cruzada",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "como devolución cruzada",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "cliente devuelve en tienda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "como cliente devuelve en tienda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "refund cross-channel",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "como refund cross-channel",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "que es devolución",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "que es cliente",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "que es refund",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de devoluciones-cruzadas-canal"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de devoluciones-cruzadas-canal"
+  }
+]

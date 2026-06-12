@@ -1,0 +1,97 @@
+[
+  {
+    "query": "agendar cita",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-salon"
+  },
+  {
+    "query": "mover cita",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-salon"
+  },
+  {
+    "query": "cancelar cita",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-salon"
+  },
+  {
+    "query": "recordatorio cliente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-salon"
+  },
+  {
+    "query": "no-show",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-salon"
+  },
+  {
+    "query": "walk-in",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-salon"
+  },
+  {
+    "query": "hueco agenda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-salon"
+  },
+  {
+    "query": "dispnibilidad estilista",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-salon"
+  },
+  {
+    "query": "agendar cita",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-salon"
+  },
+  {
+    "query": "como agendar cita",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de agenda-citas-salon"
+  },
+  {
+    "query": "cobrar (eso es cierre-dia) ni comisiones (otro skill)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-salon"
+  },
+  {
+    "query": "que es agendar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-salon"
+  },
+  {
+    "query": "que es mover",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-salon"
+  },
+  {
+    "query": "que es cancelar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-salon"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-salon"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-salon"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-salon"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-salon"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de agenda-citas-salon"
+  }
+]

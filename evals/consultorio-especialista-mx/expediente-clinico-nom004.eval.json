@@ -1,0 +1,87 @@
+[
+  {
+    "query": "expediente clinico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-nom004"
+  },
+  {
+    "query": "historia clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-nom004"
+  },
+  {
+    "query": "nom-004",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-nom004"
+  },
+  {
+    "query": "registro paciente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-nom004"
+  },
+  {
+    "query": "expediente clinico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-nom004"
+  },
+  {
+    "query": "como expediente clinico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-nom004"
+  },
+  {
+    "query": "historia clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-nom004"
+  },
+  {
+    "query": "como historia clinica",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-nom004"
+  },
+  {
+    "query": "nom-004",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-nom004"
+  },
+  {
+    "query": "como nom-004",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de expediente-clinico-nom004"
+  },
+  {
+    "query": "que es expediente",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-nom004"
+  },
+  {
+    "query": "que es historia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-nom004"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-nom004"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-nom004"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-nom004"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-nom004"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de expediente-clinico-nom004"
+  }
+]

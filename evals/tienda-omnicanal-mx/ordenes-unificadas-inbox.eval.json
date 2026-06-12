@@ -1,0 +1,92 @@
+[
+  {
+    "query": "ordenes pendientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "inbox tienda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "procesar pedidos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "todas mis ventas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "ordenes pendientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "como ordenes pendientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "inbox tienda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "como inbox tienda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "procesar pedidos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "como procesar pedidos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "que es ordenes",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "que es inbox",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "que es procesar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ordenes-unificadas-inbox"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ordenes-unificadas-inbox"
+  }
+]

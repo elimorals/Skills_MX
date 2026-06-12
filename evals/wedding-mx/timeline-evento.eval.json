@@ -1,0 +1,97 @@
+[
+  {
+    "query": "timeline boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de timeline-evento"
+  },
+  {
+    "query": "cronograma evento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de timeline-evento"
+  },
+  {
+    "query": "plan de acción boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de timeline-evento"
+  },
+  {
+    "query": "organizar boda 6 meses",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de timeline-evento"
+  },
+  {
+    "query": "días previos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de timeline-evento"
+  },
+  {
+    "query": "day-of",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de timeline-evento"
+  },
+  {
+    "query": "post-boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de timeline-evento"
+  },
+  {
+    "query": "timeline boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de timeline-evento"
+  },
+  {
+    "query": "como timeline boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de timeline-evento"
+  },
+  {
+    "query": "cronograma evento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de timeline-evento"
+  },
+  {
+    "query": "cotización (otro skill) ni contratos (otro skill)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de timeline-evento"
+  },
+  {
+    "query": "que es timeline",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de timeline-evento"
+  },
+  {
+    "query": "que es cronograma",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de timeline-evento"
+  },
+  {
+    "query": "que es plan",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de timeline-evento"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de timeline-evento"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de timeline-evento"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de timeline-evento"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de timeline-evento"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de timeline-evento"
+  }
+]

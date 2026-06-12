@@ -1,0 +1,87 @@
+[
+  {
+    "query": "pagar servicios del mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de programacion-pagos-batch"
+  },
+  {
+    "query": "batch pagos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de programacion-pagos-batch"
+  },
+  {
+    "query": "todo junto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de programacion-pagos-batch"
+  },
+  {
+    "query": "pagar servicios del mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de programacion-pagos-batch"
+  },
+  {
+    "query": "como pagar servicios del mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de programacion-pagos-batch"
+  },
+  {
+    "query": "batch pagos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de programacion-pagos-batch"
+  },
+  {
+    "query": "como batch pagos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de programacion-pagos-batch"
+  },
+  {
+    "query": "todo junto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de programacion-pagos-batch"
+  },
+  {
+    "query": "como todo junto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de programacion-pagos-batch"
+  },
+  {
+    "query": "que es pagar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de programacion-pagos-batch"
+  },
+  {
+    "query": "que es batch",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de programacion-pagos-batch"
+  },
+  {
+    "query": "que es todo",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de programacion-pagos-batch"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de programacion-pagos-batch"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de programacion-pagos-batch"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de programacion-pagos-batch"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de programacion-pagos-batch"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de programacion-pagos-batch"
+  }
+]

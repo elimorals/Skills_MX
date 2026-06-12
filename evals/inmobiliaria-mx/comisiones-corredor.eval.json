@@ -1,0 +1,97 @@
+[
+  {
+    "query": "comisión corredor",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-corredor"
+  },
+  {
+    "query": "honorarios broker",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-corredor"
+  },
+  {
+    "query": "cuánto cobro venta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-corredor"
+  },
+  {
+    "query": "cuánto cobro renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-corredor"
+  },
+  {
+    "query": "comisión inmobiliaria",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-corredor"
+  },
+  {
+    "query": "comisión corredor",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-corredor"
+  },
+  {
+    "query": "como comisión corredor",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-corredor"
+  },
+  {
+    "query": "honorarios broker",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-corredor"
+  },
+  {
+    "query": "como honorarios broker",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-corredor"
+  },
+  {
+    "query": "cuánto cobro venta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-corredor"
+  },
+  {
+    "query": "screening (otro skill) ni contratos (otro skill)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-corredor"
+  },
+  {
+    "query": "que es comisión",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-corredor"
+  },
+  {
+    "query": "que es honorarios",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-corredor"
+  },
+  {
+    "query": "que es cuánto",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-corredor"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-corredor"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-corredor"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-corredor"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-corredor"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-corredor"
+  }
+]

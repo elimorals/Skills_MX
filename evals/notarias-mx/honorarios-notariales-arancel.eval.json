@@ -1,0 +1,92 @@
+[
+  {
+    "query": "honorarios notario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de honorarios-notariales-arancel"
+  },
+  {
+    "query": "arancel notarial",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de honorarios-notariales-arancel"
+  },
+  {
+    "query": "cuanto cobra notario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de honorarios-notariales-arancel"
+  },
+  {
+    "query": "cotizar escritura",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de honorarios-notariales-arancel"
+  },
+  {
+    "query": "honorarios notario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de honorarios-notariales-arancel"
+  },
+  {
+    "query": "como honorarios notario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de honorarios-notariales-arancel"
+  },
+  {
+    "query": "arancel notarial",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de honorarios-notariales-arancel"
+  },
+  {
+    "query": "como arancel notarial",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de honorarios-notariales-arancel"
+  },
+  {
+    "query": "cuanto cobra notario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de honorarios-notariales-arancel"
+  },
+  {
+    "query": "como cuanto cobra notario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de honorarios-notariales-arancel"
+  },
+  {
+    "query": "que es honorarios",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de honorarios-notariales-arancel"
+  },
+  {
+    "query": "que es arancel",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de honorarios-notariales-arancel"
+  },
+  {
+    "query": "que es cuanto",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de honorarios-notariales-arancel"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de honorarios-notariales-arancel"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de honorarios-notariales-arancel"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de honorarios-notariales-arancel"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de honorarios-notariales-arancel"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de honorarios-notariales-arancel"
+  }
+]

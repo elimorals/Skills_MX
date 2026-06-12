@@ -1,0 +1,72 @@
+[
+  {
+    "query": "iva retenciones mx",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de iva-retenciones-mx"
+  },
+  {
+    "query": "iva retenciones mx",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de iva-retenciones-mx"
+  },
+  {
+    "query": "como iva retenciones mx",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de iva-retenciones-mx"
+  },
+  {
+    "query": "impuestos locales (isn nómina",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de iva-retenciones-mx"
+  },
+  {
+    "query": "predial",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de iva-retenciones-mx"
+  },
+  {
+    "query": "isai) ni para impuestos federales no operativos (dta aduanal",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de iva-retenciones-mx"
+  },
+  {
+    "query": "ieps de combustibles)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de iva-retenciones-mx"
+  },
+  {
+    "query": "que es iva",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de iva-retenciones-mx"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de iva-retenciones-mx"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de iva-retenciones-mx"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de iva-retenciones-mx"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de iva-retenciones-mx"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de iva-retenciones-mx"
+  },
+  {
+    "query": "ayúdame con iva retenciones mx",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  }
+]

@@ -26,17 +26,19 @@
 
 | Capa | Hecho | Faltante | % completado |
 |---|---|---|---|
-| MCP servers | 28 (+3 delivery aggregators) + esqueleto SAT/bancos Playwright | 13 secundarios | ~78% |
-| Plugins verticales | 16 (+pf-anual, +arrendador, +tramites-vehic, +conductor, +airbnb) | 10 TOP del research | ~62% |
-| Workflows | 12 (+5 nuevos) | ~5 | ~71% |
-| Hooks | 1 git + 13 runtime ✅ | 0 | 100% |
-| Crons | 11 (+9 universales) | 19 verticales | ~37% |
-| Webhooks | 1 receiver + 12 handlers V1 | retry queue + deploy | ~75% |
-| Skills nuevos del research | 8/24 | 16 (los que necesitan vertical nuevo) | ~33% |
-| Evals | 25 | 135-360 objetivo | ~7-19% |
+| MCP servers | **40** (+12 secundarios + 3 delivery aggregators) + esqueletos SAT/bancos Playwright | path real Playwright | **~92%** |
+| Plugins verticales | **27** (+15 nuevos en últimas sesiones) | 9 áreas no cubiertas (specs 07-15) | **~75%** |
+| Workflows | **23** (+11 nuevos) | 0 base, V2 opcional | **~95%** |
+| Hooks | 1 git + 14 runtime ✅ | 0 | **100%** |
+| Crons | **27** (+25 desde inicio) | extras por vertical | **~85%** |
+| Webhooks | 1 receiver V1 + 12 handlers | retry queue + deploy | ~75% |
+| Skills | **220** lint OK (+100 desde inicio) | de specs 07-15 | ~85% |
+| Specs detallados | **15** (+9 áreas no cubiertas) | 0 | **100%** |
+| Evals | **181** (+156 generados) | refinamiento manual | **~50%** |
 | Fixtures | 38 | 50-100 objetivo | ~38-76% |
-| Documentación | 24 | +12 | ~67% |
-| Áreas no cubiertas | 0/10 | 10 | 0% |
+| Tests Python | **80** (+78 nuevos) | de specs no implementados | ~70% |
+| Documentación | 24+ | actualizar STATUS continuo | ~75% |
+| Áreas no cubiertas | 9 specs ✅ / 0 implementadas | 9 implementaciones | 50% (specs ✅, código ❌) |
 
 **Esfuerzo restante estimado**: 7,780-10,740 horas.
 

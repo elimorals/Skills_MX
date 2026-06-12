@@ -1,0 +1,72 @@
+[
+  {
+    "query": "calculadora isr anual",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculadora-isr-anual"
+  },
+  {
+    "query": "calculadora isr anual",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculadora-isr-anual"
+  },
+  {
+    "query": "como calculadora isr anual",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculadora-isr-anual"
+  },
+  {
+    "query": "pago provisional mensual (eso es cierre-fiscal-mensual del core)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculadora-isr-anual"
+  },
+  {
+    "query": "que es calculadora",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculadora-isr-anual"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculadora-isr-anual"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculadora-isr-anual"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculadora-isr-anual"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculadora-isr-anual"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculadora-isr-anual"
+  },
+  {
+    "query": "ayúdame con calculadora isr anual",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con calculadora isr anual",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con calculadora isr anual",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con calculadora isr anual",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  }
+]

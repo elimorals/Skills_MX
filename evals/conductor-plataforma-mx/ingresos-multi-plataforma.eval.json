@@ -1,0 +1,92 @@
+[
+  {
+    "query": "ingreso total plataformas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ingresos-multi-plataforma"
+  },
+  {
+    "query": "suma uber didi",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ingresos-multi-plataforma"
+  },
+  {
+    "query": "ingreso consolidado",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ingresos-multi-plataforma"
+  },
+  {
+    "query": "total chofer",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ingresos-multi-plataforma"
+  },
+  {
+    "query": "ingreso total plataformas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ingresos-multi-plataforma"
+  },
+  {
+    "query": "como ingreso total plataformas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ingresos-multi-plataforma"
+  },
+  {
+    "query": "suma uber didi",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ingresos-multi-plataforma"
+  },
+  {
+    "query": "como suma uber didi",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ingresos-multi-plataforma"
+  },
+  {
+    "query": "ingreso consolidado",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ingresos-multi-plataforma"
+  },
+  {
+    "query": "como ingreso consolidado",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de ingresos-multi-plataforma"
+  },
+  {
+    "query": "que es ingreso",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ingresos-multi-plataforma"
+  },
+  {
+    "query": "que es suma",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ingresos-multi-plataforma"
+  },
+  {
+    "query": "que es ingreso",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ingresos-multi-plataforma"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ingresos-multi-plataforma"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ingresos-multi-plataforma"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ingresos-multi-plataforma"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ingresos-multi-plataforma"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de ingresos-multi-plataforma"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "query": "alertas vencimientos servicios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de alertas-vencimientos-pagos"
+  },
+  {
+    "query": "recordatorios pago servicios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de alertas-vencimientos-pagos"
+  },
+  {
+    "query": "alertas vencimientos servicios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de alertas-vencimientos-pagos"
+  },
+  {
+    "query": "como alertas vencimientos servicios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de alertas-vencimientos-pagos"
+  },
+  {
+    "query": "recordatorios pago servicios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de alertas-vencimientos-pagos"
+  },
+  {
+    "query": "como recordatorios pago servicios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de alertas-vencimientos-pagos"
+  },
+  {
+    "query": "que es alertas",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de alertas-vencimientos-pagos"
+  },
+  {
+    "query": "que es recordatorios",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de alertas-vencimientos-pagos"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de alertas-vencimientos-pagos"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de alertas-vencimientos-pagos"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de alertas-vencimientos-pagos"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de alertas-vencimientos-pagos"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de alertas-vencimientos-pagos"
+  },
+  {
+    "query": "ayúdame con alertas vencimientos pagos",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  }
+]

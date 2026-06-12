@@ -1,0 +1,87 @@
+[
+  {
+    "query": "calendario airbnb",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de reservas-y-ocupacion"
+  },
+  {
+    "query": "ocupación",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de reservas-y-ocupacion"
+  },
+  {
+    "query": "gaps reservas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de reservas-y-ocupacion"
+  },
+  {
+    "query": "tarifa por noche",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de reservas-y-ocupacion"
+  },
+  {
+    "query": "calendario airbnb",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de reservas-y-ocupacion"
+  },
+  {
+    "query": "como calendario airbnb",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de reservas-y-ocupacion"
+  },
+  {
+    "query": "ocupación",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de reservas-y-ocupacion"
+  },
+  {
+    "query": "como ocupación",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de reservas-y-ocupacion"
+  },
+  {
+    "query": "gaps reservas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de reservas-y-ocupacion"
+  },
+  {
+    "query": "como gaps reservas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de reservas-y-ocupacion"
+  },
+  {
+    "query": "que es calendario",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de reservas-y-ocupacion"
+  },
+  {
+    "query": "que es gaps",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de reservas-y-ocupacion"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de reservas-y-ocupacion"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de reservas-y-ocupacion"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de reservas-y-ocupacion"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de reservas-y-ocupacion"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de reservas-y-ocupacion"
+  }
+]

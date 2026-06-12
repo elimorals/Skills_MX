@@ -1,0 +1,87 @@
+[
+  {
+    "query": "dashboard servicios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-facturas-servicios"
+  },
+  {
+    "query": "facturas servicios publicos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-facturas-servicios"
+  },
+  {
+    "query": "consumo del mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-facturas-servicios"
+  },
+  {
+    "query": "dashboard servicios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-facturas-servicios"
+  },
+  {
+    "query": "como dashboard servicios",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-facturas-servicios"
+  },
+  {
+    "query": "facturas servicios publicos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-facturas-servicios"
+  },
+  {
+    "query": "como facturas servicios publicos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-facturas-servicios"
+  },
+  {
+    "query": "consumo del mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-facturas-servicios"
+  },
+  {
+    "query": "como consumo del mes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de dashboard-facturas-servicios"
+  },
+  {
+    "query": "que es dashboard",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-facturas-servicios"
+  },
+  {
+    "query": "que es facturas",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-facturas-servicios"
+  },
+  {
+    "query": "que es consumo",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-facturas-servicios"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-facturas-servicios"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-facturas-servicios"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-facturas-servicios"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-facturas-servicios"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de dashboard-facturas-servicios"
+  }
+]

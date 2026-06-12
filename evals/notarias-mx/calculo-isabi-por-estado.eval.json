@@ -1,0 +1,82 @@
+[
+  {
+    "query": "isabi",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-isabi-por-estado"
+  },
+  {
+    "query": "impuesto adquisicion inmuebles",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-isabi-por-estado"
+  },
+  {
+    "query": "calcular impuesto compraventa",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-isabi-por-estado"
+  },
+  {
+    "query": "isabi",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-isabi-por-estado"
+  },
+  {
+    "query": "como isabi",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-isabi-por-estado"
+  },
+  {
+    "query": "impuesto adquisicion inmuebles",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-isabi-por-estado"
+  },
+  {
+    "query": "como impuesto adquisicion inmuebles",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-isabi-por-estado"
+  },
+  {
+    "query": "calcular impuesto compraventa",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-isabi-por-estado"
+  },
+  {
+    "query": "como calcular impuesto compraventa",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de calculo-isabi-por-estado"
+  },
+  {
+    "query": "que es impuesto",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-isabi-por-estado"
+  },
+  {
+    "query": "que es calcular",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-isabi-por-estado"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-isabi-por-estado"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-isabi-por-estado"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-isabi-por-estado"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-isabi-por-estado"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de calculo-isabi-por-estado"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "clientes despacho",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "agregar cliente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "directorio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "clientes despacho",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "como clientes despacho",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "agregar cliente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "como agregar cliente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "directorio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "como directorio",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "que es clientes",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "que es agregar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestion-clientes-multi-rfc"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestion-clientes-multi-rfc"
+  }
+]

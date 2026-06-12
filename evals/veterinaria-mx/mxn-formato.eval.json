@@ -1,0 +1,97 @@
+[
+  {
+    "query": "formatear pesos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mxn-formato"
+  },
+  {
+    "query": "formato moneda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mxn-formato"
+  },
+  {
+    "query": "monto a letra",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mxn-formato"
+  },
+  {
+    "query": "importe en letra",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mxn-formato"
+  },
+  {
+    "query": "convert to mxn",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mxn-formato"
+  },
+  {
+    "query": "normalize amount",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mxn-formato"
+  },
+  {
+    "query": "o esté generando contratos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mxn-formato"
+  },
+  {
+    "query": "cotizaciones",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mxn-formato"
+  },
+  {
+    "query": "formatear pesos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mxn-formato"
+  },
+  {
+    "query": "como formatear pesos",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mxn-formato"
+  },
+  {
+    "query": "criptomonedas (otra cosa) ni para unidades no monetarias (kg",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mxn-formato"
+  },
+  {
+    "query": "que es formatear",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mxn-formato"
+  },
+  {
+    "query": "que es formato",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mxn-formato"
+  },
+  {
+    "query": "que es monto",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mxn-formato"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mxn-formato"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mxn-formato"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mxn-formato"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mxn-formato"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mxn-formato"
+  }
+]

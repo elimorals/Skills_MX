@@ -1,0 +1,87 @@
+[
+  {
+    "query": "deposito garantia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "devolver deposito",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "daños inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "deposito garantia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "como deposito garantia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "devolver deposito",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "como devolver deposito",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "daños inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "como daños inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "que es deposito",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "que es devolver",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "que es daños",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestor-deposito-en-garantia"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestor-deposito-en-garantia"
+  }
+]

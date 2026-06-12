@@ -1,0 +1,97 @@
+[
+  {
+    "query": "screening inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilinos"
+  },
+  {
+    "query": "verificar candidato",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilinos"
+  },
+  {
+    "query": "requisitos renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilinos"
+  },
+  {
+    "query": "antecedentes inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilinos"
+  },
+  {
+    "query": "capacidad de pago",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilinos"
+  },
+  {
+    "query": "screening inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilinos"
+  },
+  {
+    "query": "como screening inquilino",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilinos"
+  },
+  {
+    "query": "verificar candidato",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilinos"
+  },
+  {
+    "query": "como verificar candidato",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilinos"
+  },
+  {
+    "query": "requisitos renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de screening-inquilinos"
+  },
+  {
+    "query": "contrato (otro skill) ni para inmueble (ficha-inmueble)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilinos"
+  },
+  {
+    "query": "que es screening",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilinos"
+  },
+  {
+    "query": "que es verificar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilinos"
+  },
+  {
+    "query": "que es requisitos",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilinos"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilinos"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilinos"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilinos"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilinos"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de screening-inquilinos"
+  }
+]

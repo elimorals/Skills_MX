@@ -1,0 +1,97 @@
+[
+  {
+    "query": "imss conductor",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de imss-pia-conductor"
+  },
+  {
+    "query": "afiliarme al imss",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de imss-pia-conductor"
+  },
+  {
+    "query": "seguro social independiente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de imss-pia-conductor"
+  },
+  {
+    "query": "imss-pia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de imss-pia-conductor"
+  },
+  {
+    "query": "jubilación chofer",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de imss-pia-conductor"
+  },
+  {
+    "query": "imss conductor",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de imss-pia-conductor"
+  },
+  {
+    "query": "como imss conductor",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de imss-pia-conductor"
+  },
+  {
+    "query": "afiliarme al imss",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de imss-pia-conductor"
+  },
+  {
+    "query": "como afiliarme al imss",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de imss-pia-conductor"
+  },
+  {
+    "query": "seguro social independiente",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de imss-pia-conductor"
+  },
+  {
+    "query": "imss-patronal (eso es empleados de empresa)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de imss-pia-conductor"
+  },
+  {
+    "query": "que es imss",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de imss-pia-conductor"
+  },
+  {
+    "query": "que es afiliarme",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de imss-pia-conductor"
+  },
+  {
+    "query": "que es seguro",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de imss-pia-conductor"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de imss-pia-conductor"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de imss-pia-conductor"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de imss-pia-conductor"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de imss-pia-conductor"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de imss-pia-conductor"
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "query": "calcular comisiones",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-estilistas"
+  },
+  {
+    "query": "pago estilista",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-estilistas"
+  },
+  {
+    "query": "sueldo barbero",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-estilistas"
+  },
+  {
+    "query": "cierre mes salón",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-estilistas"
+  },
+  {
+    "query": "propinas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-estilistas"
+  },
+  {
+    "query": "bonos retención",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-estilistas"
+  },
+  {
+    "query": "calcular comisiones",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-estilistas"
+  },
+  {
+    "query": "como calcular comisiones",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-estilistas"
+  },
+  {
+    "query": "pago estilista",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-estilistas"
+  },
+  {
+    "query": "como pago estilista",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comisiones-estilistas"
+  },
+  {
+    "query": "tarifario (otro skill) ni agenda (otro skill)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-estilistas"
+  },
+  {
+    "query": "que es calcular",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-estilistas"
+  },
+  {
+    "query": "que es pago",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-estilistas"
+  },
+  {
+    "query": "que es sueldo",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-estilistas"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-estilistas"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-estilistas"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-estilistas"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-estilistas"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comisiones-estilistas"
+  }
+]

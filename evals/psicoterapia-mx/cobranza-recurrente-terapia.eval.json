@@ -1,0 +1,72 @@
+[
+  {
+    "query": "cobrar paciente terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-recurrente-terapia"
+  },
+  {
+    "query": "mensualidad psicologia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-recurrente-terapia"
+  },
+  {
+    "query": "cobrar paciente terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-recurrente-terapia"
+  },
+  {
+    "query": "como cobrar paciente terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-recurrente-terapia"
+  },
+  {
+    "query": "mensualidad psicologia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-recurrente-terapia"
+  },
+  {
+    "query": "como mensualidad psicologia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-recurrente-terapia"
+  },
+  {
+    "query": "que es cobrar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-recurrente-terapia"
+  },
+  {
+    "query": "que es mensualidad",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-recurrente-terapia"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-recurrente-terapia"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-recurrente-terapia"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-recurrente-terapia"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-recurrente-terapia"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-recurrente-terapia"
+  },
+  {
+    "query": "ayúdame con cobranza recurrente terapia",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  }
+]

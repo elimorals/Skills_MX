@@ -1,0 +1,72 @@
+[
+  {
+    "query": "identificar deducciones personales",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de identificar-deducciones-personales"
+  },
+  {
+    "query": "identificar deducciones personales",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de identificar-deducciones-personales"
+  },
+  {
+    "query": "como identificar deducciones personales",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de identificar-deducciones-personales"
+  },
+  {
+    "query": "gastos de actividad empresarial (esos son deducciones acumulables",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de identificar-deducciones-personales"
+  },
+  {
+    "query": "distinto)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de identificar-deducciones-personales"
+  },
+  {
+    "query": "que es identificar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de identificar-deducciones-personales"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de identificar-deducciones-personales"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de identificar-deducciones-personales"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de identificar-deducciones-personales"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de identificar-deducciones-personales"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de identificar-deducciones-personales"
+  },
+  {
+    "query": "ayúdame con identificar deducciones personales",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con identificar deducciones personales",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con identificar deducciones personales",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  }
+]

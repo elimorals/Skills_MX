@@ -1,0 +1,87 @@
+[
+  {
+    "query": "notas sesion",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "registro paciente psicologo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "sesion terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "notas sesion",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "como notas sesion",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "registro paciente psicologo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "como registro paciente psicologo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "sesion terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "como sesion terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "que es notas",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "que es registro",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "que es sesion",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sesiones-tracking-psicoterapia"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de sesiones-tracking-psicoterapia"
+  }
+]

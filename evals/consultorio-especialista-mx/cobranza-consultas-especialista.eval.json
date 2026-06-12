@@ -1,0 +1,92 @@
+[
+  {
+    "query": "cobrar consulta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-consultas-especialista"
+  },
+  {
+    "query": "factura medico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-consultas-especialista"
+  },
+  {
+    "query": "paciente con seguro",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-consultas-especialista"
+  },
+  {
+    "query": "gmm reembolso",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-consultas-especialista"
+  },
+  {
+    "query": "cobrar consulta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-consultas-especialista"
+  },
+  {
+    "query": "como cobrar consulta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-consultas-especialista"
+  },
+  {
+    "query": "factura medico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-consultas-especialista"
+  },
+  {
+    "query": "como factura medico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-consultas-especialista"
+  },
+  {
+    "query": "paciente con seguro",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-consultas-especialista"
+  },
+  {
+    "query": "como paciente con seguro",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cobranza-consultas-especialista"
+  },
+  {
+    "query": "que es cobrar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-consultas-especialista"
+  },
+  {
+    "query": "que es factura",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-consultas-especialista"
+  },
+  {
+    "query": "que es paciente",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-consultas-especialista"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-consultas-especialista"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-consultas-especialista"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-consultas-especialista"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-consultas-especialista"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cobranza-consultas-especialista"
+  }
+]

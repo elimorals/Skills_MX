@@ -1,0 +1,97 @@
+[
+  {
+    "query": "cotizar envío",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paqueteria-mx"
+  },
+  {
+    "query": "paquetería méxico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paqueteria-mx"
+  },
+  {
+    "query": "mejor paquetería",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paqueteria-mx"
+  },
+  {
+    "query": "envío estafeta dhl fedex",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paqueteria-mx"
+  },
+  {
+    "query": "cuánto cuesta enviar a [ciudad]",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paqueteria-mx"
+  },
+  {
+    "query": "comparar paqueterías",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paqueteria-mx"
+  },
+  {
+    "query": "guía envío",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paqueteria-mx"
+  },
+  {
+    "query": "cotizar envío",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paqueteria-mx"
+  },
+  {
+    "query": "como cotizar envío",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paqueteria-mx"
+  },
+  {
+    "query": "paquetería méxico",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de paqueteria-mx"
+  },
+  {
+    "query": "envíos internacionales mayores (ver dhl express o fedex international dedicado)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paqueteria-mx"
+  },
+  {
+    "query": "que es cotizar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paqueteria-mx"
+  },
+  {
+    "query": "que es paquetería",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paqueteria-mx"
+  },
+  {
+    "query": "que es mejor",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paqueteria-mx"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paqueteria-mx"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paqueteria-mx"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paqueteria-mx"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paqueteria-mx"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de paqueteria-mx"
+  }
+]

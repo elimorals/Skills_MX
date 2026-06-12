@@ -1,0 +1,72 @@
+[
+  {
+    "query": "seguimiento devolucion sat",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de seguimiento-devolucion-sat"
+  },
+  {
+    "query": "seguimiento devolucion sat",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de seguimiento-devolucion-sat"
+  },
+  {
+    "query": "como seguimiento devolucion sat",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de seguimiento-devolucion-sat"
+  },
+  {
+    "query": "tramitar devolución (eso es manual vía declarasat)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-devolucion-sat"
+  },
+  {
+    "query": "que es seguimiento",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-devolucion-sat"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-devolucion-sat"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-devolucion-sat"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-devolucion-sat"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-devolucion-sat"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de seguimiento-devolucion-sat"
+  },
+  {
+    "query": "ayúdame con seguimiento devolucion sat",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con seguimiento devolucion sat",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con seguimiento devolucion sat",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con seguimiento devolucion sat",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "query": "publicar en ml",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mercado-libre-listings"
+  },
+  {
+    "query": "listing mercado libre",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mercado-libre-listings"
+  },
+  {
+    "query": "optimizar listado ml",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mercado-libre-listings"
+  },
+  {
+    "query": "atributos ml",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mercado-libre-listings"
+  },
+  {
+    "query": "fotos ml",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mercado-libre-listings"
+  },
+  {
+    "query": "ranking ml",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mercado-libre-listings"
+  },
+  {
+    "query": "mercado libre catálogo",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mercado-libre-listings"
+  },
+  {
+    "query": "mejorar listing",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mercado-libre-listings"
+  },
+  {
+    "query": "publicar en ml",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mercado-libre-listings"
+  },
+  {
+    "query": "como publicar en ml",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de mercado-libre-listings"
+  },
+  {
+    "query": "pricing (otro skill mercado-libre-pricing)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mercado-libre-listings"
+  },
+  {
+    "query": "ni para mensajes de compradores (eso es el mcp directo)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mercado-libre-listings"
+  },
+  {
+    "query": "que es publicar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mercado-libre-listings"
+  },
+  {
+    "query": "que es listing",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mercado-libre-listings"
+  },
+  {
+    "query": "que es optimizar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mercado-libre-listings"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mercado-libre-listings"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mercado-libre-listings"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mercado-libre-listings"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mercado-libre-listings"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de mercado-libre-listings"
+  }
+]

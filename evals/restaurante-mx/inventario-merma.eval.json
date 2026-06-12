@@ -1,0 +1,92 @@
+[
+  {
+    "query": "inventario restaurante",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-merma"
+  },
+  {
+    "query": "merma",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-merma"
+  },
+  {
+    "query": "costo ingredientes",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-merma"
+  },
+  {
+    "query": "reposición",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-merma"
+  },
+  {
+    "query": "alertar bajo stock",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-merma"
+  },
+  {
+    "query": "robo cocina",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-merma"
+  },
+  {
+    "query": "inventario restaurante",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-merma"
+  },
+  {
+    "query": "como inventario restaurante",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-merma"
+  },
+  {
+    "query": "merma",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-merma"
+  },
+  {
+    "query": "como merma",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-merma"
+  },
+  {
+    "query": "ingeniería de menú (otro skill) ni propinas",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-merma"
+  },
+  {
+    "query": "que es inventario",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-merma"
+  },
+  {
+    "query": "que es costo",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-merma"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-merma"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-merma"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-merma"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-merma"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-merma"
+  }
+]

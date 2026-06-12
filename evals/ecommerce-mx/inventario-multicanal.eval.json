@@ -1,0 +1,92 @@
+[
+  {
+    "query": "sincronizar inventario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-multicanal"
+  },
+  {
+    "query": "stock multicanal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-multicanal"
+  },
+  {
+    "query": "overselling",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-multicanal"
+  },
+  {
+    "query": "inventario ml shopify",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-multicanal"
+  },
+  {
+    "query": "vendí lo mismo en dos lados",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-multicanal"
+  },
+  {
+    "query": "stock desincronizado",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-multicanal"
+  },
+  {
+    "query": "safety stock",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-multicanal"
+  },
+  {
+    "query": "sincronizar inventario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-multicanal"
+  },
+  {
+    "query": "como sincronizar inventario",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-multicanal"
+  },
+  {
+    "query": "stock multicanal",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de inventario-multicanal"
+  },
+  {
+    "query": "pricing (otro skill) ni para fulfillment individual (otro skill paqueteria-mx)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-multicanal"
+  },
+  {
+    "query": "que es sincronizar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-multicanal"
+  },
+  {
+    "query": "que es stock",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-multicanal"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-multicanal"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-multicanal"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-multicanal"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-multicanal"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de inventario-multicanal"
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "query": "contrato renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "contrato arrendamiento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "vamos a rentar",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "fiador",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "depósito",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "vigencia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "aumento renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "contrato renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "como contrato renta",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "contrato arrendamiento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "venta (otro skill comisiones-corredor) ni screening (otro skill)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "que es contrato",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "que es contrato",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "que es vamos",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-mx"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de contrato-arrendamiento-mx"
+  }
+]

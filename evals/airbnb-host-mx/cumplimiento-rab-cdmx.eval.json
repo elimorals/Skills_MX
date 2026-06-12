@@ -1,0 +1,92 @@
+[
+  {
+    "query": "rab cdmx",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "registro anfitriones",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "regulación airbnb cdmx",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "cumplimiento",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "rab cdmx",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "como rab cdmx",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "registro anfitriones",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "como registro anfitriones",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "regulación airbnb cdmx",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "como regulación airbnb cdmx",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "que es rab",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "que es registro",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "que es regulación",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cumplimiento-rab-cdmx"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cumplimiento-rab-cdmx"
+  }
+]

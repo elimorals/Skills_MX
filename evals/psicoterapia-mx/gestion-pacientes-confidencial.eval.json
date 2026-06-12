@@ -1,0 +1,72 @@
+[
+  {
+    "query": "pacientes terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-pacientes-confidencial"
+  },
+  {
+    "query": "directorio psicologia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-pacientes-confidencial"
+  },
+  {
+    "query": "pacientes terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-pacientes-confidencial"
+  },
+  {
+    "query": "como pacientes terapia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-pacientes-confidencial"
+  },
+  {
+    "query": "directorio psicologia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-pacientes-confidencial"
+  },
+  {
+    "query": "como directorio psicologia",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de gestion-pacientes-confidencial"
+  },
+  {
+    "query": "que es pacientes",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestion-pacientes-confidencial"
+  },
+  {
+    "query": "que es directorio",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestion-pacientes-confidencial"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestion-pacientes-confidencial"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestion-pacientes-confidencial"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestion-pacientes-confidencial"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestion-pacientes-confidencial"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de gestion-pacientes-confidencial"
+  },
+  {
+    "query": "ayúdame con gestion pacientes confidencial",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  }
+]

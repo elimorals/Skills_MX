@@ -1,0 +1,97 @@
+[
+  {
+    "query": "proveedores boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de proveedores-bda"
+  },
+  {
+    "query": "comparar cotizaciones",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de proveedores-bda"
+  },
+  {
+    "query": "pago pendiente proveedor",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de proveedores-bda"
+  },
+  {
+    "query": "presupuesto gastado",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de proveedores-bda"
+  },
+  {
+    "query": "lista vendedores boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de proveedores-bda"
+  },
+  {
+    "query": "proveedores boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de proveedores-bda"
+  },
+  {
+    "query": "como proveedores boda",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de proveedores-bda"
+  },
+  {
+    "query": "comparar cotizaciones",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de proveedores-bda"
+  },
+  {
+    "query": "como comparar cotizaciones",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de proveedores-bda"
+  },
+  {
+    "query": "pago pendiente proveedor",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de proveedores-bda"
+  },
+  {
+    "query": "timeline (otro skill) ni contratos individuales (contrato-boda-pf-pm)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de proveedores-bda"
+  },
+  {
+    "query": "que es proveedores",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de proveedores-bda"
+  },
+  {
+    "query": "que es comparar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de proveedores-bda"
+  },
+  {
+    "query": "que es pago",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de proveedores-bda"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de proveedores-bda"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de proveedores-bda"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de proveedores-bda"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de proveedores-bda"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de proveedores-bda"
+  }
+]

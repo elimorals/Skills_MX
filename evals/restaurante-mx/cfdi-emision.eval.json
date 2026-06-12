@@ -1,0 +1,72 @@
+[
+  {
+    "query": "cfdi emision",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-emision"
+  },
+  {
+    "query": "cfdi emision",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-emision"
+  },
+  {
+    "query": "como cfdi emision",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de cfdi-emision"
+  },
+  {
+    "query": "facturas de otros países (argentina afip",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-emision"
+  },
+  {
+    "query": "colombia dian",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-emision"
+  },
+  {
+    "query": "españa aeat) ni para órdenes de compra/cotizaciones (esas no se timbran)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-emision"
+  },
+  {
+    "query": "que es cfdi",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-emision"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-emision"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-emision"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-emision"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-emision"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de cfdi-emision"
+  },
+  {
+    "query": "ayúdame con cfdi emision",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  },
+  {
+    "query": "ayúdame con cfdi emision",
+    "should_trigger": true,
+    "rationale": "Catch-all relacionado"
+  }
+]

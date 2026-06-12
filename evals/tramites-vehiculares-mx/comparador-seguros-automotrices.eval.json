@@ -1,0 +1,92 @@
+[
+  {
+    "query": "comparar seguros auto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-seguros-automotrices"
+  },
+  {
+    "query": "cuál seguro comprar",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-seguros-automotrices"
+  },
+  {
+    "query": "mejor seguro vehicular",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-seguros-automotrices"
+  },
+  {
+    "query": "cotizar seguro carro",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-seguros-automotrices"
+  },
+  {
+    "query": "comparar seguros auto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-seguros-automotrices"
+  },
+  {
+    "query": "como comparar seguros auto",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-seguros-automotrices"
+  },
+  {
+    "query": "cuál seguro comprar",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-seguros-automotrices"
+  },
+  {
+    "query": "como cuál seguro comprar",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-seguros-automotrices"
+  },
+  {
+    "query": "mejor seguro vehicular",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-seguros-automotrices"
+  },
+  {
+    "query": "como mejor seguro vehicular",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-seguros-automotrices"
+  },
+  {
+    "query": "que es comparar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-seguros-automotrices"
+  },
+  {
+    "query": "que es cuál",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-seguros-automotrices"
+  },
+  {
+    "query": "que es mejor",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-seguros-automotrices"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-seguros-automotrices"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-seguros-automotrices"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-seguros-automotrices"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-seguros-automotrices"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-seguros-automotrices"
+  }
+]

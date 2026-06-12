@@ -1,0 +1,92 @@
+[
+  {
+    "query": "propinas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de propinas-distribucion"
+  },
+  {
+    "query": "distribución meseros",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de propinas-distribucion"
+  },
+  {
+    "query": "tip pool",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de propinas-distribucion"
+  },
+  {
+    "query": "propinas cocina",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de propinas-distribucion"
+  },
+  {
+    "query": "fiscalmente propinas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de propinas-distribucion"
+  },
+  {
+    "query": "propinas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de propinas-distribucion"
+  },
+  {
+    "query": "como propinas",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de propinas-distribucion"
+  },
+  {
+    "query": "distribución meseros",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de propinas-distribucion"
+  },
+  {
+    "query": "como distribución meseros",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de propinas-distribucion"
+  },
+  {
+    "query": "tip pool",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de propinas-distribucion"
+  },
+  {
+    "query": "inventario (otro skill) ni menú (otro skill)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de propinas-distribucion"
+  },
+  {
+    "query": "que es distribución",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de propinas-distribucion"
+  },
+  {
+    "query": "que es tip",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de propinas-distribucion"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de propinas-distribucion"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de propinas-distribucion"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de propinas-distribucion"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de propinas-distribucion"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de propinas-distribucion"
+  }
+]
