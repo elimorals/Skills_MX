@@ -1,0 +1,48 @@
+{
+  "name": "agente-seguros-mx",
+  "displayName": "Agente de Seguros MX — Pólizas y comisiones",
+  "description": "Plugin para agentes y promotores de seguros independientes en México (autorizados CNSF). Cubre cartera de pólizas multi-ramo (auto, GMM, vida, daños, fianzas) con vencimientos automatizados vía WhatsApp, cálculo y CFDI de comisiones recibidas de aseguradoras (régimen 612 PFAE típicamente o 626 RESICO PF), comparador de pólizas para presentar al cliente, gestión de siniestros con seguimiento end-to-end, renovaciones con recordatorio 60-30-7 días, dispersión de subagentes con CFDI por comisión a su nombre, y compliance LISF + UMA por ramo. Cubre AXA, GNP, Quálitas, Mapfre, MetLife, Allianz, Inbursa, BUPA. Construido sobre core-mexico + gmm-asegurado-mx.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
+  },
+  "keywords": [
+    "agente-seguros",
+    "polizas",
+    "comisiones",
+    "renovacion",
+    "siniestros",
+    "CNSF",
+    "auto",
+    "GMM",
+    "vida",
+    "mexico"
+  ],
+  "skills": [
+    "skills/cartera-polizas",
+    "skills/calculador-comisiones-aseguradoras",
+    "skills/comparador-polizas-cliente",
+    "skills/seguimiento-siniestro",
+    "skills/recordatorios-renovacion",
+    "skills/cfdi-emision",
+    "skills/iva-retenciones-mx",
+    "skills/rfc-validacion",
+    "skills/whatsapp-business-mx",
+    "skills/compliance-lfpdppp",
+    "skills/mxn-formato"
+  ],
+  "commands": [
+    "commands/registrar-poliza.md",
+    "commands/cotizar-comparativa.md",
+    "commands/seguimiento-siniestro.md",
+    "commands/cobrar-comisiones.md"
+  ],
+  "agents": [
+    "agents/cazador-renovaciones.md"
+  ],
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "requires": ["core-mexico", "gmm-asegurado-mx"]
+  }
+}
