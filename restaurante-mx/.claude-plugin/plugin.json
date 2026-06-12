@@ -1,0 +1,47 @@
+{
+  "name": "restaurante-mx",
+  "displayName": "Restaurante MX — Restaurantes, dark kitchens, cafeterías",
+  "description": "Plugin para restaurantes tradicionales, dark kitchens, cafeterías de especialidad, bares y food trucks en México. Cubre ingeniería de menú (margen + popularidad), control de inventario con merma proyectada, distribución de propinas a meseros (10% propinable cliente, 100% empleado), integración con aggregators delivery (Rappi, DiDi Food, UberEats) con sus comisiones distintas (25-35%), y emisión de CFDI público global B2C consolidado. Construido sobre core-mexico.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elias",
+    "email": "elias@cipreholding.com"
+  },
+  "keywords": [
+    "restaurante",
+    "dark-kitchen",
+    "cafeteria",
+    "bar",
+    "food-truck",
+    "mexico",
+    "menu-engineering",
+    "rappi",
+    "ubereats",
+    "didi-food",
+    "propinas",
+    "cfdi-global"
+  ],
+  "skills": [
+    "skills/menu-ingenieria-margen",
+    "skills/inventario-merma",
+    "skills/propinas-distribucion",
+    "skills/delivery-aggregators",
+    "skills/cfdi-publico-global",
+    "skills/cfdi-emision",
+    "skills/iva-retenciones-mx",
+    "skills/rfc-validacion",
+    "skills/whatsapp-business-mx",
+    "skills/compliance-lfpdppp",
+    "skills/mxn-formato"
+  ],
+  "commands": [
+    "commands/ingenieria-menu.md",
+    "commands/cierre-caja.md",
+    "commands/sync-aggregators.md",
+    "commands/distribuir-propinas.md"
+  ],
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "requires": ["core-mexico"]
+  }
+}
