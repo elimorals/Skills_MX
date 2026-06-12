@@ -1,0 +1,102 @@
+[
+  {
+    "query": "necesito un aviso de privacidad para mi tienda en línea",
+    "should_trigger": true,
+    "rationale": "Aviso privacidad LFPDPPP"
+  },
+  {
+    "query": "el cliente quiere ejercer su derecho ARCO, qué hago",
+    "should_trigger": true,
+    "rationale": "ARCO — Acceso, Rectificación, Cancelación, Oposición"
+  },
+  {
+    "query": "cuanto puede multar el INAI si no tengo aviso de privacidad",
+    "should_trigger": true,
+    "rationale": "Multas LFPDPPP por INAI"
+  },
+  {
+    "query": "necesito el aviso de privacidad integral para mi nómina",
+    "should_trigger": true,
+    "rationale": "Aviso integral vs simplificado"
+  },
+  {
+    "query": "como protejo los datos del cliente cuando le facturo",
+    "should_trigger": true,
+    "rationale": "Tratamiento datos personales B2C"
+  },
+  {
+    "query": "necesito el aviso de privacidad pero en inglés también",
+    "should_trigger": true,
+    "rationale": "Multi-idioma aviso privacidad"
+  },
+  {
+    "query": "que es una vulneración de datos personales en LFPDPPP",
+    "should_trigger": true,
+    "rationale": "Vulneraciones + notificación obligatoria"
+  },
+  {
+    "query": "como configuro mi base de datos correctamente",
+    "should_trigger": false,
+    "rationale": "Base datos técnica, no compliance LFPDPPP"
+  },
+  {
+    "query": "el cliente quiere que borre todos sus datos",
+    "should_trigger": true,
+    "rationale": "Derecho de cancelación ARCO"
+  },
+  {
+    "query": "necesito hacer GDPR para mis clientes en Europa",
+    "should_trigger": false,
+    "rationale": "GDPR es UE, LFPDPPP es MX (diferente)"
+  },
+  {
+    "query": "que datos personales puedo solicitar a mi empleado al contratarlo",
+    "should_trigger": true,
+    "rationale": "Datos personales laborales — principio de finalidad"
+  },
+  {
+    "query": "transferir base de datos de clientes a otra empresa",
+    "should_trigger": true,
+    "rationale": "Transferencia de datos requiere consentimiento"
+  },
+  {
+    "query": "como elimino mi cuenta de facebook",
+    "should_trigger": false,
+    "rationale": "FB cuenta personal, no compliance LFPDPPP empresa"
+  },
+  {
+    "query": "necesito proteger la información médica de mis pacientes",
+    "should_trigger": true,
+    "rationale": "Datos sensibles salud — LFPDPPP aplica"
+  },
+  {
+    "query": "como hago auditoria de mi sistema",
+    "should_trigger": false,
+    "rationale": "Auditoría sistema, no LFPDPPP"
+  },
+  {
+    "query": "que pasa si vendo datos de mis clientes a un tercero",
+    "should_trigger": true,
+    "rationale": "Transferencia/venta datos requiere consentimiento expreso"
+  },
+  {
+    "query": "compliance HIPAA en mi clinica",
+    "should_trigger": false,
+    "rationale": "HIPAA es USA, en MX aplica LFPDPPP"
+  },
+  {
+    "query": "como redacto el aviso de privacidad para mi escuela",
+    "should_trigger": true,
+    "rationale": "Aviso privacidad sector educativo"
+  },
+  {
+    "query": "tengo que reportar al INAI una fuga de datos",
+    "should_trigger": true,
+    "rationale": "Notificación vulneración a INAI"
+  },
+  {
+    "query": "como configuro https en mi sitio",
+    "should_trigger": false,
+    "rationale": "HTTPS técnico, no LFPDPPP"
+  }
+]

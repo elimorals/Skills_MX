@@ -1,0 +1,40 @@
+{
+  "name": "Cobranza Nivel 3 — Recordatorio firme + marca llamada (D+20)",
+  "input": {
+    "cliente": "Cliente Demo SA",
+    "factura": {
+      "uuid": "ABCD-1234-...",
+      "folio": "F-2026-0042",
+      "monto_mxn": 50000.00,
+      "fecha_emision": "2026-02-28",
+      "fecha_vencimiento": "2026-03-30",
+      "metodo_pago": "PPD"
+    },
+    "dias_vencidos": 20,
+    "comunicaciones_previas": [
+      {"fecha": "2026-04-05", "canal": "whatsapp", "respuesta": "no"},
+      {"fecha": "2026-04-12", "canal": "whatsapp", "respuesta": "no"},
+      {"fecha": "2026-04-18", "canal": "email", "respuesta": "leido_pero_sin_responder"}
+    ],
+    "historial_cliente": {
+      "facturas_emitidas_total": 12,
+      "no_shows_pago": 0
+    }
+  },
+  "expected_output": {
+    "nivel_asignado": 3,
+    "razon_nivel": "D+20 sin respuesta a 3 comunicaciones — escalar",
+    "accion_recomendada": "Llamada del usuario + WhatsApp firme",
+    "guion_llamada_sugerido": "Hola {{1}}, soy {{nombre_emisor}}. Le hablo por la factura F-2026-0042 que tiene 20 días vencidos. Necesito entender qué pasa. ¿Hay algo en lo que podamos ayudar? Si el pago no llega en 7 días, escalamos a procedimiento legal.",
+    "template_whatsapp_firme": "{{1}}: Tu factura F-2026-0042 tiene 20 días vencidos. He intentado contactarte 3 veces sin respuesta. Si no podemos resolver esto en 7 días, debo escalar a cobranza extrajudicial.",
+    "fecha_seguimiento_proximo": "2026-04-27",
+    "siguiente_nivel_si_no_responde": 4,
+    "alertas": [
+      "Cliente con buen histórico — investigar si hay problema real (mudanza, evento personal)",
+      "Si confirma incapacidad temporal, ofrecer plan de pagos"
+    ]
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Cobranza B2B + LFPC respeto al consumidor",
+  "notas": "Nivel 3 = punto de inflexión. Decidir si seguir cobrando o ir a recuperación legal."
+}

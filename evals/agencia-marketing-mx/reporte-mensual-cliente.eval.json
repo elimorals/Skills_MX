@@ -1,0 +1,102 @@
+[
+  {
+    "query": "necesito hacer reporte mensual para mi cliente de agencia",
+    "should_trigger": true,
+    "rationale": "Reporting mensual cliente"
+  },
+  {
+    "query": "como presento métricas de meta ads al cliente",
+    "should_trigger": true,
+    "rationale": "Presentación KPIs cliente"
+  },
+  {
+    "query": "ROAS de la campaña y como explicarlo",
+    "should_trigger": true,
+    "rationale": "ROAS reporting"
+  },
+  {
+    "query": "el cliente quiere ver dashboards",
+    "should_trigger": true,
+    "rationale": "Visualización reporte"
+  },
+  {
+    "query": "como justificar costo de campaña con resultados",
+    "should_trigger": true,
+    "rationale": "Justificación ROI cliente"
+  },
+  {
+    "query": "necesito comparar mes vs mes anterior",
+    "should_trigger": true,
+    "rationale": "Comparativos temporales"
+  },
+  {
+    "query": "templates de reporte mensual",
+    "should_trigger": true,
+    "rationale": "Plantilla reporte"
+  },
+  {
+    "query": "necesito hacer briefing creativo",
+    "should_trigger": false,
+    "rationale": "Brief, no reporte"
+  },
+  {
+    "query": "el cliente quiere saber por qué bajó el CTR",
+    "should_trigger": true,
+    "rationale": "Análisis caída métrica"
+  },
+  {
+    "query": "como traduzco impressions a vista de cliente no técnico",
+    "should_trigger": true,
+    "rationale": "Comunicación métricas a no-técnico"
+  },
+  {
+    "query": "necesito firmar contrato con cliente nuevo",
+    "should_trigger": false,
+    "rationale": "Contrato, no reporte"
+  },
+  {
+    "query": "como muestro acciones del próximo mes en el reporte",
+    "should_trigger": true,
+    "rationale": "Plan próximo mes en reporte"
+  },
+  {
+    "query": "el cliente quiere reunión de presentación de reporte",
+    "should_trigger": true,
+    "rationale": "Junta de presentación"
+  },
+  {
+    "query": "cuanto cobro por mi servicio",
+    "should_trigger": false,
+    "rationale": "Pricing, no reporte"
+  },
+  {
+    "query": "necesito hacer reporte de meta + google + tiktok unificado",
+    "should_trigger": true,
+    "rationale": "Multi-canal reporte"
+  },
+  {
+    "query": "como manejo bajos resultados al presentar al cliente",
+    "should_trigger": true,
+    "rationale": "Transparencia + plan acción"
+  },
+  {
+    "query": "necesito investigar a competidor",
+    "should_trigger": false,
+    "rationale": "Competitive research, no reporte"
+  },
+  {
+    "query": "agregar slide de aprendizajes al reporte mensual",
+    "should_trigger": true,
+    "rationale": "Insights y aprendizajes reporte"
+  },
+  {
+    "query": "como genero un reporte automático en looker studio",
+    "should_trigger": true,
+    "rationale": "Reporting tool + automatización"
+  },
+  {
+    "query": "necesito creatividad para mi anuncio",
+    "should_trigger": false,
+    "rationale": "Diseño, no reporte"
+  }
+]

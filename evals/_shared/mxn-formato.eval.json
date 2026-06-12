@@ -1,0 +1,102 @@
+[
+  {
+    "query": "como escribo 12345.67 en formato pesos mexicanos",
+    "should_trigger": true,
+    "rationale": "Formato MXN con coma para miles"
+  },
+  {
+    "query": "convierte $1,234,567.89 a letra para mi factura",
+    "should_trigger": true,
+    "rationale": "Pesos a letra para CFDI"
+  },
+  {
+    "query": "tipo de cambio dof de hoy usd mxn",
+    "should_trigger": true,
+    "rationale": "TC DOF Banxico"
+  },
+  {
+    "query": "como formateo 50 millones en pesos",
+    "should_trigger": true,
+    "rationale": "Formato MXN cantidades grandes"
+  },
+  {
+    "query": "letra pesos mil quinientos para cheque",
+    "should_trigger": true,
+    "rationale": "Conversión a letra"
+  },
+  {
+    "query": "factura USD cuanto equivale en pesos con TC del DOF",
+    "should_trigger": true,
+    "rationale": "TC DOF para CFDI multimoneda"
+  },
+  {
+    "query": "como se escribe ciento cincuenta mil pesos",
+    "should_trigger": true,
+    "rationale": "Letra → número MXN"
+  },
+  {
+    "query": "necesito traducir un texto al inglés",
+    "should_trigger": false,
+    "rationale": "Traducción texto, no formato monetario"
+  },
+  {
+    "query": "factura en euros para cliente alemán",
+    "should_trigger": true,
+    "rationale": "Multimoneda con conversión MXN"
+  },
+  {
+    "query": "el cliente quiere que ponga el monto en pesos mexicanos con dos decimales",
+    "should_trigger": true,
+    "rationale": "Formato decimal MXN"
+  },
+  {
+    "query": "calculadora online de divisas",
+    "should_trigger": false,
+    "rationale": "Calculadora genérica, no formato MXN específico"
+  },
+  {
+    "query": "como convierto 1500 pesos a letra para certificado",
+    "should_trigger": true,
+    "rationale": "Conversión letra"
+  },
+  {
+    "query": "mil pesos en numero",
+    "should_trigger": true,
+    "rationale": "Letra → número"
+  },
+  {
+    "query": "necesito el TC del DOF para timbrar mi CFDI en USD",
+    "should_trigger": true,
+    "rationale": "TC oficial DOF Banxico"
+  },
+  {
+    "query": "convertir USD a EUR",
+    "should_trigger": false,
+    "rationale": "USD↔EUR sin pasar por MXN, fuera de scope MX"
+  },
+  {
+    "query": "cuanto vale 1 millón de pesos en euros hoy",
+    "should_trigger": true,
+    "rationale": "Conversión MXN → EUR con TC"
+  },
+  {
+    "query": "como pongo el simbolo $ correcto en mi factura",
+    "should_trigger": true,
+    "rationale": "Símbolo monetario MX"
+  },
+  {
+    "query": "necesito calcular intereses bancarios",
+    "should_trigger": false,
+    "rationale": "Intereses, no formato MXN"
+  },
+  {
+    "query": "necesito convertir 350000 pesos a letra para una nota de credito",
+    "should_trigger": true,
+    "rationale": "Letra para nota de crédito"
+  },
+  {
+    "query": "como muestro el iva separado del subtotal en formato pesos",
+    "should_trigger": true,
+    "rationale": "Formato presentación MXN factura"
+  }
+]

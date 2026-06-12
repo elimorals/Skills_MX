@@ -1,0 +1,36 @@
+{
+  "name": "Cobranza Nivel 1 — Recordatorio suave (D+5 después de vencimiento)",
+  "input": {
+    "cliente": "Cliente Demo SA",
+    "factura": {
+      "uuid": "ABCD-1234-...",
+      "folio": "F-2026-0042",
+      "monto_mxn": 50000.00,
+      "fecha_emision": "2026-02-28",
+      "fecha_vencimiento": "2026-03-30",
+      "metodo_pago": "PPD"
+    },
+    "dias_vencidos": 5,
+    "historial_cliente": {
+      "facturas_emitidas_total": 12,
+      "no_shows_pago": 0,
+      "comportamiento": "buen_pagador"
+    }
+  },
+  "expected_output": {
+    "nivel_asignado": 1,
+    "razon_nivel": "Buen pagador histórico + apenas 5 días vencido",
+    "accion_recomendada": "Recordatorio amable por WhatsApp",
+    "template_whatsapp": {
+      "categoria": "UTILITY",
+      "mensaje": "Hola {{1}} 👋 Te recordamos que tu factura F-2026-0042 por $50,000 venció hace 5 días. Si ya pagaste, ignora este mensaje. Si necesitas ayuda con el pago, escríbenos.",
+      "cta": "Confirmar pago o solicitar ayuda"
+    },
+    "fecha_seguimiento_proximo": "2026-04-10",
+    "siguiente_nivel_si_no_responde": 2,
+    "alertas": []
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Buenas prácticas cobranza B2B MX",
+  "notas": "Tono amable + asunción de buena fe (cliente con buen histórico)."
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Template MARKETING con promoción y descuento",
+  "input": {
+    "tipo_template": "MARKETING",
+    "uso": "promocion_descuento",
+    "variables": ["{{1}}=Nombre", "{{2}}=Descuento_porcentaje", "{{3}}=Fecha_limite"],
+    "tono": "casual_persuasivo",
+    "idioma": "es_MX",
+    "requiere_opt_in": true
+  },
+  "expected_output": {
+    "categoria_meta": "MARKETING",
+    "tasa_aprobacion_estimada": "media",
+    "cuerpo_mensaje_sugerido": "¡Hola {{1}}! 🎉 Solo por hoy: {{2}}% de descuento en toda la tienda. Aprovecha antes del {{3}}. Compra aquí: {{4}}",
+    "tiene_emoji_apropiado": true,
+    "tiene_cta_clara": true,
+    "longitud_caracteres": 132,
+    "requiere_opt_in_documentado": true,
+    "compliance": {
+      "no_dispara_si_no_optin": true,
+      "no_contiene_lenguaje_engañoso": true,
+      "no_excede_3_emojis_promedio": true
+    },
+    "validaciones_locales_pasadas": true,
+    "alertas": [
+      "MARKETING requiere opt-in explícito del usuario. Verificar consentimiento ANTES de mandar."
+    ]
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Política Meta MARKETING templates + LFPDPPP (consentimiento)",
+  "notas": "MARKETING tasa rechazo mayor. Mandar SOLO a usuarios que opt-in explícitamente."
+}

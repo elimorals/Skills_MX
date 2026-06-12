@@ -1,0 +1,102 @@
+[
+  {
+    "query": "necesito crear orden de trabajo para nuevo cliente",
+    "should_trigger": true,
+    "rationale": "OT documento operativo"
+  },
+  {
+    "query": "como organizo las órdenes pendientes del día",
+    "should_trigger": true,
+    "rationale": "Gestión órdenes activas"
+  },
+  {
+    "query": "que info pongo en la OT del cliente",
+    "should_trigger": true,
+    "rationale": "Estructura OT"
+  },
+  {
+    "query": "necesito firma del cliente para empezar el trabajo",
+    "should_trigger": true,
+    "rationale": "Autorización en OT"
+  },
+  {
+    "query": "como entrego al cliente al final del servicio",
+    "should_trigger": true,
+    "rationale": "Cierre OT"
+  },
+  {
+    "query": "necesito sello de mi taller en la OT",
+    "should_trigger": true,
+    "rationale": "Documentación legal OT"
+  },
+  {
+    "query": "cuanto cuesta una afinación",
+    "should_trigger": false,
+    "rationale": "Cotización, no OT"
+  },
+  {
+    "query": "el mecánico capturó mal la OT, como la corrijo",
+    "should_trigger": true,
+    "rationale": "Corrección documento OT"
+  },
+  {
+    "query": "que llevarme escrito de mi reparación al irme",
+    "should_trigger": true,
+    "rationale": "Documentación OT al cliente"
+  },
+  {
+    "query": "cliente quiere ver el desglose de lo que le cobré",
+    "should_trigger": true,
+    "rationale": "OT con detalle costos"
+  },
+  {
+    "query": "como rastreo cuánto tiempo lleva esta orden",
+    "should_trigger": true,
+    "rationale": "Tracking tiempo en OT"
+  },
+  {
+    "query": "necesito reportes mensuales de ventas",
+    "should_trigger": false,
+    "rationale": "Reportes, no OT individual"
+  },
+  {
+    "query": "como notifico al cliente que su auto está listo",
+    "should_trigger": false,
+    "rationale": "Comunicación (otro skill WhatsApp)"
+  },
+  {
+    "query": "necesito el inventario de refacciones",
+    "should_trigger": false,
+    "rationale": "Inventario, no OT"
+  },
+  {
+    "query": "como documento que el cliente me autorizó trabajos extra",
+    "should_trigger": true,
+    "rationale": "OT + autorización adicional"
+  },
+  {
+    "query": "el cliente reclama que su auto le quedó peor, qué OT le presento",
+    "should_trigger": true,
+    "rationale": "OT como evidencia legal"
+  },
+  {
+    "query": "necesito facturar con CFDI",
+    "should_trigger": false,
+    "rationale": "Facturación, no OT"
+  },
+  {
+    "query": "que partes del auto debo registrar antes de la reparación",
+    "should_trigger": true,
+    "rationale": "Recepción + check-in OT"
+  },
+  {
+    "query": "como hago checklist de recepción del vehículo",
+    "should_trigger": true,
+    "rationale": "Check-in inicial OT"
+  },
+  {
+    "query": "tengo 10 vehículos pendientes y no sé por dónde empezar",
+    "should_trigger": true,
+    "rationale": "Priorización OTs"
+  }
+]

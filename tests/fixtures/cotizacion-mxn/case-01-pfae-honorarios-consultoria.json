@@ -1,0 +1,47 @@
+{
+  "name": "Cotización PFAE consultor a PM — incluye retenciones",
+  "input": {
+    "emisor": {
+      "tipo": "PF",
+      "regimen": "612",
+      "rfc": "MAJG800101XYZ"
+    },
+    "cliente": {
+      "tipo": "PM",
+      "rfc": "IBM970131DRA",
+      "razon_social": "IBM México SA"
+    },
+    "concepto": "Consultoría estratégica — Marzo 2026 (10 horas)",
+    "tarifa_hora_mxn": 1500.00,
+    "horas": 10,
+    "subtotal_mxn": 15000.00,
+    "anticipo_porcentaje": 0.50
+  },
+  "expected_output": {
+    "cotizacion_total": {
+      "subtotal_mxn": 15000.00,
+      "iva_trasladado_mxn": 2400.00,
+      "iva_retenido_mxn": 1600.00,
+      "isr_retenido_mxn": 1500.00,
+      "total_a_cobrar_mxn": 17400.00,
+      "neto_recibido_emisor_mxn": 14300.00
+    },
+    "anticipo_50_porcentaje": {
+      "monto_anticipo_mxn": 8700.00,
+      "cfdi_anticipo": true
+    },
+    "documentos_a_emitir": [
+      "CFDI tipo I al anticipo (50%)",
+      "CFDI tipo I al pago final (50%)",
+      "Si pago en partes después de servicio: CFDI tipo P"
+    ],
+    "validaciones_locales_pasadas": true,
+    "alertas": [
+      "Aplica retención porque cliente es PM y emisor PFAE",
+      "Emisor recibe $14,300 netos de los $17,400 cobrados"
+    ]
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "LISR + LIVA",
+  "notas": "Cotización típica freelancer profesional MX."
+}

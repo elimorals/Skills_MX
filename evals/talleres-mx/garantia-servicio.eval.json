@@ -1,0 +1,102 @@
+[
+  {
+    "query": "que garantía debo dar por mi reparación de motor",
+    "should_trigger": true,
+    "rationale": "Política garantía taller"
+  },
+  {
+    "query": "el cliente regresa quejándose del mismo problema",
+    "should_trigger": true,
+    "rationale": "Reclamación dentro de garantía"
+  },
+  {
+    "query": "cuánto tiempo garantizo mis trabajos de hojalatería",
+    "should_trigger": true,
+    "rationale": "Vigencia garantía"
+  },
+  {
+    "query": "necesito redactar mi certificado de garantía",
+    "should_trigger": true,
+    "rationale": "Documento garantía"
+  },
+  {
+    "query": "PROFECO reclamo por garantía, qué hago",
+    "should_trigger": true,
+    "rationale": "Reclamo PROFECO"
+  },
+  {
+    "query": "el cliente me dice que su falla regresó al mes",
+    "should_trigger": true,
+    "rationale": "Reclamación garantía activa"
+  },
+  {
+    "query": "como pongo el sello de mi taller en el certificado",
+    "should_trigger": false,
+    "rationale": "Diseño gráfico no garantía sustantiva"
+  },
+  {
+    "query": "cuáles son los plazos PROFECO para reparaciones",
+    "should_trigger": true,
+    "rationale": "Marco legal garantía PROFECO"
+  },
+  {
+    "query": "necesito un contrato de servicio",
+    "should_trigger": false,
+    "rationale": "Contrato general, no garantía"
+  },
+  {
+    "query": "cliente me reclama que la falla nunca se arregló bien",
+    "should_trigger": true,
+    "rationale": "Garantía: re-trabajo sin costo"
+  },
+  {
+    "query": "el cliente trae el auto de nuevo por el mismo problema 6 meses después",
+    "should_trigger": true,
+    "rationale": "Vigencia garantía"
+  },
+  {
+    "query": "cuanto cobro por una afinación",
+    "should_trigger": false,
+    "rationale": "Cotización, no garantía"
+  },
+  {
+    "query": "que dice la ley federal del consumidor sobre garantías",
+    "should_trigger": true,
+    "rationale": "Art. 77 LFPC"
+  },
+  {
+    "query": "que pasa si la falla viene del cliente (mal uso)",
+    "should_trigger": true,
+    "rationale": "Excepción mal uso"
+  },
+  {
+    "query": "como sé si mi taller está al día con PROFECO",
+    "should_trigger": true,
+    "rationale": "Compliance PROFECO"
+  },
+  {
+    "query": "necesito controlar mi inventario de refacciones",
+    "should_trigger": false,
+    "rationale": "Inventario, no garantía"
+  },
+  {
+    "query": "que documentos necesita el cliente para reclamar garantía",
+    "should_trigger": true,
+    "rationale": "Documentación garantía"
+  },
+  {
+    "query": "como cobro extra a un cliente que viene fuera de garantía",
+    "should_trigger": true,
+    "rationale": "Vigencia + cobranza por fuera"
+  },
+  {
+    "query": "necesito mi licencia de taller mecánico",
+    "should_trigger": false,
+    "rationale": "Licencia, no garantía"
+  },
+  {
+    "query": "el motor explotó por mi mal trabajo, qué responsabilidad tengo",
+    "should_trigger": true,
+    "rationale": "Responsabilidad civil + garantía"
+  }
+]

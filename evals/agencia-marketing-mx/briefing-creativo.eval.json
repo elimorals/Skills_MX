@@ -1,0 +1,102 @@
+[
+  {
+    "query": "necesito hacer briefing creativo para nueva campaña",
+    "should_trigger": true,
+    "rationale": "Brief creativo"
+  },
+  {
+    "query": "que info pedirle al cliente antes de empezar",
+    "should_trigger": true,
+    "rationale": "Inputs brief"
+  },
+  {
+    "query": "estructura de briefing para agencia",
+    "should_trigger": true,
+    "rationale": "Estructura formal brief"
+  },
+  {
+    "query": "el cliente no me dio objetivo claro de la campaña",
+    "should_trigger": true,
+    "rationale": "Brief incompleto"
+  },
+  {
+    "query": "que KPIs poner en el briefing",
+    "should_trigger": true,
+    "rationale": "Objetivos medibles brief"
+  },
+  {
+    "query": "presupuesto del cliente en briefing",
+    "should_trigger": true,
+    "rationale": "Budget brief"
+  },
+  {
+    "query": "como reciba el brief del cliente y lo mejore",
+    "should_trigger": true,
+    "rationale": "Refinamiento brief"
+  },
+  {
+    "query": "necesito reporte de campaña anterior",
+    "should_trigger": false,
+    "rationale": "Reporte, no brief"
+  },
+  {
+    "query": "target audience en el brief",
+    "should_trigger": true,
+    "rationale": "Audiencia objetivo brief"
+  },
+  {
+    "query": "buyer persona en briefing",
+    "should_trigger": true,
+    "rationale": "Persona detallada brief"
+  },
+  {
+    "query": "como facturo al cliente",
+    "should_trigger": false,
+    "rationale": "Facturación, no brief"
+  },
+  {
+    "query": "deliverables que espera el cliente",
+    "should_trigger": true,
+    "rationale": "Entregables brief"
+  },
+  {
+    "query": "fechas y deadlines en brief",
+    "should_trigger": true,
+    "rationale": "Timeline brief"
+  },
+  {
+    "query": "competencia del cliente",
+    "should_trigger": true,
+    "rationale": "Brief contexto competitivo"
+  },
+  {
+    "query": "necesito hacer creatividad para anuncio",
+    "should_trigger": false,
+    "rationale": "Diseño creativo, no brief"
+  },
+  {
+    "query": "tono y personalidad de marca en brief",
+    "should_trigger": true,
+    "rationale": "Brand brief"
+  },
+  {
+    "query": "como hago landing page",
+    "should_trigger": false,
+    "rationale": "Web dev, no brief"
+  },
+  {
+    "query": "brief para video institucional",
+    "should_trigger": true,
+    "rationale": "Brief de producción"
+  },
+  {
+    "query": "como mido ROI de mi campaña",
+    "should_trigger": false,
+    "rationale": "Análisis ROI, no brief"
+  },
+  {
+    "query": "brief para campaña 360 (digital + offline)",
+    "should_trigger": true,
+    "rationale": "Brief integrado canales"
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "name": "Propuesta consultoría 3 fases — discovery, ejecución, seguimiento",
+  "input": {
+    "cliente": "Empresa Demo SA",
+    "industria": "Manufactura",
+    "objetivo_cliente": "Reducir mermas 20% en 6 meses",
+    "duracion_propuesta_meses": 6,
+    "modalidad": "honorarios"
+  },
+  "expected_output": {
+    "propuesta_estructura": {
+      "fase_1_discovery": {
+        "duracion_semanas": 4,
+        "deliverables": [
+          "Diagnóstico actual de mermas (datos + tendencias)",
+          "Identificación de top 5 causas raíz",
+          "Plan de acción priorizado"
+        ],
+        "honorarios_mxn": 80000.00
+      },
+      "fase_2_ejecucion": {
+        "duracion_semanas": 18,
+        "deliverables": [
+          "Implementación de soluciones a top 3 causas",
+          "Tracking semanal de KPI principal (% merma)",
+          "Capacitación al equipo en nuevas prácticas"
+        ],
+        "honorarios_mxn": 240000.00
+      },
+      "fase_3_seguimiento": {
+        "duracion_semanas": 4,
+        "deliverables": [
+          "Análisis de resultados vs objetivo",
+          "Plan de sostenibilidad",
+          "Reporte ejecutivo final"
+        ],
+        "honorarios_mxn": 60000.00
+      },
+      "total_propuesta_mxn": 380000.00,
+      "iva_mxn": 60800.00,
+      "total_con_iva_mxn": 440800.00
+    },
+    "terminos_pago": {
+      "anticipo": "30% a la firma",
+      "milestone_1": "30% al cierre fase 1",
+      "milestone_2": "30% al cierre fase 2",
+      "milestone_3": "10% al cierre fase 3"
+    },
+    "clausulas_clave": [
+      "Cancelación prorrateada según fase activa",
+      "Confidencialidad sobre datos de empresa",
+      "Propiedad intelectual del consultor sobre metodología",
+      "Garantía: si meta no alcanzada, 2 meses extra sin costo"
+    ],
+    "alertas": [
+      "Validar con abogado mercantilista antes de firmar",
+      "Confirmar régimen del cliente (PM no requiere retenciones)"
+    ]
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Best practices propuesta SOW + LISR/LIVA",
+  "notas": "Estructura típica para consultorías medio-largas en MX."
+}

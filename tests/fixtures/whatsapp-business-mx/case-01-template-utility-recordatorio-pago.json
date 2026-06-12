@@ -1,0 +1,28 @@
+{
+  "name": "Template UTILITY de recordatorio de pago",
+  "input": {
+    "tipo_template": "UTILITY",
+    "uso": "recordatorio_pago",
+    "variables": ["{{1}}=Nombre", "{{2}}=Monto", "{{3}}=Fecha_vencimiento"],
+    "tono": "formal_amable",
+    "idioma": "es_MX"
+  },
+  "expected_output": {
+    "categoria_meta": "UTILITY",
+    "tasa_aprobacion_estimada": "alta",
+    "cuerpo_mensaje_sugerido": "Hola {{1}} 👋 Te recordamos que tu pago de ${{2}} MXN vence el {{3}}. Puedes pagarlo en este enlace: {{4}}. Cualquier duda, estamos aquí para apoyarte.",
+    "tiene_emoji_apropiado": true,
+    "tiene_cta_clara": true,
+    "longitud_caracteres": 156,
+    "compliance": {
+      "no_contiene_marketing": true,
+      "no_contiene_url_externa_no_autorizada": false,
+      "no_contiene_emoji_excesivo": true
+    },
+    "validaciones_locales_pasadas": true,
+    "alertas": []
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Política Meta WhatsApp Business 2026 (template categorías)",
+  "notas": "UTILITY = transaccional (recordatorio pago, status orden, alerta). Aprobación más rápida que MARKETING."
+}

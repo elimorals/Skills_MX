@@ -1,0 +1,102 @@
+[
+  {
+    "query": "necesito community management para mi marca en Instagram",
+    "should_trigger": true,
+    "rationale": "CM MX redes sociales"
+  },
+  {
+    "query": "como respondo a clientes molestos en Facebook",
+    "should_trigger": true,
+    "rationale": "CM crisis management"
+  },
+  {
+    "query": "estrategia de contenido mensual para tiktok marca",
+    "should_trigger": true,
+    "rationale": "Content strategy CM"
+  },
+  {
+    "query": "cuántas publicaciones por semana en redes",
+    "should_trigger": true,
+    "rationale": "Cadencia CM"
+  },
+  {
+    "query": "como manejo trolls en mis posts",
+    "should_trigger": true,
+    "rationale": "CM moderación"
+  },
+  {
+    "query": "tono de marca para audiencia mexicana en redes",
+    "should_trigger": true,
+    "rationale": "Brand voice CM MX"
+  },
+  {
+    "query": "como respondo DM masivos sin perder personalidad",
+    "should_trigger": true,
+    "rationale": "Scale CM con tono"
+  },
+  {
+    "query": "necesito redactar copy para anuncio",
+    "should_trigger": false,
+    "rationale": "Copy publicitario (otro skill)"
+  },
+  {
+    "query": "crisis en redes, marca atacada",
+    "should_trigger": true,
+    "rationale": "Crisis management CM"
+  },
+  {
+    "query": "tasa de respuesta a comentarios objetivo",
+    "should_trigger": true,
+    "rationale": "KPIs CM"
+  },
+  {
+    "query": "necesito un CRM para gestionar leads",
+    "should_trigger": false,
+    "rationale": "CRM, no CM"
+  },
+  {
+    "query": "que app uso para programar publicaciones",
+    "should_trigger": true,
+    "rationale": "Tools CM (Buffer, Hootsuite, Meta Business)"
+  },
+  {
+    "query": "necesito reporte mensual de redes para mi cliente",
+    "should_trigger": true,
+    "rationale": "Reporting CM"
+  },
+  {
+    "query": "como hago la auditoría fiscal anual",
+    "should_trigger": false,
+    "rationale": "Fiscal, no CM"
+  },
+  {
+    "query": "concursos en redes — reglas legales MX",
+    "should_trigger": true,
+    "rationale": "Sorteos / concursos PROFECO"
+  },
+  {
+    "query": "engagement rate target en instagram MX",
+    "should_trigger": true,
+    "rationale": "Benchmarks CM MX"
+  },
+  {
+    "query": "como timbrar un CFDI",
+    "should_trigger": false,
+    "rationale": "Fiscal, no CM"
+  },
+  {
+    "query": "responder en español neutro vs MX",
+    "should_trigger": true,
+    "rationale": "Localización respuestas CM"
+  },
+  {
+    "query": "tabla de horarios para publicar TikTok MX",
+    "should_trigger": true,
+    "rationale": "Best times CM"
+  },
+  {
+    "query": "como hago landing page",
+    "should_trigger": false,
+    "rationale": "Web dev, no CM"
+  }
+]

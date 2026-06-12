@@ -1,0 +1,102 @@
+[
+  {
+    "query": "el cliente trae un auto con ruido extraño en el motor",
+    "should_trigger": true,
+    "rationale": "Diagnóstico vehicular taller"
+  },
+  {
+    "query": "necesito cotizar un cambio de balatas",
+    "should_trigger": true,
+    "rationale": "Cotización reparación específica"
+  },
+  {
+    "query": "cuanto cuesta una afinación mayor",
+    "should_trigger": true,
+    "rationale": "Tarifario servicios"
+  },
+  {
+    "query": "el cliente pregunta cuánto le va a costar arreglar la transmisión",
+    "should_trigger": true,
+    "rationale": "Cotización mayor"
+  },
+  {
+    "query": "como hago el diagnóstico OBD de un vehículo",
+    "should_trigger": true,
+    "rationale": "Diagnóstico técnico"
+  },
+  {
+    "query": "tarifa por hora de mano de obra mecánico",
+    "should_trigger": true,
+    "rationale": "Mano obra taller"
+  },
+  {
+    "query": "necesito comprar refacciones del modelo 2020",
+    "should_trigger": false,
+    "rationale": "Compra de inventario, no diagnóstico/cotización a cliente"
+  },
+  {
+    "query": "cliente trae auto golpeado por accidente, cuánto cobro",
+    "should_trigger": true,
+    "rationale": "Cotización hojalateria"
+  },
+  {
+    "query": "como recibo al cliente cuando llega al taller",
+    "should_trigger": true,
+    "rationale": "Diagnóstico inicial + cotización"
+  },
+  {
+    "query": "qué refacciones de marca debo usar",
+    "should_trigger": false,
+    "rationale": "Selección refacciones técnica, no cotización"
+  },
+  {
+    "query": "el cliente no entiende mi diagnóstico, como le explico",
+    "should_trigger": true,
+    "rationale": "Comunicación diagnóstico al cliente"
+  },
+  {
+    "query": "necesito calcular costo aluminio y mano obra para defensa",
+    "should_trigger": true,
+    "rationale": "Cotización con materiales + MO"
+  },
+  {
+    "query": "como autorizo el cliente antes de empezar la reparación",
+    "should_trigger": false,
+    "rationale": "Autorización (otro skill autorizacion-cliente-wa)"
+  },
+  {
+    "query": "el cliente quiere garantía de mi reparación",
+    "should_trigger": false,
+    "rationale": "Garantía (otro skill)"
+  },
+  {
+    "query": "como verifico que el problema es la bomba de gasolina vs el inyector",
+    "should_trigger": true,
+    "rationale": "Diagnóstico diferencial"
+  },
+  {
+    "query": "necesito facturar al cliente",
+    "should_trigger": false,
+    "rationale": "Facturación, no diagnóstico"
+  },
+  {
+    "query": "el auto enciende y luego se apaga, qué falla puede ser",
+    "should_trigger": true,
+    "rationale": "Diagnóstico síntoma"
+  },
+  {
+    "query": "que descuentos hago a clientes frecuentes",
+    "should_trigger": true,
+    "rationale": "Política precios cotización"
+  },
+  {
+    "query": "cliente pide presupuesto para servicio mayor de 60 mil kilómetros",
+    "should_trigger": true,
+    "rationale": "Cotización servicio programado"
+  },
+  {
+    "query": "como pongo cita en mi calendar",
+    "should_trigger": false,
+    "rationale": "Calendar app, no diagnóstico/cotización"
+  }
+]

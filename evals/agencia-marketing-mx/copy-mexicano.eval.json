@@ -1,0 +1,102 @@
+[
+  {
+    "query": "necesito redactar copy para campaña mexicana",
+    "should_trigger": true,
+    "rationale": "Copy localizado MX"
+  },
+  {
+    "query": "el tono de mi anuncio no conecta con audiencia mexicana",
+    "should_trigger": true,
+    "rationale": "Tono MX vs neutro/España"
+  },
+  {
+    "query": "como escribo para que se sienta mexicano",
+    "should_trigger": true,
+    "rationale": "Voz MX en copy"
+  },
+  {
+    "query": "que palabras usar en MX en lugar de las españolas",
+    "should_trigger": true,
+    "rationale": "Localización vocabulario"
+  },
+  {
+    "query": "copy de promoción para hot sale",
+    "should_trigger": true,
+    "rationale": "Copy evento comercial MX"
+  },
+  {
+    "query": "como adapto mi copy de USA al mercado MX",
+    "should_trigger": true,
+    "rationale": "Translation MX no literal"
+  },
+  {
+    "query": "no entiendo por qué la conversion es baja en MX",
+    "should_trigger": true,
+    "rationale": "Diagnóstico copy no resonante"
+  },
+  {
+    "query": "como configuro Google Ads",
+    "should_trigger": false,
+    "rationale": "Setup técnico, no copy"
+  },
+  {
+    "query": "necesito frase pegajosa para mi marca de tacos",
+    "should_trigger": true,
+    "rationale": "Copy creativo MX local"
+  },
+  {
+    "query": "diferencia entre 'platicar' y 'conversar' en copy MX",
+    "should_trigger": true,
+    "rationale": "Matiz lingüístico MX"
+  },
+  {
+    "query": "cuanto cobro por hora",
+    "should_trigger": false,
+    "rationale": "Pricing, no copy"
+  },
+  {
+    "query": "como traduzco 'bargain' a algo que entienda un chilango",
+    "should_trigger": true,
+    "rationale": "Localización slang"
+  },
+  {
+    "query": "copy para audiencia premium en Polanco vs barrio popular",
+    "should_trigger": true,
+    "rationale": "Segmentación tono dentro de MX"
+  },
+  {
+    "query": "como subo creativos a meta ads",
+    "should_trigger": false,
+    "rationale": "Subida, no creación copy"
+  },
+  {
+    "query": "como evito que mi copy suene a inglés traducido",
+    "should_trigger": true,
+    "rationale": "Calidad de localización"
+  },
+  {
+    "query": "copy con humor para mexicano",
+    "should_trigger": true,
+    "rationale": "Humor culturalmente apropiado"
+  },
+  {
+    "query": "necesito hacer analytics dashboard",
+    "should_trigger": false,
+    "rationale": "Analytics, no copy"
+  },
+  {
+    "query": "como dirijo CTA en MX para que la gente click",
+    "should_trigger": true,
+    "rationale": "CTA copy localizado"
+  },
+  {
+    "query": "necesito asistente IA para escribir",
+    "should_trigger": false,
+    "rationale": "Tooling general, no copy MX"
+  },
+  {
+    "query": "regionalismos: pendejada vs estupidez en copy",
+    "should_trigger": true,
+    "rationale": "Slang vs neutro decisión"
+  }
+]
