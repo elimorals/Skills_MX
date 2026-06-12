@@ -1,0 +1,17 @@
+{
+  "_comment": "Configuración mp_shopify_mx. Sin SHOPIFY_SHOP + SHOPIFY_ACCESS_TOKEN corre mock. Para path real: en Shopify Admin > Apps > Develop apps > Crear app privada con permisos products/inventory/orders/customers/webhooks. Copiar access token (empieza con 'shpat_').",
+  "mcpServers": {
+    "shopify_mx": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_shopify_mx.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "SHOPIFY_SHOP": "${SHOPIFY_SHOP:-}",
+        "SHOPIFY_ACCESS_TOKEN": "${SHOPIFY_ACCESS_TOKEN:-}",
+        "SHOPIFY_API_VERSION": "${SHOPIFY_API_VERSION:-2024-10}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}

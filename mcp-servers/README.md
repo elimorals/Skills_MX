@@ -16,6 +16,8 @@ Servidores MCP (Model Context Protocol) construidos a medida para servicios mexi
 | `mp_sat_portal` | ✅ producción (públicos HTTP real + UUID estructural, auth mock) | — | Padrón SAT, 69-B EFOS, 69 incumplidos, verifica CFDI, CSF, Buzón, descarga masiva, citas, e.firma, acuse |
 | `mp_conekta` | ✅ producción (mock + sandbox/prod por env var) | — | Pasarela MX: órdenes, charges TDC/OXXO/SPEI, refunds, customers, payment links, suscripciones, webhook HMAC |
 | `mp_aspel_contpaqi` | ✅ producción (mock + parser CSV exports) | — | Pólizas, balanza, catálogo cuentas, P&L, Balance General — Aspel COI/ContPAQi sin API REST |
+| `mp_shopify_mx` | ✅ producción (mock + Shopify Admin API real) | — | Wrapper específico MX: products, inventory, orders, fulfillment, customers + calculadora IVA región |
+| `mp_bitso` | ✅ producción (mock + sandbox/prod real con HMAC auth) | — | Exchange cripto-fiat MX: ticker, order book, balance, ledger, fundings, retiros + calculadora ISR Art. 142 LISR |
 
 Roadmap completo: `../Downloads/plugins-mx-planeacion-mcps-agentica.md`.
 
