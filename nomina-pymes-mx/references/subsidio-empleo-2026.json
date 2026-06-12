@@ -1,0 +1,19 @@
+{
+  "_comentario": "Tabla subsidio para el empleo — ejercicio 2026. VALIDAR contra RMF vigente.",
+  "_unidad": "MXN mensual",
+  "_aplica": "Trabajadores con ingresos hasta el tope. Restar del ISR causado.",
+  "tramos": [
+    {"li": 0.01, "ls": 1768.96, "subsidio_mensual": 407.02},
+    {"li": 1768.97, "ls": 2653.38, "subsidio_mensual": 406.83},
+    {"li": 2653.39, "ls": 3472.84, "subsidio_mensual": 406.62},
+    {"li": 3472.85, "ls": 3537.87, "subsidio_mensual": 392.77},
+    {"li": 3537.88, "ls": 4446.15, "subsidio_mensual": 382.46},
+    {"li": 4446.16, "ls": 4717.18, "subsidio_mensual": 354.23},
+    {"li": 4717.19, "ls": 5335.42, "subsidio_mensual": 324.87},
+    {"li": 5335.43, "ls": 6224.67, "subsidio_mensual": 294.63},
+    {"li": 6224.68, "ls": 7113.90, "subsidio_mensual": 253.54},
+    {"li": 7113.91, "ls": 7382.33, "subsidio_mensual": 217.61},
+    {"li": 7382.34, "ls": 999999999, "subsidio_mensual": 0.00}
+  ],
+  "advertencia": "Subsidio se aplica si sueldo bruto ≤ tope. Si ISR retenido < subsidio, sub paga al trabajador la diferencia (subsidio negativo)."
+}

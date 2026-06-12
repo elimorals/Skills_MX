@@ -1,0 +1,19 @@
+{
+  "_comentario": "Tarifa Art. 96 LISR — ejercicio 2026. Tarifa MENSUAL (multiplicar × 12 para anual). VALIDAR contra RMF vigente — esta tabla es referencia.",
+  "_fuente": "RMF 2026 publicada DOF dic 2025",
+  "_unidad": "MXN mensual",
+  "limites_inferior_superior_cuota_tasa": [
+    {"li": 0.01, "ls": 746.04, "cuota_fija": 0.00, "tasa_excedente": 0.0192},
+    {"li": 746.05, "ls": 6332.05, "cuota_fija": 14.32, "tasa_excedente": 0.0640},
+    {"li": 6332.06, "ls": 11128.01, "cuota_fija": 371.83, "tasa_excedente": 0.1088},
+    {"li": 11128.02, "ls": 12935.82, "cuota_fija": 893.63, "tasa_excedente": 0.1600},
+    {"li": 12935.83, "ls": 15487.71, "cuota_fija": 1182.88, "tasa_excedente": 0.1792},
+    {"li": 15487.72, "ls": 31236.49, "cuota_fija": 1640.18, "tasa_excedente": 0.2136},
+    {"li": 31236.50, "ls": 49233.00, "cuota_fija": 5004.12, "tasa_excedente": 0.2352},
+    {"li": 49233.01, "ls": 93993.90, "cuota_fija": 9236.89, "tasa_excedente": 0.3000},
+    {"li": 93993.91, "ls": 125325.20, "cuota_fija": 22665.17, "tasa_excedente": 0.3200},
+    {"li": 125325.21, "ls": 375975.61, "cuota_fija": 32691.18, "tasa_excedente": 0.3400},
+    {"li": 375975.62, "ls": 999999999, "cuota_fija": 117912.32, "tasa_excedente": 0.3500}
+  ],
+  "advertencia": "Tabla de referencia. Validar contra RMF vigente cada enero. Reformas pueden modificar."
+}
