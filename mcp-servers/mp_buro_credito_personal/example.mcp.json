@@ -1,0 +1,18 @@
+{
+  "_comment": "⚠ mp_buro_credito_personal. OPERACIÓN LEGALMENTE SENSIBLE. Toda consulta requiere autorización formal del titular. Sin token de autorización válido (firma digital, click-wrap, carta firmada) las tools fallan por compliance independientemente del modo.",
+  "mcpServers": {
+    "buro_credito_personal": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_buro_credito_personal.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "BURO_API_KEY": "${BURO_API_KEY:-}",
+        "BURO_USUARIO": "${BURO_USUARIO:-}",
+        "BURO_PASSWORD": "${BURO_PASSWORD:-}",
+        "PLUGINS_MX_PLAYWRIGHT_REAL": "${PLUGINS_MX_PLAYWRIGHT_REAL:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}

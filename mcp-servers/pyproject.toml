@@ -47,6 +47,10 @@ testpaths = [
     "mp_infonavit_patronal/tests",
     "mp_cdmx_municipal/tests",
     "mp_edomex_municipal/tests",
+    "mp_monterrey_municipal/tests",
+    "mp_inmuebles24/tests",
+    "mp_vivanuncios/tests",
+    "mp_buro_credito_personal/tests",
 ]
 python_files = ["test_*.py"]
 asyncio_mode = "auto"

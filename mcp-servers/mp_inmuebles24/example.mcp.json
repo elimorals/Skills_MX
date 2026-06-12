@@ -1,0 +1,17 @@
+{
+  "_comment": "mp_inmuebles24. Búsqueda y detalle son públicos (HTTP scraping sin auth). Publicación requiere cuenta vendedor.",
+  "mcpServers": {
+    "inmuebles24": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_inmuebles24.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "INMUEBLES24_USUARIO": "${INMUEBLES24_USUARIO:-}",
+        "INMUEBLES24_PASSWORD": "${INMUEBLES24_PASSWORD:-}",
+        "PLUGINS_MX_PLAYWRIGHT_REAL": "${PLUGINS_MX_PLAYWRIGHT_REAL:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}
