@@ -1,0 +1,47 @@
+name: Release Validation
+
+on:
+  push:
+    tags:
+      - 'v*'
+      - '*-v*'   # ej: core-mexico-v0.2.0
+
+jobs:
+  validate-release:
+    name: Validar release antes de publicar
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint completo
+        run: bash scripts/lint-skills.sh
+
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10' }
+
+      - name: Tests MCP completos
+        run: |
+          cd mcp-servers
+          python -m venv .venv
+          .venv/bin/pip install -e ".[dev]"
+          .venv/bin/python -m pytest -q
+
+      - name: Smoke workflows
+        run: python3 scripts/smoke_test_workflows.py
+
+      - name: Validar sincronización _shared/
+        run: |
+          # Verificar que cada vertical tenga las copias actualizadas de _shared/
+          for shared_skill in _shared/*/; do
+            name=$(basename "$shared_skill")
+            for plugin in */; do
+              if [ -f "$plugin/.claude-plugin/plugin.json" ] && [ -d "$plugin/skills/$name" ]; then
+                if ! diff -q "$shared_skill/SKILL.md" "$plugin/skills/$name/SKILL.md" >/dev/null 2>&1; then
+                  echo "⚠ $plugin/skills/$name desincronizado vs _shared/$name"
+                fi
+              fi
+            done
+          done
+
+      - name: Health check final
+        run: bash scripts/health-check.sh
