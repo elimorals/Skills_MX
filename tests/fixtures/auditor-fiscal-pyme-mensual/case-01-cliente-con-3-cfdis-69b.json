@@ -1,0 +1,47 @@
+{
+  "name": "Auditoría fiscal — cliente PyME con CFDIs de 3 proveedores 69-B definitivo",
+  "input": {
+    "cliente_rfc": "TVE850301XYZ",
+    "periodo": "2026-03",
+    "regimen": "601",
+    "cfdis_emitidos_count": 28,
+    "cfdis_recibidos": [
+      {"uuid": "abc...", "rfc_emisor": "PRX001", "monto": 12000, "en_69b_definitivo": true},
+      {"uuid": "def...", "rfc_emisor": "PRX002", "monto": 35000, "en_69b_definitivo": true},
+      {"uuid": "ghi...", "rfc_emisor": "PRX003", "monto": 40500, "en_69b_definitivo": true},
+      {"uuid": "jkl...", "rfc_emisor": "ABC850101", "monto": 8500, "en_69b_definitivo": false}
+    ],
+    "depositos_efectivo_mes_mxn": 5800,
+    "reps_pendientes_count": 2,
+    "pago_provisional_anterior_oportuno": false
+  },
+  "expected_output": {
+    "riesgo_global": "ALTO",
+    "hallazgos_criticos": [
+      {
+        "tipo": "cfdis_69b_definitivo",
+        "monto_a_excluir": 87500,
+        "impacto_isr_estimado_pct": 16,
+        "impacto_isr_estimado_mxn": 14000
+      },
+      {
+        "tipo": "reps_pendientes_vencidos",
+        "cantidad": 2,
+        "accion": "emitir REP YA antes de fin de mes"
+      },
+      {
+        "tipo": "pago_provisional_extemporaneo",
+        "recargo_aplicable_mxn": 245
+      }
+    ],
+    "alertas_ok": [
+      "Sin depósitos efectivo > $15k"
+    ]
+  },
+  "validations": [
+    "Cada CFDI 69-B definitivo se reporta individualmente",
+    "Impacto fiscal calculado (no solo flagear)",
+    "Recargos por extemporaneidad calculados",
+    "Riesgo global proporcional a hallazgos críticos"
+  ]
+}

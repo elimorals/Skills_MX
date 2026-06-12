@@ -1,0 +1,40 @@
+{
+  "name": "Scoring inquilino — candidato VERDE score 85",
+  "input": {
+    "candidato": {
+      "rfc": "PER850301ABC",
+      "ingresos_comprobables_mensuales": 45000,
+      "renta_propuesta": 12000,
+      "antiguedad_laboral_anios": 4,
+      "buro_score": 720,
+      "buro_mop_grave_ultimos_12m": 0,
+      "referencias_anteriores": [
+        {"verificada": true, "comentario": "Inquilino impecable 3 años"}
+      ],
+      "antecedentes_penales": "sin_antecedentes",
+      "fotos_domicilio_actual_calificacion": 9,
+      "redes_sociales_red_flags": 0
+    }
+  },
+  "expected_output": {
+    "score_total": 85,
+    "categoria": "VERDE",
+    "desglose": {
+      "formales": 53,
+      "heuristicas": 32
+    },
+    "recomendacion": "Aceptar con depósito de 1 mes",
+    "red_flags_detectados": [],
+    "fortalezas": [
+      "Ingreso 3.75x renta",
+      "Referencia anterior excelente",
+      "Sin atrasos en 12 meses"
+    ]
+  },
+  "validations": [
+    "Ratio ingreso/renta >= 3.0",
+    "Sin discriminación por género/edad/estado civil",
+    "Buró score considerado pero no único factor",
+    "Categoría VERDE para score >= 80"
+  ]
+}

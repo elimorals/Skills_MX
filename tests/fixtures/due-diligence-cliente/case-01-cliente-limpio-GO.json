@@ -1,0 +1,27 @@
+{
+  "name": "Due diligence cliente PM legítimo — veredicto GO score 95",
+  "input": {
+    "rfc": "TVE850301XYZ",
+    "nombre_aceptado": "Tienda Verde MX SA de CV",
+    "autorizado_buro": false
+  },
+  "simulated_responses": {
+    "estructura": {"valido": true, "tipo": "PM"},
+    "padron": {"en_padron": true, "razon_social": "TIENDA VERDE MX SA DE CV", "regimen": "601", "status": "activo"},
+    "lista69b": {"en_69b": false, "estado": null},
+    "lista69_incumplidos": {"en_69": false, "motivo": null}
+  },
+  "expected_output": {
+    "veredicto": "GO",
+    "score": 100,
+    "motivos": [],
+    "razon_social": "TIENDA VERDE MX SA DE CV",
+    "regimen": "601",
+    "recomendaciones": ["Continuar onboarding normal"]
+  },
+  "validations": [
+    "Score base 100 sin penalizaciones",
+    "Veredicto GO cuando score >= 80",
+    "Sin alertas críticas"
+  ]
+}

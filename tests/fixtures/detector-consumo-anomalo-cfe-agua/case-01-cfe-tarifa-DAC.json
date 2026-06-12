@@ -1,0 +1,38 @@
+{
+  "name": "Detección consumo CFE anómalo — saltó a tarifa DAC sin razón",
+  "input": {
+    "servicio": "cfe",
+    "historico_bimestral": [
+      {"periodo": "2024-01", "kwh": 220, "monto": 580, "tarifa": "domestica"},
+      {"periodo": "2024-03", "kwh": 245, "monto": 640, "tarifa": "domestica"},
+      {"periodo": "2024-05", "kwh": 270, "monto": 710, "tarifa": "domestica"},
+      {"periodo": "2024-07", "kwh": 290, "monto": 760, "tarifa": "domestica"},
+      {"periodo": "2024-09", "kwh": 250, "monto": 650, "tarifa": "domestica"},
+      {"periodo": "2024-11", "kwh": 230, "monto": 600, "tarifa": "domestica"},
+      {"periodo": "2025-01", "kwh": 245, "monto": 640, "tarifa": "domestica"},
+      {"periodo": "2025-03", "kwh": 285, "monto": 745, "tarifa": "domestica"},
+      {"periodo": "2025-05", "kwh": 380, "monto": 1450, "tarifa": "DAC"},
+      {"periodo": "2025-07", "kwh": 285, "monto": 1100, "tarifa": "DAC"}
+    ],
+    "umbral_dac_kwh_bimestral": 250
+  },
+  "expected_output": {
+    "anomalia_detectada": true,
+    "tipo": "cambio_tarifa_dac",
+    "periodo_inicio_problema": "2025-05",
+    "causa_probable": "Consumo bimestre 2025-05 (380 kWh) excedió umbral DAC (250 kWh) → tarifa cambió a DAC permanente hasta volver a consumo normal por 12 meses",
+    "impacto_economico_mxn_mensual_extra": 450,
+    "acciones_recomendadas": [
+      "Identificar causa del aumento puntual (refrigerador, AC, calentador)",
+      "Reducir consumo bimestre actual por debajo de 250 kWh",
+      "Mantener bajo 250 kWh durante 12 meses consecutivos para regresar a doméstica",
+      "Revisar medidor si no encuentra causa"
+    ]
+  },
+  "validations": [
+    "Detección de cambio de tarifa explícito",
+    "Cálculo de impacto económico",
+    "Acciones concretas para revertir",
+    "Razón histórica (qué bimestre inició problema)"
+  ]
+}

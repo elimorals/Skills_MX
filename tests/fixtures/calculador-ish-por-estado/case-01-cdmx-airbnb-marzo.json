@@ -1,0 +1,29 @@
+{
+  "name": "Cálculo ISH CDMX — Airbnb host mes marzo 2026",
+  "input": {
+    "estado": "CDMX",
+    "host_rfc": "PER850301ABC",
+    "periodo": "2026-03",
+    "ingresos_hospedaje_brutos_mxn": 45000,
+    "noches_facturadas": 15,
+    "checkouts_mes": 8,
+    "incluye_iva": false
+  },
+  "expected_output": {
+    "tasa_ish_cdmx_pct": 3.5,
+    "base_gravable": 45000,
+    "ish_a_pagar_mxn": 1575,
+    "fecha_limite_pago": "2026-04-17",
+    "linea_captura_url": "https://www.finanzas.cdmx.gob.mx/...",
+    "advertencias": [
+      "Si la plataforma (Airbnb) ya retuvo ISH: descontar lo retenido para evitar doble pago",
+      "Validar tasa CDMX vigente — puede cambiar por reforma local"
+    ]
+  },
+  "validations": [
+    "ISH = base * tasa estatal",
+    "Plazo: día 17 del mes siguiente",
+    "Cubrir caso de retención por plataforma (Airbnb)",
+    "Tasa por estado distinta (CDMX 3.5%, QRoo 3%, Yucatán 3%)"
+  ]
+}

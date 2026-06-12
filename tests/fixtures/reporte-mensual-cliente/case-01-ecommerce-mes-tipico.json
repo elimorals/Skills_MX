@@ -1,0 +1,66 @@
+{
+  "name": "Reporte mensual agencia — cliente ecommerce mes típico Meta+Google",
+  "input": {
+    "cliente": {
+      "nombre": "Tienda Verde MX",
+      "industria": "ecommerce_sustentable",
+      "objetivo_principal": "ROAS > 4.0 en Q2"
+    },
+    "periodo": {
+      "mes": 5,
+      "anio": 2026,
+      "mes_anterior_comparativo": true
+    },
+    "datos_canales": {
+      "meta_ads": {
+        "inversion": 45000,
+        "impresiones": 850000,
+        "clicks": 18500,
+        "conversiones": 312,
+        "ingresos_atribuidos": 187000
+      },
+      "google_ads": {
+        "inversion": 32000,
+        "impresiones": 520000,
+        "clicks": 9800,
+        "conversiones": 145,
+        "ingresos_atribuidos": 98500
+      },
+      "organico": {
+        "inversion": 0,
+        "trafico_organico": 22000,
+        "conversiones": 89
+      }
+    },
+    "datos_mes_anterior": {
+      "inversion_total": 70000,
+      "ingresos_totales": 245000
+    }
+  },
+  "expected_output": {
+    "kpis_principales": {
+      "inversion_total": 77000,
+      "leads_obtenidos": 28300,
+      "conversiones": 546,
+      "cpa": 141.03,
+      "roas": 3.71
+    },
+    "variacion_vs_mes_anterior": {
+      "inversion_pct": 10,
+      "ingresos_pct": 16.5,
+      "roas_mejoró": true
+    },
+    "insights": {
+      "winners": ["Meta Advantage+ creative auto-optimizó"],
+      "losers": ["Google Display retargeting bajo CTR"],
+      "alertas_atencion": ["CPA subió 8% vs target"]
+    },
+    "recomendacion_proximo_mes": "Escalar Meta presupuesto +20%, pausar Display"
+  },
+  "validations": [
+    "ROAS calculado: ingresos / inversion",
+    "CPA calculado: inversion / conversiones",
+    "Comparativa vs mes anterior con direcciones (↑↓)",
+    "Mínimo 1 winner + 1 loser + 1 alerta"
+  ]
+}
