@@ -1,0 +1,46 @@
+{
+  "name": "laboratorio-clinico-mx",
+  "displayName": "Laboratorio Clínico MX — Análisis y resultados",
+  "description": "Plugin para laboratorios clínicos pequeños y medianos (≤50 muestras/día típico PyME) en México. Cubre recepción de muestra con etiquetado de tubos y cadena de custodia (crítico para que los resultados no se confundan entre pacientes), tracking de procesamiento por etapa (recepción → procesamiento → control de calidad → liberación), entrega de resultados al paciente y al médico referente con firma del químico responsable, integración con médicos referentes con sistema de comisiones (típico 5-15% al médico), CFDI a paciente o aseguradora con código de procedimiento SAT, compliance COFEPRIS (registro sanitario del laboratorio + procedimientos validados) y NOM-007-SSA3 sobre laboratorios clínicos. Construido sobre core-mexico + clinica-salud-mx.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
+  },
+  "keywords": [
+    "laboratorio-clinico",
+    "analisis-clinicos",
+    "muestras",
+    "COFEPRIS",
+    "NOM-007-SSA3",
+    "medico-referente",
+    "QFB",
+    "mexico"
+  ],
+  "skills": [
+    "skills/recepcion-muestra",
+    "skills/tracking-procesamiento",
+    "skills/entrega-resultados",
+    "skills/integracion-medico-referente",
+    "skills/compliance-cofepris-lab",
+    "skills/cfdi-emision",
+    "skills/iva-retenciones-mx",
+    "skills/rfc-validacion",
+    "skills/whatsapp-business-mx",
+    "skills/compliance-lfpdppp",
+    "skills/mxn-formato"
+  ],
+  "commands": [
+    "commands/registrar-muestra.md",
+    "commands/liberar-resultados.md",
+    "commands/comisiones-medico.md",
+    "commands/dashboard-lab.md"
+  ],
+  "agents": [
+    "agents/validador-resultados-criticos.md"
+  ],
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "requires": ["core-mexico", "clinica-salud-mx"]
+  }
+}

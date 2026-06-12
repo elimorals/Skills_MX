@@ -1,0 +1,47 @@
+{
+  "name": "geriatria-cuidado-mayor-mx",
+  "displayName": "Geriatría y Cuidado de Adultos Mayores MX",
+  "description": "Plugin para residencias de adultos mayores, day-care geriátrico, cuidadores a domicilio y familias mexicanas que cuidan ancianos en casa. Cubre expediente geriátrico integral con NOM-167-SSA1 (asistencia social), tracking de medicamentos con vencimiento y adherencia al tratamiento crónico (diabetes, hipertensión, alzheimer), agenda de cuidadores en turnos con CFDI Nómina 4.0 + IMSS si formal, comunicación distribuida familiar (varios hijos sincronizados sobre el estado del adulto mayor), gestión de pensiones IMSS/ISSSTE/AFORE con seguimiento de cobro, recordatorios de citas médicas con transporte, y compliance LFPDPPP datos sensibles + capacidad jurídica (poderes notariales cuando hay demencia). Construido sobre core-mexico + paciente-mx.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
+  },
+  "keywords": [
+    "geriatria",
+    "adulto-mayor",
+    "cuidado-domicilio",
+    "residencia",
+    "alzheimer",
+    "pension-imss",
+    "cuidadores",
+    "NOM-167",
+    "mexico"
+  ],
+  "skills": [
+    "skills/expediente-geriatrico",
+    "skills/tracking-medicamentos-vencimiento",
+    "skills/agenda-cuidadores",
+    "skills/comunicacion-familiar-distribuida",
+    "skills/gestor-tramites-pension",
+    "skills/cfdi-emision",
+    "skills/iva-retenciones-mx",
+    "skills/rfc-validacion",
+    "skills/whatsapp-business-mx",
+    "skills/compliance-lfpdppp",
+    "skills/mxn-formato"
+  ],
+  "commands": [
+    "commands/alta-residente.md",
+    "commands/medicamentos-hoy.md",
+    "commands/comunicar-familia.md",
+    "commands/turno-cuidador.md"
+  ],
+  "agents": [
+    "agents/coordinador-familiar.md"
+  ],
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "requires": ["core-mexico", "paciente-mx"]
+  }
+}
