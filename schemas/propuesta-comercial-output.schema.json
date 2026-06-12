@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://plugins-mx/schemas/propuesta-comercial-output.schema.json",
+  "title": "Output de propuesta-comercial",
+  "type": "object",
+  "required": [
+    "cliente_rfc",
+    "emisor",
+    "scope",
+    "entregables",
+    "plazo",
+    "honorarios",
+    "condiciones_legales",
+    "vigencia",
+    "fecha"
+  ],
+  "properties": {
+    "cliente_rfc": { "type": "string", "pattern": "^[A-ZÑ&]{3,4}[0-9]{6}[A-Z0-9]{3}$" },
+    "emisor": {
+      "type": "object",
+      "required": ["rfc", "razon_social"],
+      "properties": {
+        "rfc": { "type": "string" },
+        "razon_social": { "type": "string" }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": ["resumen_ejecutivo", "objetivos", "alcance"],
+      "properties": {
+        "resumen_ejecutivo": { "type": "string", "minLength": 50 },
+        "objetivos": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "alcance": { "type": "string" },
+        "fuera_de_scope": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "entregables": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["nombre", "fecha_estimada"],
+        "properties": {
+          "nombre": { "type": "string" },
+          "descripcion": { "type": "string" },
+          "fecha_estimada": { "type": "string", "format": "date" }
+        }
+      }
+    },
+    "plazo": {
+      "type": "object",
+      "required": ["inicio", "fin_estimado"],
+      "properties": {
+        "inicio": { "type": "string", "format": "date" },
+        "fin_estimado": { "type": "string", "format": "date" },
+        "duracion_dias_habiles": { "type": "integer" }
+      }
+    },
+    "honorarios": {
+      "type": "object",
+      "required": ["modelo", "total"],
+      "properties": {
+        "modelo": { "type": "string", "enum": ["fijo", "por_etapa", "por_hora", "iguala", "mixto", "cuota_litis"] },
+        "total": { "type": "number" },
+        "moneda": { "type": "string" },
+        "etapas": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "nombre": { "type": "string" },
+              "monto": { "type": "number" },
+              "hito_disparador": { "type": "string" }
+            }
+          }
+        },
+        "anticipo": { "type": "number" },
+        "forma_pago": { "type": "string" }
+      }
+    },
+    "condiciones_legales": {
+      "type": "object",
+      "properties": {
+        "propiedad_intelectual": { "type": "string" },
+        "limitacion_responsabilidad": { "type": "string" },
+        "confidencialidad": { "type": "string" },
+        "no_solicitation": { "type": "string" },
+        "jurisdiccion": { "type": "string" },
+        "validacion_legal": { "type": "boolean", "description": "true si abogado mercantilista revisó" }
+      }
+    },
+    "vigencia": {
+      "type": "object",
+      "required": ["dias", "vencimiento"],
+      "properties": {
+        "dias": { "type": "integer" },
+        "vencimiento": { "type": "string", "format": "date" }
+      }
+    },
+    "fecha": { "type": "string", "format": "date" }
+  }
+}

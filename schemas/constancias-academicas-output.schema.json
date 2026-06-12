@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://plugins-mx/schemas/constancias-academicas-output.schema.json",
+  "title": "Output de constancias-academicas (colegios)",
+  "type": "object",
+  "required": ["tipo", "alumno", "institucion", "ciclo_escolar", "fecha_emision", "folio"],
+  "properties": {
+    "tipo": {
+      "type": "string",
+      "enum": ["estudios", "calificaciones", "boleta", "no_adeudo", "salida", "constancia_pago_anual_deducible"]
+    },
+    "alumno": {
+      "type": "object",
+      "required": ["nombre", "curp", "matricula"],
+      "properties": {
+        "nombre": { "type": "string" },
+        "curp": { "type": "string", "pattern": "^[A-Z]{4}[0-9]{6}[HM][A-Z]{5}[A-Z0-9][0-9]$" },
+        "matricula": { "type": "string" },
+        "fecha_nacimiento": { "type": "string", "format": "date" },
+        "padre_madre_tutor_rfc": { "type": "string" }
+      }
+    },
+    "institucion": {
+      "type": "object",
+      "required": ["nombre", "cct", "rfc_emisor"],
+      "properties": {
+        "nombre": { "type": "string" },
+        "cct": { "type": "string", "description": "Clave Centro Trabajo SEP" },
+        "rvoe": { "type": "string", "description": "RVOE para particulares con autorización federal" },
+        "autorizacion_estatal": { "type": "string" },
+        "rfc_emisor": { "type": "string" },
+        "estado": { "type": "string" }
+      }
+    },
+    "ciclo_escolar": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{4}$" },
+    "grado": { "type": "string" },
+    "grupo": { "type": "string" },
+    "calificaciones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "asignatura": { "type": "string" },
+          "calificacion": { "type": "number", "minimum": 0, "maximum": 10 },
+          "bimestre": { "type": "integer", "minimum": 1, "maximum": 5 }
+        }
+      }
+    },
+    "estado_adeudo": {
+      "type": "object",
+      "properties": {
+        "tiene_adeudo": { "type": "boolean" },
+        "monto_adeudo": { "type": "number" },
+        "concepto": { "type": "string" }
+      }
+    },
+    "fecha_emision": { "type": "string", "format": "date" },
+    "folio": { "type": "string" },
+    "firma_director": { "type": "string" },
+    "sello": { "type": "string" },
+    "validacion_sep_local": { "type": "boolean", "description": "true si el formato cumple requisitos SEP del estado" }
+  }
+}

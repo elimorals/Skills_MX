@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://plugins-mx/schemas/due-diligence-output.schema.json",
+  "title": "Output de due-diligence-cliente",
+  "description": "Resultado del workflow due-diligence-cliente con veredicto + score + motivos + recomendaciones.",
+  "type": "object",
+  "required": ["rfc", "veredicto", "score", "motivos", "detalle"],
+  "properties": {
+    "rfc": { "type": "string", "pattern": "^[A-ZÑ&]{3,4}[0-9]{6}[A-Z0-9]{3}$" },
+    "razon_social": { "type": "string" },
+    "regimen": { "type": "string" },
+    "veredicto": { "type": "string", "enum": ["GO", "HOLD", "STOP"] },
+    "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "motivos": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Lista de penalizaciones aplicadas al score base 100"
+    },
+    "detalle": {
+      "type": "object",
+      "properties": {
+        "estructura_rfc": { "type": "object" },
+        "padron": {
+          "type": "object",
+          "properties": {
+            "en_padron": { "type": "boolean" },
+            "status": { "type": "string", "enum": ["activo", "suspendido", "cancelado"] }
+          }
+        },
+        "lista69b": {
+          "type": "object",
+          "properties": {
+            "en_69b": { "type": "boolean" },
+            "estado": { "enum": ["presunto", "definitivo", "desvirtuado", null] },
+            "fecha_publicacion": { "type": "string" }
+          }
+        },
+        "lista69_incumplidos": {
+          "type": "object",
+          "properties": {
+            "en_69": { "type": "boolean" },
+            "motivo": { "type": "string" }
+          }
+        },
+        "buro": {
+          "type": ["object", "null"],
+          "properties": {
+            "score_credito": { "type": "number" },
+            "mop_grave_ultimo_anio": { "type": "integer" },
+            "monto_atraso_total": { "type": "number" },
+            "autorizacion_documentada": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "recomendaciones": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "fecha_verificacion": { "type": "string", "format": "date-time" }
+  }
+}
