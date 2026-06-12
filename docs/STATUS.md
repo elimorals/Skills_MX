@@ -26,13 +26,13 @@
 
 | Capa | Hecho | Faltante | % completado |
 |---|---|---|---|
-| MCP servers | 25 + esqueleto SAT Playwright | 6 críticos + 10 secundarios | ~73% |
-| Plugins verticales | 13 (+arrendador) | 13 TOP del research | ~50% |
-| Workflows | 7 | 5-7 | ~58% |
+| MCP servers | 28 (+3 delivery aggregators) + esqueleto SAT/bancos Playwright | 13 secundarios | ~78% |
+| Plugins verticales | 16 (+pf-anual, +arrendador, +tramites-vehic, +conductor, +airbnb) | 10 TOP del research | ~62% |
+| Workflows | 12 (+5 nuevos) | ~5 | ~71% |
 | Hooks | 1 git + 13 runtime ✅ | 0 | 100% |
-| Crons | 2 | 28 | ~7% |
+| Crons | 11 (+9 universales) | 19 verticales | ~37% |
 | Webhooks | 1 receiver + 12 handlers V1 | retry queue + deploy | ~75% |
-| Skills nuevos del research | 0 | 24 | 0% |
+| Skills nuevos del research | 8/24 | 16 (los que necesitan vertical nuevo) | ~33% |
 | Evals | 25 | 135-360 objetivo | ~7-19% |
 | Fixtures | 38 | 50-100 objetivo | ~38-76% |
 | Documentación | 24 | +12 | ~67% |
