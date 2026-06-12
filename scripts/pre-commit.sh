@@ -15,14 +15,15 @@
 
 set -euo pipefail
 
-REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || { cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd; })"
 cd "$REPO_ROOT"
 
 echo "🔍 pre-commit: validando cambios..."
 
 # ---------- 1. Detectar archivos staged ----------
 
-STAGED=$(git diff --cached --name-only --diff-filter=ACM 2>/dev/null || true)
+# Usar -C explícito para asegurar que git busca en el repo correcto
+STAGED=$(git -C "$REPO_ROOT" diff --cached --name-only --diff-filter=ACM 2>/dev/null || true)
 
 if [ -z "$STAGED" ]; then
     echo "✓ Sin cambios staged. Skipping pre-commit checks."
