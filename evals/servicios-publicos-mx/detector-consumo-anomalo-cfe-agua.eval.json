@@ -1,0 +1,97 @@
+[
+  {
+    "query": "\"consumo anómalo\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "\"recibo cfe alto\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "\"fuga agua\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "\"tarifa dac\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "\"recibo gas raro\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "\"consumo anómalo\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "como \"consumo anómalo\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "\"recibo cfe alto\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "como \"recibo cfe alto\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "\"fuga agua\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "cálculo de tarifas predial ni para pago de servicios",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "que es \"consumo",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "que es \"recibo",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "que es \"fuga",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-consumo-anomalo-cfe-agua"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de detector-consumo-anomalo-cfe-agua"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "query": "\"ajustar renta\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "\"comparador renta zona\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "\"subir precio departamento\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "\"renta vs mercado\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "\"comparables renta\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "\"precio mi depa\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "\"ajustar renta\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "como \"ajustar renta\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "\"comparador renta zona\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "como \"comparador renta zona\"",
+    "should_trigger": true,
+    "rationale": "Match directo con trigger de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "tasación de venta (eso es distinto",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "valuador certificado)",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "que es \"ajustar",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "que es \"comparador",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "que es \"subir",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "como configuro mi cuenta gmail",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "necesito subir un video a youtube",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "como hago café",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "cuál es la capital de francia",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-renta-zona-dinamica"
+  },
+  {
+    "query": "explícame qué es bitcoin",
+    "should_trigger": false,
+    "rationale": "Fuera de scope de comparador-renta-zona-dinamica"
+  }
+]
