@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!--
+    com.plugins-mx.banxico-tcs — Refresh diario tipos de cambio Banxico
+
+    INSTALAR (macOS):
+        cp scripts/crons/com.plugins-mx.banxico-tcs.plist ~/Library/LaunchAgents/
+        launchctl load ~/Library/LaunchAgents/com.plugins-mx.banxico-tcs.plist
+
+    DESINSTALAR:
+        launchctl unload ~/Library/LaunchAgents/com.plugins-mx.banxico-tcs.plist
+        rm ~/Library/LaunchAgents/com.plugins-mx.banxico-tcs.plist
+
+    VERIFICAR:
+        launchctl list | grep plugins-mx
+
+    Corre lunes a viernes a las 10:00 AM (después de publicación DOF).
+    -->
+    <key>Label</key>
+    <string>com.plugins-mx.banxico-tcs</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/elias/Documents/Trabajo/skills/scripts/refresh-banxico-tcs.sh</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/elias/Documents/Trabajo/skills</string>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/plugins-mx-banxico-tcs.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/plugins-mx-banxico-tcs.err</string>
+
+    <!-- Lunes-Viernes 10:00 AM (después de publicación DOF) -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Weekday</key>
+            <integer>1</integer>
+            <key>Hour</key>
+            <integer>10</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key>
+            <integer>2</integer>
+            <key>Hour</key>
+            <integer>10</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key>
+            <integer>3</integer>
+            <key>Hour</key>
+            <integer>10</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key>
+            <integer>4</integer>
+            <key>Hour</key>
+            <integer>10</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key>
+            <integer>5</integer>
+            <key>Hour</key>
+            <integer>10</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+    </array>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>

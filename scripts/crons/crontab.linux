@@ -1,0 +1,28 @@
+# crontab.linux — versión Linux/WSL de los crons del monorepo plugins-mx
+#
+# INSTALAR:
+#    crontab -l > /tmp/cron-backup
+#    crontab scripts/crons/crontab.linux
+#
+# VERIFICAR:
+#    crontab -l
+#
+# Ajustar PATH_REPO con la ruta real del repo.
+
+PATH_REPO=/Users/elias/Documents/Trabajo/skills
+SHELL=/bin/bash
+
+# Refresh tipos de cambio Banxico — días hábiles a las 10:00
+# Después de la publicación DOF típica
+0 10 * * 1-5 cd $PATH_REPO && bash scripts/refresh-banxico-tcs.sh >> /tmp/plugins-mx-banxico-tcs.log 2>&1
+
+# Refresh listas 69 y 69-B SAT — lunes a las 9:00
+# Las listas se actualizan típicamente lunes
+0 9 * * 1 cd $PATH_REPO && bash scripts/refresh-sat-listas-69.sh >> /tmp/plugins-mx-sat-listas.log 2>&1
+
+# (Futuro) Cierre fiscal mensual — día 14 a las 9:00
+# Necesita workflow que se pueda invocar desde CLI sin Claude Code (TBD)
+# 0 9 14 * * cd $PATH_REPO && bash scripts/run-cierre-fiscal.sh >> /tmp/plugins-mx-cierre.log 2>&1
+
+# (Futuro) Backup cache + bitácora diario — 23:00
+# 0 23 * * * cd $PATH_REPO && bash scripts/backup-state.sh >> /tmp/plugins-mx-backup.log 2>&1

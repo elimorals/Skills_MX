@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!--
+    com.plugins-mx.sat-listas — Refresh semanal listas 69 y 69-B SAT
+
+    INSTALAR:
+        cp scripts/crons/com.plugins-mx.sat-listas.plist ~/Library/LaunchAgents/
+        launchctl load ~/Library/LaunchAgents/com.plugins-mx.sat-listas.plist
+
+    Corre los lunes a las 9:00 AM.
+    -->
+    <key>Label</key>
+    <string>com.plugins-mx.sat-listas</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/elias/Documents/Trabajo/skills/scripts/refresh-sat-listas-69.sh</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/elias/Documents/Trabajo/skills</string>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/plugins-mx-sat-listas.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/plugins-mx-sat-listas.err</string>
+
+    <!-- Lunes 9:00 AM -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>1</integer>
+        <key>Hour</key>
+        <integer>9</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>
