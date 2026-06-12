@@ -196,8 +196,10 @@ if [ "$LINT_FAIL" = "0" ]; then ok "Lint SKILL.md: 0 fallos"
 else err "Lint SKILL.md: $LINT_FAIL fallos"; fi
 
 JSON_FAIL=0
+# Seguridad: pasar $f como argv (NO interpolar en código Python) — previene injection
+# si un path llega a contener comillas o caracteres especiales.
 while IFS= read -r f; do
-  if ! python3 -c "import json; json.load(open('$f'))" 2>/dev/null; then
+  if ! python3 -c 'import json,sys; json.load(open(sys.argv[1]))' "$f" 2>/dev/null; then
     err "JSON inválido: $(echo "$f" | sed "s|$ROOT/||")"
     JSON_FAIL=$((JSON_FAIL+1))
   fi
