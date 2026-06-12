@@ -13,7 +13,7 @@ PATH_REPO=/Users/elias/Documents/Trabajo/skills
 SHELL=/bin/bash
 LOG_DIR=/tmp
 
-# ────────────────── Universales (originales) ──────────────────
+# ────────────────── Universales (originales — 2 activos) ──────────────────
 
 # Refresh tipos de cambio Banxico — L-V 10:00
 0 10 * * 1-5 cd $PATH_REPO && bash scripts/refresh-banxico-tcs.sh >> $LOG_DIR/plugins-mx-banxico-tcs.log 2>&1
@@ -21,37 +21,37 @@ LOG_DIR=/tmp
 # Refresh listas 69 y 69-B SAT — lunes 09:00
 0 9 * * 1 cd $PATH_REPO && bash scripts/refresh-sat-listas-69.sh >> $LOG_DIR/plugins-mx-sat-listas.log 2>&1
 
-# ────────────────── Cobranza recurrente ──────────────────
+# ────────────────── Cobranza recurrente (3 nuevos) ──────────────────
 
 # Arranque cobranza mensual — día 1 a las 09:00
-0 9 1 * * cd $PATH_REPO && bash scripts/cobranza-recurrente.sh >> $LOG_DIR/plugins-mx-cobranza.log 2>&1
+0 9 1 * * cd $PATH_REPO && bash scripts/crons/cobranza-recurrente.sh >> $LOG_DIR/plugins-mx-cobranza.log 2>&1
 
 # Verificar cobros del mes — día 5 a las 10:00
-0 10 5 * * cd $PATH_REPO && bash scripts/verificar-cobros.sh >> $LOG_DIR/plugins-mx-verificar.log 2>&1
+0 10 5 * * cd $PATH_REPO && bash scripts/crons/verificar-cobros.sh >> $LOG_DIR/plugins-mx-verificar.log 2>&1
 
-# ────────────────── Fiscal ──────────────────
+# ────────────────── Fiscal (3 nuevos) ──────────────────
 
 # Pre-cierre fiscal — día 14 a las 09:00
-0 9 14 * * cd $PATH_REPO && bash scripts/pre-cierre-fiscal.sh >> $LOG_DIR/plugins-mx-pre-cierre.log 2>&1
+0 9 14 * * cd $PATH_REPO && bash scripts/crons/pre-cierre-fiscal.sh >> $LOG_DIR/plugins-mx-pre-cierre.log 2>&1
 
 # Alerta pago provisional — día 15 a las 10:00
-0 10 15 * * cd $PATH_REPO && bash scripts/alerta-pago-provisional.sh >> $LOG_DIR/plugins-mx-alerta-prov.log 2>&1
+0 10 15 * * cd $PATH_REPO && bash scripts/crons/alerta-pago-provisional.sh >> $LOG_DIR/plugins-mx-alerta-prov.log 2>&1
 
 # Última alerta deadline — día 17 a las 08:00
-0 8 17 * * cd $PATH_REPO && bash scripts/ultima-alerta-deadline.sh >> $LOG_DIR/plugins-mx-deadline.log 2>&1
+0 8 17 * * cd $PATH_REPO && bash scripts/crons/ultima-alerta-deadline.sh >> $LOG_DIR/plugins-mx-deadline.log 2>&1
 
-# ────────────────── Dashboards y backup ──────────────────
+# ────────────────── Dashboards y backup (2 nuevos) ──────────────────
 
-# Dashboard semanal — lunes 09:00 (tras refresh listas)
-30 9 * * 1 cd $PATH_REPO && bash scripts/dashboard-semanal.sh >> $LOG_DIR/plugins-mx-dashboard.log 2>&1
+# Dashboard semanal — lunes 09:30 (tras refresh listas)
+30 9 * * 1 cd $PATH_REPO && bash scripts/crons/dashboard-semanal.sh >> $LOG_DIR/plugins-mx-dashboard.log 2>&1
 
 # Backup semanal — viernes 18:00
-0 18 * * 5 cd $PATH_REPO && bash scripts/backup-semanal.sh >> $LOG_DIR/plugins-mx-backup.log 2>&1
+0 18 * * 5 cd $PATH_REPO && bash scripts/crons/backup-semanal.sh >> $LOG_DIR/plugins-mx-backup.log 2>&1
 
-# ────────────────── Operativo continuo ──────────────────
+# ────────────────── Operativo continuo (2 nuevos) ──────────────────
 
 # Check WhatsApp pendientes — cada 30min L-V 9-18
-*/30 9-18 * * 1-5 cd $PATH_REPO && bash scripts/check-wa-pendientes.sh >> $LOG_DIR/plugins-mx-wa.log 2>&1
+*/30 9-18 * * 1-5 cd $PATH_REPO && bash scripts/crons/check-wa-pendientes.sh >> $LOG_DIR/plugins-mx-wa.log 2>&1
 
 # Check multas vehiculares — diario 08:00
-0 8 * * * cd $PATH_REPO && bash scripts/check-multas-vehiculares.sh >> $LOG_DIR/plugins-mx-multas.log 2>&1
+0 8 * * * cd $PATH_REPO && bash scripts/crons/check-multas-vehiculares.sh >> $LOG_DIR/plugins-mx-multas.log 2>&1
