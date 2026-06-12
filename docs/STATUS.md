@@ -31,7 +31,7 @@
 | Workflows | 7 | 5-7 | ~58% |
 | Hooks | 1 | 13 | ~7% |
 | Crons | 2 | 28 | ~7% |
-| Webhooks | 0 receiver | 12 handlers | 0% |
+| Webhooks | 1 receiver + 12 handlers V1 | retry queue + deploy | ~75% |
 | Skills nuevos del research | 0 | 24 | 0% |
 | Evals | 25 | 135-360 objetivo | ~7-19% |
 | Fixtures | 38 | 50-100 objetivo | ~38-76% |
@@ -230,22 +230,45 @@ Después de specs: codificar los 3 (en este orden).
 
 ---
 
-## 6. Webhooks (0/12) — REQUIERE SPEC
+## 6. Webhooks (12/12 handlers + receiver) — V1 ✅
 
-→ `docs/specs/01-webhook-receiver.md` (cubre receiver + handlers)
+→ Spec: `docs/specs/01-webhook-receiver.md`
+→ Código: `webhooks/`
+→ Tests: 29/29 passing
 
-- [ ] Webhook receiver HTTP público (FastAPI/Cloudflare Workers)
-- [ ] Handler Stripe `payment_intent.succeeded`
-- [ ] Handler Mercado Pago `payment.created`
-- [ ] Handler Conekta `charge.paid`
-- [ ] Handler Facturama `cfdi.timbrado`
-- [ ] Handler Meta WhatsApp `messages`
-- [ ] Handler GitHub `push`
-- [ ] Handler Calendly `invitee.created`
-- [ ] Handler Typeform `form_response`
-- [ ] Handler Mercado Libre `orders`
-- [ ] Handler Banxico CEP
-- [ ] Handler IMSS Buzón
+- [x] Webhook receiver HTTP (FastAPI) — `2026-06-11` MVP completo
+- [x] Handler Stripe (payment_intent.succeeded, charge.refunded, invoice.payment_succeeded)
+- [x] Handler Mercado Pago (payment, merchant_order, subscription)
+- [x] Handler Conekta (charge.paid, charge.refunded, order.paid, subscription.*)
+- [x] Handler Facturama (cfdi.stamped, cfdi.cancelled)
+- [x] Handler Meta WhatsApp (messages, message_template_status_update)
+- [x] Handler GitHub (push con detección _shared/, pull_request)
+- [x] Handler Calendly (invitee.created/canceled)
+- [x] Handler Typeform (form_response)
+- [x] Handler Mercado Libre (orders_v2, payments, questions, items)
+- [x] Handler Banxico CEP (manual trigger)
+- [x] Handler IMSS Buzón (manual trigger)
+- [x] Handler CONDUSEF (manual trigger)
+- [x] Validadores HMAC: Stripe, MP, Conekta, GitHub, Meta WhatsApp
+- [x] Validadores genéricos: Bearer, IP allowlist
+- [x] Idempotencia (memory + SQLite, deduplicación por source+event_id)
+- [x] Audit log JSONL append-only con hashed event_ids
+- [x] Endpoint admin `/webhooks/recent` con API key
+
+### V2 pendiente (V1 commiteado)
+- [ ] Retry queue async (handlers actuales son síncronos best-effort)
+- [ ] Deployment Cloudflare Workers / Railway / Fly.io
+- [ ] Integración real con workflows del monorepo (cola/MCP/CLI)
+- [ ] Firma HMAC oficial Calendly + Typeform (actualmente Bearer)
+- [ ] Rate limiting + dead letter queue
+
+### Humano requerido para activar producción
+Ver `webhooks/README.md` sección "Pasos que requieren intervención humana":
+1. Obtener webhook secrets de cada panel (Stripe, MP, Conekta, etc.)
+2. Configurar URL HTTPS pública (Cloudflare Workers / Railway / VPS)
+3. Registrar URL en cada panel + suscribir eventos
+4. Setear env vars en producción
+5. Decidir mecanismo de integración con workflows (V2)
 
 ---
 
