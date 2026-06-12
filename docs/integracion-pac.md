@@ -32,67 +32,96 @@ Este monorepo asume **Facturama** por default en `.mcp.json` placeholders, pero 
 
 ## Setup con Facturama (paso a paso)
 
+Este monorepo incluye **`mp_facturama_extendido`** (en `mcp-servers/mp_facturama_extendido/`), un MCP propio que envuelve la API REST de Facturama con:
+- Validación local de CFDI 4.0 pre-PAC
+- Mock mode automático cuando no hay credenciales
+- Soporte sandbox y producción con detección por env var
+- Bitácora de cada timbrado y cancelación
+- 88 tests verde
+
+Ya viene preconfigurado en `core-mexico/.mcp.json` — solo necesitas inyectar credenciales.
+
 ### 1. Crear cuenta sandbox
 
 1. Ir a https://facturama.mx
 2. Sign up — cuenta sandbox es gratuita
 3. Recibes credenciales en email
 
-### 2. Generar API Key
+### 2. Generar API Key o usar usuario/password
 
-1. Login en panel Facturama
-2. Settings → API Keys → Generate
-3. Guardar el API Key generado
+Facturama acepta dos formas de auth:
+- **Usuario + Password**: el correo + password de tu cuenta
+- **API Key**: pasarlo como `FACTURAMA_USER` con `FACTURAMA_PASSWORD` vacío (algunos planes)
 
 ### 3. Configurar `.env` local
 
 ```bash
-cd ~/plugins-mx
-cp .env.example .env
+cd /Users/elias/Documents/Trabajo/skills
+cp .env.example .env  # si no existe, créalo
 nano .env
 ```
 
-Agrega:
-```
-FACTURAMA_API_KEY=tu_api_key_aqui
+Agrega (uno de los dos esquemas):
+
+```bash
+# Esquema A: usuario + password
+FACTURAMA_USER=tu_correo_o_usuario
+FACTURAMA_PASSWORD=tu_password
+FACTURAMA_ENV=sandbox
+
+# o Esquema B: API key
+FACTURAMA_USER=tu_api_key
+FACTURAMA_PASSWORD=tu_api_key
 FACTURAMA_ENV=sandbox
 ```
 
-### 4. Activar MCP server
+⚠ `.env` debe estar en `.gitignore` — nunca commitearlo.
 
-Edita el `.mcp.json` del plugin que vas a usar (ej. `freelancers-mx/.mcp.json`):
+### 4. Verificar credenciales sin tocar Claude Code
+
+```bash
+python scripts/validar_facturama_credenciales.py
+```
+
+El script:
+1. Detecta variables de entorno
+2. Hace un GET autenticado a `/api-lite/products`
+3. Reporta éxito o el error específico (401, network, etc.)
+
+Output exitoso:
+```
+✓ FACTURAMA_USER o FACTURAMA_API_KEY
+✓ FACTURAMA_PASSWORD
+ℹ FACTURAMA_ENV: sandbox
+✓ Auth + endpoint: HTTP 200 — credenciales válidas en sandbox
+```
+
+### 5. El MCP server ya está activo
+
+`core-mexico/.mcp.json` ya tiene `mp_facturama_extendido` registrado y lee las env vars:
 
 ```json
 {
-  "mcpServers": {
-    "facturama": {
-      "command": "npx",
-      "args": ["-y", "@facturama/mcp-server"],
-      "env": {
-        "FACTURAMA_API_KEY": "${FACTURAMA_API_KEY}",
-        "FACTURAMA_ENV": "${FACTURAMA_ENV}"
-      },
-      "disabled": false   // ← cambiar de true a false
+  "facturama": {
+    "command": ".venv/bin/python",
+    "args": ["-m", "mp_facturama_extendido.server"],
+    "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+    "env": {
+      "FACTURAMA_USER": "${FACTURAMA_USER:-}",
+      "FACTURAMA_PASSWORD": "${FACTURAMA_PASSWORD:-}",
+      "FACTURAMA_ENV": "${FACTURAMA_ENV:-sandbox}",
+      "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
     }
   }
 }
 ```
 
-> **Nota**: el package `@facturama/mcp-server` puede no existir como tal. Verificar en npm registry. Si no existe, hay que construir un MCP server propio que envuelva la API REST de Facturama.
+Sin credenciales corre en mock. Con credenciales válidas se conecta automáticamente al endpoint correcto (sandbox o producción).
 
-### 5. Reiniciar Claude Code
+### 6. Reiniciar Claude Code
 
 ```bash
-# Salir y volver a entrar a la sesión
-exit
-claude --plugin-dir ~/plugins-mx/freelancers-mx
-```
-
-### 6. Verificar conexión
-
-```
-Usuario: "Verifica que el MCP server de Facturama está activo."
-Claude → debería listar las tools de Facturama si conectó bien.
+# Salir y volver a entrar a la sesión para que cargue env vars del .env
 ```
 
 ### 7. Primer timbrado de prueba
@@ -101,10 +130,15 @@ Claude → debería listar las tools de Facturama si conectó bien.
 Usuario: "Timbra un CFDI de prueba: emisor mi RFC, receptor IBM970131DRA,
         servicio de consultoría 1,000 MXN."
 
-Claude → invoca cfdi-emision
-        Construye payload
-        Llama a Facturama via MCP
-        Devuelve UUID, sello, XML
+Claude → invoca skill cfdi-emision
+        Construye payload con iva-retenciones-mx
+        Llama a mp_facturama_extendido.timbrar_cfdi
+        Devuelve UUID, sello, XML, PDF
+```
+
+O usar el workflow completo (incluye due-diligence y notificación WhatsApp):
+```
+/core:emitir-y-notificar receptor IBM970131DRA, consultoría 1000 MXN
 ```
 
 ---
