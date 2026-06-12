@@ -1,0 +1,114 @@
+{
+  "$schema_note": "Configuración de hooks runtime de Claude Code para plugins-mx. Ver docs/specs/04-hooks-runtime-claude-code.md.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mp_facturama_extendido__timbrar_cfdi",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/hooks/pre-timbrado-validation.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash scripts/hooks/bitacora-mcp-calls.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "mp_meta_whatsapp__send_message_batch|mp_meta_whatsapp__broadcast",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/hooks/confirmar-envio-masivo-wa.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "mp_facturama_extendido__.*|mp_aspel_contpaqi__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/hooks/validar-cfdi-payload.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/hooks/validar-ficha-cliente.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "mp_.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/hooks/bitacora-mcp-calls.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mp_facturama_extendido__timbrar_cfdi",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/hooks/backup-cfdi-automatico.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "mp_facturama_extendido__cancelar_cfdi",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/hooks/alert-cancelaciones-frecuentes.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "mp_banxico__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/hooks/actualizar-tc-banxico.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/hooks/sincronizar-shared-post-edit.sh"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/hooks/contexto-inicial-sesion.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/hooks/cleanup-sesion.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
