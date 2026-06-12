@@ -1,0 +1,44 @@
+{
+  "name": "veterinaria-mx",
+  "displayName": "Veterinaria MX — Clínicas y pet care",
+  "description": "Plugin para clínicas veterinarias, pet shops con servicio médico, hospitales veterinarios y servicios pet en México. Cubre expediente clínico de mascota (historial, vacunas, alergias), calendario de vacunación con recordatorios WhatsApp 7d/24h antes, tarifario por servicio veterinario (consulta, cirugía, hospitalización, estética canina), protocolo de urgencias 24h, y emisión de CFDI por servicio. Construido sobre core-mexico.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elias",
+    "email": "elias@cipreholding.com"
+  },
+  "keywords": [
+    "veterinaria",
+    "veterinario",
+    "clinica-veterinaria",
+    "pet-care",
+    "mascotas",
+    "mexico",
+    "vacunacion",
+    "urgencias-vet",
+    "expediente-clinico"
+  ],
+  "skills": [
+    "skills/expediente-clinico-mascota",
+    "skills/vacunacion-calendario",
+    "skills/recordatorios-pet-wa",
+    "skills/tarifario-servicios-vet",
+    "skills/urgencias-protocolo",
+    "skills/cfdi-emision",
+    "skills/iva-retenciones-mx",
+    "skills/rfc-validacion",
+    "skills/whatsapp-business-mx",
+    "skills/compliance-lfpdppp",
+    "skills/mxn-formato"
+  ],
+  "commands": [
+    "commands/registrar-mascota.md",
+    "commands/agendar-vacuna.md",
+    "commands/cotizar-servicio-vet.md",
+    "commands/urgencia.md"
+  ],
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "requires": ["core-mexico"]
+  }
+}
