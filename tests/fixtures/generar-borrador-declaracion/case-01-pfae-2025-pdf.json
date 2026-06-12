@@ -1,0 +1,30 @@
+{
+  "name": "Generar borrador declaración PDF PFAE 2025",
+  "input": {
+    "rfc": "MAJG800101XYZ",
+    "ejercicio": 2025,
+    "regimen": "PFAE_612",
+    "isr_causado_mxn": 258000,
+    "pagos_provisionales_mxn": 195000,
+    "retenciones_mxn": 28000,
+    "deducciones_personales_aceptadas_mxn": 108000,
+    "resultado": "SALDO_A_PAGAR",
+    "diferencia_mxn": 35000
+  },
+  "expected_output": {
+    "pdf_secciones": [
+      "encabezado_rfc_ejercicio",
+      "seccion_1_ingresos",
+      "seccion_2_gastos",
+      "seccion_3_deducciones_personales",
+      "seccion_4_calculo_isr",
+      "seccion_5_pagos_provisionales",
+      "seccion_6_resultado",
+      "seccion_7_alertas",
+      "footer_vigencia_disclaimer"
+    ],
+    "paginas_esperadas": 6,
+    "vigencia_validada": false
+  },
+  "validations": ["Estructura mínima cumple SAT", "Disclaimer 'consultar contador'", "vigencia_validada=false sin firma contador"]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "ISR anual PFAE — saldo a pagar $35k",
+  "input": {
+    "ejercicio": 2025,
+    "regimen": "PFAE_612",
+    "ingresos_acumulables_mxn": 1720000,
+    "gastos_deducibles_mxn": 540000,
+    "deducciones_personales_mxn": 108000,
+    "pagos_provisionales_acumulados_mxn": 195000,
+    "retenciones_acumuladas_mxn": 28000
+  },
+  "expected_output_approximate": {
+    "utilidad_fiscal_mxn": 1072000,
+    "isr_causado_anual_mxn_aprox": 258000,
+    "pagos_y_retenciones_aprox": 223000,
+    "diferencia_mxn_aprox": 35000,
+    "resultado": "SALDO_A_PAGAR",
+    "tarifa_aplicada": "Art. 152 LISR",
+    "vigencia_validada": false
+  },
+  "validations": ["Tarifa Art. 152 anual", "Saldo a pagar = ISR - (pagos + retenciones)", "Marca vigencia_validada=false hasta contador"]
+}

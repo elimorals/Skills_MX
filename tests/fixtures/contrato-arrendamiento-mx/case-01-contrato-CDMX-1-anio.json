@@ -1,0 +1,35 @@
+{
+  "name": "Contrato arrendamiento residencial CDMX — 1 año renovable",
+  "input": {
+    "arrendador_rfc": "MAJG800101XYZ",
+    "arrendatario_rfc": "PER850301ABC",
+    "inmueble": {
+      "direccion": "Calle Ejemplo 123, Col. Centro, Cuauhtémoc, CDMX",
+      "tipo": "departamento",
+      "habitaciones": 2,
+      "metros_cuadrados": 65
+    },
+    "renta_mensual_mxn": 12000,
+    "deposito_garantia_meses": 1,
+    "fecha_inicio": "2026-07-01",
+    "duracion_meses": 12
+  },
+  "expected_output": {
+    "clausulas_minimas_incluidas": [
+      "objeto",
+      "renta_y_forma_pago",
+      "deposito_garantia",
+      "duracion_y_prorroga",
+      "obligaciones_arrendador",
+      "obligaciones_arrendatario",
+      "terminacion_anticipada",
+      "ajuste_anual_INPC",
+      "jurisdiccion_CDMX",
+      "ARCO_LFPDPPP"
+    ],
+    "ajuste_anual_referencia": "INPC últimos 12 meses",
+    "fecha_renovacion": "2027-06-01",
+    "validacion_legal_pendiente": "abogado mercantilista CDMX"
+  },
+  "validations": ["Cláusulas mínimas CCDF + leyes CDMX", "Depósito 1-2 meses típico CDMX", "Renovación automática si no aviso 30 días antes"]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Dashboard nómina quincenal — PyME 15 empleados varios departamentos",
+  "input": {
+    "empresa_rfc": "EMP850101XYZ",
+    "periodo": "2026-Q14",
+    "empleados_count": 15
+  },
+  "expected_output": {
+    "total_percepciones_mxn_aprox": 187500,
+    "total_isr_retenido_aprox": 18750,
+    "total_imss_obrero_aprox": 3750,
+    "total_neto_dispersar_aprox": 165000,
+    "total_imss_patronal_aprox": 60000,
+    "total_infonavit_aprox": 9375,
+    "kpis": {
+      "rotacion_30_dias": 0,
+      "altas_mes": 1,
+      "bajas_mes": 0
+    }
+  },
+  "validations": ["Suma percepciones - deducciones = neto", "ISR mensual prorrateado a quincena", "KPIs de rotación/altas/bajas"]
+}

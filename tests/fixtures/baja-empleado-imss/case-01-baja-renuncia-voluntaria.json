@@ -1,0 +1,18 @@
+{
+  "name": "Baja IMSS — renuncia voluntaria con finiquito",
+  "input": {
+    "empleado_rfc": "BBB820505B22",
+    "empresa_rfc": "EMP850101XYZ",
+    "fecha_renuncia": "2026-03-22",
+    "fecha_ultimo_dia_trabajado": "2026-03-25",
+    "motivo": "renuncia_voluntaria"
+  },
+  "expected_output": {
+    "movimiento_idse_tipo": "08",
+    "fecha_baja_imss": "2026-03-25",
+    "plazo_envio_idse_dias": 5,
+    "finiquito_calcular": true,
+    "cfdi_nomina_finiquito_tipo": "F"
+  },
+  "validations": ["Baja IDSE en 5 días hábiles", "CFDI Nómina tipo F (finiquito)", "Aguinaldo + vacaciones + prima vacacional proporcionales"]
+}

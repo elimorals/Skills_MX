@@ -1,0 +1,20 @@
+{
+  "name": "Seguimiento devolución SAT — requerimiento documentación pendiente",
+  "input": {
+    "rfc": "ABC850301XYZ",
+    "folio_solicitud": "DEV-2026-12345",
+    "fecha_solicitud": "2026-04-25",
+    "monto_solicitado_mxn": 35000,
+    "estatus_actual": "requerimiento_documentacion",
+    "fecha_requerimiento": "2026-05-20",
+    "documentos_solicitados": ["facturas_3_meses", "extractos_bancarios", "comprobantes_deducciones"]
+  },
+  "expected_output": {
+    "dias_para_responder_requerimiento": 10,
+    "fecha_limite_respuesta": "2026-05-30",
+    "urgencia": "alta",
+    "documentos_a_preparar": 3,
+    "siguiente_paso": "Subir documentos al portal SAT antes del 30 mayo"
+  },
+  "validations": ["10 días hábiles para responder requerimiento", "Si no responde: solicitud se da por desistida", "Documentos específicos del requerimiento"]
+}
