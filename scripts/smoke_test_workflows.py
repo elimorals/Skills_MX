@@ -26,6 +26,10 @@ REPO_ROOT = Path(__file__).parent.parent
 # Workflows ejecutables conocidos
 WORKFLOWS = [
     REPO_ROOT / "core-mexico" / "workflows" / "cierre-fiscal-mensual.workflow.js",
+    REPO_ROOT / "core-mexico" / "workflows" / "cfdi-emision-completa.workflow.js",
+    REPO_ROOT / "core-mexico" / "workflows" / "due-diligence-cliente.workflow.js",
+    REPO_ROOT / "core-mexico" / "workflows" / "pago-conciliacion.workflow.js",
+    REPO_ROOT / "freelancers-mx" / "workflows" / "cobranza-multinivel.workflow.js",
     REPO_ROOT / "pf-anual-mx" / "workflows" / "pf-anual-completa.workflow.js",
 ]
 
