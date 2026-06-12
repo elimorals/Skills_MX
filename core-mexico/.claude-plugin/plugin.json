@@ -31,13 +31,16 @@
     "commands/format-mxn.md",
     "commands/timbrar-cfdi.md",
     "commands/emitir-y-notificar.md",
-    "commands/conciliar-pago.md"
+    "commands/conciliar-pago.md",
+    "commands/due-diligence.md"
   ],
   "agents": [
     "agents/validador-cfdi-batch.md",
     "agents/workflow-cfdi-emision-completa.md",
     "agents/workflow-pago-conciliacion.md",
-    "agents/workflow-cierre-fiscal-mensual.md"
+    "agents/workflow-cierre-fiscal-mensual.md",
+    "agents/workflow-due-diligence-cliente.md",
+    "agents/workflow-pf-anual-completa.md"
   ],
   "compatibility": {
     "claudeCode": ">=1.0.0"
