@@ -1,0 +1,19 @@
+{
+  "name": "Monitor multas CDMX — 3 foto-infracciones nuevas detectadas",
+  "input": {
+    "placas": "ABC1234",
+    "fecha_consulta": "2026-06-12"
+  },
+  "expected_output": {
+    "multas_nuevas_count": 3,
+    "monto_total_mxn": 4500,
+    "detalle": [
+      {"fecha": "2026-06-05", "monto": 1500, "concepto": "Exceso velocidad", "fecha_limite_descuento": "2026-06-20"},
+      {"fecha": "2026-06-08", "monto": 1500, "concepto": "Vuelta indebida", "fecha_limite_descuento": "2026-06-23"},
+      {"fecha": "2026-06-10", "monto": 1500, "concepto": "Estacionamiento prohibido", "fecha_limite_descuento": "2026-06-25"}
+    ],
+    "descuento_pronto_pago_pct": 50,
+    "alerta_urgencia": "Pagar antes de 15 días para 50% descuento"
+  },
+  "validations": ["Detección con timestamp por multa", "Descuento por pronto pago 50% en 15 días", "Recargos 50-100% post 30 días"]
+}

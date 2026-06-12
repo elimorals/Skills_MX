@@ -1,0 +1,29 @@
+{
+  "name": "Marketing inmueble — publicación multi-plataforma con SEO",
+  "input": {
+    "inmueble": {
+      "tipo": "departamento",
+      "habitaciones": 2,
+      "banios": 2,
+      "m2": 65,
+      "estacionamiento": 1,
+      "amenidades": ["seguridad", "gimnasio", "alberca"],
+      "antiguedad_anios": 5
+    },
+    "precio_renta_mxn": 14500,
+    "ubicacion": "Polanco, CDMX",
+    "fotos_count": 12
+  },
+  "expected_output": {
+    "plataformas_recomendadas": ["inmuebles24", "vivanuncios", "easybroker", "metroscubicos"],
+    "titulos_seo": [
+      "Departamento 2 recámaras en Polanco con amenidades — $14,500/mes",
+      "Depa Polanco 65m² 2/2/1 con seguridad y gym",
+      "Renta de departamento en Polanco con vista — Listo para mudarse"
+    ],
+    "descripcion_optimizada_caracteres": 350,
+    "hashtags_redes": ["#RentaPolanco", "#DepartamentoCDMX", "#RentaCDMX"],
+    "horarios_recomendados_publicacion": ["domingo 18:00", "lunes 09:00", "miercoles 18:00"]
+  },
+  "validations": ["3+ títulos para A/B testing", "SEO local con barrio", "Mínimo 8 fotos para no ser flageado como spam"]
+}

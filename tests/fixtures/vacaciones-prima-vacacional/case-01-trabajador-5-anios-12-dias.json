@@ -1,0 +1,19 @@
+{
+  "name": "Vacaciones + prima vacacional — trabajador 5 años antigüedad",
+  "input": {
+    "empleado_rfc": "AAA800101A11",
+    "fecha_ingreso": "2021-07-01",
+    "fecha_calculo": "2026-07-01",
+    "salario_diario": 833.33
+  },
+  "expected_output": {
+    "antiguedad_anios": 5,
+    "dias_vacaciones_lft": 14,
+    "prima_vacacional_pct_lft": 0.25,
+    "vacaciones_mxn": 11666.62,
+    "prima_vacacional_mxn": 2916.66,
+    "total_mxn": 14583.28,
+    "vigencia_lft": "Art. 76-80 LFT vigente con reforma 2023 (12 días año 1)"
+  },
+  "validations": ["Días según LFT reforma 2023", "Prima vacacional mínimo 25%", "Cálculo proporcional si menos de 1 año"]
+}

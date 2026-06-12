@@ -1,0 +1,19 @@
+{
+  "name": "Recopilar CFDIs ejercicio 2025 PFAE — emitidos y recibidos",
+  "input": {
+    "rfc": "MAJG800101XYZ",
+    "ejercicio": 2025
+  },
+  "expected_output_approximate": {
+    "total_cfdis_emitidos": 156,
+    "total_cfdis_recibidos": 89,
+    "ingresos_totales_mxn": 1850000,
+    "ingresos_cobrados_mxn": 1720000,
+    "gastos_totales_mxn": 580000,
+    "gastos_pagados_mxn": 540000,
+    "monedas_extranjeras": [{"moneda": "USD", "cantidad": 8}],
+    "cfdis_cancelados": 3,
+    "cfdis_con_pago_pendiente_rep": 5
+  },
+  "validations": ["Descarga vía SAT Playwright completa (puede tardar 1-4h)", "Base flujo (ingresos cobrados) vs devengado", "REPs pendientes flageados"]
+}

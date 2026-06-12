@@ -1,0 +1,22 @@
+{
+  "name": "Screening completo inquilino — categoría AMARILLO score 72",
+  "input": {
+    "candidato": {
+      "rfc": "PER850301ABC",
+      "ingresos_mensuales": 30000,
+      "renta_propuesta": 12000,
+      "antiguedad_empleo_meses": 8,
+      "buro_score": 650,
+      "buro_mop_grave_12m": 1,
+      "referencias_count_verificadas": 1
+    }
+  },
+  "expected_output": {
+    "score_total": 72,
+    "categoria": "AMARILLO",
+    "razones_no_verde": ["Solo 8 meses empleo (< 12 minimo VERDE)", "1 MOP grave en últimos 12 meses"],
+    "recomendacion": "Aceptar con aval con propiedad o depósito 2 meses",
+    "depositos_minimos_meses": 2
+  },
+  "validations": ["Ingresos 2.5x renta (< 3x VERDE)", "Antigüedad laboral pesa", "MOP grave reciente baja score", "Recomendación incluye mitigación"]
+}

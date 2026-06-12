@@ -1,0 +1,31 @@
+{
+  "name": "Deducciones personales — padre con 3 hijos en distintos niveles",
+  "input": {
+    "ejercicio": 2025,
+    "ingresos_acumulables_mxn": 720000,
+    "cfdis_deducibles": {
+      "D01_medicos": 28000,
+      "D08_colegiaturas": [
+        {"hijo": "primaria", "monto": 11500},
+        {"hijo": "secundaria", "monto": 18500},
+        {"hijo": "preescolar", "monto": 13800}
+      ],
+      "D05_sar_voluntario": 50000,
+      "D06_primas_gmm": 32000,
+      "D04_intereses_hipotecarios": 15000
+    }
+  },
+  "expected_output_approximate": {
+    "por_categoria": {
+      "D01": 28000,
+      "D08_total": 43800,
+      "D05": 50000,
+      "D06": 32000,
+      "D04": 15000
+    },
+    "total_solicitado_mxn": 168800,
+    "tope_global_aplicado_mxn": 108000,
+    "deducciones_aceptadas_mxn": 108000
+  },
+  "validations": ["3 colegiaturas con topes individuales por nivel", "Tope global 15% ingresos = $108k", "Skill ordena por valor para optimizar"]
+}

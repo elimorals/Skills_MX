@@ -1,0 +1,21 @@
+{
+  "name": "Cruce bancos vs CFDIs — depósitos en efectivo >$15k detectados",
+  "input": {
+    "ejercicio": 2025,
+    "depositos_bancarios_mxn_total": 1850000,
+    "ingresos_facturados_mxn": 1720000,
+    "depositos_efectivo_mes": {
+      "enero": 18500,
+      "febrero": 22000,
+      "junio": 16800
+    }
+  },
+  "expected_output": {
+    "discrepancia_depositos_facturas_mxn": 130000,
+    "depositos_efectivo_mayor_15k_count": 3,
+    "depositos_efectivo_total_excedente_mxn": 57300,
+    "riesgo_discrepancia": "medio",
+    "accion_recomendada": "Identificar origen depósitos para reconciliar o facturar antes de anual"
+  },
+  "validations": ["Art. 91 LISR alerta efectivo > $15k mensual", "Riesgo medio si discrepancia < 10% ingresos"]
+}
