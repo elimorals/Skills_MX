@@ -1,0 +1,17 @@
+{
+  "_comment": "mp_edomex_municipal. EdoMex tiene multiple portales por municipio. Mock-first.",
+  "mcpServers": {
+    "edomex_municipal": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_edomex_municipal.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "EDOMEX_USUARIO": "${EDOMEX_USUARIO:-}",
+        "EDOMEX_PASSWORD": "${EDOMEX_PASSWORD:-}",
+        "PLUGINS_MX_PLAYWRIGHT_REAL": "${PLUGINS_MX_PLAYWRIGHT_REAL:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}
