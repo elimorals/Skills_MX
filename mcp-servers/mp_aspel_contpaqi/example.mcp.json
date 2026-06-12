@@ -1,0 +1,16 @@
+{
+  "_comment": "Configuración para agregar mp_aspel_contpaqi. Aspel COI y ContPAQi son ERPs LOCALES sin API REST pública. Sin ASPEL_EXPORTS_DIR corre 100% mock con datos plausibles. Para path real: configurar ASPEL_EXPORTS_DIR apuntando a un directorio donde el cliente exporta CSVs (polizas_YYYYMM.csv, balanza_YYYYMM.csv, catalogo_cuentas.csv). El tool sat_obtener_instrucciones_configuracion da el paso a paso para configurar el export.",
+  "mcpServers": {
+    "aspel_contpaqi": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mp_aspel_contpaqi.server"],
+      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "env": {
+        "ASPEL_EXPORTS_DIR": "${ASPEL_EXPORTS_DIR:-}",
+        "CONTPAQI_AGENT_URL": "${CONTPAQI_AGENT_URL:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      },
+      "disabled": false
+    }
+  }
+}

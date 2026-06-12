@@ -15,6 +15,7 @@ Servidores MCP (Model Context Protocol) construidos a medida para servicios mexi
 | `mp_banxico_cep` | ✅ producción (CLABE real, CEP mock) | 53 ✓ | Validación CLABE 18 dígitos + decodificación banco/plaza + parseo claves rastreo SPEI + CEP (mock) |
 | `mp_sat_portal` | ✅ producción (públicos HTTP real + UUID estructural, auth mock) | — | Padrón SAT, 69-B EFOS, 69 incumplidos, verifica CFDI, CSF, Buzón, descarga masiva, citas, e.firma, acuse |
 | `mp_conekta` | ✅ producción (mock + sandbox/prod por env var) | — | Pasarela MX: órdenes, charges TDC/OXXO/SPEI, refunds, customers, payment links, suscripciones, webhook HMAC |
+| `mp_aspel_contpaqi` | ✅ producción (mock + parser CSV exports) | — | Pólizas, balanza, catálogo cuentas, P&L, Balance General — Aspel COI/ContPAQi sin API REST |
 
 Roadmap completo: `../Downloads/plugins-mx-planeacion-mcps-agentica.md`.
 
