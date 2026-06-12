@@ -1,0 +1,45 @@
+{
+  "name": "Inquilino APROBADO — score 8.6 — caso típico ideal",
+  "input": {
+    "candidato": {
+      "nombre": "Ana Martínez",
+      "ingresos_mensuales_mxn": 60000,
+      "antiguedad_laboral_meses": 24,
+      "renta_evaluada_mxn": 18500,
+      "buro_score": 712,
+      "buro_categoria": "bueno",
+      "referencias_profesionales_obtenidas": 3,
+      "referencias_arrendador_anterior": {
+        "obtenida": true,
+        "calificacion_anterior": 9.0
+      },
+      "estabilidad_domicilio_anios": 4,
+      "documentos_completos": true,
+      "motivo_mudanza": "Nuevo trabajo más cerca"
+    }
+  },
+  "expected_output": {
+    "score_total": 8.6,
+    "decision": "APROBAR",
+    "factores_positivos": [
+      "Ingresos 3.24x sobre renta — buen colchón",
+      "Buró score 712 (bueno)",
+      "Referencia arrendador anterior excelente (9/10)",
+      "Estabilidad domicilio 4 años en el anterior",
+      "Motivo de mudanza verificable y normal"
+    ],
+    "factores_neutros": [
+      "Antigüedad laboral 24 meses — aceptable"
+    ],
+    "factores_negativos": [],
+    "condiciones_sugeridas": [],
+    "alertas": [],
+    "siguientes_pasos": [
+      "Enviar contrato para firma en 24-48 hrs",
+      "Programar entrega de inmueble + inventario fotos"
+    ]
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Best practices screening inquilinos MX",
+  "notas": "Caso ideal — proceso ágil sin condicionantes."
+}

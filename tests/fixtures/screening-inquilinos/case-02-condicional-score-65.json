@@ -1,0 +1,48 @@
+{
+  "name": "Inquilino CONDICIONAL — score 6.5 — requiere fiador o depósito mayor",
+  "input": {
+    "candidato": {
+      "nombre": "Carlos R.",
+      "ingresos_mensuales_mxn": 42000,
+      "antiguedad_laboral_meses": 8,
+      "renta_evaluada_mxn": 18500,
+      "buro_score": 612,
+      "buro_categoria": "regular",
+      "referencias_profesionales_obtenidas": 2,
+      "referencias_arrendador_anterior": {
+        "obtenida": false,
+        "razon": "Era primera renta — vivía con familia"
+      },
+      "estabilidad_domicilio_anios": 25,
+      "documentos_completos": true,
+      "motivo_mudanza": "Independencia del hogar paterno"
+    }
+  },
+  "expected_output": {
+    "score_total": 6.5,
+    "decision": "APROBAR_CON_CONDICIONES",
+    "factores_positivos": [
+      "Estabilidad domicilio 25 años — alta",
+      "Documentos completos",
+      "Motivo de mudanza válido (primera mudanza joven)"
+    ],
+    "factores_negativos": [
+      "Ingresos 2.27x renta — debajo del 3x recomendado",
+      "Buró score 612 — regular, sin créditos en mora pero apenas histórico",
+      "Antigüedad laboral 8 meses — riesgo de cambio",
+      "Sin referencia de arrendador previo (primera mudanza)"
+    ],
+    "condiciones_sugeridas": [
+      "Solicitar FIADOR SOLIDARIO con ingresos 5x la renta + buen Buró",
+      "Depósito de 2 meses en lugar de 1",
+      "Contrato mes a mes los primeros 3 meses, después estándar 1 año"
+    ],
+    "alertas": [
+      "Sin histórico de pagos puntuales — fiador es esencial",
+      "Si cliente no acepta fiador, RECHAZAR"
+    ]
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Best practices con primer inquilino joven",
+  "notas": "Caso común en mercado renta MX — ingresos jóvenes ajustados pero potencial."
+}

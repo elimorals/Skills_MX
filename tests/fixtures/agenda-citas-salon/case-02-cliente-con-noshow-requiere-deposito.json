@@ -1,0 +1,43 @@
+{
+  "name": "Cita con depósito 30% — cliente con 1 no-show histórico",
+  "input": {
+    "cliente": {
+      "nombre": "Pedro J.",
+      "tel_wa": "+5215587654321",
+      "historial": {
+        "citas_totales": 4,
+        "no_shows": 1,
+        "ultimo_no_show": "2026-02-15"
+      }
+    },
+    "estilista_solicitada": "Ana",
+    "servicio": "Tinte + corte largo",
+    "duracion_min": 180,
+    "fecha_hora_inicio": "2026-04-20T11:00:00",
+    "precio_estimado_mxn": 1800.00
+  },
+  "expected_output": {
+    "cita_creada": {
+      "id": "C-2026-0043",
+      "status": "pendiente_deposito",
+      "deposito_requerido": true,
+      "deposito_porcentaje": 0.30,
+      "deposito_monto_mxn": 540.00,
+      "razon_deposito": "1 no-show histórico — política depósito 30%",
+      "metodos_pago_aceptados": ["TDC", "SPEI", "OXXO Pay"],
+      "vence_pago_deposito": "2026-04-19T11:00:00"
+    },
+    "si_no_paga_deposito": {
+      "accion": "Cancelar cita 24h antes si no recibimos depósito",
+      "notificar_via_wa": true
+    },
+    "validaciones_locales_pasadas": true,
+    "alertas": [
+      "Solicitar pago de depósito antes de 24h previo a la cita",
+      "Si próximo no-show: política 100% depósito"
+    ]
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Política anti-no-show salones MX",
+  "notas": "Política escalada — paso intermedio antes de depósito completo."
+}

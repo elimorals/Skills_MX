@@ -1,0 +1,48 @@
+{
+  "name": "Urgencia NIVEL 1 — Vólvulo gástrico (torsión) en perro grande",
+  "input": {
+    "mascota": {
+      "especie": "canino",
+      "raza": "Pastor Alemán",
+      "peso_kg": 35,
+      "edad_anios": 7
+    },
+    "signos_reportados_tutor": [
+      "Abdomen distendido como tambor",
+      "Vómito improductivo (intenta pero no sale nada)",
+      "Inquietud + dolor abdominal",
+      "Encías pálidas"
+    ],
+    "tiempo_desde_inicio_signos_min": 30
+  },
+  "expected_output": {
+    "triaje": "NIVEL 1 — CRÍTICO",
+    "diagnostico_presuntivo": "Vólvulo gástrico canino (GDV)",
+    "ventana_atencion_min": 30,
+    "primeros_auxilios_tutor": [
+      "🚨 EMERGENCIA CRÍTICA — VEN AHORA",
+      "NO le des agua ni comida",
+      "NO la fuerces a moverse",
+      "Si tienes oxígeno medical, dáselo",
+      "Llama al hospital 24h en camino para que estén preparados"
+    ],
+    "acciones_clinica": [
+      "Preparar quirófano AHORA",
+      "Alertar a MVZ cirujano",
+      "Sangre tipada disponible",
+      "IV fluidos preparados (Ringer lactato)",
+      "Sedación + descompresión gástrica antes de cirugía"
+    ],
+    "pronostico_sin_atencion": "muerte en 1-4 horas",
+    "pronostico_con_cirugia_rapida": "60-70% supervivencia si cirugía en primeras 4 hrs",
+    "costo_estimado_cirugia_mxn": [12000, 25000],
+    "consentimiento_informado_obligatorio": true,
+    "alertas_criticas": [
+      "Razas grandes de pecho profundo son más susceptibles (Pastor, Doberman, Gran Danés)",
+      "Cualquier demora aumenta mortalidad exponencialmente"
+    ]
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Protocolos veterinarios urgencias caninas",
+  "notas": "Caso clásico nivel 1. Decisión de cirugía en menos de 30 min."
+}

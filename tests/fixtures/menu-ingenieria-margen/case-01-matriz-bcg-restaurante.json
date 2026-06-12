@@ -1,0 +1,71 @@
+{
+  "name": "Matriz BCG aplicada a 5 platos del menú — clasificación + acciones",
+  "input": {
+    "periodo": "2026-03",
+    "platos": [
+      {"nombre": "Tacos al pastor", "precio": 145, "food_cost": 35, "vendidos": 850},
+      {"nombre": "Mole poblano", "precio": 280, "food_cost": 85, "vendidos": 320},
+      {"nombre": "Ensalada César", "precio": 165, "food_cost": 42, "vendidos": 180},
+      {"nombre": "Aguachile", "precio": 310, "food_cost": 145, "vendidos": 65},
+      {"nombre": "Pozole verde", "precio": 195, "food_cost": 75, "vendidos": 90}
+    ]
+  },
+  "expected_output": {
+    "matriz_bcg": {
+      "estrellas": [
+        {
+          "plato": "Tacos al pastor",
+          "popularidad": "alta",
+          "margen_pct": 0.76,
+          "vendidos": 850,
+          "contribucion_mxn": 93500,
+          "accion": "PROMOVER — destacar en menú + mejorar foto si no es premium"
+        }
+      ],
+      "vacas_lecheras": [
+        {
+          "plato": "Mole poblano",
+          "popularidad": "alta",
+          "margen_pct": 0.70,
+          "accion": "SUBIR PRECIO $20-30 — demanda no caerá significativamente"
+        }
+      ],
+      "dilemas": [
+        {
+          "plato": "Ensalada César",
+          "popularidad": "baja",
+          "margen_pct": 0.75,
+          "accion": "REPOSICIONAR — mejor foto, sugerir como acompañamiento de fuertes"
+        }
+      ],
+      "perros": [
+        {
+          "plato": "Aguachile",
+          "popularidad": "baja",
+          "margen_pct": 0.53,
+          "food_cost_alto": true,
+          "accion": "ELIMINAR o REFORMULAR — food cost 47% es prohibitivo"
+        },
+        {
+          "plato": "Pozole verde",
+          "popularidad": "baja",
+          "margen_pct": 0.62,
+          "accion": "DECISIÓN: eliminar si no es plato firma cultural"
+        }
+      ]
+    },
+    "impacto_estimado_acciones": {
+      "subir_precio_mole": "+$8,000 MXN/mes",
+      "eliminar_aguachile": "-$10,725 venta pero +$5,200 reducción costo logístico",
+      "mejorar_cesar": "+50% volumen potencial → +$11,070 MXN/mes",
+      "total_impacto_mensual_mxn": 13_545
+    },
+    "alertas": [
+      "Food cost promedio del menú: 34% — saludable pero perro aguachile distorsiona",
+      "Mole poblano cerca de saturación de precio — validar elasticidad antes"
+    ]
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Menu engineering Kasavana & Smith adaptado",
+  "notas": "Análisis BCG mensual recomendado — vital para gestión rentable."
+}
