@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://plugins-mx/schemas/cobranza-seguimiento-output.schema.json",
+  "title": "Output de cobranza-seguimiento",
+  "type": "object",
+  "required": ["cliente_rfc", "factura_uuid", "dias_mora", "etapa", "accion", "canal", "mensaje"],
+  "properties": {
+    "cliente_rfc": { "type": "string" },
+    "factura_uuid": { "type": "string", "pattern": "^[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$" },
+    "monto_adeudo": { "type": "number" },
+    "fecha_emision_cfdi": { "type": "string", "format": "date" },
+    "dias_mora": { "type": "integer", "minimum": 0 },
+    "etapa": {
+      "type": "string",
+      "enum": [
+        "etapa_1_recordatorio_cordial",
+        "etapa_2_recordatorio_formal",
+        "etapa_3_propuesta_pago_parcial",
+        "etapa_4_carta_formal_requerimiento",
+        "etapa_5_escalacion_extrajudicial"
+      ]
+    },
+    "historial_cliente": {
+      "type": "string",
+      "enum": ["limpio", "intermitente", "reincidente", "primera_vez"]
+    },
+    "accion": { "type": "string" },
+    "canal": { "type": "string", "enum": ["whatsapp", "email", "telefono", "presencial", "legal"] },
+    "mensaje": { "type": "string", "minLength": 20 },
+    "asunto_email": { "type": "string" },
+    "adjuntos": { "type": "array", "items": { "type": "string" } },
+    "tono": { "type": "string", "enum": ["cordial", "amable", "formal", "severo", "legal"] },
+    "siguiente_revision": { "type": "string", "format": "date" },
+    "link_pago": { "type": "string", "format": "uri" }
+  }
+}

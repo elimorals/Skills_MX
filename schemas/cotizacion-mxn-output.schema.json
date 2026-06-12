@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://plugins-mx/schemas/cotizacion-mxn-output.schema.json",
+  "title": "Output de cotizacion-mxn",
+  "description": "Estructura estandarizada de salida del skill cotizacion-mxn (PFAE/RESICO MX).",
+  "type": "object",
+  "required": [
+    "cliente_rfc",
+    "emisor_rfc",
+    "regimen_emisor",
+    "regimen_receptor",
+    "moneda",
+    "tipo_cambio",
+    "conceptos",
+    "subtotal",
+    "iva_trasladado",
+    "isr_retenido",
+    "iva_retenido",
+    "total",
+    "vigencia",
+    "fecha_emision"
+  ],
+  "properties": {
+    "cliente_rfc": { "type": "string", "pattern": "^[A-ZÑ&]{3,4}[0-9]{6}[A-Z0-9]{3}$" },
+    "emisor_rfc": { "type": "string", "pattern": "^[A-ZÑ&]{3,4}[0-9]{6}[A-Z0-9]{3}$" },
+    "regimen_emisor": { "type": "string", "enum": ["612", "626", "601", "603", "605"] },
+    "regimen_receptor": { "type": "string", "enum": ["612", "626", "601", "603", "605", "623"] },
+    "moneda": { "type": "string", "enum": ["MXN", "USD", "EUR", "GBP", "CAD"] },
+    "tipo_cambio": { "type": "number", "exclusiveMinimum": 0 },
+    "conceptos": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["descripcion", "cantidad", "valor_unitario", "importe"],
+        "properties": {
+          "descripcion": { "type": "string", "minLength": 5 },
+          "cantidad": { "type": "number", "exclusiveMinimum": 0 },
+          "valor_unitario": { "type": "number", "exclusiveMinimum": 0 },
+          "importe": { "type": "number" },
+          "clave_prod_serv": { "type": "string", "pattern": "^[0-9]{8}$" }
+        }
+      }
+    },
+    "subtotal": { "type": "number" },
+    "iva_trasladado": { "type": "number", "minimum": 0 },
+    "isr_retenido": { "type": "number", "minimum": 0 },
+    "iva_retenido": { "type": "number", "minimum": 0 },
+    "total": { "type": "number" },
+    "vigencia": {
+      "type": "object",
+      "required": ["dias", "vencimiento"],
+      "properties": {
+        "dias": { "type": "integer", "minimum": 1 },
+        "vencimiento": { "type": "string", "format": "date" }
+      }
+    },
+    "fecha_emision": { "type": "string", "format": "date" },
+    "condiciones_pago": { "type": "string" },
+    "anticipo_requerido": { "type": "number", "minimum": 0 }
+  }
+}

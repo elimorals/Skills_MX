@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://plugins-mx/schemas/garantia-servicio-output.schema.json",
+  "title": "Output de garantia-servicio",
+  "description": "Certificado de garantía para servicios de taller mecánico cumpliendo PROFECO y NMX-D-003-IMNC.",
+  "type": "object",
+  "required": [
+    "orden_trabajo",
+    "cliente",
+    "vehiculo",
+    "servicios_realizados",
+    "plazos_garantia",
+    "exclusiones",
+    "fecha_emision"
+  ],
+  "properties": {
+    "orden_trabajo": { "type": "string" },
+    "cliente": {
+      "type": "object",
+      "required": ["nombre", "rfc", "contacto"],
+      "properties": {
+        "nombre": { "type": "string" },
+        "rfc": { "type": "string" },
+        "contacto": { "type": "string" }
+      }
+    },
+    "vehiculo": {
+      "type": "object",
+      "required": ["marca", "modelo", "anio", "placas"],
+      "properties": {
+        "marca": { "type": "string" },
+        "modelo": { "type": "string" },
+        "anio": { "type": "integer" },
+        "placas": { "type": "string" },
+        "vin": { "type": "string" },
+        "kilometraje_entrada": { "type": "integer" },
+        "kilometraje_salida": { "type": "integer" }
+      }
+    },
+    "servicios_realizados": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["descripcion", "tipo", "garantia_aplicable_dias"],
+        "properties": {
+          "descripcion": { "type": "string" },
+          "tipo": { "type": "string", "enum": ["mano_obra", "refaccion", "mixto"] },
+          "marca_refaccion": { "type": "string" },
+          "modelo_refaccion": { "type": "string" },
+          "garantia_aplicable_dias": { "type": "integer", "minimum": 30 },
+          "garantia_aplicable_km": { "type": "integer" }
+        }
+      }
+    },
+    "plazos_garantia": {
+      "type": "object",
+      "properties": {
+        "mano_obra_dias": { "type": "integer", "minimum": 30, "description": "PROFECO mínimo 30 días" },
+        "refacciones_dias": { "type": "integer", "minimum": 90, "description": "PROFECO típicamente 90 días" },
+        "fecha_vencimiento_mano_obra": { "type": "string", "format": "date" },
+        "fecha_vencimiento_refacciones": { "type": "string", "format": "date" }
+      }
+    },
+    "exclusiones": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Causales de exclusión: uso indebido, falta de mantenimiento, modificaciones, etc."
+    },
+    "procedimiento_reclamo": { "type": "string" },
+    "fecha_emision": { "type": "string", "format": "date" },
+    "firma_taller": { "type": "string" },
+    "firma_cliente": { "type": "string" },
+    "validacion_legal_profeco": { "type": "boolean" }
+  }
+}

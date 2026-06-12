@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://plugins-mx/schemas/reporte-mensual-cliente-output.schema.json",
+  "title": "Output de reporte-mensual-cliente (agencias)",
+  "type": "object",
+  "required": ["cliente", "periodo", "kpis_principales", "canales", "insights", "siguiente_periodo"],
+  "properties": {
+    "cliente": {
+      "type": "object",
+      "required": ["nombre", "industria"],
+      "properties": {
+        "nombre": { "type": "string" },
+        "industria": { "type": "string" },
+        "objetivo_principal": { "type": "string" }
+      }
+    },
+    "periodo": {
+      "type": "object",
+      "required": ["mes", "anio"],
+      "properties": {
+        "mes": { "type": "integer", "minimum": 1, "maximum": 12 },
+        "anio": { "type": "integer" },
+        "mes_anterior_comparativo": { "type": "boolean" }
+      }
+    },
+    "kpis_principales": {
+      "type": "object",
+      "properties": {
+        "inversion_total": { "type": "number" },
+        "leads_obtenidos": { "type": "integer" },
+        "conversiones": { "type": "integer" },
+        "cpa": { "type": "number", "description": "Cost per acquisition" },
+        "roas": { "type": "number", "description": "Return on ad spend" },
+        "ctr_promedio": { "type": "number" },
+        "alcance": { "type": "integer" }
+      }
+    },
+    "canales": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["canal", "inversion", "resultados"],
+        "properties": {
+          "canal": { "type": "string", "enum": ["meta_ads", "google_ads", "tiktok_ads", "linkedin_ads", "youtube", "organico", "email"] },
+          "inversion": { "type": "number" },
+          "resultados": {
+            "type": "object",
+            "properties": {
+              "impresiones": { "type": "integer" },
+              "clicks": { "type": "integer" },
+              "conversiones": { "type": "integer" },
+              "ctr": { "type": "number" },
+              "cpc": { "type": "number" },
+              "cpa": { "type": "number" }
+            }
+          },
+          "variacion_vs_mes_anterior_pct": { "type": "number" }
+        }
+      }
+    },
+    "insights": {
+      "type": "object",
+      "required": ["winners", "losers", "recomendaciones"],
+      "properties": {
+        "winners": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Campañas/anuncios que rindieron mejor — escalar"
+        },
+        "losers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Campañas a pausar o ajustar"
+        },
+        "recomendaciones": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "alertas_atencion": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "siguiente_periodo": {
+      "type": "object",
+      "properties": {
+        "plan_inversion": { "type": "number" },
+        "objetivos": { "type": "array", "items": { "type": "string" } },
+        "experimentos_propuestos": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://plugins-mx/schemas/orden-trabajo-output.schema.json",
+  "title": "Output de orden-trabajo (talleres)",
+  "type": "object",
+  "required": ["orden_id", "cliente", "vehiculo", "diagnostico", "trabajos_autorizados", "presupuesto", "estado", "fecha_apertura"],
+  "properties": {
+    "orden_id": { "type": "string", "pattern": "^OT-[0-9]{4}-[0-9]+$" },
+    "cliente": {
+      "type": "object",
+      "required": ["nombre", "contacto_wa"],
+      "properties": {
+        "nombre": { "type": "string" },
+        "rfc": { "type": "string" },
+        "contacto_wa": { "type": "string" }
+      }
+    },
+    "vehiculo": {
+      "type": "object",
+      "required": ["marca", "modelo", "placas"],
+      "properties": {
+        "marca": { "type": "string" },
+        "modelo": { "type": "string" },
+        "anio": { "type": "integer" },
+        "placas": { "type": "string" },
+        "vin": { "type": "string" },
+        "kilometraje_entrada": { "type": "integer" }
+      }
+    },
+    "diagnostico": {
+      "type": "object",
+      "required": ["mecanico_responsable", "fallas_reportadas", "diagnosticos_tecnicos"],
+      "properties": {
+        "mecanico_responsable": { "type": "string" },
+        "fallas_reportadas": { "type": "array", "items": { "type": "string" } },
+        "diagnosticos_tecnicos": { "type": "array", "items": { "type": "string" } },
+        "fotos_video_evidencia": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "trabajos_autorizados": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["descripcion", "tipo", "costo", "autorizado_por", "fecha_autorizacion"],
+        "properties": {
+          "descripcion": { "type": "string" },
+          "tipo": { "type": "string", "enum": ["mano_obra", "refaccion", "diagnostico"] },
+          "costo": { "type": "number" },
+          "tiempo_estimado_hrs": { "type": "number" },
+          "autorizado_por": { "type": "string", "description": "Cliente vía WhatsApp/llamada/presencial" },
+          "fecha_autorizacion": { "type": "string", "format": "date-time" },
+          "canal_autorizacion": { "type": "string", "enum": ["whatsapp", "llamada", "presencial", "email"] },
+          "evidencia_autorizacion": { "type": "string", "description": "Path al screenshot WhatsApp o grabación llamada" }
+        }
+      }
+    },
+    "presupuesto": {
+      "type": "object",
+      "required": ["subtotal", "iva", "total"],
+      "properties": {
+        "subtotal": { "type": "number" },
+        "iva": { "type": "number" },
+        "total": { "type": "number" },
+        "anticipo": { "type": "number" }
+      }
+    },
+    "estado": {
+      "type": "string",
+      "enum": [
+        "diagnostico_abierto",
+        "esperando_autorizacion",
+        "autorizado_en_curso",
+        "esperando_refaccion",
+        "listo_entrega",
+        "entregado",
+        "garantia_activa",
+        "cerrada"
+      ]
+    },
+    "fecha_apertura": { "type": "string", "format": "date" },
+    "fecha_entrega_estimada": { "type": "string", "format": "date" },
+    "fecha_entrega_real": { "type": "string", "format": "date" }
+  }
+}
