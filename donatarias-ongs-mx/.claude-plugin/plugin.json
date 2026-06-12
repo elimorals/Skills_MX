@@ -1,0 +1,37 @@
+{
+  "name": "donatarias-ongs-mx",
+  "displayName": "Donatarias ONGs MX",
+  "description": "Plugin para donatarias autorizadas (Art. 79 LISR). Cubre CFDI D04 a donantes, declaración anual transparencia (31 mayo), reporte mensual donativos efectivo > $100k (LFPRH), renovación anual autorización SAT. Score 7.5/10. Mercado: ~9,500 donatarias.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
+  },
+  "keywords": [
+    "donataria",
+    "ONG",
+    "transparencia",
+    "D04",
+    "LFPRH",
+    "Art-79",
+    "Anexo-14"
+  ],
+  "skills": [
+    "skills/dashboard-donataria-mes",
+    "skills/cfdi-donativo-d04",
+    "skills/reporte-mensual-efectivo-100k",
+    "skills/declaracion-anual-transparencia",
+    "skills/renovacion-autorizacion-anual"
+  ],
+  "commands": [
+    "commands/dashboard.md",
+    "commands/cfdi.md",
+    "commands/reporte.md",
+    "commands/declaracion.md"
+  ],
+  "dependencies": {
+    "plugins": [
+      "core-mexico"
+    ]
+  }
+}

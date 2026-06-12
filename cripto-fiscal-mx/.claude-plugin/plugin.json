@@ -1,0 +1,22 @@
+{
+  "name": "cripto-fiscal-mx",
+  "displayName": "Cripto-Fiscal MX",
+  "description": "Plugin para personas físicas mexicanas que operan criptomonedas (trading, holding, DeFi, NFTs). Cubre tracking operaciones por exchange (Bitso, Binance, Coinbase, Kraken), cálculo costo base FIFO, permutas gravables (cripto-cripto), staking + airdrops + NFTs, riesgo CARF 2026 (TODO exchange reportará al SAT), generación reporte para declaración anual ISR. Score research: 8.7/10. Mercado: ~5M wallets MX.",
+  "version": "0.1.0",
+  "author": {"name": "Elías Rashid Morales Mendoza", "email": "elimoralsmendox@gmail.com"},
+  "keywords": ["cripto", "bitcoin", "ethereum", "bitso", "binance", "CARF", "ISR-cripto", "FIFO", "permuta-cripto", "NFT", "staking", "DeFi"],
+  "skills": [
+    "skills/dashboard-cripto-portafolio",
+    "skills/importar-operaciones-exchange",
+    "skills/calcular-costo-base-fifo",
+    "skills/calculadora-isr-cripto-detallada",
+    "skills/riesgo-carf-2026"
+  ],
+  "commands": [
+    "commands/dashboard.md",
+    "commands/importar.md",
+    "commands/calcular.md",
+    "commands/riesgo-carf.md"
+  ],
+  "dependencies": {"plugins": ["core-mexico"]}
+}

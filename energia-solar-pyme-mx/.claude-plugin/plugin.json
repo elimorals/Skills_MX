@@ -1,0 +1,37 @@
+{
+  "name": "energia-solar-pyme-mx",
+  "displayName": "Energía Solar PyME MX",
+  "description": "Plugin para PyMEs con paneles solares interconectados a CFE. Cubre lectura factura CFE bidireccional (consumo + inyección), cálculo crédito kWh acumulado, validación contra errores facturación, ROI del sistema, calendario tarifa GDMTH. Score 7.5/10.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
+  },
+  "keywords": [
+    "solar",
+    "CFE",
+    "bidireccional",
+    "GDMTH",
+    "net-metering",
+    "kWh-credito",
+    "fotovoltaico"
+  ],
+  "skills": [
+    "skills/lectura-factura-cfe-pdf",
+    "skills/validacion-factura-cfe",
+    "skills/credito-kwh-tracking",
+    "skills/roi-solar-payback",
+    "skills/optimizacion-tarifa-gdmth"
+  ],
+  "commands": [
+    "commands/lectura.md",
+    "commands/validacion.md",
+    "commands/credito.md",
+    "commands/roi.md"
+  ],
+  "dependencies": {
+    "plugins": [
+      "core-mexico"
+    ]
+  }
+}
