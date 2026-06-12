@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "puebla_mun": {
+      "command": "python",
+      "args": ["-m", "mp_puebla_municipal.server"]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "paypal_mx": {
+      "command": "python",
+      "args": ["-m", "mp_paypal_mx.server"],
+      "env": {
+        "PAYPAL_CLIENT_ID": "${{ PAYPAL_CLIENT_ID:- }}",
+        "PAYPAL_CLIENT_SECRET": "${{ PAYPAL_CLIENT_SECRET:- }}"
+      }
+    }
+  }
+}

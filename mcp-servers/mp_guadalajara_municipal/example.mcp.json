@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "guadalajara_mun": {
+      "command": "python",
+      "args": ["-m", "mp_guadalajara_municipal.server"]
+    }
+  }
+}
