@@ -1,0 +1,102 @@
+[
+  {
+    "query": "puedo deducir la universidad de mi hijo",
+    "should_trigger": true,
+    "rationale": "Universidad NO está en decreto facilidad — skill debe responder explícitamente 'no deducible' (caso edge crítico)"
+  },
+  {
+    "query": "deducción colegiatura primaria 2026",
+    "should_trigger": true,
+    "rationale": "Tope vigente decreto facilidad por nivel — primaria $12,900 anual"
+  },
+  {
+    "query": "colegio no tiene RVOE puedo deducir",
+    "should_trigger": true,
+    "rationale": "Requisito SEP — sin RVOE federal o autorización estatal NO es deducible. Edge case validación"
+  },
+  {
+    "query": "pagué la inscripción en efectivo es deducible",
+    "should_trigger": true,
+    "rationale": "Decreto exige pago electrónico cumplido. Inscripción en efectivo NO califica. Edge case crítico"
+  },
+  {
+    "query": "tengo 3 hijos en distintos niveles",
+    "should_trigger": true,
+    "rationale": "Tope por hijo y nivel — multiplica deducible. Skill debe diferenciar por hijo"
+  },
+  {
+    "query": "complemento InsEduc obligatorio",
+    "should_trigger": true,
+    "rationale": "CFDI con complemento educativo para deducción válida"
+  },
+  {
+    "query": "colegiatura pagada con tarjeta de crédito",
+    "should_trigger": true,
+    "rationale": "Forma de pago electrónica cumple. Skill debe confirmar deducibilidad"
+  },
+  {
+    "query": "factura escuela con CFDI a mi RFC",
+    "should_trigger": true,
+    "rationale": "CFDI receptor del responsable es requisito esencial — solo el padre/tutor que lo recibe deduce"
+  },
+  {
+    "query": "deducción transporte escolar obligatorio",
+    "should_trigger": true,
+    "rationale": "Art. 151 fracc. VII — transporte escolar obligatorio por reglamento de la escuela"
+  },
+  {
+    "query": "preescolar mi hijo 4 años deducción",
+    "should_trigger": true,
+    "rationale": "Preescolar SI deducible (kínder, jardín de niños) — tope $14,200"
+  },
+  {
+    "query": "deducción colegiaturas posgrado",
+    "should_trigger": false,
+    "rationale": "Posgrado NO deducible — más allá de bachillerato no aplica decreto"
+  },
+  {
+    "query": "becarios CONAHCYT",
+    "should_trigger": false,
+    "rationale": "Beca distinta a deducción de colegiatura"
+  },
+  {
+    "query": "cursos online sin colegiatura formal",
+    "should_trigger": false,
+    "rationale": "Cursos no son colegiatura SEP. Skill NO debe triggear"
+  },
+  {
+    "query": "deducción guardería trabajadora",
+    "should_trigger": false,
+    "rationale": "Guardería NO es escuela — distinto régimen (puede ser prestación laboral)"
+  },
+  {
+    "query": "deducción curso de inglés extracurricular",
+    "should_trigger": false,
+    "rationale": "Cursos extracurriculares NO en decreto"
+  },
+  {
+    "query": "factura por libros escolares",
+    "should_trigger": false,
+    "rationale": "Libros NO son colegiatura. Pueden ser deducibles bajo Art. 25, no aquí"
+  },
+  {
+    "query": "uniformes escolares deducción",
+    "should_trigger": false,
+    "rationale": "Uniformes NO son colegiatura — no aplica decreto"
+  },
+  {
+    "query": "colegiatura para sobrino soy tío",
+    "should_trigger": false,
+    "rationale": "Solo deducible para padres o tutores legales según parentesco fiscal"
+  },
+  {
+    "query": "becarios extranjeros con visa",
+    "should_trigger": false,
+    "rationale": "Migración, no colegiaturas. NO triggear este skill"
+  },
+  {
+    "query": "ISR colegio empresa",
+    "should_trigger": false,
+    "rationale": "Pago de impuesto del colegio (PM), no deducción del padre. Skill NO aplica"
+  }
+]

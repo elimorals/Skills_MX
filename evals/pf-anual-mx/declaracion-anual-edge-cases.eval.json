@@ -1,0 +1,102 @@
+[
+  {
+    "query": "declaración anual 2025 con cambio de régimen julio PFAE a RESICO",
+    "should_trigger": true,
+    "rationale": "Cambio de régimen mid-año requiere cálculo seccionado anual. Edge case complejo"
+  },
+  {
+    "query": "tengo arrendamiento e ingresos profesionales hago una sola anual",
+    "should_trigger": true,
+    "rationale": "Ingresos múltiples (régimen 612 + 614) se acumulan en una sola anual. Skill debe consolidar"
+  },
+  {
+    "query": "saldo a favor del año pasado todavía no me lo devuelven",
+    "should_trigger": true,
+    "rationale": "Saldo a favor pendiente de devolución se considera en proyección actual"
+  },
+  {
+    "query": "anual sin actividad económica este año",
+    "should_trigger": true,
+    "rationale": "Declaración en ceros sigue siendo obligatoria si tiene RFC con obligación. Skill debe confirmar"
+  },
+  {
+    "query": "ingresos extranjeros declarar en México",
+    "should_trigger": true,
+    "rationale": "Residente fiscal MX declara ingresos mundiales (Art. 1 LISR). Edge case crítico"
+  },
+  {
+    "query": "primera declaración anual nuevo PFAE",
+    "should_trigger": true,
+    "rationale": "Onboarding del flujo anual completo desde cero"
+  },
+  {
+    "query": "comparar saldo provisionales vs anual",
+    "should_trigger": true,
+    "rationale": "Cruce de pagos provisionales acumulados vs ISR anual — clave del flujo"
+  },
+  {
+    "query": "deducciones personales 2025 con tope global",
+    "should_trigger": true,
+    "rationale": "Tope global 5 UMA o 15% ingresos — clave del cálculo anual"
+  },
+  {
+    "query": "cómo presento mi anual con depósitos sin facturar",
+    "should_trigger": true,
+    "rationale": "Riesgo discrepancia Art. 91 LISR — skill debe alertar"
+  },
+  {
+    "query": "anual con CFDI 69-B definitivos recibidos",
+    "should_trigger": true,
+    "rationale": "Excluir CFDIs de 69-B definitivo de deducibles — alerta crítica del workflow"
+  },
+  {
+    "query": "anual de mi empresa SA de CV",
+    "should_trigger": false,
+    "rationale": "PM régimen 601 tiene proceso anual distinto — pf-anual-mx es para PF"
+  },
+  {
+    "query": "anual de sueldos asalariado patrón único",
+    "should_trigger": false,
+    "rationale": "Si solo tiene un patrón y < $400k, NO está obligado a anual — skill NO aplica directo"
+  },
+  {
+    "query": "declaración informativa de IVA",
+    "should_trigger": false,
+    "rationale": "DIOT, no anual ISR. Skill NO debe triggear"
+  },
+  {
+    "query": "declaración IETU",
+    "should_trigger": false,
+    "rationale": "Impuesto derogado 2014"
+  },
+  {
+    "query": "factura del mes octubre",
+    "should_trigger": false,
+    "rationale": "Emisión CFDI, va a cfdi-emision, no anual"
+  },
+  {
+    "query": "calcula mi pago provisional mensual",
+    "should_trigger": false,
+    "rationale": "Pago provisional mensual, va a freelance-tax-mx, no anual"
+  },
+  {
+    "query": "predial CDMX",
+    "should_trigger": false,
+    "rationale": "Impuesto municipal, fuera de scope ISR anual"
+  },
+  {
+    "query": "cuándo es el deadline anual",
+    "should_trigger": true,
+    "rationale": "Pregunta sobre 30 abril PF / 31 marzo PM. Skill debe responder"
+  },
+  {
+    "query": "cómo solicito devolución del saldo a favor",
+    "should_trigger": true,
+    "rationale": "Devolución es paso final del flujo anual"
+  },
+  {
+    "query": "soy residente extranjero en México con ingresos en USA",
+    "should_trigger": true,
+    "rationale": "Residencia fiscal + ingresos extranjeros — edge case complejo del anual MX"
+  }
+]
