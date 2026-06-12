@@ -1,0 +1,22 @@
+{
+  "name": "consultorio-especialista-mx",
+  "displayName": "Consultorio Especialista MX",
+  "description": "Plugin para médicos especialistas con consultorio privado en México (cardiólogos, dermatólogos, pediatras, gastroenterólogos, ortopedistas, etc.). Cubre agenda de pacientes, expediente clínico NOM-004, receta electrónica COFEPRIS, cobranza de consultas, dashboard mensual, gestión de estudios solicitados. Diferencia clave vs telemedicina-mx: enfoque PRESENCIAL con consultorio físico. Score original: 8.3/10. Mercado: ~80k especialistas en MX.",
+  "version": "0.1.0",
+  "author": {"name": "Elias", "email": "elias@cipreholding.com"},
+  "keywords": ["medico", "especialista", "consultorio", "salud", "COFEPRIS", "NOM-004", "expediente-clinico", "receta"],
+  "skills": [
+    "skills/agenda-pacientes-consultorio",
+    "skills/expediente-clinico-nom004",
+    "skills/receta-electronica-cofepris",
+    "skills/cobranza-consultas-especialista",
+    "skills/dashboard-consultorio-mes"
+  ],
+  "commands": [
+    "commands/agenda.md",
+    "commands/expediente.md",
+    "commands/receta.md",
+    "commands/dashboard.md"
+  ],
+  "dependencies": {"plugins": ["core-mexico"]}
+}

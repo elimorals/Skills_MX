@@ -1,0 +1,22 @@
+{
+  "name": "clinica-salud-mx",
+  "displayName": "Clínica de Salud MX",
+  "description": "Plugin para clínicas multiconsultorio con varios médicos en México (médico-general + especialistas + auxiliares). Cubre gestión multi-médico (agenda compartida, comisión por médico), expedientes pacientes accesibles por todos los médicos autorizados, facturación a paciente o aseguradora, inventario de medicamentos + insumos, y dashboard ejecutivo de la clínica. Extiende consultorio-especialista-mx. Score: 8.3/10.",
+  "version": "0.1.0",
+  "author": {"name": "Elias", "email": "elias@cipreholding.com"},
+  "keywords": ["clinica", "salud", "multimedico", "consultorio", "GMM", "inventario-medicamentos", "panel-medicos"],
+  "skills": [
+    "skills/agenda-multi-medico",
+    "skills/expedientes-compartidos-clinica",
+    "skills/facturacion-paciente-aseguradora",
+    "skills/inventario-medicamentos-insumos",
+    "skills/dashboard-ejecutivo-clinica"
+  ],
+  "commands": [
+    "commands/agenda.md",
+    "commands/expedientes.md",
+    "commands/facturar.md",
+    "commands/inventario.md"
+  ],
+  "dependencies": {"plugins": ["core-mexico", "consultorio-especialista-mx"]}
+}
