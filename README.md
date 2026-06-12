@@ -246,6 +246,59 @@ python scripts/validar_facturama_credenciales.py
 
 ---
 
+## Metodología de desarrollo
+
+El proyecto sigue **spec-first para items novedosos** y **pattern-based para variantes**.
+
+### Spec-first (items novedosos)
+
+Cuando lo siguiente NO tiene patrón previo en el repo, crea spec en `docs/specs/` ANTES de codificar:
+
+- Primer webhook receiver
+- Primer hook runtime Claude Code
+- Primer Playwright real con e.firma
+- Vertical con score >= 9.0 del research
+- Áreas no cubiertas (telemedicina, nómina, seguros, etc.)
+
+Plantilla: `docs/specs/_template.md`. Specs vivos: `docs/specs/README.md`.
+
+### Pattern-based (variantes)
+
+Cuando hay patrón establecido, clonar y ajustar:
+
+- Otro MCP Tier B con API REST → clonar `mp_conekta`
+- Otro vertical scaffold → clonar `salon-mx` o `talleres-mx`
+- Otro workflow variante → clonar `workflow-cobranza-multinivel`
+- Otro skill en vertical existente → seguir convenciones del directorio
+
+### Checklist vivo de progreso
+
+Cada sesión que cierre un módulo debe actualizar `docs/STATUS.md`:
+- Cambiar `[ ]` → `[x]` con fecha + commit hash
+- Si descubres trabajo nuevo no listado: agregar como `[NUEVO desc-YYYY-MM-DD]`
+- Mover "Próximo item recomendado" si lo concluiste
+
+Convención de checks:
+- `[ ]` pendiente
+- `[~ Elias 2026-06-11]` en progreso
+- `[x]` hecho (fecha + commit + nota corta)
+- `[!]` bloqueado (con razón)
+- `[-]` descartado (con razón)
+
+### Ciclo completo
+
+```
+1. Leer docs/STATUS.md → identificar próximo item
+2. Si item novedoso → crear/leer spec en docs/specs/
+3. Codificar siguiendo el spec (o el patrón si aplica)
+4. Tests verde + lint passing
+5. Commit + push
+6. Actualizar docs/STATUS.md con [x] + commit hash
+7. Si descubriste algo nuevo: agregar al STATUS o crear spec nuevo
+```
+
+---
+
 ## Convenciones técnicas
 
 - **`description:` del frontmatter SKILL.md**: español MX + sinónimos inglés para triggering robusto
