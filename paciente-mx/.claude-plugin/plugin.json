@@ -1,0 +1,22 @@
+{
+  "name": "paciente-mx",
+  "displayName": "Paciente MX",
+  "description": "Plugin para el paciente / consumidor de salud en México. Cubre gestión de citas con múltiples médicos, expediente personal de salud (uso del paciente), tracking de medicamentos (recordatorios), estudios médicos (laboratorios), CFDIs D01 deducibles, gestión de GMM. Combina enfoque para pacientes regulares + adultos mayores (geriatria-mx) + uso laboratorios. Score: 7.5/10.",
+  "version": "0.1.0",
+  "author": {"name": "Elias", "email": "elias@cipreholding.com"},
+  "keywords": ["paciente", "salud", "citas", "medicamentos", "laboratorio", "geriatria", "expediente-personal"],
+  "skills": [
+    "skills/agenda-citas-personal",
+    "skills/expediente-salud-personal",
+    "skills/tracking-medicamentos-recordatorios",
+    "skills/estudios-laboratorios",
+    "skills/cfdis-medicos-deducibles-acumulados"
+  ],
+  "commands": [
+    "commands/citas.md",
+    "commands/medicamentos.md",
+    "commands/estudios.md",
+    "commands/deducibles.md"
+  ],
+  "dependencies": {"plugins": ["core-mexico"]}
+}

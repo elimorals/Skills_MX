@@ -1,0 +1,22 @@
+{
+  "name": "psicoterapia-mx",
+  "displayName": "Psicoterapia MX",
+  "description": "Plugin para psicólogos/psicoterapeutas en práctica privada en México. Cubre agenda de sesiones, expediente psicológico confidencial (con cifrado AES-256 extra estricto, datos sensibles LGPDPPSO), consentimiento informado terapéutico, cobranza recurrente con plantillas empáticas, dashboard mensual. Score research: 7.8/10. ~50k psicólogos clínicos en MX.",
+  "version": "0.1.0",
+  "author": {"name": "Elias", "email": "elias@cipreholding.com"},
+  "keywords": ["psicologo", "psicoterapia", "psicologia", "salud-mental", "LGPDPPSO", "confidencialidad"],
+  "skills": [
+    "skills/sesiones-tracking-psicoterapia",
+    "skills/consentimiento-terapia-digital",
+    "skills/cobranza-recurrente-terapia",
+    "skills/gestion-pacientes-confidencial",
+    "skills/dashboard-terapeuta-mes"
+  ],
+  "commands": [
+    "commands/sesiones.md",
+    "commands/consentimiento.md",
+    "commands/cobranza.md",
+    "commands/dashboard.md"
+  ],
+  "dependencies": {"plugins": ["core-mexico"]}
+}

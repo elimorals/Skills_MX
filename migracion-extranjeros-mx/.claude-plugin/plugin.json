@@ -1,0 +1,22 @@
+{
+  "name": "migracion-extranjeros-mx",
+  "displayName": "Migración Extranjeros MX",
+  "description": "Plugin para extranjeros viviendo en México que necesitan gestionar trámites migratorios (visa, residencia temporal/permanente, FMM, renovaciones), regularización, asesoría laboral para extranjeros, e integración fiscal. Mercado: ~1.5M extranjeros con residencia formal. Score: 7.5/10.",
+  "version": "0.1.0",
+  "author": {"name": "Elias", "email": "elias@cipreholding.com"},
+  "keywords": ["migracion", "INM", "residencia", "visa", "FMM", "extranjero", "regularizacion"],
+  "skills": [
+    "skills/tramites-residencia-inm",
+    "skills/renovacion-vigencias-migra",
+    "skills/regularizacion-migratoria",
+    "skills/dashboard-tramite-migratorio",
+    "skills/asesoria-laboral-extranjero"
+  ],
+  "commands": [
+    "commands/tramites.md",
+    "commands/renovar.md",
+    "commands/dashboard.md",
+    "commands/regularizacion.md"
+  ],
+  "dependencies": {"plugins": ["core-mexico"]}
+}

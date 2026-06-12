@@ -1,0 +1,22 @@
+{
+  "name": "servicios-publicos-mx",
+  "displayName": "Servicios Públicos MX",
+  "description": "Plugin para gestión integral de facturas de servicios públicos en México: CFE (electricidad), agua, predial municipal, gas natural, drenaje. Lectura PDF facturas, detección anomalías consumo (fugas, sobrecargos), alertas vencimientos, CFDI deducible. Útil para PyMEs y hogares con múltiples servicios. Score: 7.8/10.",
+  "version": "0.1.0",
+  "author": {"name": "Elias", "email": "elias@cipreholding.com"},
+  "keywords": ["cfe", "agua", "predial", "gas", "servicios-publicos", "factura", "anomalia-consumo"],
+  "skills": [
+    "skills/dashboard-facturas-servicios",
+    "skills/alertas-vencimientos-pagos",
+    "skills/detector-anomalias-consumo",
+    "skills/programacion-pagos-batch",
+    "skills/cfdi-servicios-deducible"
+  ],
+  "commands": [
+    "commands/dashboard.md",
+    "commands/alertas.md",
+    "commands/anomalias.md",
+    "commands/programar-pagos.md"
+  ],
+  "dependencies": {"plugins": ["core-mexico"]}
+}
