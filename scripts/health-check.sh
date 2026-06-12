@@ -93,35 +93,35 @@ metric specs "$SPECS"
 # ─────────────────────────────────────────────────────────────
 section "Cobertura"
 
-# Skills con fixtures
-SKILLS_WITH_FIXTURES=0
-SKILLS_WITHOUT_FIXTURES=()
-while IFS= read -r skill_path; do
-  skill_name=$(basename "$(dirname "$skill_path")")
-  if [ -d "$ROOT/tests/fixtures/$skill_name" ] && ls "$ROOT/tests/fixtures/$skill_name"/*.json >/dev/null 2>&1; then
-    SKILLS_WITH_FIXTURES=$((SKILLS_WITH_FIXTURES+1))
-  else
-    SKILLS_WITHOUT_FIXTURES+=("$skill_name")
+# Skills ÚNICOS (deduplicando _shared/ sincronizado en verticales)
+# Cada SKILL.md duplicado por sync no debería contar como "sin cobertura".
+SKILLS_UNICOS=$(find "$ROOT" -name "SKILL.md" -not -path "*/node_modules/*" -not -path "*/.git/*" 2>/dev/null | xargs -I {} dirname {} | xargs -I {} basename {} | sort -u | wc -l | tr -d ' ')
+
+# Skills con fixtures (por nombre único)
+SKILLS_WITH_FIXTURES=$(find "$ROOT" -name "SKILL.md" -not -path "*/node_modules/*" -not -path "*/.git/*" 2>/dev/null | xargs -I {} dirname {} | xargs -I {} basename {} | sort -u | while read s; do
+  if [ -d "$ROOT/tests/fixtures/$s" ] && ls "$ROOT/tests/fixtures/$s"/*.json >/dev/null 2>&1; then
+    echo "$s"
   fi
-done < <(find "$ROOT" -name "SKILL.md" -not -path "*/node_modules/*" -not -path "*/.git/*" 2>/dev/null)
+done | wc -l | tr -d ' ')
 
 FIX_PCT=0
-[ "$SKILLS" -gt 0 ] && FIX_PCT=$((SKILLS_WITH_FIXTURES * 100 / SKILLS))
+[ "$SKILLS_UNICOS" -gt 0 ] && FIX_PCT=$((SKILLS_WITH_FIXTURES * 100 / SKILLS_UNICOS))
 
-if [ "$FIX_PCT" -ge 50 ]; then ok "Skills con fixtures: $SKILLS_WITH_FIXTURES/$SKILLS (${FIX_PCT}%)"
-elif [ "$FIX_PCT" -ge 25 ]; then warn "Skills con fixtures: $SKILLS_WITH_FIXTURES/$SKILLS (${FIX_PCT}%) — objetivo 50%"
-else err "Skills con fixtures: $SKILLS_WITH_FIXTURES/$SKILLS (${FIX_PCT}%) — muy bajo, objetivo 50%"; fi
+if [ "$FIX_PCT" -ge 50 ]; then ok "Skills únicos con fixtures: $SKILLS_WITH_FIXTURES/$SKILLS_UNICOS (${FIX_PCT}%)"
+elif [ "$FIX_PCT" -ge 25 ]; then warn "Skills únicos con fixtures: $SKILLS_WITH_FIXTURES/$SKILLS_UNICOS (${FIX_PCT}%) — objetivo 50%"
+else err "Skills únicos con fixtures: $SKILLS_WITH_FIXTURES/$SKILLS_UNICOS (${FIX_PCT}%) — muy bajo, objetivo 50%"; fi
 
 metric fixtures_coverage_pct "$FIX_PCT"
+metric skills_unicos "$SKILLS_UNICOS"
 
-# Skills con evals
+# Skills con evals (por nombre único)
 SKILLS_WITH_EVALS=$(find "$ROOT/evals" -name "*.eval.json" -exec basename {} .eval.json \; 2>/dev/null | sort -u | wc -l | tr -d ' ')
 EVAL_PCT=0
-[ "$SKILLS" -gt 0 ] && EVAL_PCT=$((SKILLS_WITH_EVALS * 100 / SKILLS))
+[ "$SKILLS_UNICOS" -gt 0 ] && EVAL_PCT=$((SKILLS_WITH_EVALS * 100 / SKILLS_UNICOS))
 
-if [ "$EVAL_PCT" -ge 80 ]; then ok "Skills con evals: $SKILLS_WITH_EVALS/$SKILLS (${EVAL_PCT}%)"
-elif [ "$EVAL_PCT" -ge 50 ]; then warn "Skills con evals: $SKILLS_WITH_EVALS/$SKILLS (${EVAL_PCT}%) — objetivo 80%"
-else err "Skills con evals: $SKILLS_WITH_EVALS/$SKILLS (${EVAL_PCT}%) — muy bajo, objetivo 80%"; fi
+if [ "$EVAL_PCT" -ge 80 ]; then ok "Skills únicos con evals: $SKILLS_WITH_EVALS/$SKILLS_UNICOS (${EVAL_PCT}%)"
+elif [ "$EVAL_PCT" -ge 50 ]; then warn "Skills únicos con evals: $SKILLS_WITH_EVALS/$SKILLS_UNICOS (${EVAL_PCT}%) — objetivo 80%"
+else err "Skills únicos con evals: $SKILLS_WITH_EVALS/$SKILLS_UNICOS (${EVAL_PCT}%) — muy bajo, objetivo 80%"; fi
 
 metric evals_coverage_pct "$EVAL_PCT"
 
