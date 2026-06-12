@@ -1,0 +1,97 @@
+{
+  "name": "CFDI end-to-end contra Facturama sandbox real",
+  "descripcion": "Fixture diseñado para correr contra cuenta Facturama sandbox real (no mock). Cuando se ejecuta sin credenciales válidas debe caer a modo mock y aún así pasar las validaciones estructurales locales.",
+  "requiere_credenciales": {
+    "FACTURAMA_USER": "obligatorio para path real",
+    "FACTURAMA_PASSWORD": "obligatorio para path real",
+    "FACTURAMA_ENV": "sandbox (recomendado para este fixture)"
+  },
+  "input": {
+    "emisor": {
+      "rfc": "EKU9003173C9",
+      "razon_social": "ESCUELA KEMPER URGATE",
+      "regimen_fiscal": "601",
+      "cp_lugar_expedicion": "42501"
+    },
+    "receptor": {
+      "rfc": "URE180429TM6",
+      "nombre": "UNIVERSIDAD ROBOTICA ESPAÑOLA",
+      "regimen_fiscal": "601",
+      "cp_domicilio": "86991",
+      "uso_cfdi": "G03"
+    },
+    "comprobante": {
+      "tipo_comprobante": "I",
+      "moneda": "MXN",
+      "metodo_pago": "PUE",
+      "forma_pago": "03",
+      "exportacion": "01"
+    },
+    "conceptos": [
+      {
+        "clave_prod_serv": "80141600",
+        "descripcion": "Servicios de consultoría informática (fixture de prueba)",
+        "clave_unidad": "E48",
+        "cantidad": 1,
+        "valor_unitario": 1000.00,
+        "importe": 1000.00,
+        "objeto_imp": "02"
+      }
+    ]
+  },
+  "nota_rfcs": "Estos RFCs son los OFICIALES de prueba del SAT publicados como ficticios para sandboxes PAC. EKU9003173C9 y URE180429TM6 son ampliamente usados por todos los PACs como receptor/emisor de prueba.",
+  "expected_output_payload_simplificado": {
+    "subtotal": 1000.00,
+    "impuestos_trasladados": [{"tipo": "IVA", "tasa": 0.16, "importe": 160.00}],
+    "impuestos_retenidos": [],
+    "total": 1160.00,
+    "validaciones_locales_pasadas": true,
+    "alertas": []
+  },
+  "expected_mock_response": {
+    "simulated": true,
+    "uuid": "<sintético — formato 8-4-4-4-12 hex válido>",
+    "fecha_timbrado": "<ISO timestamp del momento de la llamada>",
+    "sello_sat": "<sintético>",
+    "cadena_original": "<sintética con datos del payload>"
+  },
+  "expected_sandbox_response": {
+    "simulated": false,
+    "uuid": "<real, asignado por Facturama sandbox>",
+    "fecha_timbrado": "<ISO timestamp real>",
+    "sello_sat": "<sello real Facturama sandbox>",
+    "cadena_original": "<cadena real>",
+    "xml_disponible": true,
+    "pdf_disponible": true
+  },
+  "como_ejecutar": [
+    "1. (Opcional para path real) Configurar .env con FACTURAMA_USER, FACTURAMA_PASSWORD, FACTURAMA_ENV=sandbox",
+    "2. python scripts/validar_facturama_credenciales.py  # verificar conexión",
+    "3. Desde Claude Code con plugin core-mexico cargado:",
+    "   /core:timbrar-cfdi receptor URE180429TM6, consultoría 1000 MXN",
+    "4. O via workflow completo (incluye due-diligence + WhatsApp si está configurado):",
+    "   /core:emitir-y-notificar receptor URE180429TM6, consultoría 1000 MXN"
+  ],
+  "criterios_aceptacion": {
+    "modo_mock_sin_credenciales": [
+      "Respuesta marca simulated: true",
+      "UUID generado tiene formato válido (8-4-4-4-12 hex)",
+      "Total = 1160.00",
+      "Validaciones locales pasan sin alertas"
+    ],
+    "modo_sandbox_con_credenciales_validas": [
+      "Respuesta marca simulated: false",
+      "UUID es asignado por Facturama (verificable en su panel)",
+      "Sello SAT presente y no vacío",
+      "XML descargable",
+      "Status post-timbrado: Vigente"
+    ],
+    "modo_credenciales_invalidas": [
+      "Error tipo AuthError (HTTP 401)",
+      "Mensaje claro sugiriendo verificar FACTURAMA_USER y FACTURAMA_PASSWORD"
+    ]
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "RFCs ficticios oficiales: ver docs Facturama sandbox + 'RFCs para pruebas' del SAT",
+  "notas": "Este fixture cierra la brecha mock → sandbox. Si pasa en modo mock pero falla en sandbox, el bug está en el cliente o en la construcción del payload. Si falla en mock, hay un problema en el skill cfdi-emision o iva-retenciones-mx."
+}
