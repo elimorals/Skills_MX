@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "didi_food_partners": {
+      "command": "python",
+      "args": ["-m", "mp_didi_food_partners.server"],
+      "env": {
+        "DIDI_FOOD_TOKEN": "${DIDI_FOOD_TOKEN:-}",
+        "DIDI_FOOD_RESTAURANT_ID": "${DIDI_FOOD_RESTAURANT_ID:-}"
+      }
+    }
+  }
+}

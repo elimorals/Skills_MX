@@ -62,6 +62,9 @@ testpaths = [
     "mp_cabify_business/tests",
     "mp_amazon_mx_seller/tests",
     "mp_softrestaurant/tests",
+    "mp_rappi_partners/tests",
+    "mp_didi_food_partners/tests",
+    "mp_uber_eats_partners/tests",
 ]
 python_files = ["test_*.py"]
 asyncio_mode = "auto"
