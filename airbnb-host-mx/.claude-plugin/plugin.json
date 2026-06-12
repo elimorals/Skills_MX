@@ -1,0 +1,22 @@
+{
+  "name": "airbnb-host-mx",
+  "displayName": "Airbnb Host MX",
+  "description": "Plugin para hosts de Airbnb y plataformas de alquiler corto plazo (Vrbo, Booking) en México. Cubre tracking de reservas, ingresos por noche, ISH (Impuesto Sobre Hospedaje estatal típico 3-4%), retenciones de la plataforma (Art. 113-A LISR 4% ISR + 8% IVA), CFDI al huésped si lo pide, cumplimiento regulatorio CDMX (registro RAB obligatorio desde 2025), gastos deducibles (limpieza, mantenimiento, servicios), y reporte mensual de ocupación. Score original del research: 8.2/10.",
+  "version": "0.1.0",
+  "author": {"name": "Elias", "email": "elias@cipreholding.com"},
+  "keywords": ["airbnb", "vrbo", "booking", "host", "hospedaje", "ISH", "art-113-A", "RAB", "ocupacion"],
+  "skills": [
+    "skills/dashboard-host",
+    "skills/reservas-y-ocupacion",
+    "skills/fiscal-host-art113a",
+    "skills/cumplimiento-rab-cdmx",
+    "skills/gastos-deducibles-host"
+  ],
+  "commands": [
+    "commands/dashboard.md",
+    "commands/reservas.md",
+    "commands/fiscal.md",
+    "commands/cumplimiento.md"
+  ],
+  "dependencies": {"plugins": ["core-mexico"]}
+}

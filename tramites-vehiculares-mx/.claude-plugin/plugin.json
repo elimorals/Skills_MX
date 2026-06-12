@@ -1,0 +1,22 @@
+{
+  "name": "tramites-vehiculares-mx",
+  "displayName": "Trámites Vehiculares MX",
+  "description": "Plugin para personas con vehículos en México (40M+ vehículos registrados). Cubre seguimiento integral de obligaciones por entidad federativa: multas (CDMX/EdoMex/MTY/otros), verificación vehicular obligatoria semestral, refrendo anual, tenencia (estados que aún cobran), trámites de placas y tarjeta de circulación, y consulta de adeudos. Detecta vencimientos próximos y sugiere acciones. Score original del research: 9.0/10.",
+  "version": "0.1.0",
+  "author": {"name": "Elias", "email": "elias@cipreholding.com"},
+  "keywords": ["vehiculo", "auto", "multas", "verificacion", "tenencia", "refrendo", "placas", "mexico", "cdmx", "edomex", "monterrey"],
+  "skills": [
+    "skills/dashboard-vehicular",
+    "skills/multas-deteccion-pago",
+    "skills/verificacion-vehicular",
+    "skills/refrendo-y-tenencia",
+    "skills/tramites-placas-tarjeta"
+  ],
+  "commands": [
+    "commands/dashboard.md",
+    "commands/multas.md",
+    "commands/verificar.md",
+    "commands/refrendo.md"
+  ],
+  "dependencies": {"plugins": ["core-mexico"]}
+}
