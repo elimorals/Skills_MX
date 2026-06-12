@@ -38,6 +38,7 @@ from shared.errors import AuthError, ConfigError, McpError, UpstreamError
 from shared.mock import is_mock_mode, mark_simulated
 
 from mp_sat_portal.efirma_loader import EfirmaLoader, EfirmaMetadata
+from mp_sat_portal.selectors import SelectorsV1, default_selectors
 
 
 NAMESPACE = "sat_portal_pw"
@@ -89,11 +90,13 @@ class SatPlaywrightClient:
         bitacora: Bitacora | None = None,
         session_cache_path: Path | None = None,
         headless: bool = True,
+        selectors: SelectorsV1 | None = None,
     ) -> None:
         self.efirma = efirma
         self.bitacora = bitacora or Bitacora(NAMESPACE)
         self.session_cache_path = session_cache_path or DEFAULT_SESSION_CACHE
         self.headless = headless
+        self.selectors = selectors or default_selectors()
         self._browser_context = None  # type: ignore[var-annotated]
 
     @classmethod
@@ -292,7 +295,62 @@ class SatPlaywrightClient:
         return self._real_not_implemented("descargar_cfdi_masivo", params)
 
     def _real_verificar_efirma_vigente(self, params: dict[str, Any]) -> dict[str, Any]:
-        return self._real_not_implemented("verificar_efirma_vigente", params)
+        """Verifica e.firma vigente haciendo login real al portal SAT.
+
+        Flujo: abrir browser → login con .cer/.key/password → si login OK,
+        e.firma vigente; si rechaza, e.firma vencida o inválida.
+
+        Este es el `_real_*` más simple porque sólo necesita el flujo de login
+        — no requiere navegación a ninguna sección específica del portal.
+
+        ⚠ Selectores en `selectors.py` son hipótesis. Validar contra el portal
+        vigente al momento de activar producción.
+        """
+        from mp_sat_portal._browser_helpers import (
+            LoginFailedError,
+            browser_context,
+            dump_failure_artifacts,
+            login_efirma,
+        )
+
+        if self.efirma is None:
+            # Defensive: get_mode() ya filtró este caso, pero por si acaso.
+            return self._real_not_implemented("verificar_efirma_vigente", params)
+
+        with browser_context(headless=self.headless) as (_browser, _ctx, page):
+            try:
+                login_efirma(page, efirma=self.efirma, selectors=self.selectors)
+            except LoginFailedError as exc:
+                artifacts = dump_failure_artifacts(
+                    page, operation="verificar_efirma_vigente"
+                )
+                return {
+                    "operation": "verificar_efirma_vigente",
+                    "data": {
+                        "rfc": params.get("rfc"),
+                        "vigente": False,
+                        "razon": str(exc),
+                    },
+                    "simulated": False,
+                    "notes": [
+                        "login rechazado por portal SAT",
+                        f"artifacts guardados en {artifacts}",
+                    ],
+                }
+            # Login OK → la e.firma está vigente. Complementamos con metadata local.
+            meta = self.efirma.metadata()
+            return {
+                "operation": "verificar_efirma_vigente",
+                "data": {
+                    "rfc": meta.rfc,
+                    "vigente": True,
+                    "vigencia_hasta": meta.not_after.isoformat(),
+                    "dias_para_vencer": meta.days_until_expiry,
+                    "verificado_contra_portal": True,
+                },
+                "simulated": False,
+                "notes": ["login exitoso en portal SAT, e.firma vigente"],
+            }
 
     def _real_descargar_acuse(self, params: dict[str, Any]) -> dict[str, Any]:
         return self._real_not_implemented("descargar_acuse", params)

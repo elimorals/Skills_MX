@@ -1,11 +1,11 @@
 # mp_sat_portal — activación del path Playwright real
 
 > Spec: `docs/specs/02-sat-portal-playwright-real.md`
-> Esqueleto codificado: `efirma_loader.py` + `playwright_client.py`
+> Esqueleto codificado: `efirma_loader.py` + `playwright_client.py` + `selectors.py` + `_browser_helpers.py`
 
-Este documento describe los pasos **humanos** necesarios para pasar del modo mock al path real con Playwright + e.firma. La estructura del cliente y validación de e.firma ya están codificadas. Falta solo lo que requiere intervención del operador.
+Este documento describe los pasos **humanos** necesarios para pasar del modo mock al path real con Playwright + e.firma. La estructura del cliente, validación de e.firma, registry de selectores versionado y helpers de browser ya están codificados. Falta solo lo que requiere intervención del operador (e.firma vigente + ajuste de selectores contra el portal vigente).
 
-## Estado del código
+## Estado del código (actualizado 2026-06-12)
 
 | Componente | Estado |
 |---|---|
@@ -17,9 +17,48 @@ Este documento describe los pasos **humanos** necesarios para pasar del modo moc
 | Precheck e.firma vigente | ✅ |
 | Detector de breakage de selectores (helper) | ✅ |
 | Bitácora con RFC hasheado | ✅ |
-| 20 tests con cert self-signed | ✅ |
+| **94 tests** con cert self-signed (+13 nuevos 2026-06-12) | ✅ |
 | Stubs honestos de 6 tools (`_real_*` retornan flag explícito) | ✅ |
-| **Browser automation real** (selectores + click + descarga) | ⏳ requiere humano |
+| **`selectors.py`** — registry versionado `SelectorsV1` con flujos login/CSF/Buzón/CFDI/acuse | ✅ 2026-06-12 |
+| **`_browser_helpers.py`** — `browser_context()`, `login_efirma()`, `dump_failure_artifacts()`, `with_retry()` | ✅ 2026-06-12 |
+| **`_real_verificar_efirma_vigente`** — implementación parametrizada con login real | ✅ 2026-06-12 |
+| **Browser automation real** (5 `_real_*` restantes: CSF, Buzón, CFDI masivo, acuse) | ⏳ requiere humano + portal vigente |
+| **Validar selectores `SelectorsV1` contra portal SAT real** | ⏳ requiere humano |
+
+## Patrón para implementar los 5 `_real_*` restantes
+
+Con `selectors.py` y `_browser_helpers.py` el patrón es:
+
+```python
+def _real_descargar_csf(self, params: dict[str, Any]) -> dict[str, Any]:
+    from mp_sat_portal._browser_helpers import (
+        browser_context, dump_failure_artifacts, login_efirma,
+    )
+
+    with browser_context(headless=self.headless) as (_b, _ctx, page):
+        try:
+            login_efirma(page, efirma=self.efirma, selectors=self.selectors)
+            # ─── lógica específica de CSF ───
+            page.click(self.selectors.csf_menu_link)
+            page.click(self.selectors.csf_button_descargar)
+            with page.expect_download() as dl:
+                page.click(self.selectors.csf_download_link)
+            pdf_path = dl.value.path()
+            return {
+                "operation": "descargar_csf",
+                "data": {"rfc": params["rfc"], "pdf_path": str(pdf_path)},
+                "simulated": False,
+                "notes": [],
+            }
+        except Exception as exc:
+            artifacts = dump_failure_artifacts(page, operation="descargar_csf")
+            raise UpstreamError(f"CSF falló: {exc}", {"artifacts": artifacts})
+```
+
+El humano sólo necesita:
+1. Reemplazar selectores en `selectors.py` con los del portal vigente.
+2. Implementar la lógica específica de cada flujo (3-15 líneas por método).
+3. Probar con e.firma real vigente.
 
 ## Pasos para activar el path real
 
