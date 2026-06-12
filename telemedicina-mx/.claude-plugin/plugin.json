@@ -1,0 +1,31 @@
+{
+  "name": "telemedicina-mx",
+  "displayName": "Telemedicina MX",
+  "description": "Plugin para médicos, psicólogos y profesionales de salud que ofrecen CONSULTAS REMOTAS en México. Cubre receta electrónica COFEPRIS (con bloqueo automático Grupos I-II), expediente clínico NOM-004 cifrado, consentimiento informado digital, agenda virtual con integración Zoom/Meet, CFDI uso D01, recordatorios WhatsApp, validación cédula profesional. Compliant con Reforma LGS enero 2026. Score research: 8.5/10. Mercado: ~35k profesionales de salud que migraron a telemedicina post-COVID.",
+  "version": "0.1.0",
+  "author": {"name": "Elías Rashid Morales Mendoza", "email": "elimoralsmendox@gmail.com"},
+  "keywords": ["telemedicina", "consulta-remota", "COFEPRIS", "NOM-004", "NOM-024", "receta-electronica", "expediente-clinico", "psicologia", "salud", "LGPDPPSO"],
+  "skills": [
+    "skills/dashboard-consultas-telemedicina",
+    "skills/agendar-consulta-remota",
+    "skills/expediente-clinico-tele",
+    "skills/receta-electronica-tele-cofepris",
+    "skills/consentimiento-informado-tele",
+    "skills/cfdi-honorario-medico-d01",
+    "skills/cobranza-terapia-recurrente-tele",
+    "skills/recordatorios-paciente-wa",
+    "skills/interacciones-medicamentosas-basicas",
+    "skills/compliance-lgpdppso-salud"
+  ],
+  "commands": [
+    "commands/dashboard.md",
+    "commands/agendar.md",
+    "commands/receta.md",
+    "commands/expediente.md",
+    "commands/facturar.md"
+  ],
+  "agents": [
+    "agents/workflow-consulta-remota-completa.md"
+  ],
+  "dependencies": {"plugins": ["core-mexico"]}
+}
