@@ -1,0 +1,38 @@
+{
+  "name": "Cita normal sin depósito requerido — cliente sin no-shows",
+  "input": {
+    "cliente": {
+      "nombre": "Ana M.",
+      "tel_wa": "+5215512345678",
+      "historial": {
+        "citas_totales": 8,
+        "no_shows": 0,
+        "cancelaciones_late": 1
+      }
+    },
+    "estilista_solicitada": "Carla",
+    "servicio": "Corte mediano + tinte completo",
+    "duracion_min": 150,
+    "fecha_hora_inicio": "2026-04-15T14:00:00",
+    "precio_estimado_mxn": 1450.00
+  },
+  "expected_output": {
+    "cita_creada": {
+      "id": "C-2026-0042",
+      "status": "confirmada",
+      "deposito_requerido": false,
+      "razon_sin_deposito": "Sin no-shows en histórico"
+    },
+    "buffer_pre_post_min": 15,
+    "recordatorios_programados": [
+      {"tiempo_antes": "24h", "fecha_envio": "2026-04-14T14:00:00", "template": "recordatorio_24h"},
+      {"tiempo_antes": "2h", "fecha_envio": "2026-04-15T12:00:00", "template": "recordatorio_2h"},
+      {"tiempo_antes": "30min", "fecha_envio": "2026-04-15T13:30:00", "template": "llegando_pronto"}
+    ],
+    "validaciones_locales_pasadas": true,
+    "alertas": []
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Buenas prácticas salones MX",
+  "notas": "Caso base — cliente confiable, sin fricción adicional."
+}

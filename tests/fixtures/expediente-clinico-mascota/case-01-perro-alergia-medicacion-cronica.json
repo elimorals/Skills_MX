@@ -1,0 +1,51 @@
+{
+  "name": "Expediente perro con alergia documentada + medicación crónica",
+  "input": {
+    "mascota": {
+      "id": "PET-2026-001234",
+      "nombre": "Luna",
+      "especie": "canino",
+      "raza": "Labrador",
+      "peso_kg": 28.5,
+      "edad_anios": 5,
+      "esterilizado": true
+    },
+    "alergia_reportada": "Reacción a Penicilina (anafilaxia)",
+    "medicacion_actual": "Carprofen 75mg/día por displasia cadera"
+  },
+  "expected_output": {
+    "expediente_completo": {
+      "alergias_criticas": [
+        {
+          "alergeno": "Penicilina",
+          "severidad": "ANAFILAXIA",
+          "evento_documentado": "2023-08-15",
+          "marca_visual_expediente": "🚨 ROJO"
+        }
+      ],
+      "medicacion_cronica": [
+        {
+          "medicamento": "Carprofen 75mg",
+          "dosis": "1 tab cada 24h",
+          "via": "oral",
+          "indicacion": "Displasia cadera",
+          "prescriptor_cedula_mvz": "12345",
+          "interacciones_advertir": ["NSAIDs adicionales", "Esteroides"]
+        }
+      ],
+      "alertas_pre_consulta": [
+        "⚠ NO recetar ningún betalactámico (Penicilina, Amoxicilina, etc.)",
+        "⚠ Si requiere anti-inflamatorio extra: NO combinar con Carprofen sin lavado",
+        "Verificar función renal cada 6 meses por uso prolongado NSAID"
+      ]
+    },
+    "vacunas_check": {
+      "esquema_completo": true,
+      "vacunas_proximas": ["Multivalente refuerzo: 2026-06-15"]
+    },
+    "validaciones_locales_pasadas": true
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "NOM-007-SAG/SCFI-2014 + criterios MVZ",
+  "notas": "Expediente con alertas críticas — sistema debe destacar antes de cualquier nueva consulta."
+}

@@ -1,0 +1,68 @@
+{
+  "name": "Cotización envío 3kg CDMX → GDL — comparativa 4 paqueterías",
+  "input": {
+    "origen": {"cp": "06700", "ciudad": "CDMX"},
+    "destino": {"cp": "44100", "ciudad": "Guadalajara"},
+    "paquete": {
+      "peso_real_kg": 3.0,
+      "dimensiones_cm": {"largo": 30, "ancho": 20, "alto": 15}
+    },
+    "valor_declarado_mxn": 2500.00,
+    "urgencia": "estandar"
+  },
+  "expected_output": {
+    "calculo_peso_volumetrico": {
+      "formula": "(30 × 20 × 15) / 5000 = 1.8 kg",
+      "peso_volumetrico_kg": 1.8,
+      "peso_real_kg": 3.0,
+      "peso_facturable_kg": 3.0
+    },
+    "zona": "nacional_interestatal",
+    "cotizaciones": [
+      {
+        "carrier": "estafeta",
+        "servicio": "Día siguiente",
+        "tiempo_dias": "1-2",
+        "precio_envio_mxn": 165,
+        "seguro_mxn": 50,
+        "total_mxn": 215,
+        "recomendado": true
+      },
+      {
+        "carrier": "dhl_mx_terrestre",
+        "servicio": "Same-day a Guadalajara",
+        "tiempo_dias": "1",
+        "precio_envio_mxn": 285,
+        "seguro_mxn": 38,
+        "total_mxn": 323,
+        "recomendado": false,
+        "razon_no_rec": "Más caro sin ventaja significativa"
+      },
+      {
+        "carrier": "99_minutos",
+        "servicio": "Next-day inter-ciudad",
+        "tiempo_dias": "1",
+        "precio_envio_mxn": 199,
+        "seguro_mxn": null,
+        "total_mxn": 199,
+        "recomendado": "alternativa",
+        "razon": "Buena opción si NO necesitas seguro"
+      },
+      {
+        "carrier": "paquetex",
+        "servicio": "Variable según destino",
+        "tiempo_dias": "1-3",
+        "precio_envio_mxn": 185,
+        "seguro_mxn": null,
+        "total_mxn": 185,
+        "recomendado": false,
+        "razon_no_rec": "Tiempo variable"
+      }
+    ],
+    "recomendacion_final": "Estafeta Día Siguiente — mejor balance precio/tiempo/seguro",
+    "ahorro_potencial_si_empaca_compacto_mxn": "no aplica — peso real domina"
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Tarifas paqueterías MX 2025",
+  "notas": "Para 3kg el peso real (3kg) > volumétrico (1.8kg). Empacar compacto no cambia precio."
+}

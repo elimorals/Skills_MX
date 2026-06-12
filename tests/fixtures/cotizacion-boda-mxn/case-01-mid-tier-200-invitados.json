@@ -1,0 +1,44 @@
+{
+  "name": "Boda mid-tier 200 invitados CDMX sábado abril",
+  "input": {
+    "fecha_evento": "2027-04-18",
+    "invitados": 200,
+    "ciudad": "CDMX",
+    "dia_semana": "sábado",
+    "temporada": "alta_primavera",
+    "modalidad": "civil_y_religiosa",
+    "tipo_evento": "estandar_mid_premium"
+  },
+  "expected_output": {
+    "cotizacion_por_capitulo": [
+      {"capitulo": "banquete_bebidas", "mxn": 480000, "pct": 0.38},
+      {"capitulo": "locacion", "mxn": 180000, "pct": 0.14},
+      {"capitulo": "decoracion_flores", "mxn": 90000, "pct": 0.07},
+      {"capitulo": "musica_dj", "mxn": 60000, "pct": 0.05},
+      {"capitulo": "fotografia_video", "mxn": 70000, "pct": 0.06},
+      {"capitulo": "vestido_novia", "mxn": 60000, "pct": 0.05},
+      {"capitulo": "traje_novio", "mxn": 20000, "pct": 0.02},
+      {"capitulo": "anillos", "mxn": 50000, "pct": 0.04},
+      {"capitulo": "transporte_hospedaje", "mxn": 50000, "pct": 0.04},
+      {"capitulo": "papeleria", "mxn": 25000, "pct": 0.02},
+      {"capitulo": "coordinacion", "mxn": 100000, "pct": 0.08},
+      {"capitulo": "otros_imprevistos", "mxn": 70000, "pct": 0.05}
+    ],
+    "subtotal_mxn": 1250000,
+    "buffer_imprevistos_10pct_mxn": 125000,
+    "presupuesto_recomendado_total_mxn": 1375000,
+    "per_capita_mxn": 6875,
+    "rango_comparativo": "mid-premium CDMX 200 invitados",
+    "low_estimate_mxn": 628000,
+    "high_estimate_mxn": 2900000,
+    "honorarios_planner_full_planning_mxn": 250000,
+    "honorarios_day_of_only_mxn": 60000,
+    "alertas": [
+      "Reservar locación con anticipo 30-50% mínimo 12 meses antes",
+      "Sabado de abril = temporada alta — esperar cotizaciones premium"
+    ]
+  },
+  "vigencia_validada": null,
+  "fuente_verificacion": "Benchmark industria bodas MX 2025",
+  "notas": "Boda típica mid-tier CDMX. Validar precios proveedor real antes de comprometer al cliente."
+}
