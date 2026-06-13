@@ -13,6 +13,10 @@ if str(_REPO_ROOT) not in sys.path:
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
 from shared.errors import McpError, ValidationError  # noqa: E402
+from shared.playwright_real import (  # noqa: E402
+    is_public_real_enabled,
+    with_real_or_fallback,
+)
 from shared.playwright_stub import (  # noqa: E402
     detectar_modo_playwright,
     mock_response_playwright,
@@ -20,6 +24,7 @@ from shared.playwright_stub import (  # noqa: E402
 )
 
 from mp_inmuebles24 import mock_data  # noqa: E402
+from mp_inmuebles24 import playwright_real  # noqa: E402
 from mp_inmuebles24.catalogos import TIPO_INMUEBLE, TIPO_OPERACION  # noqa: E402
 
 
@@ -63,7 +68,17 @@ class Inmuebles24Client:
             "tipo_inmueble": tipo_inmueble,
             "ciudad": ciudad,
         })
-        # Búsqueda es pública — se podría hacer scraping HTTP simple sin auth
+        # Búsqueda es pública — usa Playwright real si MP_PLAYWRIGHT_PUBLIC=1
+        if is_public_real_enabled():
+            return with_real_or_fallback(
+                real_fn=lambda: playwright_real.buscar_real(
+                    tipo_operacion, tipo_inmueble, ciudad, precio_min, precio_max, limit
+                ),
+                fallback_fn=lambda: mock_data.mock_buscar_inmuebles(
+                    tipo_operacion, tipo_inmueble, ciudad, precio_min, precio_max, limit
+                ),
+                portal="inmuebles24",
+            )
         return mock_response_playwright(
             mock_data.mock_buscar_inmuebles(
                 tipo_operacion, tipo_inmueble, ciudad, precio_min, precio_max, limit
@@ -75,6 +90,12 @@ class Inmuebles24Client:
         if not id_inmueble:
             raise ValidationError("id_inmueble requerido")
         self._log("detalle", {"id": id_inmueble})
+        if is_public_real_enabled():
+            return with_real_or_fallback(
+                real_fn=lambda: playwright_real.detalle_real(id_inmueble),
+                fallback_fn=lambda: mock_data.mock_detalle_inmueble(id_inmueble),
+                portal="inmuebles24",
+            )
         return mock_response_playwright(
             mock_data.mock_detalle_inmueble(id_inmueble),
             portal="inmuebles24",
@@ -92,6 +113,16 @@ class Inmuebles24Client:
         self._log("comparables", {
             "ubicacion": ubicacion, "tipo": tipo_inmueble,
         })
+        if is_public_real_enabled():
+            return with_real_or_fallback(
+                real_fn=lambda: playwright_real.comparables_real(
+                    ubicacion, tipo_inmueble, metros_min, metros_max
+                ),
+                fallback_fn=lambda: mock_data.mock_comparables_zona(
+                    ubicacion, tipo_inmueble, metros_min, metros_max
+                ),
+                portal="inmuebles24",
+            )
         return mock_response_playwright(
             mock_data.mock_comparables_zona(ubicacion, tipo_inmueble, metros_min, metros_max),
             portal="inmuebles24",

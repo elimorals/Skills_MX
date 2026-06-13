@@ -1,0 +1,30 @@
+{
+  "name": "permuta-cripto-cripto-gravable - swap USDT->USDC (stablecoin, ganancia ~0)",
+  "pattern_template": "permuta_stablecoin",
+  "input": {
+    "operacion": {
+      "fecha_hora": "2026-05-10T09:00:00Z",
+      "exchange": "curve-fi",
+      "tipo": "permuta",
+      "activo_dado": "USDT",
+      "cantidad_dada": "10000",
+      "activo_recibido": "USDC",
+      "cantidad_recibida": "9990",
+      "valor_mxn_dia": "200000.00",
+      "fee_mxn": "75.00",
+      "txid": "0xdef456..."
+    },
+    "costo_base_usdt_mxn": "199500.00"
+  },
+  "expected_output": {
+    "es_permuta_gravable": true,
+    "ganancia_mxn": "500.00",
+    "tratamiento_fiscal": "Art. 119 LISR — enajenación de bienes",
+    "advertencia": "Reportar aunque ganancia sea mínima — el SAT podría requerir trazabilidad."
+  },
+  "validations": [
+    "Stablecoin swap se trata como permuta aunque la ganancia sea pequeña",
+    "NO ignorar por ser USD-pegged"
+  ],
+  "notes": "Caso edge: stablecoin swap. La práctica laxa es 'no reportar porque es 1:1' — el skill debe forzar el reporte."
+}

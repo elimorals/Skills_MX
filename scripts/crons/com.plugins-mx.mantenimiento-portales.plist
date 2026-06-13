@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+Cron mensual macOS launchd para mantenimiento del catálogo de portales municipales.
+
+INSTALAR:
+  cp scripts/crons/com.plugins-mx.mantenimiento-portales.plist ~/Library/LaunchAgents/
+  launchctl load ~/Library/LaunchAgents/com.plugins-mx.mantenimiento-portales.plist
+
+VERIFICAR:
+  launchctl list | grep mantenimiento-portales
+
+DESACTIVAR:
+  launchctl unload ~/Library/LaunchAgents/com.plugins-mx.mantenimiento-portales.plist
+
+Equivalente en crontab:
+  0 3 5 * * /Users/elias/Documents/Trabajo/skills/scripts/crons/mantenimiento-mensual-portales.sh
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.plugins-mx.mantenimiento-portales</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/elias/Documents/Trabajo/skills/scripts/crons/mantenimiento-mensual-portales.sh</string>
+    </array>
+
+    <!-- Cuando ejecutar: día 5 de cada mes a las 03:00 AM -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Day</key>
+        <integer>5</integer>
+        <key>Hour</key>
+        <integer>3</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- Output logs -->
+    <key>StandardOutPath</key>
+    <string>/tmp/mantenimiento-portales-stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/mantenimiento-portales-stderr.log</string>
+
+    <!-- Working directory -->
+    <key>WorkingDirectory</key>
+    <string>/Users/elias/Documents/Trabajo/skills</string>
+
+    <!-- Environment variables opcionales -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+        <!-- Descomenta para activar notificación WhatsApp:
+        <key>MP_NOTIFY_WHATSAPP</key>
+        <string>1</string>
+        <key>MP_NOTIFY_TEL</key>
+        <string>+521XXXXXXXXXX</string>
+        -->
+    </dict>
+
+    <!-- No reiniciar si falla (ejecuta solo en su horario) -->
+    <key>KeepAlive</key>
+    <false/>
+
+    <!-- Throttle: mínimo 24h entre ejecuciones -->
+    <key>ThrottleInterval</key>
+    <integer>86400</integer>
+</dict>
+</plist>

@@ -1,0 +1,14 @@
+[
+  {"query": "papel de trabajo cripto", "should_trigger": true, "rationale": "Trigger explícito"},
+  {"query": "respaldo sat para declaración cripto", "should_trigger": true, "rationale": "Match directo"},
+  {"query": "expediente fiscal cripto auditoría", "should_trigger": true, "rationale": "Trigger central"},
+  {"query": "documentar mis operaciones cripto al sat", "should_trigger": true, "rationale": "Documentación SAT"},
+  {"query": "auditoría sat operaciones bitcoin", "should_trigger": true, "rationale": "Auditoría cripto"},
+  {"query": "evidencia para declaración anual cripto", "should_trigger": true, "rationale": "Match con 'evidencia declaración'"},
+  {"query": "generar zip respaldo cripto sat", "should_trigger": true, "rationale": "ZIP de respaldo"},
+  {"query": "calcular ganancia fifo", "should_trigger": false, "rationale": "Cálculo — otro skill"},
+  {"query": "vendí 5 btc", "should_trigger": false, "rationale": "Operación, no papel de trabajo"},
+  {"query": "que es la sat", "should_trigger": false, "rationale": "Conceptual"},
+  {"query": "como darme de alta sat", "should_trigger": false, "rationale": "Alta RFC, off-scope"},
+  {"query": "hola", "should_trigger": false, "rationale": "Saludo"}
+]

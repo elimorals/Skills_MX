@@ -1,0 +1,28 @@
+{
+  "name": "staking-y-airdrops-ingreso - airdrop ARB con liquidez al día",
+  "pattern_template": "airdrop_liquido",
+  "input": {
+    "operacion": {
+      "fecha_hora": "2026-03-23T12:00:00Z",
+      "exchange": "self_wallet",
+      "tipo": "airdrop",
+      "activo_recibido": "ARB",
+      "cantidad_recibida": "1875",
+      "valor_mxn_dia": "65000.00",
+      "fee_mxn": "0",
+      "txid": "0x123..."
+    }
+  },
+  "expected_output": {
+    "ingreso_acumulable_mxn": "65000.00",
+    "regimen_sugerido": "Cap IX — demás ingresos",
+    "costo_base_para_futura_venta_mxn": "65000.00",
+    "advertencia_doble_tributacion_evitada": true
+  },
+  "validations": [
+    "Reconocer ingreso al día de recepción",
+    "El valor reconocido se vuelve costo base",
+    "Régimen Cap IX correcto"
+  ],
+  "notes": "Caso clásico de airdrop con mercado activo el día de recepción. Verificar que el skill NO espere a vender para tributar."
+}

@@ -1,0 +1,16 @@
+[
+  {"query": "mi wallet metamask 2026", "should_trigger": true, "rationale": "Wallet self-custody MetaMask"},
+  {"query": "tracking ledger hardware wallet", "should_trigger": true, "rationale": "Ledger es self-custody"},
+  {"query": "reconstruir historial etherscan", "should_trigger": true, "rationale": "Explorer ETH"},
+  {"query": "phantom wallet solana operaciones", "should_trigger": true, "rationale": "Wallet SOL self-custody"},
+  {"query": "transacciones on-chain bsc", "should_trigger": true, "rationale": "On-chain BSC = self-custody scrap"},
+  {"query": "no usé exchange usé wallet propia", "should_trigger": true, "rationale": "Caso típico self-custody"},
+  {"query": "trust wallet movimientos", "should_trigger": true, "rationale": "Wallet móvil self-custody"},
+  {"query": "address ethereum ver transacciones", "should_trigger": true, "rationale": "Match con 'address ETH'"},
+  {"query": "polygonscan mi address", "should_trigger": true, "rationale": "Explorer Polygon"},
+  {"query": "csv bitso 2026", "should_trigger": false, "rationale": "Exchange CSV — usa importar-operaciones-exchange"},
+  {"query": "binance api operaciones", "should_trigger": false, "rationale": "Exchange centralizado"},
+  {"query": "que es self custody", "should_trigger": false, "rationale": "Conceptual"},
+  {"query": "como crear wallet", "should_trigger": false, "rationale": "How-to, no operación fiscal"},
+  {"query": "buenos dias", "should_trigger": false, "rationale": "Saludo"}
+]

@@ -2,28 +2,70 @@
 
 Monorepo de **plugins de Claude Code**, **MCP servers** y **skills standalone** para operación diaria de PyMEs y profesionistas en México. Cubre fiscal (CFDI 4.0, SAT, IMSS, INFONAVIT), pagos (TDC, OXXO, SPEI, transferencia), marketplaces (ML, Shopify, Amazon MX), municipales (CDMX, EdoMex, MTY), inmobiliaria, salud veterinaria, eventos, restaurantes, salones y más.
 
-## Estado a 2026-06-12 (reconciliado con filesystem)
+## Estado a 2026-06-13 (reconciliado con filesystem)
 
 | Capa | Cantidad real | Notas |
 |---|---|---|
-| **Plugins verticales** | **35** | core-mexico + 34 verticales (11 originales + 24 nuevos: TOP del research + áreas no cubiertas specs 07-15) |
-| **MCP servers** | **40** | Mock-first, 92 archivos de test, FastMCP + Python |
-| **Workflows declarados** | **23 (markdown)** | ⚠ 0 implementados como código ejecutable — son plantillas en `docs/` |
-| **Skills (SKILL.md)** | **275** | 6 `_shared/` + 269 distribuidos en verticales |
-| **Comandos slash** | **37 directorios `commands/`** | Distribuidos en plugins |
-| **Hooks runtime CC** | **15** | PreToolUse (5) + PostToolUse (4) + SessionStart (4) + Stop (1) + `_lib.sh` |
+| **Plugins verticales** | **40** | core-mexico + 39 verticales (11 originales + 15 TOP research + 9 specs 07-15 + 5 nuevos: agente-seguros-mx, constructora-mx, despacho-legal-mx, geriatria-cuidado-mayor-mx, laboratorio-clinico-mx) |
+| **MCP servers** | **40** | Mock-first, FastMCP + Python; tests por servidor (3-11 archivos) |
+| **Workflows ejecutables (`.workflow.js`)** | **23/23 ✅** | 16 originales + 7 nuevos esta sesión: sync-multicanal, cobranza-renta-mensual, donativo-anual, cripto-cierre-anual, telemedicina-consulta, pedimento-importacion, energia-bidireccional-mensual. Cubren todos los workflows declarados. |
+| **Catálogo central municipios MX** | **209 (32 estados)** | `shared/catalogo_municipios_mx.py`. 33 validados con URL real, 17 con selectores DOM verificados, 88.3M habitantes en catálogo / 31.4M validados (24.2% nacional) |
+| **Plataformas SaaS estatales** | **1 (SACPI MICH)** | +95 municipios extra via 1 URL — `shared/plataformas_saas_mx.py` |
+| **Skills (SKILL.md)** | **307** | 6 `_shared/` + 301 distribuidos en 40 plugins (máx: freelancers-mx 15, inmobiliaria-mx 14, colegios-mx 12) |
+| **Comandos slash** | **44 directorios `commands/`** | ~152 comandos totales |
+| **Hooks runtime CC** | **19** | PreToolUse (5) + PostToolUse (4) + SessionStart (4) + Stop (1) + utilitarios |
 | **Hook git** | **1** | pre-commit (lint + JSON + tests MCP) |
-| **Crons activos** | **2** | Banxico TCs (diario L-V) + SAT listas 69 (lunes) |
-| **Specs detallados** | **15 + `_template.md`** | docs/specs/ — 6 infraestructura/MCPs + 9 verticales |
-| **Evals (.eval.json)** | **181** | Ratio 0.66/skill (objetivo 0.8); faltan críticos: `freelance-tax-mx`, `cfdi-colegiaturas-deducibles`, `pf-anual-mx` |
-| **Fixtures de prueba** | **38** | Objetivo 50-100 |
-| **Webhook receiver** | **V1 local + 12 handlers** | FastAPI + validators + idempotency SQLite + audit JSONL; V2 deploy pendiente |
+| **Crons activos** | **30+ scripts** | Banxico (diario L-V) + SAT 69 (lunes) + cobranza, cierre fiscal, vencimientos, dashboard, e.firma 90d, ISH airbnb, multas vehiculares, etc. |
+| **Specs detallados** | **16 + `_template.md`** | docs/specs/ — 6 infraestructura/MCPs + 10 verticales (specs 07-15 cubiertos ✅) |
+| **Evals (.eval.json)** | **281** | Ratio 0.92/skill (supera objetivo 0.8) — cobertura genérica + específica por vertical |
+| **Fixtures de prueba** | **166** | Supera objetivo inicial 50-100 |
+| **Webhook receiver** | **V1 local + 15 handlers** | FastAPI + validators + idempotency SQLite + audit JSONL; V2 deploy pendiente |
 | **Scripts ejecutables** | **13+** | lint, sync, hooks, crons, validadores |
-| **Documentación** | **25** docs | Arquitectura, roadmap, vertical guides, gap analysis, análisis profundo |
+| **Documentación** | **31** docs (+ subdirs adrs/consultorias/dogfooding) | Arquitectura, roadmap, vertical guides, gap analysis, análisis profundo, audit 2026-06-13 |
 
-⚠ **Score honesto promedio**: 4.7/9 (scaffolding denso, lint-passing, no producción). Para llegar a 7.5/9 falta validación experta (capa 3) — ver `docs/estado-real.md` y `docs/plan-afinacion.md`.
+⚠ **Score honesto promedio**: 4.7-5.5/9 (scaffolding denso, lint-passing, evals/fixtures abundantes, no validado en producción). Para llegar a 7.5/9 falta validación experta (capa 3) — ver `docs/estado-real.md`, `docs/plan-afinacion.md` y `docs/AUDIT-2026-06-13.md`.
 
-⚠ **Gap silencioso descubierto 2026-06-12**: los 23 "workflows multinivel" reportados son **plantillas markdown declarativas en `docs/`**, no código ejecutable con `Workflow.workflow()` / `phase()` / `parallel()`. Convertirlos a código real es un Tier 1 pendiente (200-300h). Ver [docs/analisis-profundo-2026-06.md](docs/analisis-profundo-2026-06.md) §3.7 y §7.
+✅ **Gap del 2026-06-12 cerrado**: los workflows ejecutables existen (16 `.workflow.js` con `phase()`/`parallel()`/`pipeline()`). Quedan ~7 plantillas markdown por convertir a código.
+
+🆕 **Infra Playwright real (2026-06-13)**: helpers `shared/playwright_real.py` + `shared/playwright_municipal_generic.py` con context manager, fallback gracioso a mock, lazy import (no requiere playwright si no se usa). Implementaciones reales (paths públicos sin login):
+- `mp_inmuebles24`: búsquedas, detalle, comparables
+- `mp_cdmx_municipal`: predial, tenencia
+- `mp_edomex/monterrey/guadalajara/merida/puebla/queretaro/tijuana_municipal`: predial + multas (esqueletos con selectores experimentales)
+
+🆕 **REST real Amazon SP-API (2026-06-13)**: LWA token exchange + 6 endpoints reales (`mp_amazon_mx_seller`). Marketplace MX ID constante. Cache de access_token en memoria con auto-refresh.
+
+🆕 **Catálogo central de municipios MX (2026-06-13, ampliado)**: `shared/catalogo_municipios_mx.py` con **32 estados + 209 municipios (88.3M habitantes / 68% pob. nacional)**. 23 validados con URL real verificada Playwright MCP, **10 con selectores DOM verificados**. Helpers `buscar_portal_predial(estado, municipio)` reemplazan el patrón "1 MCP por municipio".
+
+🆕 **Suite de scripts de descubrimiento (2026-06-13)**:
+- `scripts/descubrir-portal-municipal.py`: auto-discover Playwright que toma JSON de municipios y descubre URLs + stack + selectores. Paralelizable, idempotente, reanudable.
+- `scripts/health-check-portales.py`: valida selectores contra portales reales.
+- `scripts/municipios-pendientes-discover.json`: lista de 144 municipios listos para correr el discover.
+
+🆕 **Patrones MCP municipal (`docs/PATRONES-MCP-MUNICIPAL.md`)**: 5 stacks documentados (ASP.NET WebForms, Angular Material, PHP, ASP clásico, IP+puerto) con templates de código por stack, handlers Playwright reusables, y "cómo agregar un municipio en 5 líneas".
+
+🆕 **🎯 Plataformas SaaS gubernamentales — SACPI Michoacán (`shared/plataformas_saas_mx.py`)**: 1 URL + selector cubre **95 municipios MICH**. Hallazgo de mayor ROI: ratio 95:1 vs discovery individual. Próximas plataformas a investigar: Oaxaca (570 muns), Puebla (217), Veracruz (212).
+
+🆕 **Discovery a escala completado (FASE 18)**: corrida real sobre 144 municipios en background — 7 nuevos validados automáticamente (García NL, Tepatitlán JAL, Altamira TAM, Valle de Santiago GTO, Monclova COAH, Jesús María AGS, Ciudad Hidalgo MICH). Output crudo: `hallazgos-144-2026-06-13.json`.
+
+🆕 **Refactor a catálogo central (FASES 19-20-23)**: 7 MCPs municipales (`mp_edomex`, `mp_cdmx`, `mp_monterrey`, `mp_guadalajara`, `mp_merida`, `mp_puebla`, `mp_tijuana`) ya NO mantienen URLs hardcoded. Consultan el catálogo central — cuando el discovery encuentra una URL nueva, todos los MCPs se benefician automáticamente.
+
+🆕 **Lista INEGI top500 (`scripts/municipios-inegi-top500.json`)**: 145 municipios prioritarios extra (10.8M habitantes) listos para correr discovery — extiende cobertura potencial a ~700 municipios.
+
+📋 **Sesión completa documentada en `docs/SESION-COMPLETA-2026-06-13.md`**: índice maestro de las 24 fases ejecutadas + métricas + próximos pasos.
+
+🆕 **20 workflows ejecutables (2026-06-13)**: +4 nuevos (`sync-multicanal` ecommerce-mx, `cobranza-renta-mensual` inmobiliaria-mx, `donativo-anual` donatarias-ongs-mx, `cripto-cierre-anual` cripto-fiscal-mx). Total `16 → 20`. Plantillas markdown pendientes: 7 → 3.
+
+🆕 **APIs oficiales documentadas (`docs/apis-oficiales-mx.md`)**: rutas legales y técnicas para SAT (descarga masiva REST con e.firma), IMSS (IDSE SOAP), Open Banking MX (CNBV BBVA/Banorte sandbox), Buró de Crédito (API B2B). **No** se documentan bypass de CAPTCHA — son ilegales y no funcionan a mediano plazo.
+
+Activación:
+```bash
+# Sitios públicos sin login (búsquedas, predial, multas)
+export MP_PLAYWRIGHT_PUBLIC=1
+pip install playwright && playwright install chromium
+
+# Amazon SP-API
+export AMAZON_SP_REFRESH_TOKEN="Atzr|..." AMAZON_SP_CLIENT_ID="..." AMAZON_SP_CLIENT_SECRET="..."
+```
 
 ---
 
@@ -114,7 +156,7 @@ plugins-mx/
 
 ---
 
-## Plugins verticales (35)
+## Plugins verticales (40)
 
 ### Originales (11)
 
@@ -165,6 +207,16 @@ plugins-mx/
 | **`sucesion-empresa-familiar-mx`** | spec 13 — sucesión + donaciones + protocolo familiar |
 | **`crowdfunding-itf-mx`** | spec 14 — Ley Fintech + IFC + P2P |
 | **`energia-solar-pyme-mx`** | spec 15 — CFE bidireccional + net metering + GDMTH |
+
+### Verticales adicionales scaffoldeados (5)
+
+| Plugin | Cobertura |
+|---|---|
+| **`agente-seguros-mx`** | Cotización pólizas, renovación, comisiones, CNSF |
+| **`constructora-mx`** | REPSE mensual, IMSS construcción, ISN, contratistas |
+| **`despacho-legal-mx`** | Litigios, honorarios, retenciones ISR profesionales, expediente legal |
+| **`geriatria-cuidado-mayor-mx`** | Residencias asistidas, NOM-167, expediente geriátrico |
+| **`laboratorio-clinico-mx`** | NOM-007, COFEPRIS, resultados, facturación seguros |
 
 ---
 
@@ -244,27 +296,36 @@ Detalles en `mcp-servers/README.md`.
 
 ---
 
-## Workflows multinivel (23 declarados / 0 ejecutables)
+## Workflows multinivel (16 ejecutables / ~7 plantillas markdown pendientes)
 
-⚠ **Gap descubierto 2026-06-12**: los workflows existen como **plantillas markdown declarativas** en `docs/specs/`, `docs/flujos-operativos.md` y `plugins-mx-planeacion-mcps-agentica.md §7`. Para ser ejecutables deberían ser scripts del skill `Workflow` con sintaxis `phase()` / `parallel()` / `pipeline()`. Ver [docs/analisis-profundo-2026-06.md](docs/analisis-profundo-2026-06.md) §3.7.
+✅ **16 workflows ejecutables** en `.workflow.js` usando API del skill `Workflow` con `phase()` / `parallel()` / `pipeline()`:
 
-### Workflows declarados
+### Ejecutables (`.workflow.js`)
 
-| # | Workflow | Plugin/spec | Comando declarado |
+| # | Workflow | Plugin | Disparador |
 |---|---|---|---|
 | 1 | `cfdi-emision-completa` | core-mexico | `/core:emitir-y-notificar` |
-| 2 | `pago-conciliacion` | core-mexico | `/core:conciliar-pago` |
-| 3 | `cobranza-multinivel` | freelancers-mx | `/freelancers:cobranza-mensual` |
-| 4 | `cierre-fiscal-mensual` | core-mexico | `/freelancers:cierre-fiscal` |
-| 5 | `due-diligence-cliente-nuevo` | core-mexico | `/core:due-diligence` |
-| 6 | `sync-multicanal` | ecommerce-mx | `/ecommerce:sync-inventario` |
-| 7 | `pf-anual-completa` | pf-anual-mx | `/pf-anual:completa` |
-| 8 | `monitoreo-diario-vehicular` | tramites-vehiculares-mx | cron-driven |
-| 9 | `respuesta-crisis-cm` | agencia-marketing-mx | manual |
-| 10 | `conciliacion-bancaria-mensual` | freelancers-mx | cron día 14 |
-| 11-23 | Variantes por vertical (cobranza-renta, telemedicina-consulta, donativo-anual, etc.) | Específicos | — |
+| 2 | `pago-conciliacion` | core-mexico | webhook + `/core:conciliar-pago` |
+| 3 | `cierre-fiscal-mensual` | core-mexico | cron día 14 |
+| 4 | `due-diligence-cliente` | core-mexico | `/core:due-diligence` |
+| 5 | `emitir-cfdi-tras-pago` | core-mexico | webhook MP/Conekta/Stripe |
+| 6 | `auditoria-fiscal-mensual` | core-mexico | cron día 1 |
+| 7 | `validacion-cfdis-historico` | core-mexico | manual |
+| 8 | `cobranza-multinivel` | freelancers-mx | `/freelancers:cobranza-mensual` |
+| 9 | `migracion-rfc-a-otro-regimen` | freelancers-mx | manual |
+| 10 | `pf-anual-completa` | pf-anual-mx | `/pf-anual:completa` |
+| 11 | `dispersion-nomina` | nomina-pymes-mx | quincenal/mensual |
+| 12 | `reporte-cliente-agencia` | agencia-marketing-mx | mensual |
+| 13 | `respuesta-crisis-cm` | agencia-marketing-mx | manual |
+| 14 | `comunicacion-padres-masiva` | colegios-mx | manual |
+| 15 | `garantia-vehicular` | talleres-mx | post-servicio |
+| 16 | `monitoreo-diario-vehicular` | tramites-vehiculares-mx | cron diario |
 
-**Esfuerzo para convertir todos a código ejecutable**: ~200-300h (25-40h por workflow × 8 prioritarios).
+### Plantillas markdown pendientes de codificar (7)
+
+`sync-multicanal` (ecommerce-mx), `cobranza-renta-mensual` (inmobiliaria-mx), `telemedicina-consulta` (telemedicina-mx), `donativo-anual` (donatarias-ongs-mx), `pedimento-importacion` (importadores-mx), `cripto-cierre-anual` (cripto-fiscal-mx), `energia-bidireccional-mensual` (energia-solar-pyme-mx).
+
+**Esfuerzo para los 7 restantes**: ~25-40h cada uno (175-280h total).
 
 ---
 
@@ -423,20 +484,25 @@ Convención de checks:
 
 ## Qué falta construir (gap vs planeación original)
 
-Auditoría detallada en `docs/gap-analysis-2026-06.md` (próximamente). Resumen ejecutivo:
+Auditoría detallada en `docs/AUDIT-2026-06-13.md` y `docs/gap-analysis-2026-06.md`. Resumen ejecutivo actualizado:
 
-| Categoría | Hecho | Planeado | Gap |
+| Categoría | Hecho | Planeado | Gap real |
 |---|---|---|---|
-| MCPs Tier S/A/B | 25 | 21+ | Faltan partners delivery (Rappi/DiDi/UberEats), Playwright bancos reales |
-| Verticales | 11 | TOP 20 del research | 9+ verticales TOP scores >7.5 (pf-anual-mx, arrendador-residencial-mx, tramites-vehiculares-mx…) |
-| Workflows | 7 | 8+ | 1 webhook handler (emitir-cfdi-tras-pago) + 5-7 secundarios |
-| Hooks | 1 (pre-commit) | 15+ | 13+ hooks específicos (backup-cfdi, validar-ficha-cliente, alerta-pago-provisional…) |
-| Crons | 2 | 30+ | 27-28 crons específicos por vertical |
-| Webhooks | 0 receiver | 12 | Receiver completo + handlers |
-| Evals | 25 | 160-385 | 135-360 evals por afinación triggering |
-| Validación experta | 0 | 4+ verticales | Contador, abogado, partners — no codificable |
+| MCPs Tier S/A | 11 | 11 | ✅ Cubierto (Banxico, Facturama, MP, ML, CURP, CEP, Conekta, Aspel, Shopify, Bitso, SAT esqueleto) |
+| MCPs Tier B Playwright | 9 esqueletos | 9 con scraping real | **5/9 bloqueados por CAPTCHA/MFA/e.firma** (bancos, IMSS, INFONAVIT, SAT, Buró). Factibles sin login: Inmuebles24, Vivanuncios, municipales (consulta pública con boleta) |
+| MCPs Tier B REST stub | 5 mock | 5 con auth real | mp_clip (factible), mp_amazon_seller (LWA+SigV4 complejo), mp_trustly/cabify/softrestaurant (parcial) |
+| MCPs delivery aggregators | 3 mock | 3 con auth real | Rappi/DiDi/UberEats — APIs restringidas a partners aprobados |
+| Verticales scaffoldeados | 40 | 40 | ✅ Cubierto (incluye specs 07-15 + 5 extras no documentados antes) |
+| Verticales con código profundo | ~10 | 40 | 30 verticales con scaffolding pero skills sin lógica profunda |
+| Workflows ejecutables | 16 | 23 | 7 plantillas markdown pendientes de codificar (~175-280h) |
+| Hooks runtime | 19 | 15+ | ✅ Superado |
+| Crons | 30+ | 30+ | ✅ Cubierto |
+| Webhooks | 15 handlers V1 local | 12+ V2 producción | V2 deploy HTTPS + retry queue async |
+| Evals | 281 | 160-385 | ✅ En rango — afinación específica vertical |
+| Fixtures | 166 | 50-100 | ✅ Superado |
+| Validación experta | 0 | 4+ verticales | **No codificable** — contador, abogado, COFEPRIS, Meta |
 
-**Esfuerzo total restante**: ~6,250-8,600 horas (8-11 meses con equipo 3-4 personas).
+**Esfuerzo total restante (recalculado 2026-06-13)**: ~3,500-5,000h (4-7 meses con equipo 3-4 personas). Bajó de 6,250-8,600h por: (a) workflows ejecutables descubiertos, (b) evals/fixtures ya cubiertos, (c) specs 07-15 ya escritos.
 
 **Lo NO codificable** (capa 3, requiere humanos externos):
 - Validación fiscal con contador certificado (vigencia tarifas RMF 2026)

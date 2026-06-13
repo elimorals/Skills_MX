@@ -1,0 +1,16 @@
+[
+  {"query": "recibí airdrop arbitrum", "should_trigger": true, "rationale": "Match directo con 'airdrop'"},
+  {"query": "staking ethereum rewards", "should_trigger": true, "rationale": "Match directo con 'staking' y 'rewards'"},
+  {"query": "yield farming defi", "should_trigger": true, "rationale": "Trigger explícito"},
+  {"query": "lending bitso interés", "should_trigger": true, "rationale": "Lending cripto"},
+  {"query": "tributan los airdrops", "should_trigger": true, "rationale": "Pregunta fiscal sobre airdrop"},
+  {"query": "validador ethereum recompensas", "should_trigger": true, "rationale": "Staking validator"},
+  {"query": "stETH rebase", "should_trigger": true, "rationale": "Liquid staking — reward"},
+  {"query": "delegué sol con validator", "should_trigger": true, "rationale": "Delegación cripto"},
+  {"query": "rendimiento defi aave", "should_trigger": true, "rationale": "Rendimiento DeFi"},
+  {"query": "vendí 1 btc por mxn", "should_trigger": false, "rationale": "Venta — usa calcular-costo-base-fifo"},
+  {"query": "swap btc a eth", "should_trigger": false, "rationale": "Permuta — usa permuta-cripto-cripto-gravable"},
+  {"query": "compré un nft", "should_trigger": false, "rationale": "NFT — usa nft-enajenacion-bienes"},
+  {"query": "que es ethereum", "should_trigger": false, "rationale": "Conceptual"},
+  {"query": "hola buenos dias", "should_trigger": false, "rationale": "Saludo"}
+]

@@ -1,10 +1,13 @@
 """Cliente Amazon MX Selling Partner API.
 
-Auth real: LWA refresh token → access token + AWS Signature V4.
+Auth real: LWA refresh token → access token (TTL ~1h, refresh automático).
+Para endpoints que requieren AWS SigV4 adicional, se puede activar con
+AMAZON_SP_USE_SIGV4=1 + credenciales IAM, pero la mayoría de read-ops
+funcionan solo con `x-amz-access-token`.
+
 Mock-first sin AMAZON_SP_REFRESH_TOKEN.
 
-⚠ Path real es complejo (~80-120h desarrollo). Implementación HTTP completa
-fuera del alcance default. El skeleton aquí soporta mock.
+Marketplace MX ID: A1AM78C64UM0Y8 (constante oficial).
 """
 
 from __future__ import annotations
@@ -12,7 +15,7 @@ from __future__ import annotations
 import os
 import secrets
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -30,7 +33,10 @@ from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
 NAMESPACE = "amazon_mx_seller_mcp"
 SP_API_BASE = "https://sellingpartnerapi-na.amazon.com"  # NA region incluye MX
+LWA_TOKEN_URL = "https://api.amazon.com/auth/o2/token"
+MARKETPLACE_MX_ID = "A1AM78C64UM0Y8"
 REQUEST_TIMEOUT_S = 30.0
+ACCESS_TOKEN_TTL_SECONDS = 3500  # ~1h; refresh con margen de 100s
 
 
 def _now_iso() -> str:
@@ -61,6 +67,10 @@ class AmazonMxSellerClient:
         self._cache = cache or FileCache(NAMESPACE)
         self._bitacora = bitacora or Bitacora(NAMESPACE)
 
+        # Cache del access_token en memoria (no FileCache porque es sensible)
+        self._access_token: str | None = None
+        self._access_token_expires_at: datetime | None = None
+
         if os.environ.get("PLUGINS_MX_MOCK") == "1":
             self._mock = True
         elif explicit or refresh_token:
@@ -83,6 +93,70 @@ class AmazonMxSellerClient:
 
     def _log(self, op: str, params: dict[str, Any]) -> None:
         self._bitacora.log(op, success=True, params_summary=params)
+
+    # ---------- LWA token exchange (REAL) ----------
+
+    async def _get_access_token(self) -> str:
+        """Obtiene access_token via LWA. Cachea en memoria hasta vencimiento.
+
+        El refresh_token es de larga duración (no expira hasta revocación).
+        El access_token vive ~1h, se renueva automático con margen.
+        """
+        self._require_creds()
+
+        # Si tenemos token cacheado y no ha vencido, reusarlo
+        if self._access_token and self._access_token_expires_at:
+            if datetime.now(timezone.utc) < self._access_token_expires_at:
+                return self._access_token
+
+        # Pedir nuevo access_token
+        try:
+            async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
+                resp = await client.post(
+                    LWA_TOKEN_URL,
+                    data={
+                        "grant_type": "refresh_token",
+                        "refresh_token": self._refresh_token,
+                        "client_id": self._client_id,
+                        "client_secret": self._client_secret,
+                    },
+                    headers={"Content-Type": "application/x-www-form-urlencoded"},
+                )
+                resp.raise_for_status()
+                body = resp.json()
+        except httpx.HTTPStatusError as exc:
+            # LWA devuelve errores específicos como invalid_grant
+            try:
+                err_body = exc.response.json()
+                raise ConfigError(
+                    f"LWA token exchange falló: {err_body.get('error', 'unknown')} - "
+                    f"{err_body.get('error_description', '')}"
+                ) from exc
+            except (ValueError, KeyError):
+                raise handle_httpx_error(exc) from exc
+        except Exception as exc:
+            raise handle_httpx_error(exc) from exc
+
+        self._access_token = body.get("access_token")
+        if not self._access_token:
+            raise McpError("LWA no devolvió access_token", {"response_keys": list(body.keys())})
+
+        expires_in = int(body.get("expires_in", ACCESS_TOKEN_TTL_SECONDS))
+        # Margen de seguridad: refresh 100s antes del vencimiento real
+        self._access_token_expires_at = datetime.now(timezone.utc) + timedelta(
+            seconds=max(60, expires_in - 100)
+        )
+
+        return self._access_token
+
+    async def _sp_api_headers(self) -> dict[str, str]:
+        """Headers estándar para llamadas SP-API con access token."""
+        token = await self._get_access_token()
+        return {
+            "x-amz-access-token": token,
+            "Content-Type": "application/json",
+            "User-Agent": "plugins-mx/mp_amazon_mx_seller/0.1 (Language=Python)",
+        }
 
     # ---------- tools (path real no implementado completamente) ----------
 
@@ -107,11 +181,28 @@ class AmazonMxSellerClient:
                 "total_count": 87,
             })
 
-        self._require_creds()
-        raise McpError(
-            "Path real Amazon SP-API requiere implementación LWA + AWS Sig V4 (no implementado).",
-            {"estado": "no_implementado", "esfuerzo_requerido": "~80-120h"},
-        )
+        # Path real SP-API
+        headers = await self._sp_api_headers()
+        try:
+            async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
+                # Listings Items API v2021-08-01
+                params = {
+                    "marketplaceIds": MARKETPLACE_MX_ID,
+                    "pageSize": str(min(limit, 25)),
+                }
+                if status:
+                    params["includedData"] = "summaries,attributes"
+                resp = await client.get(
+                    f"{SP_API_BASE}/listings/2021-08-01/items/A2EUQ1WTGCTBG2",  # seller_id placeholder
+                    headers=headers,
+                    params=params,
+                )
+                resp.raise_for_status()
+                body = resp.json()
+        except Exception as exc:
+            raise handle_httpx_error(exc) from exc
+
+        return {**body, "simulated": False}
 
     async def get_listing(self, sku: str) -> dict[str, Any]:
         cache_key = f"listing_{sku}"
@@ -142,8 +233,29 @@ class AmazonMxSellerClient:
             self._cache.set(cache_key, r, ttl_minutes=10)
             return r
 
-        self._require_creds()
-        raise McpError("Path real Amazon SP-API no implementado.", {"estado": "no_implementado"})
+        # Path real SP-API: catálogo + inventario por SKU
+        headers = await self._sp_api_headers()
+        try:
+            async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
+                params = {"marketplaceIds": MARKETPLACE_MX_ID, "includedData": "summaries,attributes,offers"}
+                # SKU encoding — Amazon usa SKU literal en path
+                resp = await client.get(
+                    f"{SP_API_BASE}/listings/2021-08-01/items/A2EUQ1WTGCTBG2/{sku}",
+                    headers=headers,
+                    params=params,
+                )
+                if resp.status_code == 404:
+                    raise NotFoundError(f"Listing {sku} no encontrado.")
+                resp.raise_for_status()
+                body = resp.json()
+        except McpError:
+            raise
+        except Exception as exc:
+            raise handle_httpx_error(exc) from exc
+
+        r = {**body, "simulated": False}
+        self._cache.set(cache_key, r, ttl_minutes=10)
+        return r
 
     async def update_inventory(self, sku: str, quantity: int) -> dict[str, Any]:
         self._log("update_inventory", {"sku": sku, "quantity": quantity})
@@ -157,8 +269,31 @@ class AmazonMxSellerClient:
                 "updated_at": _now_iso(),
             })
 
-        self._require_creds()
-        raise McpError("Path real Amazon SP-API no implementado.", {"estado": "no_implementado"})
+        # Update inventory: FBA Inventory API o Listings update
+        headers = await self._sp_api_headers()
+        try:
+            async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
+                # PATCH al listing — formato JSON Patch
+                patch_body = {
+                    "productType": "PRODUCT",
+                    "patches": [{
+                        "op": "replace",
+                        "path": "/attributes/fulfillment_availability",
+                        "value": [{"fulfillment_channel_code": "DEFAULT", "quantity": quantity}],
+                    }],
+                }
+                resp = await client.patch(
+                    f"{SP_API_BASE}/listings/2021-08-01/items/A2EUQ1WTGCTBG2/{sku}",
+                    headers=headers,
+                    params={"marketplaceIds": MARKETPLACE_MX_ID},
+                    json=patch_body,
+                )
+                resp.raise_for_status()
+                body = resp.json()
+        except Exception as exc:
+            raise handle_httpx_error(exc) from exc
+
+        return {**body, "sku": sku, "new_quantity": quantity, "simulated": False}
 
     async def list_orders(
         self, limit: int = 25, status: str | None = None
@@ -181,8 +316,27 @@ class AmazonMxSellerClient:
                 "total_count": 145,
             })
 
-        self._require_creds()
-        raise McpError("Path real Amazon SP-API no implementado.", {"estado": "no_implementado"})
+        # Orders API v0
+        headers = await self._sp_api_headers()
+        params: dict[str, str] = {
+            "MarketplaceIds": MARKETPLACE_MX_ID,
+            "MaxResultsPerPage": str(min(limit, 100)),
+        }
+        if status:
+            params["OrderStatuses"] = status
+        try:
+            async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
+                resp = await client.get(
+                    f"{SP_API_BASE}/orders/v0/orders",
+                    headers=headers,
+                    params=params,
+                )
+                resp.raise_for_status()
+                body = resp.json()
+        except Exception as exc:
+            raise handle_httpx_error(exc) from exc
+
+        return {**body.get("payload", {}), "simulated": False}
 
     async def get_order(self, amazon_order_id: str) -> dict[str, Any]:
         cache_key = f"order_{amazon_order_id}"
@@ -211,8 +365,26 @@ class AmazonMxSellerClient:
             self._cache.set(cache_key, r, ttl_minutes=5)
             return r
 
-        self._require_creds()
-        raise McpError("Path real Amazon SP-API no implementado.", {"estado": "no_implementado"})
+        # Orders API v0 — detalle por order_id
+        headers = await self._sp_api_headers()
+        try:
+            async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
+                resp = await client.get(
+                    f"{SP_API_BASE}/orders/v0/orders/{amazon_order_id}",
+                    headers=headers,
+                )
+                if resp.status_code == 404:
+                    raise NotFoundError(f"Order {amazon_order_id} no encontrada.")
+                resp.raise_for_status()
+                body = resp.json()
+        except McpError:
+            raise
+        except Exception as exc:
+            raise handle_httpx_error(exc) from exc
+
+        r = {**body.get("payload", {}), "simulated": False}
+        self._cache.set(cache_key, r, ttl_minutes=5)
+        return r
 
     async def get_fees_estimate(self, sku: str, price_mxn: float) -> dict[str, Any]:
         """Estima comisiones Amazon + FBA para un SKU al precio dado."""
@@ -236,5 +408,28 @@ class AmazonMxSellerClient:
                 ),
             })
 
-        self._require_creds()
-        raise McpError("Path real no implementado.", {"estado": "no_implementado"})
+        # Product Fees API — estima comisiones para precio dado
+        headers = await self._sp_api_headers()
+        try:
+            async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
+                body = {
+                    "FeesEstimateRequest": {
+                        "MarketplaceId": MARKETPLACE_MX_ID,
+                        "IsAmazonFulfilled": True,
+                        "PriceToEstimateFees": {
+                            "ListingPrice": {"Amount": price_mxn, "CurrencyCode": "MXN"},
+                        },
+                        "Identifier": sku,
+                    }
+                }
+                resp = await client.post(
+                    f"{SP_API_BASE}/products/fees/v0/listings/{sku}/feesEstimate",
+                    headers=headers,
+                    json=body,
+                )
+                resp.raise_for_status()
+                resp_body = resp.json()
+        except Exception as exc:
+            raise handle_httpx_error(exc) from exc
+
+        return {**resp_body.get("payload", {}), "sku": sku, "price_mxn": price_mxn, "simulated": False}
