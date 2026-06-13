@@ -93,6 +93,17 @@ else
 fi
 
 # ============================================================
+# FASE 2.5: Aplicar hallazgos del discovery al catálogo
+# ============================================================
+if [ -f "$DISCOVERY_OUTPUT" ]; then
+    log "FASE 2.5: Aplicando hallazgos al catálogo..."
+    python3 "$SCRIPTS_DIR/aplicar-hallazgos-al-catalogo.py" \
+        "$DISCOVERY_OUTPUT" \
+        ${MP_AUTO_COMMIT:+--commit} \
+        2>&1 | tee -a "$LOG_FILE" || log "⚠ aplicar-hallazgos falló — continuando"
+fi
+
+# ============================================================
 # FASE 3: Reporte de cambios
 # ============================================================
 log "FASE 3: Generando reporte..."
