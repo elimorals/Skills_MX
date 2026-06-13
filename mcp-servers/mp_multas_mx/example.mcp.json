@@ -1,0 +1,14 @@
+{
+  "name": "mp_multas_mx",
+  "displayName": "Multas MX (unificado)",
+  "description": "MCP unificado para consulta de multas vehiculares estatales en México. Cubre 8 estados (CDMX, NL, JAL, YUC, BC, PUE, QRO, EdoMex). CDMX requiere CAPTCHA humano-en-loop.",
+  "version": "0.1.0",
+  "command": "python3",
+  "args": ["-m", "mp_multas_mx.server"],
+  "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+  "env": {
+    "PLUGINS_MX_MOCK": "1",
+    "MP_PLAYWRIGHT_PUBLIC": "0"
+  },
+  "tools": ["multas_consultar", "multas_estados_disponibles"]
+}

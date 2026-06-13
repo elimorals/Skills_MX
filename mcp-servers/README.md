@@ -2,11 +2,29 @@
 
 Servidores MCP (Model Context Protocol) construidos a medida para servicios mexicanos.
 
+## 🆕 Actualización 2026-06-13: arquitectura unificada
+
+Los 8 MCPs municipales individuales ahora son complementados por **MCPs unificados** que delegan al `shared/catalogo_municipios_mx.py` y `shared/plataformas_saas_mx.py`:
+
+- **`mp_predial_mx`** (NUEVO): consulta predial de cualquier municipio del catálogo via 1 MCP. Reemplaza funcionalmente los 8 MCPs individuales (mantenidos por backward compat).
+- **`mp_sacpi_michoacan`** (NUEVO): expone los 95 municipios MICH via SACPI como tools MCP.
+- **`mp_multas_mx`** (NUEVO): unifica multas estatales de 8 estados (CDMX requiere CAPTCHA).
+- **`shared/catalogo_municipios_mx.py`**: 209 municipios catalogados (33 validados con URL real, 17 con selectores DOM verificados).
+- **`shared/plataformas_saas_mx.py`**: SACPI Michoacán (+95 muns extra) — hallazgo de mayor ROI.
+- **`scripts/descubrir-portal-municipal.py`**: auto-discovery de URLs municipales con Playwright.
+
+**Cobertura efectiva**: 33 directos + 95 via SACPI = **128 municipios consultables** + 209 catalogados con metadatos.
+
+Ver `../docs/SESION-COMPLETA-2026-06-13.md` para el reporte completo.
+
 ## Estado
 
 | MCP | Estado | Tests | Uso |
 |---|---|---|---|
-| `shared/` (utilidades) | ✅ producción | 51 ✓ | Cache + bitácora + mock + errores |
+| **`mp_predial_mx`** 🆕 unificado | ✅ mock + real | 19 ✓ | Consulta predial de cualquier municipio del catálogo (4 tools) |
+| **`mp_sacpi_michoacan`** 🆕 | ✅ mock + real | 13 ✓ | 95 muns MICH via SACPI (3 tools) |
+| **`mp_multas_mx`** 🆕 unificado | ✅ mock + real | 8 ✓ | Multas estatales 8 estados (2 tools, CDMX con CAPTCHA) |
+| `shared/` (utilidades) | ✅ producción | 51 ✓ | Cache + bitácora + mock + errores + **catálogo municipios + plataformas SaaS** |
 | `mp_banxico` | ✅ producción (mock + real) | 60 ✓ | Tipos de cambio DOF, UMA, INPC, TIIE |
 | `mp_facturama_extendido` | ✅ producción (mock + real) | 88 ✓ | CFDI 4.0: validación local + timbrado + cancelación + búsqueda + descargas |
 | `mp_mercado_pago` | ✅ producción (mock + real) | 75 ✓ | Payment links + webhook HMAC validation + refunds + cancel |
@@ -21,9 +39,14 @@ Servidores MCP (Model Context Protocol) construidos a medida para servicios mexi
 | `mp_bancos_mx` | ✅ scaffolding mock (Playwright stub) | — | Portales bancarios MX: BBVA, Banamex, Santander, Banorte, HSBC (estado cuenta, movimientos, verificar pago) |
 | `mp_imss_patronal` | ✅ scaffolding mock (Playwright stub) | — | IDSE: avisos, alta/baja, cédula autodeterminación, EMCR, SBC, padrón |
 | `mp_infonavit_patronal` | ✅ scaffolding mock (Playwright stub) | — | Créditos trabajadores, EMIS, descuentos mensuales, avisos |
-| `mp_cdmx_municipal` | ✅ scaffolding mock (Playwright stub) | — | Predial, tenencia, multas, hoy no circula CDMX |
-| `mp_edomex_municipal` | ✅ scaffolding mock (Playwright stub) | — | Predial por municipio EdoMex, tenencia, multas |
-| `mp_monterrey_municipal` | ✅ scaffolding mock (Playwright stub) | — | Predial AMM (9 municipios), multas NL, calidad aire |
+| `mp_cdmx_municipal` | ✅ refactor catálogo central (2026-06-13) — OVICA validado | — | Predial CDMX via OVICA (validado MCP), tenencia, hoy no circula. Recomendado usar `mp_predial_mx` para flujos nuevos. |
+| `mp_edomex_municipal` | ✅ refactor catálogo central (2026-06-13) | — | 23 muns EdoMex (Toluca validado). Recomendado: `mp_predial_mx`. |
+| `mp_monterrey_municipal` | ✅ refactor catálogo central | — | 6 muns NL (San Pedro GG y Apodaca validados). Multas NL estatal. |
+| `mp_guadalajara_municipal` | ✅ refactor catálogo central | — | 6 muns JAL (GDL, Zapopan, Pto Vallarta validados). Multas JAL estatal. |
+| `mp_merida_municipal` | ✅ refactor catálogo central | — | Mérida YUC (validado, busca por dirección). Multas YUC estatal. |
+| `mp_puebla_municipal` | ✅ refactor catálogo central | — | Puebla (validado con CAPTCHA — humano-en-loop). |
+| `mp_queretaro_municipal` | ✅ refactor catálogo central (2026-06-13) | — | Querétaro (URL validada). Multas QRO estatal. |
+| `mp_tijuana_municipal` | ✅ refactor catálogo central | — | Tijuana BC (pendiente verificar URL real). Multas BC estatal. |
 | `mp_inmuebles24` | ✅ scaffolding mock (Playwright stub) | — | Búsqueda inmuebles, detalle, comparables zona, publicar listing |
 | `mp_vivanuncios` | ✅ scaffolding mock (Playwright stub) | — | Búsqueda multi-categoría, detalle, publicar anuncio |
 | `mp_buro_credito_personal` | ⚠ scaffolding mock + compliance | — | Score, reporte completo, alertas — REQUIERE autorización formal del titular |
@@ -34,6 +57,61 @@ Servidores MCP (Model Context Protocol) construidos a medida para servicios mexi
 | `mp_softrestaurant` | ✅ scaffolding mock + parser CSV | — | POS Soft Restaurant: corte Z, ventas, platillos, meseros, inventario |
 
 Roadmap completo: `../Downloads/plugins-mx-planeacion-mcps-agentica.md`.
+
+## 🆕 Cómo agregar un municipio nuevo
+
+A partir de 2026-06-13, NO se crea un MCP por municipio. Se agrega entry al catálogo central:
+
+### Opción 1: discovery automatizado (recomendado)
+```bash
+# 1. Agregar municipio a lista de pendientes (si no está en top500)
+echo '{"estado": "yuc", "mun": "tizimin", "nombre": "Tizimín"}' >> scripts/municipios-pendientes.json
+
+# 2. Correr discovery
+python3 ../scripts/descubrir-portal-municipal.py \
+    --input scripts/municipios-pendientes.json \
+    --output hallazgos.json --workers 5
+
+# 3. Aplicar resultados al catálogo
+python3 ../scripts/aplicar-hallazgos-al-catalogo.py hallazgos.json
+```
+
+### Opción 2: manual (cuando ya sabes URL + selectores)
+Editar `shared/catalogo_municipios_mx.py` agregando entry al dict `MUNICIPIOS[<estado>]`:
+
+```python
+'mi_municipio': MunicipioConfig(
+    nombre='Mi Municipio',
+    estado_clave='xxx',
+    portal_predial_url='https://...',
+    selectores_predial={
+        'input': ["input[name='cuenta']"],
+        'submit': ["button:has-text('Consultar')"],
+        'result': 'table',
+    },
+    poblacion_aprox=N,
+    validado=True,
+    notas='Validado manualmente YYYY-MM-DD',
+),
+```
+
+Ver `../docs/PATRONES-MCP-MUNICIPAL.md` para los 5 stacks identificados (ASP.NET, Angular, PHP, ASP clásico, IP+puerto).
+
+### Opción 3: plataforma SaaS estatal
+Si descubres un SACPI-like (1 URL cubre múltiples municipios), agregar a `shared/plataformas_saas_mx.py`:
+
+```python
+NUEVA_PLATAFORMA = PlataformaSaaS(
+    nombre="NombrePlataforma",
+    operador="Gobierno del Estado de XXX",
+    url_consulta="https://...",
+    estados_cubiertos=["xxx"],
+    municipios_soportados={"001": "MUN_A", "002": "MUN_B"},
+    selectores={...},
+    requiere_seleccionar_municipio=True,
+    validado=True,
+)
+```
 
 ## Setup
 
