@@ -1,0 +1,41 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - img [ref=e5]
+    - generic [ref=e6]: Opciones Pago
+    - generic [ref=e7]: Pago en línea
+  - iframe [ref=e9]: Disculpa, tu explorador no soporta iframes, por favor actualiza tu explorador..:
+    - generic [ref=f17e3]:
+      - generic [ref=f17e4]:
+        - generic [ref=f17e5]: Paso 1
+        - generic [ref=f17e6]: Ingresar Información
+      - generic [ref=f17e7]:
+        - generic [ref=f17e8]: Paso 2
+        - generic [ref=f17e9]: Seleccionar Forma de Pago
+      - generic [ref=f17e10]:
+        - generic [ref=f17e11]: Paso 3
+        - generic [ref=f17e12]: Pagar e Imprimir Formato
+  - generic [ref=e10]: Los datos marcados con * son obligatorios
+  - generic [ref=e11]:
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - strong [ref=e17]: DIGITE SU LÍNEA DE CAPTURA
+        - text: "*"
+        - textbox [ref=e18]
+        - button "Buscar" [ref=e19] [cursor=pointer]
+      - generic [ref=e20]:
+        - paragraph
+        - paragraph [ref=e21]: Hoy contamos con procesos ágiles y transparentes para recibir tus pagos.
+        - paragraph [ref=e22]:
+          - link "Centros Autorizados de Pago" [ref=e23] [cursor=pointer]:
+            - /url: /recaudacion/faces/asistencia/CAPs.xhtml
+        - paragraph
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - img [ref=e26]
+        - text: Avisos
+      - paragraph [ref=e29]: Puedes llevar a cabo el pago de los diversos servicios que proporciona el Gobierno del Estado de México, ya sea en línea o a través de las ventanillas de los Centros Autorizados de Pago, lo anterior a efecto de acudir a la Dependencia correspondiente con tu comprobante de pago y los demás requisitos que se establezcan en cada trámite. Realiza tú pago en línea mediante transferencia si eres cliente de la banca electrónica; adicionalmente si pagas la Tenencia con Derechos de Control Vehicular, podrás efectuarlo con cargo a tu tarjeta Visa/Master Card emitida por cualquier Institución Financiera, American Express o Puntos BBVA. Tratándose del pago de Predial y Derechos derivados de la prestación de servicios por parte de Organismos Auxiliares, con tu tarjeta Visa/Master Card o Puntos BBVA.
+    - paragraph [ref=e31]:
+      - 'link "Aviso de Privacidad: Politica de confidencialidad y manejo de datos personales." [ref=e32] [cursor=pointer]':
+        - /url: /recaudacion/faces/Politicas/PoliticasInternet.xhtml
+      - link "Encuesta de Satisfacción." [ref=e33] [cursor=pointer]:
+        - /url: /recaudacion/faces/asistencia/EOpinion/NuevasEncuestas/AC_Encuesta.xhtml?Opcion=1

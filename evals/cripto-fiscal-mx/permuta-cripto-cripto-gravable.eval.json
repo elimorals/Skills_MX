@@ -1,0 +1,17 @@
+[
+  {"query": "swap btc a usdc", "should_trigger": true, "rationale": "Match directo: 'swap' es trigger explícito de permuta gravable"},
+  {"query": "intercambio cripto cripto", "should_trigger": true, "rationale": "Match directo con 'intercambio cripto'"},
+  {"query": "permuta cripto-cripto", "should_trigger": true, "rationale": "Trigger central del skill"},
+  {"query": "convertir bitcoin a ethereum", "should_trigger": true, "rationale": "Permuta entre dos criptos"},
+  {"query": "uniswap swap eth a dai", "should_trigger": true, "rationale": "DEX swap es permuta gravable"},
+  {"query": "cambiar usdt por usdc", "should_trigger": true, "rationale": "Stablecoin swap es permuta"},
+  {"query": "pancakeswap operación", "should_trigger": true, "rationale": "DEX BSC, permuta gravable"},
+  {"query": "es gravable cambiar btc a eth", "should_trigger": true, "rationale": "Pregunta directa sobre gravabilidad de permuta"},
+  {"query": "vender btc por mxn", "should_trigger": false, "rationale": "Es venta no permuta — usa calcular-costo-base-fifo"},
+  {"query": "comprar btc con mxn", "should_trigger": false, "rationale": "Es compra — usa importar-operaciones-exchange"},
+  {"query": "recibí airdrop arb", "should_trigger": false, "rationale": "Fuera de scope — usa staking-y-airdrops-ingreso"},
+  {"query": "minté un nft", "should_trigger": false, "rationale": "Fuera de scope — usa nft-enajenacion-bienes"},
+  {"query": "qué es bitcoin", "should_trigger": false, "rationale": "Pregunta conceptual, no operación fiscal"},
+  {"query": "configurar gmail", "should_trigger": false, "rationale": "Off-topic"},
+  {"query": "cuál es la capital de francia", "should_trigger": false, "rationale": "Off-topic"}
+]

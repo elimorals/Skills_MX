@@ -1,0 +1,23 @@
+- generic [ref=e2]:
+  - heading "titulo" [level=3] [ref=e5]
+  - generic [ref=e8]:
+    - tablist [ref=e9]:
+      - tab "INICIAR SESIÓN" [ref=e10]
+      - tab "SOY NUEVO" [ref=e11] [cursor=pointer]
+    - tabpanel [ref=e13]:
+      - heading "Completa los siguientes campos:" [level=3] [ref=e14]
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - generic [ref=e17]: Número celular
+          - textbox [ref=e18]
+        - generic [ref=e19]:
+          - generic [ref=e20]: Contraseña
+          - textbox [ref=e21]
+        - generic [ref=e22]:
+          - iframe [ref=e26]:
+            - generic [ref=f1e2]:
+              - generic [ref=f1e3]:
+                - checkbox "No soy un robot" [ref=f1e7]
+                - generic [ref=f1e11]: No soy un robot
+              - generic [ref=f1e15]: reCAPTCHA
+          - button "ENTRAR" [ref=e27] [cursor=pointer]

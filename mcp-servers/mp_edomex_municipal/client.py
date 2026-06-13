@@ -12,7 +12,11 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
-from shared.errors import McpError, ValidationError  # noqa: E402
+from shared.errors import McpError, UpstreamError, ValidationError  # noqa: E402
+from shared.playwright_real import (  # noqa: E402
+    is_public_real_enabled,
+    with_real_or_fallback,
+)
 from shared.playwright_stub import (  # noqa: E402
     detectar_modo_playwright,
     mock_response_playwright,
@@ -20,6 +24,7 @@ from shared.playwright_stub import (  # noqa: E402
 )
 
 from mp_edomex_municipal import mock_data  # noqa: E402
+from mp_edomex_municipal import playwright_real  # noqa: E402
 from mp_edomex_municipal.catalogos import MUNICIPIOS_PREDIAL_DIGITAL  # noqa: E402
 
 
@@ -49,6 +54,13 @@ class EdomexMunicipalClient:
         if not municipio:
             raise ValidationError("municipio requerido")
         self._log("predial", {"municipio": municipio, "cuenta": cuenta_predial})
+        # Path real público (sin login): consulta el catálogo central de municipios
+        if is_public_real_enabled():
+            return with_real_or_fallback(
+                real_fn=lambda: playwright_real.predial_real(municipio, cuenta_predial),
+                fallback_fn=lambda: mock_data.mock_predial_edomex(municipio, cuenta_predial),
+                portal=f"predial_{municipio.lower()}",
+            )
         if self._modo() == "mock":
             return mock_response_playwright(
                 mock_data.mock_predial_edomex(municipio, cuenta_predial),
@@ -60,12 +72,23 @@ class EdomexMunicipalClient:
         if not placa:
             raise ValidationError("placa requerida")
         self._log("tenencia", {"placa": placa, "ejercicio": ejercicio})
+        # Tenencia estatal SEF-EdoMex centralizada
+        if is_public_real_enabled():
+            return with_real_or_fallback(
+                real_fn=lambda: playwright_real.tenencia_real(placa, ejercicio),
+                fallback_fn=lambda: mock_data.mock_tenencia_edomex(placa, ejercicio),
+                portal="finanzas_edomex_tenencia",
+            )
         if self._modo() == "mock":
             return mock_response_playwright(
                 mock_data.mock_tenencia_edomex(placa, ejercicio),
                 portal="finanzas_edomex_tenencia",
             )
         raise_playwright_real_no_implementado("finanzas_edomex_tenencia")
+
+    def municipios_soportados_estructurado(self) -> list[dict[str, Any]]:
+        """Lista municipios EdoMex con estado de validación desde el catálogo central."""
+        return playwright_real.municipios_soportados()
 
     def consultar_multas(self, placa: str) -> dict[str, Any]:
         if not placa:

@@ -1,0 +1,299 @@
+- generic [active] [ref=e1]:
+  - img [ref=e4]
+  - navigation [ref=e5]:
+    - generic [ref=e6]:
+      - link [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img [ref=e8]
+      - generic [ref=e10]:
+        - searchbox "Buscar" [ref=e11]
+        - button "Buscar" [ref=e12] [cursor=pointer]:
+          - generic [ref=e13]: Buscar
+      - list [ref=e15]:
+        - listitem [ref=e16]:
+          - button "Tesorería" [ref=e17] [cursor=pointer]
+        - listitem [ref=e18]:
+          - link "Transparencia" [ref=e19] [cursor=pointer]:
+            - /url: /CTGAA
+        - listitem [ref=e20]:
+          - button "Ayuntamiento" [ref=e21] [cursor=pointer]
+        - listitem [ref=e22]:
+          - link "Prensa" [ref=e23] [cursor=pointer]:
+            - /url: /CCS/Prensa
+        - listitem [ref=e24]:
+          - button "Trámites y Servicios" [ref=e25] [cursor=pointer]
+  - generic [ref=e26]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - button "Slide 1" [ref=e31] [cursor=pointer]
+        - button "Slide 2" [ref=e32] [cursor=pointer]
+        - button "Slide 3" [ref=e33] [cursor=pointer]
+        - button "Slide 4" [ref=e34] [cursor=pointer]
+        - button "Slide 5" [ref=e35] [cursor=pointer]
+        - button "Slide 6" [ref=e36] [cursor=pointer]
+      - img [ref=e39]
+      - button "Anterior" [ref=e40] [cursor=pointer]:
+        - generic [ref=e42]: Anterior
+      - button "Siguiente" [ref=e43] [cursor=pointer]:
+        - generic [ref=e45]: Siguiente
+      - generic [ref=e46]:
+        - text: 
+        - button "" [ref=e47] [cursor=pointer]:
+          - generic [ref=e48]: 
+    - heading "Servicios en Línea" [level=2] [ref=e51]
+  - generic [ref=e57]:
+    - link "Predial" [ref=e60] [cursor=pointer]:
+      - /url: /TM/Predial
+      - img [ref=e61]
+      - generic [ref=e62]: Predial
+    - link "Ventanilla Virtual" [ref=e65] [cursor=pointer]:
+      - /url: https://tramitesenlineacuu.mpiochih.gob.mx/web/inicioWebc.do?opcion=noreg
+      - img [ref=e66]
+      - generic [ref=e67]: Ventanilla Virtual
+    - link "Portal de Contrataciones" [ref=e70] [cursor=pointer]:
+      - /url: /OM/Contrataciones
+      - img [ref=e71]
+      - generic [ref=e72]: Portal de Contrataciones
+    - link "Presupuesto Participativo" [ref=e75] [cursor=pointer]:
+      - /url: /DDHE/Presupuesto_Participativo
+      - img [ref=e76]
+      - generic [ref=e77]: Presupuesto Participativo
+    - link "Convocatorias Ayuntamiento" [ref=e80] [cursor=pointer]:
+      - /url: /CCS/Convocatorias
+      - img [ref=e81]
+      - generic [ref=e82]: Convocatorias Ayuntamiento
+    - link "IMPLAN" [ref=e85] [cursor=pointer]:
+      - /url: https://implanchihuahua.org
+      - img [ref=e86]
+      - generic [ref=e87]: IMPLAN
+    - link "SIGMUN" [ref=e90] [cursor=pointer]:
+      - /url: https://sigmunchih.mpiochih.gob.mx/portal/apps/experiencebuilder/experience/?id=5d53b473e6d04e949f09dce3c26e41f9
+      - img [ref=e91]
+      - generic [ref=e92]: SIGMUN
+    - link "Servicios en línea" [ref=e95] [cursor=pointer]:
+      - /url: /Servicios
+      - img [ref=e96]
+      - generic [ref=e97]: Servicios en línea
+    - link "Consultas de Desarrollo Urbano" [ref=e100] [cursor=pointer]:
+      - /url: /DDUE
+      - img [ref=e101]
+      - generic [ref=e102]: Consultas de Desarrollo Urbano
+    - link "Ver más" [ref=e105] [cursor=pointer]:
+      - /url: "#"
+      - img [ref=e106]
+      - generic [ref=e107]: Ver más
+  - heading "Últimas noticias" [level=2] [ref=e111]
+  - generic [ref=e112]:
+    - generic [ref=e113]:
+      - generic [ref=e115]:
+        - link [ref=e117] [cursor=pointer]:
+          - /url: /CCS/Prensa/¡Vive_la_mejor_experiencia_gastronómica!_Mañana_Festival_Antojos_2026_en_el_Paseo_Bolívar
+          - img [ref=e118]
+        - link "¡Vive la mejor experiencia gastronómica! Mañana Festival Antojos 2026 en el Paseo Bolívar 12 de junio, 2026" [ref=e120] [cursor=pointer]:
+          - /url: /CCS/Prensa/¡Vive_la_mejor_experiencia_gastronómica!_Mañana_Festival_Antojos_2026_en_el_Paseo_Bolívar
+          - text: ¡Vive la mejor experiencia gastronómica! Mañana Festival Antojos 2026 en el Paseo Bolívar
+          - text: 12 de junio, 2026
+        - generic:
+          - generic:
+            - link "Facebook":
+              - /url: /CCS/Prensa/¡Vive_la_mejor_experiencia_gastronómica!_Mañana_Festival_Antojos_2026_en_el_Paseo_Bolívar
+            - link "Twitter":
+              - /url: /CCS/Prensa/¡Vive_la_mejor_experiencia_gastronómica!_Mañana_Festival_Antojos_2026_en_el_Paseo_Bolívar
+            - link "Whatsapp":
+              - /url: /CCS/Prensa/¡Vive_la_mejor_experiencia_gastronómica!_Mañana_Festival_Antojos_2026_en_el_Paseo_Bolívar
+      - generic [ref=e122]:
+        - link [ref=e124] [cursor=pointer]:
+          - /url: /CCS/Prensa/Ofrece_Municipio_especialización_en_robótica_educativa_en_la_Universidad_de_las_Mujeres
+          - img [ref=e125]
+        - link "Ofrece Municipio especialización en robótica educativa en la Universidad de las Mujeres 12 de junio, 2026" [ref=e127] [cursor=pointer]:
+          - /url: /CCS/Prensa/Ofrece_Municipio_especialización_en_robótica_educativa_en_la_Universidad_de_las_Mujeres
+          - text: Ofrece Municipio especialización en robótica educativa en la Universidad de las Mujeres
+          - text: 12 de junio, 2026
+        - generic:
+          - generic:
+            - link "Facebook":
+              - /url: /CCS/Prensa/Ofrece_Municipio_especialización_en_robótica_educativa_en_la_Universidad_de_las_Mujeres
+            - link "Twitter":
+              - /url: /CCS/Prensa/Ofrece_Municipio_especialización_en_robótica_educativa_en_la_Universidad_de_las_Mujeres
+            - link "Whatsapp":
+              - /url: /CCS/Prensa/Ofrece_Municipio_especialización_en_robótica_educativa_en_la_Universidad_de_las_Mujeres
+      - generic [ref=e129]:
+        - link [ref=e131] [cursor=pointer]:
+          - /url: /CCS/Prensa/Refuerza_Policía_Municipal_vigilancia_en_las_escuelas_durante_periodo_vacacional
+          - img [ref=e132]
+        - link "Refuerza Policía Municipal vigilancia en las escuelas durante periodo vacacional 12 de junio, 2026" [ref=e134] [cursor=pointer]:
+          - /url: /CCS/Prensa/Refuerza_Policía_Municipal_vigilancia_en_las_escuelas_durante_periodo_vacacional
+          - text: Refuerza Policía Municipal vigilancia en las escuelas durante periodo vacacional
+          - text: 12 de junio, 2026
+        - generic:
+          - generic:
+            - link "Facebook":
+              - /url: /CCS/Prensa/Refuerza_Policía_Municipal_vigilancia_en_las_escuelas_durante_periodo_vacacional
+            - link "Twitter":
+              - /url: /CCS/Prensa/Refuerza_Policía_Municipal_vigilancia_en_las_escuelas_durante_periodo_vacacional
+            - link "Whatsapp":
+              - /url: /CCS/Prensa/Refuerza_Policía_Municipal_vigilancia_en_las_escuelas_durante_periodo_vacacional
+      - generic [ref=e136]:
+        - link [ref=e138] [cursor=pointer]:
+          - /url: /CCS/Prensa/Cumple_Marco_Bonilla_con_buen_desarrollo_de_niñas_y_niños;_realizan_crucero_para_impulsar_programa_“La_Calle_No_Es_Su_Lugar”
+          - img [ref=e139]
+        - link "Cumple Marco Bonilla con buen desarrollo de niñas y niños; realizan crucero para impulsar programa “La Calle No Es Su Lugar” 12 de junio, 2026" [ref=e141] [cursor=pointer]:
+          - /url: /CCS/Prensa/Cumple_Marco_Bonilla_con_buen_desarrollo_de_niñas_y_niños;_realizan_crucero_para_impulsar_programa_“La_Calle_No_Es_Su_Lugar”
+          - text: Cumple Marco Bonilla con buen desarrollo de niñas y niños; realizan crucero para impulsar programa “La Calle No Es Su Lugar”
+          - text: 12 de junio, 2026
+        - generic:
+          - generic:
+            - link "Facebook":
+              - /url: /CCS/Prensa/Cumple_Marco_Bonilla_con_buen_desarrollo_de_niñas_y_niños;_realizan_crucero_para_impulsar_programa_“La_Calle_No_Es_Su_Lugar”
+            - link "Twitter":
+              - /url: /CCS/Prensa/Cumple_Marco_Bonilla_con_buen_desarrollo_de_niñas_y_niños;_realizan_crucero_para_impulsar_programa_“La_Calle_No_Es_Su_Lugar”
+            - link "Whatsapp":
+              - /url: /CCS/Prensa/Cumple_Marco_Bonilla_con_buen_desarrollo_de_niñas_y_niños;_realizan_crucero_para_impulsar_programa_“La_Calle_No_Es_Su_Lugar”
+    - link "Ver más notas..." [ref=e144] [cursor=pointer]:
+      - /url: /CCS/Prensa
+    - list [ref=e147]:
+      - listitem [ref=e148]:
+        - link [ref=e149] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e150]
+      - listitem [ref=e151]:
+        - link [ref=e152] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e153]
+      - listitem [ref=e154]:
+        - link [ref=e155] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e156]
+      - listitem [ref=e157]:
+        - link [ref=e158] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e159]
+      - listitem [ref=e160]:
+        - link [ref=e161] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e162]
+      - listitem [ref=e163]:
+        - link [ref=e164] [cursor=pointer]:
+          - /url: /IMM/UM
+          - img [ref=e165]
+      - listitem [ref=e166]:
+        - link [ref=e167] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e168]
+      - listitem [ref=e169]:
+        - link [ref=e170] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e171]
+      - listitem [ref=e172]:
+        - link [ref=e173] [cursor=pointer]:
+          - /url: https://forms.gle/qAnLAyFaXkDff7yA7
+          - img [ref=e174]
+      - listitem [ref=e175]:
+        - link [ref=e176] [cursor=pointer]:
+          - /url: https://docs.google.com/forms/d/e/1FAIpQLSfzrZoFP7Xb8m1XraHz36IzDlO8Z7cwIx-k1JoshZaAqjZerA/viewform
+          - img [ref=e177]
+    - generic [ref=e178]:
+      - link "Marco Antonio Bonilla Mendoza Presidente Municipal Conoce a los integrantes del Gobierno Municipal" [ref=e181] [cursor=pointer]:
+        - /url: /Presidencia
+        - img [ref=e182]
+        - generic [ref=e183]:
+          - generic [ref=e184]: Marco Antonio Bonilla Mendoza
+          - generic [ref=e185]: Presidente Municipal
+          - generic [ref=e186]: Conoce a los integrantes del Gobierno Municipal
+      - generic [ref=e188]:
+        - generic [ref=e189]:
+          - region "Reproductor de video" [ref=e191]:
+            - iframe [ref=e192]:
+              
+            - button "Reproducir Vídeo" [ref=e193] [cursor=pointer]:
+              - text: 
+              - generic [ref=e194]: Reproducir Vídeo
+            - text:            
+          - text:                          
+        - button "Anterior" [ref=e195] [cursor=pointer]:
+          - generic [ref=e197]: Anterior
+        - button "Siguiente" [ref=e198] [cursor=pointer]:
+          - generic [ref=e200]: Siguiente
+        - generic [ref=e201]:
+          - text: 
+          - button "" [ref=e202] [cursor=pointer]:
+            - generic [ref=e203]: 
+      - link "Conoce a los integrantes del Ayuntamiento de Chihuahua" [ref=e206] [cursor=pointer]:
+        - /url: /Ayuntamiento
+        - img [ref=e207]
+        - generic [ref=e209]: Conoce a los integrantes del Ayuntamiento de Chihuahua
+      - link [ref=e211] [cursor=pointer]:
+        - /url: https://www.facebook.com/imm.chih
+        - img [ref=e212]
+  - generic [ref=e215]:
+    - link [ref=e216] [cursor=pointer]:
+      - /url: https://oic.mpiochih.gob.mx/report/pspm
+    - link [ref=e217] [cursor=pointer]:
+      - /url: https://denunciapolicia.mpiochih.gob.mx/denuncias/denunciacomienzo
+  - generic [ref=e222]:
+    - generic [ref=e223]:
+      - generic [ref=e224]: Gobierno Municipal de Chihuahua
+      - img [ref=e225]
+      - generic [ref=e226]: Administración 2024 - 2027
+      - generic [ref=e227]:
+        - text: Av. Independencia No. 209 Colonia Centro,
+        - text: C.P. 31000, Chihuahua, Chihuahua
+    - generic [ref=e229]:
+      - generic [ref=e231]: Ligas de Interés
+      - list [ref=e233]:
+        - listitem [ref=e234]:
+          - link "Contacto" [ref=e235] [cursor=pointer]:
+            - /url: /Servicios/Contacto
+        - listitem [ref=e236]:
+          - link "Webmail" [ref=e237] [cursor=pointer]:
+            - /url: https://mailserver.mpiochih.gob.mx/owa
+        - listitem [ref=e238]:
+          - button "Declaración Patrimonial" [ref=e239] [cursor=pointer]
+        - listitem [ref=e240]:
+          - link "Directorio" [ref=e241] [cursor=pointer]:
+            - /url: /Directorio
+        - listitem [ref=e242]:
+          - link "PAE" [ref=e243] [cursor=pointer]:
+            - /url: /DPIG/PAE
+        - listitem [ref=e244]:
+          - link "Mesa de Servicio a Usuarios" [ref=e245] [cursor=pointer]:
+            - /url: https://sistemasmsu.mpiochih.gob.mx/
+        - listitem [ref=e246]:
+          - link "Órgano Interno de Control" [ref=e247] [cursor=pointer]:
+            - /url: https://oic.mpiochih.gob.mx/
+      - list [ref=e249]:
+        - listitem [ref=e250]:
+          - button "Descargas" [ref=e251] [cursor=pointer]
+        - listitem [ref=e252]:
+          - button "Información Pública 2019" [ref=e253] [cursor=pointer]
+        - listitem [ref=e254]:
+          - button "Información Pública 2020" [ref=e255] [cursor=pointer]
+        - listitem [ref=e256]:
+          - button "Información Pública 2023" [ref=e257] [cursor=pointer]
+        - listitem [ref=e258]:
+          - link "Recomendación 91/2019" [ref=e259] [cursor=pointer]:
+            - /url: /DDUE/Recomendacion_91_2019
+    - generic [ref=e260]:
+      - generic [ref=e261]:
+        - generic [ref=e262]: "Apps de gobierno:"
+        - link "Apps de gobierno" [ref=e263] [cursor=pointer]:
+          - /url: /Aplicaciones_Moviles
+          - img [ref=e264]
+          - img [ref=e265]
+          - generic [ref=e266]: Apps de gobierno
+      - generic [ref=e267]:
+        - link [ref=e268] [cursor=pointer]:
+          - /url: https://www.instagram.com/gobmunchih/
+          - img [ref=e269]
+        - link [ref=e270] [cursor=pointer]:
+          - /url: https://www.facebook.com/chihuahuampio/
+          - img [ref=e271]
+        - link [ref=e272] [cursor=pointer]:
+          - /url: https://twitter.com/chihuahuampio
+          - img [ref=e273]
+        - link [ref=e274] [cursor=pointer]:
+          - /url: http://www.youtube.com/c/GobiernoMunicipaldeChihuahua
+          - img [ref=e275]
+    - generic [ref=e276]: Todos los derechos reservados © 2026 Gobierno Municipal de Chihuahua 2024 - 2027
+  - contentinfo [ref=e277]
+  - img [ref=e285] [cursor=pointer]

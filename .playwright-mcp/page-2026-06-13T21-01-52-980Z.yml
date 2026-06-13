@@ -1,0 +1,284 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - link "Skip to content" [ref=e5] [cursor=pointer]:
+      - /url: "#content"
+    - banner [ref=e6]:
+      - generic [ref=e10]:
+        - link " Jdn. Principal S/N, Centro, 36500 Irapuato, Gto." [ref=e11] [cursor=pointer]:
+          - /url: https://goo.gl/maps/db6XnbhmKCTVqwJU8
+          - generic [ref=e12]: 
+          - text: Jdn. Principal S/N, Centro, 36500 Irapuato, Gto.
+        - generic [ref=e13]:
+          - link " Facebook page opens in new window" [ref=e14] [cursor=pointer]:
+            - /url: https://es-la.facebook.com/irapuato.municipio/
+            - generic [ref=e15]: 
+            - generic [ref=e16]: Facebook page opens in new window
+          - link " Twitter page opens in new window" [ref=e17] [cursor=pointer]:
+            - /url: https://twitter.com/irapuatogob
+            - generic [ref=e18]: 
+            - generic [ref=e19]: Twitter page opens in new window
+          - link " YouTube page opens in new window" [ref=e20] [cursor=pointer]:
+            - /url: https://www.youtube.com/c/irapuatogob1/
+            - generic [ref=e21]: 
+            - generic [ref=e22]: YouTube page opens in new window
+          - link " Instagram page opens in new window" [ref=e23] [cursor=pointer]:
+            - /url: https://www.instagram.com/irapuatogob/?hl=es
+            - generic [ref=e24]: 
+            - generic [ref=e25]: Instagram page opens in new window
+      - banner [ref=e26]:
+        - generic [ref=e27]:
+          - generic: Gobierno Municipal de Irapuato
+          - generic: Portal Oficial del Gobierno Municipal de Irapuato, Guanajuato
+          - link "Gobierno Municipal de Irapuato" [ref=e28] [cursor=pointer]:
+            - /url: https://www.irapuato.gob.mx/
+            - img "Gobierno Municipal de Irapuato" [ref=e29]
+        - menubar [ref=e30]:
+          - menuitem "Inicio" [ref=e31] [cursor=pointer]:
+            - generic [ref=e33]: Inicio
+          - menuitem "Gobierno" [ref=e34] [cursor=pointer]:
+            - generic [ref=e36]: Gobierno
+          - menuitem "Contigo" [ref=e37] [cursor=pointer]:
+            - generic [ref=e39]: Contigo
+          - menuitem "Municipio en Línea" [ref=e40] [cursor=pointer]:
+            - generic [ref=e42]: Municipio en Línea
+          - menuitem "Transparencia" [ref=e43] [cursor=pointer]:
+            - generic [ref=e45]: Transparencia
+          - menuitem "Boletines" [ref=e46] [cursor=pointer]:
+            - generic [ref=e48]: Boletines
+        - search [ref=e51]:
+          - generic [ref=e52]: "Search:"
+          - link "󬁑" [ref=e53] [cursor=pointer]:
+            - /url: ""
+            - generic [ref=e54]: 󬁑
+      - text: 󬁑 󬁑
+    - text:         
+    - generic [ref=e56]:
+      - generic [ref=e59]:
+        - generic [ref=e67] [cursor=pointer]: 
+        - generic [ref=e68] [cursor=pointer]: 
+      - main [ref=e72]:
+        - generic [ref=e73]:
+          - generic [ref=e83]:
+            - heading "Cartelera Cultural" [level=2] [ref=e84]:
+              - link "Cartelera Cultural" [ref=e85] [cursor=pointer]:
+                - /url: https://www.facebook.com/IMCARoficial/
+            - heading "Junio 2026" [level=3] [ref=e86]:
+              - strong [ref=e88]: Junio 2026
+            - link " Mas información" [ref=e90] [cursor=pointer]:
+              - /url: https://www.facebook.com/IMCARoficial/
+              - generic [ref=e91]: 
+              - text: Mas información
+          - generic [ref=e102]:
+            - heading "Eventos" [level=2] [ref=e103]:
+              - link "Eventos" [ref=e104] [cursor=pointer]:
+                - /url: https://www.facebook.com/IMCARoficial/?locale=es_LA
+            - paragraph [ref=e105]:
+              - strong [ref=e107]: Cultura
+            - link " Consulta la Cartelera" [ref=e109] [cursor=pointer]:
+              - /url: https://www.facebook.com/IMCARoficial/?locale=es_LA
+              - generic [ref=e110]: 
+              - text: Consulta la Cartelera
+          - generic [ref=e121]:
+            - heading "Agenda Deportiva" [level=2] [ref=e122]:
+              - link "Agenda Deportiva" [ref=e123] [cursor=pointer]:
+                - /url: https://www.irapuato.gob.mx/comudaj/agendadeportiva/#junio
+            - paragraph [ref=e124]:
+              - strong [ref=e126]: Junio 2026
+            - link " Consulta la Agenda" [ref=e128] [cursor=pointer]:
+              - /url: https://www.irapuato.gob.mx/comudaj/agendadeportiva/#junio
+              - generic [ref=e129]: 
+              - text: Consulta la Agenda
+        - heading "ACCESOS RÁPIDOS" [level=2] [ref=e138]
+        - generic [ref=e139]:
+          - figure [ref=e144]:
+            - link [ref=e145] [cursor=pointer]:
+              - /url: https://www.irapuato.gob.mx/atencionciudadana/
+          - figure [ref=e151]:
+            - link [ref=e152] [cursor=pointer]:
+              - /url: https://www.irapuato.gob.mx/070-en-linea/
+          - figure [ref=e158]:
+            - link [ref=e159] [cursor=pointer]:
+              - /url: https://www.irapuato.gob.mx/centrohistorico/
+          - figure [ref=e165]:
+            - link [ref=e166] [cursor=pointer]:
+              - /url: https://recibos.irapuato.gob.mx/
+        - heading "CONVOCATORIAS" [level=2] [ref=e175]
+        - generic [ref=e176]:
+          - figure [ref=e181]:
+            - link [ref=e182] [cursor=pointer]:
+              - /url: https://www.facebook.com/SustentabilidadIrapuato/?locale=es_LA
+          - figure [ref=e188]:
+            - link [ref=e189] [cursor=pointer]:
+              - /url: https://www.irapuato.gob.mx/becas/#2026
+          - figure [ref=e195]:
+            - link [ref=e196] [cursor=pointer]:
+              - /url: https://www.irapuato.gob.mx/convocatorias/#smn2026
+          - figure [ref=e202]:
+            - link [ref=e203] [cursor=pointer]:
+              - /url: https://www.bbva.mx/empresas/landings/alianzas/colaboracion-sectur.html
+        - heading "NOTICIAS" [level=2] [ref=e212]
+        - heading "CONSULTAS" [level=2] [ref=e227]
+        - generic [ref=e228]:
+          - generic [ref=e232]:
+            - img "null" [ref=e233]
+            - generic [ref=e234]:
+              - generic [ref=e236]: 
+              - paragraph [ref=e237]: CONSULTA EL PRESUPUESTO CIUDADANO 2026
+            - link [ref=e238] [cursor=pointer]:
+              - /url: https://presup2025-hgwyj6eb.manus.space/
+          - generic [ref=e242]:
+            - img "null" [ref=e243]
+            - generic [ref=e244]:
+              - generic [ref=e246]: 󢀡
+              - paragraph [ref=e247]: ¿BUSCAS U OFRECES EMPLEO EN IRAPUATO? REGÍSTRATE
+            - link [ref=e248] [cursor=pointer]:
+              - /url: https://bolsadeempleo.irapuato.gob.mx/job_search_by_skill.php
+          - generic [ref=e252]:
+            - img "null" [ref=e253]
+            - generic [ref=e254]:
+              - generic [ref=e256]: 
+              - paragraph [ref=e257]: ÓRGANO OFICIAL DE PUBLICACIÓN Y DIFUSIÓN DE IRAPUATO
+            - link [ref=e258] [cursor=pointer]:
+              - /url: https://gaceta.irapuato.gob.mx/
+          - generic [ref=e262]:
+            - img "null" [ref=e263]
+            - generic [ref=e264]:
+              - generic [ref=e266]: 
+              - paragraph [ref=e267]: CONSULTA REQUISITOS DE INSCRIPCIÓN, MODIFICACIÓN O REFRENDO
+            - link [ref=e268] [cursor=pointer]:
+              - /url: https://www.irapuato.gob.mx/padron-proveedores/
+        - generic [ref=e269]:
+          - link " Convocatorias" [ref=e274] [cursor=pointer]:
+            - /url: https://www.irapuato.gob.mx/2021/convocatorias/
+            - button " Convocatorias" [ref=e275]:
+              - generic [ref=e277]: 
+              - generic [ref=e279]: Convocatorias
+          - link " Directorio" [ref=e284] [cursor=pointer]:
+            - /url: https://www.irapuato.gob.mx/gabinete/#directorio
+            - button " Directorio" [ref=e285]:
+              - generic [ref=e287]: 
+              - generic [ref=e289]: Directorio
+          - link " Participación Ciudadana" [ref=e294] [cursor=pointer]:
+            - /url: https://gaceta.irapuato.gob.mx/participacion-ciudadana/
+            - button " Participación Ciudadana" [ref=e295]:
+              - generic [ref=e297]: 
+              - generic [ref=e299]: Participación Ciudadana
+        - generic [ref=e300]:
+          - figure [ref=e305]
+          - figure [ref=e311]:
+            - link [ref=e312] [cursor=pointer]:
+              - /url: https://www.irapuato.gob.mx/atencionciudadana/
+        - figure [ref=e319]:
+          - link [ref=e320] [cursor=pointer]:
+            - /url: https://portaltransparencia.irapuato.gob.mx/
+        - generic [ref=e325]:
+          - generic [ref=e326]: ¡Compartir!
+          - generic [ref=e327]:
+            - link " Share on Facebook" [ref=e328] [cursor=pointer]:
+              - /url: https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.irapuato.gob.mx%2F&t=Inicio
+              - text:  
+              - generic [ref=e329]: Share on Facebook
+            - link " Share on Twitter" [ref=e330] [cursor=pointer]:
+              - /url: https://twitter.com/share?url=https%3A%2F%2Fwww.irapuato.gob.mx%2F&text=Inicio
+              - text:  
+              - generic [ref=e331]: Share on Twitter
+            - link " Share on WhatsApp" [ref=e332] [cursor=pointer]:
+              - /url: https://api.whatsapp.com/send?text=Inicio%20-%20https%3A%2F%2Fwww.irapuato.gob.mx%2F
+              - text:  
+              - generic [ref=e333]: Share on WhatsApp
+    - contentinfo [ref=e334]:
+      - generic [ref=e338]:
+        - generic [ref=e341]:
+          - heading "Ubícanos" [level=4] [ref=e342]
+          - paragraph [ref=e343]:
+            - generic [ref=e345]: 
+            - text: Palacio Municipal s/n Zona Centro
+            - text: C.P. 36500
+            - text: Irapuato, Guanajuato, México
+          - paragraph [ref=e346]:
+            - generic [ref=e348]: 
+            - link "+52 462 606 9999" [ref=e349] [cursor=pointer]:
+              - /url: tel:462606999
+          - paragraph [ref=e350]:
+            - generic [ref=e352]: 
+            - link "Cómo llegar" [ref=e353] [cursor=pointer]:
+              - /url: https://www.google.com/maps/place/Palacio+Municipal,+Berriozabal,+Col.+Centro,+36500+Irapuato,+Gto.,+M%C3%A9xico/@20.6725326,-101.3490315,18z/data=!3m1!4b1!4m5!3m4!1s0x842c7fd4626df7bb:0xb7c40eb9f9190196!8m2!3d20.6725326!4d-101.3479372?hl=es-ES&shorturl=1
+        - generic [ref=e356]:
+          - heading "Gobierno" [level=4] [ref=e357]
+          - paragraph [ref=e358]:
+            - generic [ref=e360]: 
+            - link "Directorio" [ref=e361] [cursor=pointer]:
+              - /url: https://www.irapuato.gob.mx/gabinete/
+        - generic [ref=e364]:
+          - heading "Tramites y Servicios" [level=4] [ref=e365]
+          - paragraph [ref=e366]:
+            - generic [ref=e368]: 
+            - link "Renovación de Licencia Tipo A" [ref=e369] [cursor=pointer]:
+              - /url: https://digital.irapuato.gob.mx/ctys/busqueda/buscar_por/05ea5fd9c12de745af02d1dcc9f751ab5e9c4624c6f7cd631c72cd6c56ae678111cc6b2795106d6d4bd631228bf7d887fe0f0a025d4f6e29594017ccd35f6166IFqsNaoThigFb556V0EQL609kf1VzQUYuHpjKaMqIdI.
+          - paragraph [ref=e370]:
+            - generic [ref=e372]: 
+            - link "Trámite de renovación de pasaporte (usuario menor de edad)" [ref=e373] [cursor=pointer]:
+              - /url: https://digital.irapuato.gob.mx/ctys/busqueda/buscar_por/da63c7c5544c582750b4019c8b9135e8cc0ff7773e8a03666f478d20a360eb77041ef0e23bc347a59e4304b71dba5a88a8f7a08d3bd76bb373f0c6cae3d1ce00O6DDX-6XJSwGRl2PlEiC6dcB4Z6WZQOzFGO3ttA2mdY.
+          - paragraph [ref=e374]:
+            - generic [ref=e376]: 
+            - link "Uso de plaza pública" [ref=e377] [cursor=pointer]:
+              - /url: https://digital.irapuato.gob.mx/ctys/Tramite/busqueda_por_tramite/dccea66ad612807e7d9de7877d320ca8d3b4fc71cc2dd0c7c85dd3770117f1c9adf9cb8563cdee7944c962ba36d763ba64b1bfb6234d62bd63f6699f8395bb9ab-gR5Ceg0c5rpi-NR0_FUxbMC7XP85XJpFGNC0IKeKQ.
+          - paragraph [ref=e378]:
+            - generic [ref=e380]: 
+            - link "Carta de residencia con identificación" [ref=e381] [cursor=pointer]:
+              - /url: https://digital.irapuato.gob.mx/ctys/Tramite/busqueda_por_tramite/335f208dbe8340a9abb476e950d6ce52100cdeb436b9f7039aadf3416a55afd169ed8a1649ebb01892204c82a8bffc8fe9630a9eb8a854226dd26cecc463b4d1dhtombloAUUjC6Y4-yUVYa57SBdahielbp--y7wUvvM.
+          - paragraph [ref=e382]:
+            - generic [ref=e384]: 
+            - link "Taller \" Escuela para Padres\"" [ref=e385] [cursor=pointer]:
+              - /url: https://digital.irapuato.gob.mx/ctys/Tramite/busqueda_por_tramite/7a68fbabb3ea817ab152021dec73ed2b6d3561d211009c76b028d5b6b12dbf0f21a41f1a076c3039f3a33ba5a5916c83f3ec4f19faffc90d4aa35b9b75ef2a8cFK2eekBclCZDgF6SD4db3002_UH6k1tcb66M7SS-InY.
+        - generic [ref=e388]:
+          - heading "Accesos Rápidos" [level=4] [ref=e389]
+          - paragraph [ref=e390]:
+            - generic [ref=e392]: 
+            - link "Padrón de Proveedores" [ref=e393] [cursor=pointer]:
+              - /url: https://www.irapuato.gob.mx/padron-proveedores/
+          - paragraph [ref=e394]:
+            - generic [ref=e396]: 
+            - link "Licitaciones y Concursos" [ref=e397] [cursor=pointer]:
+              - /url: https://www.irapuato.gob.mx/licitaciones-y-concursos/
+          - paragraph [ref=e398]:
+            - generic [ref=e400]: 
+            - link "Declaranet" [ref=e401] [cursor=pointer]:
+              - /url: https://declaranet.irapuato.gob.mx/#/login
+          - paragraph [ref=e402]:
+            - generic [ref=e404]: 
+            - link "Convocatorias" [ref=e405] [cursor=pointer]:
+              - /url: https://www.irapuato.gob.mx/convocatorias/
+          - paragraph [ref=e406]:
+            - generic [ref=e408]: 
+            - link "Emergencias 911" [ref=e409] [cursor=pointer]:
+              - /url: tel:911
+          - paragraph [ref=e410]:
+            - generic [ref=e412]: 
+            - link "Atención Ciudadana CCD 072" [ref=e413] [cursor=pointer]:
+              - /url: tel:072
+          - paragraph [ref=e414]:
+            - generic [ref=e416]: 
+            - link "Quejas y Denuncias 070" [ref=e417] [cursor=pointer]:
+              - /url: https://www.irapuato.gob.mx/070-en-linea/
+        - figure [ref=e421]
+      - contentinfo [ref=e422]:
+        - generic [ref=e424]:
+          - generic [ref=e425]: © Irapuato | H. Ayuntamiento 2024-2027
+          - paragraph [ref=e428]:
+            - generic [ref=e429]: 
+            - text: +52 462 606 9999
+            - generic [ref=e430]: 
+            - text: www.irapuato.gob.mx
+    - link "󰊐 Go to Top" [ref=e431] [cursor=pointer]:
+      - /url: "#"
+      - text: 󰊐
+      - generic [ref=e432]: Go to Top
+  - generic:
+    - emphasis
+  - text:    
+  - img [ref=e433]
+  - link "Whatsapp" [ref=e435] [cursor=pointer]:
+    - /url: https://web.whatsapp.com/send?phone=524621257662&text=
+    - img [ref=e438]
+    - generic: Contacto

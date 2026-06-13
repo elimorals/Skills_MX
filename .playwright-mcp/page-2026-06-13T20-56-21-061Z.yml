@@ -1,0 +1,186 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - banner [ref=e4]:
+        - link [ref=e6] [cursor=pointer]:
+          - /url: https://pagos.tijuana.gob.mx
+          - img [ref=e7]
+        - generic [ref=e8]:
+          - link "Ayuntamiento de Tijuana" [ref=e10] [cursor=pointer]:
+            - /url: https://www.tijuana.gob.mx/index.aspx
+            - img "Ayuntamiento de Tijuana" [ref=e11]
+          - generic [ref=e12]:
+            - navigation [ref=e13]:
+              - list [ref=e14]:
+                - listitem [ref=e15]:
+                  - link "Inicio" [ref=e16] [cursor=pointer]:
+                    - /url: https://www.tijuana.gob.mx
+                - listitem [ref=e17]:
+                  - link "Ayuntamiento 3" [ref=e18] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e19]:
+                  - link "Dependencias" [ref=e20] [cursor=pointer]:
+                    - /url: https://www.tijuana.gob.mx/dependencias
+                - listitem [ref=e21]:
+                  - link "Delegaciones 3" [ref=e22] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e23]:
+                  - link "Paramunicipales 3" [ref=e24] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e25]:
+                  - link "Transparencia" [ref=e26] [cursor=pointer]:
+                    - /url: https://transparencia.tijuana.gob.mx
+                - listitem [ref=e27]:
+                  - link "Mi cuenta" [ref=e28] [cursor=pointer]:
+                    - /url: https://pagos.tijuana.gob.mx/PagosEnLinea/index.aspx
+            - link:
+              - /url: javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$lbServicios", "", false, "", "https://pagos.tijuana.gob.mx/PagosenLinea/Servicios/servicios.aspx", false, true))
+            - text: a
+      - article [ref=e31]:
+        - generic [ref=e36]:
+          - article [ref=e38]:
+            - generic [ref=e39]:
+              - heading "Tesorería Municipal" [level=1] [ref=e40]
+              - separator [ref=e41]
+              - heading "Bienvenidos" [level=3] [ref=e42]
+            - generic [ref=e43]:
+              - paragraph [ref=e44]:
+                - strong [ref=e45]: Misión
+                - text: Nuestra misión, a través de la Tesorería, es dirigir los recursos financieros de la Hacienda Municipal hacia el logro y cumplimiento de los objetivos y programas del H. Ayuntamiento, implementando procesos administrativos necesarios encaminados a proporcionar un servicio adecuado y expedito al público; así como la correcta aplicación de las partidas presupuestales con estricto apego a las leyes y normatividad vigente para cada ejercicio.
+              - paragraph [ref=e46]:
+                - strong [ref=e47]: Visión
+                - text: La Tesorería Municipal tiene la Visión de lograr una economía municipal fortalecida, que optimice el rendimiento de los recursos propios y asignados para afrontar la importante labor recaudatoria y de servicio. De tal manera, se ofrece a la ciudadanía, mejores servicios, distinguiéndose por la calidad en el desempeño de sus funciones.
+          - blockquote [ref=e50]:
+            - link "Principal" [ref=e52] [cursor=pointer]:
+              - /url: https://www.tijuana.gob.mx/dependencias/tesoreria/index.aspx
+            - link "Directorio" [ref=e54] [cursor=pointer]:
+              - /url: https://www.tijuana.gob.mx/dependencias/tesoreria/directorio.aspx
+            - link "Factura Electrónica" [ref=e56] [cursor=pointer]:
+              - /url: https://www.tijuana.gob.mx/dependencias/tesoreria/facturae.aspx
+            - link "LICITACIONES" [ref=e58] [cursor=pointer]:
+              - /url: https://www.tijuana.gob.mx/dependencias/tesoreria/licitaciones.aspx
+            - separator [ref=e59]
+            - link "Documentos de trabajo ASM anexos B, C, D, y E" [ref=e61] [cursor=pointer]:
+              - /url: https://www.tijuana.gob.mx/dependencias/tesoreria/DocumentosTrabajoAsmAnexos/AsmAnexos.aspx
+              - text: Documentos de
+              - text: trabajo ASM
+              - text: anexos B, C, D, y E
+            - link "Evaluaciónes" [ref=e63] [cursor=pointer]:
+              - /url: https://www.tijuana.gob.mx/dependencias/tesoreria/evaluaciones.aspx
+            - link "Programa Anual de Evaluaciones" [ref=e65] [cursor=pointer]:
+              - /url: https://www.tijuana.gob.mx/dependencias/tesoreria/pae.aspx
+              - text: Programa Anual
+              - text: de Evaluaciones
+            - link "Presupuesto de Egresos para el ejercicio fiscal" [ref=e67] [cursor=pointer]:
+              - /url: https://www.tijuana.gob.mx/Dependencias/Tesoreria/PresupuestoEgresos/presupuestoEgresos.aspx
+              - text: Presupuesto de
+              - text: Egresos para el
+              - text: ejercicio fiscal
+            - link "Manual de Contabilidad Gubernamental" [ref=e69] [cursor=pointer]:
+              - /url: https://www.tijuana.gob.mx/dependencias/tesoreria/manual.aspx
+              - text: Manual de
+              - text: Contabilidad
+              - text: Gubernamental
+            - link "Transparencia Cuenta Pública" [ref=e71] [cursor=pointer]:
+              - /url: https://www.tijuana.gob.mx/dependencias/tesoreria/CuentaPublica.aspx
+              - text: Transparencia
+              - text: Cuenta Pública
+            - link "Resultados Diagnóstico PBR-SED" [ref=e73] [cursor=pointer]:
+              - /url: https://www.tijuana.gob.mx/dependencias/tesoreria/resultado_PbR.aspx
+              - text: Resultados
+              - text: Diagnóstico
+              - text: PBR-SED
+            - link "Sistema de Evaluación de Desempeño" [ref=e75] [cursor=pointer]:
+              - /url: https://www.tijuana.gob.mx/Dependencias/Tesoreria/PresupuestoEgresos/SistemaEvaluacion.aspx
+              - text: Sistema de
+              - text: Evaluación
+              - text: de Desempeño
+    - contentinfo [ref=e76]:
+      - generic [ref=e78]:
+        - generic [ref=e80]:
+          - heading "Ayuntamiento de Tijuana, B.C." [level=3] [ref=e81]
+          - paragraph [ref=e82]:
+            - generic [ref=e83]:
+              - text: Avenida Independencia 1350, Zona Urbana Río, C. P. 22010
+              - text: Tijuana, Baja California, México
+              - text: (664) 973-7000
+          - iframe [ref=e85]:
+            - generic [ref=f67e2]:
+              - table [ref=f67e3]:
+                - rowgroup [ref=f67e4]:
+                  - row "25°C 11 km/h Hoy Mañana Lunes" [ref=f67e5]:
+                    - cell [ref=f67e6]:
+                      - link [ref=f67e7] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tijuana.html
+                    - cell "25°C 11 km/h" [ref=f67e8]:
+                      - strong [ref=f67e10]: 25°C
+                      - text: 11 km/h
+                    - cell "Hoy" [ref=f67e11]:
+                      - generic [ref=f67e12]: Hoy
+                    - cell "Mañana" [ref=f67e13]:
+                      - generic [ref=f67e14]: Mañana
+                    - cell "Lunes" [ref=f67e15]:
+                      - generic [ref=f67e16]: Lunes
+                  - row [ref=f67e17]:
+                    - cell [ref=f67e18]:
+                      - link [ref=f67e19] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tijuana.html
+                    - cell [ref=f67e20]:
+                      - link [ref=f67e21] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tijuana.html
+                    - cell [ref=f67e22]:
+                      - link [ref=f67e23] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tijuana.html
+                  - row "24° | 19° 23° | 19° 23° | 19°" [ref=f67e24]:
+                    - cell "24° | 19°" [ref=f67e25]:
+                      - generic [ref=f67e26]: 24°
+                      - generic [ref=f67e27]: "|"
+                      - generic [ref=f67e28]: 19°
+                    - cell "23° | 19°" [ref=f67e29]:
+                      - generic [ref=f67e30]: 23°
+                      - generic [ref=f67e31]: "|"
+                      - generic [ref=f67e32]: 19°
+                    - cell "23° | 19°" [ref=f67e33]:
+                      - generic [ref=f67e34]: 23°
+                      - generic [ref=f67e35]: "|"
+                      - generic [ref=f67e36]: 19°
+              - generic [ref=f67e37]:
+                - link "© Tutiempo.net" [ref=f67e39] [cursor=pointer]:
+                  - /url: https://www.tutiempo.net/
+                - link "»»»" [ref=f67e41] [cursor=pointer]:
+                  - /url: https://www.tutiempo.net/tijuana.html
+                  - strong [ref=f67e42]: »»»
+          - paragraph
+        - generic [ref=e88]:
+          - heading "Servicios de Emergencia" [level=3] [ref=e89]
+          - list [ref=e90]:
+            - listitem [ref=e91]:
+              - link "Protección Civil" [ref=e92] [cursor=pointer]:
+                - /url: https://proteccioncivil.tijuana.gob.mx
+            - listitem [ref=e93]:
+              - link "Bomberos" [ref=e94] [cursor=pointer]:
+                - /url: https://bomberos.tijuana.gob.mx/
+            - listitem [ref=e95]:
+              - link "Secretaría de Seguridad y Protección Ciudadana" [ref=e96] [cursor=pointer]:
+                - /url: https://policia.tijuana.gob.mx/
+          - generic [ref=e97]:
+            - img "911" [ref=e99]
+            - link "911" [ref=e101] [cursor=pointer]:
+              - /url: https://www.seguridadbc.gob.mx/contenidos/089.php
+              - img "911" [ref=e102]
+  - generic [ref=e104]:
+    - generic [ref=e105] [cursor=pointer]:
+      - img [ref=e107]
+      - generic [ref=e108]:
+        - generic [ref=e109]: Chat 24/7
+        - generic [ref=e110]: Ayuntamiento de Tijuana
+      - img [ref=e113]
+    - iframe [ref=e117]:
+      - generic [ref=f68e3]:
+        - heading "¡Bienvenido al Asistente Virtual del Ayuntamiento de Tijuana!" [level=1] [ref=f68e4]
+        - paragraph [ref=f68e5]: Compártenos tus datos para poder apoyarte mejor con información sobre trámites, servicios y reportes ciudadanos. El número de teléfono es opcional y solo se utilizará si deseas que te contactemos.
+        - generic [ref=f68e6]:
+          - textbox "Nombre (Obligatorio)" [ref=f68e7]
+          - textbox "Teléfono" [ref=f68e8]
+          - textbox "Colonia (Obligatorio)" [ref=f68e9]
+        - button "Continuar" [ref=f68e10] [cursor=pointer]

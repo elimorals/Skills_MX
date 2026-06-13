@@ -1,0 +1,127 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2] [cursor=pointer]:
+    - img "Inklusion" [ref=e4]
+    - list:
+      - listitem: INKLUSION
+      - listitem:
+        - img
+        - img
+        - img
+        - img
+        - img
+        - img
+  - dialog "cookieconsent" [ref=e5]:
+    - generic [ref=e6]:
+      - text: Utilizamos cookies propias y de terceros para mejorar la experiencia y nuestros servicios a través del análisis de la navegación en este portal. Para conocer más sobre el tratamiento de tus datos personales consulta nuestro
+      - button "learn more about cookies" [ref=e7] [cursor=pointer]: aviso de privacidad
+      - text: .
+    - button "dismiss cookie message" [ref=e9] [cursor=pointer]: ¡Entendido!
+  - generic [ref=e10]:
+    - banner [ref=e12]:
+      - generic [ref=e20]:
+        - link "Ir al incio del portal oficial del Gobierno de la Ciudad de Puebla" [ref=e23] [cursor=pointer]:
+          - /url: /
+          - img [ref=e24]
+        - navigation "Menú principal" [ref=e77]:
+          - list [ref=e79]:
+            - listitem [ref=e80]:
+              - button "Ayuntamiento" [ref=e81] [cursor=pointer]:
+                - text: Ayuntamiento
+                - img [ref=e83]
+            - listitem [ref=e85]:
+              - link "Trámites y Servicios" [ref=e86] [cursor=pointer]:
+                - /url: /tramites-y-servicios
+            - listitem [ref=e87]:
+              - link "Transparencia" [ref=e88] [cursor=pointer]:
+                - /url: https://gobiernodelaciudad.pueblacapital.gob.mx/24-27/
+            - listitem [ref=e89]:
+              - button "Noticias" [ref=e90] [cursor=pointer]:
+                - text: Noticias
+                - img [ref=e92]
+        - group "Buscador y redes sociales" [ref=e101]:
+          - button "Abrir buscador principal" [ref=e104] [cursor=pointer]:
+            - img [ref=e105]
+          - link "Ir al Facebook del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e109] [cursor=pointer]:
+            - /url: https://www.facebook.com/HAyuntamientoDePuebla
+            - img [ref=e110]
+          - link "Ir a X del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e114] [cursor=pointer]:
+            - /url: https://x.com/PueblaAyto
+            - img [ref=e115]
+          - link "Ir al Instagram del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e120] [cursor=pointer]:
+            - /url: https://www.instagram.com/pueblagobiernodelaciudad/
+            - img [ref=e121]
+          - link "Ir al YouTube del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e125] [cursor=pointer]:
+            - /url: https://www.youtube.com/@AyuntamientodePueblaAyto
+            - img [ref=e126]
+    - main [ref=e128]:
+      - generic [ref=e132]:
+        - heading "Predial 2025 - 2026" [level=3] [ref=e134]
+        - generic [ref=e135]:
+          - link "Realiza tu pago en línea aquí" [ref=e139] [cursor=pointer]:
+            - /url: https://srvappayt.pueblacapital.gob.mx:7016/pel/index
+            - generic [ref=e140]:
+              - img [ref=e143]
+              - generic [ref=e150]: Realiza tu pago en línea aquí
+          - link "Consulta los horarios de cobro" [ref=e154] [cursor=pointer]:
+            - /url: /tramites-y-servicios/horarios-de-atencion-en-puntos-de-cobro
+            - generic [ref=e155]:
+              - img [ref=e158]
+              - generic [ref=e165]: Consulta los horarios de cobro
+    - contentinfo [ref=e166]:
+      - generic [ref=e167]:
+        - generic [ref=e172]:
+          - img "Logotipo de la Capital Imparable" [ref=e174]
+          - generic [ref=e175]:
+            - link "Ir a la red social Facebook del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e177] [cursor=pointer]:
+              - /url: https://www.facebook.com/HAyuntamientoDePuebla
+              - img [ref=e178]
+            - link "Ir a la red social X del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e181] [cursor=pointer]:
+              - /url: https://x.com/PueblaAyto
+              - img [ref=e182]
+            - link "Ir a la red social Instagram del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e186] [cursor=pointer]:
+              - /url: https://www.instagram.com/pueblagobiernodelaciudad/
+              - img [ref=e187]
+            - link "Ir a la red social YouTube del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e190] [cursor=pointer]:
+              - /url: https://www.youtube.com/@AyuntamientodePueblaAyto
+              - img [ref=e191]
+          - img "Separador decorativo con mosaico central" [ref=e194]
+          - generic [ref=e195]:
+            - generic [ref=e198]:
+              - heading "Ayuntamiento" [level=3] [ref=e199]
+              - list [ref=e200]:
+                - listitem [ref=e201]:
+                  - link "Ir a Sesiones de Cabildo del H. Ayuntamiento de Puebla" [ref=e202] [cursor=pointer]:
+                    - /url: https://www.youtube.com/@AyuntamientodePueblaAyto
+                    - text: Sesiones de cabildo
+                - listitem [ref=e203]:
+                  - link "Abrir el Manual de Identidad Institucional del H. Ayuntamiento de Puebla en PDF" [ref=e204] [cursor=pointer]:
+                    - /url: /images/pages/home/Manual_de_Identidad_Institucional.pdf
+                    - text: Manual de Identidad Institucional
+            - generic [ref=e207]:
+              - heading "Transparencia" [level=3] [ref=e208]
+              - list [ref=e209]:
+                - listitem [ref=e210]:
+                  - link "Ir al portal de Obligaciones de Transparencia del Gobierno de la Ciudad de Puebla" [ref=e211] [cursor=pointer]:
+                    - /url: https://gobiernodelaciudad.pueblacapital.gob.mx/
+                    - text: Obligaciones de Transparencia
+            - generic [ref=e214]:
+              - heading "Sitios de interés" [level=3] [ref=e215]
+              - list [ref=e216]:
+                - listitem [ref=e217]:
+                  - link "Ir al sitio del Gobierno Federal, abre en una nueva pestaña" [ref=e218] [cursor=pointer]:
+                    - /url: https://www.gob.mx/
+                    - text: Gobierno Federal
+                - listitem [ref=e219]:
+                  - link "Ir al sitio del Gobierno del Estado de Puebla, abre en una nueva pestaña" [ref=e220] [cursor=pointer]:
+                    - /url: https://www.puebla.gob.mx/
+                    - text: Gobierno del Estado de Puebla
+                - listitem [ref=e221]:
+                  - link "Ir al portal para consultar tu CURP, abre en una nueva pestaña" [ref=e222] [cursor=pointer]:
+                    - /url: https://www.gob.mx/curp/
+                    - text: Consulta tu CURP
+          - separator [ref=e224]
+        - generic [ref=e229]:
+          - paragraph [ref=e230]: Municipio de Puebla — Gobierno Municipal 2024–2027
+          - paragraph [ref=e231]: Sitio oficial del Municipio de Puebla.
+          - paragraph [ref=e232]: Tel. +52 (222) 309 44 00 - (222) 309 43 00 Puebla, Pue. México
+        - paragraph [ref=e238]: Última actualización 13 de junio de 2026

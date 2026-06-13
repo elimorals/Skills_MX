@@ -1,0 +1,306 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link:
+      - /url: javascript:;
+    - link [ref=e3] [cursor=pointer]:
+      - /url: /recaudacion/index.jsp?opcion=76
+    - link [ref=e5] [cursor=pointer]:
+      - /url: /recaudacion/index.jsp?opcion=81
+    - link "Facebook" [ref=e7] [cursor=pointer]:
+      - /url: https://www.facebook.com/FinanzasEdomex/
+      - generic "Facebook" [ref=e8]
+    - link "X" [ref=e9] [cursor=pointer]:
+      - /url: https://twitter.com/FinanzasEdomex
+      - generic "X" [ref=e10]
+  - generic [ref=e11]:
+    - generic [ref=e12]:
+      - generic [ref=e14]:
+        - link "Inicio" [ref=e16] [cursor=pointer]:
+          - /url: /recaudacion/Recaudacion/Redir?fw=../
+        - link "Sistema Integral de Ingresos del Estado de México" [ref=e18] [cursor=pointer]:
+          - /url: /siigem/
+        - link "Directorio de Oficinas de Atención" [ref=e20] [cursor=pointer]:
+          - /url: /recaudacion/asistencia/RedirAC?fw=../faces/asistencia/Directorio/DirectorioAtencion.xhtml&bn=directorioAtencion&P=2
+        - link "Preguntas Frecuentes" [ref=e22] [cursor=pointer]:
+          - /url: faces/asistencia/FAC/FAQs.xhtml
+        - iframe [ref=e23]:
+          - generic [active]:
+            - generic [ref=f15e1]:
+              - generic: Ingreso por primera vez
+              - link "Genera tu contraseña" [ref=f15e3] [cursor=pointer]:
+                - /url: /ingresos/RegEst/ObtenerPassword.jsp?Opc=3
+            - generic [ref=f15e4]:
+              - generic: O recuperar contraseña
+              - link "Iniciar Sesión" [ref=f15e6] [cursor=pointer]:
+                - /url: /ingresos/RegEst/CuentaUnica.jsp
+      - generic [ref=e28]:
+        - text: Sábado 13 de Junio de 2026
+        - link "." [ref=e29] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e31]:
+        - navigation:
+          - list:
+            - listitem [ref=e32]:
+              - link "Búsqueda" [ref=e33] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e34]:
+              - link "Consultas" [ref=e35] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e36]:
+              - link "Servicios Generales" [ref=e37] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e38]:
+              - link "CFDI" [ref=e39] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e40]: CFDI
+            - listitem [ref=e41]:
+              - link "Pago en Línea" [ref=e42] [cursor=pointer]:
+                - /url: /ingresos/OpcionesPago/InicioOpcionesPago.jsp
+            - listitem [ref=e43]:
+              - link "Reimpresión FUP" [ref=e44] [cursor=pointer]:
+                - /url: /ingresos/OpcionesPago/ReemprimirFUP.jsp
+    - iframe [ref=e46]:
+      - generic [active] [ref=f16e1]:
+        - generic [ref=f16e2]:
+          - list [ref=f16e3]:
+            - listitem [ref=f16e4]:
+              - link "Slider 1":
+                - /url: https://pagosytramites.edomex.gob.mx/recaudacion/index.jsp?opcion=72
+                - img "Slider 1" [ref=f16e5] [cursor=pointer]
+            - listitem [ref=f16e6]:
+              - link "Slider 1":
+                - /url: https://tenencia.edomex.gob.mx/TenenciaIndividual/tenencia/A06E1A88B8A6ED4B#/
+                - img "Slider 1" [ref=f16e7] [cursor=pointer]
+            - listitem [ref=f16e8]:
+              - link "Slider 1":
+                - /url: https://retys.edomex.gob.mx/cedulainfo/1292?#
+                - img "Slider 1" [ref=f16e9] [cursor=pointer]
+            - listitem [ref=f16e10]:
+              - link "Slider 1":
+                - /url: https://pagosytramites.edomex.gob.mx/recaudacion/index.jsp?opcion=69
+                - img "Slider 1" [ref=f16e11] [cursor=pointer]
+            - listitem [ref=f16e12]:
+              - link "Slider 1":
+                - /url: /recaudacion/municipios/RedirMP?fw=../faces/municipios/predial/FormatoPagoPredialResponsive.xhtml&bn=FormatoPagoPredial&P=1
+                - img "Slider 1" [ref=f16e13] [cursor=pointer]
+            - listitem [ref=f16e14]:
+              - link "Slider 1":
+                - /url: /recaudacion/CtrlVeh/MicRemplaca/index.jsp?opcion=7
+                - img "Slider 1" [ref=f16e15] [cursor=pointer]
+          - list [ref=f16e16]:
+            - listitem [ref=f16e17]:
+              - link "1" [ref=f16e18] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f16e19]:
+              - link "2" [ref=f16e20] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f16e21]:
+              - link "3" [ref=f16e22] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f16e23]:
+              - link "4" [ref=f16e24] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f16e25]:
+              - link "5" [ref=f16e26] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f16e27]:
+              - link "6" [ref=f16e28] [cursor=pointer]:
+                - /url: "#"
+        - application [ref=f16e30] [cursor=pointer]:
+          - textbox "¿Qué estás buscando?" [ref=f16e31]
+          - status
+        - generic:
+          - link "Por Tema" [ref=f16e32] [cursor=pointer]:
+            - /url: "#"
+            - button "Por Tema" [ref=f16e33]:
+              - generic [ref=f16e34]: Por Tema
+          - link "De La A a La Z" [ref=f16e35] [cursor=pointer]:
+            - /url: "#"
+            - button "De La A a La Z" [ref=f16e36]:
+              - generic [ref=f16e37]: De La A a La Z
+        - list [ref=f16e40]:
+          - listitem [ref=f16e41]:
+            - link "Control Vehicular" [ref=f16e42] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=f16e43]: Control Vehicular
+          - listitem [ref=f16e44]:
+            - link "Reemplacamiento" [ref=f16e45] [cursor=pointer]:
+              - /url: /recaudacion/CtrlVeh/MicRemplaca/index.jsp
+              - generic [ref=f16e46]: Reemplacamiento
+          - listitem [ref=f16e47]:
+            - link "Pago de Derechos" [ref=f16e48] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=f16e49]: Pago de Derechos
+          - listitem [ref=f16e50]:
+            - link "Declaraciones" [ref=f16e51] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=f16e52]: Declaraciones
+          - listitem [ref=f16e53]:
+            - link "Organismos Auxiliares" [ref=f16e54] [cursor=pointer]:
+              - /url: /recaudacion/municipios/RedirMP?fw=../faces/municipios/organismosAuxiliares/OrganismosAuxiliares.xhtml&bn=OrganismosAuxiliares&P=2
+              - generic [ref=f16e55]: Organismos Auxiliares
+          - listitem [ref=f16e56]:
+            - link "Predial" [ref=f16e57] [cursor=pointer]:
+              - /url: /predial/
+              - generic [ref=f16e58]: Predial
+          - listitem [ref=f16e59]:
+            - link "Agua" [ref=f16e60] [cursor=pointer]:
+              - /url: /agua/
+              - generic [ref=f16e61]: Agua
+          - listitem [ref=f16e62]:
+            - link "Registro de Contribuyentes" [ref=f16e63] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=f16e64]: Registro de Contribuyentes
+          - listitem [ref=f16e65]:
+            - link "Adeudos Fiscales" [ref=f16e66] [cursor=pointer]:
+              - /url: /recaudacion/AdeudosFiscales/index.jsp
+              - generic [ref=f16e67]: Adeudos Fiscales
+          - listitem [ref=f16e68]:
+            - link "Calendario de pagos y Beneficios fiscales" [ref=f16e69] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=f16e70]: Calendario de pagos y Beneficios fiscales
+          - listitem [ref=f16e71]:
+            - link "Subastas" [ref=f16e72] [cursor=pointer]:
+              - /url: /recaudacion/faces/Subaspeem.xhtml
+              - generic [ref=f16e73]: Subastas
+          - listitem [ref=f16e74]:
+            - link "Legalidad de tu vehículo" [ref=f16e75] [cursor=pointer]:
+              - /url: /controlv/faces/tramiteselectronicos/cv/portalPublico/LegalidadVehiculo.xhtml?P=2
+              - generic [ref=f16e76]: Legalidad de tu vehículo
+          - listitem [ref=f16e77]:
+            - link "Grandes Contribuyentes" [ref=f16e78] [cursor=pointer]:
+              - /url: /recaudacion/ReadFile.jsp?File=GrandesContribuyentes.pdf
+              - generic [ref=f16e79]: Grandes Contribuyentes
+        - list [ref=f16e81]:
+          - listitem [ref=f16e82]:
+            - link "Entrega a domicilio" [ref=f16e83] [cursor=pointer]:
+              - /url: /recaudacion/CtrlVeh/MicRemplaca/index.jsp?opcion=7
+              - paragraph [ref=f16e86]: Entrega a domicilio
+          - listitem [ref=f16e87]:
+            - link "Programación de Citas" [ref=f16e88] [cursor=pointer]:
+              - /url: /recaudacion/asistencia/RedirAC?fw=../faces/asistencia/Citas/registro/ACC_MenuCitas.xhtml&P=2
+              - paragraph [ref=f16e91]: Programación de Citas
+          - listitem [ref=f16e92]:
+            - link "Tenencia Vehicular" [ref=f16e93] [cursor=pointer]:
+              - /url: https://tenencia.edomex.gob.mx/TenenciaIndividual/tenencia/A06E1A88B8A6ED4B#/
+              - paragraph [ref=f16e96]: Tenencia Vehicular
+          - listitem [ref=f16e97]:
+            - link "Erogaciones" [ref=f16e98] [cursor=pointer]:
+              - /url: /ingresos/erogaciones/RedirEro?fw=../faces/erogaciones/declaracion.xhtml&bn=ISERTP_session&P=2
+              - paragraph [ref=f16e101]: Erogaciones
+          - listitem [ref=f16e102]:
+            - generic "Selecciona una de las dos opciones." [ref=f16e103]:
+              - generic [ref=f16e104]:
+                - link "Solicitud de Devolución" [ref=f16e105] [cursor=pointer]:
+                  - /url: /devoluciones/Devoluciones/SolDevo1.jsp?Plataforma=2&P=2
+                - link "Consulta tu Trámite de Devolución" [ref=f16e106] [cursor=pointer]:
+                  - /url: /devoluciones/faces/Devoluciones/Consultas/DV_ConsultaTramite.xhtml?Plataforma=2&P=2
+          - listitem [ref=f16e107]:
+            - link "Licencias de Conducir" [ref=f16e108] [cursor=pointer]:
+              - /url: /ingresos/ControlObl/RedirVG?fw=../faces/WebLicencias.xhtml&bn=WebLicencias&Secretaria=12&F=1&P=2
+              - paragraph [ref=f16e111]: Licencias de Conducir
+        - navigation [ref=f16e114]:
+          - list [ref=f16e115]:
+            - listitem [ref=f16e116]:
+              - link "Top Pago de Derechos" [ref=f16e117] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f16e118]:
+              - link "Pagos en Línea" [ref=f16e119] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f16e120]:
+              - link "Requisitos Pago en Línea" [ref=f16e121] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=f16e122]:
+              - link "Centros Autorizados de Pago" [ref=f16e123] [cursor=pointer]:
+                - /url: /recaudacion/faces/asistencia/CAPs.xhtml
+        - list [ref=f16e125]:
+          - listitem [ref=f16e126]
+          - listitem [ref=f16e129]:
+            - link "." [ref=f16e130] [cursor=pointer]:
+              - /url: /recaudacion/asistencia/RedirAC?fw=../faces/asistencia/Directorio/DirectorioAtencion.xhtml&bn=directorioAtencion&P=2
+              - paragraph [ref=f16e133]: .
+          - listitem [ref=f16e134]:
+            - generic [ref=f16e136]:
+              - link "." [ref=f16e137] [cursor=pointer]:
+                - /url: ../asistencia/Folletos/Folletos.xhtml
+                - paragraph [ref=f16e138]: .
+              - link "." [ref=f16e139] [cursor=pointer]:
+                - /url: ../asistencia/formatos/Formatos.xhtml
+                - paragraph [ref=f16e140]: .
+          - listitem [ref=f16e141]:
+            - link "." [ref=f16e142] [cursor=pointer]:
+              - /url: ../servicios/tramites_fiscales/Guias_Tramites.xhtml
+              - paragraph [ref=f16e145]: .
+  - generic [ref=e47]:
+    - navigation [ref=e48]:
+      - list [ref=e49]:
+        - listitem [ref=e50]:
+          - link "CURP" [ref=e51] [cursor=pointer]:
+            - /url: http://www.gob.mx/segob/acciones-y-programas/clave-unica-de-registro-de-poblacion-curp
+        - listitem [ref=e52]:
+          - link "TRANSPARENCIA" [ref=e53] [cursor=pointer]:
+            - /url: https://edomex.gob.mx/transparencia
+        - listitem [ref=e54]:
+          - link "DIARIO OFICIAL" [ref=e55] [cursor=pointer]:
+            - /url: http://diariooficial.segob.gob.mx/
+        - listitem [ref=e56]:
+          - link "LEGISTEL" [ref=e57] [cursor=pointer]:
+            - /url: http://legislacion.edomex.gob.mx/
+        - listitem [ref=e58]:
+          - link "INPC'S Y UDIS" [ref=e59] [cursor=pointer]:
+            - /url: http://www.banxico.org.mx/
+        - listitem [ref=e60]:
+          - link "FINANZAS" [ref=e61] [cursor=pointer]:
+            - /url: http://finanzas.edomex.gob.mx/
+        - listitem [ref=e62]:
+          - link "CATGEM" [ref=e63] [cursor=pointer]:
+            - /url: http://www.google.com/url?q=http%3A%2F%2Fchat.edomex.gob.mx%2Flivezilla%2Fchat.php%3Fa%3Dbc868%26intgroup%3DQXNlc29yZXNDYXQ_%26hg%3DPw__&sa=D&sntz=1&usg=AFQjCNEC1_M1e288gb0Zw1AAK7vp1YSyEw
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - generic [ref=e67]: Normatividad
+        - generic [ref=e68]:
+          - link "Avisos de Privacidad" [ref=e69] [cursor=pointer]:
+            - /url: /recaudacion/faces/asistencia/Avisos/AvisosPrivacidad.xhtml
+          - link "Derechos y Obligaciones del Contribuyente" [ref=e70] [cursor=pointer]:
+            - /url: /recaudacion/faces/asistencia/DerechosObligaciones.xhtml
+          - link "Legislación Fiscal" [ref=e71] [cursor=pointer]:
+            - /url: /recaudacion/faces/asistencia/legislacion_fiscal/legislacion_fiscal.xhtml
+          - link "Encuesta de Satisfacción" [ref=e72] [cursor=pointer]:
+            - /url: /recaudacion/faces/asistencia/EOpinion/NuevasEncuestas/AC_Encuesta.xhtml?Opcion=1
+          - link "Manual de Procedimientos" [ref=e73] [cursor=pointer]:
+            - /url: ReadFile.jsp?File=manual_procedimientos.pdf
+          - link "Procedimiento placas dadas de baja" [ref=e74] [cursor=pointer]:
+            - /url: ReadFile.jsp?File=00-PROC-FINAL-DGR-DGI-12112025-DREV.pdf
+      - generic [ref=e75]:
+        - generic [ref=e77]: Contáctanos
+        - generic [ref=e78]:
+          - strong [ref=e79]: Dirección de Atención al Contribuyente
+          - text: 800 715 43 50
+          - strong [ref=e80]: "Correo electrónico:"
+          - text: asismex@edomex.gob.mx
+      - generic [ref=e81]:
+        - img [ref=e83]
+        - generic [ref=e84]: Teléfonos de Utilidad
+        - generic [ref=e85]:
+          - strong [ref=e86]:
+            - text: Centro de Atención Telefónica del
+            - text: Gobierno del Estado de México
+          - strong [ref=e87]: Valle de Toluca
+          - text: "070"
+          - strong [ref=e88]: Resto del Estado y del País
+          - text: 800 696 96 96
+          - strong [ref=e89]: Emergencias
+          - text: 911*
+          - strong [ref=e90]: Línea sin Violencia
+          - text: 800 108 4053
+          - strong [ref=e91]: Quejas y Sugerencias
+          - text: 800 720 0202
+    - link "prueba" [ref=e93] [cursor=pointer]:
+      - /url: https://edomex.gob.mx/
+      - img "prueba" [ref=e94]
+    - generic [ref=e96]: Derechos Reservados 2016 Sistema Integral de Ingresos del Gobierno del Estado de México
+  - img [ref=e98] [cursor=pointer]
+  - link [ref=e100] [cursor=pointer]:
+    - /url: "#\n"
+    - img [ref=e101]
+  - img

@@ -1,0 +1,12 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e5]: "404"
+    - generic [ref=e6]:
+      - heading "Página no encontrada" [level=2] [ref=e7]
+      - heading "Al parecer lo que estas buscando no se encuentrá en nuestra página :(" [level=4] [ref=e8]
+    - link "Regresar al inicio" [ref=e10] [cursor=pointer]:
+      - /url: /
+      - button "Regresar al inicio" [ref=e11]
+  - img "404" [ref=e13]
+  - img "404" [ref=e14]
+  - img "404" [ref=e15]

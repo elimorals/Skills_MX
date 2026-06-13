@@ -1,0 +1,199 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=e5]:
+      - generic [ref=e8]:
+        - generic [ref=e10]:
+          - link "Homepage":
+            - /url: https://www.municipiodurango.gob.mx/
+            - img "Municipio de Durango" [ref=e12] [cursor=pointer]
+        - navigation [ref=e13]:
+          - button "Primary Menu" [ref=e14] [cursor=pointer]: Primary Menu
+          - list:
+            - listitem:
+              - link "Noticias":
+                - /url: https://www.municipiodurango.gob.mx/index.php/noticias/
+            - listitem:
+              - link "Organigrama ":
+                - /url: https://www.municipiodurango.gob.mx/index.php/organigrama-municipal/
+              - text:  
+            - listitem:
+              - link "Transparencia ":
+                - /url: http://transparencia.municipiodurango.gob.mx/
+              - text:     
+            - listitem:
+              - generic: Tramites y Servicios 
+              - text: 
+            - listitem:
+              - link "Ubicaciones ":
+                - /url: https://www.municipiodurango.gob.mx/index.php/dependencias-municipales-durango/
+              - text: 
+            - listitem:
+              - link "Líneas de Ayuda ":
+                - /url: https://www.municipiodurango.gob.mx/index.php/lineas-de-ayuda/
+              - text: 
+    - main "Main" [ref=e18]:
+      - article [ref=e23]:
+        - generic [ref=e26]:
+          - link [ref=e41] [cursor=pointer]:
+            - /url: https://desarrollourbanodigital.municipiodurango.gob.mx/#/login
+          - generic [ref=e53]:
+            - generic [ref=e55]:
+              - generic [ref=e60]:
+                - button "Read more" [ref=e64]:
+                  - generic [ref=e68]:
+                    - generic [ref=e71]: 
+                    - generic [ref=e74]: 
+                - link "UBICA TUS CENTROS DE PAGO MUNICIPALES" [ref=e78] [cursor=pointer]:
+                  - /url: https://www.municipiodurango.gob.mx/index.php/centros-de-pago-municipales-de-durango/
+              - generic [ref=e83]:
+                - generic [ref=e86]:
+                  - generic [ref=e87]: Todos tus Trámites
+                  - generic [ref=e88]: a un solo Click
+                - paragraph [ref=e92]: Conoce los diferentes trámites que puedes realizar tanto en línea como en cada una de nuestras dependencias
+                - link "Trámites" [ref=e96] [cursor=pointer]:
+                  - /url: https://www.municipiodurango.gob.mx/index.php/tramites/
+                  - generic [ref=e97]:
+                    - generic [ref=e99]: 
+                    - generic [ref=e100]: Trámites
+            - generic [ref=e102]:
+              - generic [ref=e105]:
+                - generic [ref=e112]:
+                  - generic [ref=e113]:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: 
+                              - generic:
+                                - generic: 
+                  - generic [ref=e116]:
+                    - text: Paga tu
+                    - text: Predial en LÍNEA
+                  - link "Read more" [ref=e117] [cursor=pointer]:
+                    - /url: https://servicios.municipiodurango.gob.mx/re_serviciosinternet/faces/servicios?_adf.ctrl-state=v72eojtz3_3
+                - generic [ref=e124]:
+                  - generic [ref=e125]:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: 
+                              - generic:
+                                - generic: 
+                  - generic [ref=e128]:
+                    - text: Paga tu
+                    - text: agua en LÍNEA
+                  - link "Read more" [ref=e129] [cursor=pointer]:
+                    - /url: https://www.amd.gob.mx/
+              - generic [ref=e132]:
+                - generic [ref=e139]:
+                  - generic [ref=e140]:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: 
+                              - generic:
+                                - generic: 
+                  - generic [ref=e143]: DURANGO TRAVEL
+                  - link "Read more" [ref=e144] [cursor=pointer]:
+                    - /url: https://www.durangotravel.mx/
+                - generic [ref=e151]:
+                  - generic [ref=e152]:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: 
+                              - generic:
+                                - generic: 
+                  - generic [ref=e155]: ABRE TU EMPRESA (SDARE)
+                  - link "Read more" [ref=e156] [cursor=pointer]:
+                    - /url: https://sdare.municipiodurango.gob.mx/sign-in?redirectURL=%2Fredirect
+              - generic [ref=e159]:
+                - generic [ref=e166]:
+                  - generic [ref=e167]:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: 
+                              - generic:
+                                - generic: 
+                  - generic [ref=e170]: PORTAL DEL EMPLEO
+                  - link "Read more" [ref=e171] [cursor=pointer]:
+                    - /url: https://pem.municipiodurango.gob.mx/home
+                - generic [ref=e178]:
+                  - generic [ref=e179]:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: 
+                              - generic:
+                                - generic: 
+                  - generic [ref=e182]:
+                    - text: Desarrollo Urbano
+                    - text: Digital
+                  - link "Read more" [ref=e183] [cursor=pointer]:
+                    - /url: https://desarrollourbanodigital.municipiodurango.gob.mx/
+          - generic [ref=e184]:
+            - img [ref=e186]
+            - generic [ref=e191]:
+              - generic [ref=e194]: Nuestras
+              - generic [ref=e197]: Dependencias
+              - paragraph [ref=e201]: Conoce y Ubica la dependencias en nuestro mapa interactivo
+    - contentinfo [ref=e212]:
+      - generic [ref=e214]:
+        - generic [ref=e219]:
+          - generic [ref=e222]:
+            - generic [ref=e224]:
+              - button "Read more" [ref=e228]:
+                - generic [ref=e232]:
+                  - generic [ref=e235]: 
+                  - generic [ref=e238]: 
+              - generic [ref=e241]: Contáctanos
+              - paragraph [ref=e245]:
+                - link "+(52) 618-827-2460" [ref=e246] [cursor=pointer]:
+                  - /url: tel:+526188272460
+            - generic [ref=e248]:
+              - button "Read more" [ref=e252]:
+                - generic [ref=e256]:
+                  - generic [ref=e259]: 
+                  - generic [ref=e262]: 
+              - generic [ref=e265]: Escríbenos a
+              - paragraph [ref=e269]:
+                - link "info@municipio.gob.mx" [ref=e270] [cursor=pointer]:
+                  - /url: mailto:info@municipio.gob.mx
+          - generic [ref=e273]:
+            - generic [ref=e277]:
+              - link:
+                - /url: https://api.whatsapp.com/send/?phone=526181581853
+            - generic [ref=e281]:
+              - link:
+                - /url: tel:911
+        - generic [ref=e286]:
+          - paragraph [ref=e290]:
+            - strong [ref=e291]: © 2026 |
+            - text: Dirección Municipal de Administración y Finanzas | Desarrollo e Implementación de Sistemas
+          - paragraph [ref=e295]:
+            - link "Aviso de Privacidad" [ref=e296] [cursor=pointer]:
+              - /url: http://transparencia.municipiodurango.gob.mx/aviso_de_privacidad#:~:text=En%20cualquier%20momento%20el%20Ayuntamiento,.municipiodurango.gob.mx
+            - text: "|"
+            - link "Aviso de Privacidad Simplificado" [ref=e297] [cursor=pointer]:
+              - /url: http://transparencia.municipiodurango.gob.mx/aviso_de_privacidad#:~:text=En%20cualquier%20momento%20el%20Ayuntamiento,.municipiodurango.gob.mx
+  - generic [ref=e298]: desktop

@@ -1,0 +1,29 @@
+{
+  "name": "tracking-wallets-self-custody - reconstrucción wallet ETH mainnet",
+  "pattern_template": "wallet_eth_basico",
+  "input": {
+    "wallet_address": "0x742d35Cc6634C0532925a3b844Bc9e7595f7CB8B",
+    "cadena": "ethereum",
+    "ejercicio": 2026,
+    "muestra_txs": [
+      {"hash": "0xa1...", "tipo_inferido": "transferencia_in", "from": "binance_hot_wallet", "value_eth": "2.5"},
+      {"hash": "0xb2...", "tipo_inferido": "permuta", "router": "uniswap_v3", "in": "1 ETH", "out": "2750 USDC"},
+      {"hash": "0xc3...", "tipo_inferido": "stake_recompensa", "from": "lido_rewards", "value_eth": "0.05"},
+      {"hash": "0xd4...", "tipo_inferido": "transferencia_out", "to": "bitso_deposit", "value_usdc": "1500"}
+    ]
+  },
+  "expected_output": {
+    "operaciones_clasificadas": 4,
+    "tipos_detectados": ["transferencia_in", "permuta", "stake_recompensa", "transferencia_out"],
+    "gas_total_mxn": ">0",
+    "advertencias_count": 0,
+    "operaciones_dudosas": 0
+  },
+  "validations": [
+    "Detectar router Uniswap V3 → clasificar como permuta",
+    "Detectar address Lido conocido → stake_recompensa",
+    "Gas convertido a MXN con TC DOF del día",
+    "Identificar contraparte (Binance, Bitso) cuando es address conocido"
+  ],
+  "notes": "Caso típico de usuario que pone wallet self-custody para reconstruir movimientos. Verificar que detecta routers DEX y addresses de staking."
+}

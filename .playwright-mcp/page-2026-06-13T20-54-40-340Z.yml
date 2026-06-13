@@ -1,0 +1,510 @@
+- generic [active] [ref=e1]:
+  - region "Menú de Accesibilidad rápida":
+    - button "Saltar al contenido principal" [ref=e2] [cursor=pointer]:
+      - generic [ref=e3]:
+        - img [ref=e5]
+        - generic [ref=e9]: Saltar al contenido principal
+      - img [ref=e11]
+    - button "Habilitar la accesibilidad para personas con baja visión" [ref=e16] [cursor=pointer]:
+      - generic [ref=e17]:
+        - img [ref=e19]
+        - generic [ref=e26]: Habilitar la accesibilidad para personas con baja visión
+      - img [ref=e28]
+    - button "Abrir el Menú de Accesibilidad" [ref=e33] [cursor=pointer]:
+      - generic [ref=e34]:
+        - img [ref=e36]
+        - generic [ref=e38]: Abrir el Menú de Accesibilidad
+      - img [ref=e40]
+  - generic "Menú de Accesibilidad":
+    - button "Menú de Accesibilidad" [ref=e46] [cursor=pointer]
+  - main [ref=e49]:
+    - generic [ref=e52]:
+      - generic [ref=e53]:
+        - link [ref=e54] [cursor=pointer]:
+          - /url: mapa-del-sitio.php
+        - generic [ref=e55]:
+          - link [ref=e56] [cursor=pointer]:
+            - /url: https://www.facebook.com/municipio.leon/
+          - link [ref=e57] [cursor=pointer]:
+            - /url: https://twitter.com/municipio_leon
+          - link [ref=e58] [cursor=pointer]:
+            - /url: https://www.youtube.com/channel/UCHUL99ia-yJj_3O9wIGHZ4Q
+          - link [ref=e59] [cursor=pointer]:
+            - /url: https://www.instagram.com/municipiodeleon/
+          - link [ref=e60] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@leon_municipio?_t=8aEbkLpYRfi&_r=1
+        - link "MI CARPETA CIUDADANA" [ref=e61] [cursor=pointer]:
+          - /url: https://micarpetaciudadana.leon.gob.mx/
+        - textbox "buscar" [ref=e68]
+        - link [ref=e69] [cursor=pointer]:
+          - /url: https://wa.link/nymgxh
+      - generic:
+        - link "Municipio de León" [ref=e72] [cursor=pointer]:
+          - /url: index.php
+          - img "Municipio de León" [ref=e73]
+        - navigation [ref=e74]:
+          - list [ref=e75]:
+            - listitem [ref=e76]:
+              - link "Inicio" [ref=e77] [cursor=pointer]:
+                - /url: index.php
+            - listitem [ref=e78]:
+              - text: 
+              - link "Gobierno" [ref=e79] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e80]:
+              - link "Trámites y Servicios" [ref=e81] [cursor=pointer]:
+                - /url: https://sinfilas.leon.gob.mx
+            - listitem [ref=e82]:
+              - text: 
+              - link "Personas" [ref=e83] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e84]:
+              - link "Transparencia" [ref=e85] [cursor=pointer]:
+                - /url: https://www.leon.gob.mx/transparencia/
+            - listitem [ref=e86]:
+              - link "Turismo" [ref=e87] [cursor=pointer]:
+                - /url: https://vivaleon.mx/
+            - listitem [ref=e88]:
+              - link "Gaceta Municipal" [ref=e89] [cursor=pointer]:
+                - /url: https://leon.gob.mx/gaceta-municipal.php
+            - listitem [ref=e90]:
+              - link "Entérate" [ref=e91] [cursor=pointer]:
+                - /url: https://enterate.leon.gob.mx/
+            - listitem [ref=e92]:
+              - link "Escríbenos" [ref=e93] [cursor=pointer]:
+                - /url: escribenos.php
+        - text: 
+    - generic:
+      - generic:
+        - generic [ref=e94]:
+          - img "León, Gto." [ref=e95]
+          - text: "León Hoy:"
+        - generic [ref=e98]:
+          - text: "| Calidad del aire:"
+          - 'link "Fuente: SMAOT GTO" [ref=e99] [cursor=pointer]':
+            - /url: https://smaot.guanajuato.gob.mx/sitio/seica/monitoreo/leon
+        - generic [ref=e100]:
+          - img "Rutas de transporte" [ref=e101]
+          - link "Rutas de Transporte" [ref=e102] [cursor=pointer]:
+            - /url: https://leon.gob.mx/movilidad/micrositio.php?m=10
+        - link "Sesiones en línea Sesiones en Línea del H. Ayuntamiento" [ref=e104] [cursor=pointer]:
+          - /url: sesion-ayuntamiento-en-linea.php
+          - img "Sesiones en línea" [ref=e105]
+          - text: Sesiones en Línea
+          - text: del H. Ayuntamiento
+        - link "Pase Verde" [ref=e107] [cursor=pointer]:
+          - /url: pase-verde.php
+          - img "Pase Verde" [ref=e108]
+        - link "Pagonet" [ref=e110] [cursor=pointer]:
+          - /url: https://pagos.leon.gob.mx/pagonet2/
+          - img "Pagonet" [ref=e111]
+    - generic [ref=e112]:
+      - generic [ref=e113]:
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - link [ref=e120] [cursor=pointer]:
+              - /url: https://docs.google.com/forms/d/e/1FAIpQLSdSL2WBUZiXwbCExR3cu0SQEbAPUOQ561eW8C4sc4mYMP1aQQ/viewform?usp=header
+              - img [ref=e121]
+            - link [ref=e123] [cursor=pointer]:
+              - /url: https://sicee.ine.mx
+              - img [ref=e124]
+            - link [ref=e126] [cursor=pointer]:
+              - /url: ""
+              - img [ref=e127]
+            - link [ref=e129] [cursor=pointer]:
+              - /url: https://www.leon450.com/modulos/img/adjuntos/adjuntos-28.pdf?1557605208
+              - img [ref=e130]
+            - link [ref=e132] [cursor=pointer]:
+              - /url: https://docs.google.com/forms/d/e/1FAIpQLSdJd-QmEk0F5IANJddEF1JvjDwNTPqYrWZS5B00ZsFGK37CZg/viewform?usp=header
+              - img [ref=e133]
+            - link [ref=e135] [cursor=pointer]:
+              - /url: modulos/img/campanas/anexos/anexo-215.pdf
+              - img [ref=e136]
+            - link [ref=e138] [cursor=pointer]:
+              - /url: https://leon.gob.mx/asamblea-colonos
+              - img [ref=e139]
+            - link [ref=e141] [cursor=pointer]:
+              - /url: https://www.leon.gob.mx/modulos/img/adjuntos/adjuntos-1604.pdf
+              - img [ref=e142]
+            - link [ref=e144] [cursor=pointer]:
+              - /url: https://leon.gob.mx/cartillamilitar/servicio-militar.pdf
+              - img [ref=e145]
+            - link [ref=e147] [cursor=pointer]:
+              - /url: modulos/img/campanas/anexos/anexo-207.pdf
+              - img [ref=e148]
+            - link [ref=e150] [cursor=pointer]:
+              - /url: https://leon.gob.mx/programas-de-gobierno.php
+              - img [ref=e151]
+            - link [ref=e153] [cursor=pointer]:
+              - /url: https://api.whatsapp.com/send?phone=5214772136000&text=Hola%20Leo
+              - img [ref=e154]
+            - link [ref=e156] [cursor=pointer]:
+              - /url: https://leon.gob.mx/pase-verde.php
+              - img [ref=e157]
+            - link [ref=e159] [cursor=pointer]:
+              - /url: https://www.form.yoquieroaleon.com/
+              - img [ref=e160]
+            - link [ref=e162] [cursor=pointer]:
+              - /url: https://sinfilas.leon.gob.mx/tramite.php?id=1851ae58-37f1-466b-9c32-d51929d8ae13#
+              - img [ref=e163]
+            - link [ref=e165] [cursor=pointer]:
+              - /url: https://leon.gob.mx/directorio/
+              - img [ref=e166]
+            - link [ref=e168] [cursor=pointer]:
+              - /url: https://seguridad.guanajuato.gob.mx/wp-content/uploads/2025/02/Medidas-Preventivas-Antiextorsion.pdf
+              - img [ref=e169]
+            - link [ref=e171] [cursor=pointer]:
+              - /url: https://leon.gob.mx/salud/micrositio.php?m=24
+              - img [ref=e172]
+            - link [ref=e174] [cursor=pointer]:
+              - /url: https://leon.gob.mx/soydeleon/
+              - img [ref=e175]
+          - img [ref=e178] [cursor=pointer]
+          - img [ref=e182] [cursor=pointer]
+        - generic [ref=e184]:
+          - generic [ref=e185]:
+            - heading "TRÁMITES Y SERVICIOS" [level=1] [ref=e187]:
+              - img [ref=e188]
+              - text: TRÁMITES Y SERVICIOS
+            - text: ¿Qué estás buscando?
+            - text: Encuentra de manera rápida y sencilla de trámites y servicios en línea.
+            - generic [ref=e190]:
+              - textbox "Buscar en sinfilas.leon.gob.mx" [ref=e191]
+              - button "BUSCAR" [ref=e192] [cursor=pointer]
+            - generic [ref=e193]:
+              - text: Trámites Municipales
+              - generic [ref=e194]:
+                - listitem [ref=e195]:
+                  - link "Becas Excelencia" [ref=e196] [cursor=pointer]:
+                    - /url: https://sinfilas.leon.gob.mx/tramite.php?id=d14617eb-5f7c-458b-b8a7-ca9beeb8c29d
+                - listitem [ref=e197]:
+                  - link "Becas Educativas Municipales" [ref=e198] [cursor=pointer]:
+                    - /url: https://sinfilas.leon.gob.mx/tramite.php?id=363eda74-64cd-4ff4-8168-412754c376ba
+                - listitem [ref=e199]:
+                  - link "Consulta Médica" [ref=e200] [cursor=pointer]:
+                    - /url: https://sinfilas.leon.gob.mx/tramite.php?id=f250f280-92fe-443b-9d6f-f196370ac3b1
+                - listitem [ref=e201]:
+                  - link "Beca Educativa León 450" [ref=e202] [cursor=pointer]:
+                    - /url: https://sinfilas.leon.gob.mx/tramite.php?id=7939db0a-f75b-43b2-9a85-67dc3a0e12aa
+                - listitem [ref=e203]:
+                  - link "ACTIVIDADES DE SERVICIO EN FAVOR DE LA COMUNIDAD- Foto multa" [ref=e204] [cursor=pointer]:
+                    - /url: https://sinfilas.leon.gob.mx/tramite.php?id=e44ba0db-8e64-454d-bdd5-b8c29d8ae9df
+              - link "VER MÁS +" [ref=e205] [cursor=pointer]:
+                - /url: https://sinfilas.leon.gob.mx/
+            - generic [ref=e206]:
+              - text: Pagos en línea
+              - link "CONSULTA DE INFRACCIONES DETECTADAS POR DISPOSITIVO DE VERIFICACIÓN DE VELOCIDAD" [ref=e207] [cursor=pointer]:
+                - /url: https://pagos.leon.gob.mx/pagonet2/Services/transito03
+                - img [ref=e208]
+                - text: CONSULTA DE INFRACCIONES DETECTADAS POR DISPOSITIVO DE VERIFICACIÓN DE VELOCIDAD
+              - list [ref=e209]:
+                - listitem [ref=e210]:
+                  - link "Impuesto Predial" [ref=e211] [cursor=pointer]:
+                    - /url: https://pagos.leon.gob.mx/pagonet2/Services/predial
+                - listitem [ref=e212]:
+                  - link "Infracciones de Policía Vial y de la Dirección de Movilidad" [ref=e213] [cursor=pointer]:
+                    - /url: https://pagos.leon.gob.mx/pagonet2/Services/transito
+                - listitem [ref=e214]:
+                  - link "Multas Municipales" [ref=e215] [cursor=pointer]:
+                    - /url: https://pagos.leon.gob.mx/pagonet2/Services/multas
+                - listitem [ref=e216]:
+                  - link "Publicidad Móvil" [ref=e217] [cursor=pointer]:
+                    - /url: https://pagos.leon.gob.mx/pagonet2/Services/pubmovil
+                - listitem [ref=e218]:
+                  - link "Impuesto sobre adquisición de bienes inmuebles" [ref=e219] [cursor=pointer]:
+                    - /url: https://pagos.leon.gob.mx/pagonet2/Services/traslado
+                - listitem [ref=e220]:
+                  - link "Trámites de Desarrollo Urbano" [ref=e221] [cursor=pointer]:
+                    - /url: https://pagos.leon.gob.mx/pagonet2/Services/DesUrb01
+                - listitem [ref=e222]:
+                  - link "Referencias de pagos múltiples" [ref=e223] [cursor=pointer]:
+                    - /url: https://pagos.leon.gob.mx/pagonet2/Services/Referencias
+              - link "VER MÁS +" [ref=e224] [cursor=pointer]:
+                - /url: https://pagos.leon.gob.mx/pagonet2/
+            - generic:
+              - link:
+                - /url: https://citasenlinea.leon.gob.mx/
+            - generic [ref=e226]:
+              - link "Mi Carpeta Ciudadana" [ref=e227] [cursor=pointer]:
+                - /url: https://micarpetaciudadana.leon.gob.mx/
+                - img "Mi Carpeta Ciudadana" [ref=e228]
+              - text: Mi carpeta ciudadana se trata de un buzón virtual, en el que por única ocasión se recibe la documentación e información de una persona física o moral, que desee realizar trámites, servicios y gestionar citas ante las dependencias y entidades de la Administración Pública Municipal.
+          - generic [ref=e229]:
+            - generic [ref=e230]:
+              - img "¡Hola León!" [ref=e232]
+              - generic [ref=e233]:
+                - text: PRESIDENCIA DE LEÓN 24/7
+                - text: Un nuevo modelo de atención ciudadana que integra instrumentos y acciones para servir con mayor cercanía, calidad y calidez a los leoneses.
+              - generic [ref=e234]:
+                - link [ref=e235] [cursor=pointer]:
+                  - /url: hola-leon.php
+                - link [ref=e236] [cursor=pointer]:
+                  - /url: tel:072
+                - link [ref=e237] [cursor=pointer]:
+                  - /url: mi-barrio-habla.php
+                - link [ref=e238] [cursor=pointer]:
+                  - /url: https://participa.leon.gob.mx/
+                - link [ref=e239] [cursor=pointer]:
+                  - /url: miercoles-ciudadano.php
+                - link [ref=e240] [cursor=pointer]:
+                  - /url: fuerza-leon.php
+            - generic [ref=e241]:
+              - heading "TRÁMITES BÚSQUEDAS FRECUENTES" [level=1] [ref=e243]:
+                - img "TRÁMITES" [ref=e244]
+                - text: BÚSQUEDAS FRECUENTES
+              - list [ref=e246]:
+                - listitem [ref=e247]:
+                  - link "Obras y acciones" [ref=e248] [cursor=pointer]:
+                    - /url: https://www.leon.gob.mx/modulos/img/adjuntos/adjuntos-1604.pdf
+                - listitem [ref=e249]:
+                  - link "Hospital de Mascotas León 450" [ref=e250] [cursor=pointer]:
+                    - /url: https://hospitaldemascotas.leon.gob.mx/
+                - listitem [ref=e251]:
+                  - link "Directorio de Atención León" [ref=e252] [cursor=pointer]:
+                    - /url: https://leon.gob.mx/directorio/
+                - listitem [ref=e253]:
+                  - link "Avanza León" [ref=e254] [cursor=pointer]:
+                    - /url: https://leon.gob.mx/avanza-leon/
+                - listitem [ref=e255]:
+                  - link "Atención Ciudadana" [ref=e256] [cursor=pointer]:
+                    - /url: https://api.whatsapp.com/send?phone=5214772136000&text=Hola%20Leo
+      - generic [ref=e257]:
+        - generic [ref=e258]:
+          - generic [ref=e259]:
+            - heading "TRÁMITES TEMAS DE INTERÉS" [level=1] [ref=e261]:
+              - img "TRÁMITES" [ref=e262]
+              - text: TEMAS DE INTERÉS
+            - list [ref=e264]:
+              - listitem [ref=e265]:
+                - link "Obras y acciones" [ref=e266] [cursor=pointer]:
+                  - /url: https://www.leon.gob.mx/modulos/img/adjuntos/adjuntos-1604.pdf
+                - text: Nuevo
+              - listitem [ref=e267]:
+                - link "Contraloría Municipal" [ref=e268] [cursor=pointer]:
+                  - /url: https://contraloria.leon.gob.mx/
+              - listitem [ref=e269]:
+                - link "Avanza León" [ref=e270] [cursor=pointer]:
+                  - /url: https://leon.gob.mx/avanza-leon/
+              - listitem [ref=e271]:
+                - link "Fotomultas" [ref=e272] [cursor=pointer]:
+                  - /url: https://pagos.leon.gob.mx/pagonet2/Services/transito/Transito_Form.aspx
+              - listitem [ref=e273]:
+                - link "Adopta una mascota" [ref=e274] [cursor=pointer]:
+                  - /url: https://leon.gob.mx/salud/adoptaunamascota/
+              - listitem [ref=e275]:
+                - link "Normatividad Municipal" [ref=e276] [cursor=pointer]:
+                  - /url: https://normatividadmunicipal.leon.gob.mx/
+              - listitem [ref=e277]:
+                - link "Convocatorias a Concursos y Licitaciones" [ref=e278] [cursor=pointer]:
+                  - /url: https://leon.gob.mx/convocatorias-licitaciones.php
+              - listitem [ref=e279]:
+                - link "SIPINNA" [ref=e280] [cursor=pointer]:
+                  - /url: https://sipinna.leon.gob.mx/
+              - listitem [ref=e281]:
+                - link "Apoyos Sociales." [ref=e282] [cursor=pointer]:
+                  - /url: apoyos-sociales.php
+            - generic [ref=e284]:
+              - iframe [ref=e286]:
+                - generic [active] [ref=f36e1]:
+                  - generic "Reproductor de video de YouTube" [ref=f36e3]
+                  - generic [ref=f36e5]:
+                    - generic:
+                      - generic:
+                        - button "Reproducir video" [ref=f36e10] [cursor=pointer]
+                        - button "Ocultar controles del reproductor" [ref=f36e12] [cursor=pointer]
+                        - generic [ref=f36e19]:
+                          - generic [ref=f36e20]:
+                            - link "#León🚮Mantener la ciudad limpia también previene inundaciones. 💧" [ref=f36e21] [cursor=pointer]:
+                              - /url: https://www.youtube.com/watch?v=E6hJ6gVWNxk
+                            - link "Municipio de León" [ref=f36e22] [cursor=pointer]:
+                              - /url: /channel/UCHUL99ia-yJj_3O9wIGHZ4Q
+                              - generic [ref=f36e23]: Municipio de León
+                          - generic [ref=f36e24]:
+                            - button [ref=f36e25] [cursor=pointer]
+                            - generic [ref=f36e27]:
+                              - generic: Municipio de León
+                              - generic: 1.59 K suscriptores
+              - link "Mantener la ciudad limpia también previene inundaciones Con el arranque de la temporada de lluvias, el Gobierno Municipal intensificó las acciones preventivas en distintos puntos de la ciudad." [ref=e287] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=E6hJ6gVWNxk
+                - text: Mantener la ciudad limpia también previene inundaciones
+                - text: Con el arranque de la temporada de lluvias, el Gobierno Municipal intensificó las acciones preventivas en distintos puntos de la ciudad.
+              - link "VER MÁS +" [ref=e288] [cursor=pointer]:
+                - /url: https://www.youtube.com/channel/UCHUL99ia-yJj_3O9wIGHZ4Q
+          - link [ref=e295] [cursor=pointer]:
+            - /url: https://leon.gob.mx/directorio/
+            - img [ref=e296]
+        - generic [ref=e301]:
+          - heading "TRÁMITES OTROS ENLACES" [level=1] [ref=e303]:
+            - img "TRÁMITES" [ref=e304]
+            - text: OTROS ENLACES
+          - generic [ref=e306]:
+            - list [ref=e309]:
+              - listitem [ref=e310]:
+                - link "Pago a Proveedores" [ref=e311] [cursor=pointer]:
+                  - /url: https://pipp.leon.gob.mx/
+              - listitem [ref=e312]:
+                - link "Avalúo Fiscal" [ref=e313] [cursor=pointer]:
+                  - /url: https://aplicativos.leon.gob.mx/APP_SIGAF/Consultas/AvaluoIndividual/
+              - listitem [ref=e314]:
+                - link "Sistema SIGAF" [ref=e315] [cursor=pointer]:
+                  - /url: https://aplicativos.leon.gob.mx/APP_SIGAF/Account/LogOn?ReturnUrl=%2fAPP_SIGAF
+              - listitem [ref=e316]:
+                - link "Facturación electrónica" [ref=e317] [cursor=pointer]:
+                  - /url: https://facturacion.leon.gob.mx/wscfdi/
+            - list [ref=e320]:
+              - listitem [ref=e321]:
+                - link "Aspirantes Solicitud de Empleo" [ref=e322] [cursor=pointer]:
+                  - /url: https://sigein.leon.gob.mx/idp/Solicitudes/solicitudexterna.aspx?m=integracion
+              - listitem [ref=e323]:
+                - link "Archivo General" [ref=e324] [cursor=pointer]:
+                  - /url: https://archivohistorico.leon.gob.mx/archivogeneral/
+              - listitem [ref=e325]:
+                - link "Requisitos Cartilla Militar" [ref=e326] [cursor=pointer]:
+                  - /url: publicaciones/servicio-militar-2026.pdf
+              - listitem [ref=e327]:
+                - link "Denuncia León" [ref=e328] [cursor=pointer]:
+                  - /url: https://denuncia.leon.gob.mx/
+      - generic [ref=e330]:
+        - generic [ref=e331]:
+          - heading "EVENTOS" [level=2] [ref=e332]
+          - generic [ref=e334]:
+            - link "79 Muestra Internacional de Cine de la Cineteca Nacional 79 Muestra Internacional de Cine de la Cineteca Nacional" [ref=e338] [cursor=pointer]:
+              - /url: https://culturaleon.com/evento/10-dias-de-la-79-muestra-internacional-de-cine-en-plaza-de-gallos
+              - img "79 Muestra Internacional de Cine de la Cineteca Nacional" [ref=e339]
+              - heading "79 Muestra Internacional de Cine de la Cineteca Nacional" [level=4] [ref=e340]
+              - paragraph
+            - generic:
+              - button [ref=e341] [cursor=pointer]:
+                - generic [ref=e342]: 
+              - button [ref=e343] [cursor=pointer]:
+                - generic [ref=e344]: 
+          - link "VER MÁS +" [ref=e345] [cursor=pointer]:
+            - /url: eventos.php
+        - generic [ref=e346]:
+          - heading "ENTÉRATE" [level=2] [ref=e347]
+          - list [ref=e349]:
+            - listitem [ref=e350]:
+              - link "EL DEPORTE EN LEÓN DEJA HUELLA EN LA HISTORIA CON LA GRATUIDAD EN EL RENOVADO PARQUE JESÚS RODRÍGUEZ GAONA" [ref=e351] [cursor=pointer]:
+                - /url: https://enterate.leon.gob.mx/?p=30881
+            - listitem [ref=e352]:
+              - link "FORTALECE LEÓN SU ECOSISTEMA INDUSTRIAL PARA ATRAER MÁS INVERSIONES Y GENERAR MAYOR DESARROLLO" [ref=e353] [cursor=pointer]:
+                - /url: https://enterate.leon.gob.mx/?p=30878
+            - listitem [ref=e354]:
+              - 'link "SE DA UN PASO HISTÓRICO HACIA UNA CIUDAD MÁS HUMANA, INCLUYENTE Y CONECTADA: INAUGURAN LA ESTACIÓN SANTA RITA LEÓN 450" [ref=e355] [cursor=pointer]':
+                - /url: https://enterate.leon.gob.mx/?p=30872
+            - listitem [ref=e356]:
+              - link "IMPULSAN INICIATIVA PARA FORTALECER LA TRANSPARENCIA Y MEJORAR LA EXPERIENCIA CIUDADANA EN LA FERIA ESTATAL DE LEÓN" [ref=e357] [cursor=pointer]:
+                - /url: https://enterate.leon.gob.mx/?p=30869
+          - link "VER MÁS +" [ref=e358] [cursor=pointer]:
+            - /url: https://enterate.leon.gob.mx/
+          - heading "ESCÚCHANOS" [level=2] [ref=e359]
+          - iframe [ref=e361]:
+            - generic [ref=f37e3]:
+              - img "Entérate León Radio Online" [ref=f37e5]
+              - button [ref=f37e6]:
+                - img [ref=f37e7]
+              - generic [ref=f37e9]:
+                - generic [ref=f37e10]: Entérate León Radio Online
+                - generic [ref=f37e11]: Entérate qué pasa en León
+      - generic [ref=e363]:
+        - generic [ref=e365]:
+          - link "León MX" [ref=e367] [cursor=pointer]:
+            - /url: visita-leon.php
+            - img "León MX" [ref=e368]
+          - link [ref=e370] [cursor=pointer]:
+            - /url: https://www.leon-mexico.com/experiencias-turisticas/
+          - img "Turismo León" [ref=e371]
+        - generic [ref=e373]:
+          - heading "¿QUÉ HACER EN LEÓN?" [level=3] [ref=e374]
+          - link "1 Templo Expiatorio" [ref=e375] [cursor=pointer]:
+            - /url: https://www.leon-mexico.com/blog/templo-expiatorio/
+            - generic [ref=e376]: "1"
+            - text: Templo Expiatorio
+          - link "2 La Fuente de los Leones" [ref=e377] [cursor=pointer]:
+            - /url: https://www.leon-mexico.com/blog/fuente-leones/
+            - generic [ref=e378]: "2"
+            - text: La Fuente de los Leones
+          - link "3 Parque Metropolitano de León" [ref=e379] [cursor=pointer]:
+            - /url: parque-metropolitano.php
+            - generic [ref=e380]: "3"
+            - text: Parque Metropolitano de León
+          - link "4 Palacio Municipal" [ref=e381] [cursor=pointer]:
+            - /url: palacio-municipal.php
+            - generic [ref=e382]: "4"
+            - text: Palacio Municipal
+          - img "Turismo León" [ref=e384]
+      - list [ref=e386]:
+        - listitem [ref=e387]:
+          - img [ref=e388]
+        - listitem [ref=e389]:
+          - img [ref=e390]
+        - listitem [ref=e391]:
+          - img [ref=e392]
+    - generic [ref=e393]:
+      - generic [ref=e394]:
+        - generic [ref=e395]:
+          - heading "Municipio de León" [level=1] [ref=e396]
+          - list [ref=e398]:
+            - listitem [ref=e399]:
+              - link "Gobierno" [ref=e400] [cursor=pointer]:
+                - /url: gobierno.php
+            - listitem [ref=e401]:
+              - link "Trámites y servicios" [ref=e402] [cursor=pointer]:
+                - /url: https://sinfilas.leon.gob.mx/
+            - listitem [ref=e403]:
+              - link "Personas" [ref=e404] [cursor=pointer]:
+                - /url: personas.php
+            - listitem [ref=e405]:
+              - link "Transparencia" [ref=e406] [cursor=pointer]:
+                - /url: https://leon.gob.mx/transparencia/
+            - listitem [ref=e407]:
+              - link "Turismo" [ref=e408] [cursor=pointer]:
+                - /url: visita-leon.php
+            - listitem [ref=e409]:
+              - link "Gaceta Municipal" [ref=e410] [cursor=pointer]:
+                - /url: https://leon.gob.mx/gaceta-municipal.php
+            - listitem [ref=e411]:
+              - link "Entérate" [ref=e412] [cursor=pointer]:
+                - /url: https://enterate.leon.gob.mx/
+            - listitem [ref=e413]:
+              - link "Escríbenos" [ref=e414] [cursor=pointer]:
+                - /url: escribenos.php
+        - generic [ref=e415]:
+          - heading "Estamos para servirte" [level=1] [ref=e416]
+          - generic [ref=e417]:
+            - img "Tus comentarios" [ref=e418]
+            - link "Tus comentarios sobre el sitio" [ref=e419] [cursor=pointer]:
+              - /url: https://encuestas.leon.gob.mx/encuesta/b2acd39136f6a39028e6333a0eda4c8288fd289784595a6ceece7111e7da6f52910bbdc0dd348d637fa1b556beaea814bac8d99835028253d5b84c5bffc71e3f9d949e9f7a13f9128ccf98985f89593055b0a3ecb36467aabe5356087587f2c3fee8ee
+            - text: son muy importantes.
+          - generic [ref=e420]:
+            - img "072 Atención telefónica" [ref=e421]
+            - text: "072"
+          - generic [ref=e422]:
+            - img "Contacto" [ref=e423]
+            - text: Plaza Principal S/N
+            - text: Centro Histórico
+            - text: León, Gto.
+            - text: C.P. 37000
+        - generic [ref=e424]:
+          - heading "Síguenos en:" [level=1] [ref=e425]
+          - generic [ref=e426]:
+            - link [ref=e427] [cursor=pointer]:
+              - /url: https://www.facebook.com/municipio.leon/
+            - link [ref=e428] [cursor=pointer]:
+              - /url: https://twitter.com/municipio_leon
+            - link [ref=e429] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCHUL99ia-yJj_3O9wIGHZ4Q
+            - link [ref=e430] [cursor=pointer]:
+              - /url: https://www.instagram.com/municipiodeleon/
+            - link [ref=e431] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@leon_municipio?_t=8aEbkLpYRfi&_r=1
+      - link "Municipio de León" [ref=e434] [cursor=pointer]:
+        - /url: index.php
+        - img "Municipio de León" [ref=e435]
+      - link "Premio OX" [ref=e437] [cursor=pointer]:
+        - /url: https://www.editorialox.com/
+        - img "Premio OX" [ref=e438]
+    - generic [ref=e439]:
+      - text: Copyright © Presidencia Municipal de León 2026 |
+      - link "Aviso de privacidad" [ref=e440] [cursor=pointer]:
+        - /url: politica-de-privacidad.php

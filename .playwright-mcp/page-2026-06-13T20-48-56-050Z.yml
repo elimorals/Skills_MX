@@ -1,0 +1,177 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - img [ref=e7]
+      - img [ref=e10]
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - iframe [ref=e15]:
+            - generic [ref=f19e2]:
+              - table [ref=f19e3]:
+                - rowgroup [ref=f19e4]:
+                  - row "29°C Sin viento Hoy Mañana" [ref=f19e5]:
+                    - cell [ref=f19e6]:
+                      - link [ref=f19e7] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tuxtla-gutierrez.html
+                    - cell "29°C Sin viento" [ref=f19e8]:
+                      - strong [ref=f19e10]: 29°C
+                      - text: Sin viento
+                    - cell "Hoy" [ref=f19e11]:
+                      - generic [ref=f19e12]: Hoy
+                    - cell "Mañana" [ref=f19e13]:
+                      - generic [ref=f19e14]: Mañana
+                  - row [ref=f19e15]:
+                    - cell [ref=f19e16]:
+                      - link [ref=f19e17] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tuxtla-gutierrez.html
+                    - cell [ref=f19e18]:
+                      - link [ref=f19e19] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tuxtla-gutierrez.html
+                  - row "31° | 21° 33° | 22°" [ref=f19e20]:
+                    - cell "31° | 21°" [ref=f19e21]:
+                      - generic [ref=f19e22]: 31°
+                      - generic [ref=f19e23]: "|"
+                      - generic [ref=f19e24]: 21°
+                    - cell "33° | 22°" [ref=f19e25]:
+                      - generic [ref=f19e26]: 33°
+                      - generic [ref=f19e27]: "|"
+                      - generic [ref=f19e28]: 22°
+              - generic [ref=f19e29]:
+                - link "© Tutiempo.net" [ref=f19e31] [cursor=pointer]:
+                  - /url: https://www.tutiempo.net/
+                - link "»»»" [ref=f19e33] [cursor=pointer]:
+                  - /url: https://www.tutiempo.net/tuxtla-gutierrez.html
+                  - strong [ref=f19e34]: »»»
+          - text: Sabado, 13 de Junio 2026
+        - link "" [ref=e18] [cursor=pointer]:
+          - /url: https://www.facebook.com/ayuntamiento.tuxtlagutierrez
+          - generic [ref=e19]: 
+        - link "" [ref=e21] [cursor=pointer]:
+          - /url: https://twitter.com/TuxtlaCapital
+          - generic [ref=e22]: 
+        - link "" [ref=e24] [cursor=pointer]:
+          - /url: https://www.youtube.com/channel/UCVhnsVAG1HRvrDWwq-127rg
+          - generic [ref=e25]: 
+        - link "" [ref=e27] [cursor=pointer]:
+          - /url: 1Form-Contacto
+          - generic [ref=e28]: 
+    - navigation [ref=e30]:
+      - generic [ref=e33]:
+        - text: 
+        - list [ref=e34]:
+          - listitem [ref=e35]:
+            - link "Inicio" [ref=e36] [cursor=pointer]:
+              - /url: 1Inicio
+          - listitem [ref=e37]:
+            - link "Ayuntamiento" [ref=e38] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e39]:
+            - link "Trámites y servicios" [ref=e40] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e41]:
+            - link "Transparencia" [ref=e42] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e43]:
+            - link "Tuxtla ¡es Chiapas!" [ref=e44] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e45]:
+            - link "Prensa" [ref=e46] [cursor=pointer]:
+              - /url: https://prensa.tuxtla.gob.mx/
+          - listitem [ref=e47]:
+            - link "Multimedia" [ref=e48] [cursor=pointer]:
+              - /url: "#"
+  - generic [ref=e53]:
+    - text: Error 404
+    - heading "Página no encontrada" [level=1] [ref=e54]
+    - paragraph [ref=e55]:
+      - text: Lo sentimos el contenido que solicitó ha sido eliminado o no existe.
+      - text: Lo invitamos a seguir navegando en nuestro Sitio Web - H. Ayuntamiento de Tuxtla Gutiérrez
+  - contentinfo [ref=e56]:
+    - generic [ref=e57]:
+      - generic [ref=e58]:
+        - img [ref=e59]
+        - heading "tuxtla.gob.mx" [level=1] [ref=e60]
+        - paragraph [ref=e61]: No. de visitas 4777989
+        - paragraph
+      - list [ref=e63]:
+        - listitem [ref=e64]:
+          - link "AYUNTAMIENTO" [ref=e65] [cursor=pointer]:
+            - /url: "#"
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - link "Directorio" [ref=e68] [cursor=pointer]:
+                - /url: 1directorio-de-servidores-publicos
+            - listitem [ref=e69]:
+              - link "Organigrama" [ref=e70] [cursor=pointer]:
+                - /url: https://innovacion.tuxtla.gob.mx/transparencia/ciudadano/index.php?act=detalle&uid==g=M&anio=2018&q=2
+            - listitem [ref=e71]:
+              - link "Normatividad vigente" [ref=e72] [cursor=pointer]:
+                - /url: 1Normatividad-vigente
+            - listitem [ref=e73]:
+              - link "Enlaces Municipales" [ref=e74] [cursor=pointer]:
+                - /url: 1Enlaces-municipales
+        - listitem [ref=e75]:
+          - link "CABILDO" [ref=e76] [cursor=pointer]:
+            - /url: "#"
+          - list [ref=e77]:
+            - listitem [ref=e78]:
+              - link "Directorio del H. Cabildo" [ref=e79] [cursor=pointer]:
+                - /url: 1Dir-Directorio-del-H-Cabildo-Municipal
+            - listitem [ref=e80]:
+              - link "Comisiones" [ref=e81] [cursor=pointer]:
+                - /url: Comisiones-de-cabildo
+            - listitem [ref=e82]:
+              - link "Actas de Cabildo" [ref=e83] [cursor=pointer]:
+                - /url: 1Doc-Actas-de-Cabildo
+            - listitem [ref=e84]:
+              - link "Cabildo en vivo" [ref=e85] [cursor=pointer]:
+                - /url: Cabildo-en-vivo-
+            - listitem [ref=e86]:
+              - link "Histórico de sesiones de Cabildo" [ref=e87] [cursor=pointer]:
+                - /url: Gal-historico-de-sesiones-de-cabildo-municipal
+        - listitem [ref=e88]:
+          - link "TRÁMITES Y SERVICIOS" [ref=e89] [cursor=pointer]:
+            - /url: "#"
+          - list [ref=e90]:
+            - listitem [ref=e91]:
+              - link "Catálogo de Trámites y Servicios" [ref=e92] [cursor=pointer]:
+                - /url: https://tramites.tuxtla.gob.mx
+            - listitem [ref=e93]:
+              - link "Servicios en línea" [ref=e94] [cursor=pointer]:
+                - /url: 1Servicios-en-Linea
+            - listitem [ref=e95]:
+              - link "Ventanilla Única Digital" [ref=e96] [cursor=pointer]:
+                - /url: https://tuxtla.gob.mx/ventanilla/index.php
+            - listitem [ref=e97]:
+              - link "Trámite SARE" [ref=e98] [cursor=pointer]:
+                - /url: https://sare.tuxtla.gob.mx/
+            - listitem [ref=e99]:
+              - link "Realiza tu reporte [Tuxtla Digital]" [ref=e100] [cursor=pointer]:
+                - /url: https://innovacion.tuxtla.gob.mx/atencionciudadanaweb/captura.php
+            - listitem [ref=e101]:
+              - link "Consulta tu reporte [Tuxtla Digital]" [ref=e102] [cursor=pointer]:
+                - /url: 1Consulta-tu-reporte
+        - listitem [ref=e103]:
+          - link "RECURSOS" [ref=e104] [cursor=pointer]:
+            - /url: "#"
+          - list [ref=e105]:
+            - listitem [ref=e106]:
+              - link "Boletínes" [ref=e107] [cursor=pointer]:
+                - /url: https://cocoso.tuxtla.gob.mx/
+            - listitem [ref=e108]:
+              - link "Atlas de Riesgos (Actualización 2015)" [ref=e109] [cursor=pointer]:
+                - /url: Atlas-de-riesgos-actualizacion-2015
+      - generic [ref=e110]:
+        - heading "SUSCRÍBETE" [level=2] [ref=e111]
+        - generic [ref=e112]:
+          - paragraph [ref=e113]: Recibe las notificaciones de sesiones de cabildo en vivo.
+          - textbox "Nombre" [ref=e114]
+          - textbox "Correo Electrónico" [ref=e115]
+          - button "Registrate" [ref=e116]
+      - link "MAPA DEL SITIO" [ref=e117] [cursor=pointer]:
+        - /url: 1Mapa-del-sitio
+      - generic [ref=e119]:
+        - text: H. Ayuntamiento de Tuxtla Gutiérrez 2024 - 2027 |
+        - link "Aviso de Privacidad" [ref=e120] [cursor=pointer]:
+          - /url: Aviso-de-privacidad
+      - generic [ref=e121]: Calle Central y Segunda Norte S/N, Col. Centro C.P. 29000 | (961) 61 25511 | contacto@tuxtla.gob.mx

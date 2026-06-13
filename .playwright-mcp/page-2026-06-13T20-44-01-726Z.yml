@@ -1,0 +1,52 @@
+- generic [ref=e2]:
+  - img "Logo del municipio de puebla" [ref=e6]
+  - generic [ref=e7]:
+    - navigation [ref=e9]:
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "Guía para pago con transferencia electrónica desde BBVA (desde la app BBVA)" [ref=e13] [cursor=pointer]:
+            - /url: javascript:void(0)
+        - listitem [ref=e14]:
+          - link "Guía para pago con transferencia electrónica Interbancaria (otros bancos)" [ref=e15] [cursor=pointer]:
+            - /url: javascript:void(0)
+        - listitem [ref=e16]:
+          - link "Guía para pago con transferencia electrónica desde BBVA en línea (BBVA Net Cash)" [ref=e17] [cursor=pointer]:
+            - /url: javascript:void(0)
+    - generic [ref=e19]: Pagos en línea
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - img "Card image cap" [ref=e23]
+        - link "Infracciones" [ref=e25] [cursor=pointer]:
+          - /url: indexI
+          - paragraph [ref=e27]: Infracciones
+      - generic [ref=e28]:
+        - img "Card image cap" [ref=e30]
+        - link "Predial" [ref=e32] [cursor=pointer]:
+          - /url: iniciopredial
+          - paragraph [ref=e34]: Predial
+      - generic [ref=e35]:
+        - img "Card image cap" [ref=e37]
+        - link "Otros trámites y servicios" [ref=e39] [cursor=pointer]:
+          - /url: iniciomtram
+          - paragraph [ref=e41]: Otros trámites y servicios
+    - separator [ref=e44]
+    - generic [ref=e46]: Consulta
+    - generic [ref=e47]:
+      - generic [ref=e48]:
+        - img "Card image cap" [ref=e50]
+        - link "Línea de captura" [ref=e52] [cursor=pointer]:
+          - /url: inicioreimp
+          - paragraph [ref=e54]: Línea de captura
+      - generic [ref=e55]:
+        - img "Card image cap" [ref=e57]
+        - link "Folio de Infracción" [ref=e59] [cursor=pointer]:
+          - /url: folioInfraccion
+          - paragraph [ref=e61]: Folio de Infracción
+  - generic [ref=e64]:
+    - img [ref=e67]
+    - generic [ref=e68]:
+      - heading "Gobierno de la Ciudad de Puebla 2024-2027" [level=6] [ref=e69]:
+        - strong [ref=e70]: Gobierno de la Ciudad de Puebla 2024-2027
+      - text: Tel. +52 (222) 309 44 00
+      - text: Puebla, Puebla. México
+    - heading "Ver. 2026-0607-2200" [level=6] [ref=e72]

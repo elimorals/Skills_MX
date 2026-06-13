@@ -1,0 +1,199 @@
+- generic [active] [ref=e1]:
+  - link "Pasar al contenido principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e5]:
+    - banner "Cabecera de sitio" [ref=e6]:
+      - generic [ref=e8]:
+        - paragraph [ref=e13]:
+          - img "escudo_zapopan" [ref=e14]
+        - generic [ref=e16]:
+          - paragraph [ref=e20]:
+            - generic [ref=e21]:
+              - text: Redes sociales oficiales
+              - link "Acceso al Facebook" [ref=e22] [cursor=pointer]:
+                - /url: https://www.facebook.com/ZapopanGob/
+                - img "Acceso al Facebook" [ref=e23]
+            - link "Instagram" [ref=e24] [cursor=pointer]:
+              - /url: https://www.instagram.com/zapopangob/
+              - generic [ref=e25]: Instagram
+              - img [ref=e26]
+            - link "Twitter" [ref=e27] [cursor=pointer]:
+              - /url: https://twitter.com/zapopangob/
+              - generic [ref=e28]: Twitter
+              - img [ref=e29]
+            - link "Youtube" [ref=e30] [cursor=pointer]:
+              - /url: https://www.youtube.com/zapopangob/
+              - generic [ref=e31]: Youtube
+              - img [ref=e32]
+            - link "Transmisión" [ref=e33] [cursor=pointer]:
+              - /url: https://livestream.com/zapopangob
+              - generic [ref=e34]: Transmisión
+              - img [ref=e35]
+          - generic [ref=e39]:
+            - group [ref=e40]:
+              - textbox "Escribe tu búsqueda" [ref=e41]
+            - button "Buscar" [ref=e43] [cursor=pointer]
+    - main [ref=e47]:
+      - article [ref=e49]:
+        - generic [ref=e51]:
+          - heading "Predial" [level=1] [ref=e52]
+          - heading "Ir al pago de predial en línea" [level=2] [ref=e53]:
+            - link "Ir al pago de predial en línea" [ref=e54] [cursor=pointer]:
+              - /url: https://pagos.zapopan.gob.mx/PagoEnLineaZap/
+          - heading "Toda la información del predial aquí" [level=2] [ref=e55]:
+            - link "Toda la información del predial aquí" [ref=e56] [cursor=pointer]:
+              - /url: HTTPS://www.zapopan.gob.mx/predial2026
+          - heading "Ubica los lugares de pago más cercanos a tu domicilio:" [level=2] [ref=e57]
+          - paragraph [ref=e58]:
+            - text: "-"
+            - link "Recaudadoras municipales" [ref=e59] [cursor=pointer]:
+              - /url: https://www.zapopan.gob.mx/v3/predial/oficinas-recaudadoras-municipales
+          - paragraph [ref=e60]:
+            - text: "-"
+            - link "Kioscos" [ref=e61] [cursor=pointer]:
+              - /url: https://www.zapopan.gob.mx/v3/predial/oficinas-recaudadoras-municipales#kioscos
+          - paragraph [ref=e62]:
+            - text: "-"
+            - link "Registros civiles con cajero" [ref=e63] [cursor=pointer]:
+              - /url: https://www.zapopan.gob.mx/v3/predial/oficinas-recaudadoras-municipales#registrosconcajero
+          - paragraph [ref=e64]:
+            - text: "-"
+            - link "Centros de pago" [ref=e65] [cursor=pointer]:
+              - /url: https://mapa.zapopan.gob.mx/tesoreria/
+            - text: (mapa)
+          - paragraph [ref=e66]
+          - heading "Chatea con nuestro asistente virtual, consulta tu adeudo y paga" [level=2] [ref=e67]
+          - paragraph [ref=e68]:
+            - link "Escanea o haz click y paga desde tu celular o tablet" [ref=e69] [cursor=pointer]:
+              - /url: https://api.whatsapp.com/send/?phone=%2B523331344810&text&type=phone_number&app_absent=0
+              - img "Escanea o haz click y paga desde tu celular o tablet" [ref=e70]
+          - heading "Pago en bancos, cadena ANTAD y tiendas de conveniencia" [level=2] [ref=e71]: Pago en bancos, cadena ANTAD y tiendas de conveniencia
+          - paragraph [ref=e72]: "Imprime tu estado de cuenta y podrás pagar la totalidad de tu adeudo en: 7eleven, Oxxo, La Comer, City Market, Farmacias Guadalajara, Soriana, Farmacias del Ahorro, Bodega Aurrera, Walmart, Chedraui, Fresko, Sams Club, Elektra, Farmacias Benavides y en los bancos Banco del Bajío, Banamex, BBVA, Banorte, Bansí, HSBC, Santander y Scotiabank."
+          - heading "Requisitos para descuentos especiales" [level=2] [ref=e73]: Requisitos para descuentos especiales
+          - paragraph [ref=e74]:
+            - text: Conoce los requisitos para los descuentos especiales de tercera edad (60 años o más), viudez, pensionados y personas con discapacidad propietarias de un inmueble, etc.
+            - link "Conoce los requisitos para el 2026." [ref=e75] [cursor=pointer]:
+              - /url: https://www.zapopan.gob.mx/v3/requisitos-descuentos-especiales
+          - paragraph [ref=e76]
+          - heading "Si tu casa cuenta con tecnologías ecoamigables, obtén un descuento" [level=2] [ref=e77]
+          - paragraph [ref=e78]:
+            - link "Conoce los requisitos para obtener tu descuento." [ref=e79] [cursor=pointer]:
+              - /url: https://www.zapopan.gob.mx/v3/ecotecnologias
+          - paragraph [ref=e80]
+          - heading "Seguro a casa-habitación" [level=2] [ref=e81]
+          - paragraph [ref=e82]:
+            - text: Este seguro lo pagas con la totalidad de tu adeudo predial 2026 y está disponible hasta el 31 de marzo.
+            - link "Conoce la cobertura, deducible y asistencias incluidas." [ref=e83] [cursor=pointer]:
+              - /url: https://www.zapopan.gob.mx/v3/seguro-predial-casa-habitacion
+          - paragraph [ref=e84]
+          - heading "¿Necesitas facturar tu recibo?" [level=2] [ref=e85]
+          - paragraph [ref=e86]:
+            - text: "Hazlo en facturación Zapopan, en la siguiente dirección:"
+            - link "https://facturas.zapopan.gob.mx/facturacion/" [ref=e87] [cursor=pointer]:
+              - /url: https://facturas.zapopan.gob.mx/facturacion/
+              - strong [ref=e88]: https://facturas.zapopan.gob.mx/facturacion/
+            - text: .
+          - paragraph [ref=e89]
+          - heading "¿Ya pagaste tu predial? Entonces vota por las obras y conoce el Presupuesto Participativo" [level=2] [ref=e90]
+          - paragraph [ref=e91]:
+            - link "Vota aquí y conoce el Presupuesto Participativo 2026" [ref=e92] [cursor=pointer]:
+              - /url: https://portal.zapopan.gob.mx/encuestas/2026.asp
+          - paragraph [ref=e93]
+          - heading "Conoce el Presupuesto Participativo y se parte de la toma de decisiones" [level=2] [ref=e94]
+          - paragraph [ref=e95]:
+            - text: Desde el 2016, las zapopanas y los zapopanos pueden decidir en qué se invierten sus impuestos a través del Presupuesto Participativo, un ejercicio impulsado por el Gobierno de Zapopan, que permite promover la participación ciudadana para juntos decidir las prioridades del municipio.
+            - link "Conoce aquí todo lo referente al presupuesto participativo" [ref=e96] [cursor=pointer]:
+              - /url: https://participacionciudadana.zapopan.gob.mx/presupuesto-participativo/
+          - heading "Conoce las obas del Presupuesto Participativo 2026" [level=2] [ref=e97]:
+            - link "Conoce las obas del Presupuesto Participativo 2026" [ref=e98] [cursor=pointer]:
+              - /url: https://participacionciudadana.zapopan.gob.mx/presupuesto-participativo/
+          - paragraph [ref=e99]
+          - heading "Carta Proactiva de predial 2026" [level=2] [ref=e100]:
+            - link "Carta Proactiva de predial 2026" [ref=e101] [cursor=pointer]:
+              - /url: https://portal.zapopan.gob.mx/predial/2026/carta_proactiva2026.pdf
+          - paragraph [ref=e102]
+          - heading "Notificación de valores catastrales 2026" [level=2] [ref=e103]
+          - paragraph [ref=e104]:
+            - link "Conoce el edicto de notificación de valores catastrales 2026." [ref=e105] [cursor=pointer]:
+              - /url: https://portal.zapopan.gob.mx/predial/2026/edictoTVUSyC_2026.pdf
+          - paragraph [ref=e106]
+          - heading "Preguntas frecuentes" [level=2] [ref=e107]:
+            - strong [ref=e108]:
+              - link "Preguntas frecuentes" [ref=e109] [cursor=pointer]:
+                - /url: https://www.zapopan.gob.mx/v3/preguntas-frecuentes-predial
+          - paragraph [ref=e110]
+          - paragraph [ref=e111]
+          - paragraph [ref=e112]:
+            - link "Ubicación de los centros de pago" [ref=e113] [cursor=pointer]:
+              - /url: https://mapa.zapopan.gob.mx/tesoreria/
+              - img "Ubicación de los centros de pago" [ref=e114]
+    - complementary [ref=e117]:
+      - generic [ref=e121]:
+        - paragraph [ref=e122]
+        - paragraph [ref=e123]:
+          - text: ¿Quieres reportar baches, luminarias, basura, árboles caídos, alcantarillas, animales muertos?
+          - strong [ref=e124]: GuaZap
+          - text: al 33 3818 2222
+        - paragraph [ref=e125]:
+          - text: ¿Tienes alguna duda sobre la información que aquí se te presenta? ¿Algo no funciona bien en este portal o página?
+          - text: Envíanos un correo a
+          - strong [ref=e126]:
+            - link "contacto@zapopan.gob.mx" [ref=e127] [cursor=pointer]:
+              - /url: mailto:contacto@zapopan.gob.mx
+    - contentinfo [ref=e128]:
+      - generic [ref=e130]:
+        - generic [ref=e134]:
+          - paragraph [ref=e135]:
+            - img "Escudo Zapopan" [ref=e136]
+          - heading "2024 - 2027 Gobierno de Zapopan" [level=6] [ref=e137]:
+            - text: 2024 - 2027
+            - text: Gobierno de Zapopan
+          - paragraph [ref=e138]
+        - generic [ref=e142]:
+          - paragraph [ref=e143]:
+            - link "Circulares de interés general" [ref=e144] [cursor=pointer]:
+              - /url: https://www.zapopan.gob.mx/v3/circulares-interes-general
+          - paragraph [ref=e145]:
+            - link "Denuncia ciudadana" [ref=e146] [cursor=pointer]:
+              - /url: https://pegalealacorrupcion.zapopan.gob.mx/
+          - paragraph [ref=e147]:
+            - link "Accesibilidad del sitio" [ref=e148] [cursor=pointer]:
+              - /url: https://www.zapopan.gob.mx/v3/accesibilidad
+          - paragraph [ref=e149]:
+            - link "Aviso de privacidad" [ref=e150] [cursor=pointer]:
+              - /url: /v3/avisodeprivacidad
+          - paragraph [ref=e151]:
+            - link "Números de emergencia" [ref=e152] [cursor=pointer]:
+              - /url: /v3/telefonos-para-reportes-emergencias
+          - paragraph [ref=e153]
+        - generic [ref=e154]:
+          - paragraph [ref=e158]:
+            - generic [ref=e159]:
+              - text: Redes sociales oficiales
+              - link "Acceso al Facebook" [ref=e160] [cursor=pointer]:
+                - /url: https://www.facebook.com/ZapopanGob/
+                - img "Acceso al Facebook" [ref=e161]
+            - link "Instagram" [ref=e162] [cursor=pointer]:
+              - /url: https://www.instagram.com/zapopangob/
+              - generic [ref=e163]: Instagram
+              - img [ref=e164]
+            - link "Twitter" [ref=e165] [cursor=pointer]:
+              - /url: https://twitter.com/zapopangob/
+              - generic [ref=e166]: Twitter
+              - img [ref=e167]
+            - link "Youtube" [ref=e168] [cursor=pointer]:
+              - /url: https://www.youtube.com/zapopangob/
+              - generic [ref=e169]: Youtube
+              - img [ref=e170]
+            - link "Transmisión" [ref=e171] [cursor=pointer]:
+              - /url: https://livestream.com/zapopangob
+              - generic [ref=e172]: Transmisión
+              - img [ref=e173]
+          - generic [ref=e176]:
+            - paragraph [ref=e177]:
+              - text: Municipio de Zapopan, Jalisco
+              - text: Prolongación Avenida Laureles 300,
+              - text: Colonia Tepeyac C.P. 45150,
+              - text: Zapopan, Jalisco. México
+              - text: 33 3818 2200
+            - alert [ref=e178]

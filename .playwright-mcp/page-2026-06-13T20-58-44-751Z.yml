@@ -1,0 +1,1227 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - generic "Volver a ags.gob.mx" [ref=e7]:
+        - link "H. Ayuntamiento de Aguascalientes" [ref=e8] [cursor=pointer]:
+          - /url: https://www.ags.gob.mx
+          - img "H. Ayuntamiento de Aguascalientes" [ref=e9]
+      - generic [ref=e10]:
+        - navigation [ref=e12]:
+          - list [ref=e13]:
+            - listitem [ref=e14] [cursor=pointer]:
+              - link "Inicio" [ref=e15]:
+                - /url: http://ags.gob.mx
+            - listitem [ref=e16] [cursor=pointer]:
+              - link "Transparencia" [ref=e17]:
+                - /url: http://ags.gob.mx/transparencia/index.aspx
+            - listitem [ref=e18] [cursor=pointer]:
+              - link "Mejora Regulatoria" [ref=e19]:
+                - /url: http://ags.gob.mx/cont.aspx?p=5009
+            - listitem [ref=e20] [cursor=pointer]:
+              - link "Sala de Prensa" [ref=e21]:
+                - /url: https://saladeprensags.com/
+            - listitem [ref=e22] [cursor=pointer]:
+              - generic [ref=e23]: Ver más
+        - generic [ref=e24]:
+          - generic [ref=e25]:
+            - generic "Directorio Telefónico" [ref=e26] [cursor=pointer]
+            - generic "Escribenos vía What's App" [ref=e27] [cursor=pointer]
+            - generic "Correo electrónico institucional" [ref=e28] [cursor=pointer]
+            - generic "Navegación inclusiva" [ref=e29] [cursor=pointer]
+            - generic "Clima en Aguascalientes" [ref=e30] [cursor=pointer]
+            - generic "Siguenos en Facebook" [ref=e31] [cursor=pointer]
+            - generic "Siguenos en TikTok" [ref=e32] [cursor=pointer]
+            - generic "Siguenos en Instagram" [ref=e33] [cursor=pointer]
+            - generic "Siguenos en Youtube" [ref=e34] [cursor=pointer]
+          - textbox "Buscar en el portal" [ref=e38]
+  - generic [ref=e40]:
+    - generic [ref=e42]:
+      - img "Trabajando por la ciudad de tu vida" [ref=e44]
+      - generic [ref=e47]:
+        - generic [ref=e48] [cursor=pointer]: ❮
+        - generic [ref=e75] [cursor=pointer]: ❯
+    - generic [ref=e77]:
+      - img "Hola soy Markitos, mándame un Whats" [ref=e79] [cursor=pointer]
+      - img "Hola soy Markitos, mándame un Whats" [ref=e81] [cursor=pointer]
+      - generic [ref=e83]:
+        - img "Paga tu predial" [ref=e85]
+        - textbox "Ingresa tu cuenta" [ref=e89]
+      - generic [ref=e92]:
+        - img "Ciudadanía cumplida" [ref=e93]
+        - img "cargando pagos" [ref=e96]
+    - generic [ref=e97]:
+      - generic [ref=e99]:
+        - article [ref=e100]:
+          - generic [ref=e102]:
+            - generic [ref=e103]:
+              - heading "8 de junio de 2026" [level=4] [ref=e105]
+              - heading "Presidencia Municipal" [level=4] [ref=e107]:
+                - link "Presidencia Municipal" [ref=e108] [cursor=pointer]:
+                  - /url: https://ags.gob.mx/trabajamos/busqueda3.html?dependencia=1#portada-cabecera-titulo
+            - generic [ref=e109]:
+              - link "ENTREGA LEO MONTAÑEZ NUEVA PATRULLA PARA COMUNIDAD CAÑADA HONDA Y ESTACIÓN CAÑADA" [ref=e110] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3895#publicaciones-cabecera
+                - heading "ENTREGA LEO MONTAÑEZ NUEVA PATRULLA PARA COMUNIDAD CAÑADA HONDA Y ESTACIÓN CAÑADA" [level=1] [ref=e112]
+              - link "La unidad 482 para Cañada Honda es la primera unidad de las que se van a entregar en comunidades rurales de la ciudad capital Leer más." [ref=e113] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3895#publicaciones-cabecera
+                - heading "La unidad 482 para Cañada Honda es la primera unidad de las que se van a entregar en comunidades rurales de la ciudad capital Leer más." [level=2] [ref=e115]
+            - link "LA NOTA DEL DIA" [ref=e117] [cursor=pointer]:
+              - /url: ./trabajamos/publicacion.html?id=3895
+              - generic [ref=e121]: LA NOTA DEL DIA
+            - generic [ref=e124]:
+              - link "Facebook" [ref=e125] [cursor=pointer]:
+                - /url: /#facebook
+                - img "Facebook" [ref=e126]
+              - link "Twitter" [ref=e127] [cursor=pointer]:
+                - /url: /#twitter
+                - img "Twitter" [ref=e128]
+              - link "Enviar por What" [ref=e129] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?text=https://www.ags.gob.mx/trabajamos/publicacion.html?id=3895
+                - img "Enviar por What" [ref=e130]
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - heading "INFORMACIÓN PARA TI" [level=1] [ref=e133]:
+                - text: INFORMACIÓN
+                - text: PARA TI
+              - generic [ref=e134]:
+                - generic [ref=e135] [cursor=pointer]:
+                  - heading "Campaña" [level=3] [ref=e136]
+                  - heading "Premio Municipal de la Juventud 2026" [level=2] [ref=e137]
+                  - text: Ver más
+                - separator [ref=e138]
+                - generic [ref=e139] [cursor=pointer]:
+                  - heading "Campaña" [level=3] [ref=e140]
+                  - heading "PREMIO DOLORES CASTRO 2026" [level=2] [ref=e141]
+                  - text: Ver más
+                - separator [ref=e142]
+                - generic [ref=e143] [cursor=pointer]:
+                  - heading "Campaña" [level=3] [ref=e144]
+                  - heading "LACTARIOS MUNICIPALES UBÍCALOS" [level=2] [ref=e145]
+                  - text: Ver más
+                - separator [ref=e146]
+                - generic [ref=e147] [cursor=pointer]:
+                  - heading "Campaña" [level=3] [ref=e148]
+                  - heading "PROGRAMA PREVENTIVO \"POR UN AGUASCALIENTES LIBRE DE VIOLENCIAS\"" [level=2] [ref=e149]
+                  - text: Ver más
+                - separator [ref=e150]
+                - generic [ref=e151] [cursor=pointer]:
+                  - heading "Campaña" [level=3] [ref=e152]
+                  - heading "DENUNCIAR FALTAS ADMINITRATIVAS Y DELITOS" [level=2] [ref=e153]
+                  - text: Ver más
+                - separator [ref=e154]
+                - generic [ref=e155] [cursor=pointer]:
+                  - heading "Campaña" [level=3] [ref=e156]
+                  - heading "CÓDIGO DE ÉTICA Y CONDUCTA" [level=2] [ref=e157]
+                  - text: Ver más
+                - separator [ref=e158]
+                - generic [ref=e159] [cursor=pointer]:
+                  - heading "Publicación" [level=3] [ref=e160]
+                  - heading "MANUAL DE MUJERES CIBERSEGURAS" [level=2] [ref=e161]
+                  - text: Ver más
+                - separator [ref=e162]
+            - generic [ref=e165]:
+              - generic [ref=e166]:
+                - heading "3 de junio de 2026" [level=4] [ref=e168]
+                - heading "Protección Civil" [level=4] [ref=e170]:
+                  - link "Protección Civil" [ref=e171] [cursor=pointer]:
+                    - /url: https://ags.gob.mx/trabajamos/busqueda3.html?dependencia=7#portada-cabecera-titulo
+              - link "SIN DESCANSO, MUNICIPIO DE AGUASCALIENTES APOYA A LA CIUDADANÍA POR CONTINGENCIAS POR LLUVIAS Leer más." [ref=e173] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3881#publicaciones-cabecera
+                - heading "SIN DESCANSO, MUNICIPIO DE AGUASCALIENTES APOYA A LA CIUDADANÍA POR CONTINGENCIAS POR LLUVIAS Leer más." [level=1] [ref=e175]
+              - link "LA NOTA DEL DIA" [ref=e177] [cursor=pointer]:
+                - /url: ./trabajamos/publicacion.html?id=3881
+                - generic [ref=e181]: LA NOTA DEL DIA
+              - generic [ref=e184]:
+                - link "Facebook" [ref=e185] [cursor=pointer]:
+                  - /url: /#facebook
+                  - img "Facebook" [ref=e186]
+                - link "Twitter" [ref=e187] [cursor=pointer]:
+                  - /url: /#twitter
+                  - img "Twitter" [ref=e188]
+                - link "Enviar por What" [ref=e189] [cursor=pointer]:
+                  - /url: https://api.whatsapp.com/send?text=https://www.ags.gob.mx/trabajamos/publicacion.html?id=3881
+                  - img "Enviar por What" [ref=e190]
+          - generic [ref=e192]:
+            - generic [ref=e193]:
+              - link [ref=e195] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/turismo/conocemas/centrodeatencionalturismo/index.html
+              - link [ref=e197] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/turismo/medico
+            - generic [ref=e198] [cursor=pointer]: ❮
+            - generic [ref=e199] [cursor=pointer]: ❯
+        - complementary [ref=e200]:
+          - generic [ref=e204]:
+            - generic [ref=e205]:
+              - heading "12 de junio de 2026" [level=4] [ref=e207]
+              - heading "Obras Públicas" [level=4] [ref=e209]:
+                - link "Obras Públicas" [ref=e210] [cursor=pointer]:
+                  - /url: https://ags.gob.mx/trabajamos/busqueda3.html?dependencia=10#portada-cabecera-titulo
+            - generic [ref=e211]:
+              - link "ENCABEZA LEO MONTAÑEZ ARRANQUE DE CONSTRUCCIÓN DE PUENTE PEATONAL EN INFONAVIT PIRULES" [ref=e212] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3907#publicaciones-cabecera
+                - heading "ENCABEZA LEO MONTAÑEZ ARRANQUE DE CONSTRUCCIÓN DE PUENTE PEATONAL EN INFONAVIT PIRULES" [level=1] [ref=e214]
+              - link "Leer más." [ref=e215] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3907#publicaciones-cabecera
+                - heading "Leer más." [level=2] [ref=e217]
+            - link [ref=e219] [cursor=pointer]:
+              - /url: ./trabajamos/publicacion.html?id=3907
+            - generic [ref=e222]:
+              - link "Facebook" [ref=e223] [cursor=pointer]:
+                - /url: /#facebook
+                - img "Facebook" [ref=e224]
+              - link "Twitter" [ref=e225] [cursor=pointer]:
+                - /url: /#twitter
+                - img "Twitter" [ref=e226]
+              - link "Enviar por What" [ref=e227] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?text=https://www.ags.gob.mx/trabajamos/publicacion.html?id=3907
+                - img "Enviar por What" [ref=e228]
+          - generic [ref=e230]:
+            - generic [ref=e231]:
+              - heading "12 de junio de 2026" [level=4] [ref=e233]
+              - heading "CABILDO" [level=4] [ref=e235]:
+                - link "CABILDO" [ref=e236] [cursor=pointer]:
+                  - /url: https://ags.gob.mx/trabajamos/busqueda3.html?dependencia=16#portada-cabecera-titulo
+            - generic [ref=e237]:
+              - link "IMPULSA AYUNTAMIENTO DE AGUASCALIENTES MEJORES ESPACIOS EDUCATIVOS, CULTURALES Y PARA EL DESARROLLO SOCIAL" [ref=e238] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3906#publicaciones-cabecera
+                - heading "IMPULSA AYUNTAMIENTO DE AGUASCALIENTES MEJORES ESPACIOS EDUCATIVOS, CULTURALES Y PARA EL DESARROLLO SOCIAL" [level=1] [ref=e240]
+              - link "En Sesión Ordinaria se aprobaron donaciones y comodatos condicionados de diversos predios en beneficio de las familias de Aguascalientes Leer más." [ref=e241] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3906#publicaciones-cabecera
+                - heading "En Sesión Ordinaria se aprobaron donaciones y comodatos condicionados de diversos predios en beneficio de las familias de Aguascalientes Leer más." [level=2] [ref=e243]
+            - link [ref=e245] [cursor=pointer]:
+              - /url: ./trabajamos/publicacion.html?id=3906
+            - generic [ref=e248]:
+              - link "Facebook" [ref=e249] [cursor=pointer]:
+                - /url: /#facebook
+                - img "Facebook" [ref=e250]
+              - link "Twitter" [ref=e251] [cursor=pointer]:
+                - /url: /#twitter
+                - img "Twitter" [ref=e252]
+              - link "Enviar por What" [ref=e253] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?text=https://www.ags.gob.mx/trabajamos/publicacion.html?id=3906
+                - img "Enviar por What" [ref=e254]
+          - generic [ref=e256]:
+            - generic [ref=e257]:
+              - generic [ref=e258]:
+                - heading "12 de junio de 2026" [level=4] [ref=e260]
+                - heading "Servicios Públicos" [level=4] [ref=e262]:
+                  - link "Servicios Públicos" [ref=e263] [cursor=pointer]:
+                    - /url: https://ags.gob.mx/trabajamos/busqueda3.html?dependencia=13#portada-cabecera-titulo
+              - link "ARRANCA LEO MONTAÑEZ REHABILITACIÓN DEL CAMELLÓN CENTRAL DE LA AVENIDA JOSÉ MARÍA CHÁVEZ Leer más." [ref=e265] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3905#publicaciones-cabecera
+                - heading "ARRANCA LEO MONTAÑEZ REHABILITACIÓN DEL CAMELLÓN CENTRAL DE LA AVENIDA JOSÉ MARÍA CHÁVEZ Leer más." [level=1] [ref=e267]
+              - link [ref=e269] [cursor=pointer]:
+                - /url: ./trabajamos/publicacion.html?id=3905
+            - generic [ref=e271]:
+              - generic [ref=e272]:
+                - heading "11 de junio de 2026" [level=4] [ref=e274]
+                - heading "Presidencia Municipal" [level=4] [ref=e276]:
+                  - link "Presidencia Municipal" [ref=e277] [cursor=pointer]:
+                    - /url: https://ags.gob.mx/trabajamos/busqueda3.html?dependencia=1#portada-cabecera-titulo
+              - link "IMPULSA LEO MONTAÑEZ REHABILITACIÓN DE LA RED HIDRÁULICA EN EL FRACCIONAMIENTO PERIODISTAS Leer más." [ref=e279] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3904#publicaciones-cabecera
+                - heading "IMPULSA LEO MONTAÑEZ REHABILITACIÓN DE LA RED HIDRÁULICA EN EL FRACCIONAMIENTO PERIODISTAS Leer más." [level=1] [ref=e281]
+      - generic [ref=e284]:
+        - complementary [ref=e285]:
+          - link "Publicidad" [ref=e287] [cursor=pointer]:
+            - /url: https://www.ags.gob.mx/cont2024.aspx?p=1179
+            - img "Publicidad" [ref=e288]
+          - generic [ref=e290]:
+            - generic [ref=e291]:
+              - heading "10 de junio de 2026" [level=4] [ref=e293]
+              - heading "REGIDORES" [level=4] [ref=e295]:
+                - link "REGIDORES" [ref=e296] [cursor=pointer]:
+                  - /url: https://ags.gob.mx/trabajamos/busqueda3.html?dependencia=36#portada-cabecera-titulo
+            - generic [ref=e297]:
+              - link "INVITAN A PARTICIPAR EN EL CROQUETÓN 2026 “HUELLITAS QUE SUMAN”" [ref=e298] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3903#publicaciones-cabecera
+                - heading "INVITAN A PARTICIPAR EN EL CROQUETÓN 2026 “HUELLITAS QUE SUMAN”" [level=1] [ref=e300]
+              - link "Se llevará a cabo un evento de cierre el sábado 27 de junio en el parque La Pona, con servicios gratuitos de esterilización, vacunación y desparasitación Leer más." [ref=e301] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3903#publicaciones-cabecera
+                - heading "Se llevará a cabo un evento de cierre el sábado 27 de junio en el parque La Pona, con servicios gratuitos de esterilización, vacunación y desparasitación Leer más." [level=2] [ref=e303]
+            - generic [ref=e306]:
+              - link "Facebook" [ref=e307] [cursor=pointer]:
+                - /url: /#facebook
+                - img "Facebook" [ref=e308]
+              - link "Twitter" [ref=e309] [cursor=pointer]:
+                - /url: /#twitter
+                - img "Twitter" [ref=e310]
+              - link "Enviar por What" [ref=e311] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?text=https://www.ags.gob.mx/trabajamos/publicacion.html?id=3903
+                - img "Enviar por What" [ref=e312]
+          - generic [ref=e314]:
+            - generic [ref=e315]:
+              - heading "10 de junio de 2026" [level=4] [ref=e317]
+              - heading "Protección Civil" [level=4] [ref=e319]:
+                - link "Protección Civil" [ref=e320] [cursor=pointer]:
+                  - /url: https://ags.gob.mx/trabajamos/busqueda3.html?dependencia=7#portada-cabecera-titulo
+            - generic [ref=e321]:
+              - link "PROTECCIÓN CIVIL MUNICIPAL REALIZA RECORRIDOS PREVENTIVOS DE SUPERVISIÓN DE DRENAJE POR TEMPORADA DE LLUVIAS" [ref=e322] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3902#publicaciones-cabecera
+                - heading "PROTECCIÓN CIVIL MUNICIPAL REALIZA RECORRIDOS PREVENTIVOS DE SUPERVISIÓN DE DRENAJE POR TEMPORADA DE LLUVIAS" [level=1] [ref=e324]
+              - link "Se intensifican acciones de limpieza y desazolve de alcantarillas y caimanes en segundo anillo de circunvalación oriente y sur, así como en el fraccionamiento Insurgentes a fin de evitar inundaciones Leer más." [ref=e325] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3902#publicaciones-cabecera
+                - heading "Se intensifican acciones de limpieza y desazolve de alcantarillas y caimanes en segundo anillo de circunvalación oriente y sur, así como en el fraccionamiento Insurgentes a fin de evitar inundaciones Leer más." [level=2] [ref=e327]
+            - link [ref=e329] [cursor=pointer]:
+              - /url: ./trabajamos/publicacion.html?id=3902
+            - generic [ref=e332]:
+              - link "Facebook" [ref=e333] [cursor=pointer]:
+                - /url: /#facebook
+                - img "Facebook" [ref=e334]
+              - link "Twitter" [ref=e335] [cursor=pointer]:
+                - /url: /#twitter
+                - img "Twitter" [ref=e336]
+              - link "Enviar por What" [ref=e337] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?text=https://www.ags.gob.mx/trabajamos/publicacion.html?id=3902
+                - img "Enviar por What" [ref=e338]
+          - generic [ref=e340]:
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - heading "9 de junio de 2026" [level=4] [ref=e344]
+                - heading "Seguridad Pública" [level=4] [ref=e346]:
+                  - link "Seguridad Pública" [ref=e347] [cursor=pointer]:
+                    - /url: https://ags.gob.mx/trabajamos/busqueda3.html?dependencia=8#portada-cabecera-titulo
+              - link "ENTREGA LEO MONTAÑEZ NUEVA PATRULLA PARA FRACCIONAMIENTO MIRADOR DE LAS CULTURAS Leer más." [ref=e349] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3901#publicaciones-cabecera
+                - heading "ENTREGA LEO MONTAÑEZ NUEVA PATRULLA PARA FRACCIONAMIENTO MIRADOR DE LAS CULTURAS Leer más." [level=1] [ref=e351]
+            - generic [ref=e353]:
+              - generic [ref=e354]:
+                - heading "9 de junio de 2026" [level=4] [ref=e356]
+                - heading "Obras Públicas" [level=4] [ref=e358]:
+                  - link "Obras Públicas" [ref=e359] [cursor=pointer]:
+                    - /url: https://ags.gob.mx/trabajamos/busqueda3.html?dependencia=10#portada-cabecera-titulo
+              - link "AVANZA MUNICIPIO CON LA REHABILITACIÓN DEL CRUCERO DE PRIMER ANILLO Y JOSÉ H. ESCOBEDO Leer más." [ref=e361] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3900#publicaciones-cabecera
+                - heading "AVANZA MUNICIPIO CON LA REHABILITACIÓN DEL CRUCERO DE PRIMER ANILLO Y JOSÉ H. ESCOBEDO Leer más." [level=1] [ref=e363]
+        - article [ref=e365]:
+          - generic [ref=e367]:
+            - generic [ref=e368]:
+              - heading "2 de junio de 2026" [level=4] [ref=e370]
+              - heading "Presidencia Municipal" [level=4] [ref=e372]:
+                - link "Presidencia Municipal" [ref=e373] [cursor=pointer]:
+                  - /url: https://ags.gob.mx/trabajamos/busqueda3.html?dependencia=1#portada-cabecera-titulo
+            - generic [ref=e374]:
+              - 'link "DECISIÓN HISTÓRICA PARA AGUASCALIENTES: MUNICIPIO APRUEBA RESCATE DE LA TOTALIDAD DE LA PONA" [ref=e375] [cursor=pointer]':
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3879#publicaciones-cabecera
+                - 'heading "DECISIÓN HISTÓRICA PARA AGUASCALIENTES: MUNICIPIO APRUEBA RESCATE DE LA TOTALIDAD DE LA PONA" [level=1] [ref=e377]'
+              - link "•⁠ ⁠Leo Montañez impulsa este gran proyecto para que la zona de la Mezquitera sea una reserva ecológica para todas las familias de Aguascalientes Leer más." [ref=e378] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3879#publicaciones-cabecera
+                - heading "•⁠ ⁠Leo Montañez impulsa este gran proyecto para que la zona de la Mezquitera sea una reserva ecológica para todas las familias de Aguascalientes Leer más." [level=2] [ref=e380]
+            - generic [ref=e384]:
+              - link "Facebook" [ref=e385] [cursor=pointer]:
+                - /url: /#facebook
+                - img "Facebook" [ref=e386]
+              - link "Twitter" [ref=e387] [cursor=pointer]:
+                - /url: /#twitter
+                - img "Twitter" [ref=e388]
+              - link "Enviar por What" [ref=e389] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?text=https://www.ags.gob.mx/trabajamos/publicacion.html?id=3879
+                - img "Enviar por What" [ref=e390]
+          - generic [ref=e391]:
+            - generic [ref=e394]:
+              - generic [ref=e395]:
+                - heading "1 de junio de 2026" [level=4] [ref=e397]
+                - heading "Presidencia Municipal" [level=4] [ref=e399]:
+                  - link "Presidencia Municipal" [ref=e400] [cursor=pointer]:
+                    - /url: https://ags.gob.mx/trabajamos/busqueda3.html?dependencia=1#portada-cabecera-titulo
+              - link "VISITA LEO MONTAÑEZ A VECINOS DEL FRACCIONAMIENTO JOSÉ GUADALUPE PERALTA GÁMEZ Leer más." [ref=e402] [cursor=pointer]:
+                - /url: https://ags.gob.mx/trabajamos/publicacion.html?id=3876#publicaciones-cabecera
+                - heading "VISITA LEO MONTAÑEZ A VECINOS DEL FRACCIONAMIENTO JOSÉ GUADALUPE PERALTA GÁMEZ Leer más." [level=1] [ref=e404]
+              - generic [ref=e408]:
+                - link "Facebook" [ref=e409] [cursor=pointer]:
+                  - /url: /#facebook
+                  - img "Facebook" [ref=e410]
+                - link "Twitter" [ref=e411] [cursor=pointer]:
+                  - /url: /#twitter
+                  - img "Twitter" [ref=e412]
+                - link "Enviar por What" [ref=e413] [cursor=pointer]:
+                  - /url: https://api.whatsapp.com/send?text=https://www.ags.gob.mx/trabajamos/publicacion.html?id=3876
+                  - img "Enviar por What" [ref=e414]
+            - generic [ref=e415]:
+              - img "Municipio Live" [ref=e417] [cursor=pointer]
+              - img "video campaña" [ref=e419] [cursor=pointer]
+          - link [ref=e421] [cursor=pointer]:
+            - /url: https://www.miaa.mx/
+  - generic [ref=e423]:
+    - heading "VIDEO NOTAS" [level=1] [ref=e425]
+    - generic [ref=e427]:
+      - button "Previous" [disabled] [ref=e428] [cursor=pointer]
+      - generic [ref=e430]:
+        - tabpanel [ref=e431]:
+          - generic [ref=e436]:
+            - iframe [ref=e437] [cursor=pointer]:
+              - generic [ref=f107e6]:
+                - generic [ref=f107e12]:
+                  - link "Órgano Interno de Control del Municipio de Aguascalientes" [ref=f107e13] [cursor=pointer]:
+                    - /url: /watch/100076255004467/?ref=embed_video
+                    - img "Órgano Interno de Control del Municipio de Aguascalientes" [ref=f107e15]
+                  - link "Órgano Interno de Control del Municipio de Aguascalientes" [ref=f107e19] [cursor=pointer]:
+                    - /url: /watch/100076255004467/?ref=embed_video
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2244537309413401%2F&show_text=0&width=267" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                              - generic:
+                                - generic: Copiar
+                                - button "Copiar"
+                            - generic:
+                              - text: Obtén más información sobre la inserción de videos de Facebook en nuestro
+                              - link "sitio para desarrolladores":
+                                - /url: https://developers.facebook.com/docs/plugins/embedded-video-player/
+                              - text: .
+                          - generic:
+                            - generic: Código de inserción
+                            - button "Volver"
+                    - generic [ref=f107e20] [cursor=pointer]:
+                      - generic [ref=f107e22]: Compartir
+                      - button "Compartir" [ref=f107e23]
+                - button "Reproducir video" [ref=f107e25] [cursor=pointer]
+            - text: "'"
+        - tabpanel [ref=e438]:
+          - generic [ref=e443]:
+            - iframe [ref=e444] [cursor=pointer]:
+              - generic [ref=f108e6]:
+                - generic [ref=f108e12]:
+                  - link:
+                    - /url: /stories/102189765283283/?ref=embed_video
+                  - generic [ref=f108e13]:
+                    - link:
+                      - /url: /stories/102189765283283/?ref=embed_video
+                    - link "Reproducir historias no vistas" [ref=f108e14] [cursor=pointer]:
+                      - /url: /stories/102189765283283/?source=EMBED_VIDEO&ref=embed_video
+                      - img "Municipio de Aguascalientes" [ref=f108e17]
+                  - link "Municipio de Aguascalientes" [ref=f108e21] [cursor=pointer]:
+                    - /url: https://www.facebook.com/MunicipioAgs?ref=embed_video
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1674425703684961%2F&show_text=0&width=267" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                              - generic:
+                                - generic: Copiar
+                                - button "Copiar"
+                            - generic:
+                              - text: Obtén más información sobre la inserción de videos de Facebook en nuestro
+                              - link "sitio para desarrolladores":
+                                - /url: https://developers.facebook.com/docs/plugins/embedded-video-player/
+                              - text: .
+                          - generic:
+                            - generic: Código de inserción
+                            - button "Volver"
+                    - generic [ref=f108e22] [cursor=pointer]:
+                      - generic [ref=f108e24]: Compartir
+                      - button "Compartir" [ref=f108e25]
+                - button "Reproducir video" [ref=f108e27] [cursor=pointer]
+            - text: "'"
+        - tabpanel [ref=e445]:
+          - generic [ref=e450]:
+            - iframe [ref=e451] [cursor=pointer]:
+              - generic [ref=f109e6]:
+                - generic [ref=f109e12]:
+                  - link:
+                    - /url: /stories/102189765283283/?ref=embed_video
+                  - generic [ref=f109e13]:
+                    - link:
+                      - /url: /stories/102189765283283/?ref=embed_video
+                    - link "Reproducir historias no vistas" [ref=f109e14] [cursor=pointer]:
+                      - /url: /stories/102189765283283/?source=EMBED_VIDEO&ref=embed_video
+                      - img "Municipio de Aguascalientes" [ref=f109e17]
+                  - link "Municipio de Aguascalientes" [ref=f109e21] [cursor=pointer]:
+                    - /url: https://www.facebook.com/MunicipioAgs?ref=embed_video
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2329255804233621%2F&show_text=0&width=267" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                              - generic:
+                                - generic: Copiar
+                                - button "Copiar"
+                            - generic:
+                              - text: Obtén más información sobre la inserción de videos de Facebook en nuestro
+                              - link "sitio para desarrolladores":
+                                - /url: https://developers.facebook.com/docs/plugins/embedded-video-player/
+                              - text: .
+                          - generic:
+                            - generic: Código de inserción
+                            - button "Volver"
+                    - generic [ref=f109e22] [cursor=pointer]:
+                      - generic [ref=f109e24]: Compartir
+                      - button "Compartir" [ref=f109e25]
+                - button "Reproducir video" [ref=f109e27] [cursor=pointer]
+            - text: "'"
+        - tabpanel [ref=e452]:
+          - generic [ref=e457]:
+            - iframe [ref=e458] [cursor=pointer]:
+              - generic [ref=f110e6]:
+                - generic [ref=f110e12]:
+                  - link:
+                    - /url: /stories/102189765283283/?ref=embed_video
+                  - generic [ref=f110e13]:
+                    - link:
+                      - /url: /stories/102189765283283/?ref=embed_video
+                    - link "Reproducir historias no vistas" [ref=f110e14] [cursor=pointer]:
+                      - /url: /stories/102189765283283/?source=EMBED_VIDEO&ref=embed_video
+                      - img "Municipio de Aguascalientes" [ref=f110e17]
+                  - link "Municipio de Aguascalientes" [ref=f110e21] [cursor=pointer]:
+                    - /url: https://www.facebook.com/MunicipioAgs?ref=embed_video
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F941323682045021%2F&show_text=0&width=267" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                              - generic:
+                                - generic: Copiar
+                                - button "Copiar"
+                            - generic:
+                              - text: Obtén más información sobre la inserción de videos de Facebook en nuestro
+                              - link "sitio para desarrolladores":
+                                - /url: https://developers.facebook.com/docs/plugins/embedded-video-player/
+                              - text: .
+                          - generic:
+                            - generic: Código de inserción
+                            - button "Volver"
+                    - generic [ref=f110e22] [cursor=pointer]:
+                      - generic [ref=f110e24]: Compartir
+                      - button "Compartir" [ref=f110e25]
+                - button "Reproducir video" [ref=f110e27] [cursor=pointer]
+            - text: "'"
+        - tabpanel [ref=e459]:
+          - generic [ref=e464]:
+            - iframe [ref=e465] [cursor=pointer]:
+              - generic [ref=f111e6]:
+                - generic [ref=f111e12]:
+                  - link:
+                    - /url: /stories/102189765283283/?ref=embed_video
+                  - generic [ref=f111e13]:
+                    - link:
+                      - /url: /stories/102189765283283/?ref=embed_video
+                    - link "Reproducir historias no vistas" [ref=f111e14] [cursor=pointer]:
+                      - /url: /stories/102189765283283/?source=EMBED_VIDEO&ref=embed_video
+                      - img "Municipio de Aguascalientes" [ref=f111e17]
+                  - link "Municipio de Aguascalientes" [ref=f111e21] [cursor=pointer]:
+                    - /url: https://www.facebook.com/MunicipioAgs?ref=embed_video
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1404294881733824%2F&show_text=0&width=560" width="560" height="317" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                              - generic:
+                                - generic: Copiar
+                                - button "Copiar"
+                            - generic:
+                              - text: Obtén más información sobre la inserción de videos de Facebook en nuestro
+                              - link "sitio para desarrolladores":
+                                - /url: https://developers.facebook.com/docs/plugins/embedded-video-player/
+                              - text: .
+                          - generic:
+                            - generic: Código de inserción
+                            - button "Volver"
+                    - generic [ref=f111e22] [cursor=pointer]:
+                      - generic [ref=f111e24]: Compartir
+                      - button "Compartir" [ref=f111e25]
+                - button "Reproducir video" [ref=f111e27] [cursor=pointer]
+            - text: "'"
+        - tabpanel [ref=e466]:
+          - generic [ref=e471]:
+            - iframe [ref=e472] [cursor=pointer]:
+              - generic [ref=f112e6]:
+                - generic [ref=f112e12]:
+                  - link:
+                    - /url: /stories/102189765283283/?ref=embed_video
+                  - generic [ref=f112e13]:
+                    - link:
+                      - /url: /stories/102189765283283/?ref=embed_video
+                    - link "Reproducir historias no vistas" [ref=f112e14] [cursor=pointer]:
+                      - /url: /stories/102189765283283/?source=EMBED_VIDEO&ref=embed_video
+                      - img "Municipio de Aguascalientes" [ref=f112e17]
+                  - link "Municipio de Aguascalientes" [ref=f112e21] [cursor=pointer]:
+                    - /url: https://www.facebook.com/MunicipioAgs?ref=embed_video
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1944664596414375%2F&show_text=0&width=267" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                              - generic:
+                                - generic: Copiar
+                                - button "Copiar"
+                            - generic:
+                              - text: Obtén más información sobre la inserción de videos de Facebook en nuestro
+                              - link "sitio para desarrolladores":
+                                - /url: https://developers.facebook.com/docs/plugins/embedded-video-player/
+                              - text: .
+                          - generic:
+                            - generic: Código de inserción
+                            - button "Volver"
+                    - generic [ref=f112e22] [cursor=pointer]:
+                      - generic [ref=f112e24]: Compartir
+                      - button "Compartir" [ref=f112e25]
+                - button "Reproducir video" [ref=f112e27] [cursor=pointer]
+            - text: "'"
+        - tabpanel [ref=e473]:
+          - generic [ref=e478]:
+            - iframe [ref=e479] [cursor=pointer]:
+              - generic [ref=f113e6]:
+                - generic [ref=f113e12]:
+                  - link:
+                    - /url: /stories/102189765283283/?ref=embed_video
+                  - generic [ref=f113e13]:
+                    - link:
+                      - /url: /stories/102189765283283/?ref=embed_video
+                    - link "Reproducir historias no vistas" [ref=f113e14] [cursor=pointer]:
+                      - /url: /stories/102189765283283/?source=EMBED_VIDEO&ref=embed_video
+                      - img "Municipio de Aguascalientes" [ref=f113e17]
+                  - link "Municipio de Aguascalientes" [ref=f113e21] [cursor=pointer]:
+                    - /url: https://www.facebook.com/MunicipioAgs?ref=embed_video
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1728984105214758%2F&show_text=0&width=267" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                              - generic:
+                                - generic: Copiar
+                                - button "Copiar"
+                            - generic:
+                              - text: Obtén más información sobre la inserción de videos de Facebook en nuestro
+                              - link "sitio para desarrolladores":
+                                - /url: https://developers.facebook.com/docs/plugins/embedded-video-player/
+                              - text: .
+                          - generic:
+                            - generic: Código de inserción
+                            - button "Volver"
+                    - generic [ref=f113e22] [cursor=pointer]:
+                      - generic [ref=f113e24]: Compartir
+                      - button "Compartir" [ref=f113e25]
+                - button "Reproducir video" [ref=f113e27] [cursor=pointer]
+            - text: "'"
+        - tabpanel [ref=e480]:
+          - generic [ref=e485]:
+            - iframe [ref=e486] [cursor=pointer]:
+              - generic [ref=f114e6]:
+                - generic [ref=f114e12]:
+                  - link:
+                    - /url: /stories/102189765283283/?ref=embed_video
+                  - generic [ref=f114e13]:
+                    - link:
+                      - /url: /stories/102189765283283/?ref=embed_video
+                    - link "Reproducir historias no vistas" [ref=f114e14] [cursor=pointer]:
+                      - /url: /stories/102189765283283/?source=EMBED_VIDEO&ref=embed_video
+                      - img "Municipio de Aguascalientes" [ref=f114e17]
+                  - link "Municipio de Aguascalientes" [ref=f114e21] [cursor=pointer]:
+                    - /url: https://www.facebook.com/MunicipioAgs?ref=embed_video
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2046071036287913%2F&show_text=0&width=267" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                              - generic:
+                                - generic: Copiar
+                                - button "Copiar"
+                            - generic:
+                              - text: Obtén más información sobre la inserción de videos de Facebook en nuestro
+                              - link "sitio para desarrolladores":
+                                - /url: https://developers.facebook.com/docs/plugins/embedded-video-player/
+                              - text: .
+                          - generic:
+                            - generic: Código de inserción
+                            - button "Volver"
+                    - generic [ref=f114e22] [cursor=pointer]:
+                      - generic [ref=f114e24]: Compartir
+                      - button "Compartir" [ref=f114e25]
+                - button "Reproducir video" [ref=f114e27] [cursor=pointer]
+            - text: "'"
+        - tabpanel [ref=e487]:
+          - generic [ref=e492]:
+            - iframe [ref=e493] [cursor=pointer]:
+              - generic [ref=f115e6]:
+                - generic [ref=f115e12]:
+                  - link:
+                    - /url: /stories/102189765283283/?ref=embed_video
+                  - generic [ref=f115e13]:
+                    - link:
+                      - /url: /stories/102189765283283/?ref=embed_video
+                    - link "Reproducir historias no vistas" [ref=f115e14] [cursor=pointer]:
+                      - /url: /stories/102189765283283/?source=EMBED_VIDEO&ref=embed_video
+                      - img "Municipio de Aguascalientes" [ref=f115e17]
+                  - link "Municipio de Aguascalientes" [ref=f115e21] [cursor=pointer]:
+                    - /url: https://www.facebook.com/MunicipioAgs?ref=embed_video
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1515897539939181%2F&show_text=0&width=279" width="279" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                              - generic:
+                                - generic: Copiar
+                                - button "Copiar"
+                            - generic:
+                              - text: Obtén más información sobre la inserción de videos de Facebook en nuestro
+                              - link "sitio para desarrolladores":
+                                - /url: https://developers.facebook.com/docs/plugins/embedded-video-player/
+                              - text: .
+                          - generic:
+                            - generic: Código de inserción
+                            - button "Volver"
+                    - generic [ref=f115e22] [cursor=pointer]:
+                      - generic [ref=f115e24]: Compartir
+                      - button "Compartir" [ref=f115e25]
+                - button "Reproducir video" [ref=f115e27] [cursor=pointer]
+            - text: "'"
+        - tabpanel [ref=e494]:
+          - generic [ref=e499]:
+            - iframe [ref=e500] [cursor=pointer]:
+              - generic [ref=f116e6]:
+                - generic [ref=f116e12]:
+                  - link:
+                    - /url: /stories/102189765283283/?ref=embed_video
+                  - generic [ref=f116e13]:
+                    - link:
+                      - /url: /stories/102189765283283/?ref=embed_video
+                    - link "Reproducir historias no vistas" [ref=f116e14] [cursor=pointer]:
+                      - /url: /stories/102189765283283/?source=EMBED_VIDEO&ref=embed_video
+                      - img "Municipio de Aguascalientes" [ref=f116e17]
+                  - link "Municipio de Aguascalientes" [ref=f116e21] [cursor=pointer]:
+                    - /url: https://www.facebook.com/MunicipioAgs?ref=embed_video
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2031455674422114%2F&show_text=0&width=267" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                              - generic:
+                                - generic: Copiar
+                                - button "Copiar"
+                            - generic:
+                              - text: Obtén más información sobre la inserción de videos de Facebook en nuestro
+                              - link "sitio para desarrolladores":
+                                - /url: https://developers.facebook.com/docs/plugins/embedded-video-player/
+                              - text: .
+                          - generic:
+                            - generic: Código de inserción
+                            - button "Volver"
+                    - generic [ref=f116e22] [cursor=pointer]:
+                      - generic [ref=f116e24]: Compartir
+                      - button "Compartir" [ref=f116e25]
+                - button "Reproducir video" [ref=f116e27] [cursor=pointer]
+            - text: "'"
+      - button "Next" [ref=e501] [cursor=pointer]
+      - tablist [ref=e502]: • • • • • • • •
+  - generic [ref=e503]:
+    - generic [ref=e505]:
+      - link "WhatsApp" [ref=e506] [cursor=pointer]:
+        - /url: https://wa.me/524495089898
+        - img "WhatsApp" [ref=e507]
+      - link "Facebook" [ref=e508] [cursor=pointer]:
+        - /url: https://www.facebook.com/MunicipioAgs
+        - img "Facebook" [ref=e509]
+      - link "TikTok" [ref=e510] [cursor=pointer]:
+        - /url: https://www.tiktok.com/@municipiodeags
+        - img "TikTok" [ref=e511]
+      - link "Instagram" [ref=e512] [cursor=pointer]:
+        - /url: https://www.instagram.com/municipioags/
+        - img "Instagram" [ref=e513]
+      - link "Youtube" [ref=e514] [cursor=pointer]:
+        - /url: https://www.youtube.com/user/MunicipioAgs
+        - img "Youtube" [ref=e515]
+    - generic [ref=e516]:
+      - generic [ref=e517]:
+        - generic [ref=e518]:
+          - list [ref=e520]:
+            - listitem [ref=e521]: TU PRESIDENCIA
+            - listitem [ref=e522]:
+              - link "Conoce al Presidente" [ref=e523] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/cont2024.aspx?p=7820
+            - listitem [ref=e524]:
+              - link "Plan Municipal de Desarrollo 2024-2027" [ref=e525] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/cont.aspx?p=2801
+                - text: Plan Municipal de Desarrollo
+                - text: 2024-2027
+            - listitem [ref=e526]:
+              - link "Política de Calidad" [ref=e527] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/calidad/politica.pdf
+            - listitem [ref=e528]:
+              - link "Mejora Regulatoria" [ref=e529] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/cont.aspx?p=5009
+            - listitem [ref=e530]:
+              - link "Manuales de Procedimientos" [ref=e531] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/cont.aspx?p=6350
+            - listitem [ref=e532]:
+              - link "Manuales de Organización" [ref=e533] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/cont.aspx?p=6351
+            - listitem [ref=e534]:
+              - link "Bitácora Ambiental (POEL)" [ref=e535] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/cont.aspx?p=201
+            - listitem [ref=e536]:
+              - link "Síndicos y Regidores" [ref=e537] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/cont.aspx?p=2542
+            - listitem [ref=e538]:
+              - link "Delegaciones Municipales" [ref=e539] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/delegaciones/
+            - listitem [ref=e540]:
+              - link "Aviso de Privacidad Simplificado" [ref=e541] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/cont.aspx?p=8605
+          - list [ref=e543]:
+            - listitem [ref=e544]: PARA TI
+            - listitem [ref=e545]:
+              - link "Teléfonos de Emergencia" [ref=e546] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/cont.aspx?p=1195
+            - listitem [ref=e547]:
+              - link "Turismo Médico" [ref=e548] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/turismo/
+            - listitem [ref=e549]:
+              - link "Turismo Municipal" [ref=e550] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/turismo/turismoags.html
+            - listitem [ref=e551]:
+              - link "Historia" [ref=e552] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/turismo/historia/index.html
+            - listitem [ref=e553]:
+              - link "Personajes Ilustres" [ref=e554] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/turismo/historia/personajesilustres/index.html
+            - listitem [ref=e555]:
+              - link "Banda Sinfónica Municipal" [ref=e556] [cursor=pointer]:
+                - /url: http://ags.gob.mx/bandasinfonica/index.html
+            - listitem [ref=e557]:
+              - link "Biblioteca Digital" [ref=e558] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/cont.aspx?p=2626
+            - listitem [ref=e559]:
+              - link "Internet Gratuito" [ref=e560] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/cont.aspx?p=3315
+            - listitem [ref=e561]:
+              - link "Bibliotecas Municipales" [ref=e562] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/cont.aspx?p=841
+            - listitem [ref=e563]:
+              - link "Centros Tecnológicos" [ref=e564] [cursor=pointer]:
+                - /url: http://www.ags.gob.mx/cont.aspx?p=4824
+            - listitem [ref=e565]:
+              - link "Mitos y Leyendas" [ref=e566] [cursor=pointer]:
+                - /url: http://ags.gob.mx/mitosyleyendas/
+        - generic [ref=e567]:
+          - list [ref=e569]:
+            - listitem [ref=e570]: SERVICIOS
+            - listitem [ref=e571]:
+              - link "Centro de Pagos" [ref=e572] [cursor=pointer]:
+                - /url: https://epagosmunicipio.ags.gob.mx/Inicio.aspx
+            - listitem [ref=e573]:
+              - link "Bolsa de Trabajo" [ref=e574] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/bolsadetrabajo/
+            - listitem [ref=e575]:
+              - link "E-Compras" [ref=e576] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/servicios/ecompras/menuecompras.asp
+            - listitem [ref=e577]:
+              - link "Licitaciones y Convocatorias" [ref=e578] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/cont.aspx?p=1917
+            - listitem [ref=e579]:
+              - link "Concursos" [ref=e580] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/cont.aspx?p=2504
+            - listitem [ref=e581]:
+              - link "Directorio Municipal" [ref=e582] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/cont.aspx?p=1850
+            - listitem [ref=e583]:
+              - link "Correo Institucional" [ref=e584] [cursor=pointer]:
+                - /url: https://correo.ags.gob.mx/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fcorreo.ags.gob.mx%2fowa%2f
+          - list [ref=e586]:
+            - listitem [ref=e587]:
+              - link "Trámites de Construcción" [ref=e588] [cursor=pointer]:
+                - /url: https://tramites.ags.gob.mx/
+            - listitem [ref=e589]:
+              - link "Apertura de Empresas" [ref=e590] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/servicios2/sare/default.aspx
+            - listitem [ref=e591]:
+              - link "Reglamentos" [ref=e592] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/reglamentos/
+            - listitem [ref=e593]:
+              - link "Subastas" [ref=e594] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/cont.aspx?p=1874
+            - listitem [ref=e595]:
+              - link "Avalúos" [ref=e596] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/avaluos/
+            - listitem [ref=e597]:
+              - link "Padrón de Mascotas" [ref=e598] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/PadronMascotas/Account
+            - listitem [ref=e599]:
+              - link "Cartillas S.M.N." [ref=e600] [cursor=pointer]:
+                - /url: https://www.ags.gob.mx/cartillasmn/citas/
+      - iframe [ref=e604]:
+        - generic [ref=f99e3]:
+          - link:
+            - /url: https://www.facebook.com/MunicipioAgs?ref=embed_page
+          - generic [ref=f99e6]:
+            - generic [ref=f99e9]:
+              - link:
+                - /url: https://www.facebook.com/495249997258718?ref=embed_page
+              - link "Reproducir historias no vistas" [ref=f99e10] [cursor=pointer]:
+                - /url: /stories/102189765283283/?source=EMBED_PAGE&ref=embed_page
+                - img "Municipio de Aguascalientes" [ref=f99e13]
+              - generic [ref=f99e14]:
+                - link "Municipio de Aguascalientes" [ref=f99e16] [cursor=pointer]:
+                  - /url: https://www.facebook.com/495249997258718?ref=embed_page
+                - generic [ref=f99e18]:
+                  - button "Seguir página" [ref=f99e22] [cursor=pointer]: Seguir página
+                  - text: 129 mil seguidores
+            - generic [ref=f99e30]:
+              - feed [ref=f99e32]:
+                - generic [ref=f99e35]:
+                  - generic [ref=f99e37]:
+                    - generic [ref=f99e38]:
+                      - link "Reproducir historias no vistas" [ref=f99e40] [cursor=pointer]:
+                        - /url: /stories/102189765283283/?source=EMBED_POST&ref=embed_page
+                        - img "Municipio de Aguascalientes" [ref=f99e43]
+                      - link [ref=f99e46] [cursor=pointer]:
+                        - /url: /MunicipioAgs/posts/pfbid02T3PrtitY8NdJNLzEAwbKbJpcVfzQuY3NvyxeAnKPJNYDTHo4LkJjtVHSvFHvPKDol?ref=embed_page
+                      - generic [ref=f99e51]:
+                        - link "Municipio de Aguascalientes" [ref=f99e52] [cursor=pointer]:
+                          - /url: https://www.facebook.com/MunicipioAgs?ref=embed_page
+                          - generic [ref=f99e53]: Municipio de Aguascalientes
+                        - link "hace 58 minutos" [ref=f99e54] [cursor=pointer]:
+                          - /url: /MunicipioAgs/posts/pfbid02T3PrtitY8NdJNLzEAwbKbJpcVfzQuY3NvyxeAnKPJNYDTHo4LkJjtVHSvFHvPKDol?ref=embed_page
+                          - generic [ref=f99e55]: hace 58 minutos
+                    - generic [ref=f99e57]:
+                      - paragraph [ref=f99e58]:
+                        - text: Te invitamos a sumarte al Croquetón 2026 “Huellitas que Suman”
+                        - generic [ref=f99e60]: 🐶
+                        - generic [ref=f99e62]: 🐱
+                        - text: ", una iniciativa que busca apoyar a las asociaciones civiles que rescatan y brindan refugio a perros y gatos en situación de calle."
+                        - generic [ref=f99e64]: 🐾
+                        - generic [ref=f99e66]: ❤️
+                      - paragraph [ref=f99e67]: "Puedes donar croquetas para perro o gato en los centros de acopio habilitados:"
+                      - paragraph [ref=f99e68]:
+                        - generic [ref=f99e70]: 📍
+                        - text: Palacio Municipal de Aguascalientes
+                        - generic [ref=f99e71]: ...
+                      - link "Ver más" [ref=f99e74] [cursor=pointer]:
+                        - /url: /MunicipioAgs/posts/pfbid02T3PrtitY8NdJNLzEAwbKbJpcVfzQuY3NvyxeAnKPJNYDTHo4LkJjtVHSvFHvPKDol?ref=embed_page
+                    - generic [ref=f99e78]:
+                      - img "Puede ser una ilustración de texto que dice \"CRÖQUETÓN HueLLiTas Que Suman 27 DEJUNIO PARQUELAPONA PARQUE LAPONA DE9:00 A 16:00HORAS MUNICIPIO DE AGUASCALIENTES ale orozco REGIDORA COORDINA COCRCONACIÓN/GENERAL ESALUD ISSEA AISSEASalud ISSEASalud Secreteriade Salud\"" [ref=f99e81]
+                      - img "Puede ser un dibujo de texto" [ref=f99e84]
+                  - table [ref=f99e86]:
+                    - rowgroup [ref=f99e87]:
+                      - row "2 Comentar 1" [ref=f99e88]:
+                        - cell "2" [ref=f99e89]:
+                          - button "2" [ref=f99e90]:
+                            - generic "Me gusta" [ref=f99e91] [cursor=pointer]: "2"
+                        - cell "Comentar" [ref=f99e93]:
+                          - link "Comentar" [ref=f99e94] [cursor=pointer]:
+                            - /url: https://www.facebook.com/MunicipioAgs/posts/pfbid02T3PrtitY8NdJNLzEAwbKbJpcVfzQuY3NvyxeAnKPJNYDTHo4LkJjtVHSvFHvPKDol?ref=embed_page
+                            - generic "Comentar" [ref=f99e95]: Comentar
+                        - cell "1" [ref=f99e97]:
+                          - link "1" [ref=f99e98] [cursor=pointer]:
+                            - /url: /sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FMunicipioAgs%2Fposts%2Fpfbid02T3PrtitY8NdJNLzEAwbKbJpcVfzQuY3NvyxeAnKPJNYDTHo4LkJjtVHSvFHvPKDol&display=popup&ref=embed_page&src=post
+                            - generic "Compartir" [ref=f99e99]: "1"
+                - generic [ref=f99e103]:
+                  - generic [ref=f99e104]:
+                    - button "Reproducir video" [ref=f99e120] [cursor=pointer]
+                    - generic [ref=f99e122]:
+                      - generic [ref=f99e123]:
+                        - link "Reproducir historias no vistas" [ref=f99e125] [cursor=pointer]:
+                          - /url: /stories/102189765283283/?source=EMBED_POST&ref=embed_page
+                          - img "Municipio de Aguascalientes" [ref=f99e128]
+                        - link [ref=f99e131] [cursor=pointer]:
+                          - /url: /reel/1489851852880853/?ref=embed_page
+                        - generic [ref=f99e136]:
+                          - link "Municipio de Aguascalientes" [ref=f99e137] [cursor=pointer]:
+                            - /url: https://www.facebook.com/MunicipioAgs?ref=embed_page
+                            - generic [ref=f99e138]: Municipio de Aguascalientes
+                          - link "hace aproximadamente una hora" [ref=f99e139] [cursor=pointer]:
+                            - /url: /reel/1489851852880853/?ref=embed_page
+                            - generic [ref=f99e140]: hace aproximadamente una hora
+                      - generic [ref=f99e142]:
+                        - paragraph [ref=f99e143]:
+                          - text: ¡Trae tus tarjetas repetidas y completa tu colección!
+                          - generic [ref=f99e145]: ⚽
+                          - text: 
+                          - generic [ref=f99e147]: ✨
+                        - paragraph [ref=f99e148]: Del 11 de junio al 19 de julio en el Patio de las Jacarandas, de 13:00 a 20:00 horas.
+                        - paragraph [ref=f99e149]: Ven al Intercambio de Tarjetas Mundialistas y comparte la emoción del álbum con otras niñas y niños coleccionistas.
+                        - generic [ref=f99e150]: ...
+                        - link "Ver más" [ref=f99e153] [cursor=pointer]:
+                          - /url: /reel/1489851852880853/?ref=embed_page
+                  - table [ref=f99e155]:
+                    - rowgroup [ref=f99e156]:
+                      - row "1 Comentar 3" [ref=f99e157]:
+                        - cell "1" [ref=f99e158]:
+                          - button "1" [ref=f99e159]:
+                            - generic "Me gusta" [ref=f99e160] [cursor=pointer]: "1"
+                        - cell "Comentar" [ref=f99e162]:
+                          - link "Comentar" [ref=f99e163] [cursor=pointer]:
+                            - /url: https://www.facebook.com/reel/1489851852880853/?ref=embed_page
+                            - generic "Comentar" [ref=f99e164]: Comentar
+                        - cell "3" [ref=f99e166]:
+                          - link "3" [ref=f99e167] [cursor=pointer]:
+                            - /url: /sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Freel%2F1489851852880853%2F&display=popup&ref=embed_page&src=post
+                            - generic "Compartir" [ref=f99e168]: "3"
+                - generic [ref=f99e172]:
+                  - generic [ref=f99e173]:
+                    - button "Reproducir video" [ref=f99e189] [cursor=pointer]
+                    - generic [ref=f99e191]:
+                      - generic [ref=f99e192]:
+                        - link "Reproducir historias no vistas" [ref=f99e194] [cursor=pointer]:
+                          - /url: /stories/102189765283283/?source=EMBED_POST&ref=embed_page
+                          - img "Municipio de Aguascalientes" [ref=f99e197]
+                        - link [ref=f99e200] [cursor=pointer]:
+                          - /url: /reel/1961077464538559/?ref=embed_page
+                        - generic [ref=f99e205]:
+                          - link "Municipio de Aguascalientes" [ref=f99e206] [cursor=pointer]:
+                            - /url: https://www.facebook.com/MunicipioAgs?ref=embed_page
+                            - generic [ref=f99e207]: Municipio de Aguascalientes
+                          - link "hace aproximadamente una hora" [ref=f99e208] [cursor=pointer]:
+                            - /url: /reel/1961077464538559/?ref=embed_page
+                            - generic [ref=f99e209]: hace aproximadamente una hora
+                      - generic [ref=f99e211]:
+                        - paragraph [ref=f99e212]:
+                          - text: ¡Sé parte de La Explosión
+                          - generic [ref=f99e214]: 💥
+                          - text: de Rock!
+                        - paragraph [ref=f99e215]: Es momento de mostrar tu talento, conquistar el escenario y llevar tu música al siguiente nivel. Inscribe tu banda y únete a esta gran experiencia donde la pasión, la energía y el rock se hacen sentir.
+                        - paragraph [ref=f99e216]:
+                          - generic [ref=f99e218]: ✅
+                          - text: "CIERRE DE CONVOCATORIA: 14 de junio"
+                        - generic [ref=f99e219]: ...
+                        - link "Ver más" [ref=f99e222] [cursor=pointer]:
+                          - /url: /reel/1961077464538559/?ref=embed_page
+                  - table [ref=f99e224]:
+                    - rowgroup [ref=f99e225]:
+                      - row "Me gusta Comentar Compartir" [ref=f99e226]:
+                        - cell "Me gusta" [ref=f99e227]:
+                          - button "Me gusta" [ref=f99e228]:
+                            - generic "Me gusta" [ref=f99e229] [cursor=pointer]: Me gusta
+                        - cell "Comentar" [ref=f99e231]:
+                          - link "Comentar" [ref=f99e232] [cursor=pointer]:
+                            - /url: https://www.facebook.com/reel/1961077464538559/?ref=embed_page
+                            - generic "Comentar" [ref=f99e233]: Comentar
+                        - cell "Compartir" [ref=f99e235]:
+                          - link "Compartir" [ref=f99e236] [cursor=pointer]:
+                            - /url: /sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Freel%2F1961077464538559%2F&display=popup&ref=embed_page&src=post
+                            - generic "Compartir" [ref=f99e237]: Compartir
+                - generic [ref=f99e241]:
+                  - generic [ref=f99e243]:
+                    - generic [ref=f99e244]:
+                      - link "Reproducir historias no vistas" [ref=f99e246] [cursor=pointer]:
+                        - /url: /stories/102189765283283/?source=EMBED_POST&ref=embed_page
+                        - img "Municipio de Aguascalientes" [ref=f99e249]
+                      - link [ref=f99e252] [cursor=pointer]:
+                        - /url: /MunicipioAgs/posts/pfbid0aU7x9GTq3diitd3FhJ7DUbD4bVrGnfFfiTcqbJH4NjbtzBfrRZTnQB3EpwMjy8gWl?ref=embed_page
+                      - generic [ref=f99e257]:
+                        - link "Municipio de Aguascalientes" [ref=f99e258] [cursor=pointer]:
+                          - /url: https://www.facebook.com/MunicipioAgs?ref=embed_page
+                          - generic [ref=f99e259]: Municipio de Aguascalientes
+                        - link "hace 2 horas" [ref=f99e260] [cursor=pointer]:
+                          - /url: /MunicipioAgs/posts/pfbid0aU7x9GTq3diitd3FhJ7DUbD4bVrGnfFfiTcqbJH4NjbtzBfrRZTnQB3EpwMjy8gWl?ref=embed_page
+                          - generic [ref=f99e261]: hace 2 horas
+                    - generic [ref=f99e263]:
+                      - paragraph [ref=f99e264]:
+                        - generic [ref=f99e266]: 🐾
+                        - text: ¡Agenda tu cita para esterilizar a tu mascota!
+                        - generic [ref=f99e268]: 🐱
+                        - generic [ref=f99e270]: 🐶
+                      - paragraph [ref=f99e271]:
+                        - text: El próximo
+                        - generic [ref=f99e273]: 🗓️
+                        - text: 18 de junio se llevaremos a cabo una nueva jornada gratuita de Esterilización Canina y Felina en el Club Conquistadores,
+                        - generic [ref=f99e275]: 📍
+                        - text: "ubicado en Domingo Velazco #121, Villas de Nuestra Señora de la Asunción."
+                      - paragraph [ref=f99e276]:
+                        - generic [ref=f99e278]: 📞
+                        - text: "Agenda tu cita: 449 918 30 69 y 449 238 33 06"
+                        - generic [ref=f99e279]: ...
+                      - link "Ver más" [ref=f99e282] [cursor=pointer]:
+                        - /url: /MunicipioAgs/posts/pfbid0aU7x9GTq3diitd3FhJ7DUbD4bVrGnfFfiTcqbJH4NjbtzBfrRZTnQB3EpwMjy8gWl?ref=embed_page
+                    - generic [ref=f99e286]:
+                      - 'img "Puede ser una imagen de perro y texto que dice \"CAMPAH AÑA DE ESTERILIZACION GRATUITA CANINA Y FELINA PADRÓN DE MASCOTAS www ags. gob .mx/padronmascotas JUEVES 18 DE JUNIO DE 2026 8:00 A14:00HORAS CLUB JBCONQUISTADORES DOMINGO DOMINGOVELAZCO#12IVNSA VNSA VELAZCO AGENDA τυ CnTA: 449 918 30 30 69 449 238 06. DE LUNES VIERNES DE 8:00 A A 15:30 HRS. Aguascalientes LA CIUDAD ACIUDADDETUVIDA DETU MUNICIPIO DE AGUASCALIENTES COCRDRLACONGONRA GENERAL SALUD ISSEA Salud\"" [ref=f99e289]'
+                      - img "Puede ser una imagen de perro" [ref=f99e292]
+                      - img "Puede ser una imagen de perro" [ref=f99e295]
+                      - img "Puede ser una imagen de perro" [ref=f99e298]
+                      - img "Puede ser una imagen de perro" [ref=f99e301]
+                  - table [ref=f99e303]:
+                    - rowgroup [ref=f99e304]:
+                      - row "33 5 8" [ref=f99e305]:
+                        - cell "33" [ref=f99e306]:
+                          - button "33" [ref=f99e307]:
+                            - generic "Me gusta" [ref=f99e308] [cursor=pointer]: "33"
+                        - cell "5" [ref=f99e310]:
+                          - link "5" [ref=f99e311] [cursor=pointer]:
+                            - /url: https://www.facebook.com/MunicipioAgs/posts/pfbid0aU7x9GTq3diitd3FhJ7DUbD4bVrGnfFfiTcqbJH4NjbtzBfrRZTnQB3EpwMjy8gWl?ref=embed_page
+                            - generic "Comentar" [ref=f99e312]: "5"
+                        - cell "8" [ref=f99e314]:
+                          - link "8" [ref=f99e315] [cursor=pointer]:
+                            - /url: /sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FMunicipioAgs%2Fposts%2Fpfbid0aU7x9GTq3diitd3FhJ7DUbD4bVrGnfFfiTcqbJH4NjbtzBfrRZTnQB3EpwMjy8gWl&display=popup&ref=embed_page&src=post
+                            - generic "Compartir" [ref=f99e316]: "8"
+                - generic [ref=f99e320]:
+                  - generic [ref=f99e321]:
+                    - link [ref=f99e326] [cursor=pointer]:
+                      - /url: https://www.facebook.com/photo.php?fbid=1450698533765726&set=a.355064129995844&type=3&ref=embed_page
+                    - generic [ref=f99e327]:
+                      - generic [ref=f99e328]:
+                        - link "Reproducir historias no vistas" [ref=f99e330] [cursor=pointer]:
+                          - /url: /stories/102189765283283/?source=EMBED_POST&ref=embed_page
+                          - img "Municipio de Aguascalientes" [ref=f99e333]
+                        - link [ref=f99e336] [cursor=pointer]:
+                          - /url: /MunicipioAgs/posts/pfbid0oZgDYpeMrj13gdKDXXym1Mk9EuAxCKa9Wt1fT8VqL4uzwRiujNjYLR4h3c8SDwSul?ref=embed_page
+                        - generic [ref=f99e341]:
+                          - link "Municipio de Aguascalientes" [ref=f99e342] [cursor=pointer]:
+                            - /url: https://www.facebook.com/MunicipioAgs?ref=embed_page
+                            - generic [ref=f99e343]: Municipio de Aguascalientes
+                          - link "hace 3 horas" [ref=f99e344] [cursor=pointer]:
+                            - /url: /MunicipioAgs/posts/pfbid0oZgDYpeMrj13gdKDXXym1Mk9EuAxCKa9Wt1fT8VqL4uzwRiujNjYLR4h3c8SDwSul?ref=embed_page
+                            - generic [ref=f99e345]: hace 3 horas
+                      - generic [ref=f99e347]:
+                        - paragraph [ref=f99e348]:
+                          - text: Hoy sábado, no te puedes perder el Festival Cultural India-México
+                          - generic [ref=f99e350]: 🇮🇳
+                          - generic [ref=f99e352]: 🇲🇽
+                        - paragraph [ref=f99e353]: Acompáñanos a la muestra de música, danza y performance. Con la presencia de Tushar Arun Gandhi presidente de la Fundación Mahatma Gandhi.
+                        - paragraph [ref=f99e354]:
+                          - generic [ref=f99e356]: 📍
+                          - text: Plaza Fundadores
+                          - generic [ref=f99e357]: ...
+                        - link "Ver más" [ref=f99e360] [cursor=pointer]:
+                          - /url: /MunicipioAgs/posts/pfbid0oZgDYpeMrj13gdKDXXym1Mk9EuAxCKa9Wt1fT8VqL4uzwRiujNjYLR4h3c8SDwSul?ref=embed_page
+                  - table [ref=f99e362]:
+                    - rowgroup [ref=f99e363]:
+                      - row "30 Comentar 2" [ref=f99e364]:
+                        - cell "30" [ref=f99e365]:
+                          - button "30" [ref=f99e366]:
+                            - generic "Me gusta" [ref=f99e367] [cursor=pointer]: "30"
+                        - cell "Comentar" [ref=f99e369]:
+                          - link "Comentar" [ref=f99e370] [cursor=pointer]:
+                            - /url: https://www.facebook.com/MunicipioAgs/posts/pfbid0oZgDYpeMrj13gdKDXXym1Mk9EuAxCKa9Wt1fT8VqL4uzwRiujNjYLR4h3c8SDwSul?ref=embed_page
+                            - generic "Comentar" [ref=f99e371]: Comentar
+                        - cell "2" [ref=f99e373]:
+                          - link "2" [ref=f99e374] [cursor=pointer]:
+                            - /url: /sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FMunicipioAgs%2Fposts%2Fpfbid0oZgDYpeMrj13gdKDXXym1Mk9EuAxCKa9Wt1fT8VqL4uzwRiujNjYLR4h3c8SDwSul&display=popup&ref=embed_page&src=post
+                            - generic "Compartir" [ref=f99e375]: "2"
+              - progressbar [ref=f99e378]
+              - link "Búscanos en Facebook" [ref=f99e379] [cursor=pointer]:
+                - /url: https://www.facebook.com/495249997258718?ref=embed_page
+                - generic [ref=f99e380]: Búscanos en Facebook
+    - generic [ref=e606]:
+      - separator [ref=e607]
+      - generic [ref=e608]:
+        - text: H. Ayuntamiento de Aguascalientes 2024 - 2027. Plaza Patria S/N, Zona Centro, Aguascalientes, Ags. CP. 20000.
+        - text: Marca al 072 o 4499101022 / 365 días / 24 horas | Atención vía
+        - link "whatsApp 4495089898" [ref=e609] [cursor=pointer]:
+          - /url: https://wa.me/524495089898
+          - img "whatsApp" [ref=e610]
+          - text: "4495089898"
+        - text: "| Tel. 4499101010"
+  - generic [ref=e611]:
+    - generic [ref=e613]:
+      - link "Visita el Centro de Pagos" [ref=e614] [cursor=pointer]:
+        - /url: https://epagosmunicipio.ags.gob.mx/
+        - img "Visita el Centro de Pagos" [ref=e615]
+      - paragraph [ref=e616] [cursor=pointer]: X
+    - generic [ref=e618]:
+      - link "Conoce Aguascalientes" [ref=e619] [cursor=pointer]:
+        - /url: https://ags.gob.mx/hospitalveterinario/
+        - img "Conoce Aguascalientes" [ref=e620]
+      - paragraph [ref=e621] [cursor=pointer]: X
+    - generic [ref=e623]:
+      - link "Conoce Aguascalientes" [ref=e624] [cursor=pointer]:
+        - /url: https://ags.gob.mx/turismo/medico/
+        - img "Conoce Aguascalientes" [ref=e625]
+      - paragraph [ref=e626] [cursor=pointer]: X
+  - generic [ref=e627]:
+    - img [ref=e628]
+    - generic [ref=e629]:
+      - link "Clima en Aguascalientes" [ref=e631] [cursor=pointer]:
+        - /url: https://www.tiempo.com/aguascalientes.htm
+      - iframe [ref=e632]:
+        - generic [ref=f104e2]: "{\"ok\":false,\"expiracion\":1780586246681,\"info\":{\"message\":\"Gone\"}}"
+  - generic [ref=e635]:
+    - generic [ref=e637] [cursor=pointer]: X
+    - iframe [ref=e639]:
+      - generic [ref=f106e6]:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Reproducir":
+                      - generic: Reproducir
+                  - generic:
+                    - generic:
+                      - generic:
+                        - slider
+                  - generic:
+                    - button "-0:24"
+                    - generic:
+                      - button "Silenciar":
+                        - generic: Silenciar
+                    - button "Ver en pantalla completa":
+                      - generic: Ver en pantalla completa
+                    - link "Haz clic para verlo en Facebook":
+                      - /url: https://www.facebook.com/reel/2244537309413401/?t=0
+                      - generic: Haz clic para verlo en Facebook
+        - generic [ref=f106e12]:
+          - link "Órgano Interno de Control del Municipio de Aguascalientes" [ref=f106e13] [cursor=pointer]:
+            - /url: /watch/100076255004467/?ref=embed_video
+            - img "Órgano Interno de Control del Municipio de Aguascalientes" [ref=f106e15]
+          - link "Órgano Interno de Control del Municipio de Aguascalientes" [ref=f106e19] [cursor=pointer]:
+            - /url: /watch/100076255004467/?ref=embed_video
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2244537309413401%2F&show_text=0&width=267" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                      - generic:
+                        - generic: Copiar
+                        - button "Copiar"
+                    - generic:
+                      - text: Obtén más información sobre la inserción de videos de Facebook en nuestro
+                      - link "sitio para desarrolladores":
+                        - /url: https://developers.facebook.com/docs/plugins/embedded-video-player/
+                      - text: .
+                  - generic:
+                    - generic: Código de inserción
+                    - button "Volver"
+            - generic [ref=f106e20] [cursor=pointer]:
+              - generic [ref=f106e22]: Compartir
+              - button "Compartir" [ref=f106e23]
+        - button "Reproducir video" [ref=f106e25] [cursor=pointer]
+  - generic:
+    - generic:
+      - generic:
+        - link "X":
+          - /url: "#close"

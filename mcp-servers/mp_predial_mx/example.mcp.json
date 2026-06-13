@@ -1,0 +1,19 @@
+{
+  "name": "mp_predial_mx",
+  "displayName": "Predial MX (unificado)",
+  "description": "MCP unificado para consulta de predial municipal en México. Consulta cualquier municipio del catálogo central (209 muns) + plataformas SaaS estatales (95 muns MICH via SACPI). Reemplaza los 8 MCPs municipales individuales con auto-routing. Mock-first; activar producción con MP_PLAYWRIGHT_PUBLIC=1.",
+  "version": "0.1.0",
+  "command": "python3",
+  "args": ["-m", "mp_predial_mx.server"],
+  "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+  "env": {
+    "PLUGINS_MX_MOCK": "1",
+    "MP_PLAYWRIGHT_PUBLIC": "0"
+  },
+  "tools": [
+    "predial_consultar",
+    "predial_listar_municipios",
+    "predial_buscar_municipio",
+    "predial_estadisticas_catalogo"
+  ]
+}

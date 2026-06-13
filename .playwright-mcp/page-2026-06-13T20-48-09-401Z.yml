@@ -1,0 +1,96 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link [ref=e4] [cursor=pointer]:
+        - /url: https://www.hermosillo.gob.mx/Index.aspx
+        - img [ref=e5]
+      - text: 
+      - navigation [ref=e6]:
+        - list [ref=e7]:
+          - listitem [ref=e8]:
+            - link "Gobierno" [ref=e9] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e10]:
+            - link "Trámites y servicios" [ref=e11] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e12]:
+            - link "Sala de Prensa" [ref=e13] [cursor=pointer]:
+              - /url: https://www.hermosillo.gob.mx/boletines/Sala-Prensa.aspx
+          - listitem [ref=e14]:
+            - link "Pago de Servicios" [ref=e15] [cursor=pointer]:
+              - /url: https://www.hermosillo.gob.mx/servicios
+  - generic [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]: ¡Vaya, esta página no fue encontrada!
+      - paragraph [ref=e20]: La página que estás buscando no existe o ha sido movida.
+      - paragraph [ref=e21]:
+        - text: Regresar a la
+        - link "página principal" [ref=e22] [cursor=pointer]:
+          - /url: /
+    - img "Lottie animation" [ref=e25]:
+      - img [ref=e27]
+  - contentinfo [ref=e49]:
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - img [ref=e53]
+        - heading "H. Ayuntamiento de Hermosillo" [level=5] [ref=e54]
+        - paragraph [ref=e55]:
+          - text: Bulevar Hidalgo y Comonfort Col. Centenario,
+          - text: CP 83260, Hermosillo. Sonora, México.
+          - text: Teléfono/Fax (01662) 289 30 00
+      - list [ref=e57]:
+        - listitem [ref=e58]:
+          - link "Cronista Municipal" [ref=e59] [cursor=pointer]:
+            - /url: https://www.hermosillo.gob.mx/pages/cronista.aspx
+        - listitem [ref=e60]:
+          - link "Sala de prensa" [ref=e61] [cursor=pointer]:
+            - /url: https://www.hermosillo.gob.mx/boletines/Sala-Prensa.aspx
+        - listitem [ref=e62]:
+          - link "Cuenta única" [ref=e63] [cursor=pointer]:
+            - /url: https://www.hermosillo.gob.mx/servicios/?s=1
+        - listitem [ref=e64]:
+          - link "Transparencia" [ref=e65] [cursor=pointer]:
+            - /url: https://transparencia.hermosillo.gob.mx
+        - listitem [ref=e66]:
+          - link "Código de ética" [ref=e67] [cursor=pointer]:
+            - /url: https://www.hermosillo.gob.mx/pages/codigo-de-etica.aspx
+        - listitem [ref=e68]:
+          - link "Aviso de privacidad" [ref=e69] [cursor=pointer]:
+            - /url: https://www.hermosillo.gob.mx/avisosdeprivacidad/
+      - list [ref=e71]:
+        - listitem [ref=e72]:
+          - link "Reconocimiento, quejas y denuncias a personas servidoras públicas municipales" [ref=e73] [cursor=pointer]:
+            - /url: https://denuncias.hermosillo.gob.mx/
+        - listitem [ref=e74]:
+          - link "Directorio Teléfonico" [ref=e75] [cursor=pointer]:
+            - /url: https://www.hermosillo.gob.mx/portaltransparencia/directorio_telefonico_2.aspx
+        - listitem [ref=e76]:
+          - link "Licitaciones públicas" [ref=e77] [cursor=pointer]:
+            - /url: https://transparencia.hermosillo.gob.mx/Licitaciones.aspx
+        - listitem [ref=e78]:
+          - link "Edictos y Notificaciones por Estrados" [ref=e79] [cursor=pointer]:
+            - /url: https://www.hermosillo.gob.mx/estrados/
+      - generic [ref=e80]:
+        - heading "Síguenos" [level=4] [ref=e81]
+        - list [ref=e82]:
+          - listitem [ref=e83]:
+            - link "Facebook Hermosillo Gobierno" [ref=e84] [cursor=pointer]:
+              - /url: //www.facebook.com/hermosillogobierno/
+          - listitem [ref=e85]:
+            - link "Youtube HermosilloGob" [ref=e86] [cursor=pointer]:
+              - /url: //www.youtube.com/user/HermosilloGob
+          - listitem [ref=e87]:
+            - link "Twitter HermosilloGob" [ref=e88] [cursor=pointer]:
+              - /url: //twitter.com/HermosilloGob
+          - listitem [ref=e89]:
+            - link "Instagram HermosilloGob" [ref=e90] [cursor=pointer]:
+              - /url: //www.instagram.com/hermosillogob/
+          - listitem [ref=e91]:
+            - link "tiktok HermosilloGob" [ref=e92] [cursor=pointer]:
+              - /url: //www.tiktok.com/@hermosillogob
+        - table "Click to Verify - This site chose Symantec SSL for secure e-commerce and confidential communications." [ref=e94]:
+          - rowgroup [ref=e95]:
+            - row "ACERCA DE LOS CERTIFICADOS SSL" [ref=e96]:
+              - cell "ACERCA DE LOS CERTIFICADOS SSL" [ref=e97]:
+                - link "ACERCA DE LOS CERTIFICADOS SSL" [ref=e98] [cursor=pointer]:
+                  - /url: https://www.symantec.com/es/es/ssl-certificates

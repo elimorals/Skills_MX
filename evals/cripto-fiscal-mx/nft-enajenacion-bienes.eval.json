@@ -1,0 +1,16 @@
+[
+  {"query": "vendí un nft en opensea", "should_trigger": true, "rationale": "Match directo con 'NFT' y 'OpenSea'"},
+  {"query": "compré un bored ape", "should_trigger": true, "rationale": "NFT BAYC mencionado"},
+  {"query": "minté nft polygon", "should_trigger": true, "rationale": "Mint NFT"},
+  {"query": "como tributa un nft", "should_trigger": true, "rationale": "Pregunta fiscal NFT"},
+  {"query": "magic eden venta solana nft", "should_trigger": true, "rationale": "Marketplace NFT Solana"},
+  {"query": "royalty NFT recibido", "should_trigger": true, "rationale": "Trigger explícito"},
+  {"query": "vendí jpeg colección", "should_trigger": true, "rationale": "Jerga NFT (jpeg)"},
+  {"query": "erc-721 venta", "should_trigger": true, "rationale": "Estándar NFT"},
+  {"query": "vendí 1 btc por mxn", "should_trigger": false, "rationale": "No es NFT"},
+  {"query": "swap eth a usdc", "should_trigger": false, "rationale": "Permuta — otro skill"},
+  {"query": "staking eth rewards", "should_trigger": false, "rationale": "Staking — otro skill"},
+  {"query": "que es un nft", "should_trigger": false, "rationale": "Conceptual"},
+  {"query": "explícame opensea", "should_trigger": false, "rationale": "Conceptual"},
+  {"query": "buenos dias", "should_trigger": false, "rationale": "Saludo"}
+]

@@ -1,0 +1,1204 @@
+- generic [ref=e2]:
+  - figure [ref=e6]:
+    - link "Logo del H. Ayuntamiento de SLP" [ref=e7] [cursor=pointer]:
+      - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi
+      - img "Logo del H. Ayuntamiento de SLP" [ref=e8]
+  - banner [ref=e9]:
+    - generic [ref=e13]:
+      - list [ref=e14]:
+        - listitem [ref=e15]:
+          - generic [ref=e16]: 
+          - text: ATENCIÓN CIUDADANA
+          - link " (444) 8.34.54.34" [ref=e17] [cursor=pointer]:
+            - /url: tel:+524448345434
+      - list [ref=e18]:
+        - listitem [ref=e19]:
+          - link "Red Social Facebook" [ref=e20] [cursor=pointer]:
+            - /url: https://www.facebook.com/SLPMunicipio/
+            - img "Red Social Facebook" [ref=e21]
+        - listitem [ref=e22]:
+          - link "Red Social X (Twitter)" [ref=e23] [cursor=pointer]:
+            - /url: https://twitter.com/SLPMunicipio
+            - img "Red Social X (Twitter)" [ref=e24]
+        - listitem [ref=e25]:
+          - link "Red Social Instagram" [ref=e26] [cursor=pointer]:
+            - /url: https://www.instagram.com/slpmunicipio_/
+            - img "Red Social Instagram" [ref=e27]
+    - generic [ref=e30]:
+      - figure [ref=e32]:
+        - link "Logo del H. Ayuntamiento de SLP" [ref=e33] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi
+          - img "Logo del H. Ayuntamiento de SLP" [ref=e34]
+      - generic [ref=e35]:          
+  - generic [ref=e43]:
+    - generic [ref=e48]:
+      - heading " San Luis Potosí" [level=2] [ref=e49]:
+        - generic [ref=e50]: 
+        - text: San Luis Potosí
+      - heading "PuroPotosino 2026" [level=1] [ref=e51]:
+        - text: PuroPotosino
+        - text: "2026"
+      - heading "San Luis Potosí" [level=2] [ref=e52]: San Luis Potosí
+      - link "Visitar" [ref=e54] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/PuroPotosino
+    - generic [ref=e59]:
+      - heading " San Luis Potosí" [level=2] [ref=e60]:
+        - generic [ref=e61]: 
+        - text: San Luis Potosí
+      - heading "Catálogo de Proveedores SLP 2025" [level=1] [ref=e62]:
+        - text: Catálogo de Proveedores SLP
+        - text: "2025"
+      - heading "San Luis Potosí" [level=2] [ref=e63]: San Luis Potosí
+      - link "Visitar" [ref=e65] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/DesarrolloDeProveedores/CatalogoProveedoresSLP
+    - generic [ref=e70]:
+      - heading " San Luis Potosí" [level=2] [ref=e71]:
+        - generic [ref=e72]: 
+        - text: San Luis Potosí
+      - heading "Escuadrón Bienestar Municipal 2026" [level=1] [ref=e73]:
+        - text: Escuadrón Bienestar Municipal
+        - text: "2026"
+      - heading "San Luis Potosí" [level=2] [ref=e74]: San Luis Potosí
+      - link "Visitar" [ref=e76] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/EBIM
+    - generic [ref=e81]:
+      - heading "Certificado de no adeudo de impuesto predial" [level=1] [ref=e82]
+      - heading "Certificado de no adeudo de impuesto predial" [level=2] [ref=e83]
+      - link "Iniciar Trámite" [ref=e85] [cursor=pointer]:
+        - /url: https://servicios.sanluis.gob.mx/cartas/blank_iniciatramite/
+    - generic [ref=e90]:
+      - heading "Guía de actuación de violencia política digital en razón de género" [level=1] [ref=e91]:
+        - text: Guía de actuación de
+        - text: violencia política digital en razón de género
+      - link "Más Información" [ref=e93] [cursor=pointer]:
+        - /url: https://policiaciberneticamunicipal.sspcslp.gob.mx/GUIA_VIOLENCIA_GENERO.pdf
+    - generic [ref=e98]:
+      - heading "Consulta la Factibilidad de Uso de Suelo para Funcionamiento" [level=1] [ref=e99]
+      - heading "Te ayudará a conocer si es posible aperturar tu negocio en el lugar que deseas." [level=2] [ref=e100]
+      - link "Más Información" [ref=e102] [cursor=pointer]:
+        - /url: https://servicios.sanluis.gob.mx/scripts/cgiip.exe/WService=sare/Sare/sarenav/consulta_aprobacion_INTERNET_VEN_pduyt.r
+    - generic [ref=e107]:
+      - heading "¿Quieres abrir un negocio que mide máximo 39.99 metros cuadrados?" [level=1] [ref=e108]
+      - heading "Consulta aquí el listado de giros de bajo impacto. Obtén tu licencia de uso de suelo y licencia de funcionamiento en 3 días hábiles con el trámite SARE." [level=2] [ref=e109]:
+        - link "Consulta aquí" [ref=e110] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi/files/generales/SAREGiros.pdf
+          - text: Consulta aquí
+        - text: el listado de giros de bajo impacto.
+        - text: Obtén tu licencia de uso de suelo y licencia de funcionamiento en 3 días hábiles con el trámite SARE.
+      - link "Inicia el trámite aquí" [ref=e112] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/SARE/
+    - generic [ref=e117]:
+      - heading " San Luis Capital ¡Gobierno con Garantia!" [level=2] [ref=e118]:
+        - generic [ref=e119]: 
+        - text: San Luis Capital
+        - text: ¡Gobierno con Garantia!
+      - heading "Gobierno con Garantia Gobierno con Garantia" [level=1] [ref=e120]:
+        - text: Gobierno con Garantia
+        - text: Gobierno con Garantia
+      - heading "Gobierno con Garantia" [level=2] [ref=e121]: Gobierno con Garantia
+    - generic [ref=e126]:
+      - heading " San Luis Potosí" [level=2] [ref=e127]:
+        - generic [ref=e128]: 
+        - text: San Luis Potosí
+      - heading "Corazón del Fútbol 2026" [level=1] [ref=e129]:
+        - text: Corazón del Fútbol
+        - text: "2026"
+      - heading "San Luis Potosí" [level=2] [ref=e130]: San Luis Potosí
+      - link "Visitar" [ref=e132] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/CorazonDelFutbol/
+    - link " San Luis Capital Consulta Discapacidad y personas cuidadoras Consulta Discapacidad y personas cuidadoras Consulta Discapacidad y personas cuidadoras" [ref=e134] [cursor=pointer]:
+      - /url: https://sitio.sanluis.gob.mx/ConsultaCuidados/
+      - generic [ref=e138]:
+        - heading " San Luis Capital Consulta Discapacidad y personas cuidadoras" [level=2] [ref=e139]:
+          - generic [ref=e140]: 
+          - text: San Luis Capital
+          - text: Consulta Discapacidad y personas cuidadoras
+        - heading "Consulta Discapacidad y personas cuidadoras" [level=1] [ref=e141]:
+          - text: Consulta
+          - text: Discapacidad y personas cuidadoras
+        - heading "Consulta Discapacidad y personas cuidadoras" [level=2] [ref=e142]: Consulta Discapacidad y personas cuidadoras
+    - generic [ref=e147]:
+      - heading " San Luis Potosí" [level=2] [ref=e148]:
+        - generic [ref=e149]: 
+        - text: San Luis Potosí
+      - heading "Ruta de la Salud 3.0 2026" [level=1] [ref=e150]:
+        - text: Ruta de la Salud 3.0
+        - text: "2026"
+      - heading "San Luis Potosí" [level=2] [ref=e151]: San Luis Potosí
+      - link "Registrar cita" [ref=e153] [cursor=pointer]:
+        - /url: https://servicios.sanluis.gob.mx/registrocita
+    - generic [ref=e158]:
+      - heading "Paga en Línea tu Refrendo 2026" [level=1] [ref=e159]
+      - heading "Si tu negocio es de giro A o B y tu refrendo es 2022, 2023, 2024, 2025 es momento de hacerlo." [level=2] [ref=e160]: Si tu negocio es de giro A o B y tu refrendo es 2022, 2023, 2024, 2025 es momento de hacerlo.
+      - paragraph [ref=e161]: Solo necesitas tu número de Licencia Comercial y un correo electrónico. Posterior al pago obtén tu Licencia de Funcionamiento en las oficinas de Comercio de la Unidad Administrativa Municipal.
+      - link "Inicia el Trámite" [ref=e163] [cursor=pointer]:
+        - /url: https://servicios.sanluis.gob.mx/scripts/cgiip.exe/WService=sare/sare/refrendo/acceso.r
+    - generic [ref=e168]:
+      - heading " San Luis Capital ¡Chatea conmigo!" [level=2] [ref=e169]:
+        - generic [ref=e170]: 
+        - text: San Luis Capital
+        - text: ¡Chatea conmigo!
+      - heading "GUICHO Chatbot Municipal" [level=1] [ref=e171]:
+        - text: GUICHO
+        - text: Chatbot Municipal
+      - heading "GUICHO Chatbot Municipal" [level=2] [ref=e172]: GUICHO Chatbot Municipal
+    - generic [ref=e177]:
+      - heading " San Luis Potosí" [level=2] [ref=e178]:
+        - generic [ref=e179]: 
+        - text: San Luis Potosí
+      - heading "CIITD 2026" [level=1] [ref=e180]:
+        - text: CIITD
+        - text: "2026"
+      - heading "San Luis Potosí" [level=2] [ref=e181]: San Luis Potosí
+      - link "Visitar" [ref=e183] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/CIITD
+    - generic [ref=e188]:
+      - heading " San Luis Potosí" [level=2] [ref=e189]:
+        - generic [ref=e190]: 
+        - text: San Luis Potosí
+      - heading "PuroPotosino 2026" [level=1] [ref=e191]:
+        - text: PuroPotosino
+        - text: "2026"
+      - heading "San Luis Potosí" [level=2] [ref=e192]: San Luis Potosí
+      - link "Visitar" [ref=e194] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/PuroPotosino
+    - generic [ref=e199]:
+      - heading " San Luis Potosí" [level=2] [ref=e200]:
+        - generic [ref=e201]: 
+        - text: San Luis Potosí
+      - heading "Catálogo de Proveedores SLP 2025" [level=1] [ref=e202]:
+        - text: Catálogo de Proveedores SLP
+        - text: "2025"
+      - heading "San Luis Potosí" [level=2] [ref=e203]: San Luis Potosí
+      - link "Visitar" [ref=e205] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/DesarrolloDeProveedores/CatalogoProveedoresSLP
+    - generic [ref=e210]:
+      - heading " San Luis Potosí" [level=2] [ref=e211]:
+        - generic [ref=e212]: 
+        - text: San Luis Potosí
+      - heading "Escuadrón Bienestar Municipal 2026" [level=1] [ref=e213]:
+        - text: Escuadrón Bienestar Municipal
+        - text: "2026"
+      - heading "San Luis Potosí" [level=2] [ref=e214]: San Luis Potosí
+      - link "Visitar" [ref=e216] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/EBIM
+    - generic [ref=e221]:
+      - heading "Certificado de no adeudo de impuesto predial" [level=1] [ref=e222]
+      - heading "Certificado de no adeudo de impuesto predial" [level=2] [ref=e223]
+      - link "Iniciar Trámite" [ref=e225] [cursor=pointer]:
+        - /url: https://servicios.sanluis.gob.mx/cartas/blank_iniciatramite/
+    - generic [ref=e230]:
+      - heading "Guía de actuación de violencia política digital en razón de género" [level=1] [ref=e231]:
+        - text: Guía de actuación de
+        - text: violencia política digital en razón de género
+      - link "Más Información" [ref=e233] [cursor=pointer]:
+        - /url: https://policiaciberneticamunicipal.sspcslp.gob.mx/GUIA_VIOLENCIA_GENERO.pdf
+    - generic [ref=e238]:
+      - heading "Consulta la Factibilidad de Uso de Suelo para Funcionamiento" [level=1] [ref=e239]
+      - heading "Te ayudará a conocer si es posible aperturar tu negocio en el lugar que deseas." [level=2] [ref=e240]
+      - link "Más Información" [ref=e242] [cursor=pointer]:
+        - /url: https://servicios.sanluis.gob.mx/scripts/cgiip.exe/WService=sare/Sare/sarenav/consulta_aprobacion_INTERNET_VEN_pduyt.r
+    - generic [ref=e247]:
+      - heading "¿Quieres abrir un negocio que mide máximo 39.99 metros cuadrados?" [level=1] [ref=e248]
+      - heading "Consulta aquí el listado de giros de bajo impacto. Obtén tu licencia de uso de suelo y licencia de funcionamiento en 3 días hábiles con el trámite SARE." [level=2] [ref=e249]:
+        - link "Consulta aquí" [ref=e250] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi/files/generales/SAREGiros.pdf
+          - text: Consulta aquí
+        - text: el listado de giros de bajo impacto.
+        - text: Obtén tu licencia de uso de suelo y licencia de funcionamiento en 3 días hábiles con el trámite SARE.
+      - link "Inicia el trámite aquí" [ref=e252] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/SARE/
+    - generic [ref=e257]:
+      - heading " San Luis Capital ¡Gobierno con Garantia!" [level=2] [ref=e258]:
+        - generic [ref=e259]: 
+        - text: San Luis Capital
+        - text: ¡Gobierno con Garantia!
+      - heading "Gobierno con Garantia Gobierno con Garantia" [level=1] [ref=e260]:
+        - text: Gobierno con Garantia
+        - text: Gobierno con Garantia
+      - heading "Gobierno con Garantia" [level=2] [ref=e261]: Gobierno con Garantia
+    - generic [ref=e266]:
+      - heading " San Luis Potosí" [level=2] [ref=e267]:
+        - generic [ref=e268]: 
+        - text: San Luis Potosí
+      - heading "Corazón del Fútbol 2026" [level=1] [ref=e269]:
+        - text: Corazón del Fútbol
+        - text: "2026"
+      - heading "San Luis Potosí" [level=2] [ref=e270]: San Luis Potosí
+      - link "Visitar" [ref=e272] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/CorazonDelFutbol/
+    - link " San Luis Capital Consulta Discapacidad y personas cuidadoras Consulta Discapacidad y personas cuidadoras Consulta Discapacidad y personas cuidadoras" [ref=e274] [cursor=pointer]:
+      - /url: https://sitio.sanluis.gob.mx/ConsultaCuidados/
+      - generic [ref=e278]:
+        - heading " San Luis Capital Consulta Discapacidad y personas cuidadoras" [level=2] [ref=e279]:
+          - generic [ref=e280]: 
+          - text: San Luis Capital
+          - text: Consulta Discapacidad y personas cuidadoras
+        - heading "Consulta Discapacidad y personas cuidadoras" [level=1] [ref=e281]:
+          - text: Consulta
+          - text: Discapacidad y personas cuidadoras
+        - heading "Consulta Discapacidad y personas cuidadoras" [level=2] [ref=e282]: Consulta Discapacidad y personas cuidadoras
+    - generic [ref=e287]:
+      - heading " San Luis Potosí" [level=2] [ref=e288]:
+        - generic [ref=e289]: 
+        - text: San Luis Potosí
+      - heading "Ruta de la Salud 3.0 2026" [level=1] [ref=e290]:
+        - text: Ruta de la Salud 3.0
+        - text: "2026"
+      - heading "San Luis Potosí" [level=2] [ref=e291]: San Luis Potosí
+      - link "Registrar cita" [ref=e293] [cursor=pointer]:
+        - /url: https://servicios.sanluis.gob.mx/registrocita
+    - generic [ref=e298]:
+      - heading "Paga en Línea tu Refrendo 2026" [level=1] [ref=e299]
+      - heading "Si tu negocio es de giro A o B y tu refrendo es 2022, 2023, 2024, 2025 es momento de hacerlo." [level=2] [ref=e300]: Si tu negocio es de giro A o B y tu refrendo es 2022, 2023, 2024, 2025 es momento de hacerlo.
+      - paragraph [ref=e301]: Solo necesitas tu número de Licencia Comercial y un correo electrónico. Posterior al pago obtén tu Licencia de Funcionamiento en las oficinas de Comercio de la Unidad Administrativa Municipal.
+      - link "Inicia el Trámite" [ref=e303] [cursor=pointer]:
+        - /url: https://servicios.sanluis.gob.mx/scripts/cgiip.exe/WService=sare/sare/refrendo/acceso.r
+    - generic [ref=e308]:
+      - heading " San Luis Capital ¡Chatea conmigo!" [level=2] [ref=e309]:
+        - generic [ref=e310]: 
+        - text: San Luis Capital
+        - text: ¡Chatea conmigo!
+      - heading "GUICHO Chatbot Municipal" [level=1] [ref=e311]:
+        - text: GUICHO
+        - text: Chatbot Municipal
+      - heading "GUICHO Chatbot Municipal" [level=2] [ref=e312]: GUICHO Chatbot Municipal
+    - generic [ref=e317]:
+      - heading " San Luis Potosí" [level=2] [ref=e318]:
+        - generic [ref=e319]: 
+        - text: San Luis Potosí
+      - heading "CIITD 2026" [level=1] [ref=e320]:
+        - text: CIITD
+        - text: "2026"
+      - heading "San Luis Potosí" [level=2] [ref=e321]: San Luis Potosí
+      - link "Visitar" [ref=e323] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/CIITD
+  - generic [ref=e327]:
+    - link "Icono para opción de Presidente Municipal Presidente Municipal" [ref=e329] [cursor=pointer]:
+      - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi/PresidenteMunicipal
+      - generic [ref=e330]:
+        - img "Icono para opción de Presidente Municipal" [ref=e332]
+        - heading [level=6]
+        - heading "Presidente Municipal" [level=4] [ref=e333]
+    - link "Icono para opción de H. Cabildo Honorable Cabildo" [ref=e335] [cursor=pointer]:
+      - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi/HCabildo
+      - generic [ref=e336]:
+        - img "Icono para opción de H. Cabildo" [ref=e338]
+        - heading [level=6]
+        - heading "Honorable Cabildo" [level=4] [ref=e339]
+    - link "Icono para opción de DIF DIF Municipal" [ref=e341] [cursor=pointer]:
+      - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi/DIF
+      - generic [ref=e342]:
+        - img "Icono para opción de DIF" [ref=e344]
+        - heading [level=6]
+        - heading "DIF Municipal" [level=4] [ref=e345]:
+          - text: DIF
+          - text: Municipal
+    - link "Icono para opción de Contraloría Contraloría Municipal" [ref=e347] [cursor=pointer]:
+      - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi/Contraloria
+      - generic [ref=e348]:
+        - img "Icono para opción de Contraloría" [ref=e350]
+        - heading [level=6]
+        - heading "Contraloría Municipal" [level=4] [ref=e351]
+  - generic [ref=e377]:
+    - button [ref=e378] [cursor=pointer]
+    - button [ref=e380] [cursor=pointer]
+  - generic [ref=e383]:
+    - link [ref=e384] [cursor=pointer]:
+      - /url: https://sitio.sanluis.gob.mx/BibliotecaDigital/
+      - img [ref=e387]
+    - generic [ref=e388]:
+      - generic [ref=e391]:
+        - generic [ref=e392]:
+          - heading "Presidente Municipal de San Luis Potosí" [level=6] [ref=e393]:
+            - generic [ref=e394]: 
+            - text: Presidente Municipal de San Luis Potosí
+          - heading "Enrique Francisco Galindo Ceballos" [level=2] [ref=e395]
+        - generic [ref=e399]:
+          - 'heading "Este año en San Luis Potosí trabajamos unidos bajo un mismo fin: tener una mejor ciudad para nosotros y nuestras familias." [level=5] [ref=e400]': "Este año en San Luis Potosí trabajamos unidos bajo un mismo fin: tener una mejor ciudad para nosotros y nuestras familias."
+          - heading "Como ciudadano, alcalde y amigo, les agradezco caminar conmigo para seguir contruyendo una capital amable." [level=4] [ref=e401]
+          - list [ref=e403]:
+            - listitem [ref=e404]:
+              - link "" [ref=e405] [cursor=pointer]:
+                - /url: https://www.facebook.com/EFGalindo
+                - generic [ref=e406]: 
+            - listitem [ref=e407]:
+              - link "" [ref=e408] [cursor=pointer]:
+                - /url: https://twitter.com/EF_Galindo?fbclid=IwAR3iALIvz0PvS8IkgwXZ5Uq0CuMOw7ZjnvLmWP52n-PKnEHWijB_NT9sShM
+                - generic [ref=e409]: 
+            - listitem [ref=e410]:
+              - link "" [ref=e411] [cursor=pointer]:
+                - /url: https://www.instagram.com/enriquegalindoceballos/
+                - generic [ref=e412]: 
+      - figure [ref=e416]:
+        - 'img "Alcalde de #SanLuisAmable Enrique Galindo Ceballos" [ref=e417]'
+  - generic [ref=e420]:
+    - generic [ref=e421]:
+      - heading "" [level=6] [ref=e422]:
+        - generic [ref=e423]: 
+      - heading "Premios al H. Ayuntamiento" [level=2] [ref=e424]
+    - generic [ref=e427]:
+      - generic [ref=e429]:
+        - generic [ref=e432]:
+          - figure [ref=e433]:
+            - img "Premio a la Trayectoria en la Gestión 2025" [ref=e434]
+          - heading " Nov. 2025 Premio de la Alianza de Líderes Mundiales 2025" [level=4] [ref=e435]:
+            - generic [ref=e436]:
+              - generic [ref=e437]: 
+              - text: Nov. 2025
+            - text: Premio de la Alianza
+            - text: de Líderes Mundiales 2025
+        - generic [ref=e440]:
+          - figure [ref=e441]:
+            - img "Premio a la Trayectoria en la Gestión 2025" [ref=e442]
+          - heading " Marz. 2025 Premio a la Trayectoria en la Gestión de Residuos 2025" [level=4] [ref=e443]:
+            - generic [ref=e444]:
+              - generic [ref=e445]: 
+              - text: Marz. 2025
+            - text: Premio a la Trayectoria
+            - text: en la Gestión de Residuos 2025
+        - generic [ref=e448]:
+          - figure [ref=e449]:
+            - img "La Escoba de Platino 2024" [ref=e450]
+          - heading " Dic. 2024 Medalla por la Inclusión al Gobierno de la Capital" [level=4] [ref=e451]:
+            - generic [ref=e452]:
+              - generic [ref=e453]: 
+              - text: Dic. 2024
+            - text: Medalla por la Inclusión
+            - text: al Gobierno de la Capital
+        - generic [ref=e456]:
+          - figure [ref=e457]:
+            - img "Alcalde del Año <br />por Latin American Award 2024" [ref=e458]
+          - heading " Nov 2024 Alcalde del Año Latin American Award 2024" [level=4] [ref=e459]:
+            - generic [ref=e460]:
+              - generic [ref=e461]: 
+              - text: Nov 2024
+            - text: Alcalde del Año
+            - text: Latin American Award 2024
+        - generic [ref=e464]:
+          - figure [ref=e465]:
+            - img "Premio a la Trayectoria en la Gestión 2025" [ref=e466]
+          - heading " Nov. 2025 Premio de la Alianza de Líderes Mundiales 2025" [level=4] [ref=e467]:
+            - generic [ref=e468]:
+              - generic [ref=e469]: 
+              - text: Nov. 2025
+            - text: Premio de la Alianza
+            - text: de Líderes Mundiales 2025
+        - generic [ref=e472]:
+          - figure [ref=e473]:
+            - img "Premio a la Trayectoria en la Gestión 2025" [ref=e474]
+          - heading " Marz. 2025 Premio a la Trayectoria en la Gestión de Residuos 2025" [level=4] [ref=e475]:
+            - generic [ref=e476]:
+              - generic [ref=e477]: 
+              - text: Marz. 2025
+            - text: Premio a la Trayectoria
+            - text: en la Gestión de Residuos 2025
+        - generic [ref=e480]:
+          - figure [ref=e481]:
+            - img "La Escoba de Platino 2024" [ref=e482]
+          - heading " Dic. 2024 Medalla por la Inclusión al Gobierno de la Capital" [level=4] [ref=e483]:
+            - generic [ref=e484]:
+              - generic [ref=e485]: 
+              - text: Dic. 2024
+            - text: Medalla por la Inclusión
+            - text: al Gobierno de la Capital
+        - generic [ref=e488]:
+          - figure [ref=e489]:
+            - img "Alcalde del Año <br />por Latin American Award 2024" [ref=e490]
+          - heading " Nov 2024 Alcalde del Año Latin American Award 2024" [level=4] [ref=e491]:
+            - generic [ref=e492]:
+              - generic [ref=e493]: 
+              - text: Nov 2024
+            - text: Alcalde del Año
+            - text: Latin American Award 2024
+        - generic [ref=e496]:
+          - figure [ref=e497]:
+            - img "Premio a la Trayectoria en la Gestión 2025" [ref=e498]
+          - heading " Nov. 2025 Premio de la Alianza de Líderes Mundiales 2025" [level=4] [ref=e499]:
+            - generic [ref=e500]:
+              - generic [ref=e501]: 
+              - text: Nov. 2025
+            - text: Premio de la Alianza
+            - text: de Líderes Mundiales 2025
+        - generic [ref=e504]:
+          - figure [ref=e505]:
+            - img "Premio a la Trayectoria en la Gestión 2025" [ref=e506]
+          - heading " Marz. 2025 Premio a la Trayectoria en la Gestión de Residuos 2025" [level=4] [ref=e507]:
+            - generic [ref=e508]:
+              - generic [ref=e509]: 
+              - text: Marz. 2025
+            - text: Premio a la Trayectoria
+            - text: en la Gestión de Residuos 2025
+        - generic [ref=e512]:
+          - figure [ref=e513]:
+            - img "La Escoba de Platino 2024" [ref=e514]
+          - heading " Dic. 2024 Medalla por la Inclusión al Gobierno de la Capital" [level=4] [ref=e515]:
+            - generic [ref=e516]:
+              - generic [ref=e517]: 
+              - text: Dic. 2024
+            - text: Medalla por la Inclusión
+            - text: al Gobierno de la Capital
+        - generic [ref=e520]:
+          - figure [ref=e521]:
+            - img "Alcalde del Año <br />por Latin American Award 2024" [ref=e522]
+          - heading " Nov 2024 Alcalde del Año Latin American Award 2024" [level=4] [ref=e523]:
+            - generic [ref=e524]:
+              - generic [ref=e525]: 
+              - text: Nov 2024
+            - text: Alcalde del Año
+            - text: Latin American Award 2024
+      - generic [ref=e526]:
+        - button
+        - button
+      - generic [ref=e527]:
+        - button
+  - generic [ref=e528]:
+    - figure [ref=e529]:
+      - img "Silueta de San Luis Rey" [ref=e530]
+    - generic [ref=e532]:
+      - generic [ref=e533]:
+        - heading "Últimos " [level=6] [ref=e534]:
+          - generic [ref=e535]: 
+          - text: Últimos
+          - generic [ref=e536]: 
+        - heading "COMUNICADOS" [level=2] [ref=e537]
+      - generic [ref=e539]:
+        - generic [ref=e540]:
+          - generic [ref=e542]:
+            - generic [ref=e544]:
+              - generic [ref=e547]:
+                - generic [ref=e548]:
+                  - figure [ref=e549]:
+                    - img "Con más de 150 toneladas de basura recolectada cierra diciembre la delegación de Bocas" [ref=e550]
+                  - generic [ref=e551]:
+                    - heading "31 DIC / 25" [level=3] [ref=e553]:
+                      - text: "31"
+                      - generic [ref=e554]: DIC / 25
+                    - paragraph [ref=e556]: Con más de 150 toneladas de basura recolectada cierra diciembre la delegación de Bocas
+                - generic [ref=e557]:
+                  - list [ref=e558]:
+                    - listitem [ref=e559]:
+                      - paragraph [ref=e560]: "- “Atendemos la instrucción del Alcalde Enrique Galindo de garantizar servicios básicos en la zona rural”: Delegado Jaime Waldo Luna. - La limpieza y mantenimiento de contenedores se realiza de manera constante y exhorta a la población a apoyar en su cuidado. El Delegado de Bocas, Jaime Waldo Luna, dio a conocer que en materia de recolección se concluyó diciembre con más de 150 toneladas de desechos recolectados, debido a las acciones constantes de limpieza y mantenimiento en los sitios donde se ubican los contenedores para basura doméstica. Y como parte de atender la instrucción del Alcalde Enrique Galindo Ceballos, el funcionario capitalino puntualizó además que para garantizar los servicios básicos también en la zona rural, se da prioridad precisamente a los depósitos que se ubican en las comunidades, los que ya están debidamente identificados por habitantes de cada poblado. Estas labores implicaron también más de 90 acciones de limpieza constante y de recolección, precisamente en los contenedores que están distribuidos en localidades y puntos estratégicos de la demarcación, por parte de personal de la delegación, a quienes aprovechó para hacerles un reconocimiento debido a su labor diaria aún en días festivos. Waldo Luna recordó que estos depósitos móviles instalados en distintas comunidades se vacían de manera periódica para mantener el orden y mejorar el manejo de residuos, además para evitar focos de contaminación. Finalmente, el Delegado de Bocas exhortó a las potosinas y potosinos que viven en esta zona del Municipio de San Luis Potosí a cuidar y usar de manera correcta los contenedores, avisar cuando estén llenos al teléfono: 4448-636073, pero a la par, evitar la quema de basura para que no haya incendios en pastizales."
+                  - link "Leer nota " [ref=e562] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6ImZ1OS8vS3liK1haSDJOek9NamhlOXc9PSIsInZhbHVlIjoic1ZTU2ZvTmZJSWpHRmloOU5EbW1BQT09IiwibWFjIjoiMWM2MjlkYjk0ZTBkZmExZmQ4ZThmYThmZmMwM2I1OWZiYTliMWY4ZDE0ZWY2MmRkMzYyZWIyMGJiODE4ZWVlOCJ9')
+                    - text: Leer nota
+                    - generic [ref=e563]: 
+                  - link "Compartir " [ref=e565] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6ImZ1OS8vS3liK1haSDJOek9NamhlOXc9PSIsInZhbHVlIjoic1ZTU2ZvTmZJSWpHRmloOU5EbW1BQT09IiwibWFjIjoiMWM2MjlkYjk0ZTBkZmExZmQ4ZThmYThmZmMwM2I1OWZiYTliMWY4ZDE0ZWY2MmRkMzYyZWIyMGJiODE4ZWVlOCJ9')
+                    - text: Compartir
+                    - generic [ref=e566]: 
+              - generic [ref=e569]:
+                - generic [ref=e570]:
+                  - figure [ref=e571]:
+                    - img "Gobierno de la Capital realiza labores de mantenimiento del alumbrado en avenida Salvador Nava" [ref=e572]
+                  - generic [ref=e573]:
+                    - heading "31 DIC / 25" [level=3] [ref=e575]:
+                      - text: "31"
+                      - generic [ref=e576]: DIC / 25
+                    - paragraph [ref=e578]: Gobierno de la Capital realiza labores de mantenimiento del alumbrado en avenida Salvador Nava
+                - generic [ref=e579]:
+                  - list [ref=e580]:
+                    - listitem [ref=e581]:
+                      - paragraph [ref=e582]: "- Estas acciones dan mayor seguridad a los miles de conductores que a diario transitan por esta vialidad. De acuerdo con las instrucciones del Alcalde Enrique Galindo Caballos para detectar de inmediato las fallas que pudieran registrarse en el sistema de alumbrado, así como para atender a la brevedad los reportes de la población, personal del Ayuntamiento de la Capital realizó diversas intervenciones en la Avenida Salvador Nava. El Director de Servicios Municipales, Christian Azuara, informó que se dio mantenimiento a las luminarias de los Carriles Centrales de esta importante vialidad, en la zona oriente, entre la Unidad Administrativa Municipal y el Distribuidor Juárez. Indicó que en este tramo se procedió a la reposición de líneas de alimentación, se reconectaron líneas dañadas en el perímetro y se dio mantenimiento a postes y equipos de encendido, quedando todo funcionando adecuadamente. Dijo que estas acciones permiten que los conductores puedan circular con mayor seguridad y hacen que San Luis Potosí sea considerada como una de las ciudades mejor iluminadas del país."
+                  - link "Leer nota " [ref=e584] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6ImFTVUpvSWhxRndqMEhaaTcreS8xTHc9PSIsInZhbHVlIjoiTlVLSXU1aklZNVNlTW9GbFlIU1MrZz09IiwibWFjIjoiOWJmYWZhOGFiM2RhZWNiNjI2NjUxMGVjZjIxZjhmODY2MWI1NzliOWZiNTYyN2M0MTNhMzhjNmFmY2ExYjkyMCJ9')
+                    - text: Leer nota
+                    - generic [ref=e585]: 
+                  - link "Compartir " [ref=e587] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6ImFTVUpvSWhxRndqMEhaaTcreS8xTHc9PSIsInZhbHVlIjoiTlVLSXU1aklZNVNlTW9GbFlIU1MrZz09IiwibWFjIjoiOWJmYWZhOGFiM2RhZWNiNjI2NjUxMGVjZjIxZjhmODY2MWI1NzliOWZiNTYyN2M0MTNhMzhjNmFmY2ExYjkyMCJ9')
+                    - text: Compartir
+                    - generic [ref=e588]: 
+              - generic [ref=e591]:
+                - generic [ref=e592]:
+                  - figure [ref=e593]:
+                    - img "Durante 2025, SSPC de la Capital fortaleció la prevención de delitos cibernéticos y la alfabetización digital" [ref=e594]
+                  - generic [ref=e595]:
+                    - heading "31 DIC / 25" [level=3] [ref=e597]:
+                      - text: "31"
+                      - generic [ref=e598]: DIC / 25
+                    - paragraph [ref=e600]: Durante 2025, SSPC de la Capital fortaleció la prevención de delitos cibernéticos y la alfabetización digital
+                - generic [ref=e601]:
+                  - list [ref=e602]:
+                    - listitem [ref=e603]:
+                      - paragraph [ref=e604]: ● Durante 2025, a través de la Dirección de Tecnologías e Inteligencia Social, se impulsó la política pública Defensores Digitales, logrando impactar a 13 mil 312 personas en la capital potosina. ● En materia de ciberinteligencia, durante el año se atendieron un total de 6 mil 231 incidentes informáticos. La Secretaría de Seguridad y Protección Ciudadana (SSPC), a través de la Dirección de Tecnologías e Inteligencia Social, impulsó durante 2025 la política pública Defensores Digitales, orientada a la alfabetización digital de docentes, estudiantes, madres y padres de familia, así como de personal de empresas y dependencias gubernamentales, con el objetivo de prevenir y detectar delitos cibernéticos. Esta estrategia innovadora se enfocó en fortalecer la educación y la prevención en entornos escolares, así como en capacitar a familias y cuidadores para que conozcan cómo actuar ante incidentes cibernéticos que puedan afectar a niñas, niños y adolescentes. Durante el año, personal de la Dirección de Tecnologías e Inteligencia Social acudió a universidades, empresas, planteles educativos y oficinas públicas para generar vínculos de proximidad y fomentar el uso seguro y responsable del ciberespacio. En total, se logró impactar a 13 mil 312 personas en la capital potosina. En materia de ciberinteligencia, la Dirección de Tecnologías e Inteligencia Social atendió durante 2025 un total de 6 mil 231 incidentes informáticos, entre los que destacan casos de cobranza ilegal, hackeo de cuentas de WhatsApp, difamación, llamadas de extorsión, suplantación de identidad, sextorsión y difusión ilícita de contenido. Asimismo, se logró el rescate y localización de siete personas privadas de la libertad mediante secuestro virtual, además de la eliminación de 510 páginas reportadas por posibles hechos ilícitos. Finalmente, la Secretaría de Seguridad y Protección Ciudadana refrenda su compromiso permanente con la seguridad digital y la protección de la ciudadanía, destacando que el personal de la Dirección de Tecnologías e Inteligencia Social se mantiene en capacitación constante y especializada en materia de ciberseguridad, a fin de fortalecer sus capacidades operativas y dar respuesta oportuna a los desafíos que presenta el entorno digital.
+                  - link "Leer nota " [ref=e606] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6Ik5peHJncS9NLzRvRWVvTU9HNVEwcmc9PSIsInZhbHVlIjoiQUdMQkljMUptNVE3aUM0SzVIQkN0QT09IiwibWFjIjoiOGJiNGYwYmJkZjIzNTY1N2YxZTI1YjQ1NDQ1ZjhiODMyNjRjNzEzNTQzMTc3NmIwM2NhNjQ1Y2I3MjMxOGIzMyJ9')
+                    - text: Leer nota
+                    - generic [ref=e607]: 
+                  - link "Compartir " [ref=e609] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6Ik5peHJncS9NLzRvRWVvTU9HNVEwcmc9PSIsInZhbHVlIjoiQUdMQkljMUptNVE3aUM0SzVIQkN0QT09IiwibWFjIjoiOGJiNGYwYmJkZjIzNTY1N2YxZTI1YjQ1NDQ1ZjhiODMyNjRjNzEzNTQzMTc3NmIwM2NhNjQ1Y2I3MjMxOGIzMyJ9')
+                    - text: Compartir
+                    - generic [ref=e610]: 
+              - generic [ref=e613]:
+                - generic [ref=e614]:
+                  - figure [ref=e615]:
+                    - img "En un año crece 35% la participación en los Centros de Desarrollo Comunitario de San Luis Potosí" [ref=e616]
+                  - generic [ref=e617]:
+                    - heading "31 DIC / 25" [level=3] [ref=e619]:
+                      - text: "31"
+                      - generic [ref=e620]: DIC / 25
+                    - paragraph [ref=e622]: En un año crece 35% la participación en los Centros de Desarrollo Comunitario de San Luis Potosí
+                - generic [ref=e623]:
+                  - list [ref=e624]:
+                    - listitem [ref=e625]:
+                      - paragraph [ref=e626]: "- ⁠Se rehabilitaron los 13 CDC de la ciudad. - Más actividades, más maestros voluntarios y programas para la niñez y las familias. En un año, la participación en los Centros de Desarrollo Comunitario (CDC) de San Luis Potosí aumentó en un 35 por ciento, informó el director de Centros de Desarrollo y Vinculación, Ignacio Delgado Pérez, quien subrayó que este esfuerzo del Gobierno Municipal que encabeza el alcalde Enrique Galindo Ceballos ha permitido que más familias tengan acceso a actividades deportivas, artísticas, culturales y sociales en espacios renovados y de calidad. Delgado Pérez detalló que los 13 CDC de la ciudad —Valle Dorado, Simón Díaz, Progreso, Pedrera de Guadalupe, San Juan de Guadalupe, Infonavit Morales, Jardines de Jacarandas, Rural Atlas, San Ángel 1 y 2, Tangamanga II, Ponciano Arriaga y Terremoto— fueron rehabilitados para ofrecer mejores instalaciones a sus usuarias y usuarios. Además, se incrementó en un 60 por ciento el número de actividades y de maestros voluntarios que enriquecen la oferta comunitaria. El director destacó también la realización de programas especiales como el Campamento de Verano y el Campamento de Invierno, que brindaron espacios de aprendizaje y recreación para niñas, niños y adolescentes. Asimismo, se implementó el programa Viernes de Recreo, diseñado para apoyar a madres y padres de familia que trabajan y que no tienen dónde dejar a sus hijos durante los Consejos Técnicos Escolares, un viernes al mes, cuando no se imparten clases en las escuelas. “Los Centros de Desarrollo Comunitario son espacios que fortalecen el tejido social, promueven la convivencia y ofrecen oportunidades de crecimiento para todas las familias potosinas”, señaló Delgado Pérez."
+                  - link "Leer nota " [ref=e628] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6IlBtNlc5a0tLYXRpb1FXTm1IM3pGTGc9PSIsInZhbHVlIjoiaitVa3BsQkN6bWs2VU9GYTF6QlNUUT09IiwibWFjIjoiNDJkZjU4MmZkOTNiNDNlNGE3MmU1ZTc1ZGMwNjdkNjJkMWJlNGFmZTMzMWU4YmY2MjZhNTRkZGZmYWMxZjI0ZiJ9')
+                    - text: Leer nota
+                    - generic [ref=e629]: 
+                  - link "Compartir " [ref=e631] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6IlBtNlc5a0tLYXRpb1FXTm1IM3pGTGc9PSIsInZhbHVlIjoiaitVa3BsQkN6bWs2VU9GYTF6QlNUUT09IiwibWFjIjoiNDJkZjU4MmZkOTNiNDNlNGE3MmU1ZTc1ZGMwNjdkNjJkMWJlNGFmZTMzMWU4YmY2MjZhNTRkZGZmYWMxZjI0ZiJ9')
+                    - text: Compartir
+                    - generic [ref=e632]: 
+              - generic [ref=e635]:
+                - generic [ref=e636]:
+                  - figure [ref=e637]:
+                    - img "Resultados positivos en decomiso de pirotecnia prohibida y Conducción Segura" [ref=e638]
+                  - generic [ref=e639]:
+                    - heading "01 ENE / 26" [level=3] [ref=e641]:
+                      - text: "01"
+                      - generic [ref=e642]: ENE / 26
+                    - paragraph [ref=e644]: Resultados positivos en decomiso de pirotecnia prohibida y Conducción Segura
+                - generic [ref=e645]:
+                  - list [ref=e646]:
+                    - listitem [ref=e647]:
+                      - paragraph [ref=e648]: "• El Alcalde Enrique Galindo destacó que con casi 384 kilos de pirotecnia asegurados y resultados positivos del programa de seguridad vial, el operativo de fin de año del Gobierno de la Capital, en coordinación con los tres niveles de gobierno, obtuvo resultados contundentes._ El aseguramiento de 383.7 kilogramos de pirotecnia durante el Operativo Cohetón 2025 representó la acción más contundente del Gobierno de la Capital para reducir riesgos y prevenir accidentes en la temporada decembrina, informó el Alcalde Enrique Galindo Ceballos, quien subrayó que “cada kilo retirado de las calles es una posibilidad menos de tragedia; nuestra prioridad es proteger la vida y la integridad de las familias potosinas”. El Presidente Municipal destacó también los resultados positivos del operativo Conducción Segura, donde se detectaron 5 estados de ebriedad y 17 alientos alcohólicos, y en todos los casos se activó el protocolo de resguardo, llamando a las familias de las y los conductores para que regresaran de manera segura a sus hogares: “No se trata solo de sancionar, sino de evitar accidentes y garantizar que todos lleguen con bien a casa”, enfatizó Galindo. El Alcalde explicó que el Operativo Cohetón 2025 se desplegó en los cinco cuadrantes de la ciudad mediante células interinstitucionales integradas por Protección Civil Municipal, la Secretaría de la Defensa Nacional (DEFENSA), Guardia Civil Estatal, Guardia Municipal, Policía Vial y Protección Civil Estatal. “La coordinación entre los tres órdenes de gobierno es lo que permite resultados reales y medibles”, afirmó. Precisó que las acciones se llevaron a cabo los días 24, 30 y 31 de diciembre, fechas autorizadas para la venta de pirotecnia, y que los aseguramientos derivaron de irregularidades como la comercialización de pirotecnia prohibida, la venta de cantidades superiores a las permitidas, el incumplimiento de la carta compromiso y la falta de permisos vigentes. “Aplicamos la norma con firmeza y con un enfoque preventivo”, señaló. Finalmente, Enrique Galindo informó que la pirotecnia decomisada fue trasladada al polvorín asignado y posteriormente entregada a la Secretaría de la Defensa Nacional para su destrucción conforme a la normatividad, y reiteró que el Gobierno de la Capital mantendrá operativos permanentes. “Seguiremos actuando con responsabilidad, anticipándonos a los riesgos y cuidando a San Luis Potosí”, concluyó. Adicionalmente, se presentó saldo blanco en los bares y antros que tuvieron horario extendido de operaciones en las primeras horas de este año, gracias al trabajo de la Dirección de Comercio Municipal en coordinación con diversas instancias."
+                  - link "Leer nota " [ref=e650] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6Im5Sa2NDczBGMUJCNS9yZTdFR05rMXc9PSIsInZhbHVlIjoiUkZCdWxzL2RoWXExalowa2tyZ0Fudz09IiwibWFjIjoiMWZjYjNhNjdkZmVjNDYwMmVlMjBiYTVhZjE4MGQzMDgyNWFjZjVlZjNiOTFlOTJhOTcyYjQwMDExNWM2MjkxNiJ9')
+                    - text: Leer nota
+                    - generic [ref=e651]: 
+                  - link "Compartir " [ref=e653] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6Im5Sa2NDczBGMUJCNS9yZTdFR05rMXc9PSIsInZhbHVlIjoiUkZCdWxzL2RoWXExalowa2tyZ0Fudz09IiwibWFjIjoiMWZjYjNhNjdkZmVjNDYwMmVlMjBiYTVhZjE4MGQzMDgyNWFjZjVlZjNiOTFlOTJhOTcyYjQwMDExNWM2MjkxNiJ9')
+                    - text: Compartir
+                    - generic [ref=e654]: 
+              - generic [ref=e657]:
+                - generic [ref=e658]:
+                  - figure [ref=e659]:
+                    - img "Protección Civil Municipal asegura 383.7 kilogramos de pirotecnia durante el Operativo “Cohetón 2025”" [ref=e660]
+                  - generic [ref=e661]:
+                    - heading "01 ENE / 26" [level=3] [ref=e663]:
+                      - text: "01"
+                      - generic [ref=e664]: ENE / 26
+                    - paragraph [ref=e666]: Protección Civil Municipal asegura 383.7 kilogramos de pirotecnia durante el Operativo “Cohetón 2025”
+                - generic [ref=e667]:
+                  - list [ref=e668]:
+                    - listitem [ref=e669]:
+                      - paragraph [ref=e670]: • -Como resultado de las acciones de prevención y vigilancia implementadas durante el Operativo “Cohetón 2025”, la Dirección Municipal de Protección Civil aseguró 383.7 kilogramos de pirotecnia, en coordinación con autoridades de los tres órdenes de gobierno. En las acciones del Operativo “Cohetón 2025”, la Dirección Municipal de Protección Civil informó el aseguramiento de 383.7 kilogramos de pirotecnia, derivado de los recorridos de inspección y verificación realizados en diversos puntos de la ciudad. Dichas acciones se llevaron a cabo en estrecha coordinación con autoridades de los tres órdenes de gobierno, como parte del compromiso institucional de prevenir riesgos y fortalecer las condiciones de seguridad durante la temporada decembrina. El operativo estuvo a cargo de células operativas compuestas por personal de la Dirección Municipal de Protección Civil, en coordinación con la Secretaría de la Defensa Nacional (DEFENSA), Policía Vial, Guardia Civil Estatal, Guardia Municipal y Protección Civil Estatal, quienes realizaron recorridos de inspección en los cinco cuadrantes de la ciudad, con el propósito de verificar que los puntos de venta de pirotecnia cumplieran con la normatividad vigente, las medidas de seguridad establecidas y contaran con los permisos correspondientes para su comercialización. Las acciones del Operativo “Cohetón” se desarrollaron los días 24, 30 y 31 de diciembre, fechas autorizadas para la venta de pirotecnia, con el objetivo de prevenir accidentes y salvaguardar a la población ante los riesgos inherentes al uso de estos artefactos. Durante las labores de supervisión se detectaron diversas irregularidades, entre las que destacan la comercialización de pirotecnia prohibida, el incumplimiento de la carta compromiso, la venta de cantidades superiores a las permitidas y la falta de permisos vigentes, lo que derivó en el aseguramiento del material. El producto decomisado fue trasladado al polvorín asignado para esta edición del operativo para posteriormente, ser entregado de manera formal a la Secretaría de la Defensa Nacional, instancia responsable de llevar a cabo su destrucción conforme a la normatividad aplicable. La Dirección Municipal de Protección Civil refrenda su compromiso con la seguridad y protección de la ciudadanía y continuará implementando operativos preventivos, así como acciones de supervisión permanente, a fin de reducir riesgos y atender de manera oportuna cualquier eventualidad que pudiera presentarse.
+                  - link "Leer nota " [ref=e672] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6IkY4Q2N6dDVPVzBXeXdkeVducFliNWc9PSIsInZhbHVlIjoiQUZzYnp5NDhndFA5YmJ1QjM3MCtSdz09IiwibWFjIjoiMjAzNDhiNzg4OGUxZmVkOTFiNzViZDFmOWQwMmRiMzZkYTcyOWJlYWJmYmU2Y2VmMmJkOTA1NTM4NWI0NzgxYiJ9')
+                    - text: Leer nota
+                    - generic [ref=e673]: 
+                  - link "Compartir " [ref=e675] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6IkY4Q2N6dDVPVzBXeXdkeVducFliNWc9PSIsInZhbHVlIjoiQUZzYnp5NDhndFA5YmJ1QjM3MCtSdz09IiwibWFjIjoiMjAzNDhiNzg4OGUxZmVkOTFiNzViZDFmOWQwMmRiMzZkYTcyOWJlYWJmYmU2Y2VmMmJkOTA1NTM4NWI0NzgxYiJ9')
+                    - text: Compartir
+                    - generic [ref=e676]: 
+              - generic [ref=e679]:
+                - generic [ref=e680]:
+                  - figure [ref=e681]:
+                    - img "Impulso al talento local y reconocimiento al Mérito Cultural consolidan a San Luis Capital en 2025" [ref=e682]
+                  - generic [ref=e683]:
+                    - heading "31 DIC / 25" [level=3] [ref=e685]:
+                      - text: "31"
+                      - generic [ref=e686]: DIC / 25
+                    - paragraph [ref=e688]: Impulso al talento local y reconocimiento al Mérito Cultural consolidan a San Luis Capital en 2025
+                - generic [ref=e689]:
+                  - list [ref=e690]:
+                    - listitem [ref=e691]:
+                      - paragraph [ref=e692]: "Como resultado de una política cultural que coloca al talento local en el centro del desarrollo artístico de la ciudad, la Dirección de Cultura Municipal del Gobierno de San Luis Potosí cerró el año 2025 con importantes logros en materia de impulso a creadoras y creadores, así como en el reconocimiento a las trayectorias que fortalecen la identidad cultural de la Capital. Gracias al respaldo y al impulso permanente a la cultura del alcalde Enrique Galindo Ceballos, durante 2025 se brindó apoyo y proyección a más de 1,100 artistas potosinos, quienes participaron en programas, festivales, exposiciones, presentaciones editoriales y convocatorias públicas, fortaleciendo el ecosistema cultural local y generando nuevas oportunidades de profesionalización y difusión. Uno de los ejes más relevantes fue el fortalecimiento de la creación literaria y la memoria histórica, mediante la edición de cuatro libros que reflejan la diversidad de voces, géneros y miradas de la producción cultural potosina. Destaca la publicación de las obras ganadoras del Premio Municipal de Literatura 2025, en sus distintas categorías: Poesía, con la obra de Félix Dauajare; y Cuento, con la obra de Raquel Banda Farfán. Asimismo, se realizaron publicaciones de gran valor cultural y patrimonial, como “Tierra Nueva, cuna y camino de mis sueños” de Mario Govea Mata, así como “El Barrio de San Miguelito 1597–1767” de José Alberto Juárez Miranda, obras que contribuyen a la preservación de la memoria histórica y al fortalecimiento de la identidad de San Luis Potosí. En el ámbito de las artes visuales, la Dirección de Cultura llevó a cabo los Premios Municipales de Fotografía y Pintura 2025, reconociendo el talento, la creatividad y la calidad artística de creadoras y creadores locales, y fomentando la producción y exhibición de obra potosina en espacios institucionales. Como parte del reconocimiento a trayectorias destacadas, se otorgó la Presea al Mérito Cultural “Daniel García Álvarez de la Llera”, máximo reconocimiento cultural del municipio, con el objetivo de honrar a quienes, a través de su trabajo y compromiso, han contribuido de manera significativa al desarrollo cultural, artístico y patrimonial de la Capital. El director de Cultura Municipal, Martín Juárez Córdova, destacó que estos logros reflejan una política cultural sólida y con visión de futuro. “Impulsar a más de mil artistas potosinos y reconocer el mérito cultural es apostar por nuestra identidad y por el talento que da vida a San Luis Capital. Estos resultados son posibles gracias al liderazgo del alcalde Enrique Galindo Ceballos y al trabajo conjunto con la comunidad artística”, señaló. Juárez Córdova subrayó que el fortalecimiento del talento local es una de las principales Razones para Amar a San Luis. “Cuando reconocemos a nuestras creadoras y creadores, fortalecemos el orgullo, la memoria y el sentido de pertenencia de nuestra ciudad”, afirmó. El Gobierno de la Capital reiteró su compromiso de seguir fortaleciendo las políticas públicas en materia cultural, convencido de que el arte y la cultura son motores de desarrollo social, cohesión comunitaria y proyección de San Luis Potosí a nivel regional, nacional e internacional."
+                  - link "Leer nota " [ref=e694] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6ImREeGFuWlBqWjBEWm9sUXhFM21tSlE9PSIsInZhbHVlIjoicTJCQWdEaW96NWF1QlZBNGNCT3VWdz09IiwibWFjIjoiODdjNmFkYmJkYzI0MDM5YTRjZTQ3ZDU0Y2YzYjU5YWFkYzkyMjI5NDEzYzljNzdhZGQ1OGJiNDRiOGJiOTJlZSJ9')
+                    - text: Leer nota
+                    - generic [ref=e695]: 
+                  - link "Compartir " [ref=e697] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6ImREeGFuWlBqWjBEWm9sUXhFM21tSlE9PSIsInZhbHVlIjoicTJCQWdEaW96NWF1QlZBNGNCT3VWdz09IiwibWFjIjoiODdjNmFkYmJkYzI0MDM5YTRjZTQ3ZDU0Y2YzYjU5YWFkYzkyMjI5NDEzYzljNzdhZGQ1OGJiNDRiOGJiOTJlZSJ9')
+                    - text: Compartir
+                    - generic [ref=e698]: 
+              - generic [ref=e701]:
+                - generic [ref=e702]:
+                  - figure [ref=e703]:
+                    - img "Gestiones del Regidor Rubén Lárraga Benavente dan resultado y reactivan “Casa de Salud” en Rinconada" [ref=e704]
+                  - generic [ref=e705]:
+                    - heading "31 DIC / 25" [level=3] [ref=e707]:
+                      - text: "31"
+                      - generic [ref=e708]: DIC / 25
+                    - paragraph [ref=e710]: Gestiones del Regidor Rubén Lárraga Benavente dan resultado y reactivan “Casa de Salud” en Rinconada
+                - generic [ref=e711]:
+                  - list [ref=e712]:
+                    - listitem [ref=e713]:
+                      - paragraph [ref=e714]: "- Habitantes de esta comunidad cuentan ya con servicios médicos y medicinas sin costo. - Resalta la importancia de los acercamientos con la ciudadanía para coadyuvar en la atención de peticiones sociales. Como parte de las gestiones atendidas por parte del Regidor del Ayuntamiento de San Luis Potosí, Rubén Omar Lárraga Benavente, se reactivó la denominada “Casa de Salud” para beneficio de habitantes de la comunidad de Rinconada. Explicó que después de varios acercamientos con la población de esta localidad, entre sus peticiones más sentidas resaltó precisamente, el contar con un espacio en donde recibieran atención médica de manera constante, “por lo que procedimos a lograr los acuerdos necesarios para hacer posible esta solicitud ciudadana”. Primeramente y junto con vecinas y vecinos se procedió a la limpieza, mantenimiento y a la rehabilitación del citado espacio, y una vez que quedó en condiciones para operar, entró en funcionamiento con servicios médicos gratuitos, a la par, de proporcionar los medicamentos sin costo también. “El objetivo es mantenerlo abierto para que de manera frecuente, quienes viven en Rinconada reciban atención médica en su mismo entorno, además de facilitarles las medicinas recetadas, de ahí la importancia de las reuniones con distintos sectores de la ciudad, para apoyarles en la resolución de sus requerimientos más inmediatos”, subrayó el Regidor capitalino, Rubén Lárraga. Finalmente, el también Presidente de la Comisión edilicia de Gobernación reveló que se espera en las próximas semanas habilitar un servicio más en la “Casa de Salud”, aunque relacionado con asesorías legales totalmente gratuitas para quienes lo necesiten, para dar respuesta a otra petición de las potosinas y potosinos que viven en esta zona."
+                  - link "Leer nota " [ref=e716] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6IlZGd01EeEZoTjhNbFBrelFxcHBSa3c9PSIsInZhbHVlIjoiMWxkOXhGaGN2eFZHUWJYelN2N3c1dz09IiwibWFjIjoiZjBjMjY1MTJjYTZiOTQwYmQ0NmZjMGMxMTYyNWI2ZDI0ZGM3NDAyZWMwMzQ2MzZiYzVhMjlkY2E3NGJiZDI4ZiJ9')
+                    - text: Leer nota
+                    - generic [ref=e717]: 
+                  - link "Compartir " [ref=e719] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6IlZGd01EeEZoTjhNbFBrelFxcHBSa3c9PSIsInZhbHVlIjoiMWxkOXhGaGN2eFZHUWJYelN2N3c1dz09IiwibWFjIjoiZjBjMjY1MTJjYTZiOTQwYmQ0NmZjMGMxMTYyNWI2ZDI0ZGM3NDAyZWMwMzQ2MzZiYzVhMjlkY2E3NGJiZDI4ZiJ9')
+                    - text: Compartir
+                    - generic [ref=e720]: 
+              - generic [ref=e723]:
+                - generic [ref=e724]:
+                  - figure [ref=e725]:
+                    - img "Con más de 150 toneladas de basura recolectada cierra diciembre la delegación de Bocas" [ref=e726]
+                  - generic [ref=e727]:
+                    - heading "31 DIC / 25" [level=3] [ref=e729]:
+                      - text: "31"
+                      - generic [ref=e730]: DIC / 25
+                    - paragraph [ref=e732]: Con más de 150 toneladas de basura recolectada cierra diciembre la delegación de Bocas
+                - generic [ref=e733]:
+                  - list [ref=e734]:
+                    - listitem [ref=e735]:
+                      - paragraph [ref=e736]: "- “Atendemos la instrucción del Alcalde Enrique Galindo de garantizar servicios básicos en la zona rural”: Delegado Jaime Waldo Luna. - La limpieza y mantenimiento de contenedores se realiza de manera constante y exhorta a la población a apoyar en su cuidado. El Delegado de Bocas, Jaime Waldo Luna, dio a conocer que en materia de recolección se concluyó diciembre con más de 150 toneladas de desechos recolectados, debido a las acciones constantes de limpieza y mantenimiento en los sitios donde se ubican los contenedores para basura doméstica. Y como parte de atender la instrucción del Alcalde Enrique Galindo Ceballos, el funcionario capitalino puntualizó además que para garantizar los servicios básicos también en la zona rural, se da prioridad precisamente a los depósitos que se ubican en las comunidades, los que ya están debidamente identificados por habitantes de cada poblado. Estas labores implicaron también más de 90 acciones de limpieza constante y de recolección, precisamente en los contenedores que están distribuidos en localidades y puntos estratégicos de la demarcación, por parte de personal de la delegación, a quienes aprovechó para hacerles un reconocimiento debido a su labor diaria aún en días festivos. Waldo Luna recordó que estos depósitos móviles instalados en distintas comunidades se vacían de manera periódica para mantener el orden y mejorar el manejo de residuos, además para evitar focos de contaminación. Finalmente, el Delegado de Bocas exhortó a las potosinas y potosinos que viven en esta zona del Municipio de San Luis Potosí a cuidar y usar de manera correcta los contenedores, avisar cuando estén llenos al teléfono: 4448-636073, pero a la par, evitar la quema de basura para que no haya incendios en pastizales."
+                  - link "Leer nota " [ref=e738] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6ImZ1OS8vS3liK1haSDJOek9NamhlOXc9PSIsInZhbHVlIjoic1ZTU2ZvTmZJSWpHRmloOU5EbW1BQT09IiwibWFjIjoiMWM2MjlkYjk0ZTBkZmExZmQ4ZThmYThmZmMwM2I1OWZiYTliMWY4ZDE0ZWY2MmRkMzYyZWIyMGJiODE4ZWVlOCJ9')
+                    - text: Leer nota
+                    - generic [ref=e739]: 
+                  - link "Compartir " [ref=e741] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6ImZ1OS8vS3liK1haSDJOek9NamhlOXc9PSIsInZhbHVlIjoic1ZTU2ZvTmZJSWpHRmloOU5EbW1BQT09IiwibWFjIjoiMWM2MjlkYjk0ZTBkZmExZmQ4ZThmYThmZmMwM2I1OWZiYTliMWY4ZDE0ZWY2MmRkMzYyZWIyMGJiODE4ZWVlOCJ9')
+                    - text: Compartir
+                    - generic [ref=e742]: 
+              - generic [ref=e745]:
+                - generic [ref=e746]:
+                  - figure [ref=e747]:
+                    - img "Gobierno de la Capital realiza labores de mantenimiento del alumbrado en avenida Salvador Nava" [ref=e748]
+                  - generic [ref=e749]:
+                    - heading "31 DIC / 25" [level=3] [ref=e751]:
+                      - text: "31"
+                      - generic [ref=e752]: DIC / 25
+                    - paragraph [ref=e754]: Gobierno de la Capital realiza labores de mantenimiento del alumbrado en avenida Salvador Nava
+                - generic [ref=e755]:
+                  - list [ref=e756]:
+                    - listitem [ref=e757]:
+                      - paragraph [ref=e758]: "- Estas acciones dan mayor seguridad a los miles de conductores que a diario transitan por esta vialidad. De acuerdo con las instrucciones del Alcalde Enrique Galindo Caballos para detectar de inmediato las fallas que pudieran registrarse en el sistema de alumbrado, así como para atender a la brevedad los reportes de la población, personal del Ayuntamiento de la Capital realizó diversas intervenciones en la Avenida Salvador Nava. El Director de Servicios Municipales, Christian Azuara, informó que se dio mantenimiento a las luminarias de los Carriles Centrales de esta importante vialidad, en la zona oriente, entre la Unidad Administrativa Municipal y el Distribuidor Juárez. Indicó que en este tramo se procedió a la reposición de líneas de alimentación, se reconectaron líneas dañadas en el perímetro y se dio mantenimiento a postes y equipos de encendido, quedando todo funcionando adecuadamente. Dijo que estas acciones permiten que los conductores puedan circular con mayor seguridad y hacen que San Luis Potosí sea considerada como una de las ciudades mejor iluminadas del país."
+                  - link "Leer nota " [ref=e760] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6ImFTVUpvSWhxRndqMEhaaTcreS8xTHc9PSIsInZhbHVlIjoiTlVLSXU1aklZNVNlTW9GbFlIU1MrZz09IiwibWFjIjoiOWJmYWZhOGFiM2RhZWNiNjI2NjUxMGVjZjIxZjhmODY2MWI1NzliOWZiNTYyN2M0MTNhMzhjNmFmY2ExYjkyMCJ9')
+                    - text: Leer nota
+                    - generic [ref=e761]: 
+                  - link "Compartir " [ref=e763] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6ImFTVUpvSWhxRndqMEhaaTcreS8xTHc9PSIsInZhbHVlIjoiTlVLSXU1aklZNVNlTW9GbFlIU1MrZz09IiwibWFjIjoiOWJmYWZhOGFiM2RhZWNiNjI2NjUxMGVjZjIxZjhmODY2MWI1NzliOWZiNTYyN2M0MTNhMzhjNmFmY2ExYjkyMCJ9')
+                    - text: Compartir
+                    - generic [ref=e764]: 
+              - generic [ref=e767]:
+                - generic [ref=e768]:
+                  - figure [ref=e769]:
+                    - img "Durante 2025, SSPC de la Capital fortaleció la prevención de delitos cibernéticos y la alfabetización digital" [ref=e770]
+                  - generic [ref=e771]:
+                    - heading "31 DIC / 25" [level=3] [ref=e773]:
+                      - text: "31"
+                      - generic [ref=e774]: DIC / 25
+                    - paragraph [ref=e776]: Durante 2025, SSPC de la Capital fortaleció la prevención de delitos cibernéticos y la alfabetización digital
+                - generic [ref=e777]:
+                  - list [ref=e778]:
+                    - listitem [ref=e779]:
+                      - paragraph [ref=e780]: ● Durante 2025, a través de la Dirección de Tecnologías e Inteligencia Social, se impulsó la política pública Defensores Digitales, logrando impactar a 13 mil 312 personas en la capital potosina. ● En materia de ciberinteligencia, durante el año se atendieron un total de 6 mil 231 incidentes informáticos. La Secretaría de Seguridad y Protección Ciudadana (SSPC), a través de la Dirección de Tecnologías e Inteligencia Social, impulsó durante 2025 la política pública Defensores Digitales, orientada a la alfabetización digital de docentes, estudiantes, madres y padres de familia, así como de personal de empresas y dependencias gubernamentales, con el objetivo de prevenir y detectar delitos cibernéticos. Esta estrategia innovadora se enfocó en fortalecer la educación y la prevención en entornos escolares, así como en capacitar a familias y cuidadores para que conozcan cómo actuar ante incidentes cibernéticos que puedan afectar a niñas, niños y adolescentes. Durante el año, personal de la Dirección de Tecnologías e Inteligencia Social acudió a universidades, empresas, planteles educativos y oficinas públicas para generar vínculos de proximidad y fomentar el uso seguro y responsable del ciberespacio. En total, se logró impactar a 13 mil 312 personas en la capital potosina. En materia de ciberinteligencia, la Dirección de Tecnologías e Inteligencia Social atendió durante 2025 un total de 6 mil 231 incidentes informáticos, entre los que destacan casos de cobranza ilegal, hackeo de cuentas de WhatsApp, difamación, llamadas de extorsión, suplantación de identidad, sextorsión y difusión ilícita de contenido. Asimismo, se logró el rescate y localización de siete personas privadas de la libertad mediante secuestro virtual, además de la eliminación de 510 páginas reportadas por posibles hechos ilícitos. Finalmente, la Secretaría de Seguridad y Protección Ciudadana refrenda su compromiso permanente con la seguridad digital y la protección de la ciudadanía, destacando que el personal de la Dirección de Tecnologías e Inteligencia Social se mantiene en capacitación constante y especializada en materia de ciberseguridad, a fin de fortalecer sus capacidades operativas y dar respuesta oportuna a los desafíos que presenta el entorno digital.
+                  - link "Leer nota " [ref=e782] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6Ik5peHJncS9NLzRvRWVvTU9HNVEwcmc9PSIsInZhbHVlIjoiQUdMQkljMUptNVE3aUM0SzVIQkN0QT09IiwibWFjIjoiOGJiNGYwYmJkZjIzNTY1N2YxZTI1YjQ1NDQ1ZjhiODMyNjRjNzEzNTQzMTc3NmIwM2NhNjQ1Y2I3MjMxOGIzMyJ9')
+                    - text: Leer nota
+                    - generic [ref=e783]: 
+                  - link "Compartir " [ref=e785] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6Ik5peHJncS9NLzRvRWVvTU9HNVEwcmc9PSIsInZhbHVlIjoiQUdMQkljMUptNVE3aUM0SzVIQkN0QT09IiwibWFjIjoiOGJiNGYwYmJkZjIzNTY1N2YxZTI1YjQ1NDQ1ZjhiODMyNjRjNzEzNTQzMTc3NmIwM2NhNjQ1Y2I3MjMxOGIzMyJ9')
+                    - text: Compartir
+                    - generic [ref=e786]: 
+              - generic [ref=e789]:
+                - generic [ref=e790]:
+                  - figure [ref=e791]:
+                    - img "En un año crece 35% la participación en los Centros de Desarrollo Comunitario de San Luis Potosí" [ref=e792]
+                  - generic [ref=e793]:
+                    - heading "31 DIC / 25" [level=3] [ref=e795]:
+                      - text: "31"
+                      - generic [ref=e796]: DIC / 25
+                    - paragraph [ref=e798]: En un año crece 35% la participación en los Centros de Desarrollo Comunitario de San Luis Potosí
+                - generic [ref=e799]:
+                  - list [ref=e800]:
+                    - listitem [ref=e801]:
+                      - paragraph [ref=e802]: "- ⁠Se rehabilitaron los 13 CDC de la ciudad. - Más actividades, más maestros voluntarios y programas para la niñez y las familias. En un año, la participación en los Centros de Desarrollo Comunitario (CDC) de San Luis Potosí aumentó en un 35 por ciento, informó el director de Centros de Desarrollo y Vinculación, Ignacio Delgado Pérez, quien subrayó que este esfuerzo del Gobierno Municipal que encabeza el alcalde Enrique Galindo Ceballos ha permitido que más familias tengan acceso a actividades deportivas, artísticas, culturales y sociales en espacios renovados y de calidad. Delgado Pérez detalló que los 13 CDC de la ciudad —Valle Dorado, Simón Díaz, Progreso, Pedrera de Guadalupe, San Juan de Guadalupe, Infonavit Morales, Jardines de Jacarandas, Rural Atlas, San Ángel 1 y 2, Tangamanga II, Ponciano Arriaga y Terremoto— fueron rehabilitados para ofrecer mejores instalaciones a sus usuarias y usuarios. Además, se incrementó en un 60 por ciento el número de actividades y de maestros voluntarios que enriquecen la oferta comunitaria. El director destacó también la realización de programas especiales como el Campamento de Verano y el Campamento de Invierno, que brindaron espacios de aprendizaje y recreación para niñas, niños y adolescentes. Asimismo, se implementó el programa Viernes de Recreo, diseñado para apoyar a madres y padres de familia que trabajan y que no tienen dónde dejar a sus hijos durante los Consejos Técnicos Escolares, un viernes al mes, cuando no se imparten clases en las escuelas. “Los Centros de Desarrollo Comunitario son espacios que fortalecen el tejido social, promueven la convivencia y ofrecen oportunidades de crecimiento para todas las familias potosinas”, señaló Delgado Pérez."
+                  - link "Leer nota " [ref=e804] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6IlBtNlc5a0tLYXRpb1FXTm1IM3pGTGc9PSIsInZhbHVlIjoiaitVa3BsQkN6bWs2VU9GYTF6QlNUUT09IiwibWFjIjoiNDJkZjU4MmZkOTNiNDNlNGE3MmU1ZTc1ZGMwNjdkNjJkMWJlNGFmZTMzMWU4YmY2MjZhNTRkZGZmYWMxZjI0ZiJ9')
+                    - text: Leer nota
+                    - generic [ref=e805]: 
+                  - link "Compartir " [ref=e807] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6IlBtNlc5a0tLYXRpb1FXTm1IM3pGTGc9PSIsInZhbHVlIjoiaitVa3BsQkN6bWs2VU9GYTF6QlNUUT09IiwibWFjIjoiNDJkZjU4MmZkOTNiNDNlNGE3MmU1ZTc1ZGMwNjdkNjJkMWJlNGFmZTMzMWU4YmY2MjZhNTRkZGZmYWMxZjI0ZiJ9')
+                    - text: Compartir
+                    - generic [ref=e808]: 
+              - generic [ref=e811]:
+                - generic [ref=e812]:
+                  - figure [ref=e813]:
+                    - img "Resultados positivos en decomiso de pirotecnia prohibida y Conducción Segura" [ref=e814]
+                  - generic [ref=e815]:
+                    - heading "01 ENE / 26" [level=3] [ref=e817]:
+                      - text: "01"
+                      - generic [ref=e818]: ENE / 26
+                    - paragraph [ref=e820]: Resultados positivos en decomiso de pirotecnia prohibida y Conducción Segura
+                - generic [ref=e821]:
+                  - list [ref=e822]:
+                    - listitem [ref=e823]:
+                      - paragraph [ref=e824]: "• El Alcalde Enrique Galindo destacó que con casi 384 kilos de pirotecnia asegurados y resultados positivos del programa de seguridad vial, el operativo de fin de año del Gobierno de la Capital, en coordinación con los tres niveles de gobierno, obtuvo resultados contundentes._ El aseguramiento de 383.7 kilogramos de pirotecnia durante el Operativo Cohetón 2025 representó la acción más contundente del Gobierno de la Capital para reducir riesgos y prevenir accidentes en la temporada decembrina, informó el Alcalde Enrique Galindo Ceballos, quien subrayó que “cada kilo retirado de las calles es una posibilidad menos de tragedia; nuestra prioridad es proteger la vida y la integridad de las familias potosinas”. El Presidente Municipal destacó también los resultados positivos del operativo Conducción Segura, donde se detectaron 5 estados de ebriedad y 17 alientos alcohólicos, y en todos los casos se activó el protocolo de resguardo, llamando a las familias de las y los conductores para que regresaran de manera segura a sus hogares: “No se trata solo de sancionar, sino de evitar accidentes y garantizar que todos lleguen con bien a casa”, enfatizó Galindo. El Alcalde explicó que el Operativo Cohetón 2025 se desplegó en los cinco cuadrantes de la ciudad mediante células interinstitucionales integradas por Protección Civil Municipal, la Secretaría de la Defensa Nacional (DEFENSA), Guardia Civil Estatal, Guardia Municipal, Policía Vial y Protección Civil Estatal. “La coordinación entre los tres órdenes de gobierno es lo que permite resultados reales y medibles”, afirmó. Precisó que las acciones se llevaron a cabo los días 24, 30 y 31 de diciembre, fechas autorizadas para la venta de pirotecnia, y que los aseguramientos derivaron de irregularidades como la comercialización de pirotecnia prohibida, la venta de cantidades superiores a las permitidas, el incumplimiento de la carta compromiso y la falta de permisos vigentes. “Aplicamos la norma con firmeza y con un enfoque preventivo”, señaló. Finalmente, Enrique Galindo informó que la pirotecnia decomisada fue trasladada al polvorín asignado y posteriormente entregada a la Secretaría de la Defensa Nacional para su destrucción conforme a la normatividad, y reiteró que el Gobierno de la Capital mantendrá operativos permanentes. “Seguiremos actuando con responsabilidad, anticipándonos a los riesgos y cuidando a San Luis Potosí”, concluyó. Adicionalmente, se presentó saldo blanco en los bares y antros que tuvieron horario extendido de operaciones en las primeras horas de este año, gracias al trabajo de la Dirección de Comercio Municipal en coordinación con diversas instancias."
+                  - link "Leer nota " [ref=e826] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6Im5Sa2NDczBGMUJCNS9yZTdFR05rMXc9PSIsInZhbHVlIjoiUkZCdWxzL2RoWXExalowa2tyZ0Fudz09IiwibWFjIjoiMWZjYjNhNjdkZmVjNDYwMmVlMjBiYTVhZjE4MGQzMDgyNWFjZjVlZjNiOTFlOTJhOTcyYjQwMDExNWM2MjkxNiJ9')
+                    - text: Leer nota
+                    - generic [ref=e827]: 
+                  - link "Compartir " [ref=e829] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6Im5Sa2NDczBGMUJCNS9yZTdFR05rMXc9PSIsInZhbHVlIjoiUkZCdWxzL2RoWXExalowa2tyZ0Fudz09IiwibWFjIjoiMWZjYjNhNjdkZmVjNDYwMmVlMjBiYTVhZjE4MGQzMDgyNWFjZjVlZjNiOTFlOTJhOTcyYjQwMDExNWM2MjkxNiJ9')
+                    - text: Compartir
+                    - generic [ref=e830]: 
+              - generic [ref=e833]:
+                - generic [ref=e834]:
+                  - figure [ref=e835]:
+                    - img "Protección Civil Municipal asegura 383.7 kilogramos de pirotecnia durante el Operativo “Cohetón 2025”" [ref=e836]
+                  - generic [ref=e837]:
+                    - heading "01 ENE / 26" [level=3] [ref=e839]:
+                      - text: "01"
+                      - generic [ref=e840]: ENE / 26
+                    - paragraph [ref=e842]: Protección Civil Municipal asegura 383.7 kilogramos de pirotecnia durante el Operativo “Cohetón 2025”
+                - generic [ref=e843]:
+                  - list [ref=e844]:
+                    - listitem [ref=e845]:
+                      - paragraph [ref=e846]: • -Como resultado de las acciones de prevención y vigilancia implementadas durante el Operativo “Cohetón 2025”, la Dirección Municipal de Protección Civil aseguró 383.7 kilogramos de pirotecnia, en coordinación con autoridades de los tres órdenes de gobierno. En las acciones del Operativo “Cohetón 2025”, la Dirección Municipal de Protección Civil informó el aseguramiento de 383.7 kilogramos de pirotecnia, derivado de los recorridos de inspección y verificación realizados en diversos puntos de la ciudad. Dichas acciones se llevaron a cabo en estrecha coordinación con autoridades de los tres órdenes de gobierno, como parte del compromiso institucional de prevenir riesgos y fortalecer las condiciones de seguridad durante la temporada decembrina. El operativo estuvo a cargo de células operativas compuestas por personal de la Dirección Municipal de Protección Civil, en coordinación con la Secretaría de la Defensa Nacional (DEFENSA), Policía Vial, Guardia Civil Estatal, Guardia Municipal y Protección Civil Estatal, quienes realizaron recorridos de inspección en los cinco cuadrantes de la ciudad, con el propósito de verificar que los puntos de venta de pirotecnia cumplieran con la normatividad vigente, las medidas de seguridad establecidas y contaran con los permisos correspondientes para su comercialización. Las acciones del Operativo “Cohetón” se desarrollaron los días 24, 30 y 31 de diciembre, fechas autorizadas para la venta de pirotecnia, con el objetivo de prevenir accidentes y salvaguardar a la población ante los riesgos inherentes al uso de estos artefactos. Durante las labores de supervisión se detectaron diversas irregularidades, entre las que destacan la comercialización de pirotecnia prohibida, el incumplimiento de la carta compromiso, la venta de cantidades superiores a las permitidas y la falta de permisos vigentes, lo que derivó en el aseguramiento del material. El producto decomisado fue trasladado al polvorín asignado para esta edición del operativo para posteriormente, ser entregado de manera formal a la Secretaría de la Defensa Nacional, instancia responsable de llevar a cabo su destrucción conforme a la normatividad aplicable. La Dirección Municipal de Protección Civil refrenda su compromiso con la seguridad y protección de la ciudadanía y continuará implementando operativos preventivos, así como acciones de supervisión permanente, a fin de reducir riesgos y atender de manera oportuna cualquier eventualidad que pudiera presentarse.
+                  - link "Leer nota " [ref=e848] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6IkY4Q2N6dDVPVzBXeXdkeVducFliNWc9PSIsInZhbHVlIjoiQUZzYnp5NDhndFA5YmJ1QjM3MCtSdz09IiwibWFjIjoiMjAzNDhiNzg4OGUxZmVkOTFiNzViZDFmOWQwMmRiMzZkYTcyOWJlYWJmYmU2Y2VmMmJkOTA1NTM4NWI0NzgxYiJ9')
+                    - text: Leer nota
+                    - generic [ref=e849]: 
+                  - link "Compartir " [ref=e851] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6IkY4Q2N6dDVPVzBXeXdkeVducFliNWc9PSIsInZhbHVlIjoiQUZzYnp5NDhndFA5YmJ1QjM3MCtSdz09IiwibWFjIjoiMjAzNDhiNzg4OGUxZmVkOTFiNzViZDFmOWQwMmRiMzZkYTcyOWJlYWJmYmU2Y2VmMmJkOTA1NTM4NWI0NzgxYiJ9')
+                    - text: Compartir
+                    - generic [ref=e852]: 
+              - generic [ref=e855]:
+                - generic [ref=e856]:
+                  - figure [ref=e857]:
+                    - img "Impulso al talento local y reconocimiento al Mérito Cultural consolidan a San Luis Capital en 2025" [ref=e858]
+                  - generic [ref=e859]:
+                    - heading "31 DIC / 25" [level=3] [ref=e861]:
+                      - text: "31"
+                      - generic [ref=e862]: DIC / 25
+                    - paragraph [ref=e864]: Impulso al talento local y reconocimiento al Mérito Cultural consolidan a San Luis Capital en 2025
+                - generic [ref=e865]:
+                  - list [ref=e866]:
+                    - listitem [ref=e867]:
+                      - paragraph [ref=e868]: "Como resultado de una política cultural que coloca al talento local en el centro del desarrollo artístico de la ciudad, la Dirección de Cultura Municipal del Gobierno de San Luis Potosí cerró el año 2025 con importantes logros en materia de impulso a creadoras y creadores, así como en el reconocimiento a las trayectorias que fortalecen la identidad cultural de la Capital. Gracias al respaldo y al impulso permanente a la cultura del alcalde Enrique Galindo Ceballos, durante 2025 se brindó apoyo y proyección a más de 1,100 artistas potosinos, quienes participaron en programas, festivales, exposiciones, presentaciones editoriales y convocatorias públicas, fortaleciendo el ecosistema cultural local y generando nuevas oportunidades de profesionalización y difusión. Uno de los ejes más relevantes fue el fortalecimiento de la creación literaria y la memoria histórica, mediante la edición de cuatro libros que reflejan la diversidad de voces, géneros y miradas de la producción cultural potosina. Destaca la publicación de las obras ganadoras del Premio Municipal de Literatura 2025, en sus distintas categorías: Poesía, con la obra de Félix Dauajare; y Cuento, con la obra de Raquel Banda Farfán. Asimismo, se realizaron publicaciones de gran valor cultural y patrimonial, como “Tierra Nueva, cuna y camino de mis sueños” de Mario Govea Mata, así como “El Barrio de San Miguelito 1597–1767” de José Alberto Juárez Miranda, obras que contribuyen a la preservación de la memoria histórica y al fortalecimiento de la identidad de San Luis Potosí. En el ámbito de las artes visuales, la Dirección de Cultura llevó a cabo los Premios Municipales de Fotografía y Pintura 2025, reconociendo el talento, la creatividad y la calidad artística de creadoras y creadores locales, y fomentando la producción y exhibición de obra potosina en espacios institucionales. Como parte del reconocimiento a trayectorias destacadas, se otorgó la Presea al Mérito Cultural “Daniel García Álvarez de la Llera”, máximo reconocimiento cultural del municipio, con el objetivo de honrar a quienes, a través de su trabajo y compromiso, han contribuido de manera significativa al desarrollo cultural, artístico y patrimonial de la Capital. El director de Cultura Municipal, Martín Juárez Córdova, destacó que estos logros reflejan una política cultural sólida y con visión de futuro. “Impulsar a más de mil artistas potosinos y reconocer el mérito cultural es apostar por nuestra identidad y por el talento que da vida a San Luis Capital. Estos resultados son posibles gracias al liderazgo del alcalde Enrique Galindo Ceballos y al trabajo conjunto con la comunidad artística”, señaló. Juárez Córdova subrayó que el fortalecimiento del talento local es una de las principales Razones para Amar a San Luis. “Cuando reconocemos a nuestras creadoras y creadores, fortalecemos el orgullo, la memoria y el sentido de pertenencia de nuestra ciudad”, afirmó. El Gobierno de la Capital reiteró su compromiso de seguir fortaleciendo las políticas públicas en materia cultural, convencido de que el arte y la cultura son motores de desarrollo social, cohesión comunitaria y proyección de San Luis Potosí a nivel regional, nacional e internacional."
+                  - link "Leer nota " [ref=e870] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6ImREeGFuWlBqWjBEWm9sUXhFM21tSlE9PSIsInZhbHVlIjoicTJCQWdEaW96NWF1QlZBNGNCT3VWdz09IiwibWFjIjoiODdjNmFkYmJkYzI0MDM5YTRjZTQ3ZDU0Y2YzYjU5YWFkYzkyMjI5NDEzYzljNzdhZGQ1OGJiNDRiOGJiOTJlZSJ9')
+                    - text: Leer nota
+                    - generic [ref=e871]: 
+                  - link "Compartir " [ref=e873] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6ImREeGFuWlBqWjBEWm9sUXhFM21tSlE9PSIsInZhbHVlIjoicTJCQWdEaW96NWF1QlZBNGNCT3VWdz09IiwibWFjIjoiODdjNmFkYmJkYzI0MDM5YTRjZTQ3ZDU0Y2YzYjU5YWFkYzkyMjI5NDEzYzljNzdhZGQ1OGJiNDRiOGJiOTJlZSJ9')
+                    - text: Compartir
+                    - generic [ref=e874]: 
+              - generic [ref=e877]:
+                - generic [ref=e878]:
+                  - figure [ref=e879]:
+                    - img "Gestiones del Regidor Rubén Lárraga Benavente dan resultado y reactivan “Casa de Salud” en Rinconada" [ref=e880]
+                  - generic [ref=e881]:
+                    - heading "31 DIC / 25" [level=3] [ref=e883]:
+                      - text: "31"
+                      - generic [ref=e884]: DIC / 25
+                    - paragraph [ref=e886]: Gestiones del Regidor Rubén Lárraga Benavente dan resultado y reactivan “Casa de Salud” en Rinconada
+                - generic [ref=e887]:
+                  - list [ref=e888]:
+                    - listitem [ref=e889]:
+                      - paragraph [ref=e890]: "- Habitantes de esta comunidad cuentan ya con servicios médicos y medicinas sin costo. - Resalta la importancia de los acercamientos con la ciudadanía para coadyuvar en la atención de peticiones sociales. Como parte de las gestiones atendidas por parte del Regidor del Ayuntamiento de San Luis Potosí, Rubén Omar Lárraga Benavente, se reactivó la denominada “Casa de Salud” para beneficio de habitantes de la comunidad de Rinconada. Explicó que después de varios acercamientos con la población de esta localidad, entre sus peticiones más sentidas resaltó precisamente, el contar con un espacio en donde recibieran atención médica de manera constante, “por lo que procedimos a lograr los acuerdos necesarios para hacer posible esta solicitud ciudadana”. Primeramente y junto con vecinas y vecinos se procedió a la limpieza, mantenimiento y a la rehabilitación del citado espacio, y una vez que quedó en condiciones para operar, entró en funcionamiento con servicios médicos gratuitos, a la par, de proporcionar los medicamentos sin costo también. “El objetivo es mantenerlo abierto para que de manera frecuente, quienes viven en Rinconada reciban atención médica en su mismo entorno, además de facilitarles las medicinas recetadas, de ahí la importancia de las reuniones con distintos sectores de la ciudad, para apoyarles en la resolución de sus requerimientos más inmediatos”, subrayó el Regidor capitalino, Rubén Lárraga. Finalmente, el también Presidente de la Comisión edilicia de Gobernación reveló que se espera en las próximas semanas habilitar un servicio más en la “Casa de Salud”, aunque relacionado con asesorías legales totalmente gratuitas para quienes lo necesiten, para dar respuesta a otra petición de las potosinas y potosinos que viven en esta zona."
+                  - link "Leer nota " [ref=e892] [cursor=pointer]:
+                    - /url: javascript:visualizarNoticiaHistComppleta('eyJpdiI6IlZGd01EeEZoTjhNbFBrelFxcHBSa3c9PSIsInZhbHVlIjoiMWxkOXhGaGN2eFZHUWJYelN2N3c1dz09IiwibWFjIjoiZjBjMjY1MTJjYTZiOTQwYmQ0NmZjMGMxMTYyNWI2ZDI0ZGM3NDAyZWMwMzQ2MzZiYzVhMjlkY2E3NGJiZDI4ZiJ9')
+                    - text: Leer nota
+                    - generic [ref=e893]: 
+                  - link "Compartir " [ref=e895] [cursor=pointer]:
+                    - /url: javascript:copiarLink('eyJpdiI6IlZGd01EeEZoTjhNbFBrelFxcHBSa3c9PSIsInZhbHVlIjoiMWxkOXhGaGN2eFZHUWJYelN2N3c1dz09IiwibWFjIjoiZjBjMjY1MTJjYTZiOTQwYmQ0NmZjMGMxMTYyNWI2ZDI0ZGM3NDAyZWMwMzQ2MzZiYzVhMjlkY2E3NGJiZDI4ZiJ9')
+                    - text: Compartir
+                    - generic [ref=e896]: 
+            - generic [ref=e897]:
+              - button
+              - button
+          - generic [ref=e899]:
+            - generic [ref=e900]:
+              - img "Mover hacia izquierda" [ref=e901] [cursor=pointer]
+              - img "Mover hacia derecha" [ref=e902] [cursor=pointer]
+            - link "Más Comunicados" [ref=e904] [cursor=pointer]:
+              - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi/Comunicados
+        - generic [ref=e905]:
+          - link " Gacetas Municipales Normas que difunden e informan a la población sobre las disposiciones del Municipio." [ref=e907] [cursor=pointer]:
+            - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi/GacetasMunicipales
+            - generic [ref=e908]:
+              - generic [ref=e910]: 
+              - heading "Gacetas Municipales" [level=4] [ref=e911]
+              - paragraph [ref=e912]: Normas que difunden e informan a la población sobre las disposiciones del Municipio.
+          - link " Disposiciones Reglamentarias Normas que difunden e informan a la población sobre las disposiciones del Municipio." [ref=e914] [cursor=pointer]:
+            - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi/DisposicionesR
+            - generic [ref=e915]:
+              - generic [ref=e917]: 
+              - heading "Disposiciones Reglamentarias" [level=4] [ref=e918]
+              - paragraph [ref=e919]: Normas que difunden e informan a la población sobre las disposiciones del Municipio.
+        - generic [ref=e921]:
+          - link "Logo de Plataforma Nacional de Transparencia" [ref=e922] [cursor=pointer]:
+            - /url: https://www.plataformadetransparencia.org.mx/
+            - img "Logo de Plataforma Nacional de Transparencia" [ref=e923]
+          - link "Realiza y Consulta Información del Municipio de San Luis Potosí" [ref=e924] [cursor=pointer]:
+            - /url: https://www.plataformadetransparencia.org.mx/
+            - heading "Realiza y Consulta Información del Municipio de San Luis Potosí" [level=2] [ref=e925]:
+              - text: Realiza y Consulta Información del Municipio de
+              - text: San Luis Potosí
+  - generic [ref=e928]:
+    - generic [ref=e929]:
+      - heading "DEPENDENCIAS" [level=6] [ref=e930]:
+        - generic [ref=e931]: 
+        - text: DEPENDENCIAS
+        - generic [ref=e932]: 
+      - heading "SITIOS WEB" [level=2] [ref=e933]
+    - generic [ref=e935]:
+      - generic [ref=e937]:
+        - link "Turismo TURISMO MUNICIPAL directions_subway" [ref=e940] [cursor=pointer]:
+          - /url: https://sanluis.capital/
+          - generic [ref=e941]:
+            - generic [ref=e942]:
+              - heading "Turismo" [level=6] [ref=e943]
+              - heading "TURISMO MUNICIPAL" [level=4] [ref=e944]:
+                - text: TURISMO
+                - text: MUNICIPAL
+              - generic [ref=e946]: directions_subway
+            - figure [ref=e947]
+        - link "Un Potosino, un Árbol PULMONES URBANOS nature_people" [ref=e950] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/PulmonesUrbanos/
+          - generic [ref=e951]:
+            - generic [ref=e952]:
+              - heading "Un Potosino, un Árbol" [level=6] [ref=e953]
+              - heading "PULMONES URBANOS" [level=4] [ref=e954]:
+                - text: PULMONES
+                - text: URBANOS
+              - generic [ref=e956]: nature_people
+            - figure [ref=e957]
+        - link "Desarrollo Económico DESARROLLO DE PROVEEDORES settings" [ref=e960] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/DesarrolloDeProveedores/
+          - generic [ref=e961]:
+            - generic [ref=e962]:
+              - heading "Desarrollo Económico" [level=6] [ref=e963]
+              - heading "DESARROLLO DE PROVEEDORES" [level=4] [ref=e964]:
+                - text: DESARROLLO DE
+                - text: PROVEEDORES
+              - generic [ref=e966]: settings
+            - figure [ref=e967]
+        - link "Bienestar Animal BIENESTAR ANIMAL favorite" [ref=e970] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/BienestarAnimal
+          - generic [ref=e971]:
+            - generic [ref=e972]:
+              - heading "Bienestar Animal" [level=6] [ref=e973]
+              - heading "BIENESTAR ANIMAL" [level=4] [ref=e974]:
+                - text: BIENESTAR
+                - text: ANIMAL
+              - generic [ref=e976]: favorite
+            - figure [ref=e977]
+        - link "SSPC PROTECCIÓN CIVIL fire_hydrant" [ref=e980] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/ProteccionCivil/
+          - generic [ref=e981]:
+            - generic [ref=e982]:
+              - heading "SSPC" [level=6] [ref=e983]
+              - heading "PROTECCIÓN CIVIL" [level=4] [ref=e984]:
+                - text: PROTECCIÓN
+                - text: CIVIL
+              - generic [ref=e986]: fire_hydrant
+            - figure [ref=e987]
+        - link "Desarrollo Económico PURO POTOSINO handshake" [ref=e990] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/PuroPotosino/
+          - generic [ref=e991]:
+            - generic [ref=e992]:
+              - heading "Desarrollo Económico" [level=6] [ref=e993]
+              - heading "PURO POTOSINO" [level=4] [ref=e994]:
+                - text: PURO
+                - text: POTOSINO
+              - generic [ref=e996]: handshake
+            - figure [ref=e997]
+        - link "Turismo CIITD 2026 sports_basketball" [ref=e1000] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/CIITD/
+          - generic [ref=e1001]:
+            - generic [ref=e1002]:
+              - heading "Turismo" [level=6] [ref=e1003]
+              - heading "CIITD 2026" [level=4] [ref=e1004]:
+                - text: CIITD
+                - text: "2026"
+              - generic [ref=e1006]: sports_basketball
+            - figure [ref=e1007]
+        - link "Obras Públicas VIALIDADES POTOSÍNAS emoji_transportation" [ref=e1010] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/VialidadesPotoSinas/
+          - generic [ref=e1011]:
+            - generic [ref=e1012]:
+              - heading "Obras Públicas" [level=6] [ref=e1013]
+              - heading "VIALIDADES POTOSÍNAS" [level=4] [ref=e1014]:
+                - text: VIALIDADES
+                - text: POTOSÍNAS
+              - generic [ref=e1016]: emoji_transportation
+            - figure [ref=e1017]:
+              - img "Micrositio Vialidades Potosínas" [ref=e1018]
+        - link "INSTANCIA DE LAS MUJERES INSTANCIA DE LAS MUJERES female" [ref=e1021] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/InstanciaDeLasMujeres/
+          - generic [ref=e1022]:
+            - generic [ref=e1023]:
+              - heading "INSTANCIA DE LAS MUJERES" [level=6] [ref=e1024]
+              - heading "INSTANCIA DE LAS MUJERES" [level=4] [ref=e1025]:
+                - text: INSTANCIA DE
+                - text: LAS MUJERES
+              - generic [ref=e1027]: female
+            - figure [ref=e1028]
+        - link "SSPC SEGURIDAD PÚBLICA local_police" [ref=e1031] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/SSPC/
+          - generic [ref=e1032]:
+            - generic [ref=e1033]:
+              - heading "SSPC" [level=6] [ref=e1034]
+              - heading "SEGURIDAD PÚBLICA" [level=4] [ref=e1035]:
+                - text: SEGURIDAD
+                - text: PÚBLICA
+              - generic [ref=e1037]: local_police
+            - figure [ref=e1038]:
+              - img "Micrositio Capital Segura SSPC" [ref=e1039]
+        - link "Cartografía SAN LUIS VIRTUAL map" [ref=e1042] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/SanLuisVirtual/
+          - generic [ref=e1043]:
+            - generic [ref=e1044]:
+              - heading "Cartografía" [level=6] [ref=e1045]
+              - heading "SAN LUIS VIRTUAL" [level=4] [ref=e1046]:
+                - text: SAN LUIS
+                - text: VIRTUAL
+              - generic [ref=e1048]: map
+            - figure [ref=e1049]:
+              - img "Micrositio San Luis Virtual" [ref=e1050]
+        - link "REPORTES ATENCIÓN CIUDADANA support_agent" [ref=e1053] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi/AtencionCiudadana
+          - generic [ref=e1054]:
+            - generic [ref=e1055]:
+              - heading "REPORTES" [level=6] [ref=e1056]
+              - heading "ATENCIÓN CIUDADANA" [level=4] [ref=e1057]:
+                - text: ATENCIÓN
+                - text: CIUDADANA
+              - generic [ref=e1059]: support_agent
+            - figure [ref=e1060]:
+              - img "Atención Ciudadana" [ref=e1061]
+        - link "Cultura CULTURA MUNICIPAL interests" [ref=e1064] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/FestivalSanLuisEnPrimavera/
+          - generic [ref=e1065]:
+            - generic [ref=e1066]:
+              - heading "Cultura" [level=6] [ref=e1067]
+              - heading "CULTURA MUNICIPAL" [level=4] [ref=e1068]:
+                - text: CULTURA
+                - text: MUNICIPAL
+              - generic [ref=e1070]: interests
+            - figure [ref=e1071]
+        - link "Turismo TURISMO MUNICIPAL directions_subway" [ref=e1074] [cursor=pointer]:
+          - /url: https://sanluis.capital/
+          - generic [ref=e1075]:
+            - generic [ref=e1076]:
+              - heading "Turismo" [level=6] [ref=e1077]
+              - heading "TURISMO MUNICIPAL" [level=4] [ref=e1078]:
+                - text: TURISMO
+                - text: MUNICIPAL
+              - generic [ref=e1080]: directions_subway
+            - figure [ref=e1081]
+        - link "Un Potosino, un Árbol PULMONES URBANOS nature_people" [ref=e1084] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/PulmonesUrbanos/
+          - generic [ref=e1085]:
+            - generic [ref=e1086]:
+              - heading "Un Potosino, un Árbol" [level=6] [ref=e1087]
+              - heading "PULMONES URBANOS" [level=4] [ref=e1088]:
+                - text: PULMONES
+                - text: URBANOS
+              - generic [ref=e1090]: nature_people
+            - figure [ref=e1091]
+        - link "Desarrollo Económico DESARROLLO DE PROVEEDORES settings" [ref=e1094] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/DesarrolloDeProveedores/
+          - generic [ref=e1095]:
+            - generic [ref=e1096]:
+              - heading "Desarrollo Económico" [level=6] [ref=e1097]
+              - heading "DESARROLLO DE PROVEEDORES" [level=4] [ref=e1098]:
+                - text: DESARROLLO DE
+                - text: PROVEEDORES
+              - generic [ref=e1100]: settings
+            - figure [ref=e1101]
+        - link "Bienestar Animal BIENESTAR ANIMAL favorite" [ref=e1104] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/BienestarAnimal
+          - generic [ref=e1105]:
+            - generic [ref=e1106]:
+              - heading "Bienestar Animal" [level=6] [ref=e1107]
+              - heading "BIENESTAR ANIMAL" [level=4] [ref=e1108]:
+                - text: BIENESTAR
+                - text: ANIMAL
+              - generic [ref=e1110]: favorite
+            - figure [ref=e1111]
+        - link "SSPC PROTECCIÓN CIVIL fire_hydrant" [ref=e1114] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/ProteccionCivil/
+          - generic [ref=e1115]:
+            - generic [ref=e1116]:
+              - heading "SSPC" [level=6] [ref=e1117]
+              - heading "PROTECCIÓN CIVIL" [level=4] [ref=e1118]:
+                - text: PROTECCIÓN
+                - text: CIVIL
+              - generic [ref=e1120]: fire_hydrant
+            - figure [ref=e1121]
+        - link "Desarrollo Económico PURO POTOSINO handshake" [ref=e1124] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/PuroPotosino/
+          - generic [ref=e1125]:
+            - generic [ref=e1126]:
+              - heading "Desarrollo Económico" [level=6] [ref=e1127]
+              - heading "PURO POTOSINO" [level=4] [ref=e1128]:
+                - text: PURO
+                - text: POTOSINO
+              - generic [ref=e1130]: handshake
+            - figure [ref=e1131]
+        - link "Turismo CIITD 2026 sports_basketball" [ref=e1134] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/CIITD/
+          - generic [ref=e1135]:
+            - generic [ref=e1136]:
+              - heading "Turismo" [level=6] [ref=e1137]
+              - heading "CIITD 2026" [level=4] [ref=e1138]:
+                - text: CIITD
+                - text: "2026"
+              - generic [ref=e1140]: sports_basketball
+            - figure [ref=e1141]
+        - link "Obras Públicas VIALIDADES POTOSÍNAS emoji_transportation" [ref=e1144] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/VialidadesPotoSinas/
+          - generic [ref=e1145]:
+            - generic [ref=e1146]:
+              - heading "Obras Públicas" [level=6] [ref=e1147]
+              - heading "VIALIDADES POTOSÍNAS" [level=4] [ref=e1148]:
+                - text: VIALIDADES
+                - text: POTOSÍNAS
+              - generic [ref=e1150]: emoji_transportation
+            - figure [ref=e1151]:
+              - img "Micrositio Vialidades Potosínas" [ref=e1152]
+        - link "INSTANCIA DE LAS MUJERES INSTANCIA DE LAS MUJERES female" [ref=e1155] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/InstanciaDeLasMujeres/
+          - generic [ref=e1156]:
+            - generic [ref=e1157]:
+              - heading "INSTANCIA DE LAS MUJERES" [level=6] [ref=e1158]
+              - heading "INSTANCIA DE LAS MUJERES" [level=4] [ref=e1159]:
+                - text: INSTANCIA DE
+                - text: LAS MUJERES
+              - generic [ref=e1161]: female
+            - figure [ref=e1162]
+        - link "SSPC SEGURIDAD PÚBLICA local_police" [ref=e1165] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/SSPC/
+          - generic [ref=e1166]:
+            - generic [ref=e1167]:
+              - heading "SSPC" [level=6] [ref=e1168]
+              - heading "SEGURIDAD PÚBLICA" [level=4] [ref=e1169]:
+                - text: SEGURIDAD
+                - text: PÚBLICA
+              - generic [ref=e1171]: local_police
+            - figure [ref=e1172]:
+              - img "Micrositio Capital Segura SSPC" [ref=e1173]
+        - link "Cartografía SAN LUIS VIRTUAL map" [ref=e1176] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/SanLuisVirtual/
+          - generic [ref=e1177]:
+            - generic [ref=e1178]:
+              - heading "Cartografía" [level=6] [ref=e1179]
+              - heading "SAN LUIS VIRTUAL" [level=4] [ref=e1180]:
+                - text: SAN LUIS
+                - text: VIRTUAL
+              - generic [ref=e1182]: map
+            - figure [ref=e1183]:
+              - img "Micrositio San Luis Virtual" [ref=e1184]
+        - link "REPORTES ATENCIÓN CIUDADANA support_agent" [ref=e1187] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi/AtencionCiudadana
+          - generic [ref=e1188]:
+            - generic [ref=e1189]:
+              - heading "REPORTES" [level=6] [ref=e1190]
+              - heading "ATENCIÓN CIUDADANA" [level=4] [ref=e1191]:
+                - text: ATENCIÓN
+                - text: CIUDADANA
+              - generic [ref=e1193]: support_agent
+            - figure [ref=e1194]:
+              - img "Atención Ciudadana" [ref=e1195]
+        - link "Cultura CULTURA MUNICIPAL interests" [ref=e1198] [cursor=pointer]:
+          - /url: https://sitio.sanluis.gob.mx/FestivalSanLuisEnPrimavera/
+          - generic [ref=e1199]:
+            - generic [ref=e1200]:
+              - heading "Cultura" [level=6] [ref=e1201]
+              - heading "CULTURA MUNICIPAL" [level=4] [ref=e1202]:
+                - text: CULTURA
+                - text: MUNICIPAL
+              - generic [ref=e1204]: interests
+            - figure [ref=e1205]
+        - link "Turismo TURISMO MUNICIPAL directions_subway" [ref=e1208] [cursor=pointer]:
+          - /url: https://sanluis.capital/
+          - generic [ref=e1209]:
+            - generic [ref=e1210]:
+              - heading "Turismo" [level=6] [ref=e1211]
+              - heading "TURISMO MUNICIPAL" [level=4] [ref=e1212]:
+                - text: TURISMO
+                - text: MUNICIPAL
+              - generic [ref=e1214]: directions_subway
+            - figure [ref=e1215]
+      - generic [ref=e1216]:
+        - button "Previous" [ref=e1217] [cursor=pointer]: ‹
+        - button "Next" [ref=e1218] [cursor=pointer]: ›
+  - generic [ref=e1221]:
+    - generic [ref=e1223]:
+      - link [ref=e1225] [cursor=pointer]:
+        - /url: https://drive.google.com/drive/folders/1eZpzAjeLLmlN7kJAUYd_XcZFUoyZPnS9
+      - link [ref=e1227] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/pagAyuntamientoCMS/storage/Medios/2023/09/Programa permanente de cap.pdf
+      - link [ref=e1229] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/pagAyuntamientoCMS/storage/Medios/2026/02/Convocatoria 2026 SEGURIDAD.pdf
+      - link [ref=e1231] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/DistintivoComunidadFuturo/
+      - link [ref=e1233] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/pagAyuntamientoCMS/storage/Medios/2024/11/DOCPLANPARCIAL2024WEB-comprimido.pdf
+      - link [ref=e1235] [cursor=pointer]:
+        - /url: https://sanluisimplan.gob.mx/
+      - link [ref=e1237] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/pagAyuntamientoCMS/storage/Medios/2026/06/313-CONVOCATORIA%20PU%CC%81BLICA%20ABIERTA%20PARA%20LA%20DESIGNACIO%CC%81N%20DE%20LAS%20PERSONAS%20ACREEDORAS%20AL%20PREMIO%20MUNICIPAL%20DE%20LAS%20JUVENTUDES%202026.pdf
+      - link [ref=e1239] [cursor=pointer]:
+        - /url: https://sicee.ine.mx/
+      - link [ref=e1241] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi/SanLuisEnBici
+      - link [ref=e1243] [cursor=pointer]:
+        - /url: https://drive.google.com/drive/folders/1eZpzAjeLLmlN7kJAUYd_XcZFUoyZPnS9
+      - link [ref=e1245] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/pagAyuntamientoCMS/storage/Medios/2023/09/Programa permanente de cap.pdf
+      - link [ref=e1247] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/pagAyuntamientoCMS/storage/Medios/2026/02/Convocatoria 2026 SEGURIDAD.pdf
+      - link [ref=e1249] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/DistintivoComunidadFuturo/
+      - link [ref=e1251] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/pagAyuntamientoCMS/storage/Medios/2024/11/DOCPLANPARCIAL2024WEB-comprimido.pdf
+      - link [ref=e1253] [cursor=pointer]:
+        - /url: https://sanluisimplan.gob.mx/
+      - link [ref=e1255] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/pagAyuntamientoCMS/storage/Medios/2026/06/313-CONVOCATORIA%20PU%CC%81BLICA%20ABIERTA%20PARA%20LA%20DESIGNACIO%CC%81N%20DE%20LAS%20PERSONAS%20ACREEDORAS%20AL%20PREMIO%20MUNICIPAL%20DE%20LAS%20JUVENTUDES%202026.pdf
+      - link [ref=e1257] [cursor=pointer]:
+        - /url: https://sicee.ine.mx/
+      - link [ref=e1259] [cursor=pointer]:
+        - /url: https://sitio.sanluis.gob.mx/SanLuisPotoSi/SanLuisEnBici
+      - link [ref=e1261] [cursor=pointer]:
+        - /url: https://drive.google.com/drive/folders/1eZpzAjeLLmlN7kJAUYd_XcZFUoyZPnS9
+    - generic [ref=e1262]:
+      - button
+      - button
+  - button "" [ref=e1263] [cursor=pointer]:
+    - generic [ref=e1264]: 
+  - contentinfo [ref=e1265]:
+    - generic [ref=e1271]:
+      - img [ref=e1273]
+      - generic [ref=e1275]:
+        - heading "NÚMEROS DE EMERGENCIA" [level=5] [ref=e1276]:
+          - strong [ref=e1277]: NÚMEROS DE EMERGENCIA
+        - heading "089 Denuncia anónima 911 Atención emergencias" [level=6] [ref=e1278]:
+          - strong [ref=e1279]: "089"
+          - text: Denuncia anónima
+          - strong [ref=e1280]: "911"
+          - text: Atención emergencias
+        - heading "ATENCIÓN CIUDADANA" [level=6] [ref=e1281]:
+          - strong [ref=e1282]: ATENCIÓN CIUDADANA
+        - paragraph [ref=e1283]: Tel. (444) 8.34.54.34
+        - link "Level A conformance, W3C WAI Web Content Accessibility Guidelines 2.1" [ref=e1284] [cursor=pointer]:
+          - /url: https://www.w3.org/WAI/WCAG2A-Conformance
+          - img "Level A conformance, W3C WAI Web Content Accessibility Guidelines 2.1" [ref=e1285]
+      - generic [ref=e1287]:
+        - heading "Unidad Administrativa Municipal" [level=3] [ref=e1288]:
+          - strong [ref=e1289]: Unidad Administrativa Municipal
+        - 'heading "Blv. Salvador Nava Martínez #1580, Col. Santuario C.P.78380, San Luis Potosí" [level=6] [ref=e1290]':
+          - text: "Blv. Salvador Nava Martínez #1580,"
+          - text: Col. Santuario C.P.78380, San Luis Potosí
+      - generic [ref=e1292]:
+        - link "Red Social Facebook" [ref=e1294] [cursor=pointer]:
+          - /url: https://www.facebook.com/SLPMunicipio/
+          - img "Red Social Facebook" [ref=e1295]
+        - link "Red Social Instagram" [ref=e1297] [cursor=pointer]:
+          - /url: https://www.instagram.com/slpmunicipio_/
+          - img "Red Social Instagram" [ref=e1298]
+        - link "Red Social X" [ref=e1300] [cursor=pointer]:
+          - /url: https://twitter.com/SLPMunicipio
+          - img "Red Social X" [ref=e1301]
+    - paragraph [ref=e1306]: © 2026 Todos los derechos reservados H. Ayuntamiento de San Luis Potosí

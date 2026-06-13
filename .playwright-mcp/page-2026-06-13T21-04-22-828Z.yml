@@ -1,0 +1,293 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - link "Página inicial de Tlaquepaque" [ref=e3] [cursor=pointer]:
+      - /url: https://www.tlaquepaque.gob.mx
+      - img "Página inicial de Tlaquepaque" [ref=e4]
+    - generic [ref=e6]:
+      - textbox "¿Qué estás buscando?" [ref=e7]
+      - button "" [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: 
+  - navigation [ref=e10]:
+    - list [ref=e13]:
+      - listitem [ref=e14]:
+        - link "Inicio" [ref=e15] [cursor=pointer]:
+          - /url: https://www.tlaquepaque.gob.mx
+      - listitem [ref=e16]:
+        - button "Gobierno" [ref=e17] [cursor=pointer]
+      - listitem [ref=e18]:
+        - button "Prensa" [ref=e19] [cursor=pointer]
+      - listitem [ref=e20]:
+        - link "Transparencia" [ref=e21] [cursor=pointer]:
+          - /url: https://transparenciamunicipal.tlaquepaque.gob.mx/
+      - listitem [ref=e22]:
+        - link "Pueblo Mágico" [ref=e23] [cursor=pointer]:
+          - /url: https://www.tlaquepaque.gob.mx/pueblomagico
+      - listitem [ref=e24]:
+        - link "PROGRAMAS DE BIENESTAR" [ref=e25] [cursor=pointer]:
+          - /url: https://bienestar.tlaquepaque.gob.mx/
+      - listitem [ref=e26]:
+        - link "Áreas de Interés" [ref=e27] [cursor=pointer]:
+          - /url: https://www.tlaquepaque.gob.mx/area_de_interes
+      - listitem [ref=e28]:
+        - link "Directorio" [ref=e29] [cursor=pointer]:
+          - /url: https://www.tlaquepaque.gob.mx/desglose_post?id=3583
+      - listitem [ref=e30]:
+        - link "Cabildo" [ref=e31] [cursor=pointer]:
+          - /url: https://transparenciamunicipal.tlaquepaque.gob.mx/informacion-publica/sesiones-del-pleno-2024-2027
+  - generic [ref=e33]:
+    - listbox [ref=e34]:
+      - link "carrusel imagenes principales" [ref=e37] [cursor=pointer]:
+        - /url: https://www.tlaquepaque.gob.mx/assets/cargas/general/Vis_EL%20TRANSFORMADOR_MAYO%20PLANA%20INFORMADOR%2029X35-5%20copia.pdf
+        - img "carrusel imagenes principales" [ref=e38]
+    - button "Imágen aterior" [ref=e39] [cursor=pointer]:
+      - generic [ref=e41]: Imágen aterior
+    - button "Imágen siguiente" [ref=e42] [cursor=pointer]:
+      - generic [ref=e44]: Imágen siguiente
+  - generic [ref=e45]:
+    - link [ref=e46] [cursor=pointer]:
+      - /url: https://ciudadaniadigital.tlaquepaque.gob.mx/solicitud_anonima.php
+    - generic [ref=e48]:
+      - link "Ayudenos a Encontrarles" [ref=e50] [cursor=pointer]:
+        - /url: https://comisionacionaldebusqueda.segob.gob.mx/
+        - img "Ayudenos a Encontrarles" [ref=e51]
+      - link "Reacudadoras" [ref=e53] [cursor=pointer]:
+        - /url: https://www.tlaquepaque.gob.mx/assets/cargas/general/Domicilios_20_Recaudadoras.pdf
+        - img "Reacudadoras" [ref=e54]
+      - link "Obligaciones Transparencia" [ref=e56] [cursor=pointer]:
+        - /url: https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/?idSujetoObigadoParametro=2886&idEntidadParametro=14
+        - img "Obligaciones Transparencia" [ref=e57]
+      - link "Ramo 33" [ref=e59] [cursor=pointer]:
+        - /url: https://www.tlaquepaque.gob.mx/area_de_interes/area_de_interes_seccion?id=80&slug=/ramo33&id_categoria=10
+        - img "Ramo 33" [ref=e60]
+      - link "Predial 2024" [ref=e62] [cursor=pointer]:
+        - /url: https://srvtes.tlaquepaque.gob.mx/Tesoreria/
+        - img "Predial 2024" [ref=e63]
+      - link "Plataforma Nacional de Transparencia" [ref=e65] [cursor=pointer]:
+        - /url: https://www.plataformadetransparencia.org.mx/web/guest/inicio
+        - img "Plataforma Nacional de Transparencia" [ref=e66]
+  - list [ref=e71]:
+    - listitem [ref=e72]:
+      - heading "Tlaquepaque es tradición" [level=1] [ref=e73]:
+        - text: Tlaquepaque es
+        - generic [ref=e74]: tradición
+  - generic [ref=e76]:
+    - heading "Presidenta Municipal" [level=1] [ref=e77]
+    - separator [ref=e78]
+    - generic [ref=e79]:
+      - img "Imágen de la presidente municipal" [ref=e81]
+      - generic [ref=e82]:
+        - blockquote [ref=e83]:
+          - paragraph [ref=e84]: MTRA. LAURA IMELDA PÉREZ SEGURA
+          - generic [ref=e85]: — Presidenta Municipal
+        - paragraph [ref=e86]
+        - link "Conocer más acerca de la presidenta municipal" [ref=e88] [cursor=pointer]:
+          - /url: presidente
+          - text: Conocer más
+          - generic [ref=e89]: acerca de la presidenta municipal
+    - separator [ref=e90]
+  - generic [ref=e92]:
+    - heading "Convocatorias y licitaciones" [level=1] [ref=e93]
+    - separator [ref=e94]
+    - generic [ref=e96]:
+      - generic [ref=e97]:
+        - group "1 / 9" [ref=e98]:
+          - generic [ref=e99]:
+            - img "LPL-001/2026 Licitación Pública Local" [ref=e101]
+            - generic [ref=e102]:
+              - heading "LPL-001/2026 Licitación Pública Local" [level=4] [ref=e103]
+              - separator [ref=e104]
+              - paragraph [ref=e105]:
+                - strong [ref=e106]: "Descargables:"
+              - list [ref=e107]:
+                - listitem [ref=e108]:
+                  - generic [ref=e110] [cursor=pointer]: 
+                  - generic [ref=e112] [cursor=pointer]: 
+                  - generic [ref=e114] [cursor=pointer]: 
+                  - generic [ref=e116] [cursor=pointer]: 
+                  - generic [ref=e118] [cursor=pointer]: 
+        - group "2 / 9" [ref=e119]:
+          - generic [ref=e120]:
+            - img ".ACUERDO GENERAL 001/2026" [ref=e122]
+            - generic [ref=e123]:
+              - heading ".ACUERDO GENERAL 001/2026" [level=4] [ref=e124]
+              - generic [ref=e125]:
+                - paragraph [ref=e126]: ACUERDO GENERAL 001/2026
+                - paragraph [ref=e127]: SUSPENSIÓN DE PLAZOS Y TÉRMINOS LEGALES EN EL ORGANO INTERNO DE CONTROL DEL AYUNTAMIENTO DE SAN PEDRO TLAQUEP AQUE Y LAS UNIDADES ADMINISTRATIV AS JERARQUICAMENTE DEPENDIENTES DE ESTE, CON MOTIVO DEL PERIODO VACACIONAL DE PRIMAVERA 2026.
+              - separator [ref=e128]
+              - paragraph [ref=e129]:
+                - strong [ref=e130]: "Descargables:"
+              - list [ref=e131]:
+                - listitem [ref=e132]:
+                  - generic [ref=e134] [cursor=pointer]: 
+        - group "3 / 9" [ref=e135]:
+          - generic [ref=e136]:
+            - img "." [ref=e138]
+            - generic [ref=e139]:
+              - heading "." [level=4] [ref=e140]
+              - separator [ref=e141]
+              - paragraph [ref=e142]:
+                - strong [ref=e143]: "Descargables:"
+              - list [ref=e144]:
+                - listitem [ref=e145]:
+                  - generic [ref=e147] [cursor=pointer]: 
+        - group "4 / 9" [ref=e148]:
+          - generic [ref=e149]:
+            - img "LPL-001/2026 Licitación Pública Local" [ref=e151]
+            - generic [ref=e152]:
+              - heading "LPL-001/2026 Licitación Pública Local" [level=4] [ref=e153]
+              - separator [ref=e154]
+              - paragraph [ref=e155]:
+                - strong [ref=e156]: "Descargables:"
+              - list [ref=e157]:
+                - listitem [ref=e158]:
+                  - generic [ref=e160] [cursor=pointer]: 
+                  - generic [ref=e162] [cursor=pointer]: 
+                  - generic [ref=e164] [cursor=pointer]: 
+                  - generic [ref=e166] [cursor=pointer]: 
+                  - generic [ref=e168] [cursor=pointer]: 
+        - group "5 / 9" [ref=e169]:
+          - generic [ref=e170]:
+            - img ".ACUERDO GENERAL 001/2026" [ref=e172]
+            - generic [ref=e173]:
+              - heading ".ACUERDO GENERAL 001/2026" [level=4] [ref=e174]
+              - generic [ref=e175]:
+                - paragraph [ref=e176]: ACUERDO GENERAL 001/2026
+                - paragraph [ref=e177]: SUSPENSIÓN DE PLAZOS Y TÉRMINOS LEGALES EN EL ORGANO INTERNO DE CONTROL DEL AYUNTAMIENTO DE SAN PEDRO TLAQUEP AQUE Y LAS UNIDADES ADMINISTRATIV AS JERARQUICAMENTE DEPENDIENTES DE ESTE, CON MOTIVO DEL PERIODO VACACIONAL DE PRIMAVERA 2026.
+              - separator [ref=e178]
+              - paragraph [ref=e179]:
+                - strong [ref=e180]: "Descargables:"
+              - list [ref=e181]:
+                - listitem [ref=e182]:
+                  - generic [ref=e184] [cursor=pointer]: 
+        - group "6 / 9" [ref=e185]:
+          - generic [ref=e186]:
+            - img "." [ref=e188]
+            - generic [ref=e189]:
+              - heading "." [level=4] [ref=e190]
+              - separator [ref=e191]
+              - paragraph [ref=e192]:
+                - strong [ref=e193]: "Descargables:"
+              - list [ref=e194]:
+                - listitem [ref=e195]:
+                  - generic [ref=e197] [cursor=pointer]: 
+        - group "7 / 9" [ref=e198]:
+          - generic [ref=e199]:
+            - img "LPL-001/2026 Licitación Pública Local" [ref=e201]
+            - generic [ref=e202]:
+              - heading "LPL-001/2026 Licitación Pública Local" [level=4] [ref=e203]
+              - separator [ref=e204]
+              - paragraph [ref=e205]:
+                - strong [ref=e206]: "Descargables:"
+              - list [ref=e207]:
+                - listitem [ref=e208]:
+                  - generic [ref=e210] [cursor=pointer]: 
+                  - generic [ref=e212] [cursor=pointer]: 
+                  - generic [ref=e214] [cursor=pointer]: 
+                  - generic [ref=e216] [cursor=pointer]: 
+                  - generic [ref=e218] [cursor=pointer]: 
+        - group "8 / 9" [ref=e219]:
+          - generic [ref=e220]:
+            - img ".ACUERDO GENERAL 001/2026" [ref=e222]
+            - generic [ref=e223]:
+              - heading ".ACUERDO GENERAL 001/2026" [level=4] [ref=e224]
+              - generic [ref=e225]:
+                - paragraph [ref=e226]: ACUERDO GENERAL 001/2026
+                - paragraph [ref=e227]: SUSPENSIÓN DE PLAZOS Y TÉRMINOS LEGALES EN EL ORGANO INTERNO DE CONTROL DEL AYUNTAMIENTO DE SAN PEDRO TLAQUEP AQUE Y LAS UNIDADES ADMINISTRATIV AS JERARQUICAMENTE DEPENDIENTES DE ESTE, CON MOTIVO DEL PERIODO VACACIONAL DE PRIMAVERA 2026.
+              - separator [ref=e228]
+              - paragraph [ref=e229]:
+                - strong [ref=e230]: "Descargables:"
+              - list [ref=e231]:
+                - listitem [ref=e232]:
+                  - generic [ref=e234] [cursor=pointer]: 
+        - group "9 / 9" [ref=e235]:
+          - generic [ref=e236]:
+            - img "." [ref=e238]
+            - generic [ref=e239]:
+              - heading "." [level=4] [ref=e240]
+              - separator [ref=e241]
+              - paragraph [ref=e242]:
+                - strong [ref=e243]: "Descargables:"
+              - list [ref=e244]:
+                - listitem [ref=e245]:
+                  - generic [ref=e247] [cursor=pointer]: 
+      - generic [ref=e248]:
+        - button "Go to slide 1" [ref=e249] [cursor=pointer]
+        - button "Go to slide 2" [ref=e250] [cursor=pointer]
+        - button "Go to slide 3" [ref=e251] [cursor=pointer]
+      - button "Next slide" [ref=e252] [cursor=pointer]: next
+      - button "Previous slide" [ref=e253] [cursor=pointer]: prev
+  - dialog [active] [ref=e254]:
+    - document:
+      - generic [ref=e257]:
+        - paragraph [ref=e258]: Utilizamos cookies para mejorar la experiencia del sitio web.
+        - generic [ref=e259] [cursor=pointer]: Ok, acepto
+  - contentinfo [ref=e260]:
+    - generic [ref=e263]:
+      - heading "¡Síguenos en nuestras redes sociales!" [level=5] [ref=e265]
+      - generic [ref=e266]:
+        - link "" [ref=e267] [cursor=pointer]:
+          - /url: https://www.facebook.com/tlaquepaquegob
+          - generic [ref=e268]: 
+        - link "" [ref=e269] [cursor=pointer]:
+          - /url: https://x.com/gobtlaquepaque
+          - generic [ref=e270]: 
+        - link "" [ref=e271] [cursor=pointer]:
+          - /url: https://www.flickr.com/photos/tlaquepaquegob/
+          - generic [ref=e272]: 
+        - link "" [ref=e273] [cursor=pointer]:
+          - /url: https://www.youtube.com/channel/UC-wF67qD9S53dTgdFGINweg
+          - generic [ref=e274]: 
+        - link "youtube oficial de tlaquepaque" [ref=e275] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@gobtlaquepaque
+          - img [ref=e276]
+        - link "" [ref=e278] [cursor=pointer]:
+          - /url: https://www.instagram.com/gobtlaquepaque
+          - generic [ref=e279]: 
+    - generic [ref=e281]:
+      - generic [ref=e285]:
+        - paragraph [ref=e286]: H. Ayuntamiento de San Pedro Tlaquepaque
+        - 'heading " Conmutador: 33-1057-6000" [level=6] [ref=e287]':
+          - generic [ref=e288]: 
+          - text: "Conmutador: 33-1057-6000"
+        - heading " Independencia No. 58 Tlaquepaque, Jalisco" [level=6] [ref=e289]:
+          - link "" [ref=e290] [cursor=pointer]:
+            - /url: https://apps.tlaquepaque.gob.mx/login.php?id=7
+            - generic [ref=e291]: 
+          - text: Independencia No. 58 Tlaquepaque, Jalisco
+      - generic [ref=e293]:
+        - paragraph [ref=e294]:
+          - link " Realiza tu Declaración Patrimonial" [ref=e295] [cursor=pointer]:
+            - /url: http://declaraciones.tlaquepaque.gob.mx/
+            - generic [ref=e296]: 
+            - text: Realiza tu Declaración Patrimonial
+        - paragraph [ref=e297]:
+          - link " Oficios" [ref=e298] [cursor=pointer]:
+            - /url: https://oficios.tlaquepaque.gob.mx
+            - generic [ref=e299]: 
+            - text: Oficios
+        - paragraph [ref=e300]:
+          - link " Facturas" [ref=e301] [cursor=pointer]:
+            - /url: https://servicios.tlaquepaque.gob.mx/facturas/
+            - generic [ref=e302]: 
+            - text: Facturas
+        - paragraph [ref=e303]:
+          - link " Pagos Electrónicos" [ref=e304] [cursor=pointer]:
+            - /url: https://srvtes.tlaquepaque.gob.mx/Tesoreria/
+            - generic [ref=e305]: 
+            - text: Pagos Electrónicos
+        - paragraph [ref=e306]:
+          - link "@ Correos Institucionales" [ref=e307] [cursor=pointer]:
+            - /url: https://micorreo.telmex.com/#/login
+            - generic [ref=e308]: "@"
+            - text: Correos Institucionales
+        - paragraph [ref=e309]:
+          - link " Reportes Seiton" [ref=e310] [cursor=pointer]:
+            - /url: https://reportimptlq.svhost.net/
+            - generic [ref=e311]: 
+            - text: Reportes Seiton
+    - link "AVISO DE PRIVACIDAD PARA REDES SOCIALES" [ref=e313] [cursor=pointer]:
+      - /url: assets/cargas/AVISO-DE-PRIVACIDAD-PARA-REDES-SOCIALES.pdf
+    - generic [ref=e314]:
+      - text: "© 2026 Copyright:"
+      - link "Jefatura De Desarrollo De Software" [ref=e315] [cursor=pointer]:
+        - /url: javascript:void(0)

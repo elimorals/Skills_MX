@@ -1,0 +1,196 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "img-logo" [ref=e6] [cursor=pointer]:
+          - /url: https://merida.gob.mx/municipio/portal/index.php
+          - img "img-logo" [ref=e7]
+        - navigation [ref=e8]:
+          - list [ref=e11]:
+            - listitem [ref=e12]: Ayuntamiento
+            - listitem [ref=e13]:
+              - link "Dependencias" [ref=e14] [cursor=pointer]:
+                - /url: https://merida.gob.mx/municipio/portal/gobierno/dependencias.php
+            - listitem [ref=e15]:
+              - link "Catálogo Municipal" [ref=e16] [cursor=pointer]:
+                - /url: https://www.merida.gob.mx/catalogomunicipal/
+            - listitem [ref=e17]:
+              - link "Transparencia" [ref=e18] [cursor=pointer]:
+                - /url: https://www.merida.gob.mx/transparencia/
+            - listitem [ref=e19]: Mejora Regulatoria
+    - navigation [ref=e20]:
+      - generic [ref=e22]:
+        - separator [ref=e24]
+        - generic [ref=e27]:
+          - textbox "Qué deseas buscar..." [ref=e29]
+          - generic [ref=e30] [cursor=pointer]: Buscar
+        - generic [ref=e32]:
+          - link:
+            - /url: https://www.facebook.com/AyuntaMeridaOficial/
+          - link:
+            - /url: https://twitter.com/ayuntamerida
+          - link:
+            - /url: https://www.instagram.com/ayuntamerida_/
+          - link:
+            - /url: https://www.youtube.com/user/AyuntamientoDeMerida
+          - link:
+            - /url: https://www.tiktok.com/@ayuntamerida
+    - generic [ref=e35]:
+      - navigation [ref=e37]:
+        - list [ref=e39]:
+          - listitem [ref=e40]:
+            - link "Eventos" [ref=e41] [cursor=pointer]:
+              - /url: https://merida.gob.mx/municipio/portal/enterate.php
+          - listitem [ref=e42]:
+            - link "Ciudadanía" [ref=e43] [cursor=pointer]:
+              - /url: https://merida.gob.mx/municipio/portal/ciudadania.php
+          - listitem [ref=e44]:
+            - link "Negocios y Empresas" [ref=e45] [cursor=pointer]:
+              - /url: https://merida.gob.mx/municipio/portal/negocios.php
+          - listitem [ref=e46]:
+            - link "Turismo" [ref=e47] [cursor=pointer]:
+              - /url: https://merida.gob.mx/municipio/portal/turismo.php
+          - listitem [ref=e48]:
+            - link "Sitios web oficiales" [ref=e49] [cursor=pointer]:
+              - /url: https://merida.gob.mx/municipio/portal/sitios.php
+      - generic [ref=e52]:
+        - img "ico" [ref=e54] [cursor=pointer]
+        - img "ico" [ref=e56] [cursor=pointer]
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - paragraph
+  - generic [ref=e58]:
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - heading "¡Encuéntralo!" [level=2] [ref=e67]
+        - generic [ref=e69]:
+          - link "Gaceta" [ref=e71] [cursor=pointer]:
+            - /url: https://www.merida.gob.mx/gaceta
+          - link "Predial" [ref=e73] [cursor=pointer]:
+            - /url: https://www.merida.gob.mx/predial
+          - link "Reportes" [ref=e75] [cursor=pointer]:
+            - /url: https://www.merida.gob.mx/reportaenlinea
+          - link "Educación" [ref=e77] [cursor=pointer]:
+            - /url: https://www.merida.gob.mx/ciudaddelaprendizaje
+        - generic [ref=e80]:
+          - textbox "Escribe para buscar" [ref=e82]
+          - generic [ref=e83] [cursor=pointer]: Buscar
+      - generic [ref=e84]:
+        - link "Cruzada Forestal Cruzada Forestal 2026 ¡Súmate y participa en las actividades! Más información" [ref=e86] [cursor=pointer]:
+          - /url: https://www.merida.gob.mx/sustentable/cruzada_forestal.php
+          - generic [ref=e88]:
+            - img "Cruzada Forestal" [ref=e90]
+            - generic [ref=e91]:
+              - heading "Cruzada Forestal 2026" [level=3] [ref=e92]
+              - paragraph [ref=e93]:
+                - text: ¡Súmate y participa
+                - text: en las actividades!
+              - paragraph [ref=e94]: Más información
+        - link "PPDU Programas Parciales de Desarrollo Urbano Consulta el proceso Infórmate" [ref=e96] [cursor=pointer]:
+          - /url: https://www.merida.gob.mx/implan/
+          - generic [ref=e98]:
+            - img "PPDU" [ref=e100]
+            - generic [ref=e101]:
+              - heading "Programas Parciales de Desarrollo Urbano" [level=3] [ref=e102]
+              - paragraph [ref=e103]: Consulta el proceso
+              - paragraph [ref=e104]: Infórmate
+        - link "Ver más" [ref=e106] [cursor=pointer]:
+          - /url: enterate.php
+    - generic [ref=e114]:
+      - heading "Comunícate" [level=2] [ref=e116]
+      - link "Emergencias" [ref=e118] [cursor=pointer]:
+        - /url: tel:911
+        - paragraph [ref=e119]: Emergencias
+        - img [ref=e120]
+      - link "Línea Mujer" [ref=e122] [cursor=pointer]:
+        - /url: tel:8004557672
+        - paragraph [ref=e123]: Línea Mujer
+        - img [ref=e124]
+      - link "Ayuntatel" [ref=e126] [cursor=pointer]:
+        - /url: tel:9999244000
+        - paragraph [ref=e127]: Ayuntatel
+        - img [ref=e128]
+      - link "Protección Civil" [ref=e130] [cursor=pointer]:
+        - /url: tel:9999288311
+        - paragraph [ref=e131]: Protección Civil
+        - img [ref=e132]
+    - generic [ref=e137]:
+      - heading "Investiga" [level=2] [ref=e139]
+      - link "ico Ciudadanía" [ref=e141] [cursor=pointer]:
+        - /url: ciudadania.php
+        - generic [ref=e143]:
+          - generic [ref=e145]:
+            - img "ico"
+          - paragraph [ref=e146]: Ciudadanía
+      - link "ico Negocios y Empresas" [ref=e148] [cursor=pointer]:
+        - /url: negocios.php
+        - generic [ref=e150]:
+          - generic [ref=e152]:
+            - img "ico"
+          - paragraph [ref=e153]: Negocios y Empresas
+      - link "ico Turismo" [ref=e155] [cursor=pointer]:
+        - /url: turismo.php
+        - generic [ref=e157]:
+          - generic [ref=e159]:
+            - img "ico"
+          - paragraph [ref=e160]: Turismo
+      - generic [ref=e164] [cursor=pointer]:
+        - generic [ref=e166]:
+          - img "ico"
+        - paragraph [ref=e167]: Ayuntamiento
+  - contentinfo [ref=e168]:
+    - generic [ref=e172]:
+      - img "img-logo" [ref=e173]
+      - link "Ver ubicación" [ref=e174] [cursor=pointer]:
+        - /url: https://maps.app.goo.gl/9Jf7oL14t25ESzP97
+        - text: Ver ubicación
+      - generic [ref=e175]:
+        - link "ico-facebook" [ref=e176] [cursor=pointer]:
+          - /url: https://www.facebook.com/AyuntaMeridaOficial/
+          - img "ico-facebook" [ref=e177]
+        - link "ico-twitter" [ref=e178] [cursor=pointer]:
+          - /url: https://twitter.com/ayuntamerida
+          - img "ico-twitter" [ref=e179]
+        - link "ico-instagram" [ref=e180] [cursor=pointer]:
+          - /url: https://www.instagram.com/ayuntamerida_/
+          - img "ico-instagram" [ref=e181]
+        - link "ico-youtube" [ref=e182] [cursor=pointer]:
+          - /url: https://www.youtube.com/user/AyuntamientoDeMerida
+          - img "ico-youtube" [ref=e183]
+        - link "ico-tiktok" [ref=e184] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@ayuntamerida
+          - img "ico-tiktok" [ref=e185]
+    - button
+    - generic "Accesibilidad" [ref=e186]:
+      - img "ico-accesibilidad" [ref=e188]
+    - link "Atención Ciudadana" [ref=e189] [cursor=pointer]:
+      - /url: https://www.merida.gob.mx/atencionciudadana
+    - link "ico-app" [ref=e190] [cursor=pointer]:
+      - /url: https://merida.gob.mx/municipio/portal/apps.php
+      - img "ico-app" [ref=e191]
+    - link "ico-app" [ref=e192] [cursor=pointer]:
+      - /url: https://merida.gob.mx/proteccioncivil
+      - img "ico-app" [ref=e193]
+  - generic [ref=e197]:
+    - paragraph [ref=e199]:
+      - link "Dependencias" [ref=e200] [cursor=pointer]:
+        - /url: https://merida.gob.mx/municipio/portal/gobierno/dependencias.php
+        - generic [ref=e201]: Dependencias
+    - paragraph [ref=e203]:
+      - link "Avisos de Privacidad" [ref=e204] [cursor=pointer]:
+        - /url: https://www.merida.gob.mx/avisoprivacidad/
+        - generic [ref=e205]: Avisos de Privacidad
+    - paragraph [ref=e207]:
+      - link "Reconocimientos" [ref=e208] [cursor=pointer]:
+        - /url: https://merida.gob.mx/municipio/portal/premios.php
+        - generic [ref=e209]: Reconocimientos
+    - paragraph [ref=e211]:
+      - link "Atención Ciudadana" [ref=e212] [cursor=pointer]:
+        - /url: https://www.merida.gob.mx/atencionciudadana
+        - generic [ref=e213]: Atención Ciudadana
+    - paragraph [ref=e215]:
+      - link "Apps Móviles" [ref=e216] [cursor=pointer]:
+        - /url: https://merida.gob.mx/municipio/portal/apps.php
+        - generic [ref=e217]: Apps Móviles

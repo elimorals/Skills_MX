@@ -1,0 +1,201 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - text: 
+    - generic [ref=e4]:
+      - generic [ref=e7]:
+        - generic [ref=e9]: 
+        - link [ref=e16] [cursor=pointer]:
+          - /url: https://acapulco.gob.mx/
+        - button [ref=e20]
+      - generic [ref=e26]:
+        - link [ref=e28] [cursor=pointer]:
+          - /url: https://acapulco.gob.mx/
+        - navigation [ref=e29]:
+          - list [ref=e30]:
+            - listitem [ref=e31]:
+              - link "Inicio" [ref=e32] [cursor=pointer]:
+                - /url: https://acapulco.gob.mx/
+                - generic [ref=e33]: Inicio
+            - listitem [ref=e34]:
+              - link "Gobierno" [ref=e35] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e36]: Gobierno
+            - listitem [ref=e38]:
+              - link "Sala de Prensa" [ref=e39] [cursor=pointer]:
+                - /url: https://acapulco.gob.mx/sala-de-prensa/
+                - generic [ref=e40]: Sala de Prensa
+            - listitem [ref=e41]:
+              - link "Refugios Temporales" [ref=e42] [cursor=pointer]:
+                - /url: https://acapulco.gob.mx/refugios-temporales/
+                - generic [ref=e43]: Refugios Temporales
+            - listitem [ref=e44]:
+              - link "Transparencia" [ref=e45] [cursor=pointer]:
+                - /url: https://acapulco.gob.mx/transparencia
+                - generic [ref=e46]: Transparencia
+            - listitem [ref=e47]:
+              - link "Contacto Ciudadano" [ref=e48] [cursor=pointer]:
+                - /url: https://acapulco.gob.mx/contacto/
+                - generic [ref=e49]: Contacto Ciudadano
+            - listitem [ref=e50]:
+              - link "Nómina Transparente" [ref=e51] [cursor=pointer]:
+                - /url: https://acapulco.gob.mx/transparencia/cumplimiento-de-la-ley-de-transparencia-y-acceso-a-la-informacion-publica/viii/
+                - generic [ref=e52]: Nómina Transparente
+  - generic [ref=e56]:
+    - heading "Agencias Recaudadoras de Impuestos" [level=1] [ref=e57]
+    - generic [ref=e59]:
+      - link "Inicio" [ref=e60] [cursor=pointer]:
+        - /url: https://acapulco.gob.mx/
+      - generic [ref=e61]: /
+      - text: Agencias Recaudadoras de Impuestos
+  - main [ref=e62]:
+    - generic [ref=e65]:
+      - table [ref=e66]:
+        - rowgroup [ref=e67]:
+          - row "AGENCIA UBICACIÓN TELÉFONO" [ref=e68]:
+            - columnheader "AGENCIA" [ref=e69]
+            - columnheader "UBICACIÓN" [ref=e70]
+            - columnheader "TELÉFONO" [ref=e71]
+          - 'row "Costa Azul Calle Andrés Sufrend #355, Fracc. Costa Azul, CP 39850. Atrás del parque Merle Oberón, entre Praque Norte y Parque Sur. 744 484 8552" [ref=e72]':
+            - cell "Costa Azul" [ref=e73]:
+              - strong [ref=e74]: Costa Azul
+            - 'cell "Calle Andrés Sufrend #355, Fracc. Costa Azul, CP 39850. Atrás del parque Merle Oberón, entre Praque Norte y Parque Sur." [ref=e75]'
+            - cell "744 484 8552" [ref=e76]
+          - 'row "Diamante Boulevard de las Naciones #52, interior del “Centro Comercial Diamante”, Col. Granjas del Marqués. CP 39890. 744 348 1808" [ref=e77]':
+            - cell "Diamante" [ref=e78]:
+              - strong [ref=e79]: Diamante
+            - 'cell "Boulevard de las Naciones #52, interior del “Centro Comercial Diamante”, Col. Granjas del Marqués. CP 39890." [ref=e80]'
+            - cell "744 348 1808" [ref=e81]
+          - 'row "Progreso Calle Bernal Díaz del Castillo #16, Col. Progreso. CP 39350. A un lado del Registro Civil. 744 485 1158" [ref=e82]':
+            - cell "Progreso" [ref=e83]:
+              - strong [ref=e84]: Progreso
+            - 'cell "Calle Bernal Díaz del Castillo #16, Col. Progreso. CP 39350. A un lado del Registro Civil." [ref=e85]'
+            - cell "744 485 1158" [ref=e86]
+          - 'row "Garita Avenida Cuauhtémoc #853, Col. Garita de Juárez. CP 39650. Atrás de la iglesia de la Garita. 744 487 5281" [ref=e87]':
+            - cell "Garita" [ref=e88]:
+              - strong [ref=e89]: Garita
+            - 'cell "Avenida Cuauhtémoc #853, Col. Garita de Juárez. CP 39650. Atrás de la iglesia de la Garita." [ref=e90]'
+            - cell "744 487 5281" [ref=e91]
+          - 'row "Ejido Av. Constituyentes #57, local A1, Col. Bella Vista. CP 39560. Frente a Elektra de Constituyentes y Ejido. 744 483 6990" [ref=e92]':
+            - cell "Ejido" [ref=e93]:
+              - strong [ref=e94]: Ejido
+            - 'cell "Av. Constituyentes #57, local A1, Col. Bella Vista. CP 39560. Frente a Elektra de Constituyentes y Ejido." [ref=e95]'
+            - cell "744 483 6990" [ref=e96]
+          - 'row "Renacimiento Eje Central Vicente Guerrero #13, Cd. Renacimiento. CP 39715. Delegación Renacimiento. Atrás de la Unidad Deportiva Jorge Campos. 744 441 5198" [ref=e97]':
+            - cell "Renacimiento" [ref=e98]:
+              - strong [ref=e99]: Renacimiento
+            - 'cell "Eje Central Vicente Guerrero #13, Cd. Renacimiento. CP 39715. Delegación Renacimiento. Atrás de la Unidad Deportiva Jorge Campos." [ref=e100]'
+            - cell "744 441 5198" [ref=e101]
+          - 'row "Dirección de Catastro Antiguo ayuntamiento de Acapulco: Calle Roberto Posada y Comonfort. Col. Centro. 744 440 7000 ext. 4123" [ref=e102]':
+            - cell "Dirección de Catastro" [ref=e103]:
+              - strong [ref=e104]: Dirección de Catastro
+            - 'cell "Antiguo ayuntamiento de Acapulco: Calle Roberto Posada y Comonfort. Col. Centro." [ref=e105]':
+              - strong [ref=e106]: "Antiguo ayuntamiento de Acapulco:"
+              - text: Calle Roberto Posada y Comonfort. Col. Centro.
+            - cell "744 440 7000 ext. 4123" [ref=e107]
+          - 'row "Zócalo Módulo de Atención Movible: Afuera de la Dirección de Panteones. N/A" [ref=e108]':
+            - cell "Zócalo" [ref=e109]:
+              - strong [ref=e110]: Zócalo
+            - 'cell "Módulo de Atención Movible: Afuera de la Dirección de Panteones." [ref=e111]':
+              - strong [ref=e112]: "Módulo de Atención Movible:"
+              - text: Afuera de la Dirección de Panteones.
+            - cell "N/A" [ref=e113]
+          - 'row "Presidencia Módulo de Atención Presidencia-Papagayo: En la entrada principal de las regidurías. N/A" [ref=e114]':
+            - cell "Presidencia" [ref=e115]:
+              - strong [ref=e116]: Presidencia
+            - 'cell "Módulo de Atención Presidencia-Papagayo: En la entrada principal de las regidurías." [ref=e117]':
+              - strong [ref=e118]: "Módulo de Atención Presidencia-Papagayo:"
+              - text: En la entrada principal de las regidurías.
+            - cell "N/A" [ref=e119]
+          - 'row "Plaza Patio Módulo de Atención Plaza Patio: Interior de la CAPAMA, Carretera Cayaco-Puerto Marqués. N/A" [ref=e120]':
+            - cell "Plaza Patio" [ref=e121]:
+              - strong [ref=e122]: Plaza Patio
+            - 'cell "Módulo de Atención Plaza Patio: Interior de la CAPAMA, Carretera Cayaco-Puerto Marqués." [ref=e123]':
+              - strong [ref=e124]: "Módulo de Atención Plaza Patio:"
+              - text: Interior de la CAPAMA, Carretera Cayaco-Puerto Marqués.
+            - cell "N/A" [ref=e125]
+      - paragraph [ref=e126]
+      - paragraph [ref=e127]:
+        - strong [ref=e128]: "CONSULTA DE SALDO, DUDAS Y ACLARACIONES:"
+        - strong [ref=e129]: DIRECCIÓN DE CATASTRO E IMPUESTO PREDIAL.
+        - text: Calle Roberto Posada y Comonfort S/N, Col. Centro.
+        - text: 744 440 7000 Exts. 4123, 4143, 4274 y 4296.
+        - text: Lunes a Viernes de 9:00 A.M. a 3:00 P.M.
+      - paragraph [ref=e130]
+      - paragraph [ref=e131]:
+        - strong [ref=e132]: "FACTURACIÓN DEL PAGO DE IMPUESTO PREDIAL:"
+        - strong [ref=e133]: DIRECCIÓN DE INGRESOS.
+        - text: Av. Costera Miguel Alemán No.315, Piso Mezanine, Col. Centro, Palacio Federal.
+        - text: 744 440 7000 Exts. 6576 y 6575.
+        - text: Lunes a Viernes de 9:00 A.M. a 3:00 P.M.
+  - contentinfo [ref=e134]:
+    - generic [ref=e143]:
+      - generic [ref=e159]:
+        - generic [ref=e166]:
+          - generic [ref=e170]: 
+          - generic [ref=e172]:
+            - text: Av. Cuauhtémoc S/N,
+            - text: Interior Parque Papagayo, Fracc. Hornos.
+        - generic [ref=e176]:
+          - generic [ref=e180]: 
+          - generic [ref=e182]: 744 440 7000
+        - generic [ref=e186]:
+          - generic [ref=e190]: 
+          - generic [ref=e192]:
+            - text: oficinavirtual@acapulco
+            - text: .gob.mx
+          - link [ref=e193] [cursor=pointer]:
+            - /url: mailto:%6f%66%69%63%69%6e%61%76%69%72%74%75%61%6c%40%61%63%61%70%75%6c%63%6f%2e%67%6f%62%2e%6d%78
+      - generic [ref=e203]:
+        - generic [ref=e210]:
+          - generic [ref=e213]:
+            - heading "TELÉFONOS DE EMERGENCIA" [level=2] [ref=e216]
+            - generic [ref=e220]:
+              - heading "911 • Servicio de Emergencias" [level=3] [ref=e223]:
+                - strong [ref=e224]: "911"
+                - text: • Servicio de Emergencias
+              - link [ref=e225] [cursor=pointer]:
+                - /url: tel:911
+            - generic [ref=e229]:
+              - heading "089 • Denuncia Anónima" [level=3] [ref=e232]:
+                - strong [ref=e233]: "089"
+                - text: • Denuncia Anónima
+              - link [ref=e234] [cursor=pointer]:
+                - /url: tel:089
+            - generic [ref=e238]:
+              - heading "073 • CAPAMA" [level=3] [ref=e241]:
+                - strong [ref=e242]: "073"
+                - text: • CAPAMA
+              - link [ref=e243] [cursor=pointer]:
+                - /url: tel:073
+            - generic [ref=e247]:
+              - heading "072 • Protección Civil" [level=3] [ref=e250]:
+                - strong [ref=e251]: "072"
+                - text: • Protección Civil
+              - link [ref=e252] [cursor=pointer]:
+                - /url: tel:072
+            - generic [ref=e256]:
+              - heading "071 • CFE" [level=3] [ref=e259]:
+                - strong [ref=e260]: "071"
+                - text: • CFE
+              - link [ref=e261] [cursor=pointer]:
+                - /url: tel:071
+          - generic [ref=e264]:
+            - heading "MAPA DE LA CIUDAD" [level=2] [ref=e267]
+            - iframe [ref=e271]:
+              - link "Maps (se abre en una nueva pestaña)" [ref=f1e4] [cursor=pointer]:
+                - /url: about:invalid#zClosurez
+                - text: Maps
+                - img [ref=f1e6]
+        - generic [ref=e278]:
+          - generic [ref=e285]:
+            - heading "• Términos y Condiciones de Uso" [level=3] [ref=e288]
+            - link [ref=e289] [cursor=pointer]:
+              - /url: https://acapulco.gob.mx/terminos-y-condiciones/
+          - generic [ref=e296]:
+            - heading "• Avisos de Privacidad" [level=3] [ref=e299]
+            - link [ref=e300] [cursor=pointer]:
+              - /url: https://acapulco.gob.mx/transparencia/avisos-de-privacidad/
+        - paragraph [ref=e308]: © 2024-2027 H. Ayuntamiento de Acapulco de Juárez.
+  - link "" [ref=e313] [cursor=pointer]:
+    - /url: "#"
+  - generic [ref=e314]: desktop

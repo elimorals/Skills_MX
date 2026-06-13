@@ -1,0 +1,83 @@
+- generic [ref=e2]:
+  - img "Logo del municipio de puebla" [ref=e6]
+  - generic [ref=e7]:
+    - navigation [ref=e9]:
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "Guía para pago con transferencia electrónica desde BBVA (desde la app BBVA)" [ref=e13] [cursor=pointer]:
+            - /url: javascript:void(0)
+        - listitem [ref=e14]:
+          - link "Guía para pago con transferencia electrónica Interbancaria (otros bancos)" [ref=e15] [cursor=pointer]:
+            - /url: javascript:void(0)
+        - listitem [ref=e16]:
+          - link "Guía para pago con transferencia electrónica desde BBVA en línea (BBVA Net Cash)" [ref=e17] [cursor=pointer]:
+            - /url: javascript:void(0)
+    - navigation "breadcrumb" [ref=e18]:
+      - list [ref=e19]:
+        - listitem [ref=e20]:
+          - link "Pagos en línea" [ref=e21] [cursor=pointer]:
+            - /url: /pabel/index
+        - listitem [ref=e22]: Pago de predial
+    - heading "Pago de predial" [level=4] [ref=e33]
+    - alert [ref=e36]:
+      - text: La fecha límite para solicitar su factura es el último día del mes. Podrá hacerlo en el módulo de información de la Tesorería Municipal o generar su factura en línea únicamente dentro del mes de pago
+      - link "HAGA CLIC AQUÍ" [ref=e37] [cursor=pointer]:
+        - /url: https://srvappayt.pueblacapital.gob.mx:7017/cfdi
+      - text: . Si el pago se realiza el último día del mes, cuenta con las siguientes 72 horas para generar su CFDI en línea. Transcurridas las 72 horas después del último día del mes, la información de su referencia NO estará disponible para la generación de facturas.
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - img "Cuenta predial" [ref=e42]
+        - generic [ref=e43]:
+          - heading "Escriba la cuenta predial:" [level=4] [ref=e46]
+          - generic [ref=e47]:
+            - generic [ref=e48]: "Tipo:"
+            - combobox [ref=e50]:
+              - 'option "PU: Predial Urbano" [selected]'
+              - 'option "PR: Predial Rústico"'
+          - generic [ref=e51]:
+            - generic [ref=e52]: "Cuenta predial:"
+            - textbox [ref=e54]
+          - generic [ref=e55]:
+            - generic [ref=e56]: "Delegación:"
+            - textbox [ref=e58]
+          - heading "o la línea de captura:" [level=4] [ref=e61]
+          - generic [ref=e62]:
+            - generic [ref=e63]: "Línea de captura:"
+            - generic [ref=e64]:
+              - textbox [ref=e65]
+              - generic: 
+          - generic [ref=e66]:
+            - generic [ref=e67]:
+              - img [ref=e68]
+              - link "Mostrar otra imagen" [ref=e69] [cursor=pointer]:
+                - /url: javascript:void(0)
+                - img "Mostrar otra imagen" [ref=e70]
+            - generic [ref=e71]: Ingrese el código que aparece en la imagen
+          - textbox [ref=e74]
+      - button "Consultar" [ref=e79] [cursor=pointer]
+    - generic [ref=e81]:
+      - generic [ref=e82]: "El pago lo podrá realizar por los siguientes medios:"
+      - list [ref=e84]:
+        - listitem [ref=e85]: Cheque Electrónico para clientes Bancomer.com
+        - listitem [ref=e86]: Tarjetas de Crédito VISA o MASTERCARD pago único (En una sola exhibición)
+        - listitem [ref=e87]: Tarjeta de Débito VISA o MASTERCARD
+    - generic [ref=e90]:
+      - heading "AVISO IMPORTANTE" [level=4] [ref=e91]
+      - generic [ref=e92]: OBTENGA SU BOLETA ACTUALIZADA DESCARGÁNDOLA EN LA PÁGINA DE INTERNET DEL AYUNTAMIENTO DE PUEBLA O ACUDA A LAS DISTINTAS CAJAS DE LA TESORERÍA MUNICIPAL.
+    - link "Si usted ya ha realizado su pago en línea y desea imprimir su comprobante de pago, haga clic aquí. *NOTA* El pago podrá verse reflejado después de 48 horas." [ref=e97] [cursor=pointer]:
+      - /url: inicioreimp
+      - generic [ref=e98]:
+        - text: Si usted ya ha realizado su pago en línea y desea imprimir su comprobante de pago, haga clic aquí.
+        - strong [ref=e99]: "*NOTA* El pago podrá verse reflejado después de 48 horas."
+    - link "Regresar" [ref=e103] [cursor=pointer]:
+      - /url: /pabel/index
+      - img [ref=e104]
+      - text: Regresar
+  - generic [ref=e105]:
+    - img [ref=e108]
+    - generic [ref=e109]:
+      - heading "Gobierno de la Ciudad de Puebla 2024-2027" [level=6] [ref=e110]:
+        - strong [ref=e111]: Gobierno de la Ciudad de Puebla 2024-2027
+      - text: Tel. +52 (222) 309 44 00
+      - text: Puebla, Puebla. México
+    - heading "Ver. 2026-0607-2200" [level=6] [ref=e113]

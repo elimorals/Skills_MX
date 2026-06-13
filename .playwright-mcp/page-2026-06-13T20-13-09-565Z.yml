@@ -1,0 +1,141 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - list [ref=e4]:
+      - listitem [ref=e5]:
+        - link "Inicio" [ref=e6] [cursor=pointer]:
+          - /url: index.php
+      - listitem [ref=e7]:
+        - link "Formatos ▼" [ref=e8] [cursor=pointer]:
+          - /url: ""
+      - listitem [ref=e9]:
+        - link "Trámites y Servicios" [ref=e10] [cursor=pointer]:
+          - /url: https://tramitesdigitales.guadalajara.gob.mx/tramites;dependencia_id=10;unidad_id=38
+      - listitem [ref=e11]:
+        - link "Servicios en Linea ▼" [ref=e12] [cursor=pointer]:
+          - /url: ""
+      - listitem [ref=e13]:
+        - link "Manuales ▼" [ref=e14] [cursor=pointer]:
+          - /url: ""
+      - listitem [ref=e15]:
+        - link "Leyes ▼" [ref=e16] [cursor=pointer]:
+          - /url: ""
+      - listitem [ref=e17]:
+        - link "Tablas de Valores ▼" [ref=e18] [cursor=pointer]:
+          - /url: ""
+      - listitem [ref=e19]:
+        - link "Transparencia" [ref=e20] [cursor=pointer]:
+          - /url: http://transparencia.guadalajara.gob.mx/
+      - listitem [ref=e21]:
+        - link "Datos Abiertos" [ref=e22] [cursor=pointer]:
+          - /url: datosabiertos.php
+      - listitem [ref=e23]:
+        - link "Directorio" [ref=e24] [cursor=pointer]:
+          - /url: directorio.php
+  - generic [ref=e27]:
+    - iframe [ref=e29]:
+      - generic [ref=f44e2]:
+        - list [ref=f44e3]:
+          - listitem [ref=f44e4]
+          - listitem [ref=f44e5]
+          - listitem [ref=f44e6]:
+            - link [ref=f44e7] [cursor=pointer]:
+              - /url: tabladevalores/tablasdevaloresguadalajara2026.pdf
+          - listitem [ref=f44e8]:
+            - img [ref=f44e9]
+          - listitem [ref=f44e10]:
+            - img [ref=f44e11]
+          - listitem [ref=f44e12]:
+            - link [ref=f44e13] [cursor=pointer]:
+              - /url: https://catastro.guadalajara.gob.mx/apps/avas/login.php
+          - listitem [ref=f44e14]:
+            - img [ref=f44e15]
+        - list [ref=f44e16]:
+          - listitem [ref=f44e17]:
+            - link "1" [ref=f44e18] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f44e19]:
+            - link "2" [ref=f44e20] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f44e21]:
+            - link "3" [ref=f44e22] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f44e23]:
+            - link "4" [ref=f44e24] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f44e25]:
+            - link "5" [ref=f44e26] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f44e27]:
+            - link "6" [ref=f44e28] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f44e29]:
+            - link "7" [ref=f44e30] [cursor=pointer]:
+              - /url: "#"
+        - list:
+          - listitem:
+            - link " Previous" [ref=f44e31] [cursor=pointer]:
+              - /url: "#"
+          - listitem:
+            - link " Next" [ref=f44e32] [cursor=pointer]:
+              - /url: "#"
+    - generic [ref=e33]: Servicios
+    - table [ref=e35]:
+      - rowgroup [ref=e36]:
+        - row "Formato de Transmisión Patrimonial Captura de Avalúos en Línea Formato de pago de Avalúos en Recaudadora" [ref=e37]:
+          - cell "Formato de Transmisión Patrimonial" [ref=e38]:
+            - link [ref=e39] [cursor=pointer]:
+              - /url: formatos/tpguadalajara.doc
+              - img [ref=e40]
+            - generic [ref=e41]: Formato de Transmisión Patrimonial
+          - cell "Captura de Avalúos en Línea" [ref=e42]:
+            - link [ref=e43] [cursor=pointer]:
+              - /url: https://catastro.guadalajara.gob.mx/apps/avas/login.php
+              - img [ref=e44]
+            - generic [ref=e45]:
+              - text: Captura de
+              - paragraph [ref=e46]: Avalúos en Línea
+          - cell "Formato de pago de Avalúos en Recaudadora" [ref=e47]:
+            - link [ref=e48] [cursor=pointer]:
+              - /url: formatos/FORMAPAGOSAVALUOS.xlsx
+              - img [ref=e49]
+            - generic [ref=e50]:
+              - text: Formato de pago de
+              - paragraph [ref=e51]: Avalúos en Recaudadora
+        - row
+  - generic [ref=e52]:
+    - generic [ref=e56]: Sitios de Interés
+    - table [ref=e58]:
+      - rowgroup [ref=e59]:
+        - row "Consulta y pago de Predial en Línea Conoce la Ley de Ingresos 2026" [ref=e60]:
+          - cell "Consulta y pago de Predial en Línea" [ref=e61]:
+            - link [ref=e62] [cursor=pointer]:
+              - /url: https://pagoenlinea.guadalajara.gob.mx/predial/
+              - img [ref=e63]
+            - generic [ref=e64]:
+              - text: Consulta y pago
+              - paragraph [ref=e65]: de Predial en Línea
+          - cell "Conoce la Ley de Ingresos 2026" [ref=e66]:
+            - link [ref=e67] [cursor=pointer]:
+              - /url: leyes/LeyIngresos2026.pdf
+              - img [ref=e68]
+            - generic [ref=e69]:
+              - text: Conoce la Ley
+              - paragraph [ref=e70]: de Ingresos 2026
+  - contentinfo [ref=e74]:
+    - generic [ref=e76]:
+      - img [ref=e78]
+      - generic [ref=e79]:
+        - heading "CONTACTO" [level=4] [ref=e80]
+        - heading "Dirección:" [level=4] [ref=e81]
+        - paragraph [ref=e82]: 5 de Febrero 249, Col Las Conchas, CP:44460
+        - heading "Teléfono:" [level=4] [ref=e83]
+        - paragraph [ref=e84]: 3669-1300 ext. 1362
+      - generic [ref=e85]:
+        - heading "Ubicacion" [level=4] [ref=e86]
+        - paragraph [ref=e87]:
+          - iframe [ref=e88]:
+            - link "Maps (se abre en una nueva pestaña)" [ref=f45e4] [cursor=pointer]:
+              - /url: about:invalid#zClosurez
+              - text: Maps
+              - img [ref=f45e6]
+    - generic [ref=e91]: © 2026, Gobierno de Guadalajara - | Catastro de Guadalajara |.

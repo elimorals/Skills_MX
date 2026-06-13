@@ -1,0 +1,250 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e5]:
+          - link [ref=e6] [cursor=pointer]:
+            - /url: ""
+          - navigation [ref=e7]:
+            - list [ref=e10]:
+              - listitem [ref=e11]:
+                - link "Inicio" [ref=e12] [cursor=pointer]:
+                  - /url: index.html
+              - listitem [ref=e13]:
+                - generic [ref=e14] [cursor=pointer]: Mi Gobierno
+              - listitem [ref=e15]:
+                - link "Trámites" [ref=e16] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e17]:
+                - generic [ref=e18] [cursor=pointer]: Comunicación
+              - listitem [ref=e19]:
+                - generic [ref=e20] [cursor=pointer]: Transparencia
+              - listitem [ref=e21]:
+                - link "Noticias" [ref=e22] [cursor=pointer]:
+                  - /url: noticias.html
+      - generic [ref=e25]:
+        - paragraph [ref=e27]:
+          - link "Ayuntamiento" [ref=e28] [cursor=pointer]:
+            - /url: index.html
+          - text: / Mi Gobierno
+        - generic [ref=e29]:
+          - link [ref=e30] [cursor=pointer]:
+            - /url: tel:+523112652791
+          - link [ref=e31] [cursor=pointer]:
+            - /url: https://wa.me/523112652791
+          - link [ref=e32] [cursor=pointer]:
+            - /url: "mailto: hola@tepic.gob.mx"
+          - link [ref=e33] [cursor=pointer]:
+            - /url: https://www.facebook.com/GobTepic/
+          - link [ref=e34] [cursor=pointer]:
+            - /url: https://radio.tepic.gob.mx/
+          - link [ref=e35] [cursor=pointer]:
+            - /url: http://correo.tepic.gob.mx/src/login.php
+    - generic [ref=e36]:
+      - generic [ref=e42]:
+        - link [ref=e46] [cursor=pointer]:
+          - /url: https://empleos.tepic.gob.mx/
+          - img [ref=e48]
+        - link [ref=e52] [cursor=pointer]:
+          - /url: https://alertavioleta.tepic.gob.mx/
+        - link [ref=e57] [cursor=pointer]:
+          - /url: ""
+        - link [ref=e62] [cursor=pointer]:
+          - /url: https://empleos.tepic.gob.mx/
+          - img [ref=e64]
+        - link [ref=e68] [cursor=pointer]:
+          - /url: https://alertavioleta.tepic.gob.mx/
+        - link [ref=e73] [cursor=pointer]:
+          - /url: ""
+        - link [ref=e78] [cursor=pointer]:
+          - /url: https://empleos.tepic.gob.mx/
+          - img [ref=e80]
+      - generic [ref=e82]:
+        - link "PAGO PREDIAL" [ref=e84] [cursor=pointer]:
+          - /url: https://predial.tepic.gob.mx/
+          - paragraph [ref=e85]: PAGO PREDIAL
+        - link "FACTURACIÓN" [ref=e87] [cursor=pointer]:
+          - /url: http://facturacion.tepic.gob.mx/
+          - paragraph [ref=e88]: FACTURACIÓN
+        - link "EMPLEOS" [ref=e90] [cursor=pointer]:
+          - /url: https://empleos.tepic.gob.mx/
+          - paragraph [ref=e91]: EMPLEOS
+        - link "PRODUCTORES" [ref=e93] [cursor=pointer]:
+          - /url: https://catalogoproductores.tepic.gob.mx/
+          - paragraph [ref=e94]: PRODUCTORES
+      - link "Ver más Tramites y Servicios" [ref=e96] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e97]:
+          - text: Ver más Tramites y Servicios
+          - img [ref=e98]
+      - link "Cintilla" [ref=e101] [cursor=pointer]:
+        - /url: https://www.tepicsonrie.mx
+        - img "Cintilla" [ref=e103]
+      - generic [ref=e104]:
+        - heading "NOTICIAS" [level=2] [ref=e107]
+        - generic [ref=e108]:
+          - generic [ref=e111]:
+            - link "Geraldine Ponce fortalece un gobierno cercano al pueblo con soluciones inmediatas en las colonias" [ref=e113] [cursor=pointer]:
+              - /url: detalle?id=108
+            - generic [ref=e114]:
+              - paragraph
+              - paragraph [ref=e115]: "- Las Asambleas Populares permiten escuchar de primera mano a las familias y dar respuesta inmediata a sus necesidades."
+              - paragraph [ref=e116]
+              - paragraph [ref=e117]: Tepic.– La [...]
+            - link "Leer más" [ref=e119] [cursor=pointer]:
+              - /url: detalle?id=108
+              - generic [ref=e120]:
+                - text: Leer más
+                - img [ref=e121]
+          - generic [ref=e125]:
+            - 'link "Desde el aire y en minutos: Geraldine Ponce fortalece Alerta Violeta con drones de respuesta inmediata" [ref=e127] [cursor=pointer]':
+              - /url: detalle?id=107
+            - generic [ref=e128]:
+              - paragraph
+              - paragraph [ref=e129]
+              - paragraph [ref=e130]: "- Con el uso de drones se brindará apoyo desde el aire mientras las unidades especializadas se trasladan al lugar de la emergencia."
+              - text: < [...]
+              - paragraph
+            - link "Leer más" [ref=e132] [cursor=pointer]:
+              - /url: detalle?id=107
+              - generic [ref=e133]:
+                - text: Leer más
+                - img [ref=e134]
+          - generic [ref=e138]:
+            - link "Geraldine Ponce mejora servicios e infraestructura urbana con nuevas obras para Tepic" [ref=e140] [cursor=pointer]:
+              - /url: detalle?id=106
+            - generic [ref=e141]:
+              - paragraph
+              - paragraph [ref=e142]: "- La alcaldesa mantiene un gobierno cercano que escucha directamente a las familias para atender sus necesidades y transformar las colonias."
+              - paragraph [ref=e143]: "[...]"
+            - link "Leer más" [ref=e145] [cursor=pointer]:
+              - /url: detalle?id=106
+              - generic [ref=e146]:
+                - text: Leer más
+                - img [ref=e147]
+        - generic [ref=e149]:
+          - link "GACETA OFICIAL Compilación Histórica del Órgano oficial del H. XLIII Ayuntamiento de Tepic, Nayarit Más información" [ref=e151] [cursor=pointer]:
+            - /url: gacetas.html
+            - generic [ref=e155]:
+              - paragraph [ref=e156]: GACETA OFICIAL
+              - paragraph [ref=e157]:
+                - text: Compilación Histórica del Órgano oficial del H. XLIII Ayuntamiento de Tepic, Nayarit
+                - button "Más información" [ref=e158]:
+                  - text: Más información
+                  - img [ref=e159]
+          - link "CONVOCATORIAS, AVISOS Y CIRCULARES Infórmate de las nuevas convocatorias, avisos y circulares Más información" [ref=e162] [cursor=pointer]:
+            - /url: convocatorias.html
+            - generic [ref=e166]:
+              - paragraph [ref=e167]: CONVOCATORIAS, AVISOS Y CIRCULARES
+              - paragraph [ref=e168]:
+                - text: Infórmate de las nuevas convocatorias, avisos y circulares
+                - button "Más información" [ref=e169]:
+                  - text: Más información
+                  - img [ref=e170]
+      - link "Más Noticias" [ref=e173] [cursor=pointer]:
+        - /url: noticias.html
+        - generic [ref=e174]:
+          - text: Más Noticias
+          - img [ref=e175]
+      - generic [ref=e180]:
+        - link "CBA REGISTRA A TU MASCOTA Registra a tu peludito en centro de bienestar animal. Más información" [ref=e182] [cursor=pointer]:
+          - /url: https://cba.tepic.gob.mx
+          - generic [ref=e184]:
+            - img "CBA" [ref=e186]
+            - generic [ref=e187]:
+              - heading "REGISTRA A TU MASCOTA" [level=3] [ref=e188]
+              - paragraph [ref=e189]: Registra a tu peludito en centro de bienestar animal.
+              - button "Más información" [ref=e190]:
+                - text: Más información
+                - img [ref=e191]
+        - link "CBA SMN Consulta los requisitos en línea y has una cita. Más información" [ref=e194] [cursor=pointer]:
+          - /url: https://smn.tepic.gob.mx/
+          - generic [ref=e196]:
+            - img "CBA" [ref=e198]
+            - generic [ref=e199]:
+              - heading "SMN" [level=3] [ref=e200]
+              - paragraph [ref=e201]: Consulta los requisitos en línea y has una cita.
+              - button "Más información" [ref=e202]:
+                - text: Más información
+                - img [ref=e203]
+      - contentinfo [ref=e206]:
+        - generic [ref=e208]:
+          - img "logo" [ref=e212]
+          - generic [ref=e214]:
+            - text: Ayuntamiento de Tepic
+            - paragraph
+            - list [ref=e215]:
+              - listitem [ref=e216]: Puebla No. 218 Norte
+              - listitem [ref=e217]: Colonia Centro, C.P. 63000
+              - listitem [ref=e218]: Tepic, Nayarit, México
+          - generic [ref=e220]:
+            - text: Denuncias
+            - list [ref=e221]:
+              - listitem [ref=e222]: 311-265-27-91
+            - paragraph
+            - text: Emergencias
+            - list [ref=e223]:
+              - listitem [ref=e224]: "911"
+          - list [ref=e227]:
+            - listitem [ref=e228]:
+              - link "ico-facebook" [ref=e229] [cursor=pointer]:
+                - /url: https://www.facebook.com/GobTepic/
+                - img "ico-facebook" [ref=e230]
+        - button
+        - img "ico-accesibilidad" [ref=e233] [cursor=pointer]
+        - link "ico-app" [ref=e234] [cursor=pointer]:
+          - /url: atencionCiudadana.html
+          - img "ico-app" [ref=e235]
+        - link "ico-app" [ref=e236] [cursor=pointer]:
+          - /url: https://wa.me/523112652791
+          - img "ico-app" [ref=e237]
+      - generic [ref=e241]:
+        - paragraph [ref=e243]:
+          - link "AVISO DE PRIVACIDAD INTEGRAL" [ref=e244] [cursor=pointer]:
+            - /url: https://www.tepic.gob.mx/wp-content/uploads/2024/10/Aviso_Integral.pdf
+            - generic [ref=e245]:
+              - text: AVISO DE PRIVACIDAD INTEGRAL
+              - img [ref=e246]
+        - paragraph [ref=e249]:
+          - link "AVISO DE PRIVACIDAD SIMPLIFICADO" [ref=e250] [cursor=pointer]:
+            - /url: https://www.tepic.gob.mx/wp-content/uploads/2024/10/Aviso_Simplificado.pdf
+            - generic [ref=e251]:
+              - text: AVISO DE PRIVACIDAD SIMPLIFICADO
+              - img [ref=e252]
+        - paragraph [ref=e255]:
+          - link "FORMATO DERECHOS ARCO" [ref=e256] [cursor=pointer]:
+            - /url: https://www.tepic.gob.mx/wp-content/uploads/2024/10/Documento_ARCOP.pdf
+            - generic [ref=e257]:
+              - text: FORMATO DERECHOS ARCO
+              - img [ref=e258]
+  - list [ref=e261]:
+    - listitem [ref=e262]:
+      - strong [ref=e263]: HERRAMIENTAS DE ACCESIBILIDAD
+      - button [ref=e264] [cursor=pointer]:
+        - img [ref=e265]
+    - listitem [ref=e267]
+    - listitem [ref=e268]:
+      - generic [ref=e269] [cursor=pointer]:
+        - button [ref=e270]:
+          - img [ref=e271]
+        - text: Contraste
+    - listitem [ref=e273]:
+      - generic [ref=e274] [cursor=pointer]:
+        - button [ref=e275]:
+          - img [ref=e276]
+        - text: Escala de grises
+    - listitem [ref=e278]:
+      - generic [ref=e279]:
+        - button "A" [ref=e280] [cursor=pointer]:
+          - generic [ref=e281]: A
+          - img [ref=e282]
+        - button "A" [ref=e284] [cursor=pointer]:
+          - generic [ref=e285]: A
+          - img [ref=e286]
+      - text: Fuente
+    - listitem [ref=e288]
+    - listitem [ref=e289]:
+      - generic:
+        - button:
+          - img
+        - text: Restaurar

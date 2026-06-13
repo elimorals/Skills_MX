@@ -1,0 +1,43 @@
+{
+  "name": "documento-pruebas-sat - generación expediente cripto 2026",
+  "pattern_template": "expediente_anual",
+  "input": {
+    "rfc": "XAXX010101000",
+    "ejercicio": 2026,
+    "fuentes": {
+      "exchanges": ["bitso", "binance"],
+      "wallets_self_custody": [{"cadena": "ethereum", "address": "0xABC..."}],
+      "operaciones_count": 487,
+      "tipos_operaciones": ["compra", "venta", "permuta", "stake_recompensa", "airdrop"]
+    }
+  },
+  "expected_output": {
+    "expediente_generado": true,
+    "estructura_carpetas": [
+      "00-resumen-ejecutivo.pdf",
+      "01-csvs-originales/",
+      "02-self-custody/",
+      "03-tc-dof/",
+      "04-precios-mercado/",
+      "05-calculos-fifo/",
+      "06-permutas/",
+      "07-rendimientos/",
+      "08-nfts/",
+      "09-cfdis-recibidos/",
+      "10-justificacion-criterios.md",
+      "11-conciliacion-final.xlsx",
+      "12-declaracion-anual-borrador.pdf"
+    ],
+    "checklist_pre_envio_no_vacio": true,
+    "hash_sha256_generado": true,
+    "vigencia_5_anos_documentada": true
+  },
+  "validations": [
+    "Estructura completa de carpetas (00-12)",
+    "Hash SHA256 del ZIP final",
+    "Justificación de criterios escrita",
+    "Conservación 5 años (Art. 30 CFF) mencionada",
+    "Disclaimer de validación contador certificado"
+  ],
+  "notes": "Caso básico: expediente con muestreo amplio de tipos de operación. Validar que el skill no omita ninguna carpeta."
+}

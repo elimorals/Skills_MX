@@ -1,0 +1,213 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - navigation [ref=e3]:
+    - button "Open toolbar Herramientas de Accesibilidad" [ref=e5] [cursor=pointer]:
+      - generic [ref=e6]: Open toolbar
+      - img "Herramientas de Accesibilidad" [ref=e7]
+    - generic [ref=e12]:
+      - paragraph [ref=e13]: Herramientas de Accesibilidad
+      - list [ref=e14]:
+        - listitem [ref=e15]:
+          - button "Aumentar Tamaño de Texto Aumentar Tamaño de Texto" [ref=e16] [cursor=pointer]:
+            - img "Aumentar Tamaño de Texto" [ref=e18]
+            - text: Aumentar Tamaño de Texto
+        - listitem [ref=e20]:
+          - button "Disminuir Tamaño de Texto Disminuir Tamaño de Texto" [ref=e21] [cursor=pointer]:
+            - img "Disminuir Tamaño de Texto" [ref=e23]
+            - text: Disminuir Tamaño de Texto
+        - listitem [ref=e25]:
+          - button "Escala de Grises Escala de Grises" [ref=e26] [cursor=pointer]:
+            - img "Escala de Grises" [ref=e28]
+            - text: Escala de Grises
+        - listitem [ref=e30]:
+          - button "Alto Contraste Alto Contraste" [ref=e31] [cursor=pointer]:
+            - img "Alto Contraste" [ref=e33]
+            - text: Alto Contraste
+        - listitem [ref=e35]:
+          - button "Contraste Negativo Contraste Negativo" [ref=e36] [cursor=pointer]:
+            - img "Contraste Negativo" [ref=e38]
+            - text: Contraste Negativo
+        - listitem [ref=e40]:
+          - button "Fondo Claro Fondo Claro" [ref=e41] [cursor=pointer]:
+            - img "Fondo Claro" [ref=e43]
+            - text: Fondo Claro
+        - listitem [ref=e45]:
+          - button "Enlaces subrayados Enlaces subrayados" [ref=e46] [cursor=pointer]:
+            - img "Enlaces subrayados" [ref=e48]
+            - text: Enlaces subrayados
+        - listitem [ref=e50]:
+          - button "Fuente Legible Fuente Legible" [ref=e51] [cursor=pointer]:
+            - img "Fuente Legible" [ref=e53]
+            - text: Fuente Legible
+        - listitem [ref=e55]:
+          - button "Reset Reset" [ref=e56] [cursor=pointer]:
+            - img "Reset" [ref=e58]
+            - text: Reset
+  - button "Menu Trigger" [ref=e60]
+  - generic [ref=e61]:
+    - link "Atención Ciudadana" [ref=e63] [cursor=pointer]:
+      - /url: tel:4924915000
+    - generic [ref=e64]: Extensión 10250
+    - menubar "Atención Ciudadana" [ref=e66]:
+      - menuitem "Mejora Continua" [ref=e67] [cursor=pointer]: Mejora Continua
+      - menu "Mejora Continua" [ref=e69]:
+        - menuitem "Sugerencias" [ref=e70] [cursor=pointer]
+      - menuitem "Cruz Roja Mexicana" [ref=e71] [cursor=pointer]: Cruz Roja Mexicana
+      - menu "Cruz Roja Mexicana" [ref=e73]:
+        - menuitem "492 922 30 05" [ref=e74] [cursor=pointer]
+      - menuitem "Bomberos" [ref=e75] [cursor=pointer]: Bomberos
+      - menu "Bomberos" [ref=e77]:
+        - menuitem "492 922 53 50" [ref=e78] [cursor=pointer]
+      - menuitem "Policía Estatal Preventiva" [ref=e79] [cursor=pointer]: Policía Estatal Preventiva
+      - menu "Policía Estatal Preventiva" [ref=e81]:
+        - menuitem "492 491 4070" [ref=e82] [cursor=pointer]
+      - menuitem "Policía de Seguridad Vial" [ref=e83] [cursor=pointer]: Policía de Seguridad Vial
+      - menu "Policía de Seguridad Vial" [ref=e85]:
+        - menuitem "492 924 53 20" [ref=e86] [cursor=pointer]
+      - menuitem "Ciudad Administrativa" [ref=e87]: Ciudad Administrativa
+      - menu "Ciudad Administrativa" [ref=e89]:
+        - menuitem "492 491 50 00" [ref=e90] [cursor=pointer]
+      - menuitem "Emergencias" [ref=e91] [cursor=pointer]: Emergencias
+      - menu "Emergencias" [ref=e93]:
+        - menuitem "911" [ref=e94] [cursor=pointer]
+      - menuitem "Denuncia Anónima" [ref=e95] [cursor=pointer]: Denuncia Anónima
+      - menu "Denuncia Anónima" [ref=e97]:
+        - menuitem "089" [ref=e98] [cursor=pointer]
+  - link "Skip to content" [ref=e99] [cursor=pointer]:
+    - /url: "#content"
+  - generic [ref=e101]:
+    - generic [ref=e102]:
+      - generic [ref=e106]:
+        - navigation "bar up" [ref=e107]:
+          - list [ref=e108]:
+            - listitem [ref=e109]:
+              - link "Mapa del Sitio" [ref=e112] [cursor=pointer]:
+                - /url: https://www.zacatecas.gob.mx/mapadelsitio/
+                - generic [ref=e113]: Mapa del Sitio
+            - listitem [ref=e114]:
+              - link "Sala de Prensa" [ref=e117] [cursor=pointer]:
+                - /url: https://www.zacatecas.gob.mx/saladeprensa/
+                - generic [ref=e118]: Sala de Prensa
+        - generic [ref=e121]:
+          - link "facebook" [ref=e122] [cursor=pointer]:
+            - /url: https://www.facebook.com/gobiernozac/
+            - text: 
+          - link "twitter" [ref=e123] [cursor=pointer]:
+            - /url: https://twitter.com/gobiernozac
+            - text: 
+          - link "youtube" [ref=e124] [cursor=pointer]:
+            - /url: https://www.youtube.com/user/gobiernozac
+            - text: 
+          - link "instagram" [ref=e125] [cursor=pointer]:
+            - /url: https://www.instagram.com/gobiernozac/
+            - text: 
+          - link "Contacto" [ref=e126] [cursor=pointer]:
+            - /url: https://www.zacatecas.gob.mx/demo2021/?page_id=4843
+            - text: 
+      - generic [ref=e130]:
+        - link "zacgobmx2-400×50" [ref=e133] [cursor=pointer]:
+          - /url: https://www.zacatecas.gob.mx/
+        - navigation "Menú Header" [ref=e134]:
+          - list [ref=e135]:
+            - listitem [ref=e136]:
+              - link "Gobierno" [ref=e138] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e139]: Gobierno
+                - text: 
+              - text: 
+            - listitem [ref=e140]:
+              - link "Trámites y Servicios" [ref=e142] [cursor=pointer]:
+                - /url: https://www.zacatecas.gob.mx/tramitesyservicios/
+                - generic [ref=e143]: Trámites y Servicios
+            - listitem [ref=e144]:
+              - generic [ref=e146]:
+                - generic [ref=e147]: Transparencia
+                - text: 
+              - text: 
+            - listitem [ref=e148]:
+              - link "MOBI" [ref=e150] [cursor=pointer]:
+                - /url: https://www.zacatecas.gob.mx/mobi/
+                - generic [ref=e151]: MOBI
+            - listitem [ref=e152]:
+              - link "Conoce Zacatecas" [ref=e154] [cursor=pointer]:
+                - /url: https://www.zacatecastravel.com/
+                - generic [ref=e155]: Conoce Zacatecas
+            - listitem [ref=e156]:
+              - link "Proceso Electoral Poder Judicial" [ref=e158] [cursor=pointer]:
+                - /url: https://www.zacatecas.gob.mx/proceso-electoral-extraordinario-del-poder-judicial-de-la-federacion-2024-2025/
+                - generic [ref=e159]: Proceso Electoral Poder Judicial
+      - text:    
+    - main [ref=e161]:
+      - generic [ref=e169]:
+        - generic [ref=e175]:
+          - generic [ref=e177] [cursor=pointer]: 
+          - generic [ref=e178] [cursor=pointer]: 
+        - text:  
+    - generic [ref=e180]:
+      - generic [ref=e182]:
+        - generic [ref=e184]:
+          - img "vertical-white-200×190" [ref=e187]
+          - generic [ref=e188]:
+            - paragraph: "|"
+            - paragraph: "|"
+            - paragraph: "|"
+            - paragraph: "|"
+            - paragraph: "|"
+            - paragraph: "|"
+            - paragraph: "|"
+            - paragraph: "|"
+            - paragraph: "|"
+            - paragraph: "|"
+          - generic [ref=e189]:
+            - paragraph [ref=e190]:
+              - generic [ref=e193]: Circuito Cerro del Gato s/n
+            - paragraph [ref=e194]:
+              - generic [ref=e197]: Ciudad Administrativa
+            - paragraph [ref=e198]:
+              - generic [ref=e201]: CP 98160
+            - paragraph [ref=e202]:
+              - generic [ref=e205]: Zacatecas, Zac.
+            - paragraph [ref=e206]
+            - paragraph [ref=e207]:
+              - generic [ref=e210]: Av. Hidalgo 604,
+            - paragraph [ref=e211]: Centro Histórico
+            - paragraph [ref=e212]:
+              - generic [ref=e215]: CP 98000
+            - paragraph [ref=e216]:
+              - generic [ref=e219]: Zacatecas, Zac.
+        - generic [ref=e221]:
+          - heading "CONTACTO" [level=2] [ref=e224]:
+            - strong [ref=e226]: CONTACTO
+          - generic [ref=e229]:
+            - link "facebook" [ref=e230] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobiernozac/
+              - text: 
+            - link "twitter" [ref=e231] [cursor=pointer]:
+              - /url: https://twitter.com/gobiernozac
+              - text: 
+            - link "youtube" [ref=e232] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/gobiernozac
+              - text: 
+            - link "instagram" [ref=e233] [cursor=pointer]:
+              - /url: https://www.instagram.com/gobiernozac/
+              - text: 
+            - link "mail" [ref=e234] [cursor=pointer]:
+              - /url: mailto:contacto@zacatecas.gob.mx
+              - text: 
+            - link "phone" [ref=e235] [cursor=pointer]:
+              - /url: tel:492 491 5000
+              - text: 
+      - text:      
+  - region "Go to Top":
+    - link " Go to Top":
+      - /url: "#"
+      - text: 
+      - generic: Go to Top
+  - generic:
+    - text: ‹ ›
+    - generic:
+      - text: ✖
+      - img
+    - generic: ×
+    - text: ‖

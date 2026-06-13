@@ -1,0 +1,601 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - navigation "Primary Navigation" [ref=e7]:
+        - generic [ref=e9]:
+          - link "H. Ayuntamiento de Colima | 2021-2024 H. Ayuntamiento de Colima | 2021-2024" [ref=e12] [cursor=pointer]:
+            - /url: https://www.colima.gob.mx/portal/
+            - img "H. Ayuntamiento de Colima | 2021-2024" [ref=e14]
+            - heading "H. Ayuntamiento de Colima | 2021-2024" [level=1] [ref=e15]
+          - generic [ref=e16]:
+            - generic [ref=e19]:
+              - menubar:
+                - listitem [ref=e20]:
+                  - link "Inicio" [ref=e21] [cursor=pointer]:
+                    - /url: https://www.colima.gob.mx/portal/
+                - listitem [ref=e22]:
+                  - link "Gobierno" [ref=e23] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e24]:
+                  - link "Ciudad" [ref=e25] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e26]:
+                  - link "Trámites y Servicios" [ref=e27] [cursor=pointer]:
+                    - /url: https://www.colima.gob.mx/portal/cat/tramites
+                - listitem [ref=e28]:
+                  - link "Transparencia" [ref=e29] [cursor=pointer]:
+                    - /url: https://www.colima.gob.mx/portal/transparencia/
+            - list [ref=e30]:
+              - listitem [ref=e31]:
+                - link "Buscar por" [ref=e32] [cursor=pointer]:
+                  - /url: "#"
+                  - generic [ref=e33]: 
+                  - generic [ref=e34]: Buscar por
+              - listitem [ref=e35]:
+                - link " Instagram" [ref=e36] [cursor=pointer]:
+                  - /url: https://www.instagram.com/h.ayuntamientodecolima/
+                  - generic [ref=e37]: 
+                  - generic [ref=e38]: Instagram
+              - listitem [ref=e39]:
+                - link " Twitter" [ref=e40] [cursor=pointer]:
+                  - /url: https://twitter.com/ColimaMunicipio/
+                  - generic [ref=e41]: 
+                  - generic [ref=e42]: Twitter
+              - listitem [ref=e43]:
+                - link " Facebook" [ref=e44] [cursor=pointer]:
+                  - /url: https://www.facebook.com/ColimaMunicipio/
+                  - generic [ref=e45]: 
+                  - generic [ref=e46]: Facebook
+              - listitem [ref=e47]:
+                - generic "Rain" [ref=e48]:
+                  - generic:
+                    - generic [ref=e50]:
+                      - generic: 
+                      - generic: 
+                      - generic [ref=e51]:
+                        - generic [ref=e52]:  
+                        - generic [ref=e53]:  
+                        - generic [ref=e54]:  
+                        - text:  
+                      - generic: 
+                    - generic [ref=e55]:
+                      - text: Colima
+                      - generic [ref=e56]:
+                        - text: "26"
+                        - superscript [ref=e57]: ℃
+    - generic [ref=e62]:
+      - heading "Destacados" [level=3] [ref=e66]
+      - generic [ref=e72]:
+        - list:
+          - listitem:
+            - generic [ref=e73] [cursor=pointer]: 
+          - listitem:
+            - generic [ref=e74] [cursor=pointer]: 
+        - listbox [ref=e76]:
+          - generic [ref=e77]:
+            - generic [ref=e78]:
+              - link [ref=e79] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/policia-municipal-de-colima-atiende-arbol-caido-en-genoveva-sanchez-y-avenida-tecnologico/
+              - generic [ref=e80]:
+                - generic:
+                  - generic: hace 4 días
+                  - heading [level=2]:
+                    - link [ref=e81] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/policia-municipal-de-colima-atiende-arbol-caido-en-genoveva-sanchez-y-avenida-tecnologico/
+                      - text: Policia Municipal de Colima atiende árbol caído en Genoveva Sánchez...
+            - generic [ref=e82]:
+              - link [ref=e83] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/edicto-01/
+              - generic [ref=e84]:
+                - generic:
+                  - generic: hace 4 días
+                  - heading [level=2]:
+                    - link [ref=e85] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/edicto-01/
+                      - text: Edicto 01
+            - generic [ref=e86]:
+              - link [ref=e87] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/atiende-ayuntamiento-de-colima-labores-de-limpieza-y-desazolve-en-el-arroyo-el-manrique-tras-intensas-lluvias/
+              - generic [ref=e88]:
+                - generic:
+                  - generic: hace 4 días
+                  - heading [level=2]:
+                    - link [ref=e89] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/atiende-ayuntamiento-de-colima-labores-de-limpieza-y-desazolve-en-el-arroyo-el-manrique-tras-intensas-lluvias/
+                      - text: Atiende Ayuntamiento de Colima labores de limpieza y desazolve en el a...
+            - generic [ref=e90]:
+              - link [ref=e91] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/municipio-de-colima-impulsa-el-turismo-con-su-primer-foro-de-innovacion-y-calidad-turistica/
+              - generic [ref=e92]:
+                - generic:
+                  - generic: hace 5 días
+                  - heading [level=2]:
+                    - link [ref=e93] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/municipio-de-colima-impulsa-el-turismo-con-su-primer-foro-de-innovacion-y-calidad-turistica/
+                      - text: Municipio de Colima impulsa el turismo con su “Primer Foro de Innova...
+          - 'option "Cuadrillas de bacheo del Ayuntamiento de Colima siempre activas hace 1 día Cuadrillas de bacheo del Ayuntamiento de Colima siempre activas Un Verano Diferente 2.0: DIF Municipal Colima ofrecerá cursos para n... hace 1 día Un Verano Diferente 2.0: DIF Municipal Colima ofrecerá cursos para n... Gobierno de Riult Rivera, realiza poda de arboles y recolección de ra... hace 2 días Gobierno de Riult Rivera, realiza poda de arboles y recolección de ra... Gobierno de Riult Rivera impulsa la competitividad turística con exit... hace 3 días Gobierno de Riult Rivera impulsa la competitividad turística con exit..." [ref=e94]':
+            - generic [ref=e95]:
+              - link "Cuadrillas de bacheo del Ayuntamiento de Colima siempre activas" [ref=e96] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/cuadrillas-de-bacheo-del-ayuntamiento-de-colima-siempre-activas/
+              - generic [ref=e97]:
+                - generic:
+                  - generic: hace 1 día
+                  - heading "Cuadrillas de bacheo del Ayuntamiento de Colima siempre activas" [level=2]:
+                    - link "Cuadrillas de bacheo del Ayuntamiento de Colima siempre activas" [ref=e98] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/cuadrillas-de-bacheo-del-ayuntamiento-de-colima-siempre-activas/
+            - generic [ref=e99]:
+              - 'link "Un Verano Diferente 2.0: DIF Municipal Colima ofrecerá cursos para n..." [ref=e100] [cursor=pointer]':
+                - /url: https://www.colima.gob.mx/portal/un-verano-diferente-2-0-dif-municipal-colima-ofrecera-cursos-para-ninas-y-ninos-de-6-a-10-anos/
+              - generic [ref=e101]:
+                - generic:
+                  - generic: hace 1 día
+                  - 'heading "Un Verano Diferente 2.0: DIF Municipal Colima ofrecerá cursos para n..." [level=2]':
+                    - 'link "Un Verano Diferente 2.0: DIF Municipal Colima ofrecerá cursos para n..." [ref=e102] [cursor=pointer]':
+                      - /url: https://www.colima.gob.mx/portal/un-verano-diferente-2-0-dif-municipal-colima-ofrecera-cursos-para-ninas-y-ninos-de-6-a-10-anos/
+            - generic [ref=e103]:
+              - link "Gobierno de Riult Rivera, realiza poda de arboles y recolección de ra..." [ref=e104] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/gobierno-de-riult-rivera-realiza-poda-de-arboles-y-recoleccion-de-ramas-en-jardines-de-la-estancia/
+              - generic [ref=e105]:
+                - generic:
+                  - generic: hace 2 días
+                  - heading "Gobierno de Riult Rivera, realiza poda de arboles y recolección de ra..." [level=2]:
+                    - link "Gobierno de Riult Rivera, realiza poda de arboles y recolección de ra..." [ref=e106] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/gobierno-de-riult-rivera-realiza-poda-de-arboles-y-recoleccion-de-ramas-en-jardines-de-la-estancia/
+            - generic [ref=e107]:
+              - link "Gobierno de Riult Rivera impulsa la competitividad turística con exit..." [ref=e108] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/gobierno-de-riult-rivera-impulsa-la-competitividad-turistica-con-exitoso-foro-de-innovacion-y-calidad/
+              - generic [ref=e109]:
+                - generic:
+                  - generic: hace 3 días
+                  - heading "Gobierno de Riult Rivera impulsa la competitividad turística con exit..." [level=2]:
+                    - link "Gobierno de Riult Rivera impulsa la competitividad turística con exit..." [ref=e110] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/gobierno-de-riult-rivera-impulsa-la-competitividad-turistica-con-exitoso-foro-de-innovacion-y-calidad/
+          - option [ref=e111]:
+            - generic [ref=e112]:
+              - link [ref=e113] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/policia-municipal-de-colima-atiende-arbol-caido-en-genoveva-sanchez-y-avenida-tecnologico/
+              - generic [ref=e114]:
+                - generic:
+                  - generic: hace 4 días
+                  - heading [level=2]:
+                    - link [ref=e115] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/policia-municipal-de-colima-atiende-arbol-caido-en-genoveva-sanchez-y-avenida-tecnologico/
+                      - text: Policia Municipal de Colima atiende árbol caído en Genoveva Sánchez...
+            - generic [ref=e116]:
+              - link [ref=e117] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/edicto-01/
+              - generic [ref=e118]:
+                - generic:
+                  - generic: hace 4 días
+                  - heading [level=2]:
+                    - link [ref=e119] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/edicto-01/
+                      - text: Edicto 01
+            - generic [ref=e120]:
+              - link [ref=e121] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/atiende-ayuntamiento-de-colima-labores-de-limpieza-y-desazolve-en-el-arroyo-el-manrique-tras-intensas-lluvias/
+              - generic [ref=e122]:
+                - generic:
+                  - generic: hace 4 días
+                  - heading [level=2]:
+                    - link [ref=e123] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/atiende-ayuntamiento-de-colima-labores-de-limpieza-y-desazolve-en-el-arroyo-el-manrique-tras-intensas-lluvias/
+                      - text: Atiende Ayuntamiento de Colima labores de limpieza y desazolve en el a...
+            - generic [ref=e124]:
+              - link [ref=e125] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/municipio-de-colima-impulsa-el-turismo-con-su-primer-foro-de-innovacion-y-calidad-turistica/
+              - generic [ref=e126]:
+                - generic:
+                  - generic: hace 5 días
+                  - heading [level=2]:
+                    - link [ref=e127] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/municipio-de-colima-impulsa-el-turismo-con-su-primer-foro-de-innovacion-y-calidad-turistica/
+                      - text: Municipio de Colima impulsa el turismo con su “Primer Foro de Innova...
+          - generic [ref=e128]:
+            - generic [ref=e129]:
+              - link [ref=e130] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/cuadrillas-de-bacheo-del-ayuntamiento-de-colima-siempre-activas/
+              - generic [ref=e131]:
+                - generic:
+                  - generic: hace 1 día
+                  - heading [level=2]:
+                    - link [ref=e132] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/cuadrillas-de-bacheo-del-ayuntamiento-de-colima-siempre-activas/
+                      - text: Cuadrillas de bacheo del Ayuntamiento de Colima siempre activas
+            - generic [ref=e133]:
+              - link [ref=e134] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/un-verano-diferente-2-0-dif-municipal-colima-ofrecera-cursos-para-ninas-y-ninos-de-6-a-10-anos/
+              - generic [ref=e135]:
+                - generic:
+                  - generic: hace 1 día
+                  - heading [level=2]:
+                    - link [ref=e136] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/un-verano-diferente-2-0-dif-municipal-colima-ofrecera-cursos-para-ninas-y-ninos-de-6-a-10-anos/
+                      - text: "Un Verano Diferente 2.0: DIF Municipal Colima ofrecerá cursos para n..."
+            - generic [ref=e137]:
+              - link [ref=e138] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/gobierno-de-riult-rivera-realiza-poda-de-arboles-y-recoleccion-de-ramas-en-jardines-de-la-estancia/
+              - generic [ref=e139]:
+                - generic:
+                  - generic: hace 2 días
+                  - heading [level=2]:
+                    - link [ref=e140] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/gobierno-de-riult-rivera-realiza-poda-de-arboles-y-recoleccion-de-ramas-en-jardines-de-la-estancia/
+                      - text: Gobierno de Riult Rivera, realiza poda de arboles y recolección de ra...
+            - generic [ref=e141]:
+              - link [ref=e142] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/gobierno-de-riult-rivera-impulsa-la-competitividad-turistica-con-exitoso-foro-de-innovacion-y-calidad/
+              - generic [ref=e143]:
+                - generic:
+                  - generic: hace 3 días
+                  - heading [level=2]:
+                    - link [ref=e144] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/gobierno-de-riult-rivera-impulsa-la-competitividad-turistica-con-exitoso-foro-de-innovacion-y-calidad/
+                      - text: Gobierno de Riult Rivera impulsa la competitividad turística con exit...
+    - generic [ref=e149]:
+      - generic [ref=e151]:
+        - heading "Hazlo en línea" [level=3] [ref=e153]
+        - generic [ref=e155]:
+          - paragraph [ref=e156]: Realiza tus pagos de servicios municipales de una manera fácil y rápida. Da click en el trámite que deseas realizar.
+          - generic [ref=e157]:
+            - paragraph
+            - generic [ref=e158]:
+              - paragraph [ref=e159]:
+                - link "Multas viales" [ref=e160] [cursor=pointer]:
+                  - /url: https://www.gob-digital.mx/ruc?u=AHt2D
+                  - img "Multas viales" [ref=e161]
+              - generic [ref=e162]: Pago de multas viales
+            - generic [ref=e163]:
+              - paragraph [ref=e164]:
+                - link "Pago de predial" [ref=e165] [cursor=pointer]:
+                  - /url: https://www.gob-digital.mx/ruc?u=GPzM1
+                  - img "Pago de predial" [ref=e166]
+              - generic [ref=e167]: Pago de predial
+            - generic [ref=e168]:
+              - paragraph [ref=e169]:
+                - link:
+                  - /url: https://www.gob-digital.mx/ruc?u=cfdicolima
+                - link "Facturación" [ref=e170] [cursor=pointer]:
+                  - /url: https://www.gob-digital.mx/ruc?u=cfdicolima
+                  - img "Facturación" [ref=e171]
+              - generic [ref=e172]: Facturación
+          - paragraph
+          - generic [ref=e173]:
+            - generic [ref=e174]:
+              - paragraph [ref=e175]:
+                - link "Refrendo de licencias" [ref=e176] [cursor=pointer]:
+                  - /url: https://www.gob-digital.mx/ruc?u=Aq34s
+                  - img "Refrendo de licencias" [ref=e177]
+              - generic [ref=e178]: Refrendo de licencias
+            - generic [ref=e179]:
+              - paragraph [ref=e180]:
+                - link:
+                  - /url: https://www.gob-digital.mx/redirect?pSDL_Click=020200&pPS_Click=06002001&pSDLe_Click=020203&Remote=true&ColorSlogan=f08019
+                - link "Servicio de limpieza de panteón" [ref=e181] [cursor=pointer]:
+                  - /url: https://www.gob-digital.mx/ruc?u=FjRnP
+                  - img "Servicio de limpieza de panteón" [ref=e182]
+              - generic [ref=e183]: Servicio de limpieza de panteón
+            - generic [ref=e184]:
+              - paragraph [ref=e185]:
+                - link "Servicio de e-compras" [ref=e186] [cursor=pointer]:
+                  - /url: https://tesoreria.colima.gob.mx
+                  - img "Servicio de e-compras" [ref=e187]
+              - generic [ref=e188]: Servicio de e-compras
+          - generic [ref=e189]:
+            - generic [ref=e190]:
+              - paragraph [ref=e191]:
+                - link "Giros diversos" [ref=e192] [cursor=pointer]:
+                  - /url: https://www.gob-digital.mx/ruc?u=XIPe4
+                  - img "Giros diversos" [ref=e193]
+              - generic [ref=e194]: Giros Diversos
+            - generic [ref=e195]:
+              - paragraph [ref=e196]:
+                - link:
+                  - /url: https://www.gob-digital.mx/redirect?pSDL_Click=020100&pPS_Click=06002001&Remote=true&ColorSlogan=f08019
+                - link "Acceso a notarias" [ref=e197] [cursor=pointer]:
+                  - /url: https://www.gob-digital.mx/redirect/Login
+                  - img "Acceso a notarias" [ref=e198]
+              - link "Acceso Notarías" [ref=e200] [cursor=pointer]:
+                - /url: https://www.gob-digital.mx/redirect/Login
+            - generic [ref=e201]:
+              - link:
+                - /url: https://www.gob-digital.mx/ruc?u=II5oW
+              - link "Acceso a notarias" [ref=e202] [cursor=pointer]:
+                - /url: https://nomina.colima.gob.mx/
+                - img "Acceso a notarias" [ref=e203]
+            - generic [ref=e205]: Nómina
+            - generic [ref=e206]:
+              - paragraph [ref=e207]
+              - paragraph [ref=e208]:
+                - link "Licencias de construcción" [ref=e209] [cursor=pointer]:
+                  - /url: https://www.gob-digital.mx/ruc?u=kWIyw
+                  - img "Licencias de construcción" [ref=e210]
+              - generic [ref=e211]: Licencias de construcción
+          - paragraph
+      - generic [ref=e213]:
+        - heading "Trámites y servicios" [level=3] [ref=e215]
+        - generic [ref=e217]:
+          - paragraph [ref=e218]: Consulta toda el catálogo de trámites que puedes realizar en las diferentes oficinas del Ayuntamiento de Colima.
+          - generic [ref=e219]:
+            - generic [ref=e220]:
+              - link [ref=e222] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/cat/tramites/consulta/categoria/1
+                - img [ref=e223]
+              - generic [ref=e224]: Ciudadanos
+            - generic [ref=e225]:
+              - link [ref=e227] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/cat/tramites/consulta/categoria/2
+                - img [ref=e228]
+              - generic [ref=e229]: Cuidado, mantenimiento…
+            - generic [ref=e230]:
+              - link [ref=e232] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/cat/tramites/consulta/categoria/3
+                - img [ref=e233]
+              - generic [ref=e234]: Terreno y construcción
+          - generic [ref=e235]:
+            - generic [ref=e236]:
+              - link [ref=e238] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/cat/tramites/consulta/categoria/4
+                - img [ref=e239]
+              - generic [ref=e240]: Impuestos, multas y pagos
+            - generic [ref=e241]:
+              - link [ref=e243] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/cat/tramites/consulta/categoria/5
+                - img [ref=e244]
+              - generic [ref=e245]: Cultura y entretenimiento
+            - generic [ref=e246]:
+              - link [ref=e248] [cursor=pointer]:
+                - /url: https://www.colima.gob.mx/portal/cat/tramites/consulta/categoria/6
+                - img [ref=e249]
+              - generic [ref=e250]: Empresas, instituciones…
+          - generic [ref=e252]:
+            - link [ref=e254] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/wp-content/uploads/2021/05/CONVOCATORIA-OM-002-SEGURO-DE-VIDA-2021.docx
+              - img [ref=e255]
+            - generic [ref=e256]: Licitaciones
+          - paragraph
+      - link "Ver todos los trámites y servicios" [ref=e266] [cursor=pointer]:
+        - /url: https://www.colima.gob.mx/portal/cat/tramites
+    - generic [ref=e275]:
+      - list:
+        - listitem:
+          - generic [ref=e276] [cursor=pointer]: 
+        - listitem:
+          - generic [ref=e277] [cursor=pointer]: 
+      - toolbar [ref=e279]:
+        - listbox [ref=e281]:
+          - link [ref=e283] [cursor=pointer]:
+            - /url: https://www.colima.gob.mx/portal2016/proceso-de-adquisicion-de-bienes-y-servicios
+          - link [ref=e286] [cursor=pointer]:
+            - /url: https://www.colima.gob.mx/portal/wp-content/uploads/2022/02/AFILIACION-PROVEEDORES-veda-y-convocatoria-juntos.pdf
+          - link [ref=e289] [cursor=pointer]:
+            - /url: https://www.colima.gob.mx/portal/wp-content/uploads/2025/04/PPT-DE-BOTON-SARE-ORIGINAL-23-abril-2024.pdf
+          - option [ref=e291]:
+            - link [ref=e292] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/wp-content/uploads/2022/09/aviso-de-privacidad-2021-2024.pdf
+            - generic [ref=e293]:
+              - generic:
+                - heading [level=2]:
+                  - link:
+                    - /url: https://www.colima.gob.mx/portal/wp-content/uploads/2022/09/aviso-de-privacidad-2021-2024.pdf
+          - option [ref=e294]:
+            - link [ref=e295] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/cat/normateca/277
+            - generic [ref=e296]:
+              - generic:
+                - heading [level=2]:
+                  - link:
+                    - /url: https://www.colima.gob.mx/portal/cat/normateca/277
+          - option [ref=e297]:
+            - link [ref=e298] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal2016/consulta-publica-proceso-air-del-ayuntamiento-colima-2023-2024/
+            - generic [ref=e299]:
+              - generic:
+                - heading [level=2]:
+                  - link:
+                    - /url: https://www.colima.gob.mx/portal2016/consulta-publica-proceso-air-del-ayuntamiento-colima-2023-2024/
+          - option [ref=e300]:
+            - link [ref=e301] [cursor=pointer]:
+              - /url: https://sites.google.com/view/mejora-regulatoria-colima
+          - option [ref=e303]:
+            - link [ref=e304] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/bolsa-de-trabajo/
+          - option [ref=e306]:
+            - link [ref=e307] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/contacto
+          - option [ref=e309]:
+            - link [ref=e310] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal2016/listado-declaraciones
+          - option [ref=e312]:
+            - link [ref=e313] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/cat/normateca
+          - option [ref=e315]:
+            - link [ref=e316] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal2016/directorio-servidores-publicos/
+          - option [ref=e318]:
+            - link [ref=e319] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/transparencia/
+          - option [ref=e321]:
+            - link [ref=e322] [cursor=pointer]:
+              - /url: https://mejoraclick.colima.gob.mx/
+          - option [ref=e324]:
+            - link [ref=e325] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/convocatorias
+          - option [ref=e327]:
+            - link [ref=e328] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal2016/proceso-de-adquisicion-de-bienes-y-servicios
+          - option [ref=e330]:
+            - link [ref=e331] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/wp-content/uploads/2022/02/AFILIACION-PROVEEDORES-veda-y-convocatoria-juntos.pdf
+          - option [ref=e333]:
+            - link [ref=e334] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/wp-content/uploads/2025/04/PPT-DE-BOTON-SARE-ORIGINAL-23-abril-2024.pdf
+          - link [ref=e337] [cursor=pointer]:
+            - /url: https://www.colima.gob.mx/portal/wp-content/uploads/2022/09/aviso-de-privacidad-2021-2024.pdf
+          - link [ref=e340] [cursor=pointer]:
+            - /url: https://www.colima.gob.mx/portal/cat/normateca/277
+          - link [ref=e343] [cursor=pointer]:
+            - /url: https://www.colima.gob.mx/portal2016/consulta-publica-proceso-air-del-ayuntamiento-colima-2023-2024/
+        - list:
+          - listitem [ref=e345] [cursor=pointer]:
+            - button "1" [ref=e346]
+          - listitem [ref=e347] [cursor=pointer]:
+            - button [ref=e348]: "2"
+          - listitem [ref=e349] [cursor=pointer]:
+            - button [ref=e350]: "3"
+          - listitem [ref=e351] [cursor=pointer]:
+            - button [ref=e352]: "4"
+          - listitem [ref=e353] [cursor=pointer]:
+            - button [ref=e354]: "5"
+    - generic [ref=e358]:
+      - main [ref=e359]:
+        - generic [ref=e361]:
+          - heading "Noticias" [level=3] [ref=e363]:
+            - link "Noticias" [ref=e364] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/category/noticias/
+          - generic [ref=e365]:
+            - list:
+              - listitem [ref=e366]:
+                - link "Cuadrillas de bacheo del Ayuntamiento de Colima siempre activas" [ref=e367] [cursor=pointer]:
+                  - /url: https://www.colima.gob.mx/portal/cuadrillas-de-bacheo-del-ayuntamiento-de-colima-siempre-activas/
+                - generic:
+                  - generic:
+                    - link "Destacados":
+                      - /url: https://www.colima.gob.mx/portal/category/destacados/
+                    - heading "Cuadrillas de bacheo del Ayuntamiento de Colima siempre activas" [level=2]:
+                      - link "Cuadrillas de bacheo del Ayuntamiento de Colima siempre activas":
+                        - /url: https://www.colima.gob.mx/portal/cuadrillas-de-bacheo-del-ayuntamiento-de-colima-siempre-activas/
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: 
+                        - generic:  hace 1 día
+                        - generic:
+                          - generic:
+                            - generic: 
+                            - text: "11"
+              - listitem [ref=e368]:
+                - 'link "Un Verano Diferente 2.0: DIF Municipal Colima ofrecerá cursos para n..."':
+                  - /url: https://www.colima.gob.mx/portal/un-verano-diferente-2-0-dif-municipal-colima-ofrecera-cursos-para-ninas-y-ninos-de-6-a-10-anos/
+                - generic [ref=e371]:
+                  - generic [ref=e373]:  hace 1 día
+                  - 'heading "Un Verano Diferente 2.0: DIF Municipal Colima ofrecerá cursos para n..." [level=2] [ref=e374]':
+                    - 'link "Un Verano Diferente 2.0: DIF Municipal Colima ofrecerá cursos para n..." [ref=e375] [cursor=pointer]':
+                      - /url: https://www.colima.gob.mx/portal/un-verano-diferente-2-0-dif-municipal-colima-ofrecera-cursos-para-ninas-y-ninos-de-6-a-10-anos/
+              - listitem [ref=e376]:
+                - link "Gobierno de Riult Rivera, realiza poda de arboles y recolección de ra...":
+                  - /url: https://www.colima.gob.mx/portal/gobierno-de-riult-rivera-realiza-poda-de-arboles-y-recoleccion-de-ramas-en-jardines-de-la-estancia/
+                - generic [ref=e379]:
+                  - generic [ref=e381]:  hace 2 días
+                  - heading "Gobierno de Riult Rivera, realiza poda de arboles y recolección de ra..." [level=2] [ref=e382]:
+                    - link "Gobierno de Riult Rivera, realiza poda de arboles y recolección de ra..." [ref=e383] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/gobierno-de-riult-rivera-realiza-poda-de-arboles-y-recoleccion-de-ramas-en-jardines-de-la-estancia/
+              - listitem [ref=e384]:
+                - link "Gobierno de Riult Rivera impulsa la competitividad turística con exit...":
+                  - /url: https://www.colima.gob.mx/portal/gobierno-de-riult-rivera-impulsa-la-competitividad-turistica-con-exitoso-foro-de-innovacion-y-calidad/
+                - generic [ref=e387]:
+                  - generic [ref=e389]:  hace 3 días
+                  - heading "Gobierno de Riult Rivera impulsa la competitividad turística con exit..." [level=2] [ref=e390]:
+                    - link "Gobierno de Riult Rivera impulsa la competitividad turística con exit..." [ref=e391] [cursor=pointer]:
+                      - /url: https://www.colima.gob.mx/portal/gobierno-de-riult-rivera-impulsa-la-competitividad-turistica-con-exitoso-foro-de-innovacion-y-calidad/
+        - paragraph [ref=e397]:
+          - link "Más noticias" [ref=e398] [cursor=pointer]:
+            - /url: https://www.colima.gob.mx/portal/category/noticias/
+      - complementary "Primary Sidebar" [ref=e399]:
+        - generic [ref=e401]:
+          - generic [ref=e403]:
+            - text: Agenda
+            - generic [ref=e404]: 
+          - link "Más eventos" [ref=e407] [cursor=pointer]:
+            - /url: https://www.colima.gob.mx/portal/agenda/
+    - paragraph [ref=e417]:
+      - iframe [ref=e418]:
+        - generic [ref=f147e5]:
+          - generic [ref=f147e6]: Video no disponible
+          - generic [ref=f147e7]: Es posible que este video ya no exista o que no tengas permiso para verlo.
+          - link "Más información" [ref=f147e10] [cursor=pointer]:
+            - /url: https://www.facebook.com/help/396404120401278/list?ref=embed_video
+    - generic [ref=e420]:
+      - heading "Contigo Turismo" [level=2] [ref=e422]:
+        - generic [ref=e423]: Contigo Turismo
+      - generic [ref=e432]:
+        - paragraph [ref=e433]:
+          - text: Desde hace 500 años nos hacemos llamar Colimotes, porque nacimos en la cuna de Colimán, tierra fértil de colores, aromas, sabores y cielos azul turquesa. Somos la herencia de mujeres y hombres que trabajaron este suelo, creciendo junto a palmeras, montes, llanos y ríos.
+          - text: La tierra del ticus, de las parotas, de las primaveras, de las sonrisas, de la calma, del calorcito por la tarde, de las noches bohemias. Somos la tuba, el bate, el tejuino, los parques y jardines, los centros comerciales. Tradición y modernidad, historia y novedad.
+          - text: ¿A qué sabe Colima? A aire fresco, al susurro del río Colima, a palmeras y primaveras, a rosamorada, a guamúchil, a pitaya, a tamarindo, a jamaica, a chilayo, a tatemado y al dulce ante colimote.
+          - text: ¿Por qué enamora esta tierra? Por su cielo claro, por sus montes verdes en el horizonte y las sonrisas de su gente. Porque desde donde estés parado, al mirar al norte se llenan tus ojos con la majestuosidad de los volcanes de Colima. Que no te lo cuenten. ¡Vívelo!
+          - text: Y justo a 500 años, tenemos la oportunidad de construir un Colima en donde todas las acciones que se realicen sean en beneficio directo a las familias de éste hermoso municipio.
+          - text: Quienes conformamos esta administración 2024-2027 del Ayuntamiento de Colima, estamos poniendo contigo manos a la obra por un Colima limpio, ordenado, próspero, pero sobre todo, por un Colima más humano.
+          - text: ¡Viva Colima! ¡Ven a Colima! Come, ama, vive Colima.
+        - paragraph
+        - link "Visitar" [ref=e435] [cursor=pointer]:
+          - /url: https://www.colima.gob.mx/portal/contigo-turismo/
+    - contentinfo [ref=e437]:
+      - generic [ref=e441]:
+        - img "H. Ayuntamiento de Colima | 2021-2024" [ref=e445]
+        - generic [ref=e448]:
+          - paragraph [ref=e449]:
+            - strong [ref=e450]: Destacados
+          - paragraph [ref=e451]:
+            - link "Noticias" [ref=e452] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/category/noticias/
+            - link "Transmisiones en vivo" [ref=e453] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/transmisiones-en-vivo/
+            - link "Directorio de funcionarios" [ref=e454] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/cat/
+            - link "Transparencia" [ref=e455] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/transparencia/
+            - link "Normateca" [ref=e456] [cursor=pointer]:
+              - /url: https://www.colima.gob.mx/portal/cat/normateca
+        - generic [ref=e457]:
+          - generic [ref=e459]:
+            - paragraph [ref=e460]:
+              - strong [ref=e461]: Síguenos en las redes sociales
+            - paragraph [ref=e462]: Mantente informado de todo lo que pasa en el Ayuntamiento de Colima en nuestras redes sociales
+          - list [ref=e464]:
+            - listitem [ref=e465]:
+              - link "" [ref=e466] [cursor=pointer]:
+                - /url: https://www.facebook.com/ColimaMunicipio/
+                - generic [ref=e467]: 
+            - listitem [ref=e468]:
+              - link "" [ref=e469] [cursor=pointer]:
+                - /url: https://twitter.com/ColimaMunicipio/
+                - generic [ref=e470]: 
+            - listitem [ref=e471]:
+              - link "" [ref=e472] [cursor=pointer]:
+                - /url: https://youtube.com/channel/UC3JoBvSBqvcbpG_YtbJPO7w/featured?view_as=subscriber
+                - generic [ref=e473]: 
+            - listitem [ref=e474]:
+              - link "" [ref=e475] [cursor=pointer]:
+                - /url: https://instagram.com/h.ayuntamientodecolima/
+                - generic [ref=e476]: 
+      - generic [ref=e480]:
+        - generic [ref=e481]:
+          - text: © Algunos derechos reservados 2026 |
+          - generic [ref=e482]: H. Ayuntamiento Municipal de Colima - 2021-2024.
+          - link "Aviso de privacidad" [ref=e483] [cursor=pointer]:
+            - /url: https://www.colima.gob.mx/portal/aviso-de-privacidad/
+          - text: ","
+          - link "términos y condiciones" [ref=e484] [cursor=pointer]:
+            - /url: https://www.colima.gob.mx/portal/terminos-y-condiciones/
+        - list [ref=e485]:
+          - listitem [ref=e486]:
+            - link " Facebook" [ref=e487] [cursor=pointer]:
+              - /url: https://www.facebook.com/ColimaMunicipio/
+              - generic [ref=e488]: 
+              - generic [ref=e489]: Facebook
+          - listitem [ref=e490]:
+            - link " Twitter" [ref=e491] [cursor=pointer]:
+              - /url: https://twitter.com/ColimaMunicipio/
+              - generic [ref=e492]: 
+              - generic [ref=e493]: Twitter
+          - listitem [ref=e494]:
+            - link " Instagram" [ref=e495] [cursor=pointer]:
+              - /url: https://www.instagram.com/h.ayuntamientodecolima/
+              - generic [ref=e496]: 
+              - generic [ref=e497]: Instagram
+    - link " Back to top button" [ref=e498] [cursor=pointer]:
+      - /url: "#go-to-tie-body"
+      - generic [ref=e499]: 
+      - generic [ref=e500]: Back to top button
+  - text:  

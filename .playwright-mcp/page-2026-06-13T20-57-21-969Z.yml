@@ -1,0 +1,136 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "inicio" [ref=e9] [cursor=pointer]:
+      - /url: http://www.tesoreriaecatepec.gob.mx/ingresostesoreria/
+      - img "inicio" [ref=e10]
+  - generic [ref=e12]:
+    - link [ref=e17] [cursor=pointer]:
+      - /url: PredialenLinea.aspx
+    - generic [ref=e23]:
+      - generic [ref=e31]:
+        - paragraph [ref=e34]:
+          - generic [ref=e35] [cursor=pointer]: ESTADOS DE CUENTA Y PAGO EN LÍNEA
+          - generic [ref=e36] [cursor=pointer]: Realiza tu pago en línea de forma segura y rápida
+          - generic [ref=e37] [cursor=pointer]: CON TUS CONTRIBUCIONES CONSTRUIMOS JUNTOS LA CIUDAD QUE QUEREMOS.
+        - generic [ref=e38]:
+          - link "image Impuesto Predial Genera aquí tu estado de cuenta y paga tu predial en línea. ¡Es fácil, rapido y seguro!" [ref=e41] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e42]:
+              - generic [ref=e43]:
+                - img "image" [ref=e44]
+                - generic [ref=e45]: Impuesto Predial
+              - paragraph [ref=e47]:
+                - generic [ref=e48]: Genera aquí tu estado de cuenta y paga tu predial en línea.
+                - generic [ref=e49]: ¡Es fácil, rapido y seguro!
+          - link "image Pasaportes Genera aquí tu estado de cuenta y paga en línea tu derecho para realizar el trámite de tu pasaporte. ¡Es fácil, rapido y seguro!" [ref=e52] [cursor=pointer]:
+            - /url: javascript:__doPostBack('pasaportes','')
+            - generic [ref=e53]:
+              - generic [ref=e54]:
+                - img "image" [ref=e55]
+                - generic [ref=e56]: Pasaportes
+              - paragraph [ref=e58]:
+                - generic [ref=e59]: Genera aquí tu estado de cuenta y paga en línea tu derecho para realizar el trámite de tu pasaporte.
+                - generic [ref=e60]: ¡Es fácil, rapido y seguro!
+          - link "image Estacionaminetos Genera aquí tu estado de cuenta y paga tu impuesto por concepto de estacionamientos particulares. ¡Es fácil, rapido y seguro!" [ref=e63] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e64]:
+              - generic [ref=e65]:
+                - img "image" [ref=e66]
+                - generic [ref=e67]: Estacionaminetos
+              - paragraph [ref=e69]:
+                - generic [ref=e70]: Genera aquí tu estado de cuenta y paga tu impuesto por concepto de estacionamientos particulares.
+                - generic [ref=e71]: ¡Es fácil, rapido y seguro!
+        - separator [ref=e73]
+        - paragraph [ref=e76]:
+          - generic [ref=e77] [cursor=pointer]: SERVICIOS EN LÍNEA
+          - generic [ref=e78] [cursor=pointer]: Inicia tus trámites y valida tus documentos en línea
+        - generic [ref=e79]:
+          - link "image Facturación Genera aquí tu CFDI en línea. ¡Aguiliza tu trámite!" [ref=e82] [cursor=pointer]:
+            - /url: Facturacion.aspx
+            - generic [ref=e83]:
+              - generic [ref=e84]:
+                - img "image" [ref=e85]
+                - generic [ref=e86]: Facturación
+              - paragraph [ref=e88]:
+                - generic [ref=e89]: Genera aquí tu CFDI en línea.
+                - generic [ref=e90]: ¡Aguiliza tu trámite!
+          - link "image Valida tu Pago Valida tu recibo oficial de pago. Tu confianza, nuestro compromiso" [ref=e93] [cursor=pointer]:
+            - /url: ValidaRecibo.aspx
+            - generic [ref=e94]:
+              - generic [ref=e95]:
+                - img "image" [ref=e96]
+                - generic [ref=e97]: Valida tu Pago
+              - paragraph [ref=e99]:
+                - generic [ref=e100]: Valida tu recibo oficial de pago.
+                - generic [ref=e101]: Tu confianza, nuestro compromiso
+          - link "image Recibo Oficial Si realizaste tu pago en línea genera aquí tu recibo oficial de pago (72 hrs. después de realizarlo) ¡Es fácil, rapido y seguro!" [ref=e104] [cursor=pointer]:
+            - /url: ValidaRecibo.aspx
+            - generic [ref=e105]:
+              - generic [ref=e106]:
+                - img "image" [ref=e107]
+                - generic [ref=e108]: Recibo Oficial
+              - paragraph [ref=e110]:
+                - generic [ref=e111]: Si realizaste tu pago en línea genera aquí tu recibo oficial de pago (72 hrs. después de realizarlo)
+                - generic [ref=e112]: ¡Es fácil, rapido y seguro!
+          - link "image Pago en Línea Si ya tienes tu liquidación de pago de impuestos o derechos puedes realizar aquí tu pago en línea. ¡Es fácil, rapido y seguro!" [ref=e115] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e116]:
+              - generic [ref=e117]:
+                - img "image" [ref=e118]
+                - generic [ref=e119]: Pago en Línea
+              - paragraph [ref=e121]:
+                - generic [ref=e122]: Si ya tienes tu liquidación de pago de impuestos o derechos puedes realizar aquí tu pago en línea.
+                - generic [ref=e123]: ¡Es fácil, rapido y seguro!
+      - paragraph [ref=e128]: Contactanos Con gusto te apoyamos ¡SIN COSTO!
+      - generic [ref=e131]:
+        - paragraph [ref=e133]:
+          - text: Atención Telefónica
+          - text: (01) 55 5836-1500 Ext.0000
+          - text: Correo electrónico
+          - text: ingresos@tesoreriaecatepec.gob.mx
+          - text: "Horario de Atención:"
+          - text: Lunes a Viernes de 9:00 a 15:00 hrs.
+          - text: Sabados de 09:00 a 14:00 hrs.
+        - paragraph [ref=e135]:
+          - text: Oficinas Receptoras
+          - link "Av. Independencia & Av Mariano Abasolo, Fraccionamiento Las Americas, Las Américas, 55076 Ecatepec de Morelos, México" [ref=e136] [cursor=pointer]:
+            - /url: https://www.google.com/maps/place/Centro+de+Servicios+Administrativos+Las+Americas/@19.5885657,-99.0176761,21z/data=!4m6!3m5!1s0x85d1f1d6c43df9d1:0x308b7c65e3707146!8m2!3d19.5886773!4d-99.0175808!16s%2Fg%2F11g7zg2b97?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D
+          - link "Santa Clara Calle Independencia N° 18 Col. Santa Clara Coatitla, Ecatepec de Morelos, Estado de México" [ref=e137] [cursor=pointer]:
+            - /url: "#"
+          - link "Ciudad Azteca Av. R1 Mz 48 Lt 16 Col. Jardines de Cerro Gordo, Ecatepec de Morelos, Estado de México" [ref=e138] [cursor=pointer]:
+            - /url: https://www.google.com.mx/maps/place/CENTRO+DE+RECAUDACION+MUNICIPAL+AZTECA/@19.5342618,-99.0475491,14z/data=!4m10!1m2!2m1!1sAv.+R1+Mz+48+Lt+16!3m6!1s0x85d1f017dfe39671:0x45ea09c6e4452964!8m2!3d19.5566574!4d-99.0252484!15sChJBdi4gUjEgTXogNDggTHQgMTaSAQpnb3Zlcm5tZW50qgFKEAEqDyILbXogNDggbHQgMTYoDjIeEAEiGpait6iTXMLbjW0KFmlE6fQRVVOl9moTEAYHMhUQAiIRYXYgcjEgbXogNDggbHQgMTbgAQA!16s%2Fg%2F1z449y3m0?hl=es&entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D
+          - link "Granjas Valle Benito Juarez s/n Esq. Alfredo del Mazo Col. Granjas Valle, Ecatepec de Morelos, Estado de México" [ref=e139] [cursor=pointer]:
+            - /url: "#"
+          - link "Mexipuerto Av. Central Esq. Boulevard de los Guerreros Locales B42 y B44 Plaza Mexipuerto, Ecatepec de Morelos, Estado de México" [ref=e140] [cursor=pointer]:
+            - /url: https://www.google.com.mx/maps/place/OFICINA+RECAUDADORA+MEXIPUERTO+ECATEPEC/@19.5341449,-99.0265955,17z/data=!4m10!1m2!2m1!1srecaudadora+mexipuerto!3m6!1s0x85d1f19ea87f25a1:0x8980a4591f837f63!8m2!3d19.5342532!4d-99.0268755!15sChZyZWNhdWRhZG9yYSBtZXhpcHVlcnRvWhgiFnJlY2F1ZGFkb3JhIG1leGlwdWVydG-SARFnb3Zlcm5tZW50X29mZmljZZoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VSdGVIVkRjbWxuUlJBQqoBWxABKhoiFnJlY2F1ZGFkb3JhIG1leGlwdWVydG8oDjIfEAEiG7Z8kQWcN2FDVXgk7VsLVko3dt10IqGGACRdlDIaEAIiFnJlY2F1ZGFkb3JhIG1leGlwdWVydG_gAQD6AQUIqAcQMw!16s%2Fg%2F11n5ls4lz8?hl=es&entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D
+          - link "Center Plaza Av. Central M 44 Col. Valle de Anáhuac 1er Piso Centro Comercial Center Plaza, Ecatepec de Morelos, Estado de México" [ref=e141] [cursor=pointer]:
+            - /url: https://www.google.com.mx/maps/place/TESORER%C3%8DA+MUNICIPAL/@19.5155964,-99.037649,17z/data=!3m1!4b1!4m6!3m5!1s0x85d1fabd830b0a9b:0x7f04bdeb08ae5a48!8m2!3d19.5155964!4d-99.0350741!16s%2Fg%2F1q5bmp1p1?hl=es&entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D
+          - link "Pabellón Ecatepec Via Morelos Esq. Av. Industria N° 351-A Local 35 Col. Industrias de Cerro Gordo, Centro Comercial Pavellón Ecatepec, Ecatepec de Morelos, Estado de México" [ref=e142] [cursor=pointer]:
+            - /url: https://www.google.com.mx/maps/place/Centro+de+recaudacion+municipal+de+predio+y+agua/@19.5540768,-99.0922148,14z/data=!4m10!1m2!2m1!1srecaudadora+pabellon+ecatepec!3m6!1s0x85d1f06733629391:0x6dd6ff522bdf19b7!8m2!3d19.5540768!4d-99.054106!15sCh1yZWNhdWRhZG9yYSBwYWJlbGxvbiBlY2F0ZXBlY1ofIh1yZWNhdWRhZG9yYSBwYWJlbGxvbiBlY2F0ZXBlY5IBD2NpdHlfdGF4X29mZmljZZoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VOR2JFeFhjVWhuRUFFqgFgEAEqGCIUcmVjYXVkYWRvcmEgcGFiZWxsb24oDjIfEAEiG4UixgZRz8MILV-CRSgeFOqBD3nHZIUdhhA-MDIhEAIiHXJlY2F1ZGFkb3JhIHBhYmVsbG9uIGVjYXRlcGVj4AEA-gEECAAQOQ!16s%2Fg%2F1q2w6qp13?hl=es&entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D
+      - generic [ref=e143]:
+        - link [ref=e145] [cursor=pointer]:
+          - /url: http://tesoreriaecatepec.gob.mx/ingresostesoreria/
+        - paragraph [ref=e147]:
+          - link [ref=e148] [cursor=pointer]:
+            - /url: https://www.google.com.mx/maps/place/Palacio+Municipal+de+Ecatepec/@19.5990685,-99.050047,19.15z/data=!3m1!5s0x85d1f1a3a8b112bf:0x280cb816c7884835!4m9!1m2!2m1!1sh.ayuntamiento+de+ecatepec+de+morelos!3m5!1s0x85d1f1a211cf8bd9:0x29ecc811fb62988d!8m2!3d19.5990726!4d-99.0490849!15sCiVoLmF5dW50YW1pZW50byBkZSBlY2F0ZXBlYyBkZSBtb3JlbG9zWiciJWggYXl1bnRhbWllbnRvIGRlIGVjYXRlcGVjIGRlIG1vcmVsb3OSAQljaXR5X2hhbGyaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTmhlbHAyZDFOM0VBReABAA
+          - text: Ubicación
+          - text: Av. Juarez s/n, San Cristobal Centro, Ecatepec de Morelos, C.P. 55000
+          - text: Estado de México
+          - text: Conmutador
+          - text: 55 58 36 15 00
+        - paragraph [ref=e150]:
+          - text: Síguenos en Redes
+          - link [ref=e151] [cursor=pointer]:
+            - /url: https://www.facebook.com/GobiernodeEcatepecdeMorelos
+          - link [ref=e152] [cursor=pointer]:
+            - /url: https://x.com/Ecatepec
+          - link [ref=e153] [cursor=pointer]:
+            - /url: https://www.instagram.com/gobierno_ecatepec
+          - link [ref=e154] [cursor=pointer]:
+            - /url: "#"
+          - link [ref=e155] [cursor=pointer]:
+            - /url: "#"
+      - paragraph [ref=e158]: Derechos Reservados. H. Ayuntamiento de Ecatepec de Morelos 2025-2027
+  - contentinfo [ref=e159]:
+    - generic [ref=e161]: Soluciones Integrales Comerciales, Administrativas e Informaticas de Mexico ©
+  - img "switch to full width" [ref=e163] [cursor=pointer]

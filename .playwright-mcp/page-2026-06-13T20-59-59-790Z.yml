@@ -1,0 +1,198 @@
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e7]:
+        - generic [ref=e13]:
+          - link "Facebook" [ref=e14] [cursor=pointer]:
+            - /url: https://www.facebook.com/saltillogob
+            - img [ref=e16]
+          - link "X (Twitter)" [ref=e18] [cursor=pointer]:
+            - /url: https://x.com/SaltilloGob
+            - img [ref=e20]
+          - link "Instagram" [ref=e22] [cursor=pointer]:
+            - /url: https://www.instagram.com/saltillogob/
+            - img [ref=e24]
+        - generic [ref=e28]:
+          - link "Municipio de Saltillo" [ref=e32] [cursor=pointer]:
+            - /url: https://saltillo.gob.mx/
+            - img "Municipio de Saltillo" [ref=e33]
+          - generic [ref=e35]:
+            - navigation "Main Menu" [ref=e36]:
+              - list [ref=e37]:
+                - listitem [ref=e38]:
+                  - link "MI ciudad" [ref=e39] [cursor=pointer]:
+                    - /url: "#"
+                    - text: MI ciudad
+                    - img [ref=e41]
+                  - button "Abrir el menú desplegable"
+                - listitem [ref=e43]:
+                  - link "Servicios" [ref=e44] [cursor=pointer]:
+                    - /url: "#"
+                    - text: Servicios
+                    - img [ref=e46]
+                  - button "Abrir el menú desplegable"
+                - listitem [ref=e48]:
+                  - link "¿Cómo Vamos?" [ref=e49] [cursor=pointer]:
+                    - /url: "#"
+                    - text: ¿Cómo Vamos?
+                    - img [ref=e51]
+                  - button "Abrir el menú desplegable"
+                - listitem [ref=e53]:
+                  - link "¿Qué Hacer?" [ref=e54] [cursor=pointer]:
+                    - /url: "#"
+                    - text: ¿Qué Hacer?
+                    - img [ref=e56]
+                  - button "Abrir el menú desplegable"
+            - button "Buscar" [ref=e58] [cursor=pointer]:
+              - img [ref=e59]
+    - main [ref=e61]:
+      - article [ref=e63]:
+        - generic [ref=e64]:
+          - generic [ref=e66]:
+            - generic [ref=e67]:
+              - list [ref=e68]:
+                - figure [ref=e73]:
+                  - link [ref=e74] [cursor=pointer]:
+                    - /url: https://saltillo.gob.mx/wp-content/uploads/2026/05/FINA2026CARTELERA.pdf
+                    - img [ref=e76]
+                - figure [ref=e81]:
+                  - link [ref=e82] [cursor=pointer]:
+                    - /url: https://participa.saltillo.gob.mx/
+                    - img [ref=e84]
+                - figure [ref=e89]:
+                  - link [ref=e90] [cursor=pointer]:
+                    - /url: https://implansaltillo.mx/boceto/calidaddelaire/
+                    - img [ref=e92]
+                - figure [ref=e97]:
+                  - img [ref=e99]
+              - generic:
+                - button "Previous slide" [ref=e100] [cursor=pointer]:
+                  - img [ref=e101]
+                - button "Next slide" [ref=e103] [cursor=pointer]:
+                  - img [ref=e104]
+            - list [ref=e106]
+          - generic [ref=e111]:
+            - heading "Gobierno Municipal de Saltillo" [level=1] [ref=e113]
+            - separator [ref=e115]
+            - generic [ref=e117]:
+              - generic [ref=e120]:
+                - figure [ref=e122]:
+                  - link [ref=e123] [cursor=pointer]:
+                    - /url: https://saltillofacil.gob.mx/
+                    - img [ref=e125]
+                - generic [ref=e129]:
+                  - generic [ref=e130]:
+                    - heading "PLAN MUNICIPAL DE" [level=2] [ref=e132]
+                    - heading "DESARROLLO" [level=1] [ref=e134]
+                    - heading "2025 – 2027" [level=2] [ref=e136]
+                  - link [ref=e137] [cursor=pointer]:
+                    - /url: https://saltillo.gob.mx/plan-municipal-de-desarrollo-2025-2027-2/
+                - generic [ref=e141]:
+                  - generic [ref=e142]:
+                    - heading "¿Cuándo pasa" [level=1] [ref=e144]
+                    - heading "la basura?" [level=1] [ref=e146]
+                  - link [ref=e147] [cursor=pointer]:
+                    - /url: https://saltillo.gob.mx/horarios-de-recoleccion-de-basura/
+              - generic [ref=e150]:
+                - figure [ref=e152]:
+                  - link [ref=e153] [cursor=pointer]:
+                    - /url: https://saltillo.gob.mx/wp-content/uploads/2026/05/FINA2026CARTELERA.pdf
+                    - img [ref=e155]
+                - figure [ref=e157]:
+                  - link [ref=e158] [cursor=pointer]:
+                    - /url: https://saltillo.gob.mx/modulos-ubicacion-y-horarios-de-atencion/
+                    - img [ref=e160]
+                - figure [ref=e162]:
+                  - link [ref=e163] [cursor=pointer]:
+                    - /url: https://tramitatucartilla.saltillo.gob.mx/
+                    - img [ref=e165]
+                - figure [ref=e167]:
+                  - link [ref=e168] [cursor=pointer]:
+                    - /url: https://cartillas.saltillo.gob.mx/requisitos/
+                    - img [ref=e170]
+                - figure [ref=e172]:
+                  - img [ref=e174]
+          - heading "Noticias" [level=3] [ref=e175]
+          - separator [ref=e177]
+          - generic [ref=e179]:
+            - generic [ref=e180]:
+              - article [ref=e181]:
+                - link "Instruye alcalde mantener la seguridad y el apego a la ley electoral durante la jornada de este fin de semana" [ref=e182] [cursor=pointer]:
+                  - /url: https://saltillo.gob.mx/instruye-alcalde-mantener-la-seguridad-y-el-apego-a-la-ley-electoral-durante-la-jornada-de-este-fin-de-semana/
+                - heading "Instruye alcalde mantener la seguridad y el apego a la ley electoral durante la jornada de este fin de semana" [level=2] [ref=e183]:
+                  - link "Instruye alcalde mantener la seguridad y el apego a la ley electoral durante la jornada de este fin de semana" [ref=e184] [cursor=pointer]:
+                    - /url: https://saltillo.gob.mx/instruye-alcalde-mantener-la-seguridad-y-el-apego-a-la-ley-electoral-durante-la-jornada-de-este-fin-de-semana/
+                - paragraph [ref=e186]: Instruye alcalde mantener la seguridad y el apego a la ley electoral…
+                - list [ref=e187]:
+                  - listitem [ref=e188]:
+                    - time [ref=e189]: 02/06/2026
+              - article [ref=e190]:
+                - link "Inicia capacitación de Infancia Segura, nuevo Agrupamiento de la Comisaría" [ref=e191] [cursor=pointer]:
+                  - /url: https://saltillo.gob.mx/inicia-capacitacion-de-infancia-segura-nuevo-agrupamiento-de-la-comisaria/
+                - heading "Inicia capacitación de Infancia Segura, nuevo Agrupamiento de la Comisaría" [level=2] [ref=e192]:
+                  - link "Inicia capacitación de Infancia Segura, nuevo Agrupamiento de la Comisaría" [ref=e193] [cursor=pointer]:
+                    - /url: https://saltillo.gob.mx/inicia-capacitacion-de-infancia-segura-nuevo-agrupamiento-de-la-comisaria/
+                - paragraph [ref=e195]: Inicia capacitación de Infancia Segura, nuevo Agrupamiento de la Comisaría Refuerza Comisaría…
+                - list [ref=e196]:
+                  - listitem [ref=e197]:
+                    - time [ref=e198]: 01/06/2026
+              - article [ref=e199]:
+                - link "Disfrutan saltillenses “Ópera a la Carta” con la Compañía de Ópera de Saltillo" [ref=e200] [cursor=pointer]:
+                  - /url: https://saltillo.gob.mx/disfrutan-saltillenses-opera-a-la-carta-con-la-compania-de-opera-de-saltillo/
+                - heading "Disfrutan saltillenses “Ópera a la Carta” con la Compañía de Ópera de Saltillo" [level=2] [ref=e201]:
+                  - link "Disfrutan saltillenses “Ópera a la Carta” con la Compañía de Ópera de Saltillo" [ref=e202] [cursor=pointer]:
+                    - /url: https://saltillo.gob.mx/disfrutan-saltillenses-opera-a-la-carta-con-la-compania-de-opera-de-saltillo/
+                - paragraph [ref=e204]: Disfrutan saltillenses “Ópera a la Carta” con la Compañía de Ópera de…
+                - list [ref=e205]:
+                  - listitem [ref=e206]:
+                    - time [ref=e207]: 31/05/2026
+            - navigation [ref=e208]:
+              - generic [ref=e209]:
+                - generic [ref=e210]: "1"
+                - link "2" [ref=e211] [cursor=pointer]:
+                  - /url: https://saltillo.gob.mx/?query-2723a562=2
+                - link "3" [ref=e212] [cursor=pointer]:
+                  - /url: https://saltillo.gob.mx/?query-2723a562=3
+                - link "4" [ref=e213] [cursor=pointer]:
+                  - /url: https://saltillo.gob.mx/?query-2723a562=4
+                - generic [ref=e214]: …
+                - link "672" [ref=e215] [cursor=pointer]:
+                  - /url: https://saltillo.gob.mx/?query-2723a562=672
+              - link "Siguiente" [ref=e216] [cursor=pointer]:
+                - /url: https://saltillo.gob.mx/?query-2723a562=2
+                - text: Siguiente
+                - img [ref=e217]
+    - contentinfo [ref=e220]:
+      - generic [ref=e223]:
+        - generic [ref=e231]:
+          - figure [ref=e236]:
+            - img [ref=e238]
+          - generic [ref=e242]:
+            - heading "Información de contacto" [level=3] [ref=e243]
+            - list [ref=e245]:
+              - listitem [ref=e246]:
+                - img [ref=e248]
+                - generic [ref=e250]:
+                  - generic [ref=e251]: "Dirección:"
+                  - generic [ref=e252]: "Blvd. Francisco Coss #745 Zona Centro 25000 Saltillo, México"
+              - listitem [ref=e253]:
+                - img [ref=e255]
+                - generic [ref=e257]:
+                  - generic [ref=e258]: "Teléfono:"
+                  - link "844 438 2500" [ref=e260] [cursor=pointer]:
+                    - /url: tel:844%20438%202500
+        - separator [ref=e263]
+      - generic [ref=e265]:
+        - paragraph [ref=e268]: Copyright © 2026 - Gobierno Municipal de Saltillo
+        - generic [ref=e271]:
+          - link "Facebook" [ref=e272] [cursor=pointer]:
+            - /url: https://www.facebook.com/saltillogob
+            - img [ref=e274]
+          - link "X (Twitter)" [ref=e276] [cursor=pointer]:
+            - /url: https://x.com/SaltilloGob
+            - img [ref=e278]
+          - link "Instagram" [ref=e280] [cursor=pointer]:
+            - /url: https://www.instagram.com/saltillogob/
+            - img [ref=e282]

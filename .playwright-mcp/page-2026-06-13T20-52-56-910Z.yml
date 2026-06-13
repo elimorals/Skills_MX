@@ -1,0 +1,560 @@
+- generic [ref=e2]:
+  - text: 
+  - generic [ref=e4]:
+    - generic [ref=e8]:
+      - paragraph [ref=e14]:
+        - link "Imagen" [ref=e15] [cursor=pointer]:
+          - /url: https://www.finanzas.cdmx.gob.mx/
+          - img "Imagen" [ref=e16]
+      - textbox "search" [ref=e21]:
+        - /placeholder: Buscar …
+      - list [ref=e26]:
+        - generic [ref=e27]:
+          - listitem [ref=e28]:
+            - link "Transparencia" [ref=e29] [cursor=pointer]:
+              - /url: https://transparencia.finanzas.cdmx.gob.mx
+          - listitem [ref=e30]:
+            - link "Atención Ciudadana" [ref=e31] [cursor=pointer]:
+              - /url: https://atencionciudadana.cdmx.gob.mx
+          - listitem [ref=e32]:
+            - link "Trámites y Servicios" [ref=e33] [cursor=pointer]:
+              - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos
+          - listitem [ref=e34]:
+            - link "CDMX" [ref=e35] [cursor=pointer]:
+              - /url: http://www.cdmx.gob.mx
+    - generic [ref=e41]:
+      - text:                          
+      - list [ref=e42]:
+        - list [ref=e44]:
+          - text:   
+          - listitem [ref=e45]:
+            - link "Inicio" [ref=e46] [cursor=pointer]:
+              - /url: https://www.finanzas.cdmx.gob.mx/
+          - listitem [ref=e47]:
+            - link "SAF " [ref=e48] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e49]:
+            - link "Servicios" [ref=e50] [cursor=pointer]:
+              - /url: /servicios
+          - listitem [ref=e51]:
+            - link "Programas" [ref=e52] [cursor=pointer]:
+              - /url: /programas
+          - listitem [ref=e53]:
+            - link "Notificaciones " [ref=e54] [cursor=pointer]:
+              - /url: "#"
+  - generic [ref=e57]:
+    - main [ref=e59]:
+      - generic [ref=e63]:
+        - list [ref=e64]:
+          - listitem [ref=e65]:
+            - link "<h4>Tenencia 2026</h4>" [ref=e66] [cursor=pointer]:
+              - /url: https://data.finanzas.cdmx.gob.mx/Front_ten/
+              - img "<h4>Tenencia 2026</h4>" [ref=e67]
+            - link "Tenencia 2026" [ref=e69] [cursor=pointer]:
+              - /url: https://data.finanzas.cdmx.gob.mx/Front_ten/
+              - heading "Tenencia 2026" [level=4] [ref=e70]
+          - listitem [ref=e71]:
+            - link [ref=e72] [cursor=pointer]:
+              - /url: https://ovica.finanzas.cdmx.gob.mx/cuenta-predial-liquidacion
+              - img [ref=e73]
+            - link [ref=e75] [cursor=pointer]:
+              - /url: https://ovica.finanzas.cdmx.gob.mx/cuenta-predial-liquidacion
+              - heading [level=4] [ref=e76]: Predial 2026
+          - listitem [ref=e77]:
+            - link [ref=e78] [cursor=pointer]:
+              - /url: https://cdmxassets.s3.us-east-1.amazonaws.com/media/files-pdf/storage/07_tesomovil_tesoreria.pdf
+              - img [ref=e79]
+            - link [ref=e81] [cursor=pointer]:
+              - /url: https://cdmxassets.s3.us-east-1.amazonaws.com/media/files-pdf/storage/07_tesomovil_tesoreria.pdf
+              - heading [level=4] [ref=e82]: Tesomóvil
+          - listitem [ref=e83]:
+            - link [ref=e84] [cursor=pointer]:
+              - /url: https://s3.amazonaws.com/cdmxassets/media/Archivos+pdf/06atencion+telefonica+y+digital.pdf
+              - img [ref=e85]
+            - link [ref=e87] [cursor=pointer]:
+              - /url: https://s3.amazonaws.com/cdmxassets/media/Archivos+pdf/06atencion+telefonica+y+digital.pdf
+              - heading [level=4] [ref=e88]: Contributel
+          - listitem [ref=e89]:
+            - link [ref=e90] [cursor=pointer]:
+              - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/vehicular/licencias/03
+              - img [ref=e91]
+            - link [ref=e93] [cursor=pointer]:
+              - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/vehicular/licencias/03
+              - heading [level=4] [ref=e94]: Licencia tipo A
+          - listitem [ref=e95]:
+            - link [ref=e96] [cursor=pointer]:
+              - /url: https://s3.amazonaws.com/cdmxassets/media/Archivos+pdf/03tesorerias+express.pdf
+              - img [ref=e97]
+            - link [ref=e99] [cursor=pointer]:
+              - /url: https://s3.amazonaws.com/cdmxassets/media/Archivos+pdf/03tesorerias+express.pdf
+              - heading [level=4] [ref=e100]: Tesorerías Express
+          - listitem [ref=e101]:
+            - link [ref=e102] [cursor=pointer]:
+              - /url: https://s3.amazonaws.com/cdmxassets/media/Archivos+pdf/05centros+de+servicio+tesoreria.pdf
+              - img [ref=e103]
+            - link [ref=e105] [cursor=pointer]:
+              - /url: https://s3.amazonaws.com/cdmxassets/media/Archivos+pdf/05centros+de+servicio+tesoreria.pdf
+              - heading [level=4] [ref=e106]: Centros de Servicio
+          - listitem [ref=e107]:
+            - link [ref=e108] [cursor=pointer]:
+              - /url: https://tics.finanzas.cdmx.gob.mx/citas/public/citas
+              - img [ref=e109]
+            - link [ref=e111] [cursor=pointer]:
+              - /url: https://tics.finanzas.cdmx.gob.mx/citas/public/citas
+              - heading [level=4] [ref=e112]: Audiencias Ciudadanas
+        - link "" [ref=e113] [cursor=pointer]:
+          - /url: "#"
+        - link "" [ref=e114] [cursor=pointer]:
+          - /url: "#"
+        - list [ref=e115]:
+          - listitem [ref=e116]:
+            - link [ref=e117] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e118]:
+            - link [ref=e119] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e120]:
+            - link [ref=e121] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e122]:
+            - link [ref=e123] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e124]:
+            - link [ref=e125] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e126]:
+            - link [ref=e127] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e128]:
+            - link [ref=e129] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e130]:
+            - link [ref=e131] [cursor=pointer]:
+              - /url: "#"
+    - complementary [ref=e133]:
+      - generic [ref=e136]:
+        - figure "Pagar aquí" [ref=e137]:
+          - img "Pago en línea de trámites CDMX" [ref=e138]
+          - heading "Pagar aquí" [level=3] [ref=e140]
+          - link [ref=e142] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/pago_tramites_en_linea
+        - figure "Consulta aquí" [ref=e143]:
+          - img "Directorio de áreas CDMX" [ref=e144]
+          - heading "Consulta aquí" [level=3] [ref=e146]
+          - link [ref=e148] [cursor=pointer]:
+            - /url: https://s3.amazonaws.com/cdmxassets/media/Archivos+pdf/Directorio_areas_web.pdf
+  - generic [ref=e150]:
+    - generic [ref=e153]:
+      - generic [ref=e154]:
+        - heading "Pago en línea" [level=2] [ref=e155]
+        - generic [ref=e157]:
+          - link "Predial Predial" [ref=e158] [cursor=pointer]:
+            - /url: https://ovica.finanzas.cdmx.gob.mx/
+            - generic [ref=e159]:
+              - img "Predial" [ref=e160]
+              - text: Predial
+          - link "Tenencia Tenencia" [ref=e161] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/Front_ten/
+            - generic [ref=e162]:
+              - img "Tenencia" [ref=e163]
+              - text: Tenencia
+          - link "Agua Agua" [ref=e164] [cursor=pointer]:
+            - /url: https://aplicaciones.sacmex.cdmx.gob.mx/fut/
+            - generic [ref=e165]:
+              - img "Agua" [ref=e166]
+              - text: Agua
+        - generic [ref=e167]:
+          - link "Tránsito Tránsito" [ref=e168] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/licencias
+            - generic [ref=e169]:
+              - img "Tránsito" [ref=e170]
+              - text: Tránsito
+          - link "Registro civil Registro civil" [ref=e171] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/registro_civil
+            - generic [ref=e172]:
+              - img "Registro civil" [ref=e173]
+              - text: Registro civil
+          - link "Policía Policía" [ref=e174] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/policia
+            - generic [ref=e175]:
+              - img "Policía" [ref=e176]
+              - text: Policía
+        - generic [ref=e177]:
+          - link "Notaría Notaría" [ref=e178] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/archivo_general
+            - generic [ref=e179]:
+              - img "Notaría" [ref=e180]
+              - text: Notaría
+          - link "Derechos varios Derechos varios" [ref=e181] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/derechos_varios
+            - generic [ref=e182]:
+              - img "Derechos varios" [ref=e183]
+              - text: Derechos varios
+          - link "Impuesto sobre nómina Impuesto sobre nómina" [ref=e184] [cursor=pointer]:
+            - /url: https://innovacion.finanzas.cdmx.gob.mx/siscon/
+            - generic [ref=e185]:
+              - img "Impuesto sobre nómina" [ref=e186]
+              - text: Impuesto sobre nómina
+        - generic [ref=e187]:
+          - link "Impuestos sobre autos nuevos Impuestos sobre autos nuevos" [ref=e188] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/isan
+            - generic [ref=e189]:
+              - img "Impuestos sobre autos nuevos" [ref=e190]
+              - text: Impuestos sobre autos nuevos
+          - link "Permisos administrativos Permisos administrativos temporales revocables" [ref=e191] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/patrs
+            - generic [ref=e192]:
+              - img "Permisos administrativos" [ref=e193]
+              - text: Permisos administrativos temporales revocables
+          - link "Otras contribuciones Otras contribuciones" [ref=e194] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/contribuciones
+            - generic [ref=e195]:
+              - img "Otras contribuciones" [ref=e196]
+              - text: Otras contribuciones
+      - generic [ref=e197]:
+        - heading "Trámites" [level=2] [ref=e198]
+        - generic [ref=e200]:
+          - link "Predial grupos vulnerables Predial grupos vulnerables En línea" [ref=e201] [cursor=pointer]:
+            - /url: https://descuentopredial.cdmx.gob.mx/
+            - generic [ref=e202]:
+              - img "Predial grupos vulnerables" [ref=e203]
+              - generic [ref=e204]:
+                - text: Predial grupos vulnerables
+                - paragraph [ref=e205]: En línea
+          - link "Sin papel Sin papel En línea" [ref=e206] [cursor=pointer]:
+            - /url: https://innovacion.finanzas.cdmx.gob.mx/sinpapel/
+            - generic [ref=e207]:
+              - img "Sin papel" [ref=e208]
+              - generic [ref=e209]:
+                - text: Sin papel
+                - paragraph [ref=e210]: En línea
+          - link "Facturación electrónica Facturación electrónica En línea" [ref=e211] [cursor=pointer]:
+            - /url: https://www.facturacion.finanzas.cdmx.gob.mx/contribuyente
+            - generic [ref=e212]:
+              - img "Facturación electrónica" [ref=e213]
+              - generic [ref=e214]:
+                - text: Facturación electrónica
+                - paragraph [ref=e215]: En línea
+        - generic [ref=e216]:
+          - link "Certificación de pagos Certificación de pagos En línea" [ref=e217] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/certificacion
+            - generic [ref=e218]:
+              - img "Certificación de pagos" [ref=e219]
+              - generic [ref=e220]:
+                - text: Certificación de pagos
+                - paragraph [ref=e221]: En línea
+          - link "Constancia de adeudos Constancia de adeudos En línea" [ref=e222] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/certificacion
+            - generic [ref=e223]:
+              - img "Constancia de adeudos" [ref=e224]
+              - generic [ref=e225]:
+                - text: Constancia de adeudos
+                - paragraph [ref=e226]: En línea
+          - link "Sistemas de devoluciones Sistemas de devoluciones" [ref=e227] [cursor=pointer]:
+            - /url: https://servidoresx3.finanzas.cdmx.gob.mx/devoluciones/
+            - generic [ref=e228]:
+              - img "Sistemas de devoluciones" [ref=e229]
+              - text: Sistemas de devoluciones
+        - generic [ref=e230]:
+          - link "Trámites CDMX Trámites CDMX" [ref=e231] [cursor=pointer]:
+            - /url: https://www.cdmx.gob.mx/
+            - generic [ref=e232]:
+              - img "Trámites CDMX" [ref=e233]
+              - text: Trámites CDMX
+          - link "Reimpresión de comprobante Reimpresión de comprobante" [ref=e234] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/pagos/rComprobante
+            - generic [ref=e235]:
+              - img "Reimpresión de comprobante" [ref=e236]
+              - text: Reimpresión de comprobante
+          - link "Catastro Catastro" [ref=e237] [cursor=pointer]:
+            - /url: /catastro
+            - generic [ref=e238]:
+              - img "Catastro" [ref=e239]
+              - text: Catastro
+        - generic [ref=e240]:
+          - link "Más trámites Más trámites" [ref=e241] [cursor=pointer]:
+            - /url: /tramites
+            - generic [ref=e242]:
+              - img "Más trámites" [ref=e243]
+              - text: Más trámites
+          - link "Sistema de administración Sistema de administración de contribuciones" [ref=e244] [cursor=pointer]:
+            - /url: https://innovacion.finanzas.cdmx.gob.mx/siscon/
+            - generic [ref=e245]:
+              - img "Sistema de administración" [ref=e246]
+              - text: Sistema de administración de contribuciones
+          - link "Declaración Informativa Declaración Informativa" [ref=e247] [cursor=pointer]:
+            - /url: /declaracion-informativa/
+            - generic [ref=e248]:
+              - img "Declaración Informativa" [ref=e249]
+              - text: Declaración Informativa
+      - generic [ref=e250]:
+        - heading "Servicios y más" [level=2] [ref=e251]
+        - generic [ref=e253]:
+          - link "Sistema de citas Sistema de citas" [ref=e254] [cursor=pointer]:
+            - /url: https://tics.finanzas.cdmx.gob.mx/citas/public/citas
+            - generic [ref=e255]:
+              - img "Sistema de citas" [ref=e256]
+              - text: Sistema de citas
+          - link "Control vehícular Control vehícular" [ref=e257] [cursor=pointer]:
+            - /url: /servicios/servicios-de-control-vehicular
+            - generic [ref=e258]:
+              - img "Control vehícular" [ref=e259]
+              - text: Control vehícular
+          - link "Formatos trámites Formatos trámites" [ref=e260] [cursor=pointer]:
+            - /url: /servicios/formatos-de-inscripcion-o-aviso-de-modificacion-de-datos-al-padron-de-contribuyentes
+            - generic [ref=e261]:
+              - img "Formatos trámites" [ref=e262]
+              - text: Formatos trámites
+        - generic [ref=e263]:
+          - link "Sistema de citas Micrositios" [ref=e264] [cursor=pointer]:
+            - /url: /micrositios
+            - generic [ref=e265]:
+              - img "Sistema de citas" [ref=e266]
+              - text: Micrositios
+          - link "Control vehícular Consulta de documentos SAF" [ref=e267] [cursor=pointer]:
+            - /url: https://qr-folioconsulta.finanzas.cdmx.gob.mx/efirma/public/index.php/validate_signed
+            - generic [ref=e268]:
+              - img "Control vehícular" [ref=e269]
+              - text: Consulta de documentos SAF
+          - link "Formatos trámites Consulta pagos y adeudos" [ref=e270] [cursor=pointer]:
+            - /url: /servicios/consulta-de-pagos-y-adeudos
+            - generic [ref=e271]:
+              - img "Formatos trámites" [ref=e272]
+              - text: Consulta pagos y adeudos
+    - generic [ref=e275]:
+      - heading "Información destacada y de consulta" [level=2] [ref=e276]:
+        - paragraph [ref=e277]: Información destacada y de consulta
+      - generic [ref=e279]:
+        - generic [ref=e280]:
+          - link " Presupuesto 2026" [ref=e282] [cursor=pointer]:
+            - /url: /servicios/presupuesto-general
+            - generic [ref=e284]: 
+            - heading "Presupuesto 2026" [level=4] [ref=e285]
+          - link " Paquete Económico" [ref=e287] [cursor=pointer]:
+            - /url: /servicios/proyecto-paquete-economico
+            - generic [ref=e289]: 
+            - heading "Paquete Económico" [level=4] [ref=e290]
+          - link " Inversionistas" [ref=e292] [cursor=pointer]:
+            - /url: https://servidoresx3.finanzas.cdmx.gob.mx/inv/index.html
+            - generic [ref=e294]: 
+            - heading "Inversionistas" [level=4] [ref=e295]
+          - link " Cálculo de pagos" [ref=e297] [cursor=pointer]:
+            - /url: /servicios/consulta-de-informacion-para-calculo-de-pagos
+            - generic [ref=e299]: 
+            - heading "Cálculo de pagos" [level=4] [ref=e300]
+          - link " Transparencia Fiscal" [ref=e302] [cursor=pointer]:
+            - /url: https://servidoresx3.finanzas.cdmx.gob.mx/fiscal/
+            - generic [ref=e304]: 
+            - heading "Transparencia Fiscal" [level=4] [ref=e305]
+          - link " Crédito Simple 2025" [ref=e307] [cursor=pointer]:
+            - /url: /credito-simple
+            - generic [ref=e309]: 
+            - heading "Crédito Simple 2025" [level=4] [ref=e310]
+          - link " Histórico" [ref=e312] [cursor=pointer]:
+            - /url: /historico
+            - generic [ref=e314]: 
+            - heading "Histórico" [level=4] [ref=e315]
+          - link " Preguntas frecuentes" [ref=e317] [cursor=pointer]:
+            - /url: /servicios/preguntas-frecuentes
+            - generic [ref=e319]: 
+            - heading "Preguntas frecuentes" [level=4] [ref=e320]
+        - heading "Proveedores y empresas" [level=1] [ref=e321]:
+          - generic [ref=e322]: Proveedores y empresas
+        - generic [ref=e323]:
+          - link " ¿Eres proveedor? Consulta trámites y servicios" [ref=e325] [cursor=pointer]:
+            - /url: /proveedores
+            - generic [ref=e327]: 
+            - heading "¿Eres proveedor?" [level=3] [ref=e328]
+            - heading "Consulta trámites y servicios" [level=4] [ref=e329]
+          - link " ¿Eres empresa? Consulta trámites, pagos y servicios" [ref=e331] [cursor=pointer]:
+            - /url: /empresas
+            - generic [ref=e333]: 
+            - heading "¿Eres empresa?" [level=3] [ref=e334]
+            - heading "Consulta trámites, pagos y servicios" [level=4] [ref=e335]
+    - generic [ref=e340]:
+      - generic:
+        - paragraph
+      - generic [ref=e341]:
+        - article [ref=e342]:
+          - generic [ref=e344]:
+            - link [ref=e346] [cursor=pointer]:
+              - /url: /user/images/g5_helium/g5_helium/informado_img_carrussel/Banner_cursos_2026_02.jpg
+            - heading "Más Información Aquí" [level=4] [ref=e348]:
+              - link "Más Información Aquí" [ref=e349] [cursor=pointer]:
+                - /url: https://cdmxassets.s3.us-east-1.amazonaws.com/media/Archivos+pdf/CATALOGO_DE_CURSOS.pdf
+          - generic [ref=e350]:
+            - generic:
+              - generic:
+                - link:
+                  - /url: /user/images/g5_helium/g5_helium/mantente_informado/Banner_Analtico2026.jpg
+              - generic:
+                - heading "Más Información Aquí" [level=4]:
+                  - link "Más Información Aquí":
+                    - /url: https://cdmxassets.s3.us-east-1.amazonaws.com/media/Archivos+pdf/Analitico_de_Procedimientos2026.pdf
+          - generic [ref=e351]:
+            - generic:
+              - generic:
+                - link:
+                  - /url: /user/images/g5_helium/informado_img_carrussel/Imagen3.jpg
+              - generic:
+                - heading "Más Información Aquí" [level=4]:
+                  - link "Más Información Aquí":
+                    - /url: https://data.finanzas.cdmx.gob.mx/sSocial
+        - generic:
+          - link "Previous" [ref=e352] [cursor=pointer]:
+            - /url: ""
+            - text: 
+          - link "Next" [ref=e353] [cursor=pointer]:
+            - /url: ""
+            - text: 
+  - generic [ref=e356]:
+    - generic [ref=e359]:
+      - heading "Comunicación" [level=2] [ref=e360]
+      - heading "Ver todas las publicaciones " [level=4] [ref=e363]:
+        - link "Ver todas las publicaciones " [ref=e364] [cursor=pointer]:
+          - /url: https://www.finanzas.cdmx.gob.mx/search/query:Bolet%C3%ADn
+          - text: Ver todas las publicaciones
+          - generic [ref=e365]: 
+    - generic [ref=e370]:
+      - generic [ref=e372]:
+        - generic [ref=e373]:
+          - generic [ref=e377]:
+            - heading "INSTALACIÓN DEL GABINETE ECONÓMICO-FINANCIERO DE LA CDMX" [level=4] [ref=e378]:
+              - link "INSTALACIÓN DEL GABINETE ECONÓMICO-FINANCIERO DE LA CDMX" [ref=e379] [cursor=pointer]:
+                - /url: /comunicacion/noticias/instalacion-del-gabinete-economico-financiero-de-la-cdmx
+            - generic [ref=e381]:
+              - generic [ref=e382]: 
+              - text: Boletín
+            - generic [ref=e383]: Ciudad de México, 2 de junio de 2026 BOLETÍN 010/2026 Instalación del Gabinete Económico-Financiero de la Ciudad de México y publicación de la Plataforma de Transparencia de las Obras para recibir el Mundial 2026 Bajo el liderazgo del Gobierno de la Ciudad de México y la participación de...
+          - generic [ref=e387]:
+            - heading "MÁS DE 3.2 MILLONES DE CONTRIBUYENTES FAVORECIDOS EN LA CAMPAÑA DE BENEFICIOS FISCALES 2026" [level=4] [ref=e388]:
+              - link "MÁS DE 3.2 MILLONES DE CONTRIBUYENTES FAVORECIDOS EN LA CAMPAÑA DE BENEFICIOS FISCALES 2026" [ref=e389] [cursor=pointer]:
+                - /url: /comunicacion/noticias/mas-de-3-2-millones-de-contribuyentes-favorecidos-en-la-campana-de-beneficios-fiscales-2026
+            - generic [ref=e391]:
+              - generic [ref=e392]: 
+              - text: Boletín
+            - generic [ref=e393]: Ciudad de México, 19 de mayo de 2026 BOLETÍN 009/2026 Más de 3.2 millones de contribuyentes favorecidos en la campaña de beneficios fiscales 2026, con avance al 15 de mayo, informa la Secretaría de Administración y Finanzas de la Ciudad de México Al 15 de mayo de 2026, se registraron 3.2...
+        - text:    
+      - generic [ref=e394]:
+        - generic [ref=e395]:
+          - link "Previous" [ref=e396] [cursor=pointer]:
+            - /url: ""
+            - text: 
+          - link "Next" [ref=e397] [cursor=pointer]:
+            - /url: ""
+            - text: 
+        - list [ref=e398]:
+          - listitem [ref=e399]
+          - listitem [ref=e401]
+          - listitem [ref=e403]
+    - generic [ref=e413]:
+      - generic [ref=e414]:
+        - heading "Navegación" [level=3] [ref=e415]
+        - listitem [ref=e416]:
+          - link "Inicio" [ref=e417] [cursor=pointer]:
+            - /url: https://www.finanzas.cdmx.gob.mx/
+        - listitem [ref=e418]:
+          - link "SAF" [ref=e419] [cursor=pointer]:
+            - /url: /secretaria
+        - listitem [ref=e420]:
+          - link "Servicios" [ref=e421] [cursor=pointer]:
+            - /url: /servicios
+        - listitem [ref=e422]:
+          - link "Programas" [ref=e423] [cursor=pointer]:
+            - /url: /programas
+        - listitem [ref=e424]:
+          - link "Notificaciones" [ref=e425] [cursor=pointer]:
+            - /url: /notificaciones
+        - listitem [ref=e426]:
+          - link "Transparencia" [ref=e427] [cursor=pointer]:
+            - /url: /secretaria/transparencia
+      - generic [ref=e429]:
+        - heading "Sitios relacionados" [level=3] [ref=e430]:
+          - paragraph [ref=e431]: Sitios relacionados
+        - listitem [ref=e432]:
+          - link "Portal de la Ciudad" [ref=e433] [cursor=pointer]:
+            - /url: https://www.cdmx.gob.mx/
+        - listitem [ref=e434]:
+          - link "Tu Ciudad, Tu dinero" [ref=e435] [cursor=pointer]:
+            - /url: https://tudinero.cdmx.gob.mx/
+        - listitem [ref=e436]:
+          - link "Programas Anuales de Evaluación" [ref=e437] [cursor=pointer]:
+            - /url: https://procesos.finanzas.cdmx.gob.mx/PbR/public/Programa_Anual_de_Evaluaciones
+        - listitem [ref=e438]:
+          - link "Inclusión al Catálogo de Cuentas Bancarias de Proveedores de la CDMX" [ref=e439] [cursor=pointer]:
+            - /url: /proveedores
+        - listitem [ref=e440]:
+          - link "Congreso de la Ciudad de México" [ref=e441] [cursor=pointer]:
+            - /url: https://www.congresocdmx.gob.mx/
+        - listitem [ref=e442]:
+          - link "Gaceta Oficial de la Ciudad de México" [ref=e443] [cursor=pointer]:
+            - /url: https://www.data.consejeria.cdmx.gob.mx/index.php/gaceta
+      - generic [ref=e445]:
+        - heading "Otros sitios" [level=3] [ref=e446]:
+          - paragraph [ref=e448]: Otros sitios
+        - listitem [ref=e449]:
+          - link "InfoDF" [ref=e450] [cursor=pointer]:
+            - /url: https://infocdmx.org.mx/
+        - listitem [ref=e451]:
+          - link "FIDERE" [ref=e452] [cursor=pointer]:
+            - /url: https://www.fidere.cdmx.gob.mx/
+        - listitem [ref=e453]:
+          - link "SACMEX" [ref=e454] [cursor=pointer]:
+            - /url: https://www.sacmex.cdmx.gob.mx/
+        - listitem [ref=e455]:
+          - link "SEMOVI" [ref=e456] [cursor=pointer]:
+            - /url: https://www.semovi.cdmx.gob.mx/
+        - listitem [ref=e457]:
+          - link "Encuesta de Satisfacción" [ref=e458] [cursor=pointer]:
+            - /url: https://aplicaciones.finanzas.cdmx.gob.mx/Encuestas/
+  - contentinfo [ref=e459]:
+    - generic [ref=e460]:
+      - generic [ref=e463]:
+        - contentinfo [ref=e464]:
+          - generic [ref=e465]:
+            - link "Imagen" [ref=e467] [cursor=pointer]:
+              - /url: https://www.cdmx.gob.mx/
+              - img "Imagen" [ref=e468]
+            - list [ref=e472]:
+              - listitem [ref=e473]:
+                - link [ref=e474] [cursor=pointer]:
+                  - /url: https://www.facebook.com/AdministracionyFinanzasCiudadDeMexico/
+                  - img [ref=e475]
+              - listitem [ref=e476]:
+                - link [ref=e477] [cursor=pointer]:
+                  - /url: https://x.com/finanzas_cdmx
+                  - img [ref=e478]
+              - listitem [ref=e479]:
+                - link [ref=e480] [cursor=pointer]:
+                  - /url: https://www.instagram.com/safcdmx
+                  - img [ref=e481]
+              - listitem [ref=e482]:
+                - link [ref=e483] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@safcdmx_
+                  - img [ref=e484]
+            - heading "Atención Ciudadana" [level=4] [ref=e486]:
+              - link "Atención Ciudadana" [ref=e487] [cursor=pointer]:
+                - /url: https://311locatel.cdmx.gob.mx/
+            - heading "Portal de Transparencia" [level=4] [ref=e489]:
+              - link "Portal de Transparencia" [ref=e490] [cursor=pointer]:
+                - /url: https://transparencia.finanzas.cdmx.gob.mx/transparencia/public/
+            - heading "Tu ciudad, tu dinero" [level=4] [ref=e492]:
+              - link "Tu ciudad, tu dinero" [ref=e493] [cursor=pointer]:
+                - /url: https://tudinero.cdmx.gob.mx/
+          - paragraph [ref=e497]:
+            - strong [ref=e498]: "Atención Ciudadana:"
+            - text: Doctor Lavista 144, col. Doctores, alc. Cuauhtémoc, 06720, CDMX. 55 5134 2500
+            - strong [ref=e499]: "Secretaría de Administración y Finanzas:"
+            - text: Plaza de la Constitución 1, col. Centro, alc. Cuauhtémoc, 06000, CDMX
+          - generic [ref=e502]:
+            - paragraph [ref=e504]:
+              - link "Política de privacidad" [ref=e505] [cursor=pointer]:
+                - /url: https://www.finanzas.cdmx.gob.mx/terminos-y-condiciones
+            - paragraph [ref=e507]:
+              - link "Términos y Condiciones" [ref=e508] [cursor=pointer]:
+                - /url: https://www.finanzas.cdmx.gob.mx/terminos-y-condiciones
+            - paragraph [ref=e512]: CMS CDMX v1.18.2 2026
+        - text: 
+      - button "Abrir panel de accesibilidad" [ref=e516] [cursor=pointer]:
+        - img [ref=e517]
+        - generic [ref=e518]: Accesibilidad Web

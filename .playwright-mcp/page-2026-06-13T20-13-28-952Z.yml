@@ -1,0 +1,130 @@
+- generic [ref=e2]:
+  - navigation [ref=e12]:
+    - link [ref=e13] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e14]:
+      - button "Gobierno" [ref=e16] [cursor=pointer]:
+        - text: Gobierno
+        - img [ref=e17]
+      - link "Tramites y Servicios" [ref=e19] [cursor=pointer]:
+        - /url: https://tramitesdigitales.guadalajara.gob.mx/inicio
+      - link "Transparencia" [ref=e20] [cursor=pointer]:
+        - /url: https://transparencia.guadalajara.gob.mx/
+  - generic [ref=e21]:
+    - heading "Consulta y pago del impuesto predial" [level=1] [ref=e26]
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - heading "Los datos requeridos se encuentran en su recibo predial" [level=2] [ref=e29]
+        - generic [ref=e31]:
+          - generic [ref=e37] [cursor=pointer]:
+            - combobox "Recaudadora" [ref=e38]
+            - generic:
+              - generic: Recaudadora *
+          - generic [ref=e49] [cursor=pointer]:
+            - combobox "Tipo" [ref=e50]
+            - generic:
+              - generic: Tipo *
+          - generic [ref=e61]:
+            - textbox "Cuenta" [ref=e62]
+            - generic:
+              - generic: Cuenta *
+          - generic [ref=e69]:
+            - textbox "Correo electrónico (opcional)" [ref=e70]
+            - generic:
+              - generic: Correo electrónico (opcional)
+          - iframe [ref=e77]:
+            - generic [ref=f46e2]:
+              - generic [ref=f46e3]:
+                - checkbox "No soy un robot" [ref=f46e7]
+                - generic [ref=f46e11]: No soy un robot
+                - generic [ref=f46e13]:
+                  - text: Este sitio supera la
+                  - link "cuota gratuita de reCAPTCHA Enterprise" [ref=f46e14] [cursor=pointer]:
+                    - /url: https://cloud.google.com/recaptcha/docs/billing-information
+              - generic [ref=f46e18]: reCAPTCHA
+          - button "Consultar Adeudo Predial" [ref=e81] [cursor=pointer]: Consultar Adeudo Predial
+        - generic [ref=e83]: Por afectación de pagos con los bancos el horario de servicio para la consulta y pago del impuesto predial es de 01:00:00 am (01:00:00 hrs.) a las 10:50:00 pm (22:50:00 hrs.)
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - heading "Gráfico ejemplo de recibo predial" [level=2] [ref=e86]
+          - img [ref=e87]
+        - generic [ref=e88]:
+          - heading "Ejemplo:" [level=2] [ref=e89]
+          - generic [ref=e90]: "Cuenta Predial: 3-U-999999"
+          - generic [ref=e91]:
+            - generic [ref=e92]: "Recaudadora: 3"
+            - generic [ref=e93]: "Tipo: U"
+            - generic [ref=e94]: "Cuenta: 999999"
+        - generic [ref=e95]:
+          - text: Dudas y/o problemas para realizar el pago por internet del Impuesto Predial 33-3837-2600 ext. 2613, 2457 y 2466, 33-3882-4815,
+          - link "pagoselectronicos@guadalajara.gob.mx" [ref=e96] [cursor=pointer]:
+            - /url: mailto:pagoselectronicos@guadalajara.gob.mx
+        - generic [ref=e97]:
+          - text: "Portal de Facturación Electrónica (CFDI) Si desea obtener el CFDI (Comprobante Fiscal Digital por Internet) del pago realizado podrá solicitarlo en el siguiente link:"
+          - link "https://tesoreria.guadalajara.gob.mx/" [ref=e98] [cursor=pointer]:
+            - /url: https://tesoreria.guadalajara.gob.mx/
+          - text: Dudas sobre Facturación Electrónica 33-3837-2600 ext. 2253 y 2160.
+  - generic [ref=e99]:
+    - generic "Footer" [ref=e101]:
+      - heading "Footer" [level=2] [ref=e102]
+      - generic [ref=e103]:
+        - generic [ref=e104]:
+          - generic [ref=e105]:
+            - img "Logo de Guadalajara" [ref=e106]
+            - img "Logo de Ciudad de Guadalajara" [ref=e107]
+          - generic [ref=e108]:
+            - generic [ref=e109]:
+              - heading "Contacto" [level=3] [ref=e110]
+              - list [ref=e111]:
+                - listitem [ref=e112]:
+                  - link "Tesorería Municipal" [ref=e113] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e114]:
+                  - 'link "Dirección: Miguel Blanco #901, entre las Calles Colón y Galeana." [ref=e115] [cursor=pointer]':
+                    - /url: "#"
+                - listitem [ref=e116]:
+                  - link "contacto@guadalajara.gob.mx" [ref=e117] [cursor=pointer]:
+                    - /url: mailto:contacto@guadalajara.gob.mx
+                - listitem [ref=e118]:
+                  - 'link "Números Telefónicos: 33-3837-2600 ext. 2000" [ref=e119] [cursor=pointer]':
+                    - /url: "#"
+            - generic [ref=e120]:
+              - heading "Enlaces" [level=3] [ref=e121]
+              - list [ref=e122]:
+                - listitem [ref=e123]:
+                  - link "Aviso de privacidad en lengua de señas mexicana" [ref=e124] [cursor=pointer]:
+                    - /url: https://www.youtube.com/watch?v=AcaFAD-FZdM
+                - listitem [ref=e125]:
+                  - link "Aviso de privacidad" [ref=e126] [cursor=pointer]:
+                    - /url: https://transparencia.guadalajara.gob.mx/avisosprivacidad
+                - listitem [ref=e127]:
+                  - link "Transparencia" [ref=e128] [cursor=pointer]:
+                    - /url: https://transparencia.guadalajara.gob.mx/
+        - generic [ref=e129]:
+          - generic [ref=e130]:
+            - link "Facebook" [ref=e131] [cursor=pointer]:
+              - /url: https://www.facebook.com/GuadalajaraGob
+              - img [ref=e132]
+              - generic [ref=e134]: Facebook
+            - link "Instagram" [ref=e135] [cursor=pointer]:
+              - /url: https://www.instagram.com/guadalajaragob/
+              - img [ref=e136]
+              - generic [ref=e138]: Instagram
+            - link "X" [ref=e139] [cursor=pointer]:
+              - /url: https://x.com/GuadalajaraGob
+              - img [ref=e140]
+              - generic [ref=e142]: X
+            - link "YouTube" [ref=e143] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/AytoGuadalajara
+              - img [ref=e144]
+              - generic [ref=e146]: YouTube
+            - link "Telegram" [ref=e147] [cursor=pointer]:
+              - /url: https://t.me/GuadalajaraGob
+              - img [ref=e148]
+              - generic [ref=e150]: Telegram
+            - link "TikTok" [ref=e151] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@guadalajaragob
+              - img [ref=e152]
+              - generic [ref=e154]: TikTok
+          - paragraph [ref=e155]: © 2026 Gobierno de Guadalajara, Inc. Todos los derechos reservados.
+    - text: 

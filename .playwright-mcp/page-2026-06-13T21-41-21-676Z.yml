@@ -1,0 +1,214 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - list [ref=e6]:
+      - listitem [ref=e7]:
+        - button "" [ref=e8] [cursor=pointer]:
+          - generic [ref=e9]: 
+      - listitem [ref=e10]:
+        - link "Inicio" [ref=e11] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e12]:
+        - link "Soporte" [ref=e13] [cursor=pointer]:
+          - /url: "#"
+  - complementary [ref=e14]:
+    - link "IRYCEM SACPI" [ref=e15] [cursor=pointer]:
+      - /url: ""
+      - img "IRYCEM" [ref=e16]
+      - text: SACPI
+  - generic [ref=e17]:
+    - generic [ref=e20]:
+      - heading "Sistema para la Administración de las Contribuciones sobre la Propiedad Inmobiliaria" [level=1] [ref=e22]
+      - list [ref=e24]:
+        - listitem
+        - listitem [ref=e25]: / Consulta tu adeudo predial
+    - generic [ref=e29]:
+      - heading [level=3] [ref=e30]
+      - generic [ref=e31]:
+        - button "" [ref=e32] [cursor=pointer]:
+          - generic [ref=e33]: 
+        - button "" [ref=e34] [cursor=pointer]:
+          - generic [ref=e35]: 
+      - text: Cuenta Predial
+      - table [ref=e36]:
+        - rowgroup [ref=e37]:
+          - row "Municpio SELECIONAR MUNICIPIO" [ref=e38]:
+            - cell "Municpio" [ref=e39]
+            - cell "SELECIONAR MUNICIPIO" [ref=e40]:
+              - combobox [ref=e41]:
+                - option "SELECIONAR MUNICIPIO" [selected]
+                - option "001 - ACUITZIO"
+                - option "002 - AGUILILLA"
+                - option "003 - ALVARO OBREGON"
+                - option "004 - ANGAMACUTIRO"
+                - option "005 - ANGANGUEO"
+                - option "006 - APATZINGAN"
+                - option "007 - APORO"
+                - option "008 - AQUILA"
+                - option "010 - ARTEAGA"
+                - option "011 - BRISEÑAS"
+                - option "012 - BUENAVISTA"
+                - option "013 - CARACUARO"
+                - option "014 - COAHUAYANA"
+                - option "015 - COALCOMAN"
+                - option "016 - COENEO"
+                - option "017 - CONTEPEC"
+                - option "018 - COPANDARO"
+                - option "019 - COTIJA"
+                - option "020 - CUITZEO"
+                - option "021 - CHARAPAN"
+                - option "022 - CHARO"
+                - option "023 - CHAVINDA"
+                - option "024 - CHERAN"
+                - option "025 - CHILCHOTA"
+                - option "026 - CHINICUILA"
+                - option "028 - CHURINTZIO"
+                - option "030 - ECUANDUREO"
+                - option "031 - EPITACIO HUERTA"
+                - option "032 - ERONGARICUARO"
+                - option "033 - GABRIEL ZAMORA"
+                - option "034 - HIDALGO"
+                - option "035 - LA HUACANA"
+                - option "036 - HUANDACAREO"
+                - option "037 - HUANIQUEO"
+                - option "038 - HUETAMO"
+                - option "039 - HUIRAMBA"
+                - option "040 - INDAPARAPEO"
+                - option "041 - IRIMBO"
+                - option "043 - JACONA"
+                - option "044 - JIMENEZ"
+                - option "045 - JIQUILPAN"
+                - option "046 - JUÁREZ"
+                - option "047 - JUNGAPEO"
+                - option "048 - LAGUNILLAS"
+                - option "049 - MADERO"
+                - option "051 - MARCOS CASTELLANOS"
+                - option "054 - MORELOS"
+                - option "055 - MUGICA"
+                - option "056 - NAHUATZEN"
+                - option "057 - NOCUPETARO"
+                - option "058 - NUEVO PARANGARICUTIRO"
+                - option "059 - NUEVO URECHO"
+                - option "060 - NUMARAN"
+                - option "061 - OCAMPO"
+                - option "062 - PAJACUARAN"
+                - option "063 - PANINDICUARO"
+                - option "064 - PARACUARO"
+                - option "065 - PARACHO"
+                - option "067 - PENJAMILLO"
+                - option "068 - PERIBAN"
+                - option "068 - SAN FRANCISCO PERIBAN"
+                - option "070 - PUREPERO"
+                - option "072 - QUERENDARO"
+                - option "073 - QUIROGA"
+                - option "074 - COJUMATLAN DE REGULES"
+                - option "075 - ZACÁN"
+                - option "077 - SAN LUCAS"
+                - option "078 - SANTA ANA MAYA"
+                - option "079 - SALVADOR ESCALANTE"
+                - option "080 - SENGUIO"
+                - option "081 - SUSUPUATO"
+                - option "083 - TANCITARO"
+                - option "084 - TANGAMANDAPIO"
+                - option "086 - TANHUATO"
+                - option "087 - TARETAN"
+                - option "089 - TEPALCATEPEC"
+                - option "090 - TINGAMBATO"
+                - option "091 - TINGUINDIN"
+                - option "092 - TIQUICHEO"
+                - option "093 - TLALPUJAHUA"
+                - option "094 - TLAZAZALCA"
+                - option "095 - TOCUMBO"
+                - option "096 - TUMBISCATIO"
+                - option "097 - TURICATO"
+                - option "098 - TUXPAN"
+                - option "100 - TZINTZUNTZAN"
+                - option "101 - TZITZIO"
+                - option "103 - VENUSTIANO CARRANZA"
+                - option "104 - VILLAMAR"
+                - option "105 - VISTA HERMOSA"
+                - option "106 - YURECUARO"
+                - option "107 - ZACAPU"
+                - option "109 - ZINAPARO"
+                - option "110 - ZINAPECUARO"
+                - option "111 - ZIRACUARETIRO"
+                - option "111 - SAN ÁNGEL ZURUMUCAPIO"
+                - option "113 - JOSÉ SIXTO VERDUZCO"
+          - row "Localidad/Oficina" [ref=e42]:
+            - cell "Localidad/Oficina" [ref=e43]
+            - cell [ref=e44]:
+              - combobox [ref=e45]
+          - row "Tipo de predio 1 - URBANO" [ref=e46]:
+            - cell "Tipo de predio" [ref=e47]
+            - cell "1 - URBANO" [ref=e48]:
+              - combobox [ref=e49]:
+                - option "1 - URBANO" [selected]
+                - option "2 - RÚSTICO"
+          - row "Número de registro" [ref=e50]:
+            - cell "Número de registro" [ref=e51]
+            - cell [ref=e52]:
+              - textbox [ref=e53]
+          - row "Apellido paterno del propietario o Razón Social Marcar en caso de ser persona moral" [ref=e54]:
+            - cell "Apellido paterno del propietario o Razón Social" [ref=e55]
+            - cell "Marcar en caso de ser persona moral" [ref=e56]:
+              - textbox [ref=e57]
+              - checkbox "Marcar en caso de ser persona moral" [ref=e58]
+              - generic [ref=e59]: Marcar en caso de ser persona moral
+          - row "Consultar" [ref=e60]:
+            - cell [ref=e61]:
+              - textbox [ref=e62]
+            - cell "Consultar" [ref=e63]:
+              - button "Consultar" [ref=e64] [cursor=pointer]
+    - generic [ref=e67]:
+      - generic [ref=e68]:
+        - heading [level=3] [ref=e69]
+        - generic [ref=e70]:
+          - button "" [ref=e71] [cursor=pointer]:
+            - generic [ref=e72]: 
+          - button "" [ref=e73] [cursor=pointer]:
+            - generic [ref=e74]: 
+        - text: Municipios que cuentan con pago en línea
+      - table [ref=e75]:
+        - rowgroup [ref=e76]:
+          - row "Jacona Hidalgo" [ref=e77]:
+            - cell "Jacona" [ref=e78]
+            - cell "Hidalgo" [ref=e79]
+          - row "Tancitaro Charo" [ref=e80]:
+            - cell "Tancitaro" [ref=e81]
+            - cell "Charo" [ref=e82]
+          - row "Zacapu Tzitzio" [ref=e83]:
+            - cell "Zacapu" [ref=e84]
+            - cell "Tzitzio" [ref=e85]
+          - row "Zinapecuaro La Huacana" [ref=e86]:
+            - cell "Zinapecuaro" [ref=e87]
+            - cell "La Huacana" [ref=e88]
+          - row "Quiroga" [ref=e89]:
+            - cell [ref=e90]
+            - cell "Quiroga" [ref=e91]
+    - generic [ref=e94]:
+      - generic [ref=e95]:
+        - heading [level=3] [ref=e96]
+        - generic [ref=e97]:
+          - button "" [ref=e98] [cursor=pointer]:
+            - generic [ref=e99]: 
+          - button "" [ref=e100] [cursor=pointer]:
+            - generic [ref=e101]: 
+        - text: Atención! Necesita usar Mozilla Firefox, si no cuenta con el navegador lo puede descargar e instalar del siguiente enlace
+      - table [ref=e102]:
+        - rowgroup [ref=e103]:
+          - row "Submit" [ref=e104]:
+            - cell [ref=e105]
+            - cell "Submit" [ref=e106]:
+              - button "Submit" [ref=e107] [cursor=pointer]
+          - row [ref=e108]:
+            - cell [ref=e109]
+            - cell [ref=e110]
+          - row [ref=e111]:
+            - cell [ref=e112]
+            - cell [ref=e113]
+          - row [ref=e114]:
+            - cell [ref=e115]
+            - cell [ref=e116]
+  - contentinfo [ref=e117]:
+    - generic [ref=e118]: SACPI
+    - strong [ref=e119]: SACPI | Copyright © 2014-2025
+    - text: Todos los derechos reservados.

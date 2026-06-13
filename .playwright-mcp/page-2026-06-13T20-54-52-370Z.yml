@@ -1,0 +1,309 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - link "Iniciar Sesión" [ref=e4] [cursor=pointer]:
+      - /url: /pagonet2/Login_Form.aspx
+    - generic [ref=e5]: "|"
+    - link "¿Nuevo en PAGONET? Regístrate aquí" [ref=e6] [cursor=pointer]:
+      - /url: /pagonet2/SignUp_Form.aspx
+    - generic [ref=e7]:
+      - link "Carrito" [ref=e8] [cursor=pointer]:
+        - /url: /pagonet2/Services/Basket/Basket_list.aspx
+      - link "Ayuda" [ref=e9] [cursor=pointer]:
+        - /url: /pagonet2/Help/Default.aspx
+      - link "Contacto" [ref=e10] [cursor=pointer]:
+        - /url: /pagonet2/Contacto.aspx
+  - generic [ref=e11]:
+    - generic [ref=e12]:
+      - generic:
+        - generic [ref=e13]:
+          - link "Municipio de León":
+            - /url: https://www.leon.gob.mx
+            - img "Municipio de León" [ref=e14] [cursor=pointer]
+          - link "Municipio de León":
+            - /url: /pagonet2/
+            - img "Municipio de León" [ref=e15] [cursor=pointer]
+        - navigation [ref=e16]:
+          - list [ref=e17]:
+            - listitem [ref=e18]:
+              - link "Inicio" [ref=e19] [cursor=pointer]:
+                - /url: /pagonet2/
+            - listitem [ref=e20]:
+              - text: 
+              - link "Pagos individuales" [ref=e21] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e22]:
+              - text: 
+              - link "Carrito" [ref=e23] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e24]:
+              - link "Lugares de pago" [ref=e25] [cursor=pointer]:
+                - /url: /pagonet2/LugaresDePago.aspx
+            - listitem [ref=e26]:
+              - text: 
+              - link "Recibo digital" [ref=e27] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e28]:
+              - link "Facturación" [ref=e29] [cursor=pointer]:
+                - /url: https://facturacion.leon.gob.mx/wscfdi/
+        - text: 
+    - generic [ref=e31]:
+      - text: "Usted se encuentra en:"
+      - link "Inicio" [ref=e32] [cursor=pointer]:
+        - /url: /pagonet2/
+      - text: / Impuesto Predial - Criterios de Consulta (Pago Individual)
+    - generic [ref=e33]:
+      - img [ref=e34]
+      - text: IMPUESTO PREDIAL - CRITERIOS DE CONSULTA (PAGO INDIVIDUAL)
+    - generic [ref=e35]:
+      - generic [ref=e39]:
+        - generic [ref=e41]: Los campos marcados con * son requeridos
+        - img [ref=e42]
+        - textbox "*Cuenta predial:" [active] [ref=e43]
+        - generic [ref=e44]: "Ejemplo: 01XY12345009"
+        - img [ref=e45]
+        - combobox [ref=e46]:
+          - option "--*Periodo final:--" [selected]
+          - option "2026/6"
+          - option "2026/5"
+          - option "2026/4"
+          - option "2026/3"
+          - option "2026/2"
+          - option "2026/1"
+          - option "2025/6"
+          - option "2025/5"
+          - option "2025/4"
+          - option "2025/3"
+          - option "2025/2"
+          - option "2025/1"
+          - option "2024/6"
+          - option "2024/5"
+          - option "2024/4"
+          - option "2024/3"
+          - option "2024/2"
+          - option "2024/1"
+          - option "2023/6"
+          - option "2023/5"
+          - option "2023/4"
+          - option "2023/3"
+          - option "2023/2"
+          - option "2023/1"
+          - option "2022/6"
+          - option "2022/5"
+          - option "2022/4"
+          - option "2022/3"
+          - option "2022/2"
+          - option "2022/1"
+          - option "2021/6"
+          - option "2021/5"
+          - option "2021/4"
+          - option "2021/3"
+          - option "2021/2"
+          - option "2021/1"
+          - option "2020/6"
+          - option "2020/5"
+          - option "2020/4"
+          - option "2020/3"
+          - option "2020/2"
+          - option "2020/1"
+          - option "2019/6"
+          - option "2019/5"
+          - option "2019/4"
+          - option "2019/3"
+          - option "2019/2"
+          - option "2019/1"
+          - option "2018/6"
+          - option "2018/5"
+          - option "2018/4"
+          - option "2018/3"
+          - option "2018/2"
+          - option "2018/1"
+          - option "2017/6"
+          - option "2017/5"
+          - option "2017/4"
+          - option "2017/3"
+          - option "2017/2"
+          - option "2017/1"
+          - option "2016/6"
+          - option "2016/5"
+          - option "2016/4"
+          - option "2016/3"
+          - option "2016/2"
+          - option "2016/1"
+          - option "2015/6"
+          - option "2015/5"
+          - option "2015/4"
+          - option "2015/3"
+          - option "2015/2"
+          - option "2015/1"
+          - option "2014/6"
+          - option "2014/5"
+          - option "2014/4"
+          - option "2014/3"
+          - option "2014/2"
+          - option "2014/1"
+          - option "2013/6"
+          - option "2013/5"
+          - option "2013/4"
+          - option "2013/3"
+          - option "2013/2"
+          - option "2013/1"
+          - option "2012/6"
+          - option "2012/5"
+          - option "2012/4"
+          - option "2012/3"
+          - option "2012/2"
+          - option "2012/1"
+          - option "2011/6"
+          - option "2011/5"
+          - option "2011/4"
+          - option "2011/3"
+          - option "2011/2"
+          - option "2011/1"
+          - option "2010/6"
+          - option "2010/5"
+          - option "2010/4"
+          - option "2010/3"
+          - option "2010/2"
+          - option "2010/1"
+          - option "2009/6"
+          - option "2009/5"
+          - option "2009/4"
+          - option "2009/3"
+          - option "2009/2"
+          - option "2009/1"
+          - option "2008/6"
+          - option "2008/5"
+          - option "2008/4"
+          - option "2008/3"
+          - option "2008/2"
+          - option "2008/1"
+          - option "2007/6"
+          - option "2007/5"
+          - option "2007/4"
+          - option "2007/3"
+          - option "2007/2"
+          - option "2007/1"
+          - option "2006/6"
+          - option "2006/5"
+          - option "2006/4"
+          - option "2006/3"
+          - option "2006/2"
+          - option "2006/1"
+          - option "2005/6"
+          - option "2005/5"
+          - option "2005/4"
+          - option "2005/3"
+          - option "2005/2"
+          - option "2005/1"
+          - option "2004/6"
+          - option "2004/5"
+          - option "2004/4"
+          - option "2004/3"
+          - option "2004/2"
+          - option "2004/1"
+          - option "2003/6"
+          - option "2003/5"
+          - option "2003/4"
+          - option "2003/3"
+          - option "2003/2"
+          - option "2003/1"
+          - option "2002/6"
+          - option "2002/5"
+          - option "2002/4"
+          - option "2002/3"
+          - option "2002/2"
+          - option "2002/1"
+          - option "2001/6"
+          - option "2001/5"
+          - option "2001/4"
+          - option "2001/3"
+          - option "2001/2"
+          - option "2001/1"
+          - option "2000/6"
+          - option "2000/5"
+          - option "2000/4"
+          - option "2000/3"
+          - option "2000/2"
+          - option "2000/1"
+          - option "1999/6"
+          - option "1999/5"
+          - option "1999/4"
+          - option "1999/3"
+          - option "1999/2"
+          - option "1999/1"
+        - generic [ref=e47]: (Año/Bimestre)
+        - iframe [ref=e52]:
+          - generic [ref=f42e2]:
+            - generic [ref=f42e3]:
+              - checkbox "No soy un robot" [ref=f42e7]
+              - generic [ref=f42e11]: No soy un robot
+            - generic [ref=f42e15]: reCAPTCHA
+        - button "CONSULTAR" [ref=e54] [cursor=pointer]
+      - generic [ref=e55]:
+        - text: "Notas:"
+        - text: Una vez consultado su estado de cuenta, usted podrá imprimir el formato resultante y después pagar en los
+        - link "Lugares de Pago" [ref=e56] [cursor=pointer]:
+          - /url: /pagonet2/LugaresDePago.aspx
+        - text: . Adicionalmente, si así lo prefiere, también podrá realizar su "Pago en Línea" en este mismo Portal.
+  - generic [ref=e57]:
+    - link "Condiciones de uso" [ref=e58] [cursor=pointer]:
+      - /url: /pagonet2/Help/CondicionesDeUso.aspx
+    - text: "|"
+    - link "Aviso de Privacidad" [ref=e59] [cursor=pointer]:
+      - /url: https://www.leon.gob.mx/avisos-privacidad/aviso-pagonet.pdf
+  - generic [ref=e60]:
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - heading "Pagonet" [level=1] [ref=e63]
+        - list [ref=e65]:
+          - listitem [ref=e66]:
+            - link "Impuesto predial" [ref=e67] [cursor=pointer]:
+              - /url: /pagonet2/Services/Predial/
+          - listitem [ref=e68]:
+            - link "Infracciones de Policía Vial y de la Dirección de Movilidad" [ref=e69] [cursor=pointer]:
+              - /url: /pagonet2/Services/transito
+          - listitem [ref=e70]:
+            - link "Multas Municipales" [ref=e71] [cursor=pointer]:
+              - /url: /pagonet2/Services/multas
+          - listitem [ref=e72]:
+            - link "Publicidad móvil" [ref=e73] [cursor=pointer]:
+              - /url: /pagonet2/Services/pubmovil
+          - listitem [ref=e74]:
+            - link "Impuesto sobre adquisición de bienes inmuebles" [ref=e75] [cursor=pointer]:
+              - /url: /pagonet2/Services/traslado
+          - listitem [ref=e76]:
+            - link "Trámites de desarrollo urbano" [ref=e77] [cursor=pointer]:
+              - /url: /pagonet2/Services/DesUrb01
+          - listitem [ref=e78]:
+            - link "Referencias de pagos múltiples" [ref=e79] [cursor=pointer]:
+              - /url: /pagonet2/Services/Referencias
+          - listitem [ref=e80]:
+            - link "Transferencia Interbancaria (SPEI)" [ref=e81] [cursor=pointer]:
+              - /url: /pagonet2/Services/Spei/Spei_List.aspx
+      - generic [ref=e82]:
+        - heading "Estamos para servirte" [level=1] [ref=e83]
+        - generic [ref=e84]:
+          - img [ref=e85]
+          - link "Tus comentarios sobre el sitio" [ref=e86] [cursor=pointer]:
+            - /url: /pagonet2/Contacto.aspx
+          - text: son muy importantes.
+        - generic [ref=e87]:
+          - img [ref=e88]
+          - link "01 (477) 7 88 00 00" [ref=e89] [cursor=pointer]:
+            - /url: tel:4777880000
+        - generic [ref=e90]:
+          - img [ref=e91]
+          - text: Plaza Principal S/N
+          - text: Zona Centro León, Gto. México
+          - text: CP. 37000
+      - generic [ref=e92]:
+        - heading "Síguenos en:" [level=1] [ref=e93]
+        - generic [ref=e94]:
+          - link [ref=e95] [cursor=pointer]:
+            - /url: https://www.facebook.com/municipio.leon
+          - link [ref=e96] [cursor=pointer]:
+            - /url: https://twitter.com/municipio_leon
+    - link "Municipio de León" [ref=e99] [cursor=pointer]:
+      - /url: https://www.leon.gob.mx
+      - img "Municipio de León" [ref=e100]
+  - generic [ref=e101]: Copyright © Presidencia Municipal de León 2022

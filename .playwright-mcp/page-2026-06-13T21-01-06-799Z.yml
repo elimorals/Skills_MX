@@ -1,0 +1,430 @@
+- generic [active] [ref=e1]:
+  - alert [ref=e2]:
+    - paragraph [ref=e3]:
+      - text: SITIO WEB CON LA IDENTIDAD DEL H. AYUNTAMIENTO DE XALAPA 2018-2021
+      - text: ESTE PORTAL ESTA HABILITADO PARA EL USO EXCLUSIVO DE CONSULTA DE INFORMACIÓN
+  - generic [ref=e4]:
+    - navigation [ref=e5]:
+      - heading "Navegación" [level=1]
+      - list [ref=e6]:
+        - listitem [ref=e7]:
+          - link "Saltar al contenido" [ref=e8] [cursor=pointer]:
+            - /url: "#main-content"
+    - generic [ref=e9]:
+      - banner:
+        - generic [ref=e11]:
+          - heading [level=1] [ref=e14]:
+            - link "Ir a Xalapa" [ref=e15] [cursor=pointer]:
+              - /url: https://ayuntamiento.xalapa.gob.mx/web/guest/home
+          - paragraph [ref=e17]: H. Ayuntamiento de Xalapa
+          - generic [ref=e18]:
+            - paragraph [ref=e20]:
+              - img
+              - text: "- 13 de Junio 2026"
+            - group [ref=e30]:
+              - group [ref=e31]:
+                - textbox "Buscar" [ref=e33]
+        - generic [ref=e34]:
+          - generic:
+            - generic:
+              - text:    
+              - navigation [ref=e35]:
+                - heading "Navegación" [level=1]
+                - generic [ref=e36]:
+                  - menubar "Páginas del sitio web":
+                    - menuitem "Menú - Servicios Municipales" [ref=e37] [cursor=pointer]:
+                      - generic [ref=e38]:
+                        - text: Servicios Municipales
+                        - generic [ref=e39]: 
+                    - menuitem "Menú - Ayuntamiento" [ref=e40] [cursor=pointer]:
+                      - generic [ref=e41]:
+                        - text: Ayuntamiento
+                        - generic [ref=e42]: 
+                    - menuitem "Menú - Comunicación Social" [ref=e43] [cursor=pointer]:
+                      - generic [ref=e44]:
+                        - text: Comunicación Social
+                        - generic [ref=e45]: 
+                    - menuitem "Menú - Transparencia" [ref=e46] [cursor=pointer]:
+                      - generic [ref=e47]:
+                        - text: Transparencia
+                        - generic [ref=e48]: 
+        - generic [ref=e49]:
+          - generic [ref=e51]:
+            - listitem [ref=e55]:
+              - article [ref=e57]:
+                - generic [ref=e58]:
+                  - generic [ref=e59]:
+                    - img
+                  - generic [ref=e61]:
+                    - heading [level=3]
+                    - paragraph
+                    - paragraph [ref=e62]:
+                      - link "Ver más" [ref=e63] [cursor=pointer]:
+                        - /url: https://xalapa.gob.mx
+            - generic:
+              - generic:
+                - link "Prev" [ref=e64] [cursor=pointer]:
+                  - /url: ""
+                - link "Next" [ref=e65] [cursor=pointer]:
+                  - /url: ""
+          - generic [ref=e66]:
+            - paragraph [ref=e68]: Avisos
+            - generic [ref=e71]:
+              - list:
+                - listitem [ref=e72]:
+                  - link "COVID-19, tu Ayuntamiento trabaja para ti, haz clic aquí !!" [ref=e73] [cursor=pointer]:
+                    - /url: " https://ayuntamiento.xalapa.gob.mx/web/cimtra/cimtra-covid-19 "
+                - listitem [ref=e74]:
+                  - link "COVID-19, tu Ayuntamiento trabaja para ti, haz clic aquí !!" [ref=e75] [cursor=pointer]:
+                    - /url: " https://ayuntamiento.xalapa.gob.mx/web/cimtra/cimtra-covid-19 "
+                - listitem [ref=e76]:
+                  - link "COVID-19, tu Ayuntamiento trabaja para ti, haz clic aquí !!" [ref=e77] [cursor=pointer]:
+                    - /url: " https://ayuntamiento.xalapa.gob.mx/web/cimtra/cimtra-covid-19 "
+            - list [ref=e79]:
+              - listitem:
+                - link:
+                  - /url: ""
+                  - img
+              - listitem [ref=e80]:
+                - link [ref=e81] [cursor=pointer]:
+                  - /url: ""
+                  - img [ref=e82]
+        - generic [ref=e83]:
+          - img [ref=e85]:
+            - generic [ref=e88]: Atención alCiudadano
+          - img [ref=e94]:
+            - generic [ref=e96]: DIFMunicipal
+          - link [ref=e108] [cursor=pointer]:
+            - /url: https://www.visitaxalapa.com/
+            - img [ref=e109]:
+              - generic [ref=e111]: VisitaXalapa
+          - link [ref=e117] [cursor=pointer]:
+            - /url: /web/tucartelera
+            - img [ref=e118]:
+              - generic [ref=e121]: CarteleraCultural
+          - link "Asset 4" [ref=e133] [cursor=pointer]:
+            - /url: /web/immx/avgm
+            - img "Asset 4" [ref=e134]
+          - link [ref=e164] [cursor=pointer]:
+            - /url: http://www.radiociudadanaxalapa.com/
+            - img [ref=e165]:
+              - generic [ref=e167]:
+                - generic [ref=e168]: R
+                - generic [ref=e169]: a
+                - generic [ref=e170]: dio Ciuda
+                - generic [ref=e171]: dana
+                - generic [ref=e172]: Xalapa
+          - link [ref=e189] [cursor=pointer]:
+            - /url: /web/administracion/
+            - img [ref=e190]:
+              - generic [ref=e192]: Licitaciones
+          - link [ref=e207] [cursor=pointer]:
+            - /url: https://bolsadetrabajo.xalapa.gob.mx:2046/PortalAspirantes/login.html
+            - img [ref=e208]:
+              - generic [ref=e211]: Bolsa deTrabajo
+          - link "iconomil" [ref=e222] [cursor=pointer]:
+            - /url: https://ayuntamiento.xalapa.gob.mx/web/cimtra/cimtra-covid-19
+            - img "iconomil" [ref=e223]:
+              - generic [ref=e229]: COVID-19
+          - link [ref=e231] [cursor=pointer]:
+            - /url: https://ayuntamiento.xalapa.gob.mx/web/desarrollo-urbano/ciclovia
+            - img [ref=e232]
+          - link [ref=e253] [cursor=pointer]:
+            - /url: https://ayuntamiento.xalapa.gob.mx/web/atencion-ciudadana/catax
+            - img [ref=e254]:
+              - generic [ref=e265]: Centro de Atención Telefónica del Ayuntamiento de Xalapa
+      - main [ref=e286]:
+        - generic [ref=e289]:
+          - generic [ref=e295]:
+            - link:
+              - /url: ""
+          - heading "Sitios de interés" [level=2] [ref=e304]
+          - main [ref=e310]:
+            - generic [ref=e311]:
+              - main [ref=e319]:
+                - generic [ref=e320]:
+                  - paragraph [ref=e329]:
+                    - link [ref=e330] [cursor=pointer]:
+                      - /url: http://inicio.ifai.org.mx/SitePages/ifai.aspx
+                      - img [ref=e331]
+                  - paragraph [ref=e340]:
+                    - link [ref=e341] [cursor=pointer]:
+                      - /url: https://consultapublicamx.inai.org.mx/vut-web/?idSujetoObigadoParametro=5607&idEntidadParametro=30&idSectorParametro=26
+                      - img [ref=e342]
+              - main [ref=e350]:
+                - generic [ref=e351]:
+                  - paragraph [ref=e360]:
+                    - link [ref=e361] [cursor=pointer]:
+                      - /url: https://infomexveracruz.org.mx/InfomexVeracruz/default.aspx
+                      - img [ref=e362]
+                  - paragraph [ref=e371]:
+                    - link [ref=e372] [cursor=pointer]:
+                      - /url: http://www.ivai.org.mx
+                      - img [ref=e373]
+          - main [ref=e379]:
+            - generic [ref=e380]:
+              - main [ref=e388]:
+                - generic [ref=e389]:
+                  - paragraph [ref=e398]:
+                    - link [ref=e399] [cursor=pointer]:
+                      - /url: http://www.editoraveracruz.gob.mx/gacetaOficial.php
+                      - img [ref=e400]
+                  - paragraph [ref=e409]:
+                    - link [ref=e410] [cursor=pointer]:
+                      - /url: https://transparenciacroc.wixsite.com/sindicatocroc
+                      - img [ref=e411]
+              - main [ref=e419]:
+                - paragraph [ref=e429]:
+                  - link [ref=e430] [cursor=pointer]:
+                    - /url: https://solidaridadurbana1.wixsite.com/fatev-cat
+                    - img [ref=e432]
+          - main [ref=e440]
+      - contentinfo [ref=e446]:
+        - generic [ref=e447]:
+          - generic [ref=e448]:
+            - generic [ref=e449]:
+              - link "Inicio" [ref=e451] [cursor=pointer]:
+                - /url: https://ayuntamiento.xalapa.gob.mx/web/guest/home
+                - img [ref=e452]
+              - generic [ref=e453]:
+                - generic [ref=e454]:
+                  - paragraph [ref=e456]: Ayuntamiento
+                  - generic [ref=e457]:
+                    - paragraph [ref=e458]: Sitios de Interés
+                    - paragraph [ref=e459]:
+                      - link "CMAS" [ref=e460] [cursor=pointer]:
+                        - /url: "https://cmasxalapa.gob.mx/ "
+                    - paragraph [ref=e461]:
+                      - link "Museo Casa de Xalapa" [ref=e462] [cursor=pointer]:
+                        - /url: /web/muxa
+                    - paragraph [ref=e463]:
+                      - link "Consejo Municipal para la Asistencia Social" [ref=e464] [cursor=pointer]:
+                        - /url: /web/conmas
+                    - paragraph [ref=e465]:
+                      - link "City Adapt" [ref=e466] [cursor=pointer]:
+                        - /url: https://ayuntamiento.xalapa.gob.mx/web/cityadapt-xalapa/inicio
+                  - generic [ref=e467]:
+                    - paragraph
+                    - paragraph [ref=e468]: Teléfonos de Emergencia
+                    - paragraph [ref=e469]:
+                      - link "Emergencias 911" [ref=e470] [cursor=pointer]:
+                        - /url: "tel: 911"
+                    - paragraph [ref=e471]:
+                      - link "Cruz Roja 8.17.81.58" [ref=e472] [cursor=pointer]:
+                        - /url: "tel: 8 17 81 58"
+                    - paragraph [ref=e473]:
+                      - link "Bomberos 8.15.00.02" [ref=e474] [cursor=pointer]:
+                        - /url: "tel: 8 15 00 02"
+                    - paragraph [ref=e475]:
+                      - link "Protección Civil 8.40.42.20" [ref=e476] [cursor=pointer]:
+                        - /url: "tel: 8 40 42 20"
+                    - paragraph [ref=e477]:
+                      - link "Fugas CMAS 2.37.03.00" [ref=e478] [cursor=pointer]:
+                        - /url: "tel: 22 82 37 03 00"
+                - generic [ref=e480]:
+                  - paragraph [ref=e481] [cursor=pointer]: Direcciones [ - ]
+                  - generic [ref=e482]:
+                    - generic [ref=e483]:
+                      - paragraph [ref=e484]:
+                        - link "Administración" [ref=e485] [cursor=pointer]:
+                          - /url: /web/administracion/
+                      - paragraph [ref=e486]:
+                        - link "Atención Ciudadana" [ref=e487] [cursor=pointer]:
+                          - /url: /web/atencion-ciudadana
+                      - paragraph [ref=e488]:
+                        - link "Contraloría" [ref=e489] [cursor=pointer]:
+                          - /url: /web/contraloria
+                      - paragraph [ref=e490]:
+                        - link "Comunicación Social" [ref=e491] [cursor=pointer]:
+                          - /url: /web/coordinacion-de-comunicacion-social
+                      - paragraph [ref=e492]:
+                        - link "Desarrollo Económico" [ref=e493] [cursor=pointer]:
+                          - /url: /web/desarrollo-economico
+                      - paragraph [ref=e494]:
+                        - link "Desarrollo Social" [ref=e495] [cursor=pointer]:
+                          - /url: /web/desarrollo-social
+                      - paragraph [ref=e496]:
+                        - link "Desarrollo Urbano" [ref=e497] [cursor=pointer]:
+                          - /url: /web/desarrollo-urbano
+                      - paragraph [ref=e498]:
+                        - link "DIF Xalapa" [ref=e499] [cursor=pointer]:
+                          - /url: /web/dif-xalapa
+                      - paragraph [ref=e500]:
+                        - link "Gobierno Abierto" [ref=e501] [cursor=pointer]:
+                          - /url: /web/gobierno-abierto
+                      - paragraph [ref=e502]:
+                        - link "Gobernación" [ref=e503] [cursor=pointer]:
+                          - /url: /web/gobernacion
+                      - paragraph [ref=e504]:
+                        - link "Ingresos" [ref=e505] [cursor=pointer]:
+                          - /url: /web/ingresos
+                    - generic [ref=e506]:
+                      - paragraph [ref=e507]:
+                        - link "Instituto Municipal de las Mujeres de Xalapa" [ref=e508] [cursor=pointer]:
+                          - /url: /web/immx/
+                      - paragraph [ref=e509]:
+                        - link "Medio Ambiente y Sustentabilidad" [ref=e510] [cursor=pointer]:
+                          - /url: /web/dmas
+                      - paragraph [ref=e511]:
+                        - link "Obras Públicas" [ref=e512] [cursor=pointer]:
+                          - /url: /web/obras-publicas/
+                      - paragraph [ref=e513]:
+                        - link "Participación Ciudadana" [ref=e514] [cursor=pointer]:
+                          - /url: /web/participacion-ciudadana/
+                      - paragraph [ref=e515]:
+                        - link "Presupuesto y Contabilidad" [ref=e516] [cursor=pointer]:
+                          - /url: /web/presupuesto-y-contabilidad
+                      - paragraph [ref=e517]:
+                        - link "Protección Civil" [ref=e518] [cursor=pointer]:
+                          - /url: /web/proteccion-civil
+                      - paragraph [ref=e519]:
+                        - link "Recursos Humanos" [ref=e520] [cursor=pointer]:
+                          - /url: /web/recursos-humanos
+                      - paragraph [ref=e521]:
+                        - link "Secretaría del Ayuntamiento" [ref=e522] [cursor=pointer]:
+                          - /url: /web/secretaria-del-ayuntamiento/quienes-somos
+                      - paragraph [ref=e523]:
+                        - link "Seguridad Ciudadana y Tránsito Municipal" [ref=e524] [cursor=pointer]:
+                          - /url: /web/seguridad-ciudadana
+                      - paragraph [ref=e525]:
+                        - link "SIPINNA" [ref=e526] [cursor=pointer]:
+                          - /url: /web/sipinna
+                      - paragraph [ref=e527]:
+                        - link "Transparencia y Acceso a la Información" [ref=e528] [cursor=pointer]:
+                          - /url: /web/transparencia-y-acceso-a-la-informacion/
+            - generic [ref=e530]:
+              - paragraph [ref=e531]: Ubicación
+              - text: Calle Juan de la Luz Enríquez S/N, Colonia Centro, Xalapa, Veracruz
+              - paragraph [ref=e532]: Horario
+              - text: Lunes a Viernes de 8:00 a 15:00 y de 18:00 a 21:00
+              - paragraph [ref=e533]: Teléfono
+              - link "(228) 8 42 12 00" [ref=e535] [cursor=pointer]:
+                - /url: "tel: 22 88 42 12 00"
+              - link "(228) 2 90 10 00" [ref=e537] [cursor=pointer]:
+                - /url: "tel: 22 82 90 10 00"
+              - iframe [ref=e538]:
+                - link "Abrir en Maps (se abre en una nueva pestaña)" [ref=f132e4] [cursor=pointer]:
+                  - /url: undefined
+                  - text: Abrir en Maps
+                  - img [ref=f132e6]
+          - generic [ref=e539]:
+            - generic [ref=e540]:
+              - link "facebook" [ref=e541] [cursor=pointer]:
+                - /url: https://www.facebook.com/AytoXalapa
+                - img [ref=e542]
+              - link "youtube" [ref=e543] [cursor=pointer]:
+                - /url: https://www.youtube.com/channel/UCIIb-qxMMm9uNLaslLGpW0g
+                - img [ref=e544]
+              - link "twitter" [ref=e545] [cursor=pointer]:
+                - /url: https://twitter.com/AytoXalapa
+                - img [ref=e546]
+              - link "instagram" [ref=e547] [cursor=pointer]:
+                - /url: https://www.instagram.com/ayuntamientoxalapa/
+                - img [ref=e548]
+              - link "Entrar" [ref=e549] [cursor=pointer]:
+                - /url: /c/portal/login?p_l_id=20146
+                - img [ref=e550]
+            - paragraph [ref=e552]:
+              - link "Créditos" [ref=e553] [cursor=pointer]:
+                - /url: /web/guest/creditos/
+              - link "Política de Privacidad" [ref=e554] [cursor=pointer]:
+                - /url: /web/guest/politica-privacidad/
+              - link "Webmaster" [ref=e555] [cursor=pointer]:
+                - /url: mailto:webmaster@xalapa.gob.mx
+            - paragraph [ref=e557]: H. Ayuntamiento de Xalapa. Algunos derechos reservados 2019 ®
+    - generic:
+      - link "×" [ref=e558] [cursor=pointer]:
+        - /url: javascript:void(0)
+      - list "Páginas del sitio web":
+        - menuitem "Servicios Municipales " [ref=e559] [cursor=pointer]:
+          - generic [ref=e560]:
+            - text: Servicios Municipales
+            - generic [ref=e561]: 
+        - list:
+          - generic [ref=e562]:
+            - menuitem "Agua" [ref=e563] [cursor=pointer]
+            - menuitem "Alumbrado" [ref=e564] [cursor=pointer]
+            - menuitem "Cementerios" [ref=e565] [cursor=pointer]
+            - menuitem "Limpia Pública" [ref=e566] [cursor=pointer]
+            - menuitem "Parques y Jardines" [ref=e567] [cursor=pointer]
+            - menuitem "Salud" [ref=e568] [cursor=pointer]
+          - generic [ref=e569]:
+            - menuitem "Nacimiento" [ref=e570] [cursor=pointer]
+            - menuitem "Matrimonio" [ref=e571] [cursor=pointer]
+            - menuitem "Divorcio" [ref=e572] [cursor=pointer]
+            - menuitem "Defunción" [ref=e573] [cursor=pointer]
+          - generic [ref=e574]:
+            - menuitem "De Productor" [ref=e575] [cursor=pointer]
+            - menuitem "De Datos Catastrales" [ref=e576] [cursor=pointer]
+            - menuitem "De No Adeudo" [ref=e577] [cursor=pointer]
+          - generic [ref=e578]:
+            - menuitem "Giros Comerciales" [ref=e579] [cursor=pointer]
+            - menuitem "Construcción Obra Nueva" [ref=e580] [cursor=pointer]
+            - menuitem "Construcción Remodelación" [ref=e581] [cursor=pointer]
+          - generic [ref=e582]:
+            - menuitem "Reporta un Problema con los Servicios Municipales" [ref=e583] [cursor=pointer]
+            - menuitem "Presenta tu Queja o Denuncia de un Funcionario Municipal" [ref=e584] [cursor=pointer]
+          - generic [ref=e585]:
+            - menuitem "Apoyo de Vigilancia" [ref=e586] [cursor=pointer]
+            - menuitem "Apoyo de Medicamentos" [ref=e587] [cursor=pointer]
+            - menuitem "Permiso de Eventos Particulares" [ref=e588] [cursor=pointer]
+          - link "Contactos y teléfonos de atención" [ref=e591] [cursor=pointer]:
+            - /url: "#telefonos\""
+          - link "Ver todos los trámites y servicios" [ref=e594] [cursor=pointer]:
+            - /url: /web/tramites-y-servicios
+        - menuitem "Ayuntamiento " [ref=e595]:
+          - generic [ref=e596]:
+            - text: Ayuntamiento
+            - generic [ref=e597]: 
+        - list:
+          - generic [ref=e598]:
+            - menuitem "Presidencia" [ref=e599] [cursor=pointer]
+            - menuitem "Sindicatura" [ref=e600] [cursor=pointer]
+            - menuitem "Regidurías" [ref=e601] [cursor=pointer]
+            - menuitem "Sesiones de Cabildo" [ref=e602] [cursor=pointer]
+            - menuitem "Asambleas del Consejo de Desarrollo Municipal" [ref=e603] [cursor=pointer]
+            - menuitem "Informes del cuerpo edilicio" [ref=e604] [cursor=pointer]
+          - generic [ref=e605]:
+            - menuitem "Directorio" [ref=e606] [cursor=pointer]
+            - menuitem "Organigrama" [ref=e607] [cursor=pointer]
+            - menuitem "Plan Municipal de Desarrollo" [ref=e608] [cursor=pointer]
+            - menuitem "Informes de Gobierno" [ref=e609] [cursor=pointer]
+          - generic [ref=e610]:
+            - menuitem "Gacetas" [ref=e611] [cursor=pointer]
+            - menuitem "Normatividad" [ref=e612] [cursor=pointer]
+            - menuitem "Actas 2014-2017" [ref=e613] [cursor=pointer]
+            - menuitem "Informes de Secretaría" [ref=e614] [cursor=pointer]
+        - menuitem "Comunicación Social " [ref=e615] [cursor=pointer]:
+          - generic [ref=e616]:
+            - text: Comunicación Social
+            - generic [ref=e617]: 
+        - list:
+          - generic [ref=e618]:
+            - menuitem "Comunicados" [ref=e619] [cursor=pointer]
+            - menuitem "Avisos" [ref=e620] [cursor=pointer]
+          - menuitem "Periódico Florece Xalapa" [ref=e622] [cursor=pointer]:
+            - text: Periódico
+            - text: Florece Xalapa
+          - generic [ref=e623]:
+            - menuitem "Multimedia" [ref=e624] [cursor=pointer]
+            - menuitem "Última Transmisión" [ref=e625] [cursor=pointer]
+        - menuitem "Transparencia " [ref=e626] [cursor=pointer]:
+          - generic [ref=e627]:
+            - text: Transparencia
+            - generic [ref=e628]: 
+        - list:
+          - generic [ref=e629]:
+            - menuitem "Obligaciones de transparencia" [ref=e630] [cursor=pointer]
+            - menuitem "Avisos de privacidad" [ref=e631] [cursor=pointer]
+            - menuitem "Manuales" [ref=e632] [cursor=pointer]
+            - menuitem "Información Financiera" [ref=e633] [cursor=pointer]
+          - generic [ref=e634]:
+            - menuitem "Fondos y Programas Federales" [ref=e635] [cursor=pointer]
+            - menuitem "Consulta de Obras (COMVER)" [ref=e636] [cursor=pointer]
+            - menuitem "Información Fiscal" [ref=e637] [cursor=pointer]
+            - menuitem "Tesorería" [ref=e638] [cursor=pointer]
+            - menuitem "Herramienta CIMTRA" [ref=e639] [cursor=pointer]
+            - menuitem "CIMTRA COVID-19" [ref=e640] [cursor=pointer]
+          - generic [ref=e641]:
+            - menuitem "Preguntas frecuentes" [ref=e642] [cursor=pointer]
+            - menuitem "Formula tu Pregunta" [ref=e643] [cursor=pointer]

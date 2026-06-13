@@ -1,0 +1,59 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Sistema de Trámites en Linea" [ref=e5] [cursor=pointer]:
+        - /url: index.php
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Acceso empleados" [ref=e9] [cursor=pointer]:
+            - /url: empleados.php
+        - listitem [ref=e10]:
+          - link "Iniciar sesión" [ref=e11] [cursor=pointer]:
+            - /url: login.php
+  - generic [ref=e12]:
+    - group
+    - heading "Pago de Predial" [level=2] [ref=e13]
+    - heading "Consulta y pago del impuesto predial." [level=4] [ref=e16]
+    - generic [ref=e18]:
+      - generic [ref=e19]: Detalles del trámite.
+      - generic [ref=e21]:
+        - term [ref=e22]: "Dependencia:"
+        - definition [ref=e23]: Tesorería Municipal
+        - term [ref=e24]: "Clave trámite:"
+        - definition [ref=e25]
+        - term [ref=e26]: "Tipo de Solicitud:"
+        - definition [ref=e27]: Pago
+    - generic [ref=e28]:
+      - generic [ref=e29]: Consultar y pagar predial.
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e33]: "Expediente:"
+          - textbox "Expediente:" [active] [ref=e35]:
+            - /placeholder: "01001001"
+          - paragraph [ref=e37]:
+            - text: Ingrese su número de Expediente Catastral (Region - Manzana - Lote) sin espacios ni guiones.
+            - text: "Ejemplo: 01001001."
+        - button "Consultar" [ref=e40] [cursor=pointer]
+    - contentinfo [ref=e41]:
+      - table [ref=e42]:
+        - rowgroup [ref=e43]:
+          - row "Dudas o Aclaraciones Alonso Hernández Guerra tramites@apodaca.gob.mx 81 1772 2020 ext. 243 Dirección Zaragoza e Hidalgo s/n Centro de Apodaca Apodaca, Nuevo León C.P. 66600 Enlaces Aviso de Privacidad Terminos y condiciones" [ref=e44]:
+            - cell "Dudas o Aclaraciones Alonso Hernández Guerra tramites@apodaca.gob.mx 81 1772 2020 ext. 243" [ref=e45]:
+              - paragraph [ref=e46]:
+                - strong [ref=e47]: Dudas o Aclaraciones
+                - text: Alonso Hernández Guerra
+                - text: tramites@apodaca.gob.mx
+                - text: 81 1772 2020 ext. 243
+            - cell "Dirección Zaragoza e Hidalgo s/n Centro de Apodaca Apodaca, Nuevo León C.P. 66600" [ref=e48]:
+              - paragraph [ref=e49]:
+                - strong [ref=e50]: Dirección
+                - text: Zaragoza e Hidalgo s/n Centro de Apodaca
+                - text: Apodaca, Nuevo León
+                - text: C.P. 66600
+            - cell "Enlaces Aviso de Privacidad Terminos y condiciones" [ref=e51]:
+              - paragraph [ref=e52]:
+                - strong [ref=e53]: Enlaces
+                - link "Aviso de Privacidad" [ref=e54] [cursor=pointer]:
+                  - /url: avisodeprivacidad.pdf
+                - link "Terminos y condiciones" [ref=e55] [cursor=pointer]:
+                  - /url: terminoscondiciones.pdf

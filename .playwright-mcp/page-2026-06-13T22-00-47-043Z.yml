@@ -1,0 +1,587 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to content" [ref=e3] [cursor=pointer]:
+      - /url: "#content"
+    - heading "\"2026, AÑO DEL BICENTENARIO DEL NATALICIO DE MARGARITA MAZA PARADA, EJEMPLO DE DIGNIDAD, LEALTAD Y SERVICIO A LA NACIÓN\"" [level=3] [ref=e4]
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - link "finanzas" [ref=e7] [cursor=pointer]:
+          - /url: https://www.finanzasoaxaca.gob.mx/
+          - img "finanzas" [ref=e8]
+        - paragraph [ref=e9]:
+          - link "finanzas" [ref=e10] [cursor=pointer]:
+            - /url: https://www.finanzasoaxaca.gob.mx/
+        - paragraph [ref=e11]: Secretaría de Finanzas
+      - navigation:
+        - list [ref=e12]:
+          - listitem [ref=e13]:
+            - link [ref=e14] [cursor=pointer]:
+              - /url: https://correo.oaxaca.gob.mx/
+              - generic [ref=e15]: 
+          - listitem [ref=e16]:
+            - link [ref=e17] [cursor=pointer]:
+              - /url: https://www.facebook.com/Secretar%C3%ADa-de-Finanzas-del-Estado-de-Oaxaca-722209444553839/
+              - generic [ref=e18]: 
+          - listitem [ref=e19]:
+            - link [ref=e20] [cursor=pointer]:
+              - /url: https://twitter.com/sefingoboax?lang=es
+              - generic [ref=e21]: 
+          - listitem [ref=e22]:
+            - link [ref=e23] [cursor=pointer]:
+              - /url: http://www.pictame.com/user/sefin.goboax/4653630136
+              - generic [ref=e24]: 
+      - navigation:
+        - text: 
+        - list [ref=e25]:
+          - listitem [ref=e26]:
+            - link "Estructura" [ref=e27] [cursor=pointer]:
+              - /url: "#"
+            - list [ref=e28]:
+              - listitem [ref=e29]:
+                - link "Funciones Generales" [ref=e30] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/directorio/
+              - listitem [ref=e31]:
+                - link "Misión" [ref=e32] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/mision/
+              - listitem [ref=e33]:
+                - link "Visión" [ref=e34] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/vision/
+              - listitem [ref=e35]:
+                - link "Organigrama" [ref=e36] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/organigrama/
+          - listitem [ref=e37]:
+            - link "Transparencia" [ref=e38] [cursor=pointer]:
+              - /url: http://www.finanzasoaxaca.gob.mx/leytransparencia/
+          - listitem [ref=e39]:
+            - link "Directorio" [ref=e40] [cursor=pointer]:
+              - /url: "#"
+            - list [ref=e41]:
+              - listitem [ref=e42]:
+                - link "Oficinas Centrales" [ref=e43] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/oficinas-centrales/
+              - listitem [ref=e44]:
+                - link "Centros Integrales de Atención al Contribuyente" [ref=e45] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/delegaciones-fiscales/
+          - listitem [ref=e46]:
+            - link "Presupuestaria" [ref=e47] [cursor=pointer]:
+              - /url: http://www.finanzasoaxaca.gob.mx/transparenciapresupuestaria/
+          - listitem [ref=e48]:
+            - link "Convocatoria deuda" [ref=e49] [cursor=pointer]:
+              - /url: https://www.finanzasoaxaca.gob.mx/convocatoria-deuda/
+          - listitem [ref=e50]:
+            - link "AVISOS DE PRIVACIDAD" [ref=e51] [cursor=pointer]:
+              - /url: https://www.finanzasoaxaca.gob.mx/avisos-de-privacidad/
+          - listitem [ref=e52]:
+            - link "DOCUMENTO DE SEGURIDAD" [ref=e53] [cursor=pointer]:
+              - /url: https://www.finanzasoaxaca.gob.mx/wp-content/uploads/2025/03/DOCUMENTO-DE-SEGURIDAD-UNIDAD-DE-TRASNPARENCIA-enero-2025.pdf
+      - search [ref=e54]:
+        - generic [ref=e55]:
+          - generic [ref=e56]: "Buscar:"
+          - searchbox "Buscar:" [ref=e57]
+        - generic [ref=e58]: 
+      - link [ref=e60] [cursor=pointer]:
+        - /url: https://www.plataformadetransparencia.org.mx/Inicio
+        - img [ref=e61]
+      - separator [ref=e62]
+      - generic [ref=e63]:
+        - tablist [ref=e64]:
+          - listitem [ref=e65]:
+            - tab "Servicios en Línea" [ref=e66] [cursor=pointer]
+          - listitem [ref=e67]:
+            - tab "NUEVO Pago en Línea" [ref=e68] [cursor=pointer]:
+              - img "NUEVO" [ref=e69]
+              - text: Pago en Línea
+          - listitem [ref=e70]:
+            - tab "Información" [ref=e71] [cursor=pointer]
+          - listitem [ref=e72]:
+            - tab "Trámites" [ref=e73] [cursor=pointer]
+          - listitem [ref=e74]:
+            - tab "Datos abiertos" [ref=e75] [cursor=pointer]
+        - generic:                                                
+    - main [ref=e77]:
+      - article [ref=e78]:
+        - generic [ref=e79]:
+          - generic [ref=e84]:
+            - generic [ref=e86]:
+              - generic [ref=e87] [cursor=pointer]: 
+              - generic [ref=e88] [cursor=pointer]: 
+              - generic [ref=e89] [cursor=pointer]: 
+              - generic [ref=e90] [cursor=pointer]: 
+              - generic [ref=e91] [cursor=pointer]: 
+              - generic [ref=e92] [cursor=pointer]: 
+              - generic [ref=e93] [cursor=pointer]: 
+              - generic [ref=e94] [cursor=pointer]: 
+              - generic [ref=e95] [cursor=pointer]: 
+              - generic [ref=e96] [cursor=pointer]: 
+            - generic [ref=e147] [cursor=pointer]: 
+            - generic [ref=e153] [cursor=pointer]: 
+          - generic [ref=e155]:
+            - generic [ref=e157]:
+              - generic [ref=e159]:
+                - generic:
+                  - link:
+                    - /url: https://www.finanzasoaxaca.gob.mx/anexos-de-reglas-de-caracter-general/
+                - heading "Formatos" [level=3] [ref=e162]
+              - generic [ref=e164]:
+                - generic:
+                  - link:
+                    - /url: http://www.finanzasoaxaca.gob.mx/mapa-del-sitio/
+                - heading "Mapa del sitio" [level=3] [ref=e167]
+              - generic [ref=e169]:
+                - generic:
+                  - link:
+                    - /url: http://www.periodicooficial.oaxaca.gob.mx/
+                - heading "Periódico Oficial del Gobierno del Estado de Oaxaca." [level=3] [ref=e172]:
+                  - text: Periódico Oficial del
+                  - text: Gobierno del Estado de Oaxaca.
+              - generic [ref=e174]:
+                - generic:
+                  - link:
+                    - /url: pdf/otros/derechos.pdf
+                - heading "Derechos de los Contribuyentes" [level=3] [ref=e177]
+              - generic [ref=e179]:
+                - generic:
+                  - link:
+                    - /url: https://www.finanzasoaxaca.gob.mx/anexos-de-reglas-de-caracter-general/
+                - heading "Formatos" [level=3] [ref=e182]
+              - generic [ref=e184]:
+                - generic:
+                  - link:
+                    - /url: http://www.finanzasoaxaca.gob.mx/mapa-del-sitio/
+                - heading "Mapa del sitio" [level=3] [ref=e187]
+              - generic [ref=e189]:
+                - generic:
+                  - link:
+                    - /url: http://www.periodicooficial.oaxaca.gob.mx/
+                - heading "Periódico Oficial del Gobierno del Estado de Oaxaca." [level=3] [ref=e192]:
+                  - text: Periódico Oficial del
+                  - text: Gobierno del Estado de Oaxaca.
+              - generic [ref=e194]:
+                - generic:
+                  - link:
+                    - /url: pdf/otros/derechos.pdf
+                - heading "Derechos de los Contribuyentes" [level=3] [ref=e197]
+              - generic [ref=e199]:
+                - generic:
+                  - link:
+                    - /url: https://www.finanzasoaxaca.gob.mx/anexos-de-reglas-de-caracter-general/
+                - heading "Formatos" [level=3] [ref=e202]
+              - generic [ref=e204]:
+                - generic:
+                  - link:
+                    - /url: http://www.finanzasoaxaca.gob.mx/mapa-del-sitio/
+                - heading "Mapa del sitio" [level=3] [ref=e207]
+              - generic [ref=e209]:
+                - generic:
+                  - link:
+                    - /url: http://www.periodicooficial.oaxaca.gob.mx/
+                - heading "Periódico Oficial del Gobierno del Estado de Oaxaca." [level=3] [ref=e212]:
+                  - text: Periódico Oficial del
+                  - text: Gobierno del Estado de Oaxaca.
+              - generic [ref=e214]:
+                - generic:
+                  - link:
+                    - /url: pdf/otros/derechos.pdf
+                - heading "Derechos de los Contribuyentes" [level=3] [ref=e217]
+              - generic [ref=e219]:
+                - generic:
+                  - link:
+                    - /url: https://www.finanzasoaxaca.gob.mx/anexos-de-reglas-de-caracter-general/
+                - heading "Formatos" [level=3] [ref=e222]
+              - generic [ref=e224]:
+                - generic:
+                  - link:
+                    - /url: http://www.finanzasoaxaca.gob.mx/mapa-del-sitio/
+                - heading "Mapa del sitio" [level=3] [ref=e227]
+            - button [ref=e229] [cursor=pointer]
+          - generic [ref=e232]:
+            - generic [ref=e234]:
+              - generic [ref=e236]:
+                - generic:
+                  - link:
+                    - /url: http://www.finanzasoaxaca.gob.mx/transparenciapresupuestaria/rendicion_cuentas.html#cumplimientoLGCG
+                - heading "MANUALES CONTABLES" [level=3] [ref=e239]
+              - generic [ref=e241]:
+                - generic:
+                  - link:
+                    - /url: http://www.finanzasoaxaca.gob.mx/transparenciapresupuestaria/marco_programatico.html
+                - heading "MANUALES PRESUPUESTALES" [level=3] [ref=e244]
+              - generic [ref=e246]:
+                - generic:
+                  - link:
+                    - /url: https://www.finanzasoaxaca.gob.mx/pacef/
+                - generic [ref=e247]:
+                  - heading "PACEF 2026." [level=3] [ref=e249]
+                  - paragraph [ref=e250]: Programa Anual de Capacitación con Entidades Federativas
+              - generic [ref=e252]:
+                - generic:
+                  - link:
+                    - /url: http://www.finanzasoaxaca.gob.mx/transparenciapresupuestaria/rendicion_cuentas.html
+                - generic [ref=e253]:
+                  - heading "RENDICIÓN DE CUENTAS." [level=3] [ref=e255]
+                  - paragraph [ref=e256]: Cuenta Pública, Informes de Finanzas Publicas, Deuda Pública...
+              - generic [ref=e258]:
+                - generic:
+                  - link:
+                    - /url: http://www.finanzasoaxaca.gob.mx/paquete-economico-2018/
+                - generic [ref=e259]:
+                  - heading "PAQUETE ECONÓMICO" [level=3] [ref=e261]
+                  - paragraph [ref=e262]: Proyecto de Ley de Ingresos y Presupuesto de Egresos
+              - generic [ref=e264]:
+                - generic:
+                  - link:
+                    - /url: http://www.finanzasoaxaca.gob.mx/relacion-de-casas-de-empeno/
+                - heading "RELACIÓN DE CASAS DE EMPEÑOS" [level=3] [ref=e267]
+              - generic [ref=e269]:
+                - generic:
+                  - link:
+                    - /url: http://www.finanzasoaxaca.gob.mx/transparenciapresupuestaria/rendicion_cuentas.html#cumplimientoLGCG
+                - heading "MANUALES CONTABLES" [level=3] [ref=e272]
+              - generic [ref=e274]:
+                - generic:
+                  - link:
+                    - /url: http://www.finanzasoaxaca.gob.mx/transparenciapresupuestaria/marco_programatico.html
+                - heading "MANUALES PRESUPUESTALES" [level=3] [ref=e277]
+              - generic [ref=e279]:
+                - generic:
+                  - link:
+                    - /url: https://www.finanzasoaxaca.gob.mx/pacef/
+                - generic [ref=e280]:
+                  - heading "PACEF 2026." [level=3] [ref=e282]
+                  - paragraph [ref=e283]: Programa Anual de Capacitación con Entidades Federativas
+              - generic [ref=e285]:
+                - generic:
+                  - link:
+                    - /url: http://www.finanzasoaxaca.gob.mx/transparenciapresupuestaria/rendicion_cuentas.html
+                - generic [ref=e286]:
+                  - heading "RENDICIÓN DE CUENTAS." [level=3] [ref=e288]
+                  - paragraph [ref=e289]: Cuenta Pública, Informes de Finanzas Publicas, Deuda Pública...
+              - generic [ref=e291]:
+                - generic:
+                  - link:
+                    - /url: http://www.finanzasoaxaca.gob.mx/paquete-economico-2018/
+                - generic [ref=e292]:
+                  - heading "PAQUETE ECONÓMICO" [level=3] [ref=e294]
+                  - paragraph [ref=e295]: Proyecto de Ley de Ingresos y Presupuesto de Egresos
+              - generic [ref=e297]:
+                - generic:
+                  - link:
+                    - /url: http://www.finanzasoaxaca.gob.mx/relacion-de-casas-de-empeno/
+                - heading "RELACIÓN DE CASAS DE EMPEÑOS" [level=3] [ref=e300]
+            - generic [ref=e301]:
+              - button [ref=e302] [cursor=pointer]
+              - button [ref=e304] [cursor=pointer]
+          - generic [ref=e306]:
+            - generic [ref=e307]:
+              - heading "Micrositios" [level=3] [ref=e308]
+              - list [ref=e309]:
+                - listitem [ref=e310]:
+                  - link "Consejo de Armonización Contable del Estado de Oaxaca" [ref=e311] [cursor=pointer]:
+                    - /url: https://caceo.finanzasoaxaca.gob.mx/
+                - listitem [ref=e312]:
+                  - link "Transparencia Presupuestaria" [ref=e313] [cursor=pointer]:
+                    - /url: http://www.finanzasoaxaca.gob.mx/transparenciapresupuestaria/
+            - generic [ref=e314]:
+              - heading "Sitios de Interés" [level=3] [ref=e315]
+              - list [ref=e316]:
+                - listitem [ref=e317]:
+                  - link "INEGI" [ref=e318] [cursor=pointer]:
+                    - /url: http://www.inegi.org.mx/
+                - listitem [ref=e319]:
+                  - link "BANXICO" [ref=e320] [cursor=pointer]:
+                    - /url: http://www.banxico.org.mx/
+                - listitem [ref=e321]:
+                  - link "SHCP" [ref=e322] [cursor=pointer]:
+                    - /url: http://www.shcp.gob.mx/
+                - listitem [ref=e323]:
+                  - link "CONAC" [ref=e324] [cursor=pointer]:
+                    - /url: http://www.conac.gob.mx/
+                - listitem [ref=e325]:
+                  - link "ASF" [ref=e326] [cursor=pointer]:
+                    - /url: http://www.asf.gob.mx/
+                - listitem [ref=e327]:
+                  - link "ASE" [ref=e328] [cursor=pointer]:
+                    - /url: http://www.aseoaxaca.gob.mx/
+                - listitem [ref=e329]:
+                  - link "BANOBRAS" [ref=e330] [cursor=pointer]:
+                    - /url: http://www.banobras.gob.mx/Paginas/Banobras.aspx
+                - listitem [ref=e331]:
+                  - link "CONDUSEF" [ref=e332] [cursor=pointer]:
+                    - /url: http://www.condusef.gob.mx/
+                - listitem [ref=e333]:
+                  - link "gob.mx" [ref=e334] [cursor=pointer]:
+                    - /url: http://www.gob.mx/
+            - generic [ref=e335]:
+              - heading "Sistemas Internos" [level=3] [ref=e336]
+              - list [ref=e337]:
+                - listitem [ref=e338]:
+                  - link "Sistema de Ingresos de Oaxaca PAGOS" [ref=e339] [cursor=pointer]:
+                    - /url: https://siox.finanzasoaxaca.gob.mx/pagos
+                - listitem [ref=e340]:
+                  - link "Sistema de Ingresos de Oaxaca – Acceso Interno" [ref=e341] [cursor=pointer]:
+                    - /url: https://siox.finanzasoaxaca.gob.mx
+                - listitem [ref=e342]:
+                  - link "Sistema de Tickets" [ref=e343] [cursor=pointer]:
+                    - /url: https://osticket.finanzasoaxaca.gob.mx/
+  - generic [ref=e344]:
+    - heading "Atención Telefónica" [level=3] [ref=e345]
+    - list [ref=e347]:
+      - listitem [ref=e348]:
+        - link "951 501 6995 y 800 310 7070 Lunes a Viernes de 8 a 17 hrs." [ref=e349] [cursor=pointer]:
+          - /url: "#"
+          - text: 951 501 6995 y 800 310 7070
+          - generic [ref=e350]: Lunes a Viernes de 8 a 17 hrs.
+      - listitem [ref=e351]:
+        - link " Centro de Llamadas" [ref=e352] [cursor=pointer]:
+          - /url: https://www.finanzasoaxaca.gob.mx/centro-de-llamadas/
+          - generic [ref=e353]: 
+          - text: Centro de Llamadas
+      - listitem [ref=e354]:
+        - link "9 1 1 Emergencias El 911 esta disponible en todas las entidades del país." [ref=e355] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e356]: "9"
+          - generic [ref=e357]: "1"
+          - generic [ref=e358]: "1"
+          - text: Emergencias
+          - generic [ref=e359]: El 911 esta disponible en todas las entidades del país.
+  - generic [ref=e360]:
+    - contentinfo [ref=e361]:
+      - generic [ref=e362]:
+        - generic [ref=e363]:
+          - generic [ref=e364]:
+            - list [ref=e367]:
+              - listitem [ref=e368]:
+                - link "Directorio" [ref=e369] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e370]:
+                - link "Oficinas Centrales" [ref=e371] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/oficinas-centrales/
+              - listitem [ref=e372]:
+                - link "Centros Integrales de Atención al Contribuyente" [ref=e373] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/delegaciones-fiscales/
+            - list [ref=e376]:
+              - listitem [ref=e377]:
+                - link "Estructura" [ref=e378] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e379]:
+                - link "Funciones Generales" [ref=e380] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/directorio/
+              - listitem [ref=e381]:
+                - link "Organigrama" [ref=e382] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/organigrama/
+            - list [ref=e385]:
+              - listitem [ref=e386]:
+                - link "Transparencia" [ref=e387] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e388]:
+                - link "Transparencia Presupuestaria" [ref=e389] [cursor=pointer]:
+                  - /url: http://www.finanzasoaxaca.gob.mx/transparenciapresupuestaria/
+              - listitem [ref=e390]:
+                - link "Información Pública" [ref=e391] [cursor=pointer]:
+                  - /url: http://www.transparencia.oaxaca.gob.mx/
+              - listitem [ref=e392]:
+                - link "Cumplimiento LGTAIP" [ref=e393] [cursor=pointer]:
+                  - /url: http://www.finanzasoaxaca.gob.mx/leytransparencia/
+          - generic [ref=e394]:
+            - list [ref=e397]:
+              - listitem [ref=e398]:
+                - link "Servicios en línea" [ref=e399] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e400]:
+                - link "Generar formato de pago" [ref=e401] [cursor=pointer]:
+                  - /url: https://siox.finanzasoaxaca.gob.mx/pagos
+              - listitem [ref=e402]:
+                - link "Pre-registro al Registro Estatal de Contribuyentes" [ref=e403] [cursor=pointer]:
+                  - /url: https://siox.finanzasoaxaca.gob.mx/contribuyente-preregistro.htm
+              - listitem [ref=e404]:
+                - link "Declaraciones de Impuestos Estatales y Entero de Retenciones" [ref=e405] [cursor=pointer]:
+                  - /url: https://siox.finanzasoaxaca.gob.mx/contribuyente-declaraciones.htm
+              - listitem [ref=e406]:
+                - link "Declaraciones de Impuestos Federales Coordinados (ISAN e ISR enajenación de bienes inmuebles)" [ref=e407] [cursor=pointer]:
+                  - /url: https://siox.finanzasoaxaca.gob.mx/contribuyente-declaraciones.htm
+              - listitem [ref=e408]:
+                - link "Consulta tu adeudo vehicular" [ref=e409] [cursor=pointer]:
+                  - /url: https://siox.finanzasoaxaca.gob.mx/pagoTenencia
+              - listitem [ref=e410]:
+                - link "Aviso de Venta de VehÍculo" [ref=e411] [cursor=pointer]:
+                  - /url: https://siox.finanzasoaxaca.gob.mx/ventaVehicular
+              - listitem [ref=e412]:
+                - link "Formato de pago de licencia de conducir" [ref=e413] [cursor=pointer]:
+                  - /url: https://siox.finanzasoaxaca.gob.mx/pagos?opcion=8323
+              - listitem [ref=e414]:
+                - link "Formato de pago de Constancias de no inhabilitación" [ref=e415] [cursor=pointer]:
+                  - /url: https://siox.finanzasoaxaca.gob.mx/pagos?opcion=14783
+              - listitem [ref=e416]:
+                - link "Formato de pago de Conceptos Educativos" [ref=e417] [cursor=pointer]:
+                  - /url: https://siox.finanzasoaxaca.gob.mx/pagos
+              - listitem [ref=e418]:
+                - link "Descarga tu Factura Electrónica (CFDI)" [ref=e419] [cursor=pointer]:
+                  - /url: https://siox.finanzasoaxaca.gob.mx/pagos
+              - listitem [ref=e420]:
+                - link "Constancias de no Adeudo Fiscal" [ref=e421] [cursor=pointer]:
+                  - /url: https://siox.finanzasoaxaca.gob.mx/declaraciones/constancia-portal.htm
+              - listitem [ref=e422]:
+                - link "Acta de Nacimiento en línea" [ref=e423] [cursor=pointer]:
+                  - /url: https://www.gob.mx/ActaNacimiento/
+              - listitem [ref=e424]:
+                - link "Pre-registro de Casas de Empeño" [ref=e425] [cursor=pointer]:
+                  - /url: https://siox.finanzasoaxaca.gob.mx/empenios
+              - listitem [ref=e426]:
+                - link "Expedición de Constancia de retenciones" [ref=e427] [cursor=pointer]:
+                  - /url: https://siox.finanzasoaxaca.gob.mx/contribuyente-declaraciones.htm
+            - list [ref=e430]:
+              - listitem [ref=e431]:
+                - link "Información" [ref=e432] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e433]:
+                - link "Marco Jurídico" [ref=e434] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/marco-juridico-2/
+              - listitem [ref=e435]:
+                - link "Notificaciones por Estrado" [ref=e436] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/notifcaciones-por-estrado/
+              - listitem [ref=e437]:
+                - link "Acceso a la Información" [ref=e438] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/03-inf-03-acceso-a-la-informacion/
+              - listitem [ref=e439]:
+                - link "POA" [ref=e440] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/poa
+              - listitem [ref=e441]:
+                - link "Unidad de Transparencia" [ref=e442] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/unidad-de-transparencia/
+              - listitem [ref=e443]:
+                - link "Sistema Institucional de Archivos" [ref=e444] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/sistema_institucional_de_archivos/
+              - listitem [ref=e445]:
+                - link "Comité de Control Interno" [ref=e446] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/comite-control-interno/
+              - listitem [ref=e447]:
+                - link "Comité de Ética y de Prevención de Conflicto de Interés" [ref=e448] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/comite-de-etica-y-de-prevencion-de-conflicto-de-interes-2019-2022/
+              - listitem [ref=e449]:
+                - link "Noticias" [ref=e450] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/noticias/
+              - listitem [ref=e451]:
+                - link "Cédulas de Trámites y Servicios" [ref=e452] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/catalogo-de-tramites-y-servicios/
+              - listitem [ref=e453]:
+                - link "Guía rápida para trámites" [ref=e454] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/guia-rapida-para-tramites/
+              - listitem [ref=e455]:
+                - link "Contribuyente con créditos fiscales firmes/exigibles" [ref=e456] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/contribuyente-con-creditos-fiscales-firmes-exigibles/
+              - listitem [ref=e457]:
+                - link "Paquete Económico" [ref=e458] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/paquete-economico/
+              - listitem [ref=e459]:
+                - link "Contribuyentes en ejercicio de facultades de comprobación que cambiaron su domicilio fiscal a otra Entidad Federativa." [ref=e460] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/contribuyentes-cambio-domicilio-fiscal-a-otra-entidad-federativa/
+              - listitem [ref=e461]:
+                - link "Indicadores Fiscales" [ref=e462] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/indicadores-fiscales-2/
+              - listitem [ref=e463]:
+                - link "Aportaciones Municipales" [ref=e464] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/aportacion-municipal/
+              - listitem [ref=e465]:
+                - link "Participaciones Municipales" [ref=e466] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/participacion-municipal/
+              - listitem [ref=e467]:
+                - link "Adquisiciones" [ref=e468] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/adquisiciones/
+              - listitem [ref=e469]:
+                - link "Sistema Estatal de Coordinación Fiscal" [ref=e470] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/sistema-estatal-de-coordinacion-fiscal/
+              - listitem [ref=e471]:
+                - link "Formatos para Acreditación" [ref=e472] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/propuesta-de-formatos-para-acreditacion/
+              - listitem [ref=e473]:
+                - link "Anexos de reglas de carácter general" [ref=e474] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/anexos-de-reglas-de-caracter-general/
+              - listitem [ref=e475]:
+                - link "MAS-Oaxaca" [ref=e476] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/mas-oaxaca
+              - listitem [ref=e477]:
+                - link "IMAFF-inicio" [ref=e478] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/imaff-inicio/
+              - listitem [ref=e479]:
+                - link "Relación de casas de empeño" [ref=e480] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/relacion-de-casas-de-empeno/
+              - listitem [ref=e481]:
+                - link "Taller de Capacitación ZOFEMAT" [ref=e482] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/taller-de-capacitacion-zofemat/
+              - listitem [ref=e483]:
+                - link "Circulares" [ref=e484] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/circulares/
+            - list [ref=e487]:
+              - listitem [ref=e488]:
+                - link "Trámites" [ref=e489] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e490]:
+                - link "Guía rápida para trámites" [ref=e491] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/guia-rapida-para-tramites/
+              - listitem [ref=e492]:
+                - link "Estímulos Fiscales" [ref=e493] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/estimulos-fiscales/
+              - listitem [ref=e494]:
+                - link "Catálogo de Fondos Federales" [ref=e495] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/catalogo-de-fondos-federales/
+              - listitem [ref=e496]:
+                - link "Anexos de reglas de carácter general" [ref=e497] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/anexos-de-reglas-de-caracter-general/
+              - listitem [ref=e498]:
+                - link "Usuario y contraseña RFT" [ref=e499] [cursor=pointer]:
+                  - /url: https://www.finanzasoaxaca.gob.mx/usuario-y-contrase_a-rft/
+        - generic [ref=e500]:
+          - list [ref=e503]:
+            - listitem [ref=e504]:
+              - link "www.oaxaca.gob.mx" [ref=e505] [cursor=pointer]:
+                - /url: http://www.oaxaca.gob.mx/
+          - generic [ref=e506]:
+            - paragraph [ref=e507]: "Centro Administrativo del Poder Ejecutivo y Judicial \"General Porfirio Díaz, \x03Soldado de la Patria Edificio \"D\" Saúl Martínez Avenida Gerardo Pandal Graff #1, Reyes Mantecón,\x03San Bartolo Coyotepec, Oaxaca. C.P. 71257"
+            - heading "Contáctanos" [level=3] [ref=e508]:
+              - generic [ref=e509]: 
+              - text: Contáctanos
+            - list [ref=e511]:
+              - listitem [ref=e512]:
+                - img [ref=e514]
+    - generic [ref=e515]:
+      - button "X" [ref=e516] [cursor=pointer]
+      - generic [ref=e517]:
+        - generic [ref=e520]:
+          - paragraph [ref=e522]:
+            - text: Buscar concepto para generar
+            - text: formato de pago
+          - generic [ref=e524]:
+            - textbox "" [ref=e525]:
+              - /placeholder: BUSCAR CONCEPTO
+            - status [ref=e526]
+            - generic [ref=e527]: 
+        - generic [ref=e529]:
+          - paragraph [ref=e531]:
+            - text: Consulta tu adeudo vehicular
+            - generic [ref=e532]:
+              - generic [ref=e533]: 
+              - text: Da clic para cambiar criterio de búsqueda
+          - generic [ref=e534]:
+            - generic [ref=e537] [cursor=pointer]:
+              - generic [ref=e538]:
+                - generic [ref=e539]: 
+                - text: Placa
+              - generic [ref=e540]:
+                - generic [ref=e541]: 
+                - text: Serie
+            - textbox "INGRESA TU PLACA..." [ref=e544]
+            - iframe [ref=e549]:
+              - generic [ref=f2e2]:
+                - generic [ref=f2e3]:
+                  - checkbox "No soy un robot" [ref=f2e7]
+                  - generic [ref=f2e11]: No soy un robot
+                - generic [ref=f2e15]: reCAPTCHA
+            - button "Buscar" [ref=e551] [cursor=pointer]
+    - dialog [ref=e552]:
+      - generic [ref=e553]:
+        - button [ref=e555] [cursor=pointer]: ×
+        - img [ref=e559]
+    - dialog [active] [ref=e560]:
+      - generic [ref=e561]:
+        - button [ref=e563] [cursor=pointer]: ×
+        - img [ref=e567]

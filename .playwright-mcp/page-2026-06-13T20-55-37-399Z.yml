@@ -1,0 +1,34 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - table [ref=e5]:
+      - rowgroup [ref=e6]:
+        - row "PAGO DE IMPUESTO PREDIAL" [ref=e7]:
+          - cell [ref=e8]:
+            - img [ref=e9]
+          - cell "PAGO DE IMPUESTO PREDIAL" [ref=e10]:
+            - strong [ref=e11]
+            - strong [ref=e13]:
+              - text: PAGO DE
+              - text: IMPUESTO
+              - text: PREDIAL
+          - cell [ref=e14]:
+            - img [ref=e15]
+    - generic [ref=e16]:
+      - table [ref=e18]:
+        - rowgroup [ref=e19]:
+          - row "Clave Catastral Aceptar" [ref=e20]:
+            - cell "Clave Catastral" [ref=e21]:
+              - strong [ref=e23]: Clave Catastral
+            - cell "Aceptar" [ref=e24]:
+              - button "Aceptar" [ref=e25] [cursor=pointer]
+          - row [ref=e26]:
+            - cell [ref=e27]:
+              - textbox [ref=e28]
+          - row:
+            - cell
+      - paragraph
+  - img [ref=e30]
+  - generic [ref=e31]:
+    - strong [ref=e33]: Consulta Aviso de Privacidad
+    - link "https://www2.toluca.gob.mx/wp-content/uploads/2022/07/tol-pdf-Aviso_de_Privacidad_Sistema_de_Recaudacion-SIRE-Automatizada-2022-2024.pdf" [ref=e34] [cursor=pointer]:
+      - /url: https://www2.toluca.gob.mx/wp-content/uploads/2022/07/tol-pdf-Aviso_de_Privacidad_Sistema_de_Recaudacion-SIRE-Automatizada-2022-2024.pdf

@@ -1,0 +1,97 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - link "Portal | Corregidora" [ref=e11] [cursor=pointer]:
+            - /url: https://corregidora.gob.mx/
+            - img "Portal | Corregidora" [ref=e12]
+          - navigation [ref=e15]:
+            - list [ref=e17]:
+              - listitem [ref=e18]:
+                - link "Inicio" [ref=e19] [cursor=pointer]:
+                  - /url: https://corregidora.gob.mx/
+              - listitem [ref=e20]:
+                - link "Transparencia " [ref=e21] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e22]:
+                - link "Programas " [ref=e23] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e24]:
+                - link "Trámites y servicios " [ref=e25] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e26]:
+                - link "Comunicados" [ref=e27] [cursor=pointer]:
+                  - /url: https://corregidora.gob.mx/blog/
+        - generic [ref=e28]:
+          - generic [ref=e30]:
+            - paragraph [ref=e32]: "Síguenos:"
+            - list [ref=e34]:
+              - listitem [ref=e35]:
+                - link "Facebook" [ref=e36] [cursor=pointer]:
+                  - /url: https://www.facebook.com/mpiocorregidora/?locale=es_LA
+                  - generic [ref=e37]: Facebook
+                  - img [ref=e38]
+              - listitem [ref=e40]:
+                - link "X-twitter" [ref=e41] [cursor=pointer]:
+                  - /url: https://x.com/MpioCorregidora
+                  - generic [ref=e42]: X-twitter
+                  - img [ref=e43]
+              - listitem [ref=e45]:
+                - link "Instagram" [ref=e46] [cursor=pointer]:
+                  - /url: https://www.instagram.com/mpiocorregidora/
+                  - generic [ref=e47]: Instagram
+                  - img [ref=e48]
+              - listitem [ref=e50]:
+                - link "Whatsapp" [ref=e51] [cursor=pointer]:
+                  - /url: https://wa.me/14422810094
+                  - generic [ref=e52]: Whatsapp
+                  - img [ref=e53]
+          - generic [ref=e56]:
+            - img [ref=e60]
+            - paragraph [ref=e63]: T. 442 209 6000
+    - generic [ref=e64]:
+      - heading "404" [level=1] [ref=e65]
+      - heading "Sorry We Can't Find That Page!" [level=2] [ref=e66]
+      - paragraph [ref=e67]: The page you are looking for was never existed.
+      - search [ref=e68]:
+        - text: 
+        - searchbox [ref=e70]
+        - button "Buscar" [ref=e71] [cursor=pointer]
+      - link "Back To Home" [ref=e73] [cursor=pointer]:
+        - /url: https://corregidora.gob.mx
+    - contentinfo [ref=e74]:
+      - generic [ref=e78]:
+        - link "Portal | Corregidora" [ref=e82] [cursor=pointer]:
+          - /url: https://corregidora.gob.mx/
+          - img "Portal | Corregidora" [ref=e83]
+        - generic [ref=e84]:
+          - generic [ref=e86]:
+            - paragraph [ref=e88]: "Síguenos:"
+            - list [ref=e90]:
+              - listitem [ref=e91]:
+                - link "Facebook" [ref=e92] [cursor=pointer]:
+                  - /url: https://www.facebook.com/mpiocorregidora/?locale=es_LA
+                  - generic [ref=e93]: Facebook
+                  - img [ref=e94]
+              - listitem [ref=e96]:
+                - link "X-twitter" [ref=e97] [cursor=pointer]:
+                  - /url: https://x.com/MpioCorregidora
+                  - generic [ref=e98]: X-twitter
+                  - img [ref=e99]
+              - listitem [ref=e101]:
+                - link "Instagram" [ref=e102] [cursor=pointer]:
+                  - /url: https://www.instagram.com/mpiocorregidora/
+                  - generic [ref=e103]: Instagram
+                  - img [ref=e104]
+              - listitem [ref=e106]:
+                - link "Whatsapp" [ref=e107] [cursor=pointer]:
+                  - /url: https://wa.me/14422810094
+                  - generic [ref=e108]: Whatsapp
+                  - img [ref=e109]
+          - separator
+          - generic [ref=e112]:
+            - img [ref=e116]
+            - paragraph [ref=e119]: T. 442 209 6000
+  - text: 
+  - generic [ref=e120]: desktop

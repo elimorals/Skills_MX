@@ -1,0 +1,277 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e9]: Hoy sábado 13 de junio de 2026 , el portal ha recibido ... visitas.
+    - generic [ref=e13]:
+      - figure [ref=e17] [cursor=pointer]:
+        - link [ref=e18]:
+          - /url: https://naucalpan.gob.mx
+      - figure [ref=e23] [cursor=pointer]:
+        - link "Gobierno del Estado de México" [ref=e24]:
+          - /url: https://edomex.gob.mx/
+          - img "Gobierno del Estado de México" [ref=e25]
+      - img "Estado de México" [ref=e29] [cursor=pointer]
+    - navigation "Menu" [ref=e34]:
+      - list [ref=e35]:
+        - listitem [ref=e36]:
+          - link "Gobierno" [ref=e37] [cursor=pointer]:
+            - /url: https://naucalpan.gob.mx/
+        - listitem [ref=e38]:
+          - link "Turismo" [ref=e39] [cursor=pointer]:
+            - /url: https://naucalpan.gob.mx/turismo/
+        - listitem [ref=e40]:
+          - link "OIC" [ref=e41] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e42]:
+          - link "Transparencia" [ref=e43] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e44]:
+          - link "Gaceta Municipal" [ref=e45] [cursor=pointer]:
+            - /url: https://naucalpan.gob.mx/gaceta-municipal/
+        - listitem [ref=e46]:
+          - link "Simplificación y Digitalización Municipal" [ref=e47] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e48]:
+          - link "Comunicación" [ref=e49] [cursor=pointer]:
+            - /url: https://naucalpan.gob.mx/comunicacion/
+        - listitem [ref=e50]:
+          - link "Gobierno Digital" [ref=e51] [cursor=pointer]:
+            - /url: https://naucalpan.gob.mx/gobierno-digital/
+  - generic [ref=e52]:
+    - generic [ref=e56]:
+      - region "Carousel" [ref=e57]:
+        - generic [ref=e58]:
+          - group "1 of 12" [ref=e59]
+          - group "2 of 12" [ref=e64]
+          - group "3 of 12" [ref=e69]
+          - group "4 of 12" [ref=e74]
+          - group "5 of 12" [ref=e79]
+          - group "6 of 12" [ref=e84]
+          - group "7 of 12" [ref=e89]:
+            - link [ref=e94] [cursor=pointer]:
+              - /url: https://pagos.tesoreria-naucalpan.gob.mx/
+          - group "8 of 12" [ref=e95]:
+            - link [ref=e100] [cursor=pointer]:
+              - /url: https://empleo.naucalpan.gob.mx/
+          - group "9 of 12" [ref=e101]
+          - group "10 of 12" [ref=e106]:
+            - link [ref=e111] [cursor=pointer]:
+              - /url: https://intercensal2025.mx/
+          - group "11 of 12" [ref=e112]
+          - group "12 of 12" [ref=e117]:
+            - link [ref=e122] [cursor=pointer]:
+              - /url: https://naucalpan.gob.mx/wp-content/uploads/2025/12/Actualizacion-de-Reglamento-de-Transito.pdf
+      - button "Previous" [ref=e123] [cursor=pointer]:
+        - img [ref=e124]
+      - button "Next" [ref=e126] [cursor=pointer]:
+        - img [ref=e127]
+    - heading "Información de Interés" [level=1] [ref=e133]
+    - heading "Programas de bienestar" [level=1] [ref=e141]
+    - generic [ref=e144]:
+      - generic [ref=e147]:
+        - link "Practicas Profesionales" [ref=e149] [cursor=pointer]:
+          - /url: https://bienestar.naucalpan.gob.mx/canastas/bienestarP.php?id=7&etiqueta=PR%C3%81CTICAS+PROFESIONALES&tipo_logo=assets%2Fdist%2Fimg%2FICONOGRAFIA_JUVENTUD_BLANCO.png
+          - generic [ref=e150]: 
+        - heading "Practicas Profesionales" [level=3] [ref=e152]:
+          - link "Practicas Profesionales" [ref=e153] [cursor=pointer]:
+            - /url: https://bienestar.naucalpan.gob.mx/canastas/bienestarP.php?id=7&etiqueta=PR%C3%81CTICAS+PROFESIONALES&tipo_logo=assets%2Fdist%2Fimg%2FICONOGRAFIA_JUVENTUD_BLANCO.png
+      - generic [ref=e156]:
+        - link "Servicio Social" [ref=e158] [cursor=pointer]:
+          - /url: https://bienestar.naucalpan.gob.mx/canastas/bienestarP.php?id=6&etiqueta=SERVICIO+SOCIAL&tipo_logo=assets%2Fdist%2Fimg%2FICONOGRAFIA_JUVENTUD_BLANCO.png
+          - generic [ref=e159]: 
+        - heading "Servicio Social" [level=3] [ref=e161]:
+          - link "Servicio Social" [ref=e162] [cursor=pointer]:
+            - /url: https://bienestar.naucalpan.gob.mx/canastas/bienestarP.php?id=6&etiqueta=SERVICIO+SOCIAL&tipo_logo=assets%2Fdist%2Fimg%2FICONOGRAFIA_JUVENTUD_BLANCO.png
+    - heading "Quejas y Denuncias" [level=1] [ref=e167]
+    - generic [ref=e170]:
+      - generic [ref=e173]:
+        - 'link "Asuntos Internos: Seguridad Pública" [ref=e175] [cursor=pointer]':
+          - /url: https://quejas.naucalpan.gob.mx/quejas_denuncias/form_denuncia.php?id_d=2
+          - img [ref=e176]
+        - 'heading "Asuntos Internos: Seguridad Pública" [level=3] [ref=e179]':
+          - 'link "Asuntos Internos: Seguridad Pública" [ref=e180] [cursor=pointer]':
+            - /url: https://quejas.naucalpan.gob.mx/quejas_denuncias/form_denuncia.php?id_d=2
+      - generic [ref=e183]:
+        - link "Buzón virtual de quejas y sugerencias" [ref=e185] [cursor=pointer]:
+          - /url: https://quejas.naucalpan.gob.mx/quejas_denuncias/form_denuncia.php?id_d=3
+          - img [ref=e186]
+        - heading "Buzón virtual de quejas y sugerencias" [level=3] [ref=e189]:
+          - link "Buzón virtual de quejas y sugerencias" [ref=e190] [cursor=pointer]:
+            - /url: https://quejas.naucalpan.gob.mx/quejas_denuncias/form_denuncia.php?id_d=3
+    - heading "Convocatorias" [level=1] [ref=e195]
+    - generic [ref=e198]:
+      - link "Sesión de Cabildo Abierto Convocatoria" [ref=e201] [cursor=pointer]:
+        - /url: https://naucalpan.gob.mx/wp-content/uploads/2026/06/CONV-9-CABILDO-ABIERTO.pdf
+        - heading "Sesión de Cabildo Abierto" [level=2] [ref=e203]
+        - generic [ref=e205]: Convocatoria
+      - link "Segunda convocatoria para la selección de un integrante del comité de participación ciudadana municipal Convocatoria" [ref=e208] [cursor=pointer]:
+        - /url: https://naucalpan.gob.mx/wp-content/uploads/2026/05/SEGUNDA-CONVOCATORIA-PARA-LA-SELECCION-DE-UN-INTEGRANTE-DEL-COMITE-DE-PARTICIPACION-CIUDADANA-MUNICIPAL.pdf
+        - generic [ref=e210]: Segunda convocatoria para la selección de un integrante del comité de participación ciudadana municipal
+        - generic [ref=e212]: Convocatoria
+      - link "Consejo municipal de Protección y Bienestar animal de Naucalpan de Juárez, México Convocatoria" [ref=e215] [cursor=pointer]:
+        - /url: https://naucalpan.gob.mx/wp-content/uploads/2025/05/CONVOCATORIA_CONSEJODEPROTECCION_HISTORIAS_MAYO.pdf
+        - generic [ref=e217]: Consejo municipal de Protección y Bienestar animal de Naucalpan de Juárez, México
+        - generic [ref=e219]: Convocatoria
+    - generic [ref=e222]:
+      - link "Resultados de Programas de bienestar Resultados" [ref=e225] [cursor=pointer]:
+        - /url: https://naucalpan.gob.mx/resultados-de-programas-de-bienestar
+        - heading "Resultados de Programas de bienestar" [level=2] [ref=e227]
+        - generic [ref=e229]: Resultados
+      - link "Proceso de reclutamiento. Selección e ingreso de aspirante a la guardia municipal de Naucalpan de Juárez, 10 de marzo de 2025 Convocatoria" [ref=e232] [cursor=pointer]:
+        - /url: https://naucalpan.gob.mx/wp-content/uploads/2025/08/Convocatoria-2025-para-el-Reingreso-de-Ex-Policias-a-la-Guardia-Municipal-de-Naucalpan-de-Juarez_2.pdf
+        - generic [ref=e234]: Proceso de reclutamiento. Selección e ingreso de aspirante a la guardia municipal de Naucalpan de Juárez, 10 de marzo de 2025
+        - generic [ref=e236]: Convocatoria
+    - heading "Noticias" [level=1] [ref=e244]
+    - generic [ref=e246]:
+      - generic [ref=e253]:
+        - link [ref=e256] [cursor=pointer]:
+          - /url: https://naucalpan.gob.mx/continuan-alcalde-isaac-montoya-y-elizabeth-rocha-con-la-entrega-de-tarjetas-de-las-becas-rita-cetina/
+        - generic:
+          - link:
+            - /url: https://naucalpan.gob.mx/continuan-alcalde-isaac-montoya-y-elizabeth-rocha-con-la-entrega-de-tarjetas-de-las-becas-rita-cetina/
+        - generic [ref=e257]:
+          - heading "BOLETÍN CONTINÚAN ALCALDE ISAAC MONTOYA Y ELIZABETH ROCHA CON LA ENTREGA DE TARJETAS DE LAS BECAS RITA CETINA" [level=2] [ref=e260]:
+            - text: BOLETÍN
+            - link "CONTINÚAN ALCALDE ISAAC MONTOYA Y ELIZABETH ROCHA CON LA ENTREGA DE TARJETAS DE LAS BECAS RITA CETINA" [ref=e261] [cursor=pointer]:
+              - /url: https://naucalpan.gob.mx/continuan-alcalde-isaac-montoya-y-elizabeth-rocha-con-la-entrega-de-tarjetas-de-las-becas-rita-cetina/
+          - paragraph [ref=e263]: SCIYP COMUNICADO 651 •⁠ ⁠En una novena entrega se distribuyeron 2,181 tarjetas de este programa federal en apoyo de la economía familiar de las y los estudiantes de nivel básico. •⁠ ⁠También se beneficia a la niñez con el programa Vive Saludable, a quienes fueron detectados con problemas de visión podrán obtener sus lentes …
+          - link "junio 12, 2026" [ref=e266] [cursor=pointer]:
+            - /url: https://naucalpan.gob.mx/continuan-alcalde-isaac-montoya-y-elizabeth-rocha-con-la-entrega-de-tarjetas-de-las-becas-rita-cetina/
+      - generic [ref=e267]:
+        - list [ref=e270]:
+          - listitem [ref=e271]:
+            - link [ref=e272] [cursor=pointer]:
+              - /url: https://naucalpan.gob.mx/gobierno-de-naucalpan-deja-otra-huella-del-mundial-social-en-las-canchas-las-cuevitas-de-san-antonio-zomeyucan/
+            - generic [ref=e274]:
+              - heading "BOLETÍN GOBIERNO DE NAUCALPAN DEJA OTRA HUELLA DEL MUNDIAL SOCIAL EN LAS CANCHAS LAS CUEVITAS DE SAN ANTONIO ZOMEYUCAN" [level=3] [ref=e275]:
+                - text: BOLETÍN
+                - link "GOBIERNO DE NAUCALPAN DEJA OTRA HUELLA DEL MUNDIAL SOCIAL EN LAS CANCHAS LAS CUEVITAS DE SAN ANTONIO ZOMEYUCAN" [ref=e276] [cursor=pointer]:
+                  - /url: https://naucalpan.gob.mx/gobierno-de-naucalpan-deja-otra-huella-del-mundial-social-en-las-canchas-las-cuevitas-de-san-antonio-zomeyucan/
+              - generic [ref=e277]: junio 11, 2026
+          - listitem [ref=e278]:
+            - link [ref=e279] [cursor=pointer]:
+              - /url: https://naucalpan.gob.mx/en-naucalpan-se-entregan-canchas-rehabilitadas-en-el-marco-de-las-huellas-del-mundial-social-en-beneficio-de-100-mil-naucalpenses/
+            - generic [ref=e281]:
+              - heading "BOLETÍN EN NAUCALPAN SE ENTREGAN CANCHAS REHABILITADAS EN EL MARCO DE LAS HUELLAS DEL MUNDIAL SOCIAL EN BENEFICIO DE 100 MIL NAUCALPENSES" [level=3] [ref=e282]:
+                - text: BOLETÍN
+                - link "EN NAUCALPAN SE ENTREGAN CANCHAS REHABILITADAS EN EL MARCO DE LAS HUELLAS DEL MUNDIAL SOCIAL EN BENEFICIO DE 100 MIL NAUCALPENSES" [ref=e283] [cursor=pointer]:
+                  - /url: https://naucalpan.gob.mx/en-naucalpan-se-entregan-canchas-rehabilitadas-en-el-marco-de-las-huellas-del-mundial-social-en-beneficio-de-100-mil-naucalpenses/
+              - generic [ref=e284]: junio 10, 2026
+          - listitem [ref=e285]:
+            - link [ref=e286] [cursor=pointer]:
+              - /url: https://naucalpan.gob.mx/tras-seguimiento-de-guardia-municipal-a-sujeto-senalado-por-robo-a-comercios-logra-detencion/
+            - generic [ref=e288]:
+              - heading "BOLETÍN TRAS SEGUIMIENTO DE GUARDIA MUNICIPAL A SUJETO SEÑALADO POR ROBO A COMERCIOS LOGRA DETENCIÓN" [level=3] [ref=e289]:
+                - text: BOLETÍN
+                - link "TRAS SEGUIMIENTO DE GUARDIA MUNICIPAL A SUJETO SEÑALADO POR ROBO A COMERCIOS LOGRA DETENCIÓN" [ref=e290] [cursor=pointer]:
+                  - /url: https://naucalpan.gob.mx/tras-seguimiento-de-guardia-municipal-a-sujeto-senalado-por-robo-a-comercios-logra-detencion/
+              - generic [ref=e291]: junio 9, 2026
+        - link "Ver más" [ref=e295] [cursor=pointer]:
+          - /url: https://naucalpan.gob.mx/category/boletines/
+          - generic [ref=e297]: Ver más
+  - contentinfo [ref=e298]:
+    - generic [ref=e300]:
+      - generic [ref=e304]:
+        - heading "Páginas principales" [level=4] [ref=e307]
+        - list [ref=e310]:
+          - listitem [ref=e311]:
+            - link "Página oficial del Estado de México" [ref=e312] [cursor=pointer]:
+              - /url: https://edomex.gob.mx/
+              - generic [ref=e313]: Página oficial del Estado de México
+          - listitem [ref=e314]:
+            - link "Trámites y servicios" [ref=e315] [cursor=pointer]:
+              - /url: https://naucalpan.gob.mx/tramites-y-servicios-remtys/
+              - generic [ref=e316]: Trámites y servicios
+          - listitem [ref=e317]:
+            - link "Mejora regulatoria" [ref=e318] [cursor=pointer]:
+              - /url: https://naucalpan.gob.mx/mejora-regulatoria/
+              - generic [ref=e319]: Mejora regulatoria
+          - listitem [ref=e320]:
+            - link "Datos Abiertos" [ref=e321] [cursor=pointer]:
+              - /url: https://naucalpan.gob.mx/datos-abiertos/
+              - generic [ref=e322]: Datos Abiertos
+          - listitem [ref=e323]:
+            - link "IMCUFIDEN" [ref=e324] [cursor=pointer]:
+              - /url: http://imcufiden.naucalpan.gob.mx
+              - generic [ref=e325]: IMCUFIDEN
+          - listitem [ref=e326]:
+            - link "Comunicación" [ref=e327] [cursor=pointer]:
+              - /url: https://naucalpan.gob.mx/comunicacion/
+              - generic [ref=e328]: Comunicación
+      - generic [ref=e329]:
+        - heading "Sitios de Interés" [level=4] [ref=e332]
+        - list [ref=e335]:
+          - listitem [ref=e336]:
+            - link "Gobierno del Estado de México" [ref=e337] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e338]: Gobierno del Estado de México
+          - listitem [ref=e339]:
+            - link "Comité de Participación Ciudadana del Sistema Anticorrupción del Estado de México y Municipios" [ref=e340] [cursor=pointer]:
+              - /url: https://cpcedomex.org.mx/
+              - generic [ref=e341]: Comité de Participación Ciudadana del Sistema Anticorrupción del Estado de México y Municipios
+          - listitem [ref=e342]:
+            - link "CPC Anticorrupción Naucalpan" [ref=e343] [cursor=pointer]:
+              - /url: https://www.facebook.com/CPCNaucalpan/
+              - generic [ref=e344]: CPC Anticorrupción Naucalpan
+      - generic [ref=e345]:
+        - heading "¡Tu opinión cuenta!" [level=4] [ref=e348]
+        - form "suscripcion" [ref=e351]:
+          - generic [ref=e352]:
+            - generic [ref=e353]:
+              - generic [ref=e354] [cursor=pointer]: ¿Te ha sido útil la información de esta página? *
+              - generic [ref=e355]:
+                - generic [ref=e356]:
+                  - radio "SI" [ref=e357]
+                  - text: SI
+                - generic [ref=e358]:
+                  - radio "NO" [ref=e359]
+                  - text: "NO"
+            - generic [ref=e360]:
+              - generic [ref=e361] [cursor=pointer]: ¿Qué tan fácil te resulta navegar y encontrar información en el sitio?
+              - generic [ref=e362]:
+                - generic [ref=e363]:
+                  - radio "Fácil" [ref=e364]
+                  - text: Fácil
+                - generic [ref=e365]:
+                  - radio "Regular" [ref=e366]
+                  - text: Regular
+                - generic [ref=e367]:
+                  - radio "Difícil" [ref=e368]
+                  - text: Difícil
+            - button "Enviar" [ref=e370]:
+              - generic [ref=e372]: Enviar
+    - generic [ref=e376]:
+      - list [ref=e379]:
+        - listitem [ref=e380]:
+          - link "Facebook" [ref=e381] [cursor=pointer]:
+            - /url: https://www.facebook.com/CiudadNaucalpan
+            - generic [ref=e382]: Facebook
+            - img [ref=e383]
+        - listitem [ref=e385]:
+          - link "X-twitter" [ref=e386] [cursor=pointer]:
+            - /url: https://x.com/GobNau
+            - generic [ref=e387]: X-twitter
+            - img [ref=e388]
+        - listitem [ref=e390]:
+          - link "Instagram" [ref=e391] [cursor=pointer]:
+            - /url: https://www.instagram.com/gobnau/#
+            - generic [ref=e392]: Instagram
+            - img [ref=e393]
+      - list [ref=e397]:
+        - listitem [ref=e398]:
+          - link "Administraciones anteriores" [ref=e399] [cursor=pointer]:
+            - /url: https://www.naucalpan.gob.mx/historico
+        - listitem [ref=e400]:
+          - link "Contacto" [ref=e401] [cursor=pointer]:
+            - /url: https://naucalpan.gob.mx/#
+        - listitem [ref=e402]:
+          - link "Avisos de privacidad" [ref=e403] [cursor=pointer]:
+            - /url: https://2224.naucalpan.gob.mx/avisos-de-privacidad/
+        - listitem [ref=e404]:
+          - link "Mapa de sitio" [ref=e405] [cursor=pointer]:
+            - /url: https://naucalpan.gob.mx/sitemap_index.xml
+    - generic [ref=e411]: © 2025 Algunos derechos reservados, Teléfonos 5587895500. 5587895501. 5587895502.
+  - generic [ref=e412]:
+    - button "Chatbot":
+      - generic:      
+    - button "Click to open or close the chatbot" [ref=e413] [cursor=pointer]:
+      - img "wpChatIcon" [ref=e414]

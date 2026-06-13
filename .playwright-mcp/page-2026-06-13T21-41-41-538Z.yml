@@ -1,0 +1,54 @@
+- generic [active] [ref=e1]:
+  - img "Logo Jesus Maria" [ref=e3]
+  - table [ref=e6]:
+    - rowgroup [ref=e7]:
+      - 'row "Datos de la cuenta catastral Cuenta catastral: Escriba uno de los apellidos del titular de la cuenta: Buscar Ultimo aÃ±o que desea pagar: Calcular ObligaciÃ³n: Impuesto a la Propiedad Raï¿½z Importe a pagar: 0" [ref=e8]':
+        - 'cell "Datos de la cuenta catastral Cuenta catastral: Escriba uno de los apellidos del titular de la cuenta: Buscar Ultimo aÃ±o que desea pagar: Calcular ObligaciÃ³n: Impuesto a la Propiedad Raï¿½z Importe a pagar: 0" [ref=e9]':
+          - table [ref=e10]:
+            - rowgroup [ref=e11]:
+              - row "Datos de la cuenta catastral" [ref=e12]:
+                - cell "Datos de la cuenta catastral" [ref=e13]
+              - 'row "Cuenta catastral: Escriba uno de los apellidos del titular de la cuenta: Buscar Ultimo aÃ±o que desea pagar: Calcular ObligaciÃ³n: Impuesto a la Propiedad Raï¿½z Importe a pagar: 0" [ref=e14]':
+                - 'cell "Cuenta catastral: Escriba uno de los apellidos del titular de la cuenta: Buscar Ultimo aÃ±o que desea pagar: Calcular ObligaciÃ³n: Impuesto a la Propiedad Raï¿½z Importe a pagar: 0" [ref=e15]':
+                  - table [ref=e16]:
+                    - rowgroup [ref=e17]:
+                      - row [ref=e18]:
+                        - cell [ref=e19]
+                      - row "Cuenta catastral:" [ref=e20]:
+                        - rowheader "Cuenta catastral:" [ref=e21]
+                        - cell [ref=e22]:
+                          - textbox [ref=e23]
+                      - 'row "Escriba uno de los apellidos del titular de la cuenta: Buscar" [ref=e24]':
+                        - rowheader "Escriba uno de los apellidos del titular de la cuenta:" [ref=e25]
+                        - cell "Buscar" [ref=e26]:
+                          - textbox [ref=e27]
+                          - button "Buscar" [ref=e28] [cursor=pointer]
+                      - 'row "Ultimo aÃ±o que desea pagar: Calcular" [ref=e29]':
+                        - rowheader "Ultimo aÃ±o que desea pagar:" [ref=e30]
+                        - cell "Calcular" [ref=e31]:
+                          - combobox [ref=e32]
+                          - button "Calcular" [ref=e33] [cursor=pointer]
+                      - 'row "ObligaciÃ³n: Impuesto a la Propiedad Raï¿½z" [ref=e34]':
+                        - rowheader "ObligaciÃ³n:" [ref=e35]
+                        - cell "Impuesto a la Propiedad Raï¿½z" [ref=e36]:
+                          - textbox [ref=e37]: Impuesto a la Propiedad Raï¿½z
+                      - 'row "Importe a pagar: 0" [ref=e38]':
+                        - rowheader "Importe a pagar:" [ref=e39]
+                        - cell "0" [ref=e40]:
+                          - textbox [ref=e41]: "0"
+                      - row
+                      - row
+                  - table [ref=e42]:
+                    - rowgroup [ref=e43]:
+                      - row [ref=e44]:
+                        - cell [ref=e45]
+      - row "Imprimir Pago en Linea" [ref=e46]:
+        - cell "Imprimir Pago en Linea" [ref=e47]:
+          - table [ref=e48]:
+            - rowgroup [ref=e49]:
+              - row "Imprimir Pago en Linea" [ref=e50]:
+                - cell [ref=e51]
+                - cell "Imprimir" [ref=e52]:
+                  - button "Imprimir" [ref=e53] [cursor=pointer]
+                - cell "Pago en Linea" [ref=e54]:
+                  - button "Pago en Linea" [ref=e55] [cursor=pointer]

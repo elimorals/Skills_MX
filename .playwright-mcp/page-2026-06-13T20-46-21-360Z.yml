@@ -1,0 +1,139 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - text:    
+      - generic [ref=e5]:
+        - list [ref=e7]:
+          - listitem [ref=e8]:
+            - link "Un Solo Gobierno" [ref=e9] [cursor=pointer]:
+              - /url: https://sanpedro.gob.mx/un-solo-gobierno
+          - listitem [ref=e10]:
+            - link "Tu Ciudad " [ref=e11] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e12]:
+            - link "Trámites " [ref=e13] [cursor=pointer]:
+              - /url: "#"
+        - link "SPGG" [ref=e14] [cursor=pointer]:
+          - /url: https://sanpedro.gob.mx/
+          - img "SPGG" [ref=e15]
+        - list [ref=e17]:
+          - listitem [ref=e18]:
+            - link "Transparencia" [ref=e19] [cursor=pointer]:
+              - /url: https://transparencia.sanpedro.gob.mx/transparencia/
+          - listitem [ref=e20]:
+            - link "Proyectos " [ref=e21] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e22]:
+            - link "Denuncia" [ref=e23] [cursor=pointer]:
+              - /url: https://denuncia.sanpedro.gob.mx/denuncia
+  - table [ref=e27]:
+    - rowgroup [ref=e28]:
+      - 'row "Secretaría de Finanzas y Tesorería Dirección de Ingresos Consulta de Impuesto Predial Expediente Catastral: Consultar Ingrese su número de Expediente Catastral (Región-Manzana-Lote) sin separadores ni espacios en blanco (ejemplo: 01001001) Reimpresión de Recibos de Pago de Predial por Internet (Solo los pagos realizados con Tarjeta de Crédito): Dar Click Aquí INFORMES Coordinación de Recaudación Inmobiliaria Juárez y Libertad S/N, Centro de San Pedro ChatBot: 8112121212 SUBSIDIOS Y/O CONDONACIONES https://sanpedro.gob.mx/subsidiopredial" [ref=e29]':
+        - 'cell "Secretaría de Finanzas y Tesorería Dirección de Ingresos Consulta de Impuesto Predial Expediente Catastral: Consultar Ingrese su número de Expediente Catastral (Región-Manzana-Lote) sin separadores ni espacios en blanco (ejemplo: 01001001) Reimpresión de Recibos de Pago de Predial por Internet (Solo los pagos realizados con Tarjeta de Crédito): Dar Click Aquí INFORMES Coordinación de Recaudación Inmobiliaria Juárez y Libertad S/N, Centro de San Pedro ChatBot: 8112121212 SUBSIDIOS Y/O CONDONACIONES https://sanpedro.gob.mx/subsidiopredial" [ref=e30]':
+          - table [ref=e31]:
+            - rowgroup [ref=e32]:
+              - 'row "Secretaría de Finanzas y Tesorería Dirección de Ingresos Consulta de Impuesto Predial Expediente Catastral: Consultar Ingrese su número de Expediente Catastral (Región-Manzana-Lote) sin separadores ni espacios en blanco (ejemplo: 01001001) Reimpresión de Recibos de Pago de Predial por Internet (Solo los pagos realizados con Tarjeta de Crédito): Dar Click Aquí INFORMES Coordinación de Recaudación Inmobiliaria Juárez y Libertad S/N, Centro de San Pedro ChatBot: 8112121212 SUBSIDIOS Y/O CONDONACIONES https://sanpedro.gob.mx/subsidiopredial" [ref=e33]':
+                - cell [ref=e34]
+                - 'cell "Secretaría de Finanzas y Tesorería Dirección de Ingresos Consulta de Impuesto Predial Expediente Catastral: Consultar Ingrese su número de Expediente Catastral (Región-Manzana-Lote) sin separadores ni espacios en blanco (ejemplo: 01001001) Reimpresión de Recibos de Pago de Predial por Internet (Solo los pagos realizados con Tarjeta de Crédito): Dar Click Aquí INFORMES Coordinación de Recaudación Inmobiliaria Juárez y Libertad S/N, Centro de San Pedro ChatBot: 8112121212 SUBSIDIOS Y/O CONDONACIONES https://sanpedro.gob.mx/subsidiopredial" [ref=e35]':
+                  - table [ref=e36]:
+                    - rowgroup [ref=e37]:
+                      - row [ref=e38]:
+                        - cell [ref=e39]:
+                          - img [ref=e41]
+                      - row [ref=e42]:
+                        - cell [ref=e43]
+                      - 'row "Secretaría de Finanzas y Tesorería Dirección de Ingresos Consulta de Impuesto Predial Expediente Catastral: Consultar Ingrese su número de Expediente Catastral (Región-Manzana-Lote) sin separadores ni espacios en blanco (ejemplo: 01001001) Reimpresión de Recibos de Pago de Predial por Internet (Solo los pagos realizados con Tarjeta de Crédito): Dar Click Aquí" [ref=e44]':
+                        - 'cell "Secretaría de Finanzas y Tesorería Dirección de Ingresos Consulta de Impuesto Predial Expediente Catastral: Consultar Ingrese su número de Expediente Catastral (Región-Manzana-Lote) sin separadores ni espacios en blanco (ejemplo: 01001001) Reimpresión de Recibos de Pago de Predial por Internet (Solo los pagos realizados con Tarjeta de Crédito): Dar Click Aquí" [ref=e45]':
+                          - heading "Secretaría de Finanzas y Tesorería Dirección de Ingresos Consulta de Impuesto Predial" [level=3] [ref=e46]:
+                            - text: Secretaría de Finanzas y Tesorería
+                            - text: Dirección de Ingresos
+                            - text: Consulta de Impuesto Predial
+                          - table [ref=e48]:
+                            - rowgroup [ref=e49]:
+                              - 'row "Expediente Catastral: Consultar Ingrese su número de Expediente Catastral (Región-Manzana-Lote) sin separadores ni espacios en blanco (ejemplo: 01001001)" [ref=e50]':
+                                - 'cell "Expediente Catastral: Consultar Ingrese su número de Expediente Catastral (Región-Manzana-Lote) sin separadores ni espacios en blanco (ejemplo: 01001001)" [ref=e51]':
+                                  - text: "Expediente Catastral:"
+                                  - textbox [ref=e52]
+                                  - button "Consultar" [ref=e53] [cursor=pointer]
+                                  - text: "Ingrese su número de Expediente Catastral (Región-Manzana-Lote) sin separadores ni espacios en blanco (ejemplo: 01001001)"
+                              - 'row "Reimpresión de Recibos de Pago de Predial por Internet (Solo los pagos realizados con Tarjeta de Crédito): Dar Click Aquí" [ref=e54]':
+                                - 'cell "Reimpresión de Recibos de Pago de Predial por Internet (Solo los pagos realizados con Tarjeta de Crédito): Dar Click Aquí" [ref=e55]':
+                                  - text: "Reimpresión de Recibos de Pago de Predial por Internet (Solo los pagos realizados con Tarjeta de Crédito):"
+                                  - link "Dar Click Aquí" [ref=e56] [cursor=pointer]:
+                                    - /url: ConsultaPagos.asp
+                          - paragraph [ref=e57]
+                      - row
+                      - text:   
+                      - 'row "INFORMES Coordinación de Recaudación Inmobiliaria Juárez y Libertad S/N, Centro de San Pedro ChatBot: 8112121212" [ref=e58]':
+                        - 'cell "INFORMES Coordinación de Recaudación Inmobiliaria Juárez y Libertad S/N, Centro de San Pedro ChatBot: 8112121212" [ref=e59]':
+                          - strong [ref=e60]:
+                            - text: INFORMES
+                            - text: Coordinación de Recaudación Inmobiliaria
+                            - text: Juárez y Libertad S/N, Centro de San Pedro
+                            - text: "ChatBot:"
+                            - link "8112121212" [ref=e61] [cursor=pointer]:
+                              - /url: https://wa.me/528112121212?text=Hola
+                      - row [ref=e62]:
+                        - cell [ref=e63]
+                      - row "SUBSIDIOS Y/O CONDONACIONES https://sanpedro.gob.mx/subsidiopredial" [ref=e64]:
+                        - cell "SUBSIDIOS Y/O CONDONACIONES https://sanpedro.gob.mx/subsidiopredial" [ref=e65]:
+                          - strong [ref=e66]:
+                            - text: SUBSIDIOS Y/O CONDONACIONES
+                            - link "https://sanpedro.gob.mx/subsidiopredial" [ref=e67] [cursor=pointer]:
+                              - /url: https://sanpedro.gob.mx/subsidiopredial/
+                      - row [ref=e68]:
+                        - cell [ref=e69]:
+                          - paragraph [ref=e70]
+                          - paragraph [ref=e71]
+  - contentinfo [ref=e72]:
+    - generic [ref=e74]:
+      - generic [ref=e76]:
+        - list [ref=e78]:
+          - listitem [ref=e79]:
+            - heading "Conmutador:" [level=5] [ref=e80]
+            - link "81 8400 4400" [ref=e81] [cursor=pointer]:
+              - /url: tel:+81 8400 4400
+          - listitem [ref=e82]:
+            - heading "Emergencias C4:" [level=5] [ref=e83]
+            - link "81 8988 2000" [ref=e84] [cursor=pointer]:
+              - /url: tel:+81 8988 2000
+          - listitem [ref=e85]:
+            - heading "Atención Ciudadana:" [level=5] [ref=e86]
+            - link "* 8181" [ref=e87] [cursor=pointer]:
+              - /url: tel:+* 8181
+          - listitem [ref=e88]:
+            - heading [level=5]
+            - link "81 12 12 12 12" [ref=e89] [cursor=pointer]:
+              - /url: tel:+81 12 12 12 12
+        - generic [ref=e90]:
+          - img "SPGG" [ref=e91]
+          - generic [ref=e92]:
+            - link "" [ref=e93] [cursor=pointer]:
+              - /url: https://www.facebook.com/SanPedroGGNL
+              - generic [ref=e94]: 
+            - link "" [ref=e95] [cursor=pointer]:
+              - /url: https://twitter.com/sanpedronl
+              - generic [ref=e96]: 
+            - link "" [ref=e97] [cursor=pointer]:
+              - /url: https://www.instagram.com/sanpedroggnl
+              - generic [ref=e98]: 
+            - link "" [ref=e99] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/SPGarzaGarcia
+              - generic [ref=e100]: 
+          - generic [ref=e101]:
+            - paragraph [ref=e102]: Calle Libertad 101, centro de San Pedro Garza García, N.L. C.P. 66200
+            - paragraph [ref=e103]: atencion@sanpedro.gob.mx
+          - generic [ref=e104]:
+            - listitem [ref=e105]:
+              - link "Innovación 2025" [ref=e106] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e107]:
+              - link "Aviso de privacidad" [ref=e108] [cursor=pointer]:
+                - /url: https://transparencia.sanpedro.gob.mx/transparencia/AvisoDePrivacidad.aspx
+            - listitem [ref=e109]:
+              - link "Intranet" [ref=e110] [cursor=pointer]:
+                - /url: https://aplicativos.sanpedro.gob.mx/intranet/intranet.asp
+            - listitem [ref=e111]:
+              - link "San Pedro Contigo" [ref=e112] [cursor=pointer]:
+                - /url: https://sanpedrocontigo.mx/login.aspx
+      - img "SPGG" [ref=e114]

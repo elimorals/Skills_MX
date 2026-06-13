@@ -1,0 +1,31 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - heading "Paga tu predial en línea y obtén tu recibo de pago al instante" [level=1] [ref=e6]:
+      - generic [ref=e7]: Paga tu predial
+      - text: en línea y obtén tu recibo de pago al instante
+  - generic [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - heading "Realiza tu pago en línea los 365 días del año las 24 hrs." [level=2] [ref=e12]
+        - paragraph [ref=e13]: Ingresa tu número de Cuenta de Predial (10 dígitos) o tu Clave Única del Registro del Territorio (CURT) (31 dígitos)
+        - paragraph [ref=e14]: "Ejemplo: 1114000000 ó 1401212000000000000000000000000"
+        - textbox [ref=e15]
+        - paragraph
+      - generic [ref=e16]:
+        - button "Consultar" [ref=e17]
+        - button "Descargar último recibo pagado" [ref=e18]
+        - button "Certificado de no adeudo" [ref=e19]
+      - paragraph [ref=e21]:
+        - text: Dirección de Ingresos
+        - text: "Horarios de atención de las recaudadoras:"
+        - text: Lunes a Viernes de 9:00 am. a 3:00 pm.
+    - generic [ref=e24]:
+      - link "Requisitos para descuentos especiales" [ref=e25] [cursor=pointer]:
+        - /url: https://www.zapopan.gob.mx/v3/requisitos-descuentos-especiales
+        - generic [ref=e26]: Requisitos para descuentos especiales
+      - link "Ubicación de las recaudadoras" [ref=e27] [cursor=pointer]:
+        - /url: https://www.zapopan.gob.mx/v3/predial/oficinas-recaudadoras-municipales
+        - generic [ref=e28]: Ubicación de las recaudadoras
+      - link "Manual de usuario" [ref=e29] [cursor=pointer]:
+        - /url: https://www.zapopan.gob.mx/wp-content/uploads/2024/10/Manual-de-Usuario-Pago-Predial-web-V-Oct-2024.pdf
+        - generic [ref=e30]: Manual de usuario

@@ -1,0 +1,243 @@
+- generic [active] [ref=e1]:
+  - img "Usar teclado para desplazarse" [ref=e3]
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - banner [ref=e6]:
+        - generic [ref=e9]:
+          - generic [ref=e10]:
+            - link "Ayuntamiento de Toluca":
+              - /url: https://www2.toluca.gob.mx/
+              - img "Ayuntamiento de Toluca" [ref=e11] [cursor=pointer]
+          - navigation [ref=e13]:
+            - list [ref=e15]:
+              - listitem [ref=e16]:
+                - link "Inicio" [ref=e17] [cursor=pointer]:
+                  - /url: https://www2.toluca.gob.mx
+                  - generic [ref=e18]: Inicio
+              - listitem [ref=e19]:
+                - link "Trámites y Servicios" [ref=e20] [cursor=pointer]:
+                  - /url: https://www2.toluca.gob.mx/
+                  - generic [ref=e21]: Trámites y Servicios
+              - listitem [ref=e22]:
+                - link "Cabildo" [ref=e23] [cursor=pointer]:
+                  - /url: https://www2.toluca.gob.mx/cabildo2025_2027/
+                  - generic [ref=e24]: Cabildo
+              - listitem [ref=e25]:
+                - link "Transparencia" [ref=e26] [cursor=pointer]:
+                  - /url: https://www2.toluca.gob.mx/transparenciatoluca/
+                  - generic [ref=e27]: Transparencia
+              - listitem [ref=e28]:
+                - link "Proactiva" [ref=e29] [cursor=pointer]:
+                  - /url: https://www2.toluca.gob.mx/proactiva/
+                  - generic [ref=e30]: Proactiva
+      - generic [ref=e32]:
+        - generic [ref=e51]:
+          - link " Tesorería" [ref=e55] [cursor=pointer]:
+            - /url: https://www2.toluca.gob.mx/tesoreria/
+          - link " Mejora Regulatoria" [ref=e59] [cursor=pointer]:
+            - /url: https://www2.toluca.gob.mx/mejoraregulatoria/
+          - link " Normatividad" [ref=e63] [cursor=pointer]:
+            - /url: https://www2.toluca.gob.mx/normamun/
+          - link " Comunicación Social" [ref=e67] [cursor=pointer]:
+            - /url: https://www2.toluca.gob.mx/comunicacionsocial/
+        - generic [ref=e72]:
+          - link " Sistema de Apertura Rápida de Empresas" [ref=e76] [cursor=pointer]:
+            - /url: https://www2.toluca.gob.mx/wp-content/uploads/2025/02/SARE-2025-1.zip
+          - link " Cultura y Turismo" [ref=e80] [cursor=pointer]:
+            - /url: https://visitoluca.com/
+          - link " Directorio" [ref=e84] [cursor=pointer]:
+            - /url: https://www2.toluca.gob.mx/directorio/
+          - link " VENTANILLA DÍGITAL" [ref=e88] [cursor=pointer]:
+            - /url: https://tolucadigital.gob.mx/
+        - link " SIGTOL" [ref=e97] [cursor=pointer]:
+          - /url: https://sigtol.gob.mx/
+        - generic [ref=e126]:
+          - generic [ref=e128]:
+            - link [ref=e131] [cursor=pointer]:
+              - /url: https://www2.toluca.gob.mx/bando2026/
+              - img [ref=e132]
+            - img [ref=e136]
+            - 'heading "NOTA: *EN ACTUALIZACIÓN* La información presentada en esta plataforma de bacheo es de carácter público y está disponible para consulta ciudadana. Los datos relacionados con folios, fotografías, ubicaciones y estatus de los reportes se encuentran en constante proceso de actualización, revisión y supervisión diaria, por lo que pueden variar conforme avanza el registro y validación de los trabajos realizados" [level=6] [ref=e138]':
+              - superscript [ref=e139]:
+                - strong [ref=e140]: NOTA
+                - text: ": *EN ACTUALIZACIÓN* La información presentada en esta plataforma de bacheo es de carácter público y está disponible para consulta ciudadana. Los datos relacionados con folios, fotografías, ubicaciones y estatus de los reportes se encuentran en constante proceso de actualización, revisión y supervisión diaria, por lo que pueden variar conforme avanza el registro y validación de los trabajos realizados"
+          - generic [ref=e143]:
+            - link [ref=e146] [cursor=pointer]:
+              - /url: https://tolucadigital.gob.mx/
+              - img [ref=e147]
+            - link [ref=e150] [cursor=pointer]:
+              - /url: https://legislacion.edomex.gob.mx/sites/legislacion.edomex.gob.mx/files/files/pdf/rgl/vig/rglvig079.pdf
+              - img [ref=e151]
+            - link [ref=e155] [cursor=pointer]:
+              - /url: https://www2.toluca.gob.mx/wp-content/uploads/2025/01/MUA_TOLUCA-MMT2025-.pdf
+              - img [ref=e156]
+          - generic [ref=e158]:
+            - link [ref=e161] [cursor=pointer]:
+              - /url: https://sigtol.gob.mx/
+              - img [ref=e162]
+            - link [ref=e165] [cursor=pointer]:
+              - /url: https://rama.edomex.gob.mx/calidaddelaire
+              - img [ref=e166]
+            - link [ref=e170] [cursor=pointer]:
+              - /url: https://www2.toluca.gob.mx/asuntosinternos/
+              - img [ref=e171]
+        - img [ref=e181]
+        - generic [ref=e186]:
+          - link [ref=e191] [cursor=pointer]:
+            - /url: https://www2.toluca.gob.mx/wp-content/uploads/2026/03/CONVO-COMITE-PARTICIPACION-CIUDADANA-3-ultima.pdf
+            - img [ref=e192]
+          - generic [ref=e195]:
+            - link [ref=e198] [cursor=pointer]:
+              - /url: https://www2.toluca.gob.mx/wp-content/uploads/2026/05/CONVOCATORIA_CPCM.pdf
+              - img [ref=e199]
+            - generic [ref=e200]:
+              - heading "A C U E R D O 02/2026" [level=4] [ref=e201]:
+                - strong [ref=e203]:
+                  - link "A C U E R D O 02/2026" [ref=e204] [cursor=pointer]:
+                    - /url: https://www2.toluca.gob.mx/wp-content/uploads/2026/05/ACUERDO-2-DE-LA-COMISION-DE-SELECCION-MUNICIPAL-DEL-SISTEMA-MUNICIPAL-ANTICORRUPCION-DEL-MUNICIPIO-DE-TOLUCA.pdf
+              - heading "A C U E R D O 03/2026" [level=4] [ref=e205]:
+                - strong [ref=e207]:
+                  - link "A C U E R D O 03/2026" [ref=e208] [cursor=pointer]:
+                    - /url: https://www2.toluca.gob.mx/wp-content/uploads/2026/05/ACUERDO-3-DE-LA-COMISION-DE-SELECCION-MUNICIPAL-DEL-SISTEMA-MUNICIPAL-ANTICORRUPCION-DEL-MUNICIPIO-DE-TOLUCA.pdf
+              - heading "DICTAMEN 01/2026" [level=4] [ref=e209]:
+                - strong [ref=e210]:
+                  - link "DICTAMEN 01/2026" [ref=e212] [cursor=pointer]:
+                    - /url: https://www2.toluca.gob.mx/wp-content/uploads/2026/05/DICTAMEN-01-COMISION-SELEC.pdf
+        - img [ref=e226]
+        - generic [ref=e231]:
+          - generic [ref=e233]:
+            - link [ref=e236] [cursor=pointer]:
+              - /url: https://www2.toluca.gob.mx/bando2026/
+              - img [ref=e237]
+            - link [ref=e241] [cursor=pointer]:
+              - /url: https://www2.toluca.gob.mx/wp-content/uploads/2025/05/Guia-Tecnica-MP-1a-ed-25.pdf
+              - img [ref=e242]
+            - link [ref=e246] [cursor=pointer]:
+              - /url: http://mapas.toluca.gob.mx/mxsig/
+              - img [ref=e247]
+          - generic [ref=e249]:
+            - link [ref=e252] [cursor=pointer]:
+              - /url: https://www2.toluca.gob.mx/wp-content/uploads/2026/02/Código-Reglamentario-feb-2026.pdf
+              - img [ref=e253]
+            - link [ref=e257] [cursor=pointer]:
+              - /url: https://www2.toluca.gob.mx/gaceta-municipal/
+              - img [ref=e258]
+          - generic [ref=e260]:
+            - link [ref=e263] [cursor=pointer]:
+              - /url: https://www2.toluca.gob.mx/wp-content/uploads/2026/02/ATLAS-DE-RIESGO-DE-TOLUCA-2025-2027-1.pdf
+              - img [ref=e264]
+            - link [ref=e268] [cursor=pointer]:
+              - /url: https://www2.toluca.gob.mx/wp-content/uploads/2025/10/Plan-de-Desarrollo-2025_Toluca.pdf
+              - img [ref=e269]
+            - link [ref=e274] [cursor=pointer]:
+              - /url: http://187.174.218.142/valservcattol/(S(ht3ykbltl22vxujtsbu5xlse))/wf_inicio.aspx
+              - img [ref=e275]
+          - generic [ref=e277]:
+            - link [ref=e280] [cursor=pointer]:
+              - /url: https://www2.toluca.gob.mx/wp-content/uploads/2025/05/Guia-Tecnica-MO-1a-ed-25.pdf
+              - img [ref=e281]
+            - link [ref=e285] [cursor=pointer]:
+              - /url: https://sicee.ine.mx/home
+              - img [ref=e286]
+        - generic [ref=e291]:
+          - link [ref=e297] [cursor=pointer]:
+            - /url: https://www2.toluca.gob.mx/proactiva/
+            - img [ref=e298]
+          - link [ref=e304] [cursor=pointer]:
+            - /url: https://www2.toluca.gob.mx/wp-content/uploads/2024/05/tol-pdf-presupuesto-ciudadano-2024-4.pdf
+            - img [ref=e305]
+          - link [ref=e311] [cursor=pointer]:
+            - /url: https://www2.toluca.gob.mx/planeacion/
+            - img [ref=e312]
+        - generic [ref=e327]:
+          - generic [ref=e330]:
+            - link "Recomendación General CODHEM" [ref=e333] [cursor=pointer]:
+              - /url: "#"
+            - link "SMA De Toluca" [ref=e336] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=e339]:
+            - link "Comisión De Selección Municipal Del Sistema Municipal Anticorrupción De Toluca" [ref=e342] [cursor=pointer]:
+              - /url: "#"
+            - link "Delitos por hechos y Faltas administrativas" [ref=e345] [cursor=pointer]:
+              - /url: "#"
+            - link "Consultas de World Vision" [ref=e348] [cursor=pointer]:
+              - /url: "#"
+        - img [ref=e358]
+        - generic [ref=e367]:
+          - generic [ref=e369]:
+            - link [ref=e372] [cursor=pointer]:
+              - /url: https://www.diftoluca.gob.mx/
+              - img [ref=e373]
+            - link [ref=e376] [cursor=pointer]:
+              - /url: https://www.inegi.org.mx/default.html
+              - img [ref=e377]
+            - link [ref=e380] [cursor=pointer]:
+              - /url: https://www2.toluca.gob.mx/edictos/
+              - img [ref=e381]
+          - generic [ref=e383]:
+            - link [ref=e386] [cursor=pointer]:
+              - /url: https://www.ayst.gob.mx/portal2/
+              - img [ref=e387]
+            - link [ref=e390] [cursor=pointer]:
+              - /url: https://saimex.org.mx/saimex/ciudadano/login.page
+              - img [ref=e391]
+          - generic [ref=e393]:
+            - link [ref=e396] [cursor=pointer]:
+              - /url: http://imcufide.toluca.gob.mx/
+              - img [ref=e397]
+            - link [ref=e400] [cursor=pointer]:
+              - /url: https://www.ipomex.org.mx/ipo3/lgt/indice/toluca.web
+              - img [ref=e401]
+          - generic [ref=e403]:
+            - link [ref=e406] [cursor=pointer]:
+              - /url: http://defensoria.toluca.gob.mx/
+              - img [ref=e407]
+            - link [ref=e410] [cursor=pointer]:
+              - /url: https://infoem2.ipomex.org.mx/ipomex/#/obligaciones/197
+              - img [ref=e411]
+        - paragraph [ref=e412]:
+          - img [ref=e414]
+          - text: 3,026,963 total views, 1,913 views today
+      - generic [ref=e419]:
+        - complementary [ref=e420]
+        - complementary [ref=e421]:
+          - heading "Síguenos" [level=3] [ref=e422]
+          - list [ref=e424]:
+            - listitem [ref=e425]:
+              - link "facebook  Facebook" [ref=e426] [cursor=pointer]:
+                - /url: https://www.facebook.com/ayuntamientodetolucamx/
+                - generic [ref=e427]: facebook
+                - generic [ref=e428]: 
+                - text: Facebook
+            - listitem [ref=e429]:
+              - link "twitter  Twitter" [ref=e430] [cursor=pointer]:
+                - /url: https://x.com/TolucaGob
+                - generic [ref=e431]: twitter
+                - generic [ref=e432]: 
+                - text: Twitter
+            - listitem [ref=e433]:
+              - link "instagram  Instagram" [ref=e434] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e435]: instagram
+                - generic [ref=e436]: 
+                - text: Instagram
+            - listitem [ref=e437]:
+              - link "instagram  Youtube" [ref=e438] [cursor=pointer]:
+                - /url: https://www.youtube.com/@ayuntamientodetolucamx
+                - generic [ref=e439]: instagram
+                - generic [ref=e440]: 
+                - text: Youtube
+      - text: 
+    - contentinfo [ref=e441]:
+      - generic [ref=e443]:
+        - generic [ref=e446]: Sitio a cargo de la Coordinación General de Comunicación Social y Dirección de Tecnologías de la Información y Gobierno Digital.
+        - generic [ref=e447]: Ayuntamiento de Toluca 2025-2027. Todos los Derechos Reservados.
+  - iframe [ref=e450]:
+    - generic [ref=f48e5]:
+      - generic [ref=f48e6]:
+        - text: protegido por
+        - strong [ref=f48e7]: reCAPTCHA
+      - generic [ref=f48e9]:
+        - text: reCAPTCHA cambiará sus Condiciones del Servicio.
+        - link "Toma medidas." [ref=f48e10] [cursor=pointer]:
+          - /url: https://google.com/recaptcha/admin/migrate

@@ -1,0 +1,107 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - link "Secretaría de Administración y Finanzas" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Secretaría de Administración y Finanzas" [ref=e7]
+      - link "OVICA" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - img "OVICA" [ref=e9]
+    - generic [ref=e10]:
+      - generic [ref=e11]: Ciudad de México, sábado 13 de junio de 2026
+      - separator [ref=e12]
+      - button "Login menú" [ref=e13] [cursor=pointer]: Ingresar
+    - generic [ref=e15]:
+      - button "INICIO" [ref=e17] [cursor=pointer]:
+        - generic [ref=e18]: INICIO
+      - button "VENTANILLA DIGITAL" [ref=e20] [cursor=pointer]:
+        - generic [ref=e21]: VENTANILLA DIGITAL
+      - link "TRÁMITES Y SERVICIOS" [ref=e23] [cursor=pointer]:
+        - /url: https://www.finanzas.cdmx.gob.mx/catastro
+        - button "TRÁMITES Y SERVICIOS" [ref=e24]: TRÁMITES Y SERVICIOS
+      - link "PREDIAL POR LOTE" [ref=e26] [cursor=pointer]:
+        - /url: https://lcporlotepredial.saf.cdmx.gob.mx
+        - button "PREDIAL POR LOTE" [ref=e27]: PREDIAL POR LOTE
+      - link "REGULARIZACIÓN DE ADEUDOS PREDIAL" [ref=e29] [cursor=pointer]:
+        - /url: /cuenta-predial-liquidacion
+        - button "REGULARIZACIÓN DE ADEUDOS PREDIAL" [ref=e30]: REGULARIZACIÓN DE ADEUDOS PREDIAL
+  - generic [ref=e38]:
+    - heading "Registro a ¡Tu Mejor Año Fiscal!" [level=1] [ref=e39]
+    - generic [ref=e40]:
+      - navigation [ref=e41]:
+        - generic [ref=e42]:
+          - button "1 Consulta cuenta" [ref=e43] [cursor=pointer]:
+            - generic [ref=e44]: "1"
+            - generic [ref=e45]: Consulta cuenta
+          - button "2 Datos del Contribuyente" [disabled] [ref=e46]:
+            - generic [ref=e47]: "2"
+            - generic [ref=e48]: Datos del Contribuyente
+          - button "3 Períodos vencidos y vigentes" [disabled] [ref=e49]:
+            - generic [ref=e50]: "3"
+            - generic [ref=e51]: Períodos vencidos y vigentes
+          - button "4 Propuesta de beneficio" [disabled] [ref=e52]:
+            - generic [ref=e53]: "4"
+            - generic [ref=e54]: Propuesta de beneficio
+          - button "5 Aplicación del beneficio" [disabled] [ref=e55]:
+            - generic [ref=e56]: "5"
+            - generic [ref=e57]: Aplicación del beneficio
+      - main [ref=e58]:
+        - generic [ref=e59]:
+          - generic [ref=e60]:
+            - generic [ref=e61]: Paso 1 de 5
+            - heading "Consulta cuenta" [level=2] [ref=e62]
+            - paragraph [ref=e63]: Ingresa los 12 números de tu cuenta predial y haz clic en Consultar
+          - generic [ref=e66]:
+            - generic [ref=e67]: Cuenta Predial
+            - generic [ref=e68]:
+              - textbox "Cuenta Predial" [ref=e70]:
+                - /placeholder: Ingrese 12 caracteres alfanuméricos
+              - button "Consultar" [disabled] [ref=e71]: Consultar
+            - text: "*Ingrese los 12 números de su cuenta predial y haga clic en Consultar"
+  - contentinfo [ref=e73]:
+    - contentinfo [ref=e78]:
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - link "Secretaría de Administración y Finanzas" [ref=e82] [cursor=pointer]:
+            - /url: https://www.cdmx.gob.mx/
+            - img "Secretaría de Administración y Finanzas" [ref=e83]
+          - list [ref=e85]:
+            - listitem [ref=e86]:
+              - link [ref=e87] [cursor=pointer]:
+                - /url: https://www.facebook.com/AdministracionyFinanzasCiudadDeMexico/
+                - img [ref=e88]
+            - listitem [ref=e89]:
+              - link [ref=e90] [cursor=pointer]:
+                - /url: https://x.com/finanzas_cdmx
+                - img [ref=e91]
+            - listitem [ref=e92]:
+              - link [ref=e93] [cursor=pointer]:
+                - /url: https://www.instagram.com/safcdmx
+                - img [ref=e94]
+            - listitem [ref=e95]:
+              - link [ref=e96] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@safcdmx_
+                - img [ref=e97]
+        - generic [ref=e98]:
+          - heading "Atención Ciudadana" [level=4] [ref=e100]:
+            - link "Atención Ciudadana" [ref=e101] [cursor=pointer]:
+              - /url: https://311locatel.cdmx.gob.mx/
+          - heading "Portal de Transparencia" [level=4] [ref=e103]:
+            - link "Portal de Transparencia" [ref=e104] [cursor=pointer]:
+              - /url: https://transparencia.finanzas.cdmx.gob.mx/transparencia/public/
+          - heading "Tu ciudad, tu dinero" [level=4] [ref=e106]:
+            - link "Tu ciudad, tu dinero" [ref=e107] [cursor=pointer]:
+              - /url: https://tudinero.cdmx.gob.mx/
+        - paragraph [ref=e110]:
+          - strong [ref=e111]: "Atención Ciudadana:"
+          - text: Doctor Lavista 144, col. Doctores, alc. Cuauhtémoc, 06720, CDMX. 55 5134 2500
+          - strong [ref=e112]: "Secretaría de Administración y Finanzas:"
+          - text: Plaza de la Constitución 1, col. Centro, alc. Cuauhtémoc, 06000, CDMX
+        - generic [ref=e113]:
+          - paragraph [ref=e115]:
+            - link "Política de privacidad" [ref=e116] [cursor=pointer]:
+              - /url: https://www.finanzas.cdmx.gob.mx/terminos-y-condiciones
+          - paragraph [ref=e118]:
+            - link "Términos y Condiciones" [ref=e119] [cursor=pointer]:
+              - /url: https://www.finanzas.cdmx.gob.mx/terminos-y-condiciones
+          - paragraph [ref=e121]: 2026 OVICA. Oficina Virtual del Catastro

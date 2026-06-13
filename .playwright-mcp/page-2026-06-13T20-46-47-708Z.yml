@@ -1,0 +1,18 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - heading "www.municipiodeoaxaca.gob.mx" [level=1] [ref=e5]
+      - heading "Verificación de seguridad en curso" [level=2] [ref=e6]
+      - paragraph [ref=e7]: Este sitio web utiliza un servicio de seguridad para protegerse contra bots maliciosos. Esta página se muestra mientras el sitio web verifica que usted no es un bot.
+  - contentinfo [ref=e11]:
+    - generic [ref=e13]:
+      - generic [ref=e15]:
+        - text: "Ray ID:"
+        - code [ref=e16]: a0b3f258eff4f063
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - text: Rendimiento y seguridad de
+          - link "Cloudflare" [ref=e19] [cursor=pointer]:
+            - /url: https://www.cloudflare.com?utm_source=challenge&utm_campaign=m
+        - link "Privacidad" [ref=e21] [cursor=pointer]:
+          - /url: https://www.cloudflare.com/es-es/privacypolicy/

@@ -1,0 +1,33 @@
+{
+  "name": "permuta-cripto-cripto-gravable - swap ETH->USDC en Uniswap V3 con ganancia",
+  "pattern_template": "permuta_dex",
+  "input": {
+    "operacion": {
+      "fecha_hora": "2026-03-15T14:22:00Z",
+      "exchange": "uniswap-v3",
+      "tipo": "permuta",
+      "activo_dado": "ETH",
+      "cantidad_dada": "5.0",
+      "activo_recibido": "USDC",
+      "cantidad_recibida": "13750",
+      "valor_mxn_dia": "275000.00",
+      "fee_mxn": "850.00",
+      "txid": "0xabc123..."
+    },
+    "costo_base_eth_mxn": "200000.00"
+  },
+  "expected_output": {
+    "es_permuta_gravable": true,
+    "ganancia_mxn": "75000.00",
+    "tratamiento_fiscal": "Art. 119 LISR — enajenación de bienes",
+    "valor_mxn_realizado": "275000.00",
+    "regimen_aplicable": "Cap II o Cap IV según frecuencia"
+  },
+  "validations": [
+    "Valor MXN del lado entregado calculado con TC DOF del día",
+    "Costo base aplicado correctamente",
+    "Fee de gas incluido en cálculo",
+    "Tratamiento fiscal documentado"
+  ],
+  "notes": "Caso típico: swap en DEX con ganancia clara. Validar que el skill detecte explícitamente que es permuta gravable y NO sólo transferencia."
+}

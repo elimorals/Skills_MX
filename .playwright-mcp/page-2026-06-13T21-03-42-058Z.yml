@@ -1,0 +1,187 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e8]:
+    - paragraph [ref=e11]:
+      - link " Buzon de quejas y sugerencias" [ref=e12] [cursor=pointer]:
+        - /url: https://www.neza.gob.mx/contacto/
+        - generic [ref=e13]: 
+        - text: Buzon de quejas y sugerencias
+    - generic [ref=e15]:
+      - paragraph [ref=e17]:
+        - text: "Ayuntamiento:"
+        - generic [ref=e18]: 
+        - text: 55 57169070
+      - paragraph [ref=e20]:
+        - text: "Emergencias:"
+        - generic [ref=e21]: 
+        - text: 55 57434343
+    - generic [ref=e22]:
+      - link "facebook_neza" [ref=e23] [cursor=pointer]:
+        - /url: https://www.facebook.com/Ayuntamiento.Neza
+        - img "facebook_neza" [ref=e24]
+      - link "x_neza" [ref=e25] [cursor=pointer]:
+        - /url: https://x.com/GobNeza
+        - img "x_neza" [ref=e26]
+      - link "instagrama_neza" [ref=e27] [cursor=pointer]:
+        - /url: https://www.instagram.com/ayuntamiento.neza/
+        - img "instagrama_neza" [ref=e28]
+      - link "youtube_neza" [ref=e29] [cursor=pointer]:
+        - /url: https://www.youtube.com/user/GobiernoNeza
+        - img "youtube_neza" [ref=e30]
+    - link "SUSCRÍBETE" [ref=e32] [cursor=pointer]:
+      - /url: https://www.neza.gob.mx/suscribir/?p=subscribe&id=1
+  - navigation [ref=e33]:
+    - link "Logo_neza" [ref=e34] [cursor=pointer]:
+      - /url: https://www.neza.gob.mx/
+      - img "Logo_neza" [ref=e35]
+    - list [ref=e37]:
+      - listitem [ref=e38]:
+        - link "Inicio" [ref=e39] [cursor=pointer]:
+          - /url: https://www.neza.gob.mx/
+      - listitem [ref=e40]:
+        - link "Gobierno " [ref=e41] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e42]:
+        - link "Direcciones " [ref=e43] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e44]:
+        - link "Prensa " [ref=e45] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e46]:
+        - link "Transparencia " [ref=e47] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e48]:
+        - link "Unidad de Simplificación y Digitalización " [ref=e49] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e50]:
+        - link "Seguridad Ciudadana" [ref=e51] [cursor=pointer]:
+          - /url: https://www.seguridadneza.gob.mx/
+      - listitem [ref=e52]:
+        - link "SMA Nezahualcóyotl" [ref=e53] [cursor=pointer]:
+          - /url: https://www.neza.gob.mx/SMA-NEZAHUALC%C3%93YOTL.php
+  - link "Hoy_no_circula" [ref=e55] [cursor=pointer]:
+    - /url: "#"
+    - img "Hoy_no_circula" [ref=e56]
+  - generic [ref=e57]:
+    - generic [ref=e58]:
+      - generic [ref=e59]:
+        - text: ">"
+        - generic [ref=e61]: Nezahualcóyotl
+      - generic [ref=e63]:
+        - generic [ref=e64]: 13 Jun
+        - img [ref=e66]
+        - generic [ref=e102]: +23°C
+      - generic [ref=e104]:
+        - generic [ref=e105]: 14 Jun
+        - img [ref=e107]
+        - generic [ref=e136]: +24°C
+      - generic [ref=e138]:
+        - generic [ref=e139]: 15 Jun
+        - img [ref=e141]
+        - generic [ref=e177]: +23°C
+      - generic [ref=e179]:
+        - generic [ref=e180]: 16 Jun
+        - img [ref=e182]
+        - generic [ref=e218]: +24°C
+      - generic [ref=e220]:
+        - generic [ref=e221]: 17 Jun
+        - img [ref=e223]
+        - generic [ref=e259]: +23°C
+      - generic [ref=e261]:
+        - generic [ref=e262]: 18 Jun
+        - img [ref=e264]
+        - generic [ref=e300]: +23°C
+      - generic [ref=e302]:
+        - generic [ref=e303]: 19 Jun
+        - img [ref=e305]
+        - generic [ref=e341]: +23°C
+    - generic [ref=e342]:
+      - generic [ref=e343]:
+        - text: ">"
+        - generic [ref=e345]: Nezahualcóyotl
+      - generic [ref=e347]:
+        - generic [ref=e348]: 13 Jun
+        - img [ref=e350]
+        - generic [ref=e386]: +23°C
+      - generic [ref=e388]:
+        - generic [ref=e389]: 14 Jun
+        - img [ref=e391]
+        - generic [ref=e420]: +24°C
+      - generic [ref=e422]:
+        - generic [ref=e423]: 15 Jun
+        - img [ref=e425]
+        - generic [ref=e461]: +23°C
+      - generic [ref=e463]:
+        - generic [ref=e464]: 16 Jun
+        - img [ref=e466]
+        - generic [ref=e502]: +24°C
+      - generic [ref=e504]:
+        - generic [ref=e505]: 17 Jun
+        - img [ref=e507]
+        - generic [ref=e543]: +23°C
+      - generic [ref=e545]:
+        - generic [ref=e546]: 18 Jun
+        - img [ref=e548]
+        - generic [ref=e584]: +23°C
+      - generic [ref=e586]:
+        - generic [ref=e587]: 19 Jun
+        - img [ref=e589]
+        - generic [ref=e625]: +23°C
+    - img [ref=e627]
+  - generic [ref=e631]:
+    - link "Descarga_la_APP" [ref=e635] [cursor=pointer]:
+      - /url: https://neza.gob.mx/TransformaNeza.php
+      - img "Descarga_la_APP" [ref=e636]
+    - link "Realiza_un_reporte" [ref=e640] [cursor=pointer]:
+      - /url: https://transforma.neza.gob.mx/
+      - img "Realiza_un_reporte" [ref=e641]
+    - link "Monografia" [ref=e645] [cursor=pointer]:
+      - /url: https://neza.gob.mx/monografia/
+      - img "Monografia" [ref=e646]
+    - link "Monografia" [ref=e650] [cursor=pointer]:
+      - /url: https://neza.gob.mx/galeria/
+      - img "Monografia" [ref=e651]
+  - generic [ref=e654]:
+    - link "Edictos" [ref=e658] [cursor=pointer]:
+      - /url: https://neza.gob.mx/edictos.php
+      - img "Edictos" [ref=e659]
+    - link "Sesiones_de_cabildo" [ref=e663] [cursor=pointer]:
+      - /url: https://www.youtube.com/user/GobiernoNeza/live
+      - img "Sesiones_de_cabildo" [ref=e664]
+    - link "Correo" [ref=e668] [cursor=pointer]:
+      - /url: https://webmail.nezahualcoyotl.gob.mx/
+      - img "Correo" [ref=e669]
+    - link "Bolsa_de_trabajo" [ref=e673] [cursor=pointer]:
+      - /url: https://www.neza.gob.mx/bolsa_de_trabajo.php
+      - img "Bolsa_de_trabajo" [ref=e674]
+  - generic [ref=e677]:
+    - link "IMCUFIDENE" [ref=e681] [cursor=pointer]:
+      - /url: https://www.neza.gob.mx/direcciones_2025-2027/imcufidene.php
+      - img "IMCUFIDENE" [ref=e682]
+    - link "DIF" [ref=e686] [cursor=pointer]:
+      - /url: https://www.neza.gob.mx/direcciones_2025-2027/dif.php
+      - img "DIF" [ref=e687]
+    - link "Turismo" [ref=e691] [cursor=pointer]:
+      - /url: https://www.neza.gob.mx/turismo
+      - img "Turismo" [ref=e692]
+    - link "Comisaria" [ref=e696] [cursor=pointer]:
+      - /url: https://portal.seguridadneza.gob.mx/
+      - img "Comisaria" [ref=e697]
+    - link "ODAPAS" [ref=e701] [cursor=pointer]:
+      - /url: https://www.neza.gob.mx/direcciones_2025-2027/odapas.php
+      - img "ODAPAS" [ref=e702]
+  - generic [ref=e705]:
+    - link "Convocatorias" [ref=e709] [cursor=pointer]:
+      - /url: https://neza.gob.mx/convocatorias.php
+      - img "Convocatorias" [ref=e710]
+    - link "Audiencias" [ref=e714] [cursor=pointer]:
+      - /url: https://www.neza.gob.mx/audiencias/
+      - img "Audiencias" [ref=e715]
+    - link "Paga_predio_agua" [ref=e719] [cursor=pointer]:
+      - /url: https://neza.gob.mx/pagopredioyagua.php
+      - img "Paga_predio_agua" [ref=e720]
+    - link "Descarga_comprobantes" [ref=e724] [cursor=pointer]:
+      - /url: https://neza.gob.mx/comprobantefiscal.php
+      - img "Descarga_comprobantes" [ref=e725]
+  - link "" [ref=e731] [cursor=pointer]:
+    - /url: "#"
+    - generic [ref=e732]: 

@@ -1,0 +1,405 @@
+- generic [active] [ref=e1]:
+  - link "Ir al contenido" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - banner [ref=e3]:
+    - generic [ref=e8]:
+      - generic [ref=e9]: sáb 13 de jun, 03:03 pm
+      - generic [ref=e10]:
+        - generic [ref=e11]: "Aire:"
+        - generic [ref=e12]: aceptable
+        - generic "Pronóstico 5 días" [ref=e13]:
+          - generic [ref=e14]:
+            - generic [ref=e15]: sáb
+            - generic [ref=e16]: 🌧️
+            - generic [ref=e17]: 21°/12°
+          - generic [ref=e18]:
+            - generic [ref=e19]: dom
+            - generic [ref=e20]: 🌦️
+            - generic [ref=e21]: 23°/13°
+          - generic [ref=e22]:
+            - generic [ref=e23]: lun
+            - generic [ref=e24]: 🌦️
+            - generic [ref=e25]: 24°/13°
+          - generic [ref=e26]:
+            - generic [ref=e27]: mar
+            - generic [ref=e28]: 🌦️
+            - generic [ref=e29]: 23°/13°
+      - link "Reporte oficial" [ref=e31] [cursor=pointer]:
+        - /url: https://www.aire.cdmx.gob.mx/ultima-hora-reporte.php
+    - generic [ref=e32]:
+      - link [ref=e35] [cursor=pointer]:
+        - /url: https://cuautitlanizcalli.gob.mx
+      - navigation "Menu" [ref=e38]:
+        - list [ref=e39]:
+          - listitem [ref=e40]:
+            - link "Comunicados" [ref=e41] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/comunicados/
+          - listitem [ref=e42]:
+            - link "Gacetas" [ref=e43] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/gacetas/
+              - text: Gacetas
+              - img [ref=e45]
+          - listitem [ref=e47]:
+            - link "Información Pública" [ref=e48] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/informacion-publica/
+              - text: Información Pública
+              - img [ref=e50]
+          - listitem [ref=e52]:
+            - link "Municipio" [ref=e53] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/municipio/
+              - text: Municipio
+              - img [ref=e55]
+          - listitem [ref=e57]:
+            - link "Transparencia Financiera" [ref=e58] [cursor=pointer]:
+              - /url: "#"
+              - text: Transparencia Financiera
+              - img [ref=e60]
+      - list [ref=e64]:
+        - listitem [ref=e65]:
+          - link "Facebook" [ref=e66] [cursor=pointer]:
+            - /url: https://www.facebook.com/GobIzcalli
+            - generic [ref=e67]: Facebook
+            - img [ref=e68]
+        - listitem [ref=e70]:
+          - link "Instagram" [ref=e71] [cursor=pointer]:
+            - /url: https://www.instagram.com/gobizcalli/
+            - generic [ref=e72]: Instagram
+            - img [ref=e73]
+        - listitem [ref=e75]:
+          - link "X-twitter" [ref=e76] [cursor=pointer]:
+            - /url: https://x.com/gobizcalli
+            - generic [ref=e77]: X-twitter
+            - img [ref=e78]
+        - listitem [ref=e80]:
+          - link "Youtube" [ref=e81] [cursor=pointer]:
+            - /url: https://www.youtube.com/@gobiernomunicipaldecuautit8661
+            - generic [ref=e82]: Youtube
+            - img [ref=e83]
+      - link "Trámites en Línea" [ref=e88] [cursor=pointer]:
+        - /url: https://cuautitlanizcalli.gob.mx/tramites-en-linea/
+        - generic [ref=e90]: Trámites en Línea
+  - main [ref=e91]:
+    - generic [ref=e103]:
+      - generic [ref=e108]:
+        - generic [ref=e109]: Publicaciones Recientes
+        - list [ref=e111]:
+          - listitem [ref=e112]:
+            - generic [ref=e113]: 📅 2026-06-12
+            - generic [ref=e114]: Nuevo
+            - 'link "Cuautitlán Izcalli reduce 20% el robo a transportista: Cifras oficiales" [ref=e115] [cursor=pointer]':
+              - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-izcalli-reduce-20-el-robo-a-transportista-cifras-oficiales/
+          - listitem [ref=e116]:
+            - generic [ref=e117]: 📅 2026-06-10
+            - generic [ref=e118]: Nuevo
+            - 'link "Cuautitlán Izcalli reduce 33% el robo a casa-habitación: SESNSP" [ref=e119] [cursor=pointer]':
+              - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-izcalli-reduce-33-el-robo-a-casa-habitacion-sesnsp/
+          - listitem [ref=e120]:
+            - generic [ref=e121]: 📅 2026-06-10
+            - generic [ref=e122]: Nuevo
+            - link "Retira Operagua tapón de basura y libera el flujo del canal San José en Tres Ríos" [ref=e123] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/retira-operagua-tapon-de-basura-y-libera-el-flujo-del-canal-san-jose-en-tres-rios/
+          - listitem [ref=e124]:
+            - generic [ref=e125]: 📅 2026-06-10
+            - generic [ref=e126]: Nuevo
+            - link "Policía Municipal de Cuautitlán Izcalli recupera vehículo robado minutos después de recibir el reporte" [ref=e127] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/policia-municipal-de-cuautitlan-izcalli-recupera-vehiculo-robado-minutos-despues-de-recibir-el-reporte/
+          - listitem [ref=e128]:
+            - generic [ref=e129]: 📅 2026-06-09
+            - generic [ref=e130]: Nuevo
+            - link "En Cuautitlán Izcalli se realiza Mini Feria de la Prevención “Juegos y Valores 2026”" [ref=e131] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/en-cuautitlan-izcalli-se-realiza-mini-feria-de-la-prevencion-juegos-y-valores-2026/
+          - listitem [ref=e132]:
+            - generic [ref=e133]: 📅 2026-06-09
+            - generic [ref=e134]: Nuevo
+            - link "En Cuautitlán Izcalli detienen a probable implicado en delitos contra la salud" [ref=e135] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/en-cuautitlan-izcalli-detienen-a-probable-implicado-en-delitos-contra-la-salud/
+          - listitem [ref=e136]:
+            - generic [ref=e137]: 📅 2026-06-06
+            - 'link "Izcalli está en la cancha: Celebran torneo por la paz en favor de las juventudes" [ref=e138] [cursor=pointer]':
+              - /url: https://cuautitlanizcalli.gob.mx/izcalli-esta-en-la-cancha-celebran-torneo-por-la-paz-en-favor-de-las-juventudes/
+          - listitem [ref=e139]:
+            - generic [ref=e140]: 📅 2026-06-06
+            - link "Protección Civil de Cuautitlán Izcalli realiza revisión estructural de puente vehicular" [ref=e141] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/proteccion-civil-de-cuautitlan-izcalli-realiza-revision-estructural-de-puente-vehicular/
+          - listitem [ref=e142]:
+            - generic [ref=e143]: 📅 2026-06-05
+            - link "Respecto a la zona inundada en el Circuito Exterior Mexiquense este jueves, el Gobierno Municipal de Cuautitlán Izcalli hace el siguiente posicionamiento" [ref=e144] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/respecto-a-la-zona-inundada-en-el-circuito-exterior-mexiquense-este-jueves-el-gobierno-municipal-de-cuautitlan-izcalli-hace-el-siguiente-posicionamiento/
+          - listitem [ref=e145]:
+            - generic [ref=e146]: 📅 2026-06-04
+            - link "Gobierno de Cuautitlán Izcalli despliega operativo integral para dar atención tras la lluvia de este jueves" [ref=e147] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/gobierno-de-cuautitlan-izcalli-despliega-operativo-integral-para-dar-atencion-tras-la-lluvia-de-este-jueves/
+          - listitem [ref=e148]:
+            - generic [ref=e149]: 📅 2026-06-04
+            - link "Cuautitlán izcalli fortalece la seguridad con operativo intermunicipal Participaron corporaciones municipales, estatales y federales en acciones de prevención y disuasión del delito." [ref=e150] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-izcalli-fortalece-la-seguridad-con-operativo-intermunicipal-participaron-corporaciones-municipales-estatales-y-federales-en-acciones-de-prevencion-y-disuasion-del-delito/
+          - listitem [ref=e151]:
+            - generic [ref=e152]: 📅 2026-06-03
+            - 'link "En Cuautitlán Izcalli se mantiene una tendencia a la baja en el robo a negocio, disminuye 13%: Cifras Oficiales" [ref=e153] [cursor=pointer]':
+              - /url: https://cuautitlanizcalli.gob.mx/en-cuautitlan-izcalli-se-mantiene-una-tendencia-a-la-baja-en-el-robo-a-negocio-disminuye-13-cifras-oficiales/
+          - listitem [ref=e154]:
+            - generic [ref=e155]: 📅 2026-06-02
+            - 'link "Anuncia Daniel Serrano reactivación de 7 pozos: 15.5 millones de litros diarios recuperados, para más de 106 mil habitantes" [ref=e156] [cursor=pointer]':
+              - /url: https://cuautitlanizcalli.gob.mx/anuncia-daniel-serrano-reactivacion-de-7-pozos-15-5-millones-de-litros-diarios-recuperados-para-mas-de-106-mil-habitantes/
+          - listitem [ref=e157]:
+            - generic [ref=e158]: 📅 2026-06-02
+            - 'link "Cuautitlán disminuye 13% denuncias por robo a transeúnte: SESNSP" [ref=e159] [cursor=pointer]':
+              - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-disminuye-13-denuncias-por-robo-a-transeunte-sesnsp/
+          - listitem [ref=e160]:
+            - generic [ref=e161]: 📅 2026-06-02
+            - link "Cuautitlán Izcalli fortalece el mantenimiento vial con más de 6 mil toneladas de mezcla asfáltica aplicadas en 2026" [ref=e162] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-izcalli-fortalece-el-mantenimiento-vial-con-mas-de-6-mil-toneladas-de-mezcla-asfaltica-aplicadas-en-2026/
+          - listitem [ref=e163]:
+            - generic [ref=e164]: 📅 2026-06-12
+            - generic [ref=e165]: Nuevo
+            - 'link "Cuautitlán Izcalli reduce 20% el robo a transportista: Cifras oficiales" [ref=e166] [cursor=pointer]':
+              - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-izcalli-reduce-20-el-robo-a-transportista-cifras-oficiales/
+          - listitem [ref=e167]:
+            - generic [ref=e168]: 📅 2026-06-10
+            - generic [ref=e169]: Nuevo
+            - 'link "Cuautitlán Izcalli reduce 33% el robo a casa-habitación: SESNSP" [ref=e170] [cursor=pointer]':
+              - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-izcalli-reduce-33-el-robo-a-casa-habitacion-sesnsp/
+          - listitem [ref=e171]:
+            - generic [ref=e172]: 📅 2026-06-10
+            - generic [ref=e173]: Nuevo
+            - link "Retira Operagua tapón de basura y libera el flujo del canal San José en Tres Ríos" [ref=e174] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/retira-operagua-tapon-de-basura-y-libera-el-flujo-del-canal-san-jose-en-tres-rios/
+          - listitem [ref=e175]:
+            - generic [ref=e176]: 📅 2026-06-10
+            - generic [ref=e177]: Nuevo
+            - link "Policía Municipal de Cuautitlán Izcalli recupera vehículo robado minutos después de recibir el reporte" [ref=e178] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/policia-municipal-de-cuautitlan-izcalli-recupera-vehiculo-robado-minutos-despues-de-recibir-el-reporte/
+          - listitem [ref=e179]:
+            - generic [ref=e180]: 📅 2026-06-09
+            - generic [ref=e181]: Nuevo
+            - link "En Cuautitlán Izcalli se realiza Mini Feria de la Prevención “Juegos y Valores 2026”" [ref=e182] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/en-cuautitlan-izcalli-se-realiza-mini-feria-de-la-prevencion-juegos-y-valores-2026/
+          - listitem [ref=e183]:
+            - generic [ref=e184]: 📅 2026-06-09
+            - generic [ref=e185]: Nuevo
+            - link "En Cuautitlán Izcalli detienen a probable implicado en delitos contra la salud" [ref=e186] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/en-cuautitlan-izcalli-detienen-a-probable-implicado-en-delitos-contra-la-salud/
+          - listitem [ref=e187]:
+            - generic [ref=e188]: 📅 2026-06-06
+            - 'link "Izcalli está en la cancha: Celebran torneo por la paz en favor de las juventudes" [ref=e189] [cursor=pointer]':
+              - /url: https://cuautitlanizcalli.gob.mx/izcalli-esta-en-la-cancha-celebran-torneo-por-la-paz-en-favor-de-las-juventudes/
+          - listitem [ref=e190]:
+            - generic [ref=e191]: 📅 2026-06-06
+            - link "Protección Civil de Cuautitlán Izcalli realiza revisión estructural de puente vehicular" [ref=e192] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/proteccion-civil-de-cuautitlan-izcalli-realiza-revision-estructural-de-puente-vehicular/
+          - listitem [ref=e193]:
+            - generic [ref=e194]: 📅 2026-06-05
+            - link "Respecto a la zona inundada en el Circuito Exterior Mexiquense este jueves, el Gobierno Municipal de Cuautitlán Izcalli hace el siguiente posicionamiento" [ref=e195] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/respecto-a-la-zona-inundada-en-el-circuito-exterior-mexiquense-este-jueves-el-gobierno-municipal-de-cuautitlan-izcalli-hace-el-siguiente-posicionamiento/
+          - listitem [ref=e196]:
+            - generic [ref=e197]: 📅 2026-06-04
+            - link "Gobierno de Cuautitlán Izcalli despliega operativo integral para dar atención tras la lluvia de este jueves" [ref=e198] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/gobierno-de-cuautitlan-izcalli-despliega-operativo-integral-para-dar-atencion-tras-la-lluvia-de-este-jueves/
+          - listitem [ref=e199]:
+            - generic [ref=e200]: 📅 2026-06-04
+            - link "Cuautitlán izcalli fortalece la seguridad con operativo intermunicipal Participaron corporaciones municipales, estatales y federales en acciones de prevención y disuasión del delito." [ref=e201] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-izcalli-fortalece-la-seguridad-con-operativo-intermunicipal-participaron-corporaciones-municipales-estatales-y-federales-en-acciones-de-prevencion-y-disuasion-del-delito/
+          - listitem [ref=e202]:
+            - generic [ref=e203]: 📅 2026-06-03
+            - 'link "En Cuautitlán Izcalli se mantiene una tendencia a la baja en el robo a negocio, disminuye 13%: Cifras Oficiales" [ref=e204] [cursor=pointer]':
+              - /url: https://cuautitlanizcalli.gob.mx/en-cuautitlan-izcalli-se-mantiene-una-tendencia-a-la-baja-en-el-robo-a-negocio-disminuye-13-cifras-oficiales/
+          - listitem [ref=e205]:
+            - generic [ref=e206]: 📅 2026-06-02
+            - 'link "Anuncia Daniel Serrano reactivación de 7 pozos: 15.5 millones de litros diarios recuperados, para más de 106 mil habitantes" [ref=e207] [cursor=pointer]':
+              - /url: https://cuautitlanizcalli.gob.mx/anuncia-daniel-serrano-reactivacion-de-7-pozos-15-5-millones-de-litros-diarios-recuperados-para-mas-de-106-mil-habitantes/
+          - listitem [ref=e208]:
+            - generic [ref=e209]: 📅 2026-06-02
+            - 'link "Cuautitlán disminuye 13% denuncias por robo a transeúnte: SESNSP" [ref=e210] [cursor=pointer]':
+              - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-disminuye-13-denuncias-por-robo-a-transeunte-sesnsp/
+          - listitem [ref=e211]:
+            - generic [ref=e212]: 📅 2026-06-02
+            - link "Cuautitlán Izcalli fortalece el mantenimiento vial con más de 6 mil toneladas de mezcla asfáltica aplicadas en 2026" [ref=e213] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-izcalli-fortalece-el-mantenimiento-vial-con-mas-de-6-mil-toneladas-de-mezcla-asfaltica-aplicadas-en-2026/
+      - link [ref=e220] [cursor=pointer]:
+        - /url: https://polizas.cizcalli.gob.mx/
+      - region "Slides" [ref=e235]:
+        - generic [ref=e236]:
+          - group "1 / 3" [ref=e237]:
+            - link "Captura de pantalla 2025-09-18 a la(s) 4.02.05 p.m." [ref=e238] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/wp-content/uploads/2025/09/Captura-de-pantalla-2025-09-18-a-las-4.02.05-p.m-scaled.png
+              - img "Captura de pantalla 2025-09-18 a la(s) 4.02.05 p.m." [ref=e239]:
+                - generic [ref=e240]:
+                  - img [ref=e241]
+                  - generic [ref=e243]: Play
+          - group "2 / 3" [ref=e244]:
+            - link "Captura de pantalla 2025-09-18 a la(s) 4.04.03 p.m." [ref=e245] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/wp-content/uploads/2025/09/Captura-de-pantalla-2025-09-18-a-las-4.04.03-p.m-scaled.png
+              - img "Captura de pantalla 2025-09-18 a la(s) 4.04.03 p.m." [ref=e246]:
+                - generic [ref=e247]:
+                  - img [ref=e248]
+                  - generic [ref=e250]: Play
+          - group "3 / 3" [ref=e251]:
+            - link "Captura de pantalla 2025-09-18 a la(s) 4.02.43 p.m." [ref=e252] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/wp-content/uploads/2025/09/Captura-de-pantalla-2025-09-18-a-las-4.02.43-p.m-scaled.png
+              - img "Captura de pantalla 2025-09-18 a la(s) 4.02.43 p.m." [ref=e253]:
+                - generic [ref=e254]:
+                  - img [ref=e255]
+                  - generic [ref=e257]: Play
+          - group "1 / 3" [ref=e258]:
+            - link "Captura de pantalla 2025-09-18 a la(s) 4.02.05 p.m." [ref=e259] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/wp-content/uploads/2025/09/Captura-de-pantalla-2025-09-18-a-las-4.02.05-p.m-scaled.png
+              - img "Captura de pantalla 2025-09-18 a la(s) 4.02.05 p.m." [ref=e260]:
+                - generic [ref=e261]:
+                  - img [ref=e262]
+                  - generic [ref=e264]: Play
+          - group "2 / 3" [ref=e265]:
+            - link "Captura de pantalla 2025-09-18 a la(s) 4.04.03 p.m." [ref=e266] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/wp-content/uploads/2025/09/Captura-de-pantalla-2025-09-18-a-las-4.04.03-p.m-scaled.png
+              - img "Captura de pantalla 2025-09-18 a la(s) 4.04.03 p.m." [ref=e267]:
+                - generic [ref=e268]:
+                  - img [ref=e269]
+                  - generic [ref=e271]: Play
+          - group "3 / 3" [ref=e272]:
+            - link "Captura de pantalla 2025-09-18 a la(s) 4.02.43 p.m." [ref=e273] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/wp-content/uploads/2025/09/Captura-de-pantalla-2025-09-18-a-las-4.02.43-p.m-scaled.png
+              - img "Captura de pantalla 2025-09-18 a la(s) 4.02.43 p.m." [ref=e274]:
+                - generic [ref=e275]:
+                  - img [ref=e276]
+                  - generic [ref=e278]: Play
+          - group "1 / 3" [ref=e279]:
+            - link "Captura de pantalla 2025-09-18 a la(s) 4.02.05 p.m." [ref=e280] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/wp-content/uploads/2025/09/Captura-de-pantalla-2025-09-18-a-las-4.02.05-p.m-scaled.png
+              - img "Captura de pantalla 2025-09-18 a la(s) 4.02.05 p.m." [ref=e281]:
+                - generic [ref=e282]:
+                  - img [ref=e283]
+                  - generic [ref=e285]: Play
+          - group "2 / 3" [ref=e286]:
+            - link "Captura de pantalla 2025-09-18 a la(s) 4.04.03 p.m." [ref=e287] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/wp-content/uploads/2025/09/Captura-de-pantalla-2025-09-18-a-las-4.04.03-p.m-scaled.png
+              - img "Captura de pantalla 2025-09-18 a la(s) 4.04.03 p.m." [ref=e288]:
+                - generic [ref=e289]:
+                  - img [ref=e290]
+                  - generic [ref=e292]: Play
+          - group "3 / 3" [ref=e293]:
+            - link "Captura de pantalla 2025-09-18 a la(s) 4.02.43 p.m." [ref=e294] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/wp-content/uploads/2025/09/Captura-de-pantalla-2025-09-18-a-las-4.02.43-p.m-scaled.png
+              - img "Captura de pantalla 2025-09-18 a la(s) 4.02.43 p.m." [ref=e295]:
+                - generic [ref=e296]:
+                  - img [ref=e297]
+                  - generic [ref=e299]: Play
+        - button "Previous slide" [ref=e300] [cursor=pointer]:
+          - img [ref=e301]
+        - button "Next slide" [ref=e303] [cursor=pointer]:
+          - img [ref=e304]
+        - generic [ref=e306]:
+          - button "Go to slide 1" [ref=e307] [cursor=pointer]
+          - button "Go to slide 2" [ref=e308] [cursor=pointer]
+          - button "Go to slide 3" [ref=e309] [cursor=pointer]
+      - button "Mantente informado" [ref=e324]:
+        - generic [ref=e326]: Mantente informado
+      - list [ref=e331]:
+        - listitem [ref=e332]:
+          - generic [ref=e333]:
+            - link [ref=e334] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-izcalli-reduce-20-el-robo-a-transportista-cifras-oficiales/
+            - generic [ref=e336]: COMUNICADO
+            - generic [ref=e337]:
+              - 'heading "Cuautitlán Izcalli reduce 20% el robo a transportista: Cifras oficiales" [level=3] [ref=e338]':
+                - 'link "Cuautitlán Izcalli reduce 20% el robo a transportista: Cifras oficiales" [ref=e339] [cursor=pointer]':
+                  - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-izcalli-reduce-20-el-robo-a-transportista-cifras-oficiales/
+              - 'link "Read more about Cuautitlán Izcalli reduce 20% el robo a transportista: Cifras oficiales" [ref=e340] [cursor=pointer]':
+                - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-izcalli-reduce-20-el-robo-a-transportista-cifras-oficiales/
+                - text: Leer más »
+            - generic [ref=e342]: junio 12, 2026
+        - listitem [ref=e343]:
+          - generic [ref=e344]:
+            - link [ref=e345] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-izcalli-reduce-33-el-robo-a-casa-habitacion-sesnsp/
+            - generic [ref=e347]: COMUNICADO
+            - generic [ref=e348]:
+              - 'heading "Cuautitlán Izcalli reduce 33% el robo a casa-habitación: SESNSP" [level=3] [ref=e349]':
+                - 'link "Cuautitlán Izcalli reduce 33% el robo a casa-habitación: SESNSP" [ref=e350] [cursor=pointer]':
+                  - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-izcalli-reduce-33-el-robo-a-casa-habitacion-sesnsp/
+              - 'link "Read more about Cuautitlán Izcalli reduce 33% el robo a casa-habitación: SESNSP" [ref=e351] [cursor=pointer]':
+                - /url: https://cuautitlanizcalli.gob.mx/cuautitlan-izcalli-reduce-33-el-robo-a-casa-habitacion-sesnsp/
+                - text: Leer más »
+            - generic [ref=e353]: junio 10, 2026
+        - listitem [ref=e354]:
+          - generic [ref=e355]:
+            - link [ref=e356] [cursor=pointer]:
+              - /url: https://cuautitlanizcalli.gob.mx/retira-operagua-tapon-de-basura-y-libera-el-flujo-del-canal-san-jose-en-tres-rios/
+            - generic [ref=e358]: COMUNICADO
+            - generic [ref=e359]:
+              - heading "Retira Operagua tapón de basura y libera el flujo del canal San José en Tres Ríos" [level=3] [ref=e360]:
+                - link "Retira Operagua tapón de basura y libera el flujo del canal San José en Tres Ríos" [ref=e361] [cursor=pointer]:
+                  - /url: https://cuautitlanizcalli.gob.mx/retira-operagua-tapon-de-basura-y-libera-el-flujo-del-canal-san-jose-en-tres-rios/
+              - link "Read more about Retira Operagua tapón de basura y libera el flujo del canal San José en Tres Ríos" [ref=e362] [cursor=pointer]:
+                - /url: https://cuautitlanizcalli.gob.mx/retira-operagua-tapon-de-basura-y-libera-el-flujo-del-canal-san-jose-en-tres-rios/
+                - text: Leer más »
+            - generic [ref=e364]: junio 10, 2026
+      - generic [ref=e373]:
+        - img [ref=e376]
+        - img [ref=e379]
+        - link "Pagar" [ref=e387] [cursor=pointer]:
+          - /url: https://www.operaguaci.gob.mx/pago-en-linea/
+          - generic [ref=e389]: Pagar
+      - button "¿NECESITAS AYUDA? ESTAMOS PARA SERVIRTE" [ref=e402]:
+        - generic [ref=e404]: ¿NECESITAS AYUDA? ESTAMOS PARA SERVIRTE
+      - generic [ref=e409]:
+        - generic [ref=e410]:
+          - heading "NÚMEROS DE EMERGENCIA" [level=2] [ref=e411]
+          - paragraph [ref=e412]: Canales oficiales de atención del Gobierno de Cuautitlán Izcalli.
+        - generic [ref=e413]:
+          - link "Bomberos y Protección Civil 55 2620 1909" [ref=e414] [cursor=pointer]:
+            - /url: tel:5526201909
+            - img [ref=e416]
+            - generic [ref=e418]:
+              - heading "Bomberos y Protección Civil" [level=3] [ref=e419]
+              - paragraph [ref=e420]: 55 2620 1909
+          - link "Comisaría Gral. de Seguridad Ciudadana 55 5868 4989" [ref=e421] [cursor=pointer]:
+            - /url: tel:5558684989
+            - img [ref=e423]
+            - generic [ref=e425]:
+              - heading "Comisaría Gral. de Seguridad Ciudadana" [level=3] [ref=e426]
+              - paragraph [ref=e427]: 55 5868 4989
+          - link "Célula de Búsqueda de Personas 55 5914 2602" [ref=e428] [cursor=pointer]:
+            - /url: tel:5559142602
+            - img [ref=e430]
+            - generic [ref=e432]:
+              - heading "Célula de Búsqueda de Personas" [level=3] [ref=e433]
+              - paragraph [ref=e434]: 55 5914 2602
+          - link "Centro de Mando Municipal 55 5871 1111" [ref=e435] [cursor=pointer]:
+            - /url: tel:5558711111
+            - img [ref=e437]
+            - generic [ref=e439]:
+              - heading "Centro de Mando Municipal" [level=3] [ref=e440]
+              - paragraph [ref=e441]: 55 5871 1111
+  - contentinfo [ref=e442]:
+    - generic [ref=e444]:
+      - generic [ref=e449]:
+        - paragraph [ref=e450]: Av. Primero de Mayo 100,
+        - paragraph [ref=e451]: Centro Urbano, 54740
+        - paragraph [ref=e452]: Cuautitlán Izcalli
+      - generic [ref=e453]:
+        - heading "Síguenos en nuestras redes sociales:" [level=6] [ref=e456]
+        - list [ref=e459]:
+          - listitem [ref=e460]:
+            - link "Facebook" [ref=e461] [cursor=pointer]:
+              - /url: https://www.facebook.com/GobIzcalli
+              - generic [ref=e462]: Facebook
+              - img [ref=e463]
+          - listitem [ref=e465]:
+            - link [ref=e466] [cursor=pointer]:
+              - /url: https://www.instagram.com/gobizcalli
+              - img [ref=e468]
+          - listitem [ref=e471]:
+            - link "X-twitter" [ref=e472] [cursor=pointer]:
+              - /url: https://x.com/gobizcalli
+              - generic [ref=e473]: X-twitter
+              - img [ref=e474]
+          - listitem [ref=e476]:
+            - link "Youtube" [ref=e477] [cursor=pointer]:
+              - /url: https://www.youtube.com/@gobiernomunicipaldecuautit8661
+              - generic [ref=e478]: Youtube
+              - img [ref=e479]
+        - heading "Gobierno de Cuautitlán Izcalli 2025 - 2027 SERVIR CON PASIÓN" [level=6] [ref=e483]
+        - link [ref=e487] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e490]
+    - paragraph [ref=e496]: © Todos los derechos reservados | Municipio de Cuautitlán Izcalli
+  - generic [ref=e497]: desktop

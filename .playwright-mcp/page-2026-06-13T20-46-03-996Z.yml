@@ -1,0 +1,393 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Presidencia Municipal Celaya" [ref=e9] [cursor=pointer]:
+          - /url: https://www.celaya.gob.mx/
+          - img "Presidencia Municipal Celaya" [ref=e10]
+        - generic [ref=e13]:
+          - generic [ref=e15]:
+            - link "" [ref=e17] [cursor=pointer]:
+              - /url: "#"
+            - link "Comunicados" [ref=e19] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/comunicados
+              - generic [ref=e20]: Comunicados
+          - navigation [ref=e21]:
+            - list [ref=e22]:
+              - listitem [ref=e23]:
+                - text: 
+                - link "Depedencias" [ref=e24] [cursor=pointer]:
+                  - /url: "#"
+                - list:
+                  - listitem:
+                    - link "Ayuntamiento Municipal":
+                      - /url: https://www.celaya.gob.mx/ayuntamiento-municipal/
+                  - listitem:
+                    - link "Descentralizadas":
+                      - /url: https://www.celaya.gob.mx/ayuntamiento-municipal/dependencias/descentralizadas/
+                  - listitem:
+                    - link "Centralizadas":
+                      - /url: https://www.celaya.gob.mx/ayuntamiento-municipal/dependencias/centralizadas/
+              - listitem [ref=e25]:
+                - text: 
+                - link "Unidad de Transparencia" [ref=e26] [cursor=pointer]:
+                  - /url: https://www.celaya.gob.mx/unidad-transparencia/
+                - list:
+                  - listitem:
+                    - link "Obligaciones":
+                      - /url: https://www.celaya.gob.mx/unidad-transparencia/obligaciones/
+                  - listitem:
+                    - link "Gacetas":
+                      - /url: https://www.celaya.gob.mx/unidad-transparencia/gaceta-municipal/
+                  - listitem:
+                    - link "Marco Normativo":
+                      - /url: https://www.celaya.gob.mx/unidad-transparencia/obligaciones/fraccion-1-marco-normativo/
+                  - listitem:
+                    - link "Cuenta Publica":
+                      - /url: https://www.celaya.gob.mx/cuenta-publica/
+                  - listitem:
+                    - link "Aportaciones Federales":
+                      - /url: https://www.celaya.gob.mx/consultas/aportaciones-federales/
+                  - listitem:
+                    - link "Cuenta Pública 2017-2022":
+                      - /url: https://cuentapublica.celaya.gob.mx/
+                  - listitem:
+                    - link "Aportaciones Federales 2017-2022":
+                      - /url: https://cuentapublica.celaya.gob.mx/aportaciones-federales/
+              - listitem [ref=e27]:
+                - text: 
+                - link "Atención" [ref=e28] [cursor=pointer]:
+                  - /url: "#"
+                - list:
+                  - listitem:
+                    - link "Generar nuevo reporte":
+                      - /url: http://td.celaya.biz:98/ReporteCiudadano.aspx
+                  - listitem:
+                    - link "Consultar reporte en proceso":
+                      - /url: http://td.celaya.biz:9073/denunciaCiudadana.aspx
+                  - listitem:
+                    - link "Quejas/Denuncias Ciudades":
+                      - /url: http://td.celaya.biz:9073/denunciaCiudadana.aspx
+                  - listitem:
+                    - link "Protesta Ciudadana":
+                      - /url: http://td.celaya.biz:8074
+              - listitem [ref=e29]:
+                - text: 
+                - link "Pagos en línea" [ref=e30] [cursor=pointer]:
+                  - /url: "#pagos-online"
+                - list:
+                  - listitem:
+                    - link "Pagos de predial":
+                      - /url: https://www.celaya.gob.mx/pago-de-predial/
+                  - listitem:
+                    - link "Constancia Sria. Ayuntamiento":
+                      - /url: https://multipagos.celaya.gob.mx/
+                  - listitem:
+                    - link "Plaza ambulante":
+                      - /url: https://multipagos.celaya.gob.mx/
+                  - listitem:
+                    - link "Imprime tu comprobante de pago":
+                      - /url: https://multipagos.celaya.gob.mx/
+                  - listitem:
+                    - link "JUMAPA":
+                      - /url: https://www.jumapacelaya.gob.mx/
+              - listitem [ref=e31]:
+                - text: 
+                - link "Trámites" [ref=e32] [cursor=pointer]:
+                  - /url: "#tramites-servicios"
+                - list:
+                  - listitem:
+                    - link "Pagos de predial":
+                      - /url: https://www.celaya.gob.mx/pago-de-predial/
+                  - listitem:
+                    - link "Servicios":
+                      - /url: https://www.celaya.gob.mx/consultas/servicios-de-dependencias/
+                  - listitem:
+                    - link "Sistema de Apertura Rápida de Empresas":
+                      - /url: https://www.celaya.gob.mx/mejora-regulatoria/herramientas/sistema-apertura-rapida-empresas/
+                  - listitem:
+                    - link "Licitaciones":
+                      - /url: https://www.celaya.gob.mx/consulta/licitaciones/
+                  - listitem:
+                    - link "Convocatorias":
+                      - /url: https://celaya.gob.mx/consulta/convocatorias/
+                  - listitem:
+                    - link "Padrón de inspectores":
+                      - /url: https://www.celaya.gob.mx/consultas/padrones-de-inspeccion/
+                  - listitem:
+                    - link "Tramites":
+                      - /url: https://www.celaya.gob.mx/consultas/tramites-de-dependencias/
+                  - listitem:
+                    - link "Declaración patrimonial":
+                      - /url: https://declaranetmunicipios.strc.guanajuato.gob.mx/#/login
+                  - listitem:
+                    - link "Facturación Electrónica":
+                      - /url: http://td.celaya.biz:8065/FElectronica/
+                  - listitem:
+                    - text: 
+                    - link "Empleo":
+                      - /url: "#empleo"
+                    - list:
+                      - listitem:
+                        - link "Registra Curriculum":
+                          - /url: http://td.celaya.biz:8039/Buscadores/NuevoBuscador.aspx
+                      - listitem:
+                        - link "Registro de Vacantes":
+                          - /url: http://pageoficial.balboa.io/registrar-vacantes/
+                  - listitem:
+                    - link "Plataforma de Prestadores de Servicios":
+                      - /url: https://www.celaya.gob.mx/plataforma-de-prestadores-de-servicios-de-seguridad-privada/
+                  - listitem:
+                    - link "Servicio Civil de Carrera":
+                      - /url: https://td.celaya.biz:8243/
+                  - listitem:
+                    - link "Practicas Profesionales":
+                      - /url: https://td.celaya.biz:8253/
+              - listitem [ref=e33]:
+                - text: 
+                - link "Seguridad" [ref=e34] [cursor=pointer]:
+                  - /url: "#Seguridad"
+                - list:
+                  - listitem:
+                    - link "Policía Municipal":
+                      - /url: https://www.celaya.gob.mx/ssc/policia-municipal/
+                  - listitem:
+                    - link "Tránsito y Policía Vial":
+                      - /url: https://www.celaya.gob.mx/ssc/transito-y-policia-vial/
+                  - listitem:
+                    - link "Protección Civil y Bomberos":
+                      - /url: https://www.celaya.gob.mx/ssc/proteccion-civil-y-bomberos/
+                  - listitem:
+                    - link "INFOPOL":
+                      - /url: https://www.celaya.gob.mx/ssc/infopol/
+                  - listitem:
+                    - link "C-4":
+                      - /url: https://www.celaya.gob.mx/ssc/c-4/
+                  - listitem:
+                    - link "Fiscalización":
+                      - /url: https://www.celaya.gob.mx/ssc/fiscalizacion/
+                  - listitem:
+                    - link "Atlas de riesgo":
+                      - /url: https://atlasderiesgos.celaya.gob.mx/sistema-ciudadano/
+    - generic [ref=e38]:
+      - generic [ref=e50]:
+        - generic [ref=e56]:
+          - link "https://www.celaya.gob.mx/wp-content/uploads/2024/12/IconosPredial-_consPaga.png" [ref=e60] [cursor=pointer]:
+            - /url: https://td.celaya.biz/multipagosws/
+            - img "https://www.celaya.gob.mx/wp-content/uploads/2024/12/IconosPredial-_consPaga.png" [ref=e61]
+          - generic [ref=e65]:
+            - link "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_imprime.png" [ref=e69] [cursor=pointer]:
+              - /url: https://multipagos.celaya.gob.mx/
+              - img "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_imprime.png" [ref=e70]
+            - link "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-13.png" [ref=e74] [cursor=pointer]:
+              - /url: http://td.celaya.biz:8065/FElectronica/
+              - img "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-13.png" [ref=e75]
+            - link "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_transferencia.png" [ref=e79] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/pago-de-predial/transferencia-electronica/
+              - img "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_transferencia.png" [ref=e80]
+            - link "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_Movil-12.png" [ref=e84] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/pago-de-predial/app-movil/
+              - img "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_Movil-12.png" [ref=e85]
+        - generic [ref=e91]:
+          - generic [ref=e93]:
+            - generic [ref=e94]:
+              - generic [ref=e97]: Puntos de pago
+              - heading "Para tu comodidad paga en más de 260 puntos externos" [level=3] [ref=e98]:
+                - generic [ref=e100]: Para tu comodidad paga en más de 260 puntos externos
+            - img "https://www.celaya.gob.mx/wp-content/uploads/2020/05/floater-slider-red-dots.png" [ref=e105]
+            - img "https://www.celaya.gob.mx/wp-content/uploads/2022/02/pngegg.png" [ref=e108]
+            - generic [ref=e110]:
+              - generic [ref=e113]:
+                - generic [ref=e114]: 
+                - generic [ref=e115]:
+                  - generic [ref=e116]: Correo
+                  - generic [ref=e117]: predial@celaya.gob.mx
+              - generic [ref=e120]:
+                - generic [ref=e121]: 
+                - generic [ref=e122]:
+                  - generic [ref=e123]: Contacto
+                  - generic [ref=e124]:
+                    - text: 800-838-0728
+                    - text: 461-610-6721
+          - generic [ref=e126]:
+            - generic [ref=e128]:
+              - link "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_Bancos.png" [ref=e132] [cursor=pointer]:
+                - /url: https://www.celaya.gob.mx/pago-de-predial/puntos-externos/bancos/
+                - img "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_Bancos.png" [ref=e133]
+              - link "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_tiendas.png" [ref=e137] [cursor=pointer]:
+                - /url: https://www.celaya.gob.mx/pago-de-predial/puntos-externos/tiendas-locales/
+                - img "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_tiendas.png" [ref=e138]
+              - link "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_autoservicios.png" [ref=e142] [cursor=pointer]:
+                - /url: https://www.celaya.gob.mx/pago-de-predial/puntos-externos/autoservicios-y-farmacias/
+                - img "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_autoservicios.png" [ref=e143]
+              - link "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_GTO.png" [ref=e147] [cursor=pointer]:
+                - /url: https://www.celaya.gob.mx/pago-de-predial/puntos-externos/recaudacion-del-estado/
+                - img "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_GTO.png" [ref=e148]
+            - generic [ref=e150]:
+              - generic [ref=e153]:
+                - paragraph [ref=e154]:
+                  - strong [ref=e155]: Dirección de Ingresos
+                - paragraph [ref=e156]: Pípila 146 esquina Ignacio Camargo, Zona Centro, Primer piso , Celaya,Gto.
+                - paragraph [ref=e157]:
+                  - strong [ref=e158]: Lunes a viernes de 8:00 a 17:00 hrs
+              - link "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_cajas.png" [ref=e162] [cursor=pointer]:
+                - /url: https://www.celaya.gob.mx/pago-de-predial/puntos-externos/cajas-municipales/
+                - img "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_cajas.png" [ref=e163]
+            - generic [ref=e165]:
+              - link "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_cuota.png" [ref=e169] [cursor=pointer]:
+                - /url: https://www.celaya.gob.mx/pago-de-predial/cuota-minima/
+                - img "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_cuota.png" [ref=e170]
+              - link "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconoRecibo-Predial_1.png" [ref=e174] [cursor=pointer]:
+                - /url: http://td.celaya.biz:8052/
+                - img "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconoRecibo-Predial_1.png" [ref=e175]
+              - link "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_Bt_Vaolcatastral.png" [ref=e179] [cursor=pointer]:
+                - /url: https://www.celaya.gob.mx/pago-de-predial/avaluo-catastral/
+                - img "https://www.celaya.gob.mx/wp-content/uploads/2024/10/IconosPredial-_Bt_Vaolcatastral.png" [ref=e180]
+            - img "https://www.celaya.gob.mx/wp-content/uploads/2024/12/bancos-pred_Mesa-de-trabajo-1.png" [ref=e183]
+      - list [ref=e197]:
+        - listitem [ref=e198] [cursor=pointer]:
+          - button "1"
+      - generic [ref=e204]:
+        - generic [ref=e206]:
+          - generic [ref=e207]:
+            - generic [ref=e209]: ¿Tienes alguna duda? Comunícate con nosotros
+            - heading "Dudas y/o Preguntas Frecuentes" [level=3] [ref=e210]:
+              - generic [ref=e212]: Dudas y/o Preguntas Frecuentes
+          - generic [ref=e213]:
+            - heading "¿ Qué es el Predial ?" [level=5] [ref=e214]:
+              - strong [ref=e215]: ¿ Qué es el Predial ?
+            - paragraph [ref=e216]: El predial es un impuesto que deben pagar las personas que sean propietarias o poseedoras de bienes inmuebles.
+            - heading "¿ Qué es la avalúo catastral ?" [level=5] [ref=e217]:
+              - strong [ref=e218]: ¿ Qué es la avalúo catastral ?
+            - paragraph [ref=e219]: El avalúo catastral es el acto mediante el cual se determina el valor de los predios, considerando el valor del terreno y construcciones adheridas a éstos. Dicho valor sirve de sustento para establecer la base gravable del impuesto predial y, en consecuencia, fijar el monto a cargo del particular.
+            - heading "¿ Qué es el DAP ?" [level=5] [ref=e220]:
+              - strong [ref=e221]: ¿ Qué es el DAP ?
+            - paragraph [ref=e222]: Es el cobro del Derecho de Alumbrado Público (DAP) por el servicio de alumbrado público que se preste en las calles, plazas, jardines y todos aquellos lugares de uso común, y los ingresos que se perciban por su recaudación se destinarán al pago de dicho servicio y en su caso, a su mantenimiento y mejoramiento, en colaboración con los contribuyentes beneficiados.
+            - paragraph [ref=e223]: "Fundamento legal: Artículo 228-H, I, J,K y L de Ley de Hacienda para los Municipios del Estado de Guanajuato."
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - generic [ref=e228] [cursor=pointer]: ¿ Para qué se paga el impuesto predial ? 
+            - paragraph [ref=e230]: La función principal de este impuesto es generar recursos para que los gobiernos municipales puedan proveer servicios públicos a nivel local, tales como alumbrado, pavimentación, recolección de residuos, seguridad, etcétera.
+          - generic [ref=e231]:
+            - generic [ref=e232] [cursor=pointer]: ¿Cuál es el fundamento del cobro del impuesto Predial? 
+            - paragraph [ref=e234]: “Artículos 36 fracción I y 115 fracción IV inciso a) de la Constitución Política de los Estados Unidos Mexicanos. Artículo 161 de la Ley de Hacienda para los Municipios del Estado de Guanajuato. Artículo 4 y 5 de la Ley de Ingresos para el Municipio de Celaya, Guanajuato. ”
+          - generic [ref=e235]:
+            - generic [ref=e236] [cursor=pointer]: ¿Cómo se calcula el impuesto predial? 
+            - paragraph [ref=e238]: El impuesto predial se calcula tomando como base gravable el valor catastral del inmueble. El valor catastral se obtiene a través de la práctica de un avalúo, que se compone de los valores unitarios del suelo y la construcción. A dicha base se le aplica la tasa correspondiente contenida en el artículo 4 de la Ley de Ingresos para el Municipio de Celaya, Guanajuato.
+          - generic [ref=e239]:
+            - generic [ref=e240] [cursor=pointer]: ¿Dónde puedo pagar mi impuesto predial? 
+            - paragraph [ref=e242]: "En Cajas ubicadas en las instalaciones de la Dirección de Ingresos ubicada en calle Pípila #146 primero piso, zona centro y en Presidencia Municipal de Celaya, así como en los diferentes bancos, farmacias, tiendas de conveniencia o establecimientos publicados en la página www.celaya.gob.mx así también a través de la APP Celaya Móvil."
+          - generic [ref=e243]:
+            - generic [ref=e244] [cursor=pointer]: ¿Qué son los Derechos de Valuación y porque se cobran? 
+            - paragraph [ref=e246]: Es el pago de derechos establecido en la Ley de Ingresos para el Municipio de Celaya, Guanajuato, por la realización de un avalúo catastral, cuando existan nuevas construcciones, reconstrucciones o ampliación de las construcciones ya existentes de los inmuebles o bien cuando el contribuyente lo solicite
+          - generic [ref=e247]:
+            - generic [ref=e248] [cursor=pointer]: Recibí un documento de la Tesorería Municipal por Correos de México y/o del personal adscrito a la Tesorería. ¿Qué es? 
+            - paragraph [ref=e250]: Es el resultado del avalúo catastral, en el cual se asigna el valor del inmueble en base a las superficies de terreno y construcción registradas. Así también la liquidación del impuesto predial en la que se determina el impuesto a pagar en base al valor del inmueble y tasa correspondiente.
+          - generic [ref=e251]:
+            - generic [ref=e252] [cursor=pointer]: No estoy de acuerdo con el resultado del avalúo que me practicaron, ¿A dónde puedo acudir a manifestar mi inconformidad? 
+            - paragraph [ref=e254]: "Acudir presencialmente a la ventanilla de “Atención Catastral” en la Dirección de Impuestos Inmobiliarios y Catastro, de la Presidencia Municipal, ubicada en Portal Independencia #101 altos, zona centro, con identificación oficial y avalúo vigente del cual está inconforme. O bien hablar al número telefónico 461 6187100 ext. 7339 para obtener una cita de atención en oficina."
+          - generic [ref=e255]:
+            - generic [ref=e256] [cursor=pointer]: No estoy de acuerdo con el cobro del impuesto Predial que me hacen ¿A dónde puedo acudir a manifestar mi inconformidad? 
+            - paragraph [ref=e258]: "Acudir presencialmente a la Dirección de Impuestos Inmobiliarios y Catastro, de la Presidencia Municipal, ubicada en Portal Independencia #101 altos, zona centro, o a la Dirección de Ingresos, ubicada en calle Pípila #146 primer piso, zona centro, con identificación oficial y documento del cual está inconforme."
+          - generic [ref=e259]:
+            - generic [ref=e260] [cursor=pointer]: ¿Me pueden cobrar impuestos o derechos de manera retroactiva? 
+            - paragraph [ref=e262]: Si, de acuerdo con lo establecido en el artículo 167 de la Ley de Hacienda para los Municipios del estado de Guanajuato.
+          - generic [ref=e263]:
+            - generic [ref=e264] [cursor=pointer]: Soy pensionado(a) y/o jubilado(a), viudo(a) , tercera edad o concubino(a) de estos, ¿Tengo derecho a algún descuento en el pago del impuesto predial? 
+            - paragraph [ref=e266]:
+              - text: Jubilados, pensionados, cónyuge, concubino , viudo o personas de la tercera edad. Pueden solicitar el beneficio de la
+              - link "CUOTA MÍNIMA" [ref=e267] [cursor=pointer]:
+                - /url: https://www.celaya.gob.mx/pago-de-predial/cuota-minima/
+              - text: ", aplicable para una sola propiedad y deberá tramitarse en la Dirección de Impuestos Inmobiliarios y Catastro, ubicada en la Presidencia Municipal."
+          - generic [ref=e268]:
+            - generic [ref=e269] [cursor=pointer]: ¿Es obligatorio el donativo a la Cruz Roja Mexicana? 
+            - paragraph [ref=e271]: El donativo a la Cruz Roja Mexicana no es obligatorio.
+    - generic [ref=e272]:
+      - generic [ref=e279]:
+        - generic [ref=e281]:
+          - generic [ref=e283]:
+            - generic [ref=e284]:
+              - heading "Presidencia Municipal Localización" [level=5] [ref=e285]:
+                - generic [ref=e286]: Presidencia Municipal
+                - generic [ref=e288]: Localización
+              - generic [ref=e289]: "Portal Independencia #101 Zona Centro. CP. 38000 Celaya, Gto. MÉXICO"
+            - link " (461) 618 7100" [ref=e290] [cursor=pointer]:
+              - /url: tel:+514616187100
+              - text: 
+              - generic [ref=e291]: (461) 618 7100
+            - link " atencion.ciudadana@celaya.gob.mx" [ref=e292] [cursor=pointer]:
+              - /url: mailto:atencion.ciudadana@celaya.gob.mx
+              - text: 
+              - generic [ref=e293]: atencion.ciudadana@celaya.gob.mx
+            - link " celaya.gob.mx" [ref=e294] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/
+              - text: 
+              - generic [ref=e295]: celaya.gob.mx
+          - generic [ref=e297]:
+            - heading "Gobierno Muncipal 2024 - 2027" [level=5] [ref=e299]:
+              - generic [ref=e300]: Gobierno Muncipal
+              - generic [ref=e302]: 2024 - 2027
+            - img "https://www.celaya.gob.mx/wp-content/uploads/2022/02/logocelayahrz-05.jpg" [ref=e305]
+          - generic [ref=e307]:
+            - heading "Ayuda Ciudadana Trámites y Servicios" [level=5] [ref=e309]:
+              - generic [ref=e310]: Ayuda Ciudadana
+              - link "Trámites y Servicios" [ref=e313] [cursor=pointer]:
+                - /url: https://www.celaya.gob.mx/onsultas/servicios-de-dependencias/
+            - heading "Padron Inspectores" [level=5] [ref=e315]:
+              - generic [ref=e316]: Padron
+              - link "Inspectores" [ref=e319] [cursor=pointer]:
+                - /url: https://www.celaya.gob.mx/onsultas/padrones-de-inspeccion/
+          - generic [ref=e321]:
+            - heading "Síguenos En nuestras redes sociales" [level=5] [ref=e323]:
+              - generic [ref=e324]: Síguenos
+              - generic [ref=e326]: En nuestras redes sociales
+            - link "" [ref=e327] [cursor=pointer]:
+              - /url: https://www.facebook.com/municipiocelaya
+            - link "" [ref=e328] [cursor=pointer]:
+              - /url: https://x.com/municipiocelaya/
+            - link "" [ref=e329] [cursor=pointer]:
+              - /url: https://www.instagram.com/municipiocelaya/
+            - link "" [ref=e330] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCy0EZLCcf_xfZtz3SKwp9cQ
+            - link "Aviso de privacidad " [ref=e332] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/aviso-de-privacidad/
+              - generic [ref=e333]: Aviso de privacidad
+              - generic [ref=e334]: 
+        - generic:     
+        - list [ref=e339]:
+          - listitem [ref=e340]:
+            - link "INICIO" [ref=e341] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/
+          - listitem [ref=e342]:
+            - link "DEPENDENCIAS" [ref=e343] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/ayuntamiento-municipal/dependencias/
+          - listitem [ref=e344]:
+            - link "TRAMITES" [ref=e345] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/consultas/tramites-de-dependencias/
+          - listitem [ref=e346]:
+            - link "SERVICIOS" [ref=e347] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/consultas/servicios-de-dependencias/
+          - listitem [ref=e348]:
+            - link "MARCO NORMATIVO" [ref=e349] [cursor=pointer]:
+              - /url: https://transparencia.celaya.gob.mx/marco-normativo-fraccion-1/
+          - listitem [ref=e350]:
+            - link "SEGURIDAD CIUDADANA" [ref=e351] [cursor=pointer]:
+              - /url: https://ssc.celaya.gob.mx
+          - listitem [ref=e352]:
+            - link "ATENCIÓN CIUDADANA" [ref=e353] [cursor=pointer]:
+              - /url: http://td.celaya.biz:98/ReporteCiudadano.aspx
+          - listitem [ref=e354]:
+            - text: 
+            - link "VOLVER ARRIBA" [ref=e355] [cursor=pointer]:
+              - /url: "#top"
+        - complementary [ref=e366]:
+          - text: ©Copyright 2022
+          - link "Municipio de Celaya." [ref=e367] [cursor=pointer]:
+            - /url: https://www.celaya.gob.mx/
+            - strong [ref=e368]: Municipio de Celaya
+            - text: .
+          - text: Todos los derechos reservados ,
+          - link "Departamento de Sistemas" [ref=e369] [cursor=pointer]:
+            - /url: https://www.celaya.gob.mx/dependencia/sistemas/
+      - contentinfo
+  - img "Usar teclado para desplazarse" [ref=e371]

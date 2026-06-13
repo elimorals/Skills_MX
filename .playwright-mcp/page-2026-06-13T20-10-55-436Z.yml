@@ -1,0 +1,1453 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - link "Logo inmuebles24" [ref=e6] [cursor=pointer]:
+        - /url: https://www.inmuebles24.com
+        - img "Logo inmuebles24" [ref=e7]
+      - generic [ref=e8]:
+        - list [ref=e9]:
+          - button "Comprar Expandir o contraer" [ref=e11] [cursor=pointer]:
+            - generic [ref=e12]: Comprar
+            - img "Expandir o contraer" [ref=e13]
+        - list [ref=e14]:
+          - button "Rentar Expandir o contraer" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]: Rentar
+            - img "Expandir o contraer" [ref=e18]
+        - list [ref=e19]:
+          - button "Servicios Expandir o contraer" [ref=e21] [cursor=pointer]:
+            - generic [ref=e22]: Servicios
+            - img "Expandir o contraer" [ref=e23]
+        - list [ref=e24]:
+          - listitem [ref=e25] [cursor=pointer]:
+            - button "Buscar inmobiliarias" [ref=e26]:
+              - link "Buscar inmobiliarias" [ref=e27]:
+                - /url: /inmobiliarias.bum
+      - button [ref=e32] [cursor=pointer]:
+        - img [ref=e34]
+      - button "Mis contactos" [ref=e35] [cursor=pointer]:
+        - generic [ref=e36]:
+          - generic [ref=e37]: Mis contactos
+          - img [ref=e38]
+      - button "Publicar" [ref=e39] [cursor=pointer]
+      - button "Ingresar" [ref=e41] [cursor=pointer]
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - generic [ref=e48]:
+          - list [ref=e53]:
+            - listitem [ref=e55] [cursor=pointer]:
+              - paragraph [ref=e56]: Ciudad de México
+              - img [ref=e58]
+            - img [ref=e60]
+          - generic [ref=e63] [cursor=pointer]:
+            - text: Comprar
+            - img [ref=e65]
+          - generic [ref=e68] [cursor=pointer]:
+            - text: Casa
+            - img [ref=e70]
+          - generic [ref=e73] [cursor=pointer]:
+            - text: Recámaras
+            - img [ref=e75]
+          - generic [ref=e79] [cursor=pointer]:
+            - text: Precio
+            - img [ref=e81]
+          - generic [ref=e83]:
+            - img [ref=e85] [cursor=pointer]
+            - generic [ref=e86] [cursor=pointer]: Más filtros
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - generic [ref=e90]:
+              - heading "8,771 Casas en venta en CDMX, Ciudad de México" [level=1] [ref=e92]
+              - generic [ref=e93]:
+                - button "Crear alerta" [ref=e95] [cursor=pointer]:
+                  - text: Crear alerta
+                  - img [ref=e96]
+                - generic [ref=e101] [cursor=pointer]:
+                  - text: Ordenar
+                  - img [ref=e103]
+            - generic [ref=e104]:
+              - generic [ref=e107]:
+                - generic [ref=e108]:
+                  - generic [ref=e111]:
+                    - generic [ref=e113]:
+                      - img "9902030a141bc5ba86ddc2618a7eed4b272d2ee63184b18f5245966a87c4b967 · Casa en Venta en Coyoacan" [ref=e114] [cursor=pointer]
+                      - img [ref=e115] [cursor=pointer]
+                      - img [ref=e116] [cursor=pointer]
+                      - img [ref=e117] [cursor=pointer]
+                      - img [ref=e118] [cursor=pointer]
+                      - img [ref=e119] [cursor=pointer]
+                      - img [ref=e120] [cursor=pointer]
+                      - img [ref=e121] [cursor=pointer]
+                      - button [ref=e122] [cursor=pointer]:
+                        - generic [ref=e123]:
+                          - img [ref=e124]
+                          - generic [ref=e127]: +16 fotos
+                        - img [ref=e128]
+                    - list [ref=e129]:
+                      - listitem "Page dot 1" [ref=e130] [cursor=pointer]
+                      - listitem "Page dot 2" [ref=e131] [cursor=pointer]
+                      - listitem "Page dot 3" [ref=e132] [cursor=pointer]
+                      - listitem "Page dot 4" [ref=e133] [cursor=pointer]
+                      - listitem "Page dot 5" [ref=e134] [cursor=pointer]
+                      - listitem "Page dot 6" [ref=e135] [cursor=pointer]
+                  - generic [ref=e139]: Área de lavado
+                - generic [ref=e140]:
+                  - generic [ref=e141]:
+                    - generic [ref=e142]:
+                      - heading "MN 15,900,000" [level=2] [ref=e148]
+                      - heading "226 m² lote 4 rec. 3 baños 2 estac." [level=3] [ref=e151]:
+                        - generic [ref=e152]: 226 m² lote
+                        - generic [ref=e153]: 4 rec.
+                        - generic [ref=e154]: 3 baños
+                        - generic [ref=e155]: 2 estac.
+                      - generic [ref=e157]:
+                        - heading "CALIFORNIA" [level=4] [ref=e158]
+                        - heading "Parque San Andrés, Coyoacán" [level=4] [ref=e159]
+                      - 'heading "¡Excelente ubicación! Casa impecable, totalmente remodelada, moderna y muy buen gusto. Contamos con espacios muy amplios, llena de luz natural, acabados de lujo. Distribución: P. B.: Estudio, sala, comedor, baño de visitas, antecomedor, cocina abierta, despensa, área de lavado, 2 estacionamientos, terraza techada. Acabados de alta calidad, loseta, muros de piedra, cocina alto brillo. Primer Nivel: Family, 2 recámaras secundarias con closet, comparten baño; recámara principal con baño y vestidor, tina de hidromasaje. 2º Nivel: 1 recámara con baño, cuarto de servicio con baño subiendo por el garaje. ¡Conócela, todos los servicios cerca de tí!" [level=2] [ref=e160] [cursor=pointer]':
+                        - 'link "¡Excelente ubicación! Casa impecable, totalmente remodelada, moderna y muy buen gusto. Contamos con espacios muy amplios, llena de luz natural, acabados de lujo. Distribución: P. B.: Estudio, sala, comedor, baño de visitas, antecomedor, cocina abierta, despensa, área de lavado, 2 estacionamientos, terraza techada. Acabados de alta calidad, loseta, muros de piedra, cocina alto brillo. Primer Nivel: Family, 2 recámaras secundarias con closet, comparten baño; recámara principal con baño y vestidor, tina de hidromasaje. 2º Nivel: 1 recámara con baño, cuarto de servicio con baño subiendo por el garaje. ¡Conócela, todos los servicios cerca de tí!" [ref=e161]':
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-en-coyoacan-149080422.html?n_src=Listado&n_pills=%C3%81rea+de+lavado&n_pg=1&n_pos=1
+                    - button "Agregar a favoritos" [ref=e163] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e164]:
+                        - img [ref=e165]
+                  - generic [ref=e168]:
+                    - generic [ref=e169]:
+                      - img "logo publisher" [ref=e174] [cursor=pointer]
+                      - generic [ref=e176]: Super destacado
+                    - generic [ref=e179]:
+                      - button [ref=e181] [cursor=pointer]:
+                        - img [ref=e182]
+                      - button "WhatsApp" [ref=e185] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e186]
+                      - button "Contactar" [ref=e190] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e191]
+              - generic [ref=e195]:
+                - generic [ref=e196]:
+                  - generic [ref=e199]:
+                    - generic [ref=e201]:
+                      - img "Casa de 3 habitaciones, Alvaro Obregón · Venta Casa en San Angel Inn" [ref=e202] [cursor=pointer]
+                      - img [ref=e203] [cursor=pointer]
+                      - img [ref=e204] [cursor=pointer]
+                      - img [ref=e205] [cursor=pointer]
+                      - img [ref=e206] [cursor=pointer]
+                      - img [ref=e207] [cursor=pointer]
+                      - img [ref=e208] [cursor=pointer]
+                      - img [ref=e209] [cursor=pointer]
+                      - button [ref=e210] [cursor=pointer]:
+                        - generic [ref=e211]:
+                          - img [ref=e212]
+                          - generic [ref=e215]: +16 fotos
+                        - img [ref=e216]
+                    - list [ref=e217]:
+                      - listitem "Page dot 1" [ref=e218] [cursor=pointer]
+                      - listitem "Page dot 2" [ref=e219] [cursor=pointer]
+                      - listitem "Page dot 3" [ref=e220] [cursor=pointer]
+                      - listitem "Page dot 4" [ref=e221] [cursor=pointer]
+                      - listitem "Page dot 5" [ref=e222] [cursor=pointer]
+                      - listitem "Page dot 6" [ref=e223] [cursor=pointer]
+                  - generic [ref=e227]: Jardín privado
+                - generic [ref=e228]:
+                  - generic [ref=e229]:
+                    - generic [ref=e230]:
+                      - generic [ref=e234]:
+                        - heading "MN 32,000,000" [level=2] [ref=e236]
+                        - heading "MN 1,500 Mantenimiento" [level=2] [ref=e237]
+                      - heading "352 m² lote 3 rec. 3 baños 3 estac." [level=3] [ref=e239]:
+                        - generic [ref=e240]: 352 m² lote
+                        - generic [ref=e241]: 3 rec.
+                        - generic [ref=e242]: 3 baños
+                        - generic [ref=e243]: 3 estac.
+                      - generic [ref=e245]:
+                        - heading "Camelia" [level=4] [ref=e246]
+                        - heading "San Ángel, Alvaro Obregón" [level=4] [ref=e247]
+                      - heading [level=2] [ref=e248] [cursor=pointer]:
+                        - link [ref=e249]:
+                          - /url: /propiedades/clasificado/veclcain-venta-casa-en-san-angel-inn-147297883.html?n_src=Listado&n_pills=Jard%C3%ADn+privado&n_pg=1&n_pos=2
+                    - button "Agregar a favoritos" [ref=e251] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e252]:
+                        - img [ref=e253]
+                  - generic [ref=e256]:
+                    - generic [ref=e257]:
+                      - img "logo publisher" [ref=e262] [cursor=pointer]
+                      - generic [ref=e264]: Super destacado
+                    - generic [ref=e267]:
+                      - button [ref=e269] [cursor=pointer]:
+                        - img [ref=e270]
+                      - button "WhatsApp" [ref=e273] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e274]
+                      - button "Contactar" [ref=e278] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e279]
+              - generic [ref=e283]:
+                - generic [ref=e284]:
+                  - img "Casa · 829m² · 4 Recámaras · 4 Estacionamientos · Elegancia y Tranquilidad, Casa en Venta en Jardines del Pedregal" [ref=e286]
+                  - generic [ref=e290]: Jardín privado
+                - generic [ref=e291]:
+                  - generic [ref=e292]:
+                    - generic [ref=e293]:
+                      - heading "MN 23,500,000" [level=2] [ref=e299]
+                      - heading "829 m² lote 4 rec. 4 baños 4 estac." [level=3] [ref=e302]:
+                        - generic [ref=e303]: 829 m² lote
+                        - generic [ref=e304]: 4 rec.
+                        - generic [ref=e305]: 4 baños
+                        - generic [ref=e306]: 4 estac.
+                      - generic [ref=e308]:
+                        - heading "Alud 0" [level=4] [ref=e309]
+                        - heading "Jardines del Pedregal, Alvaro Obregón" [level=4] [ref=e310]
+                      - heading [level=2] [ref=e311] [cursor=pointer]:
+                        - link [ref=e312]:
+                          - /url: /propiedades/clasificado/veclcain-elegancia-y-tranquilidad-casa-en-venta-en-jardines-146681465.html?n_src=Listado&n_pills=Jard%C3%ADn+privado&n_pg=1&n_pos=3
+                    - button "Agregar a favoritos" [ref=e314] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e315]:
+                        - img [ref=e316]
+                  - generic [ref=e319]:
+                    - generic [ref=e320]:
+                      - img "logo publisher" [ref=e325] [cursor=pointer]
+                      - generic [ref=e327]: Super destacado
+                    - generic [ref=e330]:
+                      - button [ref=e332] [cursor=pointer]:
+                        - img [ref=e333]
+                      - button "WhatsApp" [ref=e336] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e337]
+                      - button "Contactar" [ref=e341] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e342]
+              - generic [ref=e346]:
+                - generic [ref=e347]:
+                  - img "Casa · 212m² · 4 Recámaras · 2 Estacionamientos · Casa en Venta, 1 Nivel, 4 Recámaras, 400 m² en Jardines del Sur, Xochimilco." [ref=e349]
+                  - generic [ref=e353]: Área de lavado
+                - generic [ref=e354]:
+                  - generic [ref=e355]:
+                    - generic [ref=e356]:
+                      - heading "MN 7,200,000" [level=2] [ref=e362]
+                      - heading "400 m² lote 4 rec. 3 baños 2 estac." [level=3] [ref=e365]:
+                        - generic [ref=e366]: 400 m² lote
+                        - generic [ref=e367]: 4 rec.
+                        - generic [ref=e368]: 3 baños
+                        - generic [ref=e369]: 2 estac.
+                      - generic [ref=e371]:
+                        - heading "Del Portal" [level=4] [ref=e372]
+                        - heading "Jardines del Sur, Xochimilco" [level=4] [ref=e373]
+                      - heading [level=2] [ref=e374] [cursor=pointer]:
+                        - link [ref=e375]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-1-nivel-4-recamaras-400-m-sup2--en-148180615.html?n_src=Listado&n_pills=%C3%81rea+de+lavado&n_pg=1&n_pos=4
+                    - button "Agregar a favoritos" [ref=e377] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e378]:
+                        - img [ref=e379]
+                  - generic [ref=e382]:
+                    - generic [ref=e383]:
+                      - img "logo publisher" [ref=e388] [cursor=pointer]
+                      - generic [ref=e390]: Super destacado
+                    - generic [ref=e393]:
+                      - button [ref=e395] [cursor=pointer]:
+                        - img [ref=e396]
+                      - button "WhatsApp" [ref=e399] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e400]
+                      - button "Contactar" [ref=e404] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e405]
+              - generic [ref=e407]:
+                - generic [ref=e409]:
+                  - generic [ref=e410]:
+                    - img "c0cdfcd44f71a3966e7a049a0996bdee73cafbb6d47427efd845bda0772ff0c5 · Casa en Venta con Vigilancia en Olivar de Los Padres" [ref=e412]
+                    - generic [ref=e416]: Terraza
+                  - generic [ref=e417]:
+                    - generic [ref=e418]:
+                      - generic [ref=e419]:
+                        - heading "MN 14,990,000" [level=2] [ref=e425]
+                        - heading "449 m² lote 4 rec. 5 baños 6 estac." [level=3] [ref=e428]:
+                          - generic [ref=e429]: 449 m² lote
+                          - generic [ref=e430]: 4 rec.
+                          - generic [ref=e431]: 5 baños
+                          - generic [ref=e432]: 6 estac.
+                        - generic [ref=e434]:
+                          - heading "NABOR CARRILLO" [level=4] [ref=e435]
+                          - heading "Olivar de los Padres, Alvaro Obregón" [level=4] [ref=e436]
+                        - heading [level=2] [ref=e437] [cursor=pointer]:
+                          - link [ref=e438]:
+                            - /url: /propiedades/clasificado/veclcain-casa-en-venta-con-vigilancia-en-olivar-de-los-padres-147860173.html?n_src=Listado&n_pills=Terraza&n_pg=1&n_pos=5
+                      - button "Agregar a favoritos" [ref=e440] [cursor=pointer]:
+                        - img "Agregar a favoritos" [ref=e441]:
+                          - img [ref=e442]
+                    - generic [ref=e445]:
+                      - generic [ref=e446]:
+                        - img "logo publisher" [ref=e451] [cursor=pointer]
+                        - generic [ref=e453]: Super destacado
+                      - generic [ref=e456]:
+                        - button [ref=e458] [cursor=pointer]:
+                          - img [ref=e459]
+                        - button "WhatsApp" [ref=e462] [cursor=pointer]:
+                          - text: WhatsApp
+                          - img [ref=e463]
+                        - button "Contactar" [ref=e467] [cursor=pointer]:
+                          - text: Contactar
+                          - img [ref=e468]
+                - region "Principales ciudades con casas en venta en CDMX, Ciudad de México" [ref=e471]:
+                  - generic [ref=e472]:
+                    - heading "Principales ciudades con casas en venta en CDMX, Ciudad de México" [level=2] [ref=e473]
+                    - group "Navegación" [ref=e474]:
+                      - button "Anterior" [disabled] [ref=e475]:
+                        - img [ref=e476]
+                      - button "Siguiente" [ref=e478] [cursor=pointer]:
+                        - img [ref=e479]
+                  - generic [ref=e482]:
+                    - generic [ref=e483] [cursor=pointer]:
+                      - generic [ref=e484]:
+                        - heading "Alvaro Obregón" [level=3] [ref=e485]:
+                          - link "Alvaro Obregón" [ref=e486]:
+                            - /url: /casas-en-venta-en-alvaro-obregon.html
+                        - img [ref=e488]
+                      - paragraph [ref=e490]: 1,891 casas disponibles en venta
+                      - paragraph [ref=e491]: Precio medio MN 14,212,913
+                    - generic [ref=e492] [cursor=pointer]:
+                      - generic [ref=e493]:
+                        - heading "Miguel Hidalgo" [level=3] [ref=e494]:
+                          - link "Miguel Hidalgo" [ref=e495]:
+                            - /url: /casas-en-venta-en-miguel-hidalgo.html
+                        - img [ref=e497]
+                      - paragraph [ref=e499]: 1,264 casas disponibles en venta
+                      - paragraph [ref=e500]: Precio medio MN 17,757,728
+                    - generic [ref=e501] [cursor=pointer]:
+                      - generic [ref=e502]:
+                        - heading "Tlalpan" [level=3] [ref=e503]:
+                          - link "Tlalpan" [ref=e504]:
+                            - /url: /casas-en-venta-en-tlalpan.html
+                        - img [ref=e506]
+                      - paragraph [ref=e508]: 1,073 casas disponibles en venta
+                      - paragraph [ref=e509]: Precio medio MN 8,313,993
+                    - generic [ref=e510] [cursor=pointer]:
+                      - generic [ref=e511]:
+                        - heading "Coyoacán" [level=3] [ref=e512]:
+                          - link "Coyoacán" [ref=e513]:
+                            - /url: /casas-en-venta-en-coyoacan.html
+                        - img [ref=e515]
+                      - paragraph [ref=e517]: 943 casas disponibles en venta
+                      - paragraph [ref=e518]: Precio medio MN 4,444,720
+                    - generic [ref=e519] [cursor=pointer]:
+                      - generic [ref=e520]:
+                        - heading "Cuajimalpa de Morelos" [level=3] [ref=e521]:
+                          - link "Cuajimalpa de Morelos" [ref=e522]:
+                            - /url: /casas-en-venta-en-cuajimalpa-de-morelos.html
+                        - img [ref=e524]
+                      - paragraph [ref=e526]: 762 casas disponibles en venta
+                      - paragraph [ref=e527]: Precio medio MN 21,290,526
+                    - generic [ref=e528] [cursor=pointer]:
+                      - generic [ref=e529]:
+                        - heading "Benito Juárez" [level=3] [ref=e530]:
+                          - link "Benito Juárez" [ref=e531]:
+                            - /url: /casas-en-venta-en-benito-juarez.html
+                        - img [ref=e533]
+                      - paragraph [ref=e535]: 589 casas disponibles en venta
+                      - paragraph [ref=e536]: Precio medio MN 4,399,732
+                    - generic [ref=e537] [cursor=pointer]:
+                      - generic [ref=e538]:
+                        - heading "Gustavo A. Madero" [level=3] [ref=e539]:
+                          - link "Gustavo A. Madero" [ref=e540]:
+                            - /url: /casas-en-venta-en-gustavo-a.-madero.html
+                        - img [ref=e542]
+                      - paragraph [ref=e544]: 435 casas disponibles en venta
+                      - paragraph [ref=e545]: Precio medio MN 1,702,533
+                    - generic [ref=e546] [cursor=pointer]:
+                      - generic [ref=e547]:
+                        - heading "La Magdalena Contreras" [level=3] [ref=e548]:
+                          - link "La Magdalena Contreras" [ref=e549]:
+                            - /url: /casas-en-venta-en-la-magdalena-contreras.html
+                        - img [ref=e551]
+                      - paragraph [ref=e553]: 433 casas disponibles en venta
+                      - paragraph [ref=e554]: Precio medio MN 10,999,585
+              - generic [ref=e557]:
+                - generic [ref=e558]:
+                  - img "6c23bc2e0a6e829ee3bebfb13aecc537a003403254cddeaf2bdeee28b9516697 · Casa en Paseo de La Reforma" [ref=e560]
+                  - generic [ref=e564]: Jardín privado
+                - generic [ref=e565]:
+                  - generic [ref=e566]:
+                    - generic [ref=e567]:
+                      - heading "USD 3,399,999" [level=2] [ref=e573]
+                      - heading "1350 m² lote 3 rec. 2 baños 7 estac." [level=3] [ref=e576]:
+                        - generic [ref=e577]: 1350 m² lote
+                        - generic [ref=e578]: 3 rec.
+                        - generic [ref=e579]: 2 baños
+                        - generic [ref=e580]: 7 estac.
+                      - generic [ref=e582]:
+                        - heading "PASEO DE LA REFORMA" [level=4] [ref=e583]
+                        - heading "Lomas de Chapultepec, Miguel Hidalgo" [level=4] [ref=e584]
+                      - heading [level=2] [ref=e585] [cursor=pointer]:
+                        - link [ref=e586]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-paseo-de-la-reforma-148251730.html?n_src=Listado&n_pills=Jard%C3%ADn+privado&n_pg=1&n_pos=6
+                    - button "Agregar a favoritos" [ref=e588] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e589]:
+                        - img [ref=e590]
+                  - generic [ref=e593]:
+                    - generic [ref=e594]:
+                      - generic [ref=e596] [cursor=pointer]:
+                        - generic:
+                          - img "logo publisher"
+                      - generic [ref=e599]: Super destacado
+                    - generic [ref=e602]:
+                      - button [ref=e604] [cursor=pointer]:
+                        - img [ref=e605]
+                      - button "WhatsApp" [ref=e608] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e609]
+                      - button "Contactar" [ref=e613] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e614]
+              - generic [ref=e618]:
+                - generic [ref=e619]:
+                  - img "Casa de 2 habitaciones, Alvaro Obregón · Venta Casa en La Colonia Florida" [ref=e621]
+                  - generic [ref=e625]: Escuelas cercanas
+                - generic [ref=e626]:
+                  - generic [ref=e627]:
+                    - generic [ref=e628]:
+                      - heading "MN 12,428,000" [level=2] [ref=e634]
+                      - heading "221 m² lote 2 rec. 2 baños 4 estac." [level=3] [ref=e637]:
+                        - generic [ref=e638]: 221 m² lote
+                        - generic [ref=e639]: 2 rec.
+                        - generic [ref=e640]: 2 baños
+                        - generic [ref=e641]: 4 estac.
+                      - generic [ref=e643]:
+                        - heading "Camelia" [level=4] [ref=e644]
+                        - heading "Florida, Alvaro Obregón" [level=4] [ref=e645]
+                      - heading [level=2] [ref=e646] [cursor=pointer]:
+                        - link [ref=e647]:
+                          - /url: /propiedades/clasificado/veclcain-venta-casa-en-la-colonia-florida-147501046.html?n_src=Listado&n_pills=Escuelas+cercanas&n_pg=1&n_pos=7
+                    - button "Agregar a favoritos" [ref=e649] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e650]:
+                        - img [ref=e651]
+                  - generic [ref=e654]:
+                    - generic [ref=e655]:
+                      - img "logo publisher" [ref=e660] [cursor=pointer]
+                      - generic [ref=e662]: Super destacado
+                    - generic [ref=e665]:
+                      - button [ref=e667] [cursor=pointer]:
+                        - img [ref=e668]
+                      - button "WhatsApp" [ref=e671] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e672]
+                      - button "Contactar" [ref=e676] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e677]
+              - generic [ref=e681]:
+                - generic [ref=e682]:
+                  - img "5f598be1e6425a9e68d5e19e221fb265903e4b440964ece8b46daf5fba0d1edb · Casa en Venta en Coyoacan" [ref=e684]
+                  - generic [ref=e688]: Jardín privado
+                - generic [ref=e689]:
+                  - generic [ref=e690]:
+                    - generic [ref=e691]:
+                      - heading "MN 10,300,000" [level=2] [ref=e697]
+                      - heading "310 m² lote 4 rec. 3 baños 3 estac." [level=3] [ref=e700]:
+                        - generic [ref=e701]: 310 m² lote
+                        - generic [ref=e702]: 4 rec.
+                        - generic [ref=e703]: 3 baños
+                        - generic [ref=e704]: 3 estac.
+                      - generic [ref=e706]:
+                        - heading "Ejido Xochimilco" [level=4] [ref=e707]
+                        - heading "Ex-Ejido de San Francisco CulhuacAn, Coyoacán" [level=4] [ref=e708]
+                      - heading [level=2] [ref=e709] [cursor=pointer]:
+                        - link [ref=e710]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-en-coyoacan-146574640.html?n_src=Listado&n_pills=Jard%C3%ADn+privado&n_pg=1&n_pos=8
+                    - button "Agregar a favoritos" [ref=e712] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e713]:
+                        - img [ref=e714]
+                  - generic [ref=e717]:
+                    - generic [ref=e718]:
+                      - img "logo publisher" [ref=e723] [cursor=pointer]
+                      - generic [ref=e725]: Super destacado
+                    - generic [ref=e728]:
+                      - button [ref=e730] [cursor=pointer]:
+                        - img [ref=e731]
+                      - button "WhatsApp" [ref=e734] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e735]
+                      - button "Contactar" [ref=e739] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e740]
+              - generic [ref=e744]:
+                - generic [ref=e745]:
+                  - img "Casa de 4 habitaciones, Cuajimalpa de Morelos · Casa en Condominio con Amplia Terraza en Vista Hermosa" [ref=e747]
+                  - generic [ref=e751]: Patio
+                - generic [ref=e752]:
+                  - generic [ref=e753]:
+                    - generic [ref=e754]:
+                      - generic [ref=e758]:
+                        - heading "MN 19,800,000" [level=2] [ref=e760]
+                        - heading "MN 5,800 Mantenimiento" [level=2] [ref=e761]
+                      - heading "465 m² lote 4 rec. 4 baños 5 estac." [level=3] [ref=e763]:
+                        - generic [ref=e764]: 465 m² lote
+                        - generic [ref=e765]: 4 rec.
+                        - generic [ref=e766]: 4 baños
+                        - generic [ref=e767]: 5 estac.
+                      - generic [ref=e769]:
+                        - heading "Julián Adame 137" [level=4] [ref=e770]
+                        - heading "Cuajimalpa, Cuajimalpa de Morelos" [level=4] [ref=e771]
+                      - heading "Casa en condominio con 4 amplias recámaras, cada una con su baño y 2 de ellas con vestidor. Sala, comedor, antecomedor, cocina cerrada, cuarto de T. V. Y oficina. Espectacular terraza cubierta, amplia, con asador y acceso independiente a la casa. Cuarto de servicio con baño, lavandería, estacionamiento techado para 5 autos independientes. 3 bodegas. Casa muy iluminada, pisos de madera, chimenea, impecables condiciones de mantenimiento, paneles solares, ventanas con doble vidrio, cisterna y tinacos. Mantenimiento mensual $5, 800 pesos. Condominio con 16 casas, vigilancia, jardín con juegos para niños y estacionamientos para visitas. 554 metros de construcción. 465 metros de terreno." [level=2] [ref=e772] [cursor=pointer]:
+                        - link "Casa en condominio con 4 amplias recámaras, cada una con su baño y 2 de ellas con vestidor. Sala, comedor, antecomedor, cocina cerrada, cuarto de T. V. Y oficina. Espectacular terraza cubierta, amplia, con asador y acceso independiente a la casa. Cuarto de servicio con baño, lavandería, estacionamiento techado para 5 autos independientes. 3 bodegas. Casa muy iluminada, pisos de madera, chimenea, impecables condiciones de mantenimiento, paneles solares, ventanas con doble vidrio, cisterna y tinacos. Mantenimiento mensual $5, 800 pesos. Condominio con 16 casas, vigilancia, jardín con juegos para niños y estacionamientos para visitas. 554 metros de construcción. 465 metros de terreno." [ref=e773]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-condominio-con-amplia-terraza-en-vista-hermosa-148702988.html?n_src=Listado&n_pills=Patio&n_pg=1&n_pos=9
+                    - button "Agregar a favoritos" [ref=e775] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e776]:
+                        - img [ref=e777]
+                  - generic [ref=e780]:
+                    - generic [ref=e781]:
+                      - generic [ref=e783] [cursor=pointer]:
+                        - generic:
+                          - img "logo publisher"
+                      - generic [ref=e786]: Super destacado
+                    - generic [ref=e789]:
+                      - button [ref=e791] [cursor=pointer]:
+                        - img [ref=e792]
+                      - button "WhatsApp" [ref=e795] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e796]
+                      - button "Contactar" [ref=e800] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e801]
+              - generic [ref=e805]:
+                - generic [ref=e806]:
+                  - img "_MG_8692-HDR.jpg · Ubicacion Privilegiada, en Exclusiva Zona de Santa Fe" [ref=e808]
+                  - generic [ref=e812]: Área de juegos infantiles
+                - generic [ref=e813]:
+                  - generic [ref=e814]:
+                    - generic [ref=e815]:
+                      - generic [ref=e819]:
+                        - heading "MN 16,400,000" [level=2] [ref=e821]
+                        - heading "MN 5,600 Mantenimiento" [level=2] [ref=e822]
+                      - heading "346 m² lote 3 rec. 3 baños 3 estac." [level=3] [ref=e824]:
+                        - generic [ref=e825]: 346 m² lote
+                        - generic [ref=e826]: 3 rec.
+                        - generic [ref=e827]: 3 baños
+                        - generic [ref=e828]: 3 estac.
+                      - generic [ref=e830]:
+                        - heading "Guillermo Marconi" [level=4] [ref=e831]
+                        - heading "Paseo de las Lomas, Alvaro Obregón" [level=4] [ref=e832]
+                      - heading [level=2] [ref=e833] [cursor=pointer]:
+                        - link [ref=e834]:
+                          - /url: /propiedades/clasificado/veclcain-ubicacion-privilegiada-en-exclusiva-zona-de-santa-fe-149811792.html?n_src=Listado&n_pills=%C3%81rea+de+juegos+infantiles&n_pg=1&n_pos=10
+                    - button "Agregar a favoritos" [ref=e836] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e837]:
+                        - img [ref=e838]
+                  - generic [ref=e841]:
+                    - generic [ref=e842]:
+                      - img "logo publisher" [ref=e847] [cursor=pointer]
+                      - generic [ref=e849]: Super destacado
+                    - generic [ref=e852]:
+                      - button [ref=e854] [cursor=pointer]:
+                        - img [ref=e855]
+                      - button "WhatsApp" [ref=e858] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e859]
+                      - button "Contactar" [ref=e863] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e864]
+              - generic [ref=e868]:
+                - generic [ref=e869]:
+                  - img "Casa en Venta en Pedregal Rayo Vende ® · Casa en Venta en Pedregal" [ref=e871]
+                  - generic [ref=e875]: Área de juegos infantiles
+                - generic [ref=e876]:
+                  - generic [ref=e877]:
+                    - generic [ref=e878]:
+                      - heading "MN 28,000,000" [level=2] [ref=e884]
+                      - heading "1317 m² lote 3 rec. 5 baños 12 estac." [level=3] [ref=e887]:
+                        - generic [ref=e888]: 1317 m² lote
+                        - generic [ref=e889]: 3 rec.
+                        - generic [ref=e890]: 5 baños
+                        - generic [ref=e891]: 12 estac.
+                      - generic [ref=e893]:
+                        - heading "Risco 109" [level=4] [ref=e894]
+                        - heading "Jardines del Pedregal, Alvaro Obregón" [level=4] [ref=e895]
+                      - heading [level=2] [ref=e896] [cursor=pointer]:
+                        - link [ref=e897]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-en-pedregal-143695880.html?n_src=Listado&n_pills=%C3%81rea+de+juegos+infantiles&n_pg=1&n_pos=11
+                    - button "Agregar a favoritos" [ref=e899] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e900]:
+                        - img [ref=e901]
+                  - generic [ref=e904]:
+                    - generic [ref=e905]:
+                      - img "logo publisher" [ref=e910] [cursor=pointer]
+                      - generic [ref=e912]: Super destacado
+                    - generic [ref=e915]:
+                      - button [ref=e917] [cursor=pointer]:
+                        - img [ref=e918]
+                      - button "WhatsApp" [ref=e921] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e922]
+                      - button "Contactar" [ref=e926] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e927]
+              - generic [ref=e931]:
+                - generic [ref=e932]:
+                  - img "Casa de 3 habitaciones, Coyoacán · Casa Para Remodelar en Calle Cerrada, Cerro del Quetzal, Campestre Churubusco" [ref=e934]
+                  - generic [ref=e938]: Seguridad privada
+                - generic [ref=e939]:
+                  - generic [ref=e940]:
+                    - generic [ref=e941]:
+                      - generic [ref=e945]:
+                        - heading "MN 7,990,000" [level=2] [ref=e947]
+                        - heading "MN 600 Mantenimiento" [level=2] [ref=e948]
+                      - heading "166 m² lote 3 rec. 2 baños 2 estac." [level=3] [ref=e950]:
+                        - generic [ref=e951]: 166 m² lote
+                        - generic [ref=e952]: 3 rec.
+                        - generic [ref=e953]: 2 baños
+                        - generic [ref=e954]: 2 estac.
+                      - generic [ref=e956]:
+                        - heading "Cerro Quetzal 300" [level=4] [ref=e957]
+                        - heading "Campestre Churubusco, Coyoacán" [level=4] [ref=e958]
+                      - heading [level=2] [ref=e959] [cursor=pointer]:
+                        - link [ref=e960]:
+                          - /url: /propiedades/clasificado/veclcain-casa-para-remodelar-en-calle-cerrada-cerro-del-149046421.html?n_src=Listado&n_pills=Seguridad+privada&n_pg=1&n_pos=12
+                    - button "Agregar a favoritos" [ref=e962] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e963]:
+                        - img [ref=e964]
+                  - generic [ref=e967]:
+                    - generic [ref=e968]:
+                      - generic [ref=e970] [cursor=pointer]:
+                        - generic:
+                          - img "logo publisher"
+                      - generic [ref=e973]: Super destacado
+                    - generic [ref=e976]:
+                      - button [ref=e978] [cursor=pointer]:
+                        - img [ref=e979]
+                      - button "WhatsApp" [ref=e982] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e983]
+                      - button "Contactar" [ref=e987] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e988]
+              - generic [ref=e992]:
+                - generic [ref=e993]:
+                  - img "Casa de 4 habitaciones, Cuajimalpa de Morelos · Hermosa Casa en Venta / Renta en Contadero" [ref=e995]
+                  - generic [ref=e999]: Gimnasio
+                - generic [ref=e1000]:
+                  - generic [ref=e1001]:
+                    - generic [ref=e1002]:
+                      - heading "MN 67,500,000" [level=2] [ref=e1008]
+                      - heading "2034 m² lote 4 rec. 5 baños 6 estac." [level=3] [ref=e1011]:
+                        - generic [ref=e1012]: 2034 m² lote
+                        - generic [ref=e1013]: 4 rec.
+                        - generic [ref=e1014]: 5 baños
+                        - generic [ref=e1015]: 6 estac.
+                      - generic [ref=e1017]:
+                        - heading "Cerrada Tlaloc" [level=4] [ref=e1018]
+                        - heading "Cuajimalpa de Morelos, Ciudad de México" [level=4] [ref=e1019]
+                      - heading [level=2] [ref=e1020] [cursor=pointer]:
+                        - link [ref=e1021]:
+                          - /url: /propiedades/clasificado/veclcain-hermosa-casa-en-venta-renta-en-contadero-147310580.html?n_src=Listado&n_pills=Gimnasio&n_pg=1&n_pos=13
+                    - button "Agregar a favoritos" [ref=e1023] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1024]:
+                        - img [ref=e1025]
+                  - generic [ref=e1028]:
+                    - generic [ref=e1029]:
+                      - generic [ref=e1031] [cursor=pointer]:
+                        - generic:
+                          - img "logo publisher"
+                      - generic [ref=e1034]: Super destacado
+                    - generic [ref=e1037]:
+                      - button [ref=e1039] [cursor=pointer]:
+                        - img [ref=e1040]
+                      - button "WhatsApp" [ref=e1043] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1044]
+                      - button "Contactar" [ref=e1048] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1049]
+              - generic [ref=e1053]:
+                - generic [ref=e1054]:
+                  - img "Casa de 4 habitaciones, Tlalpan · Casa en Venta en Vergel de Coyoacán." [ref=e1056]
+                  - generic [ref=e1060]: Área de lavado
+                - generic [ref=e1061]:
+                  - generic [ref=e1062]:
+                    - generic [ref=e1063]:
+                      - heading "MN 7,200,000" [level=2] [ref=e1069]
+                      - heading "160 m² lote 4 rec. 3 baños 2 estac." [level=3] [ref=e1072]:
+                        - generic [ref=e1073]: 160 m² lote
+                        - generic [ref=e1074]: 4 rec.
+                        - generic [ref=e1075]: 3 baños
+                        - generic [ref=e1076]: 2 estac.
+                      - generic [ref=e1078]:
+                        - heading "Chicoloapan 28" [level=4] [ref=e1079]
+                        - heading "Vergel de Coyoacán, Tlalpan" [level=4] [ref=e1080]
+                      - heading "Vive en un entorno tranquilo, cerca de áreas verdes y con cercanía a todos los servicios necesarios. En un terreno de 160m2, con una construcción en muy buen estado y con excelentes espacios. En planta baja cuenta con sala comedor, cocina, recamara con baño, área de lavado y patio de servicio. En planta alta 3 recámaras la principal con baño y estudio o sala de tv. Ubicada en una tranquila calle cerrada, esta propiedad ofrece el equilibrio perfecto entre privacidad y conectividad, en una Colonia de Parques para disfrutar de las actividades al aire libre. La zona se distingue por su ambiente agradable y funcional. Es el lugar ideal para quienes buscan un entorno seguro, bien conectado y con todo lo necesario a pocos minutos de distancia. \"Agenda tu visita con Navel hoy mismo\"" [level=2] [ref=e1081] [cursor=pointer]:
+                        - link "Vive en un entorno tranquilo, cerca de áreas verdes y con cercanía a todos los servicios necesarios. En un terreno de 160m2, con una construcción en muy buen estado y con excelentes espacios. En planta baja cuenta con sala comedor, cocina, recamara con baño, área de lavado y patio de servicio. En planta alta 3 recámaras la principal con baño y estudio o sala de tv. Ubicada en una tranquila calle cerrada, esta propiedad ofrece el equilibrio perfecto entre privacidad y conectividad, en una Colonia de Parques para disfrutar de las actividades al aire libre. La zona se distingue por su ambiente agradable y funcional. Es el lugar ideal para quienes buscan un entorno seguro, bien conectado y con todo lo necesario a pocos minutos de distancia. \"Agenda tu visita con Navel hoy mismo\"" [ref=e1082]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-en-vergel-de-coyoacan.-149846654.html?n_src=Listado&n_pills=%C3%81rea+de+lavado&n_pg=1&n_pos=14
+                    - button "Agregar a favoritos" [ref=e1084] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1085]:
+                        - img [ref=e1086]
+                  - generic [ref=e1089]:
+                    - generic [ref=e1090]:
+                      - generic [ref=e1092] [cursor=pointer]:
+                        - generic:
+                          - img "logo publisher"
+                      - generic [ref=e1095]: Super destacado
+                    - generic [ref=e1098]:
+                      - button [ref=e1100] [cursor=pointer]:
+                        - img [ref=e1101]
+                      - button "WhatsApp" [ref=e1104] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1105]
+                      - button "Contactar" [ref=e1109] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1110]
+              - generic [ref=e1114]:
+                - generic [ref=e1115]:
+                  - img "e5584144177424d312d209dca79bcf2cb553d61809c14eaefeeac0f65be8cb9f · Residencia en Venta, Col. Lomas de Chapultepec" [ref=e1117]
+                  - generic [ref=e1121]: Terraza
+                - generic [ref=e1122]:
+                  - generic [ref=e1123]:
+                    - generic [ref=e1124]:
+                      - heading "MN 49,950,000" [level=2] [ref=e1130]
+                      - heading "733 m² lote 4 rec. 4 baños 3 estac." [level=3] [ref=e1133]:
+                        - generic [ref=e1134]: 733 m² lote
+                        - generic [ref=e1135]: 4 rec.
+                        - generic [ref=e1136]: 4 baños
+                        - generic [ref=e1137]: 3 estac.
+                      - generic [ref=e1139]:
+                        - heading "Monte Blanco" [level=4] [ref=e1140]
+                        - heading "Lomas de Chapultepec, Miguel Hidalgo" [level=4] [ref=e1141]
+                      - heading [level=2] [ref=e1142] [cursor=pointer]:
+                        - link [ref=e1143]:
+                          - /url: /propiedades/clasificado/veclcain-residencia-en-venta-col.-lomas-de-chapultepec-149493562.html?n_src=Listado&n_pills=Terraza&n_pg=1&n_pos=15
+                    - button "Agregar a favoritos" [ref=e1145] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1146]:
+                        - img [ref=e1147]
+                  - generic [ref=e1150]:
+                    - generic [ref=e1151]:
+                      - generic [ref=e1153] [cursor=pointer]:
+                        - generic:
+                          - img "logo publisher"
+                      - generic [ref=e1156]: Super destacado
+                    - generic [ref=e1159]:
+                      - button [ref=e1161] [cursor=pointer]:
+                        - img [ref=e1162]
+                      - button "WhatsApp" [ref=e1165] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1166]
+                      - button "Contactar" [ref=e1170] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1171]
+              - generic [ref=e1175]:
+                - generic [ref=e1176]:
+                  - img "Casa · 1400m² · 3 Recámaras · Casa en Venta Bosques de Las Lomas, Bosque de Jacarandas" [ref=e1178]
+                  - generic [ref=e1182]: Área de lavado
+                - generic [ref=e1183]:
+                  - generic [ref=e1184]:
+                    - generic [ref=e1185]:
+                      - heading "MN 35,000,000" [level=2] [ref=e1191]
+                      - heading "950 m² lote 3 rec. 5 baños" [level=3] [ref=e1194]:
+                        - generic [ref=e1195]: 950 m² lote
+                        - generic [ref=e1196]: 3 rec.
+                        - generic [ref=e1197]: 5 baños
+                      - generic [ref=e1199]:
+                        - heading "Bosque de Jacarandas 703" [level=4] [ref=e1200]
+                        - heading "Bosque de las Lomas, Miguel Hidalgo" [level=4] [ref=e1201]
+                      - heading "Casa en venta en un solo nivel con jardín, techos altos. 3 recamaras todas con vestidor Y baño la principal cuenta con jacuzzi, salon de fiestas con acceso directo al jardín Y entrada independiente, amplia sala, comedor, cuarto de tv, 2 cuartos de servicio, lugar de estacionamiento para 6 autos techados, área de lavado, bodega. (rcv4429) (eb-me4772)" [level=2] [ref=e1202] [cursor=pointer]:
+                        - link "Casa en venta en un solo nivel con jardín, techos altos. 3 recamaras todas con vestidor Y baño la principal cuenta con jacuzzi, salon de fiestas con acceso directo al jardín Y entrada independiente, amplia sala, comedor, cuarto de tv, 2 cuartos de servicio, lugar de estacionamiento para 6 autos techados, área de lavado, bodega. (rcv4429) (eb-me4772)" [ref=e1203]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-bosques-de-las-lomas-bosque-de-65808289.html?n_src=Listado&n_pills=%C3%81rea+de+lavado&n_pg=1&n_pos=16
+                    - button "Agregar a favoritos" [ref=e1205] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1206]:
+                        - img [ref=e1207]
+                  - generic [ref=e1210]:
+                    - generic [ref=e1211]:
+                      - generic [ref=e1213] [cursor=pointer]:
+                        - generic:
+                          - img "logo publisher"
+                      - generic [ref=e1216]: Super destacado
+                    - generic [ref=e1219]:
+                      - button [ref=e1221] [cursor=pointer]:
+                        - img [ref=e1222]
+                      - button "WhatsApp" [ref=e1225] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1226]
+                      - button "Contactar" [ref=e1230] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1231]
+              - generic [ref=e1235]:
+                - generic [ref=e1236]:
+                  - img "17fa94e92c1501748cc01f3f3e2dce35a974853f45a4f88a3f69e7108d968d8a · Casa en Venta en San Jeronimo" [ref=e1238]
+                  - generic [ref=e1242]: Gimnasio
+                - generic [ref=e1243]:
+                  - generic [ref=e1244]:
+                    - generic [ref=e1245]:
+                      - heading "MN 17,000,000" [level=2] [ref=e1251]
+                      - heading "420 m² lote 3 rec. 3 baños 3 estac." [level=3] [ref=e1254]:
+                        - generic [ref=e1255]: 420 m² lote
+                        - generic [ref=e1256]: 3 rec.
+                        - generic [ref=e1257]: 3 baños
+                        - generic [ref=e1258]: 3 estac.
+                      - generic [ref=e1260]:
+                        - heading "LOMA BONITA" [level=4] [ref=e1261]
+                        - heading "San Jerónimo Aculco, La Magdalena Contreras" [level=4] [ref=e1262]
+                      - heading [level=2] [ref=e1263] [cursor=pointer]:
+                        - link [ref=e1264]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-en-san-jeronimo-149818258.html?n_src=Listado&n_pills=Gimnasio&n_pg=1&n_pos=17
+                    - button "Agregar a favoritos" [ref=e1266] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1267]:
+                        - img [ref=e1268]
+                  - generic [ref=e1271]:
+                    - generic [ref=e1272]:
+                      - img "logo publisher" [ref=e1277] [cursor=pointer]
+                      - generic [ref=e1279]: Super destacado
+                    - generic [ref=e1282]:
+                      - button [ref=e1284] [cursor=pointer]:
+                        - img [ref=e1285]
+                      - button "WhatsApp" [ref=e1288] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1289]
+                      - button "Contactar" [ref=e1293] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1294]
+              - generic [ref=e1298]:
+                - generic [ref=e1299]:
+                  - img "Casa de 4 habitaciones, Miguel Hidalgo · Casa en Venta Colonia Irrigacion 4 Recamaras" [ref=e1301]
+                  - generic [ref=e1305]: Patio
+                - generic [ref=e1306]:
+                  - generic [ref=e1307]:
+                    - generic [ref=e1308]:
+                      - heading "MN 19,000,000" [level=2] [ref=e1314]
+                      - heading "258 m² lote 4 rec. 3 baños 2 estac." [level=3] [ref=e1317]:
+                        - generic [ref=e1318]: 258 m² lote
+                        - generic [ref=e1319]: 4 rec.
+                        - generic [ref=e1320]: 3 baños
+                        - generic [ref=e1321]: 2 estac.
+                      - generic [ref=e1323]:
+                        - heading "Presa Palmito" [level=4] [ref=e1324]
+                        - heading "Ampliación Granada, Miguel Hidalgo" [level=4] [ref=e1325]
+                      - heading [level=2] [ref=e1326] [cursor=pointer]:
+                        - link [ref=e1327]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-colonia-irrigacion-4-recamaras-149447698.html?n_src=Listado&n_pills=Patio&n_pg=1&n_pos=18
+                    - button "Agregar a favoritos" [ref=e1329] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1330]:
+                        - img [ref=e1331]
+                  - generic [ref=e1334]:
+                    - generic [ref=e1335]:
+                      - generic [ref=e1337] [cursor=pointer]:
+                        - generic:
+                          - img "logo publisher"
+                      - generic [ref=e1340]: Super destacado
+                    - generic [ref=e1343]:
+                      - button [ref=e1345] [cursor=pointer]:
+                        - img [ref=e1346]
+                      - button "WhatsApp" [ref=e1349] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1350]
+                      - button "Contactar" [ref=e1354] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1355]
+              - generic [ref=e1359]:
+                - generic [ref=e1360]:
+                  - img "dc2f20e7f669efa922fc7e6348e0c2e638b2956375807ed9aefd7012a1e74c9e · Casa en Venta en Lomas de Las Águilas" [ref=e1362]
+                  - generic [ref=e1366]: Jardín privado
+                - generic [ref=e1367]:
+                  - generic [ref=e1368]:
+                    - generic [ref=e1369]:
+                      - heading "MN 22,750,000" [level=2] [ref=e1375]
+                      - heading "650 m² lote 5 rec. 5 baños 4 estac." [level=3] [ref=e1378]:
+                        - generic [ref=e1379]: 650 m² lote
+                        - generic [ref=e1380]: 5 rec.
+                        - generic [ref=e1381]: 5 baños
+                        - generic [ref=e1382]: 4 estac.
+                      - generic [ref=e1384]:
+                        - heading "Agamenón" [level=4] [ref=e1385]
+                        - heading "Las Águilas, Alvaro Obregón" [level=4] [ref=e1386]
+                      - heading [level=2] [ref=e1387] [cursor=pointer]:
+                        - link [ref=e1388]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-en-lomas-de-las-aguilas-148473080.html?n_src=Listado&n_pills=Jard%C3%ADn+privado&n_pg=1&n_pos=19
+                    - button "Agregar a favoritos" [ref=e1390] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1391]:
+                        - img [ref=e1392]
+                  - generic [ref=e1395]:
+                    - generic [ref=e1396]:
+                      - generic [ref=e1398] [cursor=pointer]:
+                        - generic:
+                          - img "logo publisher"
+                      - generic [ref=e1401]: Super destacado
+                    - generic [ref=e1404]:
+                      - button [ref=e1406] [cursor=pointer]:
+                        - img [ref=e1407]
+                      - button "WhatsApp" [ref=e1410] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1411]
+                      - button "Contactar" [ref=e1415] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1416]
+              - generic [ref=e1420]:
+                - generic [ref=e1421]:
+                  - img "Casa · 380m² · 4 Recámaras · 6 Estacionamientos · Fuera del Camino del Trafico" [ref=e1423]
+                  - generic [ref=e1427]: Terraza
+                - generic [ref=e1428]:
+                  - generic [ref=e1429]:
+                    - generic [ref=e1430]:
+                      - generic [ref=e1434]:
+                        - heading "MN 8,500,000" [level=2] [ref=e1436]
+                        - heading "MN 1,500 Mantenimiento" [level=2] [ref=e1437]
+                      - heading "400 m² lote 4 rec. 4 baños 6 estac." [level=3] [ref=e1439]:
+                        - generic [ref=e1440]: 400 m² lote
+                        - generic [ref=e1441]: 4 rec.
+                        - generic [ref=e1442]: 4 baños
+                        - generic [ref=e1443]: 6 estac.
+                      - generic [ref=e1445]:
+                        - heading "Primera de Cerrada Hidalgo" [level=4] [ref=e1446]
+                        - heading "San Bartolo Ameyalco, Alvaro Obregón" [level=4] [ref=e1447]
+                      - heading [level=2] [ref=e1448] [cursor=pointer]:
+                        - link [ref=e1449]:
+                          - /url: /propiedades/clasificado/veclcain-fuera-del-camino-del-trafico-147628706.html?n_src=Listado&n_pills=Terraza&n_pg=1&n_pos=20
+                    - button "Agregar a favoritos" [ref=e1451] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1452]:
+                        - img [ref=e1453]
+                  - generic [ref=e1456]:
+                    - generic [ref=e1457]:
+                      - img "logo publisher" [ref=e1462] [cursor=pointer]
+                      - generic [ref=e1464]: Super destacado
+                    - generic [ref=e1467]:
+                      - button [ref=e1469] [cursor=pointer]:
+                        - img [ref=e1470]
+                      - button "WhatsApp" [ref=e1473] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1474]
+                      - button "Contactar" [ref=e1478] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1479]
+              - generic [ref=e1483]:
+                - generic [ref=e1484]:
+                  - img "b41d71dd129f38bcd2a348cdf01a1b41103d1fa6226a5484739ddffb8da16dad · Casa en Venta en Colinas del Bosque" [ref=e1486]
+                  - generic [ref=e1490]: Seguridad privada
+                - generic [ref=e1491]:
+                  - generic [ref=e1492]:
+                    - generic [ref=e1493]:
+                      - generic [ref=e1497]:
+                        - heading "MN 14,500,000" [level=2] [ref=e1499]
+                        - heading "MN 3,000 Mantenimiento" [level=2] [ref=e1500]
+                      - heading "231 m² lote 3 rec. 3 baños 3 estac." [level=3] [ref=e1502]:
+                        - generic [ref=e1503]: 231 m² lote
+                        - generic [ref=e1504]: 3 rec.
+                        - generic [ref=e1505]: 3 baños
+                        - generic [ref=e1506]: 3 estac.
+                      - generic [ref=e1508]:
+                        - heading "RETORNO 8A DEL TEPOZTECO" [level=4] [ref=e1509]
+                        - heading "Colinas del Bosque, Tlalpan" [level=4] [ref=e1510]
+                      - heading [level=2] [ref=e1511] [cursor=pointer]:
+                        - link [ref=e1512]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-en-colinas-del-bosque-149030538.html?n_src=Listado&n_pills=Seguridad+privada&n_pg=1&n_pos=21
+                    - button "Agregar a favoritos" [ref=e1514] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1515]:
+                        - img [ref=e1516]
+                  - generic [ref=e1519]:
+                    - generic [ref=e1520]:
+                      - img "logo publisher" [ref=e1525] [cursor=pointer]
+                      - generic [ref=e1527]: Super destacado
+                    - generic [ref=e1530]:
+                      - button [ref=e1532] [cursor=pointer]:
+                        - img [ref=e1533]
+                      - button "WhatsApp" [ref=e1536] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1537]
+                      - button "Contactar" [ref=e1541] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1542]
+              - generic [ref=e1546]:
+                - generic [ref=e1547]:
+                  - img "b9219872393167cabbbac984dcc1d917d393a7a6e6da52b724210a7dcd37c14b · Casa en Venta en Las Tortolas" [ref=e1549]
+                  - generic [ref=e1553]: Seguridad privada
+                - generic [ref=e1554]:
+                  - generic [ref=e1555]:
+                    - generic [ref=e1556]:
+                      - heading "MN 12,800,000" [level=2] [ref=e1562]
+                      - heading "300 m² lote 4 rec. 3 baños 3 estac." [level=3] [ref=e1565]:
+                        - generic [ref=e1566]: 300 m² lote
+                        - generic [ref=e1567]: 4 rec.
+                        - generic [ref=e1568]: 3 baños
+                        - generic [ref=e1569]: 3 estac.
+                      - generic [ref=e1571]:
+                        - heading "RUISEÑOR" [level=4] [ref=e1572]
+                        - heading "Las Tórtolas, Tlalpan" [level=4] [ref=e1573]
+                      - heading [level=2] [ref=e1574] [cursor=pointer]:
+                        - link [ref=e1575]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-en-las-tortolas-148925626.html?n_src=Listado&n_pills=Seguridad+privada&n_pg=1&n_pos=22
+                    - button "Agregar a favoritos" [ref=e1577] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1578]:
+                        - img [ref=e1579]
+                  - generic [ref=e1582]:
+                    - generic [ref=e1583]:
+                      - img "logo publisher" [ref=e1588] [cursor=pointer]
+                      - generic [ref=e1590]: Super destacado
+                    - generic [ref=e1593]:
+                      - button [ref=e1595] [cursor=pointer]:
+                        - img [ref=e1596]
+                      - button "WhatsApp" [ref=e1599] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1600]
+                      - button "Contactar" [ref=e1604] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1605]
+              - generic [ref=e1609]:
+                - generic [ref=e1610]:
+                  - img "Casa de 3 habitaciones, Alvaro Obregón · Venta Casa en Jardines del Pedregal" [ref=e1612]
+                  - generic [ref=e1616]: Jardín privado
+                - generic [ref=e1617]:
+                  - generic [ref=e1618]:
+                    - generic [ref=e1619]:
+                      - heading "MN 61,000,000" [level=2] [ref=e1625]
+                      - heading "1132 m² lote 3 rec. 3 baños 8 estac." [level=3] [ref=e1628]:
+                        - generic [ref=e1629]: 1132 m² lote
+                        - generic [ref=e1630]: 3 rec.
+                        - generic [ref=e1631]: 3 baños
+                        - generic [ref=e1632]: 8 estac.
+                      - generic [ref=e1634]:
+                        - heading "Pizarra" [level=4] [ref=e1635]
+                        - heading "Jardines del Pedregal, Alvaro Obregón" [level=4] [ref=e1636]
+                      - heading [level=2] [ref=e1637] [cursor=pointer]:
+                        - link [ref=e1638]:
+                          - /url: /propiedades/clasificado/veclcain-venta-casa-en-jardines-del-pedregal-146781135.html?n_src=Listado&n_pills=Jard%C3%ADn+privado&n_pg=1&n_pos=23
+                    - button "Agregar a favoritos" [ref=e1640] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1641]:
+                        - img [ref=e1642]
+                  - generic [ref=e1645]:
+                    - generic [ref=e1646]:
+                      - img "logo publisher" [ref=e1651] [cursor=pointer]
+                      - generic [ref=e1653]: Super destacado
+                    - generic [ref=e1656]:
+                      - button [ref=e1658] [cursor=pointer]:
+                        - img [ref=e1659]
+                      - button "WhatsApp" [ref=e1662] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1663]
+                      - button "Contactar" [ref=e1667] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1668]
+              - generic [ref=e1672]:
+                - generic [ref=e1673]:
+                  - img "b1aa6580c4cf1e73480fd00cc89895f534997a7bb7c20c8f3e1d3bf3beb69843 · Casa en Venta en Tlalpan Ampliación Miguel Hidalgo" [ref=e1675]
+                  - generic [ref=e1679]: Área de lavado
+                - generic [ref=e1680]:
+                  - generic [ref=e1681]:
+                    - generic [ref=e1682]:
+                      - heading "MN 4,950,000" [level=2] [ref=e1688]
+                      - heading "197 m² lote 6 rec. 3 baños 3 estac." [level=3] [ref=e1691]:
+                        - generic [ref=e1692]: 197 m² lote
+                        - generic [ref=e1693]: 6 rec.
+                        - generic [ref=e1694]: 3 baños
+                        - generic [ref=e1695]: 3 estac.
+                      - generic [ref=e1697]:
+                        - heading "1ª CDA. ACANTO Mz73 Lt" [level=4] [ref=e1698]
+                        - heading "Miguel Hidalgo 4A Sección, Tlalpan" [level=4] [ref=e1699]
+                      - 'heading "¡inversión que genera ingresos! Propiedad con 3 viviendas independientes. Ubicación: Col. Ampliación Miguel Hidalgo, 4ta Sección. A solo 2 cuadras del Hospital General Ajusco Medio, en calle cerrada. Medidas: 197 m² de terreno / 171 m² de construcción. ¿Buscas estabilidad financiera? Esta propiedad es perfecta. Cuenta con tres departamentos totalmente independientes para que tú decidas cómo usarla: Tu espacio: Vive cómodamente en la primera vivienda (1 recámara, baño y cocina). Ingresos extra: Renta las otras dos unidades: Unidad 2: 3 recámaras, baño, cocina y sala-comedor. Unidad 3: 2 recámaras, baño, cocina, sala-comedor + área de lavado con baño extra. Todo lo que necesitas, listo para usar: Estacionamiento cubierto para 3 autos. Sistema de bomba de agua. 3 boilers y gas estacionario. Portón eléctrico." [level=2] [ref=e1700] [cursor=pointer]':
+                        - 'link "¡inversión que genera ingresos! Propiedad con 3 viviendas independientes. Ubicación: Col. Ampliación Miguel Hidalgo, 4ta Sección. A solo 2 cuadras del Hospital General Ajusco Medio, en calle cerrada. Medidas: 197 m² de terreno / 171 m² de construcción. ¿Buscas estabilidad financiera? Esta propiedad es perfecta. Cuenta con tres departamentos totalmente independientes para que tú decidas cómo usarla: Tu espacio: Vive cómodamente en la primera vivienda (1 recámara, baño y cocina). Ingresos extra: Renta las otras dos unidades: Unidad 2: 3 recámaras, baño, cocina y sala-comedor. Unidad 3: 2 recámaras, baño, cocina, sala-comedor + área de lavado con baño extra. Todo lo que necesitas, listo para usar: Estacionamiento cubierto para 3 autos. Sistema de bomba de agua. 3 boilers y gas estacionario. Portón eléctrico." [ref=e1701]':
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-en-tlalpan-ampliacion-miguel-hidalgo-149406643.html?n_src=Listado&n_pills=%C3%81rea+de+lavado&n_pg=1&n_pos=24
+                    - button "Agregar a favoritos" [ref=e1703] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1704]:
+                        - img [ref=e1705]
+                  - generic [ref=e1708]:
+                    - generic [ref=e1709]:
+                      - img "logo publisher" [ref=e1714] [cursor=pointer]
+                      - generic [ref=e1716]: Super destacado
+                    - generic [ref=e1719]:
+                      - button [ref=e1721] [cursor=pointer]:
+                        - img [ref=e1722]
+                      - button "WhatsApp" [ref=e1725] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1726]
+                      - button "Contactar" [ref=e1730] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1731]
+              - generic [ref=e1735]:
+                - generic [ref=e1736]:
+                  - img "Casa de 3 habitaciones, Benito Juárez · Casa en Venta Colonia del Valle" [ref=e1738]
+                  - generic [ref=e1742]: Terraza
+                - generic [ref=e1743]:
+                  - generic [ref=e1744]:
+                    - generic [ref=e1745]:
+                      - heading "MN 23,750,000" [level=2] [ref=e1751]
+                      - heading "463 m² lote 3 rec. 2 baños 4 estac." [level=3] [ref=e1754]:
+                        - generic [ref=e1755]: 463 m² lote
+                        - generic [ref=e1756]: 3 rec.
+                        - generic [ref=e1757]: 2 baños
+                        - generic [ref=e1758]: 4 estac.
+                      - generic [ref=e1760]:
+                        - heading "San Francisco 734" [level=4] [ref=e1761]
+                        - heading "Del Valle Centro, Benito Juárez" [level=4] [ref=e1762]
+                      - heading [level=2] [ref=e1763] [cursor=pointer]:
+                        - link [ref=e1764]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-colonia-del-valle-148942568.html?n_src=Listado&n_pills=Terraza&n_pg=1&n_pos=25
+                    - button "Agregar a favoritos" [ref=e1766] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1767]:
+                        - img [ref=e1768]
+                  - generic [ref=e1771]:
+                    - generic [ref=e1772]:
+                      - generic [ref=e1774] [cursor=pointer]:
+                        - generic:
+                          - img "logo publisher"
+                      - generic [ref=e1777]: Super destacado
+                    - generic [ref=e1780]:
+                      - button [ref=e1782] [cursor=pointer]:
+                        - img [ref=e1783]
+                      - button "WhatsApp" [ref=e1786] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1787]
+                      - button "Contactar" [ref=e1791] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1792]
+              - generic [ref=e1796]:
+                - generic [ref=e1797]:
+                  - img "Casa de 3 habitaciones, La Magdalena Contreras · Casa de Diseño Moderno y de Lujo en Colonia Lomas Quebradas" [ref=e1799]
+                  - generic [ref=e1803]: Área de lavado
+                - generic [ref=e1804]:
+                  - generic [ref=e1805]:
+                    - generic [ref=e1806]:
+                      - generic [ref=e1810]:
+                        - heading "MN 12,500,000" [level=2] [ref=e1812]
+                        - heading "MN 2,500 Mantenimiento" [level=2] [ref=e1813]
+                      - heading "210 m² lote 3 rec. 4 baños 3 estac." [level=3] [ref=e1815]:
+                        - generic [ref=e1816]: 210 m² lote
+                        - generic [ref=e1817]: 3 rec.
+                        - generic [ref=e1818]: 4 baños
+                        - generic [ref=e1819]: 3 estac.
+                      - generic [ref=e1821]:
+                        - heading "callejon de cruz verde 12" [level=4] [ref=e1822]
+                        - heading "Lomas Quebradas, La Magdalena Contreras" [level=4] [ref=e1823]
+                      - heading [level=2] [ref=e1824] [cursor=pointer]:
+                        - link [ref=e1825]:
+                          - /url: /propiedades/clasificado/veclcain-casa-de-diseno-moderno-y-de-lujo-en-colonia-lomas-144289319.html?n_src=Listado&n_pills=%C3%81rea+de+lavado&n_pg=1&n_pos=26
+                    - button "Agregar a favoritos" [ref=e1827] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1828]:
+                        - img [ref=e1829]
+                  - generic [ref=e1832]:
+                    - generic [ref=e1833]:
+                      - generic [ref=e1835] [cursor=pointer]:
+                        - generic:
+                          - img "logo publisher"
+                      - generic [ref=e1838]: Super destacado
+                    - generic [ref=e1841]:
+                      - button [ref=e1843] [cursor=pointer]:
+                        - img [ref=e1844]
+                      - button "WhatsApp" [ref=e1847] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1848]
+                      - button "Contactar" [ref=e1852] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1853]
+              - generic [ref=e1857]:
+                - generic [ref=e1858]:
+                  - img "Casa de 3 habitaciones, Tlalpan · Casa en Venta en Jardines de La Montaña" [ref=e1860]
+                  - generic [ref=e1864]: Seguridad privada
+                - generic [ref=e1865]:
+                  - generic [ref=e1866]:
+                    - generic [ref=e1867]:
+                      - generic [ref=e1871]:
+                        - heading "MN 20,000,000" [level=2] [ref=e1873]
+                        - heading "MN 2,300 Mantenimiento" [level=2] [ref=e1874]
+                      - heading "390 m² lote 3 rec. 3 baños 2 estac." [level=3] [ref=e1876]:
+                        - generic [ref=e1877]: 390 m² lote
+                        - generic [ref=e1878]: 3 rec.
+                        - generic [ref=e1879]: 3 baños
+                        - generic [ref=e1880]: 2 estac.
+                      - generic [ref=e1882]:
+                        - heading "Monte de Antisana" [level=4] [ref=e1883]
+                        - heading "Jardines en la Montaña, Tlalpan" [level=4] [ref=e1884]
+                      - 'heading "Venta de Casa en exclusivo fraccionamiento privado Jardines en la Montaña! Descubre la comodidad de esta encantadora casa de una planta, con una acogedora sala con chimenea, cocina integral, comedor y desayunador que se abre a un hermoso jardín plano de 70m2. Este espacio cuenta con 3 recámaras: la principal con baño, vestidor y chimenea privada, una secundaria con baño y vestidor, y una tercera recámara con baño completo. Además, disfruta de una sala de tv, un amplio salón de fiestas con entrada independiente (adaptable como departamento independiente o consultorio discreto) que incluye cocineta y un loft con baño completo. Cuenta con estacionamiento techado para 2 autos. ¡No dejes pasar la oportunidad de visitarla y encontrar tu próximo hogar en Jardines en la Montaña!" [level=2] [ref=e1885] [cursor=pointer]':
+                        - 'link "Venta de Casa en exclusivo fraccionamiento privado Jardines en la Montaña! Descubre la comodidad de esta encantadora casa de una planta, con una acogedora sala con chimenea, cocina integral, comedor y desayunador que se abre a un hermoso jardín plano de 70m2. Este espacio cuenta con 3 recámaras: la principal con baño, vestidor y chimenea privada, una secundaria con baño y vestidor, y una tercera recámara con baño completo. Además, disfruta de una sala de tv, un amplio salón de fiestas con entrada independiente (adaptable como departamento independiente o consultorio discreto) que incluye cocineta y un loft con baño completo. Cuenta con estacionamiento techado para 2 autos. ¡No dejes pasar la oportunidad de visitarla y encontrar tu próximo hogar en Jardines en la Montaña!" [ref=e1886]':
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-en-jardines-de-la-montana-91455391.html?n_src=Listado&n_pills=Seguridad+privada&n_pg=1&n_pos=27
+                    - button "Agregar a favoritos" [ref=e1888] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1889]:
+                        - img [ref=e1890]
+                  - generic [ref=e1893]:
+                    - generic [ref=e1894]:
+                      - img "logo publisher" [ref=e1899] [cursor=pointer]
+                      - generic [ref=e1901]: Super destacado
+                    - generic [ref=e1904]:
+                      - button [ref=e1906] [cursor=pointer]:
+                        - img [ref=e1907]
+                      - button "WhatsApp" [ref=e1910] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1911]
+                      - button "Contactar" [ref=e1915] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1916]
+              - generic [ref=e1920]:
+                - generic [ref=e1921]:
+                  - img "9fd82ad11c064b624f150f6fabb308f48a5c9afa4a82dd16c74418e2e30b3853 · Casa en Venta en Las Aguilas" [ref=e1923]
+                  - generic [ref=e1927]: Área de lavado
+                - generic [ref=e1928]:
+                  - generic [ref=e1929]:
+                    - generic [ref=e1930]:
+                      - generic [ref=e1934]:
+                        - heading "MN 10,590,000" [level=2] [ref=e1936]
+                        - heading "MN 1,200 Mantenimiento" [level=2] [ref=e1937]
+                      - heading "300 m² lote 3 rec. 4 baños 4 estac." [level=3] [ref=e1939]:
+                        - generic [ref=e1940]: 300 m² lote
+                        - generic [ref=e1941]: 3 rec.
+                        - generic [ref=e1942]: 4 baños
+                        - generic [ref=e1943]: 4 estac.
+                      - generic [ref=e1945]:
+                        - heading "GRULLAS" [level=4] [ref=e1946]
+                        - heading "Las Águilas, Alvaro Obregón" [level=4] [ref=e1947]
+                      - heading [level=2] [ref=e1948] [cursor=pointer]:
+                        - link [ref=e1949]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-en-las-aguilas-149618051.html?n_src=Listado&n_pills=%C3%81rea+de+lavado&n_pg=1&n_pos=28
+                    - button "Agregar a favoritos" [ref=e1951] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e1952]:
+                        - img [ref=e1953]
+                  - generic [ref=e1956]:
+                    - generic [ref=e1957]:
+                      - img "logo publisher" [ref=e1962] [cursor=pointer]
+                      - generic [ref=e1964]: Super destacado
+                    - generic [ref=e1967]:
+                      - button [ref=e1969] [cursor=pointer]:
+                        - img [ref=e1970]
+                      - button "WhatsApp" [ref=e1973] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e1974]
+                      - button "Contactar" [ref=e1978] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e1979]
+              - generic [ref=e1983]:
+                - generic [ref=e1984]:
+                  - img "2b91816a72483e313f751f7e36fd624afcfc3df4e3750519634f7061027da4d1 · Casa en Venta en San Jerónimo Lídice - Av Sn Bernabe" [ref=e1986]
+                  - generic [ref=e1990]: Terraza
+                - generic [ref=e1991]:
+                  - generic [ref=e1992]:
+                    - generic [ref=e1993]:
+                      - heading "MN 29,000,000" [level=2] [ref=e1999]
+                      - heading "1200 m² lote 3 rec. 3 baños 15 estac." [level=3] [ref=e2002]:
+                        - generic [ref=e2003]: 1200 m² lote
+                        - generic [ref=e2004]: 3 rec.
+                        - generic [ref=e2005]: 3 baños
+                        - generic [ref=e2006]: 15 estac.
+                      - generic [ref=e2008]:
+                        - heading "Av San Bernabé" [level=4] [ref=e2009]
+                        - heading "San Jerónimo Lídice, La Magdalena Contreras" [level=4] [ref=e2010]
+                      - heading "La propiedad en venta se encuentra ubicada en la ciudad de México, en el exclusivo barrio de San Jerónimo Lídice. Con una superficie total de 1200 metros cuadrados, esta residencia cuenta con 3 recamaras, 3 baños completos, 2 medios baños y espacio de estacionamiento para 15 vehículos. Construida en el año 2002, la propiedad se encuentra en excelente estado de conservación y ofrece una amplia variedad de comodidades, como sala, cantina, desayunador, cocina integral, despensa, patio de servicio, terraza, jardín privado y closets. Con una ubicación estratégica y una disposición hacia la parte trasera, esta propiedad es ideal para aquellos que buscan un hogar espacioso y funcional en una de las zonas más prestigiosas de la ciudad." [level=2] [ref=e2011] [cursor=pointer]:
+                        - link "La propiedad en venta se encuentra ubicada en la ciudad de México, en el exclusivo barrio de San Jerónimo Lídice. Con una superficie total de 1200 metros cuadrados, esta residencia cuenta con 3 recamaras, 3 baños completos, 2 medios baños y espacio de estacionamiento para 15 vehículos. Construida en el año 2002, la propiedad se encuentra en excelente estado de conservación y ofrece una amplia variedad de comodidades, como sala, cantina, desayunador, cocina integral, despensa, patio de servicio, terraza, jardín privado y closets. Con una ubicación estratégica y una disposición hacia la parte trasera, esta propiedad es ideal para aquellos que buscan un hogar espacioso y funcional en una de las zonas más prestigiosas de la ciudad." [ref=e2012]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-en-san-jeronimo-lidice-av-sn-bernabe-150073853.html?n_src=Listado&n_pills=Terraza&n_pg=1&n_pos=29
+                    - button "Agregar a favoritos" [ref=e2014] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e2015]:
+                        - img [ref=e2016]
+                  - generic [ref=e2019]:
+                    - generic [ref=e2020]:
+                      - generic [ref=e2022] [cursor=pointer]:
+                        - generic:
+                          - img "logo publisher"
+                      - generic [ref=e2025]: Super destacado
+                    - generic [ref=e2028]:
+                      - button [ref=e2030] [cursor=pointer]:
+                        - img [ref=e2031]
+                      - button "WhatsApp" [ref=e2034] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e2035]
+                      - button "Contactar" [ref=e2039] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e2040]
+              - generic [ref=e2044]:
+                - generic [ref=e2045]:
+                  - img "7189b0d7ba822d60256595a2809aeddd5cbfc9c6af00885d1a7179793e130217 · Casa en Venta en Coyoacan" [ref=e2047]
+                  - generic [ref=e2051]: Terraza
+                - generic [ref=e2052]:
+                  - generic [ref=e2053]:
+                    - generic [ref=e2054]:
+                      - heading "MN 11,800,000" [level=2] [ref=e2060]
+                      - heading "334 m² lote 3 rec. 3 baños 3 estac." [level=3] [ref=e2063]:
+                        - generic [ref=e2064]: 334 m² lote
+                        - generic [ref=e2065]: 3 rec.
+                        - generic [ref=e2066]: 3 baños
+                        - generic [ref=e2067]: 3 estac.
+                      - generic [ref=e2069]:
+                        - heading "ANTIGUA TAXQUEÑA" [level=4] [ref=e2070]
+                        - heading "Parque San Andrés, Coyoacán" [level=4] [ref=e2071]
+                      - heading "Magnífica casa en una planta sin escaleras, techos altos. 3 recámaras, 3. 5 baños y 3 autos techados. Gran estancia colindando con terraza y lindo jardín, amplia cocina con desayunador. Tiene una 4ta. Recámara con despacho en planta alta con entrada independiente. Super ubicada entre California y División del Norte." [level=2] [ref=e2072] [cursor=pointer]:
+                        - link "Magnífica casa en una planta sin escaleras, techos altos. 3 recámaras, 3. 5 baños y 3 autos techados. Gran estancia colindando con terraza y lindo jardín, amplia cocina con desayunador. Tiene una 4ta. Recámara con despacho en planta alta con entrada independiente. Super ubicada entre California y División del Norte." [ref=e2073]:
+                          - /url: /propiedades/clasificado/veclcain-casa-en-venta-en-coyoacan-146643822.html?n_src=Listado&n_pills=Terraza&n_pg=1&n_pos=30
+                    - button "Agregar a favoritos" [ref=e2075] [cursor=pointer]:
+                      - img "Agregar a favoritos" [ref=e2076]:
+                        - img [ref=e2077]
+                  - generic [ref=e2080]:
+                    - generic [ref=e2081]:
+                      - img "logo publisher" [ref=e2086] [cursor=pointer]
+                      - generic [ref=e2088]: Super destacado
+                    - generic [ref=e2091]:
+                      - button [ref=e2093] [cursor=pointer]:
+                        - img [ref=e2094]
+                      - button "WhatsApp" [ref=e2097] [cursor=pointer]:
+                        - text: WhatsApp
+                        - img [ref=e2098]
+                      - button "Contactar" [ref=e2102] [cursor=pointer]:
+                        - text: Contactar
+                        - img [ref=e2103]
+          - generic [ref=e2107]:
+            - img "Ver mapa" [ref=e2109]
+            - button "Ver mapa" [ref=e2110] [cursor=pointer]
+      - list [ref=e2114]:
+        - listitem [ref=e2115]:
+          - img [ref=e2116]
+        - listitem [ref=e2119]:
+          - link "Inmuebles24 >" [ref=e2120] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e2121]:
+          - link "Casas >" [ref=e2122] [cursor=pointer]:
+            - /url: /casas.html
+        - listitem [ref=e2123]:
+          - link "venta >" [ref=e2124] [cursor=pointer]:
+            - /url: /casas-en-venta.html
+        - listitem [ref=e2125]:
+          - link "Ciudad de México" [ref=e2126] [cursor=pointer]:
+            - /url: /casas-en-venta-en-ciudad-de-mexico.html
+      - generic [ref=e2127]:
+        - link "1":
+          - /url: /casas-en-venta-en-ciudad-de-mexico.html
+        - link "2" [ref=e2128] [cursor=pointer]:
+          - /url: /casas-en-venta-en-ciudad-de-mexico-pagina-2.html
+        - link "3" [ref=e2129] [cursor=pointer]:
+          - /url: /casas-en-venta-en-ciudad-de-mexico-pagina-3.html
+        - link "4" [ref=e2130] [cursor=pointer]:
+          - /url: /casas-en-venta-en-ciudad-de-mexico-pagina-4.html
+        - link "5" [ref=e2131] [cursor=pointer]:
+          - /url: /casas-en-venta-en-ciudad-de-mexico-pagina-5.html
+        - link [ref=e2132] [cursor=pointer]:
+          - /url: /casas-en-venta-en-ciudad-de-mexico-pagina-2.html
+          - img [ref=e2133]
+    - generic [ref=e2136]:
+      - generic [ref=e2137]:
+        - text: En este sitio
+        - mark [ref=e2138]: usamos y recopilamos cookies
+        - text: para proporcionar un acceso seguro y ofrecer contenido adaptado a tus intereses.
+        - mark [ref=e2139]: Al continuar navegando en el sitio, nos das permiso para su utilización.
+        - text: Para más información, ver nuestra
+        - link "Política de Privacidad" [ref=e2140] [cursor=pointer]:
+          - /url: https://help.inmuebles24.com/s/article/Aviso-de-Privacidad#cookies
+      - button "Acepto" [ref=e2142] [cursor=pointer]
+  - generic [ref=e2143]:
+    - generic [ref=e2146]:
+      - heading "Encuentra casas en venta en Ciudad de México por categorías" [level=2] [ref=e2147]
+      - heading "Otras ciudades" [level=3] [ref=e2150] [cursor=pointer]
+      - heading "Número de recámaras" [level=3] [ref=e2154] [cursor=pointer]
+      - heading "Números de baños y estacionamientos" [level=3] [ref=e2158] [cursor=pointer]
+      - heading "Características y amenidades" [level=3] [ref=e2162] [cursor=pointer]
+      - heading "Más operaciones" [level=3] [ref=e2166] [cursor=pointer]
+      - heading "Más tipos de inmuebles" [level=3] [ref=e2170] [cursor=pointer]
+      - heading "Búsquedas relacionadas" [level=3] [ref=e2174] [cursor=pointer]
+    - generic [ref=e2176]:
+      - generic [ref=e2178]:
+        - img "Logo inmuebles24" [ref=e2179]
+        - generic [ref=e2180]:
+          - generic [ref=e2181]:
+            - generic [ref=e2182]: Más Inmuebles24
+            - list [ref=e2183]:
+              - listitem [ref=e2184]:
+                - link "Inmuebles en Mexico" [ref=e2185] [cursor=pointer]:
+                  - /url: /inmuebles.html
+              - listitem [ref=e2186]:
+                - link "Publicar tu Inmueble" [ref=e2187] [cursor=pointer]:
+                  - /url: /publica-tu-propiedad
+              - listitem [ref=e2188]:
+                - link "Ayuda" [ref=e2189] [cursor=pointer]:
+                  - /url: https://help.inmuebles24.com/s/
+              - listitem [ref=e2190]:
+                - link "Mapa del sitio" [ref=e2191] [cursor=pointer]:
+                  - /url: /sitemaps/
+              - listitem [ref=e2192]:
+                - link "Publicidad" [ref=e2193] [cursor=pointer]:
+                  - /url: http://www.naventmedia.com/
+              - listitem [ref=e2194]:
+                - link "Blog" [ref=e2195] [cursor=pointer]:
+                  - /url: /blog/
+              - listitem [ref=e2196]:
+                - link "Trabaja con nosotros" [ref=e2197] [cursor=pointer]:
+                  - /url: https://carreiras.quintoandar.com.br/?lang=es
+              - listitem [ref=e2198]:
+                - link "¿Cuánto vale?" [ref=e2199] [cursor=pointer]:
+                  - /url: /cuantovale/#!/
+              - listitem [ref=e2200]:
+                - link "Noticias para agentes inmobiliarios" [ref=e2201] [cursor=pointer]:
+                  - /url: https://www.inmuebles24.com/blog/b2b-7-tips-de-negociacion-para-llegar-al-cierre-de-ventas-de-inmuebles/
+              - listitem [ref=e2202]:
+                - link "Términos y Condiciones de Uso Inmuebles24 FULL" [ref=e2203] [cursor=pointer]:
+                  - /url: https://help.inmuebles24.com/s/article/T%C3%A9rminos-y-Condiciones-de-Uso-de-Inmuebles24-FULL
+              - listitem [ref=e2204]:
+                - link "Aviso de Privacidad Inmuebles24 FULL" [ref=e2205] [cursor=pointer]:
+                  - /url: https://help.inmuebles24.com/s/article/Aviso-de-Privacidad-de-Inmuebles24-FULL
+              - listitem [ref=e2206]:
+                - link "Lista de colonias" [ref=e2207] [cursor=pointer]:
+                  - /url: /colonias
+          - generic [ref=e2208]:
+            - generic [ref=e2209]: Anunciantes
+            - list [ref=e2210]:
+              - listitem [ref=e2211]:
+                - link "Inmobiliarias" [ref=e2212] [cursor=pointer]:
+                  - /url: /inmobiliarias.bum
+              - listitem [ref=e2213]:
+                - link "Corredores" [ref=e2214] [cursor=pointer]:
+                  - /url: /corredores.bum
+              - listitem [ref=e2215]:
+                - link "Constructoras" [ref=e2216] [cursor=pointer]:
+                  - /url: /constructoras.bum
+          - generic [ref=e2217]:
+            - generic [ref=e2218]: Países
+            - list [ref=e2219]:
+              - listitem [ref=e2220]:
+                - generic [ref=e2221]: "Argentina:"
+                - link "Zonaprop" [ref=e2222] [cursor=pointer]:
+                  - /url: https://www.zonaprop.com.ar
+              - listitem [ref=e2223]:
+                - generic [ref=e2224]: "Brasil:"
+                - link "Imovelweb ·" [ref=e2225] [cursor=pointer]:
+                  - /url: https://www.imovelweb.com.br
+                - link "Wimoveis ·" [ref=e2226] [cursor=pointer]:
+                  - /url: https://www.wimoveis.com.br
+                - link "CasaMineira ·" [ref=e2227] [cursor=pointer]:
+                  - /url: https://www.casamineira.com.br
+                - link "QuintoAndar" [ref=e2228] [cursor=pointer]:
+                  - /url: https://www.quintoandar.com.br
+              - listitem [ref=e2229]:
+                - generic [ref=e2230]: "México:"
+                - link "Vivanuncios" [ref=e2231] [cursor=pointer]:
+                  - /url: https://www.vivanuncios.com.mx
+              - listitem [ref=e2232]:
+                - generic [ref=e2233]: "Perú:"
+                - link "Urbania ·" [ref=e2234] [cursor=pointer]:
+                  - /url: https://urbania.pe
+                - link "Adondevivir" [ref=e2235] [cursor=pointer]:
+                  - /url: https://adondevivir.com
+              - listitem [ref=e2236]:
+                - generic [ref=e2237]: "Ecuador:"
+                - link "Plusvalía" [ref=e2238] [cursor=pointer]:
+                  - /url: https://www.plusvalia.com
+              - listitem [ref=e2239]:
+                - generic [ref=e2240]: "Panamá:"
+                - link "Compreoalquile" [ref=e2241] [cursor=pointer]:
+                  - /url: https://www.compreoalquile.com
+          - generic [ref=e2242]:
+            - generic [ref=e2243]:
+              - generic [ref=e2244]: Síguenos
+              - generic [ref=e2245]:
+                - link "Facebook" [ref=e2246] [cursor=pointer]:
+                  - /url: https://www.facebook.com/inmuebles24.com.mx
+                  - img [ref=e2247]
+                - link "Instagram" [ref=e2249] [cursor=pointer]:
+                  - /url: https://instagram.com/inmuebles24
+                  - img [ref=e2250]
+                - link "Youtube" [ref=e2252] [cursor=pointer]:
+                  - /url: https://youtube.com/user/InmueblesTVRELA
+                  - img [ref=e2253]
+                - link "Twitter" [ref=e2255] [cursor=pointer]:
+                  - /url: https://twitter.com/inmuebles24
+                  - img [ref=e2256]
+            - generic [ref=e2258]:
+              - generic [ref=e2259]: Apps
+              - generic [ref=e2260]:
+                - link "App Store" [ref=e2261] [cursor=pointer]:
+                  - /url: https://apps.apple.com/mx/app/inmuebles24/id643973960
+                  - img "App Store" [ref=e2262]
+                - link "Google Play" [ref=e2263] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.navent.realestate.inmuebles24
+                  - img "Google Play" [ref=e2264]
+      - generic [ref=e2266]:
+        - link "Grupo QuintoAndar" [ref=e2267] [cursor=pointer]:
+          - /url: https://grupoquintoandar.com/es/
+          - img "Grupo QuintoAndar" [ref=e2268]
+        - generic [ref=e2270]:
+          - paragraph [ref=e2271]: © Copyright 2026 inmuebles24.com
+          - link "Términos y condiciones de Uso-" [ref=e2272] [cursor=pointer]:
+            - /url: https://help.inmuebles24.com/s/article/terminos-y-condiciones-de-uso-i24
+          - link "Términos y Condiciones de Contratación-" [ref=e2273] [cursor=pointer]:
+            - /url: https://help.inmuebles24.com/s/article/T%C3%A9rminos-y-Condiciones-Generales-de-Contrataci%C3%B3n-del-Portal-I24
+          - link "Política de privacidad" [ref=e2274] [cursor=pointer]:
+            - /url: https://help.inmuebles24.com/s/article/Aviso-de-Privacidad

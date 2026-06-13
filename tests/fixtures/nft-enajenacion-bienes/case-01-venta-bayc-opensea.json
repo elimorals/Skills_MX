@@ -1,0 +1,47 @@
+{
+  "name": "nft-enajenacion-bienes - venta BAYC con royalty y comisión OpenSea",
+  "pattern_template": "venta_nft_marketplace",
+  "input": {
+    "operacion_compra": {
+      "fecha_hora": "2025-06-10T18:00:00Z",
+      "coleccion": "Bored Ape Yacht Club",
+      "token_id": "1234",
+      "precio_eth": "30",
+      "precio_mxn_dia": "1500000.00",
+      "gas_mxn": "5000.00",
+      "comision_marketplace_pct": 2.5,
+      "marketplace": "opensea"
+    },
+    "operacion_venta": {
+      "fecha_hora": "2026-04-22T15:30:00Z",
+      "coleccion": "Bored Ape Yacht Club",
+      "token_id": "1234",
+      "precio_eth": "45",
+      "precio_mxn_dia": "2475000.00",
+      "gas_mxn": "8000.00",
+      "comision_marketplace_pct": 2.5,
+      "royalty_pct": 5.0,
+      "marketplace": "opensea"
+    }
+  },
+  "expected_output": {
+    "costo_base_mxn": "1542500.00",
+    "ingreso_neto_mxn": "2281625.00",
+    "ganancia_gravable_mxn": "739125.00",
+    "tratamiento_fiscal": "Art. 119 LISR — enajenación bien mueble",
+    "dias_tenencia": 316,
+    "calculo_detalle": {
+      "costo_base": "compra 1500000 + gas 5000 + comisión 37500 = 1542500",
+      "ingreso_neto": "venta 2475000 - comisión 61875 - royalty 123750 - gas 8000 = 2281625",
+      "ganancia": "2281625 - 1542500 = 739125"
+    }
+  },
+  "validations": [
+    "Comisión marketplace deducida del ingreso",
+    "Royalty pagado al creador deducido del ingreso",
+    "Gas de compra suma a costo base",
+    "Gas de venta resta del ingreso neto",
+    "Régimen Art. 119 LISR aplicado"
+  ],
+  "notes": "Caso clásico de holder que vende NFT comprado meses antes con apreciación."
+}

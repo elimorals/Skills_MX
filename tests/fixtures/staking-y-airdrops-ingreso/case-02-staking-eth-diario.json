@@ -1,0 +1,27 @@
+{
+  "name": "staking-y-airdrops-ingreso - validador ETH con rewards diarios",
+  "pattern_template": "staking_continuo",
+  "input": {
+    "operaciones_periodo": "2026-01-01 a 2026-12-31",
+    "rewards_diarios_eth_promedio": "0.001",
+    "tc_dof_promedio_usd_mxn": "20.50",
+    "precio_eth_usd_promedio": "3200",
+    "dias_validador_activo": 365
+  },
+  "expected_output": {
+    "rewards_eth_anuales": "0.365",
+    "ingreso_acumulable_mxn": "23944.00",
+    "regimen_sugerido": "Cap IX — demás ingresos",
+    "criterio_causacion": "Devengado diario o consolidado semanal — documentar",
+    "papel_trabajo_requerido": [
+      "Hoja de cálculo con reward diario y TC DOF del día",
+      "Justificación del criterio (diario vs consolidado)"
+    ]
+  },
+  "validations": [
+    "Aproximación: 0.001 * 365 * 3200 * 20.50 ≈ $23,944 MXN",
+    "Reconocer Cap IX, no Cap VI",
+    "Exigir papel de trabajo"
+  ],
+  "notes": "Caso continuo: validador ETH 2.0 con rewards de epoch. Documentar criterio de causación."
+}

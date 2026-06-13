@@ -1,0 +1,364 @@
+- generic [active] [ref=e1]:
+  - region "Menú de Accesibilidad rápida":
+    - button "Saltar al contenido principal" [ref=e2] [cursor=pointer]:
+      - generic [ref=e3]:
+        - img [ref=e5]
+        - generic [ref=e9]: Saltar al contenido principal
+      - img [ref=e11]
+    - button "Habilitar la accesibilidad para personas con baja visión" [ref=e16] [cursor=pointer]:
+      - generic [ref=e17]:
+        - img [ref=e19]
+        - generic [ref=e26]: Habilitar la accesibilidad para personas con baja visión
+      - img [ref=e28]
+    - button "Abrir el Menú de Accesibilidad" [ref=e33] [cursor=pointer]:
+      - generic [ref=e34]:
+        - img [ref=e36]
+        - generic [ref=e38]: Abrir el Menú de Accesibilidad
+      - img [ref=e40]
+  - generic "Menú de Accesibilidad":
+    - button "Menú de Accesibilidad" [ref=e46] [cursor=pointer]
+  - generic [ref=e49]:
+    - link "Saltar al contenido" [ref=e50] [cursor=pointer]:
+      - /url: "#content"
+    - generic [ref=e51]:
+      - banner [ref=e52]:
+        - generic [ref=e57]:
+          - link [ref=e62] [cursor=pointer]:
+            - /url: https://www.reynosa.gob.mx/
+          - navigation [ref=e70]:
+            - list [ref=e73]:
+              - listitem [ref=e74]:
+                - link "Inicio" [ref=e75] [cursor=pointer]:
+                  - /url: https://www.reynosa.gob.mx/
+              - listitem [ref=e76]:
+                - link "Transparencia" [ref=e77] [cursor=pointer]:
+                  - /url: https://www.reynosa.gob.mx/transparencia-2021-2024/
+              - listitem [ref=e78]:
+                - link "Noticias" [ref=e79] [cursor=pointer]:
+                  - /url: https://www.reynosa.gob.mx/category/noticias/
+              - listitem [ref=e80]:
+                - link "Intranet" [ref=e81] [cursor=pointer]:
+                  - /url: https://intranet.reynosa.gob.mx/Login
+              - listitem [ref=e82]:
+                - link "Webmail" [ref=e83] [cursor=pointer]:
+                  - /url: http://outlook.com/reynosa.gob.mx
+      - generic [ref=e84]:
+        - generic [ref=e90]:
+          - generic [ref=e92]:
+            - paragraph [ref=e93]
+            - paragraph [ref=e94]
+          - generic [ref=e96]:
+            - paragraph [ref=e97]
+            - paragraph [ref=e98]
+        - img [ref=e103] [cursor=pointer]
+    - generic [ref=e107]:
+      - generic [ref=e109]:
+        - generic [ref=e123]:
+          - generic [ref=e124]:
+            - generic [ref=e154]:
+              - note [ref=e156]: 277-Aniv-Reynosa
+              - note [ref=e159]: BECAS-MUNICIPALES-2026
+              - button [ref=e161] [cursor=pointer]:
+                - note [ref=e162]: PMD2024-2027
+              - button [ref=e164] [cursor=pointer]:
+                - note [ref=e165]: Banner-Gaceta-Oficial-del-MR
+              - button [ref=e169] [cursor=pointer]:
+                - note [ref=e170]: Web - Banner Tramites Servicios
+              - button [ref=e172] [cursor=pointer]:
+                - note [ref=e173]: ubica-tu-CAMION-WEB
+            - button "previous arrow" [ref=e175] [cursor=pointer]:
+              - img "previous arrow" [ref=e176]
+            - button "next arrow" [ref=e177] [cursor=pointer]:
+              - img "next arrow" [ref=e178]
+          - group "Selecciona el slide para mostrar." [ref=e180]
+        - generic [ref=e201]:
+          - generic [ref=e204]:
+            - link "Refuerza Gobierno de Carlos Peña Ortiz trabajo de bacheo en colonias de Reynosa" [ref=e207] [cursor=pointer]:
+              - /url: https://www.reynosa.gob.mx/2026/06/12/refuerza-gobierno-de-carlos-pena-ortiz-trabajo-de-bacheo-en-colonias-de-reynosa/
+            - generic [ref=e212]:
+              - link "Noticias" [ref=e215] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/category/noticias/
+              - link "Refuerza Gobierno de Carlos Peña Ortiz trabajo de bacheo en colonias de Reynosa" [ref=e218] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/refuerza-gobierno-de-carlos-pena-ortiz-trabajo-de-bacheo-en-colonias-de-reynosa/
+                - heading "Refuerza Gobierno de Carlos Peña Ortiz trabajo de bacheo en colonias de Reynosa" [level=4] [ref=e219]
+              - generic [ref=e222]: Por instrucciones del Alcalde Carlos Peña Ortiz, la Secretaría de Servicios Públicos intensificó esta semana las labores de rehabilitación de vialidades en diferentes sectores de la ciudad. Las cuadrillas de la dependencia, […]
+            - generic [ref=e224]:
+              - link "Jun 12" [ref=e230] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/
+              - link "Saber Más" [ref=e237] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/refuerza-gobierno-de-carlos-pena-ortiz-trabajo-de-bacheo-en-colonias-de-reynosa/
+                - generic [ref=e238]: Saber Más
+                - img [ref=e240]
+          - generic [ref=e244]:
+            - link "Apoya el Gobierno de Reynosa la Copa de Fisicoconstructivismo" [ref=e247] [cursor=pointer]:
+              - /url: https://www.reynosa.gob.mx/2026/06/12/apoya-el-gobierno-de-reynosa-la-copa-de-fisicoconstructivismo/
+            - generic [ref=e252]:
+              - link "Noticias" [ref=e255] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/category/noticias/
+              - link "Apoya el Gobierno de Reynosa la Copa de Fisicoconstructivismo" [ref=e258] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/apoya-el-gobierno-de-reynosa-la-copa-de-fisicoconstructivismo/
+                - heading "Apoya el Gobierno de Reynosa la Copa de Fisicoconstructivismo" [level=4] [ref=e259]
+              - generic [ref=e262]: Con el objetivo de impulsar la cultura física en la ciudad, el Alcalde Carlos Peña Ortiz brinda su respaldo para la realización de la Copa Reynosa de Fisicoconstructivismo, que se llevará a […]
+            - generic [ref=e264]:
+              - link "Jun 12" [ref=e270] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/
+              - link "Saber Más" [ref=e277] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/apoya-el-gobierno-de-reynosa-la-copa-de-fisicoconstructivismo/
+                - generic [ref=e278]: Saber Más
+                - img [ref=e280]
+          - generic [ref=e284]:
+            - link "Realiza Gobierno de Carlos Peña Ortiz desde fabricación hasta colocación de rejillas pluviales" [ref=e287] [cursor=pointer]:
+              - /url: https://www.reynosa.gob.mx/2026/06/12/realiza-gobierno-de-carlos-pena-ortiz-desde-fabricacion-hasta-colocacion-de-rejillas-pluviales/
+            - generic [ref=e292]:
+              - generic [ref=e294]:
+                - link "Noticias" [ref=e295] [cursor=pointer]:
+                  - /url: https://www.reynosa.gob.mx/category/noticias/
+                - link "Obras" [ref=e296] [cursor=pointer]:
+                  - /url: https://www.reynosa.gob.mx/category/obras/
+                - link "Servicios Públicos" [ref=e297] [cursor=pointer]:
+                  - /url: https://www.reynosa.gob.mx/category/servicios-publicos/
+              - link "Realiza Gobierno de Carlos Peña Ortiz desde fabricación hasta colocación de rejillas pluviales" [ref=e300] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/realiza-gobierno-de-carlos-pena-ortiz-desde-fabricacion-hasta-colocacion-de-rejillas-pluviales/
+                - heading "Realiza Gobierno de Carlos Peña Ortiz desde fabricación hasta colocación de rejillas pluviales" [level=4] [ref=e301]
+              - generic [ref=e304]: El Gobierno que preside el Alcalde Carlos Peña Ortiz trabaja desde la fabricación de rejillas metálicas pluviales hasta su colocación, una actividad que redunda en la calidad de estos artefactos del drenaje […]
+            - generic [ref=e306]:
+              - link "Jun 12" [ref=e312] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/
+              - link "Saber Más" [ref=e319] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/realiza-gobierno-de-carlos-pena-ortiz-desde-fabricacion-hasta-colocacion-de-rejillas-pluviales/
+                - generic [ref=e320]: Saber Más
+                - img [ref=e322]
+          - generic [ref=e326]:
+            - link "Compartieron emociones del Mundial de Futbol familias reynosenses en la plaza Miguel Hidalgo" [ref=e329] [cursor=pointer]:
+              - /url: https://www.reynosa.gob.mx/2026/06/12/compartieron-emociones-del-mundial-de-futbol-familias-reynosenses-en-la-plaza-miguel-hidalgo/
+            - generic [ref=e334]:
+              - link "Noticias" [ref=e337] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/category/noticias/
+              - link "Compartieron emociones del Mundial de Futbol familias reynosenses en la plaza Miguel Hidalgo" [ref=e340] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/compartieron-emociones-del-mundial-de-futbol-familias-reynosenses-en-la-plaza-miguel-hidalgo/
+                - heading "Compartieron emociones del Mundial de Futbol familias reynosenses en la plaza Miguel Hidalgo" [level=4] [ref=e341]
+              - generic [ref=e344]: Con un lleno completo en la plaza principal Miguel Hidalgo, familias reynosenses disfrutaron la emoción del primer juego de la Selección Mexicana de Futbol ofrecido en pantalla gigante por el Gobierno del […]
+            - generic [ref=e346]:
+              - link "Jun 12" [ref=e352] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/
+              - link "Saber Más" [ref=e359] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/compartieron-emociones-del-mundial-de-futbol-familias-reynosenses-en-la-plaza-miguel-hidalgo/
+                - generic [ref=e360]: Saber Más
+                - img [ref=e362]
+          - generic [ref=e366]:
+            - link "Emite Gobierno de Reynosa pronóstico del clima para el fin de semana; pide PCyB extremar precauciones" [ref=e369] [cursor=pointer]:
+              - /url: https://www.reynosa.gob.mx/2026/06/12/emite-gobierno-de-reynosa-pronostico-del-clima-para-el-fin-de-semana-pide-pcyb-extremar-precauciones/
+            - generic [ref=e374]:
+              - link "Noticias" [ref=e377] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/category/noticias/
+              - link "Emite Gobierno de Reynosa pronóstico del clima para el fin de semana; pide PCyB extremar precauciones" [ref=e380] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/emite-gobierno-de-reynosa-pronostico-del-clima-para-el-fin-de-semana-pide-pcyb-extremar-precauciones/
+                - heading "Emite Gobierno de Reynosa pronóstico del clima para el fin de semana; pide PCyB extremar precauciones" [level=4] [ref=e381]
+              - generic [ref=e384]: Por indicaciones del Alcalde Carlos Peña Ortiz, la Coordinación de Protección Civil y Bomberos del Gobierno Municipal de Reynosa recomienda a la población tomar medidas preventivas ante el calor intenso y las […]
+            - generic [ref=e386]:
+              - link "Jun 12" [ref=e392] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/
+              - link "Saber Más" [ref=e399] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/12/emite-gobierno-de-reynosa-pronostico-del-clima-para-el-fin-de-semana-pide-pcyb-extremar-precauciones/
+                - generic [ref=e400]: Saber Más
+                - img [ref=e402]
+          - generic [ref=e406]:
+            - link "Celebrará Gobierno de Reynosa la EcoFest 2026, promoviendo el cuidado el medio ambiente" [ref=e409] [cursor=pointer]:
+              - /url: https://www.reynosa.gob.mx/2026/06/11/celebrara-gobierno-de-reynosa-la-ecofest-2026-promoviendo-el-cuidado-el-medio-ambiente/
+            - generic [ref=e414]:
+              - link "Noticias" [ref=e417] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/category/noticias/
+              - link "Celebrará Gobierno de Reynosa la EcoFest 2026, promoviendo el cuidado el medio ambiente" [ref=e420] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/11/celebrara-gobierno-de-reynosa-la-ecofest-2026-promoviendo-el-cuidado-el-medio-ambiente/
+                - heading "Celebrará Gobierno de Reynosa la EcoFest 2026, promoviendo el cuidado el medio ambiente" [level=4] [ref=e421]
+              - generic [ref=e424]: El Presidente Municipal Carlos Peña Ortiz te invita este viernes 12 de junio al EcoFest 2026, ven y forma parte de una experiencia llena de conciencia ambiental, aprendizaje, diversión y convivencia. Disfruta […]
+            - generic [ref=e426]:
+              - link "Jun 11" [ref=e432] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/11/
+              - link "Saber Más" [ref=e439] [cursor=pointer]:
+                - /url: https://www.reynosa.gob.mx/2026/06/11/celebrara-gobierno-de-reynosa-la-ecofest-2026-promoviendo-el-cuidado-el-medio-ambiente/
+                - generic [ref=e440]: Saber Más
+                - img [ref=e442]
+      - generic [ref=e464]:
+        - generic [ref=e466]:
+          - generic [ref=e469]:
+            - iframe [ref=e473]:
+              - generic [active] [ref=f126e1]:
+                - generic "Reproductor de video de YouTube" [ref=f126e3]
+                - generic [ref=f126e5]:
+                  - generic:
+                    - generic:
+                      - button "Reproducir video" [ref=f126e10] [cursor=pointer]
+                      - button "Ocultar controles del reproductor" [ref=f126e12] [cursor=pointer]
+                      - generic [ref=f126e14]:
+                        - generic [ref=f126e19]:
+                          - generic [ref=f126e20]:
+                            - link "𝗥𝗘𝗬𝗡𝗢𝗦𝗔 𝗔𝗩𝗔𝗡𝗭𝗔 💪🏼🙌🏼" [ref=f126e21] [cursor=pointer]:
+                              - /url: https://www.youtube.com/watch?v=fz8p_eDlInk
+                            - link "Gobierno de Reynosa" [ref=f126e22] [cursor=pointer]:
+                              - /url: /channel/UCcG505OV0v5iOupeg-k84LQ
+                              - generic [ref=f126e23]: Gobierno de Reynosa
+                          - generic [ref=f126e24]:
+                            - button [ref=f126e25] [cursor=pointer]
+                            - generic [ref=f126e27]:
+                              - generic: Gobierno de Reynosa
+                              - generic: 826 suscriptores
+                        - generic [ref=f126e28]:
+                          - button "Compartir" [ref=f126e31] [cursor=pointer]:
+                            - generic [ref=f126e35]:
+                              - img
+                          - link "Mirar en YouTube" [ref=f126e42] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=fz8p_eDlInk
+                            - generic [ref=f126e45]:
+                              - text: Mirar en
+                              - img [ref=f126e47]:
+                                - generic [ref=f126e49]:
+                                  - img
+            - heading "Resumen de Actividades" [level=5] [ref=e476]:
+              - strong [ref=e477]: Resumen de Actividades
+            - generic [ref=e479]:
+              - paragraph
+              - paragraph [ref=e480]: Hoy puedes evitar ser una cifra mañana.
+          - generic [ref=e483]:
+            - iframe [ref=e487]:
+              - generic [active] [ref=f127e1]:
+                - generic "Reproductor de video de YouTube" [ref=f127e3]
+                - generic [ref=f127e5]:
+                  - generic:
+                    - generic:
+                      - button "Reproducir video" [ref=f127e10] [cursor=pointer]
+                      - button "Ocultar controles del reproductor" [ref=f127e12] [cursor=pointer]
+                      - generic [ref=f127e14]:
+                        - generic [ref=f127e19]:
+                          - generic [ref=f127e20]:
+                            - link "UN SEGUNDO PUEDE CAMBIARLO TODO ⚠️🚨" [ref=f127e21] [cursor=pointer]:
+                              - /url: https://www.youtube.com/watch?v=4iWbqvnjAOo
+                            - link "Gobierno de Reynosa" [ref=f127e22] [cursor=pointer]:
+                              - /url: /channel/UCcG505OV0v5iOupeg-k84LQ
+                              - generic [ref=f127e23]: Gobierno de Reynosa
+                          - generic [ref=f127e24]:
+                            - button [ref=f127e25] [cursor=pointer]
+                            - generic [ref=f127e27]:
+                              - generic: Gobierno de Reynosa
+                              - generic: 826 suscriptores
+                        - generic [ref=f127e28]:
+                          - button "Compartir" [ref=f127e31] [cursor=pointer]:
+                            - generic [ref=f127e35]:
+                              - img
+                          - link "Mirar en YouTube" [ref=f127e42] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=4iWbqvnjAOo
+                            - generic [ref=f127e45]:
+                              - text: Mirar en
+                              - img [ref=f127e47]:
+                                - generic [ref=f127e49]:
+                                  - img
+            - heading "Maneja Con Precaución" [level=5] [ref=e490]:
+              - strong [ref=e491]: Maneja Con Precaución
+            - generic [ref=e493]:
+              - paragraph [ref=e494]: Una familia puede perderlo todo por una distracción.
+              - paragraph [ref=e495]: Un error puede costar una vida.
+              - paragraph [ref=e496]: "El Gobierno de Reynosa, encabezado por Carlos Peña Ortiz, hace un llamado urgente: maneja con conciencia, no con prisa."
+              - paragraph [ref=e497]: No apartes la vista del camino
+              - paragraph [ref=e498]: El celular puede esperar
+              - paragraph [ref=e499]: Si tomas, no conduzcas
+              - paragraph [ref=e500]: Respeta las señales y los límites
+              - paragraph [ref=e501]: No arriesgues tu historia… ni la de alguien más. Hoy puedes evitar ser una cifra mañana.
+              - paragraph
+        - link "Ver Más videos" [ref=e505] [cursor=pointer]:
+          - /url: https://www.reynosa.gob.mx/irayoutube/
+          - generic [ref=e506]: Ver Más videos
+      - generic [ref=e508]:
+        - img "Trámites y Servicios Más Buscados" [ref=e525]
+        - generic [ref=e530]:
+          - generic [ref=e533]:
+            - img [ref=e536]
+            - heading "Predial" [level=4] [ref=e540]:
+              - strong [ref=e541]: Predial
+            - generic [ref=e543]:
+              - paragraph [ref=e544]: Trámite en Línea
+              - paragraph [ref=e545]: Es obligación del ciudadano pagar anualmente su impuesto predial.
+              - paragraph [ref=e546]: Los cajeros del Gobierno Electrónico están ubicados Tránsito y Vialidad, en el Polideportivo Reynosa y en las oficinas de COMAPA de Plaza Sendero; en cada punto de pago deben practicarse las medidas sanitarias contra la COVID-19.
+            - link "IR AL TRÁMITE" [ref=e550] [cursor=pointer]:
+              - /url: https://www.reynosa.gob.mx/pagopredialenlinea/
+              - generic [ref=e551]: IR AL TRÁMITE
+          - generic [ref=e554]:
+            - img [ref=e557]
+            - heading "Bolsa de Empleo" [level=4] [ref=e561]
+            - generic [ref=e563]:
+              - paragraph [ref=e564]: Trámite en Línea
+              - paragraph [ref=e565]: Es una plataforma en donde puedes encontrar ofertas de trabajo, asimismo las empresas se registran para ofrecer empleo de sus vacantes disponibles.
+            - link "IR A LA PLATAFORMA" [ref=e569] [cursor=pointer]:
+              - /url: https://www.reynosa.gob.mx/bolsadeempleo
+              - generic [ref=e570]: IR A LA PLATAFORMA
+          - generic [ref=e573]:
+            - img [ref=e576]
+            - heading "Trámite para Facturación" [level=4] [ref=e580]
+            - generic [ref=e582]:
+              - paragraph [ref=e583]: Trámite Presencial
+              - paragraph [ref=e584]: "El ciudadano que así lo requiera, podrá solicitar su CFDI (Factura) de cualquiera de los trámites y servicios proporcionados por el Ayuntamiento, entre los que destacan: Predial y Catastro, Alcoholes, Espectáculos, Sanidad, Inspección, Multas de Tránsito, Pagos relacionados a Obra Pública y todos aquellos servicios que preste el Municipio."
+            - link "IR AL TRÁMITE" [ref=e588] [cursor=pointer]:
+              - /url: https://www.reynosa.gob.mx/facturacionenlinea/
+              - generic [ref=e589]: IR AL TRÁMITE
+        - generic [ref=e597]:
+          - generic [ref=e600]:
+            - img [ref=e603]
+            - heading "Trámite para darse de alta como Proveedor o Contratista" [level=4] [ref=e607]:
+              - strong [ref=e608]: Trámite para darse de alta como Proveedor o Contratista
+            - generic [ref=e610]:
+              - paragraph [ref=e611]: Trámite Presencial
+              - paragraph [ref=e612]: Registro en el padrón de contratistas de las personas físicas o morales que se encuentran interesadas en participar en la elaboración de contratos de obra pública de la Administración Municipal y que cumplan con los requisitos de alta.
+            - link "IR AL TRÁMITE" [ref=e616] [cursor=pointer]:
+              - /url: https://www.reynosa.gob.mx/tramite-para-darse-de-alta-como-contratista/
+              - generic [ref=e617]: IR AL TRÁMITE
+          - generic [ref=e620]:
+            - img [ref=e623]
+            - heading "Caja Universal" [level=4] [ref=e627]
+            - generic [ref=e629]:
+              - paragraph [ref=e630]: Trámite en Línea
+              - paragraph [ref=e631]: Tiene como objetivo dar canalización al ingreso efectuado por los trámites generados en línea y los realizados en ventanillas.
+            - link "IR AL TRÁMITE" [ref=e635] [cursor=pointer]:
+              - /url: https://www.reynosa.gob.mx/cajauniversal/
+              - generic [ref=e636]: IR AL TRÁMITE
+          - generic [ref=e639]:
+            - img [ref=e642]
+            - heading "Portal de Trámites Ciudadanos" [level=4] [ref=e648]
+            - generic [ref=e650]:
+              - paragraph [ref=e651]: Trámite en Línea
+              - paragraph [ref=e652]: Portal abierto a la ciudadanía con la finalidad de brindar atención en los trámites en línea y agendar citas para atención presencial en oficinas municipales, una vez que lleven acabo su registro.
+            - link "IR AL TRÁMITE" [ref=e656] [cursor=pointer]:
+              - /url: https://www.reynosa.gob.mx/tramitesciudadanos/
+              - generic [ref=e657]: IR AL TRÁMITE
+      - generic [ref=e683]:
+        - img "Contáctanos" [ref=e687]
+        - heading "Queremos escucharte" [level=6] [ref=e690]
+        - list [ref=e692]:
+          - listitem [ref=e693]:
+            - link "899 932 3200" [ref=e695] [cursor=pointer]:
+              - /url: tel:899 9323200
+              - generic [ref=e696]:
+                - img [ref=e699]
+                - generic [ref=e701]: 899 932 3200
+          - listitem [ref=e703]:
+            - generic [ref=e705]:
+              - img [ref=e708]
+              - generic [ref=e710]: Morelos No. 645 entre Hidalgo y Juárez Cd. Reynosa, Tamaulipas México C.P. 88500
+          - listitem [ref=e712]:
+            - link "Consultar Mapa de Sitio" [ref=e713] [cursor=pointer]:
+              - /url: https://www.reynosa.gob.mx/mapa-de-sitio/
+              - generic [ref=e714]:
+                - img [ref=e717]
+                - generic [ref=e719]: Consultar Mapa de Sitio
+    - generic [ref=e725]:
+      - generic [ref=e730]: © 2026 Administración Municipal Reynosa 2024-2027. Sitio desarrollado por la Dirección de Innovación Tecnológica
+      - link "Aviso de Privacidad" [ref=e737] [cursor=pointer]:
+        - /url: https://www.reynosa.gob.mx/aviso-de-privacidad/
+      - generic [ref=e742]:
+        - link [ref=e744] [cursor=pointer]:
+          - /url: https://www.reynosa.gob.mx/redes-sociales/facebook/
+          - img [ref=e747]
+        - link [ref=e750] [cursor=pointer]:
+          - /url: https://www.reynosa.gob.mx/redes-sociales/twitter/
+          - img [ref=e753]
+        - link [ref=e756] [cursor=pointer]:
+          - /url: https://www.reynosa.gob.mx/redes-sociales/youtube/
+          - img [ref=e759]

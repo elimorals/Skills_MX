@@ -1,0 +1,299 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - generic [ref=e6]:
+            - generic [ref=e8]: 
+            - text: (686) 558.1600
+          - generic [ref=e9]:
+            - generic [ref=e11]: 
+            - text: Av. Independencia 998, Centro Cívico C.P. 21000
+        - generic [ref=e12]:
+          - link "" [ref=e14] [cursor=pointer]:
+            - /url: https://youtube.com/@gobierno_de_mexicali
+            - generic [ref=e16]: 
+          - link "" [ref=e18] [cursor=pointer]:
+            - /url: https://facebook.com/gobiernodemexicali
+            - generic [ref=e20]: 
+          - link "" [ref=e22] [cursor=pointer]:
+            - /url: https://instagram.com/gobiernodemxl
+            - generic [ref=e24]: 
+          - link "X" [ref=e26] [cursor=pointer]:
+            - /url: https://x.com/GobiernoMxl
+            - generic [ref=e28]: X
+    - navigation [ref=e29]:
+      - generic [ref=e30]:
+        - link "25 Ayuntamiento de Mexicali" [ref=e31] [cursor=pointer]:
+          - /url: /portalmexicali
+          - img "25 Ayuntamiento de Mexicali" [ref=e32]
+        - list [ref=e34]:
+          - listitem [ref=e35]:
+            - button "Gobierno" [ref=e36] [cursor=pointer]
+          - listitem [ref=e37]:
+            - link "Ciudad" [ref=e38] [cursor=pointer]:
+              - /url: /portalmexicali/ciudad
+          - listitem [ref=e39]:
+            - link "Trámites y Servicios" [ref=e40] [cursor=pointer]:
+              - /url: https://www.mexicali.gob.mx/webpub/tramites/Tramite/todos
+          - listitem [ref=e41]:
+            - link "Ventanilla" [ref=e42] [cursor=pointer]:
+              - /url: https://www.mexicali.gob.mx/webpub/registro/?fs=6&return=%2Ftramite%2Ftodos
+          - listitem [ref=e43]:
+            - link "Transparencia" [ref=e44] [cursor=pointer]:
+              - /url: https://www.mexicali.gob.mx/transparencia/
+  - main [ref=e45]:
+    - generic [ref=e46]:
+      - link "20260601-ZeNo.jpg" [ref=e49] [cursor=pointer]:
+        - /url: https://drive.google.com/file/d/1pzno6LLLjJbmvSvLaJd6fI6KMZYlowMS/view?usp=drivesdk
+        - img "20260601-ZeNo.jpg" [ref=e50]
+      - button "Anterior" [ref=e51] [cursor=pointer]:
+        - generic [ref=e53]: Anterior
+      - button "Siguiente" [ref=e54] [cursor=pointer]:
+        - generic [ref=e56]: Siguiente
+    - generic [ref=e58]:
+      - link " Paga tu Predial Aquí puedes consultar y pagar el adeudo del Impuesto Predial" [ref=e61] [cursor=pointer]:
+        - /url: https://www.mexicali.gob.mx/portalmexicali/predial
+        - generic [ref=e62]:
+          - generic [ref=e63]: 
+          - paragraph [ref=e64]: Paga tu Predial
+          - paragraph [ref=e65]: Aquí puedes consultar y pagar el adeudo del Impuesto Predial
+      - link " BIENESTAR ANIMAL Rescate de mascotas y control animal" [ref=e68] [cursor=pointer]:
+        - /url: https://www.facebook.com/CentroMunicipaldeControlAnimal/
+        - generic [ref=e69]:
+          - generic [ref=e70]: 
+          - paragraph [ref=e71]: BIENESTAR ANIMAL
+          - paragraph [ref=e72]: Rescate de mascotas y control animal
+      - link " CALIDAD DEL AIRE Conoce el índice calidad del aire, aquí" [ref=e75] [cursor=pointer]:
+        - /url: https://www.mexicali.gob.mx/portalmexicali/calidad-aire
+        - generic [ref=e76]:
+          - generic [ref=e77]: 
+          - paragraph [ref=e78]: CALIDAD DEL AIRE
+          - paragraph [ref=e79]: Conoce el índice calidad del aire, aquí
+    - generic [ref=e80]:
+      - heading "MEXICALI, LA CIUDAD QUE CAPTURÓ EL SOL" [level=2] [ref=e82]
+      - generic [ref=e83]:
+        - generic [ref=e84]:
+          - paragraph [ref=e85]:
+            - text: Mexicali, capital de Baja California. La "ciudad que capturó al Sol", localizada a orillas del Río Colorado y cerca de la Laguna Salada. Mexicali es tradicional y moderna a la vez, con la mejor y mayor oferta de comida china del país, además de ser reconocida por sus excelentes cortes de carne y cerveza artesanal. Es una ciudad con grandes oportunidades para el desarrollo de turismo de negocios, turismo médico y actividades industriales.
+            - text: Como una de las principales zonas industriales de Baja California, Mexicali se destaca por su dinamismo económico y por ser un punto estratégico para la industria manufacturera, aeroespacial y tecnológica. Además, es sede de la Agrobaja, la exposición agropecuaria y de pesca fronteriza más importante del país, consolidándose como un referente en el sector agrícola y comercial.
+          - generic [ref=e86]:
+            - generic [ref=e87]:
+              - img "Fundación"
+              - heading "1903" [level=3] [ref=e88]
+              - text: Año de fundación
+            - generic [ref=e89]:
+              - img "Habitantes"
+              - heading "1.083" [level=3] [ref=e90]
+              - text: Millones de habitantes
+            - generic [ref=e91]:
+              - img "Superficie"
+              - heading "9,955 km2" [level=3] [ref=e92]:
+                - text: 9,955 km
+                - superscript [ref=e93]: "2"
+              - text: de supercifie total
+        - iframe [ref=e96]:
+          - generic [active] [ref=f74e1]:
+            - generic "Reproductor de video de YouTube" [ref=f74e3]
+            - generic [ref=f74e5]:
+              - generic:
+                - generic:
+                  - button "Reproducir video" [ref=f74e10] [cursor=pointer]
+                  - button "Ocultar controles del reproductor" [ref=f74e12] [cursor=pointer]
+                  - generic [ref=f74e14]:
+                    - generic [ref=f74e19]:
+                      - generic [ref=f74e20]:
+                        - link "Mexicali, la ciudad que capturó el Sol." [ref=f74e21] [cursor=pointer]:
+                          - /url: https://www.youtube.com/watch?v=BU8Yrzb821A
+                        - link "Gobierno de Mexicali" [ref=f74e22] [cursor=pointer]:
+                          - /url: /channel/UCKeGGLTTL3bU5y4MMXe9mew
+                          - generic [ref=f74e23]: Gobierno de Mexicali
+                      - generic [ref=f74e24]:
+                        - button [ref=f74e25] [cursor=pointer]
+                        - generic [ref=f74e27]:
+                          - generic: Gobierno de Mexicali
+                          - generic: 190 suscriptores
+                    - generic [ref=f74e28]:
+                      - button "Compartir" [ref=f74e31] [cursor=pointer]:
+                        - generic [ref=f74e35]:
+                          - img
+                      - link "Mirar en YouTube" [ref=f74e42] [cursor=pointer]:
+                        - /url: https://www.youtube.com/watch?v=BU8Yrzb821A
+                        - generic [ref=f74e45]:
+                          - text: Mirar en
+                          - img [ref=f74e47]:
+                            - generic [ref=f74e49]:
+                              - img
+    - generic [ref=e98]:
+      - generic [ref=e101]: TRÁMITES Y SERVICIOS
+      - generic [ref=e103]:
+        - link " Infracciones de tránsito" [ref=e106] [cursor=pointer]:
+          - /url: /portalmexicali/infracciones-transito
+          - generic [ref=e107]:
+            - generic [ref=e109]: 
+            - generic [ref=e110]: Infracciones de tránsito
+        - link " Facturación electrónica" [ref=e113] [cursor=pointer]:
+          - /url: /portalmexicali/facturacion
+          - generic [ref=e114]:
+            - generic [ref=e116]: 
+            - generic [ref=e117]: Facturación electrónica
+        - link " Recibos de pago" [ref=e120] [cursor=pointer]:
+          - /url: /portalmexicali/recibo-pago
+          - generic [ref=e121]:
+            - generic [ref=e123]: 
+            - generic [ref=e124]: Recibos de pago
+        - link " Atención ciudadana" [ref=e127] [cursor=pointer]:
+          - /url: /portalmexicali/atencion-ciudadana
+          - generic [ref=e128]:
+            - generic [ref=e130]: 
+            - generic [ref=e131]: Atención ciudadana
+        - link " Arrastre vehicular" [ref=e134] [cursor=pointer]:
+          - /url: /portalmexicali/arrastre-vehicular
+          - generic [ref=e135]:
+            - generic [ref=e137]: 
+            - generic [ref=e138]: Arrastre vehicular
+        - link " Panteones municipales" [ref=e141] [cursor=pointer]:
+          - /url: /portalmexicali/panteones-municipales
+          - generic [ref=e142]:
+            - generic [ref=e144]: 
+            - generic [ref=e145]: Panteones municipales
+      - link "VER TODOS" [ref=e151] [cursor=pointer]:
+        - /url: https://www.mexicali.gob.mx/webpub/tramites/Tramite/todos
+    - generic [ref=e154]:
+      - generic [ref=e157]: COMUNICADOS
+      - generic [ref=e159]:
+        - generic [ref=e161]:
+          - img "2026-03-10-141840.jpeg"
+          - generic [ref=e162]:
+            - generic [ref=e163]: NORMA BUSTAMANTE SE SUMA A LA ESTRATEGIA NACIONAL "TERRITORIOS DE PAZ" DE LA PRESIDENTA CLAUDIA SHEINBAUM
+            - generic [ref=e164]: "- La alcaldesa de Mexicali participó en el encuentro que se reunieron un total de 61 alcaldesas y alcaldes de todo el pa..."
+            - link "VER MÁS" [ref=e166] [cursor=pointer]:
+              - /url: /portalmexicali/comunicado/ver/7037
+        - generic [ref=e168]:
+          - img "2026-03-10-141921.jpeg"
+          - generic [ref=e169]:
+            - generic [ref=e170]: NORMA BUSTAMANTE RECONOCE A ORGANIZACIONES Y ASOCIACIONES DEDICADAS AL BIENESTAR DE LA MUJER
+            - generic [ref=e171]: Mexicali, B.C. A 09 de marzo 2026.- En el marco de la conmemoración del Día Internacional de la Mujer, la presidenta mun...
+            - link "VER MÁS" [ref=e173] [cursor=pointer]:
+              - /url: /portalmexicali/comunicado/ver/7038
+        - generic [ref=e175]:
+          - img "2026-03-10-142005.jpeg"
+          - generic [ref=e176]:
+            - generic [ref=e177]: MEXICALI LIGA MÁS DE 33 MESES ABATIENDO DESEMPLEO
+            - generic [ref=e178]: "* Según las cifras oficiales la Capital de la transformación tiene su tasa de desocupación más baja en la historia. M..."
+            - link "VER MÁS" [ref=e180] [cursor=pointer]:
+              - /url: /portalmexicali/comunicado/ver/7039
+      - link "VER TODAS" [ref=e184] [cursor=pointer]:
+        - /url: /portalmexicali/comunicados
+    - generic [ref=e188]:
+      - generic [ref=e189]:
+        - link "Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales":
+          - /url: http://inicio.inai.org.mx/SitePages/ifai.aspx
+          - img "Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales"
+      - generic [ref=e190]:
+        - link "Instituto de Transparencia, Acceso a la Información Pública y Protección de Datos Personales del Estado de Baja California":
+          - /url: https://www.itaipbc.org.mx/itaipBC
+          - img "Instituto de Transparencia, Acceso a la Información Pública y Protección de Datos Personales del Estado de Baja California"
+      - generic [ref=e191]:
+        - link "Unidad Coordinadora de Transparencia":
+          - /url: http://www.mexicali.gob.mx/transparencia/
+          - img "Unidad Coordinadora de Transparencia"
+      - generic [ref=e192]:
+        - link "Plataforma Nacional de Transparencia":
+          - /url: http://consultapublicamx.inai.org.mx/vut-web/?idEntidadParametro=02&idSujetoObigadoParametro=587
+          - img "Plataforma Nacional de Transparencia"
+      - generic [ref=e193]:
+        - link "Datos Abiertos de México":
+          - /url: https://datos.gob.mx/busca/organization/estado-de-baja-california
+          - img "Datos Abiertos de México"
+      - generic [ref=e194]:
+        - link "Instituto Nacional Electoral, México":
+          - /url: http://www.ine.mx/servicios-ine
+          - img "Instituto Nacional Electoral, México"
+    - generic [ref=e197]:
+      - generic [ref=e198]:
+        - heading "072" [level=1] [ref=e199]
+        - generic [ref=e200]:
+          - text: ATENCIÓN
+          - text: CIUDADANA
+      - generic [ref=e201]:
+        - heading "070" [level=1] [ref=e202]
+        - generic [ref=e203]:
+          - text: INFORMATEL
+          - text: Y LOCATEL
+      - generic [ref=e204]:
+        - heading "911" [level=1] [ref=e205]
+        - generic [ref=e206]: EMERGENCIAS
+        - generic [ref=e207]: SEGURIDAD
+        - generic [ref=e208]: MÉDICAS
+        - generic [ref=e209]: PROTECCIÓN CIVIL
+  - generic [ref=e210]:
+    - img "Uniendo esfuerzos"
+  - contentinfo [ref=e211]:
+    - generic [ref=e213]:
+      - generic [ref=e214]:
+        - heading "CONTACTO" [level=5] [ref=e215]
+        - generic [ref=e216]: Av. Independencia 998, Centro Cívico C.P. 21000, Mexicali, Baja California.
+        - generic [ref=e217]: contacto@mexicali.gob.mx
+        - generic [ref=e218]: (686) 558.1600
+        - generic [ref=e219]: Lunes a Viernes 8:00 - 3:00 p.m.
+        - generic [ref=e220]: Sábados 10:00 - 3:00 p.m.
+      - generic [ref=e221]:
+        - heading "TELÉFONOS DE EMERGENCIA" [level=5] [ref=e222]
+        - generic [ref=e223]: ▪ Policía Municipal 911
+        - generic [ref=e224]: ▪ Bomberos 911
+        - generic [ref=e225]: ▪ Cruz Roja 911
+        - generic [ref=e226]: ▪ Agua Reporte de Fugas 073
+        - generic [ref=e227]: ▪ Atención Ciudadana 072
+        - generic [ref=e228]: ▪ Robo de Vehículos 911
+      - generic [ref=e229]:
+        - heading "LIGAS RÁPIDAS" [level=5] [ref=e230]
+        - generic [ref=e231]:
+          - text: ▪
+          - link "Ayuntamiento de Mexicali" [ref=e232] [cursor=pointer]:
+            - /url: /portalmexicali
+        - generic [ref=e233]:
+          - text: ▪
+          - link "Nosotros" [ref=e234] [cursor=pointer]:
+            - /url: /portalmexicali/nosotros
+        - generic [ref=e235]:
+          - text: ▪
+          - link "Ciudad" [ref=e236] [cursor=pointer]:
+            - /url: /portalmexicali/ciudad
+        - generic [ref=e237]:
+          - text: ▪
+          - link "Trámites y Servicios" [ref=e238] [cursor=pointer]:
+            - /url: https://www.mexicali.gob.mx/webpub/tramites/Tramite/todos
+        - generic [ref=e239]:
+          - text: ▪
+          - link "Ventanilla" [ref=e240] [cursor=pointer]:
+            - /url: https://www.mexicali.gob.mx/webpub/registro/?fs=6&return=%2Ftramite%2Ftodos
+        - generic [ref=e241]:
+          - text: ▪
+          - link "Transparencia" [ref=e242] [cursor=pointer]:
+            - /url: https://www.mexicali.gob.mx/transparencia/
+        - generic [ref=e243]:
+          - text: ▪
+          - link "Cuenta Pública" [ref=e244] [cursor=pointer]:
+            - /url: https://www.mexicali.gob.mx/portalmexicali/informacion-financiera/cuenta_publica
+        - generic [ref=e245]:
+          - text: ▪
+          - link "Aviso de privacidad" [ref=e246] [cursor=pointer]:
+            - /url: /portalmexicali/aviso-privacidad
+      - generic [ref=e247]:
+        - heading "REDES SOCIALES" [level=5] [ref=e248]
+        - generic [ref=e249]:
+          - link "" [ref=e250] [cursor=pointer]:
+            - /url: https://youtube.com/@gobierno_de_mexicali
+            - generic [ref=e251]: 
+          - link "" [ref=e252] [cursor=pointer]:
+            - /url: https://facebook.com/gobiernodemexicali
+            - generic [ref=e253]: 
+          - link "" [ref=e254] [cursor=pointer]:
+            - /url: https://instagram.com/gobiernodemxl
+            - generic [ref=e255]: 
+          - link "X" [ref=e256] [cursor=pointer]:
+            - /url: https://x.com/GobiernoMxl
+            - generic [ref=e257]: X
+        - generic [ref=e258]: © 2026 - 25 Ayuntamiento de Mexicali
+        - generic [ref=e259]: v1.0.1

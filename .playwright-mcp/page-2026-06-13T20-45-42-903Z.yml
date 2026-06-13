@@ -1,0 +1,270 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Presidencia Municipal Celaya" [ref=e9] [cursor=pointer]:
+          - /url: https://www.celaya.gob.mx/
+          - img "Presidencia Municipal Celaya" [ref=e10]
+        - generic [ref=e13]:
+          - generic [ref=e15]:
+            - link "" [ref=e17] [cursor=pointer]:
+              - /url: "#"
+            - link "Comunicados" [ref=e19] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/comunicados
+              - generic [ref=e20]: Comunicados
+          - navigation [ref=e21]:
+            - list [ref=e22]:
+              - listitem [ref=e23]:
+                - text: 
+                - link "Depedencias" [ref=e24] [cursor=pointer]:
+                  - /url: "#"
+                - list:
+                  - listitem:
+                    - link "Ayuntamiento Municipal":
+                      - /url: https://www.celaya.gob.mx/ayuntamiento-municipal/
+                  - listitem:
+                    - link "Descentralizadas":
+                      - /url: https://www.celaya.gob.mx/ayuntamiento-municipal/dependencias/descentralizadas/
+                  - listitem:
+                    - link "Centralizadas":
+                      - /url: https://www.celaya.gob.mx/ayuntamiento-municipal/dependencias/centralizadas/
+              - listitem [ref=e25]:
+                - text: 
+                - link "Unidad de Transparencia" [ref=e26] [cursor=pointer]:
+                  - /url: https://www.celaya.gob.mx/unidad-transparencia/
+                - list:
+                  - listitem:
+                    - link "Obligaciones":
+                      - /url: https://www.celaya.gob.mx/unidad-transparencia/obligaciones/
+                  - listitem:
+                    - link "Gacetas":
+                      - /url: https://www.celaya.gob.mx/unidad-transparencia/gaceta-municipal/
+                  - listitem:
+                    - link "Marco Normativo":
+                      - /url: https://www.celaya.gob.mx/unidad-transparencia/obligaciones/fraccion-1-marco-normativo/
+                  - listitem:
+                    - link "Cuenta Publica":
+                      - /url: https://www.celaya.gob.mx/cuenta-publica/
+                  - listitem:
+                    - link "Aportaciones Federales":
+                      - /url: https://www.celaya.gob.mx/consultas/aportaciones-federales/
+                  - listitem:
+                    - link "Cuenta Pública 2017-2022":
+                      - /url: https://cuentapublica.celaya.gob.mx/
+                  - listitem:
+                    - link "Aportaciones Federales 2017-2022":
+                      - /url: https://cuentapublica.celaya.gob.mx/aportaciones-federales/
+              - listitem [ref=e27]:
+                - text: 
+                - link "Atención" [ref=e28] [cursor=pointer]:
+                  - /url: "#"
+                - list:
+                  - listitem:
+                    - link "Generar nuevo reporte":
+                      - /url: http://td.celaya.biz:98/ReporteCiudadano.aspx
+                  - listitem:
+                    - link "Consultar reporte en proceso":
+                      - /url: http://td.celaya.biz:9073/denunciaCiudadana.aspx
+                  - listitem:
+                    - link "Quejas/Denuncias Ciudades":
+                      - /url: http://td.celaya.biz:9073/denunciaCiudadana.aspx
+                  - listitem:
+                    - link "Protesta Ciudadana":
+                      - /url: http://td.celaya.biz:8074
+              - listitem [ref=e29]:
+                - text: 
+                - link "Pagos en línea" [ref=e30] [cursor=pointer]:
+                  - /url: "#pagos-online"
+                - list:
+                  - listitem:
+                    - link "Pagos de predial":
+                      - /url: https://www.celaya.gob.mx/pago-de-predial/
+                  - listitem:
+                    - link "Constancia Sria. Ayuntamiento":
+                      - /url: https://multipagos.celaya.gob.mx/
+                  - listitem:
+                    - link "Plaza ambulante":
+                      - /url: https://multipagos.celaya.gob.mx/
+                  - listitem:
+                    - link "Imprime tu comprobante de pago":
+                      - /url: https://multipagos.celaya.gob.mx/
+                  - listitem:
+                    - link "JUMAPA":
+                      - /url: https://www.jumapacelaya.gob.mx/
+              - listitem [ref=e31]:
+                - text: 
+                - link "Trámites" [ref=e32] [cursor=pointer]:
+                  - /url: "#tramites-servicios"
+                - list:
+                  - listitem:
+                    - link "Pagos de predial":
+                      - /url: https://www.celaya.gob.mx/pago-de-predial/
+                  - listitem:
+                    - link "Servicios":
+                      - /url: https://www.celaya.gob.mx/consultas/servicios-de-dependencias/
+                  - listitem:
+                    - link "Sistema de Apertura Rápida de Empresas":
+                      - /url: https://www.celaya.gob.mx/mejora-regulatoria/herramientas/sistema-apertura-rapida-empresas/
+                  - listitem:
+                    - link "Licitaciones":
+                      - /url: https://www.celaya.gob.mx/consulta/licitaciones/
+                  - listitem:
+                    - link "Convocatorias":
+                      - /url: https://celaya.gob.mx/consulta/convocatorias/
+                  - listitem:
+                    - link "Padrón de inspectores":
+                      - /url: https://www.celaya.gob.mx/consultas/padrones-de-inspeccion/
+                  - listitem:
+                    - link "Tramites":
+                      - /url: https://www.celaya.gob.mx/consultas/tramites-de-dependencias/
+                  - listitem:
+                    - link "Declaración patrimonial":
+                      - /url: https://declaranetmunicipios.strc.guanajuato.gob.mx/#/login
+                  - listitem:
+                    - link "Facturación Electrónica":
+                      - /url: http://td.celaya.biz:8065/FElectronica/
+                  - listitem:
+                    - text: 
+                    - link "Empleo":
+                      - /url: "#empleo"
+                    - list:
+                      - listitem:
+                        - link "Registra Curriculum":
+                          - /url: http://td.celaya.biz:8039/Buscadores/NuevoBuscador.aspx
+                      - listitem:
+                        - link "Registro de Vacantes":
+                          - /url: http://pageoficial.balboa.io/registrar-vacantes/
+                  - listitem:
+                    - link "Plataforma de Prestadores de Servicios":
+                      - /url: https://www.celaya.gob.mx/plataforma-de-prestadores-de-servicios-de-seguridad-privada/
+                  - listitem:
+                    - link "Servicio Civil de Carrera":
+                      - /url: https://td.celaya.biz:8243/
+                  - listitem:
+                    - link "Practicas Profesionales":
+                      - /url: https://td.celaya.biz:8253/
+              - listitem [ref=e33]:
+                - text: 
+                - link "Seguridad" [ref=e34] [cursor=pointer]:
+                  - /url: "#Seguridad"
+                - list:
+                  - listitem:
+                    - link "Policía Municipal":
+                      - /url: https://www.celaya.gob.mx/ssc/policia-municipal/
+                  - listitem:
+                    - link "Tránsito y Policía Vial":
+                      - /url: https://www.celaya.gob.mx/ssc/transito-y-policia-vial/
+                  - listitem:
+                    - link "Protección Civil y Bomberos":
+                      - /url: https://www.celaya.gob.mx/ssc/proteccion-civil-y-bomberos/
+                  - listitem:
+                    - link "INFOPOL":
+                      - /url: https://www.celaya.gob.mx/ssc/infopol/
+                  - listitem:
+                    - link "C-4":
+                      - /url: https://www.celaya.gob.mx/ssc/c-4/
+                  - listitem:
+                    - link "Fiscalización":
+                      - /url: https://www.celaya.gob.mx/ssc/fiscalizacion/
+                  - listitem:
+                    - link "Atlas de riesgo":
+                      - /url: https://atlasderiesgos.celaya.gob.mx/sistema-ciudadano/
+    - generic [ref=e43]:
+      - generic [ref=e46]:
+        - link "Home" [ref=e48] [cursor=pointer]:
+          - /url: https://www.celaya.gob.mx/
+        - generic [ref=e49]: Category
+      - heading "Predial" [level=1] [ref=e50]:
+        - generic [ref=e52]: Predial
+    - generic [ref=e53]:
+      - generic [ref=e59]:
+        - generic [ref=e61]:
+          - generic [ref=e63]:
+            - generic [ref=e64]:
+              - heading "Presidencia Municipal Localización" [level=5] [ref=e65]:
+                - generic [ref=e66]: Presidencia Municipal
+                - generic [ref=e68]: Localización
+              - generic [ref=e69]: "Portal Independencia #101 Zona Centro. CP. 38000 Celaya, Gto. MÉXICO"
+            - link " (461) 618 7100" [ref=e70] [cursor=pointer]:
+              - /url: tel:+514616187100
+              - text: 
+              - generic [ref=e71]: (461) 618 7100
+            - link " atencion.ciudadana@celaya.gob.mx" [ref=e72] [cursor=pointer]:
+              - /url: mailto:atencion.ciudadana@celaya.gob.mx
+              - text: 
+              - generic [ref=e73]: atencion.ciudadana@celaya.gob.mx
+            - link " celaya.gob.mx" [ref=e74] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/
+              - text: 
+              - generic [ref=e75]: celaya.gob.mx
+          - generic [ref=e77]:
+            - heading "Gobierno Muncipal 2024 - 2027" [level=5] [ref=e79]:
+              - generic [ref=e80]: Gobierno Muncipal
+              - generic [ref=e82]: 2024 - 2027
+            - img "https://www.celaya.gob.mx/wp-content/uploads/2022/02/logocelayahrz-05.jpg" [ref=e85]
+          - generic [ref=e87]:
+            - heading "Ayuda Ciudadana Trámites y Servicios" [level=5] [ref=e89]:
+              - generic [ref=e90]: Ayuda Ciudadana
+              - link "Trámites y Servicios" [ref=e93] [cursor=pointer]:
+                - /url: https://www.celaya.gob.mx/onsultas/servicios-de-dependencias/
+            - heading "Padron Inspectores" [level=5] [ref=e95]:
+              - generic [ref=e96]: Padron
+              - link "Inspectores" [ref=e99] [cursor=pointer]:
+                - /url: https://www.celaya.gob.mx/onsultas/padrones-de-inspeccion/
+          - generic [ref=e101]:
+            - heading "Síguenos En nuestras redes sociales" [level=5] [ref=e103]:
+              - generic [ref=e104]: Síguenos
+              - generic [ref=e106]: En nuestras redes sociales
+            - link "" [ref=e107] [cursor=pointer]:
+              - /url: https://www.facebook.com/municipiocelaya
+            - link "" [ref=e108] [cursor=pointer]:
+              - /url: https://x.com/municipiocelaya/
+            - link "" [ref=e109] [cursor=pointer]:
+              - /url: https://www.instagram.com/municipiocelaya/
+            - link "" [ref=e110] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCy0EZLCcf_xfZtz3SKwp9cQ
+            - link "Aviso de privacidad " [ref=e112] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/aviso-de-privacidad/
+              - generic [ref=e113]: Aviso de privacidad
+              - generic [ref=e114]: 
+        - generic:     
+        - list [ref=e119]:
+          - listitem [ref=e120]:
+            - link "INICIO" [ref=e121] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/
+          - listitem [ref=e122]:
+            - link "DEPENDENCIAS" [ref=e123] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/ayuntamiento-municipal/dependencias/
+          - listitem [ref=e124]:
+            - link "TRAMITES" [ref=e125] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/consultas/tramites-de-dependencias/
+          - listitem [ref=e126]:
+            - link "SERVICIOS" [ref=e127] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/consultas/servicios-de-dependencias/
+          - listitem [ref=e128]:
+            - link "MARCO NORMATIVO" [ref=e129] [cursor=pointer]:
+              - /url: https://transparencia.celaya.gob.mx/marco-normativo-fraccion-1/
+          - listitem [ref=e130]:
+            - link "SEGURIDAD CIUDADANA" [ref=e131] [cursor=pointer]:
+              - /url: https://ssc.celaya.gob.mx
+          - listitem [ref=e132]:
+            - link "ATENCIÓN CIUDADANA" [ref=e133] [cursor=pointer]:
+              - /url: http://td.celaya.biz:98/ReporteCiudadano.aspx
+          - listitem [ref=e134]:
+            - text: 
+            - link "VOLVER ARRIBA" [ref=e135] [cursor=pointer]:
+              - /url: "#top"
+        - generic [ref=e145]:
+          - paragraph
+          - complementary [ref=e146]:
+            - text: ©Copyright 2022
+            - link "Municipio de Celaya." [ref=e147] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/
+              - strong [ref=e148]: Municipio de Celaya
+              - text: .
+            - text: Todos los derechos reservados ,
+            - link "Departamento de Sistemas" [ref=e149] [cursor=pointer]:
+              - /url: https://www.celaya.gob.mx/dependencia/sistemas/
+          - paragraph
+      - contentinfo
+  - img "Usar teclado para desplazarse" [ref=e151]

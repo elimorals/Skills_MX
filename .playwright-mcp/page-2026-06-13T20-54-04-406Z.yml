@@ -1,0 +1,10 @@
+- generic [ref=e2]:
+  - heading "ERROR 403 - Forbidden!" [level=1] [ref=e4]
+  - generic [ref=e5]:
+    - heading "The following error occurred:" [level=2] [ref=e6]
+    - paragraph [ref=e7]: You are not permitted to access the requested URL.
+    - paragraph [ref=e8]: Please contact the webmaster with any queries.
+  - paragraph [ref=e10]:
+    - text: Powered by
+    - link "ISPConfig" [ref=e11] [cursor=pointer]:
+      - /url: https://www.ispconfig.org

@@ -1,0 +1,248 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e6]:
+      - link [ref=e10] [cursor=pointer]:
+        - /url: https://municipiodequeretaro.gob.mx
+      - generic [ref=e13]:
+        - navigation "Menu" [ref=e14]:
+          - list [ref=e15]:
+            - listitem [ref=e16]:
+              - link "Gobierno" [ref=e17] [cursor=pointer]:
+                - /url: "#"
+                - text: Gobierno
+                - generic [ref=e18]:
+                  - generic: 
+              - text:     
+            - listitem [ref=e19]:
+              - link "Programas" [ref=e20] [cursor=pointer]:
+                - /url: https://municipiodequeretaro.gob.mx/programas/
+                - text: Programas
+                - generic [ref=e21]:
+                  - generic: 
+            - listitem [ref=e22]:
+              - link "Proyectos" [ref=e23] [cursor=pointer]:
+                - /url: https://municipiodequeretaro.gob.mx/proyectos
+                - text: Proyectos
+                - generic [ref=e24]:
+                  - generic: 
+            - listitem [ref=e25]:
+              - link "Trámites y servicios" [ref=e26] [cursor=pointer]:
+                - /url: https://municipiodequeretaro.gob.mx/tramites-y-servicios/
+                - text: Trámites y servicios
+                - generic [ref=e27]:
+                  - generic: 
+            - listitem [ref=e28]:
+              - link "Transparencia" [ref=e29] [cursor=pointer]:
+                - /url: https://municipiodequeretaro.gob.mx/transparencia-mq/
+                - text: Transparencia
+                - generic [ref=e30]:
+                  - generic: 
+            - listitem [ref=e31]:
+              - link "Pago de impuestos" [ref=e32] [cursor=pointer]:
+                - /url: https://municipiodequeretaro.gob.mx/pago-de-impuestos/
+            - listitem [ref=e33]:
+              - link "Mejora Regulatoria" [ref=e34] [cursor=pointer]:
+                - /url: https://mejoraregulatoria.municipiodequeretaro.gob.mx
+        - text:           
+  - generic [ref=e37]:
+    - generic [ref=e45]:
+      - text: 
+      - generic [ref=e51]:
+        - generic [ref=e54] [cursor=pointer]: 
+        - generic [ref=e55] [cursor=pointer]: 
+      - generic [ref=e56]:
+        - link "Imagen de Municipio de queretaro 14" [ref=e60] [cursor=pointer]:
+          - /url: https://wa.me/4423691043?text=Hola
+          - img "Imagen de Municipio de queretaro 14" [ref=e61]
+        - link "Imagen de Municipio de queretaro 3" [ref=e65] [cursor=pointer]:
+          - /url: tel:911
+          - img "Imagen de Municipio de queretaro 3" [ref=e66]
+        - link "Imagen de Municipio de queretaro 16" [ref=e70] [cursor=pointer]:
+          - /url: https://municipiodequeretaro.gob.mx/wp-content/uploads/2021/11/SDU-Decalogo.pdf
+          - img "Imagen de Municipio de queretaro 16" [ref=e71]
+    - generic [ref=e73]:
+      - generic [ref=e75]:
+        - heading "TRÁMITES" [level=2] [ref=e78]
+        - generic [ref=e80]:
+          - generic [ref=e82]:
+            - img "TRAMITE 2" [ref=e85]
+            - link "OTROS-TRAMITES" [ref=e88] [cursor=pointer]:
+              - /url: https://tramitesqro.municipiodequeretaro.gob.mx/
+              - img "OTROS-TRAMITES" [ref=e89]
+            - paragraph [ref=e92]:
+              - link "Trámites en general" [ref=e93] [cursor=pointer]:
+                - /url: https://tramitesqro.municipiodequeretaro.gob.mx/
+          - generic [ref=e95]:
+            - img "RENOVACION 2" [ref=e98]
+            - link "RENOVACION-1" [ref=e101] [cursor=pointer]:
+              - /url: https://tramitesqro.municipiodequeretaro.gob.mx/cedula.php?id=TR-170303-010
+              - img "RENOVACION-1" [ref=e102]
+            - paragraph [ref=e105]:
+              - link "Renovación de licencia" [ref=e106] [cursor=pointer]:
+                - /url: https://tramitesqro.municipiodequeretaro.gob.mx/cedula.php?id=TR-280100-010
+          - generic [ref=e108]:
+            - img "REALIZAR PAGO 2" [ref=e111]
+            - link "REALIZAR-PAGO-1" [ref=e114] [cursor=pointer]:
+              - /url: http://webservices.municipiodequeretaro.gob.mx/consultaLC/v2/
+              - img "REALIZAR-PAGO-1" [ref=e115]
+            - paragraph [ref=e118]:
+              - link "Realizar pago de Predial" [ref=e119] [cursor=pointer]:
+                - /url: http://webservices.municipiodequeretaro.gob.mx/consultaLC/v2/
+      - generic [ref=e121]:
+        - heading "SERVICIOS" [level=2] [ref=e124]
+        - generic [ref=e126]:
+          - generic [ref=e128]:
+            - img "REGISTRO CIVIL 2" [ref=e131]
+            - link "REGISTRO-CIVIL-1" [ref=e134] [cursor=pointer]:
+              - /url: https://agendaregistrocivil.municipiodequeretaro.gob.mx
+              - img "REGISTRO-CIVIL-1" [ref=e135]
+            - paragraph [ref=e138]:
+              - link "Registro Civil" [ref=e139] [cursor=pointer]:
+                - /url: https://agendaregistrocivil.municipiodequeretaro.gob.mx
+          - generic [ref=e141]:
+            - link "JUBILACIONES" [ref=e144] [cursor=pointer]:
+              - /url: https://municipiodequeretaro.gob.mx/jubilaciones-y-pensiones/
+              - img "JUBILACIONES" [ref=e145]
+            - img "JUBILACIONES (1)" [ref=e148]
+            - paragraph [ref=e151]:
+              - link "Pensiones y Jubilaciones" [ref=e152] [cursor=pointer]:
+                - /url: https://municipiodequeretaro.gob.mx/tramites-y-servicios/jubilaciones-y-pensiones/
+                - text: Pensiones y
+                - text: Jubilaciones
+          - generic [ref=e154]:
+            - img "TRANSPORTE 2" [ref=e157]
+            - link "TRANSPORTE-1" [ref=e160] [cursor=pointer]:
+              - /url: https://horariosderecolecciondebasura.municipiodequeretaro.gob.mx
+              - img "TRANSPORTE-1" [ref=e161]
+            - paragraph [ref=e164]:
+              - link "Horarios de Recolección de Basura" [ref=e165] [cursor=pointer]:
+                - /url: https://horariosderecolecciondebasura.municipiodequeretaro.gob.mx
+    - generic [ref=e166]:
+      - paragraph [ref=e169]: Noticias
+      - list [ref=e172]:
+        - link "10 junio, 2026 Fomenta Felifer Macías la atención ciudadana con Alcalde en Acción" [ref=e174] [cursor=pointer]:
+          - /url: https://municipiodequeretaro.gob.mx/fomenta-felifer-macias-la-atencion-ciudadana-con-alcalde-en-accion/
+          - generic [ref=e175]:
+            - generic [ref=e178]: 10 junio, 2026
+            - heading "Fomenta Felifer Macías la atención ciudadana con Alcalde en Acción" [level=5] [ref=e181]
+        - link "10 junio, 2026 Más de 110 parejas se registran para los Matrimonios Colectivos 2026" [ref=e183] [cursor=pointer]:
+          - /url: https://municipiodequeretaro.gob.mx/mas-de-110-parejas-se-registran-para-los-matrimonios-colectivos-2026/
+          - generic [ref=e184]:
+            - generic [ref=e187]: 10 junio, 2026
+            - heading "Más de 110 parejas se registran para los Matrimonios Colectivos 2026" [level=5] [ref=e190]
+        - link "9 junio, 2026 Aprueba Ayuntamiento acuerdos en favor de trabajadores municipales y sus familias" [ref=e192] [cursor=pointer]:
+          - /url: https://municipiodequeretaro.gob.mx/aprueba-ayuntamiento-acuerdos-en-favor-de-trabajadores-municipales-y-sus-familias/
+          - generic [ref=e193]:
+            - generic [ref=e196]: 9 junio, 2026
+            - heading "Aprueba Ayuntamiento acuerdos en favor de trabajadores municipales y sus familias" [level=5] [ref=e199]
+        - link "9 junio, 2026 Asiste Felifer Macías al abanderamiento de estudiantes del programa Contigo Beca Embajadores 2026" [ref=e201] [cursor=pointer]:
+          - /url: https://municipiodequeretaro.gob.mx/asiste-felifer-macias-al-abanderamiento-de-estudiantes-del-programa-contigo-beca-embajadores-2026/
+          - generic [ref=e202]:
+            - generic [ref=e205]: 9 junio, 2026
+            - heading "Asiste Felifer Macías al abanderamiento de estudiantes del programa Contigo Beca Embajadores 2026" [level=5] [ref=e208]
+        - link "9 junio, 2026 Impulsan activación de urbanismo táctico para reforzar la seguridad vial en Av. Tecnológico" [ref=e210] [cursor=pointer]:
+          - /url: https://municipiodequeretaro.gob.mx/impulsan-activacion-de-urbanismo-tactico-para-reforzar-la-seguridad-vial-en-av-tecnologico/
+          - generic [ref=e211]:
+            - generic [ref=e214]: 9 junio, 2026
+            - heading "Impulsan activación de urbanismo táctico para reforzar la seguridad vial en Av. Tecnológico" [level=5] [ref=e217]
+        - 'link "8 junio, 2026 Esta es una muestra de lo agradecidos que estamos con ustedes por su servicio y sacrifico por mantener la paz: Felifer Macías" [ref=e219] [cursor=pointer]':
+          - /url: https://municipiodequeretaro.gob.mx/esta-es-una-muestra-de-lo-agradecidos-que-estamos-con-ustedes-por-su-servicio-y-sacrifico-por-mantener-la-paz-felifer-macias/
+          - generic [ref=e220]:
+            - generic [ref=e223]: 8 junio, 2026
+            - 'heading "Esta es una muestra de lo agradecidos que estamos con ustedes por su servicio y sacrifico por mantener la paz: Felifer Macías" [level=5] [ref=e226]'
+      - link "Ver todas las noticias" [ref=e230] [cursor=pointer]:
+        - /url: https://municipiodequeretaro.gob.mx/noticias-recientes/
+        - generic [ref=e232]: Ver todas las noticias
+    - generic [ref=e238]:
+      - generic [ref=e240]:
+        - paragraph [ref=e243]: Tu Gobierno Municipal
+        - paragraph [ref=e246]: Conoce los Programas que el Municipio de Querétaro pone a tu disposición.
+        - link "Ver más" [ref=e250] [cursor=pointer]:
+          - /url: https://municipiodequeretaro.gob.mx/programas/
+          - generic [ref=e252]: Ver más
+      - generic [ref=e256]:
+        - generic [ref=e258]:
+          - img "Imagen de Municipio de queretaro 17" [ref=e261]
+          - heading "La Queretana" [level=5] [ref=e264]
+          - link "Ver programa" [ref=e268] [cursor=pointer]:
+            - /url: https://municipiodequeretaro.gob.mx/proyectos/la-queretana/
+            - generic [ref=e270]: Ver programa
+        - generic [ref=e272]:
+          - img "Imagen de Municipio de queretaro 18" [ref=e275]
+          - heading "Bloque" [level=5] [ref=e278]
+          - link "Ver programa" [ref=e282] [cursor=pointer]:
+            - /url: https://bloqueqro.mx
+            - generic [ref=e284]: Ver programa
+        - generic [ref=e286]:
+          - img "Imagen de Municipio de queretaro 19" [ref=e289]
+          - heading "Universidad de las Mujeres" [level=5] [ref=e292]
+          - link "Ver programa" [ref=e296] [cursor=pointer]:
+            - /url: https://municipiodequeretaro.gob.mx/secretarias/secretaria-de-la-mujer/universidad-de-las-mujeres/
+            - generic [ref=e298]: Ver programa
+    - paragraph [ref=e313]: Conoce las Entidades
+  - contentinfo [ref=e320]:
+    - generic [ref=e322]:
+      - generic [ref=e327]:
+        - paragraph [ref=e328]:
+          - text: "Horario Centro Cívico:"
+          - text: Lunes a viernes de 8:00 a 16:00 horas
+        - paragraph [ref=e329]:
+          - generic [ref=e330]: "Horario Ventanilla:"
+          - generic [ref=e331]:
+            - text: Lunes a viernes 8:00 a 15:30 horas.
+            - text: Blvd. Bernardo Quintana 10000
+            - generic [ref=e332]: Col. Centro Sur C.P. 76090
+          - generic [ref=e333]: Santiago de Querétaro, Qro.
+      - generic [ref=e334]:
+        - heading "Contactos y Atención Ciudadana" [level=3] [ref=e337]
+        - generic [ref=e338]:
+          - generic [ref=e340]:
+            - paragraph [ref=e341]:
+              - generic [ref=e342]: "Atención Ciudadana:"
+              - text: 442 238 7770
+              - text: ó al 070
+            - paragraph [ref=e343]: atencion.ciudadana@municipiodequeretaro.gob.mx
+            - paragraph [ref=e344]:
+              - generic [ref=e345]: "Línea Única de Emergencias:"
+              - text: 9-1-1
+            - paragraph [ref=e346]:
+              - generic [ref=e347]: "Denuncias Anónimas:"
+              - text: "089"
+          - generic [ref=e349]:
+            - paragraph [ref=e350]:
+              - generic [ref=e351]: "Seguridad Pública:"
+              - text: 442 427 6700
+            - paragraph [ref=e352]:
+              - generic [ref=e353]: "DIF Municipal:"
+              - text: 442 238 7700 Ext. 5515
+            - paragraph [ref=e354]:
+              - generic [ref=e355]: "Protección Civil:"
+              - text: 442 217 37 12 y 442 217 38 35
+        - generic [ref=e356]:
+          - paragraph [ref=e359]: Más información o ayuda da clic en el formulario
+          - link "Atención Ciudadana" [ref=e363] [cursor=pointer]:
+            - /url: https://programas.municipiodequeretaro.gob.mx/formatencionciudadana/public/formulario
+            - generic [ref=e365]: Atención Ciudadana
+    - generic [ref=e367]:
+      - generic [ref=e368]:
+        - paragraph [ref=e371]: © Municipio de Querétaro | Todos los Derechos Reservados
+        - link "Revisa nuestros Avisos de Privacidad" [ref=e375] [cursor=pointer]:
+          - /url: https://municipiodequeretaro.gob.mx/avisosdeprivacidad/
+          - generic [ref=e377]: Revisa nuestros Avisos de Privacidad
+      - list [ref=e381]:
+        - listitem [ref=e382]:
+          - link "Facebook" [ref=e383] [cursor=pointer]:
+            - /url: https://www.facebook.com/QroMunicipio/
+            - generic [ref=e384]: Facebook
+            - generic [ref=e385]: 
+        - listitem [ref=e386]:
+          - link [ref=e387] [cursor=pointer]:
+            - /url: http://x.com/qromunicipio
+            - img [ref=e389]
+        - listitem [ref=e391]:
+          - link "Instagram" [ref=e392] [cursor=pointer]:
+            - /url: https://www.instagram.com/qromunicipio
+            - generic [ref=e393]: Instagram
+            - generic [ref=e394]: 
+  - generic [ref=e395]: desktop
+  - text: 

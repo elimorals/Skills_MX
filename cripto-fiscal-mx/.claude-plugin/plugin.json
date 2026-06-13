@@ -1,22 +1,31 @@
 {
   "name": "cripto-fiscal-mx",
   "displayName": "Cripto-Fiscal MX",
-  "description": "Plugin para personas físicas mexicanas que operan criptomonedas (trading, holding, DeFi, NFTs). Cubre tracking operaciones por exchange (Bitso, Binance, Coinbase, Kraken), cálculo costo base FIFO, permutas gravables (cripto-cripto), staking + airdrops + NFTs, riesgo CARF 2026 (TODO exchange reportará al SAT), generación reporte para declaración anual ISR. Score research: 8.7/10. Mercado: ~5M wallets MX.",
-  "version": "0.1.0",
+  "description": "Plugin para personas físicas mexicanas que operan criptomonedas (trading, holding, DeFi, NFTs). Cubre tracking operaciones por exchange (Bitso, Binance, Coinbase, Kraken), wallets self-custody (MetaMask, Ledger via blockchain explorers), cálculo costo base FIFO, permutas gravables cripto-cripto, staking + airdrops + NFTs, riesgo CARF 2026 (TODO exchange reportará al SAT), generación reporte para declaración anual ISR y expediente de pruebas para auditoría SAT. Score research: 8.7/10. Mercado: ~5M wallets MX.",
+  "version": "0.2.0",
   "author": {"name": "Elías Rashid Morales Mendoza", "email": "elimoralsmendox@gmail.com"},
-  "keywords": ["cripto", "bitcoin", "ethereum", "bitso", "binance", "CARF", "ISR-cripto", "FIFO", "permuta-cripto", "NFT", "staking", "DeFi"],
+  "keywords": ["cripto", "bitcoin", "ethereum", "bitso", "binance", "CARF", "ISR-cripto", "FIFO", "permuta-cripto", "NFT", "staking", "DeFi", "self-custody", "etherscan", "airdrop"],
   "skills": [
     "skills/dashboard-cripto-portafolio",
     "skills/importar-operaciones-exchange",
     "skills/calcular-costo-base-fifo",
     "skills/calculadora-isr-cripto-detallada",
+    "skills/permuta-cripto-cripto-gravable",
+    "skills/staking-y-airdrops-ingreso",
+    "skills/nft-enajenacion-bienes",
+    "skills/tracking-wallets-self-custody",
+    "skills/documento-pruebas-sat",
     "skills/riesgo-carf-2026"
   ],
   "commands": [
     "commands/dashboard.md",
     "commands/importar.md",
     "commands/calcular.md",
+    "commands/declarar.md",
     "commands/riesgo-carf.md"
+  ],
+  "workflows": [
+    "workflows/declaracion-anual-cripto.workflow.js"
   ],
   "dependencies": {"plugins": ["core-mexico"]}
 }

@@ -1,0 +1,86 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - img [ref=e7]
+      - link [ref=e9] [cursor=pointer]:
+        - /url: /e-tepa2.0/
+    - button "Iniciar Sesión" [ref=e12] [cursor=pointer]:
+      - generic [ref=e13]: Iniciar Sesión
+  - complementary [ref=e16]:
+    - navigation [ref=e17]:
+      - link "Inicio" [ref=e20] [cursor=pointer]:
+        - /url: /e-tepa2.0/home
+        - generic [ref=e21]:
+          - img [ref=e23]
+          - generic [ref=e25]: Inicio
+      - generic [ref=e26]:
+        - heading "Pagos en línea" [level=3] [ref=e27]
+        - link "Predial" [ref=e28] [cursor=pointer]:
+          - /url: /e-tepa2.0/predial
+          - generic [ref=e29]:
+            - img [ref=e31]
+            - generic [ref=e33]: Predial
+      - generic [ref=e34]:
+        - heading "Servicios" [level=3] [ref=e35]
+        - link "Camiones de basura" [ref=e36] [cursor=pointer]:
+          - /url: /e-tepa2.0/basura
+          - generic [ref=e37]:
+            - img [ref=e39]
+            - generic [ref=e41]: Camiones de basura
+      - heading "Trámites en línea" [level=3] [ref=e43]
+  - main [ref=e44]:
+    - generic [ref=e45]:
+      - generic [ref=e49]:
+        - heading "Consulta tu adeudo predial" [level=3] [ref=e50]
+        - generic [ref=e51]:
+          - 'textbox "Ejemplo: U000000" [active] [ref=e52]'
+          - button "" [ref=e54] [cursor=pointer]:
+            - generic "Revisar Recibo" [ref=e56]: 
+          - generic "Convertir Cuenta Antigua" [ref=e57]:
+            - button "CA" [ref=e58] [cursor=pointer]:
+              - generic [ref=e59]: CA
+        - button "Consultar saldo " [ref=e61] [cursor=pointer]:
+          - generic [ref=e63]:
+            - text: Consultar saldo
+            - generic [ref=e64]: 
+        - alert [ref=e65]:
+          - heading "PROGRAMA" [level=5] [ref=e66]:
+            - strong [ref=e67]: PROGRAMA
+          - paragraph [ref=e68]:
+            - text: Al pagar tu cuenta predial urbana construida en línea participas de manera automática en el programa
+            - strong [ref=e69]: "“Hogares Sustentables: Recicla y Cuida el Medio Ambiente”"
+            - text: para ganar un kit de 2 contenedores de separación de residuos sólidos; orgánico e inorgánico.
+          - paragraph [ref=e70]:
+            - text: Lo único que necesitas hacer es pagar tu predial en línea y esperar la validación por la institución bancaria receptora, en donde las primeras
+            - strong [ref=e71]: 126 cuentas
+            - text: serán acreedoras al Kit de separación de basura.
+          - paragraph [ref=e72]: Las cuentas que resulten ganadoras serán contactadas vía correo electrónico con la información de fechas y procesos de entrega.
+        - alert [ref=e73]:
+          - heading "Pago Predial en Línea" [level=5] [ref=e74]
+          - paragraph [ref=e75]: Se permite pagar en línea hasta antes del día 25 de cada mes debido a cierre de mes.
+          - paragraph [ref=e76]:
+            - text: Si necesita el recibo predial que pago en línea, favor de esperar 2 días hábiles para que el banco confirme la transferencia y así poder generar el folio del pago, mismo que se le podrá proporcionar ya sea recogiendo el recibo en las oficinas de catastro o solicitándolo al email
+            - link "pagospredialweb@tepatitlan.gob.mx" [ref=e77] [cursor=pointer]:
+              - /url: mailto:pagospredialweb@tepatitlan.gob.mx
+            - text: anexando el comprobante de pago.
+        - alert [ref=e78]:
+          - heading "Facturación de Predial Pagado en Línea" [level=5] [ref=e79]
+          - paragraph [ref=e80]:
+            - text: Sólo se permite
+            - link "facturar" [ref=e81] [cursor=pointer]:
+              - /url: https://www.tepatitlan.gob.mx/facturacion/
+            - text: pagos del mes corriente.
+          - paragraph [ref=e82]: En caso de tener dudas o porblemas al realizar la factura en línea brindamos una atención personalizada de Lunes a Viernes de 8:00 a.m. a 4:00 p.m. (excepto los días festivos que pueden variar durante el año)
+          - paragraph [ref=e83]:
+            - text: Favor de comunicarse al
+            - link "378 788 8700" [ref=e84] [cursor=pointer]:
+              - /url: tel:3787888700
+            - text: EXT 8982 o enviar un correo a
+            - link "facturacion_ingresos@tepatitlan.gob.mx" [ref=e85] [cursor=pointer]:
+              - /url: mailto:facturacion_ingresos@tepatitlan.gob.mx
+      - dialog [ref=e86]:
+        - generic [ref=e88]:
+          - heading "Usuario no registrado" [level=5] [ref=e91]
+          - generic [ref=e92]:
+            - paragraph [ref=e94]: Para hacer cualquier pago es necesario iniciar sesión o inscribirse.
+            - button "Iniciar sesión" [ref=e97] [cursor=pointer]

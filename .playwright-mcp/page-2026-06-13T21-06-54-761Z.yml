@@ -1,0 +1,281 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e5]:
+          - link "Logo Predial Catastral Ayuntamiento de Mérida 2024 - 2027" [ref=e6] [cursor=pointer]:
+            - /url: index.php
+            - img "Logo" [ref=e8]
+            - paragraph [ref=e11]:
+              - text: Predial Catastral
+              - generic [ref=e12]: Ayuntamiento de Mérida 2024 - 2027
+          - generic "Menú" [ref=e13]:
+            - list [ref=e15]:
+              - listitem [ref=e16]:
+                - link "Antes de pagar" [ref=e17] [cursor=pointer]:
+                  - /url: "#"
+                  - text: Antes de pagar
+                  - img [ref=e18]
+                - list:
+                  - listitem:
+                    - link "Lugares, formas y opciones de pago":
+                      - /url: "#"
+                  - listitem:
+                    - link "¿Cuánto es tu impuesto predial?":
+                      - /url: pago.php?inf=0
+                  - listitem:
+                    - link "¿Cómo se calcula el impuesto predial?":
+                      - /url: calculopredial.php
+                  - listitem:
+                    - link "Apoyos y estímulos fiscales":
+                      - /url: apoyos.php
+                  - listitem:
+                    - link "Impuesto predial por lotes (más de 20 predios)":
+                      - /url: predial-inmobiliarias.php
+                      - text: Impuesto predial por lotes
+                      - text: (más de 20 predios)
+                  - listitem:
+                    - link "¿Qué es Recatastración?":
+                      - /url: recatastracion.php
+                  - listitem:
+                    - 'link "Programa: Tu Casa Segura"':
+                      - /url: https://merida.gob.mx/tucasasegura/
+                      - text: "Programa: Tu Casa Segura"
+                      - img
+                  - listitem:
+                    - link "Sorteo \"Gana Mérida, Ganas tú 2026\"":
+                      - /url: bases-sorteo.php
+              - listitem [ref=e20]:
+                - link "¡Pagar en línea!" [ref=e21] [cursor=pointer]:
+                  - /url: pago.php?inf=0
+              - listitem [ref=e22]:
+                - link "img carrito" [ref=e23] [cursor=pointer]:
+                  - /url: "#"
+                  - img "img carrito" [ref=e25]
+              - listitem [ref=e26]:
+                - link "Servicios y más" [ref=e27] [cursor=pointer]:
+                  - /url: "#"
+                  - text: Servicios y más
+                  - img [ref=e28]
+                - list:
+                  - listitem:
+                    - link "Recibo Oficial Electrónico":
+                      - /url: https://isla.merida.gob.mx/serviciosinternet/Recibos/
+                  - listitem:
+                    - link "Verificador de Recibos Oficiales":
+                      - /url: https://isla.merida.gob.mx/ServiciosInternet/verificarecibooficial
+                  - listitem:
+                    - link "Factura Electrónica":
+                      - /url: http://isla.merida.gob.mx/ServiciosInternet/FacturacionElectronica/
+                  - listitem:
+                    - link "Trámites Relacionados":
+                      - /url: https://isla.merida.gob.mx/serviciosinternet/tramites/buscar/predial
+              - listitem [ref=e30]:
+                - link "Ayuda" [ref=e31] [cursor=pointer]:
+                  - /url: ayuda.php
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - link "WhatsApp Asesor Predial" [ref=e34] [cursor=pointer]:
+          - /url: "#"
+          - img "WhatsApp" [ref=e35]
+          - generic [ref=e36]:
+            - text: Asesor
+            - text: Predial
+        - generic [ref=e40]:
+          - img "img pasos" [ref=e42]
+          - generic [ref=e45]:
+            - generic [ref=e46]:
+              - paragraph [ref=e47]: Impuesto Predial
+              - paragraph [ref=e48]: Los campos marcados con * son obligatorios
+            - generic [ref=e51]:
+              - generic [ref=e55]:
+                - generic [ref=e56]:
+                  - generic [ref=e57]: "*"
+                  - text: "Ubica tu predio usando:"
+                - combobox [ref=e58]
+                - combobox "La dirección" [ref=e61] [cursor=pointer]:
+                  - textbox "La dirección" [ref=e62]
+              - generic [ref=e63]:
+                - generic [ref=e66]:
+                  - generic [ref=e67]:
+                    - generic [ref=e68]: "*"
+                    - text: Calle
+                  - textbox "* Calle" [ref=e69]
+                - generic [ref=e72]:
+                  - generic [ref=e73]: Letra de calle
+                  - textbox "Letra de calle" [ref=e74]
+              - generic [ref=e75]:
+                - generic [ref=e78]:
+                  - generic [ref=e79]:
+                    - generic [ref=e80]: "*"
+                    - text: Número
+                  - textbox "* Número" [ref=e81]
+                - generic [ref=e84]:
+                  - generic [ref=e85]: Letra de número
+                  - textbox "Letra de número" [ref=e86]
+              - button "Buscar" [ref=e89] [cursor=pointer]
+      - generic [ref=e92]:
+        - img "img" [ref=e94]
+        - generic [ref=e95]:
+          - heading "Antes de pagar, es bueno revisar:" [level=2] [ref=e96]
+          - generic [ref=e97]:
+            - list [ref=e99]:
+              - listitem [ref=e100]:
+                - link "Lugares, formas y opciones de pago" [ref=e101] [cursor=pointer]:
+                  - /url: "#"
+                  - text: Lugares, formas y opciones de pago
+                  - img [ref=e102]
+              - listitem [ref=e104]:
+                - link "¿Cuánto es tu impuesto predial?" [ref=e105] [cursor=pointer]:
+                  - /url: pago.php?inf=0
+                  - text: ¿Cuánto es tu impuesto predial?
+                  - img [ref=e106]
+              - listitem [ref=e108]:
+                - link "¿Cómo se calcula el impuesto predial?" [ref=e109] [cursor=pointer]:
+                  - /url: calculopredial.php
+                  - text: ¿Cómo se calcula el impuesto predial?
+                  - img [ref=e110]
+              - listitem [ref=e112]:
+                - link "Apoyos y estímulos fiscales" [ref=e113] [cursor=pointer]:
+                  - /url: apoyos.php
+                  - text: Apoyos y estímulos fiscales
+                  - img [ref=e114]
+              - listitem [ref=e116]:
+                - link "Impuesto predial por lotes (+ de 20 predios)" [ref=e117] [cursor=pointer]:
+                  - /url: predial-inmobiliarias.php
+                  - text: Impuesto predial por lotes (+ de 20 predios)
+                  - img [ref=e118]
+            - list [ref=e121]:
+              - listitem [ref=e122]:
+                - link "¿Qué es Recatastración?" [ref=e123] [cursor=pointer]:
+                  - /url: recatastracion.php
+                  - text: ¿Qué es Recatastración?
+                  - img [ref=e124]
+              - listitem [ref=e126]:
+                - 'link "Programa: Tu Casa Segura" [ref=e127] [cursor=pointer]':
+                  - /url: https://merida.gob.mx/tucasasegura/
+                  - text: "Programa: Tu Casa Segura"
+                  - img [ref=e128]
+              - listitem [ref=e130]:
+                - link "Sorteo \"Gana Mérida, Ganas tú 2026\"" [ref=e131] [cursor=pointer]:
+                  - /url: bases-sorteo.php
+                  - text: Sorteo "Gana Mérida, Ganas tú 2026"
+                  - img [ref=e132]
+              - listitem [ref=e134]:
+                - link "Ganadores del Sorteo \"Gana Mérida, Ganas tú 2026\"" [ref=e135] [cursor=pointer]:
+                  - /url: sorteo-ganamerida.php
+                  - text: Ganadores del Sorteo "Gana Mérida, Ganas tú 2026"
+                  - img [ref=e136]
+      - generic [ref=e138]:
+        - generic [ref=e140]:
+          - heading "Para todo predio:" [level=2] [ref=e142]
+          - generic [ref=e144]:
+            - generic [ref=e146]:
+              - generic [ref=e148]:
+                - img "ico-reciboElectrónico" [ref=e150]
+                - generic [ref=e151]:
+                  - paragraph [ref=e152]:
+                    - text: Recibo Oficial
+                    - text: Electrónico
+                  - paragraph [ref=e153]: Consulta y descarga tu recibo de pago realizado en línea, establecimientos o bancos.
+              - link "Obtenlo" [ref=e155] [cursor=pointer]:
+                - /url: https://isla.merida.gob.mx/serviciosinternet/Recibos/
+            - generic [ref=e157]:
+              - generic [ref=e159]:
+                - img "ico-reciboElectrónico" [ref=e161]
+                - generic [ref=e162]:
+                  - paragraph [ref=e163]:
+                    - text: Verificador de
+                    - text: Recibos Oficiales
+                  - paragraph [ref=e164]: Ingresa tu referencia de pago y confirma que tu recibo sea válido.
+              - link "Verifícalo" [ref=e166] [cursor=pointer]:
+                - /url: https://isla.merida.gob.mx/ServiciosInternet/verificarecibooficial/
+            - generic [ref=e168]:
+              - generic [ref=e170]:
+                - img "ico-reciboElectrónico" [ref=e172]
+                - generic [ref=e173]:
+                  - paragraph [ref=e174]:
+                    - text: Facturación
+                    - text: Electrónica
+                  - paragraph [ref=e175]: Genera y descarga tus comprobantes digitales de pago de forma rápida y segura.
+              - link "Genérala" [ref=e177] [cursor=pointer]:
+                - /url: https://isla.merida.gob.mx/ServiciosInternet/FacturacionElectronica/
+            - generic [ref=e179]:
+              - generic [ref=e181]:
+                - img "ico-reciboElectrónico" [ref=e183]
+                - generic [ref=e184]:
+                  - paragraph [ref=e185]:
+                    - text: Certificado de
+                    - text: No Adeudo Predial
+                  - paragraph [ref=e186]: Confirma que tu predio está al día en el pago del Impuesto Predial
+              - link "Consúltalo" [ref=e188] [cursor=pointer]:
+                - /url: https://isla.merida.gob.mx/serviciosinternet/tramites/detalle/518
+        - generic [ref=e193]:
+          - link "Compartir" [ref=e194] [cursor=pointer]:
+            - /url: https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fisla.merida.gob.mx%2Fserviciosinternet%2Fpredialmid%2Findex.php&src=sdkpreparse
+            - generic [ref=e195]:
+              - img [ref=e196]
+              - text: Compartir
+          - link "Post" [ref=e198] [cursor=pointer]:
+            - /url: https://twitter.com/intent/tweet?url=http%3A%2F%2Fisla.merida.gob.mx%2Fserviciosinternet%2Fpredialmid%2Findex.php&text=Todo+sobre+el+impuesto+Predial.+Consulta+tu+adeudo%2C+d%C3%B3nde+pagar%2C+apoyos+disponibles&hashtags=PagatuPredial PredialBaseValorCatastral&via=AyuntaMerida
+            - generic [ref=e199]:
+              - img [ref=e200]
+              - text: Post
+    - contentinfo [ref=e203]:
+      - generic [ref=e205]:
+        - generic [ref=e207]:
+          - text: Ayuntamiento de Mérida
+          - list [ref=e208]:
+            - listitem [ref=e209]: Calle 62 s/n, Palacio Municipal
+            - listitem [ref=e210]: Colonia Centro, C.P. 97000
+            - listitem [ref=e211]: Mérida, Yucatán, México
+          - link "Ver ubicación" [ref=e212] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/9Jf7oL14t25ESzP97
+            - text: Ver ubicación
+            - img [ref=e213]
+          - link "QR Descarga el QR de este sitio" [ref=e215] [cursor=pointer]:
+            - /url: assets/img/elements/qr-predial.png
+            - img "QR" [ref=e216]
+            - paragraph [ref=e217]:
+              - text: Descarga
+              - text: el QR de este sitio
+              - img [ref=e218]
+        - generic [ref=e221]:
+          - generic [ref=e222]:
+            - text: Información, Orientación
+            - text: y Aclaración Gratuita
+          - list [ref=e223]:
+            - listitem [ref=e224]: Lunes a viernes de 8:00 a.m. a 3:00 p.m.
+            - listitem [ref=e225]: "Al teléfono: 9999420000 Ext: 80610, 80655, 80681 y 80684"
+            - listitem [ref=e226]:
+              - text: "Vía WhatsApp:"
+              - link "9991221999" [ref=e227] [cursor=pointer]:
+                - /url: https://wa.me/529991221999
+              - text: (Solo mensajes)
+          - link "asistencia.contribuyente@merida.gob.mx" [ref=e228] [cursor=pointer]:
+            - /url: mailto:asistencia.contribuyente@merida.gob.mx
+        - generic [ref=e230]:
+          - text: Centro de ayuda
+          - list [ref=e231]:
+            - listitem [ref=e232]:
+              - text: Encuentra respuestas rápidas a
+              - text: tus inquietudes.
+          - link "Consultar" [ref=e233] [cursor=pointer]:
+            - /url: ayuda.php
+            - text: Consultar
+            - img [ref=e234]
+      - button
+  - dialog [ref=e236]:
+    - generic [ref=e237]:
+      - generic [ref=e238]:
+        - heading [level=2]
+        - button "Close" [ref=e239] [cursor=pointer]:
+          - img [ref=e240]
+      - generic [ref=e244]:
+        - img "Enero 2026" [ref=e246]
+        - link "Ver ganadores" [ref=e248] [cursor=pointer]:
+          - /url: sorteo-ganamerida.php
+  - iframe [ref=e251]:
+    - generic [ref=f163e6]:
+      - text: protección de
+      - strong [ref=f163e7]: reCAPTCHA

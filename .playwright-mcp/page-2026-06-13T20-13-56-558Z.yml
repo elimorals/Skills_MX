@@ -1,0 +1,538 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2] [cursor=pointer]:
+    - img "Inklusion" [ref=e4]
+    - list:
+      - listitem: INKLUSION
+      - listitem:
+        - img
+        - img
+        - img
+        - img
+        - img
+        - img
+  - dialog "cookieconsent" [ref=e5]:
+    - generic [ref=e6]:
+      - text: Utilizamos cookies propias y de terceros para mejorar la experiencia y nuestros servicios a través del análisis de la navegación en este portal. Para conocer más sobre el tratamiento de tus datos personales consulta nuestro
+      - button "learn more about cookies" [ref=e7] [cursor=pointer]: aviso de privacidad
+      - text: .
+    - button "dismiss cookie message" [ref=e9] [cursor=pointer]: ¡Entendido!
+  - generic [ref=e10]:
+    - banner [ref=e12]:
+      - generic [ref=e20]:
+        - link "Ir al incio del portal oficial del Gobierno de la Ciudad de Puebla" [ref=e23] [cursor=pointer]:
+          - /url: /
+          - img [ref=e24]
+        - navigation "Menú principal" [ref=e77]:
+          - list [ref=e79]:
+            - listitem [ref=e80]:
+              - button "Ayuntamiento" [ref=e81] [cursor=pointer]:
+                - text: Ayuntamiento
+                - img [ref=e83]
+            - listitem [ref=e85]:
+              - link "Trámites y Servicios" [ref=e86] [cursor=pointer]:
+                - /url: /tramites-y-servicios
+            - listitem [ref=e87]:
+              - link "Transparencia" [ref=e88] [cursor=pointer]:
+                - /url: https://gobiernodelaciudad.pueblacapital.gob.mx/24-27/
+            - listitem [ref=e89]:
+              - button "Noticias" [ref=e90] [cursor=pointer]:
+                - text: Noticias
+                - img [ref=e92]
+        - group "Buscador y redes sociales" [ref=e101]:
+          - button "Abrir buscador principal" [ref=e104] [cursor=pointer]:
+            - img [ref=e105]
+          - link "Ir al Facebook del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e109] [cursor=pointer]:
+            - /url: https://www.facebook.com/HAyuntamientoDePuebla
+            - img [ref=e110]
+          - link "Ir a X del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e114] [cursor=pointer]:
+            - /url: https://x.com/PueblaAyto
+            - img [ref=e115]
+          - link "Ir al Instagram del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e120] [cursor=pointer]:
+            - /url: https://www.instagram.com/pueblagobiernodelaciudad/
+            - img [ref=e121]
+          - link "Ir al YouTube del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e125] [cursor=pointer]:
+            - /url: https://www.youtube.com/@AyuntamientodePueblaAyto
+            - img [ref=e126]
+    - main [ref=e128]:
+      - generic "Carrusel principal de banners" [ref=e132]:
+        - generic [ref=e133]:
+          - generic "Controles del carrusel":
+            - link "Regresar al banner anterior del carrusel":
+              - /url: "#"
+              - img
+            - button "Pausar movimiento automático del carrusel"
+            - link "Avanzar al siguiente banner del carrusel":
+              - /url: "#"
+              - img
+          - generic "1 of 7" [ref=e135]:
+            - 'link "Abrir banner: Resultados del proceso competitivo para financiamiento"':
+              - /url: /media/com_dpattachments/attachments/com_content.article/Anexo-A-Publicación.pdf
+              - img "Resultados del proceso competitivo para financiamiento" [ref=e136] [cursor=pointer]
+          - list "Navegación del carrusel":
+            - listitem:
+              - 'link "Banner 1: Resultados del proceso competitivo para financiamiento. Presiona Enter para abrir el contenido asociado."':
+                - /url: ""
+            - listitem:
+              - 'link "Banner 2: Servicios de Rehabilitacion y terapias DIF. Presiona Enter para abrir el contenido asociado."':
+                - /url: ""
+            - listitem:
+              - 'link "Banner 3: Mejora Video. Presiona Enter para abrir el contenido asociado."':
+                - /url: ""
+            - listitem:
+              - 'link "Banner 4: Gobierno Abierto. Presiona Enter para abrir el contenido asociado."':
+                - /url: ""
+            - listitem:
+              - 'link "Banner 5: Medidas Preventivas de Protección Civil. Presiona Enter para abrir el contenido asociado."':
+                - /url: ""
+            - listitem:
+              - 'link "Banner 6: Transparencia contruye confianza. Presiona Enter para abrir el contenido asociado."':
+                - /url: ""
+            - listitem:
+              - 'link "Banner 7: Uso de suelo especifico. Presiona Enter para abrir el contenido asociado."':
+                - /url: ""
+      - generic [ref=e141]:
+        - link "Predial en Línea" [ref=e144] [cursor=pointer]:
+          - /url: /predial
+          - generic [ref=e146]: Predial en Línea
+        - link "Cartilla Militar" [ref=e149] [cursor=pointer]:
+          - /url: /sorteo-militar
+          - generic [ref=e151]: Cartilla Militar
+        - link "Pagos en línea" [ref=e154] [cursor=pointer]:
+          - /url: https://srvappayt.pueblacapital.gob.mx:7016/pabel/index
+          - generic [ref=e156]: Pagos en línea
+      - region "Mensaje del Presidente Municipal de Puebla" [ref=e160]:
+        - article "Mensaje del Presidente Pepe Chedraui" [ref=e161]:
+          - generic [ref=e162]:
+            - img [ref=e166]
+            - generic [ref=e168]:
+              - heading "Pepe Chedraui" [level=2] [ref=e169]
+              - paragraph [ref=e170]: Presidente Municipal de Puebla
+              - heading "Queridas poblanas y poblanos:" [level=3] [ref=e171]
+              - generic "Contenido del mensaje del Presidente Municipal de Puebla" [ref=e173]:
+                - paragraph [ref=e174]: "Estoy convencido de que nuestro municipio posee todos los elementos para consolidar a Puebla como una capital imparable: un gobierno innovador, una ciudad moderna y dinámica, de la que todas y todos nos sintamos profundamente orgullosos."
+                - paragraph [ref=e175]: Puebla seguirá siendo un destino estratégico, y trabajaremos para posicionarla como una de las ciudades con mayor desarrollo y crecimiento económico en el país.
+                - paragraph [ref=e176]:
+                  - generic [ref=e177]: "Mi compromiso es firme con ustedes y con mi ciudad, para seguir construyendo juntos #LaCapitalImparable."
+      - complementary "Trámites más consultados" [ref=e183]:
+        - generic "Trámites más consultados" [ref=e185]:
+          - heading "Trámites más consultados" [level=3] [ref=e186]
+          - generic "Trámites más consultados" [ref=e187]:
+            - list "Listado de trámites más consultados" [ref=e188]:
+              - listitem [ref=e189]:
+                - link "Trámite 1. Constancia de alineamiento y número oficial" [ref=e190] [cursor=pointer]:
+                  - /url: https://experta.pueblacapital.gob.mx/web/inicioWebc.do?opcion=noreg&entidad=PUEBLA&redirige=d2ViL2ZpY2hhQXN1bnRvLmRvP29wY2lvbj0wJmFzYXNfaWRlX2FzdT0yNTU5JnJ1dGE9L3dlYi9hc3VudG9zTWFzVXN1YWxlcy5kbz9vcGNpb249MCFwZXJpb2RvPTA=
+                  - generic [ref=e191]: "1."
+                  - text: Constancia de alineamiento y número oficial
+              - listitem [ref=e192]:
+                - link "Trámite 2. Licencia de uso de suelo específico" [ref=e193] [cursor=pointer]:
+                  - /url: https://experta.pueblacapital.gob.mx/web/inicioWebc.do?opcion=noreg&entidad=PUEBLA&redirige=d2ViL2ZpY2hhQXN1bnRvLmRvP29wY2lvbj0wJmFzYXNfaWRlX2FzdT0xODQmcnV0YT0vd2ViL2FzdW50b3NNYXNVc3VhbGVzLmRvP29wY2lvbj0wIXBlcmlvZG89MA==
+                  - generic [ref=e194]: "2."
+                  - text: Licencia de uso de suelo específico
+              - listitem [ref=e195]:
+                - link "Trámite 3. Licencia de funcionamiento para establecimiento sin venta de bebidas alcohólicas" [ref=e196] [cursor=pointer]:
+                  - /url: https://experta.pueblacapital.gob.mx/web/inicioWebc.do?opcion=noreg&entidad=PUEBLA&redirige=d2ViL2ZpY2hhQXN1bnRvLmRvP29wY2lvbj0wJmFzYXNfaWRlX2FzdT0yNDcwJnJ1dGE9L3dlYi9hc3VudG9zTWFzVXN1YWxlcy5kbz9vcGNpb249MCFwZXJpb2RvPTA=
+                  - generic [ref=e197]: "3."
+                  - text: Licencia de funcionamiento para establecimiento sin venta de bebidas alcohólicas
+              - listitem [ref=e198]:
+                - link "Trámite 4. Expediente único para trámites notariales para compraventa total con construcción existente" [ref=e199] [cursor=pointer]:
+                  - /url: https://experta.pueblacapital.gob.mx/web/fichaAsunto.do?opcion=0&asas_ide_asu=2528&ruta=/web/asuntosMasUsuales.do?opcion=0!periodo=0
+                  - generic [ref=e200]: "4."
+                  - text: Expediente único para trámites notariales (para compraventa total con construcción existente)
+              - listitem [ref=e201]:
+                - link "Trámite 5. Constancia de medidas preventivas en materia de protección civil bajo riesgo" [ref=e202] [cursor=pointer]:
+                  - /url: https://experta.pueblacapital.gob.mx/web/inicioWebc.do?opcion=noreg&entidad=PUEBLA&redirige=d2ViL2ZpY2hhQXN1bnRvLmRvP29wY2lvbj0wJmFzYXNfaWRlX2FzdT02NTAmcnV0YT0vd2ViL2FzdW50b3NNYXNVc3VhbGVzLmRvP29wY2lvbj0wIXBlcmlvZG89MA==
+                  - generic [ref=e203]: "5."
+                  - text: Constancia de medidas preventivas en materia de protección civil (bajo riesgo)
+              - listitem [ref=e204]:
+                - link "Trámite 6. Constancia de registro de programa interno de protección civil" [ref=e205] [cursor=pointer]:
+                  - /url: https://experta.pueblacapital.gob.mx/web/fichaAsunto.do?opcion=0&asas_ide_asu=2490&ruta=/web/asuntosMasUsuales.do?opcion=0!periodo=0
+                  - generic [ref=e206]: "6."
+                  - text: Constancia de registro de programa interno de protección civil
+              - listitem [ref=e207]:
+                - link "Trámite 7. Constancia de uso de suelo" [ref=e208] [cursor=pointer]:
+                  - /url: https://experta.pueblacapital.gob.mx/web/fichaAsunto.do?opcion=0&asas_ide_asu=184&ruta=/web/asuntosMasUsuales.do?opcion=0!periodo=0
+                  - generic [ref=e209]: "7."
+                  - text: Constancia de uso de suelo
+              - listitem [ref=e210]:
+                - link "Trámite 8. Licencia de funcionamiento y operación de fuentes fijas de emisiones a la atmósfera de competencia municipal" [ref=e211] [cursor=pointer]:
+                  - /url: https://experta.pueblacapital.gob.mx/web/fichaAsunto.do?opcion=0&asas_ide_asu=548&ruta=/web/asuntosMasUsuales.do?opcion=0!periodo=0
+                  - generic [ref=e212]: "8."
+                  - text: Licencia de funcionamiento y operación de fuentes fijas de emisiones a la atmosfera de competencia municipal
+              - listitem [ref=e213]:
+                - link "Trámite 9. Aprobación del programa especial de protección civil para eventos públicos y/o masivos" [ref=e214] [cursor=pointer]:
+                  - /url: https://experta.pueblacapital.gob.mx/web/fichaAsunto.do?opcion=0&asas_ide_asu=2391&ruta=/web/asuntosMasUsuales.do?opcion=0!periodo=0
+                  - generic [ref=e215]: "9."
+                  - text: Aprobación del programa especial de protección civil para eventos públicos y/o masivos
+              - listitem [ref=e216]:
+                - link "Trámite 10. Factibilidad integral en zona de monumentos y áreas patrimoniales" [ref=e217] [cursor=pointer]:
+                  - /url: https://experta.pueblacapital.gob.mx/web/fichaAsunto.do?opcion=0&asas_ide_asu=2472&ruta=/web/asuntosMasUsuales.do?opcion=0!periodo=0
+                  - generic [ref=e218]: "10."
+                  - text: Factibilidad integral en zona de monumentos y áreas patrimoniales
+              - listitem [ref=e219]:
+                - link "Trámite 11. Aviso de apertura de negocio" [ref=e220] [cursor=pointer]:
+                  - /url: https://experta.pueblacapital.gob.mx/web/fichaAsunto.do?opcion=0&asas_ide_asu=1134&ruta=/web/asuntosMasUsuales.do?opcion=0!periodo=0
+                  - generic [ref=e221]: "11."
+                  - text: Aviso de apertura de negocio
+              - listitem [ref=e222]:
+                - link "Trámite 12. Factibilidad de uso de suelo" [ref=e223] [cursor=pointer]:
+                  - /url: https://experta.pueblacapital.gob.mx/web/fichaAsunto.do?opcion=0&asas_ide_asu=2566&ruta=/web/asuntosMasUsuales.do?opcion=0!periodo=0
+                  - generic [ref=e224]: "12."
+                  - text: Factibilidad de uso de suelo
+              - listitem [ref=e225]:
+                - generic "Trámite 13. Expedición de certificados de control anual. Enlace no disponible por el momento" [ref=e226]:
+                  - generic [ref=e227]: "13."
+                  - text: Expedición de certificados de control anual
+              - listitem [ref=e228]:
+                - generic "Trámite 14. Obtención de constancia de verificación ambiental. Enlace no disponible por el momento" [ref=e229]:
+                  - generic [ref=e230]: "14."
+                  - text: Obtención de constancia de verificación ambiental
+      - generic [ref=e231]:
+        - generic [ref=e234]:
+          - heading "Actividades imparables" [level=2] [ref=e236]
+          - generic [ref=e238]:
+            - 'button "Abrir video de Instagram: ⛲✨ ¡Las fuentes de #PueblaCapital brillan como nunca! Con espacios públicos más iluminados y llenos de vida, seguimos fortaleciendo la imagen de nuestra ciudad para que familias, visitantes y turistas disfruten con tranquilidad. 🌃" [ref=e240]':
+              - img [ref=e244]
+              - generic [ref=e246]:
+                - generic [ref=e247]:
+                  - generic [ref=e248]:
+                    - img [ref=e250]
+                    - generic [ref=e252]: "Me gusta:"
+                    - generic [ref=e253]: "12"
+                  - generic [ref=e254]:
+                    - img [ref=e256]
+                    - generic [ref=e258]: "Comentarios:"
+                    - generic [ref=e259]: "0"
+                - paragraph [ref=e260]: "⛲✨ ¡Las fuentes de #PueblaCapital brillan como nunca! Con espacios públicos..."
+            - 'button "Abrir video de Instagram: ⚽🎉 ¡Ya comenzó la gran fiesta del fútbol en #PueblaCapital! Gracias al apoyo de la iniciativa privada, disfrutamos del primer partido de este gran encuentro, con emoción, convivencia y actividades para toda la familia.🙌🏽🏆 #ElFútbolSeViVeAquí" [ref=e262]':
+              - img [ref=e266]
+              - generic [ref=e268]:
+                - generic [ref=e269]:
+                  - generic [ref=e270]:
+                    - img [ref=e272]
+                    - generic [ref=e274]: "Me gusta:"
+                    - generic [ref=e275]: "25"
+                  - generic [ref=e276]:
+                    - img [ref=e278]
+                    - generic [ref=e280]: "Comentarios:"
+                    - generic [ref=e281]: "0"
+                - paragraph [ref=e282]: "⚽🎉 ¡Ya comenzó la gran fiesta del fútbol en #PueblaCapital! Gracias..."
+            - 'button "Abrir carrusel de imágenes de Instagram: ⚽ El fútbol también se vive a través del arte. Inauguramos “90 minutos. La Pasión del Fútbol”. Revive la emoción de un gol y la pasión de la afición. 📍 Palacio Municipal de Puebla. 📅 10 jun – 20 jul 2026 | 🕘 9:00-17:00 horas. ¡Arte y fútbol en equipo! 🎨 #ElFútbolSeViveAquí" [ref=e284]':
+              - img "⚽ El fútbol también se vive a través del arte...." [ref=e285]
+              - img [ref=e288]
+              - generic [ref=e293]:
+                - generic [ref=e294]:
+                  - generic [ref=e295]:
+                    - img [ref=e297]
+                    - generic [ref=e299]: "Me gusta:"
+                    - generic [ref=e300]: "51"
+                  - generic [ref=e301]:
+                    - img [ref=e303]
+                    - generic [ref=e305]: "Comentarios:"
+                    - generic [ref=e306]: "0"
+                - paragraph [ref=e307]: ⚽ El fútbol también se vive a través del arte....
+            - 'button "Abrir video de Instagram: 🚧🛣️ En San Felipe Hueyotlipan las obras ya están en marcha. El alcalde @pepechedrauimx dio inicio a la rehabilitación de la calle 5 de Febrero. Con #CallesAl100 construimos vialidades más seguras, cómodas y dignas para que tus traslados sean más ágiles. Seguimos con obras para tu beneficio y el de tu familia. 🤝✨" [ref=e309]':
+              - img [ref=e313]
+              - generic [ref=e315]:
+                - generic [ref=e316]:
+                  - generic [ref=e317]:
+                    - img [ref=e319]
+                    - generic [ref=e321]: "Me gusta:"
+                    - generic [ref=e322]: "15"
+                  - generic [ref=e323]:
+                    - img [ref=e325]
+                    - generic [ref=e327]: "Comentarios:"
+                    - generic [ref=e328]: "0"
+                - paragraph [ref=e329]: 🚧🛣️ En San Felipe Hueyotlipan las obras ya están en...
+            - 'button "Abrir video de Instagram: ♿🩷 En #Puebla seguimos construyendo una ciudad más incluyente. A través del @difpuecapital realizamos la entrega de sillas de ruedas, brindando mayor movilidad, autonomía y bienestar a quienes más lo necesitan. 👨‍🦽✨" [ref=e331]':
+              - img [ref=e335]
+              - generic [ref=e337]:
+                - generic [ref=e338]:
+                  - generic [ref=e339]:
+                    - img [ref=e341]
+                    - generic [ref=e343]: "Me gusta:"
+                    - generic [ref=e344]: "13"
+                  - generic [ref=e345]:
+                    - img [ref=e347]
+                    - generic [ref=e349]: "Comentarios:"
+                    - generic [ref=e350]: "0"
+                - paragraph [ref=e351]: "♿🩷 En #Puebla seguimos construyendo una ciudad más incluyente. A través..."
+            - 'button "Abrir carrusel de imágenes de Instagram: ⚽🏆 La pasión del fútbol se hizo presente en el Zócalo de #PueblaCapital. Con el #MegaIntercambioDeEstampas, familias y coleccionistas se reunieron para compartir, intercambiar y acercarse a completar sus álbumes. 🙌✨" [ref=e353]':
+              - img "⚽🏆 La pasión del fútbol se hizo presente en el..." [ref=e354]
+              - img [ref=e357]
+              - generic [ref=e362]:
+                - generic [ref=e363]:
+                  - generic [ref=e364]:
+                    - img [ref=e366]
+                    - generic [ref=e368]: "Me gusta:"
+                    - generic [ref=e369]: "69"
+                  - generic [ref=e370]:
+                    - img [ref=e372]
+                    - generic [ref=e374]: "Comentarios:"
+                    - generic [ref=e375]: "1"
+                - paragraph [ref=e376]: ⚽🏆 La pasión del fútbol se hizo presente en el...
+            - 'button "Abrir video de Instagram: ♻️💚 En equipo, las pequeñas acciones generan grandes resultados. @deportepue llevó a cabo el Reciclatón Municipal junto a las dependencias del Gobierno de la Ciudad. Gracias a lo recolectado, contribuiremos a la mejora de los espacios deportivos de la U.H. Manuel Rivera Anaya. 🏟️✨" [ref=e378]':
+              - img [ref=e382]
+              - generic [ref=e384]:
+                - generic [ref=e385]:
+                  - generic [ref=e386]:
+                    - img [ref=e388]
+                    - generic [ref=e390]: "Me gusta:"
+                    - generic [ref=e391]: "27"
+                  - generic [ref=e392]:
+                    - img [ref=e394]
+                    - generic [ref=e396]: "Comentarios:"
+                    - generic [ref=e397]: "0"
+                - paragraph [ref=e398]: ♻️💚 En equipo, las pequeñas acciones generan grandes resultados. @deportepue ...
+            - 'button "Abrir video de Instagram: ✨ Así cerramos una gran edición de @smartcitylatam en #PueblaCapital. 🏙️💡 Fueron días de ideas, experiencias y encuentros que nos inspiran a seguir construyendo una ciudad más innovadora y cercana a su gente." [ref=e400]':
+              - img [ref=e404]
+              - generic [ref=e406]:
+                - generic [ref=e407]:
+                  - generic [ref=e408]:
+                    - img [ref=e410]
+                    - generic [ref=e412]: "Me gusta:"
+                    - generic [ref=e413]: "34"
+                  - generic [ref=e414]:
+                    - img [ref=e416]
+                    - generic [ref=e418]: "Comentarios:"
+                    - generic [ref=e419]: "0"
+                - paragraph [ref=e420]: "✨ Así cerramos una gran edición de @smartcitylatam en #PueblaCapital. 🏙️💡..."
+            - 'button "Abrir carrusel de imágenes de Instagram: ✨🏙️ Así se vive el segundo día del @smartcitylatam en #PueblaCapital. Innovación, tecnología y grandes ideas se reúnen para construir ciudades más inteligentes, sostenibles e incluyentes. 🚀🌎" [ref=e422]':
+              - img "✨🏙️ Así se vive el segundo día del @smartcitylatam en..." [ref=e423]
+              - img [ref=e426]
+              - generic [ref=e431]:
+                - generic [ref=e432]:
+                  - generic [ref=e433]:
+                    - img [ref=e435]
+                    - generic [ref=e437]: "Me gusta:"
+                    - generic [ref=e438]: "36"
+                  - generic [ref=e439]:
+                    - img [ref=e441]
+                    - generic [ref=e443]: "Comentarios:"
+                    - generic [ref=e444]: "0"
+                - paragraph [ref=e445]: ✨🏙️ Así se vive el segundo día del @smartcitylatam en...
+            - 'button "Abrir video de Instagram: 🌎✨ Puebla es sede de la innovación y el futuro. El alcalde @pepechedrauimx inauguró una nueva edición de @smartcitylatam , un espacio para impulsar ciudades más inteligentes, sostenibles e incluyentes. 🏙️🤝" [ref=e447]':
+              - img [ref=e451]
+              - generic [ref=e453]:
+                - generic [ref=e454]:
+                  - generic [ref=e455]:
+                    - img [ref=e457]
+                    - generic [ref=e459]: "Me gusta:"
+                    - generic [ref=e460]: "41"
+                  - generic [ref=e461]:
+                    - img [ref=e463]
+                    - generic [ref=e465]: "Comentarios:"
+                    - generic [ref=e466]: "0"
+                - paragraph [ref=e467]: 🌎✨ Puebla es sede de la innovación y el futuro. El...
+          - link "Ver más publicaciones en Instagram de pueblagobiernodelaciudad" [ref=e469] [cursor=pointer]:
+            - /url: https://www.instagram.com/pueblagobiernodelaciudad
+            - text: Ver más
+        - region [ref=e473]:
+          - region [ref=e474]:
+            - generic [ref=e475]:
+              - generic [ref=e476]:
+                - tabpanel "1 of 5" [ref=e477]:
+                  - generic [ref=e480]:
+                    - paragraph [ref=e481]: Convocatoria "El Pitch Perfecto"
+                    - link "Ver más" [ref=e482] [cursor=pointer]:
+                      - /url: https://www.elpitchperfecto.com/
+                - tabpanel [ref=e485]:
+                  - generic [ref=e488]:
+                    - paragraph [ref=e489]: Resultados del proceso competitivo para el financiamiento de corto plazo 2026
+                    - link [ref=e490] [cursor=pointer]:
+                      - /url: /media/com_dpattachments/attachments/com_content.article/Anexo-A-Publicacion.pdf
+                      - text: Ver más
+                - tabpanel [ref=e493]:
+                  - generic [ref=e496]:
+                    - paragraph [ref=e497]: Por una capital sin corrupcion
+                    - link [ref=e498] [cursor=pointer]:
+                      - /url: https://www.youtube.com/watch?v=pdJ9xd02NYA
+                      - text: Ver más
+                - tabpanel [ref=e501]:
+                  - generic [ref=e504]:
+                    - paragraph [ref=e505]: Servicio Militar Nacional Clase 2008 y Remisos
+                    - link [ref=e506] [cursor=pointer]:
+                      - /url: https://srvappayt.pueblacapital.gob.mx:7015/remi/
+                      - text: Ver más
+                - tabpanel [ref=e509]:
+                  - generic [ref=e512]:
+                    - paragraph [ref=e513]: Toda la Agenda Cultural en un clic
+                    - link [ref=e514] [cursor=pointer]:
+                      - /url: https://go.pueblacapital.gob.mx/Vcw0k
+                      - text: Ver más
+              - tablist [ref=e517]:
+                - 'tab "Abrir enlace externo: Convocatoria \"El Pitch Perfecto\". Convocatoria \"El Pitch Perfecto\"" [selected] [ref=e518] [cursor=pointer]'
+                - 'tab "Abrir archivo adjunto: Resultados del proceso competitivo para el financiamiento de corto plazo 2026. Resultados del proceso competitivo para el financiamiento de corto plazo 2026" [ref=e519] [cursor=pointer]'
+                - 'tab "Abrir enlace externo: Por una capital sin corrupcion" [ref=e520] [cursor=pointer]'
+                - 'tab "Abrir enlace externo: Servicio Militar Nacional Clase 2008 y Remisos" [ref=e521] [cursor=pointer]'
+                - 'tab "Abrir enlace externo: Toda la Agenda Cultural en un clic. Toda la Agenda Cultural a un clic" [ref=e522] [cursor=pointer]'
+            - group "Controles del carrusel" [ref=e523]:
+              - link "Mostrar elemento anterior del carrusel" [ref=e524] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e525]
+              - button "Pausar movimiento automático del carrusel" [ref=e527] [cursor=pointer]:
+                - img [ref=e528]
+              - link "Mostrar elemento siguiente del carrusel" [ref=e530] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e531]
+      - generic [ref=e543]:
+        - heading "Convocatorias Ciudadanas" [level=2] [ref=e544]
+        - link "CONVOCATORIA A LAS VECINAS Y VECINOS DEL FRACCIONAMIENTO SENDERO DEL FRESNO, CON INTERÉS EN PARTICIPAR COMO VOTANTES Y/O COMO CANDIDATOS PROPIETARIOS Y SUPLENTES, EN EL PROCESO DE ELECCIÓN DE LA MESA DIRECTIVA DE VECINOS . descarga convocatoria" [ref=e546] [cursor=pointer]:
+          - /url: /media/com_dpattachments/attachments/com_content.article/FRACC-SENDERO-DEL-FRESNO.pdf
+          - text: CONVOCATORIA A LAS VECINAS Y VECINOS DEL FRACCIONAMIENTO SENDERO DEL FRESNO, CON INTERÉS EN PARTICIPAR COMO VOTANTES Y/O COMO CANDIDATOS PROPIETARIOS Y SUPLENTES, EN EL PROCESO DE ELECCIÓN DE LA MESA DIRECTIVA DE VECINOS
+        - link "conoce más sobre las Convocatorias Ciudadanas" [ref=e548] [cursor=pointer]:
+          - /url: /convocatorias
+          - text: Ver más
+      - generic [ref=e558]:
+        - heading "Portales" [level=2] [ref=e559]
+        - generic [ref=e561]:
+          - link [ref=e564] [cursor=pointer]:
+            - /url: https://intranet.pueblacapital.gob.mx/
+          - link [ref=e567] [cursor=pointer]:
+            - /url: https://datos.pueblacapital.gob.mx/
+          - link [ref=e570] [cursor=pointer]:
+            - /url: https://centrohistorico.pueblacapital.gob.mx/
+        - link "Ver más" [ref=e572] [cursor=pointer]:
+          - /url: /visita-nuestros-micrositios
+      - generic [ref=e573]:
+        - region "Noticias de la Capital Imparable" [ref=e576]:
+          - heading "Noticias de la Capital Imparable" [level=2] [ref=e577]
+          - list "Listado de noticias de la Capital Imparable" [ref=e578]:
+            - listitem [ref=e579]:
+              - article "Con éxito, el Gobierno de Pepe Chedraui realizó el Primer Reciclatón Municipal 2026" [ref=e580]:
+                - 'link "Leer noticia: Con éxito, el Gobierno de Pepe Chedraui realizó el Primer Reciclatón Municipal 2026. Publicada el 6 de junio, 2026" [ref=e581] [cursor=pointer]':
+                  - /url: /noticias/capital-imparable/con-exito-el-gobierno-de-pepe-chedraui-realizo-el-primer-reciclaton-municipal-2026
+                  - generic [ref=e584]:
+                    - paragraph [ref=e586]:
+                      - time [ref=e587]: 6 de junio, 2026
+                    - generic [ref=e588]:
+                      - heading "Con éxito, el Gobierno de Pepe Chedraui realizó el Primer Reciclatón Municipal 2026" [level=3] [ref=e589]
+                      - paragraph [ref=e591]: _La suma de esfuerzos entre dependencias, ciudadanía y aliados estratégicos fortalece el programa Canchas x Latas _Se reconoció públicamente a las empresas e instituciones aliadas por su compromiso con el programa Canchas x Latas y la promoción de la cultura ambiental Puebla, Pue., 06 de junio de 2026. En el marco del Día Mundial del Medio Ambiente y como parte de las acciones del programa Canchas x Latas, el Gobierno de la Ciudad, encabezado por el alcalde, Pepe Chedraui, a través del Instituto Municipal del Deporte de Puebla, dirigido por Ricardo Zayas Gallardo, llevó a cabo con gran éxito el Primer Reciclatón Municipal 2026, una jornada que reunió a dependencias municipales, aliados estratégicos y ciudadanía comprometida con el cuidado del medio ambiente. El objetivo de esta iniciativa fue generar un espacio de participación colectiva donde las distintas dependencias del Gobierno de la Ciudad, así como instituciones y aliados de los sectores público y privado, realizaran su aportación de latas de aluminio y material reciclable, fortaleciendo así una de las estrategias más innovadoras de responsabilidad social y sustentabilidad en la capital poblana. Durante la jornada se registró una destacada participación de dependencias y entidades municipales, cuyos equipos de trabajo se sumaron activamente a la recolección de materiales reciclables, demostrando que el compromiso con el medio ambiente y el bienestar comunitario es una responsabilidad compartida. Durante el evento protocolario, el Instituto Municipal del Deporte de Puebla entregó reconocimientos a las empresas e instituciones aliadas que han respaldado el programa Canchas x Latas, destacando su compromiso con la sustentabilidad, la responsabilidad social y la construcción de una cultura ambiental participativa. Este reconocimiento simboliza el valor de la colaboración entre gobierno, iniciativa privada y sociedad para impulsar proyectos que generan beneficios tangibles para las y los ciudadanos de la capital. En su mensaje, el director del Instituto Municipal del Deporte de Puebla, Ricardo Zayas Gallardo, agradeció el respaldo de todas las dependencias municipales y destacó que cada lata recolectada representa una oportunidad para seguir transformando espacios públicos y fomentar la participación ciudadana. “Somos el primer Ayuntamiento en México en lanzar una iniciativa de este tipo, es un proyecto que tiene impacto ambiental, social porque une a la comunidad entorne a este objetivo e impacto deportivo y urbano, gracias a todos ustedes por confiar, por sumarse a esta iniciativa. Este reciclatón no marco el final de esta colecta, estamos muy cerca de completar las latas necesarias para renovar la primera cancha”, puntualizó. Asimismo, reconoció el entusiasmo y la disposición mostrada por las y los servidores públicos, quienes respondieron al llamado con una importante aportación de latas y materiales reciclables, consolidando una jornada ejemplar de colaboración institucional. Como parte de las actividades complementarias, las familias asistentes disfrutaron de retas de fútbol 3 contra 3, un intercambio masivo de estampas del álbum del Mundial 2026 y una firma de autógrafos con destacadas figuras del deporte y el entretenimiento deportivo, entre ellas las luchadoras profesionales mexicanas Lady Tiger y Dixon, así como los exfutbolistas Carlos Poblete y Pablo González. Con acciones como esta, el Gobierno de la Ciudad refrenda su compromiso de impulsar programas que promuevan el reciclaje, la cultura ambiental, la convivencia comunitaria y el deporte como herramientas de transformación social, consolidando a Puebla como una ciudad que apuesta por la sustentabilidad y la participación ciudadana.
+            - listitem [ref=e592]:
+              - article "Encabeza Pepe Chedraui jornada de reforestación en Ecocampus BUAP" [ref=e593]:
+                - 'link "Leer noticia: Encabeza Pepe Chedraui jornada de reforestación en Ecocampus BUAP. Publicada el 5 de junio, 2026" [ref=e594] [cursor=pointer]':
+                  - /url: /noticias/capital-imparable/encabeza-pepe-chedraui-jornada-de-reforestacion-en-ecocampus-buap
+                  - generic [ref=e597]:
+                    - paragraph [ref=e599]:
+                      - time [ref=e600]: 5 de junio, 2026
+                    - generic [ref=e601]:
+                      - heading "Encabeza Pepe Chedraui jornada de reforestación en Ecocampus BUAP" [level=3] [ref=e602]
+                      - paragraph [ref=e604]: "- Desde el Gobierno de la Ciudad se plantarán más de 10 mil árboles para reverdecer Puebla capital Puebla, Pue., 5 de junio de 2026.- Con el objetivo de crear nuevos espacios verdes y fortalecer el compromiso ambiental del municipio, el Gobierno de la Ciudad, que encabeza el presidente municipal, Pepe Chedraui, en coordinación con la Benemérita Universidad Autónoma de Puebla (BUAP), llevó a cabo una jornada de reforestación masiva en el Ecocampus de la máxima casa de estudios. El alcalde encabezó esta acción ambiental en un polígono de 10 hectáreas, donde se logrará la plantación de más de 10 mil árboles. Esta iniciativa busca generar nuevos pulmones verdes que contribuyan a mejorar la calidad del aire, favorecer la captación de agua y promover la biodiversidad en la capital poblana. Para alcanzar este resultado, el Gobierno de la Ciudad, colaboró con la apertura de más de 10 mil cepas y aportará la plantación de más de siete mil árboles. A este esfuerzo se sumaron tres mil ejemplares producidos en el Jardín Botánico de la BUAP, bajo el trabajo de profesores investigadores de la universidad, consolidando así una alianza estratégica entre academia y gobierno. Los árboles a plantar en este polígono serán:* 3 mil 388 agaves* 2 mil 258 sabinos* 3 mil 387 encinos* 2 mil 258 tronadoras Al respecto, el secretario de Medio Ambiente del Municipio, Iván Herrera, destacó la importancia de la corresponsabilidad ciudadana y del trabajo conjunto para construir una ciudad más sostenible. “Cada uno de estos ejemplares es un compromiso con las próximas generaciones de poblanas y poblanos. Desde la Secretaría de Medio Ambiente seguiremos impulsando acciones que hagan de Puebla una ciudad más verde, resiliente y sostenible”, expresó. Con estas acciones, el Gobierno de la Ciudad y la BUAP refrendan su compromiso con el derecho de todas y todos para un medio ambiente sano."
+            - listitem [ref=e605]:
+              - article "Supervisa Pepe Chedraui Jornada de Limpieza en Puente de México" [ref=e606]:
+                - 'link "Leer noticia: Supervisa Pepe Chedraui Jornada de Limpieza en Puente de México. Publicada el 5 de junio, 2026" [ref=e607] [cursor=pointer]':
+                  - /url: /noticias/capital-imparable/supervisa-pepe-chedraui-jornada-de-limpieza-en-puente-de-mexico
+                  - generic [ref=e610]:
+                    - paragraph [ref=e612]:
+                      - time [ref=e613]: 5 de junio, 2026
+                    - generic [ref=e614]:
+                      - heading "Supervisa Pepe Chedraui Jornada de Limpieza en Puente de México" [level=3] [ref=e615]
+                      - paragraph [ref=e617]: Puebla, Pue., 5 de junio de 2026.- Como parte de las acciones permanentes para mantener una ciudad más limpia y ordenada el presidente municipal, Pepe Chedraui, supervisó la Jornada de Limpieza realizada en la zona de Puente de México, sobre el bulevar Forjadores, donde personal del Gobierno de la Ciudad llevó a cabo labores de barrido, retiro de residuos y mantenimiento de espacios públicos. Afirmó que el Gobierno de la Ciudad continuará impulsando jornadas de limpieza en distintos puntos de la capital para fortalecer el cuidado del entorno urbano y fomentar la participación ciudadana en la conservación de los espacios comunes.
+          - link "Ver más noticias de la Capital Imparable" [ref=e619] [cursor=pointer]:
+            - /url: /noticias/capital-imparable
+            - text: Ver más
+        - region "Atención Ciudadana" [ref=e621]:
+          - generic [ref=e622]:
+            - heading "Atención Ciudadana" [level=2] [ref=e624]
+            - list [ref=e625]:
+              - listitem [ref=e626]:
+                - link "Ir al Buzón Digital para atención a quejas y denuncias contra servidores públicos municipales, abre en una nueva pestaña" [ref=e628] [cursor=pointer]:
+                  - /url: https://buzon.pueblacapital.gob.mx/
+                  - generic [ref=e629]:
+                    - img [ref=e632]
+                    - generic [ref=e634]:
+                      - paragraph [ref=e635]: Buzón Digital
+                      - paragraph [ref=e636]: Atención a quejas y denuncias contra servidores publicos municipales
+                      - generic [ref=e637]:
+                        - generic [ref=e638]: ver más
+                        - img [ref=e639]
+              - listitem [ref=e641]:
+                - link "Marcar al 072 para reportar baches, luminarias o alguna anomalía" [ref=e643] [cursor=pointer]:
+                  - /url: tel:+072
+                  - generic [ref=e644]:
+                    - img [ref=e646]
+                    - generic [ref=e648]:
+                      - paragraph [ref=e649]: "072"
+                      - paragraph [ref=e650]: Reporta baches, luminarias o alguna anomalía.
+                      - generic [ref=e651]:
+                        - generic [ref=e652]: marcar
+                        - img [ref=e653]
+              - listitem [ref=e655]:
+                - link "Marcar al 089 para realizar una denuncia anónima" [ref=e657] [cursor=pointer]:
+                  - /url: tel:+089
+                  - generic [ref=e658]:
+                    - img [ref=e660]
+                    - generic [ref=e662]:
+                      - paragraph [ref=e663]: "089"
+                      - paragraph [ref=e664]: Denuncia anónima.
+                      - generic [ref=e665]:
+                        - generic [ref=e666]: marcar
+                        - img [ref=e667]
+              - listitem [ref=e669]:
+                - link "Marcar al 911 para atención de emergencia médica, de seguridad y de protección civil" [ref=e671] [cursor=pointer]:
+                  - /url: tel:+911
+                  - generic [ref=e672]:
+                    - img [ref=e674]
+                    - generic [ref=e676]:
+                      - paragraph [ref=e677]: "911"
+                      - paragraph [ref=e678]: Atención de emergencia médica, de seguridad y de protección civil.
+                      - generic [ref=e679]:
+                        - generic [ref=e680]: marcar
+                        - img [ref=e681]
+    - contentinfo [ref=e683]:
+      - generic [ref=e684]:
+        - generic [ref=e689]:
+          - img "Logotipo de la Capital Imparable" [ref=e691]
+          - generic [ref=e692]:
+            - link "Ir a la red social Facebook del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e694] [cursor=pointer]:
+              - /url: https://www.facebook.com/HAyuntamientoDePuebla
+              - img [ref=e695]
+            - link "Ir a la red social X del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e698] [cursor=pointer]:
+              - /url: https://x.com/PueblaAyto
+              - img [ref=e699]
+            - link "Ir a la red social Instagram del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e703] [cursor=pointer]:
+              - /url: https://www.instagram.com/pueblagobiernodelaciudad/
+              - img [ref=e704]
+            - link "Ir a la red social YouTube del Gobierno de la Ciudad de Puebla, se abre en una pestaña nueva" [ref=e707] [cursor=pointer]:
+              - /url: https://www.youtube.com/@AyuntamientodePueblaAyto
+              - img [ref=e708]
+          - img "Separador decorativo con mosaico central" [ref=e711]
+          - generic [ref=e712]:
+            - generic [ref=e715]:
+              - heading "Ayuntamiento" [level=3] [ref=e716]
+              - list [ref=e717]:
+                - listitem [ref=e718]:
+                  - link "Ir a Sesiones de Cabildo del H. Ayuntamiento de Puebla" [ref=e719] [cursor=pointer]:
+                    - /url: https://www.youtube.com/@AyuntamientodePueblaAyto
+                    - text: Sesiones de cabildo
+                - listitem [ref=e720]:
+                  - link "Abrir el Manual de Identidad Institucional del H. Ayuntamiento de Puebla en PDF" [ref=e721] [cursor=pointer]:
+                    - /url: /images/pages/home/Manual_de_Identidad_Institucional.pdf
+                    - text: Manual de Identidad Institucional
+            - generic [ref=e724]:
+              - heading "Transparencia" [level=3] [ref=e725]
+              - list [ref=e726]:
+                - listitem [ref=e727]:
+                  - link "Ir al portal de Obligaciones de Transparencia del Gobierno de la Ciudad de Puebla" [ref=e728] [cursor=pointer]:
+                    - /url: https://gobiernodelaciudad.pueblacapital.gob.mx/
+                    - text: Obligaciones de Transparencia
+            - generic [ref=e731]:
+              - heading "Sitios de interés" [level=3] [ref=e732]
+              - list [ref=e733]:
+                - listitem [ref=e734]:
+                  - link "Ir al sitio del Gobierno Federal, abre en una nueva pestaña" [ref=e735] [cursor=pointer]:
+                    - /url: https://www.gob.mx/
+                    - text: Gobierno Federal
+                - listitem [ref=e736]:
+                  - link "Ir al sitio del Gobierno del Estado de Puebla, abre en una nueva pestaña" [ref=e737] [cursor=pointer]:
+                    - /url: https://www.puebla.gob.mx/
+                    - text: Gobierno del Estado de Puebla
+                - listitem [ref=e738]:
+                  - link "Ir al portal para consultar tu CURP, abre en una nueva pestaña" [ref=e739] [cursor=pointer]:
+                    - /url: https://www.gob.mx/curp/
+                    - text: Consulta tu CURP
+          - separator [ref=e741]
+        - generic [ref=e746]:
+          - paragraph [ref=e747]: Municipio de Puebla — Gobierno Municipal 2024–2027
+          - paragraph [ref=e748]: Sitio oficial del Municipio de Puebla.
+          - paragraph [ref=e749]: Tel. +52 (222) 309 44 00 - (222) 309 43 00 Puebla, Pue. México
+        - paragraph [ref=e755]: Última actualización 13 de junio de 2026

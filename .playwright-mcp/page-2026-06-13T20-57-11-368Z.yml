@@ -1,0 +1,546 @@
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e7]:
+          - link "Ecatepec de Morelos" [ref=e11] [cursor=pointer]:
+            - /url: https://ecatepec.gob.mx/
+            - img "Ecatepec de Morelos" [ref=e12]
+          - generic [ref=e17]:
+            - generic [ref=e18]:
+              - generic [ref=e19]: Fecha
+              - generic [ref=e20]: 13/6/2026
+            - generic [ref=e21]:
+              - generic [ref=e22]: Hora local
+              - generic [ref=e23]: 02:57 p.m.
+            - generic [ref=e24]:
+              - generic [ref=e25]: Clima actual
+              - generic [ref=e26]: "-- · --"
+            - generic [ref=e27]:
+              - generic [ref=e28]: Calidad del aire
+              - generic [ref=e29]: "-- --"
+            - generic [ref=e30]:
+              - generic [ref=e31]: Hoy no circula
+              - generic [ref=e32]: "Sábado: depende de holograma/terminación"
+          - generic [ref=e34]:
+            - generic [ref=e36]:
+              - link "Facebook" [ref=e37] [cursor=pointer]:
+                - /url: https://www.facebook.com/GobiernodeEcatepecdeMorelos?mibextid=wwXIfr
+                - img [ref=e39]
+              - link "YouTube" [ref=e41] [cursor=pointer]:
+                - /url: https://www.youtube.com/@h.ayuntamientodeecatepec
+                - img [ref=e43]
+            - button "Buscar" [ref=e45] [cursor=pointer]:
+              - generic [ref=e46]: Buscar
+              - img [ref=e47]
+        - navigation "cabecera" [ref=e53]:
+          - list [ref=e54]:
+            - listitem [ref=e55]:
+              - link "Inicio" [ref=e56] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/
+            - listitem [ref=e57]:
+              - link "Transparencia" [ref=e58] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/transparencia-2/
+                - text: Transparencia
+                - img [ref=e60]
+              - button "Expand dropdown menu"
+            - listitem [ref=e62]:
+              - link "Trámites – Servicios" [ref=e63] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/category/tramitesyservicios/
+                - text: Trámites – Servicios
+                - img [ref=e65]
+              - button "Expand dropdown menu"
+            - listitem [ref=e67]:
+              - link "Enlace Municipal" [ref=e68] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/enlace-municipal/
+            - listitem [ref=e69]:
+              - link "Descubre Ecatepec" [ref=e70] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/category/descubre-ecatepec/
+                - text: Descubre Ecatepec
+                - img [ref=e72]
+              - button "Expand dropdown menu"
+            - listitem [ref=e74]:
+              - link "Digitalización y Simplificación" [ref=e75] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/mejora-regulatoria/
+                - text: Digitalización y Simplificación
+                - img [ref=e77]
+              - button "Expand dropdown menu"
+            - listitem [ref=e79]:
+              - link "Contacto" [ref=e80] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/contact/
+    - main [ref=e81]:
+      - article [ref=e83]:
+        - generic [ref=e84]:
+          - generic [ref=e87]:
+            - link "Pagar Predial" [ref=e94] [cursor=pointer]:
+              - /url: http://www.tesoreriaecatepec.gob.mx/IngresosTesoreria/
+              - img [ref=e97]
+              - generic [ref=e99]: Pagar Predial
+            - link "Datos Abiertos" [ref=e106] [cursor=pointer]:
+              - /url: https://ecatepec.gob.mx/datos-abiertos/
+              - img [ref=e109]
+              - generic [ref=e111]: Datos Abiertos
+            - link "Información Pública" [ref=e118] [cursor=pointer]:
+              - /url: https://www.infoem.org.mx/es/content/informacion-publica
+              - img [ref=e121]
+              - generic [ref=e123]: Información Pública
+            - link "Protección de Datos" [ref=e130] [cursor=pointer]:
+              - /url: https://www.infoem.org.mx/es/iniciativas/micrositio/violencia-digital
+              - img [ref=e133]
+              - generic [ref=e135]: Protección de Datos
+            - link "Faenas Masivas" [ref=e142] [cursor=pointer]:
+              - /url: https://docs.google.com/forms/d/e/1FAIpQLSf5daoxYAPuCQjcNh7ijeCx0dkKvVX7LJouDNbW8K38qmCRoQ/viewform
+              - img [ref=e145]
+              - generic [ref=e147]: Faenas Masivas
+          - generic [ref=e154]:
+            - generic [ref=e155]: Tu navegador no soporta el elemento de video.
+            - button "🔇" [ref=e156] [cursor=pointer]
+          - separator [ref=e158]
+          - list [ref=e162]:
+            - listitem [ref=e163]:
+              - figure [ref=e167]:
+                - link [ref=e168] [cursor=pointer]:
+                  - /url: https://ecatepec.gob.mx/instrucciones-de-faena-masiva-en-ecatepec/
+                  - img [ref=e170]
+            - listitem [ref=e171]:
+              - figure [ref=e175]:
+                - link [ref=e176] [cursor=pointer]:
+                  - /url: https://ecatepec.gob.mx/bando-municipal-2026/
+                  - img [ref=e178]
+            - listitem [ref=e179]:
+              - figure [ref=e183]:
+                - link [ref=e184] [cursor=pointer]:
+                  - /url: https://ecatepec.gob.mx/aspirantes-a-policia-municipal-de-proximidad-2026/
+                  - img [ref=e186]
+            - listitem [ref=e187]:
+              - figure [ref=e191]:
+                - img [ref=e193]
+            - listitem [ref=e194]:
+              - figure [ref=e198]:
+                - img [ref=e200]
+            - listitem [ref=e201]:
+              - figure [ref=e205]:
+                - img [ref=e207]
+            - listitem [ref=e208]:
+              - figure [ref=e212]:
+                - img [ref=e214]
+            - listitem [ref=e215]:
+              - figure [ref=e219]:
+                - img [ref=e221]
+            - listitem [ref=e222]:
+              - figure [ref=e226]:
+                - img [ref=e228]
+          - separator [ref=e231]
+          - heading "Cabildo" [level=2] [ref=e233]
+          - separator [ref=e235]
+          - generic [ref=e236]:
+            - figure [ref=e238]:
+              - iframe [ref=e240]:
+                - generic [active] [ref=f76e1]:
+                  - generic "Reproductor de video de YouTube" [ref=f76e3]
+                  - generic [ref=f76e5]:
+                    - generic:
+                      - generic:
+                        - button "Reproducir video" [ref=f76e10] [cursor=pointer]
+                        - button "Ocultar controles del reproductor" [ref=f76e12] [cursor=pointer]
+                        - generic [ref=f76e14]:
+                          - generic [ref=f76e19]:
+                            - generic [ref=f76e20]:
+                              - link "Cabildo Infantil 20 de Noviembre 2025" [ref=f76e21] [cursor=pointer]:
+                                - /url: https://www.youtube.com/watch?v=UKHomsW3Gsw
+                              - link "H. Ayuntamiento de Ecatepec de Morelos" [ref=f76e22] [cursor=pointer]:
+                                - /url: /channel/UCJFhkzqGsmQsti4ICnXHeGg
+                                - generic [ref=f76e23]: H. Ayuntamiento de Ecatepec de Morelos
+                            - generic [ref=f76e24]:
+                              - button [ref=f76e25] [cursor=pointer]
+                              - generic [ref=f76e27]:
+                                - generic: H. Ayuntamiento de Ecatepec de Morelos
+                                - generic: 64 suscriptores
+                          - generic [ref=f76e28]:
+                            - button "Copiar vínculo" [ref=f76e31] [cursor=pointer]:
+                              - generic [ref=f76e35]:
+                                - img
+                            - link "Mirar en YouTube" [ref=f76e42] [cursor=pointer]:
+                              - /url: https://www.youtube.com/watch?v=UKHomsW3Gsw
+                              - generic [ref=f76e45]:
+                                - text: Mirar en
+                                - img [ref=f76e47]:
+                                  - generic [ref=f76e49]:
+                                    - img
+            - figure [ref=e242]:
+              - iframe [ref=e244]:
+                - generic [active] [ref=f77e1]:
+                  - generic "Reproductor de video de YouTube" [ref=f77e3]
+                  - generic [ref=f77e5]:
+                    - generic:
+                      - generic:
+                        - button "Reproducir video" [ref=f77e10] [cursor=pointer]
+                        - button "Ocultar controles del reproductor" [ref=f77e12] [cursor=pointer]
+                        - generic [ref=f77e14]:
+                          - generic [ref=f77e19]:
+                            - generic [ref=f77e20]:
+                              - link "Sesión Ordinaria de Cabildo,13 de noviembre de 2025" [ref=f77e21] [cursor=pointer]:
+                                - /url: https://www.youtube.com/watch?v=5AygZEG_7pw
+                              - link "H. Ayuntamiento de Ecatepec de Morelos" [ref=f77e22] [cursor=pointer]:
+                                - /url: /channel/UCJFhkzqGsmQsti4ICnXHeGg
+                                - generic [ref=f77e23]: H. Ayuntamiento de Ecatepec de Morelos
+                            - generic [ref=f77e24]:
+                              - button [ref=f77e25] [cursor=pointer]
+                              - generic [ref=f77e27]:
+                                - generic: H. Ayuntamiento de Ecatepec de Morelos
+                                - generic: 64 suscriptores
+                          - generic [ref=f77e28]:
+                            - button "Compartir" [ref=f77e31] [cursor=pointer]:
+                              - generic [ref=f77e35]:
+                                - img
+                            - link "Mirar en YouTube" [ref=f77e42] [cursor=pointer]:
+                              - /url: https://www.youtube.com/watch?v=5AygZEG_7pw
+                              - generic [ref=f77e45]:
+                                - text: Mirar en
+                                - img [ref=f77e47]:
+                                  - generic [ref=f77e49]:
+                                    - img
+            - figure [ref=e246]:
+              - iframe [ref=e248]:
+                - generic [active] [ref=f78e1]:
+                  - generic "Reproductor de video de YouTube" [ref=f78e3]
+                  - generic [ref=f78e5]:
+                    - generic:
+                      - generic:
+                        - button "Reproducir video" [ref=f78e10] [cursor=pointer]
+                        - button "Ocultar controles del reproductor" [ref=f78e12] [cursor=pointer]
+                        - generic [ref=f78e14]:
+                          - generic [ref=f78e19]:
+                            - generic [ref=f78e20]:
+                              - link "Conferencia de Prensa,10 de Noviembre 2025" [ref=f78e21] [cursor=pointer]:
+                                - /url: https://www.youtube.com/watch?v=yVKuPYhUd_s
+                              - link "H. Ayuntamiento de Ecatepec de Morelos" [ref=f78e22] [cursor=pointer]:
+                                - /url: /channel/UCJFhkzqGsmQsti4ICnXHeGg
+                                - generic [ref=f78e23]: H. Ayuntamiento de Ecatepec de Morelos
+                            - generic [ref=f78e24]:
+                              - button [ref=f78e25] [cursor=pointer]
+                              - generic [ref=f78e27]:
+                                - generic: H. Ayuntamiento de Ecatepec de Morelos
+                                - generic: 64 suscriptores
+                          - generic [ref=f78e28]:
+                            - button "Compartir" [ref=f78e31] [cursor=pointer]:
+                              - generic [ref=f78e35]:
+                                - img
+                            - link "Mirar en YouTube" [ref=f78e42] [cursor=pointer]:
+                              - /url: https://www.youtube.com/watch?v=yVKuPYhUd_s
+                              - generic [ref=f78e45]:
+                                - text: Mirar en
+                                - img [ref=f78e47]:
+                                  - generic [ref=f78e49]:
+                                    - img
+          - heading "Municipio en Movimiento" [level=2] [ref=e250]
+          - separator [ref=e252]
+          - generic [ref=e253]:
+            - figure [ref=e255]:
+              - link [ref=e256] [cursor=pointer]:
+                - /url: https://www.facebook.com/share/p/14QBQKZ7GqM/
+            - figure [ref=e258]:
+              - link [ref=e259] [cursor=pointer]:
+                - /url: https://www.facebook.com/share/p/17k9U4SsCF/
+            - figure [ref=e261]:
+              - link [ref=e262] [cursor=pointer]:
+                - /url: https://www.facebook.com/share/p/1ABvj3HDM3/
+          - heading "Conferencias" [level=2] [ref=e264]
+          - separator [ref=e266]
+          - generic [ref=e267]:
+            - figure [ref=e269]:
+              - iframe [ref=e271]:
+                - generic [active] [ref=f79e1]:
+                  - generic "Reproductor de video de YouTube" [ref=f79e3]
+                  - generic [ref=f79e5]:
+                    - generic:
+                      - generic:
+                        - button "Reproducir video" [ref=f79e10] [cursor=pointer]
+                        - button "Ocultar controles del reproductor" [ref=f79e12] [cursor=pointer]
+                        - generic [ref=f79e14]:
+                          - generic [ref=f79e19]:
+                            - generic [ref=f79e20]:
+                              - link "Conferencia de Prensa,19 de noviembre de 2025" [ref=f79e21] [cursor=pointer]:
+                                - /url: https://www.youtube.com/watch?v=2ZI00vWyxYs
+                              - link "H. Ayuntamiento de Ecatepec de Morelos" [ref=f79e22] [cursor=pointer]:
+                                - /url: /channel/UCJFhkzqGsmQsti4ICnXHeGg
+                                - generic [ref=f79e23]: H. Ayuntamiento de Ecatepec de Morelos
+                            - generic [ref=f79e24]:
+                              - button [ref=f79e25] [cursor=pointer]
+                              - generic [ref=f79e27]:
+                                - generic: H. Ayuntamiento de Ecatepec de Morelos
+                                - generic: 64 suscriptores
+                          - generic [ref=f79e28]:
+                            - button "Compartir" [ref=f79e31] [cursor=pointer]:
+                              - generic [ref=f79e35]:
+                                - img
+                            - link "Mirar en YouTube" [ref=f79e42] [cursor=pointer]:
+                              - /url: https://www.youtube.com/watch?v=2ZI00vWyxYs
+                              - generic [ref=f79e45]:
+                                - text: Mirar en
+                                - img [ref=f79e47]:
+                                  - generic [ref=f79e49]:
+                                    - img
+            - figure [ref=e273]:
+              - iframe [ref=e275]:
+                - generic [active] [ref=f80e1]:
+                  - generic "Reproductor de video de YouTube" [ref=f80e3]
+                  - generic [ref=f80e5]:
+                    - generic:
+                      - generic:
+                        - button "Reproducir video" [ref=f80e10] [cursor=pointer]
+                        - button "Ocultar controles del reproductor" [ref=f80e12] [cursor=pointer]
+                        - generic [ref=f80e14]:
+                          - generic [ref=f80e19]:
+                            - generic [ref=f80e20]:
+                              - link "Conferencia de Prensa,10 de Noviembre 2025" [ref=f80e21] [cursor=pointer]:
+                                - /url: https://www.youtube.com/watch?v=yVKuPYhUd_s
+                              - link "H. Ayuntamiento de Ecatepec de Morelos" [ref=f80e22] [cursor=pointer]:
+                                - /url: /channel/UCJFhkzqGsmQsti4ICnXHeGg
+                                - generic [ref=f80e23]: H. Ayuntamiento de Ecatepec de Morelos
+                            - generic [ref=f80e24]:
+                              - button [ref=f80e25] [cursor=pointer]
+                              - generic [ref=f80e27]:
+                                - generic: H. Ayuntamiento de Ecatepec de Morelos
+                                - generic: 64 suscriptores
+                          - generic [ref=f80e28]:
+                            - button "Compartir" [ref=f80e31] [cursor=pointer]:
+                              - generic [ref=f80e35]:
+                                - img
+                            - link "Mirar en YouTube" [ref=f80e42] [cursor=pointer]:
+                              - /url: https://www.youtube.com/watch?v=yVKuPYhUd_s
+                              - generic [ref=f80e45]:
+                                - text: Mirar en
+                                - img [ref=f80e47]:
+                                  - generic [ref=f80e49]:
+                                    - img
+            - figure [ref=e277]:
+              - iframe [ref=e279]:
+                - generic [active] [ref=f81e1]:
+                  - generic "Reproductor de video de YouTube" [ref=f81e3]
+                  - generic [ref=f81e5]:
+                    - generic:
+                      - generic:
+                        - button "Reproducir video" [ref=f81e10] [cursor=pointer]
+                        - button "Ocultar controles del reproductor" [ref=f81e12] [cursor=pointer]
+                        - generic [ref=f81e14]:
+                          - generic [ref=f81e19]:
+                            - generic [ref=f81e20]:
+                              - link "Conferencia de prensa, 5 de noviembre de 2025" [ref=f81e21] [cursor=pointer]:
+                                - /url: https://www.youtube.com/watch?v=VUerdJzvsGQ
+                              - link "H. Ayuntamiento de Ecatepec de Morelos" [ref=f81e22] [cursor=pointer]:
+                                - /url: /channel/UCJFhkzqGsmQsti4ICnXHeGg
+                                - generic [ref=f81e23]: H. Ayuntamiento de Ecatepec de Morelos
+                            - generic [ref=f81e24]:
+                              - button [ref=f81e25] [cursor=pointer]
+                              - generic [ref=f81e27]:
+                                - generic: H. Ayuntamiento de Ecatepec de Morelos
+                                - generic: 64 suscriptores
+                          - generic [ref=f81e28]:
+                            - button "Compartir" [ref=f81e31] [cursor=pointer]:
+                              - generic [ref=f81e35]:
+                                - img
+                            - link "Mirar en YouTube" [ref=f81e42] [cursor=pointer]:
+                              - /url: https://www.youtube.com/watch?v=VUerdJzvsGQ
+                              - generic [ref=f81e45]:
+                                - text: Mirar en
+                                - img [ref=f81e47]:
+                                  - generic [ref=f81e49]:
+                                    - img
+          - separator [ref=e281]
+          - heading "Noticias" [level=2] [ref=e283]
+          - separator [ref=e285]
+          - generic [ref=e290]:
+            - article [ref=e293]:
+              - heading "Policía de Ecatepec y paramédicos evitan suicidio de hombre" [level=5] [ref=e294]:
+                - link "Policía de Ecatepec y paramédicos evitan suicidio de hombre" [ref=e295] [cursor=pointer]:
+                  - /url: https://ecatepec.gob.mx/policia-de-ecatepec-y-paramedicos-evitan-suicidio-de-hombre/
+              - link:
+                - /url: https://ecatepec.gob.mx/policia-de-ecatepec-y-paramedicos-evitan-suicidio-de-hombre/
+              - generic [ref=e296]: Comunicación Social
+              - link "Boletin" [ref=e298] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/category/boletin/
+              - paragraph [ref=e300]: Boletín 1262/DCS/Ecatepec Un sujeto subió a una torre de alta tensión y pretendía aventarse Unidad de Atención a Víctimas brindó contención y lo trasladó a salvo a su hogar Ecatepec,…
+              - link "Leer más…" [ref=e301] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/policia-de-ecatepec-y-paramedicos-evitan-suicidio-de-hombre/
+            - article [ref=e304]:
+              - heading "Azucena Cisneros y Delfina Gómez refuerzan estrategia de seguridad con Mesa de Paz" [level=5] [ref=e305]:
+                - link "Azucena Cisneros y Delfina Gómez refuerzan estrategia de seguridad con Mesa de Paz" [ref=e306] [cursor=pointer]:
+                  - /url: https://ecatepec.gob.mx/azucena-cisneros-y-delfina-gomez-refuerzan-estrategia-de-seguridad-con-mesa-de-paz/
+              - link:
+                - /url: https://ecatepec.gob.mx/azucena-cisneros-y-delfina-gomez-refuerzan-estrategia-de-seguridad-con-mesa-de-paz/
+              - generic [ref=e307]: Comunicación Social
+              - link "Boletin" [ref=e309] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/category/boletin/
+              - paragraph [ref=e311]: Boletín 1261/DCS/Ecatepec Coordinación y resultado con Mando Unificado entre gobiernos municipal, estatal y federal Mesa de Paz con la Gobernadora Delfina Gómez, paso histórico para la seguridad de Ecatepec Ecatepec,…
+              - link "Leer más…" [ref=e312] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/azucena-cisneros-y-delfina-gomez-refuerzan-estrategia-de-seguridad-con-mesa-de-paz/
+            - article [ref=e315]:
+              - heading "Acaban con 17 años de oscuridad y abandono en avenida de Las Américas" [level=5] [ref=e316]:
+                - link "Acaban con 17 años de oscuridad y abandono en avenida de Las Américas" [ref=e317] [cursor=pointer]:
+                  - /url: https://ecatepec.gob.mx/acaban-con-17-anos-de-oscuridad-y-abandono-en-avenida-de-las-americas/
+              - link:
+                - /url: https://ecatepec.gob.mx/acaban-con-17-anos-de-oscuridad-y-abandono-en-avenida-de-las-americas/
+              - generic [ref=e318]: Comunicación Social
+              - link "Boletin" [ref=e320] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/category/boletin/
+              - paragraph [ref=e322]: Boletín 1260/DCS/Ecatepec Gobierno de Ecatepec crea Sendero Seguro de 1.2 km Rescata también zona deportiva aledaña a la alberca municipal e implementa el programa Cambia de Cancha Ecatepec, Méx., a…
+              - link "Leer más…" [ref=e323] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/acaban-con-17-anos-de-oscuridad-y-abandono-en-avenida-de-las-americas/
+            - article [ref=e326]:
+              - heading "Policía de Ecatepec persigue y detiene a sujeto en Iztapalapa por robo de auto" [level=5] [ref=e327]:
+                - link "Policía de Ecatepec persigue y detiene a sujeto en Iztapalapa por robo de auto" [ref=e328] [cursor=pointer]:
+                  - /url: https://ecatepec.gob.mx/policia-de-ecatepec-persigue-y-detiene-a-sujeto-en-iztapalapa-por-robo-de-auto/
+              - link:
+                - /url: https://ecatepec.gob.mx/policia-de-ecatepec-persigue-y-detiene-a-sujeto-en-iztapalapa-por-robo-de-auto/
+              - generic [ref=e329]: Comunicación Social
+              - link "Boletin" [ref=e331] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/category/boletin/
+              - paragraph [ref=e333]: Boletín 1259/DCS/Ecatepec El vehículo fue despojado a una mujer en Jardines de Morelos Uniformados recuperan la unidad Ecatepec, Méx., a 09 de febrero de 2026. Elementos del Sector 16 atendieron…
+              - link "Leer más…" [ref=e334] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/policia-de-ecatepec-persigue-y-detiene-a-sujeto-en-iztapalapa-por-robo-de-auto/
+            - article [ref=e337]:
+              - heading "Perrita atrapada entre dos bardas fue rescatada por elementos de Protección Civil de Ecatepec" [level=5] [ref=e338]:
+                - link "Perrita atrapada entre dos bardas fue rescatada por elementos de Protección Civil de Ecatepec" [ref=e339] [cursor=pointer]:
+                  - /url: https://ecatepec.gob.mx/perrita-atrapada-entre-dos-bardas-fue-rescatada-por-elementos-de-proteccion-civil-de-ecatepec/
+              - link:
+                - /url: https://ecatepec.gob.mx/perrita-atrapada-entre-dos-bardas-fue-rescatada-por-elementos-de-proteccion-civil-de-ecatepec/
+              - generic [ref=e340]: Comunicación Social
+              - link "Boletin" [ref=e342] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/category/boletin/
+              - paragraph [ref=e344]: Boletín 1258/DCS/Ecatepec Personal de la heroica institución utilizó una táctica especializada para el rescate Ecatepec, Méx., 09 de febrero de 2026.- Una perrita que estuvo atrapada entre dos bardas por…
+              - link "Leer más…" [ref=e345] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/perrita-atrapada-entre-dos-bardas-fue-rescatada-por-elementos-de-proteccion-civil-de-ecatepec/
+            - article [ref=e348]:
+              - heading "Gobierno de Ecatepec realiza operativo en tianguis de la avenida Acueducto para liberar un carril y agilizar la movilidad" [level=5] [ref=e349]:
+                - link "Gobierno de Ecatepec realiza operativo en tianguis de la avenida Acueducto para liberar un carril y agilizar la movilidad" [ref=e350] [cursor=pointer]:
+                  - /url: https://ecatepec.gob.mx/gobierno-de-ecatepec-realiza-operativo-en-tianguis-de-la-avenida-acueducto-para-liberar-un-carril-y-agilizar-la-movilidad/
+              - link:
+                - /url: https://ecatepec.gob.mx/gobierno-de-ecatepec-realiza-operativo-en-tianguis-de-la-avenida-acueducto-para-liberar-un-carril-y-agilizar-la-movilidad/
+              - generic [ref=e351]: Comunicación Social
+              - link "Boletin" [ref=e353] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/category/boletin/
+              - paragraph [ref=e355]: Boletín 1257/DCS/Ecatepec Se busca ordenar el comercio y beneficiar a vecinos de la parte alta de Tulpetlac Autoridades mantienen el diálogo con líderes tianguistas Ecatepec, Méx., 08 de febrero de…
+              - link "Leer más…" [ref=e356] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/gobierno-de-ecatepec-realiza-operativo-en-tianguis-de-la-avenida-acueducto-para-liberar-un-carril-y-agilizar-la-movilidad/
+          - generic [ref=e359]:
+            - figure [ref=e363]:
+              - link [ref=e364] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/bando-municipal-de-ecatepec-de-morelos-2025/
+            - generic [ref=e367]:
+              - heading "Bando Municipal de Ecatepec de Morelos 2025" [level=1] [ref=e369]:
+                - link "Bando Municipal de Ecatepec de Morelos 2025" [ref=e370] [cursor=pointer]:
+                  - /url: https://ecatepec.gob.mx/bando-municipal-de-ecatepec-de-morelos-2025/
+              - paragraph [ref=e372]:
+                - strong [ref=e373]: Descubre los nuevos artículos que marcan el rumbo de nuestra ciudad. Ven y conoce el Bando Municipal de Ecatepec 2025
+                - text: .
+              - paragraph [ref=e375]: "-secretaria del ayuntamiento"
+          - separator [ref=e378]
+          - heading "Galería" [level=2] [ref=e380]
+          - paragraph [ref=e382]: Explora nuestra galería y descubre los lugares más destacados de Ecatepec de Morelos, un reflejo de nuestra cultura, comunidad e historia.
+          - generic [ref=e385]:
+            - generic [ref=e388]:
+              - figure [ref=e390]:
+                - img [ref=e392]
+              - heading "Monumento De La Trilogía De Los Héroes De La Independencia" [level=5] [ref=e394]:
+                - link "Monumento De La Trilogía De Los Héroes De La Independencia" [ref=e395] [cursor=pointer]:
+                  - /url: https://ecatepec.gob.mx/ecatepec-de-morelos/
+              - generic [ref=e397]:
+                - link [ref=e399] [cursor=pointer]:
+                  - /url: https://www.facebook.com/GobiernodeEcatepecdeMorelos?mibextid=wwXIfr&mibextid=wwXIfr
+                  - img [ref=e402]
+                - link [ref=e405] [cursor=pointer]:
+                  - /url: https://www.youtube.com/@h.ayuntamientodeecatepec
+                  - img [ref=e408]
+            - generic [ref=e412]:
+              - figure [ref=e414]:
+                - img [ref=e416]
+              - heading "Reloj Antiguo de la Cabecera Municipal" [level=5] [ref=e418]:
+                - link "Reloj Antiguo de la Cabecera Municipal" [ref=e419] [cursor=pointer]:
+                  - /url: https://ecatepec.gob.mx/ecatepec-de-morelos/
+              - generic [ref=e421]:
+                - link [ref=e423] [cursor=pointer]:
+                  - /url: https://www.facebook.com/GobiernodeEcatepecdeMorelos?mibextid=wwXIfr&mibextid=wwXIfr
+                  - img [ref=e426]
+                - link [ref=e429] [cursor=pointer]:
+                  - /url: https://www.youtube.com/@h.ayuntamientodeecatepec
+                  - img [ref=e432]
+            - generic [ref=e436]:
+              - figure [ref=e438]:
+                - img [ref=e440]
+              - heading "Museo Jurásica de Ecatepec de Morelos" [level=5] [ref=e442]:
+                - link "Museo Jurásica de Ecatepec de Morelos" [ref=e443] [cursor=pointer]:
+                  - /url: https://ecatepec.gob.mx/ecatepec-de-morelos/
+              - generic [ref=e445]:
+                - link [ref=e447] [cursor=pointer]:
+                  - /url: https://www.facebook.com/GobiernodeEcatepecdeMorelos?mibextid=wwXIfr&mibextid=wwXIfr
+                  - img [ref=e450]
+                - link [ref=e453] [cursor=pointer]:
+                  - /url: https://www.youtube.com/@h.ayuntamientodeecatepec
+                  - img [ref=e456]
+          - paragraph
+    - contentinfo [ref=e459]:
+      - generic [ref=e461]:
+        - generic [ref=e462]:
+          - heading "Gobierno de Ecatepec" [level=5] [ref=e465]
+          - paragraph [ref=e468]:
+            - link "Accede a los canales oficiales para presentar peticiones, quejas y sugerencias al Gobierno Municipal de Ecatepec. Facilita tu comunicación con nosotros a través de nuestra página web y redes sociales" [ref=e469] [cursor=pointer]:
+              - /url: /comunicacion
+        - generic [ref=e470]:
+          - heading "Enlaces Rápidos" [level=5] [ref=e474]
+          - paragraph [ref=e477]:
+            - link "Inici" [ref=e478] [cursor=pointer]:
+              - /url: /
+            - text: o
+            - link "Transparencia" [ref=e479] [cursor=pointer]:
+              - /url: /category/transparencia
+            - link "Servicios" [ref=e480] [cursor=pointer]:
+              - /url: /category/servicios
+            - link "Tramites" [ref=e481] [cursor=pointer]:
+              - /url: /category/tramites
+            - generic:
+              - link:
+                - /url: /category/tramites
+            - link "Enlace Municipal" [ref=e482] [cursor=pointer]:
+              - /url: /enlace-municipal
+            - generic:
+              - link:
+                - /url: /enlace-municipal
+            - link "Descubre Ecatepec" [ref=e483] [cursor=pointer]:
+              - /url: /category/descubre-ecatepec
+        - generic [ref=e484]:
+          - heading "Contacto" [level=5] [ref=e487]:
+            - link "Contacto" [ref=e488] [cursor=pointer]:
+              - /url: /contact
+          - generic [ref=e491]:
+            - generic [ref=e494]:
+              - img
+              - img [ref=e495]
+            - paragraph [ref=e498]:
+              - link "+52 (55) 5836-1500" [ref=e499] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/contact/
+          - generic [ref=e502]:
+            - generic [ref=e505]:
+              - img
+              - img [ref=e506]
+            - paragraph [ref=e509]:
+              - link "atencion.ciudadana@ecatepec.gob.mx" [ref=e510] [cursor=pointer]:
+                - /url: https://ecatepec.gob.mx/contact/
+          - generic [ref=e513]:
+            - generic [ref=e516]:
+              - img
+              - img [ref=e517]
+            - paragraph [ref=e520]: Av. Juárez s/n, San Cristóbal, Centro, 55000 Ecatepec de Morelos, Méx.
+          - generic [ref=e524]:
+            - link [ref=e526] [cursor=pointer]:
+              - /url: https://www.youtube.com/@h.ayuntamientodeecatepec
+              - img [ref=e529]
+            - link [ref=e532] [cursor=pointer]:
+              - /url: https://www.facebook.com/GobiernodeEcatepecdeMorelos?mibextid=wwXIfr
+              - img [ref=e535]
+      - paragraph [ref=e541]:
+        - text: © 2026 |
+        - link "Ecatepec de Morelos | Todos los derechos reservados | Desarrollo de Plataformas 2025 -2027" [ref=e542] [cursor=pointer]:
+          - /url: https://ecatepec.gob.mx/privacy-policy/

@@ -1,0 +1,730 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link [ref=e4] [cursor=pointer]:
+        - /url: "#page-top"
+        - img [ref=e5]
+      - text: 
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link " Trámites y Servicios" [ref=e9] [cursor=pointer]:
+            - /url: http://www.torreon.gob.mx/tramites.php
+            - generic [ref=e10]: 
+            - text: Trámites y Servicios
+        - listitem [ref=e11]:
+          - link " Pago en Línea" [ref=e12] [cursor=pointer]:
+            - /url: http://www.torreon.gob.mx/pagoenlinea.html
+            - generic [ref=e13]: 
+            - text: Pago en Línea
+        - listitem [ref=e14]:
+          - link " Transparencia" [ref=e15] [cursor=pointer]:
+            - /url: https://transparencia.torreon.gob.mx
+            - generic [ref=e16]: 
+            - text: Transparencia
+        - listitem [ref=e17]:
+          - link " Sitios Municipales" [ref=e18] [cursor=pointer]:
+            - /url: sitios_municipales.html
+            - generic [ref=e19]: 
+            - text: Sitios Municipales
+  - generic [ref=e22]:
+    - list [ref=e23]:
+      - listitem [ref=e24]
+      - listitem [ref=e25]
+      - listitem [ref=e26]
+      - listitem [ref=e27]
+      - listitem [ref=e28]
+    - listbox [ref=e29]:
+      - link "One slide" [ref=e31] [cursor=pointer]:
+        - /url: https://www.torreon.gob.mx/pdf/convocatoria_CJ2026.pdf
+        - img "One slide" [ref=e32]
+    - button " Previous" [ref=e33] [cursor=pointer]:
+      - generic [ref=e34]: 
+      - generic [ref=e35]: Previous
+    - button " Next" [ref=e36] [cursor=pointer]:
+      - generic [ref=e37]: 
+      - generic [ref=e38]: Next
+  - generic [ref=e43]:
+    - generic [ref=e45]:
+      - list [ref=e46]:
+        - listitem [ref=e47]
+        - listitem [ref=e48]
+        - listitem [ref=e49]
+      - listbox [ref=e50]:
+        - link "Seven slide La Ola mantiene limpieza permanente en el periférico Raúl López Sánchez." [ref=e52] [cursor=pointer]:
+          - /url: https://comunicacion.torreon.gob.mx/?p=46698
+          - img "Seven slide"
+          - generic [ref=e53]:
+            - heading "La Ola mantiene limpieza permanente en el periférico Raúl López Sánchez." [level=6] [ref=e54]
+            - paragraph
+      - button " Previous" [ref=e55] [cursor=pointer]:
+        - generic [ref=e56]: 
+        - generic [ref=e57]: Previous
+      - button " Next" [ref=e58] [cursor=pointer]:
+        - generic [ref=e59]: 
+        - generic [ref=e60]: Next
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - link:
+            - /url: https://comunicacion.torreon.gob.mx/?p=46662
+            - img
+        - link "Dedican reunión de seguridad al legado y compromiso del alcalde Román Alberto Cepeda González" [ref=e65] [cursor=pointer]:
+          - /url: https://comunicacion.torreon.gob.mx/?p=46662
+          - generic [ref=e66]: Dedican reunión de seguridad al legado y compromiso del alcalde Román Alberto Cepeda González
+      - generic [ref=e67]:
+        - generic [ref=e68]:
+          - link:
+            - /url: https://comunicacion.torreon.gob.mx/?p=46669
+            - img
+        - link "Torreón será sede del Make Music Day el próximo 21 de junio" [ref=e70] [cursor=pointer]:
+          - /url: https://comunicacion.torreon.gob.mx/?p=46669
+          - generic [ref=e71]: Torreón será sede del Make Music Day el próximo 21 de junio
+    - generic [ref=e72]:
+      - link " Pago de Predial" [ref=e73] [cursor=pointer]:
+        - /url: https://pagoenlinea.torreon.gob.mx/predial
+        - generic [ref=e74]:
+          - generic [ref=e75]: 
+          - text: Pago de Predial
+      - separator [ref=e76]
+      - link " Parkimovil" [ref=e77] [cursor=pointer]:
+        - /url: https://www.torreon.gob.mx/parkmovil.html
+        - generic [ref=e78]:
+          - generic [ref=e79]: 
+          - text: Parkimovil
+      - separator [ref=e80]
+      - link " Pago de Garantías" [ref=e81] [cursor=pointer]:
+        - /url: https://pagoenlinea.torreon.gob.mx/infracciones/
+        - generic [ref=e82]:
+          - generic [ref=e83]: 
+          - text: Pago de Garantías
+      - separator [ref=e84]
+      - link " Dirección de Prensa" [ref=e85] [cursor=pointer]:
+        - /url: https://comunicacion.torreon.gob.mx
+        - generic [ref=e86]:
+          - generic [ref=e87]: 
+          - text: Dirección de Prensa
+  - generic [ref=e94]:
+    - generic [ref=e96]:
+      - generic [ref=e97]: 
+      - text: Accesos Rápidos del Sitio
+    - generic [ref=e98]:
+      - generic [ref=e99]:
+        - link [ref=e100] [cursor=pointer]:
+          - /url: pagoenlinea.html
+          - img [ref=e101]
+        - paragraph [ref=e102]: Pago en Línea
+      - generic [ref=e103]:
+        - link [ref=e104] [cursor=pointer]:
+          - /url: https://cabildo.torreon.gob.mx
+          - img [ref=e105]
+        - paragraph [ref=e106]: Monitor de Cabildo
+      - generic [ref=e107]:
+        - link [ref=e108] [cursor=pointer]:
+          - /url: https://pagoenlinea.torreon.gob.mx/predial
+          - img [ref=e109]
+        - paragraph [ref=e110]: Pago de Predial
+      - generic [ref=e111]:
+        - link [ref=e112] [cursor=pointer]:
+          - /url: https://vacantes.torreon.gob.mx/
+          - img [ref=e113]
+        - paragraph [ref=e114]: Bolsa de Trabajo
+      - generic [ref=e115]:
+        - link [ref=e116] [cursor=pointer]:
+          - /url: http://apps.torreon.gob.mx/isai2010/
+          - img [ref=e117]
+        - paragraph [ref=e118]: Portal de Notarios
+      - generic [ref=e119]:
+        - link [ref=e120] [cursor=pointer]:
+          - /url: https://transparencia.torreon.gob.mx/licencia_funcionamiento2.cfm
+          - img [ref=e121]
+        - paragraph [ref=e122]: Licencia de Funcionamiento
+      - generic [ref=e123]:
+        - link [ref=e124] [cursor=pointer]:
+          - /url: https://facturacion.torreon.gob.mx/busqueda.cfm
+          - img [ref=e125]
+        - paragraph [ref=e126]: Comprobante Fiscal
+      - generic [ref=e127]:
+        - link [ref=e128] [cursor=pointer]:
+          - /url: https://www.torreon.gob.mx/licitaciones_2026.html
+          - img [ref=e129]
+        - paragraph [ref=e130]: Publicaciones 2026
+      - generic [ref=e131]:
+        - link [ref=e132] [cursor=pointer]:
+          - /url: https://www.torreon.gob.mx/padron_2026.html
+          - img [ref=e133]
+        - paragraph [ref=e134]: Padrón de Proveedores
+  - generic [ref=e136]:
+    - generic [ref=e138]:
+      - generic [ref=e139]: 
+      - text: Multimedia y Redes Sociales
+    - separator [ref=e140]
+    - generic [ref=e141]:
+      - heading " Videos" [level=3] [ref=e143]:
+        - generic [ref=e144]: 
+        - text: Videos
+      - generic [ref=e146]:
+        - heading " Facebook" [level=3] [ref=e147]:
+          - generic [ref=e148]: 
+          - text: Facebook
+        - iframe [ref=e151]:
+          - generic [ref=f122e3]:
+            - link:
+              - /url: https://www.facebook.com/MunicipioTRC?ref=embed_page
+            - generic [ref=f122e6]:
+              - link [ref=f122e7] [cursor=pointer]:
+                - /url: https://www.facebook.com/176379822955812?ref=embed_page
+              - generic [ref=f122e9]:
+                - img [ref=f122e14]
+                - generic [ref=f122e16]:
+                  - generic [ref=f122e17]:
+                    - img [ref=f122e20]
+                    - generic [ref=f122e24]:
+                      - generic [ref=f122e25]:
+                        - generic [ref=f122e26]: Municipio de Torreón
+                        - img "Verified account" [ref=f122e28]
+                      - generic [ref=f122e31]: 96K followers
+                  - generic [ref=f122e34]: Cuenta oficial del Municipio de Torreón Administración Municipal 2025 - 2027
+                  - generic [ref=f122e35]:
+                    - img [ref=f122e36]
+                    - generic [ref=f122e38]: Government Organization
+                    - generic [ref=f122e39]: ·
+                    - img [ref=f122e40]
+                    - generic [ref=f122e42]: +52 871 500 7000
+                  - link "Follow" [ref=f122e45] [cursor=pointer]:
+                    - /url: https://www.facebook.com/176379822955812?ref=embed_page
+                    - generic [ref=f122e46]:
+                      - img [ref=f122e47]
+                      - generic [ref=f122e50]: Follow
+      - generic [ref=e152]:
+        - heading "" [level=3] [ref=e153]:
+          - generic [ref=e154]: 
+        - iframe [ref=e155]:
+          - generic [ref=f120e2]:
+            - generic [ref=f120e5]:
+              - img "Profile picture for @MunicipioTRC" [ref=f120e7]
+              - generic [ref=f120e8]:
+                - link "@MunicipioTRC" [ref=f120e9] [cursor=pointer]:
+                  - /url: https://x.com/MunicipioTRC
+                - paragraph [ref=f120e10]:
+                  - generic [ref=f120e11]: Municipio de Torreón
+                  - generic [ref=f120e12]: Cuenta Oficial del Municipio de Torreón
+                - generic [ref=f120e13]:
+                  - img [ref=f120e15]
+                  - link "https://www.torreon.gob.mx/" [ref=f120e18] [cursor=pointer]:
+                    - /url: https://www.torreon.gob.mx/
+                - generic [ref=f120e19]:
+                  - paragraph [ref=f120e20]: 10,944 Posts
+                  - paragraph [ref=f120e21]: 10,587 Followers
+                  - paragraph [ref=f120e22]: 141 Following
+            - generic [ref=f120e26]:
+              - generic [ref=f120e27]:
+                - generic [ref=f120e28]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e30]
+                  - generic [ref=f120e31]:
+                    - link "Municipio de Torreón" [ref=f120e32] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e33]: "@MunicipioTRC"
+                    - paragraph [ref=f120e34]: September 29, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e36] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1972733470972788973
+                    - img [ref=f120e37]
+                - generic [ref=f120e40]:
+                  - text: El Instituto de Emprendimiento de Torreón destaca a "Ancestral Tepache", proyecto artesanal 100% local.
+                  - img "🍹" [ref=f120e41]
+                  - text: Eduardo Carmona ofreció mentoría al creador, resaltando su innovación y calidad natural.
+                  - img "💡" [ref=f120e42]
+                  - img "🙌" [ref=f120e43]
+                  - link "#TorreónSiemprePuedeMás" [ref=f120e45] [cursor=pointer]:
+                    - /url: https://twitter.com/hashtag/TorreónSiemprePuedeMás?src=hashtag_click
+                  - img "👊" [ref=f120e46]
+                - generic [ref=f120e47]:
+                  - generic [ref=f120e48]:
+                    - img [ref=f120e50]
+                    - paragraph [ref=f120e52]: "1"
+                  - img [ref=f120e55]
+                  - button "Share this post" [ref=f120e60]:
+                    - img [ref=f120e61]
+              - generic [ref=f120e67]:
+                - generic [ref=f120e68]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e70]
+                  - generic [ref=f120e71]:
+                    - link "Municipio de Torreón" [ref=f120e72] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e73]: "@MunicipioTRC"
+                    - paragraph [ref=f120e74]: September 29, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e76] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1972733120932893020
+                    - img [ref=f120e77]
+                - generic [ref=f120e80]:
+                  - img "⚠️" [ref=f120e81]
+                  - text: Ante pronóstico de lluvia, SIMAS TORREÓN realiza desazolve en la ciudad para mantener el flujo de aguas residuales.
+                  - img "👷‍♂️" [ref=f120e82]
+                  - text: En Las Torres retiraron basura de las líneas de drenaje.
+                  - img "🙌" [ref=f120e83]
+                  - text: Se pide a la comunidad no tirar basura.
+                  - img "♻️" [ref=f120e84]
+                  - img "🌎" [ref=f120e85]
+                  - link "#TorreónSiemprePuedeMás" [ref=f120e87] [cursor=pointer]:
+                    - /url: https://twitter.com/hashtag/TorreónSiemprePuedeMás?src=hashtag_click
+                  - img "👊" [ref=f120e88]
+                - generic [ref=f120e89]:
+                  - generic [ref=f120e90]:
+                    - img [ref=f120e92]
+                    - paragraph [ref=f120e94]: "55"
+                  - img [ref=f120e97]
+                  - button "Share this post" [ref=f120e102]:
+                    - img [ref=f120e103]
+              - generic [ref=f120e109]:
+                - generic [ref=f120e110]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e112]
+                  - generic [ref=f120e113]:
+                    - link "Municipio de Torreón" [ref=f120e114] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e115]: "@MunicipioTRC"
+                    - paragraph [ref=f120e116]: September 29, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e118] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1972732712881709567
+                    - img [ref=f120e119]
+                - generic [ref=f120e122]:
+                  - text: La Dirección de Medio Ambiente Torreón estuvo presente en Paseo Colón con una jornada de actividades enfocadas en la calidad del aire.
+                  - img "🌬️" [ref=f120e123]
+                  - img "🌿" [ref=f120e124]
+                  - generic [ref=f120e125]: A través de estas dinámicas, se compartió con la ciudadanía la importancia de cuidar el aire que respiramos.
+                  - link "#TorreónSiemprePuedeMás" [ref=f120e127] [cursor=pointer]:
+                    - /url: https://twitter.com/hashtag/TorreónSiemprePuedeMás?src=hashtag_click
+                  - img "👊🏻" [ref=f120e128]
+                - generic [ref=f120e129]:
+                  - generic [ref=f120e130]:
+                    - img [ref=f120e132]
+                    - paragraph [ref=f120e134]: "1"
+                  - img [ref=f120e137]
+                  - button "Share this post" [ref=f120e142]:
+                    - img [ref=f120e143]
+              - generic [ref=f120e149]:
+                - generic [ref=f120e150]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e152]
+                  - generic [ref=f120e153]:
+                    - link "Municipio de Torreón" [ref=f120e154] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e155]: "@MunicipioTRC"
+                    - paragraph [ref=f120e156]: September 29, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e158] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1972732466474647673
+                    - img [ref=f120e159]
+                - generic [ref=f120e162]:
+                  - generic [ref=f120e163]:
+                    - text: Iniciamos la semana con toda la energía.
+                    - text: Con la determinación de avanzar juntos hacia un Torreón as limpio y en orden.
+                  - img "💯" [ref=f120e164]
+                  - link "#TorreónSiemprePuedeMás" [ref=f120e166] [cursor=pointer]:
+                    - /url: https://twitter.com/hashtag/TorreónSiemprePuedeMás?src=hashtag_click
+                  - img "👊🏼" [ref=f120e167]
+                - generic [ref=f120e168]:
+                  - generic [ref=f120e169]:
+                    - img [ref=f120e171]
+                    - paragraph [ref=f120e173]: "1"
+                  - img [ref=f120e176]
+                  - button "Share this post" [ref=f120e181]:
+                    - img [ref=f120e182]
+              - generic [ref=f120e188]:
+                - generic [ref=f120e189]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e191]
+                  - generic [ref=f120e192]:
+                    - link "Municipio de Torreón" [ref=f120e193] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e194]: "@MunicipioTRC"
+                    - paragraph [ref=f120e195]: September 26, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e197] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1971662971685556706
+                    - img [ref=f120e198]
+                - generic [ref=f120e201]:
+                  - img "🚨" [ref=f120e202]
+                  - text: En los operativos Anti-alcohol de Torreón, la **Unidad Municipal DH** participa como observadora, asegurando respeto a la dignidad y derechos de las personas.
+                  - img "🕵️‍♂️" [ref=f120e203]
+                  - text: Su presencia garantiza transparencia, trato justo y aplicación correcta de protocolos.
+                  - img "🚗" [ref=f120e204]
+                  - img "✅" [ref=f120e205]
+                - generic [ref=f120e206]:
+                  - generic [ref=f120e207]:
+                    - img [ref=f120e209]
+                    - paragraph [ref=f120e211]: "1"
+                  - img [ref=f120e214]
+                  - button "Share this post" [ref=f120e219]:
+                    - img [ref=f120e220]
+              - generic [ref=f120e226]:
+                - generic [ref=f120e227]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e229]
+                  - generic [ref=f120e230]:
+                    - link "Municipio de Torreón" [ref=f120e231] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e232]: "@MunicipioTRC"
+                    - paragraph [ref=f120e233]: September 26, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e235] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1971644085346983942
+                    - img [ref=f120e236]
+                - generic [ref=f120e239]:
+                  - text: El trabajo no se detiene.
+                  - img "💪🏼" [ref=f120e240]
+                  - img "🚩" [ref=f120e241]
+                  - link "#TorreónSiemprePuedeMás" [ref=f120e243] [cursor=pointer]:
+                    - /url: https://twitter.com/hashtag/TorreónSiemprePuedeMás?src=hashtag_click
+                  - img "👊" [ref=f120e244]
+                - generic [ref=f120e245]:
+                  - generic [ref=f120e246]:
+                    - img [ref=f120e248]
+                    - paragraph [ref=f120e250]: "1"
+                  - img [ref=f120e253]
+                  - button "Share this post" [ref=f120e258]:
+                    - img [ref=f120e259]
+              - generic [ref=f120e265]:
+                - generic [ref=f120e266]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e268]
+                  - generic [ref=f120e269]:
+                    - link "Municipio de Torreón" [ref=f120e270] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e271]: "@MunicipioTRC"
+                    - paragraph [ref=f120e272]: September 26, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e274] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1971636814881738925
+                    - img [ref=f120e275]
+                - generic [ref=f120e278]:
+                  - text: La Dirección de Turismo Torreón participó en el CNIR 2025 en Puebla, espacio de intercambio que impulsa el turismo de reuniones en México.
+                  - img "🤝" [ref=f120e279]
+                  - text: Con alianzas y estrategias fortalecemos la proyección de Torreón como ciudad competitiva.
+                  - img "🔝" [ref=f120e280]
+                  - text: Gracias a OCV Torreón por la invitación.
+                  - img "✅" [ref=f120e281]
+                - generic [ref=f120e282]:
+                  - generic [ref=f120e283]:
+                    - img [ref=f120e285]
+                    - paragraph [ref=f120e287]: "2"
+                  - generic [ref=f120e288]:
+                    - img [ref=f120e290]
+                    - paragraph [ref=f120e295]: "1"
+                  - button "Share this post" [ref=f120e296]:
+                    - img [ref=f120e297]
+              - generic [ref=f120e303]:
+                - generic [ref=f120e304]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e306]
+                  - generic [ref=f120e307]:
+                    - link "Municipio de Torreón" [ref=f120e308] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e309]: "@MunicipioTRC"
+                    - paragraph [ref=f120e310]: September 26, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e312] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1971620358915871024
+                    - img [ref=f120e313]
+                - generic [ref=f120e316]:
+                  - img "🌟" [ref=f120e317]
+                  - generic [ref=f120e318]:
+                    - text: ¡Urban Games 2025 en Torreón!
+                    - text: Este sábado 27 de septiembre vive la adrenalina del skateboarding en el Skatepark TRC.
+                  - img "🛹" [ref=f120e319]
+                  - img "🔥" [ref=f120e320]
+                  - generic [ref=f120e321]: Un evento que impulsa el deporte como prevención de adicciones en la juventud.
+                  - img "💪" [ref=f120e322]
+                  - img "✨" [ref=f120e323]
+                  - img "📍" [ref=f120e324]
+                  - text: Skatepark TRC |
+                  - img "⏰" [ref=f120e325]
+                  - text: Reg. 8-9 hrs, Calent. 9-9:50, Comp. 10 hrs.
+                - generic [ref=f120e326]:
+                  - generic [ref=f120e327]:
+                    - img [ref=f120e329]
+                    - paragraph [ref=f120e331]: "1"
+                  - img [ref=f120e334]
+                  - button "Share this post" [ref=f120e339]:
+                    - img [ref=f120e340]
+              - generic [ref=f120e346]:
+                - generic [ref=f120e347]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e349]
+                  - generic [ref=f120e350]:
+                    - link "Municipio de Torreón" [ref=f120e351] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e352]: "@MunicipioTRC"
+                    - paragraph [ref=f120e353]: September 26, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e355] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1971615139968467339
+                    - img [ref=f120e356]
+                - generic [ref=f120e359]:
+                  - text: La Dirección de Medio Ambiente Torreón impartió un taller en LEAR sobre propagación de plantas por semilla y esqueje, donde además se donaron especies ornamentales para fomentar espacios verdes en el hogar y el cuidado del medio ambiente.
+                  - img "💚" [ref=f120e360]
+                  - img "🌎" [ref=f120e361]
+                  - link "#TorreónSiemprePuedeMás" [ref=f120e363] [cursor=pointer]:
+                    - /url: https://twitter.com/hashtag/TorreónSiemprePuedeMás?src=hashtag_click
+                  - img "👊🏼" [ref=f120e364]
+                - generic [ref=f120e365]:
+                  - generic [ref=f120e366]:
+                    - img [ref=f120e368]
+                    - paragraph [ref=f120e370]: "2"
+                  - img [ref=f120e373]
+                  - button "Share this post" [ref=f120e378]:
+                    - img [ref=f120e379]
+              - generic [ref=f120e385]:
+                - generic [ref=f120e386]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e388]
+                  - generic [ref=f120e389]:
+                    - link "Municipio de Torreón" [ref=f120e390] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e391]: "@MunicipioTRC"
+                    - paragraph [ref=f120e392]: September 25, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e394] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1971300246920851806
+                    - img [ref=f120e395]
+                - generic [ref=f120e398]:
+                  - img "✨" [ref=f120e399]
+                  - img "🌙" [ref=f120e400]
+                  - text: ¡Noche de Museos en el Mes Patrio!
+                  - img "🇲🇽" [ref=f120e401]
+                  - text: Vive una velada llena de música, color y tradición con la Danza Folklórica *La Flor Lagunera*, dirigida por el Prof. José Venancio Rentería Meraz.
+                  - img "💃" [ref=f120e402]
+                  - img "🕺" [ref=f120e403]
+                  - img "🗓️" [ref=f120e404]
+                  - text: Vie 26 sept | 19:00 hrs
+                  - img "📍" [ref=f120e405]
+                  - text: Museo Casa del Cerro
+                  - img "🛗" [ref=f120e406]
+                  - text: Entrada libre
+                - generic [ref=f120e407]:
+                  - generic [ref=f120e408]:
+                    - img [ref=f120e410]
+                    - paragraph [ref=f120e412]: "1"
+                  - img [ref=f120e415]
+                  - button "Share this post" [ref=f120e420]:
+                    - img [ref=f120e421]
+              - generic [ref=f120e427]:
+                - generic [ref=f120e428]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e430]
+                  - generic [ref=f120e431]:
+                    - link "Municipio de Torreón" [ref=f120e432] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e433]: "@MunicipioTRC"
+                    - paragraph [ref=f120e434]: September 25, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e436] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1971276138564771841
+                    - img [ref=f120e437]
+                - generic [ref=f120e440]:
+                  - text: En la administración del alcalde Román Alberto Cepeda, junto al gobernador Manolo Jiménez Salinas, se han entregado más de 16 mil árboles y plantas para reforestar y hacer de Torreón una ciudad más verde y sostenible.
+                  - img "🌳" [ref=f120e441]
+                  - img "💚" [ref=f120e442]
+                - generic [ref=f120e443]:
+                  - generic [ref=f120e444]:
+                    - img [ref=f120e446]
+                    - paragraph [ref=f120e448]: "99"
+                  - generic [ref=f120e449]:
+                    - img [ref=f120e451]
+                    - paragraph [ref=f120e456]: "49"
+                  - button "Share this post" [ref=f120e457]:
+                    - img [ref=f120e458]
+              - generic [ref=f120e464]:
+                - generic [ref=f120e465]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e467]
+                  - generic [ref=f120e468]:
+                    - link "Municipio de Torreón" [ref=f120e469] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e470]: "@MunicipioTRC"
+                    - paragraph [ref=f120e471]: September 25, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e473] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1971269219460448468
+                    - img [ref=f120e474]
+                - generic [ref=f120e477]:
+                  - text: El equipo de Alumbrado de Servicios Públicos Torreón nos desea un excelente jueves.
+                  - img "👷🏻‍♂️" [ref=f120e478]
+                  - img "🌥️" [ref=f120e479]
+                  - generic [ref=f120e480]: Se sigue trabajando para que cada rincón de nuestra ciudad esté bien iluminado.
+                  - link "#TorreónSiemprePuedeMás" [ref=f120e482] [cursor=pointer]:
+                    - /url: https://twitter.com/hashtag/TorreónSiemprePuedeMás?src=hashtag_click
+                  - img "👊🏼" [ref=f120e483]
+                - generic [ref=f120e484]:
+                  - generic [ref=f120e485]:
+                    - img [ref=f120e487]
+                    - paragraph [ref=f120e489]: "3"
+                  - img [ref=f120e492]
+                  - button "Share this post" [ref=f120e497]:
+                    - img [ref=f120e498]
+              - generic [ref=f120e504]:
+                - generic [ref=f120e505]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e507]
+                  - generic [ref=f120e508]:
+                    - link "Municipio de Torreón" [ref=f120e509] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e510]: "@MunicipioTRC"
+                    - paragraph [ref=f120e511]: September 22, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e513] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1970208677975204282
+                    - img [ref=f120e514]
+                - generic [ref=f120e517]:
+                  - img "🌿" [ref=f120e518]
+                  - img "✨" [ref=f120e519]
+                  - text: "El IMM invita al taller “Reconectarme: autocuidado y consciencia personal”, impartido por la psicóloga Judith Venegas, hoy lunes 22 de septiembre, de 2:00 a 4:00 p.m. en sus instalaciones."
+                  - img "💜" [ref=f120e520]
+                  - img "👉" [ref=f120e521]
+                  - text: "Informes y registro: 871 500 7419"
+                - generic [ref=f120e522]:
+                  - generic [ref=f120e523]:
+                    - img [ref=f120e525]
+                    - paragraph [ref=f120e527]: "1"
+                  - img [ref=f120e530]
+                  - button "Share this post" [ref=f120e535]:
+                    - img [ref=f120e536]
+              - generic [ref=f120e542]:
+                - generic [ref=f120e543]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e545]
+                  - generic [ref=f120e546]:
+                    - link "Municipio de Torreón" [ref=f120e547] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e548]: "@MunicipioTRC"
+                    - paragraph [ref=f120e549]: September 22, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e551] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1970164547731493047
+                    - img [ref=f120e552]
+                - generic [ref=f120e555]:
+                  - text: La Sala de Regidores del Ayuntamiento de Torreón fue reconocida como Embajadora Naranja, destacando el compromiso conjunto por una vida libre de violencia para mujeres y niñas.
+                  - img "🙌🏼" [ref=f120e556]
+                - generic [ref=f120e557]:
+                  - generic [ref=f120e558]:
+                    - img [ref=f120e560]
+                    - paragraph [ref=f120e562]: "2"
+                  - img [ref=f120e565]
+                  - button "Share this post" [ref=f120e570]:
+                    - img [ref=f120e571]
+              - generic [ref=f120e577]:
+                - generic [ref=f120e578]:
+                  - img "Profile picture of Municipio de Torreón" [ref=f120e580]
+                  - generic [ref=f120e581]:
+                    - link "Municipio de Torreón" [ref=f120e582] [cursor=pointer]:
+                      - /url: https://x.com/MunicipioTRC
+                    - paragraph [ref=f120e583]: "@MunicipioTRC"
+                    - paragraph [ref=f120e584]: September 22, 2025
+                  - link "View on Twitter (opens in a new tab)" [ref=f120e586] [cursor=pointer]:
+                    - /url: https://x.com/MunicipioTRC/status/1970164319737594165
+                    - img [ref=f120e587]
+                - generic [ref=f120e590]:
+                  - text: En Torreón trabajamos todos los días para mantener nuestras calles en buen estado.
+                  - img "👷‍♂️" [ref=f120e591]
+                  - text: Con MÁX bacheo avanzamos en el cuidado vial.
+                  - img "🛣" [ref=f120e592]
+                  - text: "Si ves un bache:"
+                  - img "✅" [ref=f120e593]
+                  - text: repórtalo al 073
+                  - img "☎" [ref=f120e594]
+                  - text: o
+                  - img "✅" [ref=f120e595]
+                  - text: escríbenos en redes
+                  - img "💬" [ref=f120e596]
+                  - link "#TorreónSiemprePuedeMás" [ref=f120e598] [cursor=pointer]:
+                    - /url: https://twitter.com/hashtag/TorreónSiemprePuedeMás?src=hashtag_click
+                  - img "👊" [ref=f120e599]
+                - generic [ref=f120e600]:
+                  - generic [ref=f120e601]:
+                    - img [ref=f120e603]
+                    - paragraph [ref=f120e605]: "2"
+                  - img [ref=f120e608]
+                  - button "Share this post" [ref=f120e613]:
+                    - img [ref=f120e614]
+            - link "Embed X Feed on your website with SociableKIT" [ref=f120e621] [cursor=pointer]:
+              - /url: https://www.sociablekit.com/tutorials/embed-x-feed-website/
+  - generic [ref=e158]:
+    - generic [ref=e159]:
+      - generic [ref=e160]:
+        - generic [ref=e161]: 
+        - text: "Dirección:"
+      - iframe [ref=e163]:
+        - link "Maps (opens in new tab)" [ref=f121e4] [cursor=pointer]:
+          - /url: about:invalid#zClosurez
+          - text: Maps
+          - img [ref=f121e6]
+      - paragraph [ref=e164]:
+        - generic [ref=e165]: Av. Allende 333 Poniente,
+        - generic [ref=e166]: Primero de Cobián Centro,
+        - text: 27000 Torreón, Coah.
+    - generic [ref=e167]:
+      - generic [ref=e168]:
+        - generic [ref=e169]: 
+        - text: "Contacto:"
+      - paragraph [ref=e170]:
+        - strong [ref=e171]: "Para mayor información puede comunicarse a Conmutador:"
+      - 'heading "Tel: 871 500 7000" [level=3] [ref=e172]'
+      - paragraph
+      - paragraph [ref=e173]:
+        - strong [ref=e174]: "También puedes seguirnos en nuestras redes sociales:"
+      - list [ref=e175]:
+        - listitem [ref=e176]:
+          - link "" [ref=e177] [cursor=pointer]:
+            - /url: https://twitter.com/MunicipioTRC
+            - generic [ref=e178]: 
+        - listitem [ref=e179]:
+          - link "" [ref=e180] [cursor=pointer]:
+            - /url: https://www.facebook.com/MunicipioTRC/
+            - generic [ref=e181]: 
+        - listitem [ref=e182]:
+          - link "" [ref=e183] [cursor=pointer]:
+            - /url: https://www.instagram.com/municipio_de_torreon/
+            - generic [ref=e184]: 
+  - generic [ref=e187]:
+    - img [ref=e189]
+    - generic [ref=e190]:
+      - heading "Números de Emergencia." [level=3] [ref=e191]
+      - paragraph [ref=e192]:
+        - text: Emergencias -
+        - strong [ref=e193]: "911"
+        - text: Policia Municipal -
+        - strong [ref=e194]: (871) 729.00.99
+        - text: WhatsApp -
+        - strong [ref=e195]: (871) 409.49.65
+        - text: Protección Civil -
+        - strong [ref=e196]: 871 192.24.05
+        - text: Bomberos -
+        - strong [ref=e197]: (871) 712.00.66 / 871 716.36.60
+        - text: Bomberos Oriente -
+        - strong [ref=e198]: (871) 721.93.33
+        - text: Cruz Roja -
+        - strong [ref=e199]: (871) 707.01.40
+        - text: Atn. Ciudadana -
+        - strong [ref=e200]: "073"
+    - generic [ref=e201]:
+      - heading "Números de Servicios." [level=3] [ref=e202]
+      - paragraph [ref=e203]:
+        - text: Simas -
+        - strong [ref=e204]: (871) 690.95.95
+        - text: PASA -
+        - strong [ref=e205]: (871) 721.86.55
+        - text: P.F.P -
+        - strong [ref=e206]: (871) 722.14.18
+        - text: Policía Ministerial -
+        - strong [ref=e207]: (871) 733.67.59
+        - text: P.P.E. -
+        - strong [ref=e208]: (871) 747.15.00
+        - text: PGJE -
+        - strong [ref=e209]: (871) 729.67.00
+        - text: CFE -
+        - strong [ref=e210]: "071"
+  - contentinfo [ref=e211]:
+    - generic [ref=e212]:
+      - link [ref=e214] [cursor=pointer]:
+        - /url: http://www.editorialox.com
+        - img [ref=e215]
+      - paragraph [ref=e216]:
+        - text: © Copyright © 2025 Ayuntamiento de Torreón.
+        - link "" [ref=e217] [cursor=pointer]:
+          - /url: "#page-top"
+          - generic [ref=e218]: 
+      - list [ref=e219]:
+        - listitem [ref=e220]:
+          - link "Aviso de Privacidad" [ref=e221] [cursor=pointer]:
+            - /url: https://transparencia.torreon.gob.mx/privacidad.cfm
+        - listitem [ref=e222]:
+          - link "Gobierno del Estado de Coahuila" [ref=e223] [cursor=pointer]:
+            - /url: http://coahuila.gob.mx/
+        - listitem [ref=e224]:
+          - link "Gobierno de la República" [ref=e225] [cursor=pointer]:
+            - /url: https://www.gob.mx/presidencia/
+        - listitem [ref=e226]:
+          - link "IEPC" [ref=e227] [cursor=pointer]:
+            - /url: https://www.iec.org.mx/
+        - listitem [ref=e228]:
+          - link "CURP" [ref=e229] [cursor=pointer]:
+            - /url: http://www.registrocivilcoahuila.gob.mx/consulta/curp.aspx
+        - listitem [ref=e230]:
+          - link "Consultar en Linea" [ref=e231] [cursor=pointer]:
+            - /url: https://www.aseslp.gob.mx/media/web/registro-publico-de-la-propiedad-en-linea.php

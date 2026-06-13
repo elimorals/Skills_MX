@@ -13,6 +13,10 @@ if str(_REPO_ROOT) not in sys.path:
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
 from shared.errors import McpError, ValidationError  # noqa: E402
+from shared.playwright_real import (  # noqa: E402
+    is_public_real_enabled,
+    with_real_or_fallback,
+)
 from shared.playwright_stub import (  # noqa: E402
     detectar_modo_playwright,
     mock_response_playwright,
@@ -20,6 +24,7 @@ from shared.playwright_stub import (  # noqa: E402
 )
 
 from mp_cdmx_municipal import mock_data  # noqa: E402
+from mp_cdmx_municipal import playwright_real  # noqa: E402
 
 
 NAMESPACE = "cdmx_municipal_mcp"
@@ -48,6 +53,13 @@ class CdmxMunicipalClient:
         if not cuenta_predial or len(cuenta_predial) < 5:
             raise ValidationError("cuenta_predial debe tener al menos 5 caracteres")
         self._log("predial", {"cuenta_predial": cuenta_predial})
+        # La consulta predial es PÚBLICA — solo requiere el número de cuenta
+        if is_public_real_enabled():
+            return with_real_or_fallback(
+                real_fn=lambda: playwright_real.predial_real(cuenta_predial),
+                fallback_fn=lambda: mock_data.mock_predial(cuenta_predial),
+                portal="finanzas_cdmx_predial",
+            )
         if self._modo() == "mock":
             return mock_response_playwright(
                 mock_data.mock_predial(cuenta_predial),
@@ -59,6 +71,13 @@ class CdmxMunicipalClient:
         if not placa or len(placa) < 5:
             raise ValidationError("placa requerida")
         self._log("tenencia", {"placa": placa})
+        # Consulta tenencia/refrendo es PÚBLICA por placa
+        if is_public_real_enabled():
+            return with_real_or_fallback(
+                real_fn=lambda: playwright_real.tenencia_real(placa),
+                fallback_fn=lambda: mock_data.mock_tenencia(placa),
+                portal="finanzas_cdmx_tenencia",
+            )
         if self._modo() == "mock":
             return mock_response_playwright(
                 mock_data.mock_tenencia(placa),

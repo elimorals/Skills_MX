@@ -1,0 +1,532 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - link "Pasar al contenido principal" [ref=e4] [cursor=pointer]:
+      - /url: "#main-content"
+    - generic [ref=e5]:
+      - generic: 
+      - banner [ref=e6]:
+        - button "Este es un sitio web oficial del Gobierno del Estado de Nuevo León. Aprende a identificarlo " [ref=e10] [cursor=pointer]:
+          - generic [ref=e11]: Este es un sitio web oficial del Gobierno del Estado de Nuevo León. Aprende a identificarlo
+          - text: 
+        - generic [ref=e13]:
+          - generic [ref=e14]: "Síguenos:"
+          - list [ref=e15]:
+            - listitem [ref=e16]:
+              - link "" [ref=e17] [cursor=pointer]:
+                - /url: https://www.facebook.com/gobiernonuevoleon/
+                - generic [ref=e18]: 
+            - listitem [ref=e19]:
+              - link "" [ref=e20] [cursor=pointer]:
+                - /url: https://www.instagram.com/nuevoleonmx/
+                - generic [ref=e21]: 
+            - listitem [ref=e22]:
+              - link "" [ref=e23] [cursor=pointer]:
+                - /url: https://twitter.com/nuevoleon
+                - generic [ref=e24]: 
+            - listitem [ref=e25]:
+              - link "" [ref=e26] [cursor=pointer]:
+                - /url: https://t.me/gobnl
+                - generic [ref=e27]: 
+            - listitem [ref=e28]:
+              - link "" [ref=e29] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@nuevonlmx
+                - generic [ref=e30]: 
+            - listitem [ref=e31]:
+              - link "" [ref=e32] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/GobiernoNuevoLeon
+                - generic [ref=e33]: 
+        - navigation [ref=e34]:
+          - generic [ref=e35]:
+            - link "logo Nuevo León" [ref=e37] [cursor=pointer]:
+              - /url: /
+            - navigation "Navegación principal" [ref=e40]:
+              - heading "Navegación principal" [level=5] [ref=e41]
+              - list [ref=e42]:
+                - listitem [ref=e43]:
+                  - link "Gobierno" [ref=e44] [cursor=pointer]:
+                    - /url: /es/gobierno
+                - listitem [ref=e45]:
+                  - link "Transparencia" [ref=e46] [cursor=pointer]:
+                    - /url: https://nl.gob.mx/transparencia
+                - listitem [ref=e47]:
+                  - link "Trámites y servicios" [ref=e48] [cursor=pointer]:
+                    - /url: /es/nlinea
+                - listitem [ref=e49]:
+                  - link "Visita NL" [ref=e50] [cursor=pointer]:
+                    - /url: https://www.nuevoleon.travel
+                - button "search" [ref=e51] [cursor=pointer]:
+                  - generic [ref=e52]: search
+            - combobox "Selector de idioma" [ref=e54]:
+              - 'combobox "Idioma seleccionado: Español" [ref=e55]':
+                - link "ES" [ref=e56] [cursor=pointer]:
+                  - /url: "#"
+                - text: 
+      - main [ref=e57]:
+        - img [ref=e64]
+        - generic [ref=e69]:
+          - article [ref=e71]:
+            - generic [ref=e73]:
+              - generic [ref=e76]:
+                - heading "Gobierno de Nuevo León" [level=3] [ref=e77]
+                - paragraph [ref=e78]: Bienvenido al portal de información oficial
+              - generic [ref=e80]:
+                - generic [ref=e81] [cursor=pointer]:
+                  - link [ref=e82]:
+                    - /url: /es/gobierno
+                  - generic "Gobierno" [ref=e85]
+                  - link "Gobierno" [ref=e87]:
+                    - /url: /es/gobierno
+                - generic [ref=e88] [cursor=pointer]:
+                  - link [ref=e89]:
+                    - /url: https://nlinea.nl.gob.mx/
+                  - generic "NLínea" [ref=e92]
+                  - link "NLínea" [ref=e94]:
+                    - /url: https://nlinea.nl.gob.mx/
+                - generic [ref=e95] [cursor=pointer]:
+                  - link [ref=e96]:
+                    - /url: /es/proyectos-estrategicos
+                  - generic "Proyectos" [ref=e99]
+                  - link "Proyectos" [ref=e101]:
+                    - /url: /es/proyectos-estrategicos
+                - generic [ref=e102] [cursor=pointer]:
+                  - link:
+                    - /url: /es/nlinea
+                  - generic "Trámites y Servicios" [ref=e105]
+                  - link "Trámites y Servicios" [ref=e107]:
+                    - /url: /es/nlinea
+                - generic [ref=e108] [cursor=pointer]:
+                  - link [ref=e109]:
+                    - /url: https://www.nuevoleon.travel
+                  - generic "Visita NL" [ref=e112]
+                  - link "Visita NL" [ref=e114]:
+                    - /url: https://www.nuevoleon.travel
+                - generic [ref=e115] [cursor=pointer]:
+                  - link:
+                    - /url: https://apps.apple.com/mx/app/pasaporte-nl/id1437667651?l=en-GB
+                  - generic "APP Pasaporte Nuevo León" [ref=e118]
+                  - link "APP Pasaporte Nuevo León" [ref=e120]:
+                    - /url: https://apps.apple.com/mx/app/pasaporte-nl/id1437667651?l=en-GB
+                - generic [ref=e121] [cursor=pointer]:
+                  - link [ref=e122]:
+                    - /url: /es/noticias
+                  - generic "Noticias" [ref=e125]
+                  - link "Noticias" [ref=e127]:
+                    - /url: /es/noticias
+                - generic [ref=e128] [cursor=pointer]:
+                  - link [ref=e129]:
+                    - /url: http://nl.gob.mx/transparencia
+                  - generic "Transparencia" [ref=e132]
+                  - link "Transparencia" [ref=e134]:
+                    - /url: http://nl.gob.mx/transparencia
+              - generic [ref=e136]:
+                - generic [ref=e137]:
+                  - button "Diapositiva 1" [ref=e138] [cursor=pointer]
+                  - button "Diapositiva 1" [ref=e139] [cursor=pointer]
+                  - button "Diapositiva 1" [ref=e140] [cursor=pointer]
+                  - button "Diapositiva 1" [ref=e141] [cursor=pointer]
+                  - button "Diapositiva 1" [ref=e142] [cursor=pointer]
+                  - button "Diapositiva 1" [ref=e143] [cursor=pointer]
+                - link "Calendario de los partidos del mundial 2026" [ref=e146] [cursor=pointer]:
+                  - /url: https://www.nl.gob.mx/es/publicaciones/calendario-del-mundial-2026
+                  - img "Calendario de los partidos del mundial 2026" [ref=e150]
+                - button "Anterior" [ref=e151] [cursor=pointer]:
+                  - generic [ref=e152]: 
+                  - generic [ref=e153]: Anterior
+                - button "Próximo" [ref=e154] [cursor=pointer]:
+                  - generic [ref=e155]: 
+                  - generic [ref=e156]: Próximo
+              - generic [ref=e159] [cursor=pointer]:
+                - link:
+                  - /url: https://www.nl.gob.mx/es/informes-de-gobierno
+                - generic "INFORMES DE GOBIERNO" [ref=e162]
+                - link "INFORMES DE GOBIERNO" [ref=e164]:
+                  - /url: https://www.nl.gob.mx/es/informes-de-gobierno
+                - generic [ref=e165]: Consulta aquí los documentos
+              - separator [ref=e168]
+              - generic [ref=e171]:
+                - img [ref=e173]
+                - generic [ref=e176]:
+                  - paragraph [ref=e177]
+                  - heading "Vive el Mundial 2026 en Nuevo León" [level=3] [ref=e178]
+              - generic [ref=e181]:
+                - heading "¿Estás listo?" [level=3] [ref=e182]
+                - paragraph [ref=e183]: Consulta y encuentra aquí información que te ayudará a vivir la experiencia del Mundial más Norteño.
+              - generic [ref=e185]:
+                - generic [ref=e186]:
+                  - button "Diapositiva 1" [ref=e187] [cursor=pointer]
+                  - button "Diapositiva 1" [ref=e188] [cursor=pointer]
+                  - button "Diapositiva 1" [ref=e189] [cursor=pointer]
+                  - button "Diapositiva 1" [ref=e190] [cursor=pointer]
+                  - button "Diapositiva 1" [ref=e191] [cursor=pointer]
+                  - button "Diapositiva 1" [ref=e192] [cursor=pointer]
+                - generic [ref=e195]:
+                  - img "Dónde comer en Nuevo León" [ref=e197]
+                  - generic [ref=e198]:
+                    - heading [level=4]
+                    - paragraph
+                    - generic [ref=e199]:
+                      - heading "Dónde comer en Nuevo León" [level=3] [ref=e200]:
+                        - strong [ref=e201]: Dónde comer en Nuevo León
+                      - paragraph [ref=e202]: "Si vienes al Mundial a Nuevo León, una de las cosas que más te va a sorprender es su comida. Aquí la gastronomía es parte de la identidad, y hay ciertos platillos que sí o sí tienes que probar: el famoso cabrito, el asado de puerco y, claro, la clásica carne asada que es casi una tradición local. Pero no todo es comida típica, también vas a encontrar opciones para todos los gustos."
+                    - paragraph
+                    - button "Consulta aquí" [ref=e203] [cursor=pointer]:
+                      - link "Consulta aquí" [ref=e205]:
+                        - /url: https://www.nuevoleon.travel/planea-tu-viaje/donde-comer/
+                - button "Anterior" [ref=e206] [cursor=pointer]:
+                  - generic [ref=e207]: 
+                  - generic [ref=e208]: Anterior
+                - button "Próximo" [ref=e209] [cursor=pointer]:
+                  - generic [ref=e210]: 
+                  - generic [ref=e211]: Próximo
+              - button "Conoce más en nuevoleon.travel" [ref=e216] [cursor=pointer]:
+                - link "Conoce más en nuevoleon.travel" [ref=e218]:
+                  - /url: https://www.nuevoleon.travel/
+              - figure [ref=e224]:
+                - iframe [ref=e225]:
+                  - generic [active] [ref=f30e1]:
+                    - generic "Reproductor de video de YouTube" [ref=f30e3]
+                    - generic [ref=f30e5]:
+                      - generic:
+                        - generic:
+                          - button "Reproducir video" [ref=f30e10] [cursor=pointer]
+                          - button "Ocultar controles del reproductor" [ref=f30e12] [cursor=pointer]
+                          - generic [ref=f30e14]:
+                            - generic [ref=f30e19]:
+                              - generic [ref=f30e20]:
+                                - link "¡Esto es Nuevo León!" [ref=f30e21] [cursor=pointer]:
+                                  - /url: https://www.youtube.com/watch?v=T6JEbePmrcY
+                                - link "GobiernoNuevoLeon" [ref=f30e22] [cursor=pointer]:
+                                  - /url: /channel/UC_KvL9gZ9q3SuO6KAWLXC6w
+                                  - generic [ref=f30e23]: GobiernoNuevoLeon
+                              - generic [ref=f30e24]:
+                                - button [ref=f30e25] [cursor=pointer]
+                                - generic [ref=f30e27]:
+                                  - generic: GobiernoNuevoLeon
+                                  - generic: 70.8 k suscriptores
+                            - generic [ref=f30e28]:
+                              - button "Compartir" [ref=f30e31] [cursor=pointer]:
+                                - generic [ref=f30e35]:
+                                  - img
+                              - link "Mirar en YouTube" [ref=f30e42] [cursor=pointer]:
+                                - /url: https://www.youtube.com/watch?v=T6JEbePmrcY
+                                - generic [ref=f30e45]:
+                                  - text: Mirar en
+                                  - img [ref=f30e47]:
+                                    - generic [ref=f30e49]:
+                                      - img
+              - heading "Estamos poniendo Nuevo a Nuevo León" [level=3] [ref=e229]
+              - generic [ref=e232]:
+                - img [ref=e233]
+                - img [ref=e234]
+                - img [ref=e235]
+                - img [ref=e236]
+                - img [ref=e237]
+                - img [ref=e238]
+              - generic [ref=e241]:
+                - img [ref=e242]
+                - img [ref=e243]
+                - img [ref=e244]
+              - button "Ver más" [ref=e247] [cursor=pointer]:
+                - link "Ver más" [ref=e249]:
+                  - /url: https://www.nl.gob.mx/es/grandes-proyectos
+              - separator [ref=e252]
+              - generic [ref=e255]:
+                - heading "Últimas noticias" [level=3] [ref=e256]
+                - paragraph [ref=e257]: ¡Entérate de las últimas noticias del Nuevo Nuevo León!
+              - generic [ref=e261]:
+                - img
+                - generic [ref=e262]:
+                  - generic [ref=e263]:
+                    - generic [ref=e264]:
+                      - img "Acerca DIF NL servicios integrales a familias de Salinas Victoria"
+                    - generic [ref=e265]:
+                      - paragraph [ref=e266]: Publicado el 13/06/2026
+                      - link "Acerca DIF NL servicios integrales a familias de Salinas Victoria" [ref=e267] [cursor=pointer]:
+                        - /url: /es/boletines/acerca-dif-nl-servicios-integrales-familias-de-salinas-victoria
+                        - heading "Acerca DIF NL servicios integrales a familias de Salinas Victoria" [level=6] [ref=e268]
+                    - link "Más información" [ref=e270] [cursor=pointer]:
+                      - /url: /es/boletines/acerca-dif-nl-servicios-integrales-familias-de-salinas-victoria
+                      - button "Más información" [ref=e271]:
+                        - generic [ref=e272]: Más información
+                        - img [ref=e274]
+                  - generic [ref=e276]:
+                    - generic [ref=e277]:
+                      - img "Fortalece Contraloría del Estado coordinación con Órganos Internos de Control para garantizar legalidad y transparencia"
+                    - generic [ref=e278]:
+                      - paragraph [ref=e279]: Publicado el 13/06/2026
+                      - link "Fortalece Contraloría del Estado coordinación con Órganos Internos de Control para garantizar legalidad y transparencia" [ref=e280] [cursor=pointer]:
+                        - /url: /es/boletines/fortalece-contraloria-del-estado-coordinacion-con-organos-internos-de-control-para
+                        - heading "Fortalece Contraloría del Estado coordinación con Órganos Internos de Control para garantizar legalidad y transparencia" [level=6] [ref=e281]
+                    - link "Más información" [ref=e283] [cursor=pointer]:
+                      - /url: /es/boletines/fortalece-contraloria-del-estado-coordinacion-con-organos-internos-de-control-para
+                      - button "Más información" [ref=e284]:
+                        - generic [ref=e285]: Más información
+                        - img [ref=e287]
+                  - generic [ref=e289]:
+                    - generic [ref=e290]:
+                      - img "Anuncia Samuel García transporte público gratis en los partidos del Mundial en Nuevo León"
+                    - generic [ref=e291]:
+                      - paragraph [ref=e292]: Publicado el 12/06/2026
+                      - link "Anuncia Samuel García transporte público gratis en los partidos del Mundial en Nuevo León" [ref=e293] [cursor=pointer]:
+                        - /url: /es/boletines/anuncia-samuel-garcia-transporte-publico-gratis-en-los-partidos-del-mundial-en-nuevo-leon
+                        - heading "Anuncia Samuel García transporte público gratis en los partidos del Mundial en Nuevo León" [level=6] [ref=e294]
+                    - link "Más información" [ref=e296] [cursor=pointer]:
+                      - /url: /es/boletines/anuncia-samuel-garcia-transporte-publico-gratis-en-los-partidos-del-mundial-en-nuevo-leon
+                      - button "Más información" [ref=e297]:
+                        - generic [ref=e298]: Más información
+                        - img [ref=e300]
+              - button "Continuar leyendo noticias" [ref=e304] [cursor=pointer]:
+                - link "Continuar leyendo noticias" [ref=e306]:
+                  - /url: /es/noticias
+              - separator [ref=e309]
+              - generic [ref=e312]:
+                - heading "Convocatorias" [level=3] [ref=e313]
+                - paragraph [ref=e314]: Conoce las últimas convocatorias
+              - generic [ref=e318]:
+                - img
+                - generic [ref=e319]:
+                  - generic [ref=e320]:
+                    - img "concurso de fotografía mundial mas norteño" [ref=e322]
+                    - generic [ref=e323]:
+                      - generic [ref=e324]:
+                        - generic [ref=e325]:
+                          - img [ref=e326]
+                          - time [ref=e329]: 10/06/2026
+                          - text: "-"
+                          - time [ref=e331]: 25/07/2026
+                        - heading "Nuevo Concurso de Fotografía 2026 “El Mundial más Norteño”" [level=6] [ref=e332]
+                      - link "Ver convocatoria" [ref=e334] [cursor=pointer]:
+                        - /url: /es/convocatoria/nuevo-concurso-de-fotografia-2026-el-mundial-mas-norteno
+                        - button "Ver convocatoria" [ref=e335]:
+                          - generic [ref=e336]: Ver convocatoria
+                          - img [ref=e338]
+                  - generic [ref=e340]:
+                    - img "Mejora Regulatoria" [ref=e342]
+                    - generic [ref=e343]:
+                      - generic [ref=e344]:
+                        - generic [ref=e345]:
+                          - img [ref=e346]
+                          - time [ref=e349]: 09/06/2026
+                          - text: "-"
+                          - time [ref=e351]: 15/06/2026
+                        - 'heading "Consulta Pública: Manual de Organización de la Oficina Ejecutiva del Titular del Poder Ejecutivo" [level=6] [ref=e352]'
+                      - link "Ver convocatoria" [ref=e354] [cursor=pointer]:
+                        - /url: /es/convocatoria/consulta-publica-manual-de-organizacion-de-la-oficina-ejecutiva
+                        - button "Ver convocatoria" [ref=e355]:
+                          - generic [ref=e356]: Ver convocatoria
+                          - img [ref=e358]
+                  - generic [ref=e360]:
+                    - img "Transparencia en corto" [ref=e362]
+                    - generic [ref=e363]:
+                      - generic [ref=e364]:
+                        - generic [ref=e365]:
+                          - img [ref=e366]
+                          - time [ref=e369]: 08/06/2026
+                          - text: "-"
+                          - time [ref=e371]: 09/09/2026
+                        - heading "Concurso Nacional Transparencia en Corto" [level=6] [ref=e372]
+                      - link "Ver convocatoria" [ref=e374] [cursor=pointer]:
+                        - /url: /es/convocatoria/concurso-nacional-transparencia-en-corto
+                        - button "Ver convocatoria" [ref=e375]:
+                          - generic [ref=e376]: Ver convocatoria
+                          - img [ref=e378]
+              - button "Ver más convocatorias" [ref=e382] [cursor=pointer]:
+                - link "Ver más convocatorias" [ref=e384]:
+                  - /url: https://www.nl.gob.mx/es/convocatorias
+              - separator [ref=e387]
+              - generic [ref=e390]:
+                - heading "Próximos eventos" [level=3] [ref=e391]
+                - paragraph [ref=e392]: Prepárate para los próximos eventos
+              - generic [ref=e396]:
+                - img
+                - generic [ref=e397]:
+                  - generic [ref=e398]:
+                    - img "Mercado Hecho en Nuevo León" [ref=e400]
+                    - generic [ref=e401]:
+                      - generic [ref=e402]:
+                        - generic [ref=e403]:
+                          - img [ref=e404]
+                          - time [ref=e407]: 11/06/2026
+                          - text: "-"
+                          - time [ref=e409]: 31/07/2026
+                        - heading "Mercado Hecho en Nuevo León" [level=6] [ref=e410]
+                      - link "Ver evento" [ref=e412] [cursor=pointer]:
+                        - /url: /es/evento/mercado-hecho-en-nuevo-leon
+                        - button "Ver evento" [ref=e413]:
+                          - generic [ref=e414]: Ver evento
+                          - img [ref=e416]
+                  - generic [ref=e418]:
+                    - img "Módulos de vacunación sarampión" [ref=e420]
+                    - generic [ref=e421]:
+                      - generic [ref=e422]:
+                        - generic [ref=e423]:
+                          - img [ref=e424]
+                          - time [ref=e427]: 08/06/2026
+                          - text: "-"
+                          - time [ref=e429]: 12/06/2026
+                        - heading "Vacúnate contra el sarampión" [level=6] [ref=e430]
+                      - link "Ver evento" [ref=e432] [cursor=pointer]:
+                        - /url: /es/evento/vacunate-contra-el-sarampion
+                        - button "Ver evento" [ref=e433]:
+                          - generic [ref=e434]: Ver evento
+                          - img [ref=e436]
+                  - generic [ref=e438]:
+                    - img "Brigada de prevención contra el dengue" [ref=e440]
+                    - generic [ref=e441]:
+                      - generic [ref=e442]:
+                        - generic [ref=e443]:
+                          - img [ref=e444]
+                          - time [ref=e447]: 08/06/2026
+                          - text: "-"
+                          - time [ref=e449]: 12/06/2026
+                        - heading "Brigadas de prevención contra el dengue" [level=6] [ref=e450]
+                      - link "Ver evento" [ref=e452] [cursor=pointer]:
+                        - /url: /es/evento/brigadas-de-prevencion-contra-el-dengue
+                        - button "Ver evento" [ref=e453]:
+                          - generic [ref=e454]: Ver evento
+                          - img [ref=e456]
+              - button "Ver más eventos" [ref=e460] [cursor=pointer]:
+                - link "Ver más eventos" [ref=e462]:
+                  - /url: https://www.nl.gob.mx/es/eventos
+              - separator [ref=e465]
+          - generic [ref=e470]:
+            - generic [ref=e471]:
+              - heading "Números de emergencia" [level=3] [ref=e472]
+              - paragraph [ref=e473]: ¿Necesitas ayuda? Estamos para servirte.
+            - link "EMERGENCIAS 911" [ref=e474] [cursor=pointer]:
+              - /url: tel:911
+              - generic [ref=e475]: EMERGENCIAS
+              - heading "911" [level=1] [ref=e477]
+            - link "DENUNCIA ANÓNIMA 089" [ref=e478] [cursor=pointer]:
+              - /url: tel:089
+              - generic [ref=e479]: DENUNCIA ANÓNIMA
+              - heading "089" [level=1] [ref=e481]
+            - link "ATENCIÓN CIUDADANA 070" [ref=e482] [cursor=pointer]:
+              - /url: tel:070
+              - generic [ref=e483]: ATENCIÓN CIUDADANA
+              - heading "070" [level=1] [ref=e485]
+            - link "AGUA Y DRENAJE 073" [ref=e486] [cursor=pointer]:
+              - /url: tel:073
+              - generic [ref=e487]: AGUA Y DRENAJE
+              - heading "073" [level=1] [ref=e489]
+          - generic [ref=e493]:
+            - separator [ref=e494]
+            - link "logo_Premio_OX" [ref=e495] [cursor=pointer]:
+              - /url: https://editorialox.com
+              - img "logo_Premio_OX" [ref=e496]
+            - paragraph [ref=e497]: Web premiada con el Premio Internacional OX
+      - contentinfo [ref=e498]:
+        - generic [ref=e502]:
+          - navigation "Footer Menu 1" [ref=e503]:
+            - heading "Footer Menu 1" [level=5] [ref=e504]
+            - list [ref=e505]:
+              - listitem [ref=e506]:
+                - link "Gobierno" [ref=e507] [cursor=pointer]:
+                  - /url: /es/gobierno
+              - listitem [ref=e508]:
+                - link "Trámites y servicios" [ref=e509] [cursor=pointer]:
+                  - /url: /es/nlinea
+              - listitem [ref=e510]:
+                - link "Transparencia" [ref=e511] [cursor=pointer]:
+                  - /url: https://nl.gob.mx/transparencia
+          - navigation "Footer Menu 2" [ref=e512]:
+            - heading "Footer Menu 2" [level=5] [ref=e513]
+            - list [ref=e514]:
+              - listitem [ref=e515]:
+                - link "Código de ética" [ref=e516] [cursor=pointer]:
+                  - /url: /es/codigodeetica
+              - listitem [ref=e517]:
+                - link "Decálogo de principios" [ref=e518] [cursor=pointer]:
+                  - /url: /es/decalogo
+        - generic [ref=e521]:
+          - navigation "Privacidad" [ref=e527]:
+            - heading "Privacidad" [level=5] [ref=e528]
+            - list [ref=e529]:
+              - listitem [ref=e530]:
+                - link "Sobre el tratamiento de datos personales" [ref=e531] [cursor=pointer]:
+                  - /url: /es/sobre-tratamiento-datos-personales
+              - listitem [ref=e532]:
+                - link "Danos tu opinión" [ref=e533] [cursor=pointer]:
+                  - /url: /es/formulario/opinion
+          - generic [ref=e534]:
+            - generic [ref=e535]: "Manténte informado:"
+            - link "icono de facebook" [ref=e536] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobiernonuevoleon/
+              - img "icono de facebook" [ref=e537]
+            - link "icono de instagram" [ref=e538] [cursor=pointer]:
+              - /url: https://www.instagram.com/nuevoleonmx/
+              - img "icono de instagram" [ref=e539]
+            - link "icono de twitter" [ref=e540] [cursor=pointer]:
+              - /url: https://twitter.com/nuevoleon
+              - img "icono de twitter" [ref=e541]
+            - link "icono de telegram" [ref=e542] [cursor=pointer]:
+              - /url: https://t.me/gobnl
+              - img "icono de telegram" [ref=e543]
+            - link "icono de tiktok" [ref=e544] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@nuevonlmx
+              - img "icono de tiktok" [ref=e545]
+            - link "icono de youtube" [ref=e546] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/GobiernoNuevoLeon
+              - img "icono de youtube" [ref=e547]
+        - generic [ref=e548]:
+          - generic [ref=e549]:
+            - text: Gobierno de
+            - strong [ref=e550]: nuevo león
+          - img "logo de león dorado" [ref=e552]
+          - generic [ref=e553]:
+            - text: Un
+            - strong [ref=e554]: nuevo
+            - text: nuevo león
+        - paragraph [ref=e556]:
+          - text: SOPORTADO POR
+          - link "VÍA SISTEMA DE DISEÑO" [ref=e557] [cursor=pointer]:
+            - /url: /administracion
+          - text: © 2024 DE LA
+          - link "SUBSECRETARÍA DE TECNOLOGÍAS" [ref=e558] [cursor=pointer]:
+            - /url: /administracion
+          - text: BAJO LICENCIA
+          - link "CC BY-NC-SA 4.0" [ref=e559] [cursor=pointer]:
+            - /url: https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1
+    - dialog "¡Disfruta del FIFA Fan Festival en Nuevo León!" [active] [ref=e560]:
+      - generic [ref=e561]:
+        - generic [ref=e562]:
+          - heading "¡Disfruta del FIFA Fan Festival en Nuevo León!" [level=4] [ref=e563]
+          - button "Close" [ref=e564] [cursor=pointer]: 
+        - iframe [ref=e567]:
+          - generic [active] [ref=f31e1]:
+            - generic "Reproductor de video de YouTube" [ref=f31e3]
+            - generic [ref=f31e5]:
+              - generic:
+                - generic:
+                  - button "Reproducir video" [ref=f31e10] [cursor=pointer]:
+                    - generic [ref=f31e13]:
+                      - img
+                  - button "Ocultar controles del reproductor" [ref=f31e14] [cursor=pointer]
+                  - generic [ref=f31e16]:
+                    - generic [ref=f31e21]:
+                      - generic [ref=f31e22]:
+                        - link "¡Disfruta del FIFA Fan Festival™️ en Nuevo León!" [ref=f31e23] [cursor=pointer]:
+                          - /url: https://www.youtube.com/watch?v=zIJRfwaNq2o
+                        - link "GobiernoNuevoLeon" [ref=f31e24] [cursor=pointer]:
+                          - /url: /channel/UC_KvL9gZ9q3SuO6KAWLXC6w
+                          - generic [ref=f31e25]: GobiernoNuevoLeon
+                      - generic [ref=f31e26]:
+                        - button "thumbnail-image" [ref=f31e27] [cursor=pointer]:
+                          - img "thumbnail-image" [ref=f31e28]
+                        - generic [ref=f31e30]:
+                          - generic: GobiernoNuevoLeon
+                          - generic: 70.8 k suscriptores
+                    - generic [ref=f31e31]:
+                      - button "Compartir" [ref=f31e34] [cursor=pointer]:
+                        - generic [ref=f31e38]:
+                          - img
+                      - link "Mirar en YouTube" [ref=f31e45] [cursor=pointer]:
+                        - /url: https://www.youtube.com/watch?v=zIJRfwaNq2o
+                        - generic [ref=f31e48]:
+                          - text: Mirar en
+                          - img [ref=f31e50]:
+                            - generic [ref=f31e52]:
+                              - img
+        - button "Activar sonido" [ref=e569] [cursor=pointer]
+  - button "Abrir menú de accesibilidad" [ref=e571] [cursor=pointer]:
+    - generic [ref=e572]: settings_accessibility

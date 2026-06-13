@@ -1,0 +1,866 @@
+[
+  {
+    "estado": "cdmx",
+    "mun": "iztapalapa",
+    "nombre": "Iztapalapa",
+    "pob": 1835486
+  },
+  {
+    "estado": "cdmx",
+    "mun": "gustavo_a_madero",
+    "nombre": "Gustavo A. Madero",
+    "pob": 1173351
+  },
+  {
+    "estado": "cdmx",
+    "mun": "alvaro_obregon",
+    "nombre": "Álvaro Obregón",
+    "pob": 759137
+  },
+  {
+    "estado": "cdmx",
+    "mun": "coyoacan",
+    "nombre": "Coyoacán",
+    "pob": 614447
+  },
+  {
+    "estado": "cdmx",
+    "mun": "tlalpan",
+    "nombre": "Tlalpan",
+    "pob": 699928
+  },
+  {
+    "estado": "cdmx",
+    "mun": "iztacalco",
+    "nombre": "Iztacalco",
+    "pob": 404695
+  },
+  {
+    "estado": "cdmx",
+    "mun": "azcapotzalco",
+    "nombre": "Azcapotzalco",
+    "pob": 432205
+  },
+  {
+    "estado": "cdmx",
+    "mun": "venustiano_carranza",
+    "nombre": "Venustiano Carranza",
+    "pob": 443704
+  },
+  {
+    "estado": "cdmx",
+    "mun": "xochimilco",
+    "nombre": "Xochimilco",
+    "pob": 442178
+  },
+  {
+    "estado": "cdmx",
+    "mun": "miguel_hidalgo",
+    "nombre": "Miguel Hidalgo",
+    "pob": 414470
+  },
+  {
+    "estado": "cdmx",
+    "mun": "benito_juarez",
+    "nombre": "Benito Juárez (CDMX)",
+    "pob": 434153
+  },
+  {
+    "estado": "cdmx",
+    "mun": "cuauhtemoc",
+    "nombre": "Cuauhtémoc",
+    "pob": 545884
+  },
+  {
+    "estado": "cdmx",
+    "mun": "magdalena_contreras",
+    "nombre": "La Magdalena Contreras",
+    "pob": 247622
+  },
+  {
+    "estado": "cdmx",
+    "mun": "tlahuac",
+    "nombre": "Tláhuac",
+    "pob": 392313
+  },
+  {
+    "estado": "cdmx",
+    "mun": "milpa_alta",
+    "nombre": "Milpa Alta",
+    "pob": 152685
+  },
+  {
+    "estado": "cdmx",
+    "mun": "cuajimalpa",
+    "nombre": "Cuajimalpa de Morelos",
+    "pob": 217686
+  },
+  {
+    "estado": "edomex",
+    "mun": "ixtapaluca",
+    "nombre": "Ixtapaluca",
+    "pob": 542211
+  },
+  {
+    "estado": "edomex",
+    "mun": "tultitlan",
+    "nombre": "Tultitlán",
+    "pob": 491466
+  },
+  {
+    "estado": "edomex",
+    "mun": "coacalco",
+    "nombre": "Coacalco de Berriozábal",
+    "pob": 293444
+  },
+  {
+    "estado": "edomex",
+    "mun": "valle_chalco",
+    "nombre": "Valle de Chalco Solidaridad",
+    "pob": 391731
+  },
+  {
+    "estado": "edomex",
+    "mun": "chimalhuacan",
+    "nombre": "Chimalhuacán",
+    "pob": 705193
+  },
+  {
+    "estado": "edomex",
+    "mun": "chalco",
+    "nombre": "Chalco",
+    "pob": 365241
+  },
+  {
+    "estado": "edomex",
+    "mun": "texcoco",
+    "nombre": "Texcoco",
+    "pob": 277562
+  },
+  {
+    "estado": "edomex",
+    "mun": "metepec",
+    "nombre": "Metepec",
+    "pob": 242307
+  },
+  {
+    "estado": "edomex",
+    "mun": "tecamac",
+    "nombre": "Tecámac",
+    "pob": 547503
+  },
+  {
+    "estado": "edomex",
+    "mun": "tultepec",
+    "nombre": "Tultepec",
+    "pob": 153405
+  },
+  {
+    "estado": "edomex",
+    "mun": "ixtlahuaca",
+    "nombre": "Ixtlahuaca",
+    "pob": 153184
+  },
+  {
+    "estado": "edomex",
+    "mun": "lerma",
+    "nombre": "Lerma",
+    "pob": 165241
+  },
+  {
+    "estado": "edomex",
+    "mun": "huixquilucan",
+    "nombre": "Huixquilucan",
+    "pob": 284965
+  },
+  {
+    "estado": "edomex",
+    "mun": "zinacantepec",
+    "nombre": "Zinacantepec",
+    "pob": 207938
+  },
+  {
+    "estado": "edomex",
+    "mun": "almoloya_juarez",
+    "nombre": "Almoloya de Juárez",
+    "pob": 188833
+  },
+  {
+    "estado": "jal",
+    "mun": "el_salto",
+    "nombre": "El Salto",
+    "pob": 234403
+  },
+  {
+    "estado": "jal",
+    "mun": "lagos_de_moreno",
+    "nombre": "Lagos de Moreno",
+    "pob": 184482
+  },
+  {
+    "estado": "jal",
+    "mun": "ocotlan",
+    "nombre": "Ocotlán",
+    "pob": 110727
+  },
+  {
+    "estado": "jal",
+    "mun": "tepatitlan",
+    "nombre": "Tepatitlán de Morelos",
+    "pob": 152368
+  },
+  {
+    "estado": "jal",
+    "mun": "ameca",
+    "nombre": "Ameca",
+    "pob": 60536
+  },
+  {
+    "estado": "jal",
+    "mun": "autlan",
+    "nombre": "Autlán de Navarro",
+    "pob": 65697
+  },
+  {
+    "estado": "nl",
+    "mun": "garcia",
+    "nombre": "García",
+    "pob": 396466
+  },
+  {
+    "estado": "nl",
+    "mun": "juarez_nl",
+    "nombre": "Juárez (NL)",
+    "pob": 488768
+  },
+  {
+    "estado": "nl",
+    "mun": "cadereyta_jimenez",
+    "nombre": "Cadereyta Jiménez",
+    "pob": 100954
+  },
+  {
+    "estado": "nl",
+    "mun": "salinas_victoria",
+    "nombre": "Salinas Victoria",
+    "pob": 90159
+  },
+  {
+    "estado": "nl",
+    "mun": "general_escobedo",
+    "nombre": "General Escobedo",
+    "pob": 481752
+  },
+  {
+    "estado": "pue",
+    "mun": "tehuacan",
+    "nombre": "Tehuacán",
+    "pob": 339955
+  },
+  {
+    "estado": "pue",
+    "mun": "atlixco",
+    "nombre": "Atlixco",
+    "pob": 141793
+  },
+  {
+    "estado": "pue",
+    "mun": "san_pedro_cholula",
+    "nombre": "San Pedro Cholula",
+    "pob": 138796
+  },
+  {
+    "estado": "pue",
+    "mun": "san_andres_cholula",
+    "nombre": "San Andrés Cholula",
+    "pob": 153973
+  },
+  {
+    "estado": "pue",
+    "mun": "amozoc",
+    "nombre": "Amozoc",
+    "pob": 130834
+  },
+  {
+    "estado": "pue",
+    "mun": "cuautlancingo",
+    "nombre": "Cuautlancingo",
+    "pob": 107926
+  },
+  {
+    "estado": "qro",
+    "mun": "el_marques",
+    "nombre": "El Marqués",
+    "pob": 277672
+  },
+  {
+    "estado": "qro",
+    "mun": "san_juan_del_rio",
+    "nombre": "San Juan del Río",
+    "pob": 286797
+  },
+  {
+    "estado": "yuc",
+    "mun": "kanasin",
+    "nombre": "Kanasín",
+    "pob": 144786
+  },
+  {
+    "estado": "yuc",
+    "mun": "valladolid",
+    "nombre": "Valladolid",
+    "pob": 85460
+  },
+  {
+    "estado": "yuc",
+    "mun": "uman",
+    "nombre": "Umán",
+    "pob": 65113
+  },
+  {
+    "estado": "yuc",
+    "mun": "progreso",
+    "nombre": "Progreso",
+    "pob": 60640
+  },
+  {
+    "estado": "bc",
+    "mun": "rosarito",
+    "nombre": "Playas de Rosarito",
+    "pob": 126890
+  },
+  {
+    "estado": "bc",
+    "mun": "tecate",
+    "nombre": "Tecate",
+    "pob": 108440
+  },
+  {
+    "estado": "chih",
+    "mun": "delicias",
+    "nombre": "Delicias",
+    "pob": 154073
+  },
+  {
+    "estado": "chih",
+    "mun": "cuauhtemoc_chih",
+    "nombre": "Cuauhtémoc (Chih)",
+    "pob": 184550
+  },
+  {
+    "estado": "chih",
+    "mun": "parral",
+    "nombre": "Hidalgo del Parral",
+    "pob": 116753
+  },
+  {
+    "estado": "chih",
+    "mun": "camargo",
+    "nombre": "Camargo (Chih)",
+    "pob": 51998
+  },
+  {
+    "estado": "chih",
+    "mun": "nuevo_casas_grandes",
+    "nombre": "Nuevo Casas Grandes",
+    "pob": 65528
+  },
+  {
+    "estado": "tam",
+    "mun": "altamira",
+    "nombre": "Altamira",
+    "pob": 240206
+  },
+  {
+    "estado": "tam",
+    "mun": "madero",
+    "nombre": "Ciudad Madero",
+    "pob": 211899
+  },
+  {
+    "estado": "tam",
+    "mun": "victoria",
+    "nombre": "Ciudad Victoria",
+    "pob": 360193
+  },
+  {
+    "estado": "tam",
+    "mun": "rio_bravo",
+    "nombre": "Río Bravo",
+    "pob": 124323
+  },
+  {
+    "estado": "tam",
+    "mun": "valle_hermoso",
+    "nombre": "Valle Hermoso",
+    "pob": 65761
+  },
+  {
+    "estado": "ver",
+    "mun": "cordoba",
+    "nombre": "Córdoba",
+    "pob": 218153
+  },
+  {
+    "estado": "ver",
+    "mun": "orizaba",
+    "nombre": "Orizaba",
+    "pob": 127792
+  },
+  {
+    "estado": "ver",
+    "mun": "coatzacoalcos",
+    "nombre": "Coatzacoalcos",
+    "pob": 310698
+  },
+  {
+    "estado": "ver",
+    "mun": "minatitlan",
+    "nombre": "Minatitlán",
+    "pob": 169309
+  },
+  {
+    "estado": "ver",
+    "mun": "tuxpan",
+    "nombre": "Tuxpan (Ver)",
+    "pob": 161437
+  },
+  {
+    "estado": "ver",
+    "mun": "papantla",
+    "nombre": "Papantla",
+    "pob": 162645
+  },
+  {
+    "estado": "ver",
+    "mun": "poza_rica",
+    "nombre": "Poza Rica de Hidalgo",
+    "pob": 173761
+  },
+  {
+    "estado": "ver",
+    "mun": "boca_del_rio",
+    "nombre": "Boca del Río",
+    "pob": 145576
+  },
+  {
+    "estado": "gto",
+    "mun": "salamanca",
+    "nombre": "Salamanca",
+    "pob": 273271
+  },
+  {
+    "estado": "gto",
+    "mun": "san_miguel_de_allende",
+    "nombre": "San Miguel de Allende",
+    "pob": 175640
+  },
+  {
+    "estado": "gto",
+    "mun": "silao",
+    "nombre": "Silao de la Victoria",
+    "pob": 211278
+  },
+  {
+    "estado": "gto",
+    "mun": "valle_de_santiago",
+    "nombre": "Valle de Santiago",
+    "pob": 138478
+  },
+  {
+    "estado": "gto",
+    "mun": "guanajuato",
+    "nombre": "Guanajuato (capital)",
+    "pob": 194500
+  },
+  {
+    "estado": "sin",
+    "mun": "los_mochis",
+    "nombre": "Los Mochis (Ahome)",
+    "pob": 449215
+  },
+  {
+    "estado": "sin",
+    "mun": "navolato",
+    "nombre": "Navolato",
+    "pob": 158995
+  },
+  {
+    "estado": "sin",
+    "mun": "guasave",
+    "nombre": "Guasave",
+    "pob": 295353
+  },
+  {
+    "estado": "son",
+    "mun": "ciudad_obregon",
+    "nombre": "Ciudad Obregón (Cajeme)",
+    "pob": 433050
+  },
+  {
+    "estado": "son",
+    "mun": "nogales",
+    "nombre": "Nogales (Son)",
+    "pob": 264782
+  },
+  {
+    "estado": "son",
+    "mun": "navojoa",
+    "nombre": "Navojoa",
+    "pob": 163650
+  },
+  {
+    "estado": "son",
+    "mun": "san_luis_rio_colorado",
+    "nombre": "San Luis Río Colorado",
+    "pob": 192739
+  },
+  {
+    "estado": "son",
+    "mun": "guaymas",
+    "nombre": "Guaymas",
+    "pob": 156863
+  },
+  {
+    "estado": "coah",
+    "mun": "monclova",
+    "nombre": "Monclova",
+    "pob": 237169
+  },
+  {
+    "estado": "coah",
+    "mun": "piedras_negras",
+    "nombre": "Piedras Negras",
+    "pob": 173959
+  },
+  {
+    "estado": "coah",
+    "mun": "ramos_arizpe",
+    "nombre": "Ramos Arizpe",
+    "pob": 99385
+  },
+  {
+    "estado": "coah",
+    "mun": "frontera",
+    "nombre": "Frontera",
+    "pob": 87726
+  },
+  {
+    "estado": "coah",
+    "mun": "matamoros_coah",
+    "nombre": "Matamoros (Coah)",
+    "pob": 121722
+  },
+  {
+    "estado": "coah",
+    "mun": "san_pedro_coah",
+    "nombre": "San Pedro (Coah)",
+    "pob": 102650
+  },
+  {
+    "estado": "qroo",
+    "mun": "isla_mujeres",
+    "nombre": "Isla Mujeres",
+    "pob": 22726
+  },
+  {
+    "estado": "ags",
+    "mun": "jesus_maria",
+    "nombre": "Jesús María",
+    "pob": 129927
+  },
+  {
+    "estado": "mor",
+    "mun": "jiutepec",
+    "nombre": "Jiutepec",
+    "pob": 215357
+  },
+  {
+    "estado": "mor",
+    "mun": "cuautla",
+    "nombre": "Cuautla",
+    "pob": 187268
+  },
+  {
+    "estado": "mor",
+    "mun": "temixco",
+    "nombre": "Temixco",
+    "pob": 116143
+  },
+  {
+    "estado": "mich",
+    "mun": "uruapan",
+    "nombre": "Uruapan",
+    "pob": 356786
+  },
+  {
+    "estado": "mich",
+    "mun": "zamora",
+    "nombre": "Zamora",
+    "pob": 196999
+  },
+  {
+    "estado": "mich",
+    "mun": "apatzingan",
+    "nombre": "Apatzingán",
+    "pob": 128336
+  },
+  {
+    "estado": "mich",
+    "mun": "lazaro_cardenas",
+    "nombre": "Lázaro Cárdenas (Mich)",
+    "pob": 175625
+  },
+  {
+    "estado": "mich",
+    "mun": "patzcuaro",
+    "nombre": "Pátzcuaro",
+    "pob": 92770
+  },
+  {
+    "estado": "mich",
+    "mun": "hidalgo_mich",
+    "nombre": "Ciudad Hidalgo (Mich)",
+    "pob": 122540
+  },
+  {
+    "estado": "slp",
+    "mun": "soledad_graciano_sanchez",
+    "nombre": "Soledad de Graciano Sánchez",
+    "pob": 343134
+  },
+  {
+    "estado": "slp",
+    "mun": "ciudad_valles",
+    "nombre": "Ciudad Valles",
+    "pob": 177022
+  },
+  {
+    "estado": "slp",
+    "mun": "matehuala",
+    "nombre": "Matehuala",
+    "pob": 100722
+  },
+  {
+    "estado": "slp",
+    "mun": "rio_verde",
+    "nombre": "Río Verde",
+    "pob": 96395
+  },
+  {
+    "estado": "oax",
+    "mun": "tuxtepec",
+    "nombre": "San Juan Bautista Tuxtepec",
+    "pob": 175490
+  },
+  {
+    "estado": "oax",
+    "mun": "huajuapan_de_leon",
+    "nombre": "Huajuapan de León",
+    "pob": 78383
+  },
+  {
+    "estado": "oax",
+    "mun": "salina_cruz",
+    "nombre": "Salina Cruz",
+    "pob": 91166
+  },
+  {
+    "estado": "oax",
+    "mun": "juchitan",
+    "nombre": "Juchitán de Zaragoza",
+    "pob": 100882
+  },
+  {
+    "estado": "chis",
+    "mun": "tapachula",
+    "nombre": "Tapachula",
+    "pob": 353706
+  },
+  {
+    "estado": "chis",
+    "mun": "san_cristobal",
+    "nombre": "San Cristóbal de las Casas",
+    "pob": 215874
+  },
+  {
+    "estado": "chis",
+    "mun": "comitan",
+    "nombre": "Comitán de Domínguez",
+    "pob": 159899
+  },
+  {
+    "estado": "chis",
+    "mun": "palenque",
+    "nombre": "Palenque (Chis)",
+    "pob": 130715
+  },
+  {
+    "estado": "chis",
+    "mun": "ocosingo",
+    "nombre": "Ocosingo",
+    "pob": 240310
+  },
+  {
+    "estado": "tab",
+    "mun": "cardenas_tab",
+    "nombre": "Cárdenas (Tab)",
+    "pob": 250845
+  },
+  {
+    "estado": "tab",
+    "mun": "huimanguillo",
+    "nombre": "Huimanguillo",
+    "pob": 191434
+  },
+  {
+    "estado": "tab",
+    "mun": "comalcalco",
+    "nombre": "Comalcalco",
+    "pob": 217415
+  },
+  {
+    "estado": "tab",
+    "mun": "macuspana",
+    "nombre": "Macuspana",
+    "pob": 156628
+  },
+  {
+    "estado": "hgo",
+    "mun": "tulancingo",
+    "nombre": "Tulancingo de Bravo",
+    "pob": 168063
+  },
+  {
+    "estado": "hgo",
+    "mun": "tula",
+    "nombre": "Tula de Allende",
+    "pob": 115107
+  },
+  {
+    "estado": "hgo",
+    "mun": "huejutla",
+    "nombre": "Huejutla de Reyes",
+    "pob": 134715
+  },
+  {
+    "estado": "hgo",
+    "mun": "tepeji",
+    "nombre": "Tepeji del Río de Ocampo",
+    "pob": 86318
+  },
+  {
+    "estado": "hgo",
+    "mun": "mineral_de_la_reforma",
+    "nombre": "Mineral de la Reforma",
+    "pob": 200710
+  },
+  {
+    "estado": "dur",
+    "mun": "gomez_palacio",
+    "nombre": "Gómez Palacio",
+    "pob": 360240
+  },
+  {
+    "estado": "dur",
+    "mun": "lerdo",
+    "nombre": "Lerdo",
+    "pob": 162628
+  },
+  {
+    "estado": "zac",
+    "mun": "fresnillo",
+    "nombre": "Fresnillo",
+    "pob": 240549
+  },
+  {
+    "estado": "zac",
+    "mun": "guadalupe_zac",
+    "nombre": "Guadalupe (Zac)",
+    "pob": 207810
+  },
+  {
+    "estado": "nay",
+    "mun": "bahia_de_banderas",
+    "nombre": "Bahía de Banderas",
+    "pob": 187739
+  },
+  {
+    "estado": "nay",
+    "mun": "santiago_ixcuintla",
+    "nombre": "Santiago Ixcuintla",
+    "pob": 79750
+  },
+  {
+    "estado": "col",
+    "mun": "manzanillo",
+    "nombre": "Manzanillo",
+    "pob": 191267
+  },
+  {
+    "estado": "col",
+    "mun": "villa_de_alvarez",
+    "nombre": "Villa de Álvarez",
+    "pob": 138812
+  },
+  {
+    "estado": "col",
+    "mun": "tecoman",
+    "nombre": "Tecomán",
+    "pob": 121725
+  },
+  {
+    "estado": "tlax",
+    "mun": "apizaco",
+    "nombre": "Apizaco",
+    "pob": 79460
+  },
+  {
+    "estado": "tlax",
+    "mun": "huamantla",
+    "nombre": "Huamantla",
+    "pob": 92330
+  },
+  {
+    "estado": "tlax",
+    "mun": "chiautempan",
+    "nombre": "Chiautempan",
+    "pob": 78523
+  },
+  {
+    "estado": "cam",
+    "mun": "ciudad_del_carmen",
+    "nombre": "Ciudad del Carmen (Carmen)",
+    "pob": 248303
+  },
+  {
+    "estado": "cam",
+    "mun": "champoton",
+    "nombre": "Champotón",
+    "pob": 89232
+  },
+  {
+    "estado": "gro",
+    "mun": "iguala",
+    "nombre": "Iguala de la Independencia",
+    "pob": 154339
+  },
+  {
+    "estado": "gro",
+    "mun": "zihuatanejo",
+    "nombre": "Zihuatanejo de Azueta",
+    "pob": 126001
+  },
+  {
+    "estado": "gro",
+    "mun": "chilapa",
+    "nombre": "Chilapa de Álvarez",
+    "pob": 136174
+  },
+  {
+    "estado": "gro",
+    "mun": "taxco",
+    "nombre": "Taxco de Alarcón",
+    "pob": 105586
+  }
+]

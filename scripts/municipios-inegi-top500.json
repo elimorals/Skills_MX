@@ -1,0 +1,872 @@
+[
+  {
+    "estado": "edomex",
+    "mun": "valle_de_bravo",
+    "nombre": "Valle de Bravo",
+    "pob": 71710
+  },
+  {
+    "estado": "edomex",
+    "mun": "ixtapan_de_la_sal",
+    "nombre": "Ixtapan de la Sal",
+    "pob": 41287
+  },
+  {
+    "estado": "edomex",
+    "mun": "ocoyoacac",
+    "nombre": "Ocoyoacac",
+    "pob": 70900
+  },
+  {
+    "estado": "edomex",
+    "mun": "chicoloapan",
+    "nombre": "Chicoloapan",
+    "pob": 200750
+  },
+  {
+    "estado": "edomex",
+    "mun": "la_paz_edomex",
+    "nombre": "La Paz (EdoMex)",
+    "pob": 304088
+  },
+  {
+    "estado": "edomex",
+    "mun": "los_reyes_la_paz",
+    "nombre": "Los Reyes La Paz",
+    "pob": 304088
+  },
+  {
+    "estado": "edomex",
+    "mun": "tepotzotlan",
+    "nombre": "Tepotzotlán",
+    "pob": 94188
+  },
+  {
+    "estado": "edomex",
+    "mun": "valle_de_chalco",
+    "nombre": "Valle de Chalco Solidaridad",
+    "pob": 391731
+  },
+  {
+    "estado": "edomex",
+    "mun": "amecameca",
+    "nombre": "Amecameca",
+    "pob": 50587
+  },
+  {
+    "estado": "edomex",
+    "mun": "tenango_del_valle",
+    "nombre": "Tenango del Valle",
+    "pob": 86380
+  },
+  {
+    "estado": "jal",
+    "mun": "zapotlanejo",
+    "nombre": "Zapotlanejo",
+    "pob": 70002
+  },
+  {
+    "estado": "jal",
+    "mun": "el_grullo",
+    "nombre": "El Grullo",
+    "pob": 25009
+  },
+  {
+    "estado": "jal",
+    "mun": "tequila",
+    "nombre": "Tequila",
+    "pob": 45445
+  },
+  {
+    "estado": "jal",
+    "mun": "arandas",
+    "nombre": "Arandas",
+    "pob": 81745
+  },
+  {
+    "estado": "jal",
+    "mun": "san_juan_de_los_lagos",
+    "nombre": "San Juan de los Lagos",
+    "pob": 67945
+  },
+  {
+    "estado": "jal",
+    "mun": "encarnacion_de_diaz",
+    "nombre": "Encarnación de Díaz",
+    "pob": 53473
+  },
+  {
+    "estado": "jal",
+    "mun": "ciudad_guzman",
+    "nombre": "Ciudad Guzmán (Zapotlán el Grande)",
+    "pob": 105423
+  },
+  {
+    "estado": "nl",
+    "mun": "linares",
+    "nombre": "Linares",
+    "pob": 84666
+  },
+  {
+    "estado": "nl",
+    "mun": "montemorelos",
+    "nombre": "Montemorelos",
+    "pob": 65877
+  },
+  {
+    "estado": "nl",
+    "mun": "sabinas_hidalgo",
+    "nombre": "Sabinas Hidalgo",
+    "pob": 36032
+  },
+  {
+    "estado": "nl",
+    "mun": "anahuac_nl",
+    "nombre": "Anáhuac (NL)",
+    "pob": 16692
+  },
+  {
+    "estado": "pue",
+    "mun": "huauchinango",
+    "nombre": "Huauchinango",
+    "pob": 99236
+  },
+  {
+    "estado": "pue",
+    "mun": "san_martin_texmelucan",
+    "nombre": "San Martín Texmelucan",
+    "pob": 152051
+  },
+  {
+    "estado": "pue",
+    "mun": "izucar_de_matamoros",
+    "nombre": "Izúcar de Matamoros",
+    "pob": 78524
+  },
+  {
+    "estado": "pue",
+    "mun": "teziutlan",
+    "nombre": "Teziutlán",
+    "pob": 99975
+  },
+  {
+    "estado": "pue",
+    "mun": "zacatlan",
+    "nombre": "Zacatlán",
+    "pob": 80649
+  },
+  {
+    "estado": "pue",
+    "mun": "atlixco_2",
+    "nombre": "Atlixco",
+    "pob": 141793
+  },
+  {
+    "estado": "qro",
+    "mun": "tequisquiapan",
+    "nombre": "Tequisquiapan",
+    "pob": 75777
+  },
+  {
+    "estado": "qro",
+    "mun": "ezequiel_montes",
+    "nombre": "Ezequiel Montes",
+    "pob": 41488
+  },
+  {
+    "estado": "qro",
+    "mun": "cadereyta_qro",
+    "nombre": "Cadereyta (Qro)",
+    "pob": 73007
+  },
+  {
+    "estado": "qro",
+    "mun": "huimilpan",
+    "nombre": "Huimilpan",
+    "pob": 41576
+  },
+  {
+    "estado": "qro",
+    "mun": "amealco",
+    "nombre": "Amealco de Bonfil",
+    "pob": 65119
+  },
+  {
+    "estado": "yuc",
+    "mun": "tizimin",
+    "nombre": "Tizimín",
+    "pob": 78360
+  },
+  {
+    "estado": "yuc",
+    "mun": "ticul",
+    "nombre": "Ticul",
+    "pob": 41069
+  },
+  {
+    "estado": "yuc",
+    "mun": "motul",
+    "nombre": "Motul",
+    "pob": 38220
+  },
+  {
+    "estado": "yuc",
+    "mun": "izamal",
+    "nombre": "Izamal",
+    "pob": 27675
+  },
+  {
+    "estado": "bc",
+    "mun": "playas_de_rosarito",
+    "nombre": "Playas de Rosarito",
+    "pob": 126890
+  },
+  {
+    "estado": "chih",
+    "mun": "casas_grandes",
+    "nombre": "Casas Grandes",
+    "pob": 11700
+  },
+  {
+    "estado": "chih",
+    "mun": "meoqui",
+    "nombre": "Meoqui",
+    "pob": 47249
+  },
+  {
+    "estado": "chih",
+    "mun": "ojinaga",
+    "nombre": "Ojinaga",
+    "pob": 28900
+  },
+  {
+    "estado": "chih",
+    "mun": "saucillo",
+    "nombre": "Saucillo",
+    "pob": 35343
+  },
+  {
+    "estado": "tam",
+    "mun": "el_mante",
+    "nombre": "El Mante",
+    "pob": 116240
+  },
+  {
+    "estado": "tam",
+    "mun": "xicotencatl",
+    "nombre": "Xicoténcatl",
+    "pob": 22811
+  },
+  {
+    "estado": "tam",
+    "mun": "miguel_aleman",
+    "nombre": "Miguel Alemán",
+    "pob": 27915
+  },
+  {
+    "estado": "tam",
+    "mun": "abasolo_tam",
+    "nombre": "Abasolo (Tam)",
+    "pob": 12290
+  },
+  {
+    "estado": "ver",
+    "mun": "coatepec",
+    "nombre": "Coatepec",
+    "pob": 92127
+  },
+  {
+    "estado": "ver",
+    "mun": "perote",
+    "nombre": "Perote",
+    "pob": 65900
+  },
+  {
+    "estado": "ver",
+    "mun": "san_andres_tuxtla",
+    "nombre": "San Andrés Tuxtla",
+    "pob": 145564
+  },
+  {
+    "estado": "ver",
+    "mun": "martinez_de_la_torre",
+    "nombre": "Martínez de la Torre",
+    "pob": 100948
+  },
+  {
+    "estado": "ver",
+    "mun": "alvarado_ver",
+    "nombre": "Alvarado (Ver)",
+    "pob": 53887
+  },
+  {
+    "estado": "ver",
+    "mun": "panuco",
+    "nombre": "Pánuco",
+    "pob": 95983
+  },
+  {
+    "estado": "ver",
+    "mun": "naranjos_amatlan",
+    "nombre": "Naranjos Amatlán",
+    "pob": 35700
+  },
+  {
+    "estado": "ver",
+    "mun": "agua_dulce",
+    "nombre": "Agua Dulce",
+    "pob": 47252
+  },
+  {
+    "estado": "ver",
+    "mun": "acayucan",
+    "nombre": "Acayucan",
+    "pob": 86881
+  },
+  {
+    "estado": "ver",
+    "mun": "cosoleacaque",
+    "nombre": "Cosoleacaque",
+    "pob": 117725
+  },
+  {
+    "estado": "ver",
+    "mun": "las_choapas",
+    "nombre": "Las Choapas",
+    "pob": 79960
+  },
+  {
+    "estado": "gto",
+    "mun": "san_francisco_del_rincon",
+    "nombre": "San Francisco del Rincón",
+    "pob": 122891
+  },
+  {
+    "estado": "gto",
+    "mun": "purisima_del_rincon",
+    "nombre": "Purísima del Rincón",
+    "pob": 87032
+  },
+  {
+    "estado": "gto",
+    "mun": "abasolo_gto",
+    "nombre": "Abasolo (Gto)",
+    "pob": 89267
+  },
+  {
+    "estado": "gto",
+    "mun": "moroleon",
+    "nombre": "Moroleón",
+    "pob": 53485
+  },
+  {
+    "estado": "gto",
+    "mun": "uriangato",
+    "nombre": "Uriangato",
+    "pob": 65581
+  },
+  {
+    "estado": "gto",
+    "mun": "salvatierra",
+    "nombre": "Salvatierra",
+    "pob": 91641
+  },
+  {
+    "estado": "gto",
+    "mun": "yuriria",
+    "nombre": "Yuriria",
+    "pob": 72402
+  },
+  {
+    "estado": "gto",
+    "mun": "acambaro",
+    "nombre": "Acámbaro",
+    "pob": 109030
+  },
+  {
+    "estado": "gto",
+    "mun": "san_jose_iturbide",
+    "nombre": "San José Iturbide",
+    "pob": 92722
+  },
+  {
+    "estado": "gto",
+    "mun": "dolores_hidalgo",
+    "nombre": "Dolores Hidalgo",
+    "pob": 152120
+  },
+  {
+    "estado": "sin",
+    "mun": "el_fuerte",
+    "nombre": "El Fuerte",
+    "pob": 97536
+  },
+  {
+    "estado": "sin",
+    "mun": "guamuchil",
+    "nombre": "Guamúchil (Salvador Alvarado)",
+    "pob": 80460
+  },
+  {
+    "estado": "sin",
+    "mun": "rosario_sin",
+    "nombre": "Rosario (Sin)",
+    "pob": 49380
+  },
+  {
+    "estado": "sin",
+    "mun": "escuinapa",
+    "nombre": "Escuinapa",
+    "pob": 60516
+  },
+  {
+    "estado": "son",
+    "mun": "agua_prieta",
+    "nombre": "Agua Prieta",
+    "pob": 91929
+  },
+  {
+    "estado": "son",
+    "mun": "magdalena",
+    "nombre": "Magdalena",
+    "pob": 32835
+  },
+  {
+    "estado": "son",
+    "mun": "huatabampo",
+    "nombre": "Huatabampo",
+    "pob": 76296
+  },
+  {
+    "estado": "son",
+    "mun": "etchojoa",
+    "nombre": "Etchojoa",
+    "pob": 60717
+  },
+  {
+    "estado": "son",
+    "mun": "caborca",
+    "nombre": "Heroica Caborca",
+    "pob": 84716
+  },
+  {
+    "estado": "coah",
+    "mun": "san_buenaventura_coah",
+    "nombre": "San Buenaventura (Coah)",
+    "pob": 24580
+  },
+  {
+    "estado": "coah",
+    "mun": "ciudad_acuna",
+    "nombre": "Ciudad Acuña",
+    "pob": 161419
+  },
+  {
+    "estado": "coah",
+    "mun": "sabinas_coah",
+    "nombre": "Sabinas (Coah)",
+    "pob": 65855
+  },
+  {
+    "estado": "qroo",
+    "mun": "tulum",
+    "nombre": "Tulum",
+    "pob": 46721
+  },
+  {
+    "estado": "qroo",
+    "mun": "felipe_carrillo_puerto",
+    "nombre": "Felipe Carrillo Puerto",
+    "pob": 81742
+  },
+  {
+    "estado": "qroo",
+    "mun": "jose_maria_morelos",
+    "nombre": "José María Morelos",
+    "pob": 38715
+  },
+  {
+    "estado": "ags",
+    "mun": "calvillo",
+    "nombre": "Calvillo",
+    "pob": 58250
+  },
+  {
+    "estado": "ags",
+    "mun": "rincon_de_romos",
+    "nombre": "Rincón de Romos",
+    "pob": 53866
+  },
+  {
+    "estado": "ags",
+    "mun": "pabellon_de_arteaga",
+    "nombre": "Pabellón de Arteaga",
+    "pob": 47614
+  },
+  {
+    "estado": "mor",
+    "mun": "yautepec",
+    "nombre": "Yautepec",
+    "pob": 110192
+  },
+  {
+    "estado": "mor",
+    "mun": "ayala_mor",
+    "nombre": "Ayala (Mor)",
+    "pob": 90023
+  },
+  {
+    "estado": "mor",
+    "mun": "emiliano_zapata_mor",
+    "nombre": "Emiliano Zapata (Mor)",
+    "pob": 105011
+  },
+  {
+    "estado": "mor",
+    "mun": "jojutla",
+    "nombre": "Jojutla",
+    "pob": 57121
+  },
+  {
+    "estado": "mor",
+    "mun": "puente_de_ixtla",
+    "nombre": "Puente de Ixtla",
+    "pob": 65855
+  },
+  {
+    "estado": "mich",
+    "mun": "sahuayo",
+    "nombre": "Sahuayo",
+    "pob": 86421
+  },
+  {
+    "estado": "mich",
+    "mun": "los_reyes_mich",
+    "nombre": "Los Reyes (Mich)",
+    "pob": 71910
+  },
+  {
+    "estado": "mich",
+    "mun": "maravatio",
+    "nombre": "Maravatío",
+    "pob": 80186
+  },
+  {
+    "estado": "mich",
+    "mun": "tacambaro",
+    "nombre": "Tacámbaro",
+    "pob": 78725
+  },
+  {
+    "estado": "mich",
+    "mun": "puruandiro",
+    "nombre": "Puruándiro",
+    "pob": 70392
+  },
+  {
+    "estado": "slp",
+    "mun": "rio_verde_slp",
+    "nombre": "Río Verde",
+    "pob": 96395
+  },
+  {
+    "estado": "slp",
+    "mun": "tamuin",
+    "nombre": "Tamuín",
+    "pob": 38758
+  },
+  {
+    "estado": "slp",
+    "mun": "xilitla",
+    "nombre": "Xilitla",
+    "pob": 51498
+  },
+  {
+    "estado": "slp",
+    "mun": "tamazunchale",
+    "nombre": "Tamazunchale",
+    "pob": 96820
+  },
+  {
+    "estado": "oax",
+    "mun": "santa_lucia_del_camino",
+    "nombre": "Santa Lucía del Camino",
+    "pob": 49454
+  },
+  {
+    "estado": "oax",
+    "mun": "san_antonio_de_la_cal",
+    "nombre": "San Antonio de la Cal",
+    "pob": 23823
+  },
+  {
+    "estado": "oax",
+    "mun": "santa_cruz_xoxocotlan",
+    "nombre": "Santa Cruz Xoxocotlán",
+    "pob": 84321
+  },
+  {
+    "estado": "oax",
+    "mun": "loma_bonita",
+    "nombre": "Loma Bonita",
+    "pob": 41697
+  },
+  {
+    "estado": "oax",
+    "mun": "miahuatlan",
+    "nombre": "Miahuatlán de Porfirio Díaz",
+    "pob": 47312
+  },
+  {
+    "estado": "oax",
+    "mun": "matias_romero",
+    "nombre": "Matías Romero Avendaño",
+    "pob": 41352
+  },
+  {
+    "estado": "oax",
+    "mun": "puerto_escondido",
+    "nombre": "San Pedro Mixtepec (Puerto Escondido)",
+    "pob": 35948
+  },
+  {
+    "estado": "oax",
+    "mun": "huatulco",
+    "nombre": "Santa María Huatulco",
+    "pob": 50862
+  },
+  {
+    "estado": "chis",
+    "mun": "chiapa_de_corzo",
+    "nombre": "Chiapa de Corzo",
+    "pob": 87603
+  },
+  {
+    "estado": "chis",
+    "mun": "berriozabal",
+    "nombre": "Berriozábal",
+    "pob": 51466
+  },
+  {
+    "estado": "chis",
+    "mun": "comitan_chis_2",
+    "nombre": "Comitán de Domínguez",
+    "pob": 159899
+  },
+  {
+    "estado": "chis",
+    "mun": "frontera_comalapa",
+    "nombre": "Frontera Comalapa",
+    "pob": 80521
+  },
+  {
+    "estado": "chis",
+    "mun": "villaflores",
+    "nombre": "Villaflores",
+    "pob": 102710
+  },
+  {
+    "estado": "chis",
+    "mun": "tonala_chis",
+    "nombre": "Tonalá (Chis)",
+    "pob": 88385
+  },
+  {
+    "estado": "chis",
+    "mun": "pichucalco",
+    "nombre": "Pichucalco",
+    "pob": 35700
+  },
+  {
+    "estado": "tab",
+    "mun": "paraiso",
+    "nombre": "Paraíso",
+    "pob": 92396
+  },
+  {
+    "estado": "tab",
+    "mun": "teapa",
+    "nombre": "Teapa",
+    "pob": 55650
+  },
+  {
+    "estado": "tab",
+    "mun": "tenosique",
+    "nombre": "Tenosique",
+    "pob": 60400
+  },
+  {
+    "estado": "tab",
+    "mun": "cunduacan",
+    "nombre": "Cunduacán",
+    "pob": 137722
+  },
+  {
+    "estado": "hgo",
+    "mun": "ixmiquilpan",
+    "nombre": "Ixmiquilpan",
+    "pob": 93511
+  },
+  {
+    "estado": "hgo",
+    "mun": "huichapan",
+    "nombre": "Huichapan",
+    "pob": 46503
+  },
+  {
+    "estado": "hgo",
+    "mun": "actopan",
+    "nombre": "Actopan",
+    "pob": 60517
+  },
+  {
+    "estado": "hgo",
+    "mun": "atotonilco_hgo",
+    "nombre": "Atotonilco el Grande (Hgo)",
+    "pob": 28400
+  },
+  {
+    "estado": "dur",
+    "mun": "el_oro_dur",
+    "nombre": "El Oro (Dur)",
+    "pob": 12345
+  },
+  {
+    "estado": "dur",
+    "mun": "santiago_papasquiaro",
+    "nombre": "Santiago Papasquiaro",
+    "pob": 47555
+  },
+  {
+    "estado": "dur",
+    "mun": "nuevo_ideal",
+    "nombre": "Nuevo Ideal",
+    "pob": 26500
+  },
+  {
+    "estado": "zac",
+    "mun": "rio_grande_zac",
+    "nombre": "Río Grande (Zac)",
+    "pob": 65983
+  },
+  {
+    "estado": "zac",
+    "mun": "sombrerete",
+    "nombre": "Sombrerete",
+    "pob": 65338
+  },
+  {
+    "estado": "zac",
+    "mun": "jerez",
+    "nombre": "Jerez",
+    "pob": 60064
+  },
+  {
+    "estado": "zac",
+    "mun": "loreto_zac",
+    "nombre": "Loreto (Zac)",
+    "pob": 47770
+  },
+  {
+    "estado": "nay",
+    "mun": "compostela",
+    "nombre": "Compostela",
+    "pob": 73932
+  },
+  {
+    "estado": "nay",
+    "mun": "tuxpan_nay",
+    "nombre": "Tuxpan (Nay)",
+    "pob": 32750
+  },
+  {
+    "estado": "nay",
+    "mun": "ixtlan_del_rio",
+    "nombre": "Ixtlán del Río",
+    "pob": 28525
+  },
+  {
+    "estado": "tlax",
+    "mun": "calpulalpan",
+    "nombre": "Calpulalpan",
+    "pob": 49900
+  },
+  {
+    "estado": "tlax",
+    "mun": "tlaxco",
+    "nombre": "Tlaxco",
+    "pob": 41545
+  },
+  {
+    "estado": "tlax",
+    "mun": "zacatelco",
+    "nombre": "Zacatelco",
+    "pob": 41770
+  },
+  {
+    "estado": "tlax",
+    "mun": "ayotzinapa",
+    "nombre": "Tlaxcala (capital adicional)",
+    "pob": 95069
+  },
+  {
+    "estado": "cam",
+    "mun": "calkini",
+    "nombre": "Calkiní",
+    "pob": 56350
+  },
+  {
+    "estado": "cam",
+    "mun": "hopelchen",
+    "nombre": "Hopelchén",
+    "pob": 41500
+  },
+  {
+    "estado": "cam",
+    "mun": "escarcega",
+    "nombre": "Escárcega",
+    "pob": 60476
+  },
+  {
+    "estado": "bcs",
+    "mun": "comondu",
+    "nombre": "Comondú",
+    "pob": 70816
+  },
+  {
+    "estado": "bcs",
+    "mun": "loreto_bcs",
+    "nombre": "Loreto (BCS)",
+    "pob": 18900
+  },
+  {
+    "estado": "gro",
+    "mun": "ometepec",
+    "nombre": "Ometepec",
+    "pob": 71565
+  },
+  {
+    "estado": "gro",
+    "mun": "chilapa_2",
+    "nombre": "Chilapa de Álvarez",
+    "pob": 136174
+  },
+  {
+    "estado": "gro",
+    "mun": "tecpan_galeana",
+    "nombre": "Tecpan de Galeana",
+    "pob": 60745
+  },
+  {
+    "estado": "gro",
+    "mun": "tlapehuala",
+    "nombre": "Tlapehuala",
+    "pob": 21700
+  },
+  {
+    "estado": "gro",
+    "mun": "ciudad_altamirano",
+    "nombre": "Pungarabato (Ciudad Altamirano)",
+    "pob": 41500
+  }
+]

@@ -1,0 +1,173 @@
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e11]:
+        - link "H. Ayuntamiento Veracruz 2026-2029" [ref=e13] [cursor=pointer]:
+          - /url: https://veracruzmunicipio.gob.mx/
+          - img "H. Ayuntamiento Veracruz 2026-2029" [ref=e14]
+        - navigation "Menu" [ref=e15]:
+          - list [ref=e16]:
+            - listitem [ref=e17]:
+              - link "Inicio" [ref=e18] [cursor=pointer]:
+                - /url: https://veracruzmunicipio.gob.mx/
+            - listitem [ref=e19]:
+              - link "Conócenos" [ref=e20] [cursor=pointer]:
+                - /url: https://veracruzmunicipio.gob.mx/conocenos/
+            - listitem [ref=e21]:
+              - link "Programas y Trámites" [ref=e22] [cursor=pointer]:
+                - /url: https://veracruzmunicipio.gob.mx/programas-y-tramites-2/
+            - listitem [ref=e23]:
+              - link "Más" [ref=e24] [cursor=pointer]:
+                - /url: "#"
+                - text: Más
+                - img [ref=e26]
+              - button "Abrir el menú desplegable"
+    - main [ref=e28]:
+      - article [ref=e30]:
+        - generic [ref=e31]:
+          - figure [ref=e33]:
+            - img [ref=e35]
+          - generic [ref=e37]:
+            - generic [ref=e39]: SÁBADO, 13 DE JUNIO DE 2026
+            - generic [ref=e43]:
+              - paragraph [ref=e47]: ¡Síguenos en redes sociales!
+              - generic [ref=e53]:
+                - link "Facebook" [ref=e54] [cursor=pointer]:
+                  - /url: https://www.facebook.com/Ayuntamiento.Ver
+                  - img [ref=e56]
+                - link "Instagram" [ref=e58] [cursor=pointer]:
+                  - /url: https://www.instagram.com/ayuntamientover
+                  - img [ref=e60]
+                - link "WhatsApp" [ref=e63] [cursor=pointer]:
+                  - /url: https://wa.me/522295194863
+                  - img [ref=e65]
+                - link "X (Twitter)" [ref=e67] [cursor=pointer]:
+                  - /url: https://x.com/AyuntamientoVer
+                  - img [ref=e69]
+                - link "TikTok" [ref=e71] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@ayuntamientover
+                  - img [ref=e73]
+          - generic [ref=e77]:
+            - generic [ref=e78]:
+              - generic [ref=e79]:
+                - generic [ref=e80]:
+                  - generic [ref=e81]:
+                    - generic [ref=e82]:
+                      - figure [ref=e84]:
+                        - img [ref=e86]
+                      - heading "Prensa" [level=3] [ref=e91]
+                    - link [ref=e92] [cursor=pointer]:
+                      - /url: /prensa
+                  - generic [ref=e93]:
+                    - generic [ref=e94]:
+                      - figure [ref=e96]:
+                        - img [ref=e98]
+                      - heading "Turismo y Cultura" [level=3] [ref=e103]
+                    - link [ref=e104] [cursor=pointer]:
+                      - /url: https://carnavaldeveracruzoficial.com.mx/#inicio
+                - generic [ref=e106]:
+                  - generic [ref=e107]:
+                    - generic [ref=e108]:
+                      - figure [ref=e110]:
+                        - img [ref=e112]
+                      - heading "Atención Ciudadana" [level=3] [ref=e117]
+                    - link [ref=e118] [cursor=pointer]:
+                      - /url: https://siac.veracruzmunicipio.gob.mx
+                  - generic [ref=e119]:
+                    - generic [ref=e120]:
+                      - figure [ref=e122]:
+                        - img [ref=e124]
+                      - heading "Transparencia" [level=3] [ref=e129]
+                    - link [ref=e130] [cursor=pointer]:
+                      - /url: https://gobiernoabierto.veracruzmunicipio.gob.mx/ley-250-transparencia-del-estado/
+              - generic:
+                - figure
+            - generic [ref=e133]:
+              - generic [ref=e136]:
+                - generic [ref=e141] [cursor=pointer]:
+                  - generic [ref=e142]:
+                    - generic [ref=e143]:
+                      - heading "Estrados" [level=5] [ref=e145]
+                      - figure [ref=e147]:
+                        - link [ref=e148]:
+                          - /url: /en-desarrollo
+                          - img [ref=e150]
+                    - heading "Digitales" [level=1] [ref=e153]
+                  - link [ref=e154]:
+                    - /url: https://veracruzmunicipio.gob.mx/estrados-digitales/
+                - generic [ref=e159] [cursor=pointer]:
+                  - generic [ref=e160]:
+                    - generic [ref=e161]:
+                      - heading "Pagos" [level=3] [ref=e163]
+                      - figure [ref=e165]:
+                        - link [ref=e166]:
+                          - /url: https://tesoreriavirtual.veracruzmunicipio.gob.mx
+                          - img [ref=e168]
+                    - heading "Online" [level=3] [ref=e171]
+                  - link [ref=e172]:
+                    - /url: https://tesoreriavirtual.veracruzmunicipio.gob.mx/
+              - figure [ref=e177]:
+                - img [ref=e179]
+          - generic [ref=e181]:
+            - figure [ref=e184]:
+              - img [ref=e186]
+            - figure [ref=e189]:
+              - img [ref=e191]
+            - figure [ref=e195]:
+              - img [ref=e197]
+          - generic [ref=e199]:
+            - generic [ref=e200]:
+              - list [ref=e201]:
+                - listitem [ref=e202]:
+                  - figure [ref=e206]:
+                    - img [ref=e208]
+                - listitem [ref=e209]:
+                  - figure [ref=e213]:
+                    - img [ref=e215]
+              - generic:
+                - button "Previous slide" [ref=e216] [cursor=pointer]:
+                  - img [ref=e217]
+                - button "Next slide" [ref=e219] [cursor=pointer]:
+                  - img [ref=e220]
+            - list [ref=e223]:
+              - listitem [ref=e224]:
+                - button "Slide 1" [ref=e225] [cursor=pointer]
+              - listitem [ref=e226]:
+                - button "Slide 2" [ref=e227] [cursor=pointer]
+          - paragraph [ref=e230]: Derechos reservados por el H. Ayuntamiento del Puerto de Veracruz 2026–2029
+          - generic [ref=e233]:
+            - figure [ref=e238]:
+              - img [ref=e240]
+            - generic [ref=e243]:
+              - heading "Escríbenos" [level=5] [ref=e245]
+              - paragraph
+              - paragraph [ref=e246]: Será un gusto leer tus comentarios y sugerencias.
+              - link "Contáctanos" [ref=e250] [cursor=pointer]:
+                - /url: ""
+                - generic [ref=e251]: Contáctanos
+            - generic [ref=e254]:
+              - heading "Presidencia Municipal" [level=5] [ref=e256]
+              - paragraph
+              - paragraph [ref=e257]:
+                - text: 📍 Zaragoza esq. Mario Molina S/N, Col. Centro, C.P. 91700 Veracruz, Veracruz.
+                - text: 📞 229 200 2000
+            - generic [ref=e260]:
+              - heading "Nuestros portales" [level=5] [ref=e262]
+              - paragraph
+              - paragraph [ref=e264]:
+                - link "Atención Ciudadana" [ref=e265] [cursor=pointer]:
+                  - /url: https://siac.veracruzmunicipio.gob.mx/inicio
+                - link "Gobierno Abierto" [ref=e266] [cursor=pointer]:
+                  - /url: https://gobiernoabierto.veracruzmunicipio.gob.mx/
+                - link "Cerofilas" [ref=e267] [cursor=pointer]:
+                  - /url: https://cerofilas.veracruzmunicipio.gob.mx/
+                - link "Decide" [ref=e268] [cursor=pointer]:
+                  - /url: https://decide.veracruzmunicipio.gob.mx/
+                - link "Información Financiera" [ref=e269] [cursor=pointer]:
+                  - /url: https://informacionfinanciera.veracruzmunicipio.gob.mx/
+            - figure [ref=e274]:
+              - img [ref=e276]
+          - paragraph
+    - contentinfo

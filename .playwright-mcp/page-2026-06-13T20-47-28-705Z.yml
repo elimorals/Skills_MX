@@ -1,0 +1,501 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Saltar al contenido" [ref=e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=e4]:
+      - generic [ref=e6]:
+        - text:                       
+        - region "Slides" [ref=e11]:
+          - generic [ref=e12]:
+            - group [ref=e13]:
+              - generic [ref=e17]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e21]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e22] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e23]:
+              - generic [ref=e27]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e31]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e32] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e33]:
+              - generic [ref=e37]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e41]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e42] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e43]:
+              - generic [ref=e47]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e51]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e52] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e53]:
+              - generic [ref=e57]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e61]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e62] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e63]:
+              - generic [ref=e67]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e71]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e72] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e73]:
+              - generic [ref=e77]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e81]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e82] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e83]:
+              - generic [ref=e87]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e91]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e92] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e93]:
+              - generic [ref=e97]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e101]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e102] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e103]:
+              - generic [ref=e107]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e111]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e112] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e113]:
+              - generic [ref=e117]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e121]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e122] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e123]:
+              - generic [ref=e127]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e131]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e132] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e133]:
+              - generic [ref=e137]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e141]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e142] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e143]:
+              - generic [ref=e147]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e151]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e152] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e153]:
+              - generic [ref=e157]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e161]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e162] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e163]:
+              - generic [ref=e167]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e171]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e172] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e173]:
+              - generic [ref=e177]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e181]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e182] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e183]:
+              - generic [ref=e187]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e191]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e192] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e193]:
+              - generic [ref=e197]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e201]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e202] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e203]:
+              - generic [ref=e207]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e211]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e212] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e213]:
+              - generic [ref=e217]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e221]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e222] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e223]:
+              - generic [ref=e227]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e231]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e232] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e233]:
+              - generic [ref=e237]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e241]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e242] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e243]:
+              - generic [ref=e247]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e251]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e252] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e253]:
+              - generic [ref=e257]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e261]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e262] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e263]:
+              - generic [ref=e267]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e271]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e272] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e273]:
+              - generic [ref=e277]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e281]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e282] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e283]:
+              - generic [ref=e287]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e291]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e292] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+            - group [ref=e293]:
+              - generic [ref=e297]:
+                - text: 
+                - heading "“100% en multas y recargos en Predial hasta el 31 de Junio”" [level=2] [ref=e301]:
+                  - link "“100% en multas y recargos en Predial hasta el 31 de Junio”" [ref=e302] [cursor=pointer]:
+                    - /url: https://servicios.mazatlan.gob.mx/predial/
+        - text:                     
+        - heading "¡Descarga aquí el 1er Informe de Gobierno de nuestra Presidenta!" [level=2] [ref=e306]:
+          - link "¡Descarga aquí el 1er Informe de Gobierno de nuestra Presidenta!" [ref=e307] [cursor=pointer]:
+            - /url: https://mazatlan.gob.mx/documentos/Primer%20Informe%20Mazatl%C3%A1n%202025.pdf
+        - generic [ref=e308]:
+          - link [ref=e312] [cursor=pointer]:
+            - /url: https://mazatlan.gob.mx
+          - generic [ref=e313]:
+            - navigation [ref=e316]:
+              - list [ref=e318]:
+                - listitem [ref=e319]:
+                  - link "Trámites" [ref=e320] [cursor=pointer]:
+                    - /url: https://tics.mazatlan.gob.mx/catalogo/tramites-en-linea
+            - navigation [ref=e323]:
+              - list [ref=e325]:
+                - listitem [ref=e326]:
+                  - link "Pagos en línea" [ref=e327] [cursor=pointer]:
+                    - /url: https://tics.mazatlan.gob.mx/catalogo/pagos-en-linea
+            - navigation [ref=e330]:
+              - list [ref=e332]:
+                - listitem [ref=e333]:
+                  - link "Transparencia" [ref=e334] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/secretaria-de-la-presidencia/transparencia/
+            - navigation [ref=e337]:
+              - list [ref=e339]:
+                - listitem [ref=e340]:
+                  - link "Gobierno" [ref=e341] [cursor=pointer]:
+                    - /url: "#"
+        - text: 
+      - main [ref=e342]:
+        - generic [ref=e343]:
+          - text: 
+          - generic [ref=e344]:
+            - link [ref=e349] [cursor=pointer]:
+              - /url: https://mazatlan.gob.mx/
+              - generic [ref=e350]: 
+            - heading "> Noticias" [level=2] [ref=e353]
+          - generic [ref=e354]:
+            - heading "Noticias" [level=2] [ref=e358]
+            - heading "Municipio de Mazatlán" [level=2] [ref=e363]
+          - generic [ref=e368]:
+            - generic [ref=e369]:
+              - generic [ref=e370]:
+                - generic [ref=e371]:
+                  - img "Llevan atención médica y apoyos integrales a habitantes de La Amapa" [ref=e372]
+                  - link [ref=e374] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/llevan-atencion-medica-y-apoyos-integrales-a-habitantes-de-la-amapa/
+                - generic [ref=e375]:
+                  - link [ref=e377] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/llevan-atencion-medica-y-apoyos-integrales-a-habitantes-de-la-amapa/
+                    - text: Llevan atención médica y apoyos integrales a habitantes de La Amapa
+                  - generic [ref=e379]:
+                    - img [ref=e380]
+                    - generic [ref=e382]:
+                      - generic [ref=e383]: Posted on
+                      - time [ref=e384]: 18 mayo, 2026
+                  - generic [ref=e385]: Llevan atención médica y apoyos integrales a habitantes de La Amapa -Secretaría de Marina y ...
+                  - link "Ver más" [ref=e387] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/llevan-atencion-medica-y-apoyos-integrales-a-habitantes-de-la-amapa/
+              - generic [ref=e388]:
+                - generic [ref=e389]:
+                  - 'img "Certeza jurídica a 1,197 familias de Mazatlán y Concordia: Estrella Palacios" [ref=e390]'
+                  - link [ref=e392] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/certeza-juridica-a-1197-familias-de-mazatlan-y-concordia-estrella-palacios/
+                - generic [ref=e393]:
+                  - link [ref=e395] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/certeza-juridica-a-1197-familias-de-mazatlan-y-concordia-estrella-palacios/
+                    - text: "Certeza jurídica a 1,197 familias de Mazatlán y Concordia: Estrella Palacios"
+                  - generic [ref=e397]:
+                    - img [ref=e398]
+                    - generic [ref=e400]:
+                      - generic [ref=e401]: Posted on
+                      - time [ref=e402]: 18 mayo, 2026
+                  - generic [ref=e403]: "Certeza jurídica a 1,197 familias de Mazatlán y Concordia: Estrella Palacios -Durante la jornada se ..."
+                  - link "Ver más" [ref=e405] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/certeza-juridica-a-1197-familias-de-mazatlan-y-concordia-estrella-palacios/
+              - generic [ref=e406]:
+                - generic [ref=e407]:
+                  - img "Convocan a jóvenes mazatlecos a formar parte del Cabildo Juvenil 2026" [ref=e408]
+                  - link [ref=e410] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/convocan-a-jovenes-mazatlecos-a-formar-parte-del-cabildo-juvenil-2026/
+                - generic [ref=e411]:
+                  - link [ref=e413] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/convocan-a-jovenes-mazatlecos-a-formar-parte-del-cabildo-juvenil-2026/
+                    - text: Convocan a jóvenes mazatlecos a formar parte del Cabildo Juvenil 2026
+                  - generic [ref=e415]:
+                    - img [ref=e416]
+                    - generic [ref=e418]:
+                      - generic [ref=e419]: Posted on
+                      - time [ref=e420]: 16 mayo, 2026
+                  - generic [ref=e421]: Convocan a jóvenes mazatlecos a formar parte del Cabildo Juvenil 2026 -El IMJU abre convocatoria ...
+                  - link "Ver más" [ref=e423] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/convocan-a-jovenes-mazatlecos-a-formar-parte-del-cabildo-juvenil-2026/
+              - generic [ref=e424]:
+                - generic [ref=e425]:
+                  - img "El H. Ayuntamiento de Mazatlán convoca a la ciudadanía a participar en Cabildo Abierto 🏛️" [ref=e426]
+                  - link [ref=e428] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/el-h-ayuntamiento-de-mazatlan-convoca-a-la-ciudadania-a-participar-en-cabildo-abierto-%f0%9f%8f%9b%ef%b8%8f/
+                - generic [ref=e429]:
+                  - link [ref=e431] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/el-h-ayuntamiento-de-mazatlan-convoca-a-la-ciudadania-a-participar-en-cabildo-abierto-%f0%9f%8f%9b%ef%b8%8f/
+                    - text: El H. Ayuntamiento de Mazatlán convoca a la ciudadanía a participar en Cabildo Abierto 🏛️
+                  - generic [ref=e433]:
+                    - img [ref=e434]
+                    - generic [ref=e436]:
+                      - generic [ref=e437]: Posted on
+                      - time [ref=e438]: 29 abril, 2026
+                  - generic [ref=e439]: Regístrate del 4 al 8 de mayo para formar parte de la sesión del 22 ...
+                  - link "Ver más" [ref=e441] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/el-h-ayuntamiento-de-mazatlan-convoca-a-la-ciudadania-a-participar-en-cabildo-abierto-%f0%9f%8f%9b%ef%b8%8f/
+              - generic [ref=e442]:
+                - generic [ref=e443]:
+                  - img "Mazatlán se posiciona entre los destinos turísticos más importantes del país en Semana Santa" [ref=e444]
+                  - link [ref=e446] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/mazatlan-se-posiciona-entre-los-destinos-turisticos-mas-importantes-del-pais-en-semana-santa/
+                - generic [ref=e447]:
+                  - link [ref=e449] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/mazatlan-se-posiciona-entre-los-destinos-turisticos-mas-importantes-del-pais-en-semana-santa/
+                    - text: Mazatlán se posiciona entre los destinos turísticos más importantes del país en Semana Santa
+                  - generic [ref=e451]:
+                    - img [ref=e452]
+                    - generic [ref=e454]:
+                      - generic [ref=e455]: Posted on
+                      - time [ref=e456]: 24 abril, 2026
+                  - generic [ref=e457]: Mazatlán se posiciona entre los destinos turísticos más importantes del país en Semana Santa – ...
+                  - link "Ver más" [ref=e459] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/mazatlan-se-posiciona-entre-los-destinos-turisticos-mas-importantes-del-pais-en-semana-santa/
+              - generic [ref=e460]:
+                - generic [ref=e461]:
+                  - img "Reconoce Estrella Palacios obra “San Pedro, la Gran Batalla”, del profesor Jesús Alonso Salazar" [ref=e462]
+                  - link [ref=e464] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/reconoce-estrella-palacios-obra-san-pedro-la-gran-batalla-del-profesor-jesus-alonso-salazar/
+                - generic [ref=e465]:
+                  - link [ref=e467] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/reconoce-estrella-palacios-obra-san-pedro-la-gran-batalla-del-profesor-jesus-alonso-salazar/
+                    - text: Reconoce Estrella Palacios obra “San Pedro, la Gran Batalla”, del profesor Jesús Alonso Salazar
+                  - generic [ref=e469]:
+                    - img [ref=e470]
+                    - generic [ref=e472]:
+                      - generic [ref=e473]: Posted on
+                      - time [ref=e474]: 24 abril, 2026
+                  - generic [ref=e475]: Reconoce Estrella Palacios obra “San Pedro, la Gran Batalla”, del profesor Jesús Alonso Salazar — ...
+                  - link "Ver más" [ref=e477] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/reconoce-estrella-palacios-obra-san-pedro-la-gran-batalla-del-profesor-jesus-alonso-salazar/
+              - generic [ref=e478]:
+                - generic [ref=e479]:
+                  - img "Encabeza Estrella Palacios reunión de la Mesa de Coordinación y Construcción de la Paz en Mazatlán" [ref=e480]
+                  - link [ref=e482] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/encabeza-estrella-palacios-reunion-de-la-mesa-de-coordinacion-y-construccion-de-la-paz-en-mazatlan/
+                - generic [ref=e483]:
+                  - link [ref=e485] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/encabeza-estrella-palacios-reunion-de-la-mesa-de-coordinacion-y-construccion-de-la-paz-en-mazatlan/
+                    - text: Encabeza Estrella Palacios reunión de la Mesa de Coordinación y Construcción de la Paz en Mazatlán
+                  - generic [ref=e487]:
+                    - img [ref=e488]
+                    - generic [ref=e490]:
+                      - generic [ref=e491]: Posted on
+                      - time [ref=e492]: 24 abril, 2026
+                  - generic [ref=e493]: Encabeza Estrella Palacios reunión de la Mesa de Coordinación y Construcción de la Paz en ...
+                  - link "Ver más" [ref=e495] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/encabeza-estrella-palacios-reunion-de-la-mesa-de-coordinacion-y-construccion-de-la-paz-en-mazatlan/
+              - generic [ref=e496]:
+                - generic [ref=e497]:
+                  - img "Con triple banderazo de inicio de obras que ascienden a 7.5 mdp, el Gobierno del Bienestar responde a los mazatlecos" [ref=e498]
+                  - link [ref=e500] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/con-triple-banderazo-de-inicio-de-obras-que-ascienden-a-7-5-mdp-el-gobierno-del-bienestar-responde-a-los-mazatlecos/
+                - generic [ref=e501]:
+                  - link [ref=e503] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/con-triple-banderazo-de-inicio-de-obras-que-ascienden-a-7-5-mdp-el-gobierno-del-bienestar-responde-a-los-mazatlecos/
+                    - text: Con triple banderazo de inicio de obras que ascienden a 7.5 mdp, el Gobierno del Bienestar responde a los mazatlecos
+                  - generic [ref=e505]:
+                    - img [ref=e506]
+                    - generic [ref=e508]:
+                      - generic [ref=e509]: Posted on
+                      - time [ref=e510]: 24 abril, 2026
+                  - generic [ref=e511]: Con triple banderazo de inicio de obras que ascienden a 7.5 mdp, el Gobierno del ...
+                  - link "Ver más" [ref=e513] [cursor=pointer]:
+                    - /url: https://mazatlan.gob.mx/noticias/con-triple-banderazo-de-inicio-de-obras-que-ascienden-a-7-5-mdp-el-gobierno-del-bienestar-responde-a-los-mazatlecos/
+            - navigation "anwp-pg-pagination-navigation" [ref=e514]:
+              - list [ref=e515]:
+                - listitem [ref=e516]
+                - listitem [ref=e517]:
+                  - link "1" [ref=e518] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e519]:
+                  - link "2" [ref=e520] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e521]:
+                  - link "3" [ref=e522] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e523]:
+                  - link "4" [ref=e524] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e525]:
+                  - link "5" [ref=e526] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e527]
+                - listitem [ref=e528]:
+                  - link "574" [ref=e529] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e530]:
+                  - link "Next page" [ref=e531] [cursor=pointer]:
+                    - /url: "#"
+                    - text: »
+          - generic [ref=e532]:
+            - paragraph [ref=e536]:
+              - text: ¡Mantente al día con el trabajo
+              - text: de nuestra Presidenta!
+            - link [ref=e540] [cursor=pointer]:
+              - /url: https://tics.mazatlan.gob.mx/presidencia/agenda/
+            - link [ref=e544] [cursor=pointer]:
+              - /url: /presidenta/
+      - generic [ref=e546]:
+        - text:   
+        - generic [ref=e548]:
+          - list [ref=e555]:
+            - listitem [ref=e556]:
+              - link "Facebook" [ref=e557] [cursor=pointer]:
+                - /url: https://www.facebook.com/GobiernoMunicipaldeMazatlan/
+                - generic [ref=e558]: 
+            - listitem [ref=e559]:
+              - link "Youtube" [ref=e560] [cursor=pointer]:
+                - /url: https://www.youtube.com/@HAYUNTAMIENTODEMAZATLAN/
+                - generic [ref=e561]: 
+            - listitem [ref=e562]:
+              - link "Instagram" [ref=e563] [cursor=pointer]:
+                - /url: https://www.instagram.com/gobiernomunicipaldemazatlan/
+                - generic [ref=e564]: 
+          - generic [ref=e565]:
+            - heading "Ayuntamiento de Mazatlán" [level=2] [ref=e568]
+            - paragraph [ref=e571]:
+              - link "Gobierno" [ref=e572] [cursor=pointer]:
+                - /url: /organigrama/
+            - paragraph [ref=e575]:
+              - link "Pagos en línea" [ref=e576] [cursor=pointer]:
+                - /url: https://tics.mazatlan.gob.mx/catalogo/pagos-en-linea
+            - paragraph [ref=e579]:
+              - link "Trámites en línea" [ref=e580] [cursor=pointer]:
+                - /url: https://tics.mazatlan.gob.mx/catalogo/tramites-en-linea
+            - paragraph [ref=e583]:
+              - link "Facturación" [ref=e584] [cursor=pointer]:
+                - /url: https://mazatlan.gob.mx/facturacion/
+            - paragraph [ref=e587]:
+              - link "Mapa del sitio" [ref=e588] [cursor=pointer]:
+                - /url: /mapa-del-sitio/
+            - paragraph [ref=e591]:
+              - link "Atención ciudadana" [ref=e592] [cursor=pointer]:
+                - /url: /atencion-ciudadana/
+          - generic [ref=e593]:
+            - heading "Órgano Interno de Control" [level=2] [ref=e596]
+            - paragraph [ref=e599]:
+              - link "Realiza una denuncia" [ref=e600] [cursor=pointer]:
+                - /url: https://oicmzt.com/oic/denuncia-o-queja/
+            - paragraph [ref=e603]:
+              - link "Código de ética" [ref=e604] [cursor=pointer]:
+                - /url: https://mazatlan.gob.mx/oic/Codigo-de-Etica.pdf
+            - paragraph [ref=e607]:
+              - link "Código de conducta" [ref=e608] [cursor=pointer]:
+                - /url: https://mazatlan.gob.mx/oic/Codigo-de-Conducta.pdf
+            - paragraph [ref=e611]:
+              - link "SISDEC" [ref=e612] [cursor=pointer]:
+                - /url: https://tics.mazatlan.gob.mx/sisdec/autoridad-investigadora
+          - generic [ref=e613]:
+            - heading "Transparencia" [level=2] [ref=e616]
+            - paragraph [ref=e619]:
+              - link "Consulta transparencia" [ref=e620] [cursor=pointer]:
+                - /url: https://mazatlan.gob.mx/secretaria-de-la-presidencia/transparencia/
+            - paragraph [ref=e623]:
+              - link "Destino de recursos" [ref=e624] [cursor=pointer]:
+                - /url: https://tics.mazatlan.gob.mx/tesoreria/consulta-destino-recursos
+            - paragraph [ref=e627]:
+              - link "Síndico procurador" [ref=e628] [cursor=pointer]:
+                - /url: /sindico-procurador/
+            - paragraph [ref=e631]:
+              - link "Asuntos jurídicos" [ref=e632] [cursor=pointer]:
+                - /url: https://tics.mazatlan.gob.mx/secretaria-del-ayuntamiento/consulta-asuntos-juridicos/
+          - generic [ref=e633]:
+            - heading "Enlaces" [level=2] [ref=e636]
+            - generic [ref=e637]:
+              - paragraph [ref=e640]:
+                - link "STASAM" [ref=e641] [cursor=pointer]:
+                  - /url: http://stasam.mazatlan.gob.mx
+              - paragraph [ref=e644]:
+                - link "DIF" [ref=e645] [cursor=pointer]:
+                  - /url: http://difmazatlan.gob.mx/
+              - paragraph [ref=e648]:
+                - link "IMDEM" [ref=e649] [cursor=pointer]:
+                  - /url: https://imdem.mazatlan.gob.mx/
+              - paragraph [ref=e652]:
+                - link "IMMUJER" [ref=e653] [cursor=pointer]:
+                  - /url: http://immujer.mazatlan.gob.mx/
+              - paragraph [ref=e656]:
+                - link "IMJU" [ref=e657] [cursor=pointer]:
+                  - /url: http://imju.mazatlan.gob.mx/
+              - paragraph [ref=e660]:
+                - link "IMPLAN" [ref=e661] [cursor=pointer]:
+                  - /url: https://www.implanmazatlan.mx/
+              - paragraph [ref=e664]:
+                - link "CULTURA" [ref=e665] [cursor=pointer]:
+                  - /url: https://culturamazatlan.com
+              - paragraph [ref=e668]:
+                - link "JUMAPAM" [ref=e669] [cursor=pointer]:
+                  - /url: http://jumapam.gob.mx/
+              - paragraph [ref=e672]:
+                - link "VISIT MAZATLAN" [ref=e673] [cursor=pointer]:
+                  - /url: https://visitmazatlan.mx/
+        - paragraph [ref=e679]:
+          - generic [ref=e680]:
+            - link "Aviso de privacidad" [ref=e681] [cursor=pointer]:
+              - /url: https://mazatlan.gob.mx/aviso-de-privacidad-integral/
+            - text: "|"
+            - link "Términos y condiciones" [ref=e682] [cursor=pointer]:
+              - /url: https://mazatlan.gob.mx/terminos-y-condiciones-de-uso/
+          - text: "Angel Flores s/n Col. Centro C.P. 82000 – Tel: 669 915 8000"
+          - text: H. Ayuntamiento de Mazatlán 2026
+        - text:                         
+  - generic [ref=e683]: desktop
+  - img
