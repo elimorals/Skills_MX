@@ -43,7 +43,7 @@ Inmobiliaria con cartera de 60 propiedades en CDMX, Jalisco y Querétaro. Audita
 ## Producto 02 — Compliance REPSE (Art. 15 LFT)
 
 **URL:** https://skills-mexico.vercel.app/productos/repse
-**Estado:** Lanzado 2026-06-14. 21 tests pasando. Validado con Playwright MCP usando MANPOWER CORPORATIVO SA DE CV como caso real.
+**Estado:** Lanzado 2026-06-14. 21 tests pasando. Validado con Playwright MCP usando PROVEEDOR EJEMPLO SA DE CV como caso real.
 
 ### El riesgo en una línea
 "Sin REPSE vigente del proveedor, el contratante paga finiquitos, IMSS, INFONAVIT y créditos fiscales de los trabajadores ajenos."
@@ -176,7 +176,7 @@ print(f"Total cartera: ${sum(r.adeudo for r in resultados):,.2f} MXN")
 from mp_repse_stps import RepseStpsClient
 
 cliente = RepseStpsClient()
-resultado = cliente.verificar_proveedor(razon_social="MANPOWER CORPORATIVO SA DE CV")
+resultado = cliente.verificar_proveedor(razon_social="PROVEEDOR EJEMPLO SA DE CV")
 
 if resultado["puede_contratar_servicios_especializados"]:
     print(f"✓ Vigente hasta {resultado['detalle']['vigencia']}")

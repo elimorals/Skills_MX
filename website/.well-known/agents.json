@@ -50,7 +50,7 @@
       "description": "Verifica si un proveedor de servicios especializados tiene REPSE vigente ante STPS. Devuelve decisión binaria puede_contratar: bool. Sin captcha bloqueante.",
       "tags": ["repse", "stps", "compliance", "art-15-lft", "laboral"],
       "examples": [
-        "¿MANPOWER CORPORATIVO SA DE CV puede prestar servicios especializados?",
+        "¿PROVEEDOR EJEMPLO SA DE CV puede prestar servicios especializados?",
         "Valida el registro REPSE de mi proveedor de limpieza"
       ],
       "inputModes": ["application/json"],

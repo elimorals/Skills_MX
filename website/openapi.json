@@ -111,7 +111,7 @@
                 "type": "object",
                 "required": ["razon_social"],
                 "properties": {
-                  "razon_social": { "type": "string", "example": "MANPOWER CORPORATIVO SA DE CV" },
+                  "razon_social": { "type": "string", "example": "PROVEEDOR EJEMPLO SA DE CV" },
                   "numero_registro": { "type": "string", "description": "Si se conoce, evita búsqueda fuzzy" }
                 }
               }
