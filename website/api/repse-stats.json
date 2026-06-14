@@ -1,0 +1,61 @@
+{
+  "$schema": "https://skills-mexico.vercel.app/openapi.json#/components/schemas/RepseStats",
+  "version": "2026-06-14",
+  "license": "CC-BY-4.0",
+  "source": "Plugins MX — agregación pública del registro STPS (Padrón Público de Contratistas REPSE).",
+  "documentation": "https://skills-mexico.vercel.app/productos/repse",
+  "glossary": "https://skills-mexico.vercel.app/glosario/repse",
+  "base_legal": {
+    "ley": "Ley Federal del Trabajo",
+    "articulo": "Art. 15",
+    "reforma": "2021-04-23",
+    "autoridad": "Secretaría del Trabajo y Previsión Social (STPS)"
+  },
+  "padron": {
+    "empresas_universo_potencialmente_afectadas": 4000000,
+    "vigencia_registro_dias": 1095,
+    "vigencia_registro_anios": 3,
+    "renovacion_requerida": true
+  },
+  "responsabilidad_solidaria": {
+    "aplica_si": "El proveedor no tiene REPSE vigente al momento de prestar servicios especializados",
+    "alcance": [
+      "Obligaciones laborales (salarios caídos, finiquitos)",
+      "Obligaciones fiscales (ISR retenciones, IVA)",
+      "Obligaciones de seguridad social (IMSS, INFONAVIT)",
+      "Créditos fiscales del proveedor"
+    ],
+    "consecuencias": [
+      "El contratante puede ser demandado laboralmente por trabajadores ajenos",
+      "Multas de 173 a 173,000 UMA (Art. 1004-C LFT)",
+      "Imposibilidad de deducir el gasto / acreditar IVA"
+    ]
+  },
+  "servicios_que_requieren_repse": [
+    "IT / desarrollo de software",
+    "Limpieza",
+    "Seguridad privada",
+    "Contabilidad subcontratada",
+    "Marketing y publicidad como servicio",
+    "Maquila de nómina",
+    "Mantenimiento especializado",
+    "Construcción especializada",
+    "Logística y mensajería",
+    "Call centers"
+  ],
+  "servicios_excluidos": [
+    "Servicios complementarios al objeto social (cuando se ejecuta con personal propio sin subcontratar)",
+    "Obras públicas con régimen especial"
+  ],
+  "como_verificar": {
+    "portal_oficial": "https://repse.stps.gob.mx",
+    "via_api_plugins_mx": "https://skills-mexico.vercel.app/openapi.json#/paths/~1repse~1verificar/post",
+    "tool_mcp": "repse_verificar_proveedor(razon_social, [numero_registro])",
+    "respuesta_binaria": "puede_contratar_servicios_especializados: bool"
+  },
+  "notas": [
+    "Esta es una agregación informativa. La autoridad última es el portal STPS.",
+    "El padrón se actualiza diariamente. Plugins MX cachea por 30 días con revalidación.",
+    "Se recomienda revalidar antes de cada PO y mensualmente para la base de proveedores activos."
+  ]
+}

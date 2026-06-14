@@ -5,12 +5,120 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ISN-as-a-Service · 32 estados · Plugins MX</title>
 <meta name="description" content="Calcula ISN, genera línea de captura y descarga declaración en cualquiera de las 32 entidades mexicanas con una sola API. Universo: 4M empresas con nómina.">
+<meta name="author" content="Elías Rashid Morales Mendoza">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<link rel="canonical" href="https://skills-mexico.vercel.app/productos/isn">
+<link rel="alternate" hreflang="es-MX" href="https://skills-mexico.vercel.app/productos/isn">
+
+<meta property="og:type" content="product">
+<meta property="og:site_name" content="Plugins MX">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="https://skills-mexico.vercel.app/productos/isn">
+<meta property="og:title" content="ISN-as-a-Service · 32 estados, una API · Plugins MX">
+<meta property="og:description" content="Calcula ISN, genera línea de captura y descarga declaración en las 32 entidades federativas con una sola API. Tasas 1.8%–3.0%.">
+<meta property="og:image" content="https://skills-mexico.vercel.app/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ISN-as-a-Service · 32 estados · Plugins MX">
+<meta name="twitter:description" content="Una sola API para ISN en las 32 entidades. Offline-first para cálculo. Tasas 1.8%–3.0%.">
+<meta name="twitter:image" content="https://skills-mexico.vercel.app/og-image.svg">
+
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,200..900,0..100,0..1;1,9..144,200..900,0..100,0..1&family=Geist:wght@100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="producto.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio",    "item": "https://skills-mexico.vercel.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Productos", "item": "https://skills-mexico.vercel.app/#productos" },
+        { "@type": "ListItem", "position": 3, "name": "ISN-as-a-Service" }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://skills-mexico.vercel.app/productos/isn#app",
+      "name": "ISN-as-a-Service (32 estados, una API)",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Payroll Tax Compliance",
+      "operatingSystem": "Cross-platform (Python 3.11+, MCP)",
+      "url": "https://skills-mexico.vercel.app/productos/isn",
+      "description": "Servidor MCP que calcula el Impuesto sobre Nómina (ISN), genera línea de captura para pago referenciado y descarga la declaración mensual en cualquiera de las 32 entidades federativas mexicanas. Tasas estatales 1.8% a 3.0%. Cálculo offline-first sin credenciales para asesoría fiscal multi-estado.",
+      "softwareVersion": "3.59.0",
+      "datePublished": "2026-06-14",
+      "dateModified": "2026-06-14",
+      "inLanguage": "es-MX",
+      "featureList": [
+        "Tasas 1.8% (Baja California) a 3.0% (CDMX, Jalisco, NL, EdoMex, Querétaro)",
+        "Cálculo offline desde catálogo central",
+        "8 estados con portal validado Playwright",
+        "Optimización fiscal multi-estado"
+      ],
+      "offers": { "@type": "Offer", "priceCurrency": "MXN", "price": "0", "availability": "https://schema.org/InStock", "url": "https://skills-mexico.vercel.app/#demo" },
+      "provider": { "@type": "Organization", "name": "Plugins MX", "url": "https://skills-mexico.vercel.app/" }
+    },
+    {
+      "@type": "Dataset",
+      "name": "Tabla canónica de tasas ISN 2026 por entidad federativa",
+      "description": "Tabla mantenida con las tasas vigentes del Impuesto sobre Nómina (ISN) en las 32 entidades federativas mexicanas para el ejercicio 2026, junto con día de vencimiento del pago mensual y URL del portal estatal.",
+      "url": "https://skills-mexico.vercel.app/api/isn-tasas.json",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creator": { "@type": "Organization", "name": "Plugins MX" },
+      "distribution": [
+        { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://skills-mexico.vercel.app/api/isn-tasas.json" }
+      ],
+      "temporalCoverage": "2026",
+      "spatialCoverage": { "@type": "Country", "name": "México" },
+      "keywords": ["ISN", "Impuesto sobre Nómina", "tasas estatales México", "compliance fiscal estatal"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es el ISN (Impuesto sobre Nómina)?",
+          "acceptedAnswer": { "@type": "Answer", "text": "El ISN es un impuesto estatal que grava las erogaciones por concepto de remuneraciones al trabajo personal subordinado, prestado dentro del territorio de cada entidad federativa mexicana. Es obligación de toda empresa formal con al menos un trabajador. Cada estado fija su propia tasa (entre 1.8% y 3.0% para 2026) y su día de vencimiento mensual." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la tasa de ISN en CDMX para 2026?",
+          "acceptedAnswer": { "@type": "Answer", "text": "La tasa de ISN en la Ciudad de México es del 3.0% para 2026. El pago vence el día 17 del mes siguiente al periodo declarado. CDMX, Jalisco, Nuevo León, Estado de México y Querétaro son las entidades con la tasa más alta (3.0%)." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la entidad con la tasa de ISN más baja?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Baja California tiene la tasa de ISN más baja del país: 1.8% para 2026. Yucatán (2.5%), Guanajuato (2.0%), Aguascalientes (2.0%) y Coahuila (2.0%) también ofrecen tasas competitivas comparadas con CDMX o Nuevo León (3.0%). Cambiar la nómina de Jalisco a Baja California puede ahorrar hasta 40% de ISN." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo vence el pago del ISN?",
+          "acceptedAnswer": { "@type": "Answer", "text": "El vencimiento típico es el día 17 del mes siguiente al periodo declarado. Excepciones: Jalisco vence el día 12, Estado de México y Yucatán el día 10. La tabla completa con vencimientos por entidad está en https://skills-mexico.vercel.app/api/isn-tasas.json" }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Quién está obligado a pagar el ISN?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Toda persona física o moral, residente en México o en el extranjero con establecimiento permanente, que realice pagos por concepto de salarios, prestaciones o cualquier otra remuneración al trabajo personal subordinado prestado dentro del estado. Aplica desde el primer trabajador. Universo estimado: 4 millones de empresas formales mexicanas." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo calcular ISN sin tener credenciales del estado?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sí. La tool isn_calcular(nomina_gravable, estado) de Plugins MX funciona offline-first contra el catálogo central de tasas. No requiere credenciales del cliente. Útil para asesoría fiscal multi-estado: en milisegundos comparas el ISN de tu nómina en CDMX vs Yucatán vs Baja California sin tocar ningún portal estatal." }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -241,6 +349,47 @@ linea <span class="c-op">=</span> cliente<span class="c-pn">.</span>generar_line
 <span class="c-pn">)</span>
 <span class="c-fn">print</span><span class="c-pn">(</span><span class="c-st">f"Pagar $</span><span class="c-pn">{</span>linea<span class="c-pn">[</span><span class="c-st">'monto_a_pagar'</span><span class="c-pn">]</span><span class="c-pn">}</span><span class="c-st"> con línea </span><span class="c-pn">{</span>linea<span class="c-pn">[</span><span class="c-st">'linea_captura'</span><span class="c-pn">]</span><span class="c-pn">}</span><span class="c-st">"</span><span class="c-pn">)</span></pre>
   </div>
+</section>
+
+<!-- FAQ — Answer-first blocks para citación GEO -->
+<section class="section section-faq" id="faq">
+  <div class="section-head">
+    <span class="section-no">05</span>
+    <h2 class="section-h">Preguntas <em>frecuentes</em>.</h2>
+    <p class="section-desc">Bloques optimizados para citación por LLMs (ChatGPT, Claude, Perplexity).</p>
+  </div>
+
+  <dl class="faq-list">
+    <div class="faq-item">
+      <dt>¿Qué es el ISN (Impuesto sobre Nómina)?</dt>
+      <dd>El <strong>ISN</strong> es un impuesto estatal que grava las erogaciones por concepto de remuneraciones al trabajo personal subordinado prestado dentro del territorio de cada entidad federativa mexicana. Es obligación de <strong>toda empresa formal con al menos un trabajador</strong>. Cada estado fija su propia tasa (1.8% a 3.0% para 2026) y día de vencimiento mensual.</dd>
+    </div>
+
+    <div class="faq-item">
+      <dt>¿Cuál es la tasa de ISN en CDMX para 2026?</dt>
+      <dd>La tasa en la <strong>Ciudad de México es 3.0%</strong> para 2026. Pago vence el día 17 del mes siguiente. CDMX, Jalisco, Nuevo León, Estado de México y Querétaro tienen la tasa más alta (3.0%).</dd>
+    </div>
+
+    <div class="faq-item">
+      <dt>¿Cuál es la entidad con la tasa de ISN más baja?</dt>
+      <dd><strong>Baja California (1.8%)</strong> tiene la tasa más baja del país para 2026. Yucatán (2.5%), Guanajuato (2.0%), Aguascalientes (2.0%) y Coahuila (2.0%) son alternativas competitivas. Cambiar la nómina de Jalisco a Baja California puede <strong>ahorrar hasta 40%</strong> de ISN.</dd>
+    </div>
+
+    <div class="faq-item">
+      <dt>¿Cuándo vence el pago del ISN?</dt>
+      <dd>Vencimiento típico: <strong>día 17 del mes siguiente</strong> al periodo declarado. Excepciones: Jalisco vence día 12, Estado de México y Yucatán el día 10. Tabla completa: <a href="/api/isn-tasas.json"><span class="mono">/api/isn-tasas.json</span></a>.</dd>
+    </div>
+
+    <div class="faq-item">
+      <dt>¿Quién está obligado a pagar el ISN?</dt>
+      <dd>Toda persona física o moral, residente en México o en el extranjero con establecimiento permanente, que pague salarios, prestaciones o remuneraciones al trabajo personal subordinado prestado <strong>dentro del estado</strong>. Aplica desde el primer trabajador. Universo: <strong>~4M empresas formales</strong>.</dd>
+    </div>
+
+    <div class="faq-item">
+      <dt>¿Puedo calcular ISN sin credenciales del estado?</dt>
+      <dd>Sí. <span class="mono">isn_calcular(nomina_gravable, estado)</span> funciona <strong>offline-first</strong> contra el catálogo central de tasas — sin credenciales. Útil para asesoría fiscal multi-estado: en milisegundos comparas el ISN de tu nómina en CDMX vs Yucatán vs Baja California sin tocar ningún portal estatal.</dd>
+    </div>
+  </dl>
 </section>
 
 <!-- CTA -->

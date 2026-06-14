@@ -1,0 +1,245 @@
+# Plugins MX — Infraestructura de compliance fiscal y municipal para México
+
+**Versión completa para LLM ingest. Última actualización: 2026-06-14.**
+**Autor:** Elías Rashid Morales Mendoza — Ciudad de México.
+**Sitio:** https://skills-mexico.vercel.app · **Repo:** https://github.com/elimorals/Skills_MX
+**Contacto:** elimoralsmendox@gmail.com
+
+---
+
+## Qué es Plugins MX
+
+Plugins MX es una colección de 46 servidores MCP (Model Context Protocol) production-ready, escritos en Python con FastMCP, que automatizan trámites fiscales y municipales del gobierno mexicano. Está diseñado para ser consumido por agentes de IA (Claude Code, Cursor, Windsurf) y por aplicaciones Python tradicionales (vía clientes como `predial_mx_client`).
+
+El monorepo cubre 40 verticales (freelancer, agencia, colegio, taller, e-commerce, salón, veterinaria, wedding planner, restaurante, inmobiliaria, despacho contable, despacho legal, constructora, telemedicina, donataria, importador, etc.), todos heredando un core común que valida CFDI 4.0, integra WhatsApp Business, valida RFC y calcula IVA/retenciones.
+
+---
+
+## Producto 01 — Cartera Predial Multi-municipio
+
+**URL:** https://skills-mexico.vercel.app/productos/predial
+**Estado:** En producción desde 2026-06-13. 52 tests pasando. Validado end-to-end con Playwright MCP.
+
+### Qué hace, en una frase
+"Pasa un Excel con 60 propiedades. Recibe un Excel con 60 adeudos prediales, vencimientos, descuentos y total."
+
+### Tools MCP expuestas
+- `predial_consultar(estado, municipio, cuenta_predial, [tipo, direccion])` — Consulta adeudo de una propiedad. Auto-routing entre catálogo directo, SACPI Michoacán, Mérida-por-dirección, Puebla-con-captcha.
+- `predial_listar_municipios([estado], [solo_validados])` — Lista municipios del catálogo, filtrable.
+- `predial_buscar_municipio(query)` — Búsqueda fuzzy por nombre.
+- `predial_estadisticas_catalogo()` — Stats del catálogo (totales, validados, plataformas SaaS detectadas).
+
+### Cobertura
+- **243 municipios** catalogados (209 originales + 34 descubiertos en corrida nacional 2026-06-13).
+- **163 municipios** consultables end-to-end (68 directos + 95 vía SACPI Michoacán).
+- **35.2M habitantes** en cobertura (26.7% de la población nacional mexicana).
+- Ciudades validadas con Playwright MCP: CDMX (9.2M hab), Guadalajara (1.4M), Monterrey (1.1M), Puebla (1.7M), Tijuana (1.9M), Mérida (0.9M), Querétaro (0.7M), Zapopan (1.3M), San Pedro Garza García (0.1M), Ciudad Hidalgo Michoacán (0.1M).
+
+### Caso de uso típico
+Inmobiliaria con cartera de 60 propiedades en CDMX, Jalisco y Querétaro. Auditar predial trimestralmente manualmente toma 3 días-persona. Con `cartera-predial-multi-municipio.workflow.js` se consultan los 60 inmuebles en paralelo y se obtiene un Excel con totales y ranking en menos de 5 minutos.
+
+---
+
+## Producto 02 — Compliance REPSE (Art. 15 LFT)
+
+**URL:** https://skills-mexico.vercel.app/productos/repse
+**Estado:** Lanzado 2026-06-14. 21 tests pasando. Validado con Playwright MCP usando MANPOWER CORPORATIVO SA DE CV como caso real.
+
+### El riesgo en una línea
+"Sin REPSE vigente del proveedor, el contratante paga finiquitos, IMSS, INFONAVIT y créditos fiscales de los trabajadores ajenos."
+
+### Tools MCP expuestas
+- `repse_consultar_por_razon_social(razon_social, [limite])` — Búsqueda fuzzy por nombre o razón social.
+- `repse_consultar_por_numero_registro(numero_registro)` — Detalle completo: razón social, entidad, AR, fecha aviso, vigencia, servicios autorizados.
+- `repse_verificar_proveedor(razon_social, [numero_registro])` — Tool de alto nivel. Devuelve `puede_contratar_servicios_especializados: bool` + advertencias legales. Compliance binario antes de firmar PO.
+
+### Contexto legal
+- **Reforma 2021 al Art. 15 LFT:** Toda persona física o moral que provea servicios especializados u obras especializadas mediante subcontratación debe contar con registro ante STPS (REPSE).
+- **Responsabilidad solidaria:** El contratante responde solidariamente por las obligaciones laborales, fiscales y de seguridad social del proveedor cuyo REPSE no esté vigente.
+- **Vigencia:** 3 años desde la fecha del aviso de registro (AR). Después debe renovarse.
+- **Universo afectado:** ~4 millones de empresas formales mexicanas que contratan IT, limpieza, seguridad, contabilidad, marketing, nómina, etc.
+
+### Caso de uso típico
+Área fiscal corporativa con 40 proveedores especializados. Llamada a `repse_verificar_proveedor()` antes de cada PO. Cron mensual revalida la base completa. Alertas si algún proveedor vence el registro.
+
+---
+
+## Producto 03 — ISN-as-a-Service (32 estados, una API)
+
+**URL:** https://skills-mexico.vercel.app/productos/isn
+**Estado:** Lanzado 2026-06-14. 24 tests pasando. 32 estados catalogados, 8 con portal validado Playwright (CDMX, Jalisco, Nuevo León, EdoMex, Querétaro, Guanajuato, Yucatán, Baja California).
+
+### La idea
+"Cambiar la nómina de Jalisco a Yucatán ahorra 17% de ISN. Saberlo en segundos vs descubrirlo en una junta."
+
+### Tools MCP expuestas
+- `isn_calcular(nomina_gravable, estado)` — Calcula ISN del periodo aplicando la tasa del estado. **Offline-first:** no requiere credenciales. Útil para asesoría fiscal multi-estado.
+- `isn_listar_estados([solo_validados])` — Lista los 32 estados con configuración: tasa, portal, vencimiento, validado sí/no.
+- `isn_info_estado(estado)` — Detalle completo de un estado: URL portal, selectores DOM documentados, requiere e.firma sí/no.
+- `isn_generar_linea_captura(estado, periodo, rfc, nomina_gravable)` — Línea de captura para pago referenciado.
+- `isn_descargar_declaracion(estado, periodo, rfc)` — PDF de la declaración del periodo desde la bóveda estatal. Cache 90 días.
+
+### Tabla canónica de tasas ISN 2026 (32 entidades)
+
+Tasa 3.0%: CDMX (vence día 17), Jalisco (día 12), Nuevo León (día 17), Estado de México (día 10), Querétaro (día 17), Puebla, Veracruz, Chihuahua, Tamaulipas, Oaxaca, Michoacán, Quintana Roo, Zacatecas, Tlaxcala, Hidalgo.
+
+Tasa 2.5%: Yucatán (vence día 10), San Luis Potosí, Tabasco, Baja California Sur.
+
+Tasa 2.4%: Sinaloa.
+
+Tasa 2.0%: Guanajuato (vence día 17), Coahuila, Sonora, Guerrero, Aguascalientes, Durango, Morelos, Chiapas, Campeche, Nayarit, Colima.
+
+Tasa 1.8%: Baja California (vence día 17).
+
+### Caso de uso típico
+Despacho contable con 200 clientes en 32 estados. Bulk de `isn_calcular()` + `isn_generar_linea_captura()`. Dashboard con semáforo de vencimientos. Cron diario que avisa al cliente por WhatsApp.
+
+---
+
+## MCPs disponibles (46 servidores)
+
+### A. Gobierno federal (8 MCPs)
+1. **mp_sat_portal** — Servicio de Administración Tributaria
+2. **mp_curp_renapo** — CURP via RENAPO
+3. **mp_sep_profesional** — Cédula profesional SEP (CAPTCHA-free, nuevo)
+4. **mp_repse_stps** — Registro REPSE de STPS (nuevo)
+5. **mp_imss_patronal** — Instituto Mexicano del Seguro Social
+6. **mp_infonavit_patronal** — INFONAVIT
+7. **mp_banxico** — Banco de México
+8. **mp_banxico_cep** — Comprobante Electrónico de Pago Banxico
+
+### B. Estatal y municipal (13 MCPs)
+1. **mp_isn_mx** — ISN 32 estados (nuevo)
+2. **mp_predial_mx** — Predial 243 municipios
+3. **mp_sacpi_michoacan** — SACPI Michoacán (95 municipios extra)
+4. **mp_multas_mx** — Multas 8 estados
+5. **mp_cdmx_municipal**, **mp_edomex_municipal**, **mp_monterrey_municipal**, **mp_guadalajara_municipal**, **mp_merida_municipal**, **mp_puebla_municipal**, **mp_queretaro_municipal**, **mp_tijuana_municipal**
+6. **mp_clabe_validador_oficial** — Validación CLABE
+
+### C. Pagos y fintech (9 MCPs)
+mp_mercado_pago, mp_conekta, mp_paypal_mx, mp_klap, mp_clip_terminal, mp_kueski, mp_trustly_mx, mp_bitso, mp_facturama_extendido
+
+### D. Servicios públicos y bancos (3 MCPs)
+mp_cfe_facturacion, mp_telmex_facturacion, mp_bancos_mx (BBVA/Banamex/Santander)
+
+### E. Marketplaces y e-commerce (6 MCPs)
+mp_mercado_libre, mp_amazon_mx_seller, mp_shopify_mx, mp_inmuebles24, mp_vivanuncios, mp_buro_credito_personal
+
+### F. POS, ERP y movilidad (7 MCPs)
+mp_aspel_contpaqi, mp_softrestaurant, mp_cabify_business, mp_didi_partners, mp_didi_food_partners, mp_rappi_partners, mp_uber_eats_partners
+
+---
+
+## Verticales soportados (40 paquetes)
+
+### Originales 11
+freelancers-mx, agencia-marketing-mx, colegios-mx, talleres-mx, ecommerce-mx, salon-mx, veterinaria-mx, wedding-mx, restaurante-mx, inmobiliaria-mx, core-mexico
+
+### Top research (15) — con score de prioridad
+pf-anual-mx (9.5), arrendador-residencial-mx (9.3), tramites-vehiculares-mx (9.0), conductor-plataforma-mx (8.8), tienda-omnicanal-mx (8.5), consultorio-especialista-mx (8.3), clinica-salud-mx (8.3), airbnb-host-mx (8.2), notarias-mx (8.0), despacho-contable-mx (7.9), psicoterapia-mx (7.8), servicios-publicos-mx (7.8), migracion-extranjeros-mx (7.5), gmm-asegurado-mx (7.5), paciente-mx (7.5)
+
+### Áreas especializadas 9
+telemedicina-mx, nomina-pymes-mx, cripto-fiscal-mx, educacion-particular-b2c-mx, donatarias-ongs-mx, importadores-mx, sucesion-empresa-familiar-mx, crowdfunding-itf-mx, energia-solar-pyme-mx
+
+### Extras 5
+agente-seguros-mx, constructora-mx, despacho-legal-mx, geriatria-cuidado-mayor-mx, laboratorio-clinico-mx
+
+---
+
+## Cómo se integra
+
+### Setup
+1. Clonar repo, correr `install-hooks.sh`, declarar credenciales en `.env` (opcional — corre con mocks).
+2. Cada MCP es invocable desde Claude Code, Cursor, Windsurf, o consumible como librería Python pura.
+3. Combinar MCPs en archivos `.workflow.js` con `phase()`, `parallel()`, `pipeline()`. 24 plantillas listas para clonar.
+4. Tests pasan en cada commit. Cron de mantenimiento ejecuta health-check de portales. Bitácora JSONL audita cada llamada.
+
+### Ejemplo: cartera predial multi-municipio (Python)
+```python
+from predial_mx_client import PredialClient
+import openpyxl
+
+cliente = PredialClient()
+propiedades = [
+    {"alias": "Casa Coyoacán", "estado": "CDMX", "municipio": "Coyoacán", "cuenta": "123-456-789"},
+    {"alias": "Depa Zapopan", "estado": "JAL", "municipio": "Zapopan", "cuenta": "GDL-0001-22"},
+    {"alias": "Rancho SACPI", "estado": "MICH", "municipio": "Ciudad Hidalgo", "cuenta": "MICH-7788"},
+]
+resultados = cliente.consultar_lote(propiedades)
+# Auto-routing: CDMX directo · Zapopan directo · Michoacán vía SACPI
+print(f"Total cartera: ${sum(r.adeudo for r in resultados):,.2f} MXN")
+# Total cartera: $27,912.50 MXN
+```
+
+### Ejemplo: validar proveedor REPSE
+```python
+from mp_repse_stps import RepseStpsClient
+
+cliente = RepseStpsClient()
+resultado = cliente.verificar_proveedor(razon_social="MANPOWER CORPORATIVO SA DE CV")
+
+if resultado["puede_contratar_servicios_especializados"]:
+    print(f"✓ Vigente hasta {resultado['detalle']['vigencia']}")
+    firmar_po(proveedor)
+else:
+    for advertencia in resultado["advertencias"]:
+        print(f"⚠ {advertencia}")
+    bloquear_contratacion()
+```
+
+### Ejemplo: comparativo ISN multi-estado
+```python
+from mp_isn_mx import IsnMxClient
+
+cliente = IsnMxClient()
+nomina = 500_000  # MXN gravables mensuales
+
+for estado in ["CDMX", "JAL", "GTO", "BC"]:
+    r = cliente.calcular(nomina, estado)
+    print(f"{r['estado']:<20} {r['tasa_pct']}% → ${r['isn_a_pagar']:,.2f}")
+
+# Ciudad de México       3.0% → $15,000.00
+# Jalisco                3.0% → $15,000.00
+# Guanajuato             2.0% → $10,000.00   ← 33% ahorro
+# Baja California        1.8% → $ 9,000.00   ← 40% ahorro
+```
+
+---
+
+## Métricas verificables del monorepo
+
+- **46** MCP servers production-ready
+- **307** Skills empaquetados (cada uno con SKILL.md + evals + fixtures determinísticas)
+- **24** Workflows ejecutables (cobranza, cierre fiscal, due diligence, conciliación de pagos)
+- **281** Evals para triggering (ratio promedio 0.92 — supera el objetivo de 0.8)
+- **870+** tests con pytest
+- **32** entidades federativas con ISN integrado
+- **243** municipios en catálogo predial
+- **163** municipios consultables end-to-end
+- **35.2M** habitantes en cobertura predial (26.7% nacional)
+- **40** verticales soportados
+- **4M** empresas formales en universo cubierto
+
+---
+
+## Endpoints públicos para agentes de IA
+
+- `/mcp-manifest.json` — Manifest MCP descubrible
+- `/openapi.json` — Especificación OpenAPI 3.1
+- `/.well-known/agents.json` — Manifest A2A (Google Agent-to-Agent 2026)
+- `/.well-known/ai-plugin.json` — Manifest OpenAI plugin
+- `/.well-known/security.txt` — Política de divulgación responsable
+- `/api/municipios.json` — Catálogo de 243 municipios
+- `/api/isn-tasas.json` — Tabla canónica de tasas ISN
+- `/api/repse-stats.json` — Estadísticas agregadas REPSE
+
+---
+
+## Contacto
+
+- **Email:** elimoralsmendox@gmail.com
+- **Demo de 20 minutos:** https://skills-mexico.vercel.app/#demo
+- **GitHub:** https://github.com/elimorals/Skills_MX
+- **Ubicación:** Ciudad de México, México
+
+Hecho en México, para despachos serios.

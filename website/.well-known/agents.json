@@ -1,0 +1,87 @@
+{
+  "$schema": "https://a2a.dev/schemas/agent-card/v1.json",
+  "name": "Plugins MX — Compliance Infrastructure",
+  "description": "46 MCPs (Model Context Protocol) que automatizan SAT, IMSS, REPSE, ISN estatal en 32 entidades federativas y predial municipal en 243 ayuntamientos mexicanos.",
+  "url": "https://skills-mexico.vercel.app",
+  "version": "3.59.0",
+  "documentationUrl": "https://skills-mexico.vercel.app/llms-full.txt",
+  "provider": {
+    "organization": "Plugins MX",
+    "url": "https://skills-mexico.vercel.app",
+    "contact": "elimoralsmendox@gmail.com"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": true
+  },
+  "authentication": {
+    "schemes": ["bearer", "api-key"],
+    "credentials": "Por petición. Ver https://skills-mexico.vercel.app/#demo"
+  },
+  "defaultInputModes": ["application/json", "text/plain"],
+  "defaultOutputModes": ["application/json", "application/xlsx", "application/pdf"],
+  "skills": [
+    {
+      "id": "predial.consultar",
+      "name": "Consultar predial municipal",
+      "description": "Consulta el adeudo predial de una propiedad en cualquiera de los 243 municipios catalogados. Auto-routing entre catálogo directo, SACPI Michoacán, Mérida-por-dirección y Puebla-con-captcha.",
+      "tags": ["predial", "municipal", "inmobiliaria", "mexico"],
+      "examples": [
+        "Consulta el predial de cuenta 123-456-789 en Coyoacán",
+        "Dame el adeudo de mi cuenta predial GDL-0001-22 en Zapopan"
+      ],
+      "inputModes": ["application/json"],
+      "outputModes": ["application/json", "application/xlsx"]
+    },
+    {
+      "id": "predial.consultar_lote",
+      "name": "Consultar cartera predial multi-municipio",
+      "description": "Consulta en paralelo el adeudo predial de N propiedades en distintos municipios. Devuelve un Excel con vencimientos, descuentos por pronto pago y ranking de prioridad.",
+      "tags": ["predial", "cartera", "bulk", "xlsx"],
+      "examples": [
+        "Audita mi cartera de 60 propiedades en CDMX, Jalisco y Querétaro"
+      ],
+      "outputModes": ["application/xlsx", "application/json"]
+    },
+    {
+      "id": "repse.verificar_proveedor",
+      "name": "Verificar REPSE de proveedor (Art. 15 LFT)",
+      "description": "Verifica si un proveedor de servicios especializados tiene REPSE vigente ante STPS. Devuelve decisión binaria puede_contratar: bool. Sin captcha bloqueante.",
+      "tags": ["repse", "stps", "compliance", "art-15-lft", "laboral"],
+      "examples": [
+        "¿MANPOWER CORPORATIVO SA DE CV puede prestar servicios especializados?",
+        "Valida el registro REPSE de mi proveedor de limpieza"
+      ],
+      "inputModes": ["application/json"],
+      "outputModes": ["application/json"]
+    },
+    {
+      "id": "isn.calcular",
+      "name": "Calcular ISN multi-estado",
+      "description": "Calcula el Impuesto sobre Nómina aplicando la tasa de cualquiera de las 32 entidades federativas. Offline-first: no requiere credenciales. Útil para asesoría fiscal multi-estado.",
+      "tags": ["isn", "nomina", "estatal", "fiscal", "mexico"],
+      "examples": [
+        "Calcula ISN para nómina gravable de 500,000 MXN en CDMX",
+        "Compara ISN entre Jalisco, Guanajuato y Yucatán con nómina de 1M"
+      ],
+      "inputModes": ["application/json"],
+      "outputModes": ["application/json"]
+    },
+    {
+      "id": "isn.generar_linea_captura",
+      "name": "Generar línea de captura ISN",
+      "description": "Genera la línea de captura para pago referenciado del ISN en cualquiera de las 32 entidades.",
+      "tags": ["isn", "linea-captura", "pago-referenciado"],
+      "inputModes": ["application/json"],
+      "outputModes": ["application/json"]
+    }
+  ],
+  "links": {
+    "homepage": "https://skills-mexico.vercel.app",
+    "documentation": "https://skills-mexico.vercel.app/llms-full.txt",
+    "repository": "https://github.com/elimorals/Skills_MX",
+    "mcpManifest": "https://skills-mexico.vercel.app/mcp-manifest.json",
+    "openapi": "https://skills-mexico.vercel.app/openapi.json"
+  }
+}

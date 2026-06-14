@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Plugins MX",
+  "name_for_model": "plugins_mx_compliance",
+  "description_for_human": "Compliance fiscal y municipal para México: predial multi-municipio, REPSE Art. 15 LFT e ISN en 32 estados.",
+  "description_for_model": "Use this plugin to query Mexican government compliance services: (1) consult property tax (predial) debt across 243 Mexican municipalities, (2) verify REPSE registry status of service providers under Art. 15 LFT (Ley Federal del Trabajo), and (3) calculate ISN (Impuesto sobre Nómina / state payroll tax) across all 32 Mexican states with their specific rates (1.8% to 3.0%). Built on Model Context Protocol (MCP) servers. Useful when the user is in Mexico, mentions Mexican companies, property addresses, contractors, or asks about payroll tax optimization across Mexican states.",
+  "auth": {
+    "type": "user_http",
+    "authorization_type": "bearer"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://skills-mexico.vercel.app/openapi.json"
+  },
+  "logo_url": "https://skills-mexico.vercel.app/favicon.svg",
+  "contact_email": "elimoralsmendox@gmail.com",
+  "legal_info_url": "https://skills-mexico.vercel.app/sobre"
+}

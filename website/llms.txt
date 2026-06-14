@@ -1,0 +1,55 @@
+# Plugins MX
+
+> Infraestructura de cumplimiento fiscal y municipal para México. 46 MCPs (Model Context Protocol) production-ready que automatizan SAT, IMSS, REPSE, ISN estatal en 32 entidades federativas y predial municipal en 243 ayuntamientos. Construido para despachos contables, inmobiliarias y áreas fiscales corporativas.
+
+**Autor:** Elías Rashid Morales Mendoza · Ciudad de México · contacto: elimoralsmendox@gmail.com
+**Sitio:** https://skills-mexico.vercel.app
+**Repositorio:** https://github.com/elimorals/Skills_MX
+**Stack:** Python + FastMCP, Playwright para validación E2E, 870+ tests con pytest
+
+## Productos vendibles
+
+- [Cartera Predial Multi-municipio](https://skills-mexico.vercel.app/productos/predial): Consulta paralela del adeudo predial de N propiedades en 243 municipios mexicanos, con dashboard XLSX de vencimientos, descuentos por pronto pago y ranking. 163 municipios consultables end-to-end (68 directos + 95 vía SACPI Michoacán). Cobertura poblacional: 35.2M habitantes (26.7% nacional).
+- [Compliance REPSE Art. 15 LFT](https://skills-mexico.vercel.app/productos/repse): Verificación binaria (puede_contratar: bool) de proveedores de servicios especializados ante STPS. Evita responsabilidad solidaria laboral y fiscal del contratante. Universo afectado: ~4M empresas formales mexicanas. Sin captcha bloqueante.
+- [ISN-as-a-Service](https://skills-mexico.vercel.app/productos/isn): Una sola API para calcular Impuesto sobre Nómina, generar línea de captura y descargar declaración mensual en cualquiera de las 32 entidades federativas. Tasas 1.8% (Baja California) a 3.0% (CDMX, Jalisco, Nuevo León, EdoMex, Querétaro). 8 estados con portal validado Playwright.
+
+## Glosario
+
+- [REPSE — Registro de Prestadoras de Servicios Especializados](https://skills-mexico.vercel.app/glosario/repse): Definición, base legal (Art. 15 LFT reformado 2021), vigencia (3 años), responsabilidad solidaria del contratante.
+- [ISN — Impuesto sobre Nómina](https://skills-mexico.vercel.app/glosario/isn): Tasas por entidad federativa 2026, obligados, vencimientos, optimización fiscal multi-estado.
+- [Predial — Impuesto Predial Municipal](https://skills-mexico.vercel.app/glosario/predial): Cálculo, descuentos por pronto pago, vencimientos típicos, portales en línea por municipio.
+
+## MCPs públicos por categoría
+
+- **Gobierno federal (8):** mp_sat_portal, mp_curp_renapo, mp_sep_profesional, mp_repse_stps, mp_imss_patronal, mp_infonavit_patronal, mp_banxico, mp_banxico_cep
+- **Estatal y municipal (13):** mp_isn_mx (32 estados), mp_predial_mx (243 municipios), mp_sacpi_michoacan (95 municipios), mp_multas_mx (8 estados), mp_cdmx_municipal, mp_edomex_municipal, mp_monterrey_municipal, mp_guadalajara_municipal, mp_merida_municipal, mp_puebla_municipal, mp_queretaro_municipal, mp_tijuana_municipal, mp_clabe_validador_oficial
+- **Pagos y fintech (9):** mp_mercado_pago, mp_conekta, mp_paypal_mx, mp_klap, mp_clip_terminal, mp_kueski, mp_trustly_mx, mp_bitso, mp_facturama_extendido
+- **Servicios públicos y bancos (3):** mp_cfe_facturacion, mp_telmex_facturacion, mp_bancos_mx
+- **Marketplaces y e-commerce (6):** mp_mercado_libre, mp_amazon_mx_seller, mp_shopify_mx, mp_inmuebles24, mp_vivanuncios, mp_buro_credito_personal
+- **POS, ERP y movilidad (7):** mp_aspel_contpaqi, mp_softrestaurant, mp_cabify_business, mp_didi_partners, mp_didi_food_partners, mp_rappi_partners, mp_uber_eats_partners
+
+## Endpoints públicos para agentes
+
+- [/mcp-manifest.json](https://skills-mexico.vercel.app/mcp-manifest.json): Manifest descubrible vía MCP Registry
+- [/openapi.json](https://skills-mexico.vercel.app/openapi.json): Especificación OpenAPI 3.1
+- [/.well-known/agents.json](https://skills-mexico.vercel.app/.well-known/agents.json): Manifest agente A2A (Google A2A 2026)
+- [/.well-known/ai-plugin.json](https://skills-mexico.vercel.app/.well-known/ai-plugin.json): Manifest OpenAI plugin
+- [/api/municipios.json](https://skills-mexico.vercel.app/api/municipios.json): Catálogo de 243 municipios con cobertura predial
+- [/api/isn-tasas.json](https://skills-mexico.vercel.app/api/isn-tasas.json): Tabla canónica de tasas ISN por estado 2026
+- [/api/repse-stats.json](https://skills-mexico.vercel.app/api/repse-stats.json): Estadísticas agregadas REPSE
+
+## Métricas verificables
+
+- **46** MCPs production-ready
+- **307** Skills empaquetados (con SKILL.md + evals)
+- **24** Workflows ejecutables (cobranza, cierre fiscal, due diligence)
+- **281** Evals para triggering (ratio 0.92 promedio)
+- **870+** tests con pytest
+- **32** entidades federativas con ISN integrado
+- **243** municipios en catálogo predial (163 consultables)
+- **40** verticales soportados (de freelancer a constructora)
+
+## Contacto y demo
+
+- Email: elimoralsmendox@gmail.com
+- Demo de 20 min: https://skills-mexico.vercel.app/#demo
