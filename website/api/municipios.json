@@ -1,9 +1,9 @@
 {
-  "$schema": "https://skills-mexico.vercel.app/openapi.json#/components/schemas/MunicipiosCatalog",
+  "$schema": "https://website-eight-lake-11.vercel.app/openapi.json#/components/schemas/MunicipiosCatalog",
   "version": "2026-06-14",
   "license": "CC-BY-4.0",
   "source": "Plugins MX — discovery automatizado 2026-06-13",
-  "documentation": "https://skills-mexico.vercel.app/productos/predial",
+  "documentation": "https://website-eight-lake-11.vercel.app/productos/predial",
   "total": 243,
   "consultables": 163,
   "directos": 68,

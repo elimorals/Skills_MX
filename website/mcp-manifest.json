@@ -5,13 +5,13 @@
   "description": "46 production-ready MCP servers covering Mexican federal, state, and municipal compliance: SAT, IMSS, REPSE, ISN (32 states), property tax (243 municipalities), payments, marketplaces, POS, mobility.",
   "version": "3.59.0",
   "license": "MIT",
-  "homepage": "https://skills-mexico.vercel.app",
+  "homepage": "https://website-eight-lake-11.vercel.app",
   "repository": "https://github.com/elimorals/Skills_MX",
-  "documentation": "https://skills-mexico.vercel.app/llms-full.txt",
+  "documentation": "https://website-eight-lake-11.vercel.app/llms-full.txt",
   "author": {
     "name": "Elías Rashid Morales Mendoza",
     "email": "elimoralsmendox@gmail.com",
-    "url": "https://skills-mexico.vercel.app/sobre"
+    "url": "https://website-eight-lake-11.vercel.app/sobre"
   },
   "tags": [
     "mexico",
@@ -98,11 +98,11 @@
     "populationCoveragePct": 26.7
   },
   "endpoints": {
-    "demo": "https://skills-mexico.vercel.app/#demo",
-    "agentsManifest": "https://skills-mexico.vercel.app/.well-known/agents.json",
-    "aiPluginManifest": "https://skills-mexico.vercel.app/.well-known/ai-plugin.json",
-    "openapi": "https://skills-mexico.vercel.app/openapi.json",
-    "llms": "https://skills-mexico.vercel.app/llms.txt",
-    "llmsFull": "https://skills-mexico.vercel.app/llms-full.txt"
+    "demo": "https://website-eight-lake-11.vercel.app/#demo",
+    "agentsManifest": "https://website-eight-lake-11.vercel.app/.well-known/agents.json",
+    "aiPluginManifest": "https://website-eight-lake-11.vercel.app/.well-known/ai-plugin.json",
+    "openapi": "https://website-eight-lake-11.vercel.app/openapi.json",
+    "llms": "https://website-eight-lake-11.vercel.app/llms.txt",
+    "llmsFull": "https://website-eight-lake-11.vercel.app/llms-full.txt"
   }
 }

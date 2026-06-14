@@ -4,9 +4,9 @@
 Contact: mailto:elimoralsmendox@gmail.com
 Expires: 2027-06-14T00:00:00.000Z
 Preferred-Languages: es, en
-Canonical: https://skills-mexico.vercel.app/.well-known/security.txt
-Policy: https://skills-mexico.vercel.app/sobre
-Acknowledgments: https://skills-mexico.vercel.app/sobre
+Canonical: https://website-eight-lake-11.vercel.app/.well-known/security.txt
+Policy: https://website-eight-lake-11.vercel.app/sobre
+Acknowledgments: https://website-eight-lake-11.vercel.app/sobre
 
 # Si encontraste una vulnerabilidad en cualquiera de nuestros MCPs
 # o en este sitio, escríbenos directo. Respondemos en 72 horas.
