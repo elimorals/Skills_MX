@@ -253,39 +253,90 @@
 })();
 
 // ----------------------------------------
-// 8. Form handler (demo de captura)
+// 8. Form handler — POST a /api/lead-demo (Vercel Function + Resend)
+//    Fallback a WhatsApp si la red falla o el servicio no está configurado.
 // ----------------------------------------
-function handleDemo(event) {
+const WHATSAPP_NUMBER = '522711428381'; // +52 271 142 8381 — Elías
+
+async function handleDemo(event) {
   event.preventDefault();
   const form = event.target;
   const data = Object.fromEntries(new FormData(form));
-
-  // Construir mensaje WhatsApp
-  const msg = encodeURIComponent(
-    `Hola Elías,\n\nSoy ${data.nombre} de ${data.empresa}.\nMe interesa: ${data.interes}\n\nEmail: ${data.email}` +
-      (data.tel ? `\nTel: ${data.tel}` : '') +
-      `\n\nQuiero agendar la demo de 20 min.`
-  );
-
-  // Email principal + fallback WhatsApp
-  const wa = `https://wa.me/525500000000?text=${msg}`; // reemplazar número
-  const mailto = `mailto:elimoralsmendox@gmail.com?subject=${encodeURIComponent(
-    'Demo Plugins MX · ' + data.empresa
-  )}&body=${msg}`;
-
-  // Mensaje de éxito visual (textContent para evitar XSS — contenido controlado)
   const btn = form.querySelector('button[type="submit"]');
   const btnSpan = btn.querySelector('span');
-  if (btnSpan) btnSpan.textContent = '✓ Abriendo tu cliente de correo…';
-  btn.style.background = 'var(--c-jade)';
+  const fineprint = form.querySelector('.demo-fineprint');
+  const originalLabel = btnSpan ? btnSpan.textContent : '';
 
-  // Abrir mailto
-  setTimeout(() => {
-    window.location.href = mailto;
+  // UI: enviando
+  if (btnSpan) btnSpan.textContent = 'Enviando…';
+  btn.disabled = true;
+  btn.style.background = '';
+
+  try {
+    const r = await fetch('/api/lead-demo', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    if (!r.ok) {
+      const err = await r.json().catch(() => ({}));
+      throw new Error(err.error || `HTTP ${r.status}`);
+    }
+
+    // Éxito
+    if (btnSpan) btnSpan.textContent = '✓ Solicitud enviada · te escribo hoy';
+    btn.style.background = 'var(--c-jade, #2D6A4F)';
+
+    if (fineprint) {
+      // Reemplazo seguro con textContent + <a> creado en DOM (sin innerHTML)
+      while (fineprint.firstChild) fineprint.removeChild(fineprint.firstChild);
+      fineprint.appendChild(document.createTextNode('¿Prefieres WhatsApp directo? '));
+      const wa = document.createElement('a');
+      wa.href = buildWhatsAppLink(data);
+      wa.target = '_blank';
+      wa.rel = 'noopener';
+      wa.textContent = 'Escríbeme aquí →';
+      fineprint.appendChild(wa);
+    }
+
+    form.reset();
+
     setTimeout(() => {
-      if (btnSpan) btnSpan.textContent = 'Agendar mi demo →';
+      btn.disabled = false;
+      if (btnSpan) btnSpan.textContent = originalLabel || 'Agendar mi demo →';
       btn.style.background = '';
-      form.reset();
-    }, 2000);
-  }, 600);
+    }, 6000);
+  } catch (err) {
+    console.error('[handleDemo]', err);
+    if (btnSpan) btnSpan.textContent = '✗ Error · prueba por WhatsApp';
+    btn.style.background = 'var(--c-terracotta, #C2410C)';
+    btn.disabled = false;
+
+    // Fallback: abrir WhatsApp directo con el mensaje pre-rellenado
+    setTimeout(() => {
+      window.open(buildWhatsAppLink(data), '_blank', 'noopener');
+    }, 400);
+
+    setTimeout(() => {
+      if (btnSpan) btnSpan.textContent = originalLabel || 'Agendar mi demo →';
+      btn.style.background = '';
+    }, 5000);
+  }
+}
+
+function buildWhatsAppLink(data) {
+  const lines = [
+    'Hola Elías,',
+    '',
+    `Soy ${data.nombre || ''}${data.empresa ? ' de ' + data.empresa : ''}.`,
+    data.interes ? `Me interesa: ${data.interes}` : '',
+    '',
+    data.email ? `Email: ${data.email}` : '',
+    data.tel ? `Tel: ${data.tel}` : '',
+    '',
+    'Quiero agendar la demo de 20 min.',
+  ].filter(Boolean);
+  const msg = encodeURIComponent(lines.join('\n'));
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
 }

@@ -1836,6 +1836,50 @@ button {
 }
 .caso:hover::after { opacity: 1; }
 
+/* Demo · contacto directo bajo la lista de bullets */
+.demo-direct {
+  margin-top: 2rem;
+  padding-top: 1.4rem;
+  border-top: 1px dashed rgba(22, 19, 19, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.demo-direct-or {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(22, 19, 19, 0.5);
+}
+.demo-direct-wa {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--c-jade, #2D6A4F);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: transform 0.3s cubic-bezier(.2,.7,.2,1), color 0.3s ease;
+}
+.demo-direct-wa:hover {
+  transform: translateX(4px);
+  color: var(--c-ink, #161313);
+}
+.demo-direct-mail {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: rgba(22, 19, 19, 0.7);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(22, 19, 19, 0.3);
+  align-self: flex-start;
+}
+.demo-direct-mail:hover {
+  color: var(--c-terracotta, #C2410C);
+  border-bottom-color: currentColor;
+}
+
 /* Respeto a prefers-reduced-motion para todas las nuevas */
 @media (prefers-reduced-motion: reduce) {
   .marquee-track,
