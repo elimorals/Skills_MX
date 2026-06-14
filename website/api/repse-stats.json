@@ -1,10 +1,10 @@
 {
-  "$schema": "https://skills-mexico.vercel.app/openapi.json#/components/schemas/RepseStats",
+  "$schema": "https://website-eight-lake-11.vercel.app/openapi.json#/components/schemas/RepseStats",
   "version": "2026-06-14",
   "license": "CC-BY-4.0",
   "source": "Plugins MX — agregación pública del registro STPS (Padrón Público de Contratistas REPSE).",
-  "documentation": "https://skills-mexico.vercel.app/productos/repse",
-  "glossary": "https://skills-mexico.vercel.app/glosario/repse",
+  "documentation": "https://website-eight-lake-11.vercel.app/productos/repse",
+  "glossary": "https://website-eight-lake-11.vercel.app/glosario/repse",
   "base_legal": {
     "ley": "Ley Federal del Trabajo",
     "articulo": "Art. 15",
@@ -49,7 +49,7 @@
   ],
   "como_verificar": {
     "portal_oficial": "https://repse.stps.gob.mx",
-    "via_api_plugins_mx": "https://skills-mexico.vercel.app/openapi.json#/paths/~1repse~1verificar/post",
+    "via_api_plugins_mx": "https://website-eight-lake-11.vercel.app/openapi.json#/paths/~1repse~1verificar/post",
     "tool_mcp": "repse_verificar_proveedor(razon_social, [numero_registro])",
     "respuesta_binaria": "puede_contratar_servicios_especializados: bool"
   },

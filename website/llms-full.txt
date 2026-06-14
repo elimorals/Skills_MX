@@ -2,7 +2,7 @@
 
 **Versión completa para LLM ingest. Última actualización: 2026-06-14.**
 **Autor:** Elías Rashid Morales Mendoza — Ciudad de México.
-**Sitio:** https://skills-mexico.vercel.app · **Repo:** https://github.com/elimorals/Skills_MX
+**Sitio:** https://website-eight-lake-11.vercel.app · **Repo:** https://github.com/elimorals/Skills_MX
 **Contacto:** elimoralsmendox@gmail.com
 
 ---
@@ -17,7 +17,7 @@ El monorepo cubre 40 verticales (freelancer, agencia, colegio, taller, e-commerc
 
 ## Producto 01 — Cartera Predial Multi-municipio
 
-**URL:** https://skills-mexico.vercel.app/productos/predial
+**URL:** https://website-eight-lake-11.vercel.app/productos/predial
 **Estado:** En producción desde 2026-06-13. 52 tests pasando. Validado end-to-end con Playwright MCP.
 
 ### Qué hace, en una frase
@@ -42,7 +42,7 @@ Inmobiliaria con cartera de 60 propiedades en CDMX, Jalisco y Querétaro. Audita
 
 ## Producto 02 — Compliance REPSE (Art. 15 LFT)
 
-**URL:** https://skills-mexico.vercel.app/productos/repse
+**URL:** https://website-eight-lake-11.vercel.app/productos/repse
 **Estado:** Lanzado 2026-06-14. 21 tests pasando. Validado con Playwright MCP usando MANPOWER CORPORATIVO SA DE CV como caso real.
 
 ### El riesgo en una línea
@@ -66,7 +66,7 @@ Inmobiliaria con cartera de 60 propiedades en CDMX, Jalisco y Querétaro. Audita
 
 ## Producto 03 — ISN-as-a-Service (32 estados, una API)
 
-**URL:** https://skills-mexico.vercel.app/productos/isn
+**URL:** https://website-eight-lake-11.vercel.app/productos/isn
 **Estado:** Lanzado 2026-06-14. 24 tests pasando. 32 estados catalogados, 8 con portal validado Playwright (CDMX, Jalisco, Nuevo León, EdoMex, Querétaro, Guanajuato, Yucatán, Baja California).
 
 ### La idea
@@ -238,7 +238,7 @@ for estado in ["CDMX", "JAL", "GTO", "BC"]:
 ## Contacto
 
 - **Email:** elimoralsmendox@gmail.com
-- **Demo de 20 minutos:** https://skills-mexico.vercel.app/#demo
+- **Demo de 20 minutos:** https://website-eight-lake-11.vercel.app/#demo
 - **GitHub:** https://github.com/elimorals/Skills_MX
 - **Ubicación:** Ciudad de México, México
 
