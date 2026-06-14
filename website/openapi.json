@@ -4,21 +4,21 @@
     "title": "Plugins MX — Compliance Infrastructure API",
     "version": "3.59.0",
     "summary": "API pública para automatización de trámites fiscales y municipales mexicanos.",
-    "description": "Endpoints para consultar predial multi-municipio, verificar REPSE (Art. 15 LFT) y calcular ISN en 32 entidades federativas. Construido sobre 46 servidores MCP (Model Context Protocol). Documentación canónica en https://website-eight-lake-11.vercel.app/llms-full.txt",
-    "termsOfService": "https://website-eight-lake-11.vercel.app/sobre",
+    "description": "Endpoints para consultar predial multi-municipio, verificar REPSE (Art. 15 LFT) y calcular ISN en 32 entidades federativas. Construido sobre 46 servidores MCP (Model Context Protocol). Documentación canónica en https://skills-mexico.vercel.app/llms-full.txt",
+    "termsOfService": "https://skills-mexico.vercel.app/sobre",
     "contact": {
       "name": "Elías Rashid Morales Mendoza",
       "email": "elimoralsmendox@gmail.com",
-      "url": "https://website-eight-lake-11.vercel.app/sobre"
+      "url": "https://skills-mexico.vercel.app/sobre"
     },
     "license": { "name": "MIT", "identifier": "MIT" }
   },
   "servers": [
-    { "url": "https://website-eight-lake-11.vercel.app", "description": "Producción" }
+    { "url": "https://skills-mexico.vercel.app", "description": "Producción" }
   ],
   "externalDocs": {
     "description": "Documentación completa para LLMs",
-    "url": "https://website-eight-lake-11.vercel.app/llms-full.txt"
+    "url": "https://skills-mexico.vercel.app/llms-full.txt"
   },
   "tags": [
     { "name": "predial",  "description": "Impuesto Predial Municipal (243 municipios)" },

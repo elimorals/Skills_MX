@@ -10,9 +10,9 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://website-eight-lake-11.vercel.app/openapi.json"
+    "url": "https://skills-mexico.vercel.app/openapi.json"
   },
-  "logo_url": "https://website-eight-lake-11.vercel.app/favicon.svg",
+  "logo_url": "https://skills-mexico.vercel.app/favicon.svg",
   "contact_email": "elimoralsmendox@gmail.com",
-  "legal_info_url": "https://website-eight-lake-11.vercel.app/sobre"
+  "legal_info_url": "https://skills-mexico.vercel.app/sobre"
 }
