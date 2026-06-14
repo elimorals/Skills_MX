@@ -1,0 +1,43 @@
+{
+  "$schema": "https://skills-mexico.vercel.app/openapi.json#/components/schemas/MunicipiosCatalog",
+  "version": "2026-06-14",
+  "license": "CC-BY-4.0",
+  "source": "Plugins MX — discovery automatizado 2026-06-13",
+  "documentation": "https://skills-mexico.vercel.app/productos/predial",
+  "total": 243,
+  "consultables": 163,
+  "directos": 68,
+  "via_sacpi": 95,
+  "cobertura_poblacional": 35200000,
+  "cobertura_poblacional_pct_nacional": 26.7,
+  "validados_playwright_top": [
+    { "estado": "CDMX",      "municipio": "Coyoacán",                 "poblacion": 614447,  "consultable": true, "metodo": "directo", "url_portal": "https://data.consejeria.cdmx.gob.mx" },
+    { "estado": "CDMX",      "municipio": "Benito Juárez",            "poblacion": 434153,  "consultable": true, "metodo": "directo" },
+    { "estado": "CDMX",      "municipio": "Cuauhtémoc",               "poblacion": 545884,  "consultable": true, "metodo": "directo" },
+    { "estado": "JAL",       "municipio": "Guadalajara",              "poblacion": 1385629, "consultable": true, "metodo": "directo", "url_portal": "https://pagos.guadalajara.gob.mx" },
+    { "estado": "JAL",       "municipio": "Zapopan",                  "poblacion": 1257547, "consultable": true, "metodo": "directo" },
+    { "estado": "NL",        "municipio": "Monterrey",                "poblacion": 1142994, "consultable": true, "metodo": "directo" },
+    { "estado": "NL",        "municipio": "San Pedro Garza García",   "poblacion": 132169,  "consultable": true, "metodo": "directo" },
+    { "estado": "PUE",       "municipio": "Puebla",                   "poblacion": 1692181, "consultable": true, "metodo": "captcha" },
+    { "estado": "BC",        "municipio": "Tijuana",                  "poblacion": 1922523, "consultable": true, "metodo": "directo" },
+    { "estado": "YUC",       "municipio": "Mérida",                   "poblacion": 921770,  "consultable": true, "metodo": "directo", "input": "direccion" },
+    { "estado": "QRO",       "municipio": "Querétaro",                "poblacion": 794789,  "consultable": true, "metodo": "directo" },
+    { "estado": "MICH",      "municipio": "Ciudad Hidalgo",           "poblacion": 119435,  "consultable": true, "metodo": "sacpi" }
+  ],
+  "cobertura_por_estado": {
+    "CDMX":  { "alcaldias_catalogadas": 16,  "consultables": 16 },
+    "JAL":   { "municipios_catalogados": 18, "consultables": 12 },
+    "NL":    { "municipios_catalogados": 14, "consultables": 11 },
+    "MEX":   { "municipios_catalogados": 22, "consultables":  8 },
+    "PUE":   { "municipios_catalogados":  8, "consultables":  4 },
+    "BC":    { "municipios_catalogados":  6, "consultables":  5 },
+    "YUC":   { "municipios_catalogados":  9, "consultables":  3 },
+    "QRO":   { "municipios_catalogados":  7, "consultables":  4 },
+    "MICH":  { "municipios_catalogados": 95, "consultables": 95, "metodo": "sacpi" }
+  },
+  "notas": [
+    "163 municipios consultables end-to-end (68 directos + 95 vía SACPI Michoacán).",
+    "Auto-routing transparente al consumidor: el cliente Python decide la ruta óptima.",
+    "Discovery continuo: cron mensual amplía la lista. Próximo objetivo: 300 municipios para 2026-Q4."
+  ]
+}

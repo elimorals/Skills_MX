@@ -1,0 +1,290 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Plugins MX — Compliance Infrastructure API",
+    "version": "3.59.0",
+    "summary": "API pública para automatización de trámites fiscales y municipales mexicanos.",
+    "description": "Endpoints para consultar predial multi-municipio, verificar REPSE (Art. 15 LFT) y calcular ISN en 32 entidades federativas. Construido sobre 46 servidores MCP (Model Context Protocol). Documentación canónica en https://skills-mexico.vercel.app/llms-full.txt",
+    "termsOfService": "https://skills-mexico.vercel.app/sobre",
+    "contact": {
+      "name": "Elías Rashid Morales Mendoza",
+      "email": "elimoralsmendox@gmail.com",
+      "url": "https://skills-mexico.vercel.app/sobre"
+    },
+    "license": { "name": "MIT", "identifier": "MIT" }
+  },
+  "servers": [
+    { "url": "https://skills-mexico.vercel.app", "description": "Producción" }
+  ],
+  "externalDocs": {
+    "description": "Documentación completa para LLMs",
+    "url": "https://skills-mexico.vercel.app/llms-full.txt"
+  },
+  "tags": [
+    { "name": "predial",  "description": "Impuesto Predial Municipal (243 municipios)" },
+    { "name": "repse",    "description": "REPSE — Art. 15 LFT (compliance laboral)" },
+    { "name": "isn",      "description": "ISN — Impuesto sobre Nómina (32 estados)" },
+    { "name": "catalogo", "description": "Catálogos públicos (open data)" }
+  ],
+  "paths": {
+    "/api/municipios.json": {
+      "get": {
+        "tags": ["catalogo"],
+        "summary": "Catálogo público de municipios con cobertura predial",
+        "operationId": "listMunicipios",
+        "responses": {
+          "200": {
+            "description": "Array de municipios catalogados",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/MunicipiosCatalog" } } }
+          }
+        }
+      }
+    },
+    "/api/isn-tasas.json": {
+      "get": {
+        "tags": ["catalogo", "isn"],
+        "summary": "Tabla canónica de tasas ISN 2026 por entidad federativa",
+        "operationId": "listIsnRates",
+        "responses": {
+          "200": {
+            "description": "Tabla de 32 entidades con tasa, vencimiento y portal",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/IsnRatesTable" } } }
+          }
+        }
+      }
+    },
+    "/api/repse-stats.json": {
+      "get": {
+        "tags": ["catalogo", "repse"],
+        "summary": "Estadísticas agregadas del registro REPSE",
+        "operationId": "getRepseStats",
+        "responses": {
+          "200": {
+            "description": "Stats agregados",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/RepseStats" } } }
+          }
+        }
+      }
+    },
+    "/predial/consultar": {
+      "post": {
+        "tags": ["predial"],
+        "summary": "Consulta el adeudo predial de una propiedad",
+        "operationId": "predialConsultar",
+        "security": [{ "BearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["estado", "municipio", "cuenta_predial"],
+                "properties": {
+                  "estado": { "type": "string", "example": "CDMX" },
+                  "municipio": { "type": "string", "example": "Coyoacán" },
+                  "cuenta_predial": { "type": "string", "example": "123-456-789" },
+                  "tipo": { "type": "string", "enum": ["cuenta", "direccion"], "default": "cuenta" },
+                  "direccion": { "type": "string", "description": "Solo si tipo=direccion (Mérida)" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Adeudo consultado", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/PredialResult" } } } },
+          "404": { "description": "Cuenta no encontrada" }
+        }
+      }
+    },
+    "/repse/verificar": {
+      "post": {
+        "tags": ["repse"],
+        "summary": "Verifica compliance REPSE de un proveedor",
+        "description": "Devuelve decisión binaria puede_contratar_servicios_especializados: bool. Tool de alto nivel para decisión de PO.",
+        "operationId": "repseVerificarProveedor",
+        "security": [{ "BearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["razon_social"],
+                "properties": {
+                  "razon_social": { "type": "string", "example": "MANPOWER CORPORATIVO SA DE CV" },
+                  "numero_registro": { "type": "string", "description": "Si se conoce, evita búsqueda fuzzy" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Verificación completada", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/RepseVerificacion" } } } }
+        }
+      }
+    },
+    "/isn/calcular": {
+      "post": {
+        "tags": ["isn"],
+        "summary": "Calcula ISN para una nómina gravable en un estado",
+        "description": "Offline-first: no requiere credenciales. Útil para asesoría fiscal multi-estado.",
+        "operationId": "isnCalcular",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["nomina_gravable", "estado"],
+                "properties": {
+                  "nomina_gravable": { "type": "number", "format": "float", "example": 500000 },
+                  "estado": { "type": "string", "example": "CDMX", "description": "Código de 2-4 caracteres o nombre completo" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Cálculo completado", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/IsnCalculo" } } } }
+        }
+      }
+    },
+    "/isn/generar-linea-captura": {
+      "post": {
+        "tags": ["isn"],
+        "summary": "Genera línea de captura ISN para pago referenciado",
+        "operationId": "isnGenerarLineaCaptura",
+        "security": [{ "BearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["estado", "periodo", "rfc", "nomina_gravable"],
+                "properties": {
+                  "estado": { "type": "string", "example": "CDMX" },
+                  "periodo": { "type": "string", "example": "2026-05", "description": "ISO YYYY-MM" },
+                  "rfc": { "type": "string", "example": "ABC120101AB1" },
+                  "nomina_gravable": { "type": "number", "example": 500000 }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Línea de captura generada", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/IsnLineaCaptura" } } } }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": { "type": "http", "scheme": "bearer", "bearerFormat": "JWT" }
+    },
+    "schemas": {
+      "PredialResult": {
+        "type": "object",
+        "properties": {
+          "estado": { "type": "string" },
+          "municipio": { "type": "string" },
+          "cuenta_predial": { "type": "string" },
+          "adeudo_total": { "type": "number" },
+          "moneda": { "type": "string", "example": "MXN" },
+          "vencimiento": { "type": "string", "format": "date" },
+          "descuento_pronto_pago_pct": { "type": "number" },
+          "estatus": { "type": "string", "enum": ["al-dia", "vence-pronto", "vencido"] },
+          "fuente": { "type": "string", "enum": ["directo", "sacpi", "manual"] }
+        }
+      },
+      "RepseVerificacion": {
+        "type": "object",
+        "properties": {
+          "razon_social": { "type": "string" },
+          "numero_registro": { "type": "string" },
+          "puede_contratar_servicios_especializados": { "type": "boolean" },
+          "detalle": {
+            "type": "object",
+            "properties": {
+              "entidad": { "type": "string" },
+              "folio_aviso": { "type": "string" },
+              "fecha_aviso": { "type": "string", "format": "date" },
+              "vigencia": { "type": "string", "format": "date" },
+              "servicios_autorizados": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "advertencias": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "IsnCalculo": {
+        "type": "object",
+        "properties": {
+          "estado": { "type": "string" },
+          "tasa_pct": { "type": "number", "example": 3.0 },
+          "nomina_gravable": { "type": "number" },
+          "isn_a_pagar": { "type": "number" },
+          "vence_dia": { "type": "integer", "example": 17 }
+        }
+      },
+      "IsnLineaCaptura": {
+        "type": "object",
+        "properties": {
+          "estado": { "type": "string" },
+          "periodo": { "type": "string" },
+          "linea_captura": { "type": "string" },
+          "monto_a_pagar": { "type": "number" },
+          "vencimiento": { "type": "string", "format": "date" },
+          "url_pdf": { "type": "string", "format": "uri" }
+        }
+      },
+      "MunicipiosCatalog": {
+        "type": "object",
+        "properties": {
+          "version": { "type": "string" },
+          "total": { "type": "integer" },
+          "consultables": { "type": "integer" },
+          "municipios": { "type": "array", "items": { "$ref": "#/components/schemas/Municipio" } }
+        }
+      },
+      "Municipio": {
+        "type": "object",
+        "properties": {
+          "estado": { "type": "string" },
+          "municipio": { "type": "string" },
+          "poblacion": { "type": "integer" },
+          "consultable": { "type": "boolean" },
+          "metodo": { "type": "string", "enum": ["directo", "sacpi", "captcha", "no-disponible"] },
+          "url_portal": { "type": "string", "format": "uri" }
+        }
+      },
+      "IsnRatesTable": {
+        "type": "object",
+        "properties": {
+          "version": { "type": "string" },
+          "vigencia": { "type": "string", "example": "2026" },
+          "estados": { "type": "array", "items": { "$ref": "#/components/schemas/IsnRate" } }
+        }
+      },
+      "IsnRate": {
+        "type": "object",
+        "properties": {
+          "codigo": { "type": "string" },
+          "estado": { "type": "string" },
+          "tasa_pct": { "type": "number" },
+          "vence_dia": { "type": "integer" },
+          "portal": { "type": "string", "format": "uri" },
+          "validado_playwright": { "type": "boolean" }
+        }
+      },
+      "RepseStats": {
+        "type": "object",
+        "properties": {
+          "empresas_universo": { "type": "integer", "example": 4000000 },
+          "registros_activos_aprox": { "type": "integer" },
+          "vigencia_dias": { "type": "integer", "example": 1095 },
+          "base_legal": { "type": "string", "example": "Art. 15 LFT — Reforma 2021" }
+        }
+      }
+    }
+  }
+}

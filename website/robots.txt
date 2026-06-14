@@ -1,0 +1,101 @@
+# Plugins MX — robots.txt
+# Infraestructura de compliance fiscal y municipal para México
+# Última actualización: 2026-06-14
+
+# === Buscadores tradicionales ===
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# === Crawlers de motores generativos / LLMs (GEO) ===
+# Permitimos explícitamente para que nuestro contenido pueda ser citado.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+# === Default para el resto ===
+User-agent: *
+Allow: /
+Disallow: /.vercel/
+
+# === Discovery ===
+Sitemap: https://skills-mexico.vercel.app/sitemap.xml
+
+# Archivos auxiliares para LLMs y agentes
+# /llms.txt          — Mapa del sitio en formato llmstxt.org
+# /llms-full.txt     — Contenido completo en texto plano
+# /.well-known/agents.json   — Manifest A2A
+# /.well-known/ai-plugin.json — Manifest OpenAI plugin
+# /mcp-manifest.json — Servidores MCP públicos
+# /openapi.json      — Especificación de la API

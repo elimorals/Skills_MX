@@ -5,12 +5,125 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cartera Predial Multi-municipio · Plugins MX</title>
 <meta name="description" content="Consulta predial en paralelo de N propiedades en 243 municipios mexicanos. Dashboard XLSX con vencimientos, descuentos y ranking. Para arrendadores, despachos e inmobiliarias.">
+<meta name="author" content="Elías Rashid Morales Mendoza">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<link rel="canonical" href="https://skills-mexico.vercel.app/productos/predial">
+<link rel="alternate" hreflang="es-MX" href="https://skills-mexico.vercel.app/productos/predial">
+
+<meta property="og:type" content="product">
+<meta property="og:site_name" content="Plugins MX">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="https://skills-mexico.vercel.app/productos/predial">
+<meta property="og:title" content="Cartera Predial Multi-municipio · 243 municipios · Plugins MX">
+<meta property="og:description" content="Consulta predial paralela en 243 municipios mexicanos. Excel con vencimientos, descuentos y ranking. 163 muns consultables hoy.">
+<meta property="og:image" content="https://skills-mexico.vercel.app/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cartera Predial Multi-municipio · Plugins MX">
+<meta name="twitter:description" content="Consulta predial en paralelo en 243 municipios. Excel listo en minutos.">
+<meta name="twitter:image" content="https://skills-mexico.vercel.app/og-image.svg">
+
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,200..900,0..100,0..1;1,9..144,200..900,0..100,0..1&family=Geist:wght@100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="producto.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio",    "item": "https://skills-mexico.vercel.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Productos", "item": "https://skills-mexico.vercel.app/#productos" },
+        { "@type": "ListItem", "position": 3, "name": "Cartera Predial Multi-municipio" }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://skills-mexico.vercel.app/productos/predial#app",
+      "name": "Cartera Predial Multi-municipio",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Tax Compliance",
+      "operatingSystem": "Cross-platform (Python 3.11+, MCP, stdio/streamable-http)",
+      "url": "https://skills-mexico.vercel.app/productos/predial",
+      "description": "Servidor MCP que consulta en paralelo el adeudo del impuesto predial municipal de N propiedades en 243 municipios mexicanos catalogados (163 consultables end-to-end). Devuelve dashboard Excel con vencimientos, descuentos por pronto pago y ranking de prioridad.",
+      "softwareVersion": "3.59.0",
+      "datePublished": "2026-06-13",
+      "dateModified": "2026-06-14",
+      "inLanguage": "es-MX",
+      "featureList": [
+        "Auto-routing entre 243 municipios catalogados",
+        "Integración SACPI Michoacán (95 municipios)",
+        "Excel XLSX con totales y semáforo de vencimientos",
+        "Cron mensual de health-check automático",
+        "Cobertura poblacional: 35.2M habitantes (26.7% nacional)"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "MXN",
+        "price": "0",
+        "availability": "https://schema.org/InStock",
+        "url": "https://skills-mexico.vercel.app/#demo",
+        "description": "Demo gratuita de 20 minutos. Pricing por contrato anual."
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Plugins MX",
+        "url": "https://skills-mexico.vercel.app/",
+        "email": "elimoralsmendox@gmail.com"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "1",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es el impuesto predial en México?",
+          "acceptedAnswer": { "@type": "Answer", "text": "El impuesto predial es una contribución municipal anual que grava la propiedad inmobiliaria en México. Lo recauda cada ayuntamiento aplicando una tasa al valor catastral del inmueble. Casi todos los municipios ofrecen descuentos por pronto pago (entre 5% y 15%) si se paga durante enero, febrero o marzo." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿En cuántos municipios mexicanos puedo consultar el predial con Plugins MX?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Plugins MX tiene 243 municipios catalogados. De ellos, 163 son consultables end-to-end (68 directos vía portal y 95 a través de SACPI Michoacán). La cobertura poblacional alcanza 35.2 millones de habitantes, equivalente al 26.7% de la población nacional mexicana." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se factura el servicio de consulta predial multi-municipio?",
+          "acceptedAnswer": { "@type": "Answer", "text": "El servicio está pensado para arrendadores con más de 10 propiedades, despachos contables que manejan cartera de clientes propietarios e inmobiliarias institucionales. El pricing se acuerda en demo (modelo anual). Demo de 20 minutos sin compromiso en https://skills-mexico.vercel.app/#demo" }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Funciona con Claude Code, Cursor o Windsurf?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sí. El producto se distribuye como servidor MCP (Model Context Protocol) en Python con FastMCP. Es invocable directamente desde cualquier cliente MCP compatible: Claude Code, Cursor, Windsurf. También está disponible como librería Python pura (predial_mx_client) para integrar en pipelines existentes sin un LLM." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa cuando un municipio no tiene portal en línea?",
+          "acceptedAnswer": { "@type": "Answer", "text": "El catálogo incluye municipios catalogados pero todavía no consultables. Para ellos, el sistema devuelve un resultado tipado con metodo: 'no-disponible' y enlaza al portal manual. El discovery automatizado mensual amplía la cobertura — el objetivo es llegar a 300 municipios consultables para Q4 2026." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Los datos están protegidos? ¿Quién los puede ver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas prediales son números no sensibles por sí mismos (no exponen titularidad). Aún así, Plugins MX hashea los identificadores en la bitácora JSONL de auditoría y nunca persiste el resultado de la consulta. El sitio cumple con avisos de privacidad simplificados conforme a LFPDPPP." }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -235,6 +348,47 @@ wb<span class="c-pn">.</span>save<span class="c-pn">(</span><span class="c-st">"
 <span class="c-fn">print</span><span class="c-pn">(</span><span class="c-st">f"Total cartera: $</span><span class="c-pn">{</span><span class="c-fn">sum</span><span class="c-pn">(</span>r<span class="c-pn">.</span>adeudo <span class="c-kw">for</span> r <span class="c-kw">in</span> resultados<span class="c-pn">)</span><span class="c-op">:,.2f</span><span class="c-pn">}</span><span class="c-st"> MXN"</span><span class="c-pn">)</span>
 <span class="c-cm"># Total cartera: $27,912.50 MXN</span></pre>
   </div>
+</section>
+
+<!-- FAQ — Answer-first blocks para citación GEO -->
+<section class="section section-faq" id="faq">
+  <div class="section-head">
+    <span class="section-no">05</span>
+    <h2 class="section-h">Preguntas <em>frecuentes</em>.</h2>
+    <p class="section-desc">Bloques optimizados para citación por LLMs (ChatGPT, Claude, Perplexity).</p>
+  </div>
+
+  <dl class="faq-list">
+    <div class="faq-item">
+      <dt>¿Qué es el impuesto predial en México?</dt>
+      <dd>El <strong>impuesto predial</strong> es una contribución municipal anual que grava la propiedad inmobiliaria. Lo recauda cada ayuntamiento aplicando una tasa al valor catastral del inmueble. Casi todos los municipios ofrecen <strong>descuentos por pronto pago</strong> (5%–15%) si se paga durante enero, febrero o marzo.</dd>
+    </div>
+
+    <div class="faq-item">
+      <dt>¿En cuántos municipios mexicanos puedo consultar predial con Plugins MX?</dt>
+      <dd>Plugins MX tiene <strong>243 municipios catalogados</strong>. De ellos, <strong>163 son consultables end-to-end</strong> (68 directos vía portal + 95 a través de SACPI Michoacán). Cobertura poblacional: <strong>35.2M habitantes (26.7% nacional)</strong>.</dd>
+    </div>
+
+    <div class="faq-item">
+      <dt>¿Cómo se factura?</dt>
+      <dd>Pensado para <strong>arrendadores con &gt;10 propiedades</strong>, <strong>despachos contables</strong> que manejan cartera y <strong>inmobiliarias institucionales</strong>. Pricing por contrato anual, acordado en la demo. Demo de 20 minutos sin compromiso.</dd>
+    </div>
+
+    <div class="faq-item">
+      <dt>¿Funciona con Claude Code, Cursor o Windsurf?</dt>
+      <dd>Sí. Se distribuye como <strong>servidor MCP</strong> en Python con FastMCP. Invocable directo desde cualquier cliente MCP compatible. También disponible como <span class="mono">predial_mx_client</span> (librería Python pura) para integrar en pipelines sin LLM.</dd>
+    </div>
+
+    <div class="faq-item">
+      <dt>¿Qué pasa cuando un municipio no tiene portal en línea?</dt>
+      <dd>El catálogo distingue municipios catalogados de los consultables. Para los no consultables, el sistema devuelve <span class="mono">metodo: "no-disponible"</span> y enlaza al portal manual. Discovery mensual amplía cobertura — objetivo Q4 2026: <strong>300 muns</strong>.</dd>
+    </div>
+
+    <div class="faq-item">
+      <dt>¿Los datos están protegidos?</dt>
+      <dd>Las cuentas prediales no son sensibles por sí mismas (no exponen titularidad). Aun así, hasheamos los identificadores en la bitácora JSONL y <strong>nunca persistimos el resultado</strong> de la consulta. Cumplimos con LFPDPPP.</dd>
+    </div>
+  </dl>
 </section>
 
 <!-- CTA FINAL -->

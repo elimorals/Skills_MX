@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F4EEE2"/>
+      <stop offset="100%" stop-color="#EDE3CE"/>
+    </linearGradient>
+    <pattern id="grain" patternUnits="userSpaceOnUse" width="3" height="3">
+      <rect width="3" height="3" fill="#F4EEE2"/>
+      <circle cx="1.5" cy="1.5" r="0.4" fill="#161313" opacity="0.04"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grain)"/>
+
+  <!-- Top strip estilo periódico -->
+  <rect x="0" y="0" width="1200" height="48" fill="#161313"/>
+  <text x="60" y="32" font-family="JetBrains Mono, monospace" font-size="14" fill="#F4EEE2" letter-spacing="2">PLUGINS·MX  ·  VOL. III  ·  Nº 56-59  ·  JUNIO 2026  ·  CDMX</text>
+
+  <!-- Brand -->
+  <text x="60" y="140" font-family="Fraunces, serif" font-weight="900" font-size="58" fill="#161313" letter-spacing="-1">P<tspan fill="#C2410C">·</tspan>MX</text>
+  <text x="60" y="170" font-family="Geist, sans-serif" font-size="16" fill="#161313" opacity="0.6" letter-spacing="3">COMPLIANCE INFRASTRUCTURE</text>
+
+  <!-- Hero -->
+  <text x="60" y="290" font-family="Fraunces, serif" font-style="italic" font-weight="300" font-size="74" fill="#161313">La infraestructura</text>
+  <text x="60" y="370" font-family="Fraunces, serif" font-weight="700" font-size="74" fill="#161313">de cumplimiento</text>
+  <text x="60" y="450" font-family="Fraunces, serif" font-weight="700" font-size="74" fill="#161313">fiscal para <tspan fill="#C2410C">México</tspan>.</text>
+
+  <!-- Stats row -->
+  <g transform="translate(60, 510)">
+    <text x="0" y="0" font-family="Fraunces, serif" font-weight="900" font-size="56" fill="#161313">46</text>
+    <text x="0" y="32" font-family="Geist, sans-serif" font-size="13" fill="#161313" opacity="0.6" letter-spacing="1">MCPs</text>
+  </g>
+  <g transform="translate(220, 510)">
+    <text x="0" y="0" font-family="Fraunces, serif" font-weight="900" font-size="56" fill="#161313">32</text>
+    <text x="0" y="32" font-family="Geist, sans-serif" font-size="13" fill="#161313" opacity="0.6" letter-spacing="1">ESTADOS · ISN</text>
+  </g>
+  <g transform="translate(420, 510)">
+    <text x="0" y="0" font-family="Fraunces, serif" font-weight="900" font-size="56" fill="#161313">243</text>
+    <text x="0" y="32" font-family="Geist, sans-serif" font-size="13" fill="#161313" opacity="0.6" letter-spacing="1">MUNICIPIOS · PREDIAL</text>
+  </g>
+  <g transform="translate(680, 510)">
+    <text x="0" y="0" font-family="Fraunces, serif" font-weight="900" font-size="56" fill="#161313">4M</text>
+    <text x="0" y="32" font-family="Geist, sans-serif" font-size="13" fill="#161313" opacity="0.6" letter-spacing="1">EMPRESAS · COBERTURA</text>
+  </g>
+
+  <!-- Stamp lateral -->
+  <g transform="translate(1000, 200) rotate(-8)">
+    <rect x="0" y="0" width="170" height="170" fill="none" stroke="#C2410C" stroke-width="3" rx="6"/>
+    <text x="85" y="50" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#C2410C" letter-spacing="2">VOL. III</text>
+    <text x="85" y="98" text-anchor="middle" font-family="Fraunces, serif" font-weight="900" font-size="34" fill="#C2410C">PROD</text>
+    <text x="85" y="130" text-anchor="middle" font-family="Fraunces, serif" font-weight="900" font-size="34" fill="#C2410C">READY</text>
+    <text x="85" y="160" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#C2410C" letter-spacing="1">2026 · MX</text>
+  </g>
+
+  <!-- Bottom divider -->
+  <rect x="60" y="585" width="1080" height="1" fill="#161313" opacity="0.2"/>
+  <text x="60" y="610" font-family="JetBrains Mono, monospace" font-size="11" fill="#161313" opacity="0.5" letter-spacing="1">skills-mexico.vercel.app  ·  cartera predial · compliance repse · isn-as-a-service</text>
+</svg>
