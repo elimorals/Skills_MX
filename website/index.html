@@ -677,24 +677,34 @@ total <span class="c-op">=</span> <span class="c-fn">sum</span><span class="c-pn
         <li>→ Sin slides — todo se corre en vivo</li>
         <li>→ Te llevas un PDF con stack + costos estimados</li>
       </ul>
+
+      <div class="demo-direct">
+        <span class="demo-direct-or">o directo</span>
+        <a class="demo-direct-wa" href="https://wa.me/522711428381?text=Hola%20El%C3%ADas%2C%20vengo%20del%20sitio%20Plugins%20MX%20y%20me%20interesa%20agendar%20una%20demo." target="_blank" rel="noopener">
+          WhatsApp · +52 271 142 8381 →
+        </a>
+        <a class="demo-direct-mail" href="mailto:elimoralsmendox@gmail.com?subject=Demo%20Plugins%20MX">
+          elimoralsmendox@gmail.com
+        </a>
+      </div>
     </div>
 
-    <form class="demo-form" onsubmit="handleDemo(event)">
+    <form class="demo-form" onsubmit="handleDemo(event)" novalidate>
       <label>
         <span>Nombre completo</span>
-        <input type="text" name="nombre" required placeholder="Ej. María Hernández">
+        <input type="text" name="nombre" required maxlength="200" autocomplete="name" placeholder="Ej. María Hernández">
       </label>
       <label>
         <span>Empresa / despacho</span>
-        <input type="text" name="empresa" required placeholder="Ej. Hernández y Asociados, S.C.">
+        <input type="text" name="empresa" required maxlength="200" autocomplete="organization" placeholder="Ej. Hernández y Asociados, S.C.">
       </label>
       <label>
         <span>Email corporativo</span>
-        <input type="email" name="email" required placeholder="maria@hernandez-cp.mx">
+        <input type="email" name="email" required maxlength="200" autocomplete="email" placeholder="maria@hernandez-cp.mx">
       </label>
       <label>
         <span>WhatsApp (opcional)</span>
-        <input type="tel" name="tel" placeholder="+52 55 1234 5678">
+        <input type="tel" name="tel" maxlength="40" autocomplete="tel" placeholder="+52 55 1234 5678">
       </label>
       <label>
         <span>¿Qué te interesa más?</span>
@@ -707,6 +717,15 @@ total <span class="c-op">=</span> <span class="c-fn">sum</span><span class="c-pn
           <option>Otro / explorar</option>
         </select>
       </label>
+
+      <!-- Honeypot anti-spam: invisible para humanos, llenado por bots -->
+      <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+        <label>
+          Website (no llenar)
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
+        </label>
+      </div>
+
       <button type="submit" class="btn btn-primary btn-full">
         <span>Agendar mi demo →</span>
       </button>
