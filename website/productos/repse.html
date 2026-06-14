@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compliance REPSE · Art. 15 LFT · Plugins MX</title>
+<meta name="description" content="Verifica REPSE de proveedores en segundos. Sin captcha. Evita responsabilidad solidaria laboral y fiscal del Art. 15 LFT. Universo: 4M empresas formales MX.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,200..900,0..100,0..1;1,9..144,200..900,0..100,0..1&family=Geist:wght@100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="producto.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<div class="strip-top">
+  <div class="strip-inner">
+    <span class="strip-id">PLUGINS MX</span>
+    <span class="strip-dot">·</span>
+    <span class="strip-vol">PRODUCTO 02 · COMPLIANCE REPSE</span>
+    <span class="strip-dot strip-dot-end">·</span>
+    <span class="strip-live"><span class="pulse"></span> 4M empresas afectadas · Sin captcha</span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-glyph">P<span class="brand-mx">·</span>MX</span>
+      <span class="brand-sub">Compliance Infrastructure</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#productos">← Volver</a></li>
+      <li><a href="predial.html">Predial</a></li>
+      <li><a href="isn.html">ISN</a></li>
+      <li><a href="../index.html#demo" class="nav-cta">Agendar demo →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="prod-hero prod-hero-repse">
+  <div class="prod-hero-inner">
+    <div class="prod-breadcrumb">
+      <a href="../index.html">Productos</a>
+      <span>›</span>
+      <span>Compliance REPSE</span>
+    </div>
+
+    <span class="prod-cat">[02] Cumplimiento laboral · Art. 15 LFT</span>
+
+    <h1 class="prod-hero-h">
+      <span class="line">Compliance</span>
+      <span class="line"><em>REPSE Art. 15 LFT.</em></span>
+    </h1>
+
+    <p class="prod-hero-lede">
+      Si contratas proveedores de servicios especializados sin REPSE vigente, te conviertes en <strong>responsable solidario laboral y fiscal</strong> de sus trabajadores. Verifica en segundos. Sin captcha. Decisión binaria: <span class="mono">puede_contratar: bool</span>.
+    </p>
+
+    <div class="prod-hero-meta">
+      <span><strong>Lanzamiento:</strong> 2026-06-14</span>
+      <span><strong>Estado:</strong> Producción</span>
+      <span><strong>Tests:</strong> 21 pasando</span>
+      <span><strong>Validado:</strong> Playwright MCP en MANPOWER</span>
+    </div>
+  </div>
+
+  <div class="prod-hero-visual repse-visual">
+    <div class="compliance-card">
+      <div class="comp-head">
+        <span class="comp-status comp-ok">● Vigente</span>
+        <span class="comp-folio">FOLIO 2334</span>
+      </div>
+      <h4>MANPOWER CORPORATIVO SA DE CV</h4>
+      <dl>
+        <dt>Núm. Registro</dt><dd>669356</dd>
+        <dt>Aviso</dt><dd>AR6169 · 2024-06-12</dd>
+        <dt>Vigencia</dt><dd>2027-06-12</dd>
+        <dt>Entidad</dt><dd>CDMX · Benito Juárez</dd>
+      </dl>
+      <div class="comp-verdict">
+        ✓ Puede prestar servicios especializados
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- FRASE -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-no">01</span>
+    <h2 class="section-h">El riesgo, en <em>una sola línea</em>.</h2>
+  </div>
+
+  <div class="frase-grande">
+    "Sin REPSE vigente del proveedor, <em>el contratante</em> paga finiquitos, IMSS, INFONAVIT y créditos fiscales de los trabajadores ajenos."
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-no">02</span>
+    <h2 class="section-h">Tools <em>expuestas</em>.</h2>
+    <p class="section-desc">3 tools MCP. La principal es <span class="mono">repse_verificar_proveedor</span> — empaqueta toda la decisión legal en una sola llamada.</p>
+  </div>
+
+  <div class="tools-list">
+    <article class="tool">
+      <span class="tool-no">→</span>
+      <div>
+        <h3><span class="mono mono-strong">repse_consultar_por_razon_social</span></h3>
+        <p>Búsqueda fuzzy por nombre o razón social. Devuelve coincidencias con número de registro.</p>
+        <code class="tool-sig">repse_consultar_por_razon_social(razon_social, [limite])</code>
+      </div>
+    </article>
+
+    <article class="tool">
+      <span class="tool-no">→</span>
+      <div>
+        <h3><span class="mono mono-strong">repse_consultar_por_numero_registro</span></h3>
+        <p>Detalle completo: razón social, entidad, AR, fecha aviso, vigencia, servicios autorizados.</p>
+        <code class="tool-sig">repse_consultar_por_numero_registro(numero_registro)</code>
+      </div>
+    </article>
+
+    <article class="tool tool-hero">
+      <span class="tool-no">★</span>
+      <div>
+        <h3><span class="mono mono-strong">repse_verificar_proveedor</span></h3>
+        <p>Tool de alto nivel: pasa razón social, recibe <span class="mono">puede_contratar_servicios_especializados: bool</span> + advertencias legales. Compliance binario.</p>
+        <code class="tool-sig">repse_verificar_proveedor(razon_social, [numero_registro])</code>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- CONTEXTO LEGAL -->
+<section class="section section-mcps">
+  <div class="section-head">
+    <span class="section-no">03</span>
+    <h2 class="section-h">Contexto <em>legal</em>.</h2>
+  </div>
+
+  <div class="legal-grid">
+    <article class="legal-item">
+      <h4>Reforma 2021 al Art. 15 LFT</h4>
+      <p>Establece que toda persona física o moral que provea servicios especializados u obras especializadas mediante subcontratación debe contar con registro ante STPS (REPSE).</p>
+    </article>
+    <article class="legal-item">
+      <h4>Responsabilidad solidaria</h4>
+      <p>El contratante responde solidariamente por las obligaciones laborales, fiscales y de seguridad social del proveedor cuyo REPSE no esté vigente.</p>
+    </article>
+    <article class="legal-item">
+      <h4>Vigencia del registro</h4>
+      <p>3 años desde la fecha del aviso de registro (AR). Después debe renovarse. Es responsabilidad del contratante verificar antes de cada contrato.</p>
+    </article>
+    <article class="legal-item">
+      <h4>Universo afectado</h4>
+      <p><strong>~4 millones de empresas formales</strong> mexicanas que contratan IT, limpieza, seguridad, contabilidad, marketing, nómina, etc.</p>
+    </article>
+  </div>
+</section>
+
+<!-- CÓDIGO -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-no">04</span>
+    <h2 class="section-h">Cómo se ve el <em>código</em>.</h2>
+  </div>
+
+  <div class="code-frame">
+    <div class="code-head">
+      <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
+      <span class="code-file">validar_proveedor.py</span>
+    </div>
+    <pre class="code"><span class="c-kw">from</span> mp_repse_stps <span class="c-kw">import</span> RepseStpsClient
+
+cliente <span class="c-op">=</span> RepseStpsClient<span class="c-pn">()</span>
+
+<span class="c-cm"># Validación binaria antes de firmar PO</span>
+resultado <span class="c-op">=</span> cliente<span class="c-pn">.</span>verificar_proveedor<span class="c-pn">(</span>
+    razon_social<span class="c-op">=</span><span class="c-st">"MANPOWER CORPORATIVO SA DE CV"</span>
+<span class="c-pn">)</span>
+
+<span class="c-kw">if</span> resultado<span class="c-pn">[</span><span class="c-st">"puede_contratar_servicios_especializados"</span><span class="c-pn">]</span><span class="c-op">:</span>
+    <span class="c-fn">print</span><span class="c-pn">(</span><span class="c-st">f"✓ Vigente hasta </span><span class="c-pn">{</span>resultado<span class="c-pn">[</span><span class="c-st">'detalle'</span><span class="c-pn">][</span><span class="c-st">'vigencia'</span><span class="c-pn">]</span><span class="c-pn">}</span><span class="c-st">"</span><span class="c-pn">)</span>
+    <span class="c-cm"># ✓ Vigente hasta 2027-06-12</span>
+    firmar_po<span class="c-pn">(</span>proveedor<span class="c-pn">)</span>
+<span class="c-kw">else</span><span class="c-op">:</span>
+    <span class="c-kw">for</span> advertencia <span class="c-kw">in</span> resultado<span class="c-pn">[</span><span class="c-st">"advertencias"</span><span class="c-pn">]</span><span class="c-op">:</span>
+        <span class="c-fn">print</span><span class="c-pn">(</span><span class="c-st">f"⚠ </span><span class="c-pn">{</span>advertencia<span class="c-pn">}</span><span class="c-st">"</span><span class="c-pn">)</span>
+    bloquear_contratacion<span class="c-pn">()</span>
+    <span class="c-cm"># ⚠ Registro REPSE NO vigente (venció 2024-03-15).</span>
+    <span class="c-cm">#   El proveedor debe renovar antes de prestar servicios.</span></pre>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section">
+  <div class="cta-final cta-repse">
+    <h2 class="cta-h">¿Tu empresa contrata <em>más de 10 proveedores</em> especializados?</h2>
+    <p>Demo de 20 minutos. Te muestro la validación en vivo de proveedores reales de tu cartera + cron mensual de revalidación automática.</p>
+    <a href="../index.html#demo" class="btn btn-primary">
+      <span>Agendar mi demo</span>
+      <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 7h12m0 0L7 1m6 6L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col footer-brand">
+      <span class="brand-glyph footer-glyph">P<span class="brand-mx">·</span>MX</span>
+      <p>Infraestructura de compliance fiscal y municipal para México.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Productos</h4>
+      <a href="predial.html">Cartera Predial</a>
+      <a href="repse.html">Compliance REPSE</a>
+      <a href="isn.html">ISN-as-a-Service</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sitio</h4>
+      <a href="../index.html">Inicio</a>
+      <a href="../index.html#mcps">MCPs</a>
+      <a href="../index.html#verticales">Verticales</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="mailto:elias@cipreholding.com">elias@cipreholding.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Plugins MX · CDMX</span>
+    <span class="footer-version">Producto 02 · v3.59</span>
+  </div>
+</footer>
+
+<script src="../scripts.js"></script>
+</body>
+</html>

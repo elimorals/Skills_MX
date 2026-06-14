@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISN-as-a-Service · 32 estados · Plugins MX</title>
+<meta name="description" content="Calcula ISN, genera línea de captura y descarga declaración en cualquiera de las 32 entidades mexicanas con una sola API. Universo: 4M empresas con nómina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,200..900,0..100,0..1;1,9..144,200..900,0..100,0..1&family=Geist:wght@100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="producto.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<div class="strip-top">
+  <div class="strip-inner">
+    <span class="strip-id">PLUGINS MX</span>
+    <span class="strip-dot">·</span>
+    <span class="strip-vol">PRODUCTO 03 · ISN-AS-A-SERVICE</span>
+    <span class="strip-dot strip-dot-end">·</span>
+    <span class="strip-live"><span class="pulse"></span> 32 estados · tasas 1.8% — 3.0%</span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-glyph">P<span class="brand-mx">·</span>MX</span>
+      <span class="brand-sub">Compliance Infrastructure</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#productos">← Volver</a></li>
+      <li><a href="predial.html">Predial</a></li>
+      <li><a href="repse.html">REPSE</a></li>
+      <li><a href="../index.html#demo" class="nav-cta">Agendar demo →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="prod-hero prod-hero-isn">
+  <div class="prod-hero-inner">
+    <div class="prod-breadcrumb">
+      <a href="../index.html">Productos</a>
+      <span>›</span>
+      <span>ISN-as-a-Service</span>
+    </div>
+
+    <span class="prod-cat">[03] Fiscal estatal · Nómina</span>
+
+    <h1 class="prod-hero-h">
+      <span class="line">ISN-as-a-Service.</span>
+      <span class="line"><em>32 estados, una API.</em></span>
+    </h1>
+
+    <p class="prod-hero-lede">
+      El Impuesto sobre Nómina es obligación de <strong>toda empresa formal con un solo trabajador</strong>. 32 portales distintos, tasas de 1.8% a 3.0%, vencimientos día 10–17. Una sola interfaz unifica las 32 entidades.
+    </p>
+
+    <div class="prod-hero-meta">
+      <span><strong>Lanzamiento:</strong> 2026-06-14</span>
+      <span><strong>Estados:</strong> 32 catalogados / 8 validados</span>
+      <span><strong>Tests:</strong> 24 pasando</span>
+      <span><strong>Universo:</strong> ~4M empresas</span>
+    </div>
+  </div>
+
+  <div class="prod-hero-visual isn-visual">
+    <table class="tasas-table">
+      <thead>
+        <tr><th>Estado</th><th>Tasa</th><th>Vence</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Baja California</td><td>1.8%</td><td>día 17</td></tr>
+        <tr><td>Guanajuato</td><td>2.0%</td><td>día 17</td></tr>
+        <tr><td>Yucatán</td><td>2.5%</td><td>día 10</td></tr>
+        <tr class="hl"><td>CDMX</td><td>3.0%</td><td>día 17</td></tr>
+        <tr class="hl"><td>Jalisco</td><td>3.0%</td><td>día 12</td></tr>
+        <tr class="hl"><td>Nuevo León</td><td>3.0%</td><td>día 17</td></tr>
+        <tr class="hl"><td>EdoMex</td><td>3.0%</td><td>día 10</td></tr>
+        <tr class="hl"><td>Querétaro</td><td>3.0%</td><td>día 17</td></tr>
+        <tr><td>+ 24 estados más</td><td>varía</td><td>varía</td></tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+<!-- FRASE -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-no">01</span>
+    <h2 class="section-h">Una <em>idea</em> simple.</h2>
+  </div>
+
+  <div class="frase-grande">
+    "Cambiar la nómina de Jalisco a Yucatán <em>ahorra</em> 17% de ISN. Saberlo en segundos vs descubrirlo en una junta."
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-no">02</span>
+    <h2 class="section-h">5 tools <em>expuestas</em>.</h2>
+    <p class="section-desc">La primera (<span class="mono">isn_calcular</span>) funciona offline desde catálogo — no toca ningún portal. Útil para asesoría fiscal sin credenciales del cliente.</p>
+  </div>
+
+  <div class="tools-list">
+    <article class="tool tool-hero">
+      <span class="tool-no">★</span>
+      <div>
+        <h3><span class="mono mono-strong">isn_calcular</span></h3>
+        <p>Calcula ISN del periodo aplicando la tasa del estado. <strong>Offline-first:</strong> no requiere credenciales.</p>
+        <code class="tool-sig">isn_calcular(nomina_gravable: float, estado: str)</code>
+      </div>
+    </article>
+
+    <article class="tool">
+      <span class="tool-no">→</span>
+      <div>
+        <h3><span class="mono mono-strong">isn_listar_estados</span></h3>
+        <p>Lista los 32 estados con su configuración: tasa, portal, vencimiento, validado sí/no.</p>
+        <code class="tool-sig">isn_listar_estados([solo_validados])</code>
+      </div>
+    </article>
+
+    <article class="tool">
+      <span class="tool-no">→</span>
+      <div>
+        <h3><span class="mono mono-strong">isn_info_estado</span></h3>
+        <p>Detalle completo de un estado: URL portal, selectores DOM documentados, requiere e.firma sí/no.</p>
+        <code class="tool-sig">isn_info_estado(estado)</code>
+      </div>
+    </article>
+
+    <article class="tool">
+      <span class="tool-no">→</span>
+      <div>
+        <h3><span class="mono mono-strong">isn_generar_linea_captura</span></h3>
+        <p>Línea de captura para pago referenciado. Path real requiere credenciales del estado.</p>
+        <code class="tool-sig">isn_generar_linea_captura(estado, periodo, rfc, nomina_gravable)</code>
+      </div>
+    </article>
+
+    <article class="tool">
+      <span class="tool-no">→</span>
+      <div>
+        <h3><span class="mono mono-strong">isn_descargar_declaracion</span></h3>
+        <p>PDF de la declaración del periodo desde la bóveda estatal. Cache 90 días.</p>
+        <code class="tool-sig">isn_descargar_declaracion(estado, periodo, rfc)</code>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- TABLA TASAS COMPLETA -->
+<section class="section section-mcps">
+  <div class="section-head">
+    <span class="section-no">03</span>
+    <h2 class="section-h">Catálogo <em>completo</em>.</h2>
+    <p class="section-desc">32 estados. Tasas, portales y status de validación. Verde = portal validado Playwright MCP.</p>
+  </div>
+
+  <div class="catalogo-grid">
+    <div class="cat-state cat-val"><span class="cat-state-n">CDMX</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state cat-val"><span class="cat-state-n">Jalisco</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state cat-val"><span class="cat-state-n">Nuevo León</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state cat-val"><span class="cat-state-n">EdoMex</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state cat-val"><span class="cat-state-n">Querétaro</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state cat-val"><span class="cat-state-n">Guanajuato</span><span class="cat-state-r">2.0%</span></div>
+    <div class="cat-state cat-val"><span class="cat-state-n">Yucatán</span><span class="cat-state-r">2.5%</span></div>
+    <div class="cat-state cat-val"><span class="cat-state-n">Baja California</span><span class="cat-state-r">1.8%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Puebla</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Veracruz</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Chihuahua</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Coahuila</span><span class="cat-state-r">2.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Sinaloa</span><span class="cat-state-r">2.4%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Sonora</span><span class="cat-state-r">2.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Tamaulipas</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Oaxaca</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Michoacán</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Guerrero</span><span class="cat-state-r">2.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Quintana Roo</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Aguascalientes</span><span class="cat-state-r">2.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">San Luis Potosí</span><span class="cat-state-r">2.5%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Zacatecas</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Durango</span><span class="cat-state-r">2.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Morelos</span><span class="cat-state-r">2.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Tlaxcala</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Hidalgo</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Chiapas</span><span class="cat-state-r">2.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Tabasco</span><span class="cat-state-r">2.5%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Campeche</span><span class="cat-state-r">2.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Nayarit</span><span class="cat-state-r">2.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Colima</span><span class="cat-state-r">2.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">BCS</span><span class="cat-state-r">2.5%</span></div>
+  </div>
+
+  <div class="vert-legend">
+    <span><span class="dot" style="background: var(--c-jade);"></span> Portal validado Playwright</span>
+    <span><span class="dot" style="background: var(--c-bone); border: 1px solid var(--c-rule);"></span> Catálogo + URL, validación en pipeline</span>
+  </div>
+</section>
+
+<!-- CÓDIGO -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-no">04</span>
+    <h2 class="section-h">Cómo se ve el <em>código</em>.</h2>
+  </div>
+
+  <div class="code-frame">
+    <div class="code-head">
+      <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
+      <span class="code-file">comparativo_isn.py</span>
+    </div>
+    <pre class="code"><span class="c-kw">from</span> mp_isn_mx <span class="c-kw">import</span> IsnMxClient
+
+cliente <span class="c-op">=</span> IsnMxClient<span class="c-pn">()</span>
+nomina <span class="c-op">=</span> <span class="c-fn">500_000</span>  <span class="c-cm"># MXN gravables mensuales</span>
+
+<span class="c-cm"># Comparativo entre 4 estados en milisegundos — offline</span>
+<span class="c-kw">for</span> estado <span class="c-kw">in</span> <span class="c-pn">[</span><span class="c-st">"CDMX"</span>, <span class="c-st">"JAL"</span>, <span class="c-st">"GTO"</span>, <span class="c-st">"BC"</span><span class="c-pn">]</span><span class="c-op">:</span>
+    r <span class="c-op">=</span> cliente<span class="c-pn">.</span>calcular<span class="c-pn">(</span>nomina, estado<span class="c-pn">)</span>
+    <span class="c-fn">print</span><span class="c-pn">(</span><span class="c-st">f"</span><span class="c-pn">{</span>r<span class="c-pn">[</span><span class="c-st">'estado'</span><span class="c-pn">]</span><span class="c-op">:&lt;20</span><span class="c-pn">}</span><span class="c-st"> </span><span class="c-pn">{</span>r<span class="c-pn">[</span><span class="c-st">'tasa_pct'</span><span class="c-pn">]</span><span class="c-pn">}</span><span class="c-st">% → $</span><span class="c-pn">{</span>r<span class="c-pn">[</span><span class="c-st">'isn_a_pagar'</span><span class="c-pn">]</span><span class="c-op">:,.2f</span><span class="c-pn">}</span><span class="c-st">"</span><span class="c-pn">)</span>
+
+<span class="c-cm"># Ciudad de México       3.0% → $15,000.00</span>
+<span class="c-cm"># Jalisco                3.0% → $15,000.00</span>
+<span class="c-cm"># Guanajuato             2.0% → $10,000.00   ← 33% ahorro</span>
+<span class="c-cm"># Baja California        1.8% → $ 9,000.00   ← 40% ahorro</span>
+
+<span class="c-cm"># Genera línea de captura del mes</span>
+linea <span class="c-op">=</span> cliente<span class="c-pn">.</span>generar_linea_captura<span class="c-pn">(</span>
+    estado<span class="c-op">=</span><span class="c-st">"CDMX"</span>,
+    periodo<span class="c-op">=</span><span class="c-st">"2026-05"</span>,
+    rfc<span class="c-op">=</span><span class="c-st">"ABC120101AB1"</span>,
+    nomina_gravable<span class="c-op">=</span>nomina,
+<span class="c-pn">)</span>
+<span class="c-fn">print</span><span class="c-pn">(</span><span class="c-st">f"Pagar $</span><span class="c-pn">{</span>linea<span class="c-pn">[</span><span class="c-st">'monto_a_pagar'</span><span class="c-pn">]</span><span class="c-pn">}</span><span class="c-st"> con línea </span><span class="c-pn">{</span>linea<span class="c-pn">[</span><span class="c-st">'linea_captura'</span><span class="c-pn">]</span><span class="c-pn">}</span><span class="c-st">"</span><span class="c-pn">)</span></pre>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="cta-final cta-isn">
+    <h2 class="cta-h">¿Manejas <em>nómina multi-estado</em>?</h2>
+    <p>Demo de 20 minutos. Comparativo en vivo del ISN de tu empresa en 4 estados + propuesta de optimización fiscal anual.</p>
+    <a href="../index.html#demo" class="btn btn-primary">
+      <span>Agendar mi demo</span>
+      <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 7h12m0 0L7 1m6 6L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col footer-brand">
+      <span class="brand-glyph footer-glyph">P<span class="brand-mx">·</span>MX</span>
+      <p>Infraestructura de compliance fiscal y municipal para México.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Productos</h4>
+      <a href="predial.html">Cartera Predial</a>
+      <a href="repse.html">Compliance REPSE</a>
+      <a href="isn.html">ISN-as-a-Service</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sitio</h4>
+      <a href="../index.html">Inicio</a>
+      <a href="../index.html#mcps">MCPs</a>
+      <a href="../index.html#verticales">Verticales</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="mailto:elias@cipreholding.com">elias@cipreholding.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Plugins MX · CDMX</span>
+    <span class="footer-version">Producto 03 · v3.59</span>
+  </div>
+</footer>
+
+<script src="../scripts.js"></script>
+</body>
+</html>

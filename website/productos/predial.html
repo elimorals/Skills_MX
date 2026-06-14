@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartera Predial Multi-municipio · Plugins MX</title>
+<meta name="description" content="Consulta predial en paralelo de N propiedades en 243 municipios mexicanos. Dashboard XLSX con vencimientos, descuentos y ranking. Para arrendadores, despachos e inmobiliarias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,200..900,0..100,0..1;1,9..144,200..900,0..100,0..1&family=Geist:wght@100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="producto.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<div class="strip-top">
+  <div class="strip-inner">
+    <span class="strip-id">PLUGINS MX</span>
+    <span class="strip-dot">·</span>
+    <span class="strip-vol">PRODUCTO 01 · CARTERA PREDIAL</span>
+    <span class="strip-dot strip-dot-end">·</span>
+    <span class="strip-live"><span class="pulse"></span> 243 municipios · 35.2M hab cobertura</span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-glyph">P<span class="brand-mx">·</span>MX</span>
+      <span class="brand-sub">Compliance Infrastructure</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#productos">← Volver</a></li>
+      <li><a href="repse.html">REPSE</a></li>
+      <li><a href="isn.html">ISN</a></li>
+      <li><a href="../index.html#demo" class="nav-cta">Agendar demo →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO PRODUCTO -->
+<header class="prod-hero">
+  <div class="prod-hero-inner">
+    <div class="prod-breadcrumb">
+      <a href="../index.html">Productos</a>
+      <span>›</span>
+      <span>Cartera Predial</span>
+    </div>
+
+    <span class="prod-cat">[01] Inmobiliaria · Fiscal municipal</span>
+
+    <h1 class="prod-hero-h">
+      <span class="line">Cartera Predial</span>
+      <span class="line"><em>Multi-municipio.</em></span>
+    </h1>
+
+    <p class="prod-hero-lede">
+      Consulta el adeudo predial de N propiedades en distintos municipios <strong>en paralelo</strong> y obtén un dashboard XLSX con vencimientos, descuentos por pronto pago y ranking de prioridad. 243 municipios catalogados, 163 consultables hoy.
+    </p>
+
+    <div class="prod-hero-meta">
+      <span><strong>Lanzamiento:</strong> 2026-06-13</span>
+      <span><strong>Estado:</strong> Producción</span>
+      <span><strong>Tests:</strong> 52 pasando</span>
+      <span><strong>Validado:</strong> Playwright MCP end-to-end</span>
+    </div>
+  </div>
+
+  <!-- Visual decorativo: grid de municipios -->
+  <div class="prod-hero-visual">
+    <div class="muni-grid">
+      <span>CDMX</span><span>Guadalajara</span><span>Monterrey</span><span>Puebla</span><span>Tijuana</span>
+      <span>Mérida</span><span>Querétaro</span><span>Toluca</span><span>León</span><span>Aguascalientes</span>
+      <span>Cancún</span><span>Saltillo</span><span>Culiacán</span><span>Hermosillo</span><span>Chihuahua</span>
+      <span>Morelia</span><span class="muni-on">Coyoacán <small>✓ $0.00</small></span><span>San Luis Potosí</span>
+      <span class="muni-on">Zapopan <small>✓ $6,875</small></span><span>Tlalnepantla</span><span>Naucalpan</span>
+      <span>Acapulco</span><span class="muni-on">Ciudad Hidalgo <small>✓ $13,475</small></span><span>Veracruz</span>
+      <span>Reynosa</span><span class="muni-on">San Pedro NL <small>✓ $7,562</small></span><span>Mexicali</span>
+      <span>Pachuca</span><span>Tepic</span><span>Durango</span><span>Cuernavaca</span><span>Oaxaca</span>
+    </div>
+  </div>
+</header>
+
+<!-- QUÉ HACE -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-no">01</span>
+    <h2 class="section-h">Qué hace, en una <em>frase</em>.</h2>
+  </div>
+
+  <div class="frase-grande">
+    "Pasa un Excel con 60 propiedades. <em>Recibe</em> un Excel con 60 adeudos prediales, vencimientos, descuentos y total."
+  </div>
+</section>
+
+<!-- TOOLS EXPUESTAS -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-no">02</span>
+    <h2 class="section-h">Tools <em>expuestas</em>.</h2>
+    <p class="section-desc">4 tools MCP invocables desde Claude Code, Cursor, o como librería Python pura (<span class="mono">predial_mx_client</span>).</p>
+  </div>
+
+  <div class="tools-list">
+    <article class="tool">
+      <span class="tool-no">→</span>
+      <div>
+        <h3><span class="mono mono-strong">predial_consultar</span></h3>
+        <p>Consulta adeudo de una propiedad. Auto-routing: catálogo directo · SACPI · Mérida-dirección · Puebla-captcha.</p>
+        <code class="tool-sig">predial_consultar(estado, municipio, cuenta_predial, [tipo, direccion])</code>
+      </div>
+    </article>
+
+    <article class="tool">
+      <span class="tool-no">→</span>
+      <div>
+        <h3><span class="mono mono-strong">predial_listar_municipios</span></h3>
+        <p>Lista municipios del catálogo. Filtro opcional por estado o por <span class="mono">solo_validados=True</span>.</p>
+        <code class="tool-sig">predial_listar_municipios([estado], [solo_validados])</code>
+      </div>
+    </article>
+
+    <article class="tool">
+      <span class="tool-no">→</span>
+      <div>
+        <h3><span class="mono mono-strong">predial_buscar_municipio</span></h3>
+        <p>Busca municipio por nombre fuzzy. Devuelve mejores coincidencias con su configuración.</p>
+        <code class="tool-sig">predial_buscar_municipio(query)</code>
+      </div>
+    </article>
+
+    <article class="tool">
+      <span class="tool-no">→</span>
+      <div>
+        <h3><span class="mono mono-strong">predial_estadisticas_catalogo</span></h3>
+        <p>Devuelve stats del catálogo (total muns, validados, con captcha, plataformas SaaS detectadas).</p>
+        <code class="tool-sig">predial_estadisticas_catalogo()</code>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- COBERTURA -->
+<section class="section section-mcps">
+  <div class="section-head">
+    <span class="section-no">03</span>
+    <h2 class="section-h">Cobertura <em>real</em>.</h2>
+    <p class="section-desc">No "soportamos todo México" — soportamos lo que está validado. Discovery automatizado mes a mes amplía la lista.</p>
+  </div>
+
+  <div class="cov-row">
+    <div class="cov-big">
+      <span class="bs-n" data-target="243">0</span>
+      <span class="bs-l">Municipios en catálogo</span>
+      <span class="bs-d">32 entidades federativas representadas. 209 originales + 34 descubiertos en corrida nacional 2026-06-13.</span>
+    </div>
+    <div class="cov-big bs-accent">
+      <span class="bs-n" data-target="163">0</span>
+      <span class="bs-l">Consultables end-to-end</span>
+      <span class="bs-d">68 directos + 95 vía SACPI Michoacán. Auto-routing transparente al consumidor.</span>
+    </div>
+    <div class="cov-big bs-dark">
+      <span class="bs-n" data-target="35" data-suffix=".2M">0</span>
+      <span class="bs-l">Habitantes en cobertura</span>
+      <span class="bs-d">26.7% de la población nacional mexicana cubierta con consulta automatizada.</span>
+    </div>
+  </div>
+
+  <div class="cov-detail">
+    <h4>Top 10 ciudades validadas Playwright MCP</h4>
+    <div class="mcp-list">
+      <span class="mcp-item">CDMX <small>9.2M</small></span>
+      <span class="mcp-item">Guadalajara <small>1.4M</small></span>
+      <span class="mcp-item">Monterrey <small>1.1M</small></span>
+      <span class="mcp-item">Puebla <small>1.7M</small></span>
+      <span class="mcp-item">Tijuana <small>1.9M</small></span>
+      <span class="mcp-item">Mérida <small>0.9M</small></span>
+      <span class="mcp-item">Querétaro <small>0.7M</small></span>
+      <span class="mcp-item">Zapopan <small>1.3M</small></span>
+      <span class="mcp-item">San Pedro Garza García <small>0.1M</small></span>
+      <span class="mcp-item">Ciudad Hidalgo (MICH vía SACPI) <small>0.1M</small></span>
+    </div>
+  </div>
+</section>
+
+<!-- CÓDIGO -->
+<section class="section">
+  <div class="section-head">
+    <span class="section-no">04</span>
+    <h2 class="section-h">Cómo se ve el <em>código</em>.</h2>
+  </div>
+
+  <div class="code-frame">
+    <div class="code-head">
+      <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
+      <span class="code-file">cartera_predial.py</span>
+    </div>
+    <pre class="code"><span class="c-kw">from</span> predial_mx_client <span class="c-kw">import</span> PredialClient
+<span class="c-kw">import</span> openpyxl
+
+cliente <span class="c-op">=</span> PredialClient<span class="c-pn">()</span>
+
+<span class="c-cm"># Tu cartera: cualquier formato → diccionarios Python</span>
+propiedades <span class="c-op">=</span> <span class="c-pn">[</span>
+    <span class="c-pn">{</span><span class="c-st">"alias"</span><span class="c-op">:</span> <span class="c-st">"Casa Coyoacán"</span>,
+     <span class="c-st">"estado"</span><span class="c-op">:</span> <span class="c-st">"CDMX"</span>,
+     <span class="c-st">"municipio"</span><span class="c-op">:</span> <span class="c-st">"Coyoacán"</span>,
+     <span class="c-st">"cuenta"</span><span class="c-op">:</span> <span class="c-st">"123-456-789"</span><span class="c-pn">}</span>,
+
+    <span class="c-pn">{</span><span class="c-st">"alias"</span><span class="c-op">:</span> <span class="c-st">"Depa Zapopan"</span>,
+     <span class="c-st">"estado"</span><span class="c-op">:</span> <span class="c-st">"JAL"</span>,
+     <span class="c-st">"municipio"</span><span class="c-op">:</span> <span class="c-st">"Zapopan"</span>,
+     <span class="c-st">"cuenta"</span><span class="c-op">:</span> <span class="c-st">"GDL-0001-22"</span><span class="c-pn">}</span>,
+
+    <span class="c-pn">{</span><span class="c-st">"alias"</span><span class="c-op">:</span> <span class="c-st">"Rancho SACPI"</span>,
+     <span class="c-st">"estado"</span><span class="c-op">:</span> <span class="c-st">"MICH"</span>,
+     <span class="c-st">"municipio"</span><span class="c-op">:</span> <span class="c-st">"Ciudad Hidalgo"</span>,
+     <span class="c-st">"cuenta"</span><span class="c-op">:</span> <span class="c-st">"MICH-7788"</span><span class="c-pn">}</span>,
+<span class="c-pn">]</span>
+
+<span class="c-cm"># Consulta en paralelo — auto-routing transparente</span>
+resultados <span class="c-op">=</span> cliente<span class="c-pn">.</span>consultar_lote<span class="c-pn">(</span>propiedades<span class="c-pn">)</span>
+
+<span class="c-cm"># Exporta a Excel listo para mandar</span>
+wb <span class="c-op">=</span> openpyxl<span class="c-pn">.</span>Workbook<span class="c-pn">()</span>
+ws <span class="c-op">=</span> wb<span class="c-pn">.</span>active
+ws<span class="c-pn">.</span>append<span class="c-pn">([</span><span class="c-st">"Propiedad"</span>, <span class="c-st">"Adeudo"</span>, <span class="c-st">"Vence"</span>, <span class="c-st">"Estado"</span><span class="c-pn">])</span>
+<span class="c-kw">for</span> r <span class="c-kw">in</span> resultados<span class="c-op">:</span>
+    ws<span class="c-pn">.</span>append<span class="c-pn">([</span>r<span class="c-pn">.</span>alias, r<span class="c-pn">.</span>adeudo, r<span class="c-pn">.</span>vencimiento, r<span class="c-pn">.</span>estatus<span class="c-pn">])</span>
+wb<span class="c-pn">.</span>save<span class="c-pn">(</span><span class="c-st">"cartera-predial-2026-06.xlsx"</span><span class="c-pn">)</span>
+
+<span class="c-fn">print</span><span class="c-pn">(</span><span class="c-st">f"Total cartera: $</span><span class="c-pn">{</span><span class="c-fn">sum</span><span class="c-pn">(</span>r<span class="c-pn">.</span>adeudo <span class="c-kw">for</span> r <span class="c-kw">in</span> resultados<span class="c-pn">)</span><span class="c-op">:,.2f</span><span class="c-pn">}</span><span class="c-st"> MXN"</span><span class="c-pn">)</span>
+<span class="c-cm"># Total cartera: $27,912.50 MXN</span></pre>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section">
+  <div class="cta-final">
+    <h2 class="cta-h">¿Tienes <em>más de 10</em> propiedades en cartera?</h2>
+    <p>Demo de 20 minutos. Te muestro la consulta en vivo de 5 propiedades en tus municipios reales y el Excel resultante.</p>
+    <a href="../index.html#demo" class="btn btn-primary">
+      <span>Agendar mi demo</span>
+      <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 7h12m0 0L7 1m6 6L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col footer-brand">
+      <span class="brand-glyph footer-glyph">P<span class="brand-mx">·</span>MX</span>
+      <p>Infraestructura de compliance fiscal y municipal para México.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Productos</h4>
+      <a href="predial.html">Cartera Predial</a>
+      <a href="repse.html">Compliance REPSE</a>
+      <a href="isn.html">ISN-as-a-Service</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sitio</h4>
+      <a href="../index.html">Inicio</a>
+      <a href="../index.html#mcps">MCPs</a>
+      <a href="../index.html#verticales">Verticales</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="mailto:elias@cipreholding.com">elias@cipreholding.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Plugins MX · CDMX</span>
+    <span class="footer-version">Producto 01 · v3.59</span>
+  </div>
+</footer>
+
+<script src="../scripts.js"></script>
+</body>
+</html>
