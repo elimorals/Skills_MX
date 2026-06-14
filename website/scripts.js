@@ -164,6 +164,92 @@
       btn.style.transform = '';
     });
   });
+
+  // ----------------------------------------
+  // 8. RADIAL MOUSE GLOW en cards (CSS vars)
+  //    .prod y .caso usan --mouse-x / --mouse-y
+  // ----------------------------------------
+  const glowCards = document.querySelectorAll('.prod, .caso');
+  glowCards.forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mouse-x', `${x}%`);
+      card.style.setProperty('--mouse-y', `${y}%`);
+    });
+  });
+
+  // ----------------------------------------
+  // 9. HERO H1 + lede · reveal escalonado al cargar
+  //    Activa .is-revealed en .hero y .hero-h1 con timing controlado
+  // ----------------------------------------
+  const hero = document.querySelector('.hero');
+  const heroH1 = document.querySelector('.hero-h1');
+  const heroLede = document.querySelector('.hero-lede');
+
+  // Envuelve cada palabra del lede en un <span class="word"> para animarlas.
+  // Recorre solo TEXT_NODE — preserva markup interno (<strong>, etc.) sin usar innerHTML.
+  if (heroLede && !heroLede.querySelector('.word')) {
+    let wordIdx = 0;
+    const walkAndWrap = (node) => {
+      // Snapshot de hijos porque vamos a mutarlos
+      const children = Array.from(node.childNodes);
+      children.forEach((child) => {
+        if (child.nodeType === Node.TEXT_NODE) {
+          const text = child.nodeValue;
+          if (!text || !text.trim()) return; // espacios puros: dejar
+          const frag = document.createDocumentFragment();
+          // Split conservando los whitespace como nodos de texto entre spans
+          const parts = text.split(/(\s+)/);
+          parts.forEach((part) => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) {
+              frag.appendChild(document.createTextNode(part));
+            } else {
+              const span = document.createElement('span');
+              span.className = 'word';
+              span.textContent = part;
+              span.style.setProperty('--lede-delay', String(wordIdx++));
+              frag.appendChild(span);
+            }
+          });
+          node.replaceChild(frag, child);
+        } else if (child.nodeType === Node.ELEMENT_NODE) {
+          walkAndWrap(child);
+        }
+      });
+    };
+    walkAndWrap(heroLede);
+  }
+
+  // Trigger reveal una vez el DOM está listo
+  requestAnimationFrame(() => {
+    if (heroH1) heroH1.classList.add('is-revealed');
+    if (hero)   hero.classList.add('is-revealed');
+  });
+
+  // ----------------------------------------
+  // 10. PARALLAX sutil en el hero · solo sobre 768px
+  //     Mueve el strip-top y el marquee a velocidades distintas
+  // ----------------------------------------
+  if (window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const strip = document.querySelector('.strip-top');
+    const marquee = document.querySelector('.marquee');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (y < 600) {
+          if (strip)   strip.style.transform   = `translate3d(0, ${y * 0.15}px, 0)`;
+          if (marquee) marquee.style.transform = `translate3d(0, ${y * -0.08}px, 0)`;
+        }
+        ticking = false;
+      });
+    }, { passive: true });
+  }
 })();
 
 // ----------------------------------------

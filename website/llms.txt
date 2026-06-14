@@ -7,7 +7,7 @@
 **Repositorio:** https://github.com/elimorals/Skills_MX
 **Stack:** Python + FastMCP, Playwright para validación E2E, 870+ tests con pytest
 
-## Productos vendibles
+## Productos
 
 - [Cartera Predial Multi-municipio](https://skills-mexico.vercel.app/productos/predial): Consulta paralela del adeudo predial de N propiedades en 243 municipios mexicanos, con dashboard XLSX de vencimientos, descuentos por pronto pago y ranking. 163 municipios consultables end-to-end (68 directos + 95 vía SACPI Michoacán). Cobertura poblacional: 35.2M habitantes (26.7% nacional).
 - [Compliance REPSE Art. 15 LFT](https://skills-mexico.vercel.app/productos/repse): Verificación binaria (puede_contratar: bool) de proveedores de servicios especializados ante STPS. Evita responsabilidad solidaria laboral y fiscal del contratante. Universo afectado: ~4M empresas formales mexicanas. Sin captcha bloqueante.
