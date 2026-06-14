@@ -90,7 +90,7 @@ Allow: /
 Disallow: /.vercel/
 
 # === Discovery ===
-Sitemap: https://website-eight-lake-11.vercel.app/sitemap.xml
+Sitemap: https://skills-mexico.vercel.app/sitemap.xml
 
 # Archivos auxiliares para LLMs y agentes
 # /llms.txt          — Mapa del sitio en formato llmstxt.org
