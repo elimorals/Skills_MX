@@ -190,7 +190,7 @@ Idealmente:
   - `docs/analisis-profundo-2026-06.md` — visión general
   - `docs/estado-real.md` — auditoría honesta de riesgo
   - `docs/specs/05-vertical-pf-anual-mx.md` — spec del vertical anual
-- **Contacto**: Elías Rashid Morales Mendoza — elias@cipreholding.com
+- **Contacto**: Elías Rashid Morales Mendoza — elimoralsmendox@gmail.com
 
 ---
 

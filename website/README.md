@@ -67,7 +67,7 @@ Abrir `http://localhost:8080`.
 En `scripts.js`, función `handleDemo`, reemplazar `525500000000` por tu número real (formato internacional sin `+` ni espacios).
 
 ### Cambiar email
-Buscar y reemplazar `elias@cipreholding.com` en todos los archivos.
+Buscar y reemplazar `elimoralsmendox@gmail.com` en todos los archivos.
 
 ### Actualizar stats
 Los counters se generan automáticamente de los atributos `data-target="<n>"` y `data-suffix="<sufijo>"` en `index.html`. Solo cambia el atributo y la animación se ajusta.

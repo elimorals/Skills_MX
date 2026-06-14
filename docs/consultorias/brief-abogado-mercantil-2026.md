@@ -105,4 +105,4 @@ Idealmente:
 ## 6. Datos del proyecto
 
 - **Repositorio**: `/Users/elias/Documents/Trabajo/skills/`
-- **Contacto**: Elías Rashid Morales Mendoza — elias@cipreholding.com
+- **Contacto**: Elías Rashid Morales Mendoza — elimoralsmendox@gmail.com

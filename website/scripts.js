@@ -183,7 +183,7 @@ function handleDemo(event) {
 
   // Email principal + fallback WhatsApp
   const wa = `https://wa.me/525500000000?text=${msg}`; // reemplazar número
-  const mailto = `mailto:elias@cipreholding.com?subject=${encodeURIComponent(
+  const mailto = `mailto:elimoralsmendox@gmail.com?subject=${encodeURIComponent(
     'Demo Plugins MX · ' + data.empresa
   )}&body=${msg}`;
 

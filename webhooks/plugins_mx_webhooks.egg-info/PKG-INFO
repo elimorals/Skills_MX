@@ -2,7 +2,7 @@ Metadata-Version: 2.4
 Name: plugins-mx-webhooks
 Version: 0.1.0
 Summary: Webhook receiver para plugins-mx (FastAPI + 12 handlers)
-Author-email: Elias <elias@cipreholding.com>
+Author-email: Elias <elimoralsmendox@gmail.com>
 License: Proprietary
 Requires-Python: >=3.10
 Description-Content-Type: text/markdown
