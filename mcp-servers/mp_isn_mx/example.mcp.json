@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "isn_mx": {
+      "command": "python",
+      "args": ["-m", "mp_isn_mx.server"],
+      "env": {
+        "PLUGINS_MX_MOCK": "1",
+        "PLUGINS_MX_CACHE_DIR": "/tmp/plugins-mx-cache",
+        "PLUGINS_MX_BITACORA_DIR": "/tmp/plugins-mx-bita"
+      },
+      "_notes": [
+        "Multi-estado: CDMX, JAL, NL, EdoMex, QRO, PUE, GTO, YUC, BC validados.",
+        "Universo: TODA empresa formal MX con trabajadores (~4M empresas).",
+        "Path real requiere credenciales por estado + MP_PLAYWRIGHT_PUBLIC=1."
+      ]
+    }
+  }
+}
