@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "sep_profesional": {
+      "command": "python",
+      "args": [
+        "-m",
+        "mp_sep_profesional.server"
+      ],
+      "env": {
+        "PLUGINS_MX_MOCK": "1",
+        "PLUGINS_MX_CACHE_DIR": "/tmp/plugins-mx-cache",
+        "PLUGINS_MX_BITACORA_DIR": "/tmp/plugins-mx-bita"
+      },
+      "_notes": [
+        "Para path real: setear MP_PLAYWRIGHT_PUBLIC=1 y tener playwright instalado.",
+        "Portal SIN CAPTCHA (cedulaprofesional.sep.gob.mx) — automatizable 100%.",
+        "Caso de uso crítico: telemedicina-mx valida médicos antes de consulta (NOM-004)."
+      ]
+    }
+  }
+}
