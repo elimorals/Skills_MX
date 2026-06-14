@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "donatarias_sat": {
+      "command": "python",
+      "args": ["-m", "mp_donatarias_sat.server"],
+      "env": {
+        "PLUGINS_MX_MOCK": "1",
+        "PLUGINS_MX_CACHE_DIR": "/tmp/plugins-mx-cache",
+        "PLUGINS_MX_BITACORA_DIR": "/tmp/plugins-mx-bita"
+      },
+      "_notes": [
+        "Padrón ~10k donatarias autorizadas SAT (Anexo 14 RMF).",
+        "Path real bloqueado por Akamai — recomendación: descargar XLSX manual y montar.",
+        "Crítico para emitir CFDI uso D04 (Donativos) válido."
+      ]
+    }
+  }
+}
