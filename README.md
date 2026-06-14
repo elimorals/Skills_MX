@@ -2,15 +2,20 @@
 
 Monorepo de **plugins de Claude Code**, **MCP servers** y **skills standalone** para operación diaria de PyMEs y profesionistas en México. Cubre fiscal (CFDI 4.0, SAT, IMSS, INFONAVIT), pagos (TDC, OXXO, SPEI, transferencia), marketplaces (ML, Shopify, Amazon MX), municipales (CDMX, EdoMex, MTY), inmobiliaria, salud veterinaria, eventos, restaurantes, salones y más.
 
-## Estado a 2026-06-13 (reconciliado con filesystem)
+## Estado a 2026-06-13 (post-discovery nacional)
 
 | Capa | Cantidad real | Notas |
 |---|---|---|
-| **Plugins verticales** | **40** | core-mexico + 39 verticales (11 originales + 15 TOP research + 9 specs 07-15 + 5 nuevos: agente-seguros-mx, constructora-mx, despacho-legal-mx, geriatria-cuidado-mayor-mx, laboratorio-clinico-mx) |
-| **MCP servers** | **40** | Mock-first, FastMCP + Python; tests por servidor (3-11 archivos) |
-| **Workflows ejecutables (`.workflow.js`)** | **23/23 ✅** | 16 originales + 7 nuevos esta sesión: sync-multicanal, cobranza-renta-mensual, donativo-anual, cripto-cierre-anual, telemedicina-consulta, pedimento-importacion, energia-bidireccional-mensual. Cubren todos los workflows declarados. |
-| **Catálogo central municipios MX** | **209 (32 estados)** | `shared/catalogo_municipios_mx.py`. 33 validados con URL real, 17 con selectores DOM verificados, 88.3M habitantes en catálogo / 31.4M validados (24.2% nacional) |
-| **Plataformas SaaS estatales** | **1 (SACPI MICH)** | +95 municipios extra via 1 URL — `shared/plataformas_saas_mx.py` |
+| **Plugins verticales** | **40** | core-mexico + 39 verticales (11 originales + 15 TOP research + 9 specs 07-15 + 5 nuevos) |
+| **MCP servers** | **49** | 43 anteriores + **6 nuevos compliance/research 2026-06-14** (FASES 56-61): `mp_sep_profesional` (cédulas SEP), `mp_repse_stps` (Art. 15 LFT), `mp_isn_mx` (Impuesto Nómina 32 estados), `mp_donatarias_sat` (Anexo 14 RMF), `mp_cnbv_fintech` (Ley Fintech IFPE/IFC), `mp_dof_api` (Diario Oficial de la Federación) |
+| **MCPs municipales individuales** | 8 (todos refactorizados a catálogo central) | cdmx, edomex, guadalajara, merida, monterrey, puebla, queretaro, tijuana |
+| **Cliente Python standalone** | 1 (`clients/predial_mx_client/`) | Para apps externas (Django/FastAPI/scripts) que NO usan Claude Code |
+| **Workflows ejecutables (`.workflow.js`)** | **24/23 ✅** | 23 originales + 1 producto (`cartera-predial-multi-municipio` para inmobiliaria-mx) |
+| **Catálogo central municipios MX** | **243 muns (32 estados)** | `shared/catalogo_municipios_mx.py`. **68 validados con URL real**, **52 con selectores DOM verificados** |
+| **Cobertura efectiva consultable** | **163 municipios** | 68 directos + 95 SACPI Michoacán = **27.1% pob nacional (35.2M hab)** |
+| **Plataformas SaaS estatales** | 1 (SACPI MICH) | +95 muns extra via 1 URL. Investigadas y descartadas: Oaxaca SIOX, Puebla, Veracruz, EdoMex (Art. 115 Constitucional - predial es municipal puro) |
+| **Tests pytest nuevos** | **52** (todos pasan) | 19 mp_predial_mx + 13 mp_sacpi + 8 mp_multas + 12 cliente standalone |
+| **Cron mensual mantenimiento** | 1 (`scripts/crons/`) | launchd macOS día 5 de cada mes: health-check + discovery delta + auto-aplicar hallazgos |
 | **Skills (SKILL.md)** | **307** | 6 `_shared/` + 301 distribuidos en 40 plugins (máx: freelancers-mx 15, inmobiliaria-mx 14, colegios-mx 12) |
 | **Comandos slash** | **44 directorios `commands/`** | ~152 comandos totales |
 | **Hooks runtime CC** | **19** | PreToolUse (5) + PostToolUse (4) + SessionStart (4) + Stop (1) + utilitarios |
@@ -56,6 +61,53 @@ Monorepo de **plugins de Claude Code**, **MCP servers** y **skills standalone** 
 🆕 **20 workflows ejecutables (2026-06-13)**: +4 nuevos (`sync-multicanal` ecommerce-mx, `cobranza-renta-mensual` inmobiliaria-mx, `donativo-anual` donatarias-ongs-mx, `cripto-cierre-anual` cripto-fiscal-mx). Total `16 → 20`. Plantillas markdown pendientes: 7 → 3.
 
 🆕 **APIs oficiales documentadas (`docs/apis-oficiales-mx.md`)**: rutas legales y técnicas para SAT (descarga masiva REST con e.firma), IMSS (IDSE SOAP), Open Banking MX (CNBV BBVA/Banorte sandbox), Buró de Crédito (API B2B). **No** se documentan bypass de CAPTCHA — son ilegales y no funcionan a mediano plazo.
+
+### 🆕 Bloque post-FASE 23 (sesión continua 2026-06-13)
+
+🆕 **3 MCPs unificados nuevos** (FASES 30-34):
+- `mp_predial_mx` — 4 tools, consulta CUALQUIER municipio del catálogo via auto-routing (catálogo directo | SACPI | Mérida-dirección | Puebla-captcha). Reemplaza funcionalmente los 8 MCPs municipales (mantenidos por backward compat).
+- `mp_sacpi_michoacan` — 3 tools, expone los 95 municipios MICH via SACPI como tool calls invocables.
+- `mp_multas_mx` — 2 tools, multas vehiculares estatales de 8 estados (CDMX requiere CAPTCHA humano-en-loop).
+
+🆕 **Cliente Python standalone (`clients/predial_mx_client/`)** (FASE 37): librería pura para Django/FastAPI/scripts/notebooks. API ergonómica con tipos `PredialResponse`, `MunicipioInfo`, excepciones `NoSoportadoError`/`PortalCaidoError`/`CaptchaRequeridoError`. Ejemplos integración en su `README.md`.
+
+🆕 **52 tests pytest nuevos** (FASE 33), todos pasan:
+- `mp_predial_mx/tests/` — 19 tests (consulta, listar, buscar, edge cases, no-leak bitácora)
+- `mp_sacpi_michoacan/tests/` — 13 tests (catálogo, lookups, alias)
+- `mp_multas_mx/tests/` — 8 tests (placas, CAPTCHA humano-en-loop, validación)
+- `clients/predial_mx_client/tests/` — 12 tests (API standalone)
+
+🆕 **Producto vendible: Workflow `cartera-predial-multi-municipio`** (FASE 26): consulta predial en paralelo de N propiedades en distintos municipios → dashboard XLSX con vencimientos/descuentos/ranking. Para arrendadores, despachos contables, inmobiliarias. Skill `dashboard-cartera-predial-xlsx` + comando `/inmobiliaria:cartera-predial`.
+
+🆕 **🎯 Discovery NACIONAL completo** (FASES 38-41): corrida sobre **2,330 municipios INEGI** (todos los que faltaban). Output `hallazgos-nacional-2026-06-13.json` (951KB). **36 OK descubiertos → 34 válidos aplicados al catálogo** (HGO 4, NL 4, QRO 3, ZAC 3, AGS/COAH/GTO/JAL/EdoMex/PUE 2 c/u, +1 más estados). Tasa éxito 1.5% — confirma realidad estructural: 60%+ de muns MX no tienen portal interactivo (Art. 115 + presupuesto).
+
+🆕 **API INEGI WSCatGeo descubierta** (FASE 38, mayor hallazgo arquitectural): `https://gaia.inegi.org.mx/wscatgeo/v2/mgem/agem/` devuelve los 2,478 municipios oficiales con nombres + códigos + población. Pública, estable, sin auth. Documentada como source-of-truth en `docs/apis-oficiales-mx.md`.
+
+🆕 **Sprint Top 15 — Compliance & Research (FASES 56-61, 2026-06-14)**: 6 MCPs nuevos cubriendo 33.3% del Top 15 priorizado del research previo (`docs/TRAMITES-MX-NO-IMPLEMENTADOS-2026-06-14.md`). Hallazgo crítico: el **DOF es la columna vertebral del compliance horizontal** — autorizaciones ITF, sanciones, NOMs y modificaciones a RMF pasan por ahí primero. CNBV/SAT bloquean bots, snapshot curado + tools de decisión binaria (Art. 5 Ley Fintech, Art. 15 LFT, NOM-004, CFDI D04) cubren los casos B2B críticos. Roadmap del Sprint 2 en `docs/FASE-61-SPRINT-3-MCPS-2026-06-14.md`.
+
+🆕 **Website comercial desplegado**: landing editorial-fiscal en `website/`, live en `https://skills-mexico.vercel.app/`. 3 productos vendibles (Cartera Predial · Compliance REPSE · ISN-as-a-Service), 0 dependencias, animaciones con `IntersectionObserver` + tilt 3D + magnetic buttons. SEO con JSON-LD Organization + ItemList.
+
+🆕 **Cron mensual de mantenimiento** (FASE 28): `scripts/crons/mantenimiento-mensual-portales.sh` + `com.plugins-mx.mantenimiento-portales.plist` (launchd macOS día 5 a las 03:00). Pipeline: health-check de validados + discovery delta de pendientes + auto-aplicar hallazgos via `scripts/aplicar-hallazgos-al-catalogo.py` (detecta falsos positivos: username/searchword/wp-login/captcha responses). Auto-commit opcional con `MP_AUTO_COMMIT=1`.
+
+🆕 **Exploración profunda Playwright MCP** (FASES 44-45): muestreo top 30 muns por población de `no_form_detectado` para validar hipótesis. **+1 municipio descubierto** (Ahome Sinaloa 449k hab, ASP.NET WebForms con 6 campos catastrales). Confirma retornos decrecientes: el discovery automático ya capturó ~95% de lo automatizable. Próximo gain requiere acuerdo formal con ayuntamientos o hardcoding manual.
+
+🆕 **Validación MCPs a producción** (FASES 46-55): 17 MCPs ahora con path real validado (vs 10 antes), 14 con selectores DOM aplicados al código. Hallazgos:
+- **Nuevo módulo `shared/sep_cedula.py`** — desbloquea `telemedicina-mx` (NOM-004 cédula profesional SEP **sin CAPTCHA**, totalmente automatizable)
+- **URL Verifica CFDI SAT corregida** (`/default.aspx` → `/`) + selectores ASP.NET WebForms
+- **URL Lista 69 SAT marcada caída** desde 2025 (SAT migró a minisitio DatosAbiertos)
+- **CEP Banxico, RENAPO, Verifica CFDI, CFE Mi Espacio** documentados con CAPTCHA → humano-en-loop
+- **Mercado Libre listings** (`li.ui-search-layout__item`) y **Inmuebles24 detalle** (selectores wildcard `[class*='...']`) aplicados a Playwright real
+- **🎯 Producto Cartera Predial XLSX validado end-to-end**: 5 propiedades demo, auto-routing (CDMX directo + JAL + SACPI Michoacán + NL), `NoSoportadoError` gracioso para inválidos. **Vendible AHORA** a despachos contables/inmobiliarias.
+
+📋 **Reportes técnicos generados esta sesión**:
+- `docs/SESION-COMPLETA-2026-06-13.md` — índice maestro de 50+ fases
+- `docs/COBERTURA-NACIONAL-2026-06-13.md` — reporte ejecutivo discovery nacional
+- `docs/INVESTIGACION-SAAS-ESTATALES-2026-06-13.md` — por qué SACPI es excepción
+- `docs/VALIDACION-PORTALES-2026-06-13.md` — validación con Playwright MCP
+- **`docs/VALIDACION-MCPS-PRODUCCION-2026-06-13.md`** — auditoría exhaustiva Tier 1+2 MCPs
+- `docs/SMOKE-TEST-DISCOVERY-2026-06-13.md` — QA del script discovery
+- `docs/PATRONES-MCP-MUNICIPAL.md` — 5 stacks + templates
+- `docs/AUDIT-2026-06-13.md` — auditoría inicial reconciliación
 
 Activación:
 ```bash
@@ -220,7 +272,7 @@ plugins-mx/
 
 ---
 
-## MCP servers (40)
+## MCP servers (49)
 
 ### Tier S — Producción crítica (7)
 
@@ -292,7 +344,20 @@ plugins-mx/
 | `mp_queretaro_municipal` | Predial + multas Querétaro |
 | `mp_tijuana_municipal` | Predial + multas Tijuana |
 
-Detalles en `mcp-servers/README.md`.
+### 🆕 Compliance, validación profesional & monitoreo legal (6 nuevos · FASES 56-61)
+
+| MCP | Categoría | Universo afectado | Tests |
+|---|---|---|---|
+| `mp_sep_profesional` | Validación cédula profesional federal SEP — desbloquea `telemedicina-mx` (NOM-004 + COFEPRIS 2024). Sin captcha. | Médicos, abogados, contadores, arquitectos, ingenieros | 17 ✓ |
+| `mp_repse_stps` | Compliance Art. 15 LFT — subcontratación. `verificar_proveedor` decide compliance binario. Sin captcha funcional. | ~4M empresas B2B que contratan servicios especializados | 21 ✓ |
+| `mp_isn_mx` | Impuesto sobre Nómina multi-estado — 32 entidades catalogadas (8 validadas Playwright), tasas 1.8%–3.0% | ~4M empresas formales con trabajadores | 24 ✓ |
+| `mp_donatarias_sat` | Padrón donatarias autorizadas SAT (Anexo 14 RMF). Crítico para CFDI uso D04. Path real diferido (Akamai). | ~10k donatarias + donantes que deducen | 17 ✓ |
+| `mp_cnbv_fintech` | Padrón ITF Ley Fintech (IFPE/IFC). `verificar_contraparte` empaqueta Art. 5 Ley Fintech. Catálogo curado DOF+SIPRES. | Ecosistema fintech, cripto, crowdfunding | 15 ✓ |
+| `mp_dof_api` | Diario Oficial de la Federación — sumario diario, búsqueda full-text histórica, detalle de nota, monitor por keywords. 100% público. | Compliance horizontal: despachos legales/contables, áreas regulatorias | 22 ✓ |
+
+**Total tests nuevos FASES 56-61**: 116 pasando. Cobertura Top 15 priorizado: **5/15 = 33.3%**.
+
+Detalles en `mcp-servers/README.md` y `docs/FASE-61-SPRINT-3-MCPS-2026-06-14.md`.
 
 ---
 
