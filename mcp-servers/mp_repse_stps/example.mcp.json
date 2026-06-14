@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "repse_stps": {
+      "command": "python",
+      "args": ["-m", "mp_repse_stps.server"],
+      "env": {
+        "PLUGINS_MX_MOCK": "1",
+        "PLUGINS_MX_CACHE_DIR": "/tmp/plugins-mx-cache",
+        "PLUGINS_MX_BITACORA_DIR": "/tmp/plugins-mx-bita"
+      },
+      "_notes": [
+        "Portal: https://repse.stps.gob.mx/app/ — reCAPTCHA v1beta1 deprecated, no valida.",
+        "Universo: TODA empresa B2B que contrata servicios especializados (Art. 15 LFT).",
+        "Para path real: MP_PLAYWRIGHT_PUBLIC=1 + playwright instalado."
+      ]
+    }
+  }
+}
