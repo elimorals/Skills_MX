@@ -1,0 +1,1 @@
+{"mcpServers": {"desconexion_digital": {"command": "python", "args": ["-m", "mp_desconexion_digital.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}

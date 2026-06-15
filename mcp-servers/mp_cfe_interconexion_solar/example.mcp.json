@@ -1,0 +1,1 @@
+{"mcpServers": {"cfe_interconexion_solar": {"command": "python", "args": ["-m", "mp_cfe_interconexion_solar.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
