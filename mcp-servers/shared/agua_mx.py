@@ -32,6 +32,19 @@ from dataclasses import dataclass, field
 from typing import Literal, Optional
 
 
+# Selectores reales descubiertos 2026-06-15 (Playwright) — SIAPA Guadalajara
+URL_SIAPA_CONSULTA = "https://www.siapa.gob.mx/aplicaciones/pagoenlinea/"
+URL_SIAPA_FORM_ACTION = "https://www.siapa.gob.mx/aplicaciones/pagoenlinea/busca_cta-sntdr.php"
+SIAPA_FIELDS = {
+    "cuenta_contrato": "cuenta_contrato",
+    "clavesiapa": "clavesiapa",
+}
+# SIAPA usa reCAPTCHA v2 checkbox. Leer site_key del DOM en runtime.
+
+# SACMEX: portal con 503 dominical persistente (2026-06-15). Reintentar lunes.
+URL_SACMEX_PORTAL = "https://www.sacmex.cdmx.gob.mx"
+
+
 # Métodos de consulta soportados
 MetodoConsulta = Literal[
     "publica",       # consulta directa con identificador
