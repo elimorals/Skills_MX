@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "sat_opinion_32d": {
+      "command": "python",
+      "args": ["-m", "mp_sat_opinion_32d.server"],
+      "env": {
+        "PLUGINS_MX_MOCK": "1",
+        "PLUGINS_MX_CACHE_DIR": "/tmp/plugins-mx-cache",
+        "PLUGINS_MX_BITACORA_DIR": "/tmp/plugins-mx-bita"
+      },
+      "_notes": [
+        "Portal: https://ptsc32d.clouda.sat.gob.mx/ConsultaPublico — sin CAPTCHA, sin login.",
+        "Backend: POST /ConsultaPublico/Index con multipart FormData (Rfc + Curp).",
+        "Universo: TODO proveedor B2B/B2G mexicano. Compliance Art. 32-D CFF.",
+        "Para path real: PLUGINS_MX_MOCK=0. Latencia ~200-500ms (sin browser)."
+      ]
+    }
+  }
+}
