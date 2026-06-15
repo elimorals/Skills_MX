@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "no_antecedentes_penales_mx": {
+      "command": "python",
+      "args": ["-m", "mp_no_antecedentes_penales_mx.server"],
+      "env": {
+        "PLUGINS_MX_MOCK": "1",
+        "PLUGINS_MX_CACHE_DIR": "/tmp/plugins-mx-cache",
+        "PLUGINS_MX_BITACORA_DIR": "/tmp/plugins-mx-bita"
+      },
+      "_notes": [
+        "v1 cubre CDMX (vía Llave SSO) + EdoMex (público).",
+        "El MCP NO emite la constancia — verifica autenticidad de una ya emitida.",
+        "Universo: RRHH, conductor-plataforma, leasing, security clearance."
+      ]
+    }
+  }
+}

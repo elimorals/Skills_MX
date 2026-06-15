@@ -225,23 +225,10 @@ class SatOpinion32DClient:
             "Referer": f"{PORTAL_URL}/ConsultaPublico",
         }
 
-        # Servers gov.mx a veces mandan cadena de cert incompleta. truststore
-        # usa el bundle del SO (Keychain macOS / system store Linux) que sí
-        # tiene los intermediates. Fallback a certifi si no está.
-        verify: Any = True
+        # Usa shared helpers: truststore para gov.mx (cadena cert incompleta)
+        from shared.http_helpers import build_ssl_verify
         try:
-            import truststore
-            ssl_ctx = truststore.SSLContext(getattr(__import__("ssl"), "PROTOCOL_TLS_CLIENT"))
-            verify = ssl_ctx
-        except ImportError:
-            try:
-                import certifi
-                verify = certifi.where()
-            except ImportError:
-                pass
-
-        try:
-            with httpx.Client(timeout=TIMEOUT_SECONDS, follow_redirects=True, verify=verify) as client:
+            with httpx.Client(timeout=TIMEOUT_SECONDS, follow_redirects=True, verify=build_ssl_verify()) as client:
                 resp = client.post(url, files=files, headers=headers)
                 resp.raise_for_status()
         except Exception as exc:
