@@ -18,45 +18,20 @@ from __future__ import annotations
 
 import csv
 import io
+import sys
+from pathlib import Path
 from typing import Any
 
+_HERE = Path(__file__).resolve().parent
+_REPO_ROOT = _HERE.parent
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
 
-_ACENTOS = str.maketrans({
-    "á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u",
-    "ñ": "n", "ü": "u", "Á": "a", "É": "e", "Í": "i",
-    "Ó": "o", "Ú": "u", "Ñ": "n", "�": "",  # U+FFFD = replacement char
-})
-
-
-def _normalize_key(k: str) -> str:
-    """Normaliza una key de header CSV para matching robusto.
-
-    Casos:
-    - Acentos (á → a, ñ → n) — para que "situación" matche "situacion"
-    - Replacement char U+FFFD (�) — eliminado, viene de archivos con
-      encoding incorrecto (latin-1 leído como UTF-8 strict)
-    - Espacios extra + lowercase
-    """
-    return k.strip().lower().translate(_ACENTOS)
-
-
-def _normalize_row(row: dict[str | None, Any]) -> dict[str, str]:
-    """Normaliza un row del csv.DictReader.
-
-    Keys se pasan por _normalize_key — robusto a acentos y encoding broken.
-    """
-    out: dict[str, str] = {}
-    for k, v in row.items():
-        if k is None:
-            continue  # columnas extra sin header
-        key = _normalize_key(k)
-        if v is None:
-            out[key] = ""
-        elif isinstance(v, list):
-            out[key] = ", ".join(str(x) for x in v).strip()
-        else:
-            out[key] = str(v).strip()
-    return out
+from shared.csv_helpers import (  # noqa: E402
+    normalize_csv_key as _normalize_key,
+    normalize_row as _normalize_row,
+    skip_csv_preamble_until_header,
+)
 
 
 def parsear_csv_69b(contenido_csv: str) -> list[dict[str, Any]]:
@@ -80,22 +55,9 @@ def parsear_csv_69b(contenido_csv: str) -> list[dict[str, Any]]:
     if not contenido_csv.strip():
         return []
 
-    # Saltar líneas de preámbulo legal antes del header real.
-    # Desde 2026, el SAT pone hasta 2 líneas descriptivas antes de la cabecera:
-    #   Línea 1: "Información actualizada al..."
-    #   Línea 2: "Listado completo de contribuyentes (Artículo 69-B...)"
-    #   Línea 3: "No.,RFC,Nombre,Situación,..." ← header real
-    # Detectamos el header buscando la primera línea que contenga "RFC" como
-    # columna independiente.
-    lines = contenido_csv.splitlines()
-    header_idx = 0
-    for i, line in enumerate(lines[:5]):  # max 5 líneas de búsqueda
-        cells = [c.strip().upper() for c in line.split(",")]
-        if "RFC" in cells:
-            header_idx = i
-            break
-    if header_idx > 0:
-        contenido_csv = "\n".join(lines[header_idx:])
+    # Saltar preámbulo legal — SAT pone hasta 2 líneas descriptivas antes
+    # del header en archivos AGAFF/AGR (Datos Abiertos Azure Blob 2026+).
+    contenido_csv = skip_csv_preamble_until_header(contenido_csv, header_marker="RFC")
 
     # Detectar delimitador (SAT usa coma; algunos exports tabuladores)
     sample = contenido_csv[:2048]
@@ -206,16 +168,8 @@ def parsear_csv_69_incumplidos(contenido_csv: str) -> list[dict[str, Any]]:
     if not contenido_csv.strip():
         return []
 
-    # Saltar preámbulo legal igual que en parsear_csv_69b
-    lines = contenido_csv.splitlines()
-    header_idx = 0
-    for i, line in enumerate(lines[:5]):
-        cells = [c.strip().upper() for c in line.split(",")]
-        if "RFC" in cells:
-            header_idx = i
-            break
-    if header_idx > 0:
-        contenido_csv = "\n".join(lines[header_idx:])
+    # Saltar preámbulo legal — reusa el mismo helper que parsear_csv_69b.
+    contenido_csv = skip_csv_preamble_until_header(contenido_csv, header_marker="RFC")
 
     sample = contenido_csv[:2048]
     try:

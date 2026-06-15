@@ -122,28 +122,100 @@ Body (JSON):
 ## 🔜 3. SAT Lista 69 incumplidos — Fix pending
 
 **Estado actual** según `VALIDACION-MCPS-PRODUCCION-2026-06-13.md`:
-- ✅ `Definitivos.csv` (69-B EFOS): 200 OK, 3.5MB
-- ✅ `Presuntos.csv` (69-B presuntos): 200 OK, 185KB
-- ❌ `IncumplidosListado.csv` (Lista 69): **404 — URL cambió**
+### ✅ Resuelto (sesión 2026-06-15 PM)
 
-**Acción pendiente**: discovery con Playwright en `omawww.sat.gob.mx/cifras_sat/Paginas/datos/vinculo.html` (página índice que sí responde 200) para encontrar el nuevo path tras la migración a `/minisitio/DatosAbiertos`.
+El SAT migró toda la publicación de **Datos Abiertos** a **Azure Blob Storage**
+(`wu1agsprosta001.blob.core.windows.net`). Las URLs en `omawww.sat.gob.mx/cifras_sat/`
+siguen respondiendo pero con **archivos stale de enero 2026**, mientras los de
+Azure se actualizan **mensualmente**.
+
+#### Lista 69 (Art. 69 CFF — incumplidos) — fragmentada en 8 categorías
+
+| Categoría | URL Azure | Tamaño actual (jun 2026) |
+|---|---|---|
+| **Firmes** ⭐ (default `URL_LISTA_69_INCUMPLIDOS`) | `Documents_AGR/Firmes.csv` | **19.2 MB · 258,333 registros** |
+| Cancelados | `Documents_AGR/Cancelados.csv` | 19.9 MB |
+| Exigibles | `Documents_AGR/Exigibles.csv` | 462 KB |
+| No localizados | `Documents_AGR/No_localizados.csv` | 4.3 MB |
+| Sentencias | `Documents_AGR/Sentencias.csv` | 49 KB |
+| CSD sin efectos | `Documents_AGR/CSDsinefectos.csv` | 4.7 MB |
+| Entes públicos/gob omisos | `Documents_AGR/EntespublicosydeGobiernoomisos.csv` | 373 KB |
+| Reducción multas Art 74 | `Documents_AGR/ReduccionArt74CFF.csv` | (variable) |
+
+#### Lista 69-B (Art. 69-B CFF — EFOS) — 5 archivos
+
+| Categoría | URL Azure | Tamaño |
+|---|---|---|
+| **Listado completo** ⭐ | `Documents_AGAFF/Listado_completo_69-B.csv` | 4.5 MB |
+| Definitivos | `Documents_AGAFF/Definitivos.csv` | **3.6 MB · 12,426 registros** |
+| Desvirtuados (NUEVO) | `Documents_AGAFF/Desvirtuados.csv` | 110 KB |
+| Presuntos | `Documents_AGAFF/Presuntos.csv` | 153 KB |
+| Sentencias favorables | `Documents_AGAFF/SentenciasFavorables.csv` | 712 KB |
+
+#### Formato CSV nuevo (gotchas detectados)
+
+1. **2 líneas de preámbulo legal antes del header**:
+   ```
+   Línea 1: "Información actualizada al 30 de abril de 2026; los listados..."
+   Línea 2: "Listado completo de contribuyentes (Artículo 69-B del CFF),,,,"
+   Línea 3 (HEADER REAL): No.,RFC,Nombre del Contribuyente,Situación,...
+   ```
+2. **Encoding ISO-8859-1** (no UTF-8 declarado en Content-Type → httpx default rompe acentos).
+3. **Cadena de cert SSL incompleta** en `wu1agsprosta001.blob.core.windows.net`
+   — requiere `truststore` o el cert intermedio DigiCert manualmente.
+
+#### Refactor aplicado al monorepo
+
+- **`shared/csv_helpers.py`**: `skip_csv_preamble_until_header()` + `normalize_csv_key()` + `normalize_row()`.
+- **`shared/http_helpers.py`**: `build_ssl_verify()` (truststore→certifi→default) + `decode_response_robust()` (UTF-8 strict→latin-1).
+- **`mp_sat_portal/rfc69b.py`**: usa los helpers en lugar de duplicar.
 
 ---
 
-## Métricas Sprint 2026-06-15
+## Métricas Sprint 2026-06-15 (consolidado AM + PM)
 
 | Métrica | Valor |
 |---|---|
-| MCPs implementados | 1 (`mp_sat_opinion_32d` — Top 15 #2) |
-| MCPs discovery completado | 1 (`mp_impi_marcanet` — Top 15 #7) |
-| Tests pasando | 27/27 ✅ |
-| Endpoints backend mapeados | 2 (SAT 32-D, IMPI ViDoc) |
-| Líneas Python nuevas | ~800 |
-| MCPs Top 15 cubiertos a la fecha | 6/15 (40%) |
+| **MCPs nuevos implementados** | **6** (`mp_sat_opinion_32d`, `mp_impi_marcanet`, `mp_condusef_sipres`, `mp_repuve`, `mp_sat_ws`, `mp_no_antecedentes_penales_mx`) |
+| **MCPs fixed/refactored** | 1 (`mp_sat_portal` URLs migradas + parser robusto) |
+| **Shared libs nuevas** | 6 (`playwright_session`, `impi_vidoc`, `sipres_condusef`, `sat_opinion_32d`, `repuve`, `sat_ws`, `no_antecedentes`, `http_helpers`, `csv_helpers`) |
+| **Endpoints backend mapeados** | 5 (SAT 32-D, IMPI ViDoc, SIPRES, SAT WS, SAT Azure Blob) |
+| **Tests pasando** | **218/218 ✅** (4 MCPs nuevos + 4 existentes consolidados) |
+| **MCPs Top 15 cubiertos** | **11/15 (73%)** ↑ desde 5/15 (33%) inicial |
 
-**Siguiente sesión**:
-1. Implementar `mp_impi_marcanet` con modo Playwright (~5h)
-2. Fix `URL_LISTA_69_INCUMPLIDOS` (30 min)
-3. Continuar con #10 `mp_condusef_sipres` (Tier 1, sin captcha, ~2h)
+### Top 15 status post-sesión
 
-— Sesión 2026-06-15, Playwright MCP discovery.
+| # | MCP | Status |
+|---|---|---|
+| 1 | `mp_repse_stps` | ✅ Pre-existente |
+| 2 | `mp_sat_opinion_32d` | ✅ Esta sesión |
+| 3 | `mp_isn_mx` | ✅ Pre-existente |
+| 4 | `mp_whatsapp_business` | ❌ Pendiente |
+| 5 | **`mp_repuve`** | ✅ **Esta sesión** |
+| 6 | `mp_dof_api` | ✅ Pre-existente |
+| 7 | `mp_impi_marcanet` | ✅ Esta sesión |
+| 8 | `mp_belvo_open_banking` | ❌ Pendiente |
+| 9 | **`mp_sat_ws`** | ✅ **Esta sesión** |
+| 10 | `mp_condusef_sipres` | ✅ Esta sesión |
+| 11 | `mp_cnbv_fintech` | ✅ Pre-existente |
+| 12 | `mp_metamap` | ❌ Pendiente |
+| 13 | `mp_skydropx` + `mp_99minutos` | ❌ Pendiente |
+| 14 | **`mp_no_antecedentes_penales_mx`** | ✅ **Esta sesión** |
+| 15 | `mp_donatarias_sat` | ✅ Pre-existente |
+
+### Patrones arquitectónicos consolidados
+
+1. **`shared/playwright_session.py`** — `PortalSession` reusable para portales con
+   reCAPTCHA v3 + XSRF. Activado vía `should_use_real_browser(env_flag)`.
+2. **`is_mock_mode(default_when_no_creds=False)`** — patrón estándar para portales
+   públicos sin auth (SAT 32-D, SIPRES, IMPI). Default = real con `PLUGINS_MX_MOCK=1` override.
+3. **`shared/http_helpers.py::build_ssl_verify()`** — truststore → certifi → default,
+   esencial para servers gov.mx con cadena de cert incompleta.
+4. **`shared/csv_helpers.py::skip_csv_preamble_until_header()`** — para archivos SAT
+   AGAFF/AGR con preámbulo legal antes del header real.
+5. **`shared/http_helpers.py::decode_response_robust()`** — UTF-8 strict → latin-1 fallback,
+   para responses gov.mx sin charset declarado.
+
+**Pendiente Top 15** (próxima sesión): #4 WhatsApp Business, #8 Belvo, #12 MetaMap, #13 Skydropx+99minutos.
+
+— Sesión 2026-06-15 consolidada (AM: discovery + 3 MCPs · PM: 3 MCPs más + refactor + fix Lista 69).

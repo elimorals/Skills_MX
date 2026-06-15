@@ -243,23 +243,10 @@ class CondusefSipresClient:
             tipo=TIPO_INSTITUCIONES,
         )
 
-        # SIPRES manda cadena de cert incompleta (falta intermediate DigiCert).
-        # truststore usa el bundle del SO (Keychain en macOS) que tiene la cadena
-        # completa cargada. Si no está, fallback a certifi.
-        verify: Any = True
+        # Usa shared helpers: truststore para gov.mx (cadena cert incompleta)
+        from shared.http_helpers import build_ssl_verify
         try:
-            import truststore
-            ssl_ctx = truststore.SSLContext(getattr(__import__("ssl"), "PROTOCOL_TLS_CLIENT"))
-            verify = ssl_ctx
-        except ImportError:
-            try:
-                import certifi
-                verify = certifi.where()
-            except ImportError:
-                pass
-
-        try:
-            with httpx.Client(timeout=TIMEOUT_SECONDS, follow_redirects=True, verify=verify) as client:
+            with httpx.Client(timeout=TIMEOUT_SECONDS, follow_redirects=True, verify=build_ssl_verify()) as client:
                 resp = client.post(
                     ENDPOINT_BUSQUEDA,
                     data=body,

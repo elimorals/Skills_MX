@@ -132,51 +132,26 @@ class SatPortalClient:
     def _http_get_text(self, url: str, ttl_hours: float = 24.0) -> str | None:
         """GET con cache de texto plano. Retorna None si falla la red.
 
-        Usa truststore (system CA bundle) si está disponible — Azure Blob a veces
-        manda cadena incompleta. Fallback a certifi y a default.
+        Usa shared/http_helpers para SSL gov.mx-compatible + encoding fallback.
         """
         cached = self.cache.get(url)
         if cached is not None:
             return cached if isinstance(cached, str) else None
-        # SSL context: prefer system store > certifi > default
-        verify: Any = True
+        from shared.http_helpers import build_ssl_verify, decode_response_robust
         try:
-            import truststore
-            import ssl as _ssl
-            verify = truststore.SSLContext(_ssl.PROTOCOL_TLS_CLIENT)
-        except ImportError:
-            try:
-                import certifi
-                verify = certifi.where()
-            except ImportError:
-                pass
-        try:
-            with httpx.Client(timeout=self.http_timeout, follow_redirects=True, verify=verify) as client:
+            with httpx.Client(
+                timeout=self.http_timeout, follow_redirects=True,
+                verify=build_ssl_verify(),
+            ) as client:
                 resp = client.get(url)
                 resp.raise_for_status()
-                # SAT publica algunos archivos como latin-1 sin charset declarado.
-                # httpx default a UTF-8 produce U+FFFD para acentos. Try estricto
-                # primero; si falla, fallback a latin-1 que cubre los CSVs del SAT.
-                body = self._decode_response_body(resp)
+                body = decode_response_robust(resp)
                 self.cache.set(url, body, ttl_hours=ttl_hours)
                 return body
         except httpx.RequestError:
             return None
         except httpx.HTTPStatusError:
             return None
-
-    @staticmethod
-    def _decode_response_body(resp: Any) -> str:
-        """Decodifica body con encoding robusto (UTF-8 strict → latin-1)."""
-        # Si el server declaró charset, respétalo (httpx.text ya lo hace bien).
-        ct = (resp.headers.get("content-type") or "").lower()
-        if "charset=" in ct:
-            return resp.text
-        # Si no, intentar UTF-8 strict; si falla, latin-1 (típico SAT).
-        try:
-            return resp.content.decode("utf-8")
-        except UnicodeDecodeError:
-            return resp.content.decode("latin-1", errors="replace")
 
     # ---------- tools públicos ----------
 
