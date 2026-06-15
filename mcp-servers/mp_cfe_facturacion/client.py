@@ -57,9 +57,12 @@ SELECTORES_CFE_LOGIN = {
     "usuario": "input[name='ctl00$MainContent$txtUsuario']",
     "password": "input[name='ctl00$MainContent$txtPassword']",
     "captcha": "input[name='ctl00$MainContent$txtCaptcha']",
-    "submit": "input[type='submit'], button[type='submit']",
+    "submit": "input[name='ctl00$MainContent$btnIngresar']",
     "captcha_img": "img[id*='Captcha']",
 }
+# Re-confirmado 2026-06-15 vía Playwright. ASP.NET WebForms con __VIEWSTATE +
+# __EVENTVALIDATION ocultos; CAPTCHA alfanumérico de imagen (no reCAPTCHA).
+# Ver docs/discovery-portales-2026-06-15.md.
 
 # RPU = Registro Permanente Único (identificador de servicio CFE)
 # Formato: 12 dígitos típicamente (no estricto — algunos servicios viejos pueden ser menos)

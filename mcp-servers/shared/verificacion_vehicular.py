@@ -20,6 +20,16 @@ Holograma = Literal["00", "0", "1", "2", "Exento", "Rechazo"]
 ColorEngomado = Literal["amarillo", "rosa", "rojo", "verde", "azul"]
 
 
+# Selectores reales descubiertos 2026-06-15 (Playwright) — SAF CDMX consulta adeudos
+# Endpoint público, sin Llave CDMX. Útil para verificación + tenencia.
+URL_SAF_CDMX_CONSULTA = "https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana"
+SAF_CDMX_FIELDS = {"placa": "inputPlaca", "captcha": "captcha_code"}
+
+# Path con Llave CDMX (OAuth2) — opcional, requiere identidad digital del usuario
+URL_TRAMITES_CDMX_VERIFICACION = "https://tramites.cdmx.gob.mx/fotocivicas/public/consulta-verificacion"
+URL_LLAVE_CDMX_OAUTH = "https://llave.cdmx.gob.mx/oauth.xhtml"
+
+
 @dataclass
 class ProgramaVerificacion:
     clave: str
