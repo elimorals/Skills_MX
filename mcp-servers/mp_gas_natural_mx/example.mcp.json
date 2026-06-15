@@ -1,0 +1,1 @@
+{"mcpServers": {"gas_natural_mx": {"command": "python", "args": ["-m", "mp_gas_natural_mx.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
