@@ -82,6 +82,63 @@ CATALOGO_CATASTRO_ESTATAL: list[CatastroEstatal] = [
         identificador_label="Clave Catastral",
         metodo="no_implementado",
     ),
+    # === D.3 catastros estatales discovery 2026-06-15 ===
+    # PATRÓN NACIONAL CONFIRMADO: los catastros estatales NO exponen consulta
+    # pública por cuenta. Son login-only (OVICA, SGC) o info-only (políticas y
+    # disposiciones). La consulta operativa es municipal en todos los casos.
+    CatastroEstatal(
+        clave="ovica_cdmx",
+        nombre_estado="Ciudad de México",
+        organismo="Oficina Virtual del Catastro (OVICA) — Secretaría de Administración y Finanzas",
+        cobertura_muns=16,  # alcaldías
+        url_portal="https://ovica.finanzas.cdmx.gob.mx",
+        url_consulta="https://ovica.finanzas.cdmx.gob.mx",
+        identificador_label="Usuario registrado",
+        identificador_regex=r"^.+$",
+        metodo="login",
+        notas="❌ Discovery 2026-06-15: Material Angular SPA con login obligatorio. Predial municipal por subdelegación.",
+    ),
+    CatastroEstatal(
+        clave="catastro_jal",
+        nombre_estado="Jalisco",
+        organismo="Dirección de Catastro del Estado de Jalisco — Secretaría de Hacienda",
+        cobertura_muns=125,
+        url_portal="https://catastro.jalisco.gob.mx",
+        identificador_label="Cuenta Predial Municipal",
+        metodo="indirecto",
+        notas="❌ Discovery 2026-06-15: portal estatal info-only (políticas + cartografía). Consulta de valor por cuenta es municipal.",
+    ),
+    CatastroEstatal(
+        clave="ircnl",
+        nombre_estado="Nuevo León",
+        organismo="Instituto Registral y Catastral del Estado de Nuevo León",
+        cobertura_muns=51,
+        url_portal="https://ircnl.gob.mx",
+        url_consulta="https://catastro.ircnl.gob.mx/sgcnl/",
+        identificador_label="Usuario registrado",
+        metodo="login",
+        notas="❌ Discovery 2026-06-15: SGC NL requiere login. Consulta operativa es municipal.",
+    ),
+    CatastroEstatal(
+        clave="catastro_gto",
+        nombre_estado="Guanajuato",
+        organismo="Catastro — Secretaría de Finanzas, Inversión y Administración",
+        cobertura_muns=46,
+        url_portal="https://finanzas.guanajuato.gob.mx/c_disposiciones_administrativas_2025/lin_catastro.php",
+        identificador_label="Cuenta Predial Municipal",
+        metodo="indirecto",
+        notas="❌ Discovery 2026-06-15: portal estatal solo publica disposiciones. CapitalNet (Guanajuato Cap.) sí permite consulta predial.",
+    ),
+    CatastroEstatal(
+        clave="icreson_son",
+        nombre_estado="Sonora",
+        organismo="Instituto Catastral y Registral del Estado de Sonora",
+        cobertura_muns=72,
+        url_portal="https://icreson.sonora.gob.mx",
+        identificador_label="Cuenta Catastral",
+        metodo="indirecto",
+        notas="❌ Discovery 2026-06-15: ICRESON solo expone info — Cédula/Certificado son trámites presenciales pagados. Consulta por cuenta es municipal.",
+    ),
 ]
 
 
