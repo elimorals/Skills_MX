@@ -1,0 +1,172 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-06-15",
+  "total_skills": 62,
+  "categorias": [
+    {
+      "id": "fiscal",
+      "label": "Fiscal",
+      "icon": "F",
+      "color": "terra",
+      "descripcion": "CFDI 4.0, SAT, IMSS, INFONAVIT, retenciones, declaraciones",
+      "skills": [
+        {"id": "mp_facturama_extendido", "tier": "S", "tag": "REST", "desc": "CFDI 4.0 timbrado + cancelación + complementos pago/nómina/CCP"},
+        {"id": "mp_sat_portal", "tier": "S", "tag": "público", "desc": "Padrón SAT, 69-B EFOS, 69 incumplidos, Verifica CFDI"},
+        {"id": "mp_sat_opinion_32d", "tier": "S", "tag": "público", "desc": "Opinión 32-D cumplimiento sin captcha"},
+        {"id": "mp_sat_ws", "tier": "B", "tag": "e.firma", "desc": "Web Services SAT para descarga masiva CFDI"},
+        {"id": "mp_donatarias_sat", "tier": "A", "tag": "RMF", "desc": "Padrón donatarias autorizadas (Anexo 14 RMF)"},
+        {"id": "mp_imss_patronal", "tier": "C", "tag": "e.firma", "desc": "IDSE altas/bajas, cédula EMCR, SBC"},
+        {"id": "mp_infonavit_patronal", "tier": "C", "tag": "e.firma", "desc": "Créditos INFONAVIT, EMIS, descuentos"}
+      ]
+    },
+    {
+      "id": "laboral",
+      "label": "Laboral",
+      "icon": "L",
+      "color": "jade",
+      "descripcion": "REPSE, ISN, IMSS, contratos, nómina, subcontratación",
+      "skills": [
+        {"id": "mp_repse_stps", "tier": "A", "tag": "público", "desc": "Compliance REPSE Art. 15 LFT decisión binaria"},
+        {"id": "mp_isn_mx", "tier": "B", "tag": "32 estados", "desc": "Impuesto sobre Nómina multi-estado 1.8%–3.0%"},
+        {"id": "mp_sep_profesional", "tier": "A", "tag": "público", "desc": "Validación cédula profesional SEP sin captcha"},
+        {"id": "mp_no_antecedentes_penales_mx", "tier": "B", "tag": "Playwright", "desc": "Carta no antecedentes penales federal"}
+      ]
+    },
+    {
+      "id": "municipal",
+      "label": "Municipal",
+      "icon": "M",
+      "color": "cobalt",
+      "descripcion": "Predial, multas municipales, catastros, organismos de agua",
+      "skills": [
+        {"id": "mp_predial_mx", "tier": "B", "tag": "243 muns", "desc": "Predial 243 municipios catalogados, 71 validados Playwright"},
+        {"id": "mp_sacpi_michoacan", "tier": "B", "tag": "95 muns", "desc": "SACPI Michoacán: 95 municipios via 1 URL"},
+        {"id": "mp_cdmx_municipal", "tier": "B", "tag": "16 alcaldías", "desc": "CDMX: predial, tenencia, multas, Hoy No Circula"},
+        {"id": "mp_edomex_municipal", "tier": "B", "tag": "125 muns", "desc": "EdoMex municipal"},
+        {"id": "mp_monterrey_municipal", "tier": "B", "tag": "AMM", "desc": "Predial AMM + multas NL + aire"},
+        {"id": "mp_guadalajara_municipal", "tier": "B", "tag": "ZMG", "desc": "Predial + multas Guadalajara"},
+        {"id": "mp_merida_municipal", "tier": "B", "tag": "Mérida", "desc": "Predial + multas Mérida (PHP custom)"},
+        {"id": "mp_puebla_municipal", "tier": "B", "tag": "Puebla", "desc": "Predial + multas Puebla"},
+        {"id": "mp_queretaro_municipal", "tier": "B", "tag": "QRO", "desc": "Predial + multas Querétaro (webservices)"},
+        {"id": "mp_tijuana_municipal", "tier": "C", "tag": "login", "desc": "Tijuana: requiere registro previo"},
+        {"id": "mp_catastro_estatal_mx", "tier": "B", "tag": "10 sistemas", "desc": "IGECEM EdoMex + IRCEP Puebla + Veracruz +7"}
+      ]
+    },
+    {
+      "id": "verificacion_vehicular",
+      "label": "Verificación vehicular",
+      "icon": "V",
+      "color": "maize",
+      "descripcion": "Tenencia, verificación, multas, REPUVE, refrendo",
+      "skills": [
+        {"id": "mp_verificacion_vehicular_mx", "tier": "A", "tag": "SAF CDMX real", "desc": "Verificación 7 estados + SAF CDMX calibrado en vivo"},
+        {"id": "mp_tenencia_mx", "tier": "B", "tag": "20 estados", "desc": "Cálculo tenencia + factor depreciación 0-9 años"},
+        {"id": "mp_multas_vehiculares_mx", "tier": "B", "tag": "5 sistemas", "desc": "CDMX + EdoMex + NL ICVNL + NL San Pedro + JAL"},
+        {"id": "mp_multas_mx", "tier": "B", "tag": "8 estados", "desc": "Multas vehiculares estatales legacy"},
+        {"id": "mp_repuve", "tier": "B", "tag": "Playwright", "desc": "Registro Público Vehicular"}
+      ]
+    },
+    {
+      "id": "servicios_publicos",
+      "label": "Servicios públicos",
+      "icon": "S",
+      "color": "terra",
+      "descripcion": "Agua, CFE, Telmex, gas natural",
+      "skills": [
+        {"id": "mp_cfe_facturacion", "tier": "A", "tag": "Playwright + CAPTCHA", "desc": "CFE Mi Espacio real con human-in-loop CAPTCHA"},
+        {"id": "mp_telmex_facturacion", "tier": "A", "tag": "sin login", "desc": "Telmex pago_sin_login con reCAPTCHA Enterprise v3 invisible"},
+        {"id": "mp_agua_mx", "tier": "A", "tag": "17 organismos", "desc": "SACMEX + SIAPA + JMAS + OOAPAS + 13 más"},
+        {"id": "mp_gas_natural_mx", "tier": "C", "tag": "5 distribuidores", "desc": "Naturgy/ENGIE/Ecogas/Fenosa — sin portal público"}
+      ]
+    },
+    {
+      "id": "compliance_horizontal",
+      "label": "Compliance horizontal",
+      "icon": "C",
+      "color": "jade",
+      "descripcion": "DOF, CNBV, IMPI, CONDUSEF, RENAPO, registros",
+      "skills": [
+        {"id": "mp_dof_api", "tier": "A", "tag": "público", "desc": "Diario Oficial de la Federación: sumario diario + búsqueda full-text"},
+        {"id": "mp_cnbv_fintech", "tier": "B", "tag": "ITF", "desc": "Padrón ITF Ley Fintech (IFPE/IFC)"},
+        {"id": "mp_condusef_sipres", "tier": "B", "tag": "Playwright", "desc": "SIPRES entidades financieras"},
+        {"id": "mp_impi_marcanet", "tier": "B", "tag": "Playwright", "desc": "Marcanet IMPI marcas registradas"},
+        {"id": "mp_curp_renapo", "tier": "S", "tag": "estructural", "desc": "CURP + RENAPO validación"}
+      ]
+    },
+    {
+      "id": "pagos_fintech",
+      "label": "Pagos & fintech",
+      "icon": "$",
+      "color": "cobalt",
+      "descripcion": "MP, Conekta, Stripe, Bitso, Klap, Kueski, Clip",
+      "skills": [
+        {"id": "mp_mercado_pago", "tier": "S", "tag": "webhook HMAC", "desc": "Pagos + refunds + suscripciones"},
+        {"id": "mp_banxico", "tier": "S", "tag": "REST", "desc": "TCs DOF + UMA + INPC + TIIE diario"},
+        {"id": "mp_banxico_cep", "tier": "S", "tag": "form-POST", "desc": "CLABE + CEP SPEI"},
+        {"id": "mp_conekta", "tier": "A", "tag": "REST", "desc": "Pasarela alterna MX"},
+        {"id": "mp_paypal_mx", "tier": "B", "tag": "REST", "desc": "PayPal MX wrapper"},
+        {"id": "mp_klap", "tier": "B", "tag": "POS", "desc": "Klap POS alterno"},
+        {"id": "mp_clip_terminal", "tier": "B", "tag": "POS", "desc": "Clip terminales mobile"},
+        {"id": "mp_kueski", "tier": "B", "tag": "BNPL", "desc": "Kueski Buy-Now-Pay-Later"},
+        {"id": "mp_trustly_mx", "tier": "B", "tag": "open banking", "desc": "Open banking pagos directos"},
+        {"id": "mp_bitso", "tier": "A", "tag": "cripto", "desc": "Ticker + balance + ledger + ISR cripto"},
+        {"id": "mp_clabe_validador_oficial", "tier": "B", "tag": "CNBV", "desc": "Validador CLABE reverso CNBV"}
+      ]
+    },
+    {
+      "id": "marketplaces",
+      "label": "Marketplaces & e-commerce",
+      "icon": "M",
+      "color": "maize",
+      "descripcion": "ML, Shopify MX, Amazon SP-API, Inmuebles24",
+      "skills": [
+        {"id": "mp_mercado_libre", "tier": "S", "tag": "REST", "desc": "Listings + órdenes + mensajes + reputación"},
+        {"id": "mp_amazon_mx_seller", "tier": "A", "tag": "LWA + SigV4", "desc": "Amazon MX SP-API"},
+        {"id": "mp_shopify_mx", "tier": "A", "tag": "REST", "desc": "Wrapper Shopify específico MX"},
+        {"id": "mp_inmuebles24", "tier": "B", "tag": "Playwright", "desc": "Búsquedas + comparables + publicación"},
+        {"id": "mp_vivanuncios", "tier": "B", "tag": "Playwright", "desc": "Multi-categoría: autos/inmuebles/empleos"},
+        {"id": "mp_buro_credito_personal", "tier": "B", "tag": "autorización", "desc": "Score + reporte con autorización titular"},
+        {"id": "mp_facturama_extendido_dup", "tier": "S", "tag": "ref", "desc": "(duplicado de Fiscal)"}
+      ]
+    },
+    {
+      "id": "movilidad_delivery",
+      "label": "Movilidad & delivery",
+      "icon": "D",
+      "color": "terra",
+      "descripcion": "Cabify, DiDi, Uber Eats, Rappi (B2B)",
+      "skills": [
+        {"id": "mp_cabify_business", "tier": "B", "tag": "REST stub", "desc": "Movilidad B2B + factura mensual"},
+        {"id": "mp_didi_partners", "tier": "C", "tag": "API restringida", "desc": "DiDi Partners movilidad"},
+        {"id": "mp_didi_food_partners", "tier": "C", "tag": "API restringida", "desc": "DiDi Food partners"},
+        {"id": "mp_rappi_partners", "tier": "C", "tag": "API restringida", "desc": "Rappi partners"},
+        {"id": "mp_uber_eats_partners", "tier": "C", "tag": "API restringida", "desc": "Uber Eats partners"}
+      ]
+    },
+    {
+      "id": "erp_pos",
+      "label": "ERP & POS",
+      "icon": "E",
+      "color": "ink",
+      "descripcion": "Aspel CONTPAQi, SoftRestaurant, bancos MX",
+      "skills": [
+        {"id": "mp_aspel_contpaqi", "tier": "B", "tag": "CSV", "desc": "Pólizas + balanza + P&L parser CSV"},
+        {"id": "mp_softrestaurant", "tier": "B", "tag": "CSV", "desc": "Corte Z + ventas + meseros parser CSV"},
+        {"id": "mp_bancos_mx", "tier": "C", "tag": "Playwright", "desc": "BBVA/Banamex/Santander/Banorte stub"}
+      ]
+    }
+  ],
+  "filtros": {
+    "tier": ["S", "A", "B", "C"],
+    "captcha": ["ninguno", "recaptcha_v2", "recaptcha_v3", "turnstile", "imagen", "human-in-loop"],
+    "metodo": ["REST", "Playwright", "form-POST", "CSV-parser", "e.firma"]
+  },
+  "agents": [
+    {"id": "auditor-fiscal-mx", "categoria": "fiscal", "desc": "Auditoría preventiva CFDI + RFC + 32-D mensual"},
+    {"id": "validador-cfdi", "categoria": "fiscal", "desc": "Validación CFDI 4.0 vs padrón SAT tiempo real"},
+    {"id": "recolector-evidencia-sat", "categoria": "fiscal", "desc": "Bundle archivable de evidencia SAT"},
+    {"id": "discovery-portales-mx", "categoria": "operativo", "desc": "Discovery semi-automático nuevos portales gob.mx"},
+    {"id": "compliance-repse", "categoria": "laboral", "desc": "Verificación binaria REPSE Art. 15 LFT"},
+    {"id": "codebase-auditor-mx", "categoria": "operativo", "desc": "Auditor estructural de MCPs nuevos"}
+  ]
+}

@@ -2,6 +2,13 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/api/skills-catalog.json", "destination": "/data/skills-catalog.json" },
+    { "source": "/api/portales-coverage.json", "destination": "/data/portales-coverage.json" },
+    { "source": "/api/isn-tasas.json", "destination": "/data/isn-tasas.json" },
+    { "source": "/api/repse-stats.json", "destination": "/data/repse-stats.json" },
+    { "source": "/api/municipios.json", "destination": "/data/municipios.json" }
+  ],
   "headers": [
     {
       "source": "/(.*)\\.(css|js|svg|png|jpg|jpeg|webp|woff2)",
@@ -64,6 +71,14 @@
     },
     {
       "source": "/api/(.*)\\.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/data/(.*)\\.json",
       "headers": [
         { "key": "Content-Type", "value": "application/json; charset=utf-8" },
         { "key": "Cache-Control", "value": "public, max-age=3600" },
