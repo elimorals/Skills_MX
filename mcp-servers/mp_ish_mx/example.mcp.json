@@ -1,0 +1,1 @@
+{"mcpServers": {"ish_mx": {"command": "python", "args": ["-m", "mp_ish_mx.server"], "env": {}}}}
