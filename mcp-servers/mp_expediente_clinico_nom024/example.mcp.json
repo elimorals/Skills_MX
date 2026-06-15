@@ -1,0 +1,1 @@
+{"mcpServers": {"ece_nom024": {"command": "python", "args": ["-m", "mp_expediente_clinico_nom024.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}

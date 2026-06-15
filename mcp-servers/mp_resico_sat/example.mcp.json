@@ -1,0 +1,1 @@
+{"mcpServers": {"resico_sat": {"command": "python", "args": ["-m", "mp_resico_sat.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
