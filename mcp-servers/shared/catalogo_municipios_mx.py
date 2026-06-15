@@ -172,8 +172,28 @@ MUNICIPIOS: dict[str, dict[str, MunicipioConfig]] = {
         ),
     },
     'bc': {
-        'tijuana': MunicipioConfig(nombre='Tijuana', estado_clave='bc', poblacion_aprox=1922523, validado=False, notas='URL anterior 404/DNS-muerto (validado 2026-06-13). Pendiente identificar URL real.'),
-        'mexicali': MunicipioConfig(nombre='Mexicali', estado_clave='bc', poblacion_aprox=1049792, validado=False, notas='URL anterior 404/DNS-muerto (validado 2026-06-13). Pendiente identificar URL real.'),
+        'tijuana': MunicipioConfig(
+            nombre='Tijuana', estado_clave='bc',
+            portal_predial_url='https://pagos.tijuana.gob.mx/PagosenLinea/index.aspx?do=out',
+            selectores_predial={
+                'input': ["input[name='ctl00$ContentPlaceHolder1$txtUsuario']", "input#ContentPlaceHolder1_txtUsuario"],
+                'submit': ["input#ContentPlaceHolder1_btnLogin"],
+                'result': 'table, .resultado',
+            },
+            poblacion_aprox=1922523, validado=True,
+            notas='⚠ Playwright MCP 2026-06-15: ASP.NET WebForms requiere REGISTRO PREVIO (login user+pass). No consulta pública sin cuenta.',
+        ),
+        'mexicali': MunicipioConfig(
+            nombre='Mexicali', estado_clave='bc',
+            portal_predial_url='https://www.mexicali.gob.mx/portalmexicali/predial',
+            selectores_predial={
+                'input': ["input[name='claveCatastral']", "input#claveCatastral"],
+                'submit': ["button:has-text('Consultar')", "button[type='submit']"],
+                'result': '.resultado, table',
+            },
+            poblacion_aprox=1049792, validado=True,
+            notas='✅ Playwright MCP 2026-06-15: SPA simple con #claveCatastral, sin captcha visible.',
+        ),
         'ensenada': MunicipioConfig(nombre='Ensenada', estado_clave='bc', poblacion_aprox=443807, validado=False, notas='URL anterior 404/DNS-muerto (validado 2026-06-13). Pendiente identificar URL real.'),
         'rosarito': MunicipioConfig(nombre='Playas de Rosarito', estado_clave='bc', poblacion_aprox=126890, validado=False, notas='Agregado catálogo extendido 2026-06-13. URL pendiente verificación: correr scripts/descubrir-portal-municipal.py.'),
         'tecate': MunicipioConfig(nombre='Tecate', estado_clave='bc', poblacion_aprox=108440, validado=False, notas='Agregado catálogo extendido 2026-06-13. URL pendiente verificación: correr scripts/descubrir-portal-municipal.py.'),
@@ -651,7 +671,18 @@ MUNICIPIOS: dict[str, dict[str, MunicipioConfig]] = {
         ),
     },
     'qroo': {
-        'cancun': MunicipioConfig(nombre='Cancún (Benito Juárez)', estado_clave='qroo', portal_predial_url='https://www.cancun.gob.mx/predial', poblacion_aprox=911503, validado=False, notas='⚠ Validado Playwright MCP 2026-06-13: SPA AJAX no completó carga (timeout). Verificar manualmente o buscar subdominio dedicado.'),
+        'cancun': MunicipioConfig(
+            nombre='Cancún (Benito Juárez)', estado_clave='qroo',
+            portal_predial_url='https://cancun-digital.mx/tramites/tipo/pipcan/inicio',
+            selectores_predial={
+                # SPA React con useId — selectores estructurales en vez de IDs estáticos
+                'input': ["input[type='text']", "input[type='number']"],
+                'submit': ["button:has-text('Consultar')"],
+                'result': '[role="table"], table, .resultado',
+            },
+            poblacion_aprox=911503, validado=True,
+            notas='✅ Playwright MCP 2026-06-15: SPA React en cancun-digital.mx. 2 modos: padrón / clave catastral. Sin captcha visible.',
+        ),
         'playa_del_carmen': MunicipioConfig(nombre='Playa del Carmen (Solidaridad)', estado_clave='qroo', poblacion_aprox=333800, validado=False, notas='URL anterior 404/DNS-muerto (validado 2026-06-13). Pendiente identificar URL real.'),
         'chetumal': MunicipioConfig(nombre='Chetumal (Othón P. Blanco)', estado_clave='qroo', poblacion_aprox=233648, validado=False, notas='URL anterior 404/DNS-muerto (validado 2026-06-13). Pendiente identificar URL real.'),
         'isla_mujeres': MunicipioConfig(nombre='Isla Mujeres', estado_clave='qroo', poblacion_aprox=22726, validado=False, notas='Agregado catálogo extendido 2026-06-13. URL pendiente verificación: correr scripts/descubrir-portal-municipal.py.'),
