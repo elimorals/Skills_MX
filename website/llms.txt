@@ -1,11 +1,11 @@
 # Plugins MX
 
-> Infraestructura de cumplimiento fiscal y municipal para México. 46 MCPs (Model Context Protocol) production-ready que automatizan SAT, IMSS, REPSE, ISN estatal en 32 entidades federativas y predial municipal en 243 ayuntamientos. Construido para despachos contables, inmobiliarias y áreas fiscales corporativas.
+> Infraestructura de cumplimiento fiscal y municipal para México. 62 MCPs (Model Context Protocol) production-ready que automatizan SAT, IMSS, REPSE, ISN estatal en 32 entidades federativas, predial municipal en 243 ayuntamientos (71 validados Playwright), servicios públicos (CFE Mi Espacio real, Telmex pago sin login, 17 organismos de agua) y fiscal vehicular (tenencia 20 estados, ISH 32 estados, verificación con SAF CDMX real, multas en 5 sistemas). Construido para despachos contables, inmobiliarias, anfitriones Airbnb, talleres y áreas fiscales corporativas.
 
 **Autor:** Elías Rashid Morales Mendoza · Ciudad de México · contacto: elimoralsmendox@gmail.com
 **Sitio:** https://skills-mexico.vercel.app
 **Repositorio:** https://github.com/elimorals/Skills_MX
-**Stack:** Python + FastMCP, Playwright para validación E2E, 870+ tests con pytest
+**Stack:** Python + FastMCP, Playwright para validación E2E, 1,380 tests con pytest
 
 ## Productos
 
@@ -22,11 +22,14 @@
 ## MCPs públicos por categoría
 
 - **Gobierno federal (8):** mp_sat_portal, mp_curp_renapo, mp_sep_profesional, mp_repse_stps, mp_imss_patronal, mp_infonavit_patronal, mp_banxico, mp_banxico_cep
-- **Estatal y municipal (13):** mp_isn_mx (32 estados), mp_predial_mx (243 municipios), mp_sacpi_michoacan (95 municipios), mp_multas_mx (8 estados), mp_cdmx_municipal, mp_edomex_municipal, mp_monterrey_municipal, mp_guadalajara_municipal, mp_merida_municipal, mp_puebla_municipal, mp_queretaro_municipal, mp_tijuana_municipal, mp_clabe_validador_oficial
+- **Estatal, municipal y fiscal vehicular (21 ★):** mp_isn_mx (32 estados), mp_ish_mx (32 estados Hospedaje), mp_tenencia_mx (20 estados), mp_verificacion_vehicular_mx (7 estados + SAF CDMX real), mp_multas_vehiculares_mx (~22M vehículos CDMX/EdoMex/NL/JAL), mp_catastro_estatal_mx (10 sistemas), mp_predial_mx (243 muns · 71 validados Playwright), mp_sacpi_michoacan (95 municipios), mp_multas_mx (8 estados), mp_cdmx_municipal, mp_edomex_municipal, mp_monterrey_municipal, mp_guadalajara_municipal, mp_merida_municipal, mp_puebla_municipal, mp_queretaro_municipal, mp_tijuana_municipal (login-only), mp_clabe_validador_oficial
 - **Pagos y fintech (9):** mp_mercado_pago, mp_conekta, mp_paypal_mx, mp_klap, mp_clip_terminal, mp_kueski, mp_trustly_mx, mp_bitso, mp_facturama_extendido
-- **Servicios públicos y bancos (3):** mp_cfe_facturacion, mp_telmex_facturacion, mp_bancos_mx
+- **Servicios públicos y bancos (5 ★):** mp_cfe_facturacion (REAL · Playwright + human-in-loop CAPTCHA + cookies session 30 min), mp_telmex_facturacion (REAL · pago_sin_login con reCAPTCHA Enterprise v3 invisible sin credenciales), mp_agua_mx (17 organismos · SACMEX/SIAPA/SADM/JMAS Juárez/OOAPAS Morelia), mp_gas_natural_mx (Naturgy/ENGIE/5 distribuidores), mp_bancos_mx
+- **Compliance horizontal (6):** mp_dof_api, mp_cnbv_fintech, mp_donatarias_sat, mp_no_antecedentes_penales_mx, mp_sat_opinion_32d, mp_repuve, mp_condusef_sipres, mp_impi_marcanet, mp_sat_ws
 - **Marketplaces y e-commerce (6):** mp_mercado_libre, mp_amazon_mx_seller, mp_shopify_mx, mp_inmuebles24, mp_vivanuncios, mp_buro_credito_personal
 - **POS, ERP y movilidad (7):** mp_aspel_contpaqi, mp_softrestaurant, mp_cabify_business, mp_didi_partners, mp_didi_food_partners, mp_rappi_partners, mp_uber_eats_partners
+
+★ Nuevos/extendidos Sprint A/B/C/D 2026-06-15 con discovery Playwright en vivo. Calibración SAF CDMX en vivo (envío real de form con captcha resuelto) desbloquea 3 MCPs reusando 1 endpoint público: verificación + tenencia + multas vehiculares CDMX. Detalles en `docs/SPRINT-D-RESUMEN-2026-06-15.md` y `docs/discovery-portales-2026-06-15.md`.
 
 ## Endpoints públicos para agentes
 
@@ -40,13 +43,16 @@
 
 ## Métricas verificables
 
-- **46** MCPs production-ready
+- **62** MCPs production-ready
 - **307** Skills empaquetados (con SKILL.md + evals)
 - **24** Workflows ejecutables (cobranza, cierre fiscal, due diligence)
 - **281** Evals para triggering (ratio 0.92 promedio)
-- **870+** tests con pytest
-- **32** entidades federativas con ISN integrado
-- **243** municipios en catálogo predial (163 consultables)
+- **1,380** tests con pytest (suite full pasa en 6.9s)
+- **32** entidades federativas con ISN y ISH integrados
+- **243** municipios en catálogo predial (71 validados Playwright en vivo)
+- **20** estados con cálculo de tenencia vehicular
+- **5** sistemas de multas vehiculares (~22M vehículos cobertura combinada)
+- **17** organismos operadores de agua (~50% pob urbana MX)
 - **40** verticales soportados (de freelancer a constructora)
 
 ## Contacto y demo

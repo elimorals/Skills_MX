@@ -1,10 +1,12 @@
 # STATUS — Estado del proyecto plugins-mx
 
 > **Documento vivo.** Cada sesión que cierre un módulo, sub-módulo o entrega debe actualizar este archivo.
-> Última actualización: **2026-06-12** (reconciliación con filesystem)
+> Última actualización: **2026-06-15** (post-Sprint D — servicios públicos + fiscal vehicular)
 > Próxima revisión sugerida: al cierre de cada sesión productiva.
 
 > ⚠ **Nota 2026-06-12**: este documento estaba subestimando el filesystem real. Reconciliación completa hecha. Detalle de los hallazgos en [analisis-profundo-2026-06.md](analisis-profundo-2026-06.md).
+>
+> 🆕 **Nota 2026-06-15**: Sprint A/B/C/D ejecutado completo. 9 MCPs nuevos/extendidos (servicios públicos + fiscal vehicular). 114 tests nuevos. **62 MCPs totales**. Calibración SAF CDMX en vivo desbloquea 3 MCPs con 1 endpoint. Detalles en [SPRINT-D-RESUMEN-2026-06-15.md](SPRINT-D-RESUMEN-2026-06-15.md) y [discovery-portales-2026-06-15.md](discovery-portales-2026-06-15.md).
 
 ---
 
@@ -24,11 +26,33 @@
 
 ---
 
-## Resumen de progreso global (reconciliado 2026-06-12)
+## Resumen de progreso global (post Sprint D — 2026-06-15)
+
+### Sprint A/B/C/D (2026-06-14 → 2026-06-15)
+
+| Bloque | Estado | Commit | Tests |
+|---|---|---|---|
+| Sprint A1 `mp_agua_mx` | ✅ Catálogo 17 organismos + SIAPA real | `8c676b0` | 24 |
+| Sprint A2 `mp_cfe_facturacion` REAL | ✅ Playwright + human-in-loop + cookies | `8c676b0` | 17 |
+| Sprint A3 `mp_tenencia_mx` | ✅ 20 estados + factor depreciación | `8c676b0` | 16 |
+| Sprint B4 `scripts/discovery_predial_mensual.py` | ✅ Smoke OK | `e343068` | — |
+| Sprint B5 `mp_catastro_estatal_mx` | ✅ 10 sistemas + patrón nacional confirmado | `e343068` | 6 |
+| Sprint B6 `mp_ish_mx` | ✅ 32 estados | `e343068` | 10 |
+| Sprint C7 `mp_verificacion_vehicular_mx` | ✅ 7 estados + SAF CDMX real | `8941abc` | 15 |
+| Sprint C8 `mp_gas_natural_mx` | ✅ 5 distribuidores (mock-first) | `8941abc` | 4 |
+| Sprint C9 `mp_telmex_facturacion` REAL | ✅ pago_sin_login Enterprise v3 | `8941abc` | 11 |
+| Sprint D1 Predial top-7 muns (+8.6M hab) | ✅ | `00420f4` | 9 |
+| Sprint D2 Agua +5 organismos (+2.25M usuarios) | ✅ | `564c576` | 7 |
+| Sprint D3 Catastro +5 estados (patrón nacional) | ✅ | `2a51c80` | 7 |
+| Sprint D4 `mp_multas_vehiculares_mx` (NUEVO) | ✅ ~22M vehículos | `93f2810` | 11 |
+| 🎯 Calibración SAF CDMX en vivo | ✅ 3 MCPs reusan 1 endpoint | `41196eb` | (incluido en 15) |
+| **TOTAL Sprint A/B/C/D** | ✅ | 9 MCPs nuevos/extendidos | **114** |
+
+### Métricas globales reconciliadas 2026-06-15
 
 | Capa | Hecho (filesystem real) | Faltante | % completado | Notas |
 |---|---|---|---|---|
-| **MCP servers** | **40** | path real Playwright (SAT + bancos) | ~92% scaffolding / ~30% Playwright real | 92 archivos test |
+| **MCP servers** | **62** | path real bancos + IMSS + SAT post-login | ~95% scaffolding / ~50% Playwright real | 1,380 tests pasando |
 | **Plugins verticales** | **35** (core + 34) | ~30 del research (geriatría, lab clínico, nutrición, tutor, etc.) | ~54% universo del research | Scaffolding promedio 4.7/9 |
 | **Workflows declarados markdown** | **23** | conversión a código ejecutable | ~100% declarados | ⚠ |
 | **Workflows como código ejecutable** | **0** | 8 prioritarios | **0%** | ⚠ Gap silencioso descubierto 2026-06-12 |
