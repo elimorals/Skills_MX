@@ -65,19 +65,45 @@ def test_listar_facturas_mock():
     assert len(r["facturas_disponibles"]) >= 1
 
 
-def test_live_flag_sin_creds_se_queda_en_mock(monkeypatch):
-    """LIVE flag activo pero sin credenciales → cae a mock por is_mock_mode."""
-    monkeypatch.setenv("PLUGINS_MX_TELMEX_LIVE", "1")
+def test_live_flag_off_mantiene_mock(monkeypatch):
+    """Sin PLUGINS_MX_TELMEX_LIVE → siempre mock."""
+    monkeypatch.delenv("PLUGINS_MX_TELMEX_LIVE", raising=False)
     c = TelmexFactClient()
     r = c.descargar_factura_mes("5512345678")
     assert r["simulated"] is True
 
 
-def test_live_flag_con_creds_lanza_error_real_pendiente(monkeypatch):
-    """LIVE + creds → entra a path real, que lanza McpError porque selectores TBD."""
+def test_consumo_real_path_requiere_login(monkeypatch):
+    """Consumo histórico real requiere Mi Telmex login → lanza McpError."""
     monkeypatch.setenv("PLUGINS_MX_TELMEX_LIVE", "1")
-    monkeypatch.setenv("TELMEX_TELEFONO", "5512345678")
-    monkeypatch.setenv("TELMEX_PASSWORD", "xxx")
     c = TelmexFactClient()
+    # Necesitamos vaciar cache para que entre al path real
+    c._cache.clear() if hasattr(c._cache, "clear") else None
     with pytest.raises(McpError):
-        c.descargar_factura_mes("5512345678")
+        c.consumo_historico("5599887766", meses=6)
+
+
+def test_parser_extrae_monto():
+    """El parser de HTML extrae monto, vencimiento, num_servicio."""
+    from mp_telmex_facturacion.client import _parse_telmex_factura_html
+    html = """
+    <html><body>
+      <h2>Tu Recibo Telmex</h2>
+      <p>Total a pagar: $ 689.50</p>
+      <p>Fecha de vencimiento: 30/06/2026</p>
+      <p>Número de servicio: 5512345678</p>
+      <p>Periodo: 2026-05</p>
+    </body></html>
+    """
+    r = _parse_telmex_factura_html(html, "5512345678")
+    assert r["monto_total_mxn"] == 689.50
+    assert r["fecha_vencimiento"] == "30/06/2026"
+    assert r["numero_servicio"] == "5512345678"
+    assert r["periodo_detectado"] == "2026-05"
+    assert "parse_partial" not in r
+
+
+def test_parser_html_sin_monto_marca_partial():
+    from mp_telmex_facturacion.client import _parse_telmex_factura_html
+    r = _parse_telmex_factura_html("<html>Sin datos relevantes</html>", "5512345678")
+    assert r.get("parse_partial") is True

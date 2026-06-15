@@ -72,3 +72,48 @@ class TestProximoPeriodo:
         c = VerificacionVehicularClient()
         r = c.listar_programas()
         assert r["total"] == 7
+
+
+class TestSAFParser:
+    def test_parser_extrae_holograma_y_adeudo(self):
+        from mp_verificacion_vehicular_mx.client import _parse_saf_cdmx_html
+        html = """
+        <html><body>
+          <table>
+            <tr><td>Holograma:</td><td>00</td></tr>
+            <tr><td>Última verificación:</td><td>2026-04-10</td></tr>
+            <tr><td>Vigencia hasta:</td><td>2026-10-10</td></tr>
+            <tr><td>Adeudo total:</td><td>$ 1,245.50</td></tr>
+          </table>
+        </body></html>
+        """
+        r = _parse_saf_cdmx_html(html, "ABC1234")
+        assert r["holograma_actual"] == "00"
+        assert r["ultima_verificacion"] == "2026-04-10"
+        assert r["vigencia_hasta"] == "2026-10-10"
+        assert r["adeudo_total_mxn"] == 1245.50
+        assert r["vigente"] is True
+
+    def test_parser_html_vacio_marca_partial(self):
+        from mp_verificacion_vehicular_mx.client import _parse_saf_cdmx_html
+        r = _parse_saf_cdmx_html("<html>sin datos</html>", "ABC1234")
+        assert r.get("parse_partial") is True
+        assert r["vigente"] is False
+
+
+class TestLiveFlag:
+    def test_live_flag_no_cdmx_se_queda_en_mock(self, monkeypatch):
+        """LIVE flag activo pero estado != cdmx → mock (otros estados no implementados)."""
+        monkeypatch.setenv("PLUGINS_MX_VERIFICACION_LIVE", "1")
+        from mp_verificacion_vehicular_mx.client import VerificacionVehicularClient
+        c = VerificacionVehicularClient()
+        r = c.consultar_estatus("ABC1234", "edomex")
+        assert r["simulated"] is True
+
+    def test_captcha_resolver_lee_env(self, tmp_path, monkeypatch):
+        """_resolve_captcha lee de PLUGINS_MX_VERIFICACION_CAPTCHA."""
+        from mp_verificacion_vehicular_mx.client import _resolve_captcha
+        monkeypatch.setenv("PLUGINS_MX_VERIFICACION_CAPTCHA", "ABCDE5")
+        fake_img = tmp_path / "cap.png"
+        fake_img.write_bytes(b"")
+        assert _resolve_captcha(fake_img, "ABC1234") == "ABCDE5"
