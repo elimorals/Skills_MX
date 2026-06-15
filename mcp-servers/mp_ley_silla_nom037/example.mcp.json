@@ -1,0 +1,1 @@
+{"mcpServers": {"ley_silla_nom037": {"command": "python", "args": ["-m", "mp_ley_silla_nom037.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
