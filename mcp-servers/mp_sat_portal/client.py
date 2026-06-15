@@ -32,10 +32,62 @@ NAMESPACE = "sat_portal"
 
 
 # URLs públicas SAT (verificar vigencia — cambian periódicamente)
-URL_VERIFICACFDI = "https://verificacfdi.facturaelectronica.sat.gob.mx/default.aspx"
-URL_LISTA_69B_DEFINITIVOS = "http://omawww.sat.gob.mx/cifras_sat/Documents/Definitivos.csv"
-URL_LISTA_69B_PRESUNTOS = "http://omawww.sat.gob.mx/cifras_sat/Documents/Presuntos.csv"
-URL_LISTA_69_INCUMPLIDOS = "http://omawww.sat.gob.mx/cifras_sat/Documents/IncumplidosListado.csv"
+# Validado Playwright MCP 2026-06-15: el SAT migró todo a Azure Blob Storage
+# bajo wu1agsprosta001.blob.core.windows.net. Las URLs viejas en
+# omawww.sat.gob.mx siguen respondiendo pero con archivos STALE (Ene 2026),
+# mientras los nuevos en Azure se actualizan mensualmente.
+URL_VERIFICACFDI = "https://verificacfdi.facturaelectronica.sat.gob.mx/"
+
+# === Lista 69-B (EFOS) — operaciones simuladas Art. 69-B CFF ===
+_SAT_BLOB_AGAFF = "https://wu1agsprosta001.blob.core.windows.net/agsc-publicaciones/Datos_abiertos/Documents_AGAFF"
+URL_LISTA_69B_DEFINITIVOS = f"{_SAT_BLOB_AGAFF}/Definitivos.csv"
+URL_LISTA_69B_PRESUNTOS = f"{_SAT_BLOB_AGAFF}/Presuntos.csv"
+URL_LISTA_69B_DESVIRTUADOS = f"{_SAT_BLOB_AGAFF}/Desvirtuados.csv"
+URL_LISTA_69B_SENTENCIAS_FAVORABLES = f"{_SAT_BLOB_AGAFF}/SentenciasFavorables.csv"
+URL_LISTA_69B_COMPLETO = f"{_SAT_BLOB_AGAFF}/Listado_completo_69-B.csv"
+
+# === Lista 69 (incumplidos Art. 69 CFF) — fragmentada en 8 categorías ===
+# Tras la migración, no existe un único "IncumplidosListado.csv". El SAT publica
+# 8 archivos distintos por motivo de publicación. Para mantener compatibilidad
+# con código existente, URL_LISTA_69_INCUMPLIDOS apunta a "Firmes.csv" que es
+# conceptualmente lo más cercano a "incumplidos" (créditos fiscales firmes).
+_SAT_BLOB_AGR = "https://wu1agsprosta001.blob.core.windows.net/agsc-publicaciones/Datos_abiertos/Documents_AGR"
+URL_LISTA_69_FIRMES = f"{_SAT_BLOB_AGR}/Firmes.csv"
+URL_LISTA_69_INCUMPLIDOS = URL_LISTA_69_FIRMES  # alias backward-compatible
+URL_LISTA_69_CANCELADOS = f"{_SAT_BLOB_AGR}/Cancelados.csv"
+URL_LISTA_69_EXIGIBLES = f"{_SAT_BLOB_AGR}/Exigibles.csv"
+URL_LISTA_69_NO_LOCALIZADOS = f"{_SAT_BLOB_AGR}/No_localizados.csv"
+URL_LISTA_69_SENTENCIAS = f"{_SAT_BLOB_AGR}/Sentencias.csv"
+URL_LISTA_69_CSD_SIN_EFECTOS = f"{_SAT_BLOB_AGR}/CSDsinefectos.csv"
+URL_LISTA_69_ENTES_GOB_OMISOS = f"{_SAT_BLOB_AGR}/EntespublicosydeGobiernoomisos.csv"
+URL_LISTA_69_REDUCCION_MULTAS = f"{_SAT_BLOB_AGR}/ReduccionArt74CFF.csv"
+
+# Catálogo completo de las 8 fuentes de la Lista 69 para iteración programática
+URLS_LISTA_69_TODOS: dict[str, str] = {
+    "firmes": URL_LISTA_69_FIRMES,
+    "cancelados": URL_LISTA_69_CANCELADOS,
+    "exigibles": URL_LISTA_69_EXIGIBLES,
+    "no_localizados": URL_LISTA_69_NO_LOCALIZADOS,
+    "sentencias": URL_LISTA_69_SENTENCIAS,
+    "csd_sin_efectos": URL_LISTA_69_CSD_SIN_EFECTOS,
+    "entes_publicos_gob_omisos": URL_LISTA_69_ENTES_GOB_OMISOS,
+    "reduccion_multas_art74": URL_LISTA_69_REDUCCION_MULTAS,
+}
+
+# Selectores reales Verifica CFDI SAT (ASP.NET WebForms) — validado 2026-06-13:
+VERIFICACFDI_SELECTORES = {
+    "uuid": "input[name='ctl00$MainContent$TxtUUID']",  # 36 chars
+    "rfc_emisor": "input[name='ctl00$MainContent$TxtRfcEmisor']",  # 13 chars
+    "rfc_receptor": "input[name='ctl00$MainContent$TxtRfcReceptor']",  # 13 chars
+    "captcha": "input[name='ctl00$MainContent$TxtCaptchaNumbers']",  # 5 chars — HUMANO REQUERIDO
+    "submit": "button:has-text('Verificar CFDI')",
+    "captcha_img": "img[id*='Captcha']",  # 2 imágenes captcha (web + XML)
+}
+
+# ⚠ Verifica CFDI tiene CAPTCHA — automatización completa NO viable.
+# Path correcto: usar mp_facturama_extendido.timbrar_cfdi() para validación
+# en momento del timbrado (PAC certifica). Verifica CFDI post-emisión es
+# para humano-en-loop (cliente confirma autenticidad de CFDI recibido).
 
 
 # Env vars que indican credenciales para path real
@@ -78,21 +130,53 @@ class SatPortalClient:
         self.bitacora.log(op, success=success, params_summary=safe)
 
     def _http_get_text(self, url: str, ttl_hours: float = 24.0) -> str | None:
-        """GET con cache de texto plano. Retorna None si falla la red."""
+        """GET con cache de texto plano. Retorna None si falla la red.
+
+        Usa truststore (system CA bundle) si está disponible — Azure Blob a veces
+        manda cadena incompleta. Fallback a certifi y a default.
+        """
         cached = self.cache.get(url)
         if cached is not None:
             return cached if isinstance(cached, str) else None
+        # SSL context: prefer system store > certifi > default
+        verify: Any = True
         try:
-            with httpx.Client(timeout=self.http_timeout, follow_redirects=True) as client:
+            import truststore
+            import ssl as _ssl
+            verify = truststore.SSLContext(_ssl.PROTOCOL_TLS_CLIENT)
+        except ImportError:
+            try:
+                import certifi
+                verify = certifi.where()
+            except ImportError:
+                pass
+        try:
+            with httpx.Client(timeout=self.http_timeout, follow_redirects=True, verify=verify) as client:
                 resp = client.get(url)
                 resp.raise_for_status()
-                body = resp.text
+                # SAT publica algunos archivos como latin-1 sin charset declarado.
+                # httpx default a UTF-8 produce U+FFFD para acentos. Try estricto
+                # primero; si falla, fallback a latin-1 que cubre los CSVs del SAT.
+                body = self._decode_response_body(resp)
                 self.cache.set(url, body, ttl_hours=ttl_hours)
                 return body
         except httpx.RequestError:
             return None
         except httpx.HTTPStatusError:
             return None
+
+    @staticmethod
+    def _decode_response_body(resp: Any) -> str:
+        """Decodifica body con encoding robusto (UTF-8 strict → latin-1)."""
+        # Si el server declaró charset, respétalo (httpx.text ya lo hace bien).
+        ct = (resp.headers.get("content-type") or "").lower()
+        if "charset=" in ct:
+            return resp.text
+        # Si no, intentar UTF-8 strict; si falla, latin-1 (típico SAT).
+        try:
+            return resp.content.decode("utf-8")
+        except UnicodeDecodeError:
+            return resp.content.decode("latin-1", errors="replace")
 
     # ---------- tools públicos ----------
 
@@ -150,7 +234,7 @@ class SatPortalClient:
                 "encontrado": encontrado is not None,
                 "registro": encontrado,
                 "total_lista": len(registros),
-                "fuente": "omawww.sat.gob.mx",
+                "fuente": "wu1agsprosta001.blob.core.windows.net (SAT Datos Abiertos)",
                 "simulated": False,
             }
 
@@ -159,7 +243,7 @@ class SatPortalClient:
             "total_registros": len(registros),
             "registros": registros[:50],  # cap para no devolver listas enormes
             "truncado_a": 50,
-            "fuente": "omawww.sat.gob.mx",
+            "fuente": "wu1agsprosta001.blob.core.windows.net (SAT Datos Abiertos)",
             "simulated": False,
         }
 
@@ -189,7 +273,7 @@ class SatPortalClient:
                 "encontrado": encontrado is not None,
                 "registro": encontrado,
                 "total_lista": len(registros),
-                "fuente": "omawww.sat.gob.mx",
+                "fuente": "wu1agsprosta001.blob.core.windows.net (SAT Datos Abiertos)",
                 "simulated": False,
             }
 
@@ -198,7 +282,7 @@ class SatPortalClient:
             "total_registros": len(registros),
             "registros": registros[:50],
             "truncado_a": 50,
-            "fuente": "omawww.sat.gob.mx",
+            "fuente": "wu1agsprosta001.blob.core.windows.net (SAT Datos Abiertos)",
             "simulated": False,
         }
 
