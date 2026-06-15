@@ -1,0 +1,1 @@
+{"mcpServers": {"cofepris_aviso": {"command": "python", "args": ["-m", "mp_cofepris_aviso_funcionamiento.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
