@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "condusef_sipres": {
+      "command": "python",
+      "args": ["-m", "mp_condusef_sipres.server"],
+      "env": {
+        "PLUGINS_MX_MOCK": "1",
+        "PLUGINS_MX_CACHE_DIR": "/tmp/plugins-mx-cache",
+        "PLUGINS_MX_BITACORA_DIR": "/tmp/plugins-mx-bita"
+      },
+      "_notes": [
+        "Portal: https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp",
+        "Backend: POST /SIPRES/jsp/pub/resulbusq.jsp — sin CAPTCHA, sin sesión.",
+        "Universo: KYC institucional, fintech, aseguradoras, AFOREs, SOFOMes.",
+        "Respuesta HTML charset=ISO-8859-1 ⚠️ — cliente lo decodifica automáticamente.",
+        "Para path real: PLUGINS_MX_MOCK=0. Latencia ~300ms (sin browser)."
+      ]
+    }
+  }
+}

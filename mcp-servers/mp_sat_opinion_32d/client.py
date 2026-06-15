@@ -123,7 +123,8 @@ class SatOpinion32DClient:
             )
             return cached
 
-        if is_mock_mode(credential_env_vars=[]):
+        # Portal público — default a real cuando no hay override
+        if is_mock_mode(credential_env_vars=[], default_when_no_creds=False):
             result = self._mock_response(rfc=rfc, curp=curp)
         else:
             result = self._llamar_endpoint(rfc=rfc, curp=curp)
@@ -224,8 +225,23 @@ class SatOpinion32DClient:
             "Referer": f"{PORTAL_URL}/ConsultaPublico",
         }
 
+        # Servers gov.mx a veces mandan cadena de cert incompleta. truststore
+        # usa el bundle del SO (Keychain macOS / system store Linux) que sí
+        # tiene los intermediates. Fallback a certifi si no está.
+        verify: Any = True
         try:
-            with httpx.Client(timeout=TIMEOUT_SECONDS, follow_redirects=True) as client:
+            import truststore
+            ssl_ctx = truststore.SSLContext(getattr(__import__("ssl"), "PROTOCOL_TLS_CLIENT"))
+            verify = ssl_ctx
+        except ImportError:
+            try:
+                import certifi
+                verify = certifi.where()
+            except ImportError:
+                pass
+
+        try:
+            with httpx.Client(timeout=TIMEOUT_SECONDS, follow_redirects=True, verify=verify) as client:
                 resp = client.post(url, files=files, headers=headers)
                 resp.raise_for_status()
         except Exception as exc:
