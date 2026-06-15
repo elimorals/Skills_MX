@@ -25,12 +25,54 @@
   font-family: var(--f-body);
 }
 
-@media (max-width: 900px) {
-  .mp-shell { grid-template-columns: 1fr; }
-  .mp-sidebar { display: none; }
+/* Mobile top bar — sticky con back + hamburguesa */
+.mp-mobile-bar {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #0E0C0B;
+  border-bottom: 1px solid #2A2520;
+  padding: 0.7rem 1rem;
+  align-items: center;
+  gap: 0.6rem;
+}
+.mp-mobile-back, .mp-mobile-menu {
+  background: transparent;
+  border: 1px solid #2A2520;
+  color: var(--c-cream);
+  padding: 0.5rem 0.85rem;
+  border-radius: 6px;
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.15s;
+}
+.mp-mobile-back:hover, .mp-mobile-menu:hover { background: #1A1614; }
+.mp-mobile-brand {
+  flex: 1;
+  text-align: center;
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--c-cream);
+  text-decoration: none;
+}
+.mp-mobile-pulse {
+  display: inline-block;
+  width: 7px; height: 7px;
+  background: var(--c-maize);
+  border-radius: 50%;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+  box-shadow: 0 0 0 3px rgba(232, 184, 60, 0.18);
 }
 
-/* Sidebar de categorías */
+/* Sidebar de categorías (default desktop) */
 .mp-sidebar {
   background: #0E0C0B;
   border-right: 1px solid #2A2520;
@@ -39,6 +81,33 @@
   position: sticky;
   top: 0;
   overflow-y: auto;
+}
+.mp-sidebar-close { display: none; }
+
+/* Sidebar offcanvas en mobile/tablet (≤1100px) — invierte default */
+@media (max-width: 1100px) {
+  .mp-shell { grid-template-columns: 1fr; }
+  .mp-mobile-bar { display: flex; }
+  .mp-sidebar {
+    position: fixed;
+    top: 0; bottom: 0; left: 0;
+    width: 280px;
+    height: 100vh;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: 0 0 0 100vw rgba(0,0,0,0);
+  }
+  .mp-sidebar.is-open {
+    transform: translateX(0);
+    box-shadow: 0 0 0 100vw rgba(0,0,0,0.55);
+  }
+  .mp-sidebar-close {
+    display: flex !important;
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+  }
 }
 
 .mp-brand {
@@ -130,19 +199,23 @@
 .mp-main {
   display: grid;
   grid-template-columns: 1fr 1.15fr;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
 }
-@media (max-width: 1200px) {
-  .mp-main { grid-template-columns: 1fr; }
+@media (max-width: 1199.98px) {
+  .mp-main { grid-template-columns: 1fr; min-height: 0; }
   .mp-detail { display: none; }
   .mp-detail.is-open {
     display: block;
     position: fixed;
     inset: 0;
-    z-index: 999;
-    background: #161313;
+    z-index: 300;
+    background: #1A1614;
+    overflow-y: auto;
   }
+}
+@media (max-width: 1100px) {
+  .mp-list { height: auto; overflow-y: visible; }
+  .mp-list-head { position: static; }
 }
 
 .mp-list {
@@ -457,10 +530,18 @@
 </head>
 <body class="mp-body">
 
+<!-- MOBILE TOP BAR -->
+<div class="mp-mobile-bar">
+  <a class="mp-mobile-back" href="/">← Inicio</a>
+  <a class="mp-mobile-brand" href="/"><span class="mp-mobile-pulse"></span>plugins<i style="font-family: var(--f-display);">·mx</i></a>
+  <button class="mp-mobile-menu" id="mobileMenuBtn">☰ Menú</button>
+</div>
+
 <div class="mp-shell">
 
   <!-- SIDEBAR — CATEGORÍAS -->
-  <aside class="mp-sidebar">
+  <aside class="mp-sidebar" id="mpSidebar">
+    <button class="mp-mobile-menu mp-sidebar-close" id="sidebarCloseBtn">✕</button>
     <div class="mp-brand">
       <span class="mp-brand-pulse"></span>
       <a href="/">plugins<i>·mx</i></a>
@@ -482,6 +563,10 @@
 
     <div class="mp-section-label">Recursos</div>
     <ul class="mp-cat-list">
+      <li onclick="window.location.href='/'">
+        <span class="mp-cat-icon c-ink">←</span>
+        <span>Inicio</span>
+      </li>
       <li onclick="window.location.href='/portales/'">
         <span class="mp-cat-icon c-cobalt">P</span>
         <span>Hub portales gob.mx</span>
@@ -490,7 +575,7 @@
         <span class="mp-cat-icon c-jade">G</span>
         <span>Guías visuales</span>
       </li>
-      <li onclick="window.location.href='/api/skills-catalog.json'">
+      <li onclick="window.open('/api/skills-catalog.json', '_blank')">
         <span class="mp-cat-icon c-maize">J</span>
         <span>API catálogo (JSON)</span>
       </li>
@@ -722,6 +807,25 @@ cd mcp-servers && pip install -e ".[dev]"
 document.getElementById('searchBox').addEventListener('input', e => {
   CURRENT_QUERY = e.target.value.trim();
   renderSkills();
+});
+
+// Mobile sidebar toggle
+const sidebar = document.getElementById('mpSidebar');
+document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+  sidebar.classList.add('is-open');
+});
+document.getElementById('sidebarCloseBtn').addEventListener('click', () => {
+  sidebar.classList.remove('is-open');
+});
+sidebar.addEventListener('click', (e) => {
+  // Close on click outside (the box-shadow scrim area)
+  if (e.target === sidebar) sidebar.classList.remove('is-open');
+});
+// Close sidebar after selecting category on mobile
+document.querySelectorAll('#categoryList li').forEach(li => {
+  li.addEventListener('click', () => {
+    if (window.innerWidth <= 1100) sidebar.classList.remove('is-open');
+  });
 });
 document.querySelectorAll('.mp-filter').forEach(btn => {
   btn.addEventListener('click', () => {

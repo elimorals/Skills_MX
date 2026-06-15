@@ -25,6 +25,53 @@
   padding: 2.5rem clamp(1rem, 4vw, 3rem) 4rem;
 }
 
+/* Subnav cross-links */
+.subnav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.7rem 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--c-rule);
+}
+.subnav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--c-ink-3);
+  text-decoration: none;
+  padding: 0.35rem 0.7rem;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+}
+.subnav a:hover {
+  color: var(--c-ink);
+  border-color: var(--c-rule);
+  background: var(--c-paper);
+}
+.subnav a.is-current {
+  color: var(--c-ink);
+  border-color: var(--c-ink);
+  background: var(--c-paper);
+  font-weight: 600;
+}
+.subnav-sep {
+  width: 1px;
+  height: 14px;
+  background: var(--c-rule);
+  margin: 0 0.2rem;
+}
+@media (max-width: 600px) {
+  .subnav { padding: 0.5rem 0; gap: 0.3rem; }
+  .subnav a { padding: 0.3rem 0.55rem; font-size: 0.66rem; }
+  .subnav-sep { display: none; }
+}
+
 .hub-back {
   display: inline-flex;
   align-items: center;
@@ -353,7 +400,13 @@
 
 <div class="hub-container">
 
-  <a href="/" class="hub-back">← plugins·mx</a>
+  <nav class="subnav" aria-label="Navegación principal">
+    <a href="/">← Inicio</a>
+    <span class="subnav-sep"></span>
+    <a href="/marketplace/">Marketplace</a>
+    <a href="/portales/" class="is-current">Portales</a>
+    <a href="/guias/">Guías</a>
+  </nav>
 
   <header class="hub-head">
     <h1 class="hub-h1">Hub de portales <em>gob.mx</em></h1>

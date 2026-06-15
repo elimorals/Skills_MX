@@ -17,6 +17,14 @@
 .guias-back { display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--f-mono);font-size:0.74rem;letter-spacing:0.06em;color:var(--c-ink-3);text-decoration:none;margin-bottom:1.5rem; }
 .guias-back:hover { color: var(--c-terra); }
 
+/* Subnav cross-links */
+.subnav { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; padding: 0.7rem 0; margin-bottom: 1.5rem; border-bottom: 1px solid var(--c-rule); }
+.subnav a { display: inline-flex; align-items: center; gap: 0.3rem; font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--c-ink-3); text-decoration: none; padding: 0.35rem 0.7rem; border-radius: 5px; border: 1px solid transparent; transition: all 0.15s; }
+.subnav a:hover { color: var(--c-ink); border-color: var(--c-rule); background: var(--c-paper); }
+.subnav a.is-current { color: var(--c-ink); border-color: var(--c-ink); background: var(--c-paper); font-weight: 600; }
+.subnav-sep { width: 1px; height: 14px; background: var(--c-rule); margin: 0 0.2rem; }
+@media (max-width: 600px) { .subnav { padding: 0.5rem 0; gap: 0.3rem; } .subnav a { padding: 0.3rem 0.55rem; font-size: 0.66rem; } .subnav-sep { display: none; } }
+
 .guias-head { margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--c-ink); }
 .guias-h1 { font-family: var(--f-display); font-size: clamp(2.2rem,5vw,3.6rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.05; margin: 0 0 0.6rem; }
 .guias-h1 em { font-style: italic; color: var(--c-terra); }
@@ -61,7 +69,13 @@
 
 <div class="guias-container">
 
-  <a href="/" class="guias-back">← plugins·mx</a>
+  <nav class="subnav" aria-label="Navegación principal">
+    <a href="/">← Inicio</a>
+    <span class="subnav-sep"></span>
+    <a href="/marketplace/">Marketplace</a>
+    <a href="/portales/">Portales</a>
+    <a href="/guias/" class="is-current">Guías</a>
+  </nav>
 
   <header class="guias-head">
     <h1 class="guias-h1">Guías <em>visuales</em> operativas</h1>
@@ -104,7 +118,7 @@
     </div>
     <div class="guias-grid">
 
-      <a href="cfdi-emision" class="guia-card">
+      <a href="/guias/cfdi-emision" class="guia-card">
         <span class="guia-card-tag fiscal">CFDI 4.0</span>
         <h3 class="guia-card-h">Cómo emitir un CFDI 4.0 desde cero</h3>
         <p class="guia-card-desc">Flujo completo: validar RFC receptor, armar payload con uso CFDI correcto, timbrar con PAC, notificar cliente.</p>
@@ -112,7 +126,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="opinion-32d" class="guia-card">
+      <a href="/guias/opinion-32d" class="guia-card">
         <span class="guia-card-tag fiscal">Opinión 32-D</span>
         <h3 class="guia-card-h">Validar opinión 32-D del cliente</h3>
         <p class="guia-card-desc">Consulta sin captcha en endpoint público del SAT. Devuelve positiva/negativa/n/d con timestamp.</p>
@@ -120,7 +134,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="cierre-mensual" class="guia-card">
+      <a href="/guias/cierre-mensual" class="guia-card">
         <span class="guia-card-tag fiscal">Cierre fiscal</span>
         <h3 class="guia-card-h">Cierre fiscal mensual con multi-agente</h3>
         <p class="guia-card-desc">Workflow long-running con 4 subagentes paralelos. Pausa esperando firma contador, retoma cuando esté.</p>
@@ -128,7 +142,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="due-diligence" class="guia-card">
+      <a href="/guias/due-diligence" class="guia-card">
         <span class="guia-card-tag fiscal">Due diligence</span>
         <h3 class="guia-card-h">Due diligence cliente pre-onboarding</h3>
         <p class="guia-card-desc">Auditor + validador-cfdi + recolector-evidencia + compliance-repse en paralelo. Veredicto GO/HOLD/STOP.</p>
@@ -136,7 +150,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="auditoria-69b" class="guia-card">
+      <a href="/guias/auditoria-69b" class="guia-card">
         <span class="guia-card-tag fiscal">69-B EFOS</span>
         <h3 class="guia-card-h">Detectar proveedores en lista 69-B</h3>
         <p class="guia-card-desc">Audit batch de CFDIs recibidos contra lista 69-B definitivos. Alerta antes de presentar declaración.</p>
@@ -144,7 +158,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="cripto-isr" class="guia-card">
+      <a href="/guias/cripto-isr" class="guia-card">
         <span class="guia-card-tag fiscal">Cripto ISR</span>
         <h3 class="guia-card-h">ISR sobre operaciones cripto</h3>
         <p class="guia-card-desc">Ganancia cambiaria FIFO + ISR. Bitso ledger + tipos de cambio DOF.</p>
@@ -152,7 +166,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="declaracion-anual-pf" class="guia-card">
+      <a href="/guias/declaracion-anual-pf" class="guia-card">
         <span class="guia-card-tag fiscal">PF Anual</span>
         <h3 class="guia-card-h">Declaración anual PF asistida</h3>
         <p class="guia-card-desc">Workflow `pf-anual-completa`: ingresos + deducciones + retenciones + envío.</p>
@@ -171,7 +185,7 @@
     </div>
     <div class="guias-grid">
 
-      <a href="isn-multi-estado" class="guia-card">
+      <a href="/guias/isn-multi-estado" class="guia-card">
         <span class="guia-card-tag laboral">ISN 32 estados</span>
         <h3 class="guia-card-h">Calcular ISN multi-estado en bulk</h3>
         <p class="guia-card-desc">Empresa con nómina en CDMX (3%) + JAL (2%) + EdoMex (3%). Cálculo + línea de captura + descarga declaración.</p>
@@ -179,7 +193,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="compliance-repse" class="guia-card">
+      <a href="/guias/compliance-repse" class="guia-card">
         <span class="guia-card-tag laboral">REPSE Art. 15</span>
         <h3 class="guia-card-h">Validar proveedor REPSE antes de firmar</h3>
         <p class="guia-card-desc">Decisión binaria <code>puede_contratar</code>. Evita responsabilidad solidaria.</p>
@@ -187,7 +201,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="cedula-profesional" class="guia-card">
+      <a href="/guias/cedula-profesional" class="guia-card">
         <span class="guia-card-tag laboral">Cédula SEP</span>
         <h3 class="guia-card-h">Validar cédula profesional para telemedicina</h3>
         <p class="guia-card-desc">NOM-004 compliance. Sin captcha. Desbloquea vertical telemedicina-mx.</p>
@@ -195,7 +209,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="nomina-dispersion" class="guia-card">
+      <a href="/guias/nomina-dispersion" class="guia-card">
         <span class="guia-card-tag laboral">Nómina</span>
         <h3 class="guia-card-h">Dispersión nómina + CFDI 4.0 nómina</h3>
         <p class="guia-card-desc">Workflow `dispersion-nomina` quincenal/mensual con CFDI por colaborador.</p>
@@ -214,7 +228,7 @@
     </div>
     <div class="guias-grid">
 
-      <a href="predial-cartera" class="guia-card">
+      <a href="/guias/predial-cartera" class="guia-card">
         <span class="guia-card-tag muni">Predial</span>
         <h3 class="guia-card-h">Cartera predial multi-municipio</h3>
         <p class="guia-card-desc">N propiedades en distintos muns → dashboard XLSX con vencimientos, descuentos y ranking.</p>
@@ -222,7 +236,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="discovery-mun-nuevo" class="guia-card">
+      <a href="/guias/discovery-mun-nuevo" class="guia-card">
         <span class="guia-card-tag muni">Discovery</span>
         <h3 class="guia-card-h">Agregar un municipio nuevo al catálogo</h3>
         <p class="guia-card-desc">Discovery semi-automático con Playwright. De Google → URL → selectores → patch al catálogo.</p>
@@ -230,7 +244,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="sacpi-michoacan" class="guia-card">
+      <a href="/guias/sacpi-michoacan" class="guia-card">
         <span class="guia-card-tag muni">SACPI 95 muns</span>
         <h3 class="guia-card-h">SACPI Michoacán: 95 muns en 1 URL</h3>
         <p class="guia-card-desc">Patrón ratio 95:1 — una plataforma SaaS estatal cubre 95 municipios. Replicable a Oaxaca/Puebla.</p>
@@ -249,7 +263,7 @@
     </div>
     <div class="guias-grid">
 
-      <a href="multas-saf-cdmx" class="guia-card">
+      <a href="/guias/multas-saf-cdmx" class="guia-card">
         <span class="guia-card-tag veh">SAF CDMX</span>
         <h3 class="guia-card-h">Multas + tenencia + verificación CDMX en 1 endpoint</h3>
         <p class="guia-card-desc">Calibrado en vivo 2026-06-15. 3 MCPs reusan 1 URL pública con CAPTCHA imagen.</p>
@@ -257,7 +271,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="tenencia-comparativa" class="guia-card">
+      <a href="/guias/tenencia-comparativa" class="guia-card">
         <span class="guia-card-tag veh">Tenencia</span>
         <h3 class="guia-card-h">Comparar tenencia entre estados antes de re-plaquear</h3>
         <p class="guia-card-desc">Calculadora 20 estados con factor depreciación 0-9 años. Ahorro_max_mxn.</p>
@@ -265,7 +279,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="verificacion-engomado" class="guia-card">
+      <a href="/guias/verificacion-engomado" class="guia-card">
         <span class="guia-card-tag veh">Engomado</span>
         <h3 class="guia-card-h">Próxima fecha de verificación por placa</h3>
         <p class="guia-card-desc">Color engomado + meses obligatorios + costo verificentro.</p>
@@ -284,7 +298,7 @@
     </div>
     <div class="guias-grid">
 
-      <a href="cfe-mi-espacio" class="guia-card">
+      <a href="/guias/cfe-mi-espacio" class="guia-card">
         <span class="guia-card-tag sp">CFE</span>
         <h3 class="guia-card-h">Descargar recibo CFE Mi Espacio (human-in-loop)</h3>
         <p class="guia-card-desc">Playwright + cookies cache 30 min. Operador resuelve CAPTCHA imagen ASP.NET una vez por sesión.</p>
@@ -292,7 +306,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="telmex-pago-sin-login" class="guia-card">
+      <a href="/guias/telmex-pago-sin-login" class="guia-card">
         <span class="guia-card-tag sp">Telmex</span>
         <h3 class="guia-card-h">Telmex pago sin login (sin credenciales)</h3>
         <p class="guia-card-desc">reCAPTCHA Enterprise v3 invisible. Solo teléfono + correo. Sin credenciales del usuario.</p>
@@ -300,7 +314,7 @@
         <span class="guia-card-arrow">→</span>
       </a>
 
-      <a href="agua-multi-organismo" class="guia-card">
+      <a href="/guias/agua-multi-organismo" class="guia-card">
         <span class="guia-card-tag sp">Agua</span>
         <h3 class="guia-card-h">Consultar adeudo de agua multi-organismo</h3>
         <p class="guia-card-desc">17 organismos catalogados. SIAPA + JMAS Juárez + OOAPAS son públicos consultables.</p>
@@ -318,16 +332,16 @@
       <span class="guias-section-count">10 verticales</span>
     </div>
     <div class="guias-grid">
-      <a href="vertical-freelancers" class="guia-card"><span class="guia-card-tag fiscal">freelancers-mx</span><h3 class="guia-card-h">Freelancer / Consultor</h3><p class="guia-card-desc">Cotización + cobranza WA + ISR provisional + declaración anual.</p><div class="guia-card-meta"><span>15 skills</span></div></a>
-      <a href="vertical-talleres" class="guia-card"><span class="guia-card-tag muni">talleres-mx</span><h3 class="guia-card-h">Taller mecánico</h3><p class="guia-card-desc">Diagnóstico + cotización + autorización WA + garantía PROFECO.</p><div class="guia-card-meta"><span>14 skills</span></div></a>
-      <a href="vertical-salon" class="guia-card"><span class="guia-card-tag fiscal">salon-mx</span><h3 class="guia-card-h">Salón / Barbería / Spa</h3><p class="guia-card-desc">Agenda + no-shows + comisiones estilistas + membresías.</p><div class="guia-card-meta"><span>12 skills</span></div></a>
-      <a href="vertical-restaurante" class="guia-card"><span class="guia-card-tag fiscal">restaurante-mx</span><h3 class="guia-card-h">Restaurante</h3><p class="guia-card-desc">Ingeniería menú BCG + inventario merma + propinas + CFDI global.</p><div class="guia-card-meta"><span>14 skills</span></div></a>
-      <a href="vertical-notarias" class="guia-card"><span class="guia-card-tag laboral">notarias-mx</span><h3 class="guia-card-h">Notaría</h3><p class="guia-card-desc">CURP + RENAPO + CFDI + LFPDPPP + sucesiones.</p><div class="guia-card-meta"><span>10 skills</span></div></a>
-      <a href="vertical-airbnb" class="guia-card"><span class="guia-card-tag veh">airbnb-host-mx</span><h3 class="guia-card-h">Anfitrión Airbnb</h3><p class="guia-card-desc">CFDI hospedaje + ISH 32 estados + régimen 625.</p><div class="guia-card-meta"><span>9 skills</span></div></a>
-      <a href="vertical-inmobiliaria" class="guia-card"><span class="guia-card-tag muni">inmobiliaria-mx</span><h3 class="guia-card-h">Inmobiliaria</h3><p class="guia-card-desc">Contrato arrendamiento + screening + cartera predial + comisiones.</p><div class="guia-card-meta"><span>14 skills</span></div></a>
-      <a href="vertical-colegios" class="guia-card"><span class="guia-card-tag fiscal">colegios-mx</span><h3 class="guia-card-h">Colegio K-12</h3><p class="guia-card-desc">Cobranza colegiaturas + comunicación padres + CFDI D10.</p><div class="guia-card-meta"><span>12 skills</span></div></a>
-      <a href="vertical-agencia" class="guia-card"><span class="guia-card-tag fiscal">agencia-marketing-mx</span><h3 class="guia-card-h">Agencia marketing</h3><p class="guia-card-desc">Reportes Meta Ads + copy MX + CM + brief creativo.</p><div class="guia-card-meta"><span>11 skills</span></div></a>
-      <a href="vertical-constructora" class="guia-card"><span class="guia-card-tag laboral">constructora-mx</span><h3 class="guia-card-h">Constructora</h3><p class="guia-card-desc">REPSE mensual + IMSS construcción + ISN + contratistas.</p><div class="guia-card-meta"><span>10 skills</span></div></a>
+      <a href="/guias/vertical-freelancers" class="guia-card"><span class="guia-card-tag fiscal">freelancers-mx</span><h3 class="guia-card-h">Freelancer / Consultor</h3><p class="guia-card-desc">Cotización + cobranza WA + ISR provisional + declaración anual.</p><div class="guia-card-meta"><span>15 skills</span></div></a>
+      <a href="/guias/vertical-talleres" class="guia-card"><span class="guia-card-tag muni">talleres-mx</span><h3 class="guia-card-h">Taller mecánico</h3><p class="guia-card-desc">Diagnóstico + cotización + autorización WA + garantía PROFECO.</p><div class="guia-card-meta"><span>14 skills</span></div></a>
+      <a href="/guias/vertical-salon" class="guia-card"><span class="guia-card-tag fiscal">salon-mx</span><h3 class="guia-card-h">Salón / Barbería / Spa</h3><p class="guia-card-desc">Agenda + no-shows + comisiones estilistas + membresías.</p><div class="guia-card-meta"><span>12 skills</span></div></a>
+      <a href="/guias/vertical-restaurante" class="guia-card"><span class="guia-card-tag fiscal">restaurante-mx</span><h3 class="guia-card-h">Restaurante</h3><p class="guia-card-desc">Ingeniería menú BCG + inventario merma + propinas + CFDI global.</p><div class="guia-card-meta"><span>14 skills</span></div></a>
+      <a href="/guias/vertical-notarias" class="guia-card"><span class="guia-card-tag laboral">notarias-mx</span><h3 class="guia-card-h">Notaría</h3><p class="guia-card-desc">CURP + RENAPO + CFDI + LFPDPPP + sucesiones.</p><div class="guia-card-meta"><span>10 skills</span></div></a>
+      <a href="/guias/vertical-airbnb" class="guia-card"><span class="guia-card-tag veh">airbnb-host-mx</span><h3 class="guia-card-h">Anfitrión Airbnb</h3><p class="guia-card-desc">CFDI hospedaje + ISH 32 estados + régimen 625.</p><div class="guia-card-meta"><span>9 skills</span></div></a>
+      <a href="/guias/vertical-inmobiliaria" class="guia-card"><span class="guia-card-tag muni">inmobiliaria-mx</span><h3 class="guia-card-h">Inmobiliaria</h3><p class="guia-card-desc">Contrato arrendamiento + screening + cartera predial + comisiones.</p><div class="guia-card-meta"><span>14 skills</span></div></a>
+      <a href="/guias/vertical-colegios" class="guia-card"><span class="guia-card-tag fiscal">colegios-mx</span><h3 class="guia-card-h">Colegio K-12</h3><p class="guia-card-desc">Cobranza colegiaturas + comunicación padres + CFDI D10.</p><div class="guia-card-meta"><span>12 skills</span></div></a>
+      <a href="/guias/vertical-agencia" class="guia-card"><span class="guia-card-tag fiscal">agencia-marketing-mx</span><h3 class="guia-card-h">Agencia marketing</h3><p class="guia-card-desc">Reportes Meta Ads + copy MX + CM + brief creativo.</p><div class="guia-card-meta"><span>11 skills</span></div></a>
+      <a href="/guias/vertical-constructora" class="guia-card"><span class="guia-card-tag laboral">constructora-mx</span><h3 class="guia-card-h">Constructora</h3><p class="guia-card-desc">REPSE mensual + IMSS construcción + ISN + contratistas.</p><div class="guia-card-meta"><span>10 skills</span></div></a>
     </div>
   </section>
 
