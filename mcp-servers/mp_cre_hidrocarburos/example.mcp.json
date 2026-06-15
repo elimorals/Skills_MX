@@ -1,0 +1,1 @@
+{"mcpServers": {"cre_hidrocarburos": {"command": "python", "args": ["-m", "mp_cre_hidrocarburos.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}

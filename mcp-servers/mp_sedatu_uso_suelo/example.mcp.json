@@ -1,0 +1,1 @@
+{"mcpServers": {"sedatu_uso_suelo": {"command": "python", "args": ["-m", "mp_sedatu_uso_suelo.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}

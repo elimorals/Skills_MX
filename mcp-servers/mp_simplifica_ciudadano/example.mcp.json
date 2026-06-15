@@ -1,0 +1,1 @@
+{"mcpServers": {"simplifica_ciudadano": {"command": "python", "args": ["-m", "mp_simplifica_ciudadano.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}

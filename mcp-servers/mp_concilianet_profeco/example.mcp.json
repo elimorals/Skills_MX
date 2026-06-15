@@ -1,0 +1,1 @@
+{"mcpServers": {"concilianet": {"command": "python", "args": ["-m", "mp_concilianet_profeco.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
