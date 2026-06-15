@@ -1,0 +1,1 @@
+{"mcpServers": {"verificacion_vehicular_mx": {"command": "python", "args": ["-m", "mp_verificacion_vehicular_mx.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
