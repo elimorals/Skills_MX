@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo emitir un CFDI 4.0 desde cero · Guía visual Plugins MX</title>
+<meta name="description" content="Guía operativa paso a paso para emitir un CFDI 4.0 con Claude Code + MCPs. Validar RFC, armar payload, timbrar con PAC, notificar cliente. Cero teoría.">
+<link rel="canonical" href="https://skills-mexico.vercel.app/guias/cfdi-emision/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800&family=Instrument+Serif:ital@0;1&family=Geist:wght@100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.g-body { background: var(--c-cream); color: var(--c-ink); font-family: var(--f-body); }
+.g-container { max-width: 920px; margin: 0 auto; padding: 2.5rem clamp(1rem,4vw,3rem) 5rem; }
+.g-back { display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--f-mono);font-size:0.74rem;letter-spacing:0.06em;color:var(--c-ink-3);text-decoration:none;margin-bottom:1.5rem; }
+.g-back:hover { color: var(--c-terra); }
+
+.g-tag { display:inline-block;font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.22rem 0.6rem;background:rgba(160,62,27,0.13);color:var(--c-terra);border-radius:4px;margin-bottom:1rem; }
+.g-h1 { font-family: var(--f-display); font-size: clamp(2.2rem,5vw,3.4rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.05; margin: 0 0 0.8rem; }
+.g-lead { font-family: var(--f-display); font-style: italic; font-size: 1.3rem; color: var(--c-ink-3); margin: 0 0 2rem; line-height: 1.4; }
+
+.g-meta { display:flex;gap:1.4rem;flex-wrap:wrap;font-family:var(--f-mono);font-size:0.74rem;color:var(--c-ink-3);padding:0.8rem 1rem;border-top:1px solid var(--c-rule);border-bottom:1px solid var(--c-rule);margin-bottom: 2.5rem; }
+.g-meta strong { color: var(--c-ink); margin-right: 0.3rem; }
+
+.g-toc { background: var(--c-paper); border: 1px solid var(--c-rule); border-radius: 8px; padding: 1.4rem 1.6rem; margin-bottom: 3rem; }
+.g-toc-h { font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-ink-3); margin: 0 0 0.7rem; }
+.g-toc ol { margin: 0; padding-left: 1.3rem; }
+.g-toc li { font-size: 0.92rem; margin-bottom: 0.3rem; }
+.g-toc a { color: var(--c-ink-2); text-decoration: none; border-bottom: 1px dotted var(--c-rule); }
+.g-toc a:hover { color: var(--c-terra); border-bottom-color: var(--c-terra); }
+
+.g-section { margin-bottom: 3rem; }
+.g-section-n { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.16em; color: var(--c-terra); margin-bottom: 0.4rem; }
+.g-h2 { font-family: var(--f-display); font-size: 2rem; font-weight: 600; letter-spacing: -0.018em; margin: 0 0 1rem; }
+.g-h3 { font-family: var(--f-display); font-size: 1.3rem; font-weight: 600; margin: 1.6rem 0 0.5rem; }
+
+.g-p { font-size: 1.02rem; line-height: 1.7; color: var(--c-ink-2); margin: 0 0 1rem; }
+.g-p strong { color: var(--c-ink); }
+.g-p code { background: var(--c-bone); padding: 0.1rem 0.35rem; border-radius: 3px; font-family: var(--f-mono); font-size: 0.88em; }
+.g-p a { color: var(--c-terra); text-decoration: underline; text-underline-offset: 2px; }
+
+.g-callout { background: var(--c-paper); border-left: 4px solid var(--c-cobalt); border-radius: 6px; padding: 1.1rem 1.4rem; margin: 1.5rem 0; font-size: 0.95rem; line-height: 1.6; }
+.g-callout-warning { border-left-color: var(--c-terra); background: rgba(160,62,27,0.06); }
+.g-callout-success { border-left-color: var(--c-jade); background: rgba(45,95,63,0.06); }
+.g-callout strong { display: block; font-family: var(--f-display); font-size: 0.92rem; margin-bottom: 0.3rem; color: var(--c-ink); }
+
+.g-step { background: var(--c-paper); border: 1px solid var(--c-rule); border-radius: 10px; padding: 1.5rem 1.8rem; margin: 1.5rem 0; position: relative; }
+.g-step-n { position: absolute; top: -14px; left: 1.4rem; background: var(--c-ink); color: var(--c-cream); font-family: var(--f-mono); font-size: 0.74rem; letter-spacing: 0.12em; padding: 0.25rem 0.7rem; border-radius: 4px; }
+.g-step-h { font-family: var(--f-display); font-size: 1.35rem; font-weight: 600; margin: 0.4rem 0 0.6rem; }
+
+.g-code { background: #161313; color: #E8DEC8; border-radius: 8px; padding: 1.1rem 1.4rem; font-family: var(--f-mono); font-size: 0.84rem; line-height: 1.6; overflow-x: auto; margin: 1rem 0; white-space: pre; }
+.g-code .c-comment { color: #8A7E6F; font-style: italic; }
+.g-code .c-key { color: var(--c-maize); }
+.g-code .c-str { color: #E6815A; }
+.g-code .c-num { color: #74C593; }
+
+.g-fields { display: grid; grid-template-columns: 1fr; gap: 0.6rem; margin: 1rem 0; }
+.g-field { display: grid; grid-template-columns: 220px 1fr; gap: 1rem; padding: 0.75rem 1rem; background: var(--c-paper); border: 1px solid var(--c-rule); border-radius: 6px; font-size: 0.9rem; }
+.g-field-name { font-family: var(--f-mono); font-weight: 600; color: var(--c-ink); }
+.g-field-desc { color: var(--c-ink-3); }
+
+.g-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+.g-table th, .g-table td { padding: 0.6rem 0.9rem; text-align: left; border-bottom: 1px solid var(--c-rule); }
+.g-table th { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-ink-3); }
+.g-table tbody tr:hover { background: var(--c-paper); }
+
+.g-next { background: var(--c-ink); color: var(--c-cream); border-radius: 12px; padding: 2rem 2.4rem; margin-top: 4rem; }
+.g-next-h { font-family: var(--f-display); font-size: 1.5rem; font-weight: 600; margin: 0 0 0.6rem; }
+.g-next-p { color: var(--c-bone); font-size: 0.94rem; line-height: 1.6; margin: 0 0 1.2rem; }
+.g-next-links { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.g-next-link { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1rem; border: 1px solid #4A3F35; color: var(--c-cream); text-decoration: none; border-radius: 6px; font-family: var(--f-mono); font-size: 0.78rem; letter-spacing: 0.05em; transition: all 0.2s; }
+.g-next-link:hover { background: var(--c-maize); color: var(--c-ink); border-color: var(--c-maize); }
+</style>
+</head>
+<body class="g-body">
+
+<div class="g-container">
+
+  <a href="/guias/" class="g-back">← guías</a>
+
+  <span class="g-tag">CFDI 4.0 · Fiscal</span>
+  <h1 class="g-h1">Cómo emitir un CFDI 4.0 desde cero</h1>
+  <p class="g-lead">Flujo operativo completo: validar el RFC del receptor, armar el payload con el uso CFDI correcto, timbrar con tu PAC y notificar al cliente vía WhatsApp o email. <strong>Cero teoría.</strong></p>
+
+  <div class="g-meta">
+    <span><strong>Tiempo:</strong>15 min primera vez · 1 min reincidente</span>
+    <span><strong>MCPs:</strong>mp_facturama_extendido, mp_sat_portal</span>
+    <span><strong>Skills:</strong>cfdi-emision, rfc-validacion</span>
+    <span><strong>Pricing real:</strong>$0.40-1.20 MXN/timbre</span>
+  </div>
+
+  <div class="g-toc">
+    <div class="g-toc-h">Contenido</div>
+    <ol>
+      <li><a href="#contexto">Contexto fiscal MX</a></li>
+      <li><a href="#requisitos">Requisitos previos</a></li>
+      <li><a href="#flujo">Flujo paso a paso (5 pasos)</a></li>
+      <li><a href="#errores">Errores comunes y cómo evitarlos</a></li>
+      <li><a href="#cancelacion">Si tienes que cancelar</a></li>
+      <li><a href="#siguientes">Siguientes pasos</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================== -->
+  <section class="g-section" id="contexto">
+    <div class="g-section-n">SECCIÓN 01</div>
+    <h2 class="g-h2">Contexto fiscal MX</h2>
+
+    <p class="g-p">CFDI 4.0 es el estándar obligatorio del SAT desde abril 2023 para todos los emisores. La emisión incluye un timbre fiscal digital (TFD) firmado con el sello del SAT, válido legalmente como comprobante.</p>
+
+    <p class="g-p">Tres cosas que el flujo debe garantizar siempre:</p>
+    <ol class="g-p">
+      <li><strong>RFC receptor existe</strong> en el padrón vigente del SAT.</li>
+      <li><strong>Uso CFDI compatible</strong> con el régimen fiscal del receptor.</li>
+      <li><strong>Emisor no está en lista 69-B EFOS</strong> al momento de emitir.</li>
+    </ol>
+
+    <div class="g-callout">
+      <strong>Por qué importa.</strong> Un CFDI emitido a un RFC inválido o con uso incompatible NO se puede deducir. Si el receptor presenta declaración con ese CFDI, el SAT lo rechaza. La responsabilidad es del emisor.
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <section class="g-section" id="requisitos">
+    <div class="g-section-n">SECCIÓN 02</div>
+    <h2 class="g-h2">Requisitos previos</h2>
+
+    <h3 class="g-h3">Lo que necesitas antes de empezar</h3>
+
+    <div class="g-fields">
+      <div class="g-field">
+        <div class="g-field-name">RFC emisor</div>
+        <div class="g-field-desc">RFC de quien emite. Debe tener obligaciones fiscales vigentes.</div>
+      </div>
+      <div class="g-field">
+        <div class="g-field-name">CSD activo</div>
+        <div class="g-field-desc">Certificado de Sello Digital del emisor (vigencia 4 años SAT).</div>
+      </div>
+      <div class="g-field">
+        <div class="g-field-name">Cuenta PAC</div>
+        <div class="g-field-desc">Proveedor Autorizado de Certificación. Facturama, Sw Sapien, Diverza, etc.</div>
+      </div>
+      <div class="g-field">
+        <div class="g-field-name">Régimen receptor</div>
+        <div class="g-field-desc">601 PM general, 612 PF actividad empresarial, 625 plataformas, etc.</div>
+      </div>
+    </div>
+
+    <h3 class="g-h3">Configuración Claude Code</h3>
+
+    <pre class="g-code"><span class="c-comment"># .env mínimo</span>
+<span class="c-key">FACTURAMA_USER</span>=<span class="c-str">tu_usuario</span>
+<span class="c-key">FACTURAMA_PASSWORD</span>=<span class="c-str">tu_password</span>
+<span class="c-key">FACTURAMA_ENV</span>=<span class="c-str">sandbox</span>  <span class="c-comment"># o production</span>
+
+<span class="c-comment"># Instalar plugin core-mexico (obligatorio)</span>
+<span class="c-key">/plugin install core-mexico</span></pre>
+  </section>
+
+  <!-- ============================================== -->
+  <section class="g-section" id="flujo">
+    <div class="g-section-n">SECCIÓN 03</div>
+    <h2 class="g-h2">Flujo paso a paso</h2>
+
+    <div class="g-step">
+      <span class="g-step-n">PASO 01</span>
+      <h3 class="g-step-h">Validar el RFC del receptor</h3>
+      <p class="g-p">Antes de armar nada, confirma que el RFC existe en el padrón SAT vigente.</p>
+      <pre class="g-code"><span class="c-comment"># En Claude Code</span>
+<span class="c-key">/core</span>:validar-rfc
+
+<span class="c-comment"># O directo con el MCP</span>
+<span class="c-key">mp_sat_portal</span>.padron_rfc({rfc: <span class="c-str">"XAXX010101000"</span>})
+
+<span class="c-comment"># Respuesta esperada</span>
+{
+  <span class="c-key">existe</span>: <span class="c-num">true</span>,
+  <span class="c-key">regimen_fiscal</span>: <span class="c-str">"601"</span>,
+  <span class="c-key">nombre</span>: <span class="c-str">"PUBLICO EN GENERAL"</span>,
+  <span class="c-key">en_69b</span>: <span class="c-num">false</span>,
+  <span class="c-key">simulated</span>: <span class="c-num">false</span>
+}</pre>
+      <div class="g-callout g-callout-warning">
+        <strong>Si en_69b es true.</strong> NO emitas. Cancela la operación. El SAT rechazará cualquier CFDI con ese receptor.
+      </div>
+    </div>
+
+    <div class="g-step">
+      <span class="g-step-n">PASO 02</span>
+      <h3 class="g-step-h">Determinar uso CFDI compatible</h3>
+      <p class="g-p">El uso CFDI depende del régimen del receptor y la naturaleza de la operación. La tabla más usada:</p>
+      <table class="g-table">
+        <thead><tr><th>Uso CFDI</th><th>Para</th><th>Régimen típico</th></tr></thead>
+        <tbody>
+          <tr><td><code>G01</code></td><td>Adquisición de mercancías</td><td>601, 612, 626</td></tr>
+          <tr><td><code>G03</code></td><td>Gastos en general</td><td>601, 612, 626</td></tr>
+          <tr><td><code>P01</code></td><td>Por definir</td><td>Cualquiera (no deducible)</td></tr>
+          <tr><td><code>D04</code></td><td>Donativos</td><td>Solo donatarias autorizadas Anexo 14</td></tr>
+          <tr><td><code>D10</code></td><td>Colegiaturas</td><td>Instituciones educativas autorizadas</td></tr>
+          <tr><td><code>S01</code></td><td>Sin efectos fiscales</td><td>Público general (RFC genérico)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="g-step">
+      <span class="g-step-n">PASO 03</span>
+      <h3 class="g-step-h">Armar el payload CFDI 4.0</h3>
+      <p class="g-p">Estructura mínima de un CFDI de ingreso (I) con un concepto:</p>
+      <pre class="g-code">{
+  <span class="c-key">Serie</span>: <span class="c-str">"A"</span>,
+  <span class="c-key">Folio</span>: <span class="c-str">"1024"</span>,
+  <span class="c-key">FormaPago</span>: <span class="c-str">"03"</span>,           <span class="c-comment"># 03 = transferencia electrónica</span>
+  <span class="c-key">MetodoPago</span>: <span class="c-str">"PUE"</span>,         <span class="c-comment"># PUE = pago una sola exhibición</span>
+  <span class="c-key">TipoDeComprobante</span>: <span class="c-str">"I"</span>,    <span class="c-comment"># I = Ingreso</span>
+  <span class="c-key">Exportacion</span>: <span class="c-str">"01"</span>,        <span class="c-comment"># 01 = No aplica</span>
+  <span class="c-key">LugarExpedicion</span>: <span class="c-str">"03100"</span>, <span class="c-comment"># CP del emisor</span>
+  <span class="c-key">Emisor</span>: {
+    <span class="c-key">Rfc</span>: <span class="c-str">"XAXX010101000"</span>,
+    <span class="c-key">Nombre</span>: <span class="c-str">"TU EMPRESA SA DE CV"</span>,
+    <span class="c-key">RegimenFiscal</span>: <span class="c-str">"601"</span>
+  },
+  <span class="c-key">Receptor</span>: {
+    <span class="c-key">Rfc</span>: <span class="c-str">"XAXX010101000"</span>,
+    <span class="c-key">Nombre</span>: <span class="c-str">"CLIENTE SA DE CV"</span>,
+    <span class="c-key">DomicilioFiscalReceptor</span>: <span class="c-str">"03100"</span>,
+    <span class="c-key">RegimenFiscalReceptor</span>: <span class="c-str">"601"</span>,
+    <span class="c-key">UsoCFDI</span>: <span class="c-str">"G03"</span>
+  },
+  <span class="c-key">Conceptos</span>: [{
+    <span class="c-key">ClaveProdServ</span>: <span class="c-str">"01010101"</span>,
+    <span class="c-key">Cantidad</span>: <span class="c-num">1</span>,
+    <span class="c-key">ClaveUnidad</span>: <span class="c-str">"E48"</span>,    <span class="c-comment"># E48 = unidad de servicio</span>
+    <span class="c-key">Descripcion</span>: <span class="c-str">"Consultoría fiscal mayo 2026"</span>,
+    <span class="c-key">ValorUnitario</span>: <span class="c-num">10000.00</span>,
+    <span class="c-key">Importe</span>: <span class="c-num">10000.00</span>,
+    <span class="c-key">ObjetoImp</span>: <span class="c-str">"02"</span>,        <span class="c-comment"># 02 = sí objeto de impuesto</span>
+    <span class="c-key">Impuestos</span>: {
+      <span class="c-key">Traslados</span>: [{
+        <span class="c-key">Base</span>: <span class="c-num">10000.00</span>,
+        <span class="c-key">Impuesto</span>: <span class="c-str">"002"</span>,    <span class="c-comment"># 002 = IVA</span>
+        <span class="c-key">TipoFactor</span>: <span class="c-str">"Tasa"</span>,
+        <span class="c-key">TasaOCuota</span>: <span class="c-num">0.160000</span>,
+        <span class="c-key">Importe</span>: <span class="c-num">1600.00</span>
+      }]
+    }
+  }]
+}</pre>
+    </div>
+
+    <div class="g-step">
+      <span class="g-step-n">PASO 04</span>
+      <h3 class="g-step-h">Timbrar con el PAC</h3>
+      <pre class="g-code"><span class="c-comment"># En Claude Code (con /core:emitir-y-notificar workflow)</span>
+<span class="c-key">/core</span>:emitir-y-notificar
+
+<span class="c-comment"># O invocar el MCP directo</span>
+<span class="c-key">mp_facturama_extendido</span>.timbrar(payload_arriba)
+
+<span class="c-comment"># Respuesta exitosa</span>
+{
+  <span class="c-key">uuid</span>: <span class="c-str">"AAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE"</span>,
+  <span class="c-key">folio_fiscal</span>: <span class="c-str">"A-1024"</span>,
+  <span class="c-key">fecha_timbrado</span>: <span class="c-str">"2026-06-15T14:32:18-06:00"</span>,
+  <span class="c-key">sello_sat</span>: <span class="c-str">"...sello SAT..."</span>,
+  <span class="c-key">xml_url</span>: <span class="c-str">"https://api.facturama.mx/cfdi/AAAA.xml"</span>,
+  <span class="c-key">pdf_url</span>: <span class="c-str">"https://api.facturama.mx/cfdi/AAAA.pdf"</span>
+}</pre>
+      <div class="g-callout g-callout-success">
+        <strong>Éxito:</strong> obtuviste UUID. El CFDI está timbrado y registrado en SAT. Conserva el XML — es el original legal.
+      </div>
+    </div>
+
+    <div class="g-step">
+      <span class="g-step-n">PASO 05</span>
+      <h3 class="g-step-h">Notificar al cliente</h3>
+      <p class="g-p">Envía el XML + PDF al cliente vía email o WhatsApp Business:</p>
+      <pre class="g-code"><span class="c-comment"># Con workflow cfdi-emision-completa (incluye notificación)</span>
+<span class="c-key">/core</span>:emitir-y-notificar
+
+<span class="c-comment"># Template WA aprobado Meta (skill whatsapp-business-mx)</span>
+<span class="c-str">"Hola {{1}}, te enviamos tu factura serie A-{{2}} por ${{3}} MXN.
+XML: {{4}}
+PDF: {{5}}"</span></pre>
+    </div>
+
+  </section>
+
+  <!-- ============================================== -->
+  <section class="g-section" id="errores">
+    <div class="g-section-n">SECCIÓN 04</div>
+    <h2 class="g-h2">Errores comunes</h2>
+
+    <table class="g-table">
+      <thead><tr><th>Error PAC</th><th>Causa</th><th>Fix</th></tr></thead>
+      <tbody>
+        <tr><td><code>CFDI40103</code></td><td>RFC receptor no existe</td><td>Validar con <code>mp_sat_portal.padron_rfc()</code> antes</td></tr>
+        <tr><td><code>CFDI40147</code></td><td>Régimen receptor incorrecto</td><td>Re-consultar régimen vigente del receptor</td></tr>
+        <tr><td><code>CFDI40161</code></td><td>UsoCFDI incompatible con régimen</td><td>Ver tabla compatibilidad uso vs régimen</td></tr>
+        <tr><td><code>CFDI33184</code></td><td>Sello digital inválido</td><td>Renovar CSD (vigencia 4 años)</td></tr>
+        <tr><td><code>69B-DEFINITIVO</code></td><td>Emisor en lista negra SAT</td><td>NO emitas. Auditar emisor</td></tr>
+      </tbody>
+    </table>
+
+    <div class="g-callout g-callout-warning">
+      <strong>Antes de cualquier emisión.</strong> Validar paso 01. Cada timbre rechazado por el PAC sigue contando contra tu cuota mensual. No emitas sin validar primero.
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <section class="g-section" id="cancelacion">
+    <div class="g-section-n">SECCIÓN 05</div>
+    <h2 class="g-h2">Si tienes que cancelar</h2>
+
+    <p class="g-p">CFDI 4.0 introdujo el flujo de cancelación con acuse de aceptación. El receptor debe aceptar o se cancelará automáticamente a las 72 horas hábiles.</p>
+
+    <pre class="g-code"><span class="c-key">mp_facturama_extendido</span>.cancelar({
+  <span class="c-key">uuid</span>: <span class="c-str">"AAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE"</span>,
+  <span class="c-key">motivo</span>: <span class="c-str">"02"</span>,     <span class="c-comment"># 02 = Comprobantes emitidos con errores sin relación</span>
+  <span class="c-key">folio_sustituye</span>: <span class="c-str">""</span>  <span class="c-comment"># obligatorio solo si motivo es 01</span>
+})
+
+<span class="c-comment"># Motivos válidos</span>
+<span class="c-comment"># 01 = Comprobantes con errores con relación (requiere folio_sustituye)</span>
+<span class="c-comment"># 02 = Comprobantes con errores sin relación</span>
+<span class="c-comment"># 03 = No se llevó a cabo la operación</span>
+<span class="c-comment"># 04 = Operación nominativa relacionada en factura global</span></pre>
+  </section>
+
+  <!-- ============================================== -->
+  <section class="g-section" id="siguientes">
+    <div class="g-section-n">SIGUIENTES PASOS</div>
+    <h2 class="g-h2">Después de emitir</h2>
+
+    <p class="g-p">Tu CFDI ya está timbrado. Lo que sigue depende del caso:</p>
+
+    <ul class="g-p">
+      <li><strong>Conciliar pago:</strong> usa workflow <code>pago-conciliacion</code> para match CFDI vs depósito recibido.</li>
+      <li><strong>Emitir complemento de pagos:</strong> obligatorio si <code>MetodoPago=PPD</code> (pago en parcialidades). Usa skill <code>cfdi-complemento-pagos</code>.</li>
+      <li><strong>Auditar mes:</strong> al cierre, corre workflow <code>cierre-fiscal-mensual</code> que audita todos los CFDIs emitidos contra padrón vigente.</li>
+      <li><strong>Generar reporte:</strong> XLSX con todos los CFDIs del mes para tu contador.</li>
+    </ul>
+
+    <div class="g-next">
+      <h3 class="g-next-h">Sigue aprendiendo</h3>
+      <p class="g-next-p">Esta guía cubre el caso happy path. Para casos avanzados (complementos, traslados internacionales, retenciones, nómina) ve las guías relacionadas.</p>
+      <div class="g-next-links">
+        <a class="g-next-link" href="/guias/cierre-mensual">Cierre fiscal mensual →</a>
+        <a class="g-next-link" href="/guias/opinion-32d">Opinión 32-D →</a>
+        <a class="g-next-link" href="/guias/auditoria-69b">Detectar 69-B EFOS →</a>
+        <a class="g-next-link" href="/marketplace/">Ver marketplace →</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
