@@ -122,14 +122,44 @@ CFE_SELECTORS = {
 }
 ```
 
+## Hallazgos negativos (sesión 2026-06-15 tarde)
+
+Probados en vivo con Playwright tras impl inicial — **no existe** path web público:
+
+### Naturgy MX
+- `https://cloud.gas.naturgy.com/paperless` SÍ existe pero es opt-in para CFDI
+  digital por email (subscription, no consulta de adeudo).
+- Inputs: `nombre`, `poliza`, `email`, `Zona` (D1-CDMX, etc.), `chk_terminos`.
+- NO hay consulta pública de adeudo por póliza. Solo:
+  - App móvil **Naturgy Connect** (no web público)
+  - WhatsApp Naturgy (chatbot)
+  - Centro telefónico
+- Conclusión: `mp_gas_natural_mx` mantiene mock como única vía web; impl real
+  requeriría reverse-engineering del app móvil (fuera de scope).
+
+### Verificación EdoMex (Verificarte)
+- `verificacion.edomex.gob.mx` NO existe (DNS_NOT_RESOLVED).
+- `sma.edomex.gob.mx/verificacion-vehicular` muestra solo PDFs informativos.
+- El sistema SIREM (`http://187.188.85.202:8095/consulta-sirem/`) es del
+  **Sistema Integral de Residuos**, NO verificación vehicular.
+- Conclusión: EdoMex no expone consulta pública por placa via web. La consulta
+  es solo presencial en verificentros. Mock se mantiene.
+
+### SIAPA confirmaciones extra
+- **site_key real reCAPTCHA v2**: `6LdsJiUUAAAAAIjV_N2F3sd58XYDYznuyNn9ROva`
+  (corregido vs sitekey genérico del primer documento).
+- El form NO tiene id `loginlesspayment` (esa era de Telmex); selectores
+  correctos son por `id`: `#cuenta_contrato`, `#clavesiapa`.
+- NO envié el form en vivo para no spamear el portal; el HTML de respuesta
+  se descubrirá la primera vez que un usuario real consulte con cuenta válida.
+
 ## Próximos pasos prioritarios
 
-1. Implementar `mp_telmex_facturacion._real_factura_sin_login()` con Playwright
-   + reCAPTCHA Enterprise v3 (más rápido valor).
-2. Implementar `mp_verificacion_vehicular_mx._real_consultar_cdmx()` usando SAF
-   CDMX con captcha imagen + OCR fallback.
-3. Reintentar SACMEX el lunes 2026-06-16.
-4. CFE: implementar human-in-loop CAPTCHA con screenshot + prompt al usuario.
+1. ✅ `mp_telmex_facturacion._real_factura_sin_login()` — IMPLEMENTADO.
+2. ✅ `mp_verificacion_vehicular_mx._real_consultar_cdmx()` — IMPLEMENTADO.
+3. ✅ CFE: human-in-loop CAPTCHA — IMPLEMENTADO con cascada env/TTY.
+4. ✅ SIAPA real path — IMPLEMENTADO con reCAPTCHA v2 human-in-loop.
+5. ⏸ Reintentar SACMEX el lunes 2026-06-16.
 
 ## Notas de seguridad
 

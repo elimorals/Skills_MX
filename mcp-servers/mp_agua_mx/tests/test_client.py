@@ -124,3 +124,37 @@ class TestServerTools:
         assert "total_organismos" in r
         assert "porcentaje_pob_nacional_consultable" in r
         assert 0 < r["porcentaje_pob_nacional_consultable"] < 100
+
+
+class TestSIAPAParser:
+    def test_parser_extrae_adeudo(self):
+        from mp_agua_mx.client import _parse_siapa_html
+        html = """
+        <html><body>
+          <h2>Consulta cuenta SIAPA</h2>
+          <p>Adeudo total: $ 1,234.50</p>
+          <p>Consumo: 25.40 m3</p>
+          <p>Estado: PENDIENTE</p>
+        </body></html>
+        """
+        r = _parse_siapa_html(html, "12345678")
+        assert r["adeudo_total_mxn"] == 1234.50
+        assert r["estatus"] == "PENDIENTE"
+        assert "parse_partial" not in r
+
+    def test_parser_html_vacio_marca_needs_calibration(self):
+        from mp_agua_mx.client import _parse_siapa_html
+        r = _parse_siapa_html("<html>sin datos</html>", "12345678")
+        assert r.get("parse_partial") is True
+        assert r.get("needs_calibration") is True
+
+
+class TestLiveFlag:
+    def test_live_flag_no_siapa_se_queda_en_mock(self, monkeypatch):
+        """LIVE flag activo pero organismo != siapa → mock."""
+        monkeypatch.setenv("PLUGINS_MX_AGUA_LIVE", "1")
+        from mp_agua_mx.client import AguaMxClient
+        c = AguaMxClient()
+        r = c.consultar_adeudo("sacmex", "12345678901")  # 11 dígitos válidos SACMEX
+        # SACMEX no es siapa → mock o not_implemented
+        assert r.get("simulated") is True or r.get("consultado") is False
