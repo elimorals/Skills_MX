@@ -153,13 +153,44 @@ Probados en vivo con Playwright tras impl inicial — **no existe** path web pú
 - NO envié el form en vivo para no spamear el portal; el HTML de respuesta
   se descubrirá la primera vez que un usuario real consulte con cuenta válida.
 
+## Calibración SAF CDMX 2026-06-15 (sesión 2)
+
+Envié form con placa de prueba "AAA0000" + captcha resuelto manualmente.
+Capturé HTML real del wizard `kt-wizard-v1__nav`. Shape confirmado:
+
+```html
+<span class="nav_item_title">Sin adeudos de tenencia</span>
+<span class="nav_item_title" id="infraccionesLbl">Una infracción no pagada</span>
+<span class="nav_item_title" id="sancionesLbl">Sin sanciones ambientales</span>
+<span class="nav_item_title">Fotocivicas 10 puntos</span>
+<span class="nav_item_title">Vigencia de licencia y tarjeta de circulación</span>
+```
+
+**Detalles importantes**:
+- Si placa no existe en padrón: alert `"El número de placa no se localizó en el padrón"`.
+- SAF expone **counts agregados**, no folios individuales (necesitarías navegación adicional).
+- Reusable por 3 MCPs: `mp_verificacion_vehicular_mx`, `mp_tenencia_mx`, `mp_multas_vehiculares_mx`.
+- Selectores IDs: `#infraccionesLbl`, `#sancionesLbl` (los otros 3 son por orden de `.nav_item_title`).
+
+## NL multas — corrección 2026-06-15 (sesión 2)
+
+ICVNL `estadodecuenta` resultó ser **REFRENDO (placas/tenencia)**, NO multas.
+NL no tiene portal estatal de multas — son **municipales**.
+
+**Descubierto en vivo**:
+- **San Pedro Garza García**: `https://aplicativos.sanpedro.gob.mx/esanpedro/multas/multasnew.asp`
+  - Form POST `e_cuenta_sp.asp` con `placa`, token CSRF
+  - reCAPTCHA v2 site_key `6LfCmAEoAAAAAPZhXqaVaJQ074mEvYZ2kHutYTDA`
+
 ## Próximos pasos prioritarios
 
 1. ✅ `mp_telmex_facturacion._real_factura_sin_login()` — IMPLEMENTADO.
-2. ✅ `mp_verificacion_vehicular_mx._real_consultar_cdmx()` — IMPLEMENTADO.
+2. ✅ `mp_verificacion_vehicular_mx._real_consultar_cdmx()` — IMPLEMENTADO + parser CALIBRADO.
 3. ✅ CFE: human-in-loop CAPTCHA — IMPLEMENTADO con cascada env/TTY.
 4. ✅ SIAPA real path — IMPLEMENTADO con reCAPTCHA v2 human-in-loop.
-5. ⏸ Reintentar SACMEX el lunes 2026-06-16.
+5. ✅ NL multas — corregido (SPGG agregado).
+6. ⏸ Reintentar SACMEX el lunes 2026-06-16.
+7. ⏸ Monterrey + otros muns ZMM (Guadalupe, San Nicolás) multas — siguiente sprint.
 
 ## Notas de seguridad
 

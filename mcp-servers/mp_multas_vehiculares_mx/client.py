@@ -170,29 +170,52 @@ class MultasVehicularesMxClient:
             raise UpstreamError(f"SAF CDMX falló para multas: {e}",
                                 {"placa_hash": self._bitacora.hash_sensitive(placa)})
 
-        # Convertimos raw (verificación + adeudos) a shape "multas"
+        # Shape REAL del SAF CDMX (calibrado 2026-06-15):
+        # raw tiene: infracciones_count, infracciones_label, tenencia_adeudo,
+        # tenencia_monto_mxn, sanciones_ambientales_count, fotocivicas_puntos,
+        # placa_localizada.
+        if raw.get("placa_localizada") is False:
+            return {
+                "estado": "cdmx",
+                "placa": placa,
+                "organismo": "SAF CDMX",
+                "multas_total": 0,
+                "multas": [],
+                "placa_localizada": False,
+                "mensaje": raw.get("mensaje", "Placa no encontrada en padrón"),
+                "fuente": raw.get("fuente", ""),
+                "fecha_consulta": datetime.now(timezone.utc).isoformat(),
+                "simulated": False,
+            }
+
+        # SAF CDMX expone count agregado de infracciones, no folios individuales.
+        # Para extraer folios se requiere navegar a sub-página por cada infracción
+        # (siguiente iteración cuando un usuario real ejecute).
+        infrac_count = raw.get("infracciones_count", 0)
         multas = []
-        if raw.get("adeudo_total_mxn", 0) > 0:
-            # SAF expone un total agregado — sin desglose por folio en consulta pública.
-            # Devolvemos 1 entrada placeholder que el usuario calibre con cuenta real.
+        if infrac_count and infrac_count > 0:
             multas.append({
-                "folio": "SAF-CDMX-AGREGADO",
+                "folio": f"SAF-CDMX-AGGR-{placa[-4:]}",
                 "fecha": "n/d",
-                "infraccion": "Adeudos vehiculares (verificación + tenencia + multas)",
-                "monto_mxn": raw["adeudo_total_mxn"],
-                "dias_desde_emision": 30,
+                "infraccion": raw.get("infracciones_label", f"{infrac_count} infracción/es no pagadas"),
+                "monto_mxn": 0,  # SAF no expone monto en el wizard inicial
+                "dias_desde_emision": 0,
                 "estatus": "PENDIENTE",
+                "nota": "SAF expone solo count en wizard; folios individuales requieren navegación adicional",
             })
 
         return {
             "estado": "cdmx",
             "placa": placa,
             "organismo": "SAF CDMX",
-            "multas_total": len(multas),
+            "placa_localizada": True,
+            "multas_total": infrac_count,
             "multas": multas,
+            "tenencia_adeudo": raw.get("tenencia_adeudo", False),
+            "tenencia_monto_mxn": raw.get("tenencia_monto_mxn"),
+            "sanciones_ambientales_count": raw.get("sanciones_ambientales_count", 0),
+            "fotocivicas_puntos": raw.get("fotocivicas_puntos"),
             "fuente": raw.get("fuente", ""),
-            "raw_saf": raw,
             "fecha_consulta": datetime.now(timezone.utc).isoformat(),
             "simulated": False,
-            "needs_calibration": True,  # primer hit calibra el shape
         }
