@@ -1,0 +1,1 @@
+{"mcpServers": {"multas_vehiculares_mx": {"command": "python", "args": ["-m", "mp_multas_vehiculares_mx.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
