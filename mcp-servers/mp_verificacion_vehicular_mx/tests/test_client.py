@@ -75,24 +75,61 @@ class TestProximoPeriodo:
 
 
 class TestSAFParser:
-    def test_parser_extrae_holograma_y_adeudo(self):
+    """Calibrados en vivo con SAF CDMX 2026-06-15 — selectores reales del wizard."""
+
+    def test_placa_no_localizada(self):
+        """Caso: placa inválida → SAF muestra alert específico."""
+        from mp_verificacion_vehicular_mx.client import _parse_saf_cdmx_html
+        html = """<div class="alert alert-danger">El número de placa no se localizó en el padrón</div>"""
+        r = _parse_saf_cdmx_html(html, "AAA0000")
+        assert r["placa_localizada"] is False
+        assert "padrón" in r["mensaje"]
+
+    def test_parser_5_secciones_vehiculo_limpio(self):
+        """Shape real del wizard SAF (5 spans nav_item_title)."""
         from mp_verificacion_vehicular_mx.client import _parse_saf_cdmx_html
         html = """
-        <html><body>
-          <table>
-            <tr><td>Holograma:</td><td>00</td></tr>
-            <tr><td>Última verificación:</td><td>2026-04-10</td></tr>
-            <tr><td>Vigencia hasta:</td><td>2026-10-10</td></tr>
-            <tr><td>Adeudo total:</td><td>$ 1,245.50</td></tr>
-          </table>
-        </body></html>
+        <div class="kt-wizard-v1__nav">
+          <span class="nav_item_title">Sin adeudos de tenencia</span>
+          <span class="nav_item_title" id="infraccionesLbl">Sin infracciones</span>
+          <span class="nav_item_title" id="sancionesLbl">Sin sanciones ambientales</span>
+          <span class="nav_item_title">Fotocivicas 10 puntos</span>
+          <span class="nav_item_title">Vigencia de licencia y tarjeta de circulación</span>
+        </div>
         """
         r = _parse_saf_cdmx_html(html, "ABC1234")
-        assert r["holograma_actual"] == "00"
-        assert r["ultima_verificacion"] == "2026-04-10"
-        assert r["vigencia_hasta"] == "2026-10-10"
-        assert r["adeudo_total_mxn"] == 1245.50
+        assert r["placa_localizada"] is True
+        assert r["tenencia_adeudo"] is False
+        assert r["infracciones_count"] == 0
+        assert r["sanciones_ambientales_count"] == 0
+        assert r["fotocivicas_puntos"] == 10
         assert r["vigente"] is True
+
+    def test_parser_con_una_infraccion(self):
+        """Caso real observado: 'Una infracción no pagada'."""
+        from mp_verificacion_vehicular_mx.client import _parse_saf_cdmx_html
+        html = """
+        <span class="nav_item_title">Sin adeudos de tenencia</span>
+        <span class="nav_item_title" id="infraccionesLbl">Una infracción no pagada</span>
+        <span class="nav_item_title" id="sancionesLbl">Sin sanciones ambientales</span>
+        <span class="nav_item_title">Fotocivicas 10 puntos</span>
+        """
+        r = _parse_saf_cdmx_html(html, "ABC1234")
+        assert r["infracciones_count"] == 1
+        assert r["vigente"] is False  # tiene infracción
+
+    def test_parser_con_adeudo_tenencia(self):
+        from mp_verificacion_vehicular_mx.client import _parse_saf_cdmx_html
+        html = """
+        <span class="nav_item_title">$ 3,245.50 adeudados de tenencia</span>
+        <span class="nav_item_title" id="infraccionesLbl">Sin infracciones</span>
+        <span class="nav_item_title" id="sancionesLbl">Sin sanciones ambientales</span>
+        <span class="nav_item_title">Fotocivicas 8 puntos</span>
+        """
+        r = _parse_saf_cdmx_html(html, "ABC1234")
+        assert r["tenencia_adeudo"] is True
+        assert r["tenencia_monto_mxn"] == 3245.50
+        assert r["fotocivicas_puntos"] == 8
 
     def test_parser_html_vacio_marca_partial(self):
         from mp_verificacion_vehicular_mx.client import _parse_saf_cdmx_html

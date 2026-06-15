@@ -225,15 +225,29 @@ def _resolve_captcha(captcha_path: Path, placa: str) -> Optional[str]:
 
 
 def _parse_saf_cdmx_html(html: str, placa: str) -> dict[str, Any]:
-    """Extrae datos de verificación/adeudos del HTML SAF CDMX.
+    """Extrae datos del HTML SAF CDMX `Consultaciudadana`.
 
-    El portal renderiza una tabla con: placa, modelo, marca, holograma,
-    fecha última verificación, vigencia, adeudo total.
-    Strip de tags HTML antes del regex para tolerar `<td>X</td><td>VALOR</td>`.
+    CALIBRADO en vivo 2026-06-15 con Playwright MCP. La página post-submit
+    renderiza 5 secciones en un wizard de Keen `kt-wizard-v1__nav-label`:
+      1. Tenencia        → span.nav_item_title (primer item, sin id)
+      2. Infracciones    → #infraccionesLbl
+      3. Sanciones amb.  → #sancionesLbl
+      4. Fotocívicas     → span.nav_item_title (4to item, sin id)
+      5. Vigencia lic/TC → span.nav_item_title (5to item, sin id)
+
+    Ejemplos de valores observados:
+      - "Sin adeudos de tenencia" / "$X,XXX.XX adeudados de tenencia"
+      - "Una infracción no pagada" / "Sin infracciones" / "X infracciones..."
+      - "Sin sanciones ambientales"
+      - "Fotocivicas N puntos"
+      - "Vigencia de licencia y tarjeta de circulación"
+
+    Si la placa no existe en padrón, SAF muestra alert
+    "El número de placa no se localizó en el padrón".
     """
     # Strip HTML tags y colapsa whitespace para parseo robusto
-    text = re.sub(r"<[^>]+>", " ", html)
-    text = re.sub(r"\s+", " ", text)
+    text_raw = re.sub(r"<[^>]+>", " ", html)
+    text = re.sub(r"\s+", " ", text_raw)
 
     result: dict[str, Any] = {
         "operation": "consultar_estatus_cdmx",
@@ -244,29 +258,70 @@ def _parse_saf_cdmx_html(html: str, placa: str) -> dict[str, Any]:
         m = re.search(pattern, text, re.IGNORECASE | re.DOTALL)
         return m.group(1).strip() if m else None
 
-    # Patrones tolerantes a HTML (tags entre keyword y valor)
-    holograma = _grab(r"[Hh]olograma[^A-Za-z0-9]{0,80}(00|0|1|2|Exento|Rechazo)\b")
-    if holograma:
-        result["holograma_actual"] = holograma
+    # Detección "placa no localizada" (alert SAF observado en vivo)
+    if "no se localizó en el padrón" in text or "no se localizo en el padron" in text.lower():
+        result["placa_localizada"] = False
+        result["mensaje"] = "El número de placa no se localizó en el padrón SAF CDMX"
+        return result
+    result["placa_localizada"] = True
 
-    ultima = _grab(r"[ÚU]ltima\s+verificaci[óo]n[^\d]{0,80}(\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}/\d{2,4})")
-    if ultima:
-        result["ultima_verificacion"] = ultima
+    # Sección 1 — Tenencia (texto literal de la etiqueta)
+    tenencia = _grab(r"(Sin adeudos de tenencia|\$\s*[0-9,\.]+\s+adeudados?\s+de\s+tenencia)")
+    if tenencia:
+        result["tenencia_label"] = tenencia
+        result["tenencia_adeudo"] = "Sin adeudos" not in tenencia
+        m_monto = re.search(r"\$\s*([0-9]{1,3}(?:,[0-9]{3})*\.[0-9]{2})", tenencia)
+        if m_monto:
+            try:
+                result["tenencia_monto_mxn"] = float(m_monto.group(1).replace(",", ""))
+            except ValueError:
+                pass
 
-    vigencia = _grab(r"[Vv]igencia\s+hasta[^\d]{0,80}(\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}/\d{2,4})")
-    if vigencia:
-        result["vigencia_hasta"] = vigencia
+    # Sección 2 — Infracciones (#infraccionesLbl)
+    infrac = _grab(r"id=\"infraccionesLbl\"[^>]*>\s*([^<]+?)\s*<") or \
+             _grab(r"(Una infracción no pagada|Sin infracciones|\d+\s+infracciones?[^<\n]*)")
+    if infrac:
+        result["infracciones_label"] = infrac
+        if "Sin infrac" in infrac:
+            result["infracciones_count"] = 0
+        elif "Una infrac" in infrac:
+            result["infracciones_count"] = 1
+        else:
+            m_n = re.search(r"(\d+)", infrac)
+            result["infracciones_count"] = int(m_n.group(1)) if m_n else None
 
-    adeudo = _grab(r"[Aa]deudo[^\d]{0,80}\$\s*([0-9]{1,3}(?:[,\.][0-9]{3})*[\.,][0-9]{2})")
-    if adeudo:
-        try:
-            result["adeudo_total_mxn"] = float(adeudo.replace(",", ""))
-        except ValueError:
-            result["adeudo_raw"] = adeudo
+    # Sección 3 — Sanciones ambientales (#sancionesLbl)
+    sanciones = _grab(r"id=\"sancionesLbl\"[^>]*>\s*([^<]+?)\s*<") or \
+                _grab(r"(Sin sanciones ambientales|\d+\s+sancion(?:es)?\s+ambient[a-z]*)")
+    if sanciones:
+        result["sanciones_ambientales_label"] = sanciones
+        result["sanciones_ambientales_count"] = (
+            0 if "Sin sanciones" in sanciones
+            else int(re.search(r"(\d+)", sanciones).group(1)) if re.search(r"(\d+)", sanciones)
+            else None
+        )
 
-    if "holograma_actual" not in result:
+    # Sección 4 — Fotocívicas
+    foto = _grab(r"(Fotoc[ií]vicas?\s+(?:[-\d]+)\s+puntos?)")
+    if foto:
+        result["fotocivicas_label"] = foto
+        m_p = re.search(r"(-?\d+)\s+puntos", foto)
+        if m_p:
+            result["fotocivicas_puntos"] = int(m_p.group(1))
+
+    # Sección 5 — Vigencia licencia y tarjeta circulación (label informativo)
+    vigencia_lic = _grab(r"(Vigencia\s+de\s+licencia\s+y\s+tarjeta\s+de\s+circulaci[óo]n)")
+    if vigencia_lic:
+        result["vigencia_licencia_label"] = vigencia_lic
+
+    # Vigente combinado: sin infracciones + sin sanciones + fotocívicas no agotadas
+    result["vigente"] = (
+        result.get("infracciones_count", 99) == 0
+        and result.get("sanciones_ambientales_count", 99) == 0
+        and (result.get("fotocivicas_puntos") or 10) > 0
+    )
+
+    if not any(k in result for k in ("tenencia_label", "infracciones_label", "sanciones_ambientales_label")):
         result["parse_partial"] = True
-        result["html_snippet"] = html[:500]
-
-    result["vigente"] = result.get("holograma_actual") not in (None, "Rechazo")
+        result["html_snippet"] = text[:500]
     return result
