@@ -20,6 +20,10 @@ Mapa completo de la documentación del monorepo. Si llegas nuevo, empieza por **
 | [specs/README.md](specs/README.md) | Specs detallados de items novedosos (webhook receiver, Playwright real, verticales TOP) |
 | [plan-afinacion.md](plan-afinacion.md) | Roadmap 36 semanas para llevar a producción-grade |
 | [roadmap.md](roadmap.md) | Visión a 12 meses: nuevos verticales, integraciones, ecosistema |
+| [sprint-d-roadmap.md](sprint-d-roadmap.md) | Plan ejecutivo Sprint D (predial+agua+catastro+multas) |
+| [**SPRINT-D-RESUMEN-2026-06-15.md**](SPRINT-D-RESUMEN-2026-06-15.md) | 🆕 **Pull-out completo Sprint A/B/C/D** — 9 MCPs, 114 tests, calibración SAF, hallazgos negativos |
+| [discovery-portales-2026-06-15.md](discovery-portales-2026-06-15.md) | 🆕 Selectores Playwright validados en vivo (SIAPA, SAF, Telmex, CFE, JAL, SPGG) |
+| [discovery-predial-2026-06-15.md](discovery-predial-2026-06-15.md) | Output script discovery predial mensual |
 
 ## Guías de uso e instalación
 

@@ -1,6 +1,75 @@
 # Plugins MX — Monorepo de Skills, MCPs, Workflows y Plugins para México
 
-Monorepo de **plugins de Claude Code**, **MCP servers** y **skills standalone** para operación diaria de PyMEs y profesionistas en México. Cubre fiscal (CFDI 4.0, SAT, IMSS, INFONAVIT), pagos (TDC, OXXO, SPEI, transferencia), marketplaces (ML, Shopify, Amazon MX), municipales (CDMX, EdoMex, MTY), inmobiliaria, salud veterinaria, eventos, restaurantes, salones y más.
+Monorepo de **plugins de Claude Code**, **MCP servers** y **skills standalone** para operación diaria de PyMEs y profesionistas en México. Cubre fiscal (CFDI 4.0, SAT, IMSS, INFONAVIT), pagos (TDC, OXXO, SPEI, transferencia), marketplaces (ML, Shopify, Amazon MX), municipales (CDMX, EdoMex, MTY), inmobiliaria, salud veterinaria, eventos, restaurantes, salones, **servicios públicos (agua, gas, CFE, Telmex), tenencia/verificación/multas vehiculares** y más.
+
+## Estado a 2026-06-15 (post-Sprint D — discovery nacional servicios públicos)
+
+| Capa | Cantidad real | Notas |
+|---|---|---|
+| **MCP servers** | **62** | Crecimiento Sprint A/B/C/D: `mp_agua_mx` (17 organismos), `mp_cfe_facturacion REAL`, `mp_tenencia_mx` (20 estados), `mp_catastro_estatal_mx` (10 sistemas), `mp_ish_mx` (32 estados), `mp_verificacion_vehicular_mx` (7 estados + SAF CDMX real), `mp_gas_natural_mx` (5 distribuidores), `mp_telmex_facturacion REAL` (pago_sin_login), **`mp_multas_vehiculares_mx` (NUEVO Sprint D · 5 sistemas)** |
+| **Tests pytest** | **1,380 ✅** (1 skip) | Suite completa pasa en 6.9s |
+| **Catálogo central municipios MX** | 243 muns (32 estados) | **71 validados Playwright en vivo** (top-7 Sprint D + 64 pre-existentes) |
+| **Cobertura urbana servicios públicos** | ~50% agua + 100% ISH + 88% verificación info + cálculo tenencia 20 estados | Path real opt-in con flags por capítulo |
+| **Cobertura multas vehiculares** | ~22M vehículos (CDMX + EdoMex + NL San Pedro + JAL) | MCP nuevo Sprint D |
+
+### 🆕 Sprint A/B/C/D — Servicios públicos + fiscal vehicular (2026-06-14 → 2026-06-15)
+
+**Sprint A · Servicios públicos básicos** (commit `8c676b0`)
+- `mp_agua_mx` — Catálogo unificado 12 organismos top urbanos (~50% pob urbana).
+- `mp_cfe_facturacion REAL` — Playwright + human-in-loop CAPTCHA + cookies session 30 min.
+- `mp_tenencia_mx` — Cálculo + tablas tasa por estado (20 estados, factor depreciación 0-9 años).
+
+**Sprint B · Predial expansion** (commit `e343068`)
+- `scripts/discovery_predial_mensual.py` — Auto-discovery semi-automático mes a mes.
+- `mp_catastro_estatal_mx` — IGECEM EdoMex, IRCEP Puebla, Veracruz, QRoo, Yucatán.
+- `mp_ish_mx` — Impuesto Hospedaje 32 estados (CDMX 3.5%, QRoo 5%, BCS 4%, etc.).
+
+**Sprint C · Verificación + recibos** (commit `8941abc`)
+- `mp_verificacion_vehicular_mx` — CDMX (SAF público) + EdoMex + 5 estados (cálculo color engomado).
+- `mp_gas_natural_mx` — Naturgy, ENGIE, Ecogas, Fenosa, GasNatDF (mock; sin portal público).
+- `mp_telmex_facturacion REAL` — `pago_sin_login` con reCAPTCHA Enterprise v3 invisible.
+
+**Sprint D · Cobertura nacional ampliada** (commits `f19507b → 41196eb`)
+- D.1 **Top-7 muns predial** (+8.6M hab): León PAGONET, Mexicali SPA, QRO webservices, Mérida PHP, Culiacán SPA, Cancún React (+ Tijuana login-only documentado).
+- D.2 **Agua +5 organismos** (+2.25M usuarios públicos): JMAS Juárez ✅, OOAPAS Morelia ✅, CESPM/AGUAH/SIMAS/OAPAS marcados login-only o app-only honestamente.
+- D.3 **Catastros estatales +5**: CDMX, JAL, NL, GTO, SON — **patrón nacional confirmado: ningún catastro estatal expone consulta pública** (login-only o info-only). Consulta operativa siempre municipal.
+- D.4 **`mp_multas_vehiculares_mx` (MCP nuevo)** — CDMX + EdoMex + NL ICVNL + NL San Pedro + JAL (~22M vehículos cobertura combinada). 4 tools: `consultar_por_placa`, `calcular_total` con descuentos, `listar_sistemas`.
+
+### 🎯 Calibración SAF CDMX en vivo (2026-06-15 sesión 2)
+
+Capturé HTML real del wizard `kt-wizard-v1__nav` enviando form con placa de prueba "AAA0000" + captcha resuelto manualmente. Parser ahora extrae:
+- `tenencia_adeudo` + `tenencia_monto_mxn` (si aplica)
+- `infracciones_count` desde `#infraccionesLbl`
+- `sanciones_ambientales_count` desde `#sancionesLbl`
+- `fotocivicas_puntos`
+- `placa_localizada` (false si el alert es "no se localizó en el padrón")
+
+**Esto desbloquea 3 MCPs reusando 1 endpoint**: `mp_verificacion_vehicular_mx`, `mp_tenencia_mx`, `mp_multas_vehiculares_mx._real_cdmx()` consultan `data.finanzas.cdmx.gob.mx/sma/Consultaciudadana` con shape estructurado real (no `parse_partial`).
+
+### 🚫 Hallazgos negativos documentados (honestidad operativa)
+
+Sprint D produjo descubrimientos negativos que ahorran 50-100h de implementación inútil:
+- **Naturgy MX**: portal `cloud.gas.naturgy.com/paperless` es opt-in para CFDI digital, NO consulta de adeudos. Solo app móvil + WhatsApp chatbot.
+- **Verificarte EdoMex**: `verificacion.edomex.gob.mx` DNS_NOT_RESOLVED. `sma.edomex.gob.mx` solo publica PDFs. SIREM es de **residuos** (no vehicular).
+- **Catastros estatales (5)**: 0/5 públicos. CDMX OVICA + NL SGC requieren login; JAL, GTO, SON son info-only.
+- **Agua organismos top**: 4/6 sin portal público web (AGUAH solo app móvil, CESPM/SIMAS login-only, OAPAS Tlalne solo Facebook).
+- **Tijuana predial**: `pagos.tijuana.gob.mx` requiere **registro previo** del usuario (login user+pass), no consulta directa.
+- **SACMEX**: 503 dominical persistente — reintentar día hábil.
+
+Detalles en `docs/discovery-portales-2026-06-15.md` y `docs/SPRINT-D-RESUMEN-2026-06-15.md`.
+
+### Patrones Playwright validados (reusables Sprint E+)
+
+| CAPTCHA | Patrón | Caso usado |
+|---|---|---|
+| **reCAPTCHA Enterprise v3 invisible** | `page.click('Continuar')` y listo | Telmex pago_sin_login |
+| **reCAPTCHA v2 checkbox** | `wait_for_function('g-recaptcha-response.value.length > 20')` | SIAPA, JAL multas, SP Garza García |
+| **CAPTCHA imagen ASP.NET** | Screenshot → cascada env/TTY/fail | CFE Mi Espacio |
+| **CAPTCHA imagen GET form** | Igual cascada | SAF CDMX Consultaciudadana |
+| **Cloudflare Turnstile** | sitekey extraída en discovery | EdoMex infracciones |
+| **Captcha alfanumérica POST** | Cascada env_token | SIAPA |
+
+---
 
 ## Estado a 2026-06-13 (post-discovery nacional)
 
@@ -358,6 +427,24 @@ plugins-mx/
 **Total tests nuevos FASES 56-61**: 116 pasando. Cobertura Top 15 priorizado: **5/15 = 33.3%**.
 
 Detalles en `mcp-servers/README.md` y `docs/FASE-61-SPRINT-3-MCPS-2026-06-14.md`.
+
+### 🆕 Sprint A/B/C/D — Servicios públicos + fiscal vehicular (7 nuevos · 2026-06-14 → 2026-06-15)
+
+| MCP | Categoría | Universo afectado | Tests |
+|---|---|---|---|
+| `mp_agua_mx` | Catálogo unificado 17 organismos (SACMEX/SIAPA/SADM/CESPT/JMAS/OOAPAS + 11 más). Path real SIAPA opt-in. | ~50% pob urbana mexicana | 24 ✓ |
+| `mp_cfe_facturacion` (REAL) | Mi Espacio CFE con Playwright + human-in-loop CAPTCHA + cookies session 30 min. | 42M usuarios CFE | 17 ✓ |
+| `mp_tenencia_mx` | Cálculo + tablas tasa 20 estados + factor depreciación años 0-9. | ~40M vehículos | 16 ✓ |
+| `mp_catastro_estatal_mx` | IGECEM (EdoMex 125 muns), IRCEP Puebla, Veracruz + 7 más. Patrón nacional: catastros estatales no-públicos. | Notarías, peritos, M&A | 6 ✓ |
+| `mp_ish_mx` | Impuesto Hospedaje 32 estados. Combo con `airbnb-host-mx`. | ~100k anfitriones Airbnb MX | 10 ✓ |
+| `mp_verificacion_vehicular_mx` | 7 programas estatales + path real **SAF CDMX calibrado en vivo**. Cálculo color engomado por terminación placa. | ~8M vehículos zonas verificación | 15 ✓ |
+| `mp_gas_natural_mx` | Naturgy + ENGIE + Ecogas + Fenosa + GasNatDF (~4M usuarios). Mock-first; sin portal público confirmado. | ~4M usuarios gas natural | 4 ✓ |
+| `mp_telmex_facturacion` (REAL) | `pago_sin_login` con reCAPTCHA Enterprise v3 invisible (sin credenciales del usuario). | ~15M líneas Telmex | 11 ✓ |
+| `mp_multas_vehiculares_mx` | **MCP NUEVO**. CDMX (reusa SAF) + EdoMex + NL ICVNL + NL San Pedro + JAL. Descuentos 50%/25% por pago oportuno. | ~22M vehículos cobertura combinada | 11 ✓ |
+
+**Total tests Sprint A/B/C/D**: 114 pasando. Cobertura combinada: predial top-7 (+8.6M hab) + agua 2 nuevos públicos (+2.25M usuarios) + multas vehiculares (+22M vehículos).
+
+Detalles en `docs/SPRINT-D-RESUMEN-2026-06-15.md` y `docs/discovery-portales-2026-06-15.md`.
 
 ---
 
