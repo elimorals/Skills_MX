@@ -1,0 +1,1 @@
+{"mcpServers": {"ine_verificacion": {"command": "python", "args": ["-m", "mp_ine_verificacion.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
