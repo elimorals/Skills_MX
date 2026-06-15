@@ -1,0 +1,595 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwi6isrW4ImVAxXemmoFHfusOp4QPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: agua de hermosillo consulta saldo agua de hermosillo consulta saldo
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dagua%2Bde%2Bhermosillo%2Bconsulta%2Bsaldo&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=agua+de+hermosillo+consulta+saldo&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNmnK03caZyx7Kf6_4dBNh3nHNge_m4xP-twY_sYJNNy2aIEm4P3tPvXGR12vVZSt7jCny20NX41sGvWIinigbJUFJcluC-U2SyZJSXwoO6eRSf4tWLBoao8d2h8Rh1P-6YhENOhnR-70y1kAm4Pw0AucTt1LXsBAVbZ0YUt8BJBTUQpCNw&aep=1&ntc=1&sa=X&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q2J8OegQIERAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=agua+de+hermosillo+consulta+saldo&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNmnK03caZyx7Kf6_4dBNh3nHNge_m4xP-twY_sYJNNy2aIEm4P3tPvXGR12vVZSt7jCny20NX41sGvWIinigbJUFJcluC-U2SyZJSXwoO6eRSf4tWLBoao8d2h8Rh1P-6YhENOhnR-70y1kAm4Pw0AucTt1LXsBAVbZ0YUt8BJBTUQpCNw&sa=X&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q0pQJegQIFxAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Videos" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNmnK03caZyx7Kf6_4dBNh3nHNge_m4xP-twY_sYJNNy2aIEm4P3tPvXGR12vVZSt7jCny20NX41sGvWIinigbJUFJcluC-U2SyZJSXwoO6eRSf4tWLBoao8d2h8Rh1P-6YhENOhnR-70y1kAm4Pw0AucTt1LXsBAVbZ0YUt8BJBTUQpCNw&q=agua+de+hermosillo+consulta+saldo&sa=X&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4QtKgLegQIExAB
+              - generic [ref=e88]: Videos
+          - listitem [ref=e89]:
+            - link "Imágenes" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNmnK03caZyx7Kf6_4dBNh3nHNge_m4xP-twY_sYJNNy2aIEm4P3tPvXGR12vVZSt7jCny20NX41sGvWIinigbJUFJcluC-U2SyZJSXwoO6eRSf4tWLBoao8d2h8Rh1P-6YhENOhnR-70y1kAm4Pw0AucTt1LXsBAVbZ0YUt8BJBTUQpCNw&q=agua+de+hermosillo+consulta+saldo&sa=X&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4QtKgLegQIFBAB
+              - generic [ref=e92]: Imágenes
+          - listitem [ref=e93]:
+            - link "Shopping" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNmnK03caZyx7Kf6_4dBNh3nHNge_m4xP-twY_sYJNNy2aIEm4P3tPvXGR12vVZSt7jCny20NX41sGvWIinigbJUFJcluC-U2SyZJSXwoO6eRSf4tWLBoao8d2h8Rh1P-6YhENOhnR-70y1kAm4Pw0AucTt1LXsBAVbZ0YUt8BJBTUQpCNw&q=agua+de+hermosillo+consulta+saldo&ved=1t:220175&ictx=111
+              - generic [ref=e96]: Shopping
+          - listitem [ref=e97]:
+            - link "Videos cortos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNmnK03caZyx7Kf6_4dBNh3nHNge_m4xP-twY_sYJNNy2aIEm4P3tPvXGR12vVZSt7jCny20NX41sGvWIinigbJUFJcluC-U2SyZJSXwoO6eRSf4tWLBoao8d2h8Rh1P-6YhENOhnR-70y1kAm4Pw0AucTt1LXsBAVbZ0YUt8BJBTUQpCNw&q=agua+de+hermosillo+consulta+saldo&sa=X&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Qs6gLegQIFhAB
+              - generic [ref=e100]: Videos cortos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - main [ref=e123]:
+      - generic [ref=e127]:
+        - generic [ref=e130]:
+          - heading "Resultados web" [level=2] [ref=e131]
+          - generic [ref=e132]:
+            - generic [ref=e135]:
+              - link "Agua de Hermosillo - Pago en línea Agua de Hermosillo https://aguadehermosillo.gob.mx › aguah › pago-en-linea" [ref=e137] [cursor=pointer]:
+                - /url: https://aguadehermosillo.gob.mx/aguah/pago-en-linea/
+                - heading "Agua de Hermosillo - Pago en línea" [level=3] [ref=e138]
+                - generic [ref=e144]:
+                  - generic [ref=e146]: Agua de Hermosillo
+                  - generic [ref=e148]: https://aguadehermosillo.gob.mx › aguah › pago-en-linea
+              - button "Acerca de este resultado" [ref=e149] [cursor=pointer]:
+                - img [ref=e152]
+            - generic [ref=e156]:
+              - text: Pago en línea de Recibos y Adeudos por los servicios de agua potable que provee el Organismo Operador Municipal
+              - emphasis [ref=e157]: Agua de Hermosillo
+              - text: .
+        - generic [ref=e161]:
+          - generic [ref=e164]:
+            - link "paga fácil el agua aquí Agua de Hermosillo https://ssl1.agua.gob.mx › pagatuagua" [ref=e166] [cursor=pointer]:
+              - /url: https://ssl1.agua.gob.mx/pagatuagua/
+              - heading "paga fácil el agua aquí" [level=3] [ref=e167]
+              - generic [ref=e169]:
+                - img [ref=e174]
+                - generic [ref=e176]:
+                  - generic [ref=e178]: Agua de Hermosillo
+                  - generic [ref=e180]: https://ssl1.agua.gob.mx › pagatuagua
+            - button "Acerca de este resultado" [ref=e181] [cursor=pointer]:
+              - img [ref=e184]
+          - generic [ref=e188]:
+            - emphasis [ref=e189]: Lleva a Agua de Hermosillo en tu celular
+            - text: ", para consultar tu recibo, pagar adeudos (incluyendo acuerdos), descargar comprobantes fiscales y llevar un ..."
+        - generic [ref=e193]:
+          - generic [ref=e196]:
+            - link "Agua de Hermosillo Agua de Hermosillo https://aguadehermosillo.gob.mx › aguah" [ref=e198] [cursor=pointer]:
+              - /url: https://aguadehermosillo.gob.mx/aguah/
+              - heading "Agua de Hermosillo" [level=3] [ref=e199]
+              - generic [ref=e205]:
+                - generic [ref=e207]: Agua de Hermosillo
+                - generic [ref=e209]: https://aguadehermosillo.gob.mx › aguah
+            - button "Acerca de este resultado" [ref=e210] [cursor=pointer]:
+              - img [ref=e213]
+          - generic [ref=e217]:
+            - text: Organismo operador de
+            - emphasis [ref=e218]: Agua
+            - text: potable, drenaje, alcantarillado, tratamiento y disposición de aguas residuales del municipio
+            - emphasis [ref=e219]: Hermosillo
+            - text: y zonas rurales ...
+        - generic [ref=e224]:
+          - heading "Más preguntas" [level=2] [ref=e226]
+          - generic [ref=e227]:
+            - button "¿Cómo puedo revisar mi adeudo de agua en Hermosillo?" [ref=e233] [cursor=pointer]:
+              - generic [ref=e235]: ¿Cómo puedo revisar mi adeudo de agua en Hermosillo?
+              - img [ref=e238]
+            - button "¿Cómo puedo ver mi recibo de SAPAL?" [ref=e247] [cursor=pointer]:
+              - generic [ref=e249]: ¿Cómo puedo ver mi recibo de SAPAL?
+              - img [ref=e252]
+            - button "¿WhatsApp de Agua de Hermosillo?" [ref=e261] [cursor=pointer]:
+              - generic [ref=e263]: ¿WhatsApp de Agua de Hermosillo?
+              - img [ref=e266]
+            - button "¿Cómo descargar el recibo de agua en PDF?" [ref=e275] [cursor=pointer]:
+              - generic [ref=e277]: ¿Cómo descargar el recibo de agua en PDF?
+              - img [ref=e280]
+        - generic [ref=e293]:
+          - generic [ref=e295]:
+            - generic [ref=e297]:
+              - generic [ref=e298]:
+                - img [ref=e299]
+                - heading "Visión general creada por IA" [level=2] [ref=e301]
+              - button "Escuchar" [ref=e305]:
+                - img [ref=e310] [cursor=pointer]
+              - generic [ref=e312]:
+                - button "Ver 3 vínculos de corroboración" [ref=e315] [cursor=pointer]:
+                  - generic [ref=e320]: "+7"
+                - button "Acerca de este resultado" [ref=e323]:
+                  - img [ref=e325]
+            - generic [ref=e348]:
+              - generic [ref=e349]:
+                - text: Para consultar tu saldo de
+                - strong [ref=e350]: Agua de Hermosillo
+                - text: de forma rápida,
+                - mark [ref=e351]: puedes utilizar cualquiera de los siguientes canales oficiales
+                - text: ":"
+              - list [ref=e352]:
+                - listitem [ref=e353]:
+                  - generic [ref=e354]:
+                    - strong [ref=e355]: "WhatsApp:"
+                    - text: Envía un mensaje al número
+                    - strong [ref=e356]: (662) 429-0000
+                    - text: .
+                  - generic [ref=e358]:
+                    - link "Agua de Hermosillo (más de 1) - Ver vínculos relacionados" [ref=e359] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/pago-en-linea/
+                    - button "Agua de Hermosillo (más de 1) - Ver vínculos relacionados" [ref=e360] [cursor=pointer]:
+                      - generic [ref=e362]:
+                        - generic [ref=e363]: Agua de Hermosillo
+                        - generic [ref=e364]: "+1"
+                - listitem [ref=e365]:
+                  - generic [ref=e366]:
+                    - strong [ref=e367]: "Centro telefónico:"
+                    - text: Llama al número
+                    - strong [ref=e368]: "073"
+                    - text: desde cualquier línea en Hermosillo.
+                  - generic [ref=e370]:
+                    - link "Agua de Hermosillo - Ver vínculos relacionados" [ref=e371] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/pago-en-linea/
+                    - button "Agua de Hermosillo - Ver vínculos relacionados" [ref=e372] [cursor=pointer]:
+                      - generic [ref=e375]: Agua de Hermosillo
+                - listitem [ref=e376]:
+                  - generic [ref=e377]:
+                    - strong [ref=e378]: "En línea:"
+                    - text: Ingresa al portal oficial de
+                    - link "Agua de Hermosillo" [ref=e380] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/pago-en-linea/
+                    - text: o visita la plataforma directa de
+                    - link "Pagos de Agua de Hermosillo" [ref=e382] [cursor=pointer]:
+                      - /url: https://ssl1.agua.gob.mx/pagatuagua/
+                    - text: y escribe los dígitos de tu NIS (Número de Identificación del Suministro).
+                  - generic [ref=e384]:
+                    - link "Agua de Hermosillo (más de 2) - Ver vínculos relacionados" [ref=e385] [cursor=pointer]:
+                      - /url: https://ssl1.agua.gob.mx/pagatuagua/
+                    - button "Agua de Hermosillo (más de 2) - Ver vínculos relacionados" [ref=e386] [cursor=pointer]:
+                      - generic [ref=e388]:
+                        - generic [ref=e389]: Agua de Hermosillo
+                        - generic [ref=e390]: "+2"
+                - listitem [ref=e391]:
+                  - generic [ref=e392]:
+                    - strong [ref=e393]: "Aplicación móvil:"
+                    - text: Descarga la aplicación
+                    - strong [ref=e394]: Mi Aguah
+                    - text: (disponible para
+                    - link [ref=e396] [cursor=pointer]:
+                      - /url: https://play.google.com/store/apps/details?id=mx.gob.aguadehermosillo.miaguah&hl=es_PR
+                      - text: Google Play
+                    - text: "y"
+                    - link [ref=e398] [cursor=pointer]:
+                      - /url: https://apps.apple.com/mx/app/mi-aguah/id1514841753
+                      - text: App Store
+                    - text: ), crea una cuenta con tu correo electrónico, registra tu NIS y mantén a la mano el historial de tus recibos y consumos.
+                  - generic [ref=e400]:
+                    - link [ref=e401] [cursor=pointer]:
+                      - /url: https://ssl1.agua.gob.mx/pagatuagua/
+                    - button [ref=e402] [cursor=pointer]:
+                      - generic [ref=e404]:
+                        - generic [ref=e405]: Agua de Hermosillo
+                        - generic [ref=e406]: "+3"
+              - generic [ref=e408]: "Para ayudarte a avanzar con tu trámite, ¿te gustaría saber:"
+              - list [ref=e410]:
+                - listitem [ref=e411]:
+                  - generic [ref=e412]:
+                    - strong [ref=e413]: Cómo pagar en línea
+                    - text: con tarjeta?
+                - listitem [ref=e414]:
+                  - generic [ref=e415]:
+                    - text: Conocer
+                    - strong [ref=e416]: ubicaciones para pagar en efectivo
+                    - text: "?"
+                - listitem [ref=e417]:
+                  - generic [ref=e418]:
+                    - text: Cómo obtener beneficios para
+                    - strong [ref=e419]: usuarios cumplidos
+                    - text: "?"
+                  - generic [ref=e421]:
+                    - link [ref=e422] [cursor=pointer]:
+                      - /url: https://ssl1.agua.gob.mx/pagatuagua/
+                    - button [ref=e423] [cursor=pointer]:
+                      - generic [ref=e425]:
+                        - generic [ref=e426]: Agua de Hermosillo
+                        - generic [ref=e427]: "+2"
+              - list [ref=e431]:
+                - listitem [ref=e432]:
+                  - generic [ref=e433]:
+                    - link "Pago en línea - Agua de Hermosillo" [ref=e434] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/pago-en-linea/
+                    - generic [ref=e435]:
+                      - generic [ref=e437]:
+                        - generic [ref=e438]: Pago en línea - Agua de Hermosillo
+                        - generic [ref=e440]: al CATI marcando desde Hermosillo al 073 o vía mensaje de WhatsApp al (662) 429-0000.
+                      - generic [ref=e442]:
+                        - generic [ref=e445]: Agua de Hermosillo
+                        - button "Acerca de este resultado" [ref=e449] [cursor=pointer]:
+                          - img [ref=e451]
+                - listitem [ref=e454]:
+                  - generic [ref=e455]:
+                    - link "Beneficios de pagar en línea - Agua de Hermosillo" [ref=e456] [cursor=pointer]:
+                      - /url: https://ssl1.agua.gob.mx/pagatuagua/
+                    - generic [ref=e457]:
+                      - generic [ref=e459]:
+                        - generic [ref=e460]: Beneficios de pagar en línea - Agua de Hermosillo
+                        - generic [ref=e462]: 4 ¿Qué métodos de pago puedo usar? Puedes utilizar tarjetas de débito o crédito nacionales. Deberás ingresar los 16 dígitos de tu ...
+                      - generic [ref=e464]:
+                        - generic [ref=e467]: Agua de Hermosillo
+                        - button "Acerca de este resultado" [ref=e471] [cursor=pointer]:
+                          - img [ref=e473]
+                - listitem [ref=e476]:
+                  - generic [ref=e477]:
+                    - link "Agua de Hermosillo" [ref=e478] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/
+                    - generic [ref=e479]:
+                      - generic [ref=e481]:
+                        - generic [ref=e482]: Agua de Hermosillo
+                        - generic [ref=e484]: 11 jun 2026 — Trámites y Servicios * Organismo. * Bitacora de consumo. ... Noticias * 11 junio, 2026. Invita Agua de Hermosillo a cumplir con no...
+                      - generic [ref=e486]:
+                        - generic [ref=e489]: Agua de Hermosillo
+                        - button "Acerca de este resultado" [ref=e493] [cursor=pointer]:
+                          - img [ref=e495]
+                - listitem [ref=e498]:
+                  - generic [ref=e499]:
+                    - link "Mi Aguah - App Store" [ref=e500] [cursor=pointer]:
+                      - /url: https://apps.apple.com/mx/app/mi-aguah/id1514841753
+                    - generic [ref=e501]:
+                      - generic [ref=e503]:
+                        - generic [ref=e504]: Mi Aguah - App Store
+                        - generic [ref=e506]: Mi Aguah. Negocios. Gratis · Diseñada para iPad. No verificada para macOS. 44 calificaciones. 3.0. Clasificación por edades. 4+. A...
+                      - generic [ref=e507]:
+                        - generic [ref=e510]: Apple
+                        - button "Acerca de este resultado" [ref=e514] [cursor=pointer]:
+                          - img [ref=e516]
+                - listitem [ref=e519]:
+                  - generic [ref=e520]:
+                    - link "Mi Aguah - Apps en Google Play" [ref=e521] [cursor=pointer]:
+                      - /url: https://play.google.com/store/apps/details?id=mx.gob.aguadehermosillo.miaguah&hl=es_PR
+                    - generic [ref=e522]:
+                      - generic [ref=e524]:
+                        - generic [ref=e525]: Mi Aguah - Apps en Google Play
+                        - generic [ref=e527]: Aplicación de consultas y pagos del servicio de Agua de Hermosillo. Puedes consultar tus adeudos, consumos, pagos, sucursales, etc...
+                      - generic [ref=e529]:
+                        - generic [ref=e532]: Google Play
+                        - button "Acerca de este resultado" [ref=e536] [cursor=pointer]:
+                          - img [ref=e538]
+                - listitem [ref=e541]:
+                  - generic [ref=e542]:
+                    - link "Agua de Hermosillo (@aguahermosillo) / Posts / X - Twitter" [ref=e543] [cursor=pointer]:
+                      - /url: https://x.com/aguahermosillo
+                    - generic [ref=e544]:
+                      - generic [ref=e546]:
+                        - generic [ref=e547]: Agua de Hermosillo (@aguahermosillo) / Posts / X - Twitter
+                        - generic [ref=e549]: 18 jun 2025 — Nuevo Hermosillo. 📌Para realizar tus reportes puedes llamar a CATI al 073 y/o vía whats app al cel. 6624290000.
+                      - generic [ref=e551]:
+                        - generic [ref=e554]: X
+                        - button "Acerca de este resultado" [ref=e558] [cursor=pointer]:
+                          - img [ref=e560]
+                - listitem [ref=e563]:
+                  - generic [ref=e564]:
+                    - 'link "Recibo de Agua de Hermosillo: pago en línea, paso a paso" [ref=e565] [cursor=pointer]':
+                      - /url: https://oem.com.mx/elsoldehermosillo/local/recibo-de-agua-de-hermosillo-pago-en-linea-paso-a-paso-19269314
+                    - generic [ref=e566]:
+                      - generic [ref=e568]:
+                        - generic [ref=e569]: "Recibo de Agua de Hermosillo: pago en línea, paso a paso"
+                        - generic [ref=e571]: 14 feb 2023 — A continuación se mostrará un listado con los recibos con adeudos y se deberá seleccionar dando click en la casilla bajo la column...
+                      - generic [ref=e573]:
+                        - generic [ref=e576]: El Sol de México
+                        - button "Acerca de este resultado" [ref=e580] [cursor=pointer]:
+                          - img [ref=e582]
+                - listitem [ref=e585]:
+                  - generic [ref=e586]:
+                    - link "¿Tienes dudas sobre el número de NIS? El número de NIS ... - Instagram" [ref=e587] [cursor=pointer]:
+                      - /url: https://www.instagram.com/p/DM_DiRYyugk/
+                    - generic [ref=e588]:
+                      - generic [ref=e590]:
+                        - generic [ref=e591]: ¿Tienes dudas sobre el número de NIS? El número de NIS ... - Instagram
+                        - generic [ref=e593]: 5 ago 2025 — 🤓💧 👇🏼El número de NIS es la serie de dígitos que se encuentran en tu recibo de agua, y hace referencia al Número de Identifica...
+                      - generic [ref=e595]:
+                        - generic [ref=e598]: Instagram
+                        - button "Acerca de este resultado" [ref=e602] [cursor=pointer]:
+                          - img [ref=e604]
+                - generic [ref=e608]:
+                  - link "Sala de prensa" [ref=e609] [cursor=pointer]:
+                    - /url: https://www.hermosillo.gob.mx/boletines/Sala-Prensa.aspx?articleid=16635
+                  - generic [ref=e610]:
+                    - generic [ref=e612]:
+                      - generic [ref=e613]: Sala de prensa
+                      - generic [ref=e615]: "2 ago 2025 — Agua de Hermosillo invita a los usuarios a visitar la página oficial: www.aguahermosillo.gob.mx , donde podrán realizar pagos en l..."
+                    - generic [ref=e617]:
+                      - generic [ref=e620]: H. Ayuntamiento de Hermosillo
+                      - button "Acerca de este resultado" [ref=e624] [cursor=pointer]:
+                        - img [ref=e626]
+                - generic [ref=e630]:
+                  - link "¡Con la aplicación Mi Aguah nunca había sido tan fácil ..." [ref=e631] [cursor=pointer]:
+                    - /url: https://www.facebook.com/AguaDeHermosillo/videos/17-jul/496470229456986/
+                  - generic [ref=e632]:
+                    - generic [ref=e633]:
+                      - link "Miniatura de un video relacionado 0:42" [ref=e637] [cursor=pointer]:
+                        - /url: https://www.facebook.com/AguaDeHermosillo/videos/17-jul/496470229456986/
+                        - generic [ref=e638]:
+                          - img "Miniatura de un video relacionado" [ref=e639]
+                          - generic [ref=e641]:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - img
+                              - generic: 0:42
+                      - generic [ref=e642]: ¡Con la aplicación Mi Aguah nunca había sido tan fácil ...
+                    - generic [ref=e643]:
+                      - generic [ref=e649]:
+                        - text: Facebook
+                        - generic [ref=e650]: ·Agua de Hermosillo
+                      - button "Acerca de este resultado" [ref=e654] [cursor=pointer]:
+                        - img [ref=e656]
+                - button [ref=e659] [cursor=pointer]:
+                  - img [ref=e661]
+          - button "Mostrar más Visión general creada por IA" [ref=e666]:
+            - generic [ref=e668] [cursor=pointer]:
+              - generic [ref=e669]: Mostrar más
+              - img [ref=e671]
+        - generic [ref=e676]:
+          - heading "Resultados web" [level=2] [ref=e677]
+          - generic [ref=e678]:
+            - generic [ref=e681]:
+              - link "Mi Aguah - Apps en Google Play Google Play https://play.google.com › store › apps › details › id=mx...." [ref=e683] [cursor=pointer]:
+                - /url: https://play.google.com/store/apps/details?id=mx.gob.aguadehermosillo.miaguah&hl=es_MX
+                - heading "Mi Aguah - Apps en Google Play" [level=3] [ref=e684]
+                - generic [ref=e690]:
+                  - generic [ref=e692]: Google Play
+                  - generic [ref=e694]: https://play.google.com › store › apps › details › id=mx....
+              - button "Acerca de este resultado" [ref=e695] [cursor=pointer]:
+                - img [ref=e698]
+            - generic [ref=e702]:
+              - emphasis [ref=e703]: Aplicación de consultas y pagos del servicio de Agua de Hermosillo
+              - text: . Puedes consultar tus adeudos, consumos, pagos, sucursales, etc. Actualización.
+            - generic [ref=e706]:
+              - generic [ref=e707]:
+                - 'img "Calificación: 4.8 de 5, (343) opiniones de usuarios" [ref=e708]':
+                  - text: "4.8"
+                  - img [ref=e709]
+                  - text: (343)
+                - text: ·
+              - text: Gratis · ‎Android · ‎Finanzas
+        - generic [ref=e715]:
+          - generic [ref=e718]:
+            - link "Agua de Hermosillo - Trámites y Servicios Agua de Hermosillo https://aguadehermosillo.gob.mx › tramites-y-servicios" [ref=e720] [cursor=pointer]:
+              - /url: https://aguadehermosillo.gob.mx/aguah/tramites-y-servicios/
+              - heading "Agua de Hermosillo - Trámites y Servicios" [level=3] [ref=e721]
+              - generic [ref=e727]:
+                - generic [ref=e729]: Agua de Hermosillo
+                - generic [ref=e731]: https://aguadehermosillo.gob.mx › tramites-y-servicios
+            - button "Acerca de este resultado" [ref=e732] [cursor=pointer]:
+              - img [ref=e735]
+          - generic [ref=e738]: Trámites y Servicios · Contrataciones · Aclaraciones · Aviso de Privacidad · Cambio de nombre · Cartas de no adeudo · Domiciliación · Pago agente externo · Pago por ...
+        - generic [ref=e742]:
+          - generic [ref=e745]:
+            - link "Mi Aguah - App Store Apple https://apps.apple.com › app › mi-aguah" [ref=e747] [cursor=pointer]:
+              - /url: https://apps.apple.com/mx/app/mi-aguah/id1514841753
+              - heading "Mi Aguah - App Store" [level=3] [ref=e748]
+              - generic [ref=e754]:
+                - generic [ref=e756]: Apple
+                - generic [ref=e758]: https://apps.apple.com › app › mi-aguah
+            - button "Acerca de este resultado" [ref=e759] [cursor=pointer]:
+              - img [ref=e762]
+          - generic [ref=e766]:
+            - emphasis [ref=e767]: Aplicación para usuarios de Agua de Hermosillo
+            - text: ", consulta tus recibos, consumos, ponte en contacto con nosotros. Calificaciones y reseñas. 3.0. de 5. 44 ..."
+          - generic [ref=e770]:
+            - generic [ref=e771]:
+              - 'img "Calificación: 3.0 de 5, (44) opiniones de usuarios" [ref=e772]':
+                - text: "3.0"
+                - img [ref=e773]
+                - text: (44)
+              - text: ·
+            - text: Gratis · ‎iOS
+        - generic [ref=e781]:
+          - generic [ref=e784]:
+            - link "¡Con la aplicación Mi Aguah nunca había sido tan fácil poder ... Facebook · Agua de Hermosillo Más de 20 reacciones · hace 1 año" [ref=e786] [cursor=pointer]:
+              - /url: https://www.facebook.com/AguaDeHermosillo/videos/17-jul/496470229456986/
+              - heading "¡Con la aplicación Mi Aguah nunca había sido tan fácil poder ..." [level=3] [ref=e787]
+              - generic [ref=e793]:
+                - generic [ref=e795]: Facebook · Agua de Hermosillo
+                - generic [ref=e797]: Más de 20 reacciones · hace 1 año
+            - button "Acerca de este resultado" [ref=e798] [cursor=pointer]:
+              - img [ref=e801]
+          - generic [ref=e803]:
+            - link "¡Con la aplicación Mi Aguah nunca había sido tan fácil poder ... de Agua de Hermosillo en Facebook. Reproducir en Facebook. 0:42" [ref=e804] [cursor=pointer]:
+              - /url: https://www.facebook.com/AguaDeHermosillo/videos/17-jul/496470229456986/
+              - generic [ref=e806]:
+                - img [ref=e812]
+                - generic [ref=e816]: 0:42
+            - generic [ref=e818]: Con la aplicación Mi Aguah nunca había sido tan fácil poder pagar el servicio! Sólo descarga, realiza el registro y empieza a obtener los ...
+          - generic [ref=e820]:
+            - text: "Falta(n): saldo ‎| Realizar una búsqueda con lo siguiente:"
+            - link "saldo" [ref=e821] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=agua+de+hermosillo+consulta+%22saldo%22&sa=X&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q5t4CegQILhAS
+        - generic [ref=e825]:
+          - generic [ref=e828]:
+            - 'link "Recibo de Agua de Hermosillo: pago en línea, paso a paso El Sol de México https://oem.com.mx › elsoldehermosillo › local › recibo..." [ref=e830] [cursor=pointer]':
+              - /url: https://oem.com.mx/elsoldehermosillo/local/recibo-de-agua-de-hermosillo-pago-en-linea-paso-a-paso-19269314
+              - 'heading "Recibo de Agua de Hermosillo: pago en línea, paso a paso" [level=3] [ref=e831]'
+              - generic [ref=e837]:
+                - generic [ref=e839]: El Sol de México
+                - generic [ref=e841]: https://oem.com.mx › elsoldehermosillo › local › recibo...
+            - button "Acerca de este resultado" [ref=e842] [cursor=pointer]:
+              - img [ref=e845]
+          - generic [ref=e848]:
+            - generic [ref=e849]: 14 feb 2023 —
+            - text: A continuación se mostrará un listado con los recibos con adeudos y se deberá seleccionar dando click en la casilla bajo la columna “Pagar”. Es ...
+        - generic [ref=e853]:
+          - generic [ref=e856]:
+            - link "Agua de Hermosillo Facebook · Agua de Hermosillo Más de 78.4 k seguidores" [ref=e858] [cursor=pointer]:
+              - /url: https://www.facebook.com/AguaDeHermosillo/?locale=es_LA
+              - heading "Agua de Hermosillo" [level=3] [ref=e859]
+              - generic [ref=e865]:
+                - generic [ref=e867]: Facebook · Agua de Hermosillo
+                - generic [ref=e869]: Más de 78.4 k seguidores
+            - button "Acerca de este resultado" [ref=e870] [cursor=pointer]:
+              - img [ref=e873]
+          - generic [ref=e877]:
+            - text: "#AguaHInforma"
+            - emphasis [ref=e878]: Agua de Hermosillo
+            - text: trabaja en mejoras de la línea de conducción de agua potable, por lo que se requirió realizar cierre de válvulas temporal.
+          - 'img "Calificación: 1.6 de 5, (318) opiniones de usuarios" [ref=e883]':
+            - text: "1.6"
+            - img [ref=e884]
+            - text: (318)
+      - generic [ref=e888]:
+        - generic [ref=e893]:
+          - heading "También se buscó" [level=2] [ref=e895]
+          - generic [ref=e897]:
+            - generic [ref=e898]:
+              - link "Agua de Hermosillo consulta recibo" [ref=e902] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Agua+de+Hermosillo+consulta+recibo&sa=X&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q1QJ6BAgwEAE
+                - generic [ref=e903]:
+                  - generic [ref=e908]: Agua de Hermosillo consulta recibo
+                  - img [ref=e912]
+              - link "Agua de Hermosillo pago en línea" [ref=e917] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Agua+de+Hermosillo+pago+en+l%C3%ADnea&sa=X&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q1QJ6BAgxEAE
+                - generic [ref=e918]:
+                  - generic [ref=e923]: Agua de Hermosillo pago en línea
+                  - img [ref=e927]
+              - link "Agua de Hermosillo app" [ref=e932] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Agua+de+Hermosillo+app&sa=X&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q1QJ6BAg6EAE
+                - generic [ref=e933]:
+                  - generic [ref=e938]: Agua de Hermosillo app
+                  - img [ref=e942]
+              - link "Convenio Agua de Hermosillo" [ref=e947] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Convenio+Agua+de+Hermosillo&sa=X&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q1QJ6BAg5EAE
+                - generic [ref=e948]:
+                  - generic [ref=e953]: Convenio Agua de Hermosillo
+                  - img [ref=e957]
+            - generic [ref=e959]:
+              - link "Agua de Hermosillo teléfono" [ref=e963] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Agua+de+Hermosillo+tel%C3%A9fono&sa=X&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q1QJ6BAg4EAE
+                - generic [ref=e964]:
+                  - generic [ref=e969]: Agua de Hermosillo teléfono
+                  - img [ref=e973]
+              - link "Horario Agua de Hermosillo" [ref=e978] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Horario+Agua+de+Hermosillo&sa=X&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q1QJ6BAg2EAE
+                - generic [ref=e979]:
+                  - generic [ref=e984]: Horario Agua de Hermosillo
+                  - img [ref=e988]
+              - link "Agua de Hermosillo WhatsApp" [ref=e993] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Agua+de+Hermosillo+WhatsApp&sa=X&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q1QJ6BAgzEAE
+                - generic [ref=e994]:
+                  - generic [ref=e999]: Agua de Hermosillo WhatsApp
+                  - img [ref=e1003]
+              - link "Agua de Hermosillo Módulo Central" [ref=e1008] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Agua+de+Hermosillo+M%C3%B3dulo+Central&sa=X&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q1QJ6BAgyEAE
+                - generic [ref=e1009]:
+                  - generic [ref=e1014]: Agua de Hermosillo Módulo Central
+                  - img [ref=e1018]
+        - navigation [ref=e1020]:
+          - heading "Navegación de páginas" [level=1] [ref=e1021]
+          - text: "1"
+          - link "Page 2" [ref=e1024] [cursor=pointer]:
+            - /url: /search?q=agua+de+hermosillo+consulta+saldo&sca_esv=c6c16ab1eb0a4421&ei=WjQwarp13rWq2w_72erxCQ&start=10&sa=N&sstk=AU9db-Cb_2ZEU7pAdC5DpxGbEJO3Rim9tM-UAhnmpdhkvHsTncMuOrK4Ju9V6LlyxbTk4kBPydrw8OJIdD6n-XHYWmQgJtnr8JANZw&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q8tMDegQILBAE
+            - text: "2"
+          - link "Page 3" [ref=e1026] [cursor=pointer]:
+            - /url: /search?q=agua+de+hermosillo+consulta+saldo&sca_esv=c6c16ab1eb0a4421&ei=WjQwarp13rWq2w_72erxCQ&start=20&sa=N&sstk=AU9db-Cb_2ZEU7pAdC5DpxGbEJO3Rim9tM-UAhnmpdhkvHsTncMuOrK4Ju9V6LlyxbTk4kBPydrw8OJIdD6n-XHYWmQgJtnr8JANZw&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q8tMDegQILBAG
+            - text: "3"
+          - link "Page 4" [ref=e1028] [cursor=pointer]:
+            - /url: /search?q=agua+de+hermosillo+consulta+saldo&sca_esv=c6c16ab1eb0a4421&ei=WjQwarp13rWq2w_72erxCQ&start=30&sa=N&sstk=AU9db-Cb_2ZEU7pAdC5DpxGbEJO3Rim9tM-UAhnmpdhkvHsTncMuOrK4Ju9V6LlyxbTk4kBPydrw8OJIdD6n-XHYWmQgJtnr8JANZw&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q8tMDegQILBAI
+            - text: "4"
+          - link "Page 5" [ref=e1030] [cursor=pointer]:
+            - /url: /search?q=agua+de+hermosillo+consulta+saldo&sca_esv=c6c16ab1eb0a4421&ei=WjQwarp13rWq2w_72erxCQ&start=40&sa=N&sstk=AU9db-Cb_2ZEU7pAdC5DpxGbEJO3Rim9tM-UAhnmpdhkvHsTncMuOrK4Ju9V6LlyxbTk4kBPydrw8OJIdD6n-XHYWmQgJtnr8JANZw&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q8tMDegQILBAK
+            - text: "5"
+          - link "Page 6" [ref=e1032] [cursor=pointer]:
+            - /url: /search?q=agua+de+hermosillo+consulta+saldo&sca_esv=c6c16ab1eb0a4421&ei=WjQwarp13rWq2w_72erxCQ&start=50&sa=N&sstk=AU9db-Cb_2ZEU7pAdC5DpxGbEJO3Rim9tM-UAhnmpdhkvHsTncMuOrK4Ju9V6LlyxbTk4kBPydrw8OJIdD6n-XHYWmQgJtnr8JANZw&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q8tMDegQILBAM
+            - text: "6"
+          - link "Page 7" [ref=e1034] [cursor=pointer]:
+            - /url: /search?q=agua+de+hermosillo+consulta+saldo&sca_esv=c6c16ab1eb0a4421&ei=WjQwarp13rWq2w_72erxCQ&start=60&sa=N&sstk=AU9db-Cb_2ZEU7pAdC5DpxGbEJO3Rim9tM-UAhnmpdhkvHsTncMuOrK4Ju9V6LlyxbTk4kBPydrw8OJIdD6n-XHYWmQgJtnr8JANZw&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q8tMDegQILBAO
+            - text: "7"
+          - link "Page 8" [ref=e1036] [cursor=pointer]:
+            - /url: /search?q=agua+de+hermosillo+consulta+saldo&sca_esv=c6c16ab1eb0a4421&ei=WjQwarp13rWq2w_72erxCQ&start=70&sa=N&sstk=AU9db-Cb_2ZEU7pAdC5DpxGbEJO3Rim9tM-UAhnmpdhkvHsTncMuOrK4Ju9V6LlyxbTk4kBPydrw8OJIdD6n-XHYWmQgJtnr8JANZw&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q8tMDegQILBAQ
+            - text: "8"
+          - link "Page 9" [ref=e1038] [cursor=pointer]:
+            - /url: /search?q=agua+de+hermosillo+consulta+saldo&sca_esv=c6c16ab1eb0a4421&ei=WjQwarp13rWq2w_72erxCQ&start=80&sa=N&sstk=AU9db-Cb_2ZEU7pAdC5DpxGbEJO3Rim9tM-UAhnmpdhkvHsTncMuOrK4Ju9V6LlyxbTk4kBPydrw8OJIdD6n-XHYWmQgJtnr8JANZw&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q8tMDegQILBAS
+            - text: "9"
+          - link "Page 10" [ref=e1040] [cursor=pointer]:
+            - /url: /search?q=agua+de+hermosillo+consulta+saldo&sca_esv=c6c16ab1eb0a4421&ei=WjQwarp13rWq2w_72erxCQ&start=90&sa=N&sstk=AU9db-Cb_2ZEU7pAdC5DpxGbEJO3Rim9tM-UAhnmpdhkvHsTncMuOrK4Ju9V6LlyxbTk4kBPydrw8OJIdD6n-XHYWmQgJtnr8JANZw&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q8tMDegQILBAU
+            - text: "10"
+          - heading "Siguiente" [level=2] [ref=e1042]:
+            - link "Siguiente" [ref=e1043] [cursor=pointer]:
+              - /url: /search?q=agua+de+hermosillo+consulta+saldo&sca_esv=c6c16ab1eb0a4421&ei=WjQwarp13rWq2w_72erxCQ&start=10&sa=N&sstk=AU9db-Cb_2ZEU7pAdC5DpxGbEJO3Rim9tM-UAhnmpdhkvHsTncMuOrK4Ju9V6LlyxbTk4kBPydrw8OJIdD6n-XHYWmQgJtnr8JANZw&ved=2ahUKEwi6isrW4ImVAxXemmoFHfusOp4Q8NMDegQILBAW
+              - generic [ref=e1045]: Siguiente
+      - navigation
+    - contentinfo [ref=e1046]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e1047]
+      - generic [ref=e1051]:
+        - generic [ref=e1053]:
+          - text: México
+          - generic [ref=e1055]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - Según tu actividad anterior" [ref=e1057] [cursor=pointer]:
+              - generic [ref=e1058]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e1060]:
+                - text: "-"
+                - generic [ref=e1061]: Según tu actividad anterior
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e1063] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e1066]:
+          - link "Ayuda" [ref=e1067] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e1068] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e1069] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e1070] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

@@ -1,0 +1,191 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - link "Logo vivanuncios" [ref=e6] [cursor=pointer]:
+        - /url: https://www.vivanuncios.com.mx
+        - img "Logo vivanuncios" [ref=e7]
+      - generic [ref=e8]:
+        - list [ref=e9]:
+          - button "Inmuebles en venta Expandir o contraer" [ref=e11] [cursor=pointer]:
+            - generic [ref=e12]: Inmuebles en venta
+            - img "Expandir o contraer" [ref=e13]
+        - list [ref=e14]:
+          - button "Inmuebles en renta Expandir o contraer" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]: Inmuebles en renta
+            - img "Expandir o contraer" [ref=e18]
+        - list [ref=e19]:
+          - button "Desarrollos Expandir o contraer" [ref=e21] [cursor=pointer]:
+            - generic [ref=e22]: Desarrollos
+            - img "Expandir o contraer" [ref=e23]
+        - list [ref=e24]:
+          - button "Precios por zona Expandir o contraer" [ref=e26] [cursor=pointer]:
+            - generic [ref=e27]: Precios por zona
+            - img "Expandir o contraer" [ref=e28]
+      - button "Mis contactos" [ref=e29] [cursor=pointer]:
+        - generic [ref=e30]:
+          - generic [ref=e31]: Mis contactos
+          - img [ref=e32]
+      - button "Publicar" [ref=e33] [cursor=pointer]
+      - button "Ingresar" [ref=e35] [cursor=pointer]
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e42]:
+          - list [ref=e47]:
+            - listitem [ref=e49] [cursor=pointer]:
+              - paragraph [ref=e50]: Ocozocoautla de Espinosa
+              - img [ref=e52]
+            - img [ref=e54]
+          - generic [ref=e57] [cursor=pointer]:
+            - text: Rentar
+            - img [ref=e59]
+          - generic [ref=e62] [cursor=pointer]:
+            - text: Inmueble
+            - img [ref=e64]
+          - generic [ref=e67] [cursor=pointer]:
+            - text: Recámaras
+            - img [ref=e69]
+          - generic [ref=e73] [cursor=pointer]:
+            - text: Precio
+            - img [ref=e75]
+          - generic [ref=e77]:
+            - img [ref=e79] [cursor=pointer]
+            - generic [ref=e80] [cursor=pointer]: Más filtros
+        - generic [ref=e81]:
+          - generic [ref=e84]:
+            - heading "En este momento no hay inmuebles como el que buscas." [level=4] [ref=e85]
+            - heading "Prueba eliminando alguno de estos filtros." [level=5] [ref=e86]
+            - generic [ref=e88]:
+              - generic [ref=e89]:
+                - heading [level=5]
+              - list [ref=e91]:
+                - listitem [ref=e92]:
+                  - text: Ocozocoautla de Espinosa
+                  - img [ref=e93] [cursor=pointer]
+                - listitem [ref=e94]:
+                  - text: Rentar
+                  - img [ref=e95] [cursor=pointer]
+                - generic [ref=e96] [cursor=pointer]:
+                  - text: Limpiar
+                  - img [ref=e97]
+          - generic [ref=e99]:
+            - img "Ver mapa" [ref=e101]
+            - button "Ver mapa" [ref=e102] [cursor=pointer]
+      - list [ref=e104]:
+        - listitem [ref=e105]:
+          - link "Vivanuncios >" [ref=e106] [cursor=pointer]:
+            - /url: https://www.vivanuncios.com.mx/
+        - listitem [ref=e107]:
+          - link "Renta >" [ref=e108] [cursor=pointer]:
+            - /url: https://www.vivanuncios.com.mx/s-renta-inmuebles/v1c1098p1
+        - listitem [ref=e109]:
+          - link "Chiapas >" [ref=e110] [cursor=pointer]:
+            - /url: https://www.vivanuncios.com.mx/s-renta-inmuebles/chiapas/v1c1098l1004p1
+        - listitem [ref=e111]:
+          - link "Ocozocoautla de Espinosa" [ref=e112] [cursor=pointer]:
+            - /url: https://www.vivanuncios.com.mx/s-renta-inmuebles/ocozocoautla-de-espinosa/v1c1098l10100p1
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - text: En este sitio
+        - mark [ref=e116]: usamos y recopilamos cookies
+        - text: para proporcionar un acceso seguro y ofrecer contenido adaptado a tus intereses.
+        - mark [ref=e117]: Al continuar navegando en el sitio, nos das permiso para su utilización.
+        - text: Para más información, ver nuestra
+        - link "Política de Privacidad." [ref=e118] [cursor=pointer]:
+          - /url: https://ayuda.vivanuncios.com.mx/s/article/Aviso-de-privacidad-VA#cookies
+      - button "Acepto" [ref=e120] [cursor=pointer]
+  - generic [ref=e122]:
+    - generic [ref=e124]:
+      - img "Logo vivanuncios" [ref=e125]
+      - generic [ref=e126]:
+        - generic [ref=e127]:
+          - generic [ref=e128]: Más Vivanuncios
+          - list [ref=e129]:
+            - listitem [ref=e130]:
+              - link "Publicar tu inmueble" [ref=e131] [cursor=pointer]:
+                - /url: /publica-tu-propiedad
+            - listitem [ref=e132]:
+              - link "Ayuda" [ref=e133] [cursor=pointer]:
+                - /url: https://ayuda.vivanuncios.com.mx/s/
+            - listitem [ref=e134]:
+              - link "Mapa del sitio" [ref=e135] [cursor=pointer]:
+                - /url: /sitemaps/
+            - listitem [ref=e136]:
+              - link "Publicidad" [ref=e137] [cursor=pointer]:
+                - /url: http://www.naventmedia.com/
+            - listitem [ref=e138]:
+              - link "Noticias" [ref=e139] [cursor=pointer]:
+                - /url: https://vivanuncios.com.mx/blog/
+            - listitem [ref=e140]:
+              - link "Noticias para agentes inmobiliarios" [ref=e141] [cursor=pointer]:
+                - /url: https://vivanuncios.com.mx/blog/bienes-raices/
+            - listitem [ref=e142]:
+              - link "Precios de inmuebles" [ref=e143] [cursor=pointer]:
+                - /url: https://www.vivanuncios.com.mx/pages/
+            - listitem [ref=e144]:
+              - link "Precios por zona" [ref=e145] [cursor=pointer]:
+                - /url: https://www.vivanuncios.com.mx/pages/localidades/
+            - listitem [ref=e146]:
+              - link "Trabaja con nosotros" [ref=e147] [cursor=pointer]:
+                - /url: https://carreiras.quintoandar.com.br/?lang=es
+        - generic [ref=e148]:
+          - generic [ref=e149]: Países
+          - list [ref=e150]:
+            - listitem [ref=e151]:
+              - generic [ref=e152]: "Argentina:"
+              - link "Zonaprop" [ref=e153] [cursor=pointer]:
+                - /url: https://www.zonaprop.com.ar
+            - listitem [ref=e154]:
+              - generic [ref=e155]: "Brasil:"
+              - link "Imovelweb ·" [ref=e156] [cursor=pointer]:
+                - /url: https://www.imovelweb.com.br
+              - link "Wimoveis ·" [ref=e157] [cursor=pointer]:
+                - /url: https://www.wimoveis.com.br
+              - link "CasaMineira ·" [ref=e158] [cursor=pointer]:
+                - /url: https://www.casamineira.com.br
+              - link "QuintoAndar" [ref=e159] [cursor=pointer]:
+                - /url: https://www.quintoandar.com.br
+            - listitem [ref=e160]:
+              - generic [ref=e161]: "México:"
+              - link "Inmuebles24" [ref=e162] [cursor=pointer]:
+                - /url: https://www.inmuebles24.com
+            - listitem [ref=e163]:
+              - generic [ref=e164]: "Perú:"
+              - link "Urbania ·" [ref=e165] [cursor=pointer]:
+                - /url: https://urbania.pe
+              - link "Adondevivir" [ref=e166] [cursor=pointer]:
+                - /url: https://adondevivir.com
+            - listitem [ref=e167]:
+              - generic [ref=e168]: "Ecuador:"
+              - link "Plusvalía" [ref=e169] [cursor=pointer]:
+                - /url: https://www.plusvalia.com
+            - listitem [ref=e170]:
+              - generic [ref=e171]: "Panamá:"
+              - link "Compreoalquile" [ref=e172] [cursor=pointer]:
+                - /url: https://www.compreoalquile.com
+        - generic [ref=e174]:
+          - generic [ref=e175]: Síguenos
+          - generic [ref=e176]:
+            - link "Facebook" [ref=e177] [cursor=pointer]:
+              - /url: https://www.facebook.com/vivanuncios
+              - img [ref=e178]
+            - link "Youtube" [ref=e180] [cursor=pointer]:
+              - /url: https://youtube.com/c/Vivanuncios
+              - img [ref=e181]
+            - link "Twitter" [ref=e183] [cursor=pointer]:
+              - /url: https://twitter.com/vivanuncios
+              - img [ref=e184]
+            - link "Pinterest" [ref=e186] [cursor=pointer]:
+              - /url: https://ar.pinterest.com/vivanuncios/
+              - img [ref=e187]
+    - generic [ref=e190]:
+      - link "Grupo QuintoAndar" [ref=e191] [cursor=pointer]:
+        - /url: https://grupoquintoandar.com/es/
+        - img "Grupo QuintoAndar" [ref=e192]
+      - generic [ref=e194]:
+        - paragraph [ref=e195]: © Copyright 2026 vivanuncios.com.mx
+        - link "Términos y condiciones de Uso-" [ref=e196] [cursor=pointer]:
+          - /url: https://ayuda.vivanuncios.com.mx/s/article/T%C3%A9rminos-y-Condiciones-de-Uso-VA
+        - link "Términos y Condiciones de Contratación-" [ref=e197] [cursor=pointer]:
+          - /url: https://ayuda.vivanuncios.com.mx/s/article/T%C3%A9rminos-y-Condiciones-Generales-de-Contrataci%C3%B3n-del-Portal
+        - link "Política de privacidad" [ref=e198] [cursor=pointer]:
+          - /url: https://ayuda.vivanuncios.com.mx/s/article/Aviso-de-privacidad-VA

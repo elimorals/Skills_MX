@@ -1,0 +1,457 @@
+- generic [ref=e1]:
+  - link [ref=e2] [cursor=pointer]: Ir al contenido principal
+  - link [ref=e3] [cursor=pointer]:
+    - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+    - text: Ayuda sobre la accesibilidad
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - link [ref=e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQPQgK
+          - img [ref=e14]
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox [ref=e19]: jmas juarez consulta adeudo agua sitio:gob.mx jmas juarez consulta adeudo agua sitio:gob.mx
+            - generic [ref=e20]:
+              - button [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Djmas%2Bjuarez%2Bconsulta%2Badeudo%2Bagua%2Bsitio:gob.mx&ec=futura_srp_og_si_72236_p
+          - text: Acceder
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link [ref=e73] [cursor=pointer]:
+              - /url: /search?q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3o2cVpZyDRYSUVW0YdKyRBWTPq-prAce0nff6zLxOKhiKeLdo0UR-No2ds8x7Tf3L36S9AFjIHh5pElOIf2jvPXZ-Yhttse7T4RaH91Jk90-hCnmwMTL3pNF-7yNnZz0awkZtAOyNwV_uE7UN08aqnGQPr1yJ4H_VBNX_OTNg0RtlvWh5BRa8gPPE2pY-4WXYd9eMww&aep=1&ntc=1&sa=X&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQ2J8OegQIEhAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&tbm=nws&source=lnms&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3o2cVpZyDRYSUVW0YdKyRBWTPq-prAce0nff6zLxOKhiKeLdo0UR-No2ds8x7Tf3L36S9AFjIHh5pElOIf2jvPXZ-Yhttse7T4RaH91Jk90-hCnmwMTL3pNF-7yNnZz0awkZtAOyNwV_uE7UN08aqnGQPr1yJ4H_VBNX_OTNg0RtlvWh5BRa8gPPE2pY-4WXYd9eMww&sa=X&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQ0pQJegQIGBAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3o2cVpZyDRYSUVW0YdKyRBWTPq-prAce0nff6zLxOKhiKeLdo0UR-No2ds8x7Tf3L36S9AFjIHh5pElOIf2jvPXZ-Yhttse7T4RaH91Jk90-hCnmwMTL3pNF-7yNnZz0awkZtAOyNwV_uE7UN08aqnGQPr1yJ4H_VBNX_OTNg0RtlvWh5BRa8gPPE2pY-4WXYd9eMww&q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e88]: Shopping
+          - listitem [ref=e89]:
+            - link [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3o2cVpZyDRYSUVW0YdKyRBWTPq-prAce0nff6zLxOKhiKeLdo0UR-No2ds8x7Tf3L36S9AFjIHh5pElOIf2jvPXZ-Yhttse7T4RaH91Jk90-hCnmwMTL3pNF-7yNnZz0awkZtAOyNwV_uE7UN08aqnGQPr1yJ4H_VBNX_OTNg0RtlvWh5BRa8gPPE2pY-4WXYd9eMww&q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&sa=X&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQtKgLegQIFBAB
+              - generic [ref=e92]: Imágenes
+          - listitem [ref=e93]:
+            - link [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3o2cVpZyDRYSUVW0YdKyRBWTPq-prAce0nff6zLxOKhiKeLdo0UR-No2ds8x7Tf3L36S9AFjIHh5pElOIf2jvPXZ-Yhttse7T4RaH91Jk90-hCnmwMTL3pNF-7yNnZz0awkZtAOyNwV_uE7UN08aqnGQPr1yJ4H_VBNX_OTNg0RtlvWh5BRa8gPPE2pY-4WXYd9eMww&q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&sa=X&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQs6gLegQIFRAB
+              - generic [ref=e96]: Videos cortos
+          - listitem [ref=e97]:
+            - link [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3o2cVpZyDRYSUVW0YdKyRBWTPq-prAce0nff6zLxOKhiKeLdo0UR-No2ds8x7Tf3L36S9AFjIHh5pElOIf2jvPXZ-Yhttse7T4RaH91Jk90-hCnmwMTL3pNF-7yNnZz0awkZtAOyNwV_uE7UN08aqnGQPr1yJ4H_VBNX_OTNg0RtlvWh5BRa8gPPE2pY-4WXYd9eMww&q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&sa=X&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQtKgLegQIFhAB
+              - generic [ref=e100]: Videos
+          - listitem [ref=e101]:
+            - button [ref=e102] [cursor=pointer]:
+              - generic [ref=e104]:
+                - generic [ref=e105]: Más
+                - img [ref=e107]
+        - button [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading [level=1] [ref=e117]: Resultados de búsqueda
+    - dialog "¿Quieres ver los resultados más cercanos a tu ubicación?" [active] [ref=e121]:
+      - heading "¿Quieres ver los resultados más cercanos a tu ubicación?" [level=1] [ref=e123]:
+        - generic [ref=e124]: ¿Quieres ver los resultados más cercanos a tu ubicación?
+      - generic [ref=e125]:
+        - generic [ref=e126]: Para obtener los resultados más cercanos, permite que Google use la ubicación precisa del dispositivo.
+        - button "Ahora no" [ref=e134] [cursor=pointer]:
+          - generic [ref=e136]: Ahora no
+    - main [ref=e142]:
+      - generic [ref=e146]:
+        - generic [ref=e149]:
+          - heading [level=2] [ref=e150]: Resultados web
+          - generic [ref=e151]:
+            - generic [ref=e154]:
+              - link [ref=e156] [cursor=pointer]:
+                - /url: https://www.jmasjuarez.gob.mx/v026/saldo.php
+                - heading [level=3] [ref=e157]: Consulta tu Saldo | JMAS Juárez
+                - generic [ref=e163]:
+                  - generic [ref=e165]: Junta Municipal de Agua y Saneamiento de Juárez
+                  - generic [ref=e167]: https://www.jmasjuarez.gob.mx › saldo
+              - button [ref=e168] [cursor=pointer]:
+                - img [ref=e171]
+            - generic [ref=e175]:
+              - text: Consulta tu Saldo.
+              - emphasis [ref=e176]: Consulta tu saldo de consumo de la Junta Municipal de Agua y Saneamiento
+              - text: . Recibo. Regresar. Buscar. JMAS Juárez. Junta Municipal de Agua
+            - generic [ref=e178]:
+              - text: "Falta(n): sitio: ‎| Realizar una búsqueda con lo siguiente:"
+              - link [ref=e179] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=jmas+juarez+consulta+adeudo+agua+%22sitio:%22+gob.mx&sa=X&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQ5t4CegQIHRAB
+                - text: "sitio:"
+        - generic [ref=e190]:
+          - generic [ref=e192]:
+            - generic [ref=e194]:
+              - generic [ref=e195]:
+                - img [ref=e196]
+                - heading [level=2] [ref=e198]: Visión general creada por IA
+              - button [ref=e202]:
+                - img [ref=e207] [cursor=pointer]
+              - generic [ref=e209]:
+                - button [ref=e212] [cursor=pointer]:
+                  - generic [ref=e215]: "+6"
+                - button [ref=e218]:
+                  - img [ref=e220]
+            - generic [ref=e243]:
+              - generic [ref=e244]:
+                - text: Para consultar tu adeudo de agua de la Junta Municipal de Agua y Saneamiento (JMAS) de Ciudad Juárez,
+                - mark [ref=e245]:
+                  - text: ingresa tu número de cuenta en el
+                  - link [ref=e247] [cursor=pointer]:
+                    - /url: https://www.jmasjuarez.gob.mx/
+                    - text: Portal Oficial de la JMAS Juárez
+                - text: .
+                - button [ref=e250] [cursor=pointer]:
+                  - img [ref=e253]
+              - generic [ref=e255]: "Para realizar el trámite de manera rápida, puedes utilizar las siguientes opciones:"
+              - list [ref=e257]:
+                - listitem [ref=e258]:
+                  - generic [ref=e259]:
+                    - strong [ref=e260]: "Consulta en línea:"
+                    - text: Ingresa a la sección de
+                    - link [ref=e262] [cursor=pointer]:
+                      - /url: https://www.jmasjuarez.gob.mx/v026/saldo.php
+                      - text: Consulta tu Saldo
+                    - text: o crea tu cuenta en el
+                    - link [ref=e264] [cursor=pointer]:
+                      - /url: https://jmasjuarez.pagosdigitales.com/Perfil/Register
+                      - text: Registro de Usuario JMAS
+                    - text: para revisar tu historial y generar líneas de referencia.
+                - listitem [ref=e265]:
+                  - generic [ref=e266]:
+                    - strong [ref=e267]: "Vía mensaje SMS:"
+                    - text: Envía la palabra
+                    - strong [ref=e268]: saldo
+                    - text: ", un espacio y tu número de contrato al"
+                    - strong [ref=e269]: 614 278 3332
+                    - text: .
+                - listitem [ref=e270]:
+                  - generic [ref=e271]:
+                    - strong [ref=e272]: "Atención telefónica:"
+                    - text: Marca al
+                    - strong [ref=e273]: "073"
+                    - text: para comunicarte al Centro de Atención las 24 horas del día.
+                - listitem [ref=e274]:
+                  - generic [ref=e275]:
+                    - strong [ref=e276]: "Pago digital:"
+                    - text: Puedes realizar tu pago directamente en la
+                    - link [ref=e278] [cursor=pointer]:
+                      - /url: https://play.google.com/store/apps/details?id=com.pagosdigitales.jmasjuarez&hl=es_DO
+                      - text: App Móvil de JMAS Juárez
+                    - text: .
+                  - button [ref=e281] [cursor=pointer]:
+                    - img [ref=e284]
+              - generic [ref=e287]:
+                - text: Si tienes el
+                - strong [ref=e288]: número de cuenta
+                - text: a la mano, ¿te gustaría que te explique los pasos para
+                - strong [ref=e289]: generar tu referencia de pago
+                - text: y liquidarlo en línea, o necesitas
+                - strong [ref=e290]: reportar alguna fuga o aclaración
+                - text: en tu recibo?
+              - list [ref=e294]:
+                - listitem [ref=e295]:
+                  - generic [ref=e296]:
+                    - link [ref=e297] [cursor=pointer]:
+                      - /url: https://www.jmasjuarez.gob.mx/v026/saldo.php
+                    - generic [ref=e298]:
+                      - generic [ref=e300]:
+                        - generic [ref=e301]: Consulta tu Saldo - JMAS Juárez
+                        - generic [ref=e303]: Consulta tu Saldo. Consulta tu saldo de consumo de la Junta Municipal de Agua y Saneamiento. Recibo. Regresar. Buscar. JMAS Juárez...
+                      - generic [ref=e305]:
+                        - generic [ref=e308]: Junta Municipal de Agua y Saneamiento de Juárez
+                        - button [ref=e312] [cursor=pointer]:
+                          - img [ref=e314]
+                - listitem [ref=e317]:
+                  - generic [ref=e318]:
+                    - link [ref=e319] [cursor=pointer]:
+                      - /url: https://www.jmasjuarez.gob.mx/
+                    - generic [ref=e320]:
+                      - generic [ref=e322]:
+                        - generic [ref=e323]: Junta Municipal de Agua y Saneamiento de Juárez
+                        - generic [ref=e325]: Pago en Línea. Consulta tu saldo e historial de pagos directamente desde nuestro portal web, sin necesidad de acudir a oficinas. R...
+                      - generic [ref=e327]:
+                        - generic [ref=e330]: Junta Municipal de Agua y Saneamiento de Juárez
+                        - button [ref=e334] [cursor=pointer]:
+                          - img [ref=e336]
+                - listitem [ref=e339]:
+                  - generic [ref=e340]:
+                    - link [ref=e341] [cursor=pointer]:
+                      - /url: https://www.jmasjuarez.gob.mx/v026/referencia.php
+                    - generic [ref=e342]:
+                      - generic [ref=e344]:
+                        - generic [ref=e345]: Referencia para Pago - JMAS Juárez
+                        - generic [ref=e347]: Consultar Cuenta. Ingresa tu número de cuenta para consultar tu saldo. Número de Cuenta * El número de cuenta aparece en tu recibo...
+                      - generic [ref=e349]:
+                        - generic [ref=e352]: Junta Municipal de Agua y Saneamiento de Juárez
+                        - button [ref=e356] [cursor=pointer]:
+                          - img [ref=e358]
+                - listitem [ref=e361]:
+                  - generic [ref=e362]:
+                    - link [ref=e363] [cursor=pointer]:
+                      - /url: https://www.jmasjuarez.gob.mx/v026/cat.php
+                    - generic [ref=e364]:
+                      - generic [ref=e366]:
+                        - generic [ref=e367]: Centro de Atención Telefónica - 073 - JMAS Juárez
+                        - generic [ref=e369]: El 073 opera 24/7 todo el año para reportes, fugas y atención a emergencias.
+                      - generic [ref=e371]:
+                        - generic [ref=e374]: Junta Municipal de Agua y Saneamiento de Juárez
+                        - button [ref=e378] [cursor=pointer]:
+                          - img [ref=e380]
+                - listitem [ref=e383]:
+                  - generic [ref=e384]:
+                    - link [ref=e385] [cursor=pointer]:
+                      - /url: https://jmasjuarez.pagosdigitales.com/
+                    - generic [ref=e386]:
+                      - generic [ref=e388]:
+                        - generic [ref=e389]: JMAS
+                        - generic [ref=e391]: JMAS Juárez. Inicio · Domiciliación Nuevo · Recibo por Email y WhatsApp Nuevo · Pago en línea / Saldo · Mis Ordenes de cobro · Mis...
+                      - generic [ref=e393]:
+                        - generic [ref=e396]: PD | Pagos Digitales
+                        - button [ref=e400] [cursor=pointer]:
+                          - img [ref=e402]
+                - listitem [ref=e405]:
+                  - generic [ref=e406]:
+                    - link [ref=e407] [cursor=pointer]:
+                      - /url: https://play.google.com/store/apps/details?id=com.pagosdigitales.jmasjuarez&hl=es_DO
+                    - generic [ref=e408]:
+                      - generic [ref=e410]:
+                        - generic [ref=e411]: Jmas Juarez - Apps en Google Play
+                        - generic [ref=e413]: Te ayudamos a hacer tu vida más fácil realizando el pago de tu servicio JMAS Juárez desde tu celular, las 24 horas y desde cualqui...
+                      - generic [ref=e415]:
+                        - generic [ref=e418]: Google Play
+                        - button [ref=e422] [cursor=pointer]:
+                          - img [ref=e424]
+                - listitem [ref=e427]:
+                  - generic [ref=e428]:
+                    - link [ref=e429] [cursor=pointer]:
+                      - /url: https://www.facebook.com/JMASChihuahua/photos/ahora-puedes-consultar-el-saldo-de-tu-recibo-mediante-tu-celular-enviando-la-pal/940669002653234/?locale=es_LA
+                    - generic [ref=e430]:
+                      - generic [ref=e432]:
+                        - generic [ref=e433]: JMAS - Ahora puedes consultar el saldo de tu recibo mediante tu ...
+                        - generic [ref=e435]: 12 ene 2016 — JMAS - Ahora puedes consultar el saldo de tu recibo mediante tu celular enviando la palabra saldo + espacio + número de contrato a...
+                      - generic [ref=e437]:
+                        - generic [ref=e440]: Facebook
+                        - button [ref=e444] [cursor=pointer]:
+                          - img [ref=e446]
+                - button [ref=e449] [cursor=pointer]:
+                  - img [ref=e451]
+          - button [ref=e456]:
+            - generic [ref=e458] [cursor=pointer]:
+              - generic [ref=e459]: Mostrar más
+              - img [ref=e461]
+        - generic [ref=e466]:
+          - heading [level=2] [ref=e467]: Resultados web
+          - generic [ref=e468]:
+            - generic [ref=e471]:
+              - link [ref=e473] [cursor=pointer]:
+                - /url: https://www.jmasjuarez.gob.mx/
+                - heading [level=3] [ref=e474]: Junta Municipal de Agua y Saneamiento de Juárez
+                - generic [ref=e480]:
+                  - generic [ref=e482]: Junta Municipal de Agua y Saneamiento de Juárez
+                  - generic [ref=e484]: https://www.jmasjuarez.gob.mx
+              - button [ref=e485] [cursor=pointer]:
+                - img [ref=e488]
+            - generic [ref=e492]:
+              - text: Pago en Línea.
+              - emphasis [ref=e493]: Consulta tu saldo e historial de pagos
+              - text: directamente desde nuestro portal web, sin necesidad de acudir a oficinas. Recibo.
+        - generic [ref=e497]:
+          - generic [ref=e500]:
+            - link [ref=e502] [cursor=pointer]:
+              - /url: https://jmasjuarez.pagosdigitales.com/
+              - heading [level=3] [ref=e503]: JMAS
+              - generic [ref=e509]:
+                - generic [ref=e511]: PD | Pagos Digitales
+                - generic [ref=e513]: https://jmasjuarez.pagosdigitales.com
+            - button [ref=e514] [cursor=pointer]:
+              - img [ref=e517]
+          - generic [ref=e521]:
+            - emphasis [ref=e522]: JMAS Juárez
+            - text: . Inicio · Domiciliación Nuevo · Recibo por Email y WhatsApp Nuevo · Pago en línea / Saldo · Mis Ordenes de cobro · Mis Recibos · Mis contratos ...
+        - generic [ref=e526]:
+          - generic [ref=e529]:
+            - link [ref=e531] [cursor=pointer]:
+              - /url: https://www.jmasjuarez.gob.mx/v026/referencia.php
+              - heading [level=3] [ref=e532]: Paga tu servicio de agua de forma rápida y segura
+              - generic [ref=e538]:
+                - generic [ref=e540]: Junta Municipal de Agua y Saneamiento de Juárez
+                - generic [ref=e542]: https://www.jmasjuarez.gob.mx › referencia
+            - button [ref=e543] [cursor=pointer]:
+              - img [ref=e546]
+          - generic [ref=e550]:
+            - text: Consultar Cuenta.
+            - emphasis [ref=e551]: Ingresa tu número de cuenta para consultar tu saldo
+            - text: . Número de Cuenta * El número de cuenta aparece en tu recibo de agua. Consultar Cuenta ...
+        - generic [ref=e556]:
+          - heading [level=2] [ref=e558]: Más preguntas
+          - generic [ref=e559]:
+            - button [ref=e565] [cursor=pointer]:
+              - generic [ref=e567]: ¿Cómo puedo consultar mi adeudo a JMAS Juárez?
+              - img [ref=e570]
+            - button [ref=e579] [cursor=pointer]:
+              - generic [ref=e581]: ¿Cómo checar el adeudo de JMAS?
+              - img [ref=e584]
+            - button [ref=e593] [cursor=pointer]:
+              - generic [ref=e595]: ¿Cómo descargar el recibo de agua en PDF?
+              - img [ref=e598]
+            - button [ref=e607] [cursor=pointer]:
+              - generic [ref=e609]: ¿Cómo descargar recibo de agua CD Juárez Chihuahua?
+              - img [ref=e612]
+        - generic [ref=e620]:
+          - generic [ref=e623]:
+            - link [ref=e625] [cursor=pointer]:
+              - /url: https://www.facebook.com/JmasJuarez/videos/aqu%C3%AD-te-dejamos-un-tutorial-para-que-puedas-pagar-tu-recibo-en-l%C3%ADneaentra-a-nues/2032283134277090/
+              - heading [level=3] [ref=e626]: Aquí te dejamos un tutorial para que puedas pagar tu recibo ...
+              - generic [ref=e632]:
+                - generic [ref=e634]: Facebook · JMAS Juárez
+                - generic [ref=e636]: Más de 20 reacciones · hace 10 meses
+            - button [ref=e637] [cursor=pointer]:
+              - img [ref=e640]
+          - generic [ref=e642]:
+            - link [ref=e643] [cursor=pointer]:
+              - /url: https://www.facebook.com/JmasJuarez/videos/aqu%C3%AD-te-dejamos-un-tutorial-para-que-puedas-pagar-tu-recibo-en-l%C3%ADneaentra-a-nues/2032283134277090/
+              - generic [ref=e645]:
+                - img [ref=e648]
+                - generic [ref=e652]: 0:57
+            - generic [ref=e654]: More videos you may like. Trabajamos para prevenir desperdicio de agua ...
+        - generic [ref=e658]:
+          - generic [ref=e661]:
+            - link [ref=e663] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.pagosdigitales.jmasjuarez&hl=es_MX
+              - heading [level=3] [ref=e664]: Jmas Juarez - Apps en Google Play
+              - generic [ref=e670]:
+                - generic [ref=e672]: Google Play
+                - generic [ref=e674]: https://play.google.com › store › apps › details › id=com...
+            - button [ref=e675] [cursor=pointer]:
+              - img [ref=e678]
+          - generic [ref=e682]:
+            - text: Te ayudamos a hacer tu vida más fácil realizando el pago de tu servicio
+            - emphasis [ref=e683]: JMAS Juárez
+            - text: desde tu celular, las 24 horas y desde cualquier lugar. Actualización.
+        - generic [ref=e687]:
+          - generic [ref=e690]:
+            - link [ref=e692] [cursor=pointer]:
+              - /url: https://www.jmasjuarez.gob.mx/v2018/smar-ni.php
+              - heading [level=3] [ref=e693]: JMAS de Juárez
+              - generic [ref=e699]:
+                - generic [ref=e701]: Junta Municipal de Agua y Saneamiento de Juárez
+                - generic [ref=e703]: https://www.jmasjuarez.gob.mx › smar-ni
+            - button [ref=e704] [cursor=pointer]:
+              - img [ref=e707]
+          - generic [ref=e711]:
+            - emphasis [ref=e712]: Ingresa tu número de folio para conocer el estatus de tu reporte
+            - text: . Número de Folio. Presiona Enter o el botón para consultar. Buscar.
+        - generic [ref=e716]:
+          - generic [ref=e719]:
+            - link [ref=e721] [cursor=pointer]:
+              - /url: https://chihuahua.gob.mx/JMAS-ofrece-condonacion-sanciones-recargos-descuentos-plazos-liquidacion
+              - heading [level=3] [ref=e722]: Ofrece JMAS condonación de recargos, descuentos y ...
+              - generic [ref=e728]:
+                - generic [ref=e730]: Gobierno del Estado de Chihuahua
+                - generic [ref=e732]: https://chihuahua.gob.mx › JMAS-ofrece-condonacion-s...
+            - button [ref=e733] [cursor=pointer]:
+              - img [ref=e736]
+          - generic [ref=e739]: El funcionario precisó que esta campaña, se llevará a cabo del miércoles 30 de noviembre al 31 de enero y contempla la condonación en materia de sanciones y ...
+        - generic [ref=e743]:
+          - generic [ref=e746]:
+            - link [ref=e748] [cursor=pointer]:
+              - /url: https://aplicaciones.sacmex.cdmx.gob.mx/fut/
+              - heading [level=3] [ref=e749]: Pago de Agua - SEGIAGUA
+              - generic [ref=e751]:
+                - img [ref=e756]
+                - generic [ref=e758]:
+                  - generic [ref=e760]: CDMX
+                  - generic [ref=e762]: https://aplicaciones.sacmex.cdmx.gob.mx › fut
+            - button [ref=e763] [cursor=pointer]:
+              - img [ref=e766]
+          - generic [ref=e770]:
+            - emphasis [ref=e771]: Este servicio sirve para consulta y pago de adeudos en la cuenta de agua
+            - text: . Para cualquier duda o aclaración referente al estado de cuenta, favor de acudir a ...
+      - navigation [ref=e774]:
+        - heading [level=1] [ref=e775]: Navegación de páginas
+        - text: "1"
+        - link [ref=e778] [cursor=pointer]:
+          - /url: /search?q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=uDMwapayLLO0qtsPo6PXqAw&start=10&sa=N&sstk=AU9db-BfkpLbeopAN_IbVsLX22nmM-qpCJRnvORWRbLoe15W-OD7dUt8fHozgkaoGVCPHvrBBQOPgHv9Zo3V-ta1l4KzY6PpnbmWCA&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQ8tMDegQIIBAE
+          - text: "2"
+        - link [ref=e780] [cursor=pointer]:
+          - /url: /search?q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=uDMwapayLLO0qtsPo6PXqAw&start=20&sa=N&sstk=AU9db-BfkpLbeopAN_IbVsLX22nmM-qpCJRnvORWRbLoe15W-OD7dUt8fHozgkaoGVCPHvrBBQOPgHv9Zo3V-ta1l4KzY6PpnbmWCA&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQ8tMDegQIIBAG
+          - text: "3"
+        - link [ref=e782] [cursor=pointer]:
+          - /url: /search?q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=uDMwapayLLO0qtsPo6PXqAw&start=30&sa=N&sstk=AU9db-BfkpLbeopAN_IbVsLX22nmM-qpCJRnvORWRbLoe15W-OD7dUt8fHozgkaoGVCPHvrBBQOPgHv9Zo3V-ta1l4KzY6PpnbmWCA&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQ8tMDegQIIBAI
+          - text: "4"
+        - link [ref=e784] [cursor=pointer]:
+          - /url: /search?q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=uDMwapayLLO0qtsPo6PXqAw&start=40&sa=N&sstk=AU9db-BfkpLbeopAN_IbVsLX22nmM-qpCJRnvORWRbLoe15W-OD7dUt8fHozgkaoGVCPHvrBBQOPgHv9Zo3V-ta1l4KzY6PpnbmWCA&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQ8tMDegQIIBAK
+          - text: "5"
+        - link [ref=e786] [cursor=pointer]:
+          - /url: /search?q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=uDMwapayLLO0qtsPo6PXqAw&start=50&sa=N&sstk=AU9db-BfkpLbeopAN_IbVsLX22nmM-qpCJRnvORWRbLoe15W-OD7dUt8fHozgkaoGVCPHvrBBQOPgHv9Zo3V-ta1l4KzY6PpnbmWCA&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQ8tMDegQIIBAM
+          - text: "6"
+        - link [ref=e788] [cursor=pointer]:
+          - /url: /search?q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=uDMwapayLLO0qtsPo6PXqAw&start=60&sa=N&sstk=AU9db-BfkpLbeopAN_IbVsLX22nmM-qpCJRnvORWRbLoe15W-OD7dUt8fHozgkaoGVCPHvrBBQOPgHv9Zo3V-ta1l4KzY6PpnbmWCA&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQ8tMDegQIIBAO
+          - text: "7"
+        - link [ref=e790] [cursor=pointer]:
+          - /url: /search?q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=uDMwapayLLO0qtsPo6PXqAw&start=70&sa=N&sstk=AU9db-BfkpLbeopAN_IbVsLX22nmM-qpCJRnvORWRbLoe15W-OD7dUt8fHozgkaoGVCPHvrBBQOPgHv9Zo3V-ta1l4KzY6PpnbmWCA&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQ8tMDegQIIBAQ
+          - text: "8"
+        - link [ref=e792] [cursor=pointer]:
+          - /url: /search?q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=uDMwapayLLO0qtsPo6PXqAw&start=80&sa=N&sstk=AU9db-BfkpLbeopAN_IbVsLX22nmM-qpCJRnvORWRbLoe15W-OD7dUt8fHozgkaoGVCPHvrBBQOPgHv9Zo3V-ta1l4KzY6PpnbmWCA&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQ8tMDegQIIBAS
+          - text: "9"
+        - link [ref=e794] [cursor=pointer]:
+          - /url: /search?q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=uDMwapayLLO0qtsPo6PXqAw&start=90&sa=N&sstk=AU9db-BfkpLbeopAN_IbVsLX22nmM-qpCJRnvORWRbLoe15W-OD7dUt8fHozgkaoGVCPHvrBBQOPgHv9Zo3V-ta1l4KzY6PpnbmWCA&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQ8tMDegQIIBAU
+          - text: "10"
+        - heading [level=2] [ref=e796]:
+          - link [ref=e797] [cursor=pointer]:
+            - /url: /search?q=jmas+juarez+consulta+adeudo+agua+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=uDMwapayLLO0qtsPo6PXqAw&start=10&sa=N&sstk=AU9db-BfkpLbeopAN_IbVsLX22nmM-qpCJRnvORWRbLoe15W-OD7dUt8fHozgkaoGVCPHvrBBQOPgHv9Zo3V-ta1l4KzY6PpnbmWCA&ved=2ahUKEwiW7tWJ4ImVAxUzmmoFHaPRFcUQ8NMDegQIIBAW
+            - generic [ref=e799]: Siguiente
+    - contentinfo [ref=e800]:
+      - heading [level=1] [ref=e801]: Vínculos a pie de página
+      - generic [ref=e805]:
+        - generic [ref=e807]:
+          - text: México
+          - generic [ref=e809]:
+            - button [ref=e811] [cursor=pointer]:
+              - generic [ref=e812]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e814]:
+                - text: "-"
+                - generic [ref=e815]: A través de tu dirección IP
+            - text: "-"
+            - button [ref=e817] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e820]:
+          - link [ref=e821] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+            - text: Ayuda
+          - link [ref=e822] [cursor=pointer]:
+            - /url: "#"
+            - text: Enviar comentarios
+          - link [ref=e823] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+            - text: Privacidad
+          - link [ref=e824] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1
+            - text: Condiciones

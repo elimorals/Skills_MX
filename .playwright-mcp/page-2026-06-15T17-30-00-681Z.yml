@@ -1,0 +1,222 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - link "󰍉" [ref=e4] [cursor=pointer]:
+      - /url: https://www.sonora.gob.mx/servicios-y-tramites
+      - generic [ref=e5]: 󰍉
+    - link "󰅼" [ref=e7] [cursor=pointer]:
+      - /url: javascript:void(Tawk_API.toggle());
+      - generic [ref=e8]: 󰅼
+    - generic [ref=e10]:
+      - generic [ref=e15]:
+        - heading "ICRESON" [level=1] [ref=e19]:
+          - link "ICRESON" [ref=e20] [cursor=pointer]:
+            - /url: /
+            - img "ICRESON" [ref=e21]
+        - navigation "Menú de accesos de gobierno" [ref=e26]:
+          - text: 
+          - generic "Gobierno de Sonora" [ref=e27]:
+            - list [ref=e29]:
+              - listitem [ref=e30]:
+                - link "Gobierno" [ref=e31] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e32]:
+                - link "Servicios y Trámites" [ref=e33] [cursor=pointer]:
+                  - /url: http://www.sonora.gob.mx/servicios-y-tramites
+              - listitem [ref=e34]:
+                - link "Datos Abiertos" [ref=e35] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e36]:
+                - link "Cultura" [ref=e37] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e38]:
+                - link "Mi expediente" [ref=e39] [cursor=pointer]:
+                  - /url: https://expediente.sonora.gob.mx
+      - navigation [ref=e46]:
+        - list [ref=e47]:
+          - listitem [ref=e48]:
+            - link "Inicio" [ref=e49] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e50]:
+            - link "Acerca de" [ref=e51] [cursor=pointer]:
+              - /url: /acerca-de
+          - listitem [ref=e52]:
+            - link "Acciones" [ref=e53] [cursor=pointer]:
+              - /url: /acciones
+          - listitem [ref=e54]:
+            - link "Servicios" [ref=e55] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e56]:
+            - link "Boletín Registral" [ref=e57] [cursor=pointer]:
+              - /url: /boletin-registral
+          - listitem [ref=e58]:
+            - link "Marco legal" [ref=e59] [cursor=pointer]:
+              - /url: /marco-legal
+      - navigation "Breadcrumbs" [ref=e65]:
+        - list [ref=e66]:
+          - listitem [ref=e67]:
+            - link "󰋜" [ref=e68] [cursor=pointer]:
+              - /url: https://www.sonora.gob.mx/
+              - generic [ref=e69]: 󰋜
+          - listitem [ref=e70]:
+            - text: /
+            - link "…" [ref=e71] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e72]:
+            - text: /
+            - link "Servicios" [ref=e73] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e74]: / Servicios en linea
+      - generic [ref=e80]:
+        - generic [ref=e86]:
+          - heading "Servicios en Línea" [level=1] [ref=e90]
+          - paragraph [ref=e95]: "Titular: Ing. Rubén Armando Silva Martínez"
+        - generic [ref=e98]:
+          - generic [ref=e101]:
+            - generic [ref=e105]:
+              - generic [ref=e106]: 
+              - generic [ref=e107]: far fa-envelope
+            - generic [ref=e111]:
+              - generic [ref=e112]: 
+              - generic [ref=e113]: fas fa-phone-alt
+          - generic [ref=e116]:
+            - paragraph [ref=e121]: dgsi.icreson@sonora.gob.mx
+            - paragraph [ref=e126]: "01(662) 108-42-00 EXT: 07280"
+        - generic [ref=e130]:
+          - heading "Servicios en Línea" [level=3] [ref=e137]
+          - generic [ref=e146]:
+            - link "Acceso Plataforma Integral" [ref=e149] [cursor=pointer]:
+              - /url: https://integral.icreson.gob.mx/
+              - img "Acceso Plataforma Integral" [ref=e150]
+            - generic [ref=e152]:
+              - heading "Plataforma Integral" [level=4] [ref=e153]
+              - paragraph [ref=e155]: Ahora todos los Servicios Electrónicos del ICRESON son más seguros y en una misma plataforma.
+          - generic [ref=e164]:
+            - link "Acceso Ventanilla Electrónica" [ref=e167] [cursor=pointer]:
+              - /url: https://www.icreson.gob.mx/ventanilla-electronica/authenticate
+              - img "Acceso Ventanilla Electrónica" [ref=e168]
+            - generic [ref=e170]:
+              - heading "Ventanilla Electrónica" [level=4] [ref=e171]
+              - paragraph [ref=e173]: Acceso para Fedatarios Públicos
+          - generic [ref=e182]:
+            - link "Acceso Grandes Usuarios" [ref=e185] [cursor=pointer]:
+              - /url: https://www.icreson.gob.mx/grandes-usuarios/authenticate
+              - img "Acceso Grandes Usuarios" [ref=e186]
+            - generic [ref=e188]:
+              - heading "Grandes Usuarios" [level=4] [ref=e189]
+              - paragraph [ref=e191]: Sala de lectura exclusiva para dependencias
+      - list [ref=e228]:
+        - listitem [ref=e229] [cursor=pointer]
+        - listitem [ref=e231] [cursor=pointer]
+        - listitem [ref=e233] [cursor=pointer]
+      - generic [ref=e247]:
+        - generic [ref=e253]:
+          - heading "Instituto Catastral y Registral del Estado de Sonora" [level=6] [ref=e254]
+          - paragraph [ref=e256]:
+            - strong [ref=e257]: "Dirección:"
+            - text: Blvd. Paseo Río Sonora y Comonfort, Col. Villa de Seris. Hermosillo, Sonora. C.P. 83280.
+            - strong [ref=e258]: "Teléfonos:"
+            - link "(662) 108-42-00" [ref=e259] [cursor=pointer]:
+              - /url: tel:016621084200
+            - strong [ref=e260]: "Correo Electrónico:"
+            - text: contacto.icreson@sonora.gob.mx
+        - generic [ref=e263]:
+          - generic [ref=e267]:
+            - link "Facebook" [ref=e268] [cursor=pointer]:
+              - /url: https://www.facebook.com/icresonsonora1?paipv=0&eav=AfakZsoB_YhgS7Epcm8ObR5j6eh5DE2Bxedzz5DH8trLNsmeQV7GF87bOHvR6lrEmDc&_rdr
+              - generic [ref=e269]: 
+              - text: Facebook
+            - link "Twitter" [ref=e270] [cursor=pointer]:
+              - /url: https://twitter.com/Icreson_
+            - link "Instagram" [ref=e271] [cursor=pointer]:
+              - /url: https://www.instagram.com/icreson_oficial/
+              - generic [ref=e272]: 
+              - text: Instagram
+          - generic [ref=e276]:
+            - link "Política de Uso y Privacidad" [ref=e277] [cursor=pointer]:
+              - /url: https://www.sonora.gob.mx/politica-de-uso.html
+            - link "Denuncia Ciudadana" [ref=e278] [cursor=pointer]:
+              - /url: https://denunciapp.sonora.gob.mx/
+            - link "Contacto" [ref=e279] [cursor=pointer]:
+              - /url: https://www.sonora.gob.mx/contacto.html
+          - paragraph [ref=e284]:
+            - text: Todos los derechos reservados. Sitio web desarrollado por la
+            - text: Agencia de Transformación Digital y Telecomunicaciones
+      - generic [ref=e297]:
+        - img "Gobierno del Estado de Sonora" [ref=e306]
+        - generic [ref=e309]:
+          - list [ref=e313]:
+            - listitem [ref=e314]:
+              - link "Facebook" [ref=e315] [cursor=pointer]:
+                - /url: https://www.facebook.com/gobiernosonora
+                - generic [ref=e316]: 
+                - generic [ref=e317]: Facebook
+            - listitem [ref=e318]:
+              - link "Twitter" [ref=e319] [cursor=pointer]:
+                - /url: https://www.twitter.com/gobiernosonora
+                - generic [ref=e320]: Twitter
+            - listitem [ref=e321]:
+              - link "Instagram" [ref=e322] [cursor=pointer]:
+                - /url: https://www.instagram.com/gobiernodesonora
+                - generic [ref=e323]: 
+                - generic [ref=e324]: Instagram
+            - listitem [ref=e325]:
+              - link "TikTok" [ref=e326] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@gobierno.sonora
+                - generic [ref=e327]: 
+                - generic [ref=e328]: TikTok
+            - listitem [ref=e329]:
+              - link "Youtube" [ref=e330] [cursor=pointer]:
+                - /url: https://www.youtube.com/c/GobiernodeSonoraTV
+                - generic [ref=e331]: 
+                - generic [ref=e332]: Youtube
+          - generic [ref=e336]: "@GobiernoSonora"
+        - link "911 Número de Emergencias" [ref=e345] [cursor=pointer]:
+          - /url: tel://911
+          - img "911 Número de Emergencias" [ref=e346]
+    - generic [ref=e347]:
+      - generic [ref=e348]:
+        - heading "Menú de navegación" [level=2] [ref=e349]
+        - button "Close Off-canvas" [ref=e350] [cursor=pointer]
+      - list [ref=e355]:
+        - listitem [ref=e356]:
+          - link "Inicio" [ref=e357] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e358]:
+          - link "Acerca de 󰅀" [ref=e359] [cursor=pointer]:
+            - /url: /acerca-de
+            - text: Acerca de
+            - generic [ref=e360]: 󰅀
+        - listitem [ref=e361]:
+          - link "Acciones" [ref=e362] [cursor=pointer]:
+            - /url: /acciones
+        - listitem [ref=e363]:
+          - link "Servicios 󰅀" [ref=e364] [cursor=pointer]:
+            - /url: "#"
+            - text: Servicios
+            - generic [ref=e365]: 󰅀
+        - listitem [ref=e366]:
+          - link "Boletín Registral" [ref=e367] [cursor=pointer]:
+            - /url: /boletin-registral
+        - listitem [ref=e368]:
+          - link "Marco legal" [ref=e369] [cursor=pointer]:
+            - /url: /marco-legal
+  - generic "Opciones de accesibilidad" [ref=e370] [cursor=pointer]: accessible
+  - generic [ref=e371]:
+    - heading "close Opciones de accesibilidad refresh" [level=3] [ref=e372]:
+      - generic "Cerrar" [ref=e373] [cursor=pointer]: close
+      - text: Opciones de accesibilidad
+      - generic "Restablecer" [ref=e374] [cursor=pointer]: refresh
+    - list [ref=e375]:
+      - listitem [ref=e376] [cursor=pointer]: zoom_in Aumentar el tamaño del texto
+      - listitem [ref=e377] [cursor=pointer]: zoom_out Disminuir el tamaño del texto
+      - listitem [ref=e378] [cursor=pointer]: unfold_more Aumentar el espaciado del texto
+      - listitem [ref=e379] [cursor=pointer]: unfold_less Disminuir el espaciado del texto
+      - 'listitem "Hotkey: ctrl+alt+i" [ref=e380] [cursor=pointer]': invert_colors Invertir colores
+      - 'listitem "Hotkey: ctrl+alt+g" [ref=e381] [cursor=pointer]': format_color_reset Tonos grises
+      - 'listitem "Hotkey: ctrl+alt+u" [ref=e382] [cursor=pointer]': format_underlined Subrayar enlaces
+      - 'listitem "Hotkey: ctrl+alt+c" [ref=e383] [cursor=pointer]':
+        - img [ref=e384]
+        - text: Cursor grande
+      - 'listitem "Hotkey: ctrl+alt+r" [ref=e386] [cursor=pointer]': border_horizontal Guía de lectura
+      - listitem [ref=e387] [cursor=pointer]: record_voice_over Texto a voz
+      - listitem [ref=e388] [cursor=pointer]: mic Voz a texto

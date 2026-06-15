@@ -1,0 +1,291 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: catastro guanajuato consulta valor sitio:gob.mx catastro guanajuato consulta valor sitio:gob.mx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dcatastro%2Bguanajuato%2Bconsulta%2Bvalor%2Bsitio:gob.mx&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=catastro+guanajuato+consulta+valor+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNs-Xb_sfcvz2g8MFjbJEfzgnraFO0lKzHoFKJpiczrGf_ZDCnGz4_URtnkyhg-AZzlnjW3vkyUv9m51ulEHQfESi3OlayJftd0aG-5A9U9Rz5BjSQ8sZMKYhROF01XRE9Wt_z0ZJOPgep-6jkB3vdSPV-dz3iYlkD6E3SU3TOIr_QGQrEg&aep=1&ntc=1&sa=X&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQ2J8OegQIEhAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=catastro+guanajuato+consulta+valor+sitio:gob.mx&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNs-Xb_sfcvz2g8MFjbJEfzgnraFO0lKzHoFKJpiczrGf_ZDCnGz4_URtnkyhg-AZzlnjW3vkyUv9m51ulEHQfESi3OlayJftd0aG-5A9U9Rz5BjSQ8sZMKYhROF01XRE9Wt_z0ZJOPgep-6jkB3vdSPV-dz3iYlkD6E3SU3TOIr_QGQrEg&sa=X&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQ0pQJegQIGBAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Shopping" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNs-Xb_sfcvz2g8MFjbJEfzgnraFO0lKzHoFKJpiczrGf_ZDCnGz4_URtnkyhg-AZzlnjW3vkyUv9m51ulEHQfESi3OlayJftd0aG-5A9U9Rz5BjSQ8sZMKYhROF01XRE9Wt_z0ZJOPgep-6jkB3vdSPV-dz3iYlkD6E3SU3TOIr_QGQrEg&q=catastro+guanajuato+consulta+valor+sitio:gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e88]: Shopping
+          - listitem [ref=e89]:
+            - link "Imágenes" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNs-Xb_sfcvz2g8MFjbJEfzgnraFO0lKzHoFKJpiczrGf_ZDCnGz4_URtnkyhg-AZzlnjW3vkyUv9m51ulEHQfESi3OlayJftd0aG-5A9U9Rz5BjSQ8sZMKYhROF01XRE9Wt_z0ZJOPgep-6jkB3vdSPV-dz3iYlkD6E3SU3TOIr_QGQrEg&q=catastro+guanajuato+consulta+valor+sitio:gob.mx&sa=X&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQtKgLegQIFhAB
+              - generic [ref=e92]: Imágenes
+          - listitem [ref=e93]:
+            - link "Videos" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNs-Xb_sfcvz2g8MFjbJEfzgnraFO0lKzHoFKJpiczrGf_ZDCnGz4_URtnkyhg-AZzlnjW3vkyUv9m51ulEHQfESi3OlayJftd0aG-5A9U9Rz5BjSQ8sZMKYhROF01XRE9Wt_z0ZJOPgep-6jkB3vdSPV-dz3iYlkD6E3SU3TOIr_QGQrEg&q=catastro+guanajuato+consulta+valor+sitio:gob.mx&sa=X&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQtKgLegQIFxAB
+              - generic [ref=e96]: Videos
+          - listitem [ref=e97]:
+            - link "Videos cortos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNs-Xb_sfcvz2g8MFjbJEfzgnraFO0lKzHoFKJpiczrGf_ZDCnGz4_URtnkyhg-AZzlnjW3vkyUv9m51ulEHQfESi3OlayJftd0aG-5A9U9Rz5BjSQ8sZMKYhROF01XRE9Wt_z0ZJOPgep-6jkB3vdSPV-dz3iYlkD6E3SU3TOIr_QGQrEg&q=catastro+guanajuato+consulta+valor+sitio:gob.mx&sa=X&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQs6gLegQIFBAB
+              - generic [ref=e100]: Videos cortos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - generic [ref=e122]:
+      - generic [ref=e141]:
+        - heading "Pensando" [level=2] [ref=e145]:
+          - generic [ref=e146]: Pensando
+        - progressbar "Generando" [ref=e147]
+      - main [ref=e149]:
+        - generic [ref=e153]:
+          - generic [ref=e156]:
+            - heading "Resultados web" [level=2] [ref=e157]
+            - generic [ref=e158]:
+              - generic [ref=e161]:
+                - link "Catastro Finanzas GTO https://finanzas.guanajuato.gob.mx › lin_catastro" [ref=e163] [cursor=pointer]:
+                  - /url: https://finanzas.guanajuato.gob.mx/c_disposiciones_administrativas_2022/lin_catastro.php
+                  - heading "Catastro" [level=3] [ref=e164]
+                  - generic [ref=e170]:
+                    - generic [ref=e172]: Finanzas GTO
+                    - generic [ref=e174]: https://finanzas.guanajuato.gob.mx › lin_catastro
+                - button "Acerca de este resultado" [ref=e175] [cursor=pointer]:
+                  - img [ref=e178]
+              - generic [ref=e182]:
+                - text: Portal de Finanzas del Gobierno del Estado de
+                - emphasis [ref=e183]: Guanajuato
+                - text: ". ... Avalúo Catastral: Documento mediante el cual se determina el"
+                - emphasis [ref=e184]: valor
+                - text: fiscal de los predios y ...
+          - generic [ref=e189]:
+            - heading "Más preguntas" [level=2] [ref=e191]
+            - generic [ref=e192]:
+              - button "¿Cómo saber cuánto debo de predial en Guanajuato?" [ref=e198] [cursor=pointer]:
+                - generic [ref=e200]: ¿Cómo saber cuánto debo de predial en Guanajuato?
+                - img [ref=e203]
+              - button "¿Cómo se puede averiguar el valor catastral de un inmueble?" [ref=e212] [cursor=pointer]:
+                - generic [ref=e214]: ¿Cómo se puede averiguar el valor catastral de un inmueble?
+                - img [ref=e217]
+              - button "¿Precio del metro cuadrado de terreno en Guanajuato?" [ref=e226] [cursor=pointer]:
+                - generic [ref=e228]: ¿Precio del metro cuadrado de terreno en Guanajuato?
+                - img [ref=e231]
+              - button "¿Cómo sacar el valor de Catastro?" [ref=e240] [cursor=pointer]:
+                - generic [ref=e242]: ¿Cómo sacar el valor de Catastro?
+                - img [ref=e245]
+          - generic [ref=e250]:
+            - heading "Resultados web" [level=2] [ref=e251]
+            - generic [ref=e252]:
+              - generic [ref=e255]:
+                - link "Catastro Finanzas GTO https://finanzas.guanajuato.gob.mx › lin_catastro" [ref=e257] [cursor=pointer]:
+                  - /url: https://finanzas.guanajuato.gob.mx/c_disposiciones_administrativas_2024/lin_catastro.php
+                  - heading "Catastro" [level=3] [ref=e258]
+                  - generic [ref=e264]:
+                    - generic [ref=e266]: Finanzas GTO
+                    - generic [ref=e268]: https://finanzas.guanajuato.gob.mx › lin_catastro
+                - button "Acerca de este resultado" [ref=e269] [cursor=pointer]:
+                  - img [ref=e272]
+              - generic [ref=e276]:
+                - text: Portal de Finanzas del Gobierno del Estado de Guanajuato. ... valor fiscal de los predios y
+                - emphasis [ref=e277]: construc
+                - text: ciones adheridas a éstos. Dicho valor fiscal ...
+          - generic [ref=e281]:
+            - generic [ref=e284]:
+              - 'link "Guanajuato Capital: Inicio Guanajuato Capital https://www.guanajuatocapital.gob.mx" [ref=e286] [cursor=pointer]':
+                - /url: https://www.guanajuatocapital.gob.mx/
+                - 'heading "Guanajuato Capital: Inicio" [level=3] [ref=e287]'
+                - generic [ref=e289]:
+                  - img [ref=e294]
+                  - generic [ref=e296]:
+                    - generic [ref=e298]: Guanajuato Capital
+                    - generic [ref=e300]: https://www.guanajuatocapital.gob.mx
+              - button "Acerca de este resultado" [ref=e301] [cursor=pointer]:
+                - img [ref=e304]
+            - generic [ref=e308]:
+              - emphasis [ref=e309]: Explore los servicios y recursos en línea
+              - text: · Pago de predial · Inscripción al Padrón de Proveedores · CAPITALNET · Gaceta Municipal · Registro de trámites y servicios ...
+          - generic [ref=e313]:
+            - generic [ref=e316]:
+              - link "Consultar Adeudo Predial en Guanajuato CDMX https://data.eap.cdmx.gob.mx › recursos › estado=guan..." [ref=e318] [cursor=pointer]:
+                - /url: https://data.eap.cdmx.gob.mx/ut/recursos/?estado=guanajuato
+                - heading "Consultar Adeudo Predial en Guanajuato" [level=3] [ref=e319]
+                - generic [ref=e325]:
+                  - generic [ref=e327]: CDMX
+                  - generic [ref=e329]: https://data.eap.cdmx.gob.mx › recursos › estado=guan...
+              - button "Acerca de este resultado" [ref=e330] [cursor=pointer]:
+                - img [ref=e333]
+            - generic [ref=e337]:
+              - emphasis [ref=e338]: "Para consultar su adeudo necesitara: Clave catastral"
+              - text: (recibos anteriores o escrituras), nombre completo del propietario, o direccion completa del inmueble. CURP ...
+          - generic [ref=e342]:
+            - generic [ref=e345]:
+              - link "Ventanilla de Constancia de Certificación Catastral Gobierno Municipal de Irapuato https://vccc.irapuato.gob.mx" [ref=e347] [cursor=pointer]:
+                - /url: https://vccc.irapuato.gob.mx/
+                - heading "Ventanilla de Constancia de Certificación Catastral" [level=3] [ref=e348]
+                - generic [ref=e354]:
+                  - generic [ref=e356]: Gobierno Municipal de Irapuato
+                  - generic [ref=e358]: https://vccc.irapuato.gob.mx
+              - button "Acerca de este resultado" [ref=e359] [cursor=pointer]:
+                - img [ref=e362]
+            - generic [ref=e366]:
+              - text: Dirección de
+              - emphasis [ref=e367]: Catastro
+              - text: . "Súmate a una Tesoreria moderna y transparente. Paga,
+              - emphasis [ref=e368]: consulta
+              - text: "y participa de forma fácil y segura.\" Álvaro Obregón #100, Zona Centro ..."
+          - generic [ref=e372]:
+            - generic [ref=e375]:
+              - link "Tesorería Municipal Google Sites https://sites.google.com › consulta-folio › inicio" [ref=e377] [cursor=pointer]:
+                - /url: https://sites.google.com/guanajuatocapital.gob.mx/consulta-folio/inicio
+                - heading "Tesorería Municipal" [level=3] [ref=e378]
+                - generic [ref=e384]:
+                  - generic [ref=e386]: Google Sites
+                  - generic [ref=e388]: https://sites.google.com › consulta-folio › inicio
+              - button "Acerca de este resultado" [ref=e389] [cursor=pointer]:
+                - img [ref=e392]
+            - generic [ref=e396]:
+              - emphasis [ref=e397]: Consulta Folios 2025
+              - text: · Plano de valores 2025 · Presentación de factores 2024 · Ejercicio en formato urbano. Tesorería Municipal Dirección de Catastro e Impuesto ...
+            - generic [ref=e399]:
+              - text: "Falta(n): sitio: ‎| Realizar una búsqueda con lo siguiente:"
+              - link "sitio:" [ref=e400] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=catastro+guanajuato+consulta+valor+%22sitio:%22+gob.mx&sa=X&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQ5t4CegQISBAB
+          - generic [ref=e404]:
+            - generic [ref=e407]:
+              - link "Servicios de pagos de predial Presidencia Municipal Celaya https://www.celaya.gob.mx › pago-de-predial" [ref=e409] [cursor=pointer]:
+                - /url: https://www.celaya.gob.mx/pago-de-predial/
+                - heading "Servicios de pagos de predial" [level=3] [ref=e410]
+                - generic [ref=e416]:
+                  - generic [ref=e418]: Presidencia Municipal Celaya
+                  - generic [ref=e420]: https://www.celaya.gob.mx › pago-de-predial
+              - button "Acerca de este resultado" [ref=e421] [cursor=pointer]:
+                - img [ref=e424]
+            - generic [ref=e428]:
+              - text: Acudir presencialmente a la Dirección de Impuestos Inmobiliarios y
+              - emphasis [ref=e429]: Catastro
+              - text: ", de la Presidencia Municipal, ubicada en Portal Independencia #101 altos, zona ..."
+          - generic [ref=e433]:
+            - generic [ref=e436]:
+              - link "Certificado de Clave Catastral - Sin Filas - Municipio de León Gobierno Digital 24/7 https://sinfilas.leon.gob.mx › tramite" [ref=e438] [cursor=pointer]:
+                - /url: https://sinfilas.leon.gob.mx/tramite.php?id=15176776-e655-41a3-a883-3f6b9822b8c2
+                - heading "Certificado de Clave Catastral - Sin Filas - Municipio de León" [level=3] [ref=e439]
+                - generic [ref=e445]:
+                  - generic [ref=e447]: Gobierno Digital 24/7
+                  - generic [ref=e449]: https://sinfilas.leon.gob.mx › tramite
+              - button "Acerca de este resultado" [ref=e450] [cursor=pointer]:
+                - img [ref=e453]
+            - generic [ref=e456]: 1. Presentar identificación oficial vigente (original y copia para su cotejo). · 2. Llenar el formato de solicitud de certificación de Cuenta Catastral. · 3.
+          - generic [ref=e460]:
+            - generic [ref=e463]:
+              - link "Distribución de la propiedad catastral Inegi https://www.inegi.org.mx › temas › catastro" [ref=e465] [cursor=pointer]:
+                - /url: https://www.inegi.org.mx/temas/catastro/
+                - heading "Distribución de la propiedad catastral" [level=3] [ref=e466]
+                - generic [ref=e472]:
+                  - generic [ref=e474]: Inegi
+                  - generic [ref=e476]: https://www.inegi.org.mx › temas › catastro
+              - button "Acerca de este resultado" [ref=e477] [cursor=pointer]:
+                - img [ref=e480]
+            - generic [ref=e484]:
+              - emphasis [ref=e485]: Catastro y Gestión Territorial
+              - text: . Distribución de la Propiedad Catastral · Imágenes del Territorio. Imágenes de Satélite. Imágenes de Alta Resolución · Mapas.
+        - navigation [ref=e488]:
+          - heading "Navegación de páginas" [level=1] [ref=e489]
+          - text: "1"
+          - link "Page 2" [ref=e492] [cursor=pointer]:
+            - /url: /search?q=catastro+guanajuato+consulta+valor+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=dTYwatbJFb2jqtsPlbPa4Qc&start=10&sa=N&sstk=AU9db-CQQVH0L2LzNLbB-GFMG9KVQK5nAYFQEyRlRlYzsQb4NGDWORwG3_NF-gKElrIQF_5N9wk0YFchpqacVOoA3dk7Xk1vDTJegA&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQ8tMDegQIJhAE
+            - text: "2"
+          - link "Page 3" [ref=e494] [cursor=pointer]:
+            - /url: /search?q=catastro+guanajuato+consulta+valor+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=dTYwatbJFb2jqtsPlbPa4Qc&start=20&sa=N&sstk=AU9db-CQQVH0L2LzNLbB-GFMG9KVQK5nAYFQEyRlRlYzsQb4NGDWORwG3_NF-gKElrIQF_5N9wk0YFchpqacVOoA3dk7Xk1vDTJegA&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQ8tMDegQIJhAG
+            - text: "3"
+          - link "Page 4" [ref=e496] [cursor=pointer]:
+            - /url: /search?q=catastro+guanajuato+consulta+valor+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=dTYwatbJFb2jqtsPlbPa4Qc&start=30&sa=N&sstk=AU9db-CQQVH0L2LzNLbB-GFMG9KVQK5nAYFQEyRlRlYzsQb4NGDWORwG3_NF-gKElrIQF_5N9wk0YFchpqacVOoA3dk7Xk1vDTJegA&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQ8tMDegQIJhAI
+            - text: "4"
+          - link "Page 5" [ref=e498] [cursor=pointer]:
+            - /url: /search?q=catastro+guanajuato+consulta+valor+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=dTYwatbJFb2jqtsPlbPa4Qc&start=40&sa=N&sstk=AU9db-CQQVH0L2LzNLbB-GFMG9KVQK5nAYFQEyRlRlYzsQb4NGDWORwG3_NF-gKElrIQF_5N9wk0YFchpqacVOoA3dk7Xk1vDTJegA&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQ8tMDegQIJhAK
+            - text: "5"
+          - link "Page 6" [ref=e500] [cursor=pointer]:
+            - /url: /search?q=catastro+guanajuato+consulta+valor+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=dTYwatbJFb2jqtsPlbPa4Qc&start=50&sa=N&sstk=AU9db-CQQVH0L2LzNLbB-GFMG9KVQK5nAYFQEyRlRlYzsQb4NGDWORwG3_NF-gKElrIQF_5N9wk0YFchpqacVOoA3dk7Xk1vDTJegA&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQ8tMDegQIJhAM
+            - text: "6"
+          - link "Page 7" [ref=e502] [cursor=pointer]:
+            - /url: /search?q=catastro+guanajuato+consulta+valor+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=dTYwatbJFb2jqtsPlbPa4Qc&start=60&sa=N&sstk=AU9db-CQQVH0L2LzNLbB-GFMG9KVQK5nAYFQEyRlRlYzsQb4NGDWORwG3_NF-gKElrIQF_5N9wk0YFchpqacVOoA3dk7Xk1vDTJegA&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQ8tMDegQIJhAO
+            - text: "7"
+          - link "Page 8" [ref=e504] [cursor=pointer]:
+            - /url: /search?q=catastro+guanajuato+consulta+valor+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=dTYwatbJFb2jqtsPlbPa4Qc&start=70&sa=N&sstk=AU9db-CQQVH0L2LzNLbB-GFMG9KVQK5nAYFQEyRlRlYzsQb4NGDWORwG3_NF-gKElrIQF_5N9wk0YFchpqacVOoA3dk7Xk1vDTJegA&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQ8tMDegQIJhAQ
+            - text: "8"
+          - link "Page 9" [ref=e506] [cursor=pointer]:
+            - /url: /search?q=catastro+guanajuato+consulta+valor+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=dTYwatbJFb2jqtsPlbPa4Qc&start=80&sa=N&sstk=AU9db-CQQVH0L2LzNLbB-GFMG9KVQK5nAYFQEyRlRlYzsQb4NGDWORwG3_NF-gKElrIQF_5N9wk0YFchpqacVOoA3dk7Xk1vDTJegA&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQ8tMDegQIJhAS
+            - text: "9"
+          - link "Page 10" [ref=e508] [cursor=pointer]:
+            - /url: /search?q=catastro+guanajuato+consulta+valor+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=dTYwatbJFb2jqtsPlbPa4Qc&start=90&sa=N&sstk=AU9db-CQQVH0L2LzNLbB-GFMG9KVQK5nAYFQEyRlRlYzsQb4NGDWORwG3_NF-gKElrIQF_5N9wk0YFchpqacVOoA3dk7Xk1vDTJegA&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQ8tMDegQIJhAU
+            - text: "10"
+          - heading "Siguiente" [level=2] [ref=e510]:
+            - link "Siguiente" [ref=e511] [cursor=pointer]:
+              - /url: /search?q=catastro+guanajuato+consulta+valor+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=dTYwatbJFb2jqtsPlbPa4Qc&start=10&sa=N&sstk=AU9db-CQQVH0L2LzNLbB-GFMG9KVQK5nAYFQEyRlRlYzsQb4NGDWORwG3_NF-gKElrIQF_5N9wk0YFchpqacVOoA3dk7Xk1vDTJegA&ved=2ahUKEwiW2ODX4omVAxW9kWoFHZWZNnwQ8NMDegQIJhAW
+              - generic [ref=e513]: Siguiente
+        - navigation
+    - contentinfo [ref=e514]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e515]
+      - generic [ref=e519]:
+        - generic [ref=e521]:
+          - text: México
+          - generic [ref=e523]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - A través de tu dirección IP" [ref=e525] [cursor=pointer]:
+              - generic [ref=e526]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e528]:
+                - text: "-"
+                - generic [ref=e529]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e531] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e534]:
+          - link "Ayuda" [ref=e535] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e536] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e537] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e538] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

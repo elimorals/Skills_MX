@@ -1,0 +1,44 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link [ref=e4] [cursor=pointer]:
+        - /url: https://pagos.culiacan.gob.mx/
+        - img [ref=e5]
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "INICIO" [ref=e9] [cursor=pointer]:
+            - /url: https://pagos.culiacan.gob.mx/
+        - listitem [ref=e10]: / CLAVE
+  - generic [ref=e11]:
+    - heading "Pago de predial en línea" [level=1] [ref=e13]
+    - generic [ref=e14]:
+      - heading "Ingrese Su Clave Catastral" [level=4] [ref=e16]
+      - generic [ref=e17]:
+        - textbox [ref=e19]: "007"
+        - generic [ref=e20]: "-"
+        - textbox "POB" [active] [ref=e22]
+        - generic [ref=e23]: "-"
+        - textbox "CUA" [ref=e25]
+        - generic [ref=e26]: "-"
+        - textbox "MAN" [ref=e28]
+        - generic [ref=e29]: "-"
+        - textbox "PRE" [ref=e31]
+        - generic [ref=e32]: "-"
+        - textbox "UNI" [ref=e34]
+      - button " Buscar" [ref=e36] [cursor=pointer]:
+        - generic [ref=e37]: 
+        - text: Buscar
+  - generic [ref=e38]:
+    - table "Click to Verify - This site chose Symantec SSL for secure e-commerce and confidential communications." [ref=e39]:
+      - rowgroup [ref=e40]:
+        - row [ref=e41]:
+          - cell [ref=e42]
+    - table "Plataforma de pagos respaldada por PCI" [ref=e43]:
+      - rowgroup [ref=e44]:
+        - row [ref=e45]:
+          - cell [ref=e46]
+    - paragraph [ref=e48]: Su información está segura con nosotros.
+  - contentinfo [ref=e49]:
+    - generic:
+      - img [ref=e51]
+      - generic [ref=e52]: Av. Alvaro Obregón y Mariano Escobedo C.P. 80000 Culiacán, Sin., México

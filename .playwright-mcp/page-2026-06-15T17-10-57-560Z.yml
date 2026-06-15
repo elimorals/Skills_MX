@@ -1,0 +1,309 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwixsZ7H3omVAxXal2oFHf3PLs4QPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: pago predial leon guanajuato sitio:gob.mx pago predial leon guanajuato sitio:gob.mx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dpago%2Bpredial%2Bleon%2Bguanajuato%2Bsitio:gob.mx&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=pago+predial+leon+guanajuato+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&aep=1&ntc=1&sa=X&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4Q2J8OegQIEBAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=pago+predial+leon+guanajuato+sitio:gob.mx&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&sa=X&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4Q0pQJegQIFhAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Imágenes" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+leon+guanajuato+sitio:gob.mx&sa=X&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4QtKgLegQIFRAB
+              - generic [ref=e88]: Imágenes
+          - listitem [ref=e89]:
+            - link "Shopping" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+leon+guanajuato+sitio:gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e92]: Shopping
+          - listitem [ref=e93]:
+            - link "Videos" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+leon+guanajuato+sitio:gob.mx&sa=X&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4QtKgLegQIExAB
+              - generic [ref=e96]: Videos
+          - listitem [ref=e97]:
+            - link "Videos cortos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+leon+guanajuato+sitio:gob.mx&sa=X&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4Qs6gLegQIEhAB
+              - generic [ref=e100]: Videos cortos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - main [ref=e123]:
+      - generic [ref=e127]:
+        - generic [ref=e130]:
+          - heading "Resultado web con vínculos a sitio" [level=2] [ref=e131]
+          - generic [ref=e132]:
+            - generic [ref=e136]:
+              - generic [ref=e138]:
+                - link "Impuesto Predial - Criterios de Consulta (Pago Individual) Presidencia Municipal de León https://pagos.leon.gob.mx › pagonet2 › Services › predial" [ref=e140] [cursor=pointer]:
+                  - /url: https://pagos.leon.gob.mx/pagonet2/Services/predial/
+                  - heading "Impuesto Predial - Criterios de Consulta (Pago Individual)" [level=3] [ref=e141]
+                  - generic [ref=e143]:
+                    - img [ref=e148]
+                    - generic [ref=e150]:
+                      - generic [ref=e152]: Presidencia Municipal de León
+                      - generic [ref=e154]: https://pagos.leon.gob.mx › pagonet2 › Services › predial
+                - button "Acerca de este resultado" [ref=e155] [cursor=pointer]:
+                  - img [ref=e158]
+              - generic [ref=e162]:
+                - text: Tus comentarios sobre el
+                - emphasis [ref=e163]: sitio
+                - text: son muy importantes. 01 (477) 7 88 00 00. Plaza Principal S/N Zona Centro
+                - emphasis [ref=e164]: León
+                - text: ","
+                - emphasis [ref=e165]: Gto
+                - text: ". México CP. 37000. Síguenos en: Municipio de ..."
+            - group "Recomendaciones personalizadas en función de tu historial" [ref=e166]:
+              - rowgroup [ref=e167]:
+                - row "RECIBO DIGITAL Predial ... Pago el Línea de una Cuenta Predial ... Tus comentarios ..." [ref=e168]:
+                  - cell "RECIBO DIGITAL Predial ... Pago el Línea de una Cuenta Predial ... Tus comentarios ..." [ref=e169]:
+                    - generic [ref=e175]:
+                      - heading "RECIBO DIGITAL Predial" [level=3] [ref=e176]:
+                        - link "RECIBO DIGITAL Predial" [ref=e177] [cursor=pointer]:
+                          - /url: https://pagos.leon.gob.mx/pagonet2/Services/Recibos/Recibo_Predial_Form.aspx
+                          - text: RECIBO DIGITAL Predial
+                      - generic [ref=e180]: ... Pago el Línea de una Cuenta Predial ... Tus comentarios ...
+                - row "Impuesto Predial Tus comentarios sobre el sitio son muy importantes. 01 (477) 7 88 ..." [ref=e181]:
+                  - cell "Impuesto Predial Tus comentarios sobre el sitio son muy importantes. 01 (477) 7 88 ..." [ref=e182]:
+                    - generic [ref=e188]:
+                      - heading "Impuesto Predial" [level=3] [ref=e189]:
+                        - link "Impuesto Predial" [ref=e190] [cursor=pointer]:
+                          - /url: https://pagos.leon.gob.mx/pagonet2/Services/Predial/Predial_form.aspx?pagemode=1
+                          - text: Impuesto Predial
+                      - generic [ref=e193]: Tus comentarios sobre el sitio son muy importantes. 01 (477) 7 88 ...
+                - row "Más resultados de leon.gob.mx »" [ref=e195]:
+                  - cell "Más resultados de leon.gob.mx »" [ref=e196]:
+                    - link "Más resultados de leon.gob.mx »" [ref=e198] [cursor=pointer]:
+                      - /url: /search?q=pago+predial+leon+guanajuato+sitio:gob.mx+site:leon.gob.mx&sca_esv=c6c16ab1eb0a4421&sa=X&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4QrAN6BAgXEAE
+        - generic [ref=e209]:
+          - heading "Pensando" [level=2] [ref=e213]:
+            - generic [ref=e214]: Pensando
+          - progressbar "Generando" [ref=e215]
+        - generic [ref=e219]:
+          - heading "Resultados web" [level=2] [ref=e220]
+          - generic [ref=e221]:
+            - generic [ref=e224]:
+              - link "PAGONET LEÓN - Inicio Presidencia Municipal de León https://pagos.leon.gob.mx › pagonet2" [ref=e226] [cursor=pointer]:
+                - /url: https://pagos.leon.gob.mx/pagonet2/
+                - heading "PAGONET LEÓN - Inicio" [level=3] [ref=e227]
+                - generic [ref=e229]:
+                  - img [ref=e234]
+                  - generic [ref=e236]:
+                    - generic [ref=e238]: Presidencia Municipal de León
+                    - generic [ref=e240]: https://pagos.leon.gob.mx › pagonet2
+              - button "Acerca de este resultado" [ref=e241] [cursor=pointer]:
+                - img [ref=e244]
+            - generic [ref=e248]:
+              - emphasis [ref=e249]: Impuesto Predial
+              - text: Si quiere hacer el pago de una sola cuenta Predial, dé clic aquí. Infracciones de Policía Vial y de la Dirección de Movilidad Consulta y pago ...
+        - generic [ref=e253]:
+          - generic [ref=e256]:
+            - link "PAGONET LEÓN - Lugares de Pago Presidencia Municipal de León https://pagos.leon.gob.mx › PAGONET2 › LugaresDePago" [ref=e258] [cursor=pointer]:
+              - /url: https://pagos.leon.gob.mx/PAGONET2/LugaresDePago.aspx
+              - heading "PAGONET LEÓN - Lugares de Pago" [level=3] [ref=e259]
+              - generic [ref=e261]:
+                - img [ref=e266]
+                - generic [ref=e268]:
+                  - generic [ref=e270]: Presidencia Municipal de León
+                  - generic [ref=e272]: https://pagos.leon.gob.mx › PAGONET2 › LugaresDePago
+            - button "Acerca de este resultado" [ref=e273] [cursor=pointer]:
+              - img [ref=e276]
+          - generic [ref=e280]:
+            - emphasis [ref=e281]: Lunes a Viernes de 09:00 a 16:00 hrs
+            - text: . Información General. Impuesto Predial (Estado de Cuenta, Cuotas Mínimas y Convenios). Lunes ...
+        - generic [ref=e285]:
+          - generic [ref=e288]:
+            - link "Pago de predial municipal Gobierno de Guanajuato https://pagosenlinea.guanajuato.gob.mx › predial" [ref=e290] [cursor=pointer]:
+              - /url: https://pagosenlinea.guanajuato.gob.mx/predial
+              - heading "Pago de predial municipal" [level=3] [ref=e291]
+              - generic [ref=e297]:
+                - generic [ref=e299]: Gobierno de Guanajuato
+                - generic [ref=e301]: https://pagosenlinea.guanajuato.gob.mx › predial
+            - button "Acerca de este resultado" [ref=e302] [cursor=pointer]:
+              - img [ref=e305]
+          - generic [ref=e309]:
+            - emphasis [ref=e310]: Pagos en línea
+            - text: . Pago de predial municipal. Municipio. --- Seleccione ---, Celaya, León. Tipo de predio. --- Seleccione ---, Urbano, Rustico. Cuenta predial.
+        - generic [ref=e314]:
+          - generic [ref=e317]:
+            - link "PAGONET LEÓN - Inicio de Sesión Presidencia Municipal de León https://pagos.leon.gob.mx › pagonet2 › Login_Form" [ref=e319] [cursor=pointer]:
+              - /url: https://pagos.leon.gob.mx/pagonet2/Login_Form.aspx
+              - heading "PAGONET LEÓN - Inicio de Sesión" [level=3] [ref=e320]
+              - generic [ref=e322]:
+                - img [ref=e327]
+                - generic [ref=e329]:
+                  - generic [ref=e331]: Presidencia Municipal de León
+                  - generic [ref=e333]: https://pagos.leon.gob.mx › pagonet2 › Login_Form
+            - button "Acerca de este resultado" [ref=e334] [cursor=pointer]:
+              - img [ref=e337]
+          - generic [ref=e341]:
+            - text: Municipio de León · Inicio; Pagos individuales.
+            - emphasis [ref=e342]: Impuesto predial
+            - text: · Infracciones de Policía Vial y de la Dirección de Movilidad · Infracciones ...
+        - generic [ref=e346]:
+          - generic [ref=e349]:
+            - link "PAGONET LEÓN - Contacto Presidencia Municipal de León https://pagos.leon.gob.mx › pagonet2 › Contacto" [ref=e351] [cursor=pointer]:
+              - /url: https://pagos.leon.gob.mx/pagonet2/Contacto.aspx
+              - heading "PAGONET LEÓN - Contacto" [level=3] [ref=e352]
+              - generic [ref=e354]:
+                - img [ref=e359]
+                - generic [ref=e361]:
+                  - generic [ref=e363]: Presidencia Municipal de León
+                  - generic [ref=e365]: https://pagos.leon.gob.mx › pagonet2 › Contacto
+            - button "Acerca de este resultado" [ref=e366] [cursor=pointer]:
+              - img [ref=e369]
+          - generic [ref=e373]:
+            - text: León,
+            - emphasis [ref=e374]: Guan
+            - text: "ajuato 37000. Tel. (477) 7 88 00 00 webmaster@leon.gob.mx. DIRECCIÓN GENERAL DE INGRESOS 5 de Mayo #203, Zona Centro León, Guanajuato, C.P. 37000"
+        - generic [ref=e379]:
+          - heading "Más preguntas" [level=2] [ref=e381]
+          - generic [ref=e382]:
+            - button "¿Cómo pagar el impuesto predial 2026?" [ref=e388] [cursor=pointer]:
+              - generic [ref=e390]: ¿Cómo pagar el impuesto predial 2026?
+              - img [ref=e393]
+            - button "¿Cómo saber cuánto debo de predial en Guanajuato?" [ref=e402] [cursor=pointer]:
+              - generic [ref=e404]: ¿Cómo saber cuánto debo de predial en Guanajuato?
+              - img [ref=e407]
+            - button "¿Cuándo se paga el predial 2026 en León, Gto?" [ref=e416] [cursor=pointer]:
+              - generic [ref=e418]: ¿Cuándo se paga el predial 2026 en León, Gto?
+              - img [ref=e421]
+            - button "¿Cómo descargar el PDF del impuesto predial?" [ref=e430] [cursor=pointer]:
+              - generic [ref=e432]: ¿Cómo descargar el PDF del impuesto predial?
+              - img [ref=e435]
+        - generic [ref=e443]:
+          - generic [ref=e446]:
+            - 'link "Paga tu #PredialLeón de manera sencilla en PAGONET ... Facebook · Tesorería Municipal León Más de 20 reacciones · hace 1 semana" [ref=e448] [cursor=pointer]':
+              - /url: https://www.facebook.com/tesorerialeon/videos/paga-tu-predialle%C3%B3n-de-manera-sencilla-en-pagonet-al-cumplir-todos-podemos-const/2475409016061617/
+              - 'heading "Paga tu #PredialLeón de manera sencilla en PAGONET ..." [level=3] [ref=e449]'
+              - generic [ref=e455]:
+                - generic [ref=e457]: Facebook · Tesorería Municipal León
+                - generic [ref=e459]: Más de 20 reacciones · hace 1 semana
+            - button "Acerca de este resultado" [ref=e460] [cursor=pointer]:
+              - img [ref=e463]
+          - generic [ref=e465]:
+            - 'link "Paga tu #PredialLeón de manera sencilla en PAGONET ... de Tesorería Municipal León en Facebook. Reproducir en Facebook." [ref=e466] [cursor=pointer]':
+              - /url: https://www.facebook.com/tesorerialeon/videos/paga-tu-predialle%C3%B3n-de-manera-sencilla-en-pagonet-al-cumplir-todos-podemos-const/2475409016061617/
+              - img [ref=e471]
+            - generic [ref=e475]: ... pagos.leon.gob.mx/pagonet2/services/Predial/Predial_Form.aspx | Tesorería Municipal León | Facebook. Log in · Video. 󱡘. Tesorería Municipal León. Jan 10, 2020󰞋󱟠.
+        - generic [ref=e479]:
+          - generic [ref=e482]:
+            - link "PAGONET LEÓN - Catálogo de Pagos por Carrito Presidencia Municipal de León https://pagos.leon.gob.mx › pagonet2 › PagosECart" [ref=e484] [cursor=pointer]:
+              - /url: https://pagos.leon.gob.mx/pagonet2/PagosECart.aspx
+              - heading "PAGONET LEÓN - Catálogo de Pagos por Carrito" [level=3] [ref=e485]
+              - generic [ref=e487]:
+                - img [ref=e492]
+                - generic [ref=e494]:
+                  - generic [ref=e496]: Presidencia Municipal de León
+                  - generic [ref=e498]: https://pagos.leon.gob.mx › pagonet2 › PagosECart
+            - button "Acerca de este resultado" [ref=e499] [cursor=pointer]:
+              - img [ref=e502]
+          - generic [ref=e506]:
+            - emphasis [ref=e507]: Realiza la Consulta y el pago del Impuesto Predial
+            - text: Impuesto sobre ... Tus comentarios sobre el sitio son muy importantes. 01 (477) 7 88 00 00. Plaza Principal S/N
+      - navigation [ref=e510]:
+        - heading "Navegación de páginas" [level=1] [ref=e511]
+        - text: "1"
+        - link "Page 2" [ref=e514] [cursor=pointer]:
+          - /url: /search?q=pago+predial+leon+guanajuato+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=IDIwarGhO9qvqtsP_Z-78Qw&start=10&sa=N&sstk=AU9db-BKVVY9YHI7gSMZ04R3uXObPzeIEWWRPhUTRLVLicTcapTcBPtYWH1iFudUxZNzuLG51w_GtljHgw85_yc906W1nLg7FikmpQ&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4Q8tMDegQIHhAE
+          - text: "2"
+        - link "Page 3" [ref=e516] [cursor=pointer]:
+          - /url: /search?q=pago+predial+leon+guanajuato+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=IDIwarGhO9qvqtsP_Z-78Qw&start=20&sa=N&sstk=AU9db-BKVVY9YHI7gSMZ04R3uXObPzeIEWWRPhUTRLVLicTcapTcBPtYWH1iFudUxZNzuLG51w_GtljHgw85_yc906W1nLg7FikmpQ&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4Q8tMDegQIHhAG
+          - text: "3"
+        - link "Page 4" [ref=e518] [cursor=pointer]:
+          - /url: /search?q=pago+predial+leon+guanajuato+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=IDIwarGhO9qvqtsP_Z-78Qw&start=30&sa=N&sstk=AU9db-BKVVY9YHI7gSMZ04R3uXObPzeIEWWRPhUTRLVLicTcapTcBPtYWH1iFudUxZNzuLG51w_GtljHgw85_yc906W1nLg7FikmpQ&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4Q8tMDegQIHhAI
+          - text: "4"
+        - link "Page 5" [ref=e520] [cursor=pointer]:
+          - /url: /search?q=pago+predial+leon+guanajuato+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=IDIwarGhO9qvqtsP_Z-78Qw&start=40&sa=N&sstk=AU9db-BKVVY9YHI7gSMZ04R3uXObPzeIEWWRPhUTRLVLicTcapTcBPtYWH1iFudUxZNzuLG51w_GtljHgw85_yc906W1nLg7FikmpQ&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4Q8tMDegQIHhAK
+          - text: "5"
+        - link "Page 6" [ref=e522] [cursor=pointer]:
+          - /url: /search?q=pago+predial+leon+guanajuato+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=IDIwarGhO9qvqtsP_Z-78Qw&start=50&sa=N&sstk=AU9db-BKVVY9YHI7gSMZ04R3uXObPzeIEWWRPhUTRLVLicTcapTcBPtYWH1iFudUxZNzuLG51w_GtljHgw85_yc906W1nLg7FikmpQ&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4Q8tMDegQIHhAM
+          - text: "6"
+        - link "Page 7" [ref=e524] [cursor=pointer]:
+          - /url: /search?q=pago+predial+leon+guanajuato+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=IDIwarGhO9qvqtsP_Z-78Qw&start=60&sa=N&sstk=AU9db-BKVVY9YHI7gSMZ04R3uXObPzeIEWWRPhUTRLVLicTcapTcBPtYWH1iFudUxZNzuLG51w_GtljHgw85_yc906W1nLg7FikmpQ&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4Q8tMDegQIHhAO
+          - text: "7"
+        - link "Page 8" [ref=e526] [cursor=pointer]:
+          - /url: /search?q=pago+predial+leon+guanajuato+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=IDIwarGhO9qvqtsP_Z-78Qw&start=70&sa=N&sstk=AU9db-BKVVY9YHI7gSMZ04R3uXObPzeIEWWRPhUTRLVLicTcapTcBPtYWH1iFudUxZNzuLG51w_GtljHgw85_yc906W1nLg7FikmpQ&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4Q8tMDegQIHhAQ
+          - text: "8"
+        - link "Page 9" [ref=e528] [cursor=pointer]:
+          - /url: /search?q=pago+predial+leon+guanajuato+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=IDIwarGhO9qvqtsP_Z-78Qw&start=80&sa=N&sstk=AU9db-BKVVY9YHI7gSMZ04R3uXObPzeIEWWRPhUTRLVLicTcapTcBPtYWH1iFudUxZNzuLG51w_GtljHgw85_yc906W1nLg7FikmpQ&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4Q8tMDegQIHhAS
+          - text: "9"
+        - link "Page 10" [ref=e530] [cursor=pointer]:
+          - /url: /search?q=pago+predial+leon+guanajuato+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=IDIwarGhO9qvqtsP_Z-78Qw&start=90&sa=N&sstk=AU9db-BKVVY9YHI7gSMZ04R3uXObPzeIEWWRPhUTRLVLicTcapTcBPtYWH1iFudUxZNzuLG51w_GtljHgw85_yc906W1nLg7FikmpQ&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4Q8tMDegQIHhAU
+          - text: "10"
+        - heading "Siguiente" [level=2] [ref=e532]:
+          - link "Siguiente" [ref=e533] [cursor=pointer]:
+            - /url: /search?q=pago+predial+leon+guanajuato+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=IDIwarGhO9qvqtsP_Z-78Qw&start=10&sa=N&sstk=AU9db-BKVVY9YHI7gSMZ04R3uXObPzeIEWWRPhUTRLVLicTcapTcBPtYWH1iFudUxZNzuLG51w_GtljHgw85_yc906W1nLg7FikmpQ&ved=2ahUKEwixsZ7H3omVAxXal2oFHf3PLs4Q8NMDegQIHhAW
+            - generic [ref=e535]: Siguiente
+      - navigation
+    - contentinfo [ref=e536]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e537]
+      - generic [ref=e541]:
+        - generic [ref=e543]:
+          - text: México
+          - generic [ref=e545]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - A través de tu dirección IP" [ref=e547] [cursor=pointer]:
+              - generic [ref=e548]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e550]:
+                - text: "-"
+                - generic [ref=e551]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e553] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e556]:
+          - link "Ayuda" [ref=e557] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e558] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e559] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e560] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

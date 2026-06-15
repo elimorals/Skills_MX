@@ -1,0 +1,89 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - link "Ayuntamiento de Tijuana" [ref=e9] [cursor=pointer]:
+          - /url: https://pagos.tijuana.gob.mx
+          - img "Ayuntamiento de Tijuana" [ref=e10]
+        - generic [ref=e11]:
+          - navigation [ref=e12]:
+            - list [ref=e13]:
+              - listitem [ref=e14]:
+                - link "Salir" [ref=e15] [cursor=pointer]:
+                  - /url: https://www.tijuana.gob.mx
+          - text: a
+    - article [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e23]:
+            - heading "Pagos en Línea" [level=1] [ref=e24]
+            - separator [ref=e25]
+            - paragraph [ref=e26]:
+              - text: A través del sistema de
+              - strong [ref=e27]: Pagos en Línea
+              - text: usted podrá consultar y pagar su Predial, ingresar y consultar sus trámites de manera digital y consultar el historial de pagos.
+            - paragraph [ref=e28]:
+              - text: Para ingresar es necesario contar con una cuenta, para crearla por favor Haga click en el siguiente enlace
+              - link "REGISTRO" [ref=e29] [cursor=pointer]:
+                - /url: preRegistro.aspx
+            - img [ref=e30]
+          - generic [ref=e32]:
+            - strong [ref=e34]: Iniciar Sesión
+            - generic [ref=e35]:
+              - textbox "Usuario ó Correo Electrónico" [ref=e37]
+              - textbox "Contraseña" [ref=e39]
+              - button "Entrar" [ref=e41] [cursor=pointer]
+              - text: • ¿Olvido su Contraseña?
+              - link "Restaurar Contraseña" [ref=e42] [cursor=pointer]:
+                - /url: javascript:__doPostBack('ctl00$ContentPlaceHolder1$LinkButton1','')
+        - generic [ref=e47]:
+          - generic [ref=e51]:
+            - link [ref=e52] [cursor=pointer]:
+              - /url: seguro/index.aspx
+            - paragraph [ref=e53]: Consulta de viviendas aseguradas
+            - paragraph [ref=e54]:
+              - button "ENTRAR" [ref=e55] [cursor=pointer]
+          - generic [ref=e59]:
+            - link "Re-Impresión de Recibos de Predial" [ref=e60] [cursor=pointer]:
+              - /url: http://www.tijuana.gob.mx/recibo
+              - img "Re-Impresión de Recibos de Predial" [ref=e61]
+            - paragraph [ref=e62]: Si usted ya realizó su pago de predial por favor haga click aquí para imprimir su recibo.
+            - paragraph [ref=e63]:
+              - button "ENTRAR" [ref=e64] [cursor=pointer]
+          - generic [ref=e68]:
+            - img "Horarios" [ref=e69]
+            - strong [ref=e70]: Palacio Municipal
+            - text: "Lunes a Viernes: 8:00 am a 4:00 pm"
+            - strong [ref=e71]: Delegaciones
+            - text: "Lunes a Viernes: 8:00 am a 3:00 pm"
+  - contentinfo [ref=e72]:
+    - generic [ref=e74]:
+      - generic [ref=e77]:
+        - heading "Pagos" [level=4] [ref=e78]
+        - paragraph [ref=e79]: Los pagos realizados con tarjeta de débito se acreditan de 1 a 3 días hábiles, por lo tanto su recibo pagado aparecerá en la sección de historial de pagos en ese tiempo.
+        - paragraph [ref=e80]: Los pagos realizados con tarjeta de crédito se acreditan al momento o en el transcurso del día, si su recibo no se imprime en pantalla al momento, este aparecerá en la sección historial de pagos.
+      - generic [ref=e83]:
+        - heading "Transferencias Electrónicas" [level=4] [ref=e84]
+        - paragraph [ref=e85]:
+          - text: Si usted realizó su pago mediante transferencia electrónica por favor comuníquese al teléfono (664) 973-7653 o al correo
+          - link "facturacionrecaudacion@tijuana.gob.mx" [ref=e86] [cursor=pointer]:
+            - /url: mailto:facturacionrecaudacion@tijuana.gob.mx
+          - text: para que solicite la impresión de su recibo pagado.
+      - generic [ref=e89]:
+        - heading "Impresión de recibos" [level=4] [ref=e90]
+        - paragraph [ref=e91]: El sistema genera recibos en formato PDF con los cuales ustede podrá realizar su pago en cualquier banco de la ciudad o delegación.
+        - paragraph [ref=e92]: Por favor asegúrese que tenga deshabilitado el bloqueador de ventanas emergentes (Popup Blocker) para que pueda visualizar sus recibos.
+    - generic [ref=e95]:
+      - generic [ref=e96]:
+        - paragraph
+        - heading "Ayuntamiento de Tijuana, B. C." [level=4] [ref=e97]
+        - paragraph [ref=e98]:
+          - generic [ref=e99]:
+            - text: Avenida Independencia 1350, Zona Urbana Río, C. P. 22010
+            - text: Tijuana, Baja California, México
+        - paragraph
+      - generic [ref=e100]:
+        - img "911" [ref=e101]
+        - link "911" [ref=e102] [cursor=pointer]:
+          - /url: http://www.seguridadbc.gob.mx/contenidos/089.php
+          - img "911" [ref=e103]

@@ -1,0 +1,286 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: catastro sonora consulta sitio:sonora.gob.mx catastro sonora consulta sitio:sonora.gob.mx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dcatastro%2Bsonora%2Bconsulta%2Bsitio:sonora.gob.mx&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=catastro+sonora+consulta+sitio:sonora.gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn4CbM0gHaMP9RLFWGd8kHNhTJmj_r203Jn6uBSzsvMQA06cx6S_-rciuKUa3AoaNQsc0SZCpJ4iRk3r0FlYuy3kMX9QXynttwT_4_X-WKFfgVnwJ4QeRUEXDGGfHy1NhCwQJqHY5mvpLXn_bRA4a74m0cbwg4-u0Fno3SsaFQ0VwEdyZDxQTdECUOg3FIkzP09kpc7A&aep=1&ntc=1&sa=X&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQ2J8OegQIDBAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Shopping" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn4CbM0gHaMP9RLFWGd8kHNhTJmj_r203Jn6uBSzsvMQA06cx6S_-rciuKUa3AoaNQsc0SZCpJ4iRk3r0FlYuy3kMX9QXynttwT_4_X-WKFfgVnwJ4QeRUEXDGGfHy1NhCwQJqHY5mvpLXn_bRA4a74m0cbwg4-u0Fno3SsaFQ0VwEdyZDxQTdECUOg3FIkzP09kpc7A&q=catastro+sonora+consulta+sitio:sonora.gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e84]: Shopping
+          - listitem [ref=e85]:
+            - link "Imágenes" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn4CbM0gHaMP9RLFWGd8kHNhTJmj_r203Jn6uBSzsvMQA06cx6S_-rciuKUa3AoaNQsc0SZCpJ4iRk3r0FlYuy3kMX9QXynttwT_4_X-WKFfgVnwJ4QeRUEXDGGfHy1NhCwQJqHY5mvpLXn_bRA4a74m0cbwg4-u0Fno3SsaFQ0VwEdyZDxQTdECUOg3FIkzP09kpc7A&q=catastro+sonora+consulta+sitio:sonora.gob.mx&sa=X&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQtKgLegQIEhAB
+              - generic [ref=e88]: Imágenes
+          - listitem [ref=e89]:
+            - link "Videos" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn4CbM0gHaMP9RLFWGd8kHNhTJmj_r203Jn6uBSzsvMQA06cx6S_-rciuKUa3AoaNQsc0SZCpJ4iRk3r0FlYuy3kMX9QXynttwT_4_X-WKFfgVnwJ4QeRUEXDGGfHy1NhCwQJqHY5mvpLXn_bRA4a74m0cbwg4-u0Fno3SsaFQ0VwEdyZDxQTdECUOg3FIkzP09kpc7A&q=catastro+sonora+consulta+sitio:sonora.gob.mx&sa=X&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQtKgLegQIExAB
+              - generic [ref=e92]: Videos
+          - listitem [ref=e93]:
+            - link "Noticias" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=catastro+sonora+consulta+sitio:sonora.gob.mx&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn4CbM0gHaMP9RLFWGd8kHNhTJmj_r203Jn6uBSzsvMQA06cx6S_-rciuKUa3AoaNQsc0SZCpJ4iRk3r0FlYuy3kMX9QXynttwT_4_X-WKFfgVnwJ4QeRUEXDGGfHy1NhCwQJqHY5mvpLXn_bRA4a74m0cbwg4-u0Fno3SsaFQ0VwEdyZDxQTdECUOg3FIkzP09kpc7A&sa=X&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQ0pQJegQIERAB
+              - generic [ref=e96]: Noticias
+          - listitem [ref=e97]:
+            - link "Videos cortos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn4CbM0gHaMP9RLFWGd8kHNhTJmj_r203Jn6uBSzsvMQA06cx6S_-rciuKUa3AoaNQsc0SZCpJ4iRk3r0FlYuy3kMX9QXynttwT_4_X-WKFfgVnwJ4QeRUEXDGGfHy1NhCwQJqHY5mvpLXn_bRA4a74m0cbwg4-u0Fno3SsaFQ0VwEdyZDxQTdECUOg3FIkzP09kpc7A&q=catastro+sonora+consulta+sitio:sonora.gob.mx&sa=X&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQs6gLegQIDxAB
+              - generic [ref=e100]: Videos cortos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - main [ref=e123]:
+      - generic [ref=e127]:
+        - generic [ref=e130]:
+          - heading "Resultados web" [level=2] [ref=e131]
+          - generic [ref=e132]:
+            - generic [ref=e135]:
+              - link "Instituto Catastral y Registral del Estado de Sonora Instituto Catastral y Registral del Estado de Sonora https://icreson.sonora.gob.mx" [ref=e137] [cursor=pointer]:
+                - /url: https://icreson.sonora.gob.mx/
+                - heading "Instituto Catastral y Registral del Estado de Sonora" [level=3] [ref=e138]
+                - generic [ref=e144]:
+                  - generic [ref=e146]: Instituto Catastral y Registral del Estado de Sonora
+                  - generic [ref=e148]: https://icreson.sonora.gob.mx
+              - button "Acerca de este resultado" [ref=e149] [cursor=pointer]:
+                - img [ref=e152]
+            - generic [ref=e156]:
+              - text: Atención Usuarios en General · Servicios en Línea · Trámites frecuentes ICRESON · Certificado
+              - emphasis [ref=e157]: Catastral
+              - text: ", Cédula"
+              - emphasis [ref=e158]: Catastral
+              - text: · Anotaciones · Traslados de dominio.
+        - generic [ref=e169]:
+          - heading "Pensando" [level=2] [ref=e173]:
+            - generic [ref=e174]: Pensando
+          - progressbar "Generando" [ref=e175]
+        - generic [ref=e179]:
+          - heading "Resultados web" [level=2] [ref=e180]
+          - generic [ref=e181]:
+            - generic [ref=e184]:
+              - link "Servicios Catastrales - icreson - Gobierno del Estado de Sonora Instituto Catastral y Registral del Estado de Sonora https://icreson.sonora.gob.mx › Servicios" [ref=e186] [cursor=pointer]:
+                - /url: https://icreson.sonora.gob.mx/areas-estrategicas/servicios-catastrales
+                - heading "Servicios Catastrales - icreson - Gobierno del Estado de Sonora" [level=3] [ref=e187]
+                - generic [ref=e193]:
+                  - generic [ref=e195]: Instituto Catastral y Registral del Estado de Sonora
+                  - generic [ref=e197]: https://icreson.sonora.gob.mx › Servicios
+              - button "Acerca de este resultado" [ref=e198] [cursor=pointer]:
+                - img [ref=e201]
+            - generic [ref=e205]:
+              - emphasis [ref=e206]: Certificado Catastral
+              - text: ", Cédula Catastral · Certificación de Traslado de Dominio · Cédula Catastral, Informacion catastral · Registro o Refrendo de Perito Valuador."
+        - generic [ref=e210]:
+          - generic [ref=e213]:
+            - link "Direccion de Catastro Municipal catastro.gob.mx http://www.catastro.gob.mx" [ref=e215] [cursor=pointer]:
+              - /url: http://www.catastro.gob.mx/
+              - heading "Direccion de Catastro Municipal" [level=3] [ref=e216]
+              - generic [ref=e222]:
+                - generic [ref=e224]: catastro.gob.mx
+                - generic [ref=e226]: http://www.catastro.gob.mx
+            - button "Acerca de este resultado" [ref=e227] [cursor=pointer]:
+              - img [ref=e230]
+          - generic [ref=e234]:
+            - text: Consulta de Predial · Calculadora de Recargos · Catastro ... Nos Encontramos en.
+            - emphasis [ref=e235]: Mariano Escobedo 95. Esq. Veracruz, San Benito Cp. 83190, Hermosillo, Sonora
+            - text: .
+        - generic [ref=e239]:
+          - generic [ref=e242]:
+            - link "Certificado Catastral Simple / Servicios, Trámites y ... Gobierno del Estado de Sonora https://www.sonora.gob.mx › servicios-y-tramites › 620...." [ref=e244] [cursor=pointer]:
+              - /url: https://www.sonora.gob.mx/servicios-y-tramites/620.719-certificado-catastral-simple
+              - heading "Certificado Catastral Simple / Servicios, Trámites y ..." [level=3] [ref=e245]
+              - generic [ref=e251]:
+                - generic [ref=e253]: Gobierno del Estado de Sonora
+                - generic [ref=e255]: https://www.sonora.gob.mx › servicios-y-tramites › 620....
+            - button "Acerca de este resultado" [ref=e256] [cursor=pointer]:
+              - img [ref=e259]
+          - generic [ref=e262]: Documento que detalla las características físicas de un inmueble, incluye Nombre de Propietario y ubicación de Predio.
+        - generic [ref=e266]:
+          - generic [ref=e269]:
+            - link "Servicios en linea - icreson - Gobierno del Estado de Sonora Instituto Catastral y Registral del Estado de Sonora https://icreson.sonora.gob.mx › Servicios" [ref=e271] [cursor=pointer]:
+              - /url: https://icreson.sonora.gob.mx/areas-estrategicas/servicios-en-linea
+              - heading "Servicios en linea - icreson - Gobierno del Estado de Sonora" [level=3] [ref=e272]
+              - generic [ref=e278]:
+                - generic [ref=e280]: Instituto Catastral y Registral del Estado de Sonora
+                - generic [ref=e282]: https://icreson.sonora.gob.mx › Servicios
+            - button "Acerca de este resultado" [ref=e283] [cursor=pointer]:
+              - img [ref=e286]
+          - generic [ref=e290]:
+            - emphasis [ref=e291]: Instituto Catastral y Registral del Estado de Sonora
+            - text: ". ... 83280. Teléfonos: (662) 108-42-00. Correo Electrónico: contacto.icreson@sonora.gob.mx."
+        - generic [ref=e295]:
+          - generic [ref=e298]:
+            - link "Cédula de Información Catastral Gobierno del Estado de Sonora https://www.sonora.gob.mx › modalidades" [ref=e300] [cursor=pointer]:
+              - /url: https://www.sonora.gob.mx/servicios-y-tramites/638-cedula-catastral-informacion-catastral/modalidades
+              - heading "Cédula de Información Catastral" [level=3] [ref=e301]
+              - generic [ref=e307]:
+                - generic [ref=e309]: Gobierno del Estado de Sonora
+                - generic [ref=e311]: https://www.sonora.gob.mx › modalidades
+            - button "Acerca de este resultado" [ref=e312] [cursor=pointer]:
+              - img [ref=e315]
+          - generic [ref=e318]: Documento que contiene datos que detallan o describen las características físicas y jurídicas de los inmuebles y terrenos registrados en Sistema de Información ...
+        - generic [ref=e322]:
+          - generic [ref=e325]:
+            - link "Registro Público Instituto Catastral y Registral del Estado de Sonora https://www.icreson.gob.mx › servicios › consulta" [ref=e327] [cursor=pointer]:
+              - /url: https://www.icreson.gob.mx/servicios/consulta
+              - heading "Registro Público" [level=3] [ref=e328]
+              - generic [ref=e330]:
+                - img [ref=e335]
+                - generic [ref=e337]:
+                  - generic [ref=e339]: Instituto Catastral y Registral del Estado de Sonora
+                  - generic [ref=e341]: https://www.icreson.gob.mx › servicios › consulta
+            - button "Acerca de este resultado" [ref=e342] [cursor=pointer]:
+              - img [ref=e345]
+          - generic [ref=e348]: Descargando la aplicación, espere por favor...
+          - generic [ref=e350]:
+            - text: "Falta(n): sitio: ‎| Realizar una búsqueda con lo siguiente:"
+            - link "sitio:" [ref=e351] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=catastro+sonora+consulta+%22sitio:%22+sonora.gob.mx&sa=X&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQ5t4CegQIPBAB
+        - generic [ref=e355]:
+          - generic [ref=e358]:
+            - link "Instituto Catastral y Registral del Estado de Sonora - icreson Instituto Catastral y Registral del Estado de Sonora https://icreson.sonora.gob.mx › ..." [ref=e360] [cursor=pointer]:
+              - /url: https://icreson.sonora.gob.mx/index.php?option=com_sppagebuilder&view=page&id=50
+              - heading "Instituto Catastral y Registral del Estado de Sonora - icreson" [level=3] [ref=e361]
+              - generic [ref=e367]:
+                - generic [ref=e369]: Instituto Catastral y Registral del Estado de Sonora
+                - generic [ref=e371]: https://icreson.sonora.gob.mx › ...
+            - button "Acerca de este resultado" [ref=e372] [cursor=pointer]:
+              - img [ref=e375]
+          - generic [ref=e379]:
+            - emphasis [ref=e380]: Consulta de asientos registrales
+            - text: ". Instituto Catastral y Registral ... 83280. Teléfonos: (662) 108-42-00. Correo Electrónico: contacto.icreson@sonora.gob.mx."
+        - generic [ref=e385]:
+          - heading "Más preguntas" [level=2] [ref=e387]
+          - generic [ref=e388]:
+            - button "¿Cómo hacer una consulta en el catastro?" [ref=e394] [cursor=pointer]:
+              - generic [ref=e396]: ¿Cómo hacer una consulta en el catastro?
+              - img [ref=e399]
+            - button "¿Es obligatorio actualizar catastro?" [ref=e408] [cursor=pointer]:
+              - generic [ref=e410]: ¿Es obligatorio actualizar catastro?
+              - img [ref=e413]
+            - button "¿Cómo puedo obtener mi clave catastral si no la tengo?" [ref=e422] [cursor=pointer]:
+              - generic [ref=e424]: ¿Cómo puedo obtener mi clave catastral si no la tengo?
+              - img [ref=e427]
+            - button "¿Cómo puedo ver mi clave catastral?" [ref=e436] [cursor=pointer]:
+              - generic [ref=e438]: ¿Cómo puedo ver mi clave catastral?
+              - img [ref=e441]
+        - generic [ref=e446]:
+          - heading "Resultados web" [level=2] [ref=e447]
+          - generic [ref=e448]:
+            - generic [ref=e451]:
+              - link "Instituto Catastral y Registral del Estado de Sonora Gobierno del Estado de Sonora https://transparencia.sonora.gob.mx › informacion-publica" [ref=e453] [cursor=pointer]:
+                - /url: https://transparencia.sonora.gob.mx/informacion-publica/30/108/instituto-catastral-y-registral-del-estado-de-sonora/xx-solicitudes-de-acceso-a-la-informacion-publica
+                - heading "Instituto Catastral y Registral del Estado de Sonora" [level=3] [ref=e454]
+                - generic [ref=e456]:
+                  - img [ref=e461]
+                  - generic [ref=e463]:
+                    - generic [ref=e465]: Gobierno del Estado de Sonora
+                    - generic [ref=e467]: https://transparencia.sonora.gob.mx › informacion-publica
+              - button "Acerca de este resultado" [ref=e468] [cursor=pointer]:
+                - img [ref=e471]
+            - generic [ref=e475]:
+              - emphasis [ref=e476]: Proyecto Río Sonora 83280
+              - text: ". Hermosillo, Sonora. Teléfonos: +52 (662) 217 1274 - (662) 217 2562, (662) 213 1543 Correo Electrónico: tpp@sonora.gob.mx."
+      - navigation [ref=e479]:
+        - heading "Navegación de páginas" [level=1] [ref=e480]
+        - text: "1"
+        - link "Page 2" [ref=e483] [cursor=pointer]:
+          - /url: /search?q=catastro+sonora+consulta+sitio:sonora.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=hTYwarXgNfatqtsPpp_7kAY&start=10&sa=N&sstk=AU9db-Dx5LJuA9YlvaYYsTY3bbpm_S5ezi0Zai8k_kCWfEMPz2KCZ-SrQ7u5HH-BVXeHcw2twpa8DuPSIPcAithtmqHijrkUpfJL1A&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQ8tMDegQIHhAE
+          - text: "2"
+        - link "Page 3" [ref=e485] [cursor=pointer]:
+          - /url: /search?q=catastro+sonora+consulta+sitio:sonora.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=hTYwarXgNfatqtsPpp_7kAY&start=20&sa=N&sstk=AU9db-Dx5LJuA9YlvaYYsTY3bbpm_S5ezi0Zai8k_kCWfEMPz2KCZ-SrQ7u5HH-BVXeHcw2twpa8DuPSIPcAithtmqHijrkUpfJL1A&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQ8tMDegQIHhAG
+          - text: "3"
+        - link "Page 4" [ref=e487] [cursor=pointer]:
+          - /url: /search?q=catastro+sonora+consulta+sitio:sonora.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=hTYwarXgNfatqtsPpp_7kAY&start=30&sa=N&sstk=AU9db-Dx5LJuA9YlvaYYsTY3bbpm_S5ezi0Zai8k_kCWfEMPz2KCZ-SrQ7u5HH-BVXeHcw2twpa8DuPSIPcAithtmqHijrkUpfJL1A&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQ8tMDegQIHhAI
+          - text: "4"
+        - link "Page 5" [ref=e489] [cursor=pointer]:
+          - /url: /search?q=catastro+sonora+consulta+sitio:sonora.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=hTYwarXgNfatqtsPpp_7kAY&start=40&sa=N&sstk=AU9db-Dx5LJuA9YlvaYYsTY3bbpm_S5ezi0Zai8k_kCWfEMPz2KCZ-SrQ7u5HH-BVXeHcw2twpa8DuPSIPcAithtmqHijrkUpfJL1A&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQ8tMDegQIHhAK
+          - text: "5"
+        - link "Page 6" [ref=e491] [cursor=pointer]:
+          - /url: /search?q=catastro+sonora+consulta+sitio:sonora.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=hTYwarXgNfatqtsPpp_7kAY&start=50&sa=N&sstk=AU9db-Dx5LJuA9YlvaYYsTY3bbpm_S5ezi0Zai8k_kCWfEMPz2KCZ-SrQ7u5HH-BVXeHcw2twpa8DuPSIPcAithtmqHijrkUpfJL1A&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQ8tMDegQIHhAM
+          - text: "6"
+        - link "Page 7" [ref=e493] [cursor=pointer]:
+          - /url: /search?q=catastro+sonora+consulta+sitio:sonora.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=hTYwarXgNfatqtsPpp_7kAY&start=60&sa=N&sstk=AU9db-Dx5LJuA9YlvaYYsTY3bbpm_S5ezi0Zai8k_kCWfEMPz2KCZ-SrQ7u5HH-BVXeHcw2twpa8DuPSIPcAithtmqHijrkUpfJL1A&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQ8tMDegQIHhAO
+          - text: "7"
+        - link "Page 8" [ref=e495] [cursor=pointer]:
+          - /url: /search?q=catastro+sonora+consulta+sitio:sonora.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=hTYwarXgNfatqtsPpp_7kAY&start=70&sa=N&sstk=AU9db-Dx5LJuA9YlvaYYsTY3bbpm_S5ezi0Zai8k_kCWfEMPz2KCZ-SrQ7u5HH-BVXeHcw2twpa8DuPSIPcAithtmqHijrkUpfJL1A&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQ8tMDegQIHhAQ
+          - text: "8"
+        - link "Page 9" [ref=e497] [cursor=pointer]:
+          - /url: /search?q=catastro+sonora+consulta+sitio:sonora.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=hTYwarXgNfatqtsPpp_7kAY&start=80&sa=N&sstk=AU9db-Dx5LJuA9YlvaYYsTY3bbpm_S5ezi0Zai8k_kCWfEMPz2KCZ-SrQ7u5HH-BVXeHcw2twpa8DuPSIPcAithtmqHijrkUpfJL1A&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQ8tMDegQIHhAS
+          - text: "9"
+        - link "Page 10" [ref=e499] [cursor=pointer]:
+          - /url: /search?q=catastro+sonora+consulta+sitio:sonora.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=hTYwarXgNfatqtsPpp_7kAY&start=90&sa=N&sstk=AU9db-Dx5LJuA9YlvaYYsTY3bbpm_S5ezi0Zai8k_kCWfEMPz2KCZ-SrQ7u5HH-BVXeHcw2twpa8DuPSIPcAithtmqHijrkUpfJL1A&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQ8tMDegQIHhAU
+          - text: "10"
+        - heading "Siguiente" [level=2] [ref=e501]:
+          - link "Siguiente" [ref=e502] [cursor=pointer]:
+            - /url: /search?q=catastro+sonora+consulta+sitio:sonora.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=hTYwarXgNfatqtsPpp_7kAY&start=10&sa=N&sstk=AU9db-Dx5LJuA9YlvaYYsTY3bbpm_S5ezi0Zai8k_kCWfEMPz2KCZ-SrQ7u5HH-BVXeHcw2twpa8DuPSIPcAithtmqHijrkUpfJL1A&ved=2ahUKEwj1ttHf4omVAxX2lmoFHabPHmIQ8NMDegQIHhAW
+            - generic [ref=e504]: Siguiente
+      - navigation
+    - contentinfo [ref=e505]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e506]
+      - generic [ref=e510]:
+        - generic [ref=e512]:
+          - text: México
+          - generic [ref=e514]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - A través de tu dirección IP" [ref=e516] [cursor=pointer]:
+              - generic [ref=e517]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e519]:
+                - text: "-"
+                - generic [ref=e520]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e522] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e525]:
+          - link "Ayuda" [ref=e526] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e527] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e528] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e529] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

@@ -1,0 +1,147 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e50]:
+      - generic [ref=e51]:
+        - link "PÃƒÂ¡gina de inicio, Gobierno de MÃƒÂ©xico" [ref=e53] [cursor=pointer]:
+          - /url: https://www.gob.mx
+          - img "PÃƒÂ¡gina de inicio, Gobierno de MÃƒÂ©xico" [ref=e54]
+        - list [ref=e56]:
+          - listitem [ref=e57]:
+            - link "Trámites" [ref=e58] [cursor=pointer]:
+              - /url: https://www.gob.mxtramites
+          - listitem [ref=e59]:
+            - link "Gobierno" [ref=e60] [cursor=pointer]:
+              - /url: https://www.gob.mxgobierno
+          - listitem [ref=e61]:
+            - link "Búsqueda " [ref=e62] [cursor=pointer]:
+              - /url: https://www.gob.mxbusqueda
+              - generic [ref=e63]: Búsqueda
+              - generic [ref=e64]: 
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - img "Trabajo 2021" [ref=e5]
+      - img "Registro público de empresas de subcontratación" [ref=e7]
+      - generic [ref=e8]:
+        - heading "La Ley Federal del Trabajo en su artículo 15 establece que las personas físicas o morales que proporcionen servicios especializados o ejecuten obras especializadas deben contar con un registro ante la Secretaría del Trabajo y Previsión Social." [level=4] [ref=e9]
+        - separator [ref=e10]
+        - heading "En cumplimiento a dicha disposición, la Secretaría del Trabajo y Previsión Social pone a su disposición la plataforma repse.stps.gob.mx, plataforma que le permite ingresar su solicitud de registro al Padrón Público de Contratistas de Servicios Especializados u Obras Especializadas." [level=5] [ref=e11]
+        - separator [ref=e12]
+        - generic [ref=e13]:
+          - button "Preguntas Frecuentes" [ref=e14] [cursor=pointer]:
+            - generic [ref=e15]: Preguntas Frecuentes
+          - button "Guía registro" [ref=e16] [cursor=pointer]:
+            - link "Guía registro" [ref=e17]:
+              - /url: /assets/GUIA_REPSE.pdf
+              - generic [ref=e18]: Guía registro
+    - generic [ref=e19]:
+      - generic:
+        - generic [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: ¿Para qué es el registro?
+          - img "abrir" [ref=e22]
+        - generic [ref=e23] [cursor=pointer]:
+          - generic [ref=e24]: ¿Cuál es el procedimiento?
+          - img "abrir" [ref=e25]
+        - generic [ref=e26] [cursor=pointer]:
+          - generic [ref=e27]: ¿Cómo reviso el estatus de mi trámite?
+          - img "abrir" [ref=e28]
+  - generic [ref=e30]:
+    - generic [ref=e31]:
+      - generic [ref=e34] [cursor=pointer]:
+        - img "Ingresa a REPSE" [ref=e35]
+        - generic [ref=e36]:
+          - generic [ref=e37]: Ingresar
+          - generic [ref=e38]: Registrarme
+      - generic [ref=e41] [cursor=pointer]:
+        - img "Consulta en REPSE" [ref=e42]
+        - generic [ref=e43]:
+          - generic [ref=e44]: Consulta
+          - generic [ref=e45]: el catálogo
+    - generic [ref=e124]:
+      - generic [ref=e126]:
+        - paragraph [ref=e127]: En cumplimiento a lo establecido en el artículo 15 de la Ley Federal del Trabajo, que establece la obligación de publicar en un portal de internet el padrón de personas físicas o morales que obtengan el registro para proporcionar servicios especializados o la ejecución de obras especializadas mediante subcontratación, se pone a disposición de cualquier interesado la versión pública del Padrón Público de Contratistas de Servicios Especializados u Obras Especializadas.
+        - paragraph [ref=e128]: Lo anterior con apoyo en lo dispuesto por los artículos 2, fracción XVII, 5 y 22, fracción VIII de la Ley General de Protección de Datos Personales en posesión de Sujetos Obligados; 120, segundo párrafo, fracción I de la Ley General de Transparencia y Acceso a la Información Pública y 117, segundo párrafo, fracción I de la Ley Federal de Transparencia y Acceso a la Información Pública.
+      - button "Consultar" [ref=e132] [cursor=pointer]:
+        - generic [ref=e133]: Consultar
+  - iframe [ref=e49]:
+    - generic [ref=f1e5]:
+      - generic [ref=f1e6]:
+        - text: protegido por
+        - strong [ref=f1e7]: reCAPTCHA
+      - generic [ref=f1e9]:
+        - text: "Para el propietario del sitio: v1beta1 dejó de estar disponible."
+        - link "Toma medidas." [ref=f1e10] [cursor=pointer]:
+          - /url: https://docs.cloud.google.com/recaptcha/docs/migration-v1
+  - contentinfo [ref=e65]:
+    - generic [ref=e68]:
+      - img "logo gobierno de mÃƒÂ©xico" [ref=e70]
+      - generic [ref=e71]:
+        - heading "Enlaces" [level=5] [ref=e72]
+        - list [ref=e73]:
+          - listitem [ref=e74]:
+            - link "Participa" [ref=e75] [cursor=pointer]:
+              - /url: https://participa.gob.mx
+          - listitem [ref=e76]:
+            - link "Publicaciones Oficiales" [ref=e77] [cursor=pointer]:
+              - /url: https://www.gob.mx/publicaciones
+          - listitem [ref=e78]:
+            - link "Marco Jurídico" [ref=e79] [cursor=pointer]:
+              - /url: http://www.ordenjuridico.gob.mx
+          - listitem [ref=e80]:
+            - link "Plataforma Nacional de Transparencia" [ref=e81] [cursor=pointer]:
+              - /url: https://consultapublicamx.inai.org.mx/vut-web/
+          - listitem [ref=e82]:
+            - link "Alerta" [ref=e83] [cursor=pointer]:
+              - /url: https://alertadores.funcionpublica.gob.mx/
+          - listitem [ref=e84]:
+            - link "Denuncia" [ref=e85] [cursor=pointer]:
+              - /url: https://sidec.funcionpublica.gob.mx
+      - generic [ref=e86]:
+        - heading "¿Qué es gob.mx?" [level=5] [ref=e87]
+        - paragraph [ref=e88]:
+          - text: Es el portal único de trámites, información y participación ciudadana.
+          - link "Leer más" [ref=e89] [cursor=pointer]:
+            - /url: https://www.gob.mxque-es-gobmx
+        - list [ref=e90]:
+          - listitem [ref=e91]:
+            - link "Portal de datos abiertos" [ref=e92] [cursor=pointer]:
+              - /url: https://datos.gob.mx
+          - listitem [ref=e93]:
+            - link "Declaración de accesibilidad" [ref=e94] [cursor=pointer]:
+              - /url: https://www.gob.mxaccesibilidad
+          - listitem [ref=e95]:
+            - link "Aviso de privacidad integral" [ref=e96] [cursor=pointer]:
+              - /url: https://www.gob.mxprivacidadintegral
+          - listitem [ref=e97]:
+            - link "Aviso de privacidad simplificado" [ref=e98] [cursor=pointer]:
+              - /url: https://www.gob.mxprivacidadsimplificado
+          - listitem [ref=e99]:
+            - link "Términos y Condiciones" [ref=e100] [cursor=pointer]:
+              - /url: https://www.gob.mxterminos
+          - listitem [ref=e101]:
+            - link "Política de seguridad" [ref=e102] [cursor=pointer]:
+              - /url: https://www.gob.mxterminos#medidas-seguridad-informacion
+          - listitem [ref=e103]:
+            - link "Mapa de sitio" [ref=e104] [cursor=pointer]:
+              - /url: https://www.gob.mxsitemap
+      - generic [ref=e105]:
+        - heading "Denuncia contra servidores públicos" [level=5] [ref=e106]:
+          - link "Denuncia contra servidores públicos" [ref=e107] [cursor=pointer]:
+            - /url: https://www.gob.mxtramites/ficha/presentacion-de-quejas-y-denuncias-en-la-sfp/SFP54
+        - heading "Síguenos en" [level=5] [ref=e108]
+        - list [ref=e109]:
+          - listitem [ref=e110]:
+            - link "Facebook" [ref=e111] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobmexico
+              - img "Facebook" [ref=e112]
+          - listitem [ref=e113]:
+            - link "Twitter" [ref=e114] [cursor=pointer]:
+              - /url: https://twitter.com/GobiernoMX
+              - img "Twitter" [ref=e115]
+          - listitem [ref=e116]:
+            - link "Instagram" [ref=e117] [cursor=pointer]:
+              - /url: https://www.instagram.com/gobmexico/
+              - img "Instagram" [ref=e118]
+          - listitem [ref=e119]:
+            - link "Youtube" [ref=e120] [cursor=pointer]:
+              - /url: https://www.youtube.com/@gobiernodemexico
+              - img "Youtube" [ref=e121]

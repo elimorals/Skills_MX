@@ -1,0 +1,334 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: instituto catastral nuevo leon consulta sitio:nl.gob.mx instituto catastral nuevo leon consulta sitio:nl.gob.mx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dinstituto%2Bcatastral%2Bnuevo%2Bleon%2Bconsulta%2Bsitio:nl.gob.mx&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3GsS-y6TGO0KVHfhL9pliXNfdawhgkTLMcLphGhrPWmKlXAdMtoesdLF_8eZKu_FfalFebw90u216Qu2ZMXFtHljGeKPEi4mBerld7UAHqTuePOjH9NUMrarzuiitFCXBs3EOqorfulBlmb2YrZm9D3WtYuLrTwZFTMGu5C9Q-Asbq3qzeO6HkYMcQJZYsJKikzTNlQ&aep=1&ntc=1&sa=X&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQ2J8OegQIDxAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&tbm=nws&source=lnms&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3GsS-y6TGO0KVHfhL9pliXNfdawhgkTLMcLphGhrPWmKlXAdMtoesdLF_8eZKu_FfalFebw90u216Qu2ZMXFtHljGeKPEi4mBerld7UAHqTuePOjH9NUMrarzuiitFCXBs3EOqorfulBlmb2YrZm9D3WtYuLrTwZFTMGu5C9Q-Asbq3qzeO6HkYMcQJZYsJKikzTNlQ&sa=X&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQ0pQJegQIFBAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Shopping" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3GsS-y6TGO0KVHfhL9pliXNfdawhgkTLMcLphGhrPWmKlXAdMtoesdLF_8eZKu_FfalFebw90u216Qu2ZMXFtHljGeKPEi4mBerld7UAHqTuePOjH9NUMrarzuiitFCXBs3EOqorfulBlmb2YrZm9D3WtYuLrTwZFTMGu5C9Q-Asbq3qzeO6HkYMcQJZYsJKikzTNlQ&q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e88]: Shopping
+          - listitem [ref=e89]:
+            - link "Imágenes" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3GsS-y6TGO0KVHfhL9pliXNfdawhgkTLMcLphGhrPWmKlXAdMtoesdLF_8eZKu_FfalFebw90u216Qu2ZMXFtHljGeKPEi4mBerld7UAHqTuePOjH9NUMrarzuiitFCXBs3EOqorfulBlmb2YrZm9D3WtYuLrTwZFTMGu5C9Q-Asbq3qzeO6HkYMcQJZYsJKikzTNlQ&q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&sa=X&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQtKgLegQIEhAB
+              - generic [ref=e92]: Imágenes
+          - listitem [ref=e93]:
+            - link "Videos cortos" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3GsS-y6TGO0KVHfhL9pliXNfdawhgkTLMcLphGhrPWmKlXAdMtoesdLF_8eZKu_FfalFebw90u216Qu2ZMXFtHljGeKPEi4mBerld7UAHqTuePOjH9NUMrarzuiitFCXBs3EOqorfulBlmb2YrZm9D3WtYuLrTwZFTMGu5C9Q-Asbq3qzeO6HkYMcQJZYsJKikzTNlQ&q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&sa=X&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQs6gLegQIExAB
+              - generic [ref=e96]: Videos cortos
+          - listitem [ref=e97]:
+            - link "Videos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3GsS-y6TGO0KVHfhL9pliXNfdawhgkTLMcLphGhrPWmKlXAdMtoesdLF_8eZKu_FfalFebw90u216Qu2ZMXFtHljGeKPEi4mBerld7UAHqTuePOjH9NUMrarzuiitFCXBs3EOqorfulBlmb2YrZm9D3WtYuLrTwZFTMGu5C9Q-Asbq3qzeO6HkYMcQJZYsJKikzTNlQ&q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&sa=X&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQtKgLegQIERAB
+              - generic [ref=e100]: Videos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - main [ref=e123]:
+      - generic [ref=e127]:
+        - generic [ref=e130]:
+          - heading "Resultado web con vínculos a sitio" [level=2] [ref=e131]
+          - generic [ref=e132]:
+            - generic [ref=e136]:
+              - generic [ref=e138]:
+                - link "Instituto Registral y Catastral del Estado de Nuevo León ircnl.gob.mx https://ircnl.gob.mx" [ref=e140] [cursor=pointer]:
+                  - /url: https://ircnl.gob.mx/
+                  - heading "Instituto Registral y Catastral del Estado de Nuevo León" [level=3] [ref=e141]
+                  - generic [ref=e147]:
+                    - generic [ref=e149]: ircnl.gob.mx
+                    - generic [ref=e151]: https://ircnl.gob.mx
+                - button "Acerca de este resultado" [ref=e152] [cursor=pointer]:
+                  - img [ref=e155]
+              - generic [ref=e159]:
+                - text: Contrata en línea tus Alertas
+                - emphasis [ref=e160]: Catastral
+                - text: e Inmobiliaria. Protege tu propiedad al recibir notificaciones vía SMS acerca de cualquier trámite o movimiento sobre tu ...
+            - group "Recomendaciones personalizadas en función de tu historial" [ref=e161]:
+              - rowgroup [ref=e162]:
+                - row "Trámites catastrales Instituto Registral y Catastral del Estado de Nuevo León. Inicio ..." [ref=e163]:
+                  - cell "Trámites catastrales Instituto Registral y Catastral del Estado de Nuevo León. Inicio ..." [ref=e164]:
+                    - generic [ref=e170]:
+                      - heading "Trámites catastrales" [level=3] [ref=e171]:
+                        - link "Trámites catastrales" [ref=e172] [cursor=pointer]:
+                          - /url: https://ircnl.gob.mx/tramites-catastrales/
+                          - text: Trámites catastrales
+                      - generic [ref=e175]: Instituto Registral y Catastral del Estado de Nuevo León. Inicio ...
+                - row "SGC SGC. Sistema integral de Gestión Catastral e información ..." [ref=e176]:
+                  - cell "SGC SGC. Sistema integral de Gestión Catastral e información ..." [ref=e177]:
+                    - generic [ref=e183]:
+                      - heading "SGC" [level=3] [ref=e184]:
+                        - link "SGC" [ref=e185] [cursor=pointer]:
+                          - /url: https://catastro.ircnl.gob.mx/
+                          - text: SGC
+                      - generic [ref=e188]: SGC. Sistema integral de Gestión Catastral e información ...
+                - row "Nuestros trámites Título, Dependencia, Servicio en línea. Aclaratoria de ..." [ref=e189]:
+                  - cell "Nuestros trámites Título, Dependencia, Servicio en línea. Aclaratoria de ..." [ref=e190]:
+                    - generic [ref=e196]:
+                      - heading "Nuestros trámites" [level=3] [ref=e197]:
+                        - link "Nuestros trámites" [ref=e198] [cursor=pointer]:
+                          - /url: https://ircnl.gob.mx/nuestros-tramites/
+                          - text: Nuestros trámites
+                      - generic [ref=e201]: Título, Dependencia, Servicio en línea. Aclaratoria de ...
+                - row "Consulta boleta Consulta el estatus de tus trámites. Trámites Catastrales; Trámites ..." [ref=e202]:
+                  - cell "Consulta boleta Consulta el estatus de tus trámites. Trámites Catastrales; Trámites ..." [ref=e203]:
+                    - generic [ref=e209]:
+                      - heading "Consulta boleta" [level=3] [ref=e210]:
+                        - link "Consulta boleta" [ref=e211] [cursor=pointer]:
+                          - /url: https://miportal.ircnl.gob.mx/ConsultaTuBoleta
+                          - text: Consulta boleta
+                      - generic [ref=e214]: Consulta el estatus de tus trámites. Trámites Catastrales; Trámites ...
+                - row "Mi portal IRC•NL Mi portal. IRC•NL. close. Iniciar Sesión. Curp. Contraseña ..." [ref=e215]:
+                  - cell "Mi portal IRC•NL Mi portal. IRC•NL. close. Iniciar Sesión. Curp. Contraseña ..." [ref=e216]:
+                    - generic [ref=e222]:
+                      - heading "Mi portal IRC•NL" [level=3] [ref=e223]:
+                        - link "Mi portal IRC•NL" [ref=e224] [cursor=pointer]:
+                          - /url: https://miportal.ircnl.gob.mx/
+                          - text: Mi portal IRC•NL
+                      - generic [ref=e227]: Mi portal. IRC•NL. close. Iniciar Sesión. Curp. Contraseña ...
+                - row "Más resultados de ircnl.gob.mx »" [ref=e229]:
+                  - cell "Más resultados de ircnl.gob.mx »" [ref=e230]:
+                    - link "Más resultados de ircnl.gob.mx »" [ref=e232] [cursor=pointer]:
+                      - /url: /search?q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx+site:ircnl.gob.mx&sca_esv=c6c16ab1eb0a4421&sa=X&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQrAN6BAgbEAE
+        - generic [ref=e235]:
+          - heading "Resultados web" [level=2] [ref=e236]
+          - generic [ref=e237]:
+            - generic [ref=e240]:
+              - link "Instituto Registral y Catastral del Estado de Nuevo León Gobierno del Estado de Nuevo León http://www.nl.gob.mx › irc" [ref=e242] [cursor=pointer]:
+                - /url: http://www.nl.gob.mx/es/irc
+                - heading "Instituto Registral y Catastral del Estado de Nuevo León" [level=3] [ref=e243]
+                - generic [ref=e249]:
+                  - generic [ref=e251]: Gobierno del Estado de Nuevo León
+                  - generic [ref=e253]: http://www.nl.gob.mx › irc
+              - button "Acerca de este resultado" [ref=e254] [cursor=pointer]:
+                - img [ref=e257]
+            - generic [ref=e261]:
+              - text: Este es un
+              - emphasis [ref=e262]: sitio
+              - text: web oficial del Gobierno del Estado de
+              - emphasis [ref=e263]: Nuevo León
+              - text: . ... Los
+              - emphasis [ref=e264]: sitios
+              - text: web oficiales del Gobierno de
+              - emphasis [ref=e265]: Nuevo León
+              - text: están adheridos al dominio
+              - emphasis [ref=e266]: nl
+              - text: .
+              - emphasis [ref=e267]: gob
+              - text: .
+              - emphasis [ref=e268]: mx
+              - text: .
+        - generic [ref=e273]:
+          - heading "Más preguntas" [level=2] [ref=e275]
+          - generic [ref=e276]:
+            - button "¿Cómo checar mi Catastro en Nuevo León?" [ref=e282] [cursor=pointer]:
+              - generic [ref=e284]: ¿Cómo checar mi Catastro en Nuevo León?
+              - img [ref=e287]
+            - button "¿Cómo consultar el Catastro por internet?" [ref=e296] [cursor=pointer]:
+              - generic [ref=e298]: ¿Cómo consultar el Catastro por internet?
+              - img [ref=e301]
+            - button "¿Cómo saber quién es el dueño de una propiedad en Nuevo León?" [ref=e310] [cursor=pointer]:
+              - generic [ref=e312]: ¿Cómo saber quién es el dueño de una propiedad en Nuevo León?
+              - img [ref=e315]
+            - button "¿Cómo puedo actualizar los datos catastrales en Nuevo León?" [ref=e324] [cursor=pointer]:
+              - generic [ref=e326]: ¿Cómo puedo actualizar los datos catastrales en Nuevo León?
+              - img [ref=e329]
+        - generic [ref=e334]:
+          - heading "Resultados web" [level=2] [ref=e335]
+          - generic [ref=e336]:
+            - generic [ref=e339]:
+              - link "Directorio del Instituto Registral y Catastral Gobierno del Estado de Nuevo León http://www.nl.gob.mx › publicaciones › directorio-del-i..." [ref=e341] [cursor=pointer]:
+                - /url: http://www.nl.gob.mx/es/publicaciones/directorio-del-instituto-registral-y-catastral
+                - heading "Directorio del Instituto Registral y Catastral" [level=3] [ref=e342]
+                - generic [ref=e348]:
+                  - generic [ref=e350]: Gobierno del Estado de Nuevo León
+                  - generic [ref=e352]: http://www.nl.gob.mx › publicaciones › directorio-del-i...
+              - button "Acerca de este resultado" [ref=e353] [cursor=pointer]:
+                - img [ref=e356]
+            - generic [ref=e360]:
+              - text: Ponemos a tu disposición este directorio con
+              - emphasis [ref=e361]: contactos, ubicaciones, teléfonos y otros datos
+              - text: para que acudas a solicitar información o realizar algún ...
+        - generic [ref=e365]:
+          - generic [ref=e368]:
+            - link "Instituto Registral y Catastral del Estado de Nuevo León Facebook · Instituto Registral y Catastral del Estado de Nuevo León Más de 2 K seguidores" [ref=e370] [cursor=pointer]:
+              - /url: https://www.facebook.com/ircnuevoleon/?locale=es_LA
+              - heading "Instituto Registral y Catastral del Estado de Nuevo León" [level=3] [ref=e371]
+              - generic [ref=e377]:
+                - generic [ref=e379]: Facebook · Instituto Registral y Catastral del Estado de Nuevo León
+                - generic [ref=e381]: Más de 2 K seguidores
+            - button "Acerca de este resultado" [ref=e382] [cursor=pointer]:
+              - img [ref=e385]
+          - generic [ref=e389]:
+            - text: Con LIA, la asistente virtual de Atención Digital Ciudadana del IRCNL,
+            - emphasis [ref=e390]: puedes consultar el estatus de tu trámite de forma rápida y sencilla desde WhatsApp
+            - text: . ✓ ...
+        - generic [ref=e394]:
+          - generic [ref=e397]:
+            - link "Nuevo León lidera la transformación digital en Registro ... Gobierno del Estado de Nuevo León http://www.nl.gob.mx › boletines › nuevo-leon-lidera-l..." [ref=e399] [cursor=pointer]:
+              - /url: http://www.nl.gob.mx/es/boletines/nuevo-leon-lidera-la-transformacion-digital-en-registro-publico-y-catastro
+              - heading "Nuevo León lidera la transformación digital en Registro ..." [level=3] [ref=e400]
+              - generic [ref=e406]:
+                - generic [ref=e408]: Gobierno del Estado de Nuevo León
+                - generic [ref=e410]: http://www.nl.gob.mx › boletines › nuevo-leon-lidera-l...
+            - button "Acerca de este resultado" [ref=e411] [cursor=pointer]:
+              - img [ref=e414]
+          - generic [ref=e417]:
+            - generic [ref=e418]: 8 abr 2025 —
+            - generic [ref=e419]:
+              - text: "-"
+              - emphasis [ref=e420]: El Instituto Registral y Catastral de Nuevo León
+              - text: (IRCNL) fue reconocido, por segundo año consecutivo, como primer lugar nacional en la ...
+        - generic [ref=e424]:
+          - generic [ref=e427]:
+            - link "Instituto Registral y Catastral Gobierno del Estado de Nuevo León https://www.nl.gob.mx › taxonomy › term" [ref=e429] [cursor=pointer]:
+              - /url: https://www.nl.gob.mx/es/taxonomy/term/1554
+              - heading "Instituto Registral y Catastral" [level=3] [ref=e430]
+              - generic [ref=e436]:
+                - generic [ref=e438]: Gobierno del Estado de Nuevo León
+                - generic [ref=e440]: https://www.nl.gob.mx › taxonomy › term
+            - button "Acerca de este resultado" [ref=e441] [cursor=pointer]:
+              - img [ref=e444]
+          - generic [ref=e448]:
+            - text: Este es un
+            - emphasis [ref=e449]: sitio
+            - text: web oficial del Gobierno del Estado de
+            - emphasis [ref=e450]: Nuevo León
+            - text: . ... Los
+            - emphasis [ref=e451]: sitios
+            - text: web oficiales del Gobierno de
+            - emphasis [ref=e452]: Nuevo León
+            - text: están adheridos al dominio
+            - emphasis [ref=e453]: nl
+            - text: .
+            - emphasis [ref=e454]: gob
+            - text: .
+            - emphasis [ref=e455]: mx
+            - text: .
+        - generic [ref=e459]:
+          - generic [ref=e462]:
+            - link "Nuevo león lidera en modernización y transformación digital Gobierno del Estado de Nuevo León http://www.nl.gob.mx › boletines › nuevo-leon-lidera-e..." [ref=e464] [cursor=pointer]:
+              - /url: http://www.nl.gob.mx/es/boletines/nuevo-leon-lidera-en-modernizacion-y-transformacion-digital
+              - heading "Nuevo león lidera en modernización y transformación digital" [level=3] [ref=e465]
+              - generic [ref=e471]:
+                - generic [ref=e473]: Gobierno del Estado de Nuevo León
+                - generic [ref=e475]: http://www.nl.gob.mx › boletines › nuevo-leon-lidera-e...
+            - button "Acerca de este resultado" [ref=e476] [cursor=pointer]:
+              - img [ref=e479]
+          - generic [ref=e482]:
+            - generic [ref=e483]: 4 jul 2025 —
+            - generic [ref=e484]:
+              - text: El IRCNL avanza en su transformación digital con la
+              - emphasis [ref=e485]: nueva
+              - text: Ventanilla Digital de trámites, Asistentes virtuales y
+              - emphasis [ref=e486]: Consulta
+              - text: de trámites en ...
+      - navigation [ref=e489]:
+        - heading "Navegación de páginas" [level=1] [ref=e490]
+        - text: "1"
+        - link "Page 2" [ref=e493] [cursor=pointer]:
+          - /url: /search?q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=RzYwaofzA4e2qtsPkZ3gqA0&start=10&sa=N&sstk=AU9db-AzaDhHRyxxBD-fuGaAZijQAxqk4bF41CiZWnvo9Hes-v9tLiO9YMB_Z4beKT0b0lLGndo1LPpYAPgIbWkkm7UWfbt0l_QmEA&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQ8tMDegQIIxAE
+          - text: "2"
+        - link "Page 3" [ref=e495] [cursor=pointer]:
+          - /url: /search?q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=RzYwaofzA4e2qtsPkZ3gqA0&start=20&sa=N&sstk=AU9db-AzaDhHRyxxBD-fuGaAZijQAxqk4bF41CiZWnvo9Hes-v9tLiO9YMB_Z4beKT0b0lLGndo1LPpYAPgIbWkkm7UWfbt0l_QmEA&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQ8tMDegQIIxAG
+          - text: "3"
+        - link "Page 4" [ref=e497] [cursor=pointer]:
+          - /url: /search?q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=RzYwaofzA4e2qtsPkZ3gqA0&start=30&sa=N&sstk=AU9db-AzaDhHRyxxBD-fuGaAZijQAxqk4bF41CiZWnvo9Hes-v9tLiO9YMB_Z4beKT0b0lLGndo1LPpYAPgIbWkkm7UWfbt0l_QmEA&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQ8tMDegQIIxAI
+          - text: "4"
+        - link "Page 5" [ref=e499] [cursor=pointer]:
+          - /url: /search?q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=RzYwaofzA4e2qtsPkZ3gqA0&start=40&sa=N&sstk=AU9db-AzaDhHRyxxBD-fuGaAZijQAxqk4bF41CiZWnvo9Hes-v9tLiO9YMB_Z4beKT0b0lLGndo1LPpYAPgIbWkkm7UWfbt0l_QmEA&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQ8tMDegQIIxAK
+          - text: "5"
+        - link "Page 6" [ref=e501] [cursor=pointer]:
+          - /url: /search?q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=RzYwaofzA4e2qtsPkZ3gqA0&start=50&sa=N&sstk=AU9db-AzaDhHRyxxBD-fuGaAZijQAxqk4bF41CiZWnvo9Hes-v9tLiO9YMB_Z4beKT0b0lLGndo1LPpYAPgIbWkkm7UWfbt0l_QmEA&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQ8tMDegQIIxAM
+          - text: "6"
+        - link "Page 7" [ref=e503] [cursor=pointer]:
+          - /url: /search?q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=RzYwaofzA4e2qtsPkZ3gqA0&start=60&sa=N&sstk=AU9db-AzaDhHRyxxBD-fuGaAZijQAxqk4bF41CiZWnvo9Hes-v9tLiO9YMB_Z4beKT0b0lLGndo1LPpYAPgIbWkkm7UWfbt0l_QmEA&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQ8tMDegQIIxAO
+          - text: "7"
+        - link "Page 8" [ref=e505] [cursor=pointer]:
+          - /url: /search?q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=RzYwaofzA4e2qtsPkZ3gqA0&start=70&sa=N&sstk=AU9db-AzaDhHRyxxBD-fuGaAZijQAxqk4bF41CiZWnvo9Hes-v9tLiO9YMB_Z4beKT0b0lLGndo1LPpYAPgIbWkkm7UWfbt0l_QmEA&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQ8tMDegQIIxAQ
+          - text: "8"
+        - link "Page 9" [ref=e507] [cursor=pointer]:
+          - /url: /search?q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=RzYwaofzA4e2qtsPkZ3gqA0&start=80&sa=N&sstk=AU9db-AzaDhHRyxxBD-fuGaAZijQAxqk4bF41CiZWnvo9Hes-v9tLiO9YMB_Z4beKT0b0lLGndo1LPpYAPgIbWkkm7UWfbt0l_QmEA&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQ8tMDegQIIxAS
+          - text: "9"
+        - link "Page 10" [ref=e509] [cursor=pointer]:
+          - /url: /search?q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=RzYwaofzA4e2qtsPkZ3gqA0&start=90&sa=N&sstk=AU9db-AzaDhHRyxxBD-fuGaAZijQAxqk4bF41CiZWnvo9Hes-v9tLiO9YMB_Z4beKT0b0lLGndo1LPpYAPgIbWkkm7UWfbt0l_QmEA&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQ8tMDegQIIxAU
+          - text: "10"
+        - heading "Siguiente" [level=2] [ref=e511]:
+          - link "Siguiente" [ref=e512] [cursor=pointer]:
+            - /url: /search?q=instituto+catastral+nuevo+leon+consulta+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=RzYwaofzA4e2qtsPkZ3gqA0&start=10&sa=N&sstk=AU9db-AzaDhHRyxxBD-fuGaAZijQAxqk4bF41CiZWnvo9Hes-v9tLiO9YMB_Z4beKT0b0lLGndo1LPpYAPgIbWkkm7UWfbt0l_QmEA&ved=2ahUKEwjHstfB4omVAxUHm2oFHZEOGNUQ8NMDegQIIxAW
+            - generic [ref=e514]: Siguiente
+      - navigation
+    - contentinfo [ref=e515]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e516]
+      - generic [ref=e520]:
+        - generic [ref=e522]:
+          - text: México
+          - generic [ref=e524]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - A través de tu dirección IP" [ref=e526] [cursor=pointer]:
+              - generic [ref=e527]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e529]:
+                - text: "-"
+                - generic [ref=e530]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e532] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e535]:
+          - link "Ayuda" [ref=e536] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e537] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e538] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e539] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

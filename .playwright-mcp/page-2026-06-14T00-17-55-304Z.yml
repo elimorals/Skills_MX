@@ -1,0 +1,38 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - img "Escudo" [ref=e3]
+    - img "seguimos avanzando" [ref=e4]
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7] [cursor=pointer]:
+        - img "PREDIAL"
+        - heading "Paga tu predial" [level=3] [ref=e8]
+        - heading "Consulta y pago de saldos de prediales" [level=5] [ref=e9]
+      - generic [ref=e10] [cursor=pointer]:
+        - img "OOMAPASC"
+        - heading "OOMAPASC" [level=3] [ref=e11]
+        - heading "Consulta y pago de recibo de agua" [level=5] [ref=e12]
+    - generic [ref=e13]:
+      - generic [ref=e15]: ÚLTIMAS NOTICIAS
+      - generic [ref=e17]:
+        - img "Carrucel 3" [ref=e19]
+        - img "Carrucel 1" [ref=e21]
+        - img "Carrucel 2" [ref=e23]
+        - img "Carrucel 3" [ref=e25]
+        - img "Carrucel 1" [ref=e27]
+        - generic [ref=e28]:
+          - radio [checked] [ref=e29] [cursor=pointer]
+          - radio [ref=e30] [cursor=pointer]
+          - radio [ref=e31] [cursor=pointer]
+        - generic [ref=e32]:
+          - generic:
+            - img "Anterior"
+          - generic:
+            - img "siguiente"
+  - contentinfo [ref=e33]:
+    - link "whatsapp" [ref=e34] [cursor=pointer]:
+      - /url: https://wa.me/526444105110
+      - img "whatsapp" [ref=e35]
+    - link "emergencia" [ref=e36] [cursor=pointer]:
+      - /url: tel:911
+      - img "emergencia" [ref=e37]

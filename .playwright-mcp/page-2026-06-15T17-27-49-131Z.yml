@@ -1,0 +1,292 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwicndCp4omVAxW6m2oFHX0JLnMQPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: catastro jalisco consulta cuenta predial sitio:gob.mx catastro jalisco consulta cuenta predial sitio:gob.mx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dcatastro%2Bjalisco%2Bconsulta%2Bcuenta%2Bpredial%2Bsitio:gob.mx&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3GsS-y6TGO0KVHfhL9pliXNfdawhgkTLMcLphGhrPWmJ5jbN_J3YMV7JrfJM-wULKF60oxd02reBxRyJg0tIO8BJlfERtxn0zFvEb3OeL0MQt2N5MnaUtS_wUUfwP1aRdGdqxwmgEwQ0vbur_auPi2N8e-xHdHrJaRF_WEYfJsbCvW6HWQ_DwChyi0CDLA616jLOSvg&aep=1&ntc=1&sa=X&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQ2J8OegQIEhAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Shopping" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3GsS-y6TGO0KVHfhL9pliXNfdawhgkTLMcLphGhrPWmJ5jbN_J3YMV7JrfJM-wULKF60oxd02reBxRyJg0tIO8BJlfERtxn0zFvEb3OeL0MQt2N5MnaUtS_wUUfwP1aRdGdqxwmgEwQ0vbur_auPi2N8e-xHdHrJaRF_WEYfJsbCvW6HWQ_DwChyi0CDLA616jLOSvg&q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e84]: Shopping
+          - listitem [ref=e85]:
+            - link "Noticias" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&tbm=nws&source=lnms&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3GsS-y6TGO0KVHfhL9pliXNfdawhgkTLMcLphGhrPWmJ5jbN_J3YMV7JrfJM-wULKF60oxd02reBxRyJg0tIO8BJlfERtxn0zFvEb3OeL0MQt2N5MnaUtS_wUUfwP1aRdGdqxwmgEwQ0vbur_auPi2N8e-xHdHrJaRF_WEYfJsbCvW6HWQ_DwChyi0CDLA616jLOSvg&sa=X&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQ0pQJegQIFxAB
+              - generic [ref=e88]: Noticias
+          - listitem [ref=e89]:
+            - link "Imágenes" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3GsS-y6TGO0KVHfhL9pliXNfdawhgkTLMcLphGhrPWmJ5jbN_J3YMV7JrfJM-wULKF60oxd02reBxRyJg0tIO8BJlfERtxn0zFvEb3OeL0MQt2N5MnaUtS_wUUfwP1aRdGdqxwmgEwQ0vbur_auPi2N8e-xHdHrJaRF_WEYfJsbCvW6HWQ_DwChyi0CDLA616jLOSvg&q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&sa=X&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQtKgLegQIFhAB
+              - generic [ref=e92]: Imágenes
+          - listitem [ref=e93]:
+            - link "Videos cortos" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3GsS-y6TGO0KVHfhL9pliXNfdawhgkTLMcLphGhrPWmJ5jbN_J3YMV7JrfJM-wULKF60oxd02reBxRyJg0tIO8BJlfERtxn0zFvEb3OeL0MQt2N5MnaUtS_wUUfwP1aRdGdqxwmgEwQ0vbur_auPi2N8e-xHdHrJaRF_WEYfJsbCvW6HWQ_DwChyi0CDLA616jLOSvg&q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&sa=X&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQs6gLegQIFRAB
+              - generic [ref=e96]: Videos cortos
+          - listitem [ref=e97]:
+            - link "Videos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3GsS-y6TGO0KVHfhL9pliXNfdawhgkTLMcLphGhrPWmJ5jbN_J3YMV7JrfJM-wULKF60oxd02reBxRyJg0tIO8BJlfERtxn0zFvEb3OeL0MQt2N5MnaUtS_wUUfwP1aRdGdqxwmgEwQ0vbur_auPi2N8e-xHdHrJaRF_WEYfJsbCvW6HWQ_DwChyi0CDLA616jLOSvg&q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&sa=X&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQtKgLegQIFBAB
+              - generic [ref=e100]: Videos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - generic [ref=e122]:
+      - generic [ref=e141]:
+        - heading "Pensando" [level=2] [ref=e145]:
+          - generic [ref=e146]: Pensando
+        - progressbar "Generando" [ref=e147]
+      - main [ref=e149]:
+        - generic [ref=e153]:
+          - generic [ref=e156]:
+            - heading "Resultados web" [level=2] [ref=e157]
+            - generic [ref=e158]:
+              - generic [ref=e161]:
+                - link "Dirección de Catastro del Estado de Jalisco Dirección de Catastro del Estado de Jalisco https://catastro.jalisco.gob.mx" [ref=e163] [cursor=pointer]:
+                  - /url: https://catastro.jalisco.gob.mx/
+                  - heading "Dirección de Catastro del Estado de Jalisco" [level=3] [ref=e164]
+                  - generic [ref=e170]:
+                    - generic [ref=e172]: Dirección de Catastro del Estado de Jalisco
+                    - generic [ref=e174]: https://catastro.jalisco.gob.mx
+                - button "Acerca de este resultado" [ref=e175] [cursor=pointer]:
+                  - img [ref=e178]
+              - generic [ref=e182]:
+                - emphasis [ref=e183]: Dirección de Catastro del Estado de Jalisco
+                - text: . Secretaría de la Hacienda ... Sistemas. eCarto. Plataforma. Geográfica Estatal. ENTRAR. eCarto. eCédula. Consulta de ...
+          - generic [ref=e187]:
+            - generic [ref=e190]:
+              - link "Direccion de Catastro - Gobierno de Guadalajara Catastro de Guadalajara https://catastro.guadalajara.gob.mx" [ref=e192] [cursor=pointer]:
+                - /url: https://catastro.guadalajara.gob.mx/
+                - heading "Direccion de Catastro - Gobierno de Guadalajara" [level=3] [ref=e193]
+                - generic [ref=e195]:
+                  - img [ref=e200]
+                  - generic [ref=e202]:
+                    - generic [ref=e204]: Catastro de Guadalajara
+                    - generic [ref=e206]: https://catastro.guadalajara.gob.mx
+              - button "Acerca de este resultado" [ref=e207] [cursor=pointer]:
+                - img [ref=e210]
+            - generic [ref=e214]:
+              - emphasis [ref=e215]: Consulta y pago. de Predial en Línea
+              - text: · Conoce la Ley. de Ingresos 2026 ...
+          - generic [ref=e220]:
+            - heading "Más preguntas" [level=2] [ref=e222]
+            - generic [ref=e223]:
+              - button "¿Cómo puedo consultar mi adeudo de predial en Jalisco?" [ref=e229] [cursor=pointer]:
+                - generic [ref=e231]: ¿Cómo puedo consultar mi adeudo de predial en Jalisco?
+                - img [ref=e234]
+              - button "¿Dónde checar cuánto se debe de predial?" [ref=e243] [cursor=pointer]:
+                - generic [ref=e245]: ¿Dónde checar cuánto se debe de predial?
+                - img [ref=e248]
+              - button "¿Cómo consultar el catastro por internet?" [ref=e257] [cursor=pointer]:
+                - generic [ref=e259]: ¿Cómo consultar el catastro por internet?
+                - img [ref=e262]
+              - button "¿Cómo buscar una propiedad en el catastro?" [ref=e271] [cursor=pointer]:
+                - generic [ref=e273]: ¿Cómo buscar una propiedad en el catastro?
+                - img [ref=e276]
+          - generic [ref=e281]:
+            - heading "Resultados web" [level=2] [ref=e282]
+            - generic [ref=e283]:
+              - generic [ref=e286]:
+                - link "Cartografía Dirección de Catastro del Estado de Jalisco https://catastro.jalisco.gob.mx › cartografia" [ref=e288] [cursor=pointer]:
+                  - /url: https://catastro.jalisco.gob.mx/cartografia.html
+                  - heading "Cartografía" [level=3] [ref=e289]
+                  - generic [ref=e295]:
+                    - generic [ref=e297]: Dirección de Catastro del Estado de Jalisco
+                    - generic [ref=e299]: https://catastro.jalisco.gob.mx › cartografia
+                - button "Acerca de este resultado" [ref=e300] [cursor=pointer]:
+                  - img [ref=e303]
+              - generic [ref=e307]:
+                - text: (33) 3819 2361 8:00 a 16:00 Hrs. Políticas de uso y privacidad. Gobierno del Estado de
+                - emphasis [ref=e308]: Jalisco
+                - text: ", algunos derechos reservados © ..."
+          - generic [ref=e312]:
+            - generic [ref=e315]:
+              - link "Consultar Adeudo Predial en Jalisco | Impuesto Predial 2026 CDMX https://data.eap.cdmx.gob.mx › recursos › estado=jalisco" [ref=e317] [cursor=pointer]:
+                - /url: https://data.eap.cdmx.gob.mx/ut/recursos/?estado=jalisco
+                - heading "Consultar Adeudo Predial en Jalisco | Impuesto Predial 2026" [level=3] [ref=e318]
+                - generic [ref=e324]:
+                  - generic [ref=e326]: CDMX
+                  - generic [ref=e328]: https://data.eap.cdmx.gob.mx › recursos › estado=jalisco
+              - button "Acerca de este resultado" [ref=e329] [cursor=pointer]:
+                - img [ref=e332]
+            - generic [ref=e336]:
+              - emphasis [ref=e337]: Consulte su adeudo predial en Jalisco
+              - text: de forma rapida y segura. Verifique el estado de su impuesto predial, realice pagos en linea y obtenga comprobantes ...
+          - generic [ref=e341]:
+            - generic [ref=e344]:
+              - link "TRÁMITES Y SERVICIOS CATASTRO Gobierno de Jalisco https://transparencia.info.jalisco.gob.mx › files › S..." [ref=e346] [cursor=pointer]:
+                - /url: https://transparencia.info.jalisco.gob.mx/sites/default/files/SERVICIOS%20PRESTADOS%20POR%20LA%20DIRECCION%20DE%20CATASTRO.pdf
+                - heading "TRÁMITES Y SERVICIOS CATASTRO" [level=3] [ref=e347]
+                - generic [ref=e353]:
+                  - generic [ref=e355]: Gobierno de Jalisco
+                  - generic [ref=e357]: https://transparencia.info.jalisco.gob.mx › files › S...
+              - generic [ref=e358]:
+                - generic:
+                  - generic: PDF
+              - button "Acerca de este resultado" [ref=e359] [cursor=pointer]:
+                - img [ref=e362]
+            - generic [ref=e366]:
+              - text: Copia de la identificación. REQUISITOS. Registro del predio y
+              - emphasis [ref=e367]: cuenta predial
+              - text: . PERSONA CON. QUIEN DIRIGIRSE. Oficinas de
+              - emphasis [ref=e368]: Catastro
+              - text: . TIEMPO DE.
+          - generic [ref=e372]:
+            - generic [ref=e375]:
+              - link "Tabla de Valor catastral Periódico Oficial del estado de Jalisco https://periodicooficial.jalisco.gob.mx › seccion › tipos" [ref=e377] [cursor=pointer]:
+                - /url: https://periodicooficial.jalisco.gob.mx/seccion/tipos/catastral
+                - heading "Tabla de Valor catastral" [level=3] [ref=e378]
+                - generic [ref=e384]:
+                  - generic [ref=e386]: Periódico Oficial del estado de Jalisco
+                  - generic [ref=e388]: https://periodicooficial.jalisco.gob.mx › seccion › tipos
+              - button "Acerca de este resultado" [ref=e389] [cursor=pointer]:
+                - img [ref=e392]
+            - generic [ref=e396]:
+              - text: Egresos Valor
+              - emphasis [ref=e397]: Catastral
+              - text: ; Acatic ; Acatlán de Juárez ; Ahualulco de Mercado ; Amacueca ; Amatitán.
+          - generic [ref=e401]:
+            - generic [ref=e404]:
+              - link "Predial | Gobierno de Guadalajara Gobierno de Guadalajara https://pagoenlinea.guadalajara.gob.mx" [ref=e406] [cursor=pointer]:
+                - /url: https://pagoenlinea.guadalajara.gob.mx/
+                - heading "Predial | Gobierno de Guadalajara" [level=3] [ref=e407]
+                - generic [ref=e413]:
+                  - generic [ref=e415]: Gobierno de Guadalajara
+                  - generic [ref=e417]: https://pagoenlinea.guadalajara.gob.mx
+              - button "Acerca de este resultado" [ref=e418] [cursor=pointer]:
+                - img [ref=e421]
+            - generic [ref=e425]:
+              - emphasis [ref=e426]: Consulta y pago del impuesto predial
+              - text: "· Los datos requeridos se encuentran en su recibo predial · Gráfico ejemplo de recibo predial · Ejemplo: · Footer."
+          - generic [ref=e430]:
+            - generic [ref=e433]:
+              - link "VDigital Gobierno Municipal de Zapopan https://vdigital.zapopan.gob.mx" [ref=e435] [cursor=pointer]:
+                - /url: https://vdigital.zapopan.gob.mx/
+                - heading "VDigital" [level=3] [ref=e436]
+                - generic [ref=e442]:
+                  - generic [ref=e444]: Gobierno Municipal de Zapopan
+                  - generic [ref=e446]: https://vdigital.zapopan.gob.mx
+              - button "Acerca de este resultado" [ref=e447] [cursor=pointer]:
+                - img [ref=e450]
+            - generic [ref=e454]:
+              - text: "Pago en línea. ¡Fácil y rápido! Infracciones de movilidad. Necesitarás: Placas."
+              - emphasis [ref=e455]: Predial
+              - text: ". Necesitarás:"
+              - emphasis [ref=e456]: Cuenta predial
+              - text: o CURT.
+          - generic [ref=e460]:
+            - generic [ref=e463]:
+              - 'link "Gobierno de Puerto Vallarta: Inicio Gobierno de Puerto Vallarta https://www.puertovallarta.gob.mx" [ref=e465] [cursor=pointer]':
+                - /url: https://www.puertovallarta.gob.mx/
+                - 'heading "Gobierno de Puerto Vallarta: Inicio" [level=3] [ref=e466]'
+                - generic [ref=e472]:
+                  - generic [ref=e474]: Gobierno de Puerto Vallarta
+                  - generic [ref=e476]: https://www.puertovallarta.gob.mx
+              - button "Acerca de este resultado" [ref=e477] [cursor=pointer]:
+                - img [ref=e480]
+            - generic [ref=e484]:
+              - emphasis [ref=e485]: Pago y consulta del Predial
+              - text: · Facturación Electrónica · Proveedores. Prensa ... Repórtalo a webmaster@puertovallarta.gob.mx. Aviso de privacidad. Gobierno de ...
+        - navigation [ref=e488]:
+          - heading "Navegación de páginas" [level=1] [ref=e489]
+          - text: "1"
+          - link "Page 2" [ref=e492] [cursor=pointer]:
+            - /url: /search?q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=FDYwapzDJbq3qtsP_ZK4mQc&start=10&sa=N&sstk=AU9db-BII5QjASiaP8gO9gRAYUD-hZ6TFnyJfQHyLJNhR-XsdfUy3RCG-VYRSEsTFzS30d3D2E8OUCYmhvkFSh_Edipi-qZ11tY8Kw&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQ8tMDegQIHxAE
+            - text: "2"
+          - link "Page 3" [ref=e494] [cursor=pointer]:
+            - /url: /search?q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=FDYwapzDJbq3qtsP_ZK4mQc&start=20&sa=N&sstk=AU9db-BII5QjASiaP8gO9gRAYUD-hZ6TFnyJfQHyLJNhR-XsdfUy3RCG-VYRSEsTFzS30d3D2E8OUCYmhvkFSh_Edipi-qZ11tY8Kw&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQ8tMDegQIHxAG
+            - text: "3"
+          - link "Page 4" [ref=e496] [cursor=pointer]:
+            - /url: /search?q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=FDYwapzDJbq3qtsP_ZK4mQc&start=30&sa=N&sstk=AU9db-BII5QjASiaP8gO9gRAYUD-hZ6TFnyJfQHyLJNhR-XsdfUy3RCG-VYRSEsTFzS30d3D2E8OUCYmhvkFSh_Edipi-qZ11tY8Kw&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQ8tMDegQIHxAI
+            - text: "4"
+          - link "Page 5" [ref=e498] [cursor=pointer]:
+            - /url: /search?q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=FDYwapzDJbq3qtsP_ZK4mQc&start=40&sa=N&sstk=AU9db-BII5QjASiaP8gO9gRAYUD-hZ6TFnyJfQHyLJNhR-XsdfUy3RCG-VYRSEsTFzS30d3D2E8OUCYmhvkFSh_Edipi-qZ11tY8Kw&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQ8tMDegQIHxAK
+            - text: "5"
+          - link "Page 6" [ref=e500] [cursor=pointer]:
+            - /url: /search?q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=FDYwapzDJbq3qtsP_ZK4mQc&start=50&sa=N&sstk=AU9db-BII5QjASiaP8gO9gRAYUD-hZ6TFnyJfQHyLJNhR-XsdfUy3RCG-VYRSEsTFzS30d3D2E8OUCYmhvkFSh_Edipi-qZ11tY8Kw&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQ8tMDegQIHxAM
+            - text: "6"
+          - link "Page 7" [ref=e502] [cursor=pointer]:
+            - /url: /search?q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=FDYwapzDJbq3qtsP_ZK4mQc&start=60&sa=N&sstk=AU9db-BII5QjASiaP8gO9gRAYUD-hZ6TFnyJfQHyLJNhR-XsdfUy3RCG-VYRSEsTFzS30d3D2E8OUCYmhvkFSh_Edipi-qZ11tY8Kw&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQ8tMDegQIHxAO
+            - text: "7"
+          - link "Page 8" [ref=e504] [cursor=pointer]:
+            - /url: /search?q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=FDYwapzDJbq3qtsP_ZK4mQc&start=70&sa=N&sstk=AU9db-BII5QjASiaP8gO9gRAYUD-hZ6TFnyJfQHyLJNhR-XsdfUy3RCG-VYRSEsTFzS30d3D2E8OUCYmhvkFSh_Edipi-qZ11tY8Kw&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQ8tMDegQIHxAQ
+            - text: "8"
+          - link "Page 9" [ref=e506] [cursor=pointer]:
+            - /url: /search?q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=FDYwapzDJbq3qtsP_ZK4mQc&start=80&sa=N&sstk=AU9db-BII5QjASiaP8gO9gRAYUD-hZ6TFnyJfQHyLJNhR-XsdfUy3RCG-VYRSEsTFzS30d3D2E8OUCYmhvkFSh_Edipi-qZ11tY8Kw&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQ8tMDegQIHxAS
+            - text: "9"
+          - link "Page 10" [ref=e508] [cursor=pointer]:
+            - /url: /search?q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=FDYwapzDJbq3qtsP_ZK4mQc&start=90&sa=N&sstk=AU9db-BII5QjASiaP8gO9gRAYUD-hZ6TFnyJfQHyLJNhR-XsdfUy3RCG-VYRSEsTFzS30d3D2E8OUCYmhvkFSh_Edipi-qZ11tY8Kw&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQ8tMDegQIHxAU
+            - text: "10"
+          - heading "Siguiente" [level=2] [ref=e510]:
+            - link "Siguiente" [ref=e511] [cursor=pointer]:
+              - /url: /search?q=catastro+jalisco+consulta+cuenta+predial+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=FDYwapzDJbq3qtsP_ZK4mQc&start=10&sa=N&sstk=AU9db-BII5QjASiaP8gO9gRAYUD-hZ6TFnyJfQHyLJNhR-XsdfUy3RCG-VYRSEsTFzS30d3D2E8OUCYmhvkFSh_Edipi-qZ11tY8Kw&ved=2ahUKEwicndCp4omVAxW6m2oFHX0JLnMQ8NMDegQIHxAW
+              - generic [ref=e513]: Siguiente
+        - navigation
+    - contentinfo [ref=e514]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e515]
+      - generic [ref=e519]:
+        - generic [ref=e521]:
+          - text: México
+          - generic [ref=e523]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - A través de tu dirección IP" [ref=e525] [cursor=pointer]:
+              - generic [ref=e526]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e528]:
+                - text: "-"
+                - generic [ref=e529]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e531] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e534]:
+          - link "Ayuda" [ref=e535] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e536] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e537] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e538] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

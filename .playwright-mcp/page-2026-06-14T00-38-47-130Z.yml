@@ -1,0 +1,317 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Logo de inmuebles24" [ref=e6] [cursor=pointer]:
+          - /url: https://www.inmuebles24.com
+          - img "logo de inmuebles24" [ref=e7]
+        - button [ref=e12] [cursor=pointer]:
+          - img [ref=e14]
+        - button [ref=e16] [cursor=pointer]:
+          - img [ref=e18]
+        - img [ref=e20]
+    - generic [ref=e24]:
+      - button "Favorito" [ref=e28] [cursor=pointer]:
+        - generic [ref=e29]: Favorito
+        - img "Favorito" [ref=e30]
+      - button "Compartir" [ref=e36] [cursor=pointer]:
+        - generic [ref=e37]: Compartir
+      - button "Notas personales" [ref=e40] [cursor=pointer]
+      - button "Ocultar aviso" [ref=e44] [cursor=pointer]:
+        - generic [ref=e45]: Ocultar aviso
+        - img [ref=e46]
+    - generic [ref=e49]:
+      - generic:
+        - generic:
+          - text: "24"
+          - img "pictures"
+        - generic:
+          - img "videos"
+      - generic [ref=e50]:
+        - img [ref=e52] [cursor=pointer]
+        - img [ref=e54] [cursor=pointer]
+        - img [ref=e56] [cursor=pointer]
+        - img [ref=e58] [cursor=pointer]
+        - img [ref=e60] [cursor=pointer]
+      - button "Ver todas las fotos Ver todas las fotos" [ref=e62] [cursor=pointer]:
+        - text: Ver todas las fotos
+        - img "Ver todas las fotos" [ref=e63]
+    - main [ref=e64]:
+      - generic [ref=e66]:
+        - text:      
+        - complementary [ref=e67]:
+          - generic [ref=e71]:
+            - generic [ref=e74]:
+              - heading "Contacta al anunciante" [level=4] [ref=e75]
+              - generic [ref=e76]:
+                - generic [ref=e77]:
+                  - generic [ref=e78]: Nombre
+                  - textbox "Nombre" [ref=e79]:
+                    - /placeholder: ""
+                - generic [ref=e80]:
+                  - generic [ref=e81]: Email
+                  - textbox "Email" [ref=e82]:
+                    - /placeholder: ""
+              - generic [ref=e84]:
+                - generic [ref=e85] [cursor=pointer]:
+                  - generic [ref=e86]: País
+                  - generic [ref=e87]:
+                    - img "mx" [ref=e88]
+                    - generic [ref=e89]: "+52"
+                    - img "Seleccionar" [ref=e90]
+                - generic [ref=e91]:
+                  - generic [ref=e92]: Teléfono
+                  - textbox "Teléfono" [ref=e93]:
+                    - /placeholder: ""
+              - generic [ref=e95]:
+                - generic [ref=e96]: Mensaje
+                - textbox "Mensaje" [ref=e97]:
+                  - /placeholder: ""
+                  - text: ¡Hola! Quiero que se comuniquen conmigo por este inmueble en venta que vi en Inmuebles24.
+              - generic [ref=e98]:
+                - button "Contactar" [ref=e99] [cursor=pointer]:
+                  - text: Contactar
+                  - img [ref=e100]
+                - button "Contactar por WhatsApp" [ref=e102] [cursor=pointer]:
+                  - text: Contactar por WhatsApp
+                  - img [ref=e103]
+              - generic [ref=e106]:
+                - text: Al enviar estás aceptando los
+                - link "Términos y condiciones de Uso" [ref=e107] [cursor=pointer]:
+                  - /url: https://help.inmuebles24.com/s/article/terminos-y-condiciones-de-uso-i24
+                - text: y la
+                - link "Política de Privacidad" [ref=e108] [cursor=pointer]:
+                  - /url: https://help.inmuebles24.com/s/article/Aviso-de-Privacidad
+            - generic [ref=e110]:
+              - generic [ref=e111]:
+                - img [ref=e112]
+                - img [ref=e113]
+              - generic [ref=e114]:
+                - link "Rayo Vende." [ref=e115] [cursor=pointer]:
+                  - /url: https://www.inmuebles24.com/inmobiliarias/rayo-vende._50063144-inmuebles.html
+                - generic [ref=e116]:
+                  - generic [ref=e117] [cursor=pointer]: "55551"
+                  - button "Ver teléfono" [ref=e118] [cursor=pointer]:
+                    - text: Ver teléfono
+                    - img [ref=e119]
+        - article [ref=e121]:
+          - generic [ref=e122]:
+            - heading "Casa · 350m² · 4 recámaras · 2 estacionamientos" [level=2] [ref=e123]
+            - generic [ref=e126]:
+              - generic [ref=e127]: venta MN 15,900,000
+              - generic [ref=e130] [cursor=pointer]: Avisarme si baja de precio
+            - generic [ref=e132]:
+              - generic [ref=e133]:
+                - generic [ref=e134]: Publicidad
+                - generic [ref=e136]:
+                  - generic [ref=e137]: ¿Listo para comprar? Solo falta tu crédito
+                  - generic [ref=e138]: Te damos tu precalificación bancaria en minutos y sin costo.
+                  - link "¡Calcula tu crédito gratis!" [ref=e141] [cursor=pointer]:
+                    - /url: https://preoferta.creditaria.app/?utm_source=Inmuebles24&utm_medium=paid&utm_campaign=boton_ficha&utm_content=listo_comprar
+              - generic [ref=e142]:
+                - generic [ref=e143]: Publicidad
+                - generic [ref=e146]:
+                  - generic [ref=e147]: Tramitamos tu crédito hipotecario
+                  - generic [ref=e148]: Expertos que te ayudan a elegir el mejor crédito para tu hogar.
+                  - link "¡Precalifica en 5 pasos!" [ref=e151] [cursor=pointer]:
+                    - /url: https://preoferta.creditaria.app/?utm_source=Inmuebles24&utm_medium=paid&utm_campaign=boton_ficha&utm_content=tramitamos_credito
+            - generic [ref=e152]:
+              - generic [ref=e153]:
+                - img [ref=e154]
+                - heading "CALIFORNIA , Parque San Andrés, Coyoacán" [level=4] [ref=e157]
+              - img "Mapa" [ref=e162] [cursor=pointer]
+            - generic [ref=e164]:
+              - list [ref=e165]:
+                - listitem [ref=e166]: 226 m² lote
+                - listitem [ref=e168]: 350 m² constr.
+                - listitem [ref=e170]: 3 baños
+                - listitem [ref=e172]: 2 estac.
+                - listitem [ref=e174]: 4 rec.
+                - listitem [ref=e176]: 1 medio baño
+                - listitem [ref=e178]: 6 años
+              - text: 
+            - heading "Casa en Venta en Coyoacan" [level=1] [ref=e182]
+            - generic [ref=e185]:
+              - generic [ref=e188]:
+                - text: ¡Excelente ubicación! Casa impecable, totalmente remodelada, moderna y muy buen gusto.
+                - text: Contamos con espacios muy amplios, llena de luz natural, acabados de lujo.
+                - text: "Distribución:"
+                - text: "P.B.: Estudio, sala, comedor, baño de visitas, antecomedor, cocina abierta, despensa, área de lavado, 2 estacionamientos, terraza techada."
+                - text: Acabados de alta calidad, loseta, muros de piedra, cocina alto brillo.
+                - text: "Primer Nivel: Family, 2 recámaras secundarias con closet, comparten baño; recámara principal con baño y vestidor, tina de hidromasaje."
+                - text: "2º Nivel: 1 recámara con baño, cuarto de servicio con baño subiendo por el garaje."
+                - text: ¡Conócela, todos los servicios cerca de tí!
+              - button "Leer descripción completaExpandir o contraer" [ref=e189] [cursor=pointer]:
+                - text: Leer descripción completa
+                - img "Expandir o contraer" [ref=e190]
+            - generic [ref=e192]:
+              - heading "Preguntas para la inmobiliaria" [level=4] [ref=e193]
+              - paragraph [ref=e194]: Selecciona una o más preguntas, o escribe tu consulta.
+              - generic [ref=e195]:
+                - generic [ref=e196] [cursor=pointer]: ¿Sigue disponible?
+                - generic [ref=e197] [cursor=pointer]: ¿Tiene estacionamiento?
+                - generic [ref=e198] [cursor=pointer]: ¿Cuándo puedo visitarlo?
+                - generic [ref=e199] [cursor=pointer]: ¿En qué piso está?
+              - generic [ref=e200]:
+                - generic [ref=e201]:
+                  - textbox "Escríbela aquí" [ref=e202]
+                  - generic [ref=e203]: 0/200
+                - button "Enviar Escríbela aquí" [ref=e204] [cursor=pointer]:
+                  - text: Enviar
+                  - img "Escríbela aquí" [ref=e205]
+            - generic [ref=e207]:
+              - heading "Conoce más sobre este inmueble" [level=3] [ref=e208]
+              - generic [ref=e209]:
+                - button "Características generales icon Características generales" [ref=e210] [cursor=pointer]:
+                  - img "Características generales icon" [ref=e211]
+                  - generic [ref=e212]: Características generales
+                - button "Amenidades icon Amenidades" [ref=e214] [cursor=pointer]:
+                  - img "Amenidades icon" [ref=e215]
+                  - generic [ref=e216]: Amenidades
+              - generic [ref=e218]:
+                - generic [ref=e219]: Terraza
+                - generic [ref=e220]: Cuartos de servicio
+                - generic [ref=e221]: "Niveles construidos : 3"
+            - generic [ref=e223]:
+              - heading "Información del anunciante" [level=4] [ref=e224]
+              - generic [ref=e226]:
+                - generic [ref=e227]:
+                  - img "Rayo Vende." [ref=e228]
+                  - img "Premier" [ref=e229]
+                - heading "Rayo Vende." [level=3] [ref=e231] [cursor=pointer]
+              - generic [ref=e232]:
+                - generic [ref=e235]: Nivel 4
+                - generic [ref=e242]: Calculamos el nivel con categorías como el índice de respuesta y la calidad de sus avisos.Conocer más
+                - generic [ref=e243]:
+                  - img [ref=e244]
+                  - generic [ref=e245] [cursor=pointer]: Ver 186 calificaciones
+                  - img [ref=e248] [cursor=pointer]
+              - button "Ver teléfono" [ref=e250] [cursor=pointer]:
+                - text: Ver teléfono
+                - img [ref=e251]: 
+            - list [ref=e253]:
+              - listitem [ref=e254]:
+                - generic [ref=e255]: "Cód. del anunciante:"
+                - text: EB-VH3842
+              - listitem [ref=e256]:
+                - text: "|"
+                - generic [ref=e257]: "Cód. Inmuebles24:"
+                - text: "149080422"
+            - generic [ref=e259]:
+              - generic [ref=e260]:
+                - generic [ref=e261]: 
+                - generic [ref=e263]: ¿Tienes algún problema con este aviso?
+              - generic [ref=e264]:
+                - generic [ref=e265] [cursor=pointer]: El inmueble está vendido o reservado
+                - generic [ref=e266] [cursor=pointer]: No me puedo contactar
+                - generic [ref=e267] [cursor=pointer]: Otros motivos
+            - link "¿Cómo evitar fraudes inmobiliarios?" [ref=e269] [cursor=pointer]:
+              - /url: https://help.inmuebles24.com/s/article/C%C3%B3mo-evito-caer-en-fraudes-inmobiliarios-si-busco-comprar-i24
+            - generic [ref=e271]:
+              - paragraph [ref=e273]: Publicado hace 108 días
+              - img [ref=e274]
+              - paragraph [ref=e278] [cursor=pointer]: 286 visualizaciones
+    - list [ref=e280]:
+      - listitem [ref=e281]:
+        - link "Inmuebles24" [ref=e282] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=e283]:
+        - link "Casa" [ref=e284] [cursor=pointer]:
+          - /url: /casas.html
+      - listitem [ref=e285]:
+        - link "Venta" [ref=e286] [cursor=pointer]:
+          - /url: /casas-en-venta.html
+      - listitem [ref=e287]:
+        - link "Ciudad de México" [ref=e288] [cursor=pointer]:
+          - /url: /casas-en-venta-en-ciudad-de-mexico.html
+      - listitem [ref=e289]:
+        - link "Coyoacán" [ref=e290] [cursor=pointer]:
+          - /url: /casas-en-venta-en-coyoacan.html
+      - listitem [ref=e291]:
+        - link "Parque San Andrés" [ref=e292] [cursor=pointer]:
+          - /url: /casas-en-venta-en-parque-san-andres.html
+      - listitem [ref=e293]:
+        - link "Casa en Venta en Coyoacan" [ref=e294] [cursor=pointer]:
+          - /url: /propiedades/clasificado/veclcain-casa-en-venta-en-coyoacan-149080422.html
+    - generic [ref=e299]:
+      - strong [ref=e302]: Ver más en Parque San Andrés, Coyoacán
+      - generic [ref=e304]:
+        - list:
+          - listitem [ref=e305]:
+            - 'link "Casas en Renta: Parque San Andrés" [ref=e306] [cursor=pointer]':
+              - /url: /casas-en-renta-en-parque-san-andres.html
+          - listitem [ref=e307]:
+            - 'link "Departamentos en venta: Parque San Andrés" [ref=e308] [cursor=pointer]':
+              - /url: /departamentos-en-venta-en-parque-san-andres.html
+          - listitem [ref=e309]:
+            - 'link "Casas en condominio en venta: Parque San Andrés" [ref=e310] [cursor=pointer]':
+              - /url: /casa-en-condominio-en-venta-en-parque-san-andres.html
+          - listitem [ref=e311]:
+            - 'link "Casas en venta 3 recámaras: Parque San Andrés" [ref=e312] [cursor=pointer]':
+              - /url: /casas-en-venta-en-parque-san-andres-con-3-recamaras.html
+  - contentinfo [ref=e313]:
+    - generic [ref=e314]:
+      - link "Inmuebles24" [ref=e316] [cursor=pointer]:
+        - /url: https://www.inmuebles24.com
+        - img "logo de inmuebles24" [ref=e317]
+      - list [ref=e318]:
+        - listitem [ref=e319]:
+          - generic [ref=e320]: Más Inmuebles24
+          - generic [ref=e321]: 
+        - listitem [ref=e322]:
+          - generic [ref=e323]: Anunciantes
+          - generic [ref=e324]: 
+        - listitem [ref=e325]:
+          - generic [ref=e326]: Países
+          - generic [ref=e327]: 
+        - listitem [ref=e328]:
+          - generic [ref=e329]: Síguenos
+          - list [ref=e330]:
+            - listitem [ref=e331]:
+              - link "" [ref=e332] [cursor=pointer]:
+                - /url: https://www.facebook.com/inmuebles24.com.mx
+                - generic [ref=e333]: 
+            - listitem [ref=e334]:
+              - link "" [ref=e335] [cursor=pointer]:
+                - /url: https://instagram.com/inmuebles24
+                - generic [ref=e336]: 
+            - listitem [ref=e337]:
+              - link "" [ref=e338] [cursor=pointer]:
+                - /url: https://youtube.com/user/InmueblesTVRELA
+                - generic [ref=e339]: 
+            - listitem [ref=e340]:
+              - link "" [ref=e341] [cursor=pointer]:
+                - /url: https://twitter.com/inmuebles24
+                - generic [ref=e342]: 
+          - generic [ref=e343]: Apps
+          - list [ref=e344]:
+            - listitem [ref=e345]:
+              - link "App iOS en App Store" [ref=e346] [cursor=pointer]:
+                - /url: https://apps.apple.com/mx/app/inmuebles24/id643973960
+                - img "App iOS en App Store" [ref=e347]
+            - listitem [ref=e348]:
+              - link "App Android en Google Play" [ref=e349] [cursor=pointer]:
+                - /url: https://play.google.com/store/apps/details?id=com.navent.realestate.inmuebles24
+                - img "App Android en Google Play" [ref=e350]
+    - generic [ref=e352]:
+      - link "logo GrupoQuintoAndar" [ref=e353] [cursor=pointer]:
+        - /url: https://grupoquintoandar.com/es/
+        - img "logo GrupoQuintoAndar" [ref=e354]
+      - generic [ref=e356]:
+        - paragraph [ref=e357]: © Copyright 2026 inmuebles24.com
+        - link "Términos y condiciones de Uso-" [ref=e358] [cursor=pointer]:
+          - /url: https://help.inmuebles24.com/s/article/terminos-y-condiciones-de-uso-i24
+        - link "Términos y Condiciones de Contratación-" [ref=e359] [cursor=pointer]:
+          - /url: https://help.inmuebles24.com/s/article/T%C3%A9rminos-y-Condiciones-Generales-de-Contrataci%C3%B3n-del-Portal-I24
+        - link "Política de privacidad" [ref=e360] [cursor=pointer]:
+          - /url: https://help.inmuebles24.com/s/article/Aviso-de-Privacidad
+  - generic [ref=e362]:
+    - generic [ref=e363]:
+      - text: En este sitio
+      - mark [ref=e364]: usamos y recopilamos cookies
+      - text: para proporcionar un acceso seguro y ofrecer contenido adaptado a tus intereses.
+      - mark [ref=e365]: Al continuar navegando en el sitio, nos das permiso para su utilización.
+      - text: Para más información, ver nuestra
+      - link "Política de Privacidad." [ref=e366] [cursor=pointer]:
+        - /url: https://help.inmuebles24.com/s/article/Aviso-de-Privacidad#cookies
+    - button "Acepto" [ref=e368] [cursor=pointer]

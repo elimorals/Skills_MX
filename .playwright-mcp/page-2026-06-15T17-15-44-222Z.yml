@@ -1,0 +1,101 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - link "Logo" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "Logo" [ref=e9]
+        - generic [ref=e11]:
+          - generic [ref=e12]:
+            - combobox [ref=e13] [cursor=pointer]: Español
+            - textbox: es
+            - img
+            - group
+          - link "Trámites" [ref=e14] [cursor=pointer]:
+            - /url: "#tramites"
+            - text: Trámites
+          - link "Quejas o Denuncias" [ref=e15] [cursor=pointer]:
+            - /url: https://contraloria.cancun.gob.mx
+            - text: Quejas o Denuncias
+        - button "Entrar" [ref=e16] [cursor=pointer]:
+          - text: Entrar
+          - img [ref=e18]
+    - generic [ref=e20]:
+      - generic [ref=e22]:
+        - heading "BIENVENIDO A" [level=2] [ref=e23]
+        - heading "CANCÚN DIGITAL" [level=1] [ref=e24]
+        - generic [ref=e33]:
+          - img [ref=e34]
+          - textbox "¿Qué trámite necesitas hacer hoy?" [ref=e36]
+      - generic [ref=e40]:
+        - heading "Impuesto predial" [level=2] [ref=e47]
+        - generic [ref=e51]:
+          - alert [ref=e53]:
+            - img [ref=e55]
+            - generic [ref=e57]:
+              - generic [ref=e58]: Búsqueda de predios
+              - text: "Seleccione el tipo de búsqueda que desea realizar:"
+          - radiogroup [ref=e60]:
+            - generic [ref=e61] [cursor=pointer]:
+              - generic [ref=e62]:
+                - radio "Buscar por Número de Padrón" [checked] [ref=e63]
+                - generic [ref=e64]:
+                  - img [ref=e65]
+                  - img [ref=e67]
+              - generic [ref=e69]: Buscar por Número de Padrón
+            - generic [ref=e70] [cursor=pointer]:
+              - generic [ref=e71]:
+                - radio "Buscar por Clave Catastral" [ref=e72]
+                - img [ref=e74]
+              - generic [ref=e76]: Buscar por Clave Catastral
+          - generic [ref=e78]:
+            - generic: Número de padrón
+            - generic [ref=e79]:
+              - textbox "Número de padrón" [ref=e80]
+              - group:
+                - generic: Número de padrón
+          - generic [ref=e81]:
+            - button "Consultar" [disabled]
+      - generic [ref=e84]:
+        - img "logo" [ref=e86]
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - img [ref=e91]
+            - text: Palacio Municipal, Av. Tulum No. 5 SM. 5 C.P. 77500, Benito Juárez
+          - generic [ref=e93]:
+            - img [ref=e95]
+            - text: (998) 881-28-00
+          - generic [ref=e97]:
+            - link [ref=e98] [cursor=pointer]:
+              - /url: https://www.facebook.com/AytoCancun?mibextid=ZbWKwL
+              - img [ref=e100]
+            - link [ref=e103] [cursor=pointer]:
+              - /url: https://twitter.com/AytoCancun?t=W1T6bLGHPsHjYjD_cj11HA&s=09
+              - img [ref=e105]
+            - link [ref=e108] [cursor=pointer]:
+              - /url: https://instagram.com/aytocancun?igshid=MzRlODBiNWFlZA==
+              - img [ref=e110]
+        - list [ref=e117]:
+          - listitem [ref=e118]:
+            - link "Catálogo de Trámites y Servicios" [ref=e119] [cursor=pointer]:
+              - /url: https://imdai.cancun.gob.mx/remtys
+          - listitem [ref=e120]:
+            - link "Tutoriales" [ref=e121] [cursor=pointer]:
+              - /url: "#tutoriales"
+          - listitem [ref=e122]:
+            - link "Manual de la Ventanilla Digital" [ref=e123] [cursor=pointer]:
+              - /url: https://ventanilla-cancunprod.s3.us-east-2.amazonaws.com/Ventanilla/0template/ab338881-1e38-47cd-a397-8cf93f4cecef.pdf
+          - listitem [ref=e124]:
+            - link "Aviso de Privacidad" [ref=e125] [cursor=pointer]:
+              - /url: https://transparencia.cancun.gob.mx/uploads/24/20/Aviso%20De%20Privacidad%20Para%20El%20Sistema%20Smart%20E-Gov%20Ventanilla%20Unica%20%28Integral%29.Pdf
+          - listitem [ref=e126]:
+            - link "Términos y Condiciones" [ref=e127] [cursor=pointer]:
+              - /url: https://ventanilla-cancunprod.s3.us-east-2.amazonaws.com/Ventanilla/0template/c05aafed-4b9c-4a7f-ba2b-be7674fa82cc.pdf
+      - generic [ref=e131]:
+        - generic [ref=e132]: Derechos reservados © Smart e-Gov
+        - generic [ref=e133]: v. 29 5 11am
+        - generic [ref=e134]: Municipio de Benito Juárez, Quintana Roo.
+  - iframe [ref=e137]:
+    - generic [ref=f63e6]:
+      - text: protegido por
+      - strong [ref=f63e7]: reCAPTCHA

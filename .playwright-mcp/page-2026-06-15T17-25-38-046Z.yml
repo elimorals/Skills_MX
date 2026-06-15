@@ -1,0 +1,343 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: catastro cdmx consulta valor catastral catastro cdmx consulta valor catastral
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dcatastro%2Bcdmx%2Bconsulta%2Bvalor%2Bcatastral&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=catastro+cdmx+consulta+valor+catastral&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNs-Xb_sfcvz2g8MFjbJEfzgnraFO0lKzHoFKJpiczrGf_ZDCnGz4_URtnkyhg-AZzlnjW3vkyUv9m51ulEHQfEQWkNmkK20NH0K2ByipJrylKXIkggmLLQkqo84BhHgjs3NOsdz8ZwELF5tq9nQHiTkNUtIEHA-kvX-8yrRV34SlmPXUMw&aep=1&ntc=1&sa=X&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ2J8OegQIERAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=catastro+cdmx+consulta+valor+catastral&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNs-Xb_sfcvz2g8MFjbJEfzgnraFO0lKzHoFKJpiczrGf_ZDCnGz4_URtnkyhg-AZzlnjW3vkyUv9m51ulEHQfEQWkNmkK20NH0K2ByipJrylKXIkggmLLQkqo84BhHgjs3NOsdz8ZwELF5tq9nQHiTkNUtIEHA-kvX-8yrRV34SlmPXUMw&sa=X&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ0pQJegQIFRAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Shopping" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNs-Xb_sfcvz2g8MFjbJEfzgnraFO0lKzHoFKJpiczrGf_ZDCnGz4_URtnkyhg-AZzlnjW3vkyUv9m51ulEHQfEQWkNmkK20NH0K2ByipJrylKXIkggmLLQkqo84BhHgjs3NOsdz8ZwELF5tq9nQHiTkNUtIEHA-kvX-8yrRV34SlmPXUMw&q=catastro+cdmx+consulta+valor+catastral&ved=1t:220175&ictx=111
+              - generic [ref=e88]: Shopping
+          - listitem [ref=e89]:
+            - link "Imágenes" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNs-Xb_sfcvz2g8MFjbJEfzgnraFO0lKzHoFKJpiczrGf_ZDCnGz4_URtnkyhg-AZzlnjW3vkyUv9m51ulEHQfEQWkNmkK20NH0K2ByipJrylKXIkggmLLQkqo84BhHgjs3NOsdz8ZwELF5tq9nQHiTkNUtIEHA-kvX-8yrRV34SlmPXUMw&q=catastro+cdmx+consulta+valor+catastral&sa=X&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQtKgLegQIFxAB
+              - generic [ref=e92]: Imágenes
+          - listitem [ref=e93]:
+            - link "Videos" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNs-Xb_sfcvz2g8MFjbJEfzgnraFO0lKzHoFKJpiczrGf_ZDCnGz4_URtnkyhg-AZzlnjW3vkyUv9m51ulEHQfEQWkNmkK20NH0K2ByipJrylKXIkggmLLQkqo84BhHgjs3NOsdz8ZwELF5tq9nQHiTkNUtIEHA-kvX-8yrRV34SlmPXUMw&q=catastro+cdmx+consulta+valor+catastral&sa=X&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQtKgLegQIExAB
+              - generic [ref=e96]: Videos
+          - listitem [ref=e97]:
+            - link "Videos cortos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNs-Xb_sfcvz2g8MFjbJEfzgnraFO0lKzHoFKJpiczrGf_ZDCnGz4_URtnkyhg-AZzlnjW3vkyUv9m51ulEHQfEQWkNmkK20NH0K2ByipJrylKXIkggmLLQkqo84BhHgjs3NOsdz8ZwELF5tq9nQHiTkNUtIEHA-kvX-8yrRV34SlmPXUMw&q=catastro+cdmx+consulta+valor+catastral&sa=X&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQs6gLegQIFBAB
+              - generic [ref=e100]: Videos cortos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - generic [ref=e122]:
+      - generic [ref=e141]:
+        - heading "Pensando Buscando Pensando un poco más" [level=2] [ref=e145]:
+          - generic [ref=e146]:
+            - generic [ref=e148]: Pensando
+            - generic [ref=e150]: Buscando
+            - generic [ref=e160]: Pensando un poco más
+        - progressbar "Generando" [ref=e162]
+      - main [ref=e204]:
+        - generic [ref=e208]:
+          - generic [ref=e211]:
+            - heading "Resultados web" [level=2] [ref=e212]
+            - generic [ref=e213]:
+              - generic [ref=e216]:
+                - link "Catastro - Ciudad de México - finanzas.cdmx.gob.mx Secretaría de Administración y Finanzas de la CDMX https://dgtc.finanzas.cdmx.gob.mx › catastro" [ref=e218] [cursor=pointer]:
+                  - /url: https://dgtc.finanzas.cdmx.gob.mx/catastro
+                  - heading "Catastro - Ciudad de México - finanzas.cdmx.gob.mx" [level=3] [ref=e219]
+                  - generic [ref=e225]:
+                    - generic [ref=e227]: Secretaría de Administración y Finanzas de la CDMX
+                    - generic [ref=e229]: https://dgtc.finanzas.cdmx.gob.mx › catastro
+                - button "Acerca de este resultado" [ref=e230] [cursor=pointer]:
+                  - img [ref=e233]
+              - generic [ref=e237]:
+                - emphasis [ref=e238]: Expedición de Certificado de Clave y Valor Catastral
+                - text: (en línea) · Expedición de copias de documentos y búsqueda en el archivo de concentración catastral (en ...
+          - generic [ref=e242]:
+            - generic [ref=e245]:
+              - link "Oficina Virtual del Catastro - CDMX Ovica https://ovica.finanzas.cdmx.gob.mx" [ref=e247] [cursor=pointer]:
+                - /url: https://ovica.finanzas.cdmx.gob.mx/
+                - heading "Oficina Virtual del Catastro - CDMX" [level=3] [ref=e248]
+                - generic [ref=e254]:
+                  - generic [ref=e256]: Ovica
+                  - generic [ref=e258]: https://ovica.finanzas.cdmx.gob.mx
+              - button "Acerca de este resultado" [ref=e259] [cursor=pointer]:
+                - img [ref=e262]
+            - generic [ref=e266]:
+              - emphasis [ref=e267]: Acceda a la información sobre el estado de cuenta de su impuesto predial
+              - text: o efectúe el pago correspondiente a través de esta sección. Impuesto Predial. Consulta ...
+          - generic [ref=e271]:
+            - generic [ref=e274]:
+              - 'link "Catastro CDMX: cómo sacar la clave catastral por internet Propiedades.com https://propiedades.com › blog › informacion-inmobiliaria" [ref=e276] [cursor=pointer]':
+                - /url: https://propiedades.com/blog/informacion-inmobiliaria/catastro-consultarlo-la-nueva-herramienta-la-cdmx
+                - 'heading "Catastro CDMX: cómo sacar la clave catastral por internet" [level=3] [ref=e277]'
+                - generic [ref=e283]:
+                  - generic [ref=e285]: Propiedades.com
+                  - generic [ref=e287]: https://propiedades.com › blog › informacion-inmobiliaria
+              - button "Acerca de este resultado" [ref=e288] [cursor=pointer]:
+                - img [ref=e291]
+            - generic [ref=e294]:
+              - generic [ref=e295]: 10 sept 2025 —
+              - generic [ref=e296]:
+                - emphasis [ref=e297]: Ingresar al portal sig.cdmx.gob.mx
+                - text: . · Dar clic sobre “Sistema de Información Geográfica”. · Explorar la colonia, predio o alcaldía que quieres ...
+          - generic [ref=e301]:
+            - generic [ref=e304]:
+              - link "Descarga de datos del catastro Sistema de Información Geográfica https://sig.cdmx.gob.mx › datos › descarga" [ref=e306] [cursor=pointer]:
+                - /url: https://sig.cdmx.gob.mx/datos/descarga
+                - heading "Descarga de datos del catastro" [level=3] [ref=e307]
+                - generic [ref=e313]:
+                  - generic [ref=e315]: Sistema de Información Geográfica
+                  - generic [ref=e317]: https://sig.cdmx.gob.mx › datos › descarga
+              - button "Acerca de este resultado" [ref=e318] [cursor=pointer]:
+                - img [ref=e321]
+            - generic [ref=e325]:
+              - emphasis [ref=e326]: Descarga en esta sección los datos del catastro en formato de archivo plano
+              - text: o geográfico por alcaldía. En el formato de archivo plano se encuentran todos los ...
+          - generic [ref=e330]:
+            - generic [ref=e333]:
+              - link "Catastro CDMX Vercel https://v0-fork-of-catastro-cdmx.vercel.app" [ref=e335] [cursor=pointer]:
+                - /url: https://v0-fork-of-catastro-cdmx.vercel.app/
+                - heading "Catastro CDMX" [level=3] [ref=e336]
+                - generic [ref=e338]:
+                  - img [ref=e343]
+                  - generic [ref=e345]:
+                    - generic [ref=e347]: Vercel
+                    - generic [ref=e349]: https://v0-fork-of-catastro-cdmx.vercel.app
+              - button "Acerca de este resultado" [ref=e350] [cursor=pointer]:
+                - img [ref=e353]
+            - generic [ref=e357]:
+              - emphasis [ref=e358]: Sistema de información catastral de la Ciudad de México
+              - text: . ... Precios Base. Muestra los precios base por zona. Fiscal. Predios catastrales habitacionales.
+          - generic [ref=e362]:
+            - generic [ref=e365]:
+              - link "¿Cómo saber el valor catastral de un inmueble? Guía para ... Mercado Libre https://www.mercadolibre.com.mx › blog › re-guia-co..." [ref=e367] [cursor=pointer]:
+                - /url: https://www.mercadolibre.com.mx/blog/re-guia-como-saber-el-valor-catastral-de-un-inmueble-guia-para-estado-de-mexico-y-cdmx
+                - heading "¿Cómo saber el valor catastral de un inmueble? Guía para ..." [level=3] [ref=e368]
+                - generic [ref=e374]:
+                  - generic [ref=e376]: Mercado Libre
+                  - generic [ref=e378]: https://www.mercadolibre.com.mx › blog › re-guia-co...
+              - button "Acerca de este resultado" [ref=e379] [cursor=pointer]:
+                - img [ref=e382]
+            - generic [ref=e386]:
+              - text: Puedes obtener un certificado de clave y
+              - emphasis [ref=e387]: valor catastral
+              - text: en línea a través del portal de la Secretaría de Finanzas de la
+              - emphasis [ref=e388]: CDMX
+              - text: .
+              - emphasis [ref=e389]: Consulta
+              - text: la dirección. https:// ...
+          - generic [ref=e394]:
+            - heading "Más preguntas" [level=2] [ref=e396]
+            - generic [ref=e397]:
+              - button "¿Cómo saber el valor catastral de un inmueble en la CDMX?" [ref=e403] [cursor=pointer]:
+                - generic [ref=e405]: ¿Cómo saber el valor catastral de un inmueble en la CDMX?
+                - img [ref=e408]
+              - button "¿Cómo ver el valor catastral de un inmueble en el Catastro?" [ref=e417] [cursor=pointer]:
+                - generic [ref=e419]: ¿Cómo ver el valor catastral de un inmueble en el Catastro?
+                - img [ref=e422]
+              - button "¿Cómo sacar el Catastro por internet?" [ref=e431] [cursor=pointer]:
+                - generic [ref=e433]: ¿Cómo sacar el Catastro por internet?
+                - img [ref=e436]
+              - button "¿Cómo puedo saber cuánto debo de predial en CDMX?" [ref=e445] [cursor=pointer]:
+                - generic [ref=e447]: ¿Cómo puedo saber cuánto debo de predial en CDMX?
+                - img [ref=e450]
+          - generic [ref=e458]:
+            - generic [ref=e461]:
+              - link "Valor Catastral | Secretaría de Administración y Finanzas de ... Facebook · Secretaría de Administración y Finanzas de la Ciudad de México 4 reacciones · hace 4 años" [ref=e463] [cursor=pointer]:
+                - /url: https://www.facebook.com/AdministracionyFinanzasCiudadDeMexico/videos/valor-catastral/440262241085374/
+                - heading "Valor Catastral | Secretaría de Administración y Finanzas de ..." [level=3] [ref=e464]
+                - generic [ref=e470]:
+                  - generic [ref=e472]: Facebook · Secretaría de Administración y Finanzas de la Ciudad de México
+                  - generic [ref=e474]: 4 reacciones · hace 4 años
+              - button "Acerca de este resultado" [ref=e475] [cursor=pointer]:
+                - img [ref=e478]
+            - generic [ref=e480]:
+              - link "Valor Catastral | Secretaría de Administración y Finanzas de ... de Secretaría de Administración y Finanzas de la Ciudad de México en Facebook. Reproducir en Facebook. 1:57" [ref=e481] [cursor=pointer]:
+                - /url: https://www.facebook.com/AdministracionyFinanzasCiudadDeMexico/videos/valor-catastral/440262241085374/
+                - generic [ref=e483]:
+                  - img [ref=e489]
+                  - generic [ref=e493]: 1:57
+              - generic [ref=e495]: "\" Información Importante Hoy en nuestro #ViernesFinanciero te explicamos paso a paso cómo se calcula el valor catastral de tu vivienda ..."
+          - generic [ref=e499]:
+            - generic [ref=e502]:
+              - link "Lanza CDMX herramienta pública para consultar ... Aristegui Noticias https://aristeguinoticias.com › mexico › lanza-cdmx-her..." [ref=e504] [cursor=pointer]:
+                - /url: https://aristeguinoticias.com/2907/mexico/lanza-cdmx-herramienta-publica-para-consultar-informacion-catastral/
+                - heading "Lanza CDMX herramienta pública para consultar ..." [level=3] [ref=e505]
+                - generic [ref=e511]:
+                  - generic [ref=e513]: Aristegui Noticias
+                  - generic [ref=e515]: https://aristeguinoticias.com › mexico › lanza-cdmx-her...
+              - button "Acerca de este resultado" [ref=e516] [cursor=pointer]:
+                - img [ref=e519]
+            - generic [ref=e522]:
+              - generic [ref=e523]: 29 jul 2020 —
+              - generic [ref=e524]:
+                - text: La herramienta Sistema Abierto de Información Geográfica permite explorar,
+                - emphasis [ref=e525]: consultar
+                - text: y descargar datos territoriales de la capital en ...
+          - generic [ref=e529]:
+            - generic [ref=e532]:
+              - link "Expedición de Certificado de Clave y Valor Catastral (en línea) Secretaría de Administración y Finanzas de la CDMX https://dgtc.finanzas.cdmx.gob.mx › catastro › expedicio..." [ref=e534] [cursor=pointer]:
+                - /url: https://dgtc.finanzas.cdmx.gob.mx/catastro/expedicion-de-certificado-de-clave-y-valor-catastral
+                - heading "Expedición de Certificado de Clave y Valor Catastral (en línea)" [level=3] [ref=e535]
+                - generic [ref=e541]:
+                  - generic [ref=e543]: Secretaría de Administración y Finanzas de la CDMX
+                  - generic [ref=e545]: https://dgtc.finanzas.cdmx.gob.mx › catastro › expedicio...
+              - button "Acerca de este resultado" [ref=e546] [cursor=pointer]:
+                - img [ref=e549]
+            - generic [ref=e553]:
+              - text: 1. El ciudadano
+              - emphasis [ref=e554]: ingresa a https://ovica-servicios.finanzas.cdmx.gob.mx
+              - text: y selecciona el trámite de Expedición de Certificado de Clave y Valor.
+        - generic [ref=e556]:
+          - generic [ref=e561]:
+            - heading "También se buscó" [level=2] [ref=e563]
+            - generic [ref=e565]:
+              - generic [ref=e566]:
+                - link "Catastro CDMX mapa" [ref=e570] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Catastro+CDMX+mapa&sa=X&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ1QJ6BAggEAE
+                  - generic [ref=e571]:
+                    - generic [ref=e576]: Catastro CDMX mapa
+                    - img [ref=e580]
+                - link "Consultar Catastro por internet" [ref=e585] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Consultar+Catastro+por+internet&sa=X&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ1QJ6BAgwEAE
+                  - generic [ref=e586]:
+                    - generic [ref=e591]: Consultar Catastro por internet
+                    - img [ref=e595]
+                - link "Oficina Virtual de catastro CDMX" [ref=e600] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Oficina+Virtual+de+catastro+CDMX&sa=X&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ1QJ6BAgtEAE
+                  - generic [ref=e601]:
+                    - generic [ref=e606]: Oficina Virtual de catastro CDMX
+                    - img [ref=e610]
+                - link "Valor catastral consulta" [ref=e615] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Valor+catastral+consulta&sa=X&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ1QJ6BAgqEAE
+                  - generic [ref=e616]:
+                    - generic [ref=e621]: Valor catastral consulta
+                    - img [ref=e625]
+              - generic [ref=e627]:
+                - link "Valor catastral CDMX" [ref=e631] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Valor+catastral+CDMX&sa=X&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ1QJ6BAgoEAE
+                  - generic [ref=e632]:
+                    - generic [ref=e637]: Valor catastral CDMX
+                    - img [ref=e641]
+                - link "Descargar boleta predial CDMX" [ref=e646] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Descargar+boleta+predial+CDMX&sa=X&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ1QJ6BAgnEAE
+                  - generic [ref=e647]:
+                    - generic [ref=e652]: Descargar boleta predial CDMX
+                    - img [ref=e656]
+                - link "Consulta de predial CDMX" [ref=e661] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Consulta+de+predial+CDMX&sa=X&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ1QJ6BAgkEAE
+                  - generic [ref=e662]:
+                    - generic [ref=e667]: Consulta de predial CDMX
+                    - img [ref=e671]
+                - link "Consultar catastro por internet Estado de México" [ref=e676] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Consultar+catastro+por+internet+Estado+de+M%C3%A9xico&sa=X&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ1QJ6BAgjEAE
+                  - generic [ref=e677]:
+                    - generic [ref=e682]: Consultar catastro por internet Estado de México
+                    - img [ref=e686]
+          - navigation [ref=e688]:
+            - heading "Navegación de páginas" [level=1] [ref=e689]
+            - text: "1"
+            - link "Page 2" [ref=e692] [cursor=pointer]:
+              - /url: /search?q=catastro+cdmx+consulta+valor+catastral&sca_esv=c6c16ab1eb0a4421&ei=kDUwarbJPLqtqtsPis_C2Q0&start=10&sa=N&sstk=AU9db-AhfIgimcxb775Q4a9LyhKF0Kp3HhQZWzpGLZfa-bt4vqwMDux-m_d-0mRqwMT9rVY09KxEvMEkwdhFGUNVDkGoWlrHVBEx9A&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ8tMDegQINxAE
+              - text: "2"
+            - link "Page 3" [ref=e694] [cursor=pointer]:
+              - /url: /search?q=catastro+cdmx+consulta+valor+catastral&sca_esv=c6c16ab1eb0a4421&ei=kDUwarbJPLqtqtsPis_C2Q0&start=20&sa=N&sstk=AU9db-AhfIgimcxb775Q4a9LyhKF0Kp3HhQZWzpGLZfa-bt4vqwMDux-m_d-0mRqwMT9rVY09KxEvMEkwdhFGUNVDkGoWlrHVBEx9A&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ8tMDegQINxAG
+              - text: "3"
+            - link "Page 4" [ref=e696] [cursor=pointer]:
+              - /url: /search?q=catastro+cdmx+consulta+valor+catastral&sca_esv=c6c16ab1eb0a4421&ei=kDUwarbJPLqtqtsPis_C2Q0&start=30&sa=N&sstk=AU9db-AhfIgimcxb775Q4a9LyhKF0Kp3HhQZWzpGLZfa-bt4vqwMDux-m_d-0mRqwMT9rVY09KxEvMEkwdhFGUNVDkGoWlrHVBEx9A&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ8tMDegQINxAI
+              - text: "4"
+            - link "Page 5" [ref=e698] [cursor=pointer]:
+              - /url: /search?q=catastro+cdmx+consulta+valor+catastral&sca_esv=c6c16ab1eb0a4421&ei=kDUwarbJPLqtqtsPis_C2Q0&start=40&sa=N&sstk=AU9db-AhfIgimcxb775Q4a9LyhKF0Kp3HhQZWzpGLZfa-bt4vqwMDux-m_d-0mRqwMT9rVY09KxEvMEkwdhFGUNVDkGoWlrHVBEx9A&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ8tMDegQINxAK
+              - text: "5"
+            - link "Page 6" [ref=e700] [cursor=pointer]:
+              - /url: /search?q=catastro+cdmx+consulta+valor+catastral&sca_esv=c6c16ab1eb0a4421&ei=kDUwarbJPLqtqtsPis_C2Q0&start=50&sa=N&sstk=AU9db-AhfIgimcxb775Q4a9LyhKF0Kp3HhQZWzpGLZfa-bt4vqwMDux-m_d-0mRqwMT9rVY09KxEvMEkwdhFGUNVDkGoWlrHVBEx9A&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ8tMDegQINxAM
+              - text: "6"
+            - link "Page 7" [ref=e702] [cursor=pointer]:
+              - /url: /search?q=catastro+cdmx+consulta+valor+catastral&sca_esv=c6c16ab1eb0a4421&ei=kDUwarbJPLqtqtsPis_C2Q0&start=60&sa=N&sstk=AU9db-AhfIgimcxb775Q4a9LyhKF0Kp3HhQZWzpGLZfa-bt4vqwMDux-m_d-0mRqwMT9rVY09KxEvMEkwdhFGUNVDkGoWlrHVBEx9A&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ8tMDegQINxAO
+              - text: "7"
+            - link "Page 8" [ref=e704] [cursor=pointer]:
+              - /url: /search?q=catastro+cdmx+consulta+valor+catastral&sca_esv=c6c16ab1eb0a4421&ei=kDUwarbJPLqtqtsPis_C2Q0&start=70&sa=N&sstk=AU9db-AhfIgimcxb775Q4a9LyhKF0Kp3HhQZWzpGLZfa-bt4vqwMDux-m_d-0mRqwMT9rVY09KxEvMEkwdhFGUNVDkGoWlrHVBEx9A&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ8tMDegQINxAQ
+              - text: "8"
+            - link "Page 9" [ref=e706] [cursor=pointer]:
+              - /url: /search?q=catastro+cdmx+consulta+valor+catastral&sca_esv=c6c16ab1eb0a4421&ei=kDUwarbJPLqtqtsPis_C2Q0&start=80&sa=N&sstk=AU9db-AhfIgimcxb775Q4a9LyhKF0Kp3HhQZWzpGLZfa-bt4vqwMDux-m_d-0mRqwMT9rVY09KxEvMEkwdhFGUNVDkGoWlrHVBEx9A&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ8tMDegQINxAS
+              - text: "9"
+            - link "Page 10" [ref=e708] [cursor=pointer]:
+              - /url: /search?q=catastro+cdmx+consulta+valor+catastral&sca_esv=c6c16ab1eb0a4421&ei=kDUwarbJPLqtqtsPis_C2Q0&start=90&sa=N&sstk=AU9db-AhfIgimcxb775Q4a9LyhKF0Kp3HhQZWzpGLZfa-bt4vqwMDux-m_d-0mRqwMT9rVY09KxEvMEkwdhFGUNVDkGoWlrHVBEx9A&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ8tMDegQINxAU
+              - text: "10"
+            - heading "Siguiente" [level=2] [ref=e710]:
+              - link "Siguiente" [ref=e711] [cursor=pointer]:
+                - /url: /search?q=catastro+cdmx+consulta+valor+catastral&sca_esv=c6c16ab1eb0a4421&ei=kDUwarbJPLqtqtsPis_C2Q0&start=10&sa=N&sstk=AU9db-AhfIgimcxb775Q4a9LyhKF0Kp3HhQZWzpGLZfa-bt4vqwMDux-m_d-0mRqwMT9rVY09KxEvMEkwdhFGUNVDkGoWlrHVBEx9A&ved=2ahUKEwi20e7q4YmVAxW6lmoFHYqnMNsQ8NMDegQINxAW
+                - generic [ref=e713]: Siguiente
+        - navigation
+    - contentinfo [ref=e714]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e715]
+      - generic [ref=e719]:
+        - generic [ref=e721]:
+          - text: México
+          - generic [ref=e723]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - Según tu actividad anterior" [ref=e725] [cursor=pointer]:
+              - generic [ref=e726]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e728]:
+                - text: "-"
+                - generic [ref=e729]: Según tu actividad anterior
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e731] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e734]:
+          - link "Ayuda" [ref=e735] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e736] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e737] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e738] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

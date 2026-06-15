@@ -1,0 +1,13 @@
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - heading "Consulta 32D Público" [level=3] [ref=e9]
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]: "RFC:"
+        - textbox [ref=e17]
+      - generic [ref=e18]:
+        - generic [ref=e19]: "CURP:"
+        - textbox [ref=e21]
+      - generic [ref=e23]:
+        - button "Limpiar" [ref=e24] [cursor=pointer]
+        - button "Buscar" [disabled] [ref=e25]

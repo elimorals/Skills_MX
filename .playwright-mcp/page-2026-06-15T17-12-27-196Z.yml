@@ -1,0 +1,268 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0QPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: pago predial queretaro municipio sitio:gob.mx pago predial queretaro municipio sitio:gob.mx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dpago%2Bpredial%2Bqueretaro%2Bmunicipio%2Bsitio:gob.mx&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=pago+predial+queretaro+municipio+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNR-9YXJNVy82tvwpTTkGB1J23BpKKXH5gKJgTaInuNlX-Kd9Fl267xKRB5jbFfh-VOOmKWTRNLEXxxy7snk2yY6HiGng&aep=1&ntc=1&sa=X&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0Q2J8OegQIERAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=pago+predial+queretaro+municipio+sitio:gob.mx&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNR-9YXJNVy82tvwpTTkGB1J23BpKKXH5gKJgTaInuNlX-Kd9Fl267xKRB5jbFfh-VOOmKWTRNLEXxxy7snk2yY6HiGng&sa=X&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0Q0pQJegQIFhAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Imágenes" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNR-9YXJNVy82tvwpTTkGB1J23BpKKXH5gKJgTaInuNlX-Kd9Fl267xKRB5jbFfh-VOOmKWTRNLEXxxy7snk2yY6HiGng&q=pago+predial+queretaro+municipio+sitio:gob.mx&sa=X&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0QtKgLegQIFxAB
+              - generic [ref=e88]: Imágenes
+          - listitem [ref=e89]:
+            - link "Shopping" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNR-9YXJNVy82tvwpTTkGB1J23BpKKXH5gKJgTaInuNlX-Kd9Fl267xKRB5jbFfh-VOOmKWTRNLEXxxy7snk2yY6HiGng&q=pago+predial+queretaro+municipio+sitio:gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e92]: Shopping
+          - listitem [ref=e93]:
+            - link "Videos" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNR-9YXJNVy82tvwpTTkGB1J23BpKKXH5gKJgTaInuNlX-Kd9Fl267xKRB5jbFfh-VOOmKWTRNLEXxxy7snk2yY6HiGng&q=pago+predial+queretaro+municipio+sitio:gob.mx&sa=X&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0QtKgLegQIFBAB
+              - generic [ref=e96]: Videos
+          - listitem [ref=e97]:
+            - link "Videos cortos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNR-9YXJNVy82tvwpTTkGB1J23BpKKXH5gKJgTaInuNlX-Kd9Fl267xKRB5jbFfh-VOOmKWTRNLEXxxy7snk2yY6HiGng&q=pago+predial+queretaro+municipio+sitio:gob.mx&sa=X&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0Qs6gLegQIExAB
+              - generic [ref=e100]: Videos cortos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - main [ref=e123]:
+      - generic [ref=e127]:
+        - generic [ref=e130]:
+          - heading "Resultados web" [level=2] [ref=e131]
+          - generic [ref=e132]:
+            - generic [ref=e135]:
+              - link "Pago de Impuestos Municipio de Querétaro https://municipiodequeretaro.gob.mx › pago-de-impues..." [ref=e137] [cursor=pointer]:
+                - /url: https://municipiodequeretaro.gob.mx/pago-de-impuestos/
+                - heading "Pago de Impuestos" [level=3] [ref=e138]
+                - generic [ref=e144]:
+                  - generic [ref=e146]: Municipio de Querétaro
+                  - generic [ref=e148]: https://municipiodequeretaro.gob.mx › pago-de-impues...
+              - button "Acerca de este resultado" [ref=e149] [cursor=pointer]:
+                - img [ref=e152]
+            - generic [ref=e156]:
+              - emphasis [ref=e157]: Predial
+              - text: · Paga en línea aquí · Lugares y formas de pago · Recaudamóvil · Actualización de Datos Personales · Descargar tu recibo de pago y CFDI · Valida tu ...
+        - generic [ref=e168]:
+          - heading "Pensando" [level=2] [ref=e172]:
+            - generic [ref=e173]: Pensando
+          - progressbar "Generando" [ref=e174]
+        - generic [ref=e178]:
+          - heading "Resultados web" [level=2] [ref=e179]
+          - generic [ref=e180]:
+            - generic [ref=e183]:
+              - link "Consulta de Línea de Captura para pago de Impuesto ... Municipio de Querétaro https://webservices.municipiodequeretaro.gob.mx › cons..." [ref=e185] [cursor=pointer]:
+                - /url: https://webservices.municipiodequeretaro.gob.mx/consultaLC/v2/
+                - heading "Consulta de Línea de Captura para pago de Impuesto ..." [level=3] [ref=e186]
+                - generic [ref=e192]:
+                  - generic [ref=e194]: Municipio de Querétaro
+                  - generic [ref=e196]: https://webservices.municipiodequeretaro.gob.mx › cons...
+              - button "Acerca de este resultado" [ref=e197] [cursor=pointer]:
+                - img [ref=e200]
+            - generic [ref=e204]:
+              - emphasis [ref=e205]: Para la descarga de pagos por Impuesto Predial, deberá capturar los siguientes datos
+              - text: ": *Clave catastral *Año en que realizó el pago *Importe pagado (sin signos, ..."
+        - generic [ref=e209]:
+          - generic [ref=e212]:
+            - link "Consulta e Impresión del Comprobante de Pago Municipio de Querétaro https://gestion.municipiodequeretaro.gob.mx › sello_digi..." [ref=e214] [cursor=pointer]:
+              - /url: https://gestion.municipiodequeretaro.gob.mx/sello_digital/
+              - heading "Consulta e Impresión del Comprobante de Pago" [level=3] [ref=e215]
+              - generic [ref=e221]:
+                - generic [ref=e223]: Municipio de Querétaro
+                - generic [ref=e225]: https://gestion.municipiodequeretaro.gob.mx › sello_digi...
+            - button "Acerca de este resultado" [ref=e226] [cursor=pointer]:
+              - img [ref=e229]
+          - generic [ref=e233]:
+            - emphasis [ref=e234]: Para la descarga de pagos por Impuesto Predial, deberá capturar los siguientes datos
+            - text: ": *Clave catastral *Año en que realizó el pago *Importe pagado (sin signos, ..."
+        - generic [ref=e238]:
+          - generic [ref=e241]:
+            - link "Municipio de Querétaro Municipio de Querétaro https://municipiodequeretaro.gob.mx" [ref=e243] [cursor=pointer]:
+              - /url: https://municipiodequeretaro.gob.mx/
+              - heading "Municipio de Querétaro" [level=3] [ref=e244]
+              - generic [ref=e250]:
+                - generic [ref=e252]: Municipio de Querétaro
+                - generic [ref=e254]: https://municipiodequeretaro.gob.mx
+            - button "Acerca de este resultado" [ref=e255] [cursor=pointer]:
+              - img [ref=e258]
+          - generic [ref=e262]:
+            - text: Página oficial de Gobierno del Municipio de Querétaro. Trámites, Servicios ...
+            - emphasis [ref=e263]: Realizar pago de Predial
+            - text: . SERVICIOS. REGISTRO CIVIL 2. REGISTRO-CIVIL-1.
+        - generic [ref=e267]:
+          - generic [ref=e270]:
+            - link "Formas de Pago de las Diversas Contribuciones Municipales Municipio de Querétaro https://municipiodequeretaro.gob.mx › lugares-y-forma..." [ref=e272] [cursor=pointer]:
+              - /url: https://municipiodequeretaro.gob.mx/pago-de-impuestos/lugares-y-formas-de-pago-de-las-diversas-contribuciones-municipales/
+              - heading "Formas de Pago de las Diversas Contribuciones Municipales" [level=3] [ref=e273]
+              - generic [ref=e279]:
+                - generic [ref=e281]: Municipio de Querétaro
+                - generic [ref=e283]: https://municipiodequeretaro.gob.mx › lugares-y-forma...
+            - button "Acerca de este resultado" [ref=e284] [cursor=pointer]:
+              - img [ref=e287]
+          - generic [ref=e291]:
+            - text: ¿DÓNDE PUEDO PAGAR MI PREDIAL? ·
+            - emphasis [ref=e292]: Página Web del Municipio
+            - text: · Código QR · Cajeros Cerca · Banorte (empresa 83997) · BanBajío · Citibanamex ...
+        - generic [ref=e296]:
+          - generic [ref=e299]:
+            - link "Tramites Municipio de Querétaro Tramites Municipio de Querétaro https://tramitesqro.municipiodequeretaro.gob.mx" [ref=e301] [cursor=pointer]:
+              - /url: https://tramitesqro.municipiodequeretaro.gob.mx/
+              - heading "Tramites Municipio de Querétaro" [level=3] [ref=e302]
+              - generic [ref=e304]:
+                - img [ref=e309]
+                - generic [ref=e311]:
+                  - generic [ref=e313]: Tramites Municipio de Querétaro
+                  - generic [ref=e315]: https://tramitesqro.municipiodequeretaro.gob.mx
+            - button "Acerca de este resultado" [ref=e316] [cursor=pointer]:
+              - img [ref=e319]
+          - generic [ref=e323]:
+            - emphasis [ref=e324]: Realiza el pago del Impuesto Predial en Línea
+            - text: . Ver Cédula Ir al sitio. Renovación de la Licencia Municipal de Funcionamiento. Ver Cédula. Obtén tu Certificado ...
+        - generic [ref=e328]:
+          - generic [ref=e331]:
+            - link "Inicio - queretaro.gob.mx queretaro.gob.mx https://www.queretaro.gob.mx" [ref=e333] [cursor=pointer]:
+              - /url: https://www.queretaro.gob.mx/
+              - heading "Inicio - queretaro.gob.mx" [level=3] [ref=e334]
+              - generic [ref=e340]:
+                - generic [ref=e342]: queretaro.gob.mx
+                - generic [ref=e344]: https://www.queretaro.gob.mx
+            - button "Acerca de este resultado" [ref=e345] [cursor=pointer]:
+              - img [ref=e348]
+          - generic [ref=e351]: "¡Hola! ¿TIENES ALGUNA DUDA? Ingresa al CHAT y contáctanos. Horarios de: L-V 8:00 a 20:00hrs. | Sábados 9:00 a 14:00hrs."
+        - generic [ref=e355]:
+          - generic [ref=e358]:
+            - link "¿Cómo y dónde pagar el impuesto predial en Querétaro? BBVA México https://www.bbva.mx › Personas › Impuestos" [ref=e360] [cursor=pointer]:
+              - /url: https://www.bbva.mx/educacion-financiera/impuestos/impuesto-predial-en-queretaro.html
+              - heading "¿Cómo y dónde pagar el impuesto predial en Querétaro?" [level=3] [ref=e361]
+              - generic [ref=e367]:
+                - generic [ref=e369]: BBVA México
+                - generic [ref=e371]: https://www.bbva.mx › Personas › Impuestos
+            - button "Acerca de este resultado" [ref=e372] [cursor=pointer]:
+              - img [ref=e375]
+          - generic [ref=e379]:
+            - text: Si prefieres realizar el pago de manera presencial,
+            - emphasis [ref=e380]: puedes acudir a las oficinas de recaudación del municipio de Querétaro
+            - text: . Estas oficinas cuentan con personal ...
+        - generic [ref=e384]:
+          - generic [ref=e387]:
+            - link "Predial Querétaro 2026 — ¿Cuánto debo? INAH https://antropologiafisica.inah.gob.mx › consultar-predial" [ref=e389] [cursor=pointer]:
+              - /url: https://antropologiafisica.inah.gob.mx/consultar-predial/index.php?estado=queretaro
+              - heading "Predial Querétaro 2026 — ¿Cuánto debo?" [level=3] [ref=e390]
+              - generic [ref=e392]:
+                - img [ref=e397]
+                - generic [ref=e399]:
+                  - generic [ref=e401]: INAH
+                  - generic [ref=e403]: https://antropologiafisica.inah.gob.mx › consultar-predial
+            - button "Acerca de este resultado" [ref=e404] [cursor=pointer]:
+              - img [ref=e407]
+          - generic [ref=e411]:
+            - emphasis [ref=e412]: Consulta cuánto debes de predial en Querétaro 2026
+            - text: . Boleta predial, pago en línea y oficinas de catastro en Querétaro.
+      - navigation [ref=e415]:
+        - heading "Navegación de páginas" [level=1] [ref=e416]
+        - text: "1"
+        - link "Page 2" [ref=e419] [cursor=pointer]:
+          - /url: /search?q=pago+predial+queretaro+municipio+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=ejIwasScKpesmtkPmfro6Aw&start=10&sa=N&sstk=AU9db-DggfTsV8FC_Z8Co0q4uBtSs4r9_KPNJC-VguhO11In-ZU-u5cqwmLjUu0lAyksI9rOpTOO1s8xRFtG7bZcpkMRbK-3FngJCQ&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0Q8tMDegQIHhAE
+          - text: "2"
+        - link "Page 3" [ref=e421] [cursor=pointer]:
+          - /url: /search?q=pago+predial+queretaro+municipio+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=ejIwasScKpesmtkPmfro6Aw&start=20&sa=N&sstk=AU9db-DggfTsV8FC_Z8Co0q4uBtSs4r9_KPNJC-VguhO11In-ZU-u5cqwmLjUu0lAyksI9rOpTOO1s8xRFtG7bZcpkMRbK-3FngJCQ&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0Q8tMDegQIHhAG
+          - text: "3"
+        - link "Page 4" [ref=e423] [cursor=pointer]:
+          - /url: /search?q=pago+predial+queretaro+municipio+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=ejIwasScKpesmtkPmfro6Aw&start=30&sa=N&sstk=AU9db-DggfTsV8FC_Z8Co0q4uBtSs4r9_KPNJC-VguhO11In-ZU-u5cqwmLjUu0lAyksI9rOpTOO1s8xRFtG7bZcpkMRbK-3FngJCQ&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0Q8tMDegQIHhAI
+          - text: "4"
+        - link "Page 5" [ref=e425] [cursor=pointer]:
+          - /url: /search?q=pago+predial+queretaro+municipio+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=ejIwasScKpesmtkPmfro6Aw&start=40&sa=N&sstk=AU9db-DggfTsV8FC_Z8Co0q4uBtSs4r9_KPNJC-VguhO11In-ZU-u5cqwmLjUu0lAyksI9rOpTOO1s8xRFtG7bZcpkMRbK-3FngJCQ&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0Q8tMDegQIHhAK
+          - text: "5"
+        - link "Page 6" [ref=e427] [cursor=pointer]:
+          - /url: /search?q=pago+predial+queretaro+municipio+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=ejIwasScKpesmtkPmfro6Aw&start=50&sa=N&sstk=AU9db-DggfTsV8FC_Z8Co0q4uBtSs4r9_KPNJC-VguhO11In-ZU-u5cqwmLjUu0lAyksI9rOpTOO1s8xRFtG7bZcpkMRbK-3FngJCQ&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0Q8tMDegQIHhAM
+          - text: "6"
+        - link "Page 7" [ref=e429] [cursor=pointer]:
+          - /url: /search?q=pago+predial+queretaro+municipio+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=ejIwasScKpesmtkPmfro6Aw&start=60&sa=N&sstk=AU9db-DggfTsV8FC_Z8Co0q4uBtSs4r9_KPNJC-VguhO11In-ZU-u5cqwmLjUu0lAyksI9rOpTOO1s8xRFtG7bZcpkMRbK-3FngJCQ&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0Q8tMDegQIHhAO
+          - text: "7"
+        - link "Page 8" [ref=e431] [cursor=pointer]:
+          - /url: /search?q=pago+predial+queretaro+municipio+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=ejIwasScKpesmtkPmfro6Aw&start=70&sa=N&sstk=AU9db-DggfTsV8FC_Z8Co0q4uBtSs4r9_KPNJC-VguhO11In-ZU-u5cqwmLjUu0lAyksI9rOpTOO1s8xRFtG7bZcpkMRbK-3FngJCQ&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0Q8tMDegQIHhAQ
+          - text: "8"
+        - link "Page 9" [ref=e433] [cursor=pointer]:
+          - /url: /search?q=pago+predial+queretaro+municipio+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=ejIwasScKpesmtkPmfro6Aw&start=80&sa=N&sstk=AU9db-DggfTsV8FC_Z8Co0q4uBtSs4r9_KPNJC-VguhO11In-ZU-u5cqwmLjUu0lAyksI9rOpTOO1s8xRFtG7bZcpkMRbK-3FngJCQ&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0Q8tMDegQIHhAS
+          - text: "9"
+        - link "Page 10" [ref=e435] [cursor=pointer]:
+          - /url: /search?q=pago+predial+queretaro+municipio+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=ejIwasScKpesmtkPmfro6Aw&start=90&sa=N&sstk=AU9db-DggfTsV8FC_Z8Co0q4uBtSs4r9_KPNJC-VguhO11In-ZU-u5cqwmLjUu0lAyksI9rOpTOO1s8xRFtG7bZcpkMRbK-3FngJCQ&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0Q8tMDegQIHhAU
+          - text: "10"
+        - heading "Siguiente" [level=2] [ref=e437]:
+          - link "Siguiente" [ref=e438] [cursor=pointer]:
+            - /url: /search?q=pago+predial+queretaro+municipio+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=ejIwasScKpesmtkPmfro6Aw&start=10&sa=N&sstk=AU9db-DggfTsV8FC_Z8Co0q4uBtSs4r9_KPNJC-VguhO11In-ZU-u5cqwmLjUu0lAyksI9rOpTOO1s8xRFtG7bZcpkMRbK-3FngJCQ&ved=2ahUKEwjEwYLy3omVAxUXliYFHRk9Gs0Q8NMDegQIHhAW
+            - generic [ref=e440]: Siguiente
+      - navigation
+    - contentinfo [ref=e441]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e442]
+      - generic [ref=e446]:
+        - generic [ref=e448]:
+          - text: México
+          - generic [ref=e450]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - A través de tu dirección IP" [ref=e452] [cursor=pointer]:
+              - generic [ref=e453]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e455]:
+                - text: "-"
+                - generic [ref=e456]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e458] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e461]:
+          - link "Ayuda" [ref=e462] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e463] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e464] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e465] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

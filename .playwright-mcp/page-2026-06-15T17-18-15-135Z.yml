@@ -1,0 +1,144 @@
+- generic [active] [ref=e1]:
+  - text: J M A S
+  - banner [ref=e2]:
+    - generic [ref=e5]:
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - generic [ref=e10]: 
+          - text: Pedro N. García 2231 Col. Partido Romero, Cd. Juárez, Chih.
+        - listitem [ref=e11]:
+          - generic [ref=e12]: 
+          - link "(656) 686 00 73" [ref=e13] [cursor=pointer]:
+            - /url: tel:+526566860073
+        - listitem [ref=e14]:
+          - generic [ref=e15]: 
+          - link "Preguntas Frecuentes" [ref=e16] [cursor=pointer]:
+            - /url: preguntas_frecuentes.php
+      - generic [ref=e18]:
+        - generic [ref=e19]: "Síguenos en:"
+        - link "" [ref=e20] [cursor=pointer]:
+          - /url: https://www.facebook.com/JmasJuarez
+          - generic [ref=e21]: 
+        - link [ref=e22] [cursor=pointer]:
+          - /url: https://twitter.com/jmasjuarez
+        - link "" [ref=e24] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@jmasjuarez
+          - generic [ref=e25]: 
+        - link "" [ref=e26] [cursor=pointer]:
+          - /url: https://www.instagram.com/jmasjuarez/
+          - generic [ref=e27]: 
+        - link "" [ref=e28] [cursor=pointer]:
+          - /url: https://www.youtube.com/channel/UCb2k0h23g-8-gfOweLJDcmA
+          - generic [ref=e29]: 
+    - generic [ref=e33]:
+      - generic [ref=e35]:
+        - text: 
+        - link "JMAS de Juárez" [ref=e37] [cursor=pointer]:
+          - /url: /v026/index.php
+          - img "JMAS de Juárez" [ref=e39]
+      - navigation [ref=e41]:
+        - list [ref=e42]:
+          - listitem [ref=e43]:
+            - link "Inicio" [ref=e44] [cursor=pointer]:
+              - /url: /v026/
+          - listitem [ref=e45]:
+            - link "Atención" [ref=e46] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e47]:
+            - link "Servicios" [ref=e48] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e49]:
+            - link "Información" [ref=e50] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e51]:
+            - link "Nosotros" [ref=e52] [cursor=pointer]:
+              - /url: /v026/quienes-somos.php
+          - listitem [ref=e53]:
+            - link "Transparencia" [ref=e54] [cursor=pointer]:
+              - /url: /v026/transparencia.php
+          - listitem [ref=e55]:
+            - link "Comité de Ética" [ref=e56] [cursor=pointer]:
+              - /url: /v026/conetica.php
+      - generic [ref=e58]:
+        - link "Paga tu recibo " [ref=e59] [cursor=pointer]:
+          - /url: https://jmasjuarez.pagosdigitales.com
+          - text: Paga tu recibo
+          - generic [ref=e60]: 
+        - link " Empleados" [ref=e61] [cursor=pointer]:
+          - /url: /v026/empleados.php
+          - generic [ref=e62]: 
+          - text: Empleados
+  - generic [ref=e64]:
+    - generic [ref=e65]: Consulta tu Saldo
+    - generic [ref=e66]:
+      - img "shape" [ref=e69]
+      - text: Consulta tu Saldo
+    - heading "Consulta tu saldo de consumo de la Junta Municipal de Agua y Saneamiento." [level=5] [ref=e70]
+  - main [ref=e71]:
+    - generic [ref=e73]:
+      - img "Recibo" [ref=e74]
+      - group "Consulta de cuenta" [ref=e75]:
+        - link "Regresar" [ref=e76] [cursor=pointer]:
+          - /url: index.php
+        - generic [ref=e77]:
+          - textbox "Ingresar número de cuenta" [ref=e78]:
+            - /placeholder: Ingresar cuenta
+          - button "Buscar" [ref=e79] [cursor=pointer]
+  - contentinfo [ref=e80]:
+    - generic [ref=e82]:
+      - generic [ref=e83]:
+        - link "JMAS Juárez" [ref=e85] [cursor=pointer]:
+          - /url: /v026/
+          - img "JMAS Juárez" [ref=e86]
+        - generic [ref=e87]:
+          - heading "Junta Municipal de Agua y Saneamiento de Juárez" [level=3] [ref=e88]:
+            - text: Junta Municipal de Agua
+            - text: y Saneamiento de Juárez
+          - paragraph [ref=e89]:
+            - text: "Calle Pedro N. García #2231 Col. Partido Romero C.P. 32030,"
+            - text: Cd. Juárez, Chih. 2025
+          - navigation "Redes sociales" [ref=e90]:
+            - link "Facebook" [ref=e91] [cursor=pointer]:
+              - /url: https://www.facebook.com/JmasJuarez
+              - img [ref=e92]
+            - link "Instagram" [ref=e94] [cursor=pointer]:
+              - /url: https://www.instagram.com/jmasjuarez
+              - img [ref=e95]
+            - link "X" [ref=e97] [cursor=pointer]:
+              - /url: https://x.com/jmasjuarez
+              - img [ref=e98]
+            - link "TikTok" [ref=e100] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@jmasjuarez
+              - img [ref=e101]
+            - link "YouTube" [ref=e103] [cursor=pointer]:
+              - /url: https://www.youtube.com/@jmas_juarez
+              - img [ref=e104]
+      - link "Gobierno del Estado de Chihuahua" [ref=e107] [cursor=pointer]:
+        - /url: https://www.chihuahua.gob.mx/
+        - img "Gobierno del Estado de Chihuahua" [ref=e108]
+      - generic [ref=e109]:
+        - heading "REPORTES E INFORMACIÓN" [level=4] [ref=e110]
+        - generic [ref=e111]: "073"
+        - paragraph [ref=e112]:
+          - text: Atención a Usuarios las 24 horas,
+          - text: los 7 días de la semana.
+  - generic [ref=e114]:
+    - paragraph [ref=e116]:
+      - text: Copyright
+      - generic [ref=e117]: 
+      - text: 2025 Junta Municipal de Agua y Saneamiento de Juárez. Todos los derechos reservados.
+    - list [ref=e120]:
+      - listitem [ref=e121]:
+        - link "Términos & Condiciones" [ref=e122] [cursor=pointer]:
+          - /url: terminos_condiciones.php
+      - listitem [ref=e123]:
+        - link "Vacantes" [ref=e124] [cursor=pointer]:
+          - /url: /v026/vacantes.php
+      - listitem [ref=e125]:
+        - link "Politica de Privacidad" [ref=e126] [cursor=pointer]:
+          - /url: /v026/aviso_privacidad.php
+    - link "Desarrollado por Stratopia" [ref=e128] [cursor=pointer]:
+      - /url: https://www.stratopia.mx
+      - paragraph [ref=e129]:
+        - text: Desarrollado por
+        - strong [ref=e130]: Stratopia

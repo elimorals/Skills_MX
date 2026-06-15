@@ -1,0 +1,81 @@
+- generic [active] [ref=e1]:
+  - img "banner" [ref=e3]
+  - generic [ref=e4]:
+    - generic [ref=e11]:
+      - link [ref=e15] [cursor=pointer]:
+        - /url: "#"
+      - generic [ref=e26]:
+        - link "Atención Ciudadana" [ref=e28] [cursor=pointer]:
+          - /url: https://311locatel.cdmx.gob.mx/
+        - link "Guía de visitantes" [ref=e30] [cursor=pointer]:
+          - /url: https://mexicocity.cdmx.gob.mx/
+        - link "Gobierno" [ref=e32] [cursor=pointer]:
+          - /url: https://gobierno.cdmx.gob.mx
+      - button "es" [ref=e39] [cursor=pointer]:
+        - generic [ref=e40]: es
+    - generic [ref=e42]:
+      - generic [ref=e52]: "Estás por iniciar sesión en: Fotocívicas"
+      - generic [ref=e57]:
+        - generic [ref=e60]:
+          - generic [ref=e62]: Ingresa a tu
+          - generic [ref=e67]:
+            - text: Tu espacio único de interacción con el gobierno.
+            - text: Todos tus trámites y documentos en un solo lugar.
+          - generic [ref=e74]:
+            - text: ¿Tienes alguna duda?
+            - link "Te apoyamos aquí" [ref=e75] [cursor=pointer]:
+              - /url: /public/PreguntasFrecuentes.xhtml
+        - generic [ref=e78]:
+          - generic [ref=e82]:
+            - generic [ref=e85]: Correo electrónico o teléfono*
+            - textbox "Correo electrónico o teléfono*" [ref=e88]:
+              - /placeholder: Escribe tu correo o teléfono
+            - alert [ref=e91]
+            - link "Olvidé mi usuario" [ref=e98] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=e102]:
+            - generic [ref=e105]: Contraseña*
+            - generic [ref=e108]:
+              - textbox "Contraseña*" [ref=e109]:
+                - /placeholder: Escribe tu contraseña
+              - generic [ref=e110] [cursor=pointer]: 
+            - alert [ref=e113]
+            - link "Olvidé mi contraseña" [ref=e120] [cursor=pointer]:
+              - /url: /oauth.xhtml
+          - button "Ingresar" [ref=e127] [cursor=pointer]:
+            - generic [ref=e128]: Ingresar
+          - generic [ref=e136]:
+            - generic [ref=e139]: ¿No tienes cuenta?
+            - button "Crear cuenta" [ref=e142] [cursor=pointer]:
+              - generic [ref=e143]: Crear cuenta
+    - generic [ref=e149]:
+      - img [ref=e151]
+      - generic [ref=e154]:
+        - generic [ref=e157]:
+          - text: Para emergencias, marca al
+          - link "911" [ref=e158] [cursor=pointer]:
+            - /url: tel:911
+        - generic [ref=e161]:
+          - text: Dudas e información, marca al
+          - link "*0311" [ref=e162] [cursor=pointer]:
+            - /url: tel:*0311
+      - generic [ref=e165]:
+        - generic [ref=e167]: Redes de la Ciudad
+        - generic [ref=e170]:
+          - link [ref=e171] [cursor=pointer]:
+            - /url: https://es-la.facebook.com/GobiernoCDMX/
+          - link [ref=e172] [cursor=pointer]:
+            - /url: https://twitter.com/GobCDMX
+      - generic [ref=e176]:
+        - generic [ref=e179]:
+          - generic [ref=e182]: Sitios relacionados
+          - link "Agencia Digital de Innovación Pública" [ref=e189] [cursor=pointer]:
+            - /url: https://adip.cdmx.gob.mx/
+          - generic [ref=e192]: Transparencia
+          - link "Ir al portal de Transparencia ->" [ref=e195] [cursor=pointer]:
+            - /url: https://www.transparencia.cdmx.gob.mx/
+          - link "Aviso de privacidad" [ref=e198] [cursor=pointer]:
+            - /url: https://frontendbase.cdmx.gob.mx/file-server/aviso_privacidad/4_aviso_simplificado.pdf
+        - link "Portal de Datos Abiertos. Explora, analiza y descarga las bases de datos de la CDMX." [ref=e204] [cursor=pointer]:
+          - /url: https://datos.cdmx.gob.mx/
+          - img "Portal de Datos Abiertos. Explora, analiza y descarga las bases de datos de la CDMX." [ref=e205]

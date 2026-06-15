@@ -1,0 +1,288 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: pago predial mexicali sitio:gob.mx pago predial mexicali sitio:gob.mx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dpago%2Bpredial%2Bmexicali%2Bsitio:gob.mx&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=pago+predial+mexicali+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&aep=1&ntc=1&sa=X&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQ2J8OegQIERAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=pago+predial+mexicali+sitio:gob.mx&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&sa=X&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQ0pQJegQIFRAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Imágenes" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+mexicali+sitio:gob.mx&sa=X&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQtKgLegQIFxAB
+              - generic [ref=e88]: Imágenes
+          - listitem [ref=e89]:
+            - link "Shopping" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+mexicali+sitio:gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e92]: Shopping
+          - listitem [ref=e93]:
+            - link "Videos" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+mexicali+sitio:gob.mx&sa=X&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQtKgLegQIFBAB
+              - generic [ref=e96]: Videos
+          - listitem [ref=e97]:
+            - link "Videos cortos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+mexicali+sitio:gob.mx&sa=X&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQs6gLegQIExAB
+              - generic [ref=e100]: Videos cortos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - main [ref=e123]:
+      - generic [ref=e127]:
+        - generic [ref=e130]:
+          - heading "Resultados web" [level=2] [ref=e131]
+          - generic [ref=e132]:
+            - generic [ref=e135]:
+              - link "Impuesto predial > 25 Ayuntamiento de Mexicali Ayuntamiento de Mexicali https://www.mexicali.gob.mx › portalmexicali › predial" [ref=e137] [cursor=pointer]:
+                - /url: https://www.mexicali.gob.mx/portalmexicali/predial
+                - heading "Impuesto predial > 25 Ayuntamiento de Mexicali" [level=3] [ref=e138]
+                - generic [ref=e144]:
+                  - generic [ref=e146]: Ayuntamiento de Mexicali
+                  - generic [ref=e148]: https://www.mexicali.gob.mx › portalmexicali › predial
+              - button "Acerca de este resultado" [ref=e149] [cursor=pointer]:
+                - img [ref=e152]
+            - generic [ref=e156]:
+              - emphasis [ref=e157]: Para consultar el impuesto predial, proporciona la clave catastral
+              - text: ; puedes localizarla en la parte central del recibo anterior o en tu recibo de agua, ...
+        - generic [ref=e168]:
+          - heading "Pensando" [level=2] [ref=e172]:
+            - generic [ref=e173]: Pensando
+          - progressbar "Generando" [ref=e174]
+        - generic [ref=e178]:
+          - heading "Resultados web" [level=2] [ref=e179]
+          - generic [ref=e180]:
+            - generic [ref=e183]:
+              - link "Impuesto Predial Gobierno de Baja California https://www.bajacalifornia.gob.mx › Tramites_Servicios" [ref=e185] [cursor=pointer]:
+                - /url: https://www.bajacalifornia.gob.mx/Tramites_Servicios/Predial
+                - heading "Impuesto Predial" [level=3] [ref=e186]
+                - generic [ref=e192]:
+                  - generic [ref=e194]: Gobierno de Baja California
+                  - generic [ref=e196]: https://www.bajacalifornia.gob.mx › Tramites_Servicios
+              - button "Acerca de este resultado" [ref=e197] [cursor=pointer]:
+                - img [ref=e200]
+            - generic [ref=e204]:
+              - emphasis [ref=e205]: Impuesto Predial
+              - text: · Mexicali · Tijuana · Ensenada · Tecate · Playas de Rosarito · San Quintín · San Felipe.
+        - generic [ref=e209]:
+          - generic [ref=e212]:
+            - link "25 Ayuntamiento de Mexicali Ayuntamiento de Mexicali https://www.mexicali.gob.mx" [ref=e214] [cursor=pointer]:
+              - /url: https://www.mexicali.gob.mx/
+              - heading "25 Ayuntamiento de Mexicali" [level=3] [ref=e215]
+              - generic [ref=e221]:
+                - generic [ref=e223]: Ayuntamiento de Mexicali
+                - generic [ref=e225]: https://www.mexicali.gob.mx
+            - button "Acerca de este resultado" [ref=e226] [cursor=pointer]:
+              - img [ref=e229]
+          - generic [ref=e233]:
+            - text: Paga tu Predial.
+            - emphasis [ref=e234]: Aquí puedes consultar y pagar el adeudo del Impuesto
+            - text: ... 21000, Mexicali, Baja California. contacto@mexicali.gob.mx. (686) 558.1600.
+        - generic [ref=e238]:
+          - generic [ref=e241]:
+            - link "Recibo de pago > 25 Ayuntamiento de Mexicali Ayuntamiento de Mexicali https://www.mexicali.gob.mx › portalmexicali › recibo-..." [ref=e243] [cursor=pointer]:
+              - /url: https://www.mexicali.gob.mx/portalmexicali/recibo-pago
+              - heading "Recibo de pago > 25 Ayuntamiento de Mexicali" [level=3] [ref=e244]
+              - generic [ref=e250]:
+                - generic [ref=e252]: Ayuntamiento de Mexicali
+                - generic [ref=e254]: https://www.mexicali.gob.mx › portalmexicali › recibo-...
+            - button "Acerca de este resultado" [ref=e255] [cursor=pointer]:
+              - img [ref=e258]
+          - generic [ref=e262]:
+            - emphasis [ref=e263]: Consulta el comprobante que recibiste al realizar el pago
+            - text: para identificar la clave catastral o de servicio, la fecha de pago y el importe. Clave *. Ejemplo la ...
+        - generic [ref=e267]:
+          - generic [ref=e270]:
+            - link "Lugares de pago > 25 Ayuntamiento de Mexicali Ayuntamiento de Mexicali https://www.mexicali.gob.mx › portalmexicali › lugares..." [ref=e272] [cursor=pointer]:
+              - /url: https://www.mexicali.gob.mx/portalmexicali/lugares-pago
+              - heading "Lugares de pago > 25 Ayuntamiento de Mexicali" [level=3] [ref=e273]
+              - generic [ref=e279]:
+                - generic [ref=e281]: Ayuntamiento de Mexicali
+                - generic [ref=e283]: https://www.mexicali.gob.mx › portalmexicali › lugares...
+            - button "Acerca de este resultado" [ref=e284] [cursor=pointer]:
+              - img [ref=e287]
+          - generic [ref=e291]:
+            - text: Oficinas para pagos municipales. Uniendo esfuerzos. CONTACTO.
+            - emphasis [ref=e292]: Av. Independencia 998, Centro Cívico C.P. 21000, Mexicali, Baja California
+            - text: . contacto@mexicali.gob.
+        - generic [ref=e298]:
+          - generic [ref=e301]:
+            - link "¿Ya pagaste tu predial? Ahora puedes hacerlo desde tu ... Facebook · Gobierno de Mexicali Más de 10 reacciones · hace 1 año" [ref=e303] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobiernodemexicali/videos/ya-pagaste-tu-predial-ahora-puedes-hacerlo-desde-tu-computadora-o-celular-solo-e/966027788331302/
+              - heading "¿Ya pagaste tu predial? Ahora puedes hacerlo desde tu ..." [level=3] [ref=e304]
+              - generic [ref=e310]:
+                - generic [ref=e312]: Facebook · Gobierno de Mexicali
+                - generic [ref=e314]: Más de 10 reacciones · hace 1 año
+            - button "Acerca de este resultado" [ref=e315] [cursor=pointer]:
+              - img [ref=e318]
+          - generic [ref=e320]:
+            - link "¿Ya pagaste tu predial? Ahora puedes hacerlo desde tu ... de Gobierno de Mexicali en Facebook. Reproducir en Facebook. 0:56" [ref=e321] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobiernodemexicali/videos/ya-pagaste-tu-predial-ahora-puedes-hacerlo-desde-tu-computadora-o-celular-solo-e/966027788331302/
+              - generic [ref=e323]:
+                - img [ref=e329]
+                - generic [ref=e333]: 0:56
+            - generic [ref=e335]: "Ya pagaste tu predial? Ahora puedes hacerlo desde tu computadora o celular, solo entra a nuestro sitio: www.mexicali.gob.mx ¡Recuerda que ..."
+        - generic [ref=e340]:
+          - heading "Más preguntas" [level=2] [ref=e342]
+          - generic [ref=e343]:
+            - button "¿Cómo pagar el predial de mexicali en línea?" [ref=e349] [cursor=pointer]:
+              - generic [ref=e351]: ¿Cómo pagar el predial de mexicali en línea?
+              - img [ref=e354]
+            - button "¿Cómo puedo descargar mi recibo del predial de 2026?" [ref=e363] [cursor=pointer]:
+              - generic [ref=e365]: ¿Cómo puedo descargar mi recibo del predial de 2026?
+              - img [ref=e368]
+            - button "¿Cómo pago el predial en línea?" [ref=e377] [cursor=pointer]:
+              - generic [ref=e379]: ¿Cómo pago el predial en línea?
+              - img [ref=e382]
+            - button "¿Cómo saber cuánto debo del impuesto predial?" [ref=e391] [cursor=pointer]:
+              - generic [ref=e393]: ¿Cómo saber cuánto debo del impuesto predial?
+              - img [ref=e396]
+        - generic [ref=e401]:
+          - heading "Resultados web" [level=2] [ref=e402]
+          - generic [ref=e403]:
+            - generic [ref=e406]:
+              - 'link "Impuesto predial Mexicali: cómo calcularlo y pagarlo BBVA México https://www.bbva.mx › Personas › Impuestos" [ref=e408] [cursor=pointer]':
+                - /url: https://www.bbva.mx/educacion-financiera/impuestos/impuesto-predial-mexicali.html
+                - 'heading "Impuesto predial Mexicali: cómo calcularlo y pagarlo" [level=3] [ref=e409]'
+                - generic [ref=e415]:
+                  - generic [ref=e417]: BBVA México
+                  - generic [ref=e419]: https://www.bbva.mx › Personas › Impuestos
+              - button "Acerca de este resultado" [ref=e420] [cursor=pointer]:
+                - img [ref=e423]
+            - generic [ref=e427]:
+              - emphasis [ref=e428]: Solo necesitas tu clave catastral y una tarjeta bancaria
+              - text: . Una opción adicional es realizar este trámite desde BBVA, con su servicio de Pago de Impuestos BBVA.
+        - generic [ref=e432]:
+          - generic [ref=e435]:
+            - link "Pagar Predial en Mexicali, Baja California 2026 | Sistema Oficial pesqueria.gob.mx https://pesqueria.gob.mx › wp-content › uploads › pred..." [ref=e437] [cursor=pointer]:
+              - /url: https://pesqueria.gob.mx/wp-content/uploads/predial/index.php?estado=baja_california&municipio=mexicali
+              - heading "Pagar Predial en Mexicali, Baja California 2026 | Sistema Oficial" [level=3] [ref=e438]
+              - generic [ref=e444]:
+                - generic [ref=e446]: pesqueria.gob.mx
+                - generic [ref=e448]: https://pesqueria.gob.mx › wp-content › uploads › pred...
+            - button "Acerca de este resultado" [ref=e449] [cursor=pointer]:
+              - img [ref=e452]
+          - generic [ref=e456]:
+            - emphasis [ref=e457]: Consulta y paga tu impuesto predial en Mexicali
+            - text: ", Baja California. Realiza tu pago en línea, obtén descuentos por pronto pago y descarga tu recibo oficial ..."
+        - generic [ref=e461]:
+          - generic [ref=e464]:
+            - 'link "Pago de Predial Mexicali 2026: Descuentos y En Línea Mexicali.org https://mexicali.org › Servicios y Trámites" [ref=e466] [cursor=pointer]':
+              - /url: https://mexicali.org/servicios/predial
+              - 'heading "Pago de Predial Mexicali 2026: Descuentos y En Línea" [level=3] [ref=e467]'
+              - generic [ref=e473]:
+                - generic [ref=e475]: Mexicali.org
+                - generic [ref=e477]: https://mexicali.org › Servicios y Trámites
+            - button "Acerca de este resultado" [ref=e478] [cursor=pointer]:
+              - img [ref=e481]
+          - generic [ref=e484]:
+            - generic [ref=e485]: 31 ene 2026 —
+            - generic [ref=e486]:
+              - emphasis [ref=e487]: Ingresa al portal oficial
+              - text: . Visita www.mexicali.gob.mx y selecciona "Pago de Predial" ; Ingresa tu clave catastral. Tu clave catastral tiene 8 o 9 ...
+      - navigation [ref=e490]:
+        - heading "Navegación de páginas" [level=1] [ref=e491]
+        - text: "1"
+        - link "Page 2" [ref=e494] [cursor=pointer]:
+          - /url: /search?q=pago+predial+mexicali+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=SjIwauSBKJewqtsPgbzywAY&start=10&sa=N&sstk=AU9db-A4QF9e57PBpjrBkIwqIgbsUZ_6HLqqhplTbZTuvyKv9qFhewfSeGH7VlPhrMSxBFMTKPhKCB9waa8rrBe_npi56-3rz3GNSQ&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQ8tMDegQIHhAE
+          - text: "2"
+        - link "Page 3" [ref=e496] [cursor=pointer]:
+          - /url: /search?q=pago+predial+mexicali+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=SjIwauSBKJewqtsPgbzywAY&start=20&sa=N&sstk=AU9db-A4QF9e57PBpjrBkIwqIgbsUZ_6HLqqhplTbZTuvyKv9qFhewfSeGH7VlPhrMSxBFMTKPhKCB9waa8rrBe_npi56-3rz3GNSQ&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQ8tMDegQIHhAG
+          - text: "3"
+        - link "Page 4" [ref=e498] [cursor=pointer]:
+          - /url: /search?q=pago+predial+mexicali+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=SjIwauSBKJewqtsPgbzywAY&start=30&sa=N&sstk=AU9db-A4QF9e57PBpjrBkIwqIgbsUZ_6HLqqhplTbZTuvyKv9qFhewfSeGH7VlPhrMSxBFMTKPhKCB9waa8rrBe_npi56-3rz3GNSQ&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQ8tMDegQIHhAI
+          - text: "4"
+        - link "Page 5" [ref=e500] [cursor=pointer]:
+          - /url: /search?q=pago+predial+mexicali+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=SjIwauSBKJewqtsPgbzywAY&start=40&sa=N&sstk=AU9db-A4QF9e57PBpjrBkIwqIgbsUZ_6HLqqhplTbZTuvyKv9qFhewfSeGH7VlPhrMSxBFMTKPhKCB9waa8rrBe_npi56-3rz3GNSQ&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQ8tMDegQIHhAK
+          - text: "5"
+        - link "Page 6" [ref=e502] [cursor=pointer]:
+          - /url: /search?q=pago+predial+mexicali+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=SjIwauSBKJewqtsPgbzywAY&start=50&sa=N&sstk=AU9db-A4QF9e57PBpjrBkIwqIgbsUZ_6HLqqhplTbZTuvyKv9qFhewfSeGH7VlPhrMSxBFMTKPhKCB9waa8rrBe_npi56-3rz3GNSQ&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQ8tMDegQIHhAM
+          - text: "6"
+        - link "Page 7" [ref=e504] [cursor=pointer]:
+          - /url: /search?q=pago+predial+mexicali+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=SjIwauSBKJewqtsPgbzywAY&start=60&sa=N&sstk=AU9db-A4QF9e57PBpjrBkIwqIgbsUZ_6HLqqhplTbZTuvyKv9qFhewfSeGH7VlPhrMSxBFMTKPhKCB9waa8rrBe_npi56-3rz3GNSQ&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQ8tMDegQIHhAO
+          - text: "7"
+        - link "Page 8" [ref=e506] [cursor=pointer]:
+          - /url: /search?q=pago+predial+mexicali+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=SjIwauSBKJewqtsPgbzywAY&start=70&sa=N&sstk=AU9db-A4QF9e57PBpjrBkIwqIgbsUZ_6HLqqhplTbZTuvyKv9qFhewfSeGH7VlPhrMSxBFMTKPhKCB9waa8rrBe_npi56-3rz3GNSQ&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQ8tMDegQIHhAQ
+          - text: "8"
+        - link "Page 9" [ref=e508] [cursor=pointer]:
+          - /url: /search?q=pago+predial+mexicali+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=SjIwauSBKJewqtsPgbzywAY&start=80&sa=N&sstk=AU9db-A4QF9e57PBpjrBkIwqIgbsUZ_6HLqqhplTbZTuvyKv9qFhewfSeGH7VlPhrMSxBFMTKPhKCB9waa8rrBe_npi56-3rz3GNSQ&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQ8tMDegQIHhAS
+          - text: "9"
+        - link "Page 10" [ref=e510] [cursor=pointer]:
+          - /url: /search?q=pago+predial+mexicali+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=SjIwauSBKJewqtsPgbzywAY&start=90&sa=N&sstk=AU9db-A4QF9e57PBpjrBkIwqIgbsUZ_6HLqqhplTbZTuvyKv9qFhewfSeGH7VlPhrMSxBFMTKPhKCB9waa8rrBe_npi56-3rz3GNSQ&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQ8tMDegQIHhAU
+          - text: "10"
+        - heading "Siguiente" [level=2] [ref=e512]:
+          - link "Siguiente" [ref=e513] [cursor=pointer]:
+            - /url: /search?q=pago+predial+mexicali+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=SjIwauSBKJewqtsPgbzywAY&start=10&sa=N&sstk=AU9db-A4QF9e57PBpjrBkIwqIgbsUZ_6HLqqhplTbZTuvyKv9qFhewfSeGH7VlPhrMSxBFMTKPhKCB9waa8rrBe_npi56-3rz3GNSQ&ved=2ahUKEwjkzo7b3omVAxUXmGoFHQGeHGgQ8NMDegQIHhAW
+            - generic [ref=e515]: Siguiente
+      - navigation
+    - contentinfo [ref=e516]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e517]
+      - generic [ref=e521]:
+        - generic [ref=e523]:
+          - text: México
+          - generic [ref=e525]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - Según tu actividad anterior" [ref=e527] [cursor=pointer]:
+              - generic [ref=e528]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e530]:
+                - text: "-"
+                - generic [ref=e531]: Según tu actividad anterior
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e533] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e536]:
+          - link "Ayuda" [ref=e537] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e538] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e539] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e540] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

@@ -1,0 +1,150 @@
+- generic [ref=e1]:
+  - text: 
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e7]:
+          - link [ref=e10] [cursor=pointer]:
+            - /url: https://www.finanzas.cdmx.gob.mx/
+          - heading "Atención Ciudadana " [level=5] [ref=e12]:
+            - link "Atención Ciudadana " [ref=e13] [cursor=pointer]:
+              - /url: https://atencionciudadana.cdmx.gob.mx/
+              - text: Atención Ciudadana
+              - generic [ref=e14]: 
+        - generic [ref=e16]:
+          - text: 
+          - list [ref=e19]:
+            - listitem [ref=e20]:
+              - link "Secretaría" [ref=e21] [cursor=pointer]:
+                - /url: javascript:;
+                - generic [ref=e22]: Secretaría
+                - text: 
+            - listitem [ref=e23]:
+              - link "Tramites en Línea" [ref=e24] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/licencias
+                - generic [ref=e25]: Tramites en Línea
+                - text: 
+            - listitem [ref=e26]:
+              - link "Pagos" [ref=e27] [cursor=pointer]:
+                - /url: javascript:;
+                - generic [ref=e28]: Pagos
+                - text: 
+            - listitem [ref=e29]:
+              - link "Adeudos" [ref=e30] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/consulta_adeudos
+                - generic [ref=e31]: Adeudos
+                - text: 
+            - listitem [ref=e32]:
+              - link "Certificaciones" [ref=e33] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/certificacion
+                - generic [ref=e34]: Certificaciones
+                - text: 
+            - listitem [ref=e35]:
+              - link "Recibos de Pago" [ref=e36] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/recibos_lotes
+                - generic [ref=e37]: Recibos de Pago
+                - text: 
+            - listitem [ref=e38]:
+              - link "Devoluciones" [ref=e39] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/devoluciones
+                - generic [ref=e40]: Devoluciones
+                - text: 
+      - generic [ref=e43]:
+        - heading [level=3]
+        - generic [ref=e44]:
+          - link "" [ref=e45] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e46]: 
+          - link "Inicio" [ref=e48] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx
+          - link "Consultar Pagos y Adeudos" [ref=e50] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/consultas_pagos
+          - link "Consulta de adeudos" [ref=e52] [cursor=pointer]:
+            - /url: javascript:void(0)
+      - generic [ref=e57]:
+        - heading "Consulta de adeudos" [level=2] [ref=e60]
+        - generic [ref=e67]:
+          - generic [ref=e69]:
+            - generic [ref=e71]:
+              - generic [ref=e72]: Placa
+              - textbox "Ingresa una placa" [ref=e73]: AAA0000
+              - generic [ref=e74]: Escriba el número de placa que desea buscar sin espacios
+            - generic [ref=e75]:
+              - generic [ref=e77]:
+                - button "" [ref=e78] [cursor=pointer]:
+                  - generic: 
+                - img [ref=e128]
+              - textbox "Ingrese el texto de la imagen" [ref=e82]
+            - alert [ref=e130]:
+              - generic [ref=e131]: No puedes verificar, por favor consulta tus adeudos.
+              - button "Close" [ref=e133] [cursor=pointer]:
+                - generic [ref=e135]: 
+          - button "Buscar" [active] [ref=e85] [cursor=pointer]
+        - generic [ref=e138]:
+          - generic [ref=e139]:
+            - img [ref=e141]
+            - generic [ref=e148]:
+              - link "My Happy SVG Sin adeudos de tenencia" [ref=e149] [cursor=pointer]:
+                - /url: javascript:void(0)
+                - generic [ref=e150]:
+                  - img "My Happy SVG" [ref=e152]
+                  - generic [ref=e153]: Sin adeudos de tenencia
+              - link "infracciones_rojo Una infracción no pagada" [ref=e154] [cursor=pointer]:
+                - /url: javascript:void(0)
+                - generic [ref=e155]:
+                  - img "infracciones_rojo" [ref=e157]
+                  - generic [ref=e158]: Una infracción no pagada
+              - link "medioambiente Sin sanciones ambientales" [ref=e159] [cursor=pointer]:
+                - /url: javascript:void(0)
+                - generic [ref=e160]:
+                  - img "medioambiente" [ref=e162]
+                  - generic [ref=e163]: Sin sanciones ambientales
+              - link "fotocivicas Fotocivicas 10 puntos" [ref=e164] [cursor=pointer]:
+                - /url: javascript:void(0)
+                - generic [ref=e165]:
+                  - img "fotocivicas" [ref=e167]
+                  - generic [ref=e168]: Fotocivicas 10 puntos
+              - link "licencia Vigencia de licencia y tarjeta de circulación" [ref=e169] [cursor=pointer]:
+                - /url: javascript:void(0)
+                - generic [ref=e170]:
+                  - img "licencia" [ref=e172]
+                  - generic [ref=e173]: Vigencia de licencia y tarjeta de circulación
+          - generic [ref=e176]:
+            - generic [ref=e177]: CONSULTA DE ADEUDOS DE TENENCIA
+            - heading "El número de placa no se localizó en el padrón" [level=2] [ref=e191]
+    - generic [ref=e89]:
+      - generic [ref=e91]:
+        - heading "Atención Ciudadana" [level=3] [ref=e92]
+        - generic [ref=e93]:
+          - text: "Dirección: Calle Doctor Lavista 144"
+          - text: Colonia Doctores, Alcaldía
+          - text: Cuauhtémoc
+          - text: "Teléfono: 55883388"
+      - generic [ref=e95]:
+        - heading "Navegación" [level=3] [ref=e96]
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - link "Inicio" [ref=e100] [cursor=pointer]:
+              - /url: https://www.finanzas.cdmx.gob.mx/
+            - link "Secretaría" [ref=e101] [cursor=pointer]:
+              - /url: http://www.finanzas.cdmx.gob.mx/secretaria
+            - link "Servcios" [ref=e102] [cursor=pointer]:
+              - /url: http://www.finanzas.cdmx.gob.mx/servicios
+          - generic [ref=e103]:
+            - link "Programas" [ref=e104] [cursor=pointer]:
+              - /url: http://www.finanzas.cdmx.gob.mx/programas
+            - link "Notificaciones" [ref=e105] [cursor=pointer]:
+              - /url: http://www.finanzas.cdmx.gob.mx/notificaciones
+            - link "Transparencia" [ref=e106] [cursor=pointer]:
+              - /url: http://www.finanzas.cdmx.gob.mx/secretaria/transparencia
+      - generic [ref=e108]:
+        - heading "Sitios relacionados" [level=3] [ref=e109]
+        - generic [ref=e111]:
+          - generic [ref=e112]:
+            - link "Gaceta Oficial de la Ciudad de México" [ref=e113] [cursor=pointer]:
+              - /url: http://www.data.consejeria.cdmx.gob.mx/index.php/gaceta
+            - link "Fidere" [ref=e114] [cursor=pointer]:
+              - /url: https://www.fidere.cdmx.gob.mx/
+          - link "Procedimiento para la Solicitud" [ref=e116] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/proveedores.html
+  - text: 

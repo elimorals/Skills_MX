@@ -1,0 +1,546 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwi9oYi94YmVAxUamGoFHWevJXEQPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: oapas tlalnepantla pago linea agua oapas tlalnepantla pago linea agua
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Doapas%2Btlalnepantla%2Bpago%2Blinea%2Bagua&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=oapas+tlalnepantla+pago+linea+agua&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JeLGz0jncugk5V_VFRDvEmWHfYbduiqNlahFum2K1kkZSY9AQ_WRbKMDR4d7sdEiwFYeivPETgRyWEWDYobh9HT8kpop2Wxg4kfM0ueFMNWXSu-RajPI-2ao2e71xwrAvpLauZEv95C4RnsNITqcoPGuhdYA&aep=1&ntc=1&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ2J8OegQIERAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=oapas+tlalnepantla+pago+linea+agua&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JeLGz0jncugk5V_VFRDvEmWHfYbduiqNlahFum2K1kkZSY9AQ_WRbKMDR4d7sdEiwFYeivPETgRyWEWDYobh9HT8kpop2Wxg4kfM0ueFMNWXSu-RajPI-2ao2e71xwrAvpLauZEv95C4RnsNITqcoPGuhdYA&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ0pQJegQIFxAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Imágenes" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JeLGz0jncugk5V_VFRDvEmWHfYbduiqNlahFum2K1kkZSY9AQ_WRbKMDR4d7sdEiwFYeivPETgRyWEWDYobh9HT8kpop2Wxg4kfM0ueFMNWXSu-RajPI-2ao2e71xwrAvpLauZEv95C4RnsNITqcoPGuhdYA&q=oapas+tlalnepantla+pago+linea+agua&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQtKgLegQIGBAB
+              - generic [ref=e88]: Imágenes
+          - listitem [ref=e89]:
+            - link "Videos" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JeLGz0jncugk5V_VFRDvEmWHfYbduiqNlahFum2K1kkZSY9AQ_WRbKMDR4d7sdEiwFYeivPETgRyWEWDYobh9HT8kpop2Wxg4kfM0ueFMNWXSu-RajPI-2ao2e71xwrAvpLauZEv95C4RnsNITqcoPGuhdYA&q=oapas+tlalnepantla+pago+linea+agua&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQtKgLegQIFRAB
+              - generic [ref=e92]: Videos
+          - listitem [ref=e93]:
+            - link "Shopping" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JeLGz0jncugk5V_VFRDvEmWHfYbduiqNlahFum2K1kkZSY9AQ_WRbKMDR4d7sdEiwFYeivPETgRyWEWDYobh9HT8kpop2Wxg4kfM0ueFMNWXSu-RajPI-2ao2e71xwrAvpLauZEv95C4RnsNITqcoPGuhdYA&q=oapas+tlalnepantla+pago+linea+agua&ved=1t:220175&ictx=111
+              - generic [ref=e96]: Shopping
+          - listitem [ref=e97]:
+            - link "Videos cortos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JeLGz0jncugk5V_VFRDvEmWHfYbduiqNlahFum2K1kkZSY9AQ_WRbKMDR4d7sdEiwFYeivPETgRyWEWDYobh9HT8kpop2Wxg4kfM0ueFMNWXSu-RajPI-2ao2e71xwrAvpLauZEv95C4RnsNITqcoPGuhdYA&q=oapas+tlalnepantla+pago+linea+agua&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQs6gLegQIFBAB
+              - generic [ref=e100]: Videos cortos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - generic [ref=e122]:
+      - generic [ref=e141]:
+        - generic [ref=e143]:
+          - generic [ref=e145]:
+            - generic [ref=e146]:
+              - img [ref=e147]
+              - heading "Visión general creada por IA" [level=2] [ref=e149]
+            - button "Escuchar" [ref=e153]:
+              - img [ref=e158] [cursor=pointer]
+            - button "Acerca de este resultado" [ref=e163]:
+              - img [ref=e165]
+          - generic [ref=e185]:
+            - generic [ref=e188]:
+              - generic [ref=e189]:
+                - text: Puedes pagar tu servicio de agua en Tlalnepantla
+                - mark [ref=e190]:
+                  - text: a través de internet utilizando el
+                  - link "Portal de Servicios al Contribuyente del Estado de México" [ref=e192] [cursor=pointer]:
+                    - /url: http://edomex.gob.mx/pago-agua-2026
+                  - text: o directamente en la página del
+                  - link "OPDM Tlalnepantla" [ref=e194] [cursor=pointer]:
+                    - /url: http://www.opdmtlalnepantla.gob.mx/
+                - text: . Ten a la mano tu recibo para ingresar tu número de cuenta y generar tu línea de captura.
+              - generic [ref=e195]: "Para realizar tu pago en línea de manera rápida, sigue estos pasos:"
+              - list [ref=e197]:
+                - listitem [ref=e198]:
+                  - generic [ref=e199]:
+                    - text: Entra a la plataforma de cobro del
+                    - generic [ref=e200]: Pago de Agua EdoMex
+                    - text: .
+                - listitem [ref=e201]:
+                  - generic [ref=e202]:
+                    - text: Ten a la mano el recibo para ingresar el
+                    - strong [ref=e203]: número de cuenta
+                    - text: o
+                    - strong [ref=e204]: clave del servicio
+                    - text: .
+                - listitem [ref=e205]:
+                  - generic [ref=e206]: Genera tu línea de captura y selecciona la opción de pago con tarjeta de crédito o débito.
+                  - generic [ref=e208]:
+                    - link [ref=e210] [cursor=pointer]:
+                      - /url: http://edomex.gob.mx/pago-agua-2026
+                    - button [disabled] [ref=e211]:
+                      - generic [ref=e214]: Gobierno del Estado de México
+              - generic [ref=e216]:
+                - text: Si prefieres hacer el pago de forma presencial o necesitas asesoría comercial, puedes acudir a las oficinas centrales del OPDM ubicadas en la calle
+                - strong [ref=e217]: Riva Palacio No. 8, Tlalnepantla Centro
+                - text: ", en un horario de lunes a viernes de 8:00 a 17:00 horas y los sábados de 9:00 a 13:00 horas."
+                - generic [ref=e219]:
+                  - link [ref=e221] [cursor=pointer]:
+                    - /url: http://www.opdmtlalnepantla.gob.mx/
+                  - button [disabled] [ref=e222]:
+                    - generic [ref=e224]:
+                      - generic [ref=e225]: Opdm
+                      - generic [ref=e226]: "+1"
+              - generic [ref=e228]:
+                - text: ¿Te gustaría que te ayude a
+                - strong [ref=e229]: consultar los centros autorizados de pago más cercanos a tu domicilio
+                - text: en Tlalnepantla o necesitas orientación sobre cómo
+                - strong [ref=e230]: descargar tu recibo en línea
+                - text: "?"
+            - generic [ref=e235]:
+              - generic [ref=e237]:
+                - button "3 sitios" [ref=e238]:
+                  - generic [ref=e247]: 3 sitios
+                - button "Acerca de este resultado" [ref=e252] [cursor=pointer]:
+                  - img [ref=e254]
+              - list [ref=e257]:
+                - listitem [ref=e258]:
+                  - generic [ref=e259]:
+                    - link "Opdm - Tlalnepantla. Se abrirá en una pestaña nueva." [ref=e260] [cursor=pointer]:
+                      - /url: http://www.opdmtlalnepantla.gob.mx/
+                    - generic [ref=e261]:
+                      - generic [ref=e263]:
+                        - generic [ref=e264]: Opdm - Tlalnepantla
+                        - generic [ref=e265]: OPDM TLALNEPANTLA CENTRO. OPDM Tlalnepantla MUNDO E CITY SHOPS SAN JUAN IXHUATEPEC LA PRESA CARACOLES. home C. Riva Palacio 8-Loca...
+                      - generic [ref=e267]:
+                        - generic [ref=e272]: Opdm
+                        - button "Acerca de este resultado" [ref=e276] [cursor=pointer]:
+                          - img [ref=e278]
+                - listitem [ref=e282]:
+                  - generic [ref=e283]:
+                    - link "Pago de Agua EdoMex 2026 - Gobierno del Estado de México. Se abrirá en una pestaña nueva." [ref=e284] [cursor=pointer]:
+                      - /url: http://edomex.gob.mx/pago-agua-2026
+                    - generic [ref=e285]:
+                      - generic [ref=e287]:
+                        - generic [ref=e288]: Pago de Agua EdoMex 2026 - Gobierno del Estado de México
+                        - generic [ref=e289]: "14 may 2026 — * 19°C. * 18°C. * 18°C. * 18°C. * 17°C. * 17°C. * 17°C. * 19°C. * 18°C. * 18°C. * 18°C. * 17°C. * 17°C. * 17°C. ... Table_title: ¡..."
+                      - generic [ref=e290]:
+                        - generic [ref=e295]: Gobierno del Estado de México
+                        - button [ref=e299] [cursor=pointer]:
+                          - img [ref=e301]
+                - listitem [ref=e305]:
+                  - generic [ref=e306]:
+                    - link [ref=e307] [cursor=pointer]:
+                      - /url: https://portal.tlalnepantla.gob.mx/pages/noticias/opdm-tlalnepantla-ofrece-100-de-condonacion-en-multas-y-recargos-a-cuentas-institucionales-dependi
+                    - generic [ref=e308]:
+                      - generic [ref=e310]:
+                        - generic [ref=e311]: opdm tlalnepantla ofrece 100% de condonación en multas y ...
+                        - generic [ref=e312]: Noticias | H. Ayuntamiento de Tlalnepantla de Baz 2025-2027. ... BOLETÍN TLALNEPANTLA 023. ... Esta iniciativa también contribuye ...
+                      - generic [ref=e314]:
+                        - generic [ref=e319]: Ayuntamiento de Tlalnepantla
+                        - button [ref=e323] [cursor=pointer]:
+                          - img [ref=e325]
+        - button "Mostrar más Visión general creada por IA" [ref=e331]:
+          - generic [ref=e333] [cursor=pointer]:
+            - generic [ref=e334]: Mostrar más
+            - img [ref=e336]
+      - main [ref=e339]:
+        - generic [ref=e343]:
+          - generic [ref=e346]:
+            - heading "Resultados web" [level=2] [ref=e347]
+            - generic [ref=e348]:
+              - generic [ref=e351]:
+                - link "Opdm - Tlalnepantla Opdm http://www.opdmtlalnepantla.gob.mx" [ref=e353] [cursor=pointer]:
+                  - /url: http://www.opdmtlalnepantla.gob.mx/
+                  - heading "Opdm - Tlalnepantla" [level=3] [ref=e354]
+                  - generic [ref=e360]:
+                    - generic [ref=e362]: Opdm
+                    - generic [ref=e364]: http://www.opdmtlalnepantla.gob.mx
+                - button "Acerca de este resultado" [ref=e365] [cursor=pointer]:
+                  - img [ref=e368]
+              - generic [ref=e372]:
+                - text: OPDM
+                - emphasis [ref=e373]: TLALNEPANTLA
+                - text: CENTRO ... schedule Horario de lunes a viernes de 8:00 a 17:00 Y sábados de 9:00 a 13:00. Hrs. call 55 53 21 08 40.
+          - generic [ref=e377]:
+            - generic [ref=e380]:
+              - link "Pago del Agua en Línea Gobierno del Estado de México http://edomex.gob.mx › pago-agua-en-linea" [ref=e382] [cursor=pointer]:
+                - /url: http://edomex.gob.mx/pago-agua-en-linea
+                - heading "Pago del Agua en Línea" [level=3] [ref=e383]
+                - generic [ref=e389]:
+                  - generic [ref=e391]: Gobierno del Estado de México
+                  - generic [ref=e393]: http://edomex.gob.mx › pago-agua-en-linea
+              - button "Acerca de este resultado" [ref=e394] [cursor=pointer]:
+                - img [ref=e397]
+            - generic [ref=e401]:
+              - text: El Gobierno del Estado de México a través del Portal de Servicios al Contribuyente te permite
+              - emphasis [ref=e402]: realizar el Pago del Agua en línea
+              - text: con cargo a tu tarjeta de ...
+          - generic [ref=e407]:
+            - heading "Más preguntas" [level=2] [ref=e409]
+            - generic [ref=e410]:
+              - button "¿Cómo pagar el agua en línea en Tlalnepantla?" [ref=e416] [cursor=pointer]:
+                - generic [ref=e418]: ¿Cómo pagar el agua en línea en Tlalnepantla?
+                - img [ref=e421]
+              - button "¿Dónde pagar el recibo de agua en Oapas?" [ref=e430] [cursor=pointer]:
+                - generic [ref=e432]: ¿Dónde pagar el recibo de agua en Oapas?
+                - img [ref=e435]
+              - button "¿Cómo pagar el agua en línea en el estado de México?" [ref=e444] [cursor=pointer]:
+                - generic [ref=e446]: ¿Cómo pagar el agua en línea en el estado de México?
+                - img [ref=e449]
+              - button "¿Cómo saber cuánto debo de agua en Odapas?" [ref=e458] [cursor=pointer]:
+                - generic [ref=e460]: ¿Cómo saber cuánto debo de agua en Odapas?
+                - img [ref=e463]
+          - generic [ref=e468]:
+            - heading "Resultados web" [level=2] [ref=e469]
+            - generic [ref=e470]:
+              - generic [ref=e473]:
+                - link "opdm tlalnepantla ofrece 100% de condonación en multas ... Ayuntamiento de Tlalnepantla https://portal.tlalnepantla.gob.mx › pages › noticias › o..." [ref=e475] [cursor=pointer]:
+                  - /url: https://portal.tlalnepantla.gob.mx/pages/noticias/opdm-tlalnepantla-ofrece-100-de-condonacion-en-multas-y-recargos-a-cuentas-institucionales-dependi
+                  - heading "opdm tlalnepantla ofrece 100% de condonación en multas ..." [level=3] [ref=e476]
+                  - generic [ref=e482]:
+                    - generic [ref=e484]: Ayuntamiento de Tlalnepantla
+                    - generic [ref=e486]: https://portal.tlalnepantla.gob.mx › pages › noticias › o...
+                - button "Acerca de este resultado" [ref=e487] [cursor=pointer]:
+                  - img [ref=e490]
+              - generic [ref=e494]:
+                - text: OPDM
+                - emphasis [ref=e495]: TLALNEPANTLA
+                - text: OFRECE 100% DE CONDONACIÓN EN MULTAS Y RECARGOS A CUENTAS INSTITUCIONALES DEPENDIENTES DE UN PRESUPUESTO GUBERNAMENTAL.
+          - generic [ref=e499]:
+            - generic [ref=e501]:
+              - heading "Videos" [level=2] [ref=e502]
+              - button "Acerca de este resultado" [ref=e503] [cursor=pointer]:
+                - img [ref=e506]
+            - generic [ref=e509]:
+              - generic [ref=e514]:
+                - generic [ref=e515]:
+                  - 'link "Conoce tu boleta de pago del #agua y así cuando requieras ... Facebook OPDM Tlalnepantla 31 mar 2026" [ref=e517] [cursor=pointer]':
+                    - /url: https://www.facebook.com/OPDMTLALNE/videos/conoce-tu-boleta-de-pago-del-agua-y-as%C3%AD-cuando-requieras-alg%C3%BAn-dato-para-realiza/920903197388782/
+                    - 'heading "Conoce tu boleta de pago del #agua y así cuando requieras ... Facebook OPDM Tlalnepantla 31 mar 2026" [level=3] [ref=e518]':
+                      - generic [ref=e521]: "Conoce tu boleta de pago del #agua y así cuando requieras ..."
+                      - generic [ref=e523]:
+                        - generic [ref=e524]:
+                          - text: Facebook
+                          - generic [ref=e525]: · OPDM Tlalnepantla
+                        - generic [ref=e526]: 31 mar 2026
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - text: Facebook
+                            - generic: · OPDM Tlalnepantla
+                      - button "Acerca de este resultado" [ref=e527] [cursor=pointer]:
+                        - img [ref=e530]
+                - 'link "Conoce tu boleta de pago del #agua y así cuando requieras ... de OPDM Tlalnepantla en Facebook. Reproducir en Facebook. 0:31" [ref=e532] [cursor=pointer]':
+                  - /url: https://www.facebook.com/OPDMTLALNE/videos/conoce-tu-boleta-de-pago-del-agua-y-as%C3%AD-cuando-requieras-alg%C3%BAn-dato-para-realiza/920903197388782/
+                  - generic [ref=e533]:
+                    - img [ref=e536]
+                    - generic [ref=e540]: 0:31
+              - generic [ref=e546]:
+                - generic [ref=e547]:
+                  - link "Cómo pagar tu recibo de agua en Tlalnepantla TikTok opdm_tlalnepantla 23 ene 2025" [ref=e549] [cursor=pointer]:
+                    - /url: https://www.tiktok.com/@opdm_tlalnepantla/video/7463269179823557893
+                    - heading "Cómo pagar tu recibo de agua en Tlalnepantla TikTok opdm_tlalnepantla 23 ene 2025" [level=3] [ref=e550]:
+                      - generic [ref=e553]: Cómo pagar tu recibo de agua en Tlalnepantla
+                      - generic [ref=e555]:
+                        - generic [ref=e556]:
+                          - text: TikTok
+                          - generic [ref=e557]: · opdm_tlalnepantla
+                        - generic [ref=e558]: 23 ene 2025
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - text: TikTok
+                            - generic: · opdm_tlalnepantla
+                      - button "Acerca de este resultado" [ref=e559] [cursor=pointer]:
+                        - img [ref=e562]
+                - link "Cómo pagar tu recibo de agua en Tlalnepantla de opdm_tlalnepantla en TikTok. Reproducir en TikTok. 0:37" [ref=e564] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@opdm_tlalnepantla/video/7463269179823557893
+                  - generic [ref=e565]:
+                    - img [ref=e571]
+                    - generic [ref=e575]: 0:37
+              - generic [ref=e581]:
+                - generic [ref=e582]:
+                  - link "#Hazlotuyo💡Realiza tu pago de agua en Tlalnepantla Ponte ... Facebook Gobierno de Tlalnepantla de Baz 9 ene 2025" [ref=e584] [cursor=pointer]:
+                    - /url: https://www.facebook.com/GobTlalne/videos/hazlotuyo-realiza-tu-pago-de-agua-en-tlalnepantla/1335903297596139/
+                    - heading "#Hazlotuyo💡Realiza tu pago de agua en Tlalnepantla Ponte ... Facebook Gobierno de Tlalnepantla de Baz 9 ene 2025" [level=3] [ref=e585]:
+                      - generic [ref=e588]: "#Hazlotuyo💡Realiza tu pago de agua en Tlalnepantla Ponte ..."
+                      - generic [ref=e590]:
+                        - generic [ref=e591]:
+                          - text: Facebook
+                          - generic [ref=e592]: · Gobierno de Tlalnepantla de Baz
+                        - generic [ref=e593]: 9 ene 2025
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - text: Facebook
+                            - generic: · Gobierno de Tlalnepantla de Baz
+                      - button "Acerca de este resultado" [ref=e594] [cursor=pointer]:
+                        - img [ref=e597]
+                - link "#Hazlotuyo💡Realiza tu pago de agua en Tlalnepantla Ponte ... de Gobierno de Tlalnepantla de Baz en Facebook. Reproducir en Facebook. 1:02" [ref=e599] [cursor=pointer]:
+                  - /url: https://www.facebook.com/GobTlalne/videos/hazlotuyo-realiza-tu-pago-de-agua-en-tlalnepantla/1335903297596139/
+                  - generic [ref=e600]:
+                    - img [ref=e606]
+                    - generic [ref=e610]: 1:02
+              - generic [ref=e616]:
+                - generic [ref=e617]:
+                  - link "Y tú, ¿ya sabes cómo pagar tu recibo de agua? ¡Aquí te ... Facebook OPDM Tlalnepantla 23 ene 2025" [ref=e619] [cursor=pointer]:
+                    - /url: https://www.facebook.com/OPDMTLALNE/videos/y-t%C3%BA-ya-sabes-c%C3%B3mo-pagar-tu-recibo-de-aguaaqu%C3%AD-te-mostramos-el-proceso-al-llegar/1161964618980538/
+                    - heading "Y tú, ¿ya sabes cómo pagar tu recibo de agua? ¡Aquí te ... Facebook OPDM Tlalnepantla 23 ene 2025" [level=3] [ref=e620]:
+                      - generic [ref=e623]: Y tú, ¿ya sabes cómo pagar tu recibo de agua? ¡Aquí te ...
+                      - generic [ref=e625]:
+                        - generic [ref=e626]:
+                          - text: Facebook
+                          - generic [ref=e627]: · OPDM Tlalnepantla
+                        - generic [ref=e628]: 23 ene 2025
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - text: Facebook
+                            - generic: · OPDM Tlalnepantla
+                      - button "Acerca de este resultado" [ref=e629] [cursor=pointer]:
+                        - img [ref=e632]
+                - link "Y tú, ¿ya sabes cómo pagar tu recibo de agua? ¡Aquí te ... de OPDM Tlalnepantla en Facebook. Reproducir en Facebook. 0:51" [ref=e634] [cursor=pointer]:
+                  - /url: https://www.facebook.com/OPDMTLALNE/videos/y-t%C3%BA-ya-sabes-c%C3%B3mo-pagar-tu-recibo-de-aguaaqu%C3%AD-te-mostramos-el-proceso-al-llegar/1161964618980538/
+                  - generic [ref=e635]:
+                    - img [ref=e641]
+                    - generic [ref=e645]: 0:51
+            - link "Ver todos los videos" [ref=e648] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&q=oapas+tlalnepantla+pago+linea+agua&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ8ccDKAJ6BAhBEAQ
+              - separator [ref=e649]
+              - generic [ref=e650]:
+                - generic [ref=e651]: Ver más
+                - img [ref=e653]
+          - generic [ref=e657]:
+            - heading "Resultados web" [level=2] [ref=e658]
+            - generic [ref=e659]:
+              - generic [ref=e662]:
+                - link "OPDM Tlalnepantla | Estado de México Facebook · OPDM Tlalnepantla Más de 32.7 k seguidores" [ref=e664] [cursor=pointer]:
+                  - /url: https://www.facebook.com/OPDMTLALNE/?locale=es_LA
+                  - heading "OPDM Tlalnepantla | Estado de México" [level=3] [ref=e665]
+                  - generic [ref=e671]:
+                    - generic [ref=e673]: Facebook · OPDM Tlalnepantla
+                    - generic [ref=e675]: Más de 32.7 k seguidores
+                - button "Acerca de este resultado" [ref=e676] [cursor=pointer]:
+                  - img [ref=e679]
+              - generic [ref=e683]:
+                - text: ¿Sabías que además de nuestras oficinas centrales
+                - emphasis [ref=e684]: puedes realizar el pago de tus servicios en distintos puntos de nuestro municipio
+                - text: "? ¡Conoce los horarios de ..."
+          - generic [ref=e688]:
+            - generic [ref=e691]:
+              - link "PAGO DE AGUA Gobierno del Estado de México https://pagosytramites.edomex.gob.mx › agua › faces › F..." [ref=e693] [cursor=pointer]:
+                - /url: https://pagosytramites.edomex.gob.mx/agua/faces/FormatoPagoAgua.xhtml
+                - heading "PAGO DE AGUA" [level=3] [ref=e694]
+                - generic [ref=e700]:
+                  - generic [ref=e702]: Gobierno del Estado de México
+                  - generic [ref=e704]: https://pagosytramites.edomex.gob.mx › agua › faces › F...
+              - button "Acerca de este resultado" [ref=e705] [cursor=pointer]:
+                - img [ref=e708]
+            - generic [ref=e712]:
+              - text: Desde ahora puedes cumplir de manera electrónica con la obligación de
+              - emphasis [ref=e713]: pago
+              - text: del Impuesto de
+              - emphasis [ref=e714]: Agua
+              - text: ", ya sea en"
+              - emphasis [ref=e715]: línea
+              - text: con cargo a tu tarjeta de crédito, o a través ...
+          - generic [ref=e719]:
+            - generic [ref=e722]:
+              - link "Pago en Linea recaudacionsapasa.gob.mx https://recaudacionsapasa.gob.mx" [ref=e724] [cursor=pointer]:
+                - /url: https://recaudacionsapasa.gob.mx/
+                - heading "Pago en Linea" [level=3] [ref=e725]
+                - generic [ref=e727]:
+                  - img [ref=e732]
+                  - generic [ref=e734]:
+                    - generic [ref=e736]: recaudacionsapasa.gob.mx
+                    - generic [ref=e738]: https://recaudacionsapasa.gob.mx
+              - button "Acerca de este resultado" [ref=e739] [cursor=pointer]:
+                - img [ref=e742]
+            - generic [ref=e746]:
+              - emphasis [ref=e747]: Ingresa tu número de contrato
+              - text: . Principal. Derivacion. Aviso de privacidad.
+          - generic [ref=e754]:
+            - generic [ref=e757]:
+              - link "Pagar tu RECIBO DE AGUA OPDM Tlalnepantla desde tu ... YouTube · Antonomasia Disruptiva Más de 5.6 K vistas · hace 3 años" [ref=e759] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=auKz5ON3SpI
+                - heading "Pagar tu RECIBO DE AGUA OPDM Tlalnepantla desde tu ..." [level=3] [ref=e760]
+                - generic [ref=e766]:
+                  - generic [ref=e768]: YouTube · Antonomasia Disruptiva
+                  - generic [ref=e770]: Más de 5.6 K vistas · hace 3 años
+              - button "Acerca de este resultado" [ref=e771] [cursor=pointer]:
+                - img [ref=e774]
+            - generic [ref=e776]:
+              - button "Pagar tu RECIBO DE AGUA OPDM Tlalnepantla desde tu ... de Antonomasia Disruptiva en YouTube. Reproducir en Google. 4:02" [ref=e777] [cursor=pointer]:
+                - generic [ref=e779]:
+                  - img [ref=e785]
+                  - generic [ref=e788]:
+                    - generic [ref=e789]: 4:02
+                    - img [ref=e792]
+              - generic [ref=e795]: En esta ocasión te enseñaré a pagar tu recibo de AGUA desde la comodidad de tu casa, desde tu celular, en menos de 3 minutos.
+            - generic [ref=e797]:
+              - text: "Falta(n): oapas ‎| Realizar una búsqueda con lo siguiente:"
+              - link "oapas" [ref=e798] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=%22oapas%22+tlalnepantla+pago+linea+agua&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ5t4CegQIIRAT
+          - generic [ref=e802]:
+            - generic [ref=e805]:
+              - link "¡Realiza Pago en Línea de tu Servicio de Agua OPDM! pagosenlinea.mx https://pagosenlinea.mx › Agua" [ref=e807] [cursor=pointer]:
+                - /url: https://pagosenlinea.mx/agua/opdm/
+                - heading "¡Realiza Pago en Línea de tu Servicio de Agua OPDM!" [level=3] [ref=e808]
+                - generic [ref=e814]:
+                  - generic [ref=e816]: pagosenlinea.mx
+                  - generic [ref=e818]: https://pagosenlinea.mx › Agua
+              - button "Acerca de este resultado" [ref=e819] [cursor=pointer]:
+                - img [ref=e822]
+            - generic [ref=e826]:
+              - emphasis [ref=e827]: Realiza el pago de tu servicio de agua potable online con OPDM
+              - text: de forma rápida y sencilla! ¡Descubre cómo aquí!
+        - generic [ref=e829]:
+          - generic [ref=e834]:
+            - heading "También se buscó" [level=2] [ref=e836]
+            - generic [ref=e838]:
+              - generic [ref=e839]:
+                - link "Pago de agua OPDM" [ref=e843] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Pago+de+agua+OPDM&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ1QJ6BAggEAE
+                  - generic [ref=e844]:
+                    - generic [ref=e849]: Pago de agua OPDM
+                    - img [ref=e853]
+                - link "Pago de agua OPDM Tlalnepantla" [ref=e858] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Pago+de+agua+OPDM+Tlalnepantla&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ1QJ6BAgvEAE
+                  - generic [ref=e859]:
+                    - generic [ref=e864]: Pago de agua OPDM Tlalnepantla
+                    - img [ref=e868]
+                - link "OPDM pago en línea" [ref=e873] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=OPDM+pago+en+l%C3%ADnea&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ1QJ6BAgtEAE
+                  - generic [ref=e874]:
+                    - generic [ref=e879]: OPDM pago en línea
+                    - img [ref=e883]
+                - link "Consultar recibo de agua OPDM" [ref=e888] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Consultar+recibo+de+agua+OPDM&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ1QJ6BAgrEAE
+                  - generic [ref=e889]:
+                    - generic [ref=e894]: Consultar recibo de agua OPDM
+                    - img [ref=e898]
+              - generic [ref=e900]:
+                - link "Recibo de agua OPDM Tlalnepantla" [ref=e904] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Recibo+de+agua+OPDM+Tlalnepantla&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ1QJ6BAgpEAE
+                  - generic [ref=e905]:
+                    - generic [ref=e910]: Recibo de agua OPDM Tlalnepantla
+                    - img [ref=e914]
+                - link "Pago de agua en línea EdoMéx" [ref=e919] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Pago+de+agua+en+l%C3%ADnea+EdoM%C3%A9x&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ1QJ6BAgoEAE
+                  - generic [ref=e920]:
+                    - generic [ref=e925]: Pago de agua en línea EdoMéx
+                    - img [ref=e929]
+                - link "Consultar recibo de agua en línea Edomex" [ref=e934] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Consultar+recibo+de+agua+en+l%C3%ADnea+Edomex&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ1QJ6BAgkEAE
+                  - generic [ref=e935]:
+                    - generic [ref=e940]: Consultar recibo de agua en línea Edomex
+                    - img [ref=e944]
+                - link "OPDM Tlalnepantla adeudos" [ref=e949] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=OPDM+Tlalnepantla+adeudos&sa=X&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ1QJ6BAgiEAE
+                  - generic [ref=e950]:
+                    - generic [ref=e955]: OPDM Tlalnepantla adeudos
+                    - img [ref=e959]
+          - navigation [ref=e961]:
+            - heading "Navegación de páginas" [level=1] [ref=e962]
+            - text: "1"
+            - link "Page 2" [ref=e965] [cursor=pointer]:
+              - /url: /search?q=oapas+tlalnepantla+pago+linea+agua&sca_esv=c6c16ab1eb0a4421&ei=MDUwar3JOZqwqtsP596WiQc&start=10&sa=N&sstk=AU9db-CtL4LyMevRiDGRpxG1IbaHyHh4hmLDfhc86fVtSOWnnZLpNMpYH4TAhBwurDYxe4-F15Tg0tKcHU2yhvq6apN_GnOmFtcV6g&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ8tMDegQIOxAE
+              - text: "2"
+            - link "Page 3" [ref=e967] [cursor=pointer]:
+              - /url: /search?q=oapas+tlalnepantla+pago+linea+agua&sca_esv=c6c16ab1eb0a4421&ei=MDUwar3JOZqwqtsP596WiQc&start=20&sa=N&sstk=AU9db-CtL4LyMevRiDGRpxG1IbaHyHh4hmLDfhc86fVtSOWnnZLpNMpYH4TAhBwurDYxe4-F15Tg0tKcHU2yhvq6apN_GnOmFtcV6g&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ8tMDegQIOxAG
+              - text: "3"
+            - link "Page 4" [ref=e969] [cursor=pointer]:
+              - /url: /search?q=oapas+tlalnepantla+pago+linea+agua&sca_esv=c6c16ab1eb0a4421&ei=MDUwar3JOZqwqtsP596WiQc&start=30&sa=N&sstk=AU9db-CtL4LyMevRiDGRpxG1IbaHyHh4hmLDfhc86fVtSOWnnZLpNMpYH4TAhBwurDYxe4-F15Tg0tKcHU2yhvq6apN_GnOmFtcV6g&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ8tMDegQIOxAI
+              - text: "4"
+            - link "Page 5" [ref=e971] [cursor=pointer]:
+              - /url: /search?q=oapas+tlalnepantla+pago+linea+agua&sca_esv=c6c16ab1eb0a4421&ei=MDUwar3JOZqwqtsP596WiQc&start=40&sa=N&sstk=AU9db-CtL4LyMevRiDGRpxG1IbaHyHh4hmLDfhc86fVtSOWnnZLpNMpYH4TAhBwurDYxe4-F15Tg0tKcHU2yhvq6apN_GnOmFtcV6g&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ8tMDegQIOxAK
+              - text: "5"
+            - link "Page 6" [ref=e973] [cursor=pointer]:
+              - /url: /search?q=oapas+tlalnepantla+pago+linea+agua&sca_esv=c6c16ab1eb0a4421&ei=MDUwar3JOZqwqtsP596WiQc&start=50&sa=N&sstk=AU9db-CtL4LyMevRiDGRpxG1IbaHyHh4hmLDfhc86fVtSOWnnZLpNMpYH4TAhBwurDYxe4-F15Tg0tKcHU2yhvq6apN_GnOmFtcV6g&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ8tMDegQIOxAM
+              - text: "6"
+            - link "Page 7" [ref=e975] [cursor=pointer]:
+              - /url: /search?q=oapas+tlalnepantla+pago+linea+agua&sca_esv=c6c16ab1eb0a4421&ei=MDUwar3JOZqwqtsP596WiQc&start=60&sa=N&sstk=AU9db-CtL4LyMevRiDGRpxG1IbaHyHh4hmLDfhc86fVtSOWnnZLpNMpYH4TAhBwurDYxe4-F15Tg0tKcHU2yhvq6apN_GnOmFtcV6g&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ8tMDegQIOxAO
+              - text: "7"
+            - link "Page 8" [ref=e977] [cursor=pointer]:
+              - /url: /search?q=oapas+tlalnepantla+pago+linea+agua&sca_esv=c6c16ab1eb0a4421&ei=MDUwar3JOZqwqtsP596WiQc&start=70&sa=N&sstk=AU9db-CtL4LyMevRiDGRpxG1IbaHyHh4hmLDfhc86fVtSOWnnZLpNMpYH4TAhBwurDYxe4-F15Tg0tKcHU2yhvq6apN_GnOmFtcV6g&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ8tMDegQIOxAQ
+              - text: "8"
+            - link "Page 9" [ref=e979] [cursor=pointer]:
+              - /url: /search?q=oapas+tlalnepantla+pago+linea+agua&sca_esv=c6c16ab1eb0a4421&ei=MDUwar3JOZqwqtsP596WiQc&start=80&sa=N&sstk=AU9db-CtL4LyMevRiDGRpxG1IbaHyHh4hmLDfhc86fVtSOWnnZLpNMpYH4TAhBwurDYxe4-F15Tg0tKcHU2yhvq6apN_GnOmFtcV6g&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ8tMDegQIOxAS
+              - text: "9"
+            - heading "Siguiente" [level=2] [ref=e981]:
+              - link "Siguiente" [ref=e982] [cursor=pointer]:
+                - /url: /search?q=oapas+tlalnepantla+pago+linea+agua&sca_esv=c6c16ab1eb0a4421&ei=MDUwar3JOZqwqtsP596WiQc&start=10&sa=N&sstk=AU9db-CtL4LyMevRiDGRpxG1IbaHyHh4hmLDfhc86fVtSOWnnZLpNMpYH4TAhBwurDYxe4-F15Tg0tKcHU2yhvq6apN_GnOmFtcV6g&ved=2ahUKEwi9oYi94YmVAxUamGoFHWevJXEQ8NMDegQIOxAU
+                - generic [ref=e984]: Siguiente
+        - navigation
+    - contentinfo [ref=e985]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e986]
+      - generic [ref=e990]:
+        - generic [ref=e992]:
+          - text: México
+          - generic [ref=e994]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - A través de tu dirección IP" [ref=e996] [cursor=pointer]:
+              - generic [ref=e997]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e999]:
+                - text: "-"
+                - generic [ref=e1000]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e1002] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e1005]:
+          - link "Ayuda" [ref=e1006] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e1007] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e1008] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e1009] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

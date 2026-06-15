@@ -1,0 +1,204 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e7]:
+            - generic [ref=e8]: Emergencias
+            - link " 073" [ref=e9] [cursor=pointer]:
+              - /url: tel:073
+              - generic [ref=e10]: 
+              - generic [ref=e11]: "073"
+          - link " (686) 569-8020" [ref=e12] [cursor=pointer]:
+            - /url: https://wa.me/+526865698020?text=Hola%20puedes%20ayudarme
+            - generic [ref=e13]: 
+            - generic [ref=e14]: (686) 569-8020
+        - generic [ref=e15]:
+          - link "PAGO EN LÍNEA" [ref=e16] [cursor=pointer]:
+            - /url: https://www.ecespm.gob.mx/cespm-servlinea/pagosenlineacespm.aspx
+          - generic [ref=e17]:
+            - link "" [ref=e19] [cursor=pointer]:
+              - /url: https://www.facebook.com/cespmbc/
+              - generic [ref=e21]: 
+            - link "" [ref=e23] [cursor=pointer]:
+              - /url: https://www.instagram.com/cespmexicali/
+              - generic [ref=e25]: 
+            - link "" [ref=e27] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/cespmxl
+              - generic [ref=e29]: 
+    - navigation [ref=e30]:
+      - generic [ref=e31]:
+        - link "CESPM Comisión Estatal de Servicios Públicos de Mexicali" [ref=e32] [cursor=pointer]:
+          - /url: /
+          - img "CESPM Comisión Estatal de Servicios Públicos de Mexicali" [ref=e33]
+        - list [ref=e35]:
+          - listitem [ref=e36]:
+            - link "Inicio" [ref=e37] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e38]:
+            - link "Nosotros" [ref=e39] [cursor=pointer]:
+              - /url: /nosotros
+          - listitem [ref=e40]:
+            - link "Trámites y Servicios" [ref=e41] [cursor=pointer]:
+              - /url: /tramites
+          - listitem [ref=e42]:
+            - link "Transparencia" [ref=e43] [cursor=pointer]:
+              - /url: /transparencia
+  - main [ref=e44]:
+    - generic [ref=e46]:
+      - link "Aviso 1" [ref=e49] [cursor=pointer]:
+        - /url: https://www.cespm.gob.mx/noticia/ver/5968
+        - img "Aviso 1" [ref=e50]
+      - button "Anterior" [ref=e51] [cursor=pointer]:
+        - generic [ref=e53]: Anterior
+      - button "Siguiente" [ref=e54] [cursor=pointer]:
+        - generic [ref=e56]: Siguiente
+    - generic [ref=e58]:
+      - heading "Trámites y Servicios" [level=3] [ref=e59]
+      - generic [ref=e60]:
+        - link " ¿Dónde Pagar?" [ref=e63] [cursor=pointer]:
+          - /url: https://www.cespm.gob.mx/donde-pagar
+          - generic [ref=e64]:
+            - generic [ref=e66]: 
+            - generic [ref=e67]: ¿Dónde Pagar?
+        - link " Centros de Atención" [ref=e70] [cursor=pointer]:
+          - /url: https://www.cespm.gob.mx/centros-atencion
+          - generic [ref=e71]:
+            - generic [ref=e73]: 
+            - generic [ref=e74]: Centros de Atención
+        - link " Constancia de Descargas" [ref=e77] [cursor=pointer]:
+          - /url: https://www.cespm.gob.mx/constancia-descargas
+          - generic [ref=e78]:
+            - generic [ref=e80]: 
+            - generic [ref=e81]: Constancia de Descargas
+        - link " Recepción CFDI para Proveedores" [ref=e84] [cursor=pointer]:
+          - /url: https://www.ecespm.gob.mx/cfdiproveedoresv1/cfdiproveedores.aspx
+          - generic [ref=e85]:
+            - generic [ref=e87]: 
+            - generic [ref=e88]: Recepción CFDI para Proveedores
+        - link " Factura Electrónica" [ref=e91] [cursor=pointer]:
+          - /url: https://www.ecespm.gob.mx/cespm-servlinea/facturaelectronica.aspx
+          - generic [ref=e92]:
+            - generic [ref=e94]: 
+            - generic [ref=e95]: Factura Electrónica
+        - link " Transferencia Electrónica" [ref=e98] [cursor=pointer]:
+          - /url: https://www.cespm.gob.mx/transferencia-electronica
+          - generic [ref=e99]:
+            - generic [ref=e101]: 
+            - generic [ref=e102]: Transferencia Electrónica
+        - link " Domiciliación" [ref=e105] [cursor=pointer]:
+          - /url: https://www.cespm.gob.mx/domiciliacion
+          - generic [ref=e106]:
+            - generic [ref=e108]: 
+            - generic [ref=e109]: Domiciliación
+        - link " Aclaraciones en Línea" [ref=e112] [cursor=pointer]:
+          - /url: https://www.ecespm.gob.mx/cespm-servlinea/alta-de-aclaracion.aspx
+          - generic [ref=e113]:
+            - generic [ref=e115]: 
+            - generic [ref=e116]: Aclaraciones en Línea
+        - link " Directorio de Funcionarios" [ref=e119] [cursor=pointer]:
+          - /url: https://www.bajacalifornia.gob.mx/Gobierno/Directorio_Funcionarios
+          - generic [ref=e120]:
+            - generic [ref=e122]: 
+            - generic [ref=e123]: Directorio de Funcionarios
+    - generic [ref=e125]:
+      - heading "Sala de Prensa" [level=3] [ref=e126]
+      - generic [ref=e127]:
+        - link "CESPM CONTINÚA CON LA REPOSICIÓN DE INFRAESTRUCTURA SANITARIA Y PLUVIAL EN LA COLONIA NUEVA CESPM CONTINÚA CON LA REPOSICIÓN DE INFRAESTRUCTURA SANITARIA Y PLUVIAL EN LA COLONIA NUEVA" [ref=e130] [cursor=pointer]:
+          - /url: /noticia/ver/6245
+          - img "CESPM CONTINÚA CON LA REPOSICIÓN DE INFRAESTRUCTURA SANITARIA Y PLUVIAL EN LA COLONIA NUEVA" [ref=e131]
+          - generic [ref=e133]: CESPM CONTINÚA CON LA REPOSICIÓN DE INFRAESTRUCTURA SANITARIA Y PLUVIAL EN LA COLONIA NUEVA
+        - link "CESPM RETIRA MÁS DE 5 MIL 400 TONELADAS DE AZOLVE EN EL DREN MÉXICO CESPM RETIRA MÁS DE 5 MIL 400 TONELADAS DE AZOLVE EN EL DREN MÉXICO" [ref=e136] [cursor=pointer]:
+          - /url: /noticia/ver/6244
+          - img "CESPM RETIRA MÁS DE 5 MIL 400 TONELADAS DE AZOLVE EN EL DREN MÉXICO" [ref=e137]
+          - generic [ref=e139]: CESPM RETIRA MÁS DE 5 MIL 400 TONELADAS DE AZOLVE EN EL DREN MÉXICO
+        - link "CESPM ACERCO´ SERVICIOS Y ACCIONES COMUNITARIAS A FAMILIAS DE PUERTA DEL SOL CESPM ACERCO´ SERVICIOS Y ACCIONES COMUNITARIAS A FAMILIAS DE PUERTA DEL SOL" [ref=e142] [cursor=pointer]:
+          - /url: /noticia/ver/6243
+          - img "CESPM ACERCO´ SERVICIOS Y ACCIONES COMUNITARIAS A FAMILIAS DE PUERTA DEL SOL" [ref=e143]
+          - generic [ref=e145]: CESPM ACERCO´ SERVICIOS Y ACCIONES COMUNITARIAS A FAMILIAS DE PUERTA DEL SOL
+      - link "Ver más noticias" [ref=e147] [cursor=pointer]:
+        - /url: /noticias
+    - generic [ref=e150]:
+      - heading "Consultas de Interés" [level=3] [ref=e151]
+      - generic [ref=e152]:
+        - link " Calculadora de Consumo" [ref=e155] [cursor=pointer]:
+          - /url: https://www.cespm.gob.mx/calculadora-consumo
+          - generic [ref=e156]:
+            - generic [ref=e158]: 
+            - generic [ref=e159]: Calculadora de Consumo
+        - link "$ Costo de Servicios" [ref=e162] [cursor=pointer]:
+          - /url: https://www.cespm.gob.mx/costo-servicios
+          - generic [ref=e163]:
+            - generic [ref=e165]: $
+            - generic [ref=e166]: Costo de Servicios
+        - link " Información Pública" [ref=e169] [cursor=pointer]:
+          - /url: https://www.ecespm.gob.mx/consultasenlineacespm/transparenciaenlineacespm.aspx
+          - generic [ref=e170]:
+            - generic [ref=e172]: 
+            - generic [ref=e173]: Información Pública
+  - contentinfo [ref=e174]:
+    - generic [ref=e177]:
+      - list [ref=e179]:
+        - listitem [ref=e180]:
+          - text: ■
+          - link "CESPM App (Android)" [ref=e181] [cursor=pointer]:
+            - /url: https://play.google.com/store/apps/details?id=com.cespmapp
+        - listitem [ref=e182]:
+          - text: ■
+          - link "CESPM App (iOS)" [ref=e183] [cursor=pointer]:
+            - /url: https://apps.apple.com/mx/app/cespm-app/id1543301296
+        - listitem [ref=e184]:
+          - text: ■
+          - link "Cultura del Agua" [ref=e185] [cursor=pointer]:
+            - /url: https://www.cespm.gob.mx/content/cultura-agua.pdf
+        - listitem [ref=e186]:
+          - text: ■
+          - link "Quejas y Denuncias" [ref=e187] [cursor=pointer]:
+            - /url: http://sctg.bajacalifornia.gob.mx:8080/quejas/queja.jsp
+      - list [ref=e189]:
+        - listitem [ref=e190]:
+          - text: ■
+          - link "Gobierno de Baja California" [ref=e191] [cursor=pointer]:
+            - /url: http://www.bajacalifornia.gob.mx/
+        - listitem [ref=e192]:
+          - text: ■
+          - link "Municipio de Mexicali" [ref=e193] [cursor=pointer]:
+            - /url: http://www.mexicali.gob.mx/
+        - listitem [ref=e194]:
+          - text: ■
+          - link "Comisión Estatal de Servicios Públicos de Tijuana" [ref=e195] [cursor=pointer]:
+            - /url: http://www.cespt.gob.mx/
+        - listitem [ref=e196]:
+          - text: ■
+          - link "Comisión Estatal de Servicios Públicos de Ensenada" [ref=e197] [cursor=pointer]:
+            - /url: http://www.cespe.gob.mx/
+        - listitem [ref=e198]:
+          - text: ■
+          - link "Comisión Estatal de Servicios Públicos de Tecate" [ref=e199] [cursor=pointer]:
+            - /url: http://www.cespte.gob.mx/
+      - list [ref=e201]:
+        - listitem [ref=e202]:
+          - text: ■
+          - link "Comisión Estatal del Agua de Baja California" [ref=e203] [cursor=pointer]:
+            - /url: http://www.cea.gob.mx/
+        - listitem [ref=e204]:
+          - text: ■
+          - link "Comisión Nacional del Agua" [ref=e205] [cursor=pointer]:
+            - /url: http://www.conagua.gob.mx/
+        - listitem [ref=e206]:
+          - text: ■
+          - link "Instituto Mexicano de Tecnología del Agua" [ref=e207] [cursor=pointer]:
+            - /url: http://www.imta.gob.mx/
+        - listitem [ref=e208]:
+          - text: ■
+          - link "Asoc. Nac. Empresas Agua y Saneamiento Mex. A.C." [ref=e209] [cursor=pointer]:
+            - /url: http://www.aneas.com.mx/
+    - generic [ref=e212]:
+      - generic [ref=e213]:
+        - generic [ref=e214]: "Calle Río Sinaloa #1399 Colonia Vallarta Tel. (686) 564-1900"
+        - generic [ref=e215]:
+          - text: CESPM Comisión Estatal de Servicios Públicos de Mexicali |
+          - link "Aviso de Privacidad" [ref=e216] [cursor=pointer]:
+            - /url: /aviso-privacidad
+        - generic [ref=e217]: 1998 - 2026 v1.2.0
+      - img "Logos" [ref=e219]

@@ -1,0 +1,83 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e6]:
+        - list
+  - main [ref=e7]:
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - list [ref=e11]:
+          - listitem [ref=e12]:
+            - link "" [ref=e13] [cursor=pointer]:
+              - /url: https://www.gob.mx/segob/
+              - generic [ref=e14]: 
+          - listitem [ref=e15]:
+            - text: 
+            - link "Consulta Ciudadana" [ref=e16] [cursor=pointer]:
+              - /url: /ciudadania/
+        - heading "Consulta Ciudadana" [level=3] [ref=e17]
+        - separator [ref=e18]
+        - generic [ref=e19]:
+          - strong [ref=e22]: POR FAVOR, INGRESE SÓLO UN CRITERIO DE BÚSQUEDA
+          - generic [ref=e23]:
+            - generic [ref=e24]:
+              - generic [ref=e25]: "Número de Placa (sin guiones ni espacios) (5-7 dígitos):"
+              - textbox "Ingresa tu placa" [ref=e26]
+            - generic [ref=e27]:
+              - generic [ref=e28]: "Número de Identificación Vehicular (NIV): (4-17 dígitos)"
+              - generic [ref=e29]: 
+              - textbox "Ingresa tu número de serie" [ref=e30]
+            - generic [ref=e31]:
+              - generic [ref=e32]:
+                - text: "Folio de Constancia de Inscripción: (8 números)"
+                - generic [ref=e33]: 
+              - textbox "Ingresa tu folio" [ref=e34]
+            - generic [ref=e35]:
+              - generic [ref=e36]:
+                - text: "Número de Constancia de Inscripción: (8 dígitos)"
+                - generic [ref=e37]: 
+              - textbox "Ingresa tu número de constancia de inscripción" [ref=e38]
+            - separator [ref=e41]
+            - generic [ref=e42]:
+              - generic [ref=e43]: "* Ingresa sólo un criterio de búsqueda"
+              - generic [ref=e45]:
+                - button "Limpiar" [ref=e46] [cursor=pointer]
+                - button " Buscar" [ref=e47] [cursor=pointer]:
+                  - generic [ref=e48]: 
+                  - text: Buscar
+          - generic [ref=e49]:
+            - strong [ref=e51]:
+              - paragraph [ref=e52]:
+                - text: Este servicio de consulta es
+                - emphasis [ref=e53]: GRATUITO
+                - text: de acuerdo con el Artículo 6 de la Ley del Registro Público Vehicular.
+            - generic [ref=e54]:
+              - strong [ref=e55]: ¡Sugerencia!
+              - text: "Para solicitar asistencia telefónica sobre el servicio de REPUVE, puedes comunicarte al Centro de Atención Telefónica, a los números telefónicos:"
+              - list [ref=e56]:
+                - listitem [ref=e57]: 01 800 7378831 (01 800 REPUVE1) o al 079
+          - generic [ref=e58]:
+            - table:
+              - row
+      - generic [ref=e60]:
+        - heading "Contacto" [level=3] [ref=e61]
+        - separator [ref=e62]
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - paragraph [ref=e65]: Boulevard Adolfo Ruiz Cortines número 3648
+            - generic [ref=e66]: Colonia Jardines del Pedregal, código postal 01900, demarcación territorial Álvaro Obregón, Ciudad de México
+            - generic [ref=e67]: "Teléfono: 800 REPUVE 1 (800-737-883-1)"
+            - generic [ref=e68]: "Atención Ciudadana:"
+            - generic [ref=e69]: Dirección General del Registro Público Vehicular.
+          - iframe [ref=e72]:
+            
+  - contentinfo [ref=e73]:
+    - paragraph [ref=e77]:
+      - text: REPUVE - Registro Público Vehicular
+      - text: Versión 3.9.0
+  - iframe [ref=e80]:
+    - generic [ref=f6e6]:
+      - text: protegido por
+      - strong [ref=f6e7]: reCAPTCHA

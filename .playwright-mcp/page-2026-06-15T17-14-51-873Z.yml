@@ -1,0 +1,316 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: pago predial cancun benito juarez sitio:gob.mx pago predial cancun benito juarez sitio:gob.mx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dpago%2Bpredial%2Bcancun%2Bbenito%2Bjuarez%2Bsitio:gob.mx&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=pago+predial+cancun+benito+juarez+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNR-9YXJNVy82tvwpTTkGB1J23BpKKXH5gKJgTaInuNlX-Kd9Fl267xKRB5jbFfh-VOOmKWTRNLEXxxy7snk2yY6HiGng&aep=1&ntc=1&sa=X&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQ2J8OegQIDxAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=pago+predial+cancun+benito+juarez+sitio:gob.mx&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNR-9YXJNVy82tvwpTTkGB1J23BpKKXH5gKJgTaInuNlX-Kd9Fl267xKRB5jbFfh-VOOmKWTRNLEXxxy7snk2yY6HiGng&sa=X&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQ0pQJegQIExAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Imágenes" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNR-9YXJNVy82tvwpTTkGB1J23BpKKXH5gKJgTaInuNlX-Kd9Fl267xKRB5jbFfh-VOOmKWTRNLEXxxy7snk2yY6HiGng&q=pago+predial+cancun+benito+juarez+sitio:gob.mx&sa=X&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQtKgLegQIFBAB
+              - generic [ref=e88]: Imágenes
+          - listitem [ref=e89]:
+            - link "Shopping" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNR-9YXJNVy82tvwpTTkGB1J23BpKKXH5gKJgTaInuNlX-Kd9Fl267xKRB5jbFfh-VOOmKWTRNLEXxxy7snk2yY6HiGng&q=pago+predial+cancun+benito+juarez+sitio:gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e92]: Shopping
+          - listitem [ref=e93]:
+            - link "Videos" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNR-9YXJNVy82tvwpTTkGB1J23BpKKXH5gKJgTaInuNlX-Kd9Fl267xKRB5jbFfh-VOOmKWTRNLEXxxy7snk2yY6HiGng&q=pago+predial+cancun+benito+juarez+sitio:gob.mx&sa=X&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQtKgLegQIFRAB
+              - generic [ref=e96]: Videos
+          - listitem [ref=e97]:
+            - link "Videos cortos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNR-9YXJNVy82tvwpTTkGB1J23BpKKXH5gKJgTaInuNlX-Kd9Fl267xKRB5jbFfh-VOOmKWTRNLEXxxy7snk2yY6HiGng&q=pago+predial+cancun+benito+juarez+sitio:gob.mx&sa=X&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQs6gLegQIEhAB
+              - generic [ref=e100]: Videos cortos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - main [ref=e123]:
+      - generic [ref=e127]:
+        - generic [ref=e130]:
+          - heading "Resultado web con vínculos a sitio" [level=2] [ref=e131]
+          - generic [ref=e132]:
+            - generic [ref=e136]:
+              - generic [ref=e138]:
+                - link "Municipio de Benito Juárez Municipio de Benito Juárez https://www.cancun.gob.mx" [ref=e140] [cursor=pointer]:
+                  - /url: https://www.cancun.gob.mx/
+                  - heading "Municipio de Benito Juárez" [level=3] [ref=e141]
+                  - generic [ref=e147]:
+                    - generic [ref=e149]: Municipio de Benito Juárez
+                    - generic [ref=e151]: https://www.cancun.gob.mx
+                - button "Acerca de este resultado" [ref=e152] [cursor=pointer]:
+                  - img [ref=e155]
+              - generic [ref=e159]:
+                - emphasis [ref=e160]: Pago
+                - text: de
+                - emphasis [ref=e161]: predial
+                - text: . Ícono Licencias de funcionamiento. Licencia de ...
+                - emphasis [ref=e162]: Cancun
+                - text: .
+                - emphasis [ref=e163]: gob
+                - text: .
+                - emphasis [ref=e164]: mx
+                - text: es la presencia digital del Gobierno Municipal de
+                - emphasis [ref=e165]: Benito Juárez
+                - text: .
+            - group "Recomendaciones personalizadas en función de tu historial" [ref=e166]:
+              - rowgroup [ref=e167]:
+                - row "Tesorería Municipal de Cancún El municipio de Benito Juárez pone a tu disposición estos ..." [ref=e168]:
+                  - cell "Tesorería Municipal de Cancún El municipio de Benito Juárez pone a tu disposición estos ..." [ref=e169]:
+                    - generic [ref=e175]:
+                      - heading "Tesorería Municipal de Cancún" [level=3] [ref=e176]:
+                        - link "Tesorería Municipal de Cancún" [ref=e177] [cursor=pointer]:
+                          - /url: https://cancun.gob.mx/tesoreria-qr
+                          - text: Tesorería Municipal de Cancún
+                      - generic [ref=e180]: El municipio de Benito Juárez pone a tu disposición estos ...
+                - row "INFORMA GOBIERNO DE BJ ... ... Pago De Predial En El Palacio Municipal.docx. Información ..." [ref=e181]:
+                  - cell "INFORMA GOBIERNO DE BJ ... ... Pago De Predial En El Palacio Municipal.docx. Información ..." [ref=e182]:
+                    - generic [ref=e188]:
+                      - heading "INFORMA GOBIERNO DE BJ ..." [level=3] [ref=e189]:
+                        - link "INFORMA GOBIERNO DE BJ ..." [ref=e190] [cursor=pointer]:
+                          - /url: https://cancun.gob.mx/cancun/noticias/leer/1896
+                          - text: INFORMA GOBIERNO DE BJ ...
+                      - generic [ref=e193]: ... Pago De Predial En El Palacio Municipal.docx. Información ...
+                - row "Más resultados de cancun.gob.mx »" [ref=e195]:
+                  - cell "Más resultados de cancun.gob.mx »" [ref=e196]:
+                    - link "Más resultados de cancun.gob.mx »" [ref=e198] [cursor=pointer]:
+                      - /url: /search?q=pago+predial+cancun+benito+juarez+sitio:gob.mx+site:cancun.gob.mx&sca_esv=c6c16ab1eb0a4421&sa=X&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQrAN6BAgZEAE
+        - generic [ref=e201]:
+          - heading "Resultados web" [level=2] [ref=e202]
+          - generic [ref=e203]:
+            - generic [ref=e206]:
+              - link "Cancún - Digital Cancún - Digital https://cancun-digital.mx" [ref=e208] [cursor=pointer]:
+                - /url: https://cancun-digital.mx/
+                - heading "Cancún - Digital" [level=3] [ref=e209]
+                - generic [ref=e211]:
+                  - img [ref=e216]
+                  - generic [ref=e218]:
+                    - generic [ref=e220]: Cancún - Digital
+                    - generic [ref=e222]: https://cancun-digital.mx
+              - button "Acerca de este resultado" [ref=e223] [cursor=pointer]:
+                - img [ref=e226]
+            - generic [ref=e230]:
+              - emphasis [ref=e231]: Impuesto predial
+              - text: · Pago de recolección de residuos sólidos urbanos · Constancia de no inhabilitación · Suspensión de Actividades · Programa de Becas "Educación para ...
+        - generic [ref=e242]:
+          - heading "Pensando" [level=2] [ref=e246]:
+            - generic [ref=e247]: Pensando
+          - progressbar "Generando" [ref=e248]
+        - generic [ref=e252]:
+          - heading "Resultados web" [level=2] [ref=e253]
+          - generic [ref=e254]:
+            - generic [ref=e257]:
+              - link "Impuesto predial Cancún - Digital https://cancun-digital.mx › tramites › tipo › pipcan › inicio" [ref=e259] [cursor=pointer]:
+                - /url: https://cancun-digital.mx/tramites/tipo/pipcan/inicio
+                - heading "Impuesto predial" [level=3] [ref=e260]
+                - generic [ref=e262]:
+                  - img [ref=e267]
+                  - generic [ref=e269]:
+                    - generic [ref=e271]: Cancún - Digital
+                    - generic [ref=e273]: https://cancun-digital.mx › tramites › tipo › pipcan › inicio
+              - button "Acerca de este resultado" [ref=e274] [cursor=pointer]:
+                - img [ref=e277]
+            - generic [ref=e281]:
+              - text: "Seleccione el tipo de búsqueda que desea realizar:"
+              - emphasis [ref=e282]: Buscar por Número de Padrón
+              - text: Buscar por Clave Catastral. Número de padrón. Número de padrón. Consultar.
+        - generic [ref=e288]:
+          - generic [ref=e291]:
+            - link "Realizar tu pago de predial en línea es muy sencillo, ingresa ... Facebook · Ayuntamiento de Benito Juárez Más de 80 reacciones · hace 5 años" [ref=e293] [cursor=pointer]:
+              - /url: https://www.facebook.com/AytoCancun/videos/paga-tu-predial-en-l%C3%ADnea/411054680167564/
+              - heading "Realizar tu pago de predial en línea es muy sencillo, ingresa ..." [level=3] [ref=e294]
+              - generic [ref=e300]:
+                - generic [ref=e302]: Facebook · Ayuntamiento de Benito Juárez
+                - generic [ref=e304]: Más de 80 reacciones · hace 5 años
+            - button "Acerca de este resultado" [ref=e305] [cursor=pointer]:
+              - img [ref=e308]
+          - generic [ref=e310]:
+            - link "Realizar tu pago de predial en línea es muy sencillo, ingresa ... de Ayuntamiento de Benito Juárez en Facebook. Reproducir en Facebook. 1:11" [ref=e311] [cursor=pointer]:
+              - /url: https://www.facebook.com/AytoCancun/videos/paga-tu-predial-en-l%C3%ADnea/411054680167564/
+              - generic [ref=e313]:
+                - img [ref=e316]
+                - generic [ref=e320]: 1:11
+            - generic [ref=e322]: Ayuntamiento de Benito Juárez. 󱢏. Hola Adalberto Jiménez Ruiz, ingresa a www.cancun.gob.mx para más información. cancun.gob.mx. Ayuntamiento ...
+        - generic [ref=e327]:
+          - heading "Más preguntas" [level=2] [ref=e329]
+          - generic [ref=e330]:
+            - button "¿Cómo checar cuánto debo de predial en Cancún?" [ref=e336] [cursor=pointer]:
+              - generic [ref=e338]: ¿Cómo checar cuánto debo de predial en Cancún?
+              - img [ref=e341]
+            - button "¿Cómo bajar el recibo de predial 2026?" [ref=e350] [cursor=pointer]:
+              - generic [ref=e352]: ¿Cómo bajar el recibo de predial 2026?
+              - img [ref=e355]
+            - button "¿Dónde pagar el predial Benito Juárez?" [ref=e364] [cursor=pointer]:
+              - generic [ref=e366]: ¿Dónde pagar el predial Benito Juárez?
+              - img [ref=e369]
+            - button "¿Cómo pagar el predial por WhatsApp?" [ref=e378] [cursor=pointer]:
+              - generic [ref=e380]: ¿Cómo pagar el predial por WhatsApp?
+              - img [ref=e383]
+        - generic [ref=e388]:
+          - heading "Resultados web" [level=2] [ref=e389]
+          - generic [ref=e390]:
+            - generic [ref=e393]:
+              - link "Pagar tu predial ¡Ahora es muy sencillo! Sólo tienes que ... Facebook · Ayuntamiento de Benito Juárez 4 reacciones" [ref=e395] [cursor=pointer]:
+                - /url: https://www.facebook.com/AytoCancun/videos/pagar-tu-predial-ahora-es-muy-sencillos%C3%B3lo-tienes-que-ingresar-al-portal-httpwww/508096923394029/
+                - heading "Pagar tu predial ¡Ahora es muy sencillo! Sólo tienes que ..." [level=3] [ref=e396]
+                - generic [ref=e402]:
+                  - generic [ref=e404]: Facebook · Ayuntamiento de Benito Juárez
+                  - generic [ref=e406]: 4 reacciones
+              - button "Acerca de este resultado" [ref=e407] [cursor=pointer]:
+                - img [ref=e410]
+            - generic [ref=e414]:
+              - text: Pagar tu predial ¡Ahora es muy sencillo! Sólo tienes que
+              - emphasis [ref=e415]: ingresar al portal http://www.cancun. gob.mx
+              - text: ", seguir unos sencillos pasos y ¡listo!"
+        - generic [ref=e419]:
+          - generic [ref=e422]:
+            - 'link "Impuesto predial Cancún: ¿cómo calcularlo y pagarlo? BBVA México https://www.bbva.mx › Personas › Impuestos" [ref=e424] [cursor=pointer]':
+              - /url: https://www.bbva.mx/educacion-financiera/impuestos/impuesto-predial-cancun.html
+              - 'heading "Impuesto predial Cancún: ¿cómo calcularlo y pagarlo?" [level=3] [ref=e425]'
+              - generic [ref=e431]:
+                - generic [ref=e433]: BBVA México
+                - generic [ref=e435]: https://www.bbva.mx › Personas › Impuestos
+            - button "Acerca de este resultado" [ref=e436] [cursor=pointer]:
+              - img [ref=e439]
+          - generic [ref=e443]:
+            - text: El impuesto predial en línea en Cancún
+            - emphasis [ref=e444]: puede pagarse desde el portal oficial del Ayuntamiento de Benito Juárez
+            - text: (cancun.gob.mx). Solo necesitas ingresar el ...
+        - generic [ref=e448]:
+          - generic [ref=e451]:
+            - 'link "SATQ : Servicio de Administración Tributaria de Quintana Roo Servicio de Administración Tributaria de Quintana Roo (SATQ) https://satq.qroo.gob.mx" [ref=e453] [cursor=pointer]':
+              - /url: https://satq.qroo.gob.mx/
+              - 'heading "SATQ : Servicio de Administración Tributaria de Quintana Roo" [level=3] [ref=e454]'
+              - generic [ref=e456]:
+                - img [ref=e461]
+                - generic [ref=e463]:
+                  - generic [ref=e465]: Servicio de Administración Tributaria de Quintana Roo (SATQ)
+                  - generic [ref=e467]: https://satq.qroo.gob.mx
+            - button "Acerca de este resultado" [ref=e468] [cursor=pointer]:
+              - img [ref=e471]
+          - generic [ref=e475]:
+            - emphasis [ref=e476]: Servicios en Línea
+            - text: · Nómina y Hospedaje. Validación de pagos del Impuesto Sobre Nómina y Hospedaje · Padrón Vehicular. Solicitudes de validación de pagos de ...
+        - generic [ref=e480]:
+          - generic [ref=e483]:
+            - link "Ayuntamiento - ¡Comienza el año pagando tu predial! 🏡 ... Facebook · Ayuntamiento de Benito Juárez Más de 180 reacciones · hace 5 meses" [ref=e485] [cursor=pointer]:
+              - /url: https://www.facebook.com/AytoCancun/photos/comienza-el-a%C3%B1o-pagando-tu-predial-acude-a-cualquiera-de-nuestros-m%C3%B3dulos-o-paga/1303696555137298/
+              - heading "Ayuntamiento - ¡Comienza el año pagando tu predial! 🏡 ..." [level=3] [ref=e486]
+              - generic [ref=e492]:
+                - generic [ref=e494]: Facebook · Ayuntamiento de Benito Juárez
+                - generic [ref=e496]: Más de 180 reacciones · hace 5 meses
+            - button "Acerca de este resultado" [ref=e497] [cursor=pointer]:
+              - img [ref=e500]
+          - generic [ref=e504]:
+            - text: Comienza el año pagando tu predial! Acude a cualquiera de nuestros módulos o
+            - emphasis [ref=e505]: paga en línea a través de cancun-digital.mx
+            - text: "tu #Predial2026 ..."
+      - navigation [ref=e508]:
+        - heading "Navegación de páginas" [level=1] [ref=e509]
+        - text: "1"
+        - link "Page 2" [ref=e512] [cursor=pointer]:
+          - /url: /search?q=pago+predial+cancun+benito+juarez+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=CzMwaqCyEoqHqtsP8dKemQg&start=10&sa=N&sstk=AU9db-AfXu05MKQYfP-4rUupnRWN21P1oFiEoflL5FVCtyv8X7EEMNsXxBMD5jUqAyFGryKoExKYp_mC_cWi4hX6Lud2vNbBFR1ssA&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQ8tMDegQIIBAE
+          - text: "2"
+        - link "Page 3" [ref=e514] [cursor=pointer]:
+          - /url: /search?q=pago+predial+cancun+benito+juarez+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=CzMwaqCyEoqHqtsP8dKemQg&start=20&sa=N&sstk=AU9db-AfXu05MKQYfP-4rUupnRWN21P1oFiEoflL5FVCtyv8X7EEMNsXxBMD5jUqAyFGryKoExKYp_mC_cWi4hX6Lud2vNbBFR1ssA&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQ8tMDegQIIBAG
+          - text: "3"
+        - link "Page 4" [ref=e516] [cursor=pointer]:
+          - /url: /search?q=pago+predial+cancun+benito+juarez+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=CzMwaqCyEoqHqtsP8dKemQg&start=30&sa=N&sstk=AU9db-AfXu05MKQYfP-4rUupnRWN21P1oFiEoflL5FVCtyv8X7EEMNsXxBMD5jUqAyFGryKoExKYp_mC_cWi4hX6Lud2vNbBFR1ssA&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQ8tMDegQIIBAI
+          - text: "4"
+        - link "Page 5" [ref=e518] [cursor=pointer]:
+          - /url: /search?q=pago+predial+cancun+benito+juarez+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=CzMwaqCyEoqHqtsP8dKemQg&start=40&sa=N&sstk=AU9db-AfXu05MKQYfP-4rUupnRWN21P1oFiEoflL5FVCtyv8X7EEMNsXxBMD5jUqAyFGryKoExKYp_mC_cWi4hX6Lud2vNbBFR1ssA&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQ8tMDegQIIBAK
+          - text: "5"
+        - link "Page 6" [ref=e520] [cursor=pointer]:
+          - /url: /search?q=pago+predial+cancun+benito+juarez+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=CzMwaqCyEoqHqtsP8dKemQg&start=50&sa=N&sstk=AU9db-AfXu05MKQYfP-4rUupnRWN21P1oFiEoflL5FVCtyv8X7EEMNsXxBMD5jUqAyFGryKoExKYp_mC_cWi4hX6Lud2vNbBFR1ssA&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQ8tMDegQIIBAM
+          - text: "6"
+        - link "Page 7" [ref=e522] [cursor=pointer]:
+          - /url: /search?q=pago+predial+cancun+benito+juarez+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=CzMwaqCyEoqHqtsP8dKemQg&start=60&sa=N&sstk=AU9db-AfXu05MKQYfP-4rUupnRWN21P1oFiEoflL5FVCtyv8X7EEMNsXxBMD5jUqAyFGryKoExKYp_mC_cWi4hX6Lud2vNbBFR1ssA&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQ8tMDegQIIBAO
+          - text: "7"
+        - link "Page 8" [ref=e524] [cursor=pointer]:
+          - /url: /search?q=pago+predial+cancun+benito+juarez+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=CzMwaqCyEoqHqtsP8dKemQg&start=70&sa=N&sstk=AU9db-AfXu05MKQYfP-4rUupnRWN21P1oFiEoflL5FVCtyv8X7EEMNsXxBMD5jUqAyFGryKoExKYp_mC_cWi4hX6Lud2vNbBFR1ssA&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQ8tMDegQIIBAQ
+          - text: "8"
+        - link "Page 9" [ref=e526] [cursor=pointer]:
+          - /url: /search?q=pago+predial+cancun+benito+juarez+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=CzMwaqCyEoqHqtsP8dKemQg&start=80&sa=N&sstk=AU9db-AfXu05MKQYfP-4rUupnRWN21P1oFiEoflL5FVCtyv8X7EEMNsXxBMD5jUqAyFGryKoExKYp_mC_cWi4hX6Lud2vNbBFR1ssA&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQ8tMDegQIIBAS
+          - text: "9"
+        - link "Page 10" [ref=e528] [cursor=pointer]:
+          - /url: /search?q=pago+predial+cancun+benito+juarez+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=CzMwaqCyEoqHqtsP8dKemQg&start=90&sa=N&sstk=AU9db-AfXu05MKQYfP-4rUupnRWN21P1oFiEoflL5FVCtyv8X7EEMNsXxBMD5jUqAyFGryKoExKYp_mC_cWi4hX6Lud2vNbBFR1ssA&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQ8tMDegQIIBAU
+          - text: "10"
+        - heading "Siguiente" [level=2] [ref=e530]:
+          - link "Siguiente" [ref=e531] [cursor=pointer]:
+            - /url: /search?q=pago+predial+cancun+benito+juarez+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=CzMwaqCyEoqHqtsP8dKemQg&start=10&sa=N&sstk=AU9db-AfXu05MKQYfP-4rUupnRWN21P1oFiEoflL5FVCtyv8X7EEMNsXxBMD5jUqAyFGryKoExKYp_mC_cWi4hX6Lud2vNbBFR1ssA&ved=2ahUKEwjg4_y234mVAxWKg2oFHXGpJ4MQ8NMDegQIIBAW
+            - generic [ref=e533]: Siguiente
+      - navigation
+    - contentinfo [ref=e534]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e535]
+      - generic [ref=e539]:
+        - generic [ref=e541]:
+          - text: México
+          - generic [ref=e543]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - Según tu actividad anterior" [ref=e545] [cursor=pointer]:
+              - generic [ref=e546]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e548]:
+                - text: "-"
+                - generic [ref=e549]: Según tu actividad anterior
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e551] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e554]:
+          - link "Ayuda" [ref=e555] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e556] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e557] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e558] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

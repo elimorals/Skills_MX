@@ -1,0 +1,40 @@
+- generic [ref=e5]:
+  - generic [ref=e8]: Sábado 13 de Junio del 2026
+  - generic [ref=e9]:
+    - paragraph [ref=e10]: Guía Rápida
+    - img "Guía Rápida" [ref=e11] [cursor=pointer]
+  - generic [ref=e13]:
+    - paragraph [ref=e14]:
+      - strong [ref=e15]: Manual para descargar certificado de ingresos
+    - link "open_in_new Ver Manual" [ref=e16] [cursor=pointer]:
+      - /url: MANUALCERTIFICADOINGRESOS2026.pdf
+      - generic [ref=e17]: open_in_new
+      - text: Ver Manual
+  - generic [ref=e18]:
+    - group "INGRESE LOS DATOS DE SU CUENTA CATASTRAL" [ref=e19]:
+      - heading "INGRESE LOS DATOS DE SU CUENTA CATASTRAL" [level=4] [ref=e21]
+      - separator [ref=e22]
+      - generic [ref=e23]: "*LOCALIDAD *SECTOR *MANZANA *LOTE *CONDOMINIO"
+      - textbox "LOC" [ref=e24]
+      - text: "-"
+      - textbox "SEC" [ref=e25]
+      - text: "-"
+      - textbox "MAN" [ref=e26]
+      - text: "-"
+      - textbox "LOT" [ref=e27]
+      - text: "-"
+      - textbox "CON" [ref=e28]
+    - group [ref=e29]:
+      - button "BUSCAR" [ref=e32]:
+        - strong [ref=e33]: BUSCAR
+  - generic [ref=e34]:
+    - generic [ref=e35]:
+      - separator [ref=e36]
+      - generic:
+        - paragraph
+    - paragraph [ref=e38]:
+      - strong [ref=e39]: SI DESEA CONSULTAR MAS DE 10 CUENTAS CATASTRALES, FAVOR DE DIRIGIRSE A LA DIRECCION DE INGRESOS UBICADA EN AYUNTAMIENTO DE JUAREZ AVE.FRANCISCO VILLA 950 NTE COL CENTRO UNIDAD ADMINISTRATIVA BENITO JUAREZ C.P:32000
+    - generic [ref=e40]:
+      - heading "Aviso de privacidad" [level=6] [ref=e41]
+      - paragraph [ref=e42]: El Municipio de Juárez a través de la Unidad Única de Transparencia del Municipio de Juárez con domicilio en Francisco Villa 950 Nte Col. Centro, Área de Sótano ala sur de la Unidad Administrativa “Lic. Benito Juárez” da a conocer a los usuarios el siguiente aviso de privacidad simplificado, en cumplimiento a lo dispuesto en el artículo 66 de la Ley de Protección de Datos Personales del Estado de Chihuahua. La finalidad para la cual serán recabados sus datos personales es para efectos de trámites administrativos, como pueden ser relativos a recursos financieros, patrimoniales, o fiscales, solicitudes para el ejercicio de los derechos de Acceso, Rectificación, Cancelación y Oposición de datos personales y de portabilidad los cuales serán tratados para las finalidades antes mencionadas para lo cual será necesario que usted otorgue su consentimiento al calce del presente. Los datos personales podrán ser transferidos a órganos de fiscalización estatales y federales, para lo cual será necesario que otorgue su consentimiento al calce del documento. El titular de los datos podrá manifestar su negativa al tratamiento y tratamiento de sus datos, ante la Unidad de Transparencia o por medio de la Plataforma Nacional de Transparencia http://www.plataformadetransparencia.org.mx. El presente aviso de privacidad integral estará disponible en www.juarez.gob.mx
+    - separator [ref=e43]

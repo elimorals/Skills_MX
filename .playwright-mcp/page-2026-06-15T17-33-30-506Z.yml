@@ -1,0 +1,35 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link [ref=e4] [cursor=pointer]:
+      - /url: https://gobiernoenlinea1.jalisco.gob.mx/spelweb/
+    - heading "Servicios Vehiculares" [level=1] [ref=e6]
+  - generic [ref=e9]:
+    - heading "ADEUDOS" [level=2] [ref=e12]
+    - paragraph [ref=e14]: Para consultar los adeudos, proporcione la placa y al menos los últimos cinco caracteres del número de serie, nombre del propietario, número de motor de su vehículo, toda la información tal cual aparece en su tarjeta de circulación
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]: Número de placa
+        - textbox "Número de placa" [ref=e22]:
+          - /placeholder: Placa
+      - generic [ref=e23]:
+        - generic [ref=e24]: Número de serie
+        - textbox "Número de serie" [ref=e26]
+      - generic [ref=e27]:
+        - generic [ref=e28]: Nombre propietario
+        - textbox "Nombre propietario" [ref=e30]:
+          - /placeholder: Nombre, primer y segundo apellido
+      - generic [ref=e31]:
+        - generic [ref=e32]: Número motor
+        - textbox "Número motor" [ref=e34]:
+          - /placeholder: Número de motor
+      - generic [ref=e35]:
+        - iframe [ref=e38]:
+          - generic [ref=f21e6]:
+            - text: protegido por
+            - strong [ref=f21e7]: reCAPTCHA
+        - button "Consultar" [ref=e39] [cursor=pointer]:
+          - strong [ref=e40]: Consultar
+  - contentinfo [ref=e41]:
+    - paragraph [ref=e42]:
+      - text: Desarrollado por la Dirección de Tecnología de Información Financiera
+      - text: Gobierno del Estado de Jalisco ©2026

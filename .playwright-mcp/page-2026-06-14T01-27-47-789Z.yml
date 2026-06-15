@@ -1,0 +1,581 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]: PLUGINS MX
+    - generic [ref=e5]: ·
+    - generic [ref=e6]: VOL. III · Nº 56-59 · JUNIO 2026
+    - generic [ref=e7]: ·
+    - generic [ref=e8]: Ciudad de México, México
+    - generic [ref=e9]: ·
+    - generic [ref=e10]: 46 MCPs · 32 estados · 243 municipios
+  - navigation [ref=e12]:
+    - generic [ref=e13]:
+      - link "P·MX Compliance Infrastructure" [ref=e14] [cursor=pointer]:
+        - /url: "#top"
+        - generic [ref=e15]: P·MX
+        - generic [ref=e16]: Compliance Infrastructure
+      - list [ref=e17]:
+        - listitem [ref=e18]:
+          - link "Productos" [ref=e19] [cursor=pointer]:
+            - /url: "#productos"
+        - listitem [ref=e20]:
+          - link "MCPs" [ref=e21] [cursor=pointer]:
+            - /url: "#mcps"
+        - listitem [ref=e22]:
+          - link "Verticales" [ref=e23] [cursor=pointer]:
+            - /url: "#verticales"
+        - listitem [ref=e24]:
+          - link "Cifras" [ref=e25] [cursor=pointer]:
+            - /url: "#stats"
+        - listitem [ref=e26]:
+          - link "Agendar demo →" [ref=e27] [cursor=pointer]:
+            - /url: "#demo"
+  - banner [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e31]: "[01] Infraestructura"
+        - generic [ref=e33]: Junio 2026 · MX
+      - heading "La infraestructura de cumplimiento fiscal y municipal para México ." [level=1] [ref=e34]:
+        - generic [ref=e35]:
+          - emphasis [ref=e36]: La
+          - text: infraestructura
+        - generic [ref=e37]: de cumplimiento
+        - generic [ref=e38]: fiscal y municipal
+        - generic [ref=e39]: para México .
+      - paragraph [ref=e40]: 46 MCPs production-ready que automatizan SAT, IMSS, REPSE, ISN estatal y predial municipal en 243 ayuntamientos. Construido para despachos contables, inmobiliarias y áreas fiscales corporativas que cobran por hora — no por hoja.
+      - generic [ref=e41]:
+        - link "Agendar demo de 20 min" [ref=e42] [cursor=pointer]:
+          - /url: "#demo"
+          - generic [ref=e43]: Agendar demo de 20 min
+          - img [ref=e44]
+        - link "Ver los 3 productos vendibles ↓" [ref=e46] [cursor=pointer]:
+          - /url: "#productos"
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - generic [ref=e49]: "0"
+          - generic [ref=e50]: MCPs production-ready
+        - generic [ref=e51]:
+          - generic [ref=e52]: "0"
+          - generic [ref=e53]: Estados con ISN integrado
+        - generic [ref=e54]:
+          - generic [ref=e55]: "0"
+          - generic [ref=e56]: Municipios en catálogo predial
+        - generic [ref=e57]:
+          - generic [ref=e58]: "0"
+          - generic [ref=e59]: Empresas formales en cobertura
+    - generic [ref=e61]:
+      - generic [ref=e62]: SAT
+      - generic [ref=e63]: ·
+      - generic [ref=e64]: IMSS
+      - generic [ref=e65]: ·
+      - generic [ref=e66]: INFONAVIT
+      - generic [ref=e67]: ·
+      - generic [ref=e68]: BANXICO
+      - generic [ref=e69]: ·
+      - generic [ref=e70]: REPSE
+      - generic [ref=e71]: ·
+      - generic [ref=e72]: CONDUSEF
+      - generic [ref=e73]: ·
+      - generic [ref=e74]: SEP RNP
+      - generic [ref=e75]: ·
+      - generic [ref=e76]: CDMX Finanzas
+      - generic [ref=e77]: ·
+      - generic [ref=e78]: Jalisco SAT
+      - generic [ref=e79]: ·
+      - generic [ref=e80]: NL eGobierno
+      - generic [ref=e81]: ·
+      - generic [ref=e82]: EdoMex SFPyA
+      - generic [ref=e83]: ·
+      - generic [ref=e84]: Querétaro
+      - generic [ref=e85]: ·
+      - generic [ref=e86]: Mercado Pago
+      - generic [ref=e87]: ·
+      - generic [ref=e88]: Conekta
+      - generic [ref=e89]: ·
+      - generic [ref=e90]: Facturama
+      - generic [ref=e91]: ·
+      - generic [ref=e92]: Bitso
+      - generic [ref=e93]: ·
+      - generic [ref=e94]: Mercado Libre
+      - generic [ref=e95]: ·
+      - generic [ref=e96]: Inmuebles24
+      - generic [ref=e97]: ·
+      - generic [ref=e98]: Amazon MX SP-API
+      - generic [ref=e99]: ·
+      - generic [ref=e100]: Shopify MX
+      - generic [ref=e101]: ·
+      - generic [ref=e102]: SACPI Michoacán
+      - generic [ref=e103]: ·
+      - generic [ref=e104]: Mérida
+      - generic [ref=e105]: ·
+      - generic [ref=e106]: Tijuana
+      - generic [ref=e107]: ·
+      - generic [ref=e108]: Puebla
+      - generic [ref=e109]: ·
+      - generic [ref=e110]: SAT
+      - generic [ref=e111]: ·
+      - generic [ref=e112]: IMSS
+      - generic [ref=e113]: ·
+      - generic [ref=e114]: INFONAVIT
+      - generic [ref=e115]: ·
+      - generic [ref=e116]: BANXICO
+      - generic [ref=e117]: ·
+      - generic [ref=e118]: REPSE
+      - generic [ref=e119]: ·
+      - generic [ref=e120]: CONDUSEF
+      - generic [ref=e121]: ·
+      - generic [ref=e122]: SEP RNP
+      - generic [ref=e123]: ·
+      - generic [ref=e124]: CDMX Finanzas
+      - generic [ref=e125]: ·
+      - generic [ref=e126]: Jalisco SAT
+      - generic [ref=e127]: ·
+      - generic [ref=e128]: NL eGobierno
+      - generic [ref=e129]: ·
+      - generic [ref=e130]: EdoMex SFPyA
+      - generic [ref=e131]: ·
+      - generic [ref=e132]: Querétaro
+      - generic [ref=e133]: ·
+      - generic [ref=e134]: Mercado Pago
+      - generic [ref=e135]: ·
+      - generic [ref=e136]: Conekta
+      - generic [ref=e137]: ·
+      - generic [ref=e138]: Facturama
+      - generic [ref=e139]: ·
+  - generic [ref=e140]:
+    - generic [ref=e141]:
+      - generic [ref=e142]: "02"
+      - heading "Tres productos. Vendibles hoy." [level=2] [ref=e143]:
+        - text: Tres productos.
+        - emphasis [ref=e144]: Vendibles hoy.
+      - paragraph [ref=e145]: Cada uno resuelve un dolor cuantificable en clientes B2B mexicanos. Probados, con tests pasando, validados con Playwright contra los portales reales.
+    - generic [ref=e146]:
+      - article [ref=e147]:
+        - generic [ref=e148]:
+          - generic [ref=e149]: Producto 01
+          - generic [ref=e150]: En producción
+        - heading "Cartera Predial Multi-municipio" [level=3] [ref=e152]:
+          - text: Cartera Predial
+          - emphasis [ref=e153]: Multi-municipio
+        - paragraph [ref=e154]: Consulta el adeudo predial de N propiedades en distintos municipios en paralelo y entrega un dashboard XLSX con vencimientos, descuentos y ranking de prioridad.
+        - list [ref=e155]:
+          - listitem [ref=e156]: Auto-routing entre 243 municipios catalogados
+          - listitem [ref=e158]: SACPI Michoacán incluido (95 municipios extra)
+          - listitem [ref=e160]: Excel con totales, semáforo de vencimientos
+          - listitem [ref=e162]: Cron mensual de health-check automático
+        - generic [ref=e164]:
+          - generic [ref=e165]:
+            - generic [ref=e166]: "163"
+            - generic [ref=e167]: muns consultables
+          - generic [ref=e168]:
+            - generic [ref=e169]: 35.2M
+            - generic [ref=e170]: hab cobertura pob.
+        - link "Ver Cartera Predial" [ref=e171] [cursor=pointer]:
+          - /url: productos/predial.html
+          - text: Ver Cartera Predial
+          - img [ref=e172]
+      - article [ref=e174]:
+        - generic [ref=e175]:
+          - generic [ref=e176]: Producto 02
+          - generic [ref=e177]: Lanzado Jun 2026
+        - heading "Compliance REPSE Art. 15 LFT" [level=3] [ref=e179]:
+          - text: Compliance
+          - emphasis [ref=e180]: REPSE Art. 15 LFT
+        - paragraph [ref=e181]: Verifica en segundos si tu proveedor de servicios especializados tiene REPSE vigente. Si no, te conviertes en responsable solidario laboral y fiscal de sus trabajadores.
+        - list [ref=e182]:
+          - listitem [ref=e183]: Búsqueda por razón social o número de registro
+          - listitem [ref=e185]:
+            - text: "Decisión binaria:"
+            - generic [ref=e187]: "puede_contratar: bool"
+          - listitem [ref=e188]: Cache 30 días, sin tocar STPS innecesariamente
+          - listitem [ref=e190]: Sin CAPTCHA bloqueante (reCAPTCHA deprecated)
+        - generic [ref=e192]:
+          - generic [ref=e193]:
+            - generic [ref=e194]: 4M
+            - generic [ref=e195]: empresas afectadas
+          - generic [ref=e196]:
+            - generic [ref=e197]: "21"
+            - generic [ref=e198]: tests pasando
+        - link "Ver Compliance REPSE" [ref=e199] [cursor=pointer]:
+          - /url: productos/repse.html
+          - text: Ver Compliance REPSE
+          - img [ref=e200]
+      - article [ref=e202]:
+        - generic [ref=e203]:
+          - generic [ref=e204]: Producto 03
+          - generic [ref=e205]: Lanzado Jun 2026
+        - heading "ISN-as-a-Service 32 estados, una API" [level=3] [ref=e207]:
+          - text: ISN-as-a-Service
+          - emphasis [ref=e208]: 32 estados, una API
+        - paragraph [ref=e209]: Calcula el Impuesto sobre Nómina, genera línea de captura y descarga la declaración mensual en cualquiera de las 32 entidades federativas con una sola interfaz.
+        - list [ref=e210]:
+          - listitem [ref=e211]: Tasas 1.8% (BC) a 3.0% (CDMX/JAL/NL)
+          - listitem [ref=e213]: Cálculo offline desde catálogo central
+          - listitem [ref=e215]: 8 estados con portal validado Playwright
+          - listitem [ref=e217]: Útil para optimización fiscal multi-estado
+        - generic [ref=e219]:
+          - generic [ref=e220]:
+            - generic [ref=e221]: "32"
+            - generic [ref=e222]: entidades MX
+          - generic [ref=e223]:
+            - generic [ref=e224]: ~4M
+            - generic [ref=e225]: empresas con nómina
+        - link "Ver ISN-as-a-Service" [ref=e226] [cursor=pointer]:
+          - /url: productos/isn.html
+          - text: Ver ISN-as-a-Service
+          - img [ref=e227]
+  - generic [ref=e229]:
+    - generic [ref=e230]:
+      - generic [ref=e231]: "03"
+      - heading "Hecho con datos, no con slides." [level=2] [ref=e232]:
+        - text: Hecho con datos, no con
+        - emphasis [ref=e233]: slides
+        - text: .
+      - paragraph [ref=e234]: Cada cifra es verificable abriendo el repositorio. Las pruebas corren con pytest. Los portales se auditan con Playwright todos los meses.
+    - generic [ref=e235]:
+      - generic [ref=e236]:
+        - generic [ref=e237]: "0"
+        - generic [ref=e238]: MCP servers
+        - generic [ref=e239]: Servidores Model Context Protocol production-ready en Python + FastMCP.
+      - generic [ref=e240]:
+        - generic [ref=e241]: "0"
+        - generic [ref=e242]: Verticales soportados
+        - generic [ref=e243]: De freelancer a constructora. De clínica a despacho legal.
+      - generic [ref=e244]:
+        - generic [ref=e245]: "0"
+        - generic [ref=e246]: Skills empaquetados
+        - generic [ref=e247]: Cada uno con SKILL.md + evals + fixtures determinísticas.
+      - generic [ref=e248]:
+        - generic [ref=e249]: "0"
+        - generic [ref=e250]: Workflows ejecutables
+        - generic [ref=e251]: Cobranza, cierre fiscal, due diligence, conciliación de pagos.
+      - generic [ref=e252]:
+        - generic [ref=e253]: "0"
+        - generic [ref=e254]: Evals para triggering
+        - generic [ref=e255]: Ratio 0.92 por skill — supera el objetivo de 0.8.
+      - generic [ref=e256]:
+        - generic [ref=e257]: "0"
+        - generic [ref=e258]: Habitantes en cobertura predial
+        - generic [ref=e259]: 26.7% de la población nacional MX consultable end-to-end.
+  - generic [ref=e260]:
+    - generic [ref=e261]:
+      - generic [ref=e262]: "04"
+      - heading "46 MCPs. Por categoría." [level=2] [ref=e263]:
+        - text: 46 MCPs.
+        - emphasis [ref=e264]: Por categoría.
+      - paragraph [ref=e265]: Cada MCP es un servidor independiente con tests, cache, bitácora hasheada de identificadores sensibles y modo mock-first para correr sin credenciales.
+    - generic [ref=e266]:
+      - generic [ref=e267]:
+        - generic [ref=e268]: A.
+        - heading "Gobierno federal" [level=3] [ref=e269]
+        - generic [ref=e270]: "8"
+      - generic [ref=e271]:
+        - generic [ref=e272]: mp_sat_portal
+        - generic [ref=e273]: mp_curp_renapo
+        - generic [ref=e274]: mp_sep_profesional ✦
+        - generic [ref=e275]: mp_repse_stps ✦
+        - generic [ref=e276]: mp_imss_patronal
+        - generic [ref=e277]: mp_infonavit_patronal
+        - generic [ref=e278]: mp_banxico
+        - generic [ref=e279]: mp_banxico_cep
+    - generic [ref=e280]:
+      - generic [ref=e281]:
+        - generic [ref=e282]: B.
+        - heading "Estatal & municipal" [level=3] [ref=e283]
+        - generic [ref=e284]: "13"
+      - generic [ref=e285]:
+        - generic [ref=e286]: mp_isn_mx (32 estados) ✦
+        - generic [ref=e287]: mp_predial_mx (243 muns)
+        - generic [ref=e288]: mp_sacpi_michoacan (95 muns)
+        - generic [ref=e289]: mp_multas_mx (8 estados)
+        - generic [ref=e290]: mp_cdmx_municipal
+        - generic [ref=e291]: mp_edomex_municipal
+        - generic [ref=e292]: mp_monterrey_municipal
+        - generic [ref=e293]: mp_guadalajara_municipal
+        - generic [ref=e294]: mp_merida_municipal
+        - generic [ref=e295]: mp_puebla_municipal
+        - generic [ref=e296]: mp_queretaro_municipal
+        - generic [ref=e297]: mp_tijuana_municipal
+        - generic [ref=e298]: mp_clabe_validador_oficial
+    - generic [ref=e299]:
+      - generic [ref=e300]:
+        - generic [ref=e301]: C.
+        - heading "Pagos & fintech" [level=3] [ref=e302]
+        - generic [ref=e303]: "9"
+      - generic [ref=e304]:
+        - generic [ref=e305]: mp_mercado_pago
+        - generic [ref=e306]: mp_conekta
+        - generic [ref=e307]: mp_paypal_mx
+        - generic [ref=e308]: mp_klap
+        - generic [ref=e309]: mp_clip_terminal
+        - generic [ref=e310]: mp_kueski
+        - generic [ref=e311]: mp_trustly_mx
+        - generic [ref=e312]: mp_bitso
+        - generic [ref=e313]: mp_facturama_extendido
+    - generic [ref=e314]:
+      - generic [ref=e315]:
+        - generic [ref=e316]: D.
+        - heading "Servicios públicos & bancos" [level=3] [ref=e317]
+        - generic [ref=e318]: "3"
+      - generic [ref=e319]:
+        - generic [ref=e320]: mp_cfe_facturacion
+        - generic [ref=e321]: mp_telmex_facturacion
+        - generic [ref=e322]: mp_bancos_mx (BBVA/Banamex/Santander)
+    - generic [ref=e323]:
+      - generic [ref=e324]:
+        - generic [ref=e325]: E.
+        - heading "Marketplaces & e-commerce" [level=3] [ref=e326]
+        - generic [ref=e327]: "6"
+      - generic [ref=e328]:
+        - generic [ref=e329]: mp_mercado_libre
+        - generic [ref=e330]: mp_amazon_mx_seller
+        - generic [ref=e331]: mp_shopify_mx
+        - generic [ref=e332]: mp_inmuebles24
+        - generic [ref=e333]: mp_vivanuncios
+        - generic [ref=e334]: mp_buro_credito_personal
+    - generic [ref=e335]:
+      - generic [ref=e336]:
+        - generic [ref=e337]: F.
+        - heading "POS, ERP & movilidad" [level=3] [ref=e338]
+        - generic [ref=e339]: "7"
+      - generic [ref=e340]:
+        - generic [ref=e341]: mp_aspel_contpaqi
+        - generic [ref=e342]: mp_softrestaurant
+        - generic [ref=e343]: mp_cabify_business
+        - generic [ref=e344]: mp_didi_partners
+        - generic [ref=e345]: mp_didi_food_partners
+        - generic [ref=e346]: mp_rappi_partners
+        - generic [ref=e347]: mp_uber_eats_partners
+  - generic [ref=e348]:
+    - generic [ref=e349]:
+      - generic [ref=e350]: "05"
+      - heading "40 verticales. Una sola filosofía." [level=2] [ref=e351]:
+        - text: 40 verticales.
+        - emphasis [ref=e352]: Una sola filosofía.
+      - paragraph [ref=e353]: Cada vertical hereda core-mexico (CFDI 4.0, WhatsApp Business, validación RFC, IVA/retenciones) y agrega lo específico de su sector.
+    - generic [ref=e354]:
+      - generic [ref=e355]: freelancers-mx
+      - generic [ref=e356]: agencia-marketing-mx
+      - generic [ref=e357]: colegios-mx
+      - generic [ref=e358]: talleres-mx
+      - generic [ref=e359]: ecommerce-mx
+      - generic [ref=e360]: salon-mx
+      - generic [ref=e361]: veterinaria-mx
+      - generic [ref=e362]: wedding-mx
+      - generic [ref=e363]: restaurante-mx
+      - generic [ref=e364]: inmobiliaria-mx
+      - generic [ref=e365]: core-mexico
+      - generic [ref=e366]:
+        - text: pf-anual-mx
+        - generic [ref=e367]: "9.5"
+      - generic [ref=e368]:
+        - text: arrendador-residencial-mx
+        - generic [ref=e369]: "9.3"
+      - generic [ref=e370]:
+        - text: tramites-vehiculares-mx
+        - generic [ref=e371]: "9.0"
+      - generic [ref=e372]:
+        - text: conductor-plataforma-mx
+        - generic [ref=e373]: "8.8"
+      - generic [ref=e374]:
+        - text: tienda-omnicanal-mx
+        - generic [ref=e375]: "8.5"
+      - generic [ref=e376]:
+        - text: consultorio-especialista-mx
+        - generic [ref=e377]: "8.3"
+      - generic [ref=e378]:
+        - text: clinica-salud-mx
+        - generic [ref=e379]: "8.3"
+      - generic [ref=e380]:
+        - text: airbnb-host-mx
+        - generic [ref=e381]: "8.2"
+      - generic [ref=e382]:
+        - text: notarias-mx
+        - generic [ref=e383]: "8.0"
+      - generic [ref=e384]:
+        - text: despacho-contable-mx
+        - generic [ref=e385]: "7.9"
+      - generic [ref=e386]:
+        - text: psicoterapia-mx
+        - generic [ref=e387]: "7.8"
+      - generic [ref=e388]:
+        - text: servicios-publicos-mx
+        - generic [ref=e389]: "7.8"
+      - generic [ref=e390]:
+        - text: migracion-extranjeros-mx
+        - generic [ref=e391]: "7.5"
+      - generic [ref=e392]:
+        - text: gmm-asegurado-mx
+        - generic [ref=e393]: "7.5"
+      - generic [ref=e394]:
+        - text: paciente-mx
+        - generic [ref=e395]: "7.5"
+      - generic [ref=e396]: telemedicina-mx
+      - generic [ref=e397]: nomina-pymes-mx
+      - generic [ref=e398]: cripto-fiscal-mx
+      - generic [ref=e399]: educacion-particular-b2c-mx
+      - generic [ref=e400]: donatarias-ongs-mx
+      - generic [ref=e401]: importadores-mx
+      - generic [ref=e402]: sucesion-empresa-familiar-mx
+      - generic [ref=e403]: crowdfunding-itf-mx
+      - generic [ref=e404]: energia-solar-pyme-mx
+      - generic [ref=e405]: agente-seguros-mx
+      - generic [ref=e406]: constructora-mx
+      - generic [ref=e407]: despacho-legal-mx
+      - generic [ref=e408]: geriatria-cuidado-mayor-mx
+      - generic [ref=e409]: laboratorio-clinico-mx
+    - generic [ref=e410]:
+      - generic [ref=e411]: Originales 11
+      - generic [ref=e413]: TOP research 15
+      - generic [ref=e415]: Áreas no cubiertas 9
+      - generic [ref=e417]: Extras 5
+  - generic [ref=e419]:
+    - generic [ref=e420]:
+      - generic [ref=e421]: "06"
+      - heading "Quién ya lo necesita." [level=2] [ref=e422]:
+        - text: Quién
+        - emphasis [ref=e423]: ya
+        - text: lo necesita.
+      - paragraph [ref=e424]: Tres clientes-tipo donde el ROI es inmediato y medible. No "AI fluff" — herramientas que reducen horas facturables manuales a minutos.
+    - generic [ref=e425]:
+      - article [ref=e426]:
+        - generic [ref=e427]: ↗ 01
+        - heading "Despacho contable" [level=3] [ref=e428]
+        - paragraph [ref=e429]:
+          - strong [ref=e430]: "Dolor:"
+          - text: 200 clientes × 32 estados × declaración mensual ISN = caos de portales, contraseñas y vencimientos día 17.
+        - paragraph [ref=e431]:
+          - strong [ref=e432]: "Solución:"
+          - text: isn_calcular() + isn_generar_linea_captura() en bulk. Dashboard con semáforo de vencimientos. Cron diario que avisa al cliente por WhatsApp.
+        - generic [ref=e433]:
+          - generic [ref=e434]: ISN-as-a-Service
+          - generic [ref=e435]: Compliance REPSE
+          - generic [ref=e436]: "workflow: cobranza-multinivel"
+      - article [ref=e437]:
+        - generic [ref=e438]: ↗ 02
+        - heading "Inmobiliaria / Arrendador" [level=3] [ref=e439]
+        - paragraph [ref=e440]:
+          - strong [ref=e441]: "Dolor:"
+          - text: Cartera de 60 propiedades en CDMX, Jalisco y Querétaro. Auditar predial trimestralmente toma 3 días-persona.
+        - paragraph [ref=e442]:
+          - strong [ref=e443]: "Solución:"
+          - text: cartera-predial-multi-municipio.workflow.js consulta los 60 inmuebles en paralelo. Excel con totales, vencimientos y ranking listo en < 5 minutos.
+        - generic [ref=e444]:
+          - generic [ref=e445]: Cartera Predial
+          - generic [ref=e446]: arrendador-residencial-mx
+          - generic [ref=e447]: inmobiliaria-mx
+      - article [ref=e448]:
+        - generic [ref=e449]: ↗ 03
+        - heading "Área fiscal corporativa" [level=3] [ref=e450]
+        - paragraph [ref=e451]:
+          - strong [ref=e452]: "Dolor:"
+          - text: Contratan 40 proveedores especializados. Sin REPSE vigente = responsabilidad solidaria masiva (Art. 15 LFT) en sueldos caídos.
+        - paragraph [ref=e453]:
+          - strong [ref=e454]: "Solución:"
+          - text: repse_verificar_proveedor() antes de cada PO. Cron mensual revalida la base completa. Alertas si algún proveedor vence el registro.
+        - generic [ref=e455]:
+          - generic [ref=e456]: Compliance REPSE
+          - generic [ref=e457]: "workflow: due-diligence-cliente"
+          - generic [ref=e458]: Auditoría laboral
+  - generic [ref=e459]:
+    - generic [ref=e460]:
+      - generic [ref=e461]: "07"
+      - heading "Cómo se ve en práctica." [level=2] [ref=e462]:
+        - text: Cómo se ve
+        - emphasis [ref=e463]: en práctica
+        - text: .
+    - generic [ref=e464]:
+      - generic [ref=e465]:
+        - generic [ref=e466]: i.
+        - heading "Setup en una tarde" [level=3] [ref=e467]
+        - paragraph [ref=e468]: "Clonas el repo, corres install-hooks.sh, declaras tus credenciales en .env (opcional: corre con mocks). Hecho."
+      - generic [ref=e469]:
+        - generic [ref=e470]: ii.
+        - heading "Conectas a Claude o a tu stack" [level=3] [ref=e471]
+        - paragraph [ref=e472]: Cada MCP es invocable desde Claude Code, Cursor, Windsurf, o consumible como librería Python pura (clients/predial_mx_client).
+      - generic [ref=e473]:
+        - generic [ref=e474]: iii.
+        - heading "Construyes workflows" [level=3] [ref=e475]
+        - paragraph [ref=e476]: Combinas MCPs en archivos .workflow.js con phase() / parallel() / pipeline(). 24 plantillas listas para clonar.
+      - generic [ref=e477]:
+        - generic [ref=e478]: iv.
+        - heading "Operas con confianza" [level=3] [ref=e479]
+        - paragraph [ref=e480]: Tests pasan en cada commit. Cron de mantenimiento ejecuta health-check de portales. Bitácora JSONL audita cada llamada.
+    - generic [ref=e481]:
+      - generic [ref=e486]: "ejemplo: cartera predial multi-municipio"
+      - generic [ref=e487]: "from mp_predial_mx import PredialClient cliente = PredialClient() propiedades = [ {\"municipio\": \"Coyoacán\", \"cuenta\": \"123-456-789\"}, {\"municipio\": \"Zapopan\", \"cuenta\": \"GDL-0001-22\"}, {\"municipio\": \"Ciudad Hidalgo\", \"cuenta\": \"MICH-7788\"}, ] resultados = [cliente.consultar(**p) for p in propiedades] # ↳ Auto-routing: CDMX directo · Zapopan directo · Michoacán vía SACPI total = sum(r.adeudo for r in resultados) print(f\"Cartera total: ${total:,.2f} MXN\") # Cartera total: $27,912.50 MXN"
+  - generic [ref=e489]:
+    - generic [ref=e490]:
+      - generic [ref=e491]: "08"
+      - heading "Agendemos una demo de 20 minutos." [level=2] [ref=e492]:
+        - text: Agendemos
+        - text: una demo de
+        - emphasis [ref=e493]: 20 minutos
+        - text: .
+      - paragraph [ref=e494]: Te muestro la consulta predial en vivo de 5 municipios distintos, la validación REPSE de un proveedor real y el cálculo ISN de 4 estados. Después decides si te sirve.
+      - list [ref=e495]:
+        - listitem [ref=e496]: → Sesión 1:1 por Google Meet o WhatsApp Video
+        - listitem [ref=e497]: → Sin slides — todo se corre en vivo
+        - listitem [ref=e498]: → Te llevas un PDF con stack + costos estimados
+    - generic [ref=e499]:
+      - generic [ref=e500]:
+        - generic [ref=e501]: Nombre completo
+        - textbox "Nombre completo" [ref=e502]:
+          - /placeholder: Ej. María Hernández
+      - generic [ref=e503]:
+        - generic [ref=e504]: Empresa / despacho
+        - textbox "Empresa / despacho" [ref=e505]:
+          - /placeholder: Ej. Hernández y Asociados, S.C.
+      - generic [ref=e506]:
+        - generic [ref=e507]: Email corporativo
+        - textbox "Email corporativo" [ref=e508]:
+          - /placeholder: maria@hernandez-cp.mx
+      - generic [ref=e509]:
+        - generic [ref=e510]: WhatsApp (opcional)
+        - textbox "WhatsApp (opcional)" [ref=e511]:
+          - /placeholder: +52 55 1234 5678
+      - generic [ref=e512]:
+        - generic [ref=e513]: ¿Qué te interesa más?
+        - combobox "¿Qué te interesa más?" [ref=e514]:
+          - option "— Elegir —" [selected]
+          - option "Cartera Predial multi-municipio"
+          - option "Compliance REPSE"
+          - option "ISN-as-a-Service"
+          - option "Implementación completa por vertical"
+          - option "Otro / explorar"
+      - button "Agendar mi demo →" [ref=e515] [cursor=pointer]:
+        - generic [ref=e516]: Agendar mi demo →
+      - paragraph [ref=e517]: Tus datos solo se usan para coordinar la demo. No spam, no newsletters, no automatizaciones invasivas.
+  - contentinfo [ref=e518]:
+    - generic [ref=e519]:
+      - generic [ref=e520]:
+        - generic [ref=e521]: P·MX
+        - paragraph [ref=e522]: Infraestructura de compliance fiscal y municipal para México.
+        - paragraph [ref=e523]:
+          - text: Construido por
+          - strong [ref=e524]: Elías Rashid Morales
+          - text: en Ciudad de México.
+      - generic [ref=e525]:
+        - heading "Productos" [level=4] [ref=e526]
+        - link "Cartera Predial" [ref=e527] [cursor=pointer]:
+          - /url: productos/predial.html
+        - link "Compliance REPSE" [ref=e528] [cursor=pointer]:
+          - /url: productos/repse.html
+        - link "ISN-as-a-Service" [ref=e529] [cursor=pointer]:
+          - /url: productos/isn.html
+      - generic [ref=e530]:
+        - heading "Repositorio" [level=4] [ref=e531]
+        - link "GitHub →" [ref=e532] [cursor=pointer]:
+          - /url: https://github.com/elimorals/Skills_MX
+        - link "46 MCPs" [ref=e533] [cursor=pointer]:
+          - /url: "#mcps"
+        - link "40 verticales" [ref=e534] [cursor=pointer]:
+          - /url: "#verticales"
+      - generic [ref=e535]:
+        - heading "Contacto" [level=4] [ref=e536]
+        - link "elias@cipreholding.com" [ref=e537] [cursor=pointer]:
+          - /url: mailto:elias@cipreholding.com
+        - link "Agendar demo" [ref=e538] [cursor=pointer]:
+          - /url: "#demo"
+    - generic [ref=e539]:
+      - generic [ref=e540]: © 2026 Plugins MX · CDMX · Hecho con ☕ y pytest
+      - generic [ref=e541]: v3.59 · Junio 2026

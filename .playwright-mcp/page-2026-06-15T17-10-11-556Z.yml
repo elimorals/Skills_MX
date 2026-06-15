@@ -1,0 +1,316 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: pago predial tijuana sitio:gob.mx pago predial tijuana sitio:gob.mx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dpago%2Bpredial%2Btijuana%2Bsitio:gob.mx&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=pago+predial+tijuana+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&aep=1&ntc=1&sa=X&ved=2ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQ2J8OegQIEBAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=pago+predial+tijuana+sitio:gob.mx&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&sa=X&ved=2ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQ0pQJegQIFBAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Imágenes" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+tijuana+sitio:gob.mx&sa=X&ved=2ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQtKgLegQIFhAB
+              - generic [ref=e88]: Imágenes
+          - listitem [ref=e89]:
+            - link "Shopping" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+tijuana+sitio:gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e92]: Shopping
+          - listitem [ref=e93]:
+            - link "Videos" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+tijuana+sitio:gob.mx&sa=X&ved=2ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQtKgLegQIExAB
+              - generic [ref=e96]: Videos
+          - listitem [ref=e97]:
+            - link "Videos cortos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+tijuana+sitio:gob.mx&sa=X&ved=2ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQs6gLegQIEhAB
+              - generic [ref=e100]: Videos cortos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - main [ref=e123]:
+      - generic [ref=e127]:
+        - generic [ref=e130]:
+          - heading "Resultado web con vínculos a sitio" [level=2] [ref=e131]
+          - generic [ref=e132]:
+            - generic [ref=e136]:
+              - generic [ref=e138]:
+                - link "Ayuntamiento de Tijuana | Pagos en Línea Ayuntamiento de Tijuana https://pagos.tijuana.gob.mx" [ref=e140] [cursor=pointer]:
+                  - /url: https://pagos.tijuana.gob.mx/
+                  - heading "Ayuntamiento de Tijuana | Pagos en Línea" [level=3] [ref=e141]
+                  - generic [ref=e147]:
+                    - generic [ref=e149]: Ayuntamiento de Tijuana
+                    - generic [ref=e151]: https://pagos.tijuana.gob.mx
+                - button "Acerca de este resultado" [ref=e152] [cursor=pointer]:
+                  - img [ref=e155]
+              - generic [ref=e159]:
+                - text: Si usted ya realizó su
+                - emphasis [ref=e160]: pago
+                - text: de
+                - emphasis [ref=e161]: predial
+                - text: por favor haga click aquí para imprimir su recibo. ...
+                - emphasis [ref=e162]: tijuana
+                - text: .
+                - emphasis [ref=e163]: gob
+                - text: .
+                - emphasis [ref=e164]: mx
+                - text: para que solicite la impresión de su recibo pagado.
+            - group "Recomendaciones personalizadas en función de tu historial" [ref=e165]:
+              - rowgroup [ref=e166]:
+                - row "Pagos en Línea Si usted ya realizó su pago de predial por favor haga click aquí ..." [ref=e167]:
+                  - cell "Pagos en Línea Si usted ya realizó su pago de predial por favor haga click aquí ..." [ref=e168]:
+                    - generic [ref=e174]:
+                      - heading "Pagos en Línea" [level=3] [ref=e175]:
+                        - link "Pagos en Línea" [ref=e176] [cursor=pointer]:
+                          - /url: https://pagos.tijuana.gob.mx/PagosenLinea/index.aspx?do=out
+                          - text: Pagos en Línea
+                      - generic [ref=e179]: Si usted ya realizó su pago de predial por favor haga click aquí ...
+                - row "Registro Si usted realizó su pago mediante transferencia electrónica por ..." [ref=e180]:
+                  - cell "Registro Si usted realizó su pago mediante transferencia electrónica por ..." [ref=e181]:
+                    - generic [ref=e187]:
+                      - heading "Registro" [level=3] [ref=e188]:
+                        - link "Registro" [ref=e189] [cursor=pointer]:
+                          - /url: https://pagos.tijuana.gob.mx/pagosenlinea/Registro.aspx
+                          - text: Registro
+                      - generic [ref=e192]: Si usted realizó su pago mediante transferencia electrónica por ...
+                - row "Programa de Protección ... Si usted realizó su pago mediante transferencia electrónica por ..." [ref=e193]:
+                  - cell "Programa de Protección ... Si usted realizó su pago mediante transferencia electrónica por ..." [ref=e194]:
+                    - generic [ref=e200]:
+                      - heading "Programa de Protección ..." [level=3] [ref=e201]:
+                        - link "Programa de Protección ..." [ref=e202] [cursor=pointer]:
+                          - /url: https://pagos.tijuana.gob.mx/PagosEnLinea/seguro/
+                          - text: Programa de Protección ...
+                      - generic [ref=e205]: Si usted realizó su pago mediante transferencia electrónica por ...
+                - row "Manual_Predial.pdf ACCESO AL PAGO DE IMPUESTO PREDIAL DESDE ..." [ref=e206]:
+                  - cell "Manual_Predial.pdf ACCESO AL PAGO DE IMPUESTO PREDIAL DESDE ..." [ref=e207]:
+                    - generic [ref=e213]:
+                      - heading "Manual_Predial.pdf" [level=3] [ref=e214]:
+                        - link "Manual_Predial.pdf" [ref=e215] [cursor=pointer]:
+                          - /url: https://pagos.tijuana.gob.mx/manual/Manual_Predial.pdf
+                          - text: Manual_Predial.pdf
+                      - generic [ref=e218]: ACCESO AL PAGO DE IMPUESTO PREDIAL DESDE ...
+                - row "Más resultados de tijuana.gob.mx »" [ref=e220]:
+                  - cell "Más resultados de tijuana.gob.mx »" [ref=e221]:
+                    - link "Más resultados de tijuana.gob.mx »" [ref=e223] [cursor=pointer]:
+                      - /url: /search?q=pago+predial+tijuana+sitio:gob.mx+site:tijuana.gob.mx&sca_esv=c6c16ab1eb0a4421&sa=X&ved=2ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQrAN6BAgXEAE
+        - generic [ref=e234]:
+          - heading "Buscando Pensando un poco más" [level=2] [ref=e238]:
+            - generic [ref=e239]:
+              - generic [ref=e241]: Buscando
+              - generic [ref=e251]: Pensando un poco más
+          - progressbar "Generando" [ref=e253]
+        - generic [ref=e297]:
+          - heading "Resultados web" [level=2] [ref=e298]
+          - generic [ref=e299]:
+            - generic [ref=e302]:
+              - link "Ayuntamiento de Tijuana | Bienvenidos Ayuntamiento de Tijuana https://www.tijuana.gob.mx" [ref=e304] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/
+                - heading "Ayuntamiento de Tijuana | Bienvenidos" [level=3] [ref=e305]
+                - generic [ref=e311]:
+                  - generic [ref=e313]: Ayuntamiento de Tijuana
+                  - generic [ref=e315]: https://www.tijuana.gob.mx
+              - button "Acerca de este resultado" [ref=e316] [cursor=pointer]:
+                - img [ref=e319]
+            - generic [ref=e323]:
+              - text: Dispersión y Desbloqueo de Infonavit (
+              - emphasis [ref=e324]: Predial
+              - text: ),
+              - emphasis [ref=e325]: Pagos
+              - text: Parciales y/o Convenios (
+              - emphasis [ref=e326]: Predial
+              - text: ), Solicitud de Prescripciones (
+              - emphasis [ref=e327]: Predial
+              - text: ),
+              - emphasis [ref=e328]: Pago
+              - text: de
+              - emphasis [ref=e329]: Predial
+              - text: (
+              - emphasis [ref=e330]: Predial
+              - text: ) ...
+        - generic [ref=e334]:
+          - generic [ref=e337]:
+            - link "Impuesto Predial Gobierno de Baja California https://www.bajacalifornia.gob.mx › Tramites_Servicios" [ref=e339] [cursor=pointer]:
+              - /url: https://www.bajacalifornia.gob.mx/Tramites_Servicios/Predial
+              - heading "Impuesto Predial" [level=3] [ref=e340]
+              - generic [ref=e346]:
+                - generic [ref=e348]: Gobierno de Baja California
+                - generic [ref=e350]: https://www.bajacalifornia.gob.mx › Tramites_Servicios
+            - button "Acerca de este resultado" [ref=e351] [cursor=pointer]:
+              - img [ref=e354]
+          - generic [ref=e358]:
+            - text: Dejamos a tu disposición los enlaces oficiales para mayor información sobre el Impuesto
+            - emphasis [ref=e359]: Predial
+            - text: "de tu municipio: * Estos enlaces no pertenecen a Gobierno ..."
+        - generic [ref=e364]:
+          - heading "Más preguntas" [level=2] [ref=e366]
+          - generic [ref=e367]:
+            - button "¿Cómo puedo consultar mi adeudo predial en Tijuana?" [ref=e373] [cursor=pointer]:
+              - generic [ref=e375]: ¿Cómo puedo consultar mi adeudo predial en Tijuana?
+              - img [ref=e378]
+            - button "¿Cómo puedo descargar mi recibo del predial de 2026?" [ref=e387] [cursor=pointer]:
+              - generic [ref=e389]: ¿Cómo puedo descargar mi recibo del predial de 2026?
+              - img [ref=e392]
+            - button "¿Cuándo hay descuento del predial en Tijuana?" [ref=e401] [cursor=pointer]:
+              - generic [ref=e403]: ¿Cuándo hay descuento del predial en Tijuana?
+              - img [ref=e406]
+            - button "¿Qué pasa si debes más de 10 años de predial?" [ref=e415] [cursor=pointer]:
+              - generic [ref=e417]: ¿Qué pasa si debes más de 10 años de predial?
+              - img [ref=e420]
+        - generic [ref=e428]:
+          - generic [ref=e431]:
+            - link "#ParaTodos | ¡Ahora es más fácil pagar tu predial en línea ... Facebook · Ayuntamiento de Tijuana Más de 30 reacciones · hace 2 años" [ref=e433] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobtijuanamx/videos/ahora-es-m%C3%A1s-f%C3%A1cil-pagar-tu-predial-en-l%C3%ADnea/272303275744320/
+              - heading "#ParaTodos | ¡Ahora es más fácil pagar tu predial en línea ..." [level=3] [ref=e434]
+              - generic [ref=e440]:
+                - generic [ref=e442]: Facebook · Ayuntamiento de Tijuana
+                - generic [ref=e444]: Más de 30 reacciones · hace 2 años
+            - button "Acerca de este resultado" [ref=e445] [cursor=pointer]:
+              - img [ref=e448]
+          - generic [ref=e450]:
+            - link "#ParaTodos | ¡Ahora es más fácil pagar tu predial en línea ... de Ayuntamiento de Tijuana en Facebook. Reproducir en Facebook. 1:07" [ref=e451] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobtijuanamx/videos/ahora-es-m%C3%A1s-f%C3%A1cil-pagar-tu-predial-en-l%C3%ADnea/272303275744320/
+              - generic [ref=e453]:
+                - img [ref=e456]
+                - generic [ref=e460]: 1:07
+            - generic [ref=e462]: Realiza el pago del Impuesto Predial desde cualquier lugar, en cualquier ... https://pagos.tijuana.gob.mx/PagosenLinea/index. aspx ℹ️ ...
+        - generic [ref=e466]:
+          - generic [ref=e469]:
+            - link "Ayuntamiento de Tijuana - Portal Oficial Ayuntamiento de Tijuana https://www.tijuana.gob.mx › noticia" [ref=e471] [cursor=pointer]:
+              - /url: https://www.tijuana.gob.mx/noticia.aspx?idComunicado=36205
+              - heading "Ayuntamiento de Tijuana - Portal Oficial" [level=3] [ref=e472]
+              - generic [ref=e478]:
+                - generic [ref=e480]: Ayuntamiento de Tijuana
+                - generic [ref=e482]: https://www.tijuana.gob.mx › noticia
+            - button "Acerca de este resultado" [ref=e483] [cursor=pointer]:
+              - img [ref=e486]
+          - generic [ref=e489]:
+            - generic [ref=e490]: 29 ene 2026 —
+            - generic [ref=e491]:
+              - emphasis [ref=e492]: El pago del Impuesto Predial puede realizarse en Palacio Municipal
+              - text: ", de lunes a viernes de 8:00 a 16:00 horas y los sábados de 8:00 a 12:00 horas ..."
+        - generic [ref=e496]:
+          - generic [ref=e499]:
+            - link "¿Cómo y dónde pagar el impuesto predial en Tijuana? BBVA México https://www.bbva.mx › Personas › Impuestos" [ref=e501] [cursor=pointer]:
+              - /url: https://www.bbva.mx/educacion-financiera/impuestos/impuesto-predial-en-tijuana.html
+              - heading "¿Cómo y dónde pagar el impuesto predial en Tijuana?" [level=3] [ref=e502]
+              - generic [ref=e508]:
+                - generic [ref=e510]: BBVA México
+                - generic [ref=e512]: https://www.bbva.mx › Personas › Impuestos
+            - button "Acerca de este resultado" [ref=e513] [cursor=pointer]:
+              - img [ref=e516]
+          - generic [ref=e520]:
+            - emphasis [ref=e521]: Después de obtener el valor del impuesto en la página del Gobierno selecciona “Pago en Línea”
+            - text: y elige el método de pago, ya sea con tarjeta de crédito o débito.
+        - generic [ref=e525]:
+          - generic [ref=e528]:
+            - link "¡¡Paga tu Predial en línea a través de www.tijuana.gob.mx ... Facebook · Ayuntamiento de Tijuana Más de 10 reacciones · hace 5 años" [ref=e530] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobtijuanamx/photos/paga-tu-predial-en-l%C3%ADnea-a-trav%C3%A9s-de-wwwtijuanagobmx-o-si-lo-prefieres-imprime-t/1129247497513296/
+              - heading "¡¡Paga tu Predial en línea a través de www.tijuana.gob.mx ..." [level=3] [ref=e531]
+              - generic [ref=e537]:
+                - generic [ref=e539]: Facebook · Ayuntamiento de Tijuana
+                - generic [ref=e541]: Más de 10 reacciones · hace 5 años
+            - button "Acerca de este resultado" [ref=e542] [cursor=pointer]:
+              - img [ref=e545]
+          - generic [ref=e549]:
+            - emphasis [ref=e550]: Paga tu Predial en línea a través de www.tijuana.gob.mx
+            - text: o si lo prefieres, imprime tu recibo y acude a comercio favorito!
+      - navigation [ref=e553]:
+        - heading "Navegación de páginas" [level=1] [ref=e554]
+        - text: "1"
+        - link "Page 2" [ref=e557] [cursor=pointer]:
+          - /url: /search?q=pago+predial+tijuana+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8jEwarKMF9m5mtkP0IOdiQk&start=10&sa=N&sstk=AU9db-AEEAnRAO_aRhUOpof3qpJnOiI5vCwopp2dGqyeauVab0PhKudr4gIoSCG6ikGI0UGVIpdvtv6yXoVmmY0k65yMQ7rqXXKXHQ&ved=2ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQ8tMDegQIIBAE
+          - text: "2"
+        - link "Page 3" [ref=e559] [cursor=pointer]:
+          - /url: /search?q=pago+predial+tijuana+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8jEwarKMF9m5mtkP0IOdiQk&start=20&sa=N&sstk=AU9db-AEEAnRAO_aRhUOpof3qpJnOiI5vCwopp2dGqyeauVab0PhKudr4gIoSCG6ikGI0UGVIpdvtv6yXoVmmY0k65yMQ7rqXXKXHQ&ved=2ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQ8tMDegQIIBAG
+          - text: "3"
+        - link "Page 4" [ref=e561] [cursor=pointer]:
+          - /url: /search?q=pago+predial+tijuana+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8jEwarKMF9m5mtkP0IOdiQk&start=30&sa=N&sstk=AU9db-AEEAnRAO_aRhUOpof3qpJnOiI5vCwopp2dGqyeauVab0PhKudr4gIoSCG6ikGI0UGVIpdvtv6yXoVmmY0k65yMQ7rqXXKXHQ&ved=2ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQ8tMDegQIIBAI
+          - text: "4"
+        - link "Page 5" [ref=e563] [cursor=pointer]:
+          - /url: /search?q=pago+predial+tijuana+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8jEwarKMF9m5mtkP0IOdiQk&start=40&sa=N&sstk=AU9db-AEEAnRAO_aRhUOpof3qpJnOiI5vCwopp2dGqyeauVab0PhKudr4gIoSCG6ikGI0UGVIpdvtv6yXoVmmY0k65yMQ7rqXXKXHQ&ved=2ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQ8tMDegQIIBAK
+          - text: "5"
+        - link "Page 6" [ref=e565] [cursor=pointer]:
+          - /url: /search?q=pago+predial+tijuana+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8jEwarKMF9m5mtkP0IOdiQk&start=50&sa=N&sstk=AU9db-AEEAnRAO_aRhUOpof3qpJnOiI5vCwopp2dGqyeauVab0PhKudr4gIoSCG6ikGI0UGVIpdvtv6yXoVmmY0k65yMQ7rqXXKXHQ&ved=2ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQ8tMDegQIIBAM
+          - text: "6"
+        - link "Page 7" [ref=e567] [cursor=pointer]:
+          - /url: /search?q=pago+predial+tijuana+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8jEwarKMF9m5mtkP0IOdiQk&start=60&sa=N&sstk=AU9db-AEEAnRAO_aRhUOpof3qpJnOiI5vCwopp2dGqyeauVab0PhKudr4gIoSCG6ikGI0UGVIpdvtv6yXoVmmY0k65yMQ7rqXXKXHQ&ved=2ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQ8tMDegQIIBAO
+          - text: "7"
+        - link "Page 8" [ref=e569] [cursor=pointer]:
+          - /url: /search?q=pago+predial+tijuana+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8jEwarKMF9m5mtkP0IOdiQk&start=70&sa=N&sstk=AU9db-AEEAnRAO_aRhUOpof3qpJnOiI5vCwopp2dGqyeauVab0PhKudr4gIoSCG6ikGI0UGVIpdvtv6yXoVmmY0k65yMQ7rqXXKXHQ&ved=2ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQ8tMDegQIIBAQ
+          - text: "8"
+        - heading "Siguiente" [level=2] [ref=e571]:
+          - link "Siguiente" [ref=e572] [cursor=pointer]:
+            - /url: /search?q=pago+predial+tijuana+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8jEwarKMF9m5mtkP0IOdiQk&start=10&sa=N&sstk=AU9db-AEEAnRAO_aRhUOpof3qpJnOiI5vCwopp2dGqyeauVab0PhKudr4gIoSCG6ikGI0UGVIpdvtv6yXoVmmY0k65yMQ7rqXXKXHQ&ved=2ahUKEwiyzYKx3omVAxXZnCYFHdBBJ5EQ8NMDegQIIBAS
+            - generic [ref=e574]: Siguiente
+      - navigation
+    - contentinfo [ref=e575]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e576]
+      - generic [ref=e580]:
+        - generic [ref=e582]:
+          - text: México
+          - generic [ref=e584]:
+            - button "Cuauhtémoc, Ciudad de México, CDMX - Según tu actividad anterior" [ref=e586] [cursor=pointer]:
+              - generic [ref=e587]: Cuauhtémoc, Ciudad de México, CDMX
+              - generic [ref=e589]:
+                - text: "-"
+                - generic [ref=e590]: Según tu actividad anterior
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e592] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e595]:
+          - link "Ayuda" [ref=e596] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e597] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e598] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e599] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

@@ -1,0 +1,154 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - generic [ref=e6]:
+            - generic [ref=e8]: 
+            - text: (686) 558.1600
+          - generic [ref=e9]:
+            - generic [ref=e11]: 
+            - text: Av. Independencia 998, Centro Cívico C.P. 21000
+        - generic [ref=e12]:
+          - link "" [ref=e14] [cursor=pointer]:
+            - /url: https://youtube.com/@gobierno_de_mexicali
+            - generic [ref=e16]: 
+          - link "" [ref=e18] [cursor=pointer]:
+            - /url: https://facebook.com/gobiernodemexicali
+            - generic [ref=e20]: 
+          - link "" [ref=e22] [cursor=pointer]:
+            - /url: https://instagram.com/gobiernodemxl
+            - generic [ref=e24]: 
+          - link "X" [ref=e26] [cursor=pointer]:
+            - /url: https://x.com/GobiernoMxl
+            - generic [ref=e28]: X
+    - navigation [ref=e29]:
+      - generic [ref=e30]:
+        - link "25 Ayuntamiento de Mexicali" [ref=e31] [cursor=pointer]:
+          - /url: /portalmexicali
+          - img "25 Ayuntamiento de Mexicali" [ref=e32]
+        - list [ref=e34]:
+          - listitem [ref=e35]:
+            - button "Gobierno" [ref=e36] [cursor=pointer]
+          - listitem [ref=e37]:
+            - link "Ciudad" [ref=e38] [cursor=pointer]:
+              - /url: /portalmexicali/ciudad
+          - listitem [ref=e39]:
+            - link "Trámites y Servicios" [ref=e40] [cursor=pointer]:
+              - /url: https://www.mexicali.gob.mx/webpub/tramites/Tramite/todos
+          - listitem [ref=e41]:
+            - link "Ventanilla" [ref=e42] [cursor=pointer]:
+              - /url: https://www.mexicali.gob.mx/webpub/registro/?fs=6&return=%2Ftramite%2Ftodos
+          - listitem [ref=e43]:
+            - link "Transparencia" [ref=e44] [cursor=pointer]:
+              - /url: https://www.mexicali.gob.mx/transparencia/
+  - main [ref=e45]:
+    - generic [ref=e46]:
+      - navigation "breadcrumb" [ref=e47]:
+        - list [ref=e48]:
+          - listitem [ref=e49]:
+            - link "Inicio" [ref=e50] [cursor=pointer]:
+              - /url: /portalmexicali
+          - listitem [ref=e51]: / Impuesto predial
+      - heading "Impuesto predial" [level=2] [ref=e52]
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - heading "Aviso" [level=5] [ref=e55]
+          - generic [ref=e56]: Si usted tiene una propiedad en el municipio de San Felipe podrá comunicarse al teléfono (686) 577.6234 para cualquier duda del pago del impuesto predial.
+          - generic [ref=e57]: Si usted es residente del Dorado Ranch llamar a los teléfonos (686) 577.0010 ext 4022.
+        - paragraph [ref=e58]: Para consultar el impuesto predial, proporciona la clave catastral; puedes localizarla en la parte central del recibo anterior o en tu recibo de agua, consta de 8 ó 9 caracteres.
+        - form [ref=e59]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: Clave catastral
+            - text: "*"
+            - textbox "Clave catastral" [ref=e64]
+            - generic [ref=e65]:
+              - text: "Ejemplo: NN001001."
+              - link "¿Dónde se ubica la clave catastral?" [ref=e66] [cursor=pointer]:
+                - /url: https://www.mexicali.gob.mx/cdn/api/recurso?sistema=portal&archivo=/predial-ejemplo.jpg
+          - generic [ref=e67]:
+            - generic [ref=e68]: "* Campos obligatorios"
+            - button " Buscar" [ref=e70] [cursor=pointer]:
+              - generic [ref=e71]: 
+              - text: Buscar
+      - generic [ref=e73]:
+        - generic [ref=e74]: También puedes realizar tus pagos en las oficinas y cajas auxiliares de la Recaudación de Rentas de la Ciudad y Valle.
+        - link "Conoce nuestras ubicaciones" [ref=e76] [cursor=pointer]:
+          - /url: /portalmexicali/lugares-pago
+      - generic [ref=e78]:
+        - generic [ref=e79]: "Dudas, aclaraciones e información relacionadas con el pago del impuesto predial, la Recaudación de Rentas Municipal está a tu servicio en el teléfono:"
+        - generic [ref=e80]: 52 (686) 558.1600 ext 1666 y 1679
+        - generic [ref=e81]:
+          - link "Obtener recibo de pago" [ref=e82] [cursor=pointer]:
+            - /url: /portalmexicali/recibo-pago
+          - link "Obtener factura" [ref=e83] [cursor=pointer]:
+            - /url: /portalmexicali/facturacion
+  - img "Uniendo esfuerzos" [ref=e85]
+  - contentinfo [ref=e86]:
+    - generic [ref=e88]:
+      - generic [ref=e89]:
+        - heading "CONTACTO" [level=5] [ref=e90]
+        - generic [ref=e91]: Av. Independencia 998, Centro Cívico C.P. 21000, Mexicali, Baja California.
+        - generic [ref=e92]: contacto@mexicali.gob.mx
+        - generic [ref=e93]: (686) 558.1600
+        - generic [ref=e94]: Lunes a Viernes 8:00 - 3:00 p.m.
+        - generic [ref=e95]: Sábados 10:00 - 3:00 p.m.
+      - generic [ref=e96]:
+        - heading "TELÉFONOS DE EMERGENCIA" [level=5] [ref=e97]
+        - generic [ref=e98]: ▪ Policía Municipal 911
+        - generic [ref=e99]: ▪ Bomberos 911
+        - generic [ref=e100]: ▪ Cruz Roja 911
+        - generic [ref=e101]: ▪ Agua Reporte de Fugas 073
+        - generic [ref=e102]: ▪ Atención Ciudadana 072
+        - generic [ref=e103]: ▪ Robo de Vehículos 911
+      - generic [ref=e104]:
+        - heading "LIGAS RÁPIDAS" [level=5] [ref=e105]
+        - generic [ref=e106]:
+          - text: ▪
+          - link "Ayuntamiento de Mexicali" [ref=e107] [cursor=pointer]:
+            - /url: /portalmexicali
+        - generic [ref=e108]:
+          - text: ▪
+          - link "Nosotros" [ref=e109] [cursor=pointer]:
+            - /url: /portalmexicali/nosotros
+        - generic [ref=e110]:
+          - text: ▪
+          - link "Ciudad" [ref=e111] [cursor=pointer]:
+            - /url: /portalmexicali/ciudad
+        - generic [ref=e112]:
+          - text: ▪
+          - link "Trámites y Servicios" [ref=e113] [cursor=pointer]:
+            - /url: https://www.mexicali.gob.mx/webpub/tramites/Tramite/todos
+        - generic [ref=e114]:
+          - text: ▪
+          - link "Ventanilla" [ref=e115] [cursor=pointer]:
+            - /url: https://www.mexicali.gob.mx/webpub/registro/?fs=6&return=%2Ftramite%2Ftodos
+        - generic [ref=e116]:
+          - text: ▪
+          - link "Transparencia" [ref=e117] [cursor=pointer]:
+            - /url: https://www.mexicali.gob.mx/transparencia/
+        - generic [ref=e118]:
+          - text: ▪
+          - link "Cuenta Pública" [ref=e119] [cursor=pointer]:
+            - /url: https://www.mexicali.gob.mx/portalmexicali/informacion-financiera/cuenta_publica
+        - generic [ref=e120]:
+          - text: ▪
+          - link "Aviso de privacidad" [ref=e121] [cursor=pointer]:
+            - /url: /portalmexicali/aviso-privacidad
+      - generic [ref=e122]:
+        - heading "REDES SOCIALES" [level=5] [ref=e123]
+        - generic [ref=e124]:
+          - link "" [ref=e125] [cursor=pointer]:
+            - /url: https://youtube.com/@gobierno_de_mexicali
+            - generic [ref=e126]: 
+          - link "" [ref=e127] [cursor=pointer]:
+            - /url: https://facebook.com/gobiernodemexicali
+            - generic [ref=e128]: 
+          - link "" [ref=e129] [cursor=pointer]:
+            - /url: https://instagram.com/gobiernodemxl
+            - generic [ref=e130]: 
+          - link "X" [ref=e131] [cursor=pointer]:
+            - /url: https://x.com/GobiernoMxl
+            - generic [ref=e132]: X
+        - generic [ref=e133]: © 2026 - 25 Ayuntamiento de Mexicali
+        - generic [ref=e134]: v1.0.1

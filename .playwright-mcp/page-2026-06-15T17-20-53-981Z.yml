@@ -1,0 +1,325 @@
+- generic [ref=e2]:
+  - link "Ir al contenido" [ref=e3] [cursor=pointer]:
+    - /url: "#content"
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - generic:
+        - generic [ref=e6]: 15 junio, 2026
+        - generic [ref=e7]:
+          - generic [ref=e8]: Noticias
+          - generic [ref=e10]:
+            - list:
+              - listitem [ref=e11]:
+                - link "Invita Agua de Hermosillo a cumplir con normas de aguas residuales para mantener instalaciones sanitarias funcionales" [ref=e12] [cursor=pointer]:
+                  - /url: https://aguadehermosillo.gob.mx/aguah/2026/06/11/invita-agua-de-hermosillo-a-cumplir-con-normas-de-aguas-residuales-para-mantener-instalaciones-sanitarias-funcionales/
+        - generic [ref=e14]:
+          - link "" [ref=e15] [cursor=pointer]:
+            - /url: https://facebook.com/AguahdeHermosillo
+            - generic [ref=e17]: 
+          - link "" [ref=e18] [cursor=pointer]:
+            - /url: https://twitter.com/aguahermosillo
+            - generic [ref=e20]: 
+    - generic [ref=e22]:
+      - link "Agua de Hermosillo" [ref=e25] [cursor=pointer]:
+        - /url: https://aguadehermosillo.gob.mx/aguah
+      - navigation [ref=e26]:
+        - generic [ref=e27]:
+          - link "" [ref=e29] [cursor=pointer]:
+            - /url: https://aguadehermosillo.gob.mx/aguah/
+            - generic [ref=e30]: 
+          - generic:
+            - list:
+              - listitem [ref=e31]:
+                - link "Organismo" [ref=e32] [cursor=pointer]:
+                  - /url: "#"
+                - list [ref=e33]:
+                  - listitem [ref=e34]:
+                    - link "Directorios" [ref=e35] [cursor=pointer]:
+                      - /url: "#"
+                    - list [ref=e36]:
+                      - listitem [ref=e37]:
+                        - link "Directorio de Agua de Hermosillo" [ref=e38] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/organismo-directorio-aguah/
+                      - listitem [ref=e39]:
+                        - link "Directorio Junta de Gobierno" [ref=e40] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/organismo-directorio-junta-de-gobierno/
+                      - listitem [ref=e41]:
+                        - link "Directorio Consejo Consultivo" [ref=e42] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/organismo-directorio-consejo-consultivo/
+                  - listitem [ref=e43]:
+                    - link "Organización" [ref=e44] [cursor=pointer]:
+                      - /url: "#"
+                    - list [ref=e45]:
+                      - listitem [ref=e46]:
+                        - link "Antecedentes" [ref=e47] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/organizacion-antecedentes/
+                      - listitem [ref=e48]:
+                        - link "Filosofía Organizacional" [ref=e49] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/organismo-filosofia-organizacional/
+                  - listitem [ref=e50]:
+                    - link "Sustento Legal" [ref=e51] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/sustento-legal/
+                  - listitem [ref=e52]:
+                    - link "Sindicato" [ref=e53] [cursor=pointer]:
+                      - /url: "#"
+                    - list [ref=e54]:
+                      - listitem [ref=e55]:
+                        - link "Organigrama del Sindicato" [ref=e56] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/sindicato-organigrama/
+                      - listitem [ref=e57]:
+                        - link "Contrato Colectivo de Trabajo" [ref=e58] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/sindicato-contrato-colectivo-de-trabajo/
+                      - listitem [ref=e59]:
+                        - link "Revisión" [ref=e60] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/sindicato-revision/
+                      - listitem [ref=e61]:
+                        - link "Estatutos" [ref=e62] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/sindicato-estatutos/
+                      - listitem [ref=e63]:
+                        - link "Transparencia del Sindicato" [ref=e64] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/sindicato-transparencia/
+                  - listitem [ref=e65]:
+                    - link "Actas" [ref=e66] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/actas/
+              - listitem [ref=e67]:
+                - link "Sala de Prensa" [ref=e68] [cursor=pointer]:
+                  - /url: "#"
+                - list [ref=e69]:
+                  - listitem [ref=e70]:
+                    - link "Boletines" [ref=e71] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/category/boletines/
+              - listitem [ref=e72]:
+                - link "Cultura del Agua" [ref=e73] [cursor=pointer]:
+                  - /url: "#"
+                - list [ref=e74]:
+                  - listitem [ref=e75]:
+                    - link "Cuidemos cada gota" [ref=e76] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/cuidemos-cada-gota/
+                  - listitem [ref=e77]:
+                    - link "¿Por qué es importante contar con un medidor de agua funcional?" [ref=e78] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/?page_id=1194
+                  - listitem [ref=e79]:
+                    - link "Escuela Enlace" [ref=e80] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/escuela-enlace/
+              - listitem [ref=e81]:
+                - link "Transparencia" [ref=e82] [cursor=pointer]:
+                  - /url: "#"
+                - list [ref=e83]:
+                  - listitem [ref=e84]:
+                    - link "Portal de transparencia" [ref=e85] [cursor=pointer]:
+                      - /url: https://transparencia.hermosillo.gob.mx/
+                  - listitem [ref=e86]:
+                    - link "Transparencia proactiva" [ref=e87] [cursor=pointer]:
+                      - /url: "#"
+                    - list [ref=e88]:
+                      - listitem [ref=e89]:
+                        - link "Financiamiento temporal" [ref=e90] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/financiamiento-temporal-70-millones/
+                  - listitem [ref=e91]:
+                    - link "Transparencia Presupuestaria" [ref=e92] [cursor=pointer]:
+                      - /url: https://transparenciapresupuestaria.hermosillo.gob.mx/finanzas
+                  - listitem [ref=e93]:
+                    - link "Sistema Institucional de Archivos" [ref=e94] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/sistema-institucional-de-archivos/
+              - listitem [ref=e95]:
+                - link "Ingeniería" [ref=e96] [cursor=pointer]:
+                  - /url: "#"
+                - list [ref=e97]:
+                  - listitem [ref=e98]:
+                    - link "Aguah en Números" [ref=e99] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/aguah-en-numeros/
+                  - listitem [ref=e100]:
+                    - link "Calidad del Agua" [ref=e101] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/calidad-del-agua/
+                  - listitem [ref=e102]:
+                    - link "Catastro" [ref=e103] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/catastro/
+                  - listitem [ref=e104]:
+                    - link "PTAR" [ref=e105] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/ptar/
+                  - listitem [ref=e106]:
+                    - link "Factibilidad de Servicio" [ref=e107] [cursor=pointer]:
+                      - /url: "#"
+                    - list [ref=e108]:
+                      - listitem [ref=e109]:
+                        - link "Subdivisión y/o fusión" [ref=e110] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/subdivision-y-fusion/
+                      - listitem [ref=e111]:
+                        - link "Comerciales" [ref=e112] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/factibilidades-comerciales/
+                      - listitem [ref=e113]:
+                        - link "Proyectos Habitacionales" [ref=e114] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/factibilidades-para-proyectos-habitacionales/
+                      - listitem [ref=e115]:
+                        - link "Criterios de Resolución" [ref=e116] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/criterios-de-resolucion/
+              - listitem [ref=e117]:
+                - link "Comercial" [ref=e118] [cursor=pointer]:
+                  - /url: "#"
+                - list [ref=e119]:
+                  - listitem [ref=e120]:
+                    - link "Calcular mi consumo" [ref=e121] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/calcular-mi-consumo/
+                  - listitem [ref=e122]:
+                    - link "Centro de Pagos" [ref=e123] [cursor=pointer]:
+                      - /url: "#"
+                    - list [ref=e124]:
+                      - listitem [ref=e125]:
+                        - link "Módulos y Cajeros" [ref=e126] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/oficinas-comerciales/
+                      - listitem [ref=e127]:
+                        - link "Externos" [ref=e128] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/centro-de-pagos-externos/
+                      - listitem [ref=e129]:
+                        - link "Pago en línea" [ref=e130] [cursor=pointer]:
+                          - /url: https://ssl1.agua.gob.mx/MiAguah/
+                      - listitem [ref=e131]:
+                        - link "Pago de Servicios" [ref=e132] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/pago-de-servicios/
+                      - listitem [ref=e133]:
+                        - link "Convenios de pago" [ref=e134] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/convenios-de-pago/
+                  - listitem [ref=e135]:
+                    - link "Cortes y Reconexiones" [ref=e136] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/cortes-y-reconexiones/
+                  - listitem [ref=e137]:
+                    - link "Lecturas" [ref=e138] [cursor=pointer]:
+                      - /url: "#"
+                    - list [ref=e139]:
+                      - listitem [ref=e140]:
+                        - link "Bitacora de consumo" [ref=e141] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/lecturas/
+                      - listitem [ref=e142]:
+                        - link "Anomalías de lectura" [ref=e143] [cursor=pointer]:
+                          - /url: https://ssl1.agua.gob.mx/anomaliaslectura/
+                      - listitem [ref=e144]:
+                        - link "Consumo Irregular" [ref=e145] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/consumo-irregular/
+                  - listitem [ref=e146]:
+                    - link "Tarifas" [ref=e147] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/tarifas/
+                  - listitem [ref=e148]:
+                    - link "Trámites y Servicios" [ref=e149] [cursor=pointer]:
+                      - /url: https://aguadehermosillo.gob.mx/aguah/tramites-y-servicios/
+                    - list [ref=e150]:
+                      - listitem [ref=e151]:
+                        - link "Contrataciones" [ref=e152] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/tramites-y-servicios-contrataciones/
+                      - listitem [ref=e153]:
+                        - link "Aclaraciones" [ref=e154] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/tramites-y-servicios-aclaraciones/
+                      - listitem [ref=e155]:
+                        - link "Aviso de Privacidad" [ref=e156] [cursor=pointer]:
+                          - /url: https://www.hermosillo.gob.mx/avisosdeprivacidad/
+                      - listitem [ref=e157]:
+                        - link "Cambio de Nombre" [ref=e158] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/tramites-y-servicios-cambio-de-nombre/
+                      - listitem [ref=e159]:
+                        - link "Cartas de no adeudo" [ref=e160] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/tramites-y-servicios-cartas-de-no-adeudo/
+                      - listitem [ref=e161]:
+                        - link "Domiciliación" [ref=e162] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/tramites-y-servicios-domiciliacion/
+                      - listitem [ref=e163]:
+                        - link "Pago agente externo" [ref=e164] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/tramites-y-servicios-pago-agente-externo/
+                      - listitem [ref=e165]:
+                        - link "Pago por cajero automático" [ref=e166] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/tramites-y-servicios-pago-por-cajero-automatico/
+                      - listitem [ref=e167]:
+                        - link "Factibilidad" [ref=e168] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/factibilidad/
+                      - listitem [ref=e169]:
+                        - link "Tarifa Social" [ref=e170] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/tarifa-social-2/
+                      - listitem [ref=e171]:
+                        - link "Inspección de Servicio" [ref=e172] [cursor=pointer]:
+                          - /url: https://aguadehermosillo.gob.mx/aguah/inspeccion-de-servicio/
+              - listitem [ref=e173]:
+                - link "CATI" [ref=e174] [cursor=pointer]:
+                  - /url: https://aguadehermosillo.gob.mx/aguah/contacto-cati/
+                  - generic [ref=e175]: 
+                  - text: CATI
+              - listitem [ref=e176]:
+                - link "Pago en Línea" [ref=e177] [cursor=pointer]:
+                  - /url: https://ssl1.agua.gob.mx/MiAguah/
+                  - generic [ref=e178]: 
+                  - text: Pago en Línea
+          - link "" [ref=e179] [cursor=pointer]:
+            - /url: "#"
+          - text: 
+        - text:                
+  - main [ref=e184]:
+    - article [ref=e185]:
+      - heading "Pago en línea" [level=1] [ref=e187]
+      - generic [ref=e188]:
+        - paragraph [ref=e189]:
+          - iframe [ref=e190]: Esta opción no funcionará correctamente. Lamentablemente, su navegador no soporta URLs embebidas.:
+            - generic [ref=f15e4]:
+              - table [ref=f15e6]:
+                - rowgroup [ref=f15e7]:
+                  - row "Mi Aguah!" [ref=f15e8]:
+                    - cell "Mi Aguah!" [ref=f15e9]:
+                      - img "Mi Aguah!" [ref=f15e10]
+              - generic [ref=f15e11]:
+                - table [ref=f15e13]:
+                  - rowgroup [ref=f15e14]:
+                    - row ">Acceso >¿Cómo me registro? >Registro de nuevo usuario" [ref=f15e15]:
+                      - cell ">Acceso" [ref=f15e16]
+                      - cell ">¿Cómo me registro?" [ref=f15e17]
+                      - cell ">Registro de nuevo usuario" [ref=f15e18]
+                - generic [ref=f15e19]:
+                  - table [ref=f15e20]:
+                    - rowgroup [ref=f15e21]:
+                      - row "<p>Lo sentimos, pero su explorador no tiene soporte para \"Recuadros Internos\". Descargue uno más actual.</p>" [ref=f15e22]:
+                        - cell "<p>Lo sentimos, pero su explorador no tiene soporte para \"Recuadros Internos\". Descargue uno más actual.</p>" [ref=f15e23]:
+                          - iframe [ref=f15e24]: <p>Lo sentimos, pero su explorador no tiene soporte para "Recuadros Internos". Descargue uno más actual.</p>:
+                            - table [ref=f16e4]:
+                              - rowgroup [ref=f16e5]:
+                                - row "Para navegar en esta pagina es necesario tener habilitadas las cookies. Por favor habilite las cookies y recargue la pagina." [ref=f16e6]:
+                                  - cell [ref=f16e7]
+                                  - cell "Para navegar en esta pagina es necesario tener habilitadas las cookies. Por favor habilite las cookies y recargue la pagina." [ref=f16e8]:
+                                    - generic [ref=f16e9]: Para navegar en esta pagina es necesario tener habilitadas las cookies. Por favor habilite las cookies y recargue la pagina.
+                                  - cell [ref=f16e10]
+                  - table [ref=f15e26]:
+                    - rowgroup [ref=f15e27]:
+                      - 'row "Descarga nuestra app en tu teléfono: AppStore GooglePlay Ver tutorial de registro en línea. Ver tutorial para pagar su recibo. ¿Olvidó su contraseña? Para solicitar información relativa a su adeudo, trámites, consumo o datos del suministro puede comunicarse al CATI marcando desde Hermosillo al 073 o vía mensaje de WhatsApp al (662) 429-0000. Si tiene problemas para ingresar, registrarse o efectuar su pago en el Portal o la App Móvil, comuníquese al (662) 289-6000 ext. 6057, en el horario de 8:00 AM a 3:30 PM." [ref=f15e28]':
+                        - 'cell "Descarga nuestra app en tu teléfono: AppStore GooglePlay Ver tutorial de registro en línea. Ver tutorial para pagar su recibo. ¿Olvidó su contraseña? Para solicitar información relativa a su adeudo, trámites, consumo o datos del suministro puede comunicarse al CATI marcando desde Hermosillo al 073 o vía mensaje de WhatsApp al (662) 429-0000. Si tiene problemas para ingresar, registrarse o efectuar su pago en el Portal o la App Móvil, comuníquese al (662) 289-6000 ext. 6057, en el horario de 8:00 AM a 3:30 PM." [ref=f15e29]':
+                          - table [ref=f15e30]:
+                            - rowgroup [ref=f15e31]:
+                              - 'row "Descarga nuestra app en tu teléfono: AppStore GooglePlay" [ref=f15e32]':
+                                - cell [ref=f15e33]
+                                - cell "Descarga nuestra app en tu teléfono:" [ref=f15e34]
+                                - cell "AppStore GooglePlay" [ref=f15e35]:
+                                  - link "AppStore" [ref=f15e36] [cursor=pointer]:
+                                    - /url: https://apps.apple.com/mx/app/id1514841753
+                                    - img "AppStore" [ref=f15e37]
+                                  - link "GooglePlay" [ref=f15e38] [cursor=pointer]:
+                                    - /url: https://play.google.com/store/apps/details?id=mx.gob.aguadehermosillo.miaguah&hl=es_US
+                                    - img "GooglePlay" [ref=f15e39]
+                                - cell [ref=f15e40]
+                          - link "Ver tutorial de registro en línea." [ref=f15e41] [cursor=pointer]:
+                            - /url: https://ssl1.agua.gob.mx/tutoriales/tutorial_registro.html
+                          - link "Ver tutorial para pagar su recibo." [ref=f15e42] [cursor=pointer]:
+                            - /url: https://ssl1.agua.gob.mx/tutoriales/tutorial_pagoenlinea.html
+                          - link "¿Olvidó su contraseña?" [ref=f15e43] [cursor=pointer]:
+                            - /url: Usuario/RecuperarPass.aspx
+                          - generic [ref=f15e44]:
+                            - text: Para solicitar información relativa a su adeudo, trámites, consumo o datos del suministro puede comunicarse
+                            - text: al CATI marcando desde Hermosillo al 073 o vía mensaje de WhatsApp al (662) 429-0000.
+                            - text: Si tiene problemas para ingresar, registrarse o efectuar su pago en el Portal o la App Móvil,
+                            - text: comuníquese al (662) 289-6000 ext. 6057, en el horario de 8:00 AM a 3:30 PM.
+                - generic [ref=f15e45]: ©2023 Agua de Hermosillo
+        - generic [ref=e191]: "Compartir por:"
+        - generic [ref=e192]:
+          - button "Share through Email" [ref=e193] [cursor=pointer]: 
+          - button "WhatsApp Share" [ref=e194] [cursor=pointer]: 
+          - button "Twitter Share" [ref=e195] [cursor=pointer]: 
+          - button "Facebook Share" [ref=e196] [cursor=pointer]: 
+  - contentinfo [ref=e197]:
+    - paragraph [ref=e200]:
+      - text: "© Agua de Hermosillo ⁞ Blvd. Luis Encinas y Ave. Universidad ⁞ Tel. (662)289-6000 ⁞ Contacto:"
+      - link "cati@agua.gob.mx" [ref=e201] [cursor=pointer]:
+        - /url: mailto:cati@agua.gob.mx
+      - link "Aviso de privacidad" [ref=e202] [cursor=pointer]:
+        - /url: https://www.hermosillo.gob.mx/avisosdeprivacidad/

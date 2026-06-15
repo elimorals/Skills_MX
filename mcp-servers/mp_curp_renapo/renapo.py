@@ -1,7 +1,19 @@
 """Consulta RENAPO — verificación de existencia en padrón oficial.
 
-⚠ Hoy mismo (2026-06): RENAPO no expone API pública. La consulta oficial
+⚠ Validado Playwright MCP 2026-06-13: RENAPO no expone API pública. La consulta oficial
 está en https://www.gob.mx/curp/ y requiere CAPTCHA.
+
+Selectores reales del portal gob.mx/curp/ (modo 2 — consulta por datos):
+- input[name='curp'] (18 chars, maxLength=18)
+- input[name='nombres'] (50 chars)
+- input[name='primerApellido'] (50 chars)
+- input[name='segundoApellido'] (50 chars)
+- input[name='selectedYear'] (4 chars, year)
+- button:has-text('Buscar')
+
+Endpoint API REST descubierto (cuando captcha resuelto):
+POST https://www.gob.mx/curp/Search/SearchCurpByData
+con form data: curp/nombres/primerApellido/segundoApellido/selectedYear
 
 Estrategias implementadas:
 1. **Modo mock** (default): devuelve respuesta plausible "Vigente" con datos

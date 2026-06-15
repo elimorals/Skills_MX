@@ -1,0 +1,723 @@
+- generic [active] [ref=e1]:
+  - paragraph
+  - paragraph
+  - textbox "buscar" [ref=e7]
+  - generic [ref=e8]:
+    - table [ref=e9]:
+      - rowgroup [ref=e10]:
+        - row "Usuario Clave Ingresar ¿Olvidó su clave? ¿Olvidó su usuario? Inicio | Contacto | Mapa del Sitio | Ayuda . RSS Buscar... Submit Regresar Ejemplar de hoy Trámites Servicios Leyes y Reglamentos Preguntas Frecuentes ayuda twitter" [ref=e11]:
+          - cell "Usuario Clave Ingresar ¿Olvidó su clave? ¿Olvidó su usuario? Inicio | Contacto | Mapa del Sitio | Ayuda . RSS Buscar... Submit Regresar Ejemplar de hoy Trámites Servicios Leyes y Reglamentos Preguntas Frecuentes ayuda twitter" [ref=e12]:
+            - generic [ref=e13]:
+              - generic [ref=e14]:
+                - generic [ref=e15]:
+                  - generic:
+                    - paragraph [ref=e16]:
+                      - textbox "Usuario" [ref=e17]
+                      - textbox "Clave" [ref=e18]
+                      - button "Ingresar" [ref=e19]
+                    - paragraph [ref=e20]:
+                      - link "¿Olvidó su clave?" [ref=e21] [cursor=pointer]:
+                        - /url: olvido_clave.php
+                      - link "¿Olvidó su usuario?" [ref=e22] [cursor=pointer]:
+                        - /url: olvido_usuario.php
+                - generic [ref=e23]:
+                  - link "Inicio" [ref=e24] [cursor=pointer]:
+                    - /url: index.php
+                  - text: "|"
+                  - link "Contacto" [ref=e25] [cursor=pointer]:
+                    - /url: contactenos.php
+                  - text: "|"
+                  - link "Mapa del Sitio" [ref=e26] [cursor=pointer]:
+                    - /url: mapa.php
+                  - text: "|"
+                  - link "Ayuda" [ref=e27] [cursor=pointer]:
+                    - /url: ayuda.php
+              - generic [ref=e28]:
+                - link "." [ref=e30] [cursor=pointer]:
+                  - /url: index.php
+                - generic [ref=e31]:
+                  - link "RSS" [ref=e33] [cursor=pointer]:
+                    - /url: sumario.xml
+                    - img "RSS" [ref=e34]
+                  - generic [ref=e35]:
+                    - generic:
+                      - textbox "Busqueda" [ref=e36]: Buscar...
+                      - button "Submit" [ref=e38]
+              - generic [ref=e39]:
+                - generic [ref=e40]:
+                  - link "Regresar" [ref=e41] [cursor=pointer]:
+                    - /url: http://dof.gob.mx/index.php
+                    - img "Regresar" [ref=e42]
+                  - link "Ejemplar de hoy" [ref=e43] [cursor=pointer]:
+                    - /url: index.php
+                  - link "Trámites" [ref=e44] [cursor=pointer]:
+                    - /url: tramites1.php?info=completa
+                  - link "Servicios" [ref=e45] [cursor=pointer]:
+                    - /url: "#"
+                  - link "Leyes y Reglamentos" [ref=e46] [cursor=pointer]:
+                    - /url: http://www.ordenjuridico.gob.mx/leyes.php
+                  - link "Preguntas Frecuentes" [ref=e47] [cursor=pointer]:
+                    - /url: faqs.php
+                  - link "ayuda" [ref=e48] [cursor=pointer]:
+                    - /url: "#"
+                    - img "ayuda" [ref=e49]
+                - link "twitter" [ref=e50] [cursor=pointer]:
+                  - /url: http://twitter.com/#!/DOF_segob
+                  - img "twitter" [ref=e51]
+        - row [ref=e52]:
+          - cell [ref=e53]:
+            - table [ref=e54]:
+              - rowgroup [ref=e55]:
+                - row [ref=e56]:
+                  - cell [ref=e57]:
+                    - table [ref=e58]:
+                      - rowgroup [ref=e59]:
+                        - row [ref=e60]:
+                          - cell [ref=e61]
+                          - cell [ref=e62]:
+                            - table [ref=e63]:
+                              - rowgroup [ref=e64]:
+                                - row:
+                                  - cell
+                                - row [ref=e65]:
+                                  - cell [ref=e66]:
+                                    - table [ref=e67]:
+                                      - rowgroup [ref=e68]:
+                                        - row [ref=e69]:
+                                          - cell [ref=e70]
+                                        - row "Resultado de Búsqueda" [ref=e71]:
+                                          - cell "Resultado de Búsqueda" [ref=e72]
+                                        - row [ref=e73]:
+                                          - cell [ref=e74]
+                                        - 'row "Texto: fintech" [ref=e75]':
+                                          - 'cell "Texto: fintech" [ref=e76]'
+                                        - row [ref=e77]:
+                                          - cell [ref=e78]
+                                        - 'row "Periodo: 13/06/2016 a 13/06/2026" [ref=e79]':
+                                          - 'cell "Periodo: 13/06/2016 a 13/06/2026" [ref=e80]'
+                                        - row [ref=e81]:
+                                          - cell [ref=e82]
+                                        - row [ref=e83]:
+                                          - cell [ref=e84]:
+                                            - generic [ref=e85]:
+                                              - table
+                                              - table [ref=e86]:
+                                                - rowgroup [ref=e87]:
+                                                  - row:
+                                                    - cell
+                                                  - row [ref=e88]:
+                                                    - cell [ref=e89]
+                                              - table [ref=e90]:
+                                                - rowgroup [ref=e91]:
+                                                  - row "1 - 9 de 9" [ref=e92]:
+                                                    - cell "1 - 9 de 9" [ref=e93]
+                                                  - row [ref=e94]:
+                                                    - cell [ref=e95]
+                                                  - row [ref=e96]:
+                                                    - cell [ref=e97]
+                                                  - row "02/04/2026 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se modifican los términos de la autorización para organizarse y operar de Ares Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e98]:
+                                                    - cell [ref=e99]
+                                                    - cell "02/04/2026 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se modifican los términos de la autorización para organizarse y operar de Ares Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e100]:
+                                                      - img [ref=e101]
+                                                      - text: 02/04/2026
+                                                      - link "Ver WORD" [ref=e102] [cursor=pointer]:
+                                                        - /url: /nota_to_doc.php?codnota=5783927
+                                                        - img "Ver WORD" [ref=e103]
+                                                      - text: SECRETARIA DE HACIENDA Y CREDITO PUBLICO
+                                                      - link "Oficio mediante el cual se modifican los términos de la autorización para organizarse y operar de Ares Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e104] [cursor=pointer]:
+                                                        - /url: /nota_detalle.php?codigo=5783927&fecha=02/04/2026
+                                                        - generic [ref=e105]: Oficio mediante el cual se modifican los términos de la autorización para organizarse y operar de Ares Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico.
+                                                  - row [ref=e106]:
+                                                    - cell [ref=e107]
+                                                  - row [ref=e108]:
+                                                    - cell [ref=e109]:
+                                                      - img [ref=e110]
+                                                  - row [ref=e111]:
+                                                    - cell [ref=e112]
+                                                  - row "10/10/2023 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se modifican los términos de la autorización para organizarse y operar a Pluxee México Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e113]:
+                                                    - cell [ref=e114]
+                                                    - cell "10/10/2023 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se modifican los términos de la autorización para organizarse y operar a Pluxee México Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e115]:
+                                                      - img [ref=e116]
+                                                      - text: 10/10/2023
+                                                      - link "Ver WORD" [ref=e117] [cursor=pointer]:
+                                                        - /url: /nota_to_doc.php?codnota=5704431
+                                                        - img "Ver WORD" [ref=e118]
+                                                      - text: SECRETARIA DE HACIENDA Y CREDITO PUBLICO
+                                                      - link "Oficio mediante el cual se modifican los términos de la autorización para organizarse y operar a Pluxee México Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e119] [cursor=pointer]:
+                                                        - /url: /nota_detalle.php?codigo=5704431&fecha=10/10/2023
+                                                        - generic [ref=e120]: Oficio mediante el cual se modifican los términos de la autorización para organizarse y operar a Pluxee México Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico.
+                                                  - row [ref=e121]:
+                                                    - cell [ref=e122]
+                                                  - row [ref=e123]:
+                                                    - cell [ref=e124]:
+                                                      - img [ref=e125]
+                                                  - row [ref=e126]:
+                                                    - cell [ref=e127]
+                                                  - row "20/07/2023 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Efectifintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e128]:
+                                                    - cell [ref=e129]
+                                                    - cell "20/07/2023 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Efectifintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e130]:
+                                                      - img [ref=e131]
+                                                      - text: 20/07/2023
+                                                      - link "Ver WORD" [ref=e132] [cursor=pointer]:
+                                                        - /url: /nota_to_doc.php?codnota=5696111
+                                                        - img "Ver WORD" [ref=e133]
+                                                      - text: SECRETARIA DE HACIENDA Y CREDITO PUBLICO
+                                                      - link "Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Efectifintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e134] [cursor=pointer]:
+                                                        - /url: /nota_detalle.php?codigo=5696111&fecha=20/07/2023
+                                                        - generic [ref=e135]: Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Efectifintech, S.A. de C.V., Institución de Fondos de Pago Electrónico.
+                                                  - row [ref=e136]:
+                                                    - cell [ref=e137]
+                                                  - row [ref=e138]:
+                                                    - cell [ref=e139]:
+                                                      - img [ref=e140]
+                                                  - row [ref=e141]:
+                                                    - cell [ref=e142]
+                                                  - row "01/03/2023 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Edenred México Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e143]:
+                                                    - cell [ref=e144]
+                                                    - cell "01/03/2023 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Edenred México Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e145]:
+                                                      - img [ref=e146]
+                                                      - text: 01/03/2023
+                                                      - link "Ver WORD" [ref=e147] [cursor=pointer]:
+                                                        - /url: /nota_to_doc.php?codnota=5681212
+                                                        - img "Ver WORD" [ref=e148]
+                                                      - text: SECRETARIA DE HACIENDA Y CREDITO PUBLICO
+                                                      - link "Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Edenred México Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e149] [cursor=pointer]:
+                                                        - /url: /nota_detalle.php?codigo=5681212&fecha=01/03/2023
+                                                        - generic [ref=e150]: Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Edenred México Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico.
+                                                  - row [ref=e151]:
+                                                    - cell [ref=e152]
+                                                  - row [ref=e153]:
+                                                    - cell [ref=e154]:
+                                                      - img [ref=e155]
+                                                  - row [ref=e156]:
+                                                    - cell [ref=e157]
+                                                  - row "01/03/2023 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Sí Vale Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e158]:
+                                                    - cell [ref=e159]
+                                                    - cell "01/03/2023 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Sí Vale Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e160]:
+                                                      - img [ref=e161]
+                                                      - text: 01/03/2023
+                                                      - link "Ver WORD" [ref=e162] [cursor=pointer]:
+                                                        - /url: /nota_to_doc.php?codnota=5681211
+                                                        - img "Ver WORD" [ref=e163]
+                                                      - text: SECRETARIA DE HACIENDA Y CREDITO PUBLICO
+                                                      - link "Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Sí Vale Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e164] [cursor=pointer]:
+                                                        - /url: /nota_detalle.php?codigo=5681211&fecha=01/03/2023
+                                                        - generic [ref=e165]: Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Sí Vale Fintech, S.A. de C.V., Institución de Fondos de Pago Electrónico.
+                                                  - row [ref=e166]:
+                                                    - cell [ref=e167]
+                                                  - row [ref=e168]:
+                                                    - cell [ref=e169]:
+                                                      - img [ref=e170]
+                                                  - row [ref=e171]:
+                                                    - cell [ref=e172]
+                                                  - row "23/09/2022 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Peibo Fintech, S.A.P.I. de C.V., Institución de Fondos de Pago Electrónico." [ref=e173]:
+                                                    - cell [ref=e174]
+                                                    - cell "23/09/2022 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Peibo Fintech, S.A.P.I. de C.V., Institución de Fondos de Pago Electrónico." [ref=e175]:
+                                                      - img [ref=e176]
+                                                      - text: 23/09/2022
+                                                      - link "Ver WORD" [ref=e177] [cursor=pointer]:
+                                                        - /url: /nota_to_doc.php?codnota=5665337
+                                                        - img "Ver WORD" [ref=e178]
+                                                      - text: SECRETARIA DE HACIENDA Y CREDITO PUBLICO
+                                                      - link "Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Peibo Fintech, S.A.P.I. de C.V., Institución de Fondos de Pago Electrónico." [ref=e179] [cursor=pointer]:
+                                                        - /url: /nota_detalle.php?codigo=5665337&fecha=23/09/2022
+                                                        - generic [ref=e180]: Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Peibo Fintech, S.A.P.I. de C.V., Institución de Fondos de Pago Electrónico.
+                                                  - row [ref=e181]:
+                                                    - cell [ref=e182]
+                                                  - row [ref=e183]:
+                                                    - cell [ref=e184]:
+                                                      - img [ref=e185]
+                                                  - row [ref=e186]:
+                                                    - cell [ref=e187]
+                                                  - row "08/09/2022 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Toka Fintech S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e188]:
+                                                    - cell [ref=e189]
+                                                    - cell "08/09/2022 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Toka Fintech S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e190]:
+                                                      - img [ref=e191]
+                                                      - text: 08/09/2022
+                                                      - link "Ver WORD" [ref=e192] [cursor=pointer]:
+                                                        - /url: /nota_to_doc.php?codnota=5663758
+                                                        - img "Ver WORD" [ref=e193]
+                                                      - text: SECRETARIA DE HACIENDA Y CREDITO PUBLICO
+                                                      - link "Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Toka Fintech S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e194] [cursor=pointer]:
+                                                        - /url: /nota_detalle.php?codigo=5663758&fecha=08/09/2022
+                                                        - generic [ref=e195]: Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Toka Fintech S.A. de C.V., Institución de Fondos de Pago Electrónico.
+                                                  - row [ref=e196]:
+                                                    - cell [ref=e197]
+                                                  - row [ref=e198]:
+                                                    - cell [ref=e199]:
+                                                      - img [ref=e200]
+                                                  - row [ref=e201]:
+                                                    - cell [ref=e202]
+                                                  - row "12/10/2021 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Fintech on Demand, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e203]:
+                                                    - cell [ref=e204]
+                                                    - cell "12/10/2021 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Fintech on Demand, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e205]:
+                                                      - img [ref=e206]
+                                                      - text: 12/10/2021
+                                                      - link "Ver WORD" [ref=e207] [cursor=pointer]:
+                                                        - /url: /nota_to_doc.php?codnota=5632292
+                                                        - img "Ver WORD" [ref=e208]
+                                                      - text: SECRETARIA DE HACIENDA Y CREDITO PUBLICO
+                                                      - link "Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Fintech on Demand, S.A. de C.V., Institución de Fondos de Pago Electrónico." [ref=e209] [cursor=pointer]:
+                                                        - /url: /nota_detalle.php?codigo=5632292&fecha=12/10/2021
+                                                        - generic [ref=e210]: Oficio mediante el cual se otorga autorización para la organización y operación de una institución de fondos de pago electrónico a denominarse Fintech on Demand, S.A. de C.V., Institución de Fondos de Pago Electrónico.
+                                                  - row [ref=e211]:
+                                                    - cell [ref=e212]
+                                                  - row [ref=e213]:
+                                                    - cell [ref=e214]:
+                                                      - img [ref=e215]
+                                                  - row [ref=e216]:
+                                                    - cell [ref=e217]
+                                                  - row "28/04/2021 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se otorga autorización para la organización y operación de una institución de financiamiento colectivo a denominarse BXL Fintech, S.A. de C.V., Institución de Financiamiento Colectivo." [ref=e218]:
+                                                    - cell [ref=e219]
+                                                    - cell "28/04/2021 Ver WORD SECRETARIA DE HACIENDA Y CREDITO PUBLICO Oficio mediante el cual se otorga autorización para la organización y operación de una institución de financiamiento colectivo a denominarse BXL Fintech, S.A. de C.V., Institución de Financiamiento Colectivo." [ref=e220]:
+                                                      - img [ref=e221]
+                                                      - text: 28/04/2021
+                                                      - link "Ver WORD" [ref=e222] [cursor=pointer]:
+                                                        - /url: /nota_to_doc.php?codnota=5617026
+                                                        - img "Ver WORD" [ref=e223]
+                                                      - text: SECRETARIA DE HACIENDA Y CREDITO PUBLICO
+                                                      - link "Oficio mediante el cual se otorga autorización para la organización y operación de una institución de financiamiento colectivo a denominarse BXL Fintech, S.A. de C.V., Institución de Financiamiento Colectivo." [ref=e224] [cursor=pointer]:
+                                                        - /url: /nota_detalle.php?codigo=5617026&fecha=28/04/2021
+                                                        - generic [ref=e225]: Oficio mediante el cual se otorga autorización para la organización y operación de una institución de financiamiento colectivo a denominarse BXL Fintech, S.A. de C.V., Institución de Financiamiento Colectivo.
+                                                  - row [ref=e226]:
+                                                    - cell [ref=e227]
+                                                  - row [ref=e228]:
+                                                    - cell [ref=e229]:
+                                                      - img [ref=e230]
+                                                  - row:
+                                                    - cell
+                                                  - row:
+                                                    - cell
+                                        - row [ref=e231]:
+                                          - cell [ref=e232]
+                                        - row [ref=e233]:
+                                          - cell [ref=e234]:
+                                            - link [ref=e235] [cursor=pointer]:
+                                              - /url: javascript:void(window.open('fileSave.php?print=true&urlSave=http://10.2.51.111:8070/busqueda_detalle.php^textobusqueda--fintech~choosePath--textoCompleto~print--true~cantResultados--9','',''))
+                                              - img [ref=e236]
+                                            - link [ref=e237] [cursor=pointer]:
+                                              - /url: javascript:void(window.open('fileSave.php?filename=DetalleBusqueda&urlSave=http://10.2.51.111:8070/busqueda_detalle.php^textobusqueda--fintech~choosePath--textoCompleto~save--true~cantResultados--9','',''))
+                                              - img [ref=e238]
+                                        - row [ref=e239]:
+                                          - cell [ref=e240]
+                            - img [ref=e241]
+                          - cell [ref=e242]:
+                            - img [ref=e243]
+                  - cell "CONSULTA POR FECHA Jun 2026 Do Lu Ma Mi Ju Vi Sá 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 crear usuario Crear Usuario busqueda avanzada Búsqueda Avanzada top notas Top Notas tramites Normas Oficiales quejas y sugerencias Quejas y Sugerencias copia Obtener Copia del DOF versif. copia Verificar Copia del DOF enlaces relevantes Enlaces Relevantes Contacto Contáctenos historia Historia del Diario Oficial estadisticas Vacantes en Gobierno estadisticas Ex-trabajadores Migratorios INDICADORES Tipo de Cambio y Tasas al 13/06/2026 UDIS 8.827635 Ver más ENCUESTAS ¿Le gustó la nueva imagen de la página web del Diario Oficial de la Federación? No Sí Votar 0.821786001312920061.gif 0.475545001508857915.jpg" [ref=e244]:
+                    - table [ref=e245]:
+                      - rowgroup [ref=e246]:
+                        - row "CONSULTA POR FECHA Jun 2026 Do Lu Ma Mi Ju Vi Sá 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 crear usuario Crear Usuario busqueda avanzada Búsqueda Avanzada top notas Top Notas tramites Normas Oficiales quejas y sugerencias Quejas y Sugerencias copia Obtener Copia del DOF versif. copia Verificar Copia del DOF enlaces relevantes Enlaces Relevantes Contacto Contáctenos historia Historia del Diario Oficial estadisticas Vacantes en Gobierno estadisticas Ex-trabajadores Migratorios INDICADORES Tipo de Cambio y Tasas al 13/06/2026 UDIS 8.827635 Ver más ENCUESTAS ¿Le gustó la nueva imagen de la página web del Diario Oficial de la Federación? No Sí Votar" [ref=e247]:
+                          - cell "CONSULTA POR FECHA Jun 2026 Do Lu Ma Mi Ju Vi Sá 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 crear usuario Crear Usuario busqueda avanzada Búsqueda Avanzada top notas Top Notas tramites Normas Oficiales quejas y sugerencias Quejas y Sugerencias copia Obtener Copia del DOF versif. copia Verificar Copia del DOF enlaces relevantes Enlaces Relevantes Contacto Contáctenos historia Historia del Diario Oficial estadisticas Vacantes en Gobierno estadisticas Ex-trabajadores Migratorios INDICADORES Tipo de Cambio y Tasas al 13/06/2026 UDIS 8.827635 Ver más ENCUESTAS ¿Le gustó la nueva imagen de la página web del Diario Oficial de la Federación? No Sí Votar" [ref=e248]:
+                            - table [ref=e249]:
+                              - rowgroup [ref=e250]:
+                                - row "CONSULTA POR FECHA" [ref=e251]:
+                                  - cell "CONSULTA POR FECHA" [ref=e252]
+                                - row "Jun 2026 Do Lu Ma Mi Ju Vi Sá 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30" [ref=e253]:
+                                  - cell "Jun 2026 Do Lu Ma Mi Ju Vi Sá 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30" [ref=e254]:
+                                    - table [ref=e257]:
+                                      - rowgroup [ref=e258]:
+                                        - row "Jun 2026" [ref=e259]:
+                                          - cell "Jun 2026" [ref=e260]:
+                                            - table [ref=e261]:
+                                              - rowgroup [ref=e262]:
+                                                - row "Jun 2026" [ref=e263]:
+                                                  - cell [ref=e264]
+                                                  - cell "Jun" [ref=e265]:
+                                                    - combobox [ref=e266]:
+                                                      - option "Ene"
+                                                      - option "Feb"
+                                                      - option "Mar"
+                                                      - option "Abr"
+                                                      - option "May"
+                                                      - option "Jun" [selected]
+                                                      - option "Jul"
+                                                      - option "Ago"
+                                                      - option "Sep"
+                                                      - option "Oct"
+                                                      - option "Nov"
+                                                      - option "Dic"
+                                                  - cell "2026" [ref=e267]:
+                                                    - combobox [ref=e268]:
+                                                      - option "2026" [selected]
+                                                      - option "2025"
+                                                      - option "2024"
+                                                      - option "2023"
+                                                      - option "2022"
+                                                      - option "2021"
+                                                      - option "2020"
+                                                      - option "2019"
+                                                      - option "2018"
+                                                      - option "2017"
+                                                      - option "2016"
+                                                      - option "2015"
+                                                      - option "2014"
+                                                      - option "2013"
+                                                      - option "2012"
+                                                      - option "2011"
+                                                      - option "2010"
+                                                      - option "2009"
+                                                      - option "2008"
+                                                      - option "2007"
+                                                      - option "2006"
+                                                      - option "2005"
+                                                      - option "2004"
+                                                      - option "2003"
+                                                      - option "2002"
+                                                      - option "2001"
+                                                      - option "2000"
+                                                      - option "1999"
+                                                      - option "1998"
+                                                      - option "1997"
+                                                      - option "1996"
+                                                      - option "1995"
+                                                      - option "1994"
+                                                      - option "1993"
+                                                      - option "1992"
+                                                      - option "1991"
+                                                      - option "1990"
+                                                      - option "1989"
+                                                      - option "1988"
+                                                      - option "1987"
+                                                      - option "1986"
+                                                      - option "1985"
+                                                      - option "1984"
+                                                      - option "1983"
+                                                      - option "1982"
+                                                      - option "1981"
+                                                      - option "1980"
+                                                      - option "1979"
+                                                      - option "1978"
+                                                      - option "1977"
+                                                      - option "1976"
+                                                      - option "1975"
+                                                      - option "1974"
+                                                      - option "1973"
+                                                      - option "1972"
+                                                      - option "1971"
+                                                      - option "1970"
+                                                      - option "1969"
+                                                      - option "1968"
+                                                      - option "1967"
+                                                      - option "1966"
+                                                      - option "1965"
+                                                      - option "1964"
+                                                      - option "1963"
+                                                      - option "1962"
+                                                      - option "1961"
+                                                      - option "1960"
+                                                      - option "1959"
+                                                      - option "1958"
+                                                      - option "1957"
+                                                      - option "1956"
+                                                      - option "1955"
+                                                      - option "1954"
+                                                      - option "1953"
+                                                      - option "1952"
+                                                      - option "1951"
+                                                      - option "1950"
+                                                      - option "1949"
+                                                      - option "1948"
+                                                      - option "1947"
+                                                      - option "1946"
+                                                      - option "1945"
+                                                      - option "1944"
+                                                      - option "1943"
+                                                      - option "1942"
+                                                      - option "1941"
+                                                      - option "1940"
+                                                      - option "1939"
+                                                      - option "1938"
+                                                      - option "1937"
+                                                      - option "1936"
+                                                      - option "1935"
+                                                      - option "1934"
+                                                      - option "1933"
+                                                      - option "1932"
+                                                      - option "1931"
+                                                      - option "1930"
+                                                      - option "1929"
+                                                      - option "1928"
+                                                      - option "1927"
+                                                      - option "1926"
+                                                      - option "1925"
+                                                      - option "1924"
+                                                      - option "1923"
+                                                      - option "1922"
+                                                      - option "1921"
+                                                      - option "1920"
+                                                      - option "1919"
+                                                      - option "1918"
+                                                      - option "1917"
+                                                  - cell [ref=e269]
+                                        - row "Do Lu Ma Mi Ju Vi Sá" [ref=e270]:
+                                          - cell "Do Lu Ma Mi Ju Vi Sá" [ref=e271]:
+                                            - table [ref=e272]:
+                                              - rowgroup [ref=e273]:
+                                                - row "Do Lu Ma Mi Ju Vi Sá" [ref=e274]:
+                                                  - cell "Do" [ref=e275]:
+                                                    - generic [ref=e276]: Do
+                                                  - cell "Lu" [ref=e277]:
+                                                    - generic [ref=e278]: Lu
+                                                  - cell "Ma" [ref=e279]:
+                                                    - generic [ref=e280]: Ma
+                                                  - cell "Mi" [ref=e281]:
+                                                    - generic [ref=e282]: Mi
+                                                  - cell "Ju" [ref=e283]:
+                                                    - generic [ref=e284]: Ju
+                                                  - cell "Vi" [ref=e285]:
+                                                    - generic [ref=e286]: Vi
+                                                  - cell "Sá" [ref=e287]:
+                                                    - generic [ref=e288]: Sá
+                                        - row "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30" [ref=e289]:
+                                          - cell "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30" [ref=e290]:
+                                            - table [ref=e292]:
+                                              - rowgroup [ref=e293]:
+                                                - row "1 2 3 4 5 6" [ref=e294]:
+                                                  - cell [ref=e295]
+                                                  - cell "1" [ref=e297]:
+                                                    - link "1" [ref=e298] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=01
+                                                  - cell "2" [ref=e299]:
+                                                    - link "2" [ref=e300] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=02
+                                                  - cell "3" [ref=e301]:
+                                                    - link "3" [ref=e302] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=03
+                                                  - cell "4" [ref=e303]:
+                                                    - link "4" [ref=e304] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=04
+                                                  - cell "5" [ref=e305]:
+                                                    - link "5" [ref=e306] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=05
+                                                  - cell "6" [ref=e307]:
+                                                    - generic [ref=e308]: "6"
+                                                - row "7 8 9 10 11 12 13" [ref=e309]:
+                                                  - cell "7" [ref=e310]:
+                                                    - generic [ref=e311]: "7"
+                                                  - cell "8" [ref=e312]:
+                                                    - link "8" [ref=e313] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=08
+                                                  - cell "9" [ref=e314]:
+                                                    - link "9" [ref=e315] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=09
+                                                  - cell "10" [ref=e316]:
+                                                    - link "10" [ref=e317] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=10
+                                                  - cell "11" [ref=e318]:
+                                                    - link "11" [ref=e319] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=11
+                                                  - cell "12" [ref=e320]:
+                                                    - link "12" [ref=e321] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=12
+                                                  - cell "13" [ref=e322]:
+                                                    - generic [ref=e323]: "13"
+                                                - row "14 15 16 17 18 19 20" [ref=e324]:
+                                                  - cell "14" [ref=e325]:
+                                                    - generic [ref=e326]: "14"
+                                                  - cell "15" [ref=e327]:
+                                                    - generic [ref=e328]: "15"
+                                                  - cell "16" [ref=e329]:
+                                                    - generic [ref=e330]: "16"
+                                                  - cell "17" [ref=e331]:
+                                                    - generic [ref=e332]: "17"
+                                                  - cell "18" [ref=e333]:
+                                                    - generic [ref=e334]: "18"
+                                                  - cell "19" [ref=e335]:
+                                                    - generic [ref=e336]: "19"
+                                                  - cell "20" [ref=e337]:
+                                                    - generic [ref=e338]: "20"
+                                                - row "21 22 23 24 25 26 27" [ref=e339]:
+                                                  - cell "21" [ref=e340]:
+                                                    - generic [ref=e341]: "21"
+                                                  - cell "22" [ref=e342]:
+                                                    - generic [ref=e343]: "22"
+                                                  - cell "23" [ref=e344]:
+                                                    - generic [ref=e345]: "23"
+                                                  - cell "24" [ref=e346]:
+                                                    - generic [ref=e347]: "24"
+                                                  - cell "25" [ref=e348]:
+                                                    - generic [ref=e349]: "25"
+                                                  - cell "26" [ref=e350]:
+                                                    - generic [ref=e351]: "26"
+                                                  - cell "27" [ref=e352]:
+                                                    - generic [ref=e353]: "27"
+                                                - row "28 29 30" [ref=e354]:
+                                                  - cell "28" [ref=e355]:
+                                                    - generic [ref=e356]: "28"
+                                                  - cell "29" [ref=e357]:
+                                                    - generic [ref=e358]: "29"
+                                                  - cell "30" [ref=e359]:
+                                                    - generic [ref=e360]: "30"
+                                                  - cell [ref=e361]
+                                                  - cell [ref=e363]
+                                                  - cell [ref=e365]
+                                                  - cell [ref=e367]
+                            - table [ref=e369]:
+                              - rowgroup [ref=e370]:
+                                - row "crear usuario Crear Usuario busqueda avanzada Búsqueda Avanzada top notas Top Notas tramites Normas Oficiales quejas y sugerencias Quejas y Sugerencias copia Obtener Copia del DOF versif. copia Verificar Copia del DOF enlaces relevantes Enlaces Relevantes Contacto Contáctenos historia Historia del Diario Oficial estadisticas Vacantes en Gobierno estadisticas Ex-trabajadores Migratorios" [ref=e371]:
+                                  - cell "crear usuario Crear Usuario busqueda avanzada Búsqueda Avanzada top notas Top Notas tramites Normas Oficiales quejas y sugerencias Quejas y Sugerencias copia Obtener Copia del DOF versif. copia Verificar Copia del DOF enlaces relevantes Enlaces Relevantes Contacto Contáctenos historia Historia del Diario Oficial estadisticas Vacantes en Gobierno estadisticas Ex-trabajadores Migratorios" [ref=e372]:
+                                    - table [ref=e373]:
+                                      - rowgroup [ref=e374]:
+                                        - row "crear usuario Crear Usuario" [ref=e375]:
+                                          - cell "crear usuario" [ref=e376]:
+                                            - link "crear usuario" [ref=e377] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "crear usuario" [ref=e378]
+                                          - cell "Crear Usuario" [ref=e379]:
+                                            - link "Crear Usuario" [ref=e380] [cursor=pointer]:
+                                              - /url: admin_usuarios.php
+                                        - row "busqueda avanzada Búsqueda Avanzada" [ref=e381]:
+                                          - cell "busqueda avanzada" [ref=e382]:
+                                            - link "busqueda avanzada" [ref=e383] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "busqueda avanzada" [ref=e384]
+                                          - cell "Búsqueda Avanzada" [ref=e385]:
+                                            - link "Búsqueda Avanzada" [ref=e386] [cursor=pointer]:
+                                              - /url: busqueda_avanzada.php?pb=S&cod_orga=TODOS
+                                        - row "top notas Top Notas" [ref=e387]:
+                                          - cell "top notas" [ref=e388]:
+                                            - link "top notas" [ref=e389] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "top notas" [ref=e390]
+                                          - cell "Top Notas" [ref=e391]:
+                                            - link "Top Notas" [ref=e392] [cursor=pointer]:
+                                              - /url: index.php?vertopnotas=1
+                                        - row "tramites Normas Oficiales" [ref=e393]:
+                                          - cell "tramites" [ref=e394]:
+                                            - link "tramites" [ref=e395] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "tramites" [ref=e396]
+                                          - cell "Normas Oficiales" [ref=e397]:
+                                            - link "Normas Oficiales" [ref=e398] [cursor=pointer]:
+                                              - /url: normasOficiales.php
+                                        - row "quejas y sugerencias Quejas y Sugerencias" [ref=e399]:
+                                          - cell "quejas y sugerencias" [ref=e400]:
+                                            - link "quejas y sugerencias" [ref=e401] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "quejas y sugerencias" [ref=e402]
+                                          - cell "Quejas y Sugerencias" [ref=e403]:
+                                            - link "Quejas y Sugerencias" [ref=e404] [cursor=pointer]:
+                                              - /url: quejas.php
+                                        - row "copia Obtener Copia del DOF" [ref=e405]:
+                                          - cell "copia" [ref=e406]:
+                                            - link "copia" [ref=e407] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "copia" [ref=e408]
+                                          - cell "Obtener Copia del DOF" [ref=e409]:
+                                            - link "Obtener Copia del DOF" [ref=e410] [cursor=pointer]:
+                                              - /url: copias_cert.php
+                                        - row "versif. copia Verificar Copia del DOF" [ref=e411]:
+                                          - cell "versif. copia" [ref=e412]:
+                                            - link "versif. copia" [ref=e413] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "versif. copia" [ref=e414]
+                                          - cell "Verificar Copia del DOF" [ref=e415]:
+                                            - link "Verificar Copia del DOF" [ref=e416] [cursor=pointer]:
+                                              - /url: copias_verif.php
+                                        - row "enlaces relevantes Enlaces Relevantes" [ref=e417]:
+                                          - cell "enlaces relevantes" [ref=e418]:
+                                            - link "enlaces relevantes" [ref=e419] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "enlaces relevantes" [ref=e420]
+                                          - cell "Enlaces Relevantes" [ref=e421]:
+                                            - link "Enlaces Relevantes" [ref=e422] [cursor=pointer]:
+                                              - /url: enlaces_dependencias.php
+                                        - row "Contacto Contáctenos" [ref=e423]:
+                                          - cell "Contacto" [ref=e424]:
+                                            - link "Contacto" [ref=e425] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "Contacto" [ref=e426]
+                                          - cell "Contáctenos" [ref=e427]:
+                                            - link "Contáctenos" [ref=e428] [cursor=pointer]:
+                                              - /url: contactenos.php
+                                        - row "historia Historia del Diario Oficial" [ref=e429]:
+                                          - cell "historia" [ref=e430]:
+                                            - link "historia" [ref=e431] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "historia" [ref=e432]
+                                          - cell "Historia del Diario Oficial" [ref=e433]:
+                                            - link "Historia del Diario Oficial" [ref=e434] [cursor=pointer]:
+                                              - /url: historia.php
+                                        - row "estadisticas Vacantes en Gobierno" [ref=e435]:
+                                          - cell "estadisticas" [ref=e436]:
+                                            - link "estadisticas" [ref=e437] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "estadisticas" [ref=e438]
+                                          - cell "Vacantes en Gobierno" [ref=e439]:
+                                            - link "Vacantes en Gobierno" [ref=e440] [cursor=pointer]:
+                                              - /url: vacantes.php
+                                        - row "estadisticas Ex-trabajadores Migratorios" [ref=e441]:
+                                          - cell "estadisticas" [ref=e442]:
+                                            - link "estadisticas" [ref=e443] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "estadisticas" [ref=e444]
+                                          - cell "Ex-trabajadores Migratorios" [ref=e445]:
+                                            - link "Ex-trabajadores Migratorios" [ref=e446] [cursor=pointer]:
+                                              - /url: extrabmigmex.php
+                            - table [ref=e447]:
+                              - rowgroup [ref=e448]:
+                                - row "INDICADORES" [ref=e449]:
+                                  - cell "INDICADORES" [ref=e450]
+                                - row "Tipo de Cambio y Tasas al 13/06/2026 UDIS 8.827635 Ver más" [ref=e451]:
+                                  - cell "Tipo de Cambio y Tasas al 13/06/2026 UDIS 8.827635 Ver más" [ref=e452]:
+                                    - table [ref=e453]:
+                                      - rowgroup [ref=e454]:
+                                        - row "Tipo de Cambio y Tasas al 13/06/2026" [ref=e455]:
+                                          - cell "Tipo de Cambio y Tasas al 13/06/2026" [ref=e456]
+                                        - row [ref=e457]:
+                                          - cell [ref=e458]
+                                        - row "UDIS 8.827635" [ref=e459]:
+                                          - cell "UDIS 8.827635" [ref=e460]:
+                                            - paragraph [ref=e461]:
+                                              - text: UDIS
+                                              - text: "8.827635"
+                                        - row "Ver más" [ref=e462]:
+                                          - cell "Ver más" [ref=e463]:
+                                            - link "Ver más" [ref=e464] [cursor=pointer]:
+                                              - /url: indicadores.php
+                            - table [ref=e465]:
+                              - rowgroup [ref=e466]:
+                                - row "ENCUESTAS" [ref=e467]:
+                                  - cell "ENCUESTAS" [ref=e468]
+                                - row "¿Le gustó la nueva imagen de la página web del Diario Oficial de la Federación? No Sí Votar" [ref=e469]:
+                                  - cell "¿Le gustó la nueva imagen de la página web del Diario Oficial de la Federación? No Sí Votar" [ref=e470]:
+                                    - paragraph [ref=e471]: ¿Le gustó la nueva imagen de la página web del Diario Oficial de la Federación?
+                                    - generic [ref=e472]:
+                                      - paragraph [ref=e473]:
+                                        - radio "No" [ref=e474]
+                                        - text: "No"
+                                        - radio "Sí" [checked] [ref=e475]
+                                        - text: Sí
+                                      - paragraph [ref=e476]
+                                      - button "Votar" [ref=e478]
+                        - row [ref=e479]:
+                          - cell [ref=e480]
+                        - row "0.821786001312920061.gif 0.475545001508857915.jpg" [ref=e481]:
+                          - cell "0.821786001312920061.gif 0.475545001508857915.jpg" [ref=e482]:
+                            - link "0.821786001312920061.gif" [ref=e483] [cursor=pointer]:
+                              - /url: http://dof.gob.mx/red-boa.php
+                              - img "0.821786001312920061.gif" [ref=e484]
+                            - link "0.475545001508857915.jpg" [ref=e485] [cursor=pointer]:
+                              - /url: https://www.gob.mx/
+                              - img "0.475545001508857915.jpg" [ref=e486]
+                  - cell
+    - generic [ref=e487]:
+      - generic:
+        - link:
+          - /url: red-boa.php
+          - img [ref=e488] [cursor=pointer]
+      - generic [ref=e489]:
+        - link "Diario Oficial de la Federación" [ref=e490] [cursor=pointer]:
+          - /url: https://goo.gl/maps/grL3boxiDMjLhmLS6
+        - paragraph [ref=e491]:
+          - text: Río Amazonas No. 62, Col. Cuauhtémoc, C.P. 06500, Ciudad de México
+          - text: Tel. (55) 5093-3200, donde podrá acceder a nuestro menú de servicios
+          - text: "Dirección electrónica:"
+          - link "www.dof.gob.mx" [ref=e492] [cursor=pointer]:
+            - /url: http://www.dof.gob.mx
+      - img [ref=e494]
+      - text: "111"
+      - paragraph [ref=e495]:
+        - link "AVISO LEGAL" [ref=e496] [cursor=pointer]:
+          - /url: "#"
+        - text: "| ALGUNOS DERECHOS RESERVADOS © 2026"

@@ -1,0 +1,123 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - link "Secretaría de Administración y Finanzas" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Secretaría de Administración y Finanzas" [ref=e7]
+      - link "OVICA" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - img "OVICA" [ref=e9]
+    - generic [ref=e10]:
+      - generic [ref=e11]: Ciudad de México, lunes 15 de junio de 2026
+      - separator [ref=e12]
+      - button "Login menú" [ref=e13] [cursor=pointer]: Ingresar
+    - generic [ref=e15]:
+      - button "INICIO" [ref=e17] [cursor=pointer]:
+        - generic [ref=e18]: INICIO
+      - button "VENTANILLA DIGITAL" [ref=e20] [cursor=pointer]:
+        - generic [ref=e21]: VENTANILLA DIGITAL
+      - link "TRÁMITES Y SERVICIOS" [ref=e23] [cursor=pointer]:
+        - /url: https://www.finanzas.cdmx.gob.mx/catastro
+        - button "TRÁMITES Y SERVICIOS" [ref=e24]: TRÁMITES Y SERVICIOS
+      - link "PREDIAL POR LOTE" [ref=e26] [cursor=pointer]:
+        - /url: https://lcporlotepredial.saf.cdmx.gob.mx
+        - button "PREDIAL POR LOTE" [ref=e27]: PREDIAL POR LOTE
+      - link "REGULARIZACIÓN DE ADEUDOS PREDIAL" [ref=e29] [cursor=pointer]:
+        - /url: /cuenta-predial-liquidacion
+        - button "REGULARIZACIÓN DE ADEUDOS PREDIAL" [ref=e30]: REGULARIZACIÓN DE ADEUDOS PREDIAL
+  - generic [ref=e39]:
+    - generic [ref=e40]:
+      - generic [ref=e44]:
+        - generic [ref=e51] [cursor=pointer]: ‹
+        - generic [ref=e52] [cursor=pointer]: ›
+      - heading "Ventanilla Digital al Contribuyente" [level=1] [ref=e53]
+      - separator [ref=e54]
+      - generic [ref=e55]:
+        - generic [ref=e57] [cursor=pointer]:
+          - img "Impuesto Predial" [ref=e58]
+          - generic [ref=e59]:
+            - heading "Impuesto Predial" [level=3] [ref=e60]
+            - paragraph [ref=e61]: Acceda a la información sobre el estado de cuenta de su impuesto predial o efectúe el pago correspondiente a través de esta sección.
+        - link "Impuesto Predial Consulta de pagos realizados Consulte sus pagos realizados por línea de captura. Recuerde que el pago se verá reflejado dos días hábiles después de haberlo realizado." [ref=e63] [cursor=pointer]:
+          - /url: https://data.finanzas.cdmx.gob.mx/consultas_pagos/consultar_adeudos.html
+          - generic [ref=e64]:
+            - img "Impuesto Predial" [ref=e65]
+            - generic [ref=e66]:
+              - heading "Consulta de pagos realizados" [level=3] [ref=e67]
+              - paragraph [ref=e68]: Consulte sus pagos realizados por línea de captura.
+              - paragraph [ref=e69]: Recuerde que el pago se verá reflejado dos días hábiles después de haberlo realizado.
+        - link "Impuesto Predial Pre-registro trámites Pre-registro de trámites catastrales para la revisión de documentos. Si cumple con los requisitos obtendrá una cita para dar inicio al trámite." [ref=e71] [cursor=pointer]:
+          - /url: https://ovica-servicios.finanzas.cdmx.gob.mx/tramites-linea/
+          - generic [ref=e72]:
+            - img "Impuesto Predial" [ref=e73]
+            - generic [ref=e74]:
+              - heading "Pre-registro trámites" [level=3] [ref=e75]
+              - paragraph [ref=e76]: Pre-registro de trámites catastrales para la revisión de documentos.
+              - paragraph [ref=e77]: Si cumple con los requisitos obtendrá una cita para dar inicio al trámite.
+      - heading "Notarios y Peritos" [level=1] [ref=e78]
+      - separator [ref=e79]
+      - generic [ref=e80]:
+        - link "ISAI Administración de avalúos asignados a un notario y sobre los que se puede realizar una declaración ISAI." [ref=e82] [cursor=pointer]:
+          - /url: /isai
+          - generic [ref=e84]:
+            - heading "ISAI" [level=3] [ref=e85]
+            - paragraph [ref=e86]: Administración de avalúos asignados a un notario y sobre los que se puede realizar una declaración ISAI.
+        - link "Avalúos Registro y gestión de avalúos comerciales o catastrales en formato unificado (declaraciones ISAI, actualizaciones catastrales, dictamen, etc.) Destinado a los peritos valuadores y sociedades." [ref=e88] [cursor=pointer]:
+          - /url: /avaluos
+          - generic [ref=e90]:
+            - heading "Avalúos" [level=3] [ref=e91]
+            - paragraph [ref=e92]: Registro y gestión de avalúos comerciales o catastrales en formato unificado (declaraciones ISAI, actualizaciones catastrales, dictamen, etc.)
+            - paragraph [ref=e93]: Destinado a los peritos valuadores y sociedades.
+        - link "Condominios Gestión de entrega de solicitudes condominales por parte de Notarios acreditados por la Secretaría de Administración y Finanzas de la Ciudad de México." [ref=e95] [cursor=pointer]:
+          - /url: /condominios
+          - generic [ref=e97]:
+            - heading "Condominios" [level=3] [ref=e98]
+            - paragraph [ref=e99]: Gestión de entrega de solicitudes condominales por parte de Notarios acreditados por la Secretaría de Administración y Finanzas de la Ciudad de México.
+    - generic [ref=e103]: Su navegador no puede reproducir este tipo de video
+  - contentinfo [ref=e105]:
+    - contentinfo [ref=e110]:
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - link "Secretaría de Administración y Finanzas" [ref=e114] [cursor=pointer]:
+            - /url: https://www.cdmx.gob.mx/
+            - img "Secretaría de Administración y Finanzas" [ref=e115]
+          - list [ref=e117]:
+            - listitem [ref=e118]:
+              - link [ref=e119] [cursor=pointer]:
+                - /url: https://www.facebook.com/AdministracionyFinanzasCiudadDeMexico/
+                - img [ref=e120]
+            - listitem [ref=e121]:
+              - link [ref=e122] [cursor=pointer]:
+                - /url: https://x.com/finanzas_cdmx
+                - img [ref=e123]
+            - listitem [ref=e124]:
+              - link [ref=e125] [cursor=pointer]:
+                - /url: https://www.instagram.com/safcdmx
+                - img [ref=e126]
+            - listitem [ref=e127]:
+              - link [ref=e128] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@safcdmx_
+                - img [ref=e129]
+        - generic [ref=e130]:
+          - heading "Atención Ciudadana" [level=4] [ref=e132]:
+            - link "Atención Ciudadana" [ref=e133] [cursor=pointer]:
+              - /url: https://311locatel.cdmx.gob.mx/
+          - heading "Portal de Transparencia" [level=4] [ref=e135]:
+            - link "Portal de Transparencia" [ref=e136] [cursor=pointer]:
+              - /url: https://transparencia.finanzas.cdmx.gob.mx/transparencia/public/
+          - heading "Tu ciudad, tu dinero" [level=4] [ref=e138]:
+            - link "Tu ciudad, tu dinero" [ref=e139] [cursor=pointer]:
+              - /url: https://tudinero.cdmx.gob.mx/
+        - paragraph [ref=e142]:
+          - strong [ref=e143]: "Atención Ciudadana:"
+          - text: Doctor Lavista 144, col. Doctores, alc. Cuauhtémoc, 06720, CDMX. 55 5134 2500
+          - strong [ref=e144]: "Secretaría de Administración y Finanzas:"
+          - text: Plaza de la Constitución 1, col. Centro, alc. Cuauhtémoc, 06000, CDMX
+        - generic [ref=e145]:
+          - paragraph [ref=e147]:
+            - link "Política de privacidad" [ref=e148] [cursor=pointer]:
+              - /url: https://www.finanzas.cdmx.gob.mx/terminos-y-condiciones
+          - paragraph [ref=e150]:
+            - link "Términos y Condiciones" [ref=e151] [cursor=pointer]:
+              - /url: https://www.finanzas.cdmx.gob.mx/terminos-y-condiciones
+          - paragraph [ref=e153]: 2026 OVICA. Oficina Virtual del Catastro

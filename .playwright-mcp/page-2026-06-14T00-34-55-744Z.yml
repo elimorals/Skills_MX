@@ -1,0 +1,97 @@
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - list [ref=e6]:
+      - listitem [ref=e7]:
+        - link "Inicio" [ref=e8] [cursor=pointer]:
+          - /url: "#"
+          - text: Inicio
+      - listitem [ref=e10]:
+        - link "Cédulas Profesionales" [ref=e11] [cursor=pointer]:
+          - /url: "#"
+          - text: Cédulas Profesionales
+      - listitem [ref=e13]: "Especialistas: Cirugía Plástica, Estética y Reconstructiva"
+      - listitem [ref=e14]: Cédulas Estatales
+      - listitem [ref=e15]:
+        - link "Datos Abiertos" [ref=e16] [cursor=pointer]:
+          - /url: "#"
+          - text: Datos Abiertos
+      - listitem [ref=e18]: Contacto
+  - list [ref=e20]:
+    - listitem [ref=e21]:
+      - link "Home" [ref=e22] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e23]: 
+    - listitem [ref=e24]:
+      - link "Inicio" [ref=e25] [cursor=pointer]:
+        - /url: "#"
+    - listitem [ref=e26]: "> Búsqueda de Cédulas Profesionales"
+  - main [ref=e27]:
+    - generic [ref=e28]:
+      - heading "Realiza tu búsqueda de forma segura y confiable." [level=2] [ref=e29]
+      - separator [ref=e30]
+      - paragraph [ref=e31]:
+        - text: Al ingresar los datos, los resultados te mostrarán que la persona profesionista cuenta con título registrado y cédula profesional expedida, cumpliendo con todos los requisitos de la ley.
+        - text: La información publicada en este sitio se realiza en estricto apego a la Política de Datos Abiertos y en congruencia con los principios que rigen su publicación. Dicha información se actualiza de manera periódica; en consecuencia, la Secretaría de Educación Pública se deslinda de cualquier responsabilidad derivada del uso, reproducción, adecuación o modalidad que pudiera adquirir en sitios web distintos al oficial.
+      - generic [ref=e32]: ¡Descarga la Constancia de Situación Profesional!
+      - paragraph [ref=e33]: "Recuerda: La emisión de la Constancia es completamente gratuita."
+      - generic [ref=e35]:
+        - list [ref=e36]:
+          - listitem [ref=e37]:
+            - link "Datos generales" [ref=e38]:
+              - /url: "#tab-04"
+          - listitem [ref=e39]:
+            - link "Número de cédula" [ref=e40] [cursor=pointer]:
+              - /url: "#tab-01"
+        - generic [ref=e41]:
+          - generic [ref=e44]:
+            - generic [ref=e45]:
+              - generic [ref=e46]: "Nombre(s)*:"
+              - textbox "Nombre(s)*:" [ref=e47]:
+                - /placeholder: Nombre(s)
+            - generic [ref=e48]:
+              - generic [ref=e49]: "Primer Apellido*:"
+              - textbox "Primer Apellido*:" [ref=e50]:
+                - /placeholder: Primer Apellido
+            - generic [ref=e51]:
+              - generic [ref=e52]: "Segundo Apellido:"
+              - textbox "Segundo Apellido:" [ref=e53]:
+                - /placeholder: Segundo Apellido
+            - generic [ref=e54]:
+              - generic [ref=e55]: "CURP:"
+              - textbox "CURP:" [ref=e56]:
+                - /placeholder: CURP
+          - group [ref=e57]:
+            - button "Buscar" [ref=e58] [cursor=pointer]
+            - button "Limpiar" [ref=e59] [cursor=pointer]
+            - button "Descargar CSV" [disabled] [ref=e60]: Descargar CSV 
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - heading "Aviso Importante" [level=5] [ref=e64]
+          - button "×" [ref=e65] [cursor=pointer]
+        - paragraph [ref=e67]:
+          - text: ATENCIÓN PROFESIONISTAS
+          - text: Trámites profesionales ahora 100% digitales
+          - text: La Dirección General de Profesiones informa que, a partir del 17 de marzo de 2026, las constancias profesionales podrán tramitarse completamente en línea, de forma rápida, segura y sin necesidad de acudir de manera presencial.
+          - text: "Constancias disponibles:"
+          - text: • Título en trámite
+          - text: • Pasante
+          - text: • No sanción
+          - text: "Puedes solicitar tu constancia en:"
+          - link "https://tramitesprofesiones.sep.gob.mx" [ref=e68] [cursor=pointer]:
+            - /url: https://tramitesprofesiones.sep.gob.mx
+          - text: "Solo necesitarás:"
+          - text: • Llave MX
+          - text: • e.firma vigente
+          - text: • Tarjeta bancaria para pago en línea
+          - text: "Además, recuerda que la expedición de cédula profesional y la solicitud de duplicados continúan disponibles en línea en:"
+          - link "https://siurp.sep.gob.mx/mvc/cedulaElectronica" [ref=e69] [cursor=pointer]:
+            - /url: https://siurp.sep.gob.mx/mvc/cedulaElectronica
+          - text: "Requisitos:"
+          - text: • CURP
+          - text: • e.firma vigente
+          - text: • Tarjeta bancaria para pago en línea
+          - text: "También puedes vincular tu CURP al Registro Profesional en:"
+          - link "Vinculación de CURP" [ref=e70] [cursor=pointer]:
+            - /url: https://siurp.sep.gob.mx/mvc/profesionista/tramites/vinculacion-curp
+          - text: "Nota importante: La Dirección General de Profesiones no registra títulos profesionales de estudios realizados en México. El registro del título lo realiza directamente la institución educativa que lo expide."
+  - contentinfo [ref=e71]: RNP v1.6.7

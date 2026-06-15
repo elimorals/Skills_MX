@@ -1,0 +1,418 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwi49dy744mVAxVQnCYFHYdnIJ0QPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: consulta multas vehiculares jalisco placa sitio:jalisco.gob.mx consulta multas vehiculares jalisco placa sitio:jalisco.gob.mx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dconsulta%2Bmultas%2Bvehiculares%2Bjalisco%2Bplaca%2Bsitio:jalisco.gob.mx&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgjRpJxKskhs3w0qljhfMzXflg20N83YcQy19g18AXLltAw8DyrmQVx0d4okss435zDQ7miqaM-u2PsL8ZzYeM-4166HQR6a5163ZTkvrihWU_YVbbzX5k9kWBavs5f4P-NZJshQ&aep=1&ntc=1&sa=X&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q2J8OegQIERAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgjRpJxKskhs3w0qljhfMzXflg20N83YcQy19g18AXLltAw8DyrmQVx0d4okss435zDQ7miqaM-u2PsL8ZzYeM-4166HQR6a5163ZTkvrihWU_YVbbzX5k9kWBavs5f4P-NZJshQ&sa=X&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q0pQJegQIFxAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Imágenes" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgjRpJxKskhs3w0qljhfMzXflg20N83YcQy19g18AXLltAw8DyrmQVx0d4okss435zDQ7miqaM-u2PsL8ZzYeM-4166HQR6a5163ZTkvrihWU_YVbbzX5k9kWBavs5f4P-NZJshQ&q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&sa=X&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0QtKgLegQIFhAB
+              - generic [ref=e88]: Imágenes
+          - listitem [ref=e89]:
+            - link "Shopping" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgjRpJxKskhs3w0qljhfMzXflg20N83YcQy19g18AXLltAw8DyrmQVx0d4okss435zDQ7miqaM-u2PsL8ZzYeM-4166HQR6a5163ZTkvrihWU_YVbbzX5k9kWBavs5f4P-NZJshQ&q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e92]: Shopping
+          - listitem [ref=e93]:
+            - link "Maps" [ref=e94] [cursor=pointer]:
+              - /url: https://maps.google.com/maps?sca_esv=c6c16ab1eb0a4421&output=search&q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgjRpJxKskhs3w0qljhfMzXflg20N83YcQy19g18AXLltAw8DyrmQVx0d4okss435zDQ7miqaM-u2PsL8ZzYeM-4166HQR6a5163ZTkvrihWU_YVbbzX5k9kWBavs5f4P-NZJshQ&entry=mc&ved=1t:200715&ictx=111
+              - generic [ref=e96]: Maps
+          - listitem [ref=e97]:
+            - link "Videos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgjRpJxKskhs3w0qljhfMzXflg20N83YcQy19g18AXLltAw8DyrmQVx0d4okss435zDQ7miqaM-u2PsL8ZzYeM-4166HQR6a5163ZTkvrihWU_YVbbzX5k9kWBavs5f4P-NZJshQ&q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&sa=X&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0QtKgLegQIFBAB
+              - generic [ref=e100]: Videos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - generic [ref=e122]:
+      - generic [ref=e141]:
+        - generic [ref=e143]:
+          - generic [ref=e145]:
+            - generic [ref=e146]:
+              - img [ref=e147]
+              - heading "Visión general creada por IA" [level=2] [ref=e149]
+            - button "Escuchar" [ref=e153]:
+              - img [ref=e158] [cursor=pointer]
+            - button "Acerca de este resultado" [ref=e163]:
+              - img [ref=e165]
+          - generic [ref=e185]:
+            - generic [ref=e188]:
+              - generic [ref=e189]:
+                - text: Para consultar multas vehiculares en Jalisco, ingresa al portal oficial de
+                - link "Gobierno en Línea de Jalisco" [ref=e191] [cursor=pointer]:
+                  - /url: https://gobiernoenlinea1.jalisco.gob.mx/serviciosVehiculares/adeudos
+                - text: .
+                - mark [ref=e192]:
+                  - text: En el sitio web deberás proporcionar tu
+                  - strong [ref=e193]: número de placa
+                  - text: ", los últimos 5 dígitos del"
+                  - strong [ref=e194]: número de serie (NIV)
+                  - text: y otros datos de la tarjeta de circulación
+                - text: .
+                - button "Ver vínculos relacionados" [ref=e197] [cursor=pointer]:
+                  - img [ref=e200]
+              - generic [ref=e202]:
+                - text: Si necesitas asistencia para realizar el trámite o verificar adeudos, el sistema también puede ser consultado mediante la aplicación oficial de la
+                - link "Secretaría de la Hacienda Pública en Google Play" [ref=e204] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=mx.gob.jalisco.gobiernoenlinea2&hl=es_MX
+                - text: .
+              - generic [ref=e206]: "Si prefieres verificar a nivel municipal o tienes dudas, dime:"
+              - list [ref=e208]:
+                - listitem [ref=e209]:
+                  - generic [ref=e210]:
+                    - text: ¿La infracción ocurrió dentro del
+                    - strong [ref=e211]: Área Metropolitana de Guadalajara
+                    - text: "?"
+                - listitem [ref=e212]:
+                  - generic [ref=e213]:
+                    - text: ¿Cuentas a la mano con tu
+                    - strong [ref=e214]: tarjeta de circulación
+                    - text: para ingresar el número de motor o serie?
+              - generic [ref=e216]: Puedo guiarte para obtener tu línea de captura y conocer los descuentos aplicables vigentes.
+            - generic [ref=e221]:
+              - generic [ref=e223]:
+                - button
+                - button "Acerca de este resultado" [ref=e228] [cursor=pointer]:
+                  - img [ref=e230]
+              - list [ref=e233]:
+                - listitem [ref=e234]:
+                  - generic [ref=e235]:
+                    - 'link "▷ Multas Jalisco 2026: Cómo consultarlas y Costos - miituo seguros. Se abrirá en una pestaña nueva." [ref=e236] [cursor=pointer]':
+                      - /url: https://miituo.com/blog/costo-multas-jalisco/
+                    - generic [ref=e237]:
+                      - generic [ref=e239]:
+                        - generic [ref=e240]: "▷ Multas Jalisco 2026: Cómo consultarlas y Costos - miituo seguros"
+                        - generic [ref=e241]: 26 ene 2026 — Accede al portal de Gobierno en Línea Jalisco y consulta los adeudos que tienes. Escribe tu número de placas y número de serie. Br...
+                      - generic [ref=e243]:
+                        - generic [ref=e248]: miituo.com
+                        - button "Acerca de este resultado" [ref=e252] [cursor=pointer]:
+                          - img [ref=e254]
+                - listitem [ref=e258]:
+                  - generic [ref=e259]:
+                    - link "Vehicular - Adeudos - Gobierno de Jalisco en línea.. Se abrirá en una pestaña nueva." [ref=e260] [cursor=pointer]:
+                      - /url: https://gobiernoenlinea1.jalisco.gob.mx/serviciosVehiculares/adeudos
+                    - generic [ref=e261]:
+                      - generic [ref=e263]:
+                        - generic [ref=e264]: Vehicular - Adeudos - Gobierno de Jalisco en línea.
+                        - generic [ref=e265]: Para consultar los adeudos, proporcione la placa y al menos los últimos cinco caracteres del número de serie, nombre del propietar...
+                      - generic [ref=e267]:
+                        - generic [ref=e272]: Gobierno de Jalisco
+                        - button "Acerca de este resultado" [ref=e276] [cursor=pointer]:
+                          - img [ref=e278]
+                - listitem [ref=e282]:
+                  - generic [ref=e283]:
+                    - link "Pago de Multas de Tránsito en Jalisco 2026 - TramitaSeguro. Se abrirá en una pestaña nueva." [ref=e284] [cursor=pointer]:
+                      - /url: https://www.tramitaseguro.com/pago-multas-transito-jalisco/
+                    - generic [ref=e285]:
+                      - generic [ref=e287]:
+                        - generic [ref=e288]: Pago de Multas de Tránsito en Jalisco 2026 - TramitaSeguro
+                        - generic [ref=e289]: ¿Qué pasa si perdí mi ticket de infracción en Jalisco? No necesitas el ticket físico para consultar o pagar tus multas en Jalisco.
+                      - generic [ref=e290]:
+                        - generic [ref=e295]: TramitaSeguro
+                        - button "Acerca de este resultado" [ref=e299] [cursor=pointer]:
+                          - img [ref=e301]
+              - button "Mostrar todos los vínculos relacionados" [ref=e305] [cursor=pointer]:
+                - generic [ref=e306]: Mostrar todo
+        - button "Mostrar más Visión general creada por IA" [ref=e310]:
+          - generic [ref=e312] [cursor=pointer]:
+            - generic [ref=e313]: Mostrar más
+            - img [ref=e315]
+      - main [ref=e318]:
+        - generic [ref=e322]:
+          - generic [ref=e325]:
+            - heading "Resultados web" [level=2] [ref=e326]
+            - generic [ref=e327]:
+              - generic [ref=e330]:
+                - link "Vehicular - Adeudos Gobierno de Jalisco https://gobiernoenlinea1.jalisco.gob.mx › adeudos" [ref=e332] [cursor=pointer]:
+                  - /url: https://gobiernoenlinea1.jalisco.gob.mx/serviciosVehiculares/adeudos
+                  - heading "Vehicular - Adeudos" [level=3] [ref=e333]
+                  - generic [ref=e335]:
+                    - img [ref=e340]
+                    - generic [ref=e342]:
+                      - generic [ref=e344]: Gobierno de Jalisco
+                      - generic [ref=e346]: https://gobiernoenlinea1.jalisco.gob.mx › adeudos
+                - button "Acerca de este resultado" [ref=e347] [cursor=pointer]:
+                  - img [ref=e350]
+              - generic [ref=e354]:
+                - text: Para
+                - emphasis [ref=e355]: consultar
+                - text: los adeudos, proporcione la
+                - emphasis [ref=e356]: placa
+                - text: y al menos los últimos cinco caracteres del número de serie, nombre del propietario, número de motor de su ...
+              - generic [ref=e358]:
+                - text: "Falta(n): sitio: ‎| Realizar una búsqueda con lo siguiente:"
+                - link "sitio:" [ref=e359] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=consulta+multas+vehiculares+jalisco+placa+%22sitio:%22+jalisco.gob.mx&sa=X&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q5t4CegQIHBAB
+          - generic [ref=e363]:
+            - generic [ref=e366]:
+              - link "Consulta de Multas - Gobierno de Guadalajara Gobierno de Guadalajara https://ssim.guadalajara.gob.mx" [ref=e368] [cursor=pointer]:
+                - /url: https://ssim.guadalajara.gob.mx/
+                - heading "Consulta de Multas - Gobierno de Guadalajara" [level=3] [ref=e369]
+                - generic [ref=e375]:
+                  - generic [ref=e377]: Gobierno de Guadalajara
+                  - generic [ref=e379]: https://ssim.guadalajara.gob.mx
+              - button "Acerca de este resultado" [ref=e380] [cursor=pointer]:
+                - img [ref=e383]
+            - generic [ref=e387]:
+              - text: Consultar Placa.
+              - emphasis [ref=e388]: Ingresa tu placa para consultar tus multas y pagar en línea
+              - text: "... contacto@guadalajara.gob.mx; Números Telefónicos: 3837-4400. Enlaces. Mapa del ..."
+          - generic [ref=e392]:
+            - generic [ref=e395]:
+              - link "Servicios en Línea Gobierno de Jalisco https://gobiernoenlinea1.jalisco.gob.mx › spelweb" [ref=e397] [cursor=pointer]:
+                - /url: https://gobiernoenlinea1.jalisco.gob.mx/spelweb/
+                - heading "Servicios en Línea" [level=3] [ref=e398]
+                - generic [ref=e400]:
+                  - img [ref=e405]
+                  - generic [ref=e407]:
+                    - generic [ref=e409]: Gobierno de Jalisco
+                    - generic [ref=e411]: https://gobiernoenlinea1.jalisco.gob.mx › spelweb
+              - button "Acerca de este resultado" [ref=e412] [cursor=pointer]:
+                - img [ref=e415]
+            - generic [ref=e419]:
+              - text: Adeudos Vehiculares ·
+              - emphasis [ref=e420]: Consulte y efectúe el pago de multas y refrendos
+              - text: . ; Mapas de Recaudadoras · Localiza las oficinas para realizar tus trámites. ; Impuestos ...
+            - generic [ref=e422]:
+              - text: "Falta(n): sitio: ‎| Realizar una búsqueda con lo siguiente:"
+              - link "sitio:" [ref=e423] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=consulta+multas+vehiculares+jalisco+placa+%22sitio:%22+jalisco.gob.mx&sa=X&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q5t4CegQIORAB
+          - generic [ref=e428]:
+            - heading "Más preguntas" [level=2] [ref=e430]
+            - generic [ref=e431]:
+              - button "¿Cómo revisar si tengo multas de tránsito en Jalisco?" [ref=e437] [cursor=pointer]:
+                - generic [ref=e439]: ¿Cómo revisar si tengo multas de tránsito en Jalisco?
+                - img [ref=e442]
+              - button "¿Cómo checar adeudos de placas en Jalisco?" [ref=e451] [cursor=pointer]:
+                - generic [ref=e453]: ¿Cómo checar adeudos de placas en Jalisco?
+                - img [ref=e456]
+              - button "¿Cuándo empiezan las multas por placas en Jalisco?" [ref=e465] [cursor=pointer]:
+                - generic [ref=e467]: ¿Cuándo empiezan las multas por placas en Jalisco?
+                - img [ref=e470]
+              - button "¿Cómo checar cuánto debo de placas?" [ref=e479] [cursor=pointer]:
+                - generic [ref=e481]: ¿Cómo checar cuánto debo de placas?
+                - img [ref=e484]
+          - generic [ref=e489]:
+            - heading "Resultados web" [level=2] [ref=e490]
+            - generic [ref=e491]:
+              - generic [ref=e494]:
+                - link "Pago de Multas de Tránsito en Jalisco 2026 – Consulta y ... TramitaSeguro https://www.tramitaseguro.com › pago-multas-transito-j..." [ref=e496] [cursor=pointer]:
+                  - /url: https://www.tramitaseguro.com/pago-multas-transito-jalisco/
+                  - heading "Pago de Multas de Tránsito en Jalisco 2026 – Consulta y ..." [level=3] [ref=e497]
+                  - generic [ref=e503]:
+                    - generic [ref=e505]: TramitaSeguro
+                    - generic [ref=e507]: https://www.tramitaseguro.com › pago-multas-transito-j...
+                - button "Acerca de este resultado" [ref=e508] [cursor=pointer]:
+                  - img [ref=e511]
+              - generic [ref=e515]:
+                - text: Puedes
+                - emphasis [ref=e516]: consultar
+                - text: todas tus infracciones pendientes ingresando únicamente tu número de
+                - emphasis [ref=e517]: placa vehicular
+                - text: y los últimos 5 dígitos del número de serie (VIN) en ...
+              - generic [ref=e519]:
+                - text: "Falta(n): sitio: ‎| Realizar una búsqueda con lo siguiente:"
+                - link "sitio:" [ref=e520] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=consulta+multas+vehiculares+jalisco+placa+%22sitio:%22+jalisco.gob.mx&sa=X&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q5t4CegQIQRAB
+          - generic [ref=e524]:
+            - generic [ref=e527]:
+              - link "inicio | Secretaría de la Hacienda - Gobierno de Jalisco Secretaría de la Hacienda Pública https://hacienda.jalisco.gob.mx" [ref=e529] [cursor=pointer]:
+                - /url: https://hacienda.jalisco.gob.mx/
+                - heading "inicio | Secretaría de la Hacienda - Gobierno de Jalisco" [level=3] [ref=e530]
+                - generic [ref=e536]:
+                  - generic [ref=e538]: Secretaría de la Hacienda Pública
+                  - generic [ref=e540]: https://hacienda.jalisco.gob.mx
+              - button "Acerca de este resultado" [ref=e541] [cursor=pointer]:
+                - img [ref=e544]
+            - generic [ref=e548]:
+              - text: Orientación de trámites y servicios de impuesto estatales y
+              - emphasis [ref=e549]: vehiculares
+              - text: . CATSET en el teléfono 333668 1700 o en el chat, dando click en el botón de atención al ...
+          - generic [ref=e553]:
+            - generic [ref=e556]:
+              - link "Recibos de Pagos Electrónicos de Multas de Movilidad ... Gobierno de Guadalajara https://pagoenlinea.guadalajara.gob.mx › recibosmovili..." [ref=e558] [cursor=pointer]:
+                - /url: https://pagoenlinea.guadalajara.gob.mx/recibosmovilidad/
+                - heading "Recibos de Pagos Electrónicos de Multas de Movilidad ..." [level=3] [ref=e559]
+                - generic [ref=e565]:
+                  - generic [ref=e567]: Gobierno de Guadalajara
+                  - generic [ref=e569]: https://pagoenlinea.guadalajara.gob.mx › recibosmovili...
+              - button "Acerca de este resultado" [ref=e570] [cursor=pointer]:
+                - img [ref=e573]
+            - generic [ref=e577]:
+              - text: Introduciendo los datos que a continuación se le solicitan, podrá hacer la
+              - emphasis [ref=e578]: consulta
+              - text: de los pagos de
+              - emphasis [ref=e579]: multas
+              - text: de estacionometros realizados de manera ...
+            - generic [ref=e581]:
+              - text: "Falta(n): sitio: ‎| Realizar una búsqueda con lo siguiente:"
+              - link "sitio:" [ref=e582] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=consulta+multas+vehiculares+jalisco+placa+%22sitio:%22+jalisco.gob.mx&sa=X&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q5t4CegQIOhAB
+          - generic [ref=e586]:
+            - generic [ref=e589]:
+              - 'link "▷ Multas Jalisco 2026: Cómo consultarlas y Costos miituo.com https://miituo.com › Blog" [ref=e591] [cursor=pointer]':
+                - /url: https://miituo.com/blog/costo-multas-jalisco/
+                - 'heading "▷ Multas Jalisco 2026: Cómo consultarlas y Costos" [level=3] [ref=e592]'
+                - generic [ref=e598]:
+                  - generic [ref=e600]: miituo.com
+                  - generic [ref=e602]: https://miituo.com › Blog
+              - button "Acerca de este resultado" [ref=e603] [cursor=pointer]:
+                - img [ref=e606]
+            - generic [ref=e609]:
+              - generic [ref=e610]: 26 ene 2026 —
+              - generic [ref=e611]:
+                - emphasis [ref=e612]: Accede al portal de Gobierno en Línea Jalisco y consulta los adeudos que tienes
+                - text: . · Escribe tu número de placas y número de serie. · Brinda el ...
+            - 'img "Calificación: 4.9 de 5, (2,597) opiniones de usuarios" [ref=e617]':
+              - text: "4.9"
+              - img [ref=e618]
+              - text: (2,597)
+          - generic [ref=e624]:
+            - generic [ref=e627]:
+              - link "¿Cómo consultar multas vehiculares en Jalisco? Rastreator.mx https://www.rastreator.mx › ... › Articulos Destacados" [ref=e629] [cursor=pointer]:
+                - /url: https://www.rastreator.mx/seguros-de-auto/articulos-destacados/consulta-de-multas-jalisco
+                - heading "¿Cómo consultar multas vehiculares en Jalisco?" [level=3] [ref=e630]
+                - generic [ref=e636]:
+                  - generic [ref=e638]: Rastreator.mx
+                  - generic [ref=e640]: https://www.rastreator.mx › ... › Articulos Destacados
+              - button "Acerca de este resultado" [ref=e641] [cursor=pointer]:
+                - img [ref=e644]
+            - generic [ref=e647]:
+              - generic [ref=e648]: 13 mar 2023 —
+              - generic [ref=e649]:
+                - text: Para
+                - emphasis [ref=e650]: consultar
+                - text: tus
+                - emphasis [ref=e651]: multas
+                - text: necesitas ingresar al portal de Adeudos
+                - emphasis [ref=e652]: Vehiculares
+                - text: de la Secretaría de la Hacienda Pública de
+                - emphasis [ref=e653]: Jalisco
+                - text: en el link www.
+          - generic [ref=e657]:
+            - generic [ref=e660]:
+              - link "REPUVE Consulta Ciudadana repuve.gob.mx https://www2.repuve.gob.mx › ciudadania" [ref=e662] [cursor=pointer]:
+                - /url: https://www2.repuve.gob.mx:8443/ciudadania/
+                - heading "REPUVE Consulta Ciudadana" [level=3] [ref=e663]
+                - generic [ref=e665]:
+                  - img [ref=e670]
+                  - generic [ref=e672]:
+                    - generic [ref=e674]: repuve.gob.mx
+                    - generic [ref=e676]: https://www2.repuve.gob.mx › ciudadania
+              - button "Acerca de este resultado" [ref=e677] [cursor=pointer]:
+                - img [ref=e680]
+            - generic [ref=e684]:
+              - emphasis [ref=e685]: Consulta
+              - text: Ciudadana. POR FAVOR, INGRESE SÓLO UN CRITERIO DE BÚSQUEDA. Número de
+              - emphasis [ref=e686]: Placa
+              - text: (sin guiones ni espacios) (5-7 dígitos):. Número de Identificación ...
+        - navigation [ref=e689]:
+          - heading "Navegación de páginas" [level=1] [ref=e690]
+          - text: "1"
+          - link "Page 2" [ref=e693] [cursor=pointer]:
+            - /url: /search?q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=Rzcwavg10Lia2Q-Hz4HpCQ&start=10&sa=N&sstk=AU9db-BxUiQCcNF6NUcuN2sBo20U17oOqBEq3Ut3I3XsGps5V7v1pIV8uSIMzpUPai0_yGVhhFPTKTILAu8x34zuwT_rlpZi27lwIg&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q8tMDegQIHxAE
+            - text: "2"
+          - link "Page 3" [ref=e695] [cursor=pointer]:
+            - /url: /search?q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=Rzcwavg10Lia2Q-Hz4HpCQ&start=20&sa=N&sstk=AU9db-BxUiQCcNF6NUcuN2sBo20U17oOqBEq3Ut3I3XsGps5V7v1pIV8uSIMzpUPai0_yGVhhFPTKTILAu8x34zuwT_rlpZi27lwIg&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q8tMDegQIHxAG
+            - text: "3"
+          - link "Page 4" [ref=e697] [cursor=pointer]:
+            - /url: /search?q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=Rzcwavg10Lia2Q-Hz4HpCQ&start=30&sa=N&sstk=AU9db-BxUiQCcNF6NUcuN2sBo20U17oOqBEq3Ut3I3XsGps5V7v1pIV8uSIMzpUPai0_yGVhhFPTKTILAu8x34zuwT_rlpZi27lwIg&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q8tMDegQIHxAI
+            - text: "4"
+          - link "Page 5" [ref=e699] [cursor=pointer]:
+            - /url: /search?q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=Rzcwavg10Lia2Q-Hz4HpCQ&start=40&sa=N&sstk=AU9db-BxUiQCcNF6NUcuN2sBo20U17oOqBEq3Ut3I3XsGps5V7v1pIV8uSIMzpUPai0_yGVhhFPTKTILAu8x34zuwT_rlpZi27lwIg&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q8tMDegQIHxAK
+            - text: "5"
+          - link "Page 6" [ref=e701] [cursor=pointer]:
+            - /url: /search?q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=Rzcwavg10Lia2Q-Hz4HpCQ&start=50&sa=N&sstk=AU9db-BxUiQCcNF6NUcuN2sBo20U17oOqBEq3Ut3I3XsGps5V7v1pIV8uSIMzpUPai0_yGVhhFPTKTILAu8x34zuwT_rlpZi27lwIg&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q8tMDegQIHxAM
+            - text: "6"
+          - link "Page 7" [ref=e703] [cursor=pointer]:
+            - /url: /search?q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=Rzcwavg10Lia2Q-Hz4HpCQ&start=60&sa=N&sstk=AU9db-BxUiQCcNF6NUcuN2sBo20U17oOqBEq3Ut3I3XsGps5V7v1pIV8uSIMzpUPai0_yGVhhFPTKTILAu8x34zuwT_rlpZi27lwIg&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q8tMDegQIHxAO
+            - text: "7"
+          - link "Page 8" [ref=e705] [cursor=pointer]:
+            - /url: /search?q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=Rzcwavg10Lia2Q-Hz4HpCQ&start=70&sa=N&sstk=AU9db-BxUiQCcNF6NUcuN2sBo20U17oOqBEq3Ut3I3XsGps5V7v1pIV8uSIMzpUPai0_yGVhhFPTKTILAu8x34zuwT_rlpZi27lwIg&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q8tMDegQIHxAQ
+            - text: "8"
+          - link "Page 9" [ref=e707] [cursor=pointer]:
+            - /url: /search?q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=Rzcwavg10Lia2Q-Hz4HpCQ&start=80&sa=N&sstk=AU9db-BxUiQCcNF6NUcuN2sBo20U17oOqBEq3Ut3I3XsGps5V7v1pIV8uSIMzpUPai0_yGVhhFPTKTILAu8x34zuwT_rlpZi27lwIg&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q8tMDegQIHxAS
+            - text: "9"
+          - link "Page 10" [ref=e709] [cursor=pointer]:
+            - /url: /search?q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=Rzcwavg10Lia2Q-Hz4HpCQ&start=90&sa=N&sstk=AU9db-BxUiQCcNF6NUcuN2sBo20U17oOqBEq3Ut3I3XsGps5V7v1pIV8uSIMzpUPai0_yGVhhFPTKTILAu8x34zuwT_rlpZi27lwIg&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q8tMDegQIHxAU
+            - text: "10"
+          - heading "Siguiente" [level=2] [ref=e711]:
+            - link "Siguiente" [ref=e712] [cursor=pointer]:
+              - /url: /search?q=consulta+multas+vehiculares+jalisco+placa+sitio:jalisco.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=Rzcwavg10Lia2Q-Hz4HpCQ&start=10&sa=N&sstk=AU9db-BxUiQCcNF6NUcuN2sBo20U17oOqBEq3Ut3I3XsGps5V7v1pIV8uSIMzpUPai0_yGVhhFPTKTILAu8x34zuwT_rlpZi27lwIg&ved=2ahUKEwi49dy744mVAxVQnCYFHYdnIJ0Q8NMDegQIHxAW
+              - generic [ref=e714]: Siguiente
+        - navigation
+    - contentinfo [ref=e715]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e716]
+      - generic [ref=e720]:
+        - generic [ref=e722]:
+          - text: México
+          - generic [ref=e724]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - A través de tu dirección IP" [ref=e726] [cursor=pointer]:
+              - generic [ref=e727]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e729]:
+                - text: "-"
+                - generic [ref=e730]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e732] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e735]:
+          - link "Ayuda" [ref=e736] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e737] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e738] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e739] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

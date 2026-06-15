@@ -1,0 +1,820 @@
+- generic [active] [ref=e1]:
+  - navigation "Enlaces rápidos":
+    - list:
+      - listitem:
+        - link "Saltar al contenido" [ref=e2] [cursor=pointer]:
+          - /url: "#main-content"
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - generic:
+            - navigation [ref=e8]:
+              - link "Hogar" [ref=e9] [cursor=pointer]:
+                - /url: /web/hogar/
+              - link "Negocio" [ref=e10] [cursor=pointer]:
+                - /url: /web/negocios
+              - link "Empresa" [ref=e11] [cursor=pointer]:
+                - /url: /web/empresas
+              - link "Gamers" [ref=e12] [cursor=pointer]:
+                - /url: /web/hogar/gamers
+            - navigation [ref=e13]:
+              - link "|" [ref=e14] [cursor=pointer]:
+                - /url: https://distintivodigital.profeco.gob.mx/consulta/DA26TBQ1111350
+              - link "Ayuda" [ref=e15] [cursor=pointer]:
+                - /url: /web/asistencia/home
+                - text: Ayuda|
+              - link "Centros de Atención Telmex - Sitios WiFi" [ref=e16] [cursor=pointer]:
+                - /url: /web/buscador/lugares
+                - text: Centros de Atención Telmex - Sitios WiFi|
+              - generic [ref=e17]: a- A+
+        - generic [ref=e19]:
+          - generic [ref=e21]:
+            - link "Telmex" [ref=e22] [cursor=pointer]:
+              - /url: /web/hogar/home
+              - img "Telmex" [ref=e23]
+            - navigation [ref=e24]:
+              - list [ref=e25]:
+                - listitem [ref=e26]:
+                  - link "Servicios" [ref=e27] [cursor=pointer]:
+                    - /url: ""
+                - listitem [ref=e28]:
+                  - link "Mi Telmex" [ref=e29] [cursor=pointer]:
+                    - /url: /web/hogar/mi-telmex
+                - listitem [ref=e30]:
+                  - link "Cobertura" [ref=e31] [cursor=pointer]:
+                    - /url: /web/hogar/mesh-huawei-wifi
+                - listitem [ref=e32]:
+                  - link "Tienda en línea" [ref=e33] [cursor=pointer]:
+                    - /url: https://tienda.telmex.com/shell/af/home.do
+                  - list:
+                    - listitem
+                - listitem [ref=e34]:
+                  - link "Portabilidad" [ref=e35] [cursor=pointer]:
+                    - /url: /web/hogar/cambiate-a-telmex
+                  - list:
+                    - listitem
+                - listitem [ref=e36]:
+                  - link "Paga tu Recibo" [ref=e37] [cursor=pointer]:
+                    - /url: /web/guest/pago_sin_login
+                  - list:
+                    - listitem
+          - generic [ref=e38]:
+            - strong [ref=e41] [cursor=pointer]: Mi cuenta
+            - generic [ref=e43]:
+              - textbox "Buscar en Telmex" [ref=e44]
+              - button "Buscar en Telmex" [ref=e45] [cursor=pointer]
+    - generic [ref=e46]:
+      - heading "Internet Infinitum y teléfono con llamadas ilimitadas para tu casa - Hogar" [level=2] [ref=e47]
+      - main [ref=e48]:
+        - paragraph [ref=e62]:
+          - text: Domicilia con cargo a tu tarjeta de crédito o débito (Visa, Mastercard o American Express). Aplica la primer plataforma al contratar y la segunda al domiciliar en cualquier Paquete. F1 TV solo aplica al domiciliar.
+          - strong [ref=e63]: Vigencia al 30 de junio de 2026.
+        - generic [ref=e82]:
+          - heading "Paquetes Infinitum" [level=1] [ref=e84]
+          - generic [ref=e85]:
+            - generic [ref=e86]:
+              - paragraph [ref=e88] [cursor=pointer]: Telefonía + Internet
+              - paragraph [ref=e92] [cursor=pointer]: Solo Internet
+            - generic [ref=e94]:
+              - button "Previous" [ref=e95] [cursor=pointer]
+              - generic [ref=e97]:
+                - button [ref=e98] [cursor=pointer]:
+                  - generic [ref=e99]:
+                    - heading [level=3] [ref=e100]: 500Megas
+                    - paragraph [ref=e101]: 350 megas de subida
+                  - generic [ref=e102]: $649 al mes
+                  - generic [ref=e104]:
+                    - generic [ref=e105]: PROMOCIONES
+                    - paragraph [ref=e106]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e107]:
+                      - generic [ref=e108]:
+                        - checkbox [ref=e109]
+                        - img [ref=e112]
+                      - generic [ref=e113]:
+                        - checkbox [ref=e114]
+                        - img [ref=e116]
+                      - generic [ref=e117]:
+                        - checkbox [ref=e118]
+                        - img [ref=e120]
+                    - paragraph [ref=e121]: 6 meses van por nuestra cuenta
+                    - generic [ref=e123]:
+                      - img [ref=e124]
+                      - generic [ref=e125]: Incluido
+                  - link [ref=e127]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI64&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e129]: Deseo contratar sin domiciliar
+                - button [ref=e130] [cursor=pointer]:
+                  - generic [ref=e131]:
+                    - heading [level=3] [ref=e132]: 600Megas
+                    - paragraph [ref=e133]: 350 megas de subida
+                  - generic [ref=e134]: $725 al mes
+                  - generic [ref=e136]:
+                    - generic [ref=e137]: PROMOCIONES
+                    - paragraph [ref=e138]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e139]:
+                      - generic [ref=e140]:
+                        - checkbox [ref=e141]
+                        - img [ref=e144]
+                      - generic [ref=e145]:
+                        - checkbox [ref=e146]
+                        - img [ref=e148]
+                      - generic [ref=e149]:
+                        - checkbox [ref=e150]
+                        - img [ref=e152]
+                    - paragraph [ref=e153]: 6 meses van por nuestra cuenta
+                    - generic [ref=e155]:
+                      - img [ref=e156]
+                      - generic [ref=e157]: Incluido
+                  - link [ref=e159]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI70&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e161]: Deseo contratar sin domiciliar
+                - button [ref=e162] [cursor=pointer]:
+                  - generic [ref=e163]:
+                    - heading [level=3] [ref=e164]: 850Megas
+                    - paragraph [ref=e165]: 350 megas de subida
+                  - generic [ref=e166]: $999 al mes
+                  - generic [ref=e168]:
+                    - generic [ref=e169]: PROMOCIONES
+                    - paragraph [ref=e170]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e171]:
+                      - generic [ref=e172]:
+                        - checkbox [ref=e173]
+                        - img [ref=e176]
+                      - generic [ref=e177]:
+                        - checkbox [ref=e178]
+                        - img [ref=e180]
+                      - generic [ref=e181]:
+                        - checkbox [ref=e182]
+                        - img [ref=e184]
+                    - paragraph [ref=e185]: 6 meses van por nuestra cuenta
+                    - generic [ref=e187]:
+                      - img [ref=e188]
+                      - generic [ref=e189]: Incluido
+                  - link [ref=e191]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI25&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e193]: Deseo contratar sin domiciliar
+                - button [ref=e194] [cursor=pointer]:
+                  - generic [ref=e195]:
+                    - heading [level=3] [ref=e196]: 1000Megas
+                    - paragraph [ref=e197]: 350 megas de subida
+                  - generic [ref=e198]: $1,399 al mes
+                  - generic [ref=e200]:
+                    - generic [ref=e201]: PROMOCIONES
+                    - paragraph [ref=e202]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e203]:
+                      - generic [ref=e204]:
+                        - checkbox [ref=e205]
+                        - img [ref=e208]
+                      - generic [ref=e209]:
+                        - checkbox [ref=e210]
+                        - img [ref=e212]
+                      - generic [ref=e213]:
+                        - checkbox [ref=e214]
+                        - img [ref=e216]
+                    - paragraph [ref=e217]: 6 meses van por nuestra cuenta
+                    - generic [ref=e219]:
+                      - img [ref=e220]
+                      - generic [ref=e221]: Incluido
+                  - link [ref=e223]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI62&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e225]: Deseo contratar sin domiciliar
+                - button "Contrata 389" [ref=e226] [cursor=pointer]:
+                  - generic [ref=e227]:
+                    - heading "120Megas" [level=3] [ref=e228]
+                    - paragraph [ref=e229]: de subida y de bajada
+                  - generic [ref=e230]: $389 al mes
+                  - generic [ref=e232]:
+                    - generic [ref=e233]: PROMOCIONES
+                    - paragraph [ref=e234]:
+                      - text: Al contratar
+                      - text: Domicíliate y
+                      - text: Elige 2 de 3
+                    - generic [ref=e235]:
+                      - generic [ref=e236]:
+                        - checkbox "Netflix" [ref=e237]
+                        - img "Netflix" [ref=e240]
+                      - generic [ref=e241]:
+                        - checkbox "HBO Max" [ref=e242]
+                        - img "HBO Max" [ref=e244]
+                      - generic [ref=e245]:
+                        - checkbox "F1 TV" [ref=e246]
+                        - img "F1 TV" [ref=e248]
+                    - paragraph [ref=e249]: 6 meses van por nuestra cuenta
+                    - generic [ref=e251]:
+                      - img "Universal" [ref=e252]
+                      - generic [ref=e253]: Incluido
+                  - link "INF19" [ref=e255]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=INF19&pnetflix=NFX07
+                    - text: Contratar
+                  - button "INF19" [ref=e257]: Deseo contratar sin domiciliar
+                - button "Contrata 435" [ref=e258] [cursor=pointer]:
+                  - generic [ref=e259]:
+                    - heading "150Megas" [level=3] [ref=e260]
+                    - paragraph [ref=e261]: de subida y de bajada
+                  - generic [ref=e262]: $435 al mes
+                  - generic [ref=e264]:
+                    - generic [ref=e265]: PROMOCIONES
+                    - paragraph [ref=e266]:
+                      - text: Al contratar
+                      - text: Domicíliate y
+                      - text: Elige 2 de 3
+                    - generic [ref=e267]:
+                      - generic [ref=e268]:
+                        - checkbox "Netflix" [ref=e269]
+                        - img "Netflix" [ref=e272]
+                      - generic [ref=e273]:
+                        - checkbox "HBO Max" [ref=e274]
+                        - img "HBO Max" [ref=e276]
+                      - generic [ref=e277]:
+                        - checkbox "F1 TV" [ref=e278]
+                        - img "F1 TV" [ref=e280]
+                    - paragraph [ref=e281]: 6 meses van por nuestra cuenta
+                    - generic [ref=e283]:
+                      - img "Universal" [ref=e284]
+                      - generic [ref=e285]: Incluido
+                  - link "Contratar" [ref=e287]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI42&pnetflix=NFX07
+                  - button "INF19" [ref=e289]: Deseo contratar sin domiciliar
+                - button "Contrata 499" [ref=e290] [cursor=pointer]:
+                  - generic [ref=e291]:
+                    - heading "250Megas" [level=3] [ref=e292]
+                    - paragraph [ref=e293]: de subida y de bajada
+                  - generic [ref=e294]: $499 al mes
+                  - generic [ref=e296]:
+                    - generic [ref=e297]: PROMOCIONES
+                    - paragraph [ref=e298]:
+                      - text: Al contratar
+                      - text: Domicíliate y
+                      - text: Elige 2 de 3
+                    - generic [ref=e299]:
+                      - generic [ref=e300]:
+                        - checkbox "Netflix" [ref=e301]
+                        - img "Netflix" [ref=e304]
+                      - generic [ref=e305]:
+                        - checkbox "HBO Max" [ref=e306]
+                        - img "HBO Max" [ref=e308]
+                      - generic [ref=e309]:
+                        - checkbox "F1 TV" [ref=e310]
+                        - img "F1 TV" [ref=e312]
+                    - paragraph [ref=e313]: 6 meses van por nuestra cuenta
+                    - generic [ref=e315]:
+                      - img "Universal" [ref=e316]
+                      - generic [ref=e317]: Incluido
+                  - link "Contratar" [ref=e319]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI43&pnetflix=NFX07
+                  - button "INF19" [ref=e321]: Deseo contratar sin domiciliar
+                - button "Contrata 599" [ref=e322] [cursor=pointer]:
+                  - generic [ref=e323]:
+                    - heading "350Megas" [level=3] [ref=e324]
+                    - paragraph [ref=e325]: de subida y de bajada
+                  - generic [ref=e326]: $599 al mes
+                  - generic [ref=e328]:
+                    - generic [ref=e329]: PROMOCIONES
+                    - paragraph [ref=e330]:
+                      - text: Al contratar
+                      - text: Domicíliate y
+                      - text: Elige 2 de 3
+                    - generic [ref=e331]:
+                      - generic [ref=e332]:
+                        - checkbox "Netflix" [ref=e333]
+                        - img "Netflix" [ref=e336]
+                      - generic [ref=e337]:
+                        - checkbox "HBO Max" [ref=e338]
+                        - img "HBO Max" [ref=e340]
+                      - generic [ref=e341]:
+                        - checkbox "F1 TV" [ref=e342]
+                        - img "F1 TV" [ref=e344]
+                    - paragraph [ref=e345]: 6 meses van por nuestra cuenta
+                    - generic [ref=e347]:
+                      - img "Universal" [ref=e348]
+                      - generic [ref=e349]: Incluido
+                  - link "Contratar" [ref=e351]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI32&pnetflix=NFX07
+                  - button "INF19" [ref=e353]: Deseo contratar sin domiciliar
+                - button [ref=e354] [cursor=pointer]:
+                  - generic [ref=e355]:
+                    - heading [level=3] [ref=e356]: 500Megas
+                    - paragraph [ref=e357]: 350 megas de subida
+                  - generic [ref=e358]: $649 al mes
+                  - generic [ref=e360]:
+                    - generic [ref=e361]: PROMOCIONES
+                    - paragraph [ref=e362]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e363]:
+                      - generic [ref=e364]:
+                        - checkbox [ref=e365]
+                        - img [ref=e368]
+                      - generic [ref=e369]:
+                        - checkbox [ref=e370]
+                        - img [ref=e372]
+                      - generic [ref=e373]:
+                        - checkbox [ref=e374]
+                        - img [ref=e376]
+                    - paragraph [ref=e377]: 6 meses van por nuestra cuenta
+                    - generic [ref=e379]:
+                      - img [ref=e380]
+                      - generic [ref=e381]: Incluido
+                  - link [ref=e383]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI64&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e385]: Deseo contratar sin domiciliar
+                - button [ref=e386] [cursor=pointer]:
+                  - generic [ref=e387]:
+                    - heading [level=3] [ref=e388]: 600Megas
+                    - paragraph [ref=e389]: 350 megas de subida
+                  - generic [ref=e390]: $725 al mes
+                  - generic [ref=e392]:
+                    - generic [ref=e393]: PROMOCIONES
+                    - paragraph [ref=e394]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e395]:
+                      - generic [ref=e396]:
+                        - checkbox [ref=e397]
+                        - img [ref=e400]
+                      - generic [ref=e401]:
+                        - checkbox [ref=e402]
+                        - img [ref=e404]
+                      - generic [ref=e405]:
+                        - checkbox [ref=e406]
+                        - img [ref=e408]
+                    - paragraph [ref=e409]: 6 meses van por nuestra cuenta
+                    - generic [ref=e411]:
+                      - img [ref=e412]
+                      - generic [ref=e413]: Incluido
+                  - link [ref=e415]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI70&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e417]: Deseo contratar sin domiciliar
+                - button [ref=e418] [cursor=pointer]:
+                  - generic [ref=e419]:
+                    - heading [level=3] [ref=e420]: 850Megas
+                    - paragraph [ref=e421]: 350 megas de subida
+                  - generic [ref=e422]: $999 al mes
+                  - generic [ref=e424]:
+                    - generic [ref=e425]: PROMOCIONES
+                    - paragraph [ref=e426]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e427]:
+                      - generic [ref=e428]:
+                        - checkbox [ref=e429]
+                        - img [ref=e432]
+                      - generic [ref=e433]:
+                        - checkbox [ref=e434]
+                        - img [ref=e436]
+                      - generic [ref=e437]:
+                        - checkbox [ref=e438]
+                        - img [ref=e440]
+                    - paragraph [ref=e441]: 6 meses van por nuestra cuenta
+                    - generic [ref=e443]:
+                      - img [ref=e444]
+                      - generic [ref=e445]: Incluido
+                  - link [ref=e447]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI25&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e449]: Deseo contratar sin domiciliar
+                - button [ref=e450] [cursor=pointer]:
+                  - generic [ref=e451]:
+                    - heading [level=3] [ref=e452]: 1000Megas
+                    - paragraph [ref=e453]: 350 megas de subida
+                  - generic [ref=e454]: $1,399 al mes
+                  - generic [ref=e456]:
+                    - generic [ref=e457]: PROMOCIONES
+                    - paragraph [ref=e458]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e459]:
+                      - generic [ref=e460]:
+                        - checkbox [ref=e461]
+                        - img [ref=e464]
+                      - generic [ref=e465]:
+                        - checkbox [ref=e466]
+                        - img [ref=e468]
+                      - generic [ref=e469]:
+                        - checkbox [ref=e470]
+                        - img [ref=e472]
+                    - paragraph [ref=e473]: 6 meses van por nuestra cuenta
+                    - generic [ref=e475]:
+                      - img [ref=e476]
+                      - generic [ref=e477]: Incluido
+                  - link [ref=e479]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI62&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e481]: Deseo contratar sin domiciliar
+                - button [ref=e482] [cursor=pointer]:
+                  - generic [ref=e483]:
+                    - heading [level=3] [ref=e484]: 120Megas
+                    - paragraph [ref=e485]: de subida y de bajada
+                  - generic [ref=e486]: $389 al mes
+                  - generic [ref=e488]:
+                    - generic [ref=e489]: PROMOCIONES
+                    - paragraph [ref=e490]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e491]:
+                      - generic [ref=e492]:
+                        - checkbox [ref=e493]
+                        - img [ref=e496]
+                      - generic [ref=e497]:
+                        - checkbox [ref=e498]
+                        - img [ref=e500]
+                      - generic [ref=e501]:
+                        - checkbox [ref=e502]
+                        - img [ref=e504]
+                    - paragraph [ref=e505]: 6 meses van por nuestra cuenta
+                    - generic [ref=e507]:
+                      - img [ref=e508]
+                      - generic [ref=e509]: Incluido
+                  - link [ref=e511]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=INF19&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e513]: Deseo contratar sin domiciliar
+                - button [ref=e514] [cursor=pointer]:
+                  - generic [ref=e515]:
+                    - heading [level=3] [ref=e516]: 150Megas
+                    - paragraph [ref=e517]: de subida y de bajada
+                  - generic [ref=e518]: $435 al mes
+                  - generic [ref=e520]:
+                    - generic [ref=e521]: PROMOCIONES
+                    - paragraph [ref=e522]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e523]:
+                      - generic [ref=e524]:
+                        - checkbox [ref=e525]
+                        - img [ref=e528]
+                      - generic [ref=e529]:
+                        - checkbox [ref=e530]
+                        - img [ref=e532]
+                      - generic [ref=e533]:
+                        - checkbox [ref=e534]
+                        - img [ref=e536]
+                    - paragraph [ref=e537]: 6 meses van por nuestra cuenta
+                    - generic [ref=e539]:
+                      - img [ref=e540]
+                      - generic [ref=e541]: Incluido
+                  - link [ref=e543]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI42&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e545]: Deseo contratar sin domiciliar
+                - button [ref=e546] [cursor=pointer]:
+                  - generic [ref=e547]:
+                    - heading [level=3] [ref=e548]: 250Megas
+                    - paragraph [ref=e549]: de subida y de bajada
+                  - generic [ref=e550]: $499 al mes
+                  - generic [ref=e552]:
+                    - generic [ref=e553]: PROMOCIONES
+                    - paragraph [ref=e554]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e555]:
+                      - generic [ref=e556]:
+                        - checkbox [ref=e557]
+                        - img [ref=e560]
+                      - generic [ref=e561]:
+                        - checkbox [ref=e562]
+                        - img [ref=e564]
+                      - generic [ref=e565]:
+                        - checkbox [ref=e566]
+                        - img [ref=e568]
+                    - paragraph [ref=e569]: 6 meses van por nuestra cuenta
+                    - generic [ref=e571]:
+                      - img [ref=e572]
+                      - generic [ref=e573]: Incluido
+                  - link [ref=e575]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI43&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e577]: Deseo contratar sin domiciliar
+                - button [ref=e578] [cursor=pointer]:
+                  - generic [ref=e579]:
+                    - heading [level=3] [ref=e580]: 350Megas
+                    - paragraph [ref=e581]: de subida y de bajada
+                  - generic [ref=e582]: $599 al mes
+                  - generic [ref=e584]:
+                    - generic [ref=e585]: PROMOCIONES
+                    - paragraph [ref=e586]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e587]:
+                      - generic [ref=e588]:
+                        - checkbox [ref=e589]
+                        - img [ref=e592]
+                      - generic [ref=e593]:
+                        - checkbox [ref=e594]
+                        - img [ref=e596]
+                      - generic [ref=e597]:
+                        - checkbox [ref=e598]
+                        - img [ref=e600]
+                    - paragraph [ref=e601]: 6 meses van por nuestra cuenta
+                    - generic [ref=e603]:
+                      - img [ref=e604]
+                      - generic [ref=e605]: Incluido
+                  - link [ref=e607]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI32&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e609]: Deseo contratar sin domiciliar
+                - button [ref=e610] [cursor=pointer]:
+                  - generic [ref=e611]:
+                    - heading [level=3] [ref=e612]: 500Megas
+                    - paragraph [ref=e613]: 350 megas de subida
+                  - generic [ref=e614]: $649 al mes
+                  - generic [ref=e616]:
+                    - generic [ref=e617]: PROMOCIONES
+                    - paragraph [ref=e618]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e619]:
+                      - generic [ref=e620]:
+                        - checkbox [ref=e621]
+                        - img [ref=e624]
+                      - generic [ref=e625]:
+                        - checkbox [ref=e626]
+                        - img [ref=e628]
+                      - generic [ref=e629]:
+                        - checkbox [ref=e630]
+                        - img [ref=e632]
+                    - paragraph [ref=e633]: 6 meses van por nuestra cuenta
+                    - generic [ref=e635]:
+                      - img [ref=e636]
+                      - generic [ref=e637]: Incluido
+                  - link [ref=e639]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI64&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e641]: Deseo contratar sin domiciliar
+                - button [ref=e642] [cursor=pointer]:
+                  - generic [ref=e643]:
+                    - heading [level=3] [ref=e644]: 600Megas
+                    - paragraph [ref=e645]: 350 megas de subida
+                  - generic [ref=e646]: $725 al mes
+                  - generic [ref=e648]:
+                    - generic [ref=e649]: PROMOCIONES
+                    - paragraph [ref=e650]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e651]:
+                      - generic [ref=e652]:
+                        - checkbox [ref=e653]
+                        - img [ref=e656]
+                      - generic [ref=e657]:
+                        - checkbox [ref=e658]
+                        - img [ref=e660]
+                      - generic [ref=e661]:
+                        - checkbox [ref=e662]
+                        - img [ref=e664]
+                    - paragraph [ref=e665]: 6 meses van por nuestra cuenta
+                    - generic [ref=e667]:
+                      - img [ref=e668]
+                      - generic [ref=e669]: Incluido
+                  - link [ref=e671]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI70&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e673]: Deseo contratar sin domiciliar
+                - button [ref=e674] [cursor=pointer]:
+                  - generic [ref=e675]:
+                    - heading [level=3] [ref=e676]: 850Megas
+                    - paragraph [ref=e677]: 350 megas de subida
+                  - generic [ref=e678]: $999 al mes
+                  - generic [ref=e680]:
+                    - generic [ref=e681]: PROMOCIONES
+                    - paragraph [ref=e682]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e683]:
+                      - generic [ref=e684]:
+                        - checkbox [ref=e685]
+                        - img [ref=e688]
+                      - generic [ref=e689]:
+                        - checkbox [ref=e690]
+                        - img [ref=e692]
+                      - generic [ref=e693]:
+                        - checkbox [ref=e694]
+                        - img [ref=e696]
+                    - paragraph [ref=e697]: 6 meses van por nuestra cuenta
+                    - generic [ref=e699]:
+                      - img [ref=e700]
+                      - generic [ref=e701]: Incluido
+                  - link [ref=e703]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI25&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e705]: Deseo contratar sin domiciliar
+                - button [ref=e706] [cursor=pointer]:
+                  - generic [ref=e707]:
+                    - heading [level=3] [ref=e708]: 1000Megas
+                    - paragraph [ref=e709]: 350 megas de subida
+                  - generic [ref=e710]: $1,399 al mes
+                  - generic [ref=e712]:
+                    - generic [ref=e713]: PROMOCIONES
+                    - paragraph [ref=e714]: Al contratar Domicíliate y Elige 2 de 3
+                    - generic [ref=e715]:
+                      - generic [ref=e716]:
+                        - checkbox [ref=e717]
+                        - img [ref=e720]
+                      - generic [ref=e721]:
+                        - checkbox [ref=e722]
+                        - img [ref=e724]
+                      - generic [ref=e725]:
+                        - checkbox [ref=e726]
+                        - img [ref=e728]
+                    - paragraph [ref=e729]: 6 meses van por nuestra cuenta
+                    - generic [ref=e731]:
+                      - img [ref=e732]
+                      - generic [ref=e733]: Incluido
+                  - link [ref=e735]:
+                    - /url: /web/contrata/lineas-nuevas-hgr-datos?pqi=PQI62&pnetflix=NFX07
+                    - text: Contratar
+                  - button [ref=e737]: Deseo contratar sin domiciliar
+              - button "Next" [ref=e738] [cursor=pointer]
+        - paragraph [ref=e752]:
+          - generic [ref=e753]:
+            - text: Precios con impuestos incluidos. La renta incluye llamadas ilimitadas a números fijos y móviles en México, Estados Unidos, Canadá y hasta 180 países más, consulta lista de destinos completa en
+            - link "telmex.com/destinosLDI" [ref=e754] [cursor=pointer]:
+              - /url: http://telmex.com/destinosLDI
+            - text: Las velocidades comunicadas son en Megas (Megabits por segundo) y corresponden a la velocidad máxima de transferencia de datos ofrecida y alcanzable, la velocidad de bajada y subida podrá variar en función de las condiciones técnicas del módem, cantidad de dispositivos conectados simultáneamente y/o la distancia entre el domicilio del usuario y la central. A partir del 7o mes el cliente continuará con la velocidad de su paquete originalmente contratado. La velocidad aplica para usuarios activos sin adeudos en sus servicios de telecomunicaciones y nuevos que cuentan con fibra óptica instalada. Promoción de 100% de descuento en la renta de los meses 4, 8 y 12 (sobre servicio de telecomunicaciones) y promoción de descuento del 100% en gastos de instalación ($1,600 con impuestos), aplican para clientes que realizan el cambio de su servicio de telecomunicaciones a Telmex. Netflix estándar con anuncios o HBO Max básico con anuncios sin costo durante 6 meses. Todos los derechos reservados. A partir del 7°mes se pagará la renta del OTT. Netflix, HBO Max, Universal+ en Claro Video, Claro Drive, Infinitum Mail y Antivirus, son servicios proporcionados por un tercero. Plazos, condiciones, inscripciones IFT (ahora CRT) y velocidades promedio de descarga aplicables en
+            - link "telmex.com/terminoshogar" [ref=e755] [cursor=pointer]:
+              - /url: http://telmex.com/terminoshogar
+            - strong [ref=e756]: Vigencia 30 de junio de 2026.
+        - generic [ref=e768]:
+          - heading "¡Juntos encontraremos la solución a tus dudas!" [level=3] [ref=e769]
+          - generic [ref=e770]:
+            - generic [ref=e771]:
+              - link "Lo más visto" [ref=e772] [cursor=pointer]:
+                - /url: /web/asistencia/home
+                - img "icono" [ref=e774]
+                - generic [ref=e775]: Lo más visto
+              - list [ref=e776]:
+                - listitem [ref=e777]:
+                  - link "Claro video" [ref=e778] [cursor=pointer]:
+                    - /url: /web/asistencia/hogar-clarovideo-para-clientes-infinitum
+                - listitem [ref=e779]:
+                  - link "Pago de Recibo" [ref=e780] [cursor=pointer]:
+                    - /url: /web/acerca-de-telmex/pago-recibo-telmex
+                - listitem [ref=e781]:
+                  - link "Consulta de Recibo" [ref=e782] [cursor=pointer]:
+                    - /url: /web/hogar/recibo-telmex
+            - generic [ref=e783]:
+              - link "Guías y manuales" [ref=e784] [cursor=pointer]:
+                - /url: /web/asistencia/home
+                - img "icono" [ref=e786]
+                - generic [ref=e787]: Guías y manuales
+              - list [ref=e788]:
+                - listitem [ref=e789]:
+                  - link "Encuentra manuales,guías, artículos." [ref=e790] [cursor=pointer]:
+                    - /url: /web/asistencia/home
+                    - text: Encuentra manuales,
+                    - text: guías, artículos.
+                - listitem [ref=e791]:
+                  - link "Preguntas Frecuentes" [ref=e792] [cursor=pointer]:
+                    - /url: /web/asistencia/incremento-de-velocidad
+            - generic [ref=e793]:
+              - link "ContáctanosAtención a Clientes" [ref=e794] [cursor=pointer]:
+                - /url: /web/asistencia/contactanos
+                - img "icono" [ref=e796]
+                - generic [ref=e797]:
+                  - text: Contáctanos
+                  - text: Atención a Clientes
+              - list [ref=e798]:
+                - listitem [ref=e799]:
+                  - link "Nuestros asesores estáncapacitados para atender tus dudas." [ref=e800] [cursor=pointer]:
+                    - /url: /web/asistencia/contactanos
+                    - text: Nuestros asesores están
+                    - text: capacitados para atender tus dudas.
+          - paragraph [ref=e801]: Más de 600,000 kilómetros de fibra óptica respaldan tu servicio.
+        - generic [ref=e803] [cursor=pointer]: "1"
+    - contentinfo [ref=e804]:
+      - generic [ref=e808]:
+        - generic [ref=e809]:
+          - generic [ref=e810]:
+            - generic [ref=e812]:
+              - link "icono_Blog" [ref=e813] [cursor=pointer]:
+                - /url: /web/blog
+                - img "icono_Blog" [ref=e814]
+              - generic [ref=e815]:
+                - paragraph [ref=e816]: Blog Telmex
+                - paragraph [ref=e817]: Descubre consejos y guías prácticas diseñadas para ti.
+            - generic [ref=e820]:
+              - paragraph [ref=e821]: Newsletter
+              - paragraph [ref=e822]: Suscríbete a nuestras promociones
+              - generic [ref=e823]:
+                - textbox "Ingresa tu correo electrónico." [ref=e824]
+                - button "Suscribir" [ref=e825] [cursor=pointer]
+          - paragraph [ref=e826]
+          - link [ref=e828] [cursor=pointer]:
+            - /url: https://distintivodigital.profeco.gob.mx/consulta/DA26TBQ1111350
+        - generic [ref=e829]:
+          - list [ref=e830]:
+            - listitem [ref=e831]:
+              - strong [ref=e832]: Servicios Telmex
+            - listitem [ref=e833]:
+              - link "Hogar" [ref=e834] [cursor=pointer]:
+                - /url: /web/hogar
+            - listitem [ref=e835]:
+              - link "Negocio" [ref=e836] [cursor=pointer]:
+                - /url: /web/negocios
+            - listitem [ref=e837]:
+              - link "Empresa" [ref=e838] [cursor=pointer]:
+                - /url: /web/empresas
+            - listitem [ref=e839]:
+              - link "Centros de Atención Telmex" [ref=e840] [cursor=pointer]:
+                - /url: /web/buscador/lugares?i=td
+            - listitem [ref=e841]:
+              - link "Sitios WiFi" [ref=e842] [cursor=pointer]:
+                - /url: /web/buscador/lugares
+          - list [ref=e843]:
+            - listitem [ref=e844]:
+              - strong [ref=e845]: Educación Digital
+            - listitem [ref=e846]:
+              - link "Académica" [ref=e847] [cursor=pointer]:
+                - /url: http://academica.mx/#/
+            - listitem [ref=e848]:
+              - link "Biblioteca Digital Telmex" [ref=e849] [cursor=pointer]:
+                - /url: https://telmexeducacion.com/
+            - listitem [ref=e850]:
+              - link "Educación Inicial" [ref=e851] [cursor=pointer]:
+                - /url: /web/acerca-de-telmex/educacion-digital#tab1
+          - list [ref=e852]:
+            - listitem [ref=e853]:
+              - strong [ref=e854]: Conoce más
+            - listitem [ref=e855]:
+              - link "Acerca de Telmex" [ref=e856] [cursor=pointer]:
+                - /url: /web/acerca-de-telmex
+            - listitem [ref=e857]:
+              - link "Noticias" [ref=e858] [cursor=pointer]:
+                - /url: /web/acerca-de-telmex/prensa-2024
+            - listitem [ref=e859]:
+              - link "Escudería Telmex" [ref=e860] [cursor=pointer]:
+                - /url: http://www.escuderiatelmex.com/wps/portal/et/es
+            - listitem [ref=e861]:
+              - link "Ring Telmex Telcel" [ref=e862] [cursor=pointer]:
+                - /url: http://ringtelmextelcel.com/
+      - generic [ref=e863]:
+        - generic [ref=e865]:
+          - generic [ref=e866]:
+            - text: ¡Descarga la App Telmex!
+            - link "Google Play Store" [ref=e867] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.telmex.mitelmex&utm_source=Telmex Hogar&utm_medium=Descargas app Telmex mi telmex&utm_content=Google Play&utm_campaign=Descarga la aplicación Mi telmex
+              - img "Google Play Store" [ref=e869]
+            - link "Apple Store" [ref=e870] [cursor=pointer]:
+              - /url: https://itunes.apple.com/mx/app/telmex/id1135440722?utm_source=Telmex Hogar&utm_medium=Descargas app Telmex mi telmex&utm_content=App Store&utm_campaign=Descarga la aplicación Mi telmex
+              - img "Apple Store" [ref=e871]
+            - link "Huawei App Gallery" [ref=e872] [cursor=pointer]:
+              - /url: https://appgallery5.huawei.com/#/app/C101130843
+              - img "Huawei App Gallery" [ref=e874]
+          - generic [ref=e875]:
+            - text: "Síguenos:"
+            - link "Twitter" [ref=e876] [cursor=pointer]:
+              - /url: https://twitter.com/telmex
+              - img "Twitter" [ref=e877]
+            - link "Facebook" [ref=e878] [cursor=pointer]:
+              - /url: https://www.facebook.com/telmex
+              - img "Facebook" [ref=e879]
+            - link "Instagram" [ref=e880] [cursor=pointer]:
+              - /url: https://www.instagram.com/telmex/
+              - img "Instagram" [ref=e881]
+            - link "Youtube" [ref=e882] [cursor=pointer]:
+              - /url: http://www.youtube.com/telmex
+              - img "Youtube" [ref=e883]
+            - link "Linkedin" [ref=e884] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/telmex/
+              - img "Linkedin" [ref=e885]
+        - generic [ref=e887]:
+          - paragraph [ref=e888]:
+            - text: "Estimado Cliente: Consulte nuestros mapas de cobertura en el sitio telmex.com/mapasdecobertura, donde podrá consultar las tecnologías y servicios disponibles en su domicilio."
+            - link "Ingrese aquí" [ref=e889] [cursor=pointer]:
+              - /url: /web/acerca-de-telmex/mapas-de-cobertura
+          - paragraph [ref=e890]: 2026 Telmex. Todos los derechos reservados.
+          - list [ref=e891]:
+            - listitem [ref=e892]:
+              - link "Aviso de privacidad" [ref=e893] [cursor=pointer]:
+                - /url: /web/acerca-de-telmex/aviso-de-privacidad
+                - text: Aviso de privacidad|
+            - listitem [ref=e894]:
+              - link "Contrato Marco de prestación de servicios" [ref=e895] [cursor=pointer]:
+                - /url: /web/hogar/contrato-marco
+                - text: Contrato Marco de prestación de servicios|
+            - listitem [ref=e896]:
+              - link "Oferta de servicios Mayoristas" [ref=e897] [cursor=pointer]:
+                - /url: /web/acerca-de-telmex/oferta-mayoristas
+                - text: Oferta de servicios Mayoristas|
+            - listitem [ref=e898]:
+              - link "Contrato Marco y Términos en formato audible" [ref=e899] [cursor=pointer]:
+                - /url: /web/hogar/contratos-audibles
+                - text: Contrato Marco y Términos en formato audible|
+            - listitem [ref=e900]:
+              - link "Colaboración con justicia" [ref=e901] [cursor=pointer]:
+                - /url: /web/acerca-de-telmex/colaboracion-en-materia-de-seguridad-y-justicia
+                - text: Colaboración con justicia|
+            - listitem [ref=e902]:
+              - link "Mapa de sitio" [ref=e903] [cursor=pointer]:
+                - /url: /mapa-de-sitio
+                - text: Mapa de sitio|
+            - listitem [ref=e904]:
+              - link "Declaración de accesibilidad" [ref=e905] [cursor=pointer]:
+                - /url: https://www.hearcolors.com.mx/SelloAccesibilidad.php?num_clte=040E1736
+                - text: Declaración de accesibilidad|
+            - listitem [ref=e906]:
+              - link "Mapas de cobertura" [ref=e907] [cursor=pointer]:
+                - /url: /web/acerca-de-telmex/mapas-de-cobertura
+                - text: Mapas de cobertura|
+            - listitem [ref=e908]:
+              - link "Carta de derechos mínimos de los usuarios" [ref=e909] [cursor=pointer]:
+                - /url: https://downloads.telmex.com/pdf/cartadelosderechosdelosusuarios.pdf
+                - text: Carta de derechos mínimos de los usuarios|
+            - listitem [ref=e910]:
+              - link "Código de Ética" [ref=e911] [cursor=pointer]:
+                - /url: https://downloads.telmex.com/pdf/codigo-etica-telmex.pdf
+                - text: Código de Ética|
+            - listitem [ref=e912]:
+              - text: "Términos y Condiciones:"
+              - link "Hogar" [ref=e913] [cursor=pointer]:
+                - /url: /web/hogar/terminoshogar
+              - text: "-"
+              - link "Negocio" [ref=e914] [cursor=pointer]:
+                - /url: /web/negocios/terminosnegocio
+              - text: "-"
+              - link "Empresa" [ref=e915] [cursor=pointer]:
+                - /url: /web/empresas/terminosempresa

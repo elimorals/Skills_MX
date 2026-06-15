@@ -1,0 +1,136 @@
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido principal" [ref=e3] [cursor=pointer]:
+    - /url: "#content"
+  - banner [ref=e4]:
+    - navigation [ref=e6]:
+      - link "datos.gob.mx" [ref=e8] [cursor=pointer]:
+        - /url: https://www.gob.mx
+        - img "datos.gob.mx" [ref=e9]
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "Trámites" [ref=e13] [cursor=pointer]:
+            - /url: https://www.gob.mx/tramites
+        - listitem [ref=e14]:
+          - link "Gobierno" [ref=e15] [cursor=pointer]:
+            - /url: https://www.gob.mx/gobierno
+        - listitem [ref=e16]:
+          - link "" [ref=e17] [cursor=pointer]:
+            - /url: https://www.gob.mx/busqueda
+            - generic [ref=e18]: 
+    - navigation [ref=e19]:
+      - list [ref=e21]:
+        - listitem [ref=e22]:
+          - link "Inicio" [ref=e23] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e24]:
+          - link "Bases de datos" [ref=e25] [cursor=pointer]:
+            - /url: /dataset/
+        - listitem [ref=e26]:
+          - link "Instituciones" [ref=e27] [cursor=pointer]:
+            - /url: /organization/
+        - listitem [ref=e28]:
+          - link "Categorías" [ref=e29] [cursor=pointer]:
+            - /url: /group/
+        - listitem [ref=e30]:
+          - link "Visualizaciones de datos" [ref=e31] [cursor=pointer]:
+            - /url: /visualizador
+  - generic [ref=e33]:
+    - navigation "Miga de pan" [ref=e34]
+    - article [ref=e36]:
+      - generic [ref=e37]:
+        - heading "Error 404 – Página no encontrada" [level=1] [ref=e38]
+        - paragraph [ref=e39]: La página que estás buscando no está disponible o no existe. Es posible que haya sido eliminada, actualizada o escrita incorrectamente.
+        - paragraph [ref=e40]: Puedes explorar las bases de datos disponibles en el sitio principal de la Plataforma Nacional de Datos Abiertos o visitar el portal histórico para consultar versiones anteriores.
+        - paragraph [ref=e41]:
+          - text: También puedes intentar una
+          - link "búsqueda directa de datos" [ref=e42] [cursor=pointer]:
+            - /url: /dataset
+          - text: desde este portal.
+        - generic [ref=e43]:
+          - link "Explorar datos.gob.mx" [ref=e44] [cursor=pointer]:
+            - /url: https://www.datos.gob.mx
+          - link "Consultar portal histórico" [ref=e45] [cursor=pointer]:
+            - /url: https://historico.datos.gob.mx
+  - contentinfo [ref=e46]:
+    - generic [ref=e48]:
+      - img "Gobierno de México" [ref=e50]
+      - generic [ref=e51]:
+        - heading "Enlaces" [level=2] [ref=e52]
+        - list [ref=e53]:
+          - listitem [ref=e54]:
+            - link "Datos" [ref=e55] [cursor=pointer]:
+              - /url: https://datos.gob.mx/
+          - separator [ref=e56]
+          - listitem [ref=e57]:
+            - link "Publicaciones" [ref=e58] [cursor=pointer]:
+              - /url: https://www.gob.mx/publicaciones
+          - separator [ref=e59]
+          - listitem [ref=e60]:
+            - link "Portal de Obligaciones de Transparencia" [ref=e61] [cursor=pointer]:
+              - /url: https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/faces/view/consultaPublica.xhtml?idEntidad=MzM=&idSujetoObligado=MTAwMDE=#inicio
+          - separator [ref=e62]
+          - listitem [ref=e63]:
+            - link "PNT" [ref=e64] [cursor=pointer]:
+              - /url: https://consultapublicamx.plataformadetransparencia.org.mx
+          - separator [ref=e65]
+          - listitem [ref=e66]:
+            - link "INAI" [ref=e67] [cursor=pointer]:
+              - /url: http://www.inai.org.mx/
+          - separator [ref=e68]
+          - listitem [ref=e69]:
+            - link "Alerta" [ref=e70] [cursor=pointer]:
+              - /url: https://alertadores.funcionpublica.gob.mx/
+          - separator [ref=e71]
+          - listitem [ref=e72]:
+            - link "Denuncia" [ref=e73] [cursor=pointer]:
+              - /url: https://sidec.funcionpublica.gob.mx/#!/
+      - generic [ref=e74]:
+        - heading "¿Qué es gob.mx?" [level=2] [ref=e75]
+        - paragraph [ref=e76]:
+          - text: Es el portal único de trámites, información y participación ciudadana.
+          - link "Leer más" [ref=e77] [cursor=pointer]:
+            - /url: https://www.gob.mx/que-es-gobmx
+        - separator [ref=e78]
+        - list [ref=e79]:
+          - listitem [ref=e80]:
+            - link "Administraciones anteriores" [ref=e81] [cursor=pointer]:
+              - /url: https://www.gob.mx/amlo
+          - separator [ref=e82]
+          - listitem [ref=e83]:
+            - link "Declaración de Accesibilidad" [ref=e84] [cursor=pointer]:
+              - /url: https://www.gob.mx/accesibilidad
+          - separator [ref=e85]
+          - listitem [ref=e86]:
+            - link "Marco jurídico" [ref=e87] [cursor=pointer]:
+              - /url: http://www.ordenjuridico.gob.mx/
+          - separator [ref=e88]
+          - listitem [ref=e89]:
+            - link "Política de seguridad" [ref=e90] [cursor=pointer]:
+              - /url: https://www.gob.mx/terminos#medidas-seguridad-informacion
+          - separator [ref=e91]
+          - listitem [ref=e92]:
+            - link "Términos y Condiciones" [ref=e93] [cursor=pointer]:
+              - /url: https://www.gob.mx/terminos
+          - separator [ref=e94]
+          - listitem [ref=e95]:
+            - link "Aviso de privacidad" [ref=e96] [cursor=pointer]:
+              - /url: https://www.gob.mx/aviso_de_privacidad
+          - separator [ref=e97]
+          - listitem [ref=e98]:
+            - link "Aviso de privacidad simplificado" [ref=e99] [cursor=pointer]:
+              - /url: https://www.gob.mx/privacidadsimplificado
+          - separator [ref=e100]
+          - listitem [ref=e101]:
+            - link "Mapa de sitio" [ref=e102] [cursor=pointer]:
+              - /url: https://www.gob.mx/sitemap
+      - generic [ref=e103]:
+        - link "Denuncia contra servidores públicos" [ref=e104] [cursor=pointer]:
+          - /url: https://www.gob.mx/accesibilidad
+        - paragraph [ref=e105]: Síguenos en
+        - generic [ref=e106]:
+          - link [ref=e107] [cursor=pointer]:
+            - /url: https://www.facebook.com/gobmexico
+            - img [ref=e108]
+          - link [ref=e109] [cursor=pointer]:
+            - /url: https://x.com/GobiernoMX
+            - img [ref=e110]

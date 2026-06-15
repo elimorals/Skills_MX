@@ -1,0 +1,286 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwjSmJWn44mVAxVGmSYFHduvH9gQPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: consulta multas transito nuevo leon placa sitio:nl.gob.mx consulta multas transito nuevo leon placa sitio:nl.gob.mx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dconsulta%2Bmultas%2Btransito%2Bnuevo%2Bleon%2Bplaca%2Bsitio:nl.gob.mx&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=consulta+multas+transito+nuevo+leon+placa+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-ZsP6SKvhKiwE9NNegOps-9WL0aBkrpI5cf3sFKoGdD6Ii4ktUZAf19ygT6NP52lQ9jNvJzXeDe1uLmBVbKa0RkV8114TGJAKeniwoO-kjJdSuKMGa1JNXeR8AUY5Q17WxA2ta-O-Av0HJBYmxAc17zZO7_khhDLAlX-2GmKnNJdv-E_zhiMQYMirnzd3rmOp9JTotzA0VbQxxk6C0tUwiW9K0u6A&aep=1&ntc=1&sa=X&ved=2ahUKEwjSmJWn44mVAxVGmSYFHduvH9gQ2J8OegQIEBAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=consulta+multas+transito+nuevo+leon+placa+sitio:nl.gob.mx&tbm=nws&source=lnms&fbs=ADc_l-ZsP6SKvhKiwE9NNegOps-9WL0aBkrpI5cf3sFKoGdD6Ii4ktUZAf19ygT6NP52lQ9jNvJzXeDe1uLmBVbKa0RkV8114TGJAKeniwoO-kjJdSuKMGa1JNXeR8AUY5Q17WxA2ta-O-Av0HJBYmxAc17zZO7_khhDLAlX-2GmKnNJdv-E_zhiMQYMirnzd3rmOp9JTotzA0VbQxxk6C0tUwiW9K0u6A&sa=X&ved=2ahUKEwjSmJWn44mVAxVGmSYFHduvH9gQ0pQJegQIFhAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Shopping" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-ZsP6SKvhKiwE9NNegOps-9WL0aBkrpI5cf3sFKoGdD6Ii4ktUZAf19ygT6NP52lQ9jNvJzXeDe1uLmBVbKa0RkV8114TGJAKeniwoO-kjJdSuKMGa1JNXeR8AUY5Q17WxA2ta-O-Av0HJBYmxAc17zZO7_khhDLAlX-2GmKnNJdv-E_zhiMQYMirnzd3rmOp9JTotzA0VbQxxk6C0tUwiW9K0u6A&q=consulta+multas+transito+nuevo+leon+placa+sitio:nl.gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e88]: Shopping
+          - listitem [ref=e89]:
+            - link "Imágenes" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-ZsP6SKvhKiwE9NNegOps-9WL0aBkrpI5cf3sFKoGdD6Ii4ktUZAf19ygT6NP52lQ9jNvJzXeDe1uLmBVbKa0RkV8114TGJAKeniwoO-kjJdSuKMGa1JNXeR8AUY5Q17WxA2ta-O-Av0HJBYmxAc17zZO7_khhDLAlX-2GmKnNJdv-E_zhiMQYMirnzd3rmOp9JTotzA0VbQxxk6C0tUwiW9K0u6A&q=consulta+multas+transito+nuevo+leon+placa+sitio:nl.gob.mx&sa=X&ved=2ahUKEwjSmJWn44mVAxVGmSYFHduvH9gQtKgLegQIFRAB
+              - generic [ref=e92]: Imágenes
+          - listitem [ref=e93]:
+            - link "Videos cortos" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-ZsP6SKvhKiwE9NNegOps-9WL0aBkrpI5cf3sFKoGdD6Ii4ktUZAf19ygT6NP52lQ9jNvJzXeDe1uLmBVbKa0RkV8114TGJAKeniwoO-kjJdSuKMGa1JNXeR8AUY5Q17WxA2ta-O-Av0HJBYmxAc17zZO7_khhDLAlX-2GmKnNJdv-E_zhiMQYMirnzd3rmOp9JTotzA0VbQxxk6C0tUwiW9K0u6A&q=consulta+multas+transito+nuevo+leon+placa+sitio:nl.gob.mx&sa=X&ved=2ahUKEwjSmJWn44mVAxVGmSYFHduvH9gQs6gLegQIEhAB
+              - generic [ref=e96]: Videos cortos
+          - listitem [ref=e97]:
+            - link "Videos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-ZsP6SKvhKiwE9NNegOps-9WL0aBkrpI5cf3sFKoGdD6Ii4ktUZAf19ygT6NP52lQ9jNvJzXeDe1uLmBVbKa0RkV8114TGJAKeniwoO-kjJdSuKMGa1JNXeR8AUY5Q17WxA2ta-O-Av0HJBYmxAc17zZO7_khhDLAlX-2GmKnNJdv-E_zhiMQYMirnzd3rmOp9JTotzA0VbQxxk6C0tUwiW9K0u6A&q=consulta+multas+transito+nuevo+leon+placa+sitio:nl.gob.mx&sa=X&ved=2ahUKEwjSmJWn44mVAxVGmSYFHduvH9gQtKgLegQIExAB
+              - generic [ref=e100]: Videos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - main [ref=e123]:
+      - generic [ref=e127]:
+        - generic [ref=e130]:
+          - heading "Resultados web" [level=2] [ref=e131]
+          - generic [ref=e132]:
+            - generic [ref=e135]:
+              - link "Consulta y Pago de Refrendo Control Vehicular https://www.icvnl.gob.mx › estadodecuenta" [ref=e137] [cursor=pointer]:
+                - /url: https://www.icvnl.gob.mx/estadodecuenta
+                - heading "Consulta y Pago de Refrendo" [level=3] [ref=e138]
+                - generic [ref=e144]:
+                  - generic [ref=e146]: Control Vehicular
+                  - generic [ref=e148]: https://www.icvnl.gob.mx › estadodecuenta
+              - button "Acerca de este resultado" [ref=e149] [cursor=pointer]:
+                - img [ref=e152]
+            - generic [ref=e156]:
+              - text: "1."
+              - emphasis [ref=e157]: El servicio de consulta de estado de cuenta y registro vehicular es gratuito
+              - text: . 2. El usuario deberá de proporcionar el número de placa para llevar a cabo ...
+        - generic [ref=e168]:
+          - heading "Pensando Buscando Pensando un poco más" [level=2] [ref=e172]:
+            - generic [ref=e173]:
+              - generic [ref=e175]: Pensando
+              - generic [ref=e177]: Buscando
+              - generic [ref=e187]: Pensando un poco más
+          - progressbar "Generando" [ref=e189]
+        - generic [ref=e233]:
+          - heading "Resultados web" [level=2] [ref=e234]
+          - generic [ref=e235]:
+            - generic [ref=e238]:
+              - link "Portal de Pagos en Línea | Gobierno del Estado de Nuevo León Gobierno del Estado de Nuevo León https://tramites.nl.gob.mx" [ref=e240] [cursor=pointer]:
+                - /url: https://tramites.nl.gob.mx/
+                - heading "Portal de Pagos en Línea | Gobierno del Estado de Nuevo León" [level=3] [ref=e241]
+                - generic [ref=e247]:
+                  - generic [ref=e249]: Gobierno del Estado de Nuevo León
+                  - generic [ref=e251]: https://tramites.nl.gob.mx
+              - button "Acerca de este resultado" [ref=e252] [cursor=pointer]:
+                - img [ref=e255]
+            - generic [ref=e259]:
+              - text: PAGO DE REFRENDO.
+              - emphasis [ref=e260]: Realiza en línea el pago de tu refrendo vehicular
+              - text: y consulta el estado de cuenta, estatus o situación actual de los vehículos que tienes ...
+        - generic [ref=e264]:
+          - generic [ref=e267]:
+            - link "Instituto de Control Vehicular Control Vehicular https://www.icvnl.gob.mx" [ref=e269] [cursor=pointer]:
+              - /url: https://www.icvnl.gob.mx/
+              - heading "Instituto de Control Vehicular" [level=3] [ref=e270]
+              - generic [ref=e276]:
+                - generic [ref=e278]: Control Vehicular
+                - generic [ref=e280]: https://www.icvnl.gob.mx
+            - button "Acerca de este resultado" [ref=e281] [cursor=pointer]:
+              - img [ref=e284]
+          - generic [ref=e288]:
+            - emphasis [ref=e289]: Consulta
+            - text: y Pago de Refrendo · Ventanilla Empresarial Online. · Trámites en Linea · Requisitos para Trámites · Ubica tu Delegación · Factura Electrónica (CFDI).
+        - generic [ref=e293]:
+          - generic [ref=e296]:
+            - link "Tenencia, refrendo y multas de tránsito Gobierno del Estado de Nuevo León https://egobierno.nl.gob.mx › egob › AMEX › terminos" [ref=e298] [cursor=pointer]:
+              - /url: https://egobierno.nl.gob.mx/egob/AMEX/terminos.php
+              - heading "Tenencia, refrendo y multas de tránsito" [level=3] [ref=e299]
+              - generic [ref=e305]:
+                - generic [ref=e307]: Gobierno del Estado de Nuevo León
+                - generic [ref=e309]: https://egobierno.nl.gob.mx › egob › AMEX › terminos
+            - button "Acerca de este resultado" [ref=e310] [cursor=pointer]:
+              - img [ref=e313]
+          - generic [ref=e317]:
+            - text: El servicio consiste en
+            - emphasis [ref=e318]: consultar
+            - text: sin costo el estado de cuenta de vehículos automotores particulares (Automóvil, vehículos para discapacitados) incluyendo ...
+        - generic [ref=e323]:
+          - heading "Más preguntas" [level=2] [ref=e325]
+          - generic [ref=e326]:
+            - button "¿Dónde revisar si tengo multas en Nuevo León?" [ref=e332] [cursor=pointer]:
+              - generic [ref=e334]: ¿Dónde revisar si tengo multas en Nuevo León?
+              - img [ref=e337]
+            - button "¿Cómo ver si tu placa tiene multas?" [ref=e346] [cursor=pointer]:
+              - generic [ref=e348]: ¿Cómo ver si tu placa tiene multas?
+              - img [ref=e351]
+            - button "¿Cómo saber si tengo multas en León?" [ref=e360] [cursor=pointer]:
+              - generic [ref=e362]: ¿Cómo saber si tengo multas en León?
+              - img [ref=e365]
+            - button "¿Cómo puedo revisar si tengo alguna multa de tránsito?" [ref=e374] [cursor=pointer]:
+              - generic [ref=e376]: ¿Cómo puedo revisar si tengo alguna multa de tránsito?
+              - img [ref=e379]
+        - generic [ref=e384]:
+          - heading "Resultados web" [level=2] [ref=e385]
+          - generic [ref=e386]:
+            - generic [ref=e389]:
+              - link "Tenencia, refrendo y multas de tránsito Gobierno del Estado de Nuevo León https://egobierno.nl.gob.mx › egob › terminos" [ref=e391] [cursor=pointer]:
+                - /url: https://egobierno.nl.gob.mx/egob/terminos.php
+                - heading "Tenencia, refrendo y multas de tránsito" [level=3] [ref=e392]
+                - generic [ref=e398]:
+                  - generic [ref=e400]: Gobierno del Estado de Nuevo León
+                  - generic [ref=e402]: https://egobierno.nl.gob.mx › egob › terminos
+              - button "Acerca de este resultado" [ref=e403] [cursor=pointer]:
+                - img [ref=e406]
+            - generic [ref=e410]:
+              - emphasis [ref=e411]: Tenencia, refrendo y multas de tránsito
+              - text: . El servicio consiste en consultar sin costo el estado de cuenta de vehículos automotores particulares (Automóvil, ...
+        - generic [ref=e415]:
+          - generic [ref=e418]:
+            - link "Instituto de Control Vehicular Gobierno del Estado de Nuevo León http://www.nl.gob.mx › controlvehicular" [ref=e420] [cursor=pointer]:
+              - /url: http://www.nl.gob.mx/es/controlvehicular
+              - heading "Instituto de Control Vehicular" [level=3] [ref=e421]
+              - generic [ref=e427]:
+                - generic [ref=e429]: Gobierno del Estado de Nuevo León
+                - generic [ref=e431]: http://www.nl.gob.mx › controlvehicular
+            - button "Acerca de este resultado" [ref=e432] [cursor=pointer]:
+              - img [ref=e435]
+          - generic [ref=e439]:
+            - text: Pabellón Ciudadano | Planta Baja Calle Washington 2000 Oriente Col. Obrera Monterrey,
+            - emphasis [ref=e440]: Nuevo León
+            - text: CP 64010. Horario. Lunes a Viernes de 08:00 a 19:00 horas.
+        - generic [ref=e444]:
+          - generic [ref=e447]:
+            - 'link "Multas de tránsito en Nuevo León: dónde revisar y ... Milenio https://www.milenio.com › sociedad › multas-de-transit..." [ref=e449] [cursor=pointer]':
+              - /url: https://www.milenio.com/sociedad/multas-de-transito-en-nuevo-leon-donde-revisar-y-descuentos
+              - 'heading "Multas de tránsito en Nuevo León: dónde revisar y ..." [level=3] [ref=e450]'
+              - generic [ref=e456]:
+                - generic [ref=e458]: Milenio
+                - generic [ref=e460]: https://www.milenio.com › sociedad › multas-de-transit...
+            - button "Acerca de este resultado" [ref=e461] [cursor=pointer]:
+              - img [ref=e464]
+          - generic [ref=e467]:
+            - generic [ref=e468]: 30 dic 2022 —
+            - generic [ref=e469]:
+              - text: Para revisar las
+              - emphasis [ref=e470]: multas
+              - text: que se te han aplicado pueden ingresar a la página web del Instituto de Control Vehicular de
+              - emphasis [ref=e471]: Nuevo León
+              - text: a través de la ...
+        - generic [ref=e475]:
+          - generic [ref=e478]:
+            - link "Multas de Tránsito - Sistema de Trámites en Linea. - Apodaca Municipio de Apodaca https://enlinea.apodaca.gob.mx › multastransito" [ref=e480] [cursor=pointer]:
+              - /url: https://enlinea.apodaca.gob.mx/multastransito.php?id=4
+              - heading "Multas de Tránsito - Sistema de Trámites en Linea. - Apodaca" [level=3] [ref=e481]
+              - generic [ref=e487]:
+                - generic [ref=e489]: Municipio de Apodaca
+                - generic [ref=e491]: https://enlinea.apodaca.gob.mx › multastransito
+            - button "Acerca de este resultado" [ref=e492] [cursor=pointer]:
+              - img [ref=e495]
+          - generic [ref=e499]:
+            - emphasis [ref=e500]: Consulta
+            - text: sin costo el estado de cuenta de
+            - emphasis [ref=e501]: multas
+            - text: de trásito municipales de vehículos automotores con
+            - emphasis [ref=e502]: placas
+            - text: del Estado de
+            - emphasis [ref=e503]: Nuevo León
+            - text: . Detalles del trámite.
+        - generic [ref=e507]:
+          - generic [ref=e510]:
+            - link "¡Paga tu Refrendo Vehicular! Gobierno del Estado de Nuevo León http://www.nl.gob.mx › refrendo" [ref=e512] [cursor=pointer]:
+              - /url: http://www.nl.gob.mx/es/refrendo
+              - heading "¡Paga tu Refrendo Vehicular!" [level=3] [ref=e513]
+              - generic [ref=e519]:
+                - generic [ref=e521]: Gobierno del Estado de Nuevo León
+                - generic [ref=e523]: http://www.nl.gob.mx › refrendo
+            - button "Acerca de este resultado" [ref=e524] [cursor=pointer]:
+              - img [ref=e527]
+          - generic [ref=e531]:
+            - emphasis [ref=e532]: Consulta tu estado de cuenta y paga tu refrendo en línea
+            - text: ", ingresando a www.icvnl.gob.mx, a través de la app móvil ICVNL ó en delegaciones del Instituto de ..."
+      - navigation [ref=e535]:
+        - heading "Navegación de páginas" [level=1] [ref=e536]
+        - text: "1"
+        - link "Page 2" [ref=e539] [cursor=pointer]:
+          - /url: /search?q=consulta+multas+transito+nuevo+leon+placa+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=GzcwapKfNsaymtkP29_-wA0&start=10&sa=N&sstk=AU9db-BmaUZ5SKXspzLkltS4arfHPN7S2fQDKIZyyAc9tyUct8tDvNdXAs-P1FHjMMX3_-gKhO7s3-hCebUZnMJKrMpXnWkcojjBWg&ved=2ahUKEwjSmJWn44mVAxVGmSYFHduvH9gQ8tMDegQIHRAE
+          - text: "2"
+        - link "Page 3" [ref=e541] [cursor=pointer]:
+          - /url: /search?q=consulta+multas+transito+nuevo+leon+placa+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=GzcwapKfNsaymtkP29_-wA0&start=20&sa=N&sstk=AU9db-BmaUZ5SKXspzLkltS4arfHPN7S2fQDKIZyyAc9tyUct8tDvNdXAs-P1FHjMMX3_-gKhO7s3-hCebUZnMJKrMpXnWkcojjBWg&ved=2ahUKEwjSmJWn44mVAxVGmSYFHduvH9gQ8tMDegQIHRAG
+          - text: "3"
+        - link "Page 4" [ref=e543] [cursor=pointer]:
+          - /url: /search?q=consulta+multas+transito+nuevo+leon+placa+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=GzcwapKfNsaymtkP29_-wA0&start=30&sa=N&sstk=AU9db-BmaUZ5SKXspzLkltS4arfHPN7S2fQDKIZyyAc9tyUct8tDvNdXAs-P1FHjMMX3_-gKhO7s3-hCebUZnMJKrMpXnWkcojjBWg&ved=2ahUKEwjSmJWn44mVAxVGmSYFHduvH9gQ8tMDegQIHRAI
+          - text: "4"
+        - link "Page 5" [ref=e545] [cursor=pointer]:
+          - /url: /search?q=consulta+multas+transito+nuevo+leon+placa+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=GzcwapKfNsaymtkP29_-wA0&start=40&sa=N&sstk=AU9db-BmaUZ5SKXspzLkltS4arfHPN7S2fQDKIZyyAc9tyUct8tDvNdXAs-P1FHjMMX3_-gKhO7s3-hCebUZnMJKrMpXnWkcojjBWg&ved=2ahUKEwjSmJWn44mVAxVGmSYFHduvH9gQ8tMDegQIHRAK
+          - text: "5"
+        - link "Page 6" [ref=e547] [cursor=pointer]:
+          - /url: /search?q=consulta+multas+transito+nuevo+leon+placa+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=GzcwapKfNsaymtkP29_-wA0&start=50&sa=N&sstk=AU9db-BmaUZ5SKXspzLkltS4arfHPN7S2fQDKIZyyAc9tyUct8tDvNdXAs-P1FHjMMX3_-gKhO7s3-hCebUZnMJKrMpXnWkcojjBWg&ved=2ahUKEwjSmJWn44mVAxVGmSYFHduvH9gQ8tMDegQIHRAM
+          - text: "6"
+        - heading "Siguiente" [level=2] [ref=e549]:
+          - link "Siguiente" [ref=e550] [cursor=pointer]:
+            - /url: /search?q=consulta+multas+transito+nuevo+leon+placa+sitio:nl.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=GzcwapKfNsaymtkP29_-wA0&start=10&sa=N&sstk=AU9db-BmaUZ5SKXspzLkltS4arfHPN7S2fQDKIZyyAc9tyUct8tDvNdXAs-P1FHjMMX3_-gKhO7s3-hCebUZnMJKrMpXnWkcojjBWg&ved=2ahUKEwjSmJWn44mVAxVGmSYFHduvH9gQ8NMDegQIHRAO
+            - generic [ref=e552]: Siguiente
+      - navigation
+    - contentinfo [ref=e553]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e554]
+      - generic [ref=e558]:
+        - generic [ref=e560]:
+          - text: México
+          - generic [ref=e562]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - A través de tu dirección IP" [ref=e564] [cursor=pointer]:
+              - generic [ref=e565]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e567]:
+                - text: "-"
+                - generic [ref=e568]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e570] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e573]:
+          - link "Ayuda" [ref=e574] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e575] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e576] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e577] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

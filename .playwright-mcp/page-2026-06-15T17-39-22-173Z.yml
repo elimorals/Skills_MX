@@ -1,0 +1,133 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e7]
+        - text: 
+        - generic [ref=e8]:
+          - list [ref=e9]:
+            - listitem [ref=e10]:
+              - link "Licencias" [ref=e11] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e12]:
+              - link "Autos" [ref=e13] [cursor=pointer]:
+                - /url: "#"
+            - text: 
+            - generic [ref=e16]:
+              - textbox
+              - link "" [ref=e17] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e18]: 
+          - text:  
+    - generic [ref=e19]:
+      - generic [ref=e23]:
+        - generic: 
+        - list [ref=e25]:
+          - listitem [ref=e26]:
+            - link "Consulta y Pago de Refrendo" [ref=e27] [cursor=pointer]:
+              - /url: EstadodeCuenta
+              - img [ref=e28]
+              - paragraph [ref=e29]: Consulta y Pago de Refrendo
+          - listitem [ref=e30]:
+            - link "Ventanilla Empresarial Online." [ref=e31] [cursor=pointer]:
+              - /url: VentanillaEmpresarial
+              - img [ref=e32]
+              - paragraph [ref=e33]: Ventanilla Empresarial Online.
+          - listitem [ref=e34]:
+            - link "Tramites en Linea" [ref=e35] [cursor=pointer]:
+              - /url: TramitesEnLinea
+              - img [ref=e36]
+              - paragraph [ref=e37]: Tramites en Linea
+          - listitem [ref=e38]:
+            - link "Requisitos para Trámites" [ref=e39] [cursor=pointer]:
+              - /url: tramites
+              - img [ref=e40]
+              - paragraph [ref=e41]: Requisitos para Trámites
+          - listitem [ref=e42]:
+            - link "Ubica tu Delegación" [ref=e43] [cursor=pointer]:
+              - /url: Delegaciones
+              - img [ref=e44]
+              - paragraph [ref=e45]: Ubica tu Delegación
+          - listitem [ref=e46]:
+            - link "Factura Electrónica (CFDI)" [ref=e47] [cursor=pointer]:
+              - /url: http://cfdi.nl.gob.mx/
+              - img [ref=e48]
+              - paragraph [ref=e49]: Factura Electrónica (CFDI)
+        - generic: 
+      - generic [ref=e51]:
+        - paragraph [ref=e52]:
+          - text: PAGO EN LÍNEA REFRENDO v5
+          - link "":
+            - /url: javascript:history.back();
+            - generic [ref=e53] [cursor=pointer]: 
+        - iframe [ref=e54]:
+          - generic [ref=f1e8]:
+            - generic [ref=f1e10]:
+              - generic [ref=f1e11]:
+                - paragraph [ref=f1e12]: TÉRMINOS Y CONDICIONES
+                - paragraph [ref=f1e13]: "El presente servicio es brindado por el Instituto de Control Vehicular del Estado de Nuevo León y permite al usuario consultar el estado de cuenta y registro que guarda su vehículo, bajo las siguientes condiciones:"
+                - paragraph [ref=f1e14]: 1. El servicio de consulta de estado de cuenta y registro vehicular es gratuito.
+                - paragraph [ref=f1e15]: 2. El usuario deberá de proporcionar el número de placa para llevar a cabo la consulta.
+                - paragraph [ref=f1e16]: 3. Durante el proceso de consulta no se entregarán datos personales, sensibles ni información confidencial
+                - paragraph [ref=f1e17]: 4. Los fines de la consulta serán meramente informativos y estarán sujetos a las actualizaciones de la información en el sistema
+                - paragraph [ref=f1e18]: 5. Dentro del proceso de la consulta, no se podrán realizar modificaciones en la información del vehículo, para lo anterior deberá de acercarse a su delegación de preferencia y cumplir con los requisitos aplicables para cada caso
+                - paragraph [ref=f1e19]:
+                  - text: "6. El solicitante ha dado lectura y se manifiesta conforme con el aviso de privacidad de trámites y servicios disponible para su consulta en la en la siguiente ubicación:"
+                  - link "http://www.icvnl.gob.mx/AvisoPrivacidad/." [ref=f1e20] [cursor=pointer]:
+                    - /url: https://www.icvnl.gob.mx/AvisoPrivacidad
+              - generic [ref=f1e22]:
+                - checkbox "Acepto bajo protesta de decir verdad que he leído y estoy de acuerdo con todos y cada uno de los términos y condiciones del servicio." [ref=f1e23]
+                - strong [ref=f1e25]: Acepto bajo protesta de decir verdad que he leído y estoy de acuerdo con todos y cada uno de los términos y condiciones del servicio.
+            - generic [ref=f1e28]:
+              - generic [ref=f1e31]:
+                - generic [ref=f1e32]:
+                  - heading "PAGO EN LÍNEA REFRENDO" [level=4] [ref=f1e33]
+                  - img [ref=f1e34]
+                  - img [ref=f1e35]
+                  - img [ref=f1e36]
+                - paragraph [ref=f1e37]: "Ingresa tu placa:"
+              - generic [ref=f1e40]:
+                - textbox "Placa" [ref=f1e41]
+                - generic: Placa
+              - generic [ref=f1e42]:
+                - generic [ref=f1e43]:
+                  - checkbox [checked] [ref=f1e44]
+                  - generic [ref=f1e45]: Deseo donar $40.00 M.N. para la Cruz Roja y Bomberos de Nuevo León
+                - generic [ref=f1e49]:
+                  - checkbox "No soy un robot" [ref=f1e51]
+                  - generic [ref=f1e52] [cursor=pointer]: No soy un robot
+              - generic [ref=f1e54]:
+                - button "Consultar" [disabled]
+                - paragraph [ref=f1e55]: "\"(*) Escribe tu placa sin guiones.\""
+  - generic [ref=e55]:
+    - generic [ref=e57]:
+      - text:  
+      - list [ref=e59]:
+        - listitem [ref=e60]:
+          - link "" [ref=e61] [cursor=pointer]:
+            - /url: https://www.facebook.com/ICVNL/
+            - generic [ref=e62]: 
+        - listitem [ref=e63]:
+          - link "" [ref=e64] [cursor=pointer]:
+            - /url: https://www.instagram.com/icvnl/?hl=es-la
+            - generic [ref=e65]: 
+        - listitem [ref=e66]:
+          - link [ref=e67] [cursor=pointer]:
+            - /url: https://twitter.com/icvnl
+            - img [ref=e68]
+        - listitem [ref=e69]:
+          - img [ref=e70]
+      - link "Autos" [ref=e73] [cursor=pointer]:
+        - /url: TramitesdeAutos
+      - link "Licencia" [ref=e76] [cursor=pointer]:
+        - /url: TramitesdeLicencia
+      - link "Reclutamiento" [ref=e79] [cursor=pointer]:
+        - /url: Reclutamiento
+      - link "Normatividad y Transparencia" [ref=e82] [cursor=pointer]:
+        - /url: Transparencia
+      - link "Avisos de Privacidad" [ref=e85] [cursor=pointer]:
+        - /url: AvisoPrivacidad
+    - list [ref=e87]:
+      - listitem [ref=e88]: Versión 1.1

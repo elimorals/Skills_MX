@@ -1,0 +1,507 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e31]:
+      - generic [ref=e32]:
+        - link "P&aacutegina de inicio, Gobierno de M&eacutexico" [ref=e33] [cursor=pointer]:
+          - /url: https://www.gob.mx/
+          - img "P&aacutegina de inicio, Gobierno de M&eacutexico" [ref=e34]
+        - generic [ref=e36]:
+          - link "Trámites" [ref=e37] [cursor=pointer]:
+            - /url: https://www.gob.mx/tramites
+          - link "Gobierno" [ref=e38] [cursor=pointer]:
+            - /url: https://www.gob.mx/gobierno
+          - link "" [ref=e39] [cursor=pointer]:
+            - /url: https://www.gob.mx/busqueda
+            - generic [ref=e40]: 
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link [ref=e5] [cursor=pointer]:
+          - /url: /inicio
+        - list [ref=e7]:
+          - listitem [ref=e8] [cursor=pointer]:
+            - link "Inicio" [ref=e9]:
+              - /url: /
+          - listitem [ref=e10] [cursor=pointer]:
+            - link "Búsqueda por metadatos" [ref=e11]:
+              - /url: /busc
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e16]:
+          - generic:
+            - button "Ingrese un término de búsqueda  Search":
+              - generic:
+                - generic:
+                  - generic:
+                    - searchbox "Ingrese un término de búsqueda" [ref=e17]: TELMEX
+                    - generic: 
+                    - generic:
+                      - img [ref=e19] [cursor=pointer]: settings
+                      - img [ref=e166] [cursor=pointer]: close
+                      - button "Search" [ref=e20] [cursor=pointer]:
+                        - img [ref=e167]: arrow_forward
+        - generic [ref=e168]:
+          - generic [ref=e170]:
+            - generic [ref=e172]:
+              - button [ref=e173] [cursor=pointer]:
+                - img [ref=e174]: grid_on
+              - button [ref=e177] [cursor=pointer]:
+                - img [ref=e178]: list
+            - generic [ref=e181]:
+              - generic [ref=e182]:
+                - button "Documentos" [ref=e183] [cursor=pointer]:
+                  - img [ref=e184]: description
+                  - generic [ref=e185]: Documentos
+                - button "Expedientes" [ref=e186] [cursor=pointer]:
+                  - img [ref=e187]: folder
+                  - generic [ref=e188]: Expedientes
+              - generic [ref=e189]:
+                - generic [ref=e190]: "Resultados encontrados: 863"
+                - generic [ref=e191]:
+                  - button "Marcas" [ref=e192] [cursor=pointer]
+                  - button "Contencioso" [ref=e193] [cursor=pointer]
+                - textbox "Filtro..." [ref=e196]
+          - generic [ref=e198]:
+            - generic [ref=e199]:
+              - generic [ref=e200] [cursor=pointer]:
+                - generic [ref=e201]:
+                  - generic [ref=e202]: "expediente: MA/M/1985/3502080"
+                  - generic [ref=e204]: "1"
+                - generic [ref=e205]:
+                  - paragraph [ref=e206]: "Área: MARCAS"
+                  - paragraph [ref=e207]: "Año: 2025"
+                  - paragraph [ref=e208]: "Expediente: 3502080"
+                  - paragraph [ref=e209]: "Tipo expediente: MARCA"
+                  - paragraph [ref=e210]: "Num. Expediente: 3502080"
+                  - paragraph [ref=e211]: "Expediente: 3502080"
+                  - paragraph [ref=e212]: "Expediente Interno: MA/M/1985/3502080"
+                  - paragraph [ref=e213]:
+                    - text: "Título o Denominación:"
+                    - generic [ref=e214]:
+                      - text: RELLAMADO
+                      - mark [ref=e215]: TELMEX
+                  - paragraph [ref=e216]: "Fecha: 11 de noviembre de 2025"
+                  - paragraph [ref=e217]: "Titular: TELEFONOS DE MEXICO, S.A.B. DE C.V."
+                  - paragraph [ref=e218]: "Nacionalidad (Titular.): MEXICO"
+                  - paragraph [ref=e219]: "Estado (Titular.): CUAUHTEMOC, CIUDAD DE MEXICO"
+                  - paragraph [ref=e220]: "Tipo Descripción: DENOMINACION"
+                  - paragraph [ref=e221]: "Clase: 38"
+                - img [ref=e222]: arrow_forward
+              - generic [ref=e223] [cursor=pointer]:
+                - generic [ref=e224]:
+                  - generic [ref=e225]: "expediente: MA/M/1985/2963830"
+                  - generic [ref=e227]: "2"
+                - generic [ref=e228]:
+                  - paragraph [ref=e229]: "Área: MARCAS"
+                  - paragraph [ref=e230]: "Año: 2023"
+                  - paragraph [ref=e231]: "Expediente: 2963830"
+                  - paragraph [ref=e232]: "Tipo expediente: MARCA"
+                  - paragraph [ref=e233]: "Num. Expediente: 2963830"
+                  - paragraph [ref=e234]: "Expediente: 2963830"
+                  - paragraph [ref=e235]: "Expediente Interno: MA/M/1985/2963830"
+                  - paragraph [ref=e236]:
+                    - text: "Título o Denominación:"
+                    - generic [ref=e237]:
+                      - text: SALUD DIGITAL
+                      - mark [ref=e238]: TELMEX
+                  - paragraph [ref=e239]: "Fecha: 12 de junio de 2023"
+                  - paragraph [ref=e240]: "Titular: TELEFONOS DE MEXICO, S.A.B. DE C.V."
+                  - paragraph [ref=e241]: "Nacionalidad (Titular.): MEXICO"
+                  - paragraph [ref=e242]: "Estado (Titular.): CUAUHTEMOC, CIUDAD DE MEXICO"
+                  - paragraph [ref=e243]: "Tipo Descripción: DENOMINACION"
+                  - paragraph [ref=e244]: "Clase: 42"
+                - img [ref=e245]: arrow_forward
+              - generic [ref=e246] [cursor=pointer]:
+                - generic [ref=e247]:
+                  - generic [ref=e248]: "expediente: MA/A/1985/0143037"
+                  - generic [ref=e250]: "3"
+                - generic [ref=e251]:
+                  - paragraph [ref=e252]: "Área: MARCAS"
+                  - paragraph [ref=e253]: "Año: 2023"
+                  - paragraph [ref=e254]: "Expediente: 143037"
+                  - paragraph [ref=e255]: "Tipo expediente: AVISO COMERCIAL"
+                  - paragraph [ref=e256]: "Num. Expediente: 143037"
+                  - paragraph [ref=e257]: "Expediente: 143037"
+                  - paragraph [ref=e258]: "Expediente Interno: MA/A/1985/0143037"
+                  - paragraph [ref=e259]:
+                    - text: "Título o Denominación:"
+                    - generic [ref=e260]:
+                      - text: CUENTA CON
+                      - mark [ref=e261]: TELMEX
+                  - paragraph [ref=e262]: "Fecha: 30 de enero de 2023"
+                  - paragraph [ref=e263]: "Titular: TELEFONOS DE MEXICO, S.A.B. DE C.V."
+                  - paragraph [ref=e264]: "Nacionalidad (Titular.): MEXICO"
+                  - paragraph [ref=e265]: "Estado (Titular.): CUAUHTEMOC, CIUDAD DE MEXICO"
+                  - paragraph [ref=e266]: "Tipo Descripción: DENOMINACION"
+                  - paragraph [ref=e267]: "Clase: 9"
+                - img [ref=e268]: arrow_forward
+              - generic [ref=e269] [cursor=pointer]:
+                - generic [ref=e270]:
+                  - generic [ref=e271]: "expediente: MA/A/1985/0143036"
+                  - generic [ref=e273]: "4"
+                - generic [ref=e274]:
+                  - paragraph [ref=e275]: "Área: MARCAS"
+                  - paragraph [ref=e276]: "Año: 2023"
+                  - paragraph [ref=e277]: "Expediente: 143036"
+                  - paragraph [ref=e278]: "Tipo expediente: AVISO COMERCIAL"
+                  - paragraph [ref=e279]: "Num. Expediente: 143036"
+                  - paragraph [ref=e280]: "Expediente: 143036"
+                  - paragraph [ref=e281]: "Expediente Interno: MA/A/1985/0143036"
+                  - paragraph [ref=e282]:
+                    - text: "Título o Denominación:"
+                    - generic [ref=e283]:
+                      - text: CUENTA CON
+                      - mark [ref=e284]: TELMEX
+                  - paragraph [ref=e285]: "Fecha: 30 de enero de 2023"
+                  - paragraph [ref=e286]: "Titular: TELEFONOS DE MEXICO, S.A.B. DE C.V."
+                  - paragraph [ref=e287]: "Nacionalidad (Titular.): MEXICO"
+                  - paragraph [ref=e288]: "Estado (Titular.): CUAUHTEMOC, CIUDAD DE MEXICO"
+                  - paragraph [ref=e289]: "Tipo Descripción: DENOMINACION"
+                  - paragraph [ref=e290]: "Clase: 35"
+                - img [ref=e291]: arrow_forward
+              - generic [ref=e292] [cursor=pointer]:
+                - generic [ref=e293]:
+                  - generic [ref=e294]: "expediente: MA/M/1985/2883767"
+                  - generic [ref=e296]: "5"
+                - generic [ref=e297]:
+                  - paragraph [ref=e298]: "Área: MARCAS"
+                  - paragraph [ref=e299]: "Año: 2023"
+                  - paragraph [ref=e300]: "Expediente: 2883767"
+                  - paragraph [ref=e301]: "Tipo expediente: MARCA"
+                  - paragraph [ref=e302]: "Num. Expediente: 2883767"
+                  - paragraph [ref=e303]: "Expediente: 2883767"
+                  - paragraph [ref=e304]: "Expediente Interno: MA/M/1985/2883767"
+                  - paragraph [ref=e305]:
+                    - text: "Título o Denominación:"
+                    - generic [ref=e306]:
+                      - text: CUENTA CON
+                      - mark [ref=e307]: TELMEX
+                  - paragraph [ref=e308]: "Fecha: 30 de enero de 2023"
+                  - paragraph [ref=e309]: "Titular: TELEFONOS DE MEXICO, S.A.B. DE C.V."
+                  - paragraph [ref=e310]: "Nacionalidad (Titular.): MEXICO"
+                  - paragraph [ref=e311]: "Estado (Titular.): CUAUHTEMOC, CIUDAD DE MEXICO"
+                  - paragraph [ref=e312]: "Tipo Descripción: DENOMINACION"
+                  - paragraph [ref=e313]: "Clase: 38"
+                - img [ref=e314]: arrow_forward
+              - generic [ref=e315] [cursor=pointer]:
+                - generic [ref=e316]:
+                  - generic [ref=e317]: "expediente: MA/A/1985/0140021"
+                  - generic [ref=e319]: "6"
+                - generic [ref=e320]:
+                  - paragraph [ref=e321]: "Área: MARCAS"
+                  - paragraph [ref=e322]: "Año: 2022"
+                  - paragraph [ref=e323]: "Expediente: 140021"
+                  - paragraph [ref=e324]: "Tipo expediente: AVISO COMERCIAL"
+                  - paragraph [ref=e325]: "Num. Expediente: 140021"
+                  - paragraph [ref=e326]: "Expediente: 140021"
+                  - paragraph [ref=e327]: "Expediente Interno: MA/A/1985/0140021"
+                  - paragraph [ref=e328]:
+                    - text: "Título o Denominación:"
+                    - generic [ref=e329]:
+                      - text: PARTNERS
+                      - mark [ref=e330]: TELMEX
+                      - text: . IMPULSANDO LA TRANSFORMACION DIGITAL
+                  - paragraph [ref=e331]: "Fecha: 30 de mayo de 2022"
+                  - paragraph [ref=e332]: "Titular: TELEFONOS DE MEXICO S.A.B. DE C.V."
+                  - paragraph [ref=e333]: "Nacionalidad (Titular.): MEXICO"
+                  - paragraph [ref=e334]: "Estado (Titular.): CUAUHTEMOC, CIUDAD DE MEXICO"
+                  - paragraph [ref=e335]: "Tipo Descripción: DENOMINACION"
+                  - paragraph [ref=e336]: "Clase: 38"
+                - img [ref=e337]: arrow_forward
+              - generic [ref=e338] [cursor=pointer]:
+                - generic [ref=e339]:
+                  - generic [ref=e340]: "expediente: MA/M/1985/2759079"
+                  - generic [ref=e342]: "7"
+                - generic [ref=e343]:
+                  - paragraph [ref=e344]: "Área: MARCAS"
+                  - paragraph [ref=e345]: "Año: 2022"
+                  - paragraph [ref=e346]: "Expediente: 2759079"
+                  - paragraph [ref=e347]: "Tipo expediente: MARCA"
+                  - paragraph [ref=e348]: "Num. Expediente: 2759079"
+                  - paragraph [ref=e349]: "Expediente: 2759079"
+                  - paragraph [ref=e350]: "Expediente Interno: MA/M/1985/2759079"
+                  - paragraph [ref=e351]:
+                    - text: "Título o Denominación:"
+                    - generic [ref=e352]:
+                      - text: PARTNER PLATINO
+                      - mark [ref=e353]: TELMEX
+                  - paragraph [ref=e354]: "Fecha: 30 de mayo de 2022"
+                  - paragraph [ref=e355]: "Titular: TELEFONOS DE MEXICO S.A.B. DE C.V."
+                  - paragraph [ref=e356]: "Nacionalidad (Titular.): MEXICO"
+                  - paragraph [ref=e357]: "Estado (Titular.): CUAUHTEMOC, CIUDAD DE MEXICO"
+                  - paragraph [ref=e358]: "Tipo Descripción: DENOMINACION"
+                  - paragraph [ref=e359]: "Clase: 38"
+                - img [ref=e360]: arrow_forward
+              - generic [ref=e361] [cursor=pointer]:
+                - generic [ref=e362]:
+                  - generic [ref=e363]: "expediente: MA/M/1985/2759077"
+                  - generic [ref=e365]: "8"
+                - generic [ref=e366]:
+                  - paragraph [ref=e367]: "Área: MARCAS"
+                  - paragraph [ref=e368]: "Año: 2022"
+                  - paragraph [ref=e369]: "Expediente: 2759077"
+                  - paragraph [ref=e370]: "Tipo expediente: MARCA"
+                  - paragraph [ref=e371]: "Num. Expediente: 2759077"
+                  - paragraph [ref=e372]: "Expediente: 2759077"
+                  - paragraph [ref=e373]: "Expediente Interno: MA/M/1985/2759077"
+                  - paragraph [ref=e374]:
+                    - text: "Título o Denominación:"
+                    - generic [ref=e375]:
+                      - text: PARTNER ORO
+                      - mark [ref=e376]: TELMEX
+                  - paragraph [ref=e377]: "Fecha: 30 de mayo de 2022"
+                  - paragraph [ref=e378]: "Titular: TELEFONOS DE MEXICO S.A.B. DE C.V."
+                  - paragraph [ref=e379]: "Nacionalidad (Titular.): MEXICO"
+                  - paragraph [ref=e380]: "Estado (Titular.): CUAUHTEMOC, CIUDAD DE MEXICO"
+                  - paragraph [ref=e381]: "Tipo Descripción: DENOMINACION"
+                  - paragraph [ref=e382]: "Clase: 38"
+                - img [ref=e383]: arrow_forward
+              - generic [ref=e384] [cursor=pointer]:
+                - generic [ref=e385]:
+                  - generic [ref=e386]: "expediente: MA/M/1985/2759076"
+                  - generic [ref=e388]: "9"
+                - generic [ref=e389]:
+                  - paragraph [ref=e390]: "Área: MARCAS"
+                  - paragraph [ref=e391]: "Año: 2022"
+                  - paragraph [ref=e392]: "Expediente: 2759076"
+                  - paragraph [ref=e393]: "Tipo expediente: MARCA"
+                  - paragraph [ref=e394]: "Num. Expediente: 2759076"
+                  - paragraph [ref=e395]: "Expediente: 2759076"
+                  - paragraph [ref=e396]: "Expediente Interno: MA/M/1985/2759076"
+                  - paragraph [ref=e397]:
+                    - text: "Título o Denominación:"
+                    - generic [ref=e398]:
+                      - text: PARTNER PLATA
+                      - mark [ref=e399]: TELMEX
+                  - paragraph [ref=e400]: "Fecha: 30 de mayo de 2022"
+                  - paragraph [ref=e401]: "Titular: TELEFONOS DE MEXICO S.A.B. DE C.V."
+                  - paragraph [ref=e402]: "Nacionalidad (Titular.): MEXICO"
+                  - paragraph [ref=e403]: "Estado (Titular.): CUAUHTEMOC, CIUDAD DE MEXICO"
+                  - paragraph [ref=e404]: "Tipo Descripción: DENOMINACION"
+                  - paragraph [ref=e405]: "Clase: 38"
+                - img [ref=e406]: arrow_forward
+              - generic [ref=e407] [cursor=pointer]:
+                - generic [ref=e408]:
+                  - generic [ref=e409]: "expediente: MA/M/1985/2759075"
+                  - generic [ref=e411]: "10"
+                - generic [ref=e412]:
+                  - paragraph [ref=e413]: "Área: MARCAS"
+                  - paragraph [ref=e414]: "Año: 2022"
+                  - paragraph [ref=e415]: "Expediente: 2759075"
+                  - paragraph [ref=e416]: "Tipo expediente: MARCA"
+                  - paragraph [ref=e417]: "Num. Expediente: 2759075"
+                  - paragraph [ref=e418]: "Expediente: 2759075"
+                  - paragraph [ref=e419]: "Expediente Interno: MA/M/1985/2759075"
+                  - paragraph [ref=e420]:
+                    - text: "Título o Denominación:"
+                    - generic [ref=e421]:
+                      - text: PARTNERS
+                      - mark [ref=e422]: TELMEX
+                  - paragraph [ref=e423]: "Fecha: 30 de mayo de 2022"
+                  - paragraph [ref=e424]: "Titular: TELEFONOS DE MEXICO S.A.B. DE C.V."
+                  - paragraph [ref=e425]: "Nacionalidad (Titular.): MEXICO"
+                  - paragraph [ref=e426]: "Estado (Titular.): CUAUHTEMOC, CIUDAD DE MEXICO"
+                  - paragraph [ref=e427]: "Tipo Descripción: DENOMINACION"
+                  - paragraph [ref=e428]: "Clase: 38"
+                - img [ref=e429]: arrow_forward
+              - generic [ref=e430] [cursor=pointer]:
+                - generic [ref=e431]:
+                  - generic [ref=e432]: "expediente: MA/A/1985/140021"
+                  - generic [ref=e434]: "11"
+                - generic [ref=e435]:
+                  - paragraph [ref=e436]: "Área: MARCAS"
+                  - paragraph [ref=e437]: "Año: 2022"
+                  - paragraph [ref=e438]: "Expediente: 140021"
+                  - paragraph [ref=e439]: "Tipo expediente: AVISO COMERCIAL"
+                  - paragraph [ref=e440]: "Num. Expediente: 140021"
+                  - paragraph [ref=e441]: "Expediente: 140021"
+                  - paragraph [ref=e442]: "Expediente Interno: MA/A/1985/140021"
+                  - paragraph [ref=e443]:
+                    - text: "Título o Denominación:"
+                    - generic [ref=e444]:
+                      - text: PARTNERS
+                      - mark [ref=e445]: TELMEX
+                      - text: . IMPULSANDO LA TRANSFORMACION DIGITAL
+                  - paragraph [ref=e446]: "Fecha: 30 de mayo de 2022"
+                  - paragraph [ref=e447]: "Titular: TELEFONOS DE MEXICO S.A.B. DE C.V."
+                  - paragraph [ref=e448]: "Nacionalidad (Titular.): MEXICO"
+                  - paragraph [ref=e449]: "Estado (Titular.): CUAUHTEMOC, CIUDAD DE MEXICO"
+                  - paragraph [ref=e450]: "Tipo Descripción: DENOMINACION"
+                  - paragraph [ref=e451]: "Clase: 38"
+                - img [ref=e452]: arrow_forward
+              - generic [ref=e453] [cursor=pointer]:
+                - generic [ref=e454]:
+                  - generic [ref=e455]: "expediente: MA/M/1985/2473995"
+                  - generic [ref=e457]: "12"
+                - generic [ref=e458]:
+                  - paragraph [ref=e459]: "Área: MARCAS"
+                  - paragraph [ref=e460]: "Año: 2020"
+                  - paragraph [ref=e461]: "Expediente: 2473995"
+                  - paragraph [ref=e462]: "Tipo expediente: MARCA"
+                  - paragraph [ref=e463]: "Num. Expediente: 2473995"
+                  - paragraph [ref=e464]: "Expediente: 2473995"
+                  - paragraph [ref=e465]: "Expediente Interno: MA/M/1985/2473995"
+                  - paragraph [ref=e466]:
+                    - text: "Título o Denominación:"
+                    - generic [ref=e467]:
+                      - mark [ref=e468]: TELMEX
+                      - text: ACELERADOR DE NEGOCIOS
+                  - paragraph [ref=e469]: "Fecha: 18 de diciembre de 2020"
+                  - paragraph [ref=e470]: "Titular: TELÉFONOS DE MÉXICO, S.A.B. DE C.V."
+                  - paragraph [ref=e471]: "Nacionalidad (Titular.): MEXICO"
+                  - paragraph [ref=e472]: "Estado (Titular.): CUAUHTEMOC, CIUDAD DE MEXICO"
+                  - paragraph [ref=e473]: "Tipo Descripción: DENOMINACION"
+                  - paragraph [ref=e474]: "Clase: 42"
+                - img [ref=e475]: arrow_forward
+            - generic [ref=e476]:
+              - group [ref=e478]:
+                - generic [ref=e480]:
+                  - generic [ref=e481]:
+                    - generic [ref=e482]: Elementos por página
+                    - combobox "12 Elementos por página" [ref=e487] [cursor=pointer]:
+                      - generic [ref=e488]:
+                        - generic [ref=e490]: "12"
+                        - img [ref=e493]
+                  - generic [ref=e496]:
+                    - generic [ref=e497]: 1 - 12 de 863
+                    - button "Primera página" [disabled] [ref=e498]:
+                      - img [ref=e499]
+                    - button "Página anterior" [disabled] [ref=e503]:
+                      - img [ref=e504]
+                    - button "Siguiente página" [ref=e508] [cursor=pointer]:
+                      - img [ref=e509]
+                    - button "Última página" [ref=e513] [cursor=pointer]:
+                      - img [ref=e514]
+              - generic [ref=e518]:
+                - generic [ref=e519]: Página
+                - combobox "1" [ref=e524] [cursor=pointer]:
+                  - generic [ref=e525]:
+                    - generic [ref=e527]: "1"
+                    - img [ref=e530]
+      - paragraph [ref=e24]: VIDOC. 4.0.1
+      - button [ref=e26] [cursor=pointer]:
+        - img [ref=e27]: import_contacts
+  - generic "Menu Accesibilidad":
+    - navigation:
+      - link [ref=e41] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e42]:  􏊚
+      - listitem [ref=e43]:
+        - list [ref=e44]:
+          - listitem [ref=e45] [cursor=pointer]:
+            - checkbox [ref=e46]
+            - generic [ref=e47]: 
+            - generic [ref=e48]: Restablecer
+          - listitem [ref=e49] [cursor=pointer]:
+            - checkbox [ref=e50]
+            - generic [ref=e51]: 
+            - generic [ref=e52]: Cambiar escala de grises
+          - listitem [ref=e53] [cursor=pointer]:
+            - checkbox [ref=e54]
+            - generic [ref=e55]: 
+            - generic [ref=e56]: Usar un lector de pantalla
+          - listitem [ref=e57] [cursor=pointer]:
+            - checkbox [ref=e58]
+            - generic [ref=e59]: 
+            - generic [ref=e60]: Cambiar tamaño de cursor
+          - listitem [ref=e61] [cursor=pointer]:
+            - checkbox [ref=e62]
+            - generic [ref=e63]: 
+            - generic [ref=e64]: Cambiar el contraste de color
+          - listitem [ref=e65] [cursor=pointer]:
+            - checkbox [ref=e66]
+            - generic [ref=e67]: 
+            - generic [ref=e68]: Mascara de lectura
+          - listitem [ref=e69] [cursor=pointer]:
+            - checkbox [ref=e70]
+            - generic [ref=e71]: 
+            - generic [ref=e72]: Guia de Lectura
+          - listitem [ref=e73] [cursor=pointer]:
+            - checkbox [ref=e74]
+            - generic [ref=e75]: 
+            - generic [ref=e76]: Cambio de tipografia dislexia
+          - listitem [ref=e77] [cursor=pointer]:
+            - checkbox [ref=e78]
+            - generic [ref=e79]: 
+            - generic [ref=e80]: Espaciado vertical
+          - listitem [ref=e86] [cursor=pointer]:
+            - checkbox [ref=e87]
+            - generic [ref=e88]: 
+            - generic [ref=e89]: Espaciado Horizontal
+          - listitem [ref=e95] [cursor=pointer]:
+            - generic [ref=e96]:
+              - generic [ref=e97]: 
+              - generic [ref=e98]: 
+            - generic [ref=e99]:
+              - generic [ref=e100]: 
+              - generic [ref=e101]: 
+            - generic [ref=e102]: Cambiar tamaño
+          - listitem [ref=e103] [cursor=pointer]:
+            - checkbox [ref=e104]
+            - generic [ref=e105]: 
+            - generic [ref=e106]: Resaltar Enlaces
+  - contentinfo [ref=e107]:
+    - generic [ref=e110]:
+      - img "logo gobierno de méxico" [ref=e112]
+      - generic [ref=e113]:
+        - heading "Enlaces" [level=5] [ref=e115] [cursor=pointer]
+        - list [ref=e118]:
+          - listitem [ref=e119]:
+            - link "Datos abiertos de la SABG" [ref=e120] [cursor=pointer]:
+              - /url: " https://data.buengobierno.gob.mx/"
+          - listitem [ref=e121]:
+            - link "Marco Jurídico" [ref=e122] [cursor=pointer]:
+              - /url: http://www.ordenjuridico.gob.mx
+          - listitem [ref=e123]:
+            - link "Plataforma Nacional de Transparencia" [ref=e124] [cursor=pointer]:
+              - /url: https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/faces/view/consultaPublica.xhtml#inicio
+          - listitem [ref=e125]:
+            - link "Transparencia para el pueblo" [ref=e126] [cursor=pointer]:
+              - /url: https://transparencia.gob.mx
+          - listitem [ref=e127]:
+            - link "Alerta" [ref=e128] [cursor=pointer]:
+              - /url: https://alertadores.buengobierno.gob.mx/
+      - generic [ref=e129]:
+        - heading "¿Qué es gob.mx?" [level=5] [ref=e131] [cursor=pointer]
+        - generic [ref=e133]:
+          - paragraph [ref=e134]:
+            - text: Es el portal único de trámites, información y participación ciudadana.
+            - link "Leer más" [ref=e135] [cursor=pointer]:
+              - /url: https://www.gob.mx/que-es-gobmx
+          - list [ref=e136]:
+            - listitem [ref=e137]:
+              - link "Portal de datos abiertos" [ref=e138] [cursor=pointer]:
+                - /url: https://datos.gob.mx
+            - listitem [ref=e139]:
+              - link "Declaración de accesibilidad" [ref=e140] [cursor=pointer]:
+                - /url: https://www.gob.mx/accesibilidad
+            - listitem [ref=e141]:
+              - link "Términos y Condiciones" [ref=e142] [cursor=pointer]:
+                - /url: https://www.gob.mx/terminos
+      - generic [ref=e143]:
+        - heading "Denuncia contra servidores públicos" [level=5] [ref=e144]:
+          - link "Denuncia contra servidores públicos" [ref=e145] [cursor=pointer]:
+            - /url: https://sidec.buengobierno.gob.mx/#!/
+        - generic [ref=e146]: Síguenos en
+        - list [ref=e147]:
+          - listitem [ref=e148]:
+            - link "Facebook" [ref=e149] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobmexico
+              - img "Facebook" [ref=e150]
+          - listitem [ref=e151]:
+            - link "Twitter" [ref=e152] [cursor=pointer]:
+              - /url: https://twitter.com/GobiernoMX
+              - img "Twitter" [ref=e153]
+          - listitem [ref=e154]:
+            - link "Instagram" [ref=e155] [cursor=pointer]:
+              - /url: https://www.instagram.com/gobmexico/
+              - img "Instagram" [ref=e156]
+          - listitem [ref=e157]:
+            - link "Youtube" [ref=e158] [cursor=pointer]:
+              - /url: https://www.youtube.com/@gobiernodemexico
+              - img "Youtube" [ref=e159]
+        - list [ref=e160]:
+          - listitem [ref=e161]:
+            - link "logo 079" [ref=e163] [cursor=pointer]:
+              - /url: tel:+079
+              - img "logo 079" [ref=e164]

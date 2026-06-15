@@ -1,0 +1,454 @@
+- generic [active] [ref=e1]:
+  - dialog "Naturgy utiliza cookies y tecnologías similares" [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: Naturgy utiliza cookies y tecnologías similares
+      - text: 
+    - generic [ref=e6]:
+      - paragraph [ref=e7]: Este sitio utiliza cookies propias y de terceros para funcionar correctamente, personalizar tu experiencia, analizar el uso y mostrar publicidad según tus intereses.
+      - paragraph [ref=e8]
+      - paragraph [ref=e9]:
+        - text: Al hacer clic en “Configurar preferencias” podrás seleccionar manualmente las cookies que deseas aceptar o rechazar, o bien aceptar todas pulsando el botón “Aceptar todas”.
+        - text: En cualquier momento puedes modificar o revocar tu consentimiento a través de los medios indicados en la
+        - link "Política de cookies" [ref=e10] [cursor=pointer]:
+          - /url: /politica-de-cookies/#cookie-web
+          - strong [ref=e11]: Política de cookies
+        - strong [ref=e12]
+        - text: de nuestro sitio web.
+      - paragraph [ref=e13]
+      - paragraph [ref=e14]:
+        - text: Naturgy puede compartir tus datos con terceros para prestar servicios. Más información en nuestra
+        - link "Política de cookies" [ref=e15] [cursor=pointer]:
+          - /url: /politica-de-cookies/#cookie-web
+          - strong [ref=e16]: Política de cookies
+        - text: .
+    - generic [ref=e17]:
+      - button "Aceptar todas" [ref=e18] [cursor=pointer]
+      - button "Rechazar todas" [ref=e19] [cursor=pointer]
+      - button "Configurar preferencias" [ref=e20] [cursor=pointer]
+  - link "Skip to content" [ref=e21] [cursor=pointer]:
+    - /url: "#content"
+  - banner [ref=e22]:
+    - generic [ref=e26]:
+      - generic [ref=e28]:
+        - navigation "Menu" [ref=e33]:
+          - list [ref=e34]:
+            - listitem [ref=e35]:
+              - link "Empresas Colaboradoras" [ref=e36] [cursor=pointer]:
+                - /url: https://www.naturgy.com.mx/empresas-colaboradoras/
+            - listitem [ref=e37]:
+              - link "Naturgy Contigo" [ref=e38] [cursor=pointer]:
+                - /url: https://apololatam.my.site.com/NaturgyContigo/s/bienvenida?language=es_MX
+            - listitem [ref=e39]:
+              - link "Oficina Virtual Industrial" [ref=e40] [cursor=pointer]:
+                - /url: https://www.gnmextranet.com/PortalGranConsumo/
+        - link [ref=e46] [cursor=pointer]:
+          - /url: https://www.naturgy.com.mx/inicio/buscador/
+          - generic [ref=e47]: 
+      - text: 
+    - generic [ref=e48]:
+      - link [ref=e52] [cursor=pointer]:
+        - /url: https://www.naturgy.com.mx/
+      - generic [ref=e55]:
+        - navigation "Menu" [ref=e56]:
+          - list [ref=e57]:
+            - listitem [ref=e58]:
+              - link "Inicio" [ref=e59] [cursor=pointer]:
+                - /url: "#"
+                - text: Inicio
+                - generic [ref=e60]:
+                  - generic: 
+        - text:   
+      - generic [ref=e63]:
+        - navigation "Menu" [ref=e64]:
+          - list [ref=e65]:
+            - listitem [ref=e66]:
+              - link "Corporativo" [ref=e67] [cursor=pointer]:
+                - /url: https://www.naturgy.com.mx/corporativo/
+            - listitem [ref=e68]:
+              - link "Residencial" [ref=e69] [cursor=pointer]:
+                - /url: https://www.naturgy.com.mx/residencial/
+            - listitem [ref=e70]:
+              - link "Industria" [ref=e71] [cursor=pointer]:
+                - /url: https://www.naturgy.com.mx/industria/
+            - listitem [ref=e72]:
+              - link "Generación Eléctrica" [ref=e73] [cursor=pointer]:
+                - /url: https://www.naturgy.com.mx/generacion-electrica/
+            - listitem [ref=e74]:
+              - link "Blog" [ref=e75] [cursor=pointer]:
+                - /url: https://www.naturgy.com.mx/blog/
+        - text:  
+    - text: ☰
+  - main [ref=e76]:
+    - generic [ref=e78]:
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - generic [ref=e87]:
+            - generic [ref=e95]:
+              - heading [level=2] [ref=e98]: Regístrate en Naturgy Contigo
+              - heading [level=5] [ref=e101]: "Te recordamos que nuestra oficina virtual ha cerrado. Realiza tus trámites desde Naturgy Contigo y disfruta de los siguientes beneficios:"
+              - list [ref=e104]:
+                - listitem [ref=e105]:
+                  - generic [ref=e107]: 
+                  - generic [ref=e108]: Paga tu factura vigente o vencida y reconexiones.
+                - listitem [ref=e109]:
+                  - generic [ref=e111]: 
+                  - generic [ref=e112]: Consulta tu historial de pagos y descarga tus facturas
+                - listitem [ref=e113]:
+                  - generic [ref=e115]: 
+                  - generic [ref=e116]: Domicilia tu pago en un clic
+              - generic [ref=e118]:
+                - link [ref=e123] [cursor=pointer]:
+                  - /url: https://apps.apple.com/us/app/naturgy-contigo/id1541405677
+                - link [ref=e128] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.mysalesforce.mycommunity.C00D58000000I73MEAS.A0OT3W0000000007WAA
+            - tabpanel [ref=e131]:
+              - generic [ref=e139]:
+                - generic [ref=e141]:
+                  - paragraph
+                  - paragraph [ref=e142]:
+                    - strong [ref=e143]: Solución
+                    - strong [ref=e144]: inmediata
+                  - paragraph [ref=e145]:
+                    - generic [ref=e146]:
+                      - text: Contáctanos en WhatsApp
+                      - img "WhatsApp" [ref=e147]
+                - generic [ref=e149]:
+                  - list [ref=e150]:
+                    - listitem [ref=e151]: Consulta saldo
+                    - listitem [ref=e152]: Obtén y paga tu recibo
+                    - listitem [ref=e153]: Solicita reconexión
+                    - listitem [ref=e154]: Reporta una fuga
+                  - img "QR WhatsApp" [ref=e156]
+                - generic [ref=e159]:
+                  - generic:
+                    - generic:
+                      - link:
+                        - /url: https://clicktime.symantec.com/15wkoCDgJVg18JJFND3Ud?h=ujwVSwWay7lPNuVvfkJaAkBVwQMCQM6JJk2qybclIjA=&u=https://click.gas.naturgy.com/?qs%3DABB7InYiOjEsImQiOjQ4NTJ9ADIAAAAAABkvAdcyH11uBrGQ9IBvt89u6JogFipiNQf-xxOPIjS_OcULYxexCl8_pNYvgvHTKZTemxves9CU9hm6YmAwDHLckENKeymUGj71lg
+                        - text: 
+                  - text: Gestiona tu servicio aquí
+            - tabpanel [ref=e162]:
+              - generic [ref=e172]:
+                - heading [level=3] [ref=e173]:
+                  - strong [ref=e174]: "En una sola llamada:"
+                - heading [level=2] [ref=e175]:
+                  - generic [ref=e176]: Paga
+                  - text: tu recibo, reconexión y consulta saldo más
+                  - strong [ref=e177]: rápido.
+                - heading [level=2] [ref=e178]:
+                  - text: Llama al
+                  - strong [ref=e179]: 800 Naturgy (628 8749),
+                - heading [level=2] [ref=e180]:
+                  - text: y elige la opción
+                  - strong [ref=e182]: "2."
+            - tabpanel [ref=e185]:
+              - generic [ref=e193]:
+                - heading [level=2] [ref=e196]: "Paperless: La alternativa más sustentable para consultar tu recibo."
+                - heading [level=4] [ref=e199]:
+                  - generic [ref=e200]: Únete a paperless para obtener tu recibo únicamente en formato digital
+                - link [ref=e208] [cursor=pointer]:
+                  - /url: https://cloud.gas.naturgy.com/paperless
+                  - generic [ref=e210]: Quiero mi recibo digital
+            - tabpanel [ref=e213]:
+              - generic [ref=e220]:
+                - heading [level=2] [ref=e223]: Regístrate en Naturgy Contigo
+                - heading [level=5] [ref=e226]: "Te recordamos que nuestra oficina virtual ha cerrado. Realiza tus trámites desde Naturgy Contigo y disfruta de los siguientes beneficios:"
+                - list [ref=e229]:
+                  - listitem [ref=e230]:
+                    - generic [ref=e232]: 
+                    - generic [ref=e233]: Paga tu factura vigente o vencida y reconexiones.
+                  - listitem [ref=e234]:
+                    - generic [ref=e236]: 
+                    - generic [ref=e237]: Consulta tu historial de pagos y descarga tus facturas
+                  - listitem [ref=e238]:
+                    - generic [ref=e240]: 
+                    - generic [ref=e241]: Domicilia tu pago en un clic
+                - generic [ref=e243]:
+                  - link [ref=e248] [cursor=pointer]:
+                    - /url: https://apps.apple.com/us/app/naturgy-contigo/id1541405677
+                  - link [ref=e253] [cursor=pointer]:
+                    - /url: https://play.google.com/store/apps/details?id=com.mysalesforce.mycommunity.C00D58000000I73MEAS.A0OT3W0000000007WAA
+            - generic [ref=e264]:
+              - generic [ref=e266]:
+                - paragraph [ref=e267]:
+                  - strong [ref=e268]: Solución
+                  - strong [ref=e269]: inmediata
+                - paragraph [ref=e270]:
+                  - generic [ref=e271]:
+                    - text: Contáctanos en WhatsApp
+                    - img [ref=e272]
+              - generic [ref=e274]:
+                - list [ref=e275]:
+                  - listitem [ref=e276]: Consulta saldo
+                  - listitem [ref=e277]: Obtén y paga tu recibo
+                  - listitem [ref=e278]: Solicita reconexión
+                  - listitem [ref=e279]: Reporta una fuga
+                - img [ref=e281]
+              - generic [ref=e284]:  Gestiona tu servicio aquí
+            - generic [ref=e297]:
+              - heading [level=3] [ref=e298]:
+                - strong [ref=e299]: "En una sola llamada:"
+              - heading [level=2] [ref=e300]:
+                - generic [ref=e301]: Paga
+                - text: tu recibo, reconexión y consulta saldo más
+                - strong [ref=e302]: rápido.
+              - heading [level=2] [ref=e303]:
+                - text: Llama al
+                - strong [ref=e304]: 800 Naturgy (628 8749),
+              - heading [level=2] [ref=e305]:
+                - text: y elige la opción
+                - strong [ref=e307]: "2."
+            - generic [ref=e318]:
+              - heading [level=2] [ref=e321]: "Paperless: La alternativa más sustentable para consultar tu recibo."
+              - heading [level=4] [ref=e324]:
+                - generic [ref=e325]: Únete a paperless para obtener tu recibo únicamente en formato digital
+              - link [ref=e333] [cursor=pointer]:
+                - /url: https://cloud.gas.naturgy.com/paperless
+                - generic [ref=e335]: Quiero mi recibo digital
+            - generic [ref=e345]:
+              - heading [level=2] [ref=e348]: Regístrate en Naturgy Contigo
+              - heading [level=5] [ref=e351]: "Te recordamos que nuestra oficina virtual ha cerrado. Realiza tus trámites desde Naturgy Contigo y disfruta de los siguientes beneficios:"
+              - list [ref=e354]:
+                - listitem [ref=e355]:
+                  - generic [ref=e357]: 
+                  - generic [ref=e358]: Paga tu factura vigente o vencida y reconexiones.
+                - listitem [ref=e359]:
+                  - generic [ref=e361]: 
+                  - generic [ref=e362]: Consulta tu historial de pagos y descarga tus facturas
+                - listitem [ref=e363]:
+                  - generic [ref=e365]: 
+                  - generic [ref=e366]: Domicilia tu pago en un clic
+              - generic [ref=e368]:
+                - link [ref=e373] [cursor=pointer]:
+                  - /url: https://apps.apple.com/us/app/naturgy-contigo/id1541405677
+                - link [ref=e378] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.mysalesforce.mycommunity.C00D58000000I73MEAS.A0OT3W0000000007WAA
+          - list [ref=e381]:
+            - listitem [ref=e382]:
+              - generic [ref=e383] [cursor=pointer]: "1"
+            - listitem [ref=e384]:
+              - generic [ref=e385] [cursor=pointer]: "2"
+            - listitem [ref=e386]:
+              - generic [ref=e387] [cursor=pointer]: "3"
+            - listitem [ref=e388]:
+              - generic [ref=e389] [cursor=pointer]: "4"
+        - generic [ref=e391] [cursor=pointer]: 
+        - generic [ref=e393] [cursor=pointer]: 
+      - link "Contrata Aquí" [ref=e403] [cursor=pointer]:
+        - /url: https://www.naturgy.com.mx/residencial/contrata-aqui/
+        - generic [ref=e404]:
+          - generic [ref=e406]: 
+          - generic [ref=e407]: Contrata Aquí
+      - link "Normatividad y Tarifas" [ref=e417] [cursor=pointer]:
+        - /url: https://www.naturgy.com.mx/negocio
+        - generic [ref=e418]:
+          - generic [ref=e420]: 
+          - generic [ref=e421]: Normatividad y Tarifas
+      - generic [ref=e423]:
+        - generic [ref=e424]:
+          - heading "Nosotros" [level=3] [ref=e429]
+          - paragraph [ref=e432]:
+            - generic [ref=e433]: Somos un grupo multinacional líder
+            - text: "en el sector energético, pionero en la distribución y comercialización de gas natural y la generación de electricidad:"
+          - list [ref=e436]:
+            - listitem [ref=e437]:
+              - generic [ref=e439]: 
+              - generic [ref=e440]: Presentes en 20 países
+            - listitem [ref=e441]:
+              - generic [ref=e443]: 
+              - generic [ref=e444]: Más de 16 millones de clientes
+            - listitem [ref=e445]:
+              - generic [ref=e447]: 
+              - generic [ref=e448]: Tenemos una potencia instalada de 16,9 GW y un mix diversificado de generación de electricidad
+        - generic [ref=e449]:
+          - heading "Servicios" [level=3] [ref=e454]
+          - paragraph [ref=e457]: "Ofrecemos soluciones integrales para garantizar el suministro eficiente de energía a hogares, negocios e industrias. Dentro de nuestros servicios, destacan:"
+          - list [ref=e460]:
+            - listitem [ref=e461]:
+              - generic [ref=e463]: 
+              - generic [ref=e464]: Diseño personalizado de infraestructura
+            - listitem [ref=e465]:
+              - generic [ref=e467]: 
+              - generic [ref=e468]: Aprovisionamiento y comercialización de gas natural
+            - listitem [ref=e469]:
+              - generic [ref=e471]: 
+              - generic [ref=e472]: Generación de electricidad mediante plantas de ciclo combinado, hidroeléctricas, solares y eólicas
+            - listitem [ref=e473]:
+              - generic [ref=e475]: 
+              - generic [ref=e476]: Gas natural vehicular
+        - generic [ref=e477]:
+          - heading "Compromisos" [level=3] [ref=e482]
+          - paragraph [ref=e485]:
+            - text: Atendemos las necesidades de
+            - text: "nuestros clientes proporcionando un servicio confiable y con alto valor añadido, basado en los siguientes principios clave:"
+          - list [ref=e488]:
+            - listitem [ref=e489]:
+              - generic [ref=e491]: 
+              - generic [ref=e492]: Interés por las personas
+            - listitem [ref=e493]:
+              - generic [ref=e495]: 
+              - generic [ref=e496]: Cumplimiento de resultados
+            - listitem [ref=e497]:
+              - generic [ref=e499]: 
+              - generic [ref=e500]: Gestión responsable del medio ambiente
+            - listitem [ref=e501]:
+              - generic [ref=e503]: 
+              - generic [ref=e504]: Seguridad y salud
+            - listitem [ref=e505]:
+              - generic [ref=e507]: 
+              - generic [ref=e508]: Integridad y transparencia
+  - contentinfo [ref=e517]:
+    - generic [ref=e519]:
+      - link "Llámanos y contrata al 800 Naturgy" [ref=e525] [cursor=pointer]:
+        - /url: tel:800-6288749
+        - generic [ref=e526]:
+          - generic [ref=e528]: 
+          - generic [ref=e529]: Llámanos y contrata al 800 Naturgy
+      - generic [ref=e530]:
+        - generic [ref=e535]: 
+        - heading "Descarga Naturgy Contigo" [level=5] [ref=e538]
+        - link [ref=e541] [cursor=pointer]:
+          - /url: https://apps.apple.com/us/app/naturgy-contigo/id1541405677
+        - link [ref=e544] [cursor=pointer]:
+          - /url: https://play.google.com/store/apps/details?id=com.mysalesforce.mycommunity.C00D58000000I73MEAS.A0OT3W0000000007WAA&pli=1
+        - link [ref=e547] [cursor=pointer]:
+          - /url: https://appgallery.huawei.com/#/app/C103771893?locale=en_US&source=appshare&subsource=C103771893
+        - iframe [ref=e550]:
+          - generic [active]:
+            - generic:
+              - table:
+                - rowgroup:
+                  - row:
+                    - cell:
+                      - generic:
+                        - generic:
+                          - img [ref=f7e1]
+                          - img [ref=f7e2]
+                          - img [ref=f7e3]
+                          - img [ref=f7e4]
+                          - img [ref=f7e5]
+      - generic [ref=e551]:
+        - generic [ref=e556]: 
+        - heading "Presencia internacional" [level=5] [ref=e559]
+        - list [ref=e562]:
+          - listitem [ref=e563]:
+            - link "España" [ref=e564] [cursor=pointer]:
+              - /url: https://www.naturgy.com/conocenos-naturgy/presencia-internacional/espana/?_ga=2.206395093.711556964.1698897578-2111364639.1695917721
+              - generic [ref=e565]: España
+          - listitem [ref=e566]:
+            - link "Resto de Europa" [ref=e567] [cursor=pointer]:
+              - /url: https://www.naturgy.com/conocenos-naturgy/presencia-internacional/resto-de-europa/
+              - generic [ref=e568]: Resto de Europa
+          - listitem [ref=e569]:
+            - link "América" [ref=e570] [cursor=pointer]:
+              - /url: https://www.naturgy.com/conocenos-naturgy/presencia-internacional/america/
+              - generic [ref=e571]: América
+          - listitem [ref=e572]:
+            - link "África" [ref=e573] [cursor=pointer]:
+              - /url: https://www.naturgy.com/conocenos-naturgy/presencia-internacional/africa/
+              - generic [ref=e574]: África
+          - listitem [ref=e575]:
+            - link "Asia" [ref=e576] [cursor=pointer]:
+              - /url: https://www.naturgy.com/conocenos-naturgy/presencia-internacional/asia/
+              - generic [ref=e577]: Asia
+          - listitem [ref=e578]:
+            - link "Oceanía" [ref=e579] [cursor=pointer]:
+              - /url: https://www.naturgy.com/conocenos-naturgy/presencia-internacional/oceania/
+              - generic [ref=e580]: Oceanía
+      - generic [ref=e581]:
+        - generic [ref=e586]: 
+        - heading "De interés" [level=5] [ref=e589]
+        - list [ref=e592]:
+          - listitem [ref=e593]:
+            - link "Informes anuales" [ref=e594] [cursor=pointer]:
+              - /url: https://www.naturgy.com/accionistas_e_inversores/la_sociedad/informes_anuales?_ga=2.182437922.448013177.1673546828-1352811658.1670947774
+              - generic [ref=e595]: Informes anuales
+          - listitem [ref=e596]:
+            - link "Cotizaciones" [ref=e597] [cursor=pointer]:
+              - /url: https://www.naturgy.com/accionistas-e-inversores/accionistas/cotizaciones/?_ga=2.38624229.711556964.1698897578-2111364639.1695917721
+              - generic [ref=e598]: Cotizaciones
+          - listitem [ref=e599]:
+            - link "Calendario financiero" [ref=e600] [cursor=pointer]:
+              - /url: https://www.naturgy.com/accionistas-e-inversores/la-sociedad/calendario-financiero/?_ga=2.38624229.711556964.1698897578-2111364639.1695917721
+              - generic [ref=e601]: Calendario financiero
+          - listitem [ref=e602]:
+            - link "Normatividad y Tarifas" [ref=e603] [cursor=pointer]:
+              - /url: https://www.naturgy.com.mx/industria/
+              - generic [ref=e604]: Normatividad y Tarifas
+          - listitem [ref=e605]:
+            - link "Resultados trimestrales" [ref=e606] [cursor=pointer]:
+              - /url: https://www.naturgy.com/accionistas-e-inversores/informacion-economica/resultados-trimestrales/?_ga=2.92831258.689638556.1708470122-1219904927.1705068410
+              - generic [ref=e607]: Resultados trimestrales
+      - generic [ref=e608]:
+        - generic [ref=e613]: 
+        - heading "Sitios recomendados" [level=5] [ref=e616]
+        - list [ref=e619]:
+          - listitem [ref=e620]:
+            - link "Fundación Naturgy" [ref=e621] [cursor=pointer]:
+              - /url: https://www.fundacionnaturgy.org/
+              - generic [ref=e622]: Fundación Naturgy
+          - listitem [ref=e623]:
+            - link "AMGN" [ref=e624] [cursor=pointer]:
+              - /url: https://amgn.mx/
+              - generic [ref=e625]: AMGN
+          - listitem [ref=e626]:
+            - link "CNE" [ref=e627] [cursor=pointer]:
+              - /url: https://www.gob.mx/cne
+              - generic [ref=e628]: CNE
+          - listitem [ref=e629]:
+            - link "SENER" [ref=e630] [cursor=pointer]:
+              - /url: https://www.gob.mx/sener
+              - generic [ref=e631]: SENER
+          - listitem [ref=e632]:
+            - link "PEMEX" [ref=e633] [cursor=pointer]:
+              - /url: https://www.pemex.com/en/Paginas/default.aspx
+              - generic [ref=e634]: PEMEX
+          - listitem [ref=e635]:
+            - link "EMA" [ref=e636] [cursor=pointer]:
+              - /url: https://catalogo.consultaema.mx:75/busqueda-unidades-inspeccion
+              - generic [ref=e637]: EMA
+      - generic [ref=e638]:
+        - generic:
+          - generic:
+            - link:
+              - /url: http://wa.me/524442338287
+              - text: 
+        - text: Gestiona tu servicio aquí
+    - list [ref=e644]:
+      - listitem [ref=e645]:
+        - link "Linkedin" [ref=e646] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/naturgymx/
+          - generic [ref=e647]: Linkedin
+          - generic [ref=e648]: 
+      - listitem [ref=e649]:
+        - link "Facebook" [ref=e650] [cursor=pointer]:
+          - /url: https://www.facebook.com/NaturgyMx
+          - generic [ref=e651]: Facebook
+          - generic [ref=e652]: 
+      - listitem [ref=e653]:
+        - link [ref=e654] [cursor=pointer]:
+          - /url: https://twitter.com/naturgymx
+          - img [ref=e656]
+      - listitem [ref=e658]:
+        - link "Instagram" [ref=e659] [cursor=pointer]:
+          - /url: https://www.instagram.com/naturgymx/
+          - generic [ref=e660]: Instagram
+          - generic [ref=e661]: 
+      - listitem [ref=e662]:
+        - link "Youtube" [ref=e663] [cursor=pointer]:
+          - /url: https://www.youtube.com/user/gasnatmex
+          - generic [ref=e664]: Youtube
+          - generic [ref=e665]: 
+    - generic [ref=e669]:
+      - generic [ref=e670]:
+        - link "Aviso de Privacidad" [ref=e674] [cursor=pointer]:
+          - /url: https://www.naturgy.com.mx/aviso-privacidad/
+          - generic [ref=e676]: Aviso de Privacidad
+        - link "Política de cookies" [ref=e680] [cursor=pointer]:
+          - /url: https://www.naturgy.com.mx/politica-de-cookies/
+          - generic [ref=e682]: Política de cookies
+        - button "Selección de Cookies" [ref=e686] [cursor=pointer]:
+          - generic [ref=e688]: Selección de Cookies
+      - paragraph [ref=e691]: © 2026 Naturgy | Todos los derechos reservados
+  - generic [ref=e693]: desktop
+  - button "Hola, ¿tiene alguna pregunta? Chateemos." [ref=e694] [cursor=pointer]:
+    - img [ref=e696]

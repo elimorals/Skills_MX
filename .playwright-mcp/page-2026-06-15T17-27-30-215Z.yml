@@ -1,0 +1,154 @@
+- generic [active] [ref=e1]:
+  - text: 
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e7]:
+          - link [ref=e10] [cursor=pointer]:
+            - /url: https://www.finanzas.cdmx.gob.mx/
+          - heading "Atención Ciudadana " [level=5] [ref=e12]:
+            - link "Atención Ciudadana " [ref=e13] [cursor=pointer]:
+              - /url: https://atencionciudadana.cdmx.gob.mx/
+              - text: Atención Ciudadana
+              - generic [ref=e14]: 
+        - generic [ref=e16]:
+          - text: 
+          - list [ref=e19]:
+            - listitem [ref=e20]:
+              - link "Secretaría" [ref=e21] [cursor=pointer]:
+                - /url: javascript:;
+                - generic [ref=e22]: Secretaría
+                - text: 
+            - listitem [ref=e23]:
+              - link "Tramites en Línea" [ref=e24] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/licencias
+                - generic [ref=e25]: Tramites en Línea
+                - text: 
+            - listitem [ref=e26]:
+              - link "Pagos" [ref=e27] [cursor=pointer]:
+                - /url: javascript:;
+                - generic [ref=e28]: Pagos
+                - text: 
+            - listitem [ref=e29]:
+              - link "Adeudos" [ref=e30] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/consulta_adeudos
+                - generic [ref=e31]: Adeudos
+                - text: 
+            - listitem [ref=e32]:
+              - link "Certificaciones" [ref=e33] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/certificacion
+                - generic [ref=e34]: Certificaciones
+                - text: 
+            - listitem [ref=e35]:
+              - link "Recibos de Pago" [ref=e36] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/recibos_lotes
+                - generic [ref=e37]: Recibos de Pago
+                - text: 
+            - listitem [ref=e38]:
+              - link "Devoluciones" [ref=e39] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/devoluciones
+                - generic [ref=e40]: Devoluciones
+                - text: 
+      - generic [ref=e43]:
+        - heading [level=3]
+        - generic [ref=e44]:
+          - link "" [ref=e45] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e46]: 
+          - link "Inicio" [ref=e48] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx
+          - link "Trámites en línea" [ref=e50] [cursor=pointer]:
+            - /url: javascript:void(0)
+      - generic [ref=e55]:
+        - generic [ref=e57] [cursor=pointer]:
+          - generic [ref=e58]: Pagos y trámites en línea
+          - text: 
+        - generic "Pagos y trámites en línea " [ref=e59]:
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - generic [ref=e63]:
+                - link "Predial Predial" [ref=e65] [cursor=pointer]:
+                  - /url: https://ovica.finanzas.cdmx.gob.mx/
+                  - img "Predial" [ref=e66]
+                  - strong [ref=e68]: Predial
+                - link "Tenencia Tenencia" [ref=e70] [cursor=pointer]:
+                  - /url: https://data.finanzas.cdmx.gob.mx/Front_ten/
+                  - img "Tenencia" [ref=e71]
+                  - strong [ref=e73]: Tenencia
+                - link "Agua Agua" [ref=e75] [cursor=pointer]:
+                  - /url: https://www.sacmex.cdmx.gob.mx/
+                  - img "Agua" [ref=e76]
+                  - strong [ref=e78]: Agua
+                - link "Nómina Nómina" [ref=e80] [cursor=pointer]:
+                  - /url: https://innovacion.finanzas.cdmx.gob.mx/siscon/
+                  - img "Nómina" [ref=e81]
+                  - strong [ref=e83]: Nómina
+                - link "Tránsito Tránsito" [ref=e85] [cursor=pointer]:
+                  - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/licencias
+                  - img "Tránsito" [ref=e86]
+                  - strong [ref=e88]: Tránsito
+                - link "Registro Civil Registro Civil" [ref=e90] [cursor=pointer]:
+                  - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/registro_civil
+                  - img "Registro Civil" [ref=e91]
+                  - strong [ref=e93]: Registro Civil
+              - link "Patrs/Concesiones Patrs / Concesiones" [ref=e97] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/patrs
+                - img "Patrs/Concesiones" [ref=e98]
+                - strong [ref=e100]: Patrs / Concesiones
+            - generic [ref=e103]:
+              - link "Policia Policia" [ref=e105] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/policia
+                - img "Policia" [ref=e106]
+                - strong [ref=e108]: Policia
+              - link "Notaría Notaría" [ref=e110] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/archivo_general
+                - img "Notaría" [ref=e111]
+                - strong [ref=e113]: Notaría
+              - link "Derechos Varios Derechos Varios" [ref=e115] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/derechos_varios
+                - img "Derechos Varios" [ref=e116]
+                - strong [ref=e118]: Derechos Varios
+              - link "Contribuciones Contribuciones" [ref=e120] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/contribuciones
+                - img "Contribuciones" [ref=e121]
+                - strong [ref=e123]: Contribuciones
+              - link "Isan Isan" [ref=e125] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/isan
+                - img "Isan" [ref=e126]
+                - strong [ref=e128]: Isan
+    - generic [ref=e132]:
+      - generic [ref=e134]:
+        - heading "Atención Ciudadana" [level=3] [ref=e135]
+        - generic [ref=e136]:
+          - text: "Dirección: Calle Doctor Lavista 144"
+          - text: Colonia Doctores, Alcaldía
+          - text: Cuauhtémoc
+          - text: "Teléfono: 55883388"
+      - generic [ref=e138]:
+        - heading "Navegación" [level=3] [ref=e139]
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - link "Inicio" [ref=e143] [cursor=pointer]:
+              - /url: https://www.finanzas.cdmx.gob.mx/
+            - link "Secretaría" [ref=e144] [cursor=pointer]:
+              - /url: http://www.finanzas.cdmx.gob.mx/secretaria
+            - link "Servcios" [ref=e145] [cursor=pointer]:
+              - /url: http://www.finanzas.cdmx.gob.mx/servicios
+          - generic [ref=e146]:
+            - link "Programas" [ref=e147] [cursor=pointer]:
+              - /url: http://www.finanzas.cdmx.gob.mx/programas
+            - link "Notificaciones" [ref=e148] [cursor=pointer]:
+              - /url: http://www.finanzas.cdmx.gob.mx/notificaciones
+            - link "Transparencia" [ref=e149] [cursor=pointer]:
+              - /url: http://www.finanzas.cdmx.gob.mx/secretaria/transparencia
+      - generic [ref=e151]:
+        - heading "Sitios relacionados" [level=3] [ref=e152]
+        - generic [ref=e154]:
+          - generic [ref=e155]:
+            - link "Gaceta Oficial de la Ciudad de México" [ref=e156] [cursor=pointer]:
+              - /url: http://www.data.consejeria.cdmx.gob.mx/index.php/gaceta
+            - link "Fidere" [ref=e157] [cursor=pointer]:
+              - /url: https://www.fidere.cdmx.gob.mx/
+          - link "Procedimiento para la Solicitud" [ref=e159] [cursor=pointer]:
+            - /url: https://data.finanzas.cdmx.gob.mx/proveedores.html
+  - text: 

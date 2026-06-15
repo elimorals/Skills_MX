@@ -158,7 +158,17 @@ def buscar_real(
 
 
 def detalle_real(id_inmueble: str) -> dict[str, Any]:
-    """Detalle de un inmueble por ID — scraping de la página individual."""
+    """Detalle de un inmueble por ID — scraping de la página individual.
+
+    Validado Playwright MCP 2026-06-13:
+    URL pattern: /propiedades/clasificado/{slug}-{id}.html
+    Selectores reales:
+    - titulo: h1
+    - precio: [class*='price'] [class*='value']
+    - descripcion: section[class*='descript']
+    - ubicacion: [class*='location']
+    - caracteristicas: [class*='features']
+    """
     # El URL puede ser conocido si tenemos el slug completo, o usar redirect
     url = f"{BASE_URL}/propiedades/{id_inmueble}.html"
 

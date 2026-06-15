@@ -1,0 +1,50 @@
+- form [ref=e2]:
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - navigation [ref=e5]:
+        - link "FACTURA ELECTRÓNICA" [ref=e8] [cursor=pointer]:
+          - /url: /
+      - generic [ref=e10]:
+        - generic [ref=e11]:
+          - list [ref=e13]:
+            - listitem [ref=e14]:
+              - link "" [ref=e15] [cursor=pointer]:
+                - /url: http://www.gob.mx/
+                - generic [ref=e16]: 
+            - listitem [ref=e17]:
+              - text: 
+              - link "Inicio" [ref=e18] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=e19]:
+            - img "Logo SHCP" [ref=e20]
+            - generic [ref=e21]: Versión 4.5.1
+          - heading "Verificación de comprobantes fiscales digitales por internet" [level=3] [ref=e23]
+        - generic [ref=e24]:
+          - generic [ref=e25]:
+            - generic [ref=e26]:
+              - radio "Consulta por Folio Fiscal" [checked] [ref=e27] [cursor=pointer]
+              - generic [ref=e28]: Consulta por Folio Fiscal
+            - generic [ref=e29]:
+              - radio "Consulta por archivo XML" [ref=e30] [cursor=pointer]
+              - generic [ref=e31]: Consulta por archivo XML
+          - separator [ref=e32]
+          - generic [ref=e33]:
+            - generic [ref=e34]: A través de esta opción, usted podrá verificar si el comprobante fue certificado por el SAT
+            - generic [ref=e35]:
+              - generic [ref=e36]:
+                - text: "Folio fiscal*:"
+                - textbox [ref=e37]
+              - generic [ref=e38]:
+                - text: "RFC emisor*:"
+                - textbox [ref=e39]
+              - generic [ref=e40]:
+                - text: "RFC receptor*:"
+                - textbox [ref=e41]
+            - generic [ref=e42]:
+              - generic:
+                - img [ref=e45]
+                - generic [ref=e46]:
+                  - text: "Proporcione los dígitos de la imagen*:"
+                  - textbox [ref=e47]
+                - button "Verificar CFDI" [ref=e49] [cursor=pointer]
+            - generic [ref=e51]: "* Datos obligatorios"

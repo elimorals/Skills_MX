@@ -1,0 +1,194 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - link "Ir a la página inicial" [ref=e5] [cursor=pointer]:
+          - /url: /
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Trámites" [ref=e10] [cursor=pointer]:
+              - /url: /tramites
+          - listitem [ref=e11]:
+            - link "Gobierno" [ref=e12] [cursor=pointer]:
+              - /url: /gobierno
+          - listitem [ref=e13]:
+            - link "English" [ref=e14] [cursor=pointer]:
+              - /url: /cnbv/en
+          - listitem [ref=e15]:
+            - button "Buscar" [ref=e17] [cursor=pointer]:
+              - link "Buscar" [ref=e18]:
+                - /url: https://www.gob.mx/busqueda?utf8=✓
+                - img "Buscar" [ref=e19]
+  - main [ref=e20]:
+    - heading "Sitio de Comisión Nacional Bancaria y de Valores" [level=1] [ref=e21]
+    - generic [ref=e22]:
+      - button [ref=e23] [cursor=pointer]: Aa+
+      - button [ref=e24] [cursor=pointer]: Aa-
+    - generic [ref=e25]:
+      - navigation [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - link:
+              - /url: "?tab="
+          - list [ref=e30]:
+            - listitem [ref=e31]:
+              - link "Blog" [ref=e32] [cursor=pointer]:
+                - /url: "#3317"
+            - listitem [ref=e33]:
+              - link "Prensa" [ref=e34] [cursor=pointer]:
+                - /url: "#3322"
+            - listitem [ref=e35]:
+              - link "Documentos" [ref=e36] [cursor=pointer]:
+                - /url: "#3325"
+            - listitem [ref=e37]:
+              - link "Acciones y programas" [ref=e38] [cursor=pointer]:
+                - /url: "#12640"
+            - listitem [ref=e39]:
+              - link "Datos Personales" [ref=e40] [cursor=pointer]:
+                - /url: https://www.cnbv.gob.mx/ProteccionDatos/Paginas/default.aspx
+            - listitem [ref=e41]:
+              - link "Transparencia" [ref=e42] [cursor=pointer]:
+                - /url: https://www.cnbv.gob.mx/TRANSPARENCIA/Paginas/Transparencia-Home.aspx
+      - generic [ref=e45]:
+        - heading "-" [level=1] [ref=e46]
+        - paragraph [ref=e47]: "-"
+      - generic [ref=e48]:
+        - link "Ver Url":
+          - /url: https://portal.crt.gob.mx/gestion-de-lineas-telefonicas-moviles
+      - generic [ref=e51]:
+        - heading "Blog" [level=3] [ref=e52]
+        - separator [ref=e53]
+        - generic [ref=e54]:
+          - generic [ref=e55]:
+            - link "Interconexión de entidades e instituciones financieras a la Plataforma Única de Identidad" [ref=e57] [cursor=pointer]:
+              - /url: /cnbv/articulos/interconexion-de-entidades-e-instituciones-financieras-a-la-plataforma-unica-de-identidad-contribuye-a-la-busqueda-de-personas-desaparecidas?idiom=es
+              - img "Interconexión de entidades e instituciones financieras a la Plataforma Única de Identidad" [ref=e58]
+            - article [ref=e60]:
+              - time [ref=e61]:
+                - text: martes, 31 de marzo de 2026
+                - generic [ref=e62]: Fecha de publicación
+              - link "Interconexión de entidades e instituciones financieras a la Plataforma Única de Identidad contribuye a la búsqueda de personas desaparecidas" [ref=e63] [cursor=pointer]:
+                - /url: /cnbv/articulos/interconexion-de-entidades-e-instituciones-financieras-a-la-plataforma-unica-de-identidad-contribuye-a-la-busqueda-de-personas-desaparecidas?idiom=es
+                - heading "Interconexión de entidades e instituciones financieras a la Plataforma Única de Identidad contribuye a la búsqueda de personas desaparecidas" [level=3] [ref=e64]
+              - link "La interconexión de entidades e instituciones financieras a la Plataforma permite sumar esfuerzos en la búsqueda de personas desaparecidas o no localizadas, mediante la validación de información, sin compartir datos sensibles y respetando en todo momento las obligaciones de secrecía." [ref=e65] [cursor=pointer]:
+                - /url: /cnbv/articulos/interconexion-de-entidades-e-instituciones-financieras-a-la-plataforma-unica-de-identidad-contribuye-a-la-busqueda-de-personas-desaparecidas?idiom=es
+                - paragraph [ref=e66]: La interconexión de entidades e instituciones financieras a la Plataforma permite sumar esfuerzos en la búsqueda de personas desaparecidas o no localizadas, mediante la validación de información, sin compartir datos sensibles y respetando en todo momento las obligaciones de secrecía.
+              - link "Continuar leyendo" [ref=e67] [cursor=pointer]:
+                - /url: /cnbv/articulos/interconexion-de-entidades-e-instituciones-financieras-a-la-plataforma-unica-de-identidad-contribuye-a-la-busqueda-de-personas-desaparecidas?idiom=es
+              - separator [ref=e68]
+          - generic [ref=e69]:
+            - article [ref=e71]:
+              - link "Denuncia cualquier hecho o acto de corrupción a través de estos tres medios de contacto" [ref=e73] [cursor=pointer]:
+                - /url: /cnbv/articulos/denuncia-cualquier-hecho-o-acto-de-corrupcion-a-traves-de-estos-tres-medios-de-contacto-333225?idiom=es
+                - img "Denuncia cualquier hecho o acto de corrupción a través de estos tres medios de contacto" [ref=e74]
+              - time [ref=e75]:
+                - text: 03 de mayo de 2023
+                - generic [ref=e76]: Fecha de publicación
+              - heading "Denuncia cualquier hecho o acto de corrupción a través de estos tres medios de contacto" [level=4] [ref=e77]:
+                - link "Denuncia cualquier hecho o acto de corrupción a través de estos tres medios de contacto" [ref=e78] [cursor=pointer]:
+                  - /url: /cnbv/articulos/denuncia-cualquier-hecho-o-acto-de-corrupcion-a-traves-de-estos-tres-medios-de-contacto-333225?idiom=es
+              - link:
+                - /url: /cnbv/articulos/denuncia-cualquier-hecho-o-acto-de-corrupcion-a-traves-de-estos-tres-medios-de-contacto-333225?idiom=es
+              - link "Denuncia cualquier hecho o acto de corrupción a través de estos tres medios de contacto" [ref=e79] [cursor=pointer]:
+                - /url: /cnbv/articulos/denuncia-cualquier-hecho-o-acto-de-corrupcion-a-traves-de-estos-tres-medios-de-contacto-333225?idiom=es
+                - text: Continuar leyendo
+            - article [ref=e81]:
+              - link "Buzón de Quejas respecto de personas físicas o morales no sujetas a la supervisión" [ref=e83] [cursor=pointer]:
+                - /url: /cnbv/articulos/buzon-de-quejas-respecto-de-personas-fisicas-o-morales-no-sujetas-a-la-supervision-de-esta-comision?idiom=es
+                - img "Buzón de Quejas respecto de personas físicas o morales no sujetas a la supervisión" [ref=e84]
+              - time [ref=e85]:
+                - text: 03 de octubre de 2022
+                - generic [ref=e86]: Fecha de publicación
+              - heading "Buzón de Quejas respecto de personas físicas o morales no sujetas a la supervisión de esta Comisión" [level=4] [ref=e87]:
+                - link "Buzón de Quejas respecto de personas físicas o morales no sujetas a la supervisión de esta Comisión" [ref=e88] [cursor=pointer]:
+                  - /url: /cnbv/articulos/buzon-de-quejas-respecto-de-personas-fisicas-o-morales-no-sujetas-a-la-supervision-de-esta-comision?idiom=es
+              - link:
+                - /url: /cnbv/articulos/buzon-de-quejas-respecto-de-personas-fisicas-o-morales-no-sujetas-a-la-supervision-de-esta-comision?idiom=es
+              - link "Buzón de Quejas respecto de personas físicas o morales no sujetas a la supervisión de esta Comisión" [ref=e89] [cursor=pointer]:
+                - /url: /cnbv/articulos/buzon-de-quejas-respecto-de-personas-fisicas-o-morales-no-sujetas-a-la-supervision-de-esta-comision?idiom=es
+                - text: Continuar leyendo
+            - article [ref=e91]:
+              - link "Quejas y Denuncias Ciudadanas" [ref=e93] [cursor=pointer]:
+                - /url: /cnbv/articulos/quejas-y-denuncias-ciudadanas?idiom=es
+                - img "Quejas y Denuncias Ciudadanas" [ref=e94]
+              - time [ref=e95]:
+                - text: 24 de mayo de 2017
+                - generic [ref=e96]: Fecha de publicación
+              - heading "Quejas y Denuncias Ciudadanas" [level=4] [ref=e97]:
+                - link "Quejas y Denuncias Ciudadanas" [ref=e98] [cursor=pointer]:
+                  - /url: /cnbv/articulos/quejas-y-denuncias-ciudadanas?idiom=es
+              - link:
+                - /url: /cnbv/articulos/quejas-y-denuncias-ciudadanas?idiom=es
+              - link "Quejas y Denuncias Ciudadanas" [ref=e99] [cursor=pointer]:
+                - /url: /cnbv/articulos/quejas-y-denuncias-ciudadanas?idiom=es
+                - text: Continuar leyendo
+        - link "Ver historial" [ref=e101] [cursor=pointer]:
+          - /url: /cnbv/archivo/articulos?idiom=es&&filter_origin=archive
+  - contentinfo [ref=e102]:
+    - generic [ref=e104]:
+      - generic:
+        - img "logo gobierno de méxico" [ref=e106]
+        - generic [ref=e107]:
+          - heading "Enlaces" [level=4] [ref=e108]
+          - list [ref=e110]:
+            - listitem [ref=e111]:
+              - link "Datos" [ref=e112] [cursor=pointer]:
+                - /url: https://datos.gob.mx/
+            - listitem [ref=e113]:
+              - link "Portal de Obligaciones de Transparencia" [ref=e114] [cursor=pointer]:
+                - /url: http://portaltransparencia.gob.mx/buscador/search/search.do?method=begin&searchBy=0&idDependenciaZoom=06100
+            - listitem [ref=e115]:
+              - link "PNT" [ref=e116] [cursor=pointer]:
+                - /url: https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/
+            - listitem [ref=e117]:
+              - link "INAI" [ref=e118] [cursor=pointer]:
+                - /url: http://www.inai.org.mx/
+            - listitem [ref=e119]:
+              - link "Alerta" [ref=e120] [cursor=pointer]:
+                - /url: http://alertadores.funcionpublica.gob.mx/
+            - listitem [ref=e121]:
+              - link "Denuncia" [ref=e122] [cursor=pointer]:
+                - /url: https://sidec.buengobierno.gob.mx/#!/
+        - generic [ref=e123]:
+          - heading "¿Qué es gob.mx?" [level=4] [ref=e124]
+          - paragraph
+          - paragraph [ref=e125]:
+            - text: Es el portal único de trámites, información y participación ciudadana.
+            - link "Leer más" [ref=e126] [cursor=pointer]:
+              - /url: /que-es-gobmx
+          - paragraph
+          - list [ref=e127]:
+            - listitem [ref=e128]:
+              - link "Declaración de Accesibilidad" [ref=e129] [cursor=pointer]:
+                - /url: /accesibilidad
+            - listitem [ref=e130]:
+              - link "Términos y Condiciones" [ref=e131] [cursor=pointer]:
+                - /url: /terminos
+        - generic [ref=e132]:
+          - heading "Denuncia contra servidores públicos" [level=5] [ref=e133]:
+            - link "Denuncia contra servidores públicos" [ref=e134] [cursor=pointer]:
+              - /url: https://sidec.buengobierno.gob.mx/#!/
+          - heading "Síguenos en" [level=4] [ref=e135]
+          - list [ref=e136]:
+            - listitem [ref=e137]:
+              - link "Facebook" [ref=e138] [cursor=pointer]:
+                - /url: https://www.facebook.com/gobmexico
+                - img "Facebook" [ref=e139]
+            - listitem [ref=e140]:
+              - link "Twitter" [ref=e141] [cursor=pointer]:
+                - /url: https://twitter.com/GobiernoMX
+                - img "Twitter" [ref=e142]
+            - listitem [ref=e143]:
+              - link "gob.mx" [ref=e144] [cursor=pointer]:
+                - /url: https://www.instagram.com/gobmexico/
+                - img "gob.mx" [ref=e145]
+            - listitem [ref=e146]:
+              - link "gob.mx" [ref=e147] [cursor=pointer]:
+                - /url: https://www.youtube.com/@gobiernodemexico
+                - img "gob.mx" [ref=e148]
+          - list [ref=e149]:
+            - listitem [ref=e150]:
+              - link "logo 079" [ref=e152] [cursor=pointer]:
+                - /url: tel:+079
+                - img "logo 079" [ref=e153]
+  - generic "Modal Principal"

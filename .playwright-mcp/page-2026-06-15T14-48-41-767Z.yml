@@ -1,0 +1,167 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - link "gobierno de mexico" [ref=e5] [cursor=pointer]:
+          - /url: https://www.gob.mx/
+          - img "gobierno de mexico" [ref=e6]
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Trámites" [ref=e10] [cursor=pointer]:
+              - /url: https://www.gob.mx/tramites
+          - listitem [ref=e11]:
+            - link "Gobierno" [ref=e12] [cursor=pointer]:
+              - /url: https://www.gob.mx/gobierno
+          - listitem [ref=e13]:
+            - link "Búsqueda " [ref=e14] [cursor=pointer]:
+              - /url: https://www.gob.mx/busqueda
+              - generic [ref=e15]: Búsqueda
+              - generic [ref=e16]: 
+  - navigation [ref=e17]:
+    - generic [ref=e18]:
+      - link [ref=e20] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e21]:
+        - list
+  - main [ref=e22]:
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - list [ref=e26]:
+          - listitem [ref=e27]:
+            - link "" [ref=e28] [cursor=pointer]:
+              - /url: https://www.gob.mx/segob/
+              - generic [ref=e29]: 
+          - listitem [ref=e30]:
+            - text: 
+            - link "Consulta Ciudadana" [ref=e31] [cursor=pointer]:
+              - /url: /ciudadania/
+        - heading "Consulta Ciudadana" [level=3] [ref=e32]
+        - separator [ref=e33]
+        - generic [ref=e34]:
+          - strong [ref=e37]: POR FAVOR, INGRESE SÓLO UN CRITERIO DE BÚSQUEDA
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - generic [ref=e40]: "Número de Placa (sin guiones ni espacios) (5-7 dígitos):"
+              - textbox "Ingresa tu placa" [ref=e41]
+            - generic [ref=e42]:
+              - generic [ref=e43]: "Número de Identificación Vehicular (NIV): (4-17 dígitos)"
+              - generic [ref=e44]: 
+              - textbox "Ingresa tu número de serie" [ref=e45]
+            - generic [ref=e46]:
+              - generic [ref=e47]:
+                - text: "Folio de Constancia de Inscripción: (8 números)"
+                - generic [ref=e48]: 
+              - textbox "Ingresa tu folio" [ref=e49]
+            - generic [ref=e50]:
+              - generic [ref=e51]:
+                - text: "Número de Constancia de Inscripción: (8 dígitos)"
+                - generic [ref=e52]: 
+              - textbox "Ingresa tu número de constancia de inscripción" [ref=e53]
+            - separator [ref=e56]
+            - generic [ref=e57]:
+              - generic [ref=e58]: "* Ingresa sólo un criterio de búsqueda"
+              - generic [ref=e60]:
+                - button "Limpiar" [ref=e61] [cursor=pointer]
+                - button " Buscar" [ref=e62] [cursor=pointer]:
+                  - generic [ref=e63]: 
+                  - text: Buscar
+          - generic [ref=e64]:
+            - strong [ref=e66]:
+              - paragraph [ref=e67]:
+                - text: Este servicio de consulta es
+                - emphasis [ref=e68]: GRATUITO
+                - text: de acuerdo con el Artículo 6 de la Ley del Registro Público Vehicular.
+            - generic [ref=e69]:
+              - strong [ref=e70]: ¡Sugerencia!
+              - text: "Para solicitar asistencia telefónica sobre el servicio de REPUVE, puedes comunicarte al Centro de Atención Telefónica, a los números telefónicos:"
+              - list [ref=e71]:
+                - listitem [ref=e72]: 01 800 7378831 (01 800 REPUVE1) o al 079
+          - generic [ref=e73]:
+            - table:
+              - row
+      - generic [ref=e75]:
+        - heading "Contacto" [level=3] [ref=e76]
+        - separator [ref=e77]
+        - generic [ref=e78]:
+          - generic [ref=e79]:
+            - paragraph [ref=e80]: Boulevard Adolfo Ruiz Cortines número 3648
+            - generic [ref=e81]: Colonia Jardines del Pedregal, código postal 01900, demarcación territorial Álvaro Obregón, Ciudad de México
+            - generic [ref=e82]: "Teléfono: 800 REPUVE 1 (800-737-883-1)"
+            - generic [ref=e83]: "Atención Ciudadana:"
+            - generic [ref=e84]: Dirección General del Registro Público Vehicular.
+          - iframe [ref=e87]:
+            
+  - contentinfo [ref=e88]:
+    - paragraph [ref=e92]:
+      - text: REPUVE - Registro Público Vehicular
+      - text: Versión 3.9.0
+  - iframe [ref=e95]:
+    - generic [ref=f11e6]:
+      - text: protegido por
+      - strong [ref=f11e7]: reCAPTCHA
+  - contentinfo [ref=e96]:
+    - generic [ref=e99]:
+      - img "logo gobierno de méxico" [ref=e101]
+      - generic [ref=e102]:
+        - heading "Enlaces" [level=5] [ref=e104] [cursor=pointer]
+        - list [ref=e107]:
+          - listitem [ref=e108]:
+            - link "Datos abiertos de la SABG" [ref=e109] [cursor=pointer]:
+              - /url: https://data.buengobierno.gob.mx/databuengobierno
+          - listitem [ref=e110]:
+            - link "Marco Jurídico" [ref=e111] [cursor=pointer]:
+              - /url: http://www.ordenjuridico.gob.mx
+          - listitem [ref=e112]:
+            - link "Plataforma Nacional de Transparencia" [ref=e113] [cursor=pointer]:
+              - /url: https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/faces/view/consultaPublica.xhtml#inicio
+          - listitem [ref=e114]:
+            - link "Transparencia para el pueblo" [ref=e115] [cursor=pointer]:
+              - /url: https://transparencia.gob.mx
+          - listitem [ref=e116]:
+            - link "Alerta" [ref=e117] [cursor=pointer]:
+              - /url: https://alertadores.buengobierno.gob.mx/
+      - generic [ref=e118]:
+        - heading "¿Qué es gob.mx?" [level=5] [ref=e120] [cursor=pointer]
+        - generic [ref=e122]:
+          - paragraph [ref=e123]:
+            - text: Es el portal único de trámites, información y participación ciudadana.
+            - link "Leer más" [ref=e124] [cursor=pointer]:
+              - /url: https://www.gob.mx/que-es-gobmx
+          - list [ref=e125]:
+            - listitem [ref=e126]:
+              - link "Portal de datos abiertos" [ref=e127] [cursor=pointer]:
+                - /url: https://datos.gob.mx
+            - listitem [ref=e128]:
+              - link "Declaración de accesibilidad" [ref=e129] [cursor=pointer]:
+                - /url: https://www.gob.mx/accesibilidad
+            - listitem [ref=e130]:
+              - link "Términos y Condiciones" [ref=e131] [cursor=pointer]:
+                - /url: https://www.gob.mx/terminos
+      - generic [ref=e132]:
+        - heading "Denuncia contra servidores públicos" [level=5] [ref=e133]:
+          - link "Denuncia contra servidores públicos" [ref=e134] [cursor=pointer]:
+            - /url: https://sidec.buengobierno.gob.mx/#!/
+        - generic [ref=e135]: Síguenos en
+        - list [ref=e136]:
+          - listitem [ref=e137]:
+            - link "Facebook":
+              - /url: https://www.facebook.com/gobmexico
+              - img "Facebook"
+          - listitem [ref=e138]:
+            - link "Twitter":
+              - /url: https://twitter.com/GobiernoMX
+              - img "Twitter"
+          - listitem [ref=e139]:
+            - link "Instagram":
+              - /url: https://www.instagram.com/gobmexico/
+              - img "Instagram"
+          - listitem [ref=e140]:
+            - link "Youtube":
+              - /url: https://www.youtube.com/@gobiernodemexico
+              - img "Youtube"
+        - list [ref=e141]:
+          - listitem [ref=e142]:
+            - generic:
+              - link "logo 079":
+                - /url: tel:+079
+                - img "logo 079"

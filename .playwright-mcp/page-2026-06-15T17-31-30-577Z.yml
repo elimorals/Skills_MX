@@ -1,0 +1,287 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwjcvoiT44mVAxVjlmoFHbIJNnkQPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: fotomultas edomex consulta placa sitio:edomex.gob.mx fotomultas edomex consulta placa sitio:edomex.gob.mx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dfotomultas%2Bedomex%2Bconsulta%2Bplaca%2Bsitio:edomex.gob.mx&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=fotomultas+edomex+consulta+placa+sitio:edomex.gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3o2cVpZyDRYSUVW0YdKyRBWTPq-prAce0nff6zLxOKhiKeLdo0UR-No2ds8x7Tf3L36S9AFjIHh5pElOIf2jvPXZ-Yhttse7T4RaH91Jk90-hCnmwMTL3pNF-7yNnZz0awkZtAOyNwV_uE7UN08aqnGQPr1yJ4H_VBNX_OTNg0RtlvWh5BRa8gPPE2pY-4WXYd9eMww&aep=1&ntc=1&sa=X&ved=2ahUKEwjcvoiT44mVAxVjlmoFHbIJNnkQ2J8OegQIERAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=fotomultas+edomex+consulta+placa+sitio:edomex.gob.mx&tbm=nws&source=lnms&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3o2cVpZyDRYSUVW0YdKyRBWTPq-prAce0nff6zLxOKhiKeLdo0UR-No2ds8x7Tf3L36S9AFjIHh5pElOIf2jvPXZ-Yhttse7T4RaH91Jk90-hCnmwMTL3pNF-7yNnZz0awkZtAOyNwV_uE7UN08aqnGQPr1yJ4H_VBNX_OTNg0RtlvWh5BRa8gPPE2pY-4WXYd9eMww&sa=X&ved=2ahUKEwjcvoiT44mVAxVjlmoFHbIJNnkQ0pQJegQIFxAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Shopping" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3o2cVpZyDRYSUVW0YdKyRBWTPq-prAce0nff6zLxOKhiKeLdo0UR-No2ds8x7Tf3L36S9AFjIHh5pElOIf2jvPXZ-Yhttse7T4RaH91Jk90-hCnmwMTL3pNF-7yNnZz0awkZtAOyNwV_uE7UN08aqnGQPr1yJ4H_VBNX_OTNg0RtlvWh5BRa8gPPE2pY-4WXYd9eMww&q=fotomultas+edomex+consulta+placa+sitio:edomex.gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e88]: Shopping
+          - listitem [ref=e89]:
+            - link "Imágenes" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3o2cVpZyDRYSUVW0YdKyRBWTPq-prAce0nff6zLxOKhiKeLdo0UR-No2ds8x7Tf3L36S9AFjIHh5pElOIf2jvPXZ-Yhttse7T4RaH91Jk90-hCnmwMTL3pNF-7yNnZz0awkZtAOyNwV_uE7UN08aqnGQPr1yJ4H_VBNX_OTNg0RtlvWh5BRa8gPPE2pY-4WXYd9eMww&q=fotomultas+edomex+consulta+placa+sitio:edomex.gob.mx&sa=X&ved=2ahUKEwjcvoiT44mVAxVjlmoFHbIJNnkQtKgLegQIFRAB
+              - generic [ref=e92]: Imágenes
+          - listitem [ref=e93]:
+            - link "Videos cortos" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3o2cVpZyDRYSUVW0YdKyRBWTPq-prAce0nff6zLxOKhiKeLdo0UR-No2ds8x7Tf3L36S9AFjIHh5pElOIf2jvPXZ-Yhttse7T4RaH91Jk90-hCnmwMTL3pNF-7yNnZz0awkZtAOyNwV_uE7UN08aqnGQPr1yJ4H_VBNX_OTNg0RtlvWh5BRa8gPPE2pY-4WXYd9eMww&q=fotomultas+edomex+consulta+placa+sitio:edomex.gob.mx&sa=X&ved=2ahUKEwjcvoiT44mVAxVjlmoFHbIJNnkQs6gLegQIExAB
+              - generic [ref=e96]: Videos cortos
+          - listitem [ref=e97]:
+            - link "Videos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-YxZOBgMY2xn13RSvz_mNu3o2cVpZyDRYSUVW0YdKyRBWTPq-prAce0nff6zLxOKhiKeLdo0UR-No2ds8x7Tf3L36S9AFjIHh5pElOIf2jvPXZ-Yhttse7T4RaH91Jk90-hCnmwMTL3pNF-7yNnZz0awkZtAOyNwV_uE7UN08aqnGQPr1yJ4H_VBNX_OTNg0RtlvWh5BRa8gPPE2pY-4WXYd9eMww&q=fotomultas+edomex+consulta+placa+sitio:edomex.gob.mx&sa=X&ved=2ahUKEwjcvoiT44mVAxVjlmoFHbIJNnkQtKgLegQIFBAB
+              - generic [ref=e100]: Videos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - generic [ref=e122]:
+      - generic [ref=e141]:
+        - heading "Pensando" [level=2] [ref=e145]:
+          - generic [ref=e146]: Pensando
+        - progressbar "Generando" [ref=e147]
+      - main [ref=e149]:
+        - generic [ref=e153]:
+          - generic [ref=e156]:
+            - heading "Resultados web" [level=2] [ref=e157]
+            - generic [ref=e158]:
+              - generic [ref=e161]:
+                - link "Infracciones de Tránsito - Secretaría de Seguridad Secretaría de Seguridad del Edomex http://sseguridad.edomex.gob.mx › infracciones-transito" [ref=e163] [cursor=pointer]:
+                  - /url: http://sseguridad.edomex.gob.mx/infracciones-transito
+                  - heading "Infracciones de Tránsito - Secretaría de Seguridad" [level=3] [ref=e164]
+                  - generic [ref=e170]:
+                    - generic [ref=e172]: Secretaría de Seguridad del Edomex
+                    - generic [ref=e174]: http://sseguridad.edomex.gob.mx › infracciones-transito
+                - button "Acerca de este resultado" [ref=e175] [cursor=pointer]:
+                  - img [ref=e178]
+              - generic [ref=e182]:
+                - emphasis [ref=e183]: Accede al Portal Ciudadano para conocer el estatus de tus infracciones
+                - text: ", pagar o generar tu línea de captura. Recuerda que se podrán pagar las infracciones en ..."
+          - generic [ref=e187]:
+            - generic [ref=e190]:
+              - link "Consulta de infracciones Estado de México ssedomex.gob.mx https://infracciones.ssedomex.gob.mx" [ref=e192] [cursor=pointer]:
+                - /url: https://infracciones.ssedomex.gob.mx/
+                - heading "Consulta de infracciones Estado de México" [level=3] [ref=e193]
+                - generic [ref=e199]:
+                  - generic [ref=e201]: ssedomex.gob.mx
+                  - generic [ref=e203]: https://infracciones.ssedomex.gob.mx
+              - button "Acerca de este resultado" [ref=e204] [cursor=pointer]:
+                - img [ref=e207]
+            - generic [ref=e211]:
+              - emphasis [ref=e212]: Consulta fácilmente tus infracciones de tránsito del Estado de México
+              - text: . Verifica montos, descuentos, fechas y realiza tu pago en línea de forma segura.
+          - generic [ref=e217]:
+            - heading "Más preguntas" [level=2] [ref=e219]
+            - generic [ref=e220]:
+              - button "¿Cómo saber si tengo fotomultas con placas del estado de México?" [ref=e226] [cursor=pointer]:
+                - generic [ref=e228]: ¿Cómo saber si tengo fotomultas con placas del estado de México?
+                - img [ref=e231]
+              - button "¿Cómo ver si una placa tiene multas?" [ref=e240] [cursor=pointer]:
+                - generic [ref=e242]: ¿Cómo ver si una placa tiene multas?
+                - img [ref=e245]
+              - button "¿Dónde verifico si tengo multa?" [ref=e254] [cursor=pointer]:
+                - generic [ref=e256]: ¿Dónde verifico si tengo multa?
+                - img [ref=e259]
+              - button "¿Cuándo entran en vigor las fotomultas en el estado de México?" [ref=e268] [cursor=pointer]:
+                - generic [ref=e270]: ¿Cuándo entran en vigor las fotomultas en el estado de México?
+                - img [ref=e273]
+          - generic [ref=e278]:
+            - heading "Resultados web" [level=2] [ref=e279]
+            - generic [ref=e280]:
+              - generic [ref=e283]:
+                - link "Gobierno del Estado de México Gobierno del Estado de México https://edomex.gob.mx" [ref=e285] [cursor=pointer]:
+                  - /url: https://edomex.gob.mx/
+                  - heading "Gobierno del Estado de México" [level=3] [ref=e286]
+                  - generic [ref=e292]:
+                    - generic [ref=e294]: Gobierno del Estado de México
+                    - generic [ref=e296]: https://edomex.gob.mx
+                - button "Acerca de este resultado" [ref=e297] [cursor=pointer]:
+                  - img [ref=e300]
+              - generic [ref=e304]:
+                - emphasis [ref=e305]: Consulta el trámite en línea
+                - text: . Programa Hoy No Circula. Consulta el Programa No Circula del Estado de México y Zona del Valle de México. Certificado de No ...
+          - generic [ref=e309]:
+            - generic [ref=e312]:
+              - link "Sistema Electrónico de Información, Trámites y Servicios Gobierno del Estado de México http://sistemas2.edomex.gob.mx › ventanilla › login.action" [ref=e314] [cursor=pointer]:
+                - /url: http://sistemas2.edomex.gob.mx/ventanilla/login.action
+                - heading "Sistema Electrónico de Información, Trámites y Servicios" [level=3] [ref=e315]
+                - generic [ref=e317]:
+                  - img [ref=e322]
+                  - generic [ref=e324]:
+                    - generic [ref=e326]: Gobierno del Estado de México
+                    - generic [ref=e328]: http://sistemas2.edomex.gob.mx › ventanilla › login.action
+              - button "Acerca de este resultado" [ref=e329] [cursor=pointer]:
+                - img [ref=e332]
+            - generic [ref=e336]:
+              - emphasis [ref=e337]: Sistema Electrónico de Información, Trámites y Servicios
+              - text: · ¿Olvidaste tu contraseña? · ¿No tienes tu CUTS? Obtenla AQUÍ · ¿Deseas modificar tu correo electrónico?
+          - generic [ref=e341]:
+            - generic [ref=e344]:
+              - link "Aquí puedes consultar tus multas de tránsito del Edomex El Universal https://www.eluniversal.com.mx › Autopistas" [ref=e346] [cursor=pointer]:
+                - /url: https://www.eluniversal.com.mx/autopistas/aqui-puedes-consultar-tus-multas-de-transito-en-edomex/
+                - heading "Aquí puedes consultar tus multas de tránsito del Edomex" [level=3] [ref=e347]
+                - generic [ref=e353]:
+                  - generic [ref=e355]: El Universal
+                  - generic [ref=e357]: https://www.eluniversal.com.mx › Autopistas
+              - button "Acerca de este resultado" [ref=e358] [cursor=pointer]:
+                - img [ref=e361]
+            - generic [ref=e364]:
+              - generic [ref=e365]: 2 jun 2026 —
+              - generic [ref=e366]:
+                - emphasis [ref=e367]: Entra al portal del Sistema Digital de Infracciones
+                - text: https://sistemas2.edomex.gob.mx/ventanilla/login.action; Accede con tu Clave Única de ...
+          - generic [ref=e373]:
+            - generic [ref=e376]:
+              - link "¿Sabes si tienes multas de tránsito en el EDOMEX? Así ... Facebook · MVSNoticias Más de 30 reacciones · hace 1 año" [ref=e378] [cursor=pointer]:
+                - /url: https://www.facebook.com/MVSNoticias/videos/sabes-si-tienes-multas-de-tr%C3%A1nsito-en-el-edomex-as%C3%AD-puedes-consultarlo-mvsnotici/358062767329495/
+                - heading "¿Sabes si tienes multas de tránsito en el EDOMEX? Así ..." [level=3] [ref=e379]
+                - generic [ref=e385]:
+                  - generic [ref=e387]: Facebook · MVSNoticias
+                  - generic [ref=e389]: Más de 30 reacciones · hace 1 año
+              - button "Acerca de este resultado" [ref=e390] [cursor=pointer]:
+                - img [ref=e393]
+            - generic [ref=e395]:
+              - link "¿Sabes si tienes multas de tránsito en el EDOMEX? Así ... de MVSNoticias en Facebook. Reproducir en Facebook. 1:26" [ref=e396] [cursor=pointer]:
+                - /url: https://www.facebook.com/MVSNoticias/videos/sabes-si-tienes-multas-de-tr%C3%A1nsito-en-el-edomex-as%C3%AD-puedes-consultarlo-mvsnotici/358062767329495/
+                - generic [ref=e398]:
+                  - img [ref=e404]
+                  - generic [ref=e408]: 1:26
+              - generic [ref=e410]: Sin Embargo MX. 󱢏. Media/News Company. No photo description available. Gobierno de México. 󱢏. Government ...
+          - generic [ref=e414]:
+            - generic [ref=e417]:
+              - link "¿Dónde Puedo Consultar Multas de Tránsito en Edomex? ... N+ https://www.nmas.com.mx › seguridad › consulta-multa..." [ref=e419] [cursor=pointer]:
+                - /url: https://www.nmas.com.mx/estado-de-mexico/seguridad/consulta-multas-transito-edomex-link-pasos-checar-en-linea-infracciones-control-vehicular/
+                - heading "¿Dónde Puedo Consultar Multas de Tránsito en Edomex? ..." [level=3] [ref=e420]
+                - generic [ref=e426]:
+                  - generic [ref=e428]: N+
+                  - generic [ref=e430]: https://www.nmas.com.mx › seguridad › consulta-multa...
+              - button "Acerca de este resultado" [ref=e431] [cursor=pointer]:
+                - img [ref=e434]
+            - generic [ref=e437]:
+              - generic [ref=e438]: 24 nov 2025 —
+              - generic [ref=e439]:
+                - text: Así puedes revisar las multas de tránsito en
+                - emphasis [ref=e440]: Edomex
+                - text: . Si realizarás algún trámite vehicular en el
+                - emphasis [ref=e441]: Edomex
+                - text: ", pero desconoces si tienes multas para ..."
+            - generic [ref=e443]:
+              - text: "Falta(n): gob. ‎| Realizar una búsqueda con lo siguiente:"
+              - link "gob." [ref=e444] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=fotomultas+edomex+consulta+placa+sitio:edomex.+%22gob.%22+mx&sa=X&ved=2ahUKEwjcvoiT44mVAxVjlmoFHbIJNnkQ5t4CegQILBAB
+          - generic [ref=e448]:
+            - generic [ref=e451]:
+              - link "Portal de Servicios al Contribuyente - Gobierno del Estado de ... Gobierno del Estado de México https://pagosytramites.edomex.gob.mx › recaudacion" [ref=e453] [cursor=pointer]:
+                - /url: https://pagosytramites.edomex.gob.mx/recaudacion/
+                - heading "Portal de Servicios al Contribuyente - Gobierno del Estado de ..." [level=3] [ref=e454]
+                - generic [ref=e460]:
+                  - generic [ref=e462]: Gobierno del Estado de México
+                  - generic [ref=e464]: https://pagosytramites.edomex.gob.mx › recaudacion
+              - button "Acerca de este resultado" [ref=e465] [cursor=pointer]:
+                - img [ref=e468]
+            - generic [ref=e472]:
+              - emphasis [ref=e473]: Consulta Vigencia de Placa
+              - text: . Alta Vehículo. Extranjero · Nuevo · Usado. Cambios ... Correo Electrónico - asismex@edomex.gob.mx. Derechos Reservados 2016 Sistema ...
+          - generic [ref=e477]:
+            - generic [ref=e480]:
+              - link "Adeudos - Ciudad de México Finanzas CDMX https://data.finanzas.cdmx.gob.mx › consulta_adeudos" [ref=e482] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/consulta_adeudos
+                - heading "Adeudos - Ciudad de México" [level=3] [ref=e483]
+                - generic [ref=e489]:
+                  - generic [ref=e491]: Finanzas CDMX
+                  - generic [ref=e493]: https://data.finanzas.cdmx.gob.mx › consulta_adeudos
+              - button "Acerca de este resultado" [ref=e494] [cursor=pointer]:
+                - img [ref=e497]
+            - generic [ref=e501]:
+              - emphasis [ref=e502]: Placa Escriba el número de placa que desea buscar sin espacios
+              - text: ". Buscar. Atención Ciudadana. Dirección: Calle Doctor Lavista 144. Colonia Doctores, Alcaldía"
+        - navigation [ref=e505]:
+          - heading "Navegación de páginas" [level=1] [ref=e506]
+          - text: "1"
+          - link "Page 2" [ref=e509] [cursor=pointer]:
+            - /url: /search?q=fotomultas+edomex+consulta+placa+sitio:edomex.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8TYwapyCLeOsqtsPspPYyQc&start=10&sa=N&sstk=AU9db-A76nS8xNs-qt3mPSPm5VedluX7MLLtdwNIBH8NcmhZfPjy2IB4liaLO4B_5AeWLr4eB36vn0IKbeDGrFxQVqlv09c77EwMTg&ved=2ahUKEwjcvoiT44mVAxVjlmoFHbIJNnkQ8tMDegQIHxAE
+            - text: "2"
+          - link "Page 3" [ref=e511] [cursor=pointer]:
+            - /url: /search?q=fotomultas+edomex+consulta+placa+sitio:edomex.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8TYwapyCLeOsqtsPspPYyQc&start=20&sa=N&sstk=AU9db-A76nS8xNs-qt3mPSPm5VedluX7MLLtdwNIBH8NcmhZfPjy2IB4liaLO4B_5AeWLr4eB36vn0IKbeDGrFxQVqlv09c77EwMTg&ved=2ahUKEwjcvoiT44mVAxVjlmoFHbIJNnkQ8tMDegQIHxAG
+            - text: "3"
+          - link "Page 4" [ref=e513] [cursor=pointer]:
+            - /url: /search?q=fotomultas+edomex+consulta+placa+sitio:edomex.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8TYwapyCLeOsqtsPspPYyQc&start=30&sa=N&sstk=AU9db-A76nS8xNs-qt3mPSPm5VedluX7MLLtdwNIBH8NcmhZfPjy2IB4liaLO4B_5AeWLr4eB36vn0IKbeDGrFxQVqlv09c77EwMTg&ved=2ahUKEwjcvoiT44mVAxVjlmoFHbIJNnkQ8tMDegQIHxAI
+            - text: "4"
+          - link "Page 5" [ref=e515] [cursor=pointer]:
+            - /url: /search?q=fotomultas+edomex+consulta+placa+sitio:edomex.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8TYwapyCLeOsqtsPspPYyQc&start=40&sa=N&sstk=AU9db-A76nS8xNs-qt3mPSPm5VedluX7MLLtdwNIBH8NcmhZfPjy2IB4liaLO4B_5AeWLr4eB36vn0IKbeDGrFxQVqlv09c77EwMTg&ved=2ahUKEwjcvoiT44mVAxVjlmoFHbIJNnkQ8tMDegQIHxAK
+            - text: "5"
+          - link "Page 6" [ref=e517] [cursor=pointer]:
+            - /url: /search?q=fotomultas+edomex+consulta+placa+sitio:edomex.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8TYwapyCLeOsqtsPspPYyQc&start=50&sa=N&sstk=AU9db-A76nS8xNs-qt3mPSPm5VedluX7MLLtdwNIBH8NcmhZfPjy2IB4liaLO4B_5AeWLr4eB36vn0IKbeDGrFxQVqlv09c77EwMTg&ved=2ahUKEwjcvoiT44mVAxVjlmoFHbIJNnkQ8tMDegQIHxAM
+            - text: "6"
+          - link "Page 7" [ref=e519] [cursor=pointer]:
+            - /url: /search?q=fotomultas+edomex+consulta+placa+sitio:edomex.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8TYwapyCLeOsqtsPspPYyQc&start=60&sa=N&sstk=AU9db-A76nS8xNs-qt3mPSPm5VedluX7MLLtdwNIBH8NcmhZfPjy2IB4liaLO4B_5AeWLr4eB36vn0IKbeDGrFxQVqlv09c77EwMTg&ved=2ahUKEwjcvoiT44mVAxVjlmoFHbIJNnkQ8tMDegQIHxAO
+            - text: "7"
+          - heading "Siguiente" [level=2] [ref=e521]:
+            - link "Siguiente" [ref=e522] [cursor=pointer]:
+              - /url: /search?q=fotomultas+edomex+consulta+placa+sitio:edomex.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=8TYwapyCLeOsqtsPspPYyQc&start=10&sa=N&sstk=AU9db-A76nS8xNs-qt3mPSPm5VedluX7MLLtdwNIBH8NcmhZfPjy2IB4liaLO4B_5AeWLr4eB36vn0IKbeDGrFxQVqlv09c77EwMTg&ved=2ahUKEwjcvoiT44mVAxVjlmoFHbIJNnkQ8NMDegQIHxAQ
+              - generic [ref=e524]: Siguiente
+        - navigation
+    - contentinfo [ref=e525]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e526]
+      - generic [ref=e530]:
+        - generic [ref=e532]:
+          - text: México
+          - generic [ref=e534]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - A través de tu dirección IP" [ref=e536] [cursor=pointer]:
+              - generic [ref=e537]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e539]:
+                - text: "-"
+                - generic [ref=e540]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e542] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e545]:
+          - link "Ayuda" [ref=e546] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e547] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e548] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e549] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

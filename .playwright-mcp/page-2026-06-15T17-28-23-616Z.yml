@@ -1,0 +1,42 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - img "Direccion Catastro" [ref=e5]
+    - list [ref=e6]:
+      - link "INICIO" [ref=e7] [cursor=pointer]:
+        - /url: ./
+      - link "VALORES CATASTRALES" [ref=e8] [cursor=pointer]:
+        - /url: valores_catastrales.html
+      - link "CARTOGRAFÍA" [ref=e9] [cursor=pointer]:
+        - /url: cartografia.html
+      - link "MODELADO 3D" [ref=e10] [cursor=pointer]:
+        - /url: modelado_3d.html
+      - link "NUBE DE PUNTOS" [ref=e11] [cursor=pointer]:
+        - /url: nube_de_puntos.html
+    - img "Jalisco" [ref=e13]
+  - main [ref=e14]:
+    - iframe [ref=e16]:
+      - generic [active] [ref=f10e1]:
+        - link "Leaflet" [ref=f10e7] [cursor=pointer]:
+          - /url: https://leafletjs.com
+        - generic [ref=f10e9]:
+          - img [ref=f10e10]
+          - paragraph [ref=f10e12]: Por favor espere...
+    - generic [ref=e17]:
+      - img "Jalisco" [ref=e20]
+      - generic [ref=e21]:
+        - generic [ref=e22]: Dirección de Catastro | Secretaría de la Hacienda Pública
+        - paragraph [ref=e23]:
+          - img [ref=e24]
+          - link "C. Pedro Moreno 281, 5° Piso, Zona Centro, CP 44100 Guadalajara, Jalisco." [ref=e26] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/9wJGUhwgthHfptRd9
+        - paragraph [ref=e27]:
+          - generic [ref=e28]:
+            - img [ref=e29]
+            - text: (33) 3819 2361
+          - generic [ref=e31]:
+            - img [ref=e32]
+            - text: 8:00 a 16:00 Hrs.
+      - generic [ref=e34]:
+        - link "Políticas de uso y privacidad." [ref=e35] [cursor=pointer]:
+          - /url: https://info.jalisco.gob.mx/politicas
+        - paragraph [ref=e36]: Gobierno del Estado de Jalisco, algunos derechos reservados © 2024

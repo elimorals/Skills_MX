@@ -1,0 +1,15 @@
+- table [ref=e2]:
+  - rowgroup [ref=e3]:
+    - row "¡Acceso prohibido!" [ref=e4]:
+      - cell [ref=e5]
+      - cell "¡Acceso prohibido!" [ref=e6]:
+        - generic [ref=e7]: ¡Acceso prohibido!
+      - cell [ref=e8]
+    - row "Usted no tiene permiso para acceder al objeto solicitado. El objeto está protegido contra lectura o el servidor no puede leerlo." [ref=e9]:
+      - cell [ref=e10]
+      - cell "Usted no tiene permiso para acceder al objeto solicitado. El objeto está protegido contra lectura o el servidor no puede leerlo." [ref=e11]
+      - cell [ref=e12]
+    - row [ref=e13]:
+      - cell [ref=e14]
+      - cell [ref=e15]
+      - cell [ref=e16]

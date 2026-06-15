@@ -1,0 +1,287 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - link "gobierno de mexico" [ref=e5] [cursor=pointer]:
+          - /url: https://www.gob.mx/
+          - img "gobierno de mexico" [ref=e6]
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Trámites" [ref=e10] [cursor=pointer]:
+              - /url: https://www.gob.mx/tramites
+          - listitem [ref=e11]:
+            - link "Gobierno" [ref=e12] [cursor=pointer]:
+              - /url: https://www.gob.mx/gobierno
+          - listitem [ref=e13]:
+            - link "Búsqueda " [ref=e14] [cursor=pointer]:
+              - /url: https://www.gob.mx/busqueda
+              - generic [ref=e15]: Búsqueda
+              - generic [ref=e16]: 
+  - generic [ref=e20]:
+    - generic [ref=e28]:
+      - navigation [ref=e29]:
+        - generic [ref=e30]:
+          - link "Página de inicio, Gobierno de México" [ref=e32] [cursor=pointer]:
+            - /url: https://www.gob.mx/
+            - img "Página de inicio, Gobierno de México" [ref=e33]
+          - list [ref=e35]:
+            - listitem [ref=e36]:
+              - link "Trámites" [ref=e37] [cursor=pointer]:
+                - /url: https://www.gob.mx/tramites
+            - listitem [ref=e38]:
+              - link "Gobierno" [ref=e39] [cursor=pointer]:
+                - /url: https://www.gob.mx/gobierno
+            - listitem [ref=e40]:
+              - link "Búsqueda " [ref=e41] [cursor=pointer]:
+                - /url: https://www.gob.mx/busqueda
+                - generic [ref=e42]: Búsqueda
+                - generic [ref=e43]: 
+      - generic [ref=e48]:
+        - list [ref=e49]:
+          - listitem [ref=e50]:
+            - link "" [ref=e51] [cursor=pointer]:
+              - /url: http://www.gob.mx
+              - generic [ref=e52]: 
+          - listitem [ref=e53]:
+            - text: 
+            - link "CNBV" [ref=e54] [cursor=pointer]:
+              - /url: http://www.gob.mx/cnbv
+          - listitem [ref=e55]:
+            - text: 
+            - link "Padrón de Entidades Supervisadas" [ref=e56] [cursor=pointer]:
+              - /url: https://www.cnbv.gob.mx/Paginas/PADR%c3%93N-DE-ENTIDADES-SUPERVISADAS.aspx
+        - generic [ref=e57]:
+          - heading "Padrón de Entidades Supervisadas" [level=2] [ref=e58]
+          - generic "Contenido de la página" [ref=e59]:
+            - paragraph [ref=e60]
+            - table [ref=e67]:
+              - rowgroup [ref=e68]:
+                - row [ref=e69]:
+                  - rowheader [ref=e70]:
+                    - paragraph [ref=e71]
+                  - cell [ref=e72]:
+                    - paragraph [ref=e73]
+                  - cell [ref=e74]:
+                    - paragraph [ref=e75]
+                  - cell [ref=e76]:
+                    - paragraph [ref=e77]
+                  - cell [ref=e78]
+                  - cell [ref=e79]:
+                    - paragraph [ref=e80]
+                  - cell [ref=e81]:
+                    - paragraph [ref=e82]
+                  - cell [ref=e83]
+                  - cell [ref=e84]:
+                    - paragraph [ref=e85]
+                - row "QueEs.PNG TiposDeConsulta.PNG Contacto.PNG" [ref=e86]:
+                  - cell [ref=e87]:
+                    - paragraph [ref=e88]
+                  - cell "QueEs.PNG" [ref=e89]:
+                    - link "QueEs.PNG" [ref=e90] [cursor=pointer]:
+                      - /url: /Paginas/InfoPES.aspx
+                      - img "QueEs.PNG" [ref=e91]
+                  - cell [ref=e92]
+                  - cell [ref=e93]
+                  - cell "TiposDeConsulta.PNG" [ref=e94]:
+                    - link "TiposDeConsulta.PNG" [ref=e95] [cursor=pointer]:
+                      - /url: /Paginas/TiposDeConsulta.aspx
+                      - img "TiposDeConsulta.PNG" [ref=e96]
+                  - cell [ref=e97]
+                  - cell [ref=e98]
+                  - cell "Contacto.PNG" [ref=e99]:
+                    - link "Contacto.PNG" [ref=e100] [cursor=pointer]:
+                      - /url: /Paginas/ContactoPES.aspx
+                      - img "Contacto.PNG" [ref=e101]
+                  - cell [ref=e102]:
+                    - paragraph [ref=e103]
+                - row "¿Qué es? Tipos de Consulta Contacto" [ref=e104]:
+                  - cell [ref=e105]
+                  - cell "¿Qué es?" [ref=e106]:
+                    - paragraph [ref=e107]: ¿Qué es?
+                  - cell [ref=e108]
+                  - cell [ref=e109]
+                  - cell "Tipos de Consulta" [ref=e110]:
+                    - paragraph [ref=e111]: Tipos de Consulta
+                  - cell [ref=e112]
+                  - cell [ref=e113]
+                  - cell "Contacto" [ref=e114]:
+                    - paragraph [ref=e115]: Contacto
+                  - cell [ref=e116]
+                - row [ref=e117]:
+                  - cell [ref=e118]:
+                    - paragraph [ref=e119]
+                  - cell [ref=e120]:
+                    - paragraph [ref=e121]
+                  - cell [ref=e122]:
+                    - paragraph [ref=e123]
+                  - cell [ref=e124]:
+                    - paragraph [ref=e125]
+                  - cell [ref=e126]:
+                    - paragraph [ref=e127]
+                  - cell [ref=e128]:
+                    - paragraph [ref=e129]
+                  - cell [ref=e130]:
+                    - paragraph [ref=e131]
+                  - cell [ref=e132]:
+                    - paragraph [ref=e133]
+                  - cell [ref=e134]:
+                    - paragraph [ref=e135]
+                - row "Iniciar búsqueda de Entidades" [ref=e136]:
+                  - cell [ref=e137]:
+                    - paragraph [ref=e138]:
+                      - link [ref=e139] [cursor=pointer]:
+                        - /url: /Paginas/BusquedaEntidades.aspx
+                  - cell "Iniciar búsqueda de Entidades" [ref=e140]:
+                    - paragraph [ref=e141]
+                    - paragraph [ref=e142]: Iniciar búsqueda
+                    - paragraph [ref=e143]: de Entidades
+            - paragraph [ref=e144]
+            - paragraph
+            - generic [ref=e145]: "*Los ahorros de los clientes de la banca están protegidos por un seguro de depósito, bajo la administración del IPAB, que cubre un monto de hasta 400,000 UDIs, de conformidad con los artículos 6 y 11 de la Ley de Protección y Ahorro Bancario."
+            - generic [ref=e146]: "**Los ahorros de los socios de las Socaps están protegidos por un seguro de depósito, bajo la administración del Focoop, que cubre un monto de hasta 25,000 UDIs, de conformidad con el artículo 54 de la Ley para Regular las Actividades de las Sociedades Cooperativas de Ahorro y Préstamo."
+            - generic [ref=e147]: "***Los ahorros de clientes y socios de las Sofipos y Sofincos están protegidos por un seguro de depósito, bajo la administración del Prosofipo, que cubre un monto de hasta 25,000 UDIs, de conformidad con el artículo 105 de la Ley Ahorro y Crédito Popular."
+            - generic [ref=e148]:
+              - generic [ref=e149]:
+                - strong [ref=e150]: Nota
+                - text: ": El total de entidades del sector SOFOM E.N.R., supervisadas exclusivamente en materia de PLD/FT por la CNBV, se actualiza a partir de la información proporcionada por la CONDUSEF, relativa a los registros renovados o creados conforme a la Ley General de Organizaciones y Actividades Auxiliares del Crédito."
+              - generic [ref=e152]: Dado que los servicios informáticos que albergan el número de SOFOM E.N.R. están siendo actualizados por la CONDUSEF, las cifras pueden variar. Se recomienda consultar el Sistema de Registro de Prestadores de Servicios Financieros (SIPRES) como fuente principal para obtener la información actualizada.
+            - 'link ":::: CONDUSEF | Sistema de Registro de Prestadores de Servicios Financieros ::::" [ref=e156] [cursor=pointer]':
+              - /url: https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp
+              - generic [ref=e157]: ":::: CONDUSEF | Sistema de Registro de Prestadores de Servicios Financieros ::::"
+            - paragraph [ref=e158]
+    - contentinfo [ref=e161]:
+      - generic [ref=e163]:
+        - img "logo gobierno de méxico" [ref=e165]
+        - generic [ref=e166]:
+          - heading "Enlaces" [level=2] [ref=e167]
+          - list [ref=e168]:
+            - listitem [ref=e169]:
+              - link "Participa" [ref=e170] [cursor=pointer]:
+                - /url: http://www.participa.gob.mx
+            - listitem [ref=e171]:
+              - link "Datos" [ref=e172] [cursor=pointer]:
+                - /url: https://datos.gob.mx/
+            - listitem [ref=e173]:
+              - link "Publicaciones Oficiales" [ref=e174] [cursor=pointer]:
+                - /url: https://www.gob.mx/publicaciones
+            - listitem [ref=e175]:
+              - link "Portal de Obligaciones de Transparencia" [ref=e176] [cursor=pointer]:
+                - /url: http://portaltransparencia.gob.mx/buscador/search/search.do?method=begin&searchBy=0&idDependenciaZoom=06100
+            - listitem [ref=e177]:
+              - link "Sistema Infomex" [ref=e178] [cursor=pointer]:
+                - /url: https://www.infomex.org.mx/gobiernofederal/home.action
+            - listitem [ref=e179]:
+              - link "INAI" [ref=e180] [cursor=pointer]:
+                - /url: http://www.inai.org.mx
+        - generic [ref=e181]:
+          - heading "¿Qué es gob.mx?" [level=2] [ref=e182]
+          - paragraph [ref=e183]:
+            - text: Es el portal único de trámites, información y participación ciudadana.
+            - link "Leer más" [ref=e184] [cursor=pointer]:
+              - /url: /que-es-gobmx
+          - list [ref=e185]:
+            - listitem [ref=e186]:
+              - link "Temas" [ref=e187] [cursor=pointer]:
+                - /url: /temas
+            - listitem [ref=e188]:
+              - link "Declaración de Accesibilidad" [ref=e189] [cursor=pointer]:
+                - /url: /accesibilidad
+            - listitem [ref=e190]:
+              - link "Aviso de privacidad integral" [ref=e191] [cursor=pointer]:
+                - /url: /privacidadintegral
+            - listitem [ref=e192]:
+              - link "Aviso de privacidad simplificado" [ref=e193] [cursor=pointer]:
+                - /url: /privacidadsimplificado
+            - listitem [ref=e194]:
+              - link "Términos y Condiciones" [ref=e195] [cursor=pointer]:
+                - /url: /terminos
+            - listitem [ref=e196]:
+              - link "Política de seguridad" [ref=e197] [cursor=pointer]:
+                - /url: /terminos#medidas-seguridad-informacion
+            - listitem [ref=e198]:
+              - link "Marco Jurídico" [ref=e199] [cursor=pointer]:
+                - /url: http://www.ordenjuridico.gob.mx
+            - listitem [ref=e200]:
+              - link "Mapa de sitio" [ref=e201] [cursor=pointer]:
+                - /url: /sitemap
+        - generic [ref=e202]:
+          - heading "Contacto" [level=2] [ref=e203]
+          - paragraph [ref=e204]:
+            - text: Dudas e información a
+            - link "info@cnbv.gob.mx" [ref=e205] [cursor=pointer]:
+              - /url: mailto:info@cnbv.gob.mx
+          - heading "Síguenos en" [level=2] [ref=e206]
+          - list [ref=e207]:
+            - listitem [ref=e208]:
+              - link "Facebook" [ref=e209] [cursor=pointer]:
+                - /url: https://www.facebook.com/gobmexico
+                - img "Facebook" [ref=e210]
+            - listitem [ref=e211]:
+              - link "Twitter" [ref=e212] [cursor=pointer]:
+                - /url: https://twitter.com/GobiernoMX
+                - img "Twitter" [ref=e213]
+  - contentinfo [ref=e214]:
+    - generic [ref=e217]:
+      - img "logo gobierno de méxico" [ref=e219]
+      - generic [ref=e220]:
+        - heading "Enlaces" [level=5] [ref=e222] [cursor=pointer]
+        - list [ref=e225]:
+          - listitem [ref=e226]:
+            - link "Datos abiertos de la SABG" [ref=e227] [cursor=pointer]:
+              - /url: https://data.buengobierno.gob.mx/databuengobierno
+          - listitem [ref=e228]:
+            - link "Marco Jurídico" [ref=e229] [cursor=pointer]:
+              - /url: http://www.ordenjuridico.gob.mx
+          - listitem [ref=e230]:
+            - link "Plataforma Nacional de Transparencia" [ref=e231] [cursor=pointer]:
+              - /url: https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/faces/view/consultaPublica.xhtml#inicio
+          - listitem [ref=e232]:
+            - link "Transparencia para el pueblo" [ref=e233] [cursor=pointer]:
+              - /url: https://transparencia.gob.mx
+          - listitem [ref=e234]:
+            - link "Alerta" [ref=e235] [cursor=pointer]:
+              - /url: https://alertadores.buengobierno.gob.mx/
+      - generic [ref=e236]:
+        - heading "¿Qué es gob.mx?" [level=5] [ref=e238] [cursor=pointer]
+        - generic [ref=e240]:
+          - paragraph [ref=e241]:
+            - text: Es el portal único de trámites, información y participación ciudadana.
+            - link "Leer más" [ref=e242] [cursor=pointer]:
+              - /url: https://www.gob.mx/que-es-gobmx
+          - list [ref=e243]:
+            - listitem [ref=e244]:
+              - link "Portal de datos abiertos" [ref=e245] [cursor=pointer]:
+                - /url: https://datos.gob.mx
+            - listitem [ref=e246]:
+              - link "Declaración de accesibilidad" [ref=e247] [cursor=pointer]:
+                - /url: https://www.gob.mx/accesibilidad
+            - listitem [ref=e248]:
+              - link "Términos y Condiciones" [ref=e249] [cursor=pointer]:
+                - /url: https://www.gob.mx/terminos
+      - generic [ref=e250]:
+        - heading "Denuncia contra servidores públicos" [level=5] [ref=e251]:
+          - link "Denuncia contra servidores públicos" [ref=e252] [cursor=pointer]:
+            - /url: https://sidec.buengobierno.gob.mx/#!/
+        - generic [ref=e253]: Síguenos en
+        - list [ref=e254]:
+          - listitem [ref=e255]:
+            - link "Facebook" [ref=e256] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobmexico
+              - img "Facebook" [ref=e257]
+          - listitem [ref=e258]:
+            - link "Twitter" [ref=e259] [cursor=pointer]:
+              - /url: https://twitter.com/GobiernoMX
+              - img "Twitter" [ref=e260]
+          - listitem [ref=e261]:
+            - link "Instagram" [ref=e262] [cursor=pointer]:
+              - /url: https://www.instagram.com/gobmexico/
+              - img "Instagram" [ref=e263]
+          - listitem [ref=e264]:
+            - link "Youtube" [ref=e265] [cursor=pointer]:
+              - /url: https://www.youtube.com/@gobiernodemexico
+              - img "Youtube" [ref=e266]
+        - list [ref=e267]:
+          - listitem [ref=e268]:
+            - link "logo 079" [ref=e270] [cursor=pointer]:
+              - /url: tel:+079
+              - img "logo 079" [ref=e271]

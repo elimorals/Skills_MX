@@ -1,0 +1,659 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - link "gobierno de mexico" [ref=e5] [cursor=pointer]:
+          - /url: https://www.gob.mx/
+          - img "gobierno de mexico" [ref=e6]
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Trámites" [ref=e10] [cursor=pointer]:
+              - /url: https://www.gob.mx/tramites
+          - listitem [ref=e11]:
+            - link "Gobierno" [ref=e12] [cursor=pointer]:
+              - /url: https://www.gob.mx/gobierno
+          - listitem [ref=e13]:
+            - link "Búsqueda " [ref=e14] [cursor=pointer]:
+              - /url: https://www.gob.mx/busqueda
+              - generic [ref=e15]: Búsqueda
+              - generic [ref=e16]: 
+  - generic [ref=e20]:
+    - generic [ref=e30]:
+      - navigation [ref=e31]:
+        - generic [ref=e32]:
+          - link "CNBV" [ref=e34] [cursor=pointer]:
+            - /url: http://www.gob.mx/cnbv
+          - generic [ref=e35]:
+            - list [ref=e36]:
+              - listitem [ref=e37]:
+                - button "" [ref=e38] [cursor=pointer]: 
+                - text: ✉
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "Publicaciones" [ref=e42] [cursor=pointer]:
+                  - /url: /Paginas/Contenidos-Temas.aspx
+            - list [ref=e43]:
+              - listitem [ref=e44]:
+                - button "Ligas de Interés" [ref=e45] [cursor=pointer]: Ligas de Interés
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - generic:
+            - generic "Imagen de la página"
+          - generic "Leyenda de imagen" [ref=e51]:
+            - paragraph [ref=e52]
+        - generic "Contenido de la página" [ref=e54]:
+          - generic [ref=e60]:
+            - img [ref=e62]
+            - generic [ref=e63]:
+              - paragraph [ref=e64]: La Comisión Nacional Bancaria y de Valores (CNBV), a través del Portafolio de Información, publica de manera periódica información financiera y operativa de las diferentes entidades bajo supervisión, de acuerdo a las disposiciones vigentes.
+              - paragraph
+            - generic [ref=e67]:
+              - table [ref=e68]:
+                - rowgroup [ref=e69]:
+                  - row [ref=e70]:
+                    - cell [ref=e71]:
+                      - link [ref=e72] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiN2Y2MjA0MGEtMzY4MS00NzhmLWIzY2EtZThlODk4ZDQyZjJhIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                  - row:
+                    - cell
+                  - row [ref=e73]:
+                    - cell [ref=e74]
+              - table [ref=e75]:
+                - rowgroup [ref=e76]:
+                  - row [ref=e77]:
+                    - cell [ref=e78]:
+                      - link [ref=e79] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiN2Y2MjA0MGEtMzY4MS00NzhmLWIzY2EtZThlODk4ZDQyZjJhIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                    - cell [ref=e80]
+                    - cell [ref=e81]:
+                      - link [ref=e82] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiYzM1ODdhYjItZjJlZS00MWFkLWExM2EtODc1NDY1MjRjMjYzIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                    - cell [ref=e83]
+                    - cell [ref=e84]:
+                      - link [ref=e85] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiMjA4YjhkZTYtZWJjMy00ZTUxLWExZmUtZWY3ODhmYzQ4YTkwIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                  - row [ref=e86]:
+                    - cell [ref=e87]
+            - generic:
+              - generic:
+                - generic [ref=e88]:
+                  - table [ref=e90]:
+                    - rowgroup [ref=e91]:
+                      - row "Presencia de las MUJERES en el sistema bancario (actualizado a febrero 2026)" [ref=e92]:
+                        - cell [ref=e93]
+                        - cell "Presencia de las MUJERES en el sistema bancario (actualizado a febrero 2026)" [ref=e94]
+                  - list [ref=e96]:
+                    - listitem [ref=e97]:
+                      - link "Presencia de las MUJERES en el sistema bancario" [ref=e98] [cursor=pointer]:
+                        - /url: https://app.fabric.microsoft.com/view?r=eyJrIjoiM2MxYTBlYWQtMDJjOS00MGEyLWJmNjQtMTA4OThjOTE1MGNhIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                        - generic [ref=e99]: Presencia de las MUJERES en el sistema bancario
+                    - listitem
+                - generic [ref=e100]:
+                  - table [ref=e102]:
+                    - rowgroup [ref=e103]:
+                      - row "Sistema Financiero Mexicano (actualizado a marzo 2026)" [ref=e104]:
+                        - cell [ref=e105]
+                        - cell "Sistema Financiero Mexicano (actualizado a marzo 2026)" [ref=e106]
+                  - list [ref=e108]:
+                    - listitem [ref=e109]:
+                      - link "Consulta interactiva" [ref=e110] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiZGU5NDk5NTktZmI2My00NjkwLThkMjUtNmU4YzQ2ZjI2OTMxIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                    - listitem
+                - generic [ref=e111]:
+                  - table [ref=e113]:
+                    - rowgroup [ref=e114]:
+                      - row "Banca múltiple (actualizado a abril 2026)" [ref=e115]:
+                        - cell [ref=e116]
+                        - cell "Banca múltiple (actualizado a abril 2026)" [ref=e117]
+                  - list [ref=e119]:
+                    - listitem [ref=e120]:
+                      - link "Consultas interactivas" [ref=e121] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e122]:
+                      - link "Boletines estadísticos" [ref=e123] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=40&Contenido=Boletines&Titulo=Banca%20M%C3%BAltiple
+                    - listitem [ref=e124]:
+                      - link "Captación" [ref=e125] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=40&Contenido=Captaci%C3%B3n&Titulo=Banca%20M%C3%BAltiple
+                    - listitem [ref=e126]:
+                      - link "Cartera de Crédito Comercial" [ref=e127] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e128]:
+                      - link "Cartera de Crédito Consumo Interactiva (Incluye descargables en Excel y CSV)" [ref=e129] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiYzM1ODdhYjItZjJlZS00MWFkLWExM2EtODc1NDY1MjRjMjYzIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                    - listitem [ref=e130]:
+                      - link "Cartera de Crédito Vivienda" [ref=e131] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e132]:
+                      - link "Corresponsales" [ref=e133] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=40&t=126&st=0&ti=0&sti=0&n=0&tp=0
+                    - listitem [ref=e134]:
+                      - link "Evaluación de Calidad" [ref=e135] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=40&Contenido=Evaluaci%C3%B3n%20de%20Calidad&Titulo=Banca%20M%C3%BAltiple
+                    - listitem [ref=e136]:
+                      - link "Índice de Capitalización y Alertas Tempranas" [ref=e137] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e138]:
+                      - link "Información Operativa" [ref=e139] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e140]:
+                      - link "Pruebas de Estrés" [ref=e141] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=40&Contenido=Pruebas%20de%20Estr%C3%A9s&Titulo=Banca%20M%C3%BAltiple
+                    - listitem [ref=e142]:
+                      - link "Reclamaciones" [ref=e143] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=40&t=127&st=0&ti=0&sti=0&n=0&tp=0
+                    - listitem [ref=e144]:
+                      - link "Serie Histórica Interactiva (Incluye descargables en Excel y CSV)" [ref=e145] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiMGI0YWE0NzktYWQyYi00ZWFmLTllMWUtNDllZmY1OTc2ZGU0IiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                    - listitem [ref=e146]:
+                      - link "Situación Financiera" [ref=e147] [cursor=pointer]:
+                        - /url: "#"
+                - generic [ref=e148]:
+                  - table [ref=e150]:
+                    - rowgroup [ref=e151]:
+                      - row "Banca de desarrollo (actualizado a abril 2026)" [ref=e152]:
+                        - cell [ref=e153]
+                        - cell "Banca de desarrollo (actualizado a abril 2026)" [ref=e154]
+                  - list [ref=e156]:
+                    - listitem [ref=e157]:
+                      - link "Consultas interactivas" [ref=e158] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e159]:
+                      - link "Boletines estadísticos" [ref=e160] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=37&Contenido=Boletines&Titulo=Banca%20de%20Desarrollo
+                    - listitem [ref=e161]:
+                      - link "Captación" [ref=e162] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=37&Contenido=Captaci%C3%B3n&Titulo=Banca%20de%20Desarrollo
+                    - listitem [ref=e163]:
+                      - link "Cartera de Crédito Comercial" [ref=e164] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e165]:
+                      - link "Cartera de Crédito Consumo Interactiva (Incluye descargables en Excel y CSV)" [ref=e166] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiYzM1ODdhYjItZjJlZS00MWFkLWExM2EtODc1NDY1MjRjMjYzIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                    - listitem [ref=e167]:
+                      - link "Cartera de Crédito Vivienda Interactiva (Incluye descargables en excel y CSV)" [ref=e168] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiMjA4YjhkZTYtZWJjMy00ZTUxLWExZmUtZWY3ODhmYzQ4YTkwIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                    - listitem [ref=e169]:
+                      - link "Corresponsales" [ref=e170] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=37&t=126&st=0&ti=0&sti=0&n=0&tp=0
+                    - listitem [ref=e171]:
+                      - link "Evaluación de Calidad" [ref=e172] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=37&Contenido=Evaluaci%C3%B3n%20de%20Calidad&Titulo=Banca%20de%20Desarrollo
+                    - listitem [ref=e173]:
+                      - link "Índice de Capitalización y Alertas Tempranas" [ref=e174] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=37&t=31&st=0&ti=0&sti=0&n=0&tp=0
+                    - listitem [ref=e175]:
+                      - link "Información Operativa" [ref=e176] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e177]:
+                      - link "Pruebas de Estrés" [ref=e178] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=37&Contenido=Pruebas%20de%20Estr%C3%A9s&Titulo=Banca%20de%20Desarrollo
+                    - listitem [ref=e179]:
+                      - link "Reclamaciones" [ref=e180] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=37&t=127&st=0&ti=0&sti=0&n=0&tp=0
+                    - listitem [ref=e181]:
+                      - link "Serie Histórica Interactiva (Incluye descargables en Excel y CSV)" [ref=e182] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiNmQwMGE2YTYtY2EyOC00MzExLWE1N2QtMjM0NWYwZmE4OTM1IiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                    - listitem [ref=e183]:
+                      - link "Situación Financiera" [ref=e184] [cursor=pointer]:
+                        - /url: "#"
+                - generic [ref=e185]:
+                  - table [ref=e187]:
+                    - rowgroup [ref=e188]:
+                      - row "Sociedades financieras de objeto múltiple (actualizado a abril 2026)" [ref=e189]:
+                        - cell [ref=e190]
+                        - cell "Sociedades financieras de objeto múltiple (actualizado a abril 2026)" [ref=e191]
+                  - list [ref=e193]:
+                    - listitem [ref=e194]:
+                      - link "Consultas interactivas" [ref=e195] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e196]:
+                      - link "Boletines estadísticos" [ref=e197] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=68&Contenido=Boletines&Titulo=Sociedades%20Financieras%20de%20Objeto%20M%C3%BAltiple
+                    - listitem [ref=e198]:
+                      - link "Cartera de Crédito Comercial" [ref=e199] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e200]:
+                      - link "Cartera de Crédito Consumo Interactiva (Incluye descargables en Excel y CSV)" [ref=e201] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiYzM1ODdhYjItZjJlZS00MWFkLWExM2EtODc1NDY1MjRjMjYzIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                    - listitem [ref=e202]:
+                      - link "Cartera de Crédito Vivienda" [ref=e203] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e204]:
+                      - link "Corresponsales" [ref=e205] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=68&t=126&st=0&ti=0&sti=0&n=0&tp=0
+                    - listitem [ref=e206]:
+                      - link "Evaluaciones de Calidad" [ref=e207] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=68&Contenido=Evaluaci%C3%B3n%20de%20Calidad&Titulo=Sociedades%20Financieras%20de%20Objeto%20M%C3%BAltiple
+                    - listitem [ref=e208]:
+                      - link "Índice de Capitalización" [ref=e209] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=68&Contenido=%C3%8Dndice%20de%20Capitalizaci%C3%B3n%20&Titulo=Sociedades%20Financieras%20de%20Objeto%20M%C3%BAltiple
+                    - listitem [ref=e210]:
+                      - link "Serie Histórica Interactiva (Incluye descargables en Excel y CSV)" [ref=e211] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiYWVlMWYzMGEtYTdkYy00MWUxLTg0YTItMjYzNTg2OTZhZWRjIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                    - listitem [ref=e212]:
+                      - link "Situación Financiera" [ref=e213] [cursor=pointer]:
+                        - /url: "#"
+                - generic [ref=e214]:
+                  - table [ref=e216]:
+                    - rowgroup [ref=e217]:
+                      - row "Casas de bolsa (actualizado a abril 2026)" [ref=e218]:
+                        - cell [ref=e219]
+                        - cell "Casas de bolsa (actualizado a abril 2026)" [ref=e220]
+                  - list [ref=e222]:
+                    - listitem [ref=e223]:
+                      - link "Consultas interactivas" [ref=e224] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e225]:
+                      - link "Boletines estadísticos" [ref=e226] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=13&Contenido=Boletines&Titulo=Casas%20de%20Bolsa
+                    - listitem [ref=e227]:
+                      - link "Evaluaciones de Calidad" [ref=e228] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=13&Contenido=Evaluaci%C3%B3n%20de%20Calidad&Titulo=Casas%20de%20Bolsa
+                    - listitem [ref=e229]:
+                      - link "Índice de Capitalización y Alertas Tempranas" [ref=e230] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e231]:
+                      - 'link "Información operativa: cuentas y empleados" [ref=e232] [cursor=pointer]':
+                        - /url: /Paginas/Reporte.aspx?s=13&t=32&st=0&ti=0&sti=0&n=0&tp=0
+                    - listitem [ref=e233]:
+                      - link "Pruebas de Estrés" [ref=e234] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=13&Contenido=Pruebas%20de%20Estr%C3%A9s&Titulo=Casas%20de%20Bolsa
+                    - listitem [ref=e235]:
+                      - link "Serie Histórica Interactiva (Incluye descargables en Excel y CSV)" [ref=e236] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiYjA5ZWFjNTctYzZlMC00M2Y2LWEwNzAtMWM3YTkzNTRmYTk2IiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                    - listitem [ref=e237]:
+                      - link "Situación Financiera" [ref=e238] [cursor=pointer]:
+                        - /url: "#"
+                - generic [ref=e239]:
+                  - table [ref=e241]:
+                    - rowgroup [ref=e242]:
+                      - row "Casas de cambio (actualizado a marzo 2026)" [ref=e243]:
+                        - cell [ref=e244]
+                        - cell "Casas de cambio (actualizado a marzo 2026)" [ref=e245]
+                  - list [ref=e247]:
+                    - listitem [ref=e248]:
+                      - link "Consultas interactivas" [ref=e249] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e250]:
+                      - link "Boletines estadísticos" [ref=e251] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=16&Contenido=Boletines&Titulo=Casas%20de%20Cambio
+                    - listitem [ref=e252]:
+                      - link "Evaluaciones de Calidad" [ref=e253] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=16&Contenido=Evaluaci%C3%B3n%20de%20Calidad&Titulo=Casas%20de%20Cambio
+                    - listitem [ref=e254]:
+                      - link "Serie Histórica" [ref=e255] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=16&Contenido=Series%20Hist%C3%B3ricas&Titulo=Casas%20de%20Cambio
+                    - listitem [ref=e256]:
+                      - link "Situación Financiera" [ref=e257] [cursor=pointer]:
+                        - /url: "#"
+                - generic [ref=e258]:
+                  - table [ref=e260]:
+                    - rowgroup [ref=e261]:
+                      - row "Sociedades cooperativas de ahorro y préstamo (actualizado a marzo 2026)" [ref=e262]:
+                        - cell [ref=e263]
+                        - cell "Sociedades cooperativas de ahorro y préstamo (actualizado a marzo 2026)" [ref=e264]
+                  - list [ref=e266]:
+                    - listitem [ref=e267]:
+                      - link "Consultas interactivas" [ref=e268] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e269]:
+                      - link "Boletines estadísticos" [ref=e270] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=29&Contenido=Boletines&Titulo=Sociedades%20Cooperativas%20de%20Ahorro%20y%20Pr%C3%A9stamo
+                    - listitem [ref=e271]:
+                      - link "Corresponsales" [ref=e272] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=29&t=126&st=0&ti=0&sti=0&n=0&tp=0
+                    - listitem [ref=e273]:
+                      - link "Evaluaciones de Calidad" [ref=e274] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=29&Contenido=Evaluaci%C3%B3n%20de%20Calidad&Titulo=Sociedades%20Cooperativas%20de%20Ahorro%20y%20Pr%C3%A9stamo
+                    - listitem [ref=e275]:
+                      - link "Información Operativa y de Captación" [ref=e276] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=29&t=124&st=0&ti=0&sti=0&n=0&tp=0
+                    - listitem [ref=e277]:
+                      - link "Nivel de Capitalización y Alertas Tempranas" [ref=e278] [cursor=pointer]:
+                        - /url: "/Paginas/Contenidos.aspx?ID=29&Contenido=Nivel%20de%20Capitalizaci%C3%B3n%20y%20Alertas%20Tempranas&Titulo=Sociedades%20Cooperativas%20de%20Ahorro%20y%20Pr%C3%A9stamo\n"
+                    - listitem [ref=e279]:
+                      - link "Nivel de Operaciones Básico evaluadas en D" [ref=e280] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=29&t=5&st=0&ti=0&sti=0&n=0&tp=0
+                    - listitem [ref=e281]:
+                      - link "Pruebas de Estrés" [ref=e282] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=29&Contenido=Pruebas%20de%20estr%C3%A9s&Titulo=Sociedades%20Cooperativas%20de%20Ahorro%20y%20Pr%C3%A9stamo
+                    - listitem [ref=e283]:
+                      - link "Serie Histórica" [ref=e284] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=29&Contenido=Series%20Hist%C3%B3ricas&Titulo=Sociedades%20Cooperativas%20de%20Ahorro%20y%20Pr%C3%A9stamo
+                    - listitem [ref=e285]:
+                      - link "Situación Financiera" [ref=e286] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=29&t=26&st=0&ti=0&sti=0&n=0&tp=0
+                - generic [ref=e287]:
+                  - table [ref=e289]:
+                    - rowgroup [ref=e290]:
+                      - row "Sociedades financieras populares (actualizado a marzo 2026)" [ref=e291]:
+                        - cell [ref=e292]
+                        - cell "Sociedades financieras populares (actualizado a marzo 2026)" [ref=e293]
+                  - list [ref=e295]:
+                    - listitem [ref=e296]:
+                      - link "Consultas interactivas" [ref=e297] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e298]:
+                      - link "Boletines estadísticos" [ref=e299] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=27&Contenido=Boletines&Titulo=Sociedades%20Financieras%20Populares
+                    - listitem [ref=e300]:
+                      - link "Corresponsales" [ref=e301] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=27&t=126&st=0&ti=0&sti=0&n=0&tp=0
+                    - listitem [ref=e302]:
+                      - link "Evaluaciones de Calidad" [ref=e303] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=27&Contenido=Evaluaci%C3%B3n%20de%20Calidad&Titulo=Sociedades%20Financieras%20Populares
+                    - listitem [ref=e304]:
+                      - link "Nivel de Capitalización y Alertas Tempranas" [ref=e305] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e306]:
+                      - link "Pruebas de Estrés" [ref=e307] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=29&Contenido=Pruebas%20de%20estr%C3%A9s&Titulo=Sociedades%20Cooperativas%20de%20Ahorro%20y%20Pr%C3%A9stamo
+                    - listitem [ref=e308]:
+                      - link "Serie Histórica Interactiva (Incluye descargables en Excel y CSV)" [ref=e309] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiNzExMjliMzEtZjcxYS00ZTllLTgzNzgtYjYxYjI5MmZlNWJjIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                    - listitem [ref=e310]:
+                      - link "Situación Financiera" [ref=e311] [cursor=pointer]:
+                        - /url: "#"
+                - generic [ref=e312]:
+                  - table [ref=e314]:
+                    - rowgroup [ref=e315]:
+                      - row "Uniones de crédito (actualizado a marzo 2026)" [ref=e316]:
+                        - cell [ref=e317]
+                        - cell "Uniones de crédito (actualizado a marzo 2026)" [ref=e318]
+                  - list [ref=e320]:
+                    - listitem [ref=e321]:
+                      - link "Consultas interactivas" [ref=e322] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e323]:
+                      - link "Boletines estadísticos" [ref=e324] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=85&Contenido=Boletines&Titulo=Uniones%20de%20Cr%C3%A9dito
+                    - listitem [ref=e325]:
+                      - link "Evaluaciones de Calidad" [ref=e326] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=85&Contenido=Evaluaci%C3%B3n%20de%20Calidad&Titulo=Uniones%20de%20Cr%C3%A9dito
+                    - listitem [ref=e327]:
+                      - link "Índice de Capitalización" [ref=e328] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=85&Contenido=%C3%8Dndice%20de%20Capitalizaci%C3%B3n%20&Titulo=Uniones%20de%20Cr%C3%A9dito
+                    - listitem [ref=e329]:
+                      - link "Pruebas de Estrés" [ref=e330] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=29&Contenido=Pruebas%20de%20estr%C3%A9s&Titulo=Sociedades%20Cooperativas%20de%20Ahorro%20y%20Pr%C3%A9stamo
+                    - listitem [ref=e331]:
+                      - link "Serie Histórica" [ref=e332] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=85&Contenido=Series%20Hist%C3%B3ricas&Titulo=Uniones%20de%20Cr%C3%A9dito
+                    - listitem [ref=e333]:
+                      - link "Situación Financiera" [ref=e334] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=85&t=26&st=0&ti=0&sti=0&n=0&tp=0
+                - generic [ref=e335]:
+                  - table [ref=e337]:
+                    - rowgroup [ref=e338]:
+                      - row "Almacenes generales de depósito (actualizado a marzo 2026)" [ref=e339]:
+                        - cell [ref=e340]
+                        - cell "Almacenes generales de depósito (actualizado a marzo 2026)" [ref=e341]
+                  - list [ref=e343]:
+                    - listitem [ref=e344]:
+                      - link "Consultas interactivas" [ref=e345] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e346]:
+                      - link "Boletines estadísticos" [ref=e347] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=7&Contenido=Boletines&Titulo=Almacenes%20Generales%20de%20Dep%C3%B3sito
+                    - listitem [ref=e348]:
+                      - link "Evaluación de Calidad" [ref=e349] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=7&Contenido=Evaluaci%C3%B3n%20de%20Calidad&Titulo=Almacenes%20Generales%20de%20Dep%C3%B3sito
+                    - listitem [ref=e350]:
+                      - link "Serie Histórica" [ref=e351] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=7&Contenido=Series%20Hist%C3%B3ricas&Titulo=Almacenes%20Generales%20de%20Dep%C3%B3sito
+                    - listitem [ref=e352]:
+                      - link "Situación Financiera" [ref=e353] [cursor=pointer]:
+                        - /url: "#"
+                - generic [ref=e354]:
+                  - table [ref=e356]:
+                    - rowgroup [ref=e357]:
+                      - row "Sociedades controladoras de grupos financieros (actualizado a marzo 2026)" [ref=e358]:
+                        - cell [ref=e359]
+                        - cell "Sociedades controladoras de grupos financieros (actualizado a marzo 2026)" [ref=e360]
+                  - list [ref=e362]:
+                    - listitem [ref=e363]:
+                      - link "Consultas interactivas" [ref=e364] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e365]:
+                      - link "Boletines estadísticos" [ref=e366] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=55&Contenido=Boletines&Titulo=Sociedades%20Controladoras%20de%20Grupos%20Financieros
+                    - listitem [ref=e367]:
+                      - link "Evaluación de Calidad" [ref=e368] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=55&Contenido=Evaluaci%C3%B3n%20de%20Calidad&Titulo=Sociedades%20Controladoras%20de%20Grupos%20Financieros
+                    - listitem [ref=e369]:
+                      - link "Serie Histórica Interactiva (Incluye descargables en Excel y CSV)" [ref=e370] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiZDJkOGQ1NmUtM2UwMy00NzQzLWIwMWEtNWYyMDI4OWRmNGYyIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                    - listitem [ref=e371]:
+                      - link "Situación Financiera" [ref=e372] [cursor=pointer]:
+                        - /url: "#"
+                - generic [ref=e373]:
+                  - table [ref=e375]:
+                    - rowgroup [ref=e376]:
+                      - row "Fondos de fomento, fideicomisos y financiera nacional de desarrollo (actualizado a marzo 2026)" [ref=e377]:
+                        - cell [ref=e378]
+                        - cell "Fondos de fomento, fideicomisos y financiera nacional de desarrollo (actualizado a marzo 2026)" [ref=e379]
+                  - list [ref=e381]:
+                    - listitem [ref=e382]:
+                      - link "Consultas interactivas" [ref=e383] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e384]:
+                      - link "Información Operativa" [ref=e385] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=31&t=32&st=0&ti=0&sti=0&n=0&tp=0
+                    - listitem [ref=e386]:
+                      - link "Pruebas de Estrés" [ref=e387] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=37&Contenido=Pruebas%20de%20Estr%C3%A9s&Titulo=Banca%20de%20Desarrollo
+                    - listitem [ref=e388]:
+                      - link "Serie Histórica" [ref=e389] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=31&Contenido=Series%20Hist%C3%B3ricas&Titulo=Fondos%20de%20Fomento,%20Fideicomisos%20y%20Financiera%20Nacional%20de%20Desarrollo
+                    - listitem [ref=e390]:
+                      - link "Situación Financiera" [ref=e391] [cursor=pointer]:
+                        - /url: "#"
+                - generic [ref=e392]:
+                  - table [ref=e394]:
+                    - rowgroup [ref=e395]:
+                      - row "Organismos de fomento (actualizado a marzo 2026)" [ref=e396]:
+                        - cell [ref=e397]
+                        - cell "Organismos de fomento (actualizado a marzo 2026)" [ref=e398]
+                  - list [ref=e400]:
+                    - listitem [ref=e401]:
+                      - link "Consultas interactivas" [ref=e402] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e403]:
+                      - link "Información Operativa" [ref=e404] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=32&t=32&st=0&ti=0&sti=0&n=0&tp=0
+                    - listitem [ref=e405]:
+                      - link "Pruebas de Estrés" [ref=e406] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=37&Contenido=Pruebas%20de%20Estr%C3%A9s&Titulo=Banca%20de%20Desarrollo
+                    - listitem [ref=e407]:
+                      - link "Serie Histórica" [ref=e408] [cursor=pointer]:
+                        - /url: /Paginas/Contenidos.aspx?ID=32&Contenido=Series%20Hist%C3%B3ricas&Titulo=Organismos%20de%20Fomento
+                    - listitem [ref=e409]:
+                      - link "Situación Financiera" [ref=e410] [cursor=pointer]:
+                        - /url: "#"
+                - generic [ref=e411]:
+                  - table [ref=e413]:
+                    - rowgroup [ref=e414]:
+                      - row "Fondos de inversión, sociedades operadoras y distribuidoras (actualizado a marzo 2026)" [ref=e415]:
+                        - cell [ref=e416]
+                        - cell "Fondos de inversión, sociedades operadoras y distribuidoras (actualizado a marzo 2026)" [ref=e417]
+                  - list [ref=e419]:
+                    - listitem [ref=e420]:
+                      - link "Información de Sociedades de Inversión y Fondos de Inversión" [ref=e421] [cursor=pointer]:
+                        - /url: /Paginas/Reporte.aspx?s=52&t=2&st=0&ti=0&sti=0&n=0&tp=0
+                - generic [ref=e422]:
+                  - table [ref=e424]:
+                    - rowgroup [ref=e425]:
+                      - row "Instituciones de Tecnología Financiera (actualizado a diciembre 2023)" [ref=e426]:
+                        - cell [ref=e427]
+                        - cell "Instituciones de Tecnología Financiera (actualizado a diciembre 2023)" [ref=e428]
+                  - list [ref=e430]:
+                    - listitem [ref=e431]:
+                      - link "Consultas Interactivas" [ref=e432] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e433]:
+                      - link "Evaluación de Calidad" [ref=e434] [cursor=pointer]:
+                        - /url: https://portafolioinfo.cnbv.gob.mx/Paginas/Contenidos.aspx?ID=65&Contenido=Evaluaci%C3%B3n%20de%20Calidad&Titulo=Instituciones%20de%20Tecnología%20Financiera
+                    - listitem [ref=e435]:
+                      - link "Series Históricas" [ref=e436] [cursor=pointer]:
+                        - /url: https://portafolioinfo.cnbv.gob.mx/Paginas/Contenidos.aspx?ID=65&Contenido=Series%20Hist%C3%B3ricas&Titulo=Instituciones%20de%20Tecnología%20Financiera
+                    - listitem [ref=e437]:
+                      - link "Situación Financiera" [ref=e438] [cursor=pointer]:
+                        - /url: https://app.powerbi.com/view?r=eyJrIjoiYzFlMDNiNDAtZTNjMC00YzcyLTljMDUtZDMxZDExYjRjYmMxIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+                    - listitem [ref=e439]:
+                      - link "Tablero de Análisis" [ref=e440] [cursor=pointer]:
+                        - /url: https://app.fabric.microsoft.com/view?r=eyJrIjoiNGFmZjk5NzktMjNjNi00YjFlLWJmMjMtMTUzYTg0MzZkZWIzIiwidCI6IjVlMmM0OTc3LTEwN2QtNDBhMy04YWY3LTcwMDc0ODFhNjBkNCIsImMiOjR9
+            - table:
+              - rowgroup
+            - generic [ref=e441]:
+              - generic [ref=e442]:
+                - paragraph [ref=e443]:
+                  - generic [ref=e444]: La información publicada en el portafolio de información corresponde a la que, en cumplimiento a las Disposiciones aplicables a cada sector, remiten las entidades supervisadas a la CNBV a través de los reportes regulatorios, debiéndose asegurar que la misma sea completa, correcta, precisa, íntegra, confiable y oportuna. *.
+                - paragraph [ref=e445]:
+                  - generic [ref=e446]: "*La información correspondiente a Cartera de Crédito al Consumo, en los sectores aplicables, es compartida a esta Comisión por Banxico."
+              - generic [ref=e447]:
+                - text: "En caso de dudas o comentarios relacionados con el Portafolio de Información, favor de comunicarse a través de nuestra cuenta de contacto:"
+                - link "portafoliodeinformacion@cnbv.gob.mx" [ref=e448] [cursor=pointer]:
+                  - /url: mailto:portafoliodeinformacion@cnbv.gob.mx
+    - contentinfo [ref=e451]:
+      - generic [ref=e453]:
+        - generic [ref=e454]:
+          - generic [ref=e455]:
+            - heading "Enlaces" [level=5] [ref=e456]
+            - list [ref=e457]:
+              - listitem [ref=e458]:
+                - link "Declaración de Accesibilidad" [ref=e459] [cursor=pointer]:
+                  - /url: https://www.gob.mx/accesibilidad
+              - listitem [ref=e460]:
+                - link "Política de privacidad" [ref=e461] [cursor=pointer]:
+                  - /url: https://www.gob.mx/privacidad
+              - listitem [ref=e462]:
+                - link "Términos y Condiciones" [ref=e463] [cursor=pointer]:
+                  - /url: https://www.gob.mx/terminos
+              - listitem [ref=e464]:
+                - link "Marco Jurídico" [ref=e465] [cursor=pointer]:
+                  - /url: http://www.ordenjuridico.gob.mx
+              - listitem [ref=e466]:
+                - link "Portal de Obligaciones de Transparencia" [ref=e467] [cursor=pointer]:
+                  - /url: http://portaltransparencia.gob.mx
+              - listitem [ref=e468]:
+                - link "Sistema Infomex" [ref=e469] [cursor=pointer]:
+                  - /url: https://www.infomex.org.mx/gobiernofederal/home.action
+              - listitem [ref=e470]:
+                - link "INAI" [ref=e471] [cursor=pointer]:
+                  - /url: http://inicio.ifai.org.mx/SitePages/ifai.aspx
+              - listitem [ref=e472]:
+                - link "Mapa de sitio" [ref=e473] [cursor=pointer]:
+                  - /url: https://www.gob.mx/sitemap
+          - generic [ref=e474]:
+            - heading "¿Qué es gob.mx?" [level=5] [ref=e475]
+            - paragraph [ref=e476]:
+              - text: Es el portal único de trámites, información y participación ciudadana.
+              - link "Leer más" [ref=e477] [cursor=pointer]:
+                - /url: https://www.gob.mx/que-es-gobmx
+            - list [ref=e478]:
+              - listitem [ref=e479]:
+                - link "English" [ref=e480] [cursor=pointer]:
+                  - /url: https://www.gob.mx/en/index
+              - listitem [ref=e481]:
+                - link "Temas" [ref=e482] [cursor=pointer]:
+                  - /url: https://www.gob.mx/temas
+              - listitem [ref=e483]:
+                - link "Reformas" [ref=e484] [cursor=pointer]:
+                  - /url: http://reformas.gob.mx
+          - generic [ref=e485]:
+            - heading "Contacto" [level=5] [ref=e486]
+            - paragraph [ref=e487]:
+              - text: "Mesa de ayuda: dudas e información"
+              - text: gobmx@funcionpublica.gob.mx
+            - paragraph [ref=e488]:
+              - link "Denuncia contra servidores públicos" [ref=e489] [cursor=pointer]:
+                - /url: https://www.gob.mx/tramites/ficha/presentacion-de-quejas-y-denuncias-en-la-sfp/SFP54
+        - generic [ref=e490]:
+          - group "Suscríbete" [ref=e492]:
+            - generic [ref=e493]: Suscríbete
+            - generic [ref=e494]: Mantente informado. Suscríbete.
+            - generic [ref=e495]:
+              - textbox "Ingresa tu correo electronico" [ref=e496]:
+                - /placeholder: usuario@ejemplo.com
+              - button "Suscríbete " [ref=e497] [cursor=pointer]:
+                - generic [ref=e498]: Suscríbete
+                - generic [ref=e499]: 
+          - generic [ref=e500]:
+            - heading "Síguenos en" [level=5] [ref=e501]
+            - list [ref=e502]:
+              - listitem [ref=e503]:
+                - link "Facebook de presidencia" [ref=e504] [cursor=pointer]:
+                  - /url: https://www.facebook.com/gobmx
+              - listitem [ref=e505]:
+                - link "Twitter de presidencia" [ref=e506] [cursor=pointer]:
+                  - /url: https://twitter.com/gobmx
+      - generic [ref=e508]:
+        - img "Página de inicio, Gobierno de México" [ref=e510]
+        - img "gob.mx" [ref=e512]
+      - img "*" [ref=e513]
+  - contentinfo [ref=e514]:
+    - generic [ref=e517]:
+      - img "logo gobierno de méxico" [ref=e519]
+      - generic [ref=e520]:
+        - heading "Enlaces" [level=5] [ref=e522] [cursor=pointer]
+        - list [ref=e525]:
+          - listitem [ref=e526]:
+            - link "Datos abiertos de la SABG" [ref=e527] [cursor=pointer]:
+              - /url: https://data.buengobierno.gob.mx/databuengobierno
+          - listitem [ref=e528]:
+            - link "Marco Jurídico" [ref=e529] [cursor=pointer]:
+              - /url: http://www.ordenjuridico.gob.mx
+          - listitem [ref=e530]:
+            - link "Plataforma Nacional de Transparencia" [ref=e531] [cursor=pointer]:
+              - /url: https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/faces/view/consultaPublica.xhtml#inicio
+          - listitem [ref=e532]:
+            - link "Transparencia para el pueblo" [ref=e533] [cursor=pointer]:
+              - /url: https://transparencia.gob.mx
+          - listitem [ref=e534]:
+            - link "Alerta" [ref=e535] [cursor=pointer]:
+              - /url: https://alertadores.buengobierno.gob.mx/
+      - generic [ref=e536]:
+        - heading "¿Qué es gob.mx?" [level=5] [ref=e538] [cursor=pointer]
+        - generic [ref=e540]:
+          - paragraph [ref=e541]:
+            - text: Es el portal único de trámites, información y participación ciudadana.
+            - link "Leer más" [ref=e542] [cursor=pointer]:
+              - /url: https://www.gob.mx/que-es-gobmx
+          - list [ref=e543]:
+            - listitem [ref=e544]:
+              - link "Portal de datos abiertos" [ref=e545] [cursor=pointer]:
+                - /url: https://datos.gob.mx
+            - listitem [ref=e546]:
+              - link "Declaración de accesibilidad" [ref=e547] [cursor=pointer]:
+                - /url: https://www.gob.mx/accesibilidad
+            - listitem [ref=e548]:
+              - link "Términos y Condiciones" [ref=e549] [cursor=pointer]:
+                - /url: https://www.gob.mx/terminos
+      - generic [ref=e550]:
+        - heading "Denuncia contra servidores públicos" [level=5] [ref=e551]:
+          - link "Denuncia contra servidores públicos" [ref=e552] [cursor=pointer]:
+            - /url: https://sidec.buengobierno.gob.mx/#!/
+        - generic [ref=e553]: Síguenos en
+        - list [ref=e554]:
+          - listitem [ref=e555]:
+            - link "Facebook" [ref=e556] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobmexico
+              - img "Facebook" [ref=e557]
+          - listitem [ref=e558]:
+            - link "Twitter" [ref=e559] [cursor=pointer]:
+              - /url: https://twitter.com/GobiernoMX
+              - img "Twitter" [ref=e560]
+          - listitem [ref=e561]:
+            - link "Instagram" [ref=e562] [cursor=pointer]:
+              - /url: https://www.instagram.com/gobmexico/
+              - img "Instagram" [ref=e563]
+          - listitem [ref=e564]:
+            - link "Youtube" [ref=e565] [cursor=pointer]:
+              - /url: https://www.youtube.com/@gobiernodemexico
+              - img "Youtube" [ref=e566]
+        - list [ref=e567]:
+          - listitem [ref=e568]:
+            - link "logo 079" [ref=e570] [cursor=pointer]:
+              - /url: tel:+079
+              - img "logo 079" [ref=e571]

@@ -1,0 +1,1997 @@
+- generic [active] [ref=e1]:
+  - complementary [ref=e2]:
+    - link "Registra tu línea celular para acabar con el anonimato. Hazlo antes del 30 de junio." [ref=e3] [cursor=pointer]:
+      - /url: https://portal.crt.gob.mx/gestion-de-lineas-telefonicas-moviles
+      - img "Registra tu línea celular para acabar con el anonimato. Hazlo antes del 30 de junio." [ref=e4]
+  - generic:
+    - generic:
+      - img "Imagen de header"
+    - generic:
+      - img "Imagen de header"
+  - banner [ref=e5]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - link [ref=e11] [cursor=pointer]:
+          - /url: https://www.sedema.cdmx.gob.mx
+          - img [ref=e12]
+          - img [ref=e13]
+        - generic [ref=e16]:
+          - textbox "Buscar en el sitio" [ref=e17]
+          - button "" [ref=e19] [cursor=pointer]:
+            - generic [ref=e20]: 
+      - list [ref=e22]:
+        - listitem [ref=e23]:
+          - link "CDMX" [ref=e24] [cursor=pointer]:
+            - /url: http://www.cdmx.gob.mx
+          - text: /
+          - link "Secretarías" [ref=e25] [cursor=pointer]:
+            - /url: https://www.ciudadanos.cdmx.gob.mx/gobierno/gabinete/secretarias
+          - text: / SEDEMA
+        - listitem [ref=e26]:
+          - link "Transparencia" [ref=e27] [cursor=pointer]:
+            - /url: https://www.transparencia.cdmx.gob.mx/secretaria-del-medio-ambiente
+        - listitem [ref=e28]:
+          - link "Atención Ciudadana" [ref=e29] [cursor=pointer]:
+            - /url: https://311locatel.cdmx.gob.mx/
+        - listitem [ref=e30]:
+          - link "Trámites y Servicios" [ref=e31] [cursor=pointer]:
+            - /url: https://www.cdmx.gob.mx/
+    - generic [ref=e32]:
+      - text:  
+      - list [ref=e33]:
+        - list [ref=e35]:
+          - text:   
+          - listitem [ref=e36]:
+            - link "Inicio" [ref=e37] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx
+          - listitem [ref=e38]:
+            - link "Secretaría " [ref=e39] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/secretaria
+          - listitem [ref=e40]:
+            - link "Servicios" [ref=e41] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/servicios
+          - listitem [ref=e42]:
+            - link "Programas" [ref=e43] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas
+          - listitem [ref=e44]:
+            - link "Convocatorias" [ref=e45] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/convocatorias/licitaciones
+          - listitem [ref=e46]:
+            - link "Impacto ambiental " [ref=e47] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/impacto-ambiental
+          - listitem [ref=e48]:
+            - link "Ver más " [ref=e49] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx
+  - main [ref=e50]:
+    - generic [ref=e51]:
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - link "Programas" [ref=e55] [cursor=pointer]:
+            - /url: "#"
+            - heading "Programas" [level=2] [ref=e57]
+          - text: 
+        - list [ref=e59]:
+          - listitem [ref=e60]:
+            - link "Cosecha de lluvia y calentadores solares para transformar la Ciudad" [ref=e61] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/cosecha-de-lluvia-y-calentadores-solares-para-transformar-la-ciudad
+          - listitem [ref=e62]:
+            - link "Saneamiento del arbolado" [ref=e63] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/saneamiento
+          - listitem [ref=e64]:
+            - link "Sello Verde" [ref=e65] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/sello-verde
+          - listitem [ref=e66]:
+            - link "Reto Verde" [ref=e67] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/reto-verde
+          - listitem [ref=e68]:
+            - link "Residuos Sólidos" [ref=e69] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/residuos-solidos
+          - listitem [ref=e70]:
+            - link "Registros Ambientales" [ref=e71] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/registros-ambientales
+          - listitem [ref=e72]:
+            - link "Reciclatrón" [ref=e73] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/reciclatron
+          - listitem [ref=e74]:
+            - link "Ponte Pilas con tu Ciudad" [ref=e75] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/ponte-pilas-con-tu-ciudad
+          - listitem [ref=e76]:
+            - link "Mercado de Trueque" [ref=e77] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/mercado-de-trueque
+          - listitem [ref=e78]:
+            - link "Vehículos Contaminantes (PVC)" [ref=e79] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/vehiculos-contaminantes-pvc
+          - listitem [ref=e80]:
+            - link "Inventario de Áreas Verdes" [ref=e81] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/inventario-de-areas-verdes
+          - listitem [ref=e82]:
+            - link "Infraestructura Verde" [ref=e83] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/infraestructura-verde
+          - listitem [ref=e84]:
+            - link "Hoy No Circula" [ref=e85] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/hoy-no-circula
+          - listitem [ref=e86]:
+            - link "Cambio Climático" [ref=e87] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/cambio-climatico
+          - listitem [ref=e88]:
+            - link "Basura Cero" [ref=e89] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/basura-cero
+          - listitem [ref=e90]:
+            - link "Verificación Vehicular" [ref=e91] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/verificacion-vehicular
+          - listitem [ref=e92]:
+            - link "Cosecha de Lluvia" [ref=e93] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/cosecha-de-lluvia
+          - listitem [ref=e94]:
+            - link "Altépetl Bienestar" [ref=e95] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/altepetl
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - heading "Verificación Vehicular" [level=1] [ref=e99]
+          - generic [ref=e100]:
+            - paragraph
+            - paragraph [ref=e101]: El presente programa es de observancia obligatoria para los vehículos automotores de combustión interna matriculados en la Ciudad de México, en otras entidades federativas o con matrícula federal que de manera voluntaria soliciten el servicio de verificación vehicular en la Ciudad de México, con excepción de los tractores agrícolas, la maquinaria dedicada a las industrias de la construcción y minera, las motocicletas, los vehículos con peso bruto vehicular menor o igual a 400 kilogramos, los vehículos eléctricos, vehículos híbridos categorías I y II mencionadas en el presente programa, los vehículos con matrícula de auto antiguo, así como los automotores con matrícula de demostración y/o traslado y aquellos cuya tecnología o dimensiones impida la aplicación de la Norma Oficial Mexicana correspondiente.
+            - paragraph [ref=e102]:
+              - text: Asimismo, quedan obligados a observar el presente programa, los titulares de los
+              - strong [ref=e103]: Centro de Verificación
+              - strong [ref=e104]: de Emisiones Vehiculares
+              - text: de la Ciudad de México y los proveedores de equipo de verificación de emisiones vehiculares autorizados por la Secretaría del Medio Ambiente de la Ciudad de México.
+            - separator [ref=e105]
+            - paragraph [ref=e106]:
+              - strong [ref=e107]: ⚠
+              - strong [ref=e108]: ️ AVISOS
+            - list [ref=e109]:
+              - listitem [ref=e110]:
+                - link "Nuevo Reglamento de la Ley Ambiental de la Ciudad de México en Materia de Verificación Vehicular" [ref=e111] [cursor=pointer]:
+                  - /url: https://proyectos.sedema.cdmx.gob.mx/datos/storage/app/media/gacetas/GOCDMX_26-05-19_GOBIERNO.pdf
+                  - strong [ref=e112]: Nuevo Reglamento de la Ley Ambiental de la Ciudad de México en Materia de Verificación Vehicular
+                - strong [ref=e113]: (19 mayo de 2026)
+              - listitem [ref=e114]:
+                - link "Aviso por el que se da a conocer el programa de Verificación Vehicular Obligatoria para el primer semestre de 2026" [ref=e115] [cursor=pointer]:
+                  - /url: https://proyectos.sedema.cdmx.gob.mx/datos/storage/app/media/gacetas/GOCDMX_26-01-02_DGCA.pdf
+                  - strong [ref=e116]: Aviso por el que se da a conocer el programa de Verificación Vehicular Obligatoria para el primer semestre de 2026
+            - separator [ref=e117]
+            - paragraph [ref=e118]:
+              - strong [ref=e119]: ¿Dónde puedes realizar la verificación y agendar una cita?
+            - list [ref=e120]:
+              - listitem [ref=e121]:
+                - link "Centros de Verificación de Emisiones Vehiculares Autorizados para operar en la Ciudad de México" [ref=e122] [cursor=pointer]:
+                  - /url: https://citasverificentros.cdmx.gob.mx/
+                  - strong [ref=e123]: Centros de Verificación de Emisiones Vehiculares Autorizados para operar en la Ciudad de México
+              - listitem [ref=e124]:
+                - link "Centros de Verificación de Emisiones Vehiculares para vehículos pesados a diésel" [ref=e125] [cursor=pointer]:
+                  - /url: https://www.sedema.cdmx.gob.mx/storage/app/media/obligaciones-transparencia/directorioCVV_autorizados.pdf
+                  - strong [ref=e126]: Centros de Verificación de Emisiones Vehiculares para vehículos pesados a diésel
+            - link [ref=e129] [cursor=pointer]:
+              - /url: https://citasverificentros.cdmx.gob.mx/
+              - img [ref=e130]
+            - generic [ref=e131]:
+              - text: Asimismo que tu auto no cuente con adeudos de tenencia, infracciones al Reglamento de Tránsito o sanciones impuestas por
+              - strong [ref=e132]: SEDEMA
+              - text: "o bien fotocívicas en el portal oficial de Internet de la Agencia digital de Innovación Pública:"
+              - link "tramites.cdmx.gob.mx/fotocivicas/public/consulta-verificacion," [ref=e133] [cursor=pointer]:
+                - /url: https://tramites.cdmx.gob.mx/fotocivicas/public/consulta-verificacion,
+                - strong [ref=e134]: tramites.cdmx.gob.mx/fotocivicas/public/consulta-verificacion
+                - text: ","
+              - text: "o en portal oficial de Fotocívicas de la Secretaría de Movilidad:"
+              - link "tramites.cdmx.gob.mx/fotocivicas/public/," [ref=e135] [cursor=pointer]:
+                - /url: https://tramites.cdmx.gob.mx/fotocivicas/public/,
+                - strong [ref=e136]: tramites.cdmx.gob.mx/fotocivicas/public/
+                - text: ","
+              - text: "o en el portal oficial de Internet Secretaría de Administración y Finanzas:"
+              - link "data.finanzas.cdmx.gob.mx/sma/Consultaciudadana" [ref=e137] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana
+                - strong [ref=e138]: data.finanzas.cdmx.gob.mx/sma/Consultaciudadana
+              - text: .
+            - separator [ref=e139]
+            - paragraph [ref=e140]:
+              - strong [ref=e141]: CALENDARIO PARA REALIZAR LA VERIFICACIÓN DE EMISIONES VEHICULARES
+            - paragraph [ref=e142]: Los vehículos deberán realizar y aprobar la verificación de emisiones vehiculares y revisión de componentes de control ambiental cada semestre, salvo el caso de los que obtengan un holograma doble cero “00”, en cuyo caso la unidad estará exenta de la obligación de verificar sus emisiones hasta por tres semestres de verificación vehicular posteriores al semestre en que se obtuvo.
+            - paragraph [ref=e143]: "Los vehículos matriculados en la Ciudad de México deberán continuar verificando conforme al color del Engomado de Circulación o al último dígito numérico de las placas de circulación del vehículo, en los siguientes términos:"
+            - paragraph [ref=e144]:
+              - strong [ref=e145]: Programa de Verificación Vehicular Obligatorio para el primer semestre de 2026
+            - paragraph [ref=e146]:
+              - img [ref=e147]
+            - paragraph [ref=e148]
+            - paragraph [ref=e149]
+            - heading "Si quieres revisar tus adeudos haz click aquí" [level=3] [ref=e150]:
+              - strong [ref=e151]: Si quieres revisar tus adeudos haz
+              - link "click aquí" [ref=e152] [cursor=pointer]:
+                - /url: https://tramites.cdmx.gob.mx/fotocivicas/public/consulta-verificacion
+                - strong [ref=e153]: click aquí
+              - strong [ref=e154]
+            - separator [ref=e155]
+            - paragraph [ref=e156]: Los vehículos de cualquier uso que se registren por primera vez, o que, encontrándose matriculados en la Ciudad de México deciden cambiar de placa, deberán ser verificados dentro de los 180 días naturales contados a partir de la fecha de expedición de la tarjeta de circulación, con excepción de los que porten “Holograma “00”, los cuales deberán verificar conforme a la vigencia del mismo, situación que no exime de portar el certificado y holograma de verificación correspondientes a la matricula anterior.
+            - paragraph [ref=e157]: Los vehículos con registro previo en la Ciudad de México, que porten el certificado y holograma de verificación correspondiente a la matricula previa, mantendrán los beneficios a la circulación de acuerdo al tipo de holograma que hayan obtenido, continuando con su vigencia en tanto realizan la próxima verificación dentro del plazo señalado con antelación.
+            - paragraph [ref=e158]: Los certificados y hologramas obtenidos a través de la verificación voluntaria permanecerán vigentes hasta la fecha de su vencimiento.
+            - paragraph [ref=e159]:
+              - text: Si transcurridos los 180 días para el caso de los registrados por primera vez, o si, previo al cambio de matrícula en el caso de los ya registrados en la Ciudad de México, el vehículo automotor no acreditó la aprobación de la Verificación Vehicular, el propietario o legal poseedor de éste, deberá respetar las limitaciones a la circulación por no portar holograma vigente, de acuerdo a lo establecido en el
+              - strong [ref=e160]: Programa Hoy No Circula
+              - text: ", así mismo, para efectos de regularizar la verificación, se hará acreedor a una multa por Verificación Extemporánea la cual deberá pagar con la placa nueva y/o actual, misma que le permitirá trasladar el vehículo al taller mecánico para las reparaciones o mantenimiento respectivo, o en su caso, para trasladarse al"
+              - strong [ref=e161]: Centro de Verificación
+              - strong [ref=e162]: de Emisiones
+              - strong [ref=e163]: Vehicular
+              - strong [ref=e164]: es
+              - text: el día programado en su cita, lo anterior, mientras el pago respectivo se encuentre vigente.
+            - paragraph [ref=e165]: Los vehículos que porten matrícula que esté conformada por dos o más series de números o que contengan series numéricas y letras, símbolos, guiones o emblemas, deberán realizar la verificación vehicular de conformidad con el último dígito numérico de la placa.
+            - paragraph [ref=e166]: Los vehículos que carezcan de dígito numérico en su terminación de la matrícula, deberán realizar la verificación vehicular conforme el período de la terminación 9 o 0.
+            - paragraph [ref=e167]:
+              - text: Los vehículos cuyo último dígito numérico de la placa de circulación no corresponda con el color del engomado de circulación del vehículo, deberán realizar la verificación vehicular y respetar las limitaciones a la circulación establecidas en el
+              - strong [ref=e168]: Programa Hoy No Circula
+              - text: y en el
+              - strong [ref=e169]: Programa para Prevenir y Responder a Contingencias Ambientales Atmosféricas en la Ciudad de México
+              - text: ", conforme al último dígito numérico de la matrícula."
+            - paragraph [ref=e170]: En el caso de matrículas de taxi que realicen sustitución por un vehículo usado previamente matriculado en la Ciudad de México, el vehículo deberá ser verificado dentro de los 180 días naturales contados a partir de la fecha de expedición de la tarjeta de circulación, presentando el certificado y holograma de verificación correspondientes a la matricula anterior al alta como taxi, o el pago de la multa por verificación extemporánea en caso de no contar con estos últimos.
+            - paragraph [ref=e171]:
+              - text: Los vehículos de cualquier uso con número de matrícula ya asignada, que únicamente cuenten con el trámite de alta, renovación, reposición o sustitución entre otros, ante la Secretaría de Movilidad de la Ciudad de México, deberán realizar la verificación vehicular de acuerdo con el último dígito numérico de la matrícula asignada. Para el caso de vehículos de transporte público de pasajeros y de carga, cuya matrícula este rotulada en la unidad, deberán exhibir el documento del trámite de la citada Secretaría de Movilidad de la Ciudad de México, por lo que el
+              - strong [ref=e172]: Centro de Verificación
+              - strong [ref=e173]: de Emisiones
+              - strong [ref=e174]: Vehicular
+              - strong [ref=e175]: es
+              - text: deberá integrar dicho documento en el expediente de la verificación, no será necesario presentar la tarjeta de circulación, ni las placas del vehículo.
+            - paragraph [ref=e176]:
+              - text: A los vehículos pertenecientes a las Dependencias, Unidades Administrativas, Unidades de Apoyo Técnico Operativo, Fiscalía General de Justicia, Órganos Desconcentrados, Alcaldías y Entidades de la Administración Pública de la Ciudad de México, podrán ser verificados del
+              - strong [ref=e177]: 02 de enero de 2026 al 30 de junio de 2026
+              - text: ", dicha determinación aplicará para vehículos de dependencias locales y federales siempre y cuando se encuentren regulares en su verificación anterior y que la tarjeta de circulación este a nombre de la dependencia."
+            - paragraph [ref=e178]:
+              - text: Los propietarios o legales poseedores podrán verificar sus vehículos antes de su periodo de verificación, con el fin de acceder a un holograma con mayores beneficios de circulación, debiendo pagar la verificación respectiva, para la prestación de este servicio, el
+              - strong [ref=e179]: Centro de Verificación
+              - strong [ref=e180]: de Emisiones
+              - strong [ref=e181]: Vehicular
+              - strong [ref=e182]: es
+              - text: será responsable de verificar la vigencia y que se cumpla las posibilidades de acceder a un holograma de más beneficios. La constancia de verificación aprobatoria obtenida corresponderá al semestre en curso y no será necesario verificar en el periodo correspondiente conforme al calendario establecido.
+            - paragraph [ref=e183]: Los propietarios o legales poseedores de los vehículos que cuenten con un certificado “00” y hayan realizado cambio de placa, podrán verificar sus vehículos antes del periodo de verificación de la nueva placa, con el fin de obtener el holograma que les permita circular, el cual les otorgará la vigencia del periodo correspondiente a la terminación de la nueva placa.
+            - separator [ref=e184]
+            - paragraph [ref=e185]:
+              - strong [ref=e186]: "Casos para ampliar el periodo para verificar:"
+            - paragraph [ref=e187]: "Se podrá ampliar el período para verificar por un término de 15 días naturales, siempre y cuando los vehículos se encuentren en alguno de los siguientes supuestos:"
+            - paragraph [ref=e188]:
+              - strong [ref=e189]: "1."
+              - text: Haber obtenido un rechazo en los últimos 7 días naturales de su periodo en el mismo
+              - strong [ref=e190]: Centro de Verificación
+              - strong [ref=e191]: de Emisiones Vehiculares
+              - text: .
+            - paragraph [ref=e192]:
+              - text: Para este caso, el
+              - strong [ref=e193]: Centro de Verificación
+              - strong [ref=e194]: de Emisiones Vehiculares
+              - text: ", además de los requisitos establecidos en el numeral 9 del presente programa, deberá corroborar que el rechazo haya sido emitido en los últimos 7 días naturales de su periodo de verificación, que el vehículo no presente adeudos por infracciones, sanciones o tenencia, una vez corroborado lo anterior, se podrá prestar el servicio sin el pago de la multa por verificación extemporánea, debiendo anexar al expediente las consultas realizadas y el rechazo resultado de la nueva verificación."
+            - paragraph [ref=e195]: Si transcurridos los 15 días de ampliación al periodo el vehículo no acreditó la verificación, para la prestación del servicio se deberá presentar el pago de la multa por verificación extemporánea correspondiente, no estando obligado a hacerlo en el mismo Verificentro donde se generó el rechazo.
+            - paragraph [ref=e196]:
+              - strong [ref=e197]: "2."
+              - text: Que el vehículo no pueda realizar la verificación vigente debido a que el portal de consulta de adeudos (De la
+              - strong [ref=e198]: ADIP
+              - text: ", de la Secretaría de Administración y Finanzas ("
+              - strong [ref=e199]: SAF
+              - text: ) o
+              - strong [ref=e200]: ADIP
+              - text: o cita para verificar) no refleja pago o pagos previos realizados durante los últimos siete días naturales del periodo por concepto de infracciones al Reglamento de Tránsito de la Ciudad de México con sanción económica y sanciones al Reglamento de la Ley Ambiental de la Ciudad de México, en Materia de Verificación Vehicular.
+            - paragraph [ref=e201]:
+              - text: Para este supuesto, dentro de los 15 días de ampliación al periodo, el
+              - strong [ref=e202]: Centro de Verificación
+              - strong [ref=e203]: de Emisiones Vehiculares
+              - text: deberá corroborar que la consulta de adeudos presentada haya sido realizada durante los últimos siete días naturales del periodo, asimismo, que el vehículo no presente adeudos por infracciones, sanciones o tenencia, una vez corroborado lo anterior, se podrá prestar el servicio sin el pago de la multa por verificación extemporánea, debiendo anexar al expediente las consultas presentadas y realizadas.
+            - paragraph [ref=e204]:
+              - text: Si trascurridos los 15 días de ampliación, el portal de consulta de adeudos (
+              - strong [ref=e205]: ADIP
+              - text: o
+              - strong [ref=e206]: SAF
+              - text: ) no refleja aun el pago realizado durante los últimos siete días del periodo, el
+              - strong [ref=e207]: Centro de Verificación de Emisiones Vehiculares
+              - text: deberá imprimir y proporcionar al ciudadano la consulta de adeudos en la que se observe que continúa el mismo, orientando al ciudadano que acuda a la
+              - strong [ref=e208]: SAF
+              - text: a resolver los elementos que eviten que la información se refleje de manera correcta en el portal.
+            - paragraph [ref=e209]:
+              - text: Si trascurridos los 15 días de ampliación otorgada, el vehículo no cuenta con verificación vigente, el
+              - strong [ref=e210]: Centro de Verificación
+              - strong [ref=e211]: de Emisiones Vehiculares
+              - text: deberá corroborar que el vehículo no presente adeudos por infracciones, sanciones o tenencia, una vez corroborado lo anterior, se podrá prestar el servicio solicitando el pago de la multa por verificación extemporánea correspondiente, debiendo anexar al expediente las consultas presentadas, realizadas y el pago de la multa respectiva.
+            - paragraph [ref=e212]:
+              - strong [ref=e213]: "3."
+              - text: Que el vehículo no pueda realizar la verificación vigente debido a que el portal de consulta de adeudos (
+              - strong [ref=e214]: ADIP
+              - text: o
+              - strong [ref=e215]: SAF
+              - text: cita para verificar) refleja sanciones cívicas de cualquier tipo, durante los últimos siete días naturales del periodo.
+            - paragraph [ref=e216]:
+              - text: Para este supuesto, dentro de los 15 días de ampliación al periodo, el
+              - strong [ref=e217]: Centro de Verificación
+              - strong [ref=e218]: de Emisiones Vehiculares
+              - text: deberá corroborar que la consulta de adeudos presentada haya sido realizada durante los últimos días 7 días naturales del periodo, asimismo, que el vehículo no presente adeudos por infracciones, sanciones o tenencia. Una vez corroborado lo anterior, se podrá prestar el servicio sin el pago de la multa por verificación extemporánea, debiendo anexar al expediente las consultas presentadas y realizadas.
+            - paragraph [ref=e219]: El propietario o legal poseedor del vehículo que requiera realizar un curso en línea en ese momento, podrá solicitar en el Verificentro una terminal para realizar el curso y una vez eliminado el bloqueo, y se refleje en la página de la ADIP o SAF, solicitar la prestación del servicio de verificación de su vehículo.
+            - paragraph [ref=e220]:
+              - text: Si trascurridos los 15 días de ampliación, el portal de consulta de adeudos (
+              - strong [ref=e221]: ADIP
+              - text: o
+              - strong [ref=e222]: SAF
+              - text: o cita para acudir a verificar) no refleja aún las sanciones por foto cívicas solventadas, el
+              - strong [ref=e223]: Centro de Verificación
+              - strong [ref=e224]: de Emisiones
+              - strong [ref=e225]: Vehicular
+              - strong [ref=e226]: es
+              - text: deberá imprimir y proporcionar al ciudadano la consulta de adeudos en la que se observe que continúa el adeudo, orientando al ciudadano que acuda a la
+              - strong [ref=e227]: SEMOVI
+              - text: a resolver los elementos que eviten que la información se refleje de manera correcta en el portal.
+            - paragraph [ref=e228]:
+              - text: Si trascurridos los 15 días de ampliación otorgada, el vehículo no cuenta con verificación vigente, el
+              - strong [ref=e229]: Centro de Verificación
+              - strong [ref=e230]: de Emisiones Vehiculares
+              - text: deberá corroborar que el vehículo no presente adeudos por infracciones, sanciones o tenencia, una vez corroborado lo anterior, se podrá prestar el servicio solicitando el pago de la multa por verificación extemporánea correspondiente, debiendo anexar al expediente las consultas presentadas, realizadas y el pago de la multa respectivo.
+            - paragraph [ref=e231]: "La ampliación para cada periodo se sujeta al siguiente calendario:"
+            - paragraph [ref=e232]:
+              - strong [ref=e233]: Ampliación al periodo de verificación
+            - table [ref=e234]:
+              - rowgroup [ref=e235]:
+                - row "Color del engomado de circulación del vehículo Último dígito numérico de la placa de circulación Fecha límite para verificar Última semana del periodo" [ref=e236]:
+                  - cell "Color del engomado de circulación del vehículo" [ref=e237]:
+                    - paragraph [ref=e238]:
+                      - strong [ref=e239]: Color del engomado de circulación del vehículo
+                  - cell "Último dígito numérico de la placa de circulación" [ref=e240]:
+                    - paragraph [ref=e241]:
+                      - strong [ref=e242]: Último dígito numérico de la placa de circulación
+                  - cell "Fecha límite para verificar" [ref=e243]:
+                    - paragraph [ref=e244]:
+                      - strong [ref=e245]: Fecha límite para verificar
+                  - cell "Última semana del periodo" [ref=e246]:
+                    - paragraph [ref=e247]:
+                      - strong [ref=e248]: Última semana del periodo
+                - row "Amarillo 5 ó 6 Al 15 de marzo de 2026 Del 22 al 28 de febrero de 2026" [ref=e249]:
+                  - cell "Amarillo" [ref=e250]:
+                    - paragraph [ref=e251]: Amarillo
+                  - cell "5 ó 6" [ref=e252]:
+                    - paragraph [ref=e253]: 5 ó 6
+                  - cell "Al 15 de marzo de 2026" [ref=e254]:
+                    - paragraph [ref=e255]: Al 15 de marzo de 2026
+                  - cell "Del 22 al 28 de febrero de 2026" [ref=e256]:
+                    - paragraph [ref=e257]: Del 22 al 28 de febrero de 2026
+                - row "Rosa 7 ó 8 Al 15 de abril de 2026 Del 25 al 31 de marzo de 2026" [ref=e258]:
+                  - cell "Rosa" [ref=e259]:
+                    - paragraph [ref=e260]: Rosa
+                  - cell "7 ó 8" [ref=e261]:
+                    - paragraph [ref=e262]: 7 ó 8
+                  - cell "Al 15 de abril de 2026" [ref=e263]:
+                    - paragraph [ref=e264]: Al 15 de abril de 2026
+                  - cell "Del 25 al 31 de marzo de 2026" [ref=e265]:
+                    - paragraph [ref=e266]: Del 25 al 31 de marzo de 2026
+                - row "Rojo 3 ó 4 Al 15 de mayo de 2026 Del 24 al 30 de abril de 2026" [ref=e267]:
+                  - cell "Rojo" [ref=e268]:
+                    - paragraph [ref=e269]: Rojo
+                  - cell "3 ó 4" [ref=e270]:
+                    - paragraph [ref=e271]: 3 ó 4
+                  - cell "Al 15 de mayo de 2026" [ref=e272]:
+                    - paragraph [ref=e273]: Al 15 de mayo de 2026
+                  - cell "Del 24 al 30 de abril de 2026" [ref=e274]:
+                    - paragraph [ref=e275]: Del 24 al 30 de abril de 2026
+                - row "Verde 1 ó 2 Al 15 de junio de 2026 Del 25 al 31 de mayo de 2026" [ref=e276]:
+                  - cell "Verde" [ref=e277]:
+                    - paragraph [ref=e278]: Verde
+                  - cell "1 ó 2" [ref=e279]:
+                    - paragraph [ref=e280]: 1 ó 2
+                  - cell "Al 15 de junio de 2026" [ref=e281]:
+                    - paragraph [ref=e282]: Al 15 de junio de 2026
+                  - cell "Del 25 al 31 de mayo de 2026" [ref=e283]:
+                    - paragraph [ref=e284]: Del 25 al 31 de mayo de 2026
+                - row "Azul 9 ó 0 Al 15 de julio de 2026 Del 24 al 30 de junio de 2026" [ref=e285]:
+                  - cell "Azul" [ref=e286]:
+                    - paragraph [ref=e287]: Azul
+                  - cell "9 ó 0" [ref=e288]:
+                    - paragraph [ref=e289]: 9 ó 0
+                  - cell "Al 15 de julio de 2026" [ref=e290]:
+                    - paragraph [ref=e291]: Al 15 de julio de 2026
+                  - cell "Del 24 al 30 de junio de 2026" [ref=e292]:
+                    - paragraph [ref=e293]: Del 24 al 30 de junio de 2026
+            - paragraph [ref=e294]
+            - paragraph [ref=e295]: Los vehículos que se encuentren en alguno de los supuestos antes descritos, mantendrán los beneficios a la circulación de acuerdo al tipo de holograma que hayan obtenido continuando con su vigencia durante los 15 días de ampliación.
+            - separator [ref=e296]
+            - heading [level=3] [ref=e297]
+            - heading "PRUEBA DE INSPECCIÓN FÍSICO MECÁNICA" [level=3] [ref=e298]:
+              - strong [ref=e299]: PRUEBA DE INSPECCIÓN FÍSICO MECÁNICA
+            - paragraph [ref=e300]:
+              - strong [ref=e301]: INSPECCIÓN FÍSICO MECÁNICA VOLUNTARIA
+            - paragraph [ref=e302]: Los vehículos de uso particular que realicen el proceso de verificación en la Ciudad de México podrán ser sujetos de realizar una prueba de inspección físico - mecánica (sin costo), siempre y cuando se haya asignado a una línea de verificación que cuente con la infraestructura necesaria para la aplicación de tales pruebas y el usuario del vehículo de su autorización para realizar dicha prueba; los resultados obtenidos serán de carácter informativo para el ciudadano y no serán motivo de aprobación o rechazo. Esta prueba no corresponde a la descrita para revista y validación vehicular que se indica en el numeral 6.2 del presente programa.
+            - paragraph [ref=e303]: La prueba de inspección físico - mecánica se realizará previo a la inspección visual y SDB, la cual incluye las pruebas de alineación al paso, banco de suspensiones, frenómetro y detector de holguras, mismas que no son invasivas para el vehículo automotor.
+            - paragraph [ref=e304]:
+              - text: El resultado de la prueba de inspección físico - mecánica será entregado al propietario y/o legal poseedor del vehículo y, en caso de así solicitarlo, el
+              - strong [ref=e305]: Centro de Verificación
+              - strong [ref=e306]: de Emisiones Vehiculares
+              - text: realizará una explicación del resultado obtenido.
+            - paragraph [ref=e307]:
+              - strong [ref=e308]: INSPECCIÓN FÍSICO MECÁNICA PARA LA “REVISTA VEHICULAR” (TAXI) Y “VALIDACIÓN VEHICULAR” (PLATAFORMA Y APP)
+            - paragraph [ref=e309]:
+              - text: Las unidades que prestan el servicio de transporte de pasajeros público individual (taxi) en la Ciudad de México y los de servicio de transporte de pasajeros privado especializado con chofer, deberán sujetarse al procedimiento denominado “revista vehicular” y “validación vehicular” vigentes, respectivamente, conforme al procedimiento, requisitos y periodo que para tal efecto publique la Secretaría de Movilidad de la Ciudad de México (
+              - strong [ref=e310]: SEMOVI
+              - text: ).
+            - paragraph [ref=e311]:
+              - text: Para obtener información sobre los
+              - strong [ref=e312]: Centros de Verificación de Emisiones Vehiculares
+              - text: que realizan la inspección fisco mecánica, se deberá revisar la siguiente dirección electrónica
+              - link:
+                - /url: http://verificentros.sedema.cdmx.gob.mx:8080/dvc/
+              - link "citasverificentros.cdmx.gob.mx" [ref=e313] [cursor=pointer]:
+                - /url: https://citasverificentros.cdmx.gob.mx
+                - strong [ref=e314]: citasverificentros.cdmx.gob.mx
+            - separator [ref=e315]
+            - paragraph [ref=e316]:
+              - strong [ref=e317]: TARIFAS POR LA PRESTACIÓN DEL SERVICIO DE VERIFICACIÓN DE EMISIONES VEHICULARES
+            - paragraph [ref=e318]:
+              - text: El costo por los servicios de verificación vehicular que presten los Verificentros, para todo tipo de Constancia de Verificación (“Holograma “0”, “1”, “2”, Rechazo y Evaluación Técnica), así como del incentivo “00” que se entregue al usuario, es de
+              - strong [ref=e319]: "5.625"
+              - text: veces la Unidad de Medida y Actualización vigente más el Impuesto al Valor Agregado (IVA).
+              - text: Las tarifas referidas anteriormente se actualizarán de manera anual, de conformidad con el ajuste de la Unidad de Medida y Actualización que publique el Instituto Nacional de Estadística y Geografía (
+              - strong [ref=e320]: INEGI
+              - text: ) en el Diario Oficial de la Federación y el aviso o Circular que emita la Secretaría.
+              - text: La verificación en su segundo, cuarto, sexto, octavo, décimo o sucesivos intentos pares será gratuita, siempre y cuando la verificación que le anteceda sea un rechazo vehicular y se realice en el mismo
+              - strong [ref=e321]: Centro de Verificación de Emisiones Vehiculares
+              - text: en que se obtuvo el rechazo, este criterio aplicará en todos los periodos regulares de verificación vehicular otorgados por el presente programa, incluso los periodos otorgados por las Multas de Verificación Extemporánea (30 días naturales contados a partir del día natural siguiente del pago), en los casos en los que apliquen 180 días naturales a partir del registro por primera vez o cambio de placa en la Ciudad de México, los casos señalados en el numeral 5.1.9. , 8.6.1.1 del presente programa y en las verificaciones voluntarias.
+            - paragraph [ref=e322]: El pago de la tarifa por la expedición de las reposiciones de Constancias de Verificación (holograma y/o certificado) será la que establezca el Código Fiscal de la Ciudad de México vigente.
+            - paragraph [ref=e323]:
+              - text: Las tarifas por concepto de verificación vehicular deberán indicarse de manera destacada y a la vista del público en todos los Verificentros, debiendo presentarse en moneda nacional.
+              - text: Las copias o impresiones de los documentos necesarios para realizar la verificación vehicular de cada unidad, que el propietario o poseedor del automotor a verificar llegase a solicitar a los Verificentros, deberá ser cobrada en un máximo de un peso por cada copia fotostática o impresión realizada, debiendo imprimirse el concepto por copias fotostáticas o impresiones en el comprobante de pago, no estando obligado el Verificentro a prestar el servicio de fotocopiado.
+            - paragraph [ref=e324]:
+              - text: La Constancia del tipo “
+              - strong [ref=e325]: EXENTO
+              - text: ” para vehículos matriculados en la CDMX se expedirá sin costo.
+            - paragraph [ref=e326]: Los vehículos con matrícula de otra entidad que lo soliciten de manera voluntaria deberán pagar la tarifa de 4.8 UMA´s más IVA ($630.00). No aplica para matrículas del Estado de México.
+            - paragraph [ref=e327]:
+              - text: Por la inspección físico - mecánica para la “revista vehicular” y la “validación vehicular”, se deberá presentar el vehículo en cualquiera de los
+              - strong [ref=e328]: Centros de Verificación de Emisiones Vehiculares
+              - text: de la Ciudad de México autorizados para el efecto, donde deberá cubrir el pago correspondiente que para tal efecto publique la Secretaría de Movilidad de la Ciudad de México.
+              - text: La tarifa por las Constancias para los vehículos que participen en el Programa de Autorregulación Ambiental de Vehículos a Diésel o para impulsar la electromovilidad en vehículos ligeros, será la que establezca la Secretaría.
+            - separator [ref=e329]
+            - paragraph [ref=e330]
+            - paragraph [ref=e331]:
+              - strong [ref=e332]: CONSTANCIA DE VERIFICACIÓN QUE SE PUEDE OBTENER
+            - paragraph [ref=e333]: Los hologramas que puedes obtener con el nuevo programa de Verificación Vehicular son los siguientes
+            - paragraph [ref=e334]:
+              - strong [ref=e335]: EXENTO
+            - paragraph [ref=e336]:
+              - text: Los propietarios o legales poseedores de los vehículos Eléctricos, Vehículos Híbridos Categoría I y II de cualquier uso deberán solicitar el incentivo del Holograma “
+              - strong [ref=e337]: Exento
+              - text: ” de forma gratuita, si se encuentren en la lista publicada en la página de internet de la Secretaría (Una vez que la información sea proporcionada por la Industria Automotriz y sea valorada por la Secretaría).
+            - paragraph [ref=e338]:
+              - text: El cual podrán solicitar en las áreas de atención ciudadana de los
+              - strong [ref=e339]: Centros de Verificación de Emisiones Vehiculares
+              - text: "autorizados en la Ciudad de México, siempre y cuando se cumpla con los requisitos siguientes:"
+            - paragraph [ref=e340]:
+              - strong [ref=e341]: a)
+              - text: "Identificación oficial vigente con fotografía del solicitante, (ej.: credencial para votar o cédula profesional o pasaporte o licencia para conducir o cartilla del Servicio Militar Nacional o del"
+              - strong [ref=e342]: INAPAM
+              - text: ", entre otros). Copia."
+            - paragraph [ref=e343]:
+              - strong [ref=e344]: b)
+              - text: Documento mediante el cual se acredite la primera enajenación del vehículo. Copia.
+            - paragraph [ref=e345]:
+              - strong [ref=e346]: c)
+              - text: Tarjeta de circulación de la entidad en la que se encuentre registrado (Excepto del Estado de México). Copia.
+            - paragraph [ref=e347]:
+              - strong [ref=e348]: d)
+              - text: Encontrarse dentro del
+              - link "listado de vehículos candidatos al holograma Exento" [ref=e349] [cursor=pointer]:
+                - /url: https://verificacionvehicular.sedema.cdmx.gob.mx/Listado/Exentos
+                - strong [ref=e350]: listado de vehículos candidatos al holograma Exento
+              - text: de la página de la Secretaría (www.sedema.cdmx.gob.mx).
+            - paragraph [ref=e351]:
+              - strong [ref=e352]: e)
+              - text: "Cumplir con los criterios establecidos en la siguiente tabla:"
+            - paragraph [ref=e353]
+            - paragraph [ref=e354]:
+              - strong [ref=e355]: Criterios para la asignación del Incentivo tipo “EXENTO”
+            - paragraph [ref=e356]
+            - table [ref=e357]:
+              - rowgroup [ref=e358]:
+                - row "Vehículos Descripción Vigencia" [ref=e359]:
+                  - cell "Vehículos" [ref=e360]:
+                    - paragraph [ref=e361]:
+                      - strong [ref=e362]: Vehículos
+                  - cell "Descripción" [ref=e363]:
+                    - paragraph [ref=e364]:
+                      - strong [ref=e365]: Descripción
+                  - cell "Vigencia" [ref=e366]:
+                    - paragraph [ref=e367]:
+                      - strong [ref=e368]: Vigencia
+                - row "Eléctrico Vehículo con una fuente de energía (eléctrica) donde la energía eléctrica es la fuente de propulsión principal sin combustión. Permanente" [ref=e369]:
+                  - cell "Eléctrico" [ref=e370]:
+                    - paragraph [ref=e371]: Eléctrico
+                  - cell "Vehículo con una fuente de energía (eléctrica) donde la energía eléctrica es la fuente de propulsión principal sin combustión." [ref=e372]: Vehículo con una fuente de energía (eléctrica) donde la energía eléctrica es la fuente de propulsión principal sin combustión.
+                  - cell "Permanente" [ref=e373]:
+                    - paragraph [ref=e374]: Permanente
+                - row "Celda de combustible Vehículo con una fuente de energía proveniente de celdas de combustible." [ref=e375]:
+                  - cell "Celda de combustible" [ref=e376]:
+                    - paragraph [ref=e377]: Celda de combustible
+                  - cell "Vehículo con una fuente de energía proveniente de celdas de combustible." [ref=e378]: Vehículo con una fuente de energía proveniente de celdas de combustible.
+                - row "Híbrido categoría I Vehículo con dos fuentes de energía (eléctrica y gasolina) donde la energía eléctrica es la fuente de propulsión principal sin combustión y se obtiene desde una toma de corriente. La fuente de combustión interna se usa únicamente para alimentar el banco de baterías. De 6 años, con posibilidad de 1 renovación" [ref=e379]:
+                  - cell "Híbrido categoría I" [ref=e380]:
+                    - paragraph [ref=e381]: Híbrido categoría I
+                  - cell "Vehículo con dos fuentes de energía (eléctrica y gasolina) donde la energía eléctrica es la fuente de propulsión principal sin combustión y se obtiene desde una toma de corriente. La fuente de combustión interna se usa únicamente para alimentar el banco de baterías." [ref=e382]: Vehículo con dos fuentes de energía (eléctrica y gasolina) donde la energía eléctrica es la fuente de propulsión principal sin combustión y se obtiene desde una toma de corriente. La fuente de combustión interna se usa únicamente para alimentar el banco de baterías.
+                  - cell "De 6 años, con posibilidad de 1 renovación" [ref=e383]:
+                    - paragraph [ref=e384]: De 6 años, con posibilidad de 1 renovación
+                - row "Híbrido categoría II Vehículo con dos fuentes de energía (eléctrica y gasolina), en el cual la energía eléctrica permite la propulsión sin combustión, en periodos de operación en los que no se requiere máxima potencia." [ref=e385]:
+                  - cell "Híbrido categoría II" [ref=e386]:
+                    - paragraph [ref=e387]: Híbrido categoría II
+                  - cell "Vehículo con dos fuentes de energía (eléctrica y gasolina), en el cual la energía eléctrica permite la propulsión sin combustión, en periodos de operación en los que no se requiere máxima potencia." [ref=e388]: Vehículo con dos fuentes de energía (eléctrica y gasolina), en el cual la energía eléctrica permite la propulsión sin combustión, en periodos de operación en los que no se requiere máxima potencia.
+            - paragraph [ref=e389]
+            - paragraph [ref=e390]
+            - paragraph [ref=e391]:
+              - text: Al vencimiento de la vigencia del holograma tipo Exento otorgado a los vehículos híbridos categoría I y II, los propietarios o legales poseedores deberán solicitar en los
+              - strong [ref=e392]: Centros de Verificación de Emisiones Vehiculares
+              - text: la renovación del mismo, siempre y cuando se encuentre en el listado descrito en el inciso
+              - strong [ref=e393]: d)
+              - text: de este numeral.
+            - paragraph [ref=e394]: La vigencia se calculará a partir de la fecha de emisión de la factura o carta factura, y/o contrato de arrendamiento del vehículo.
+            - paragraph [ref=e395]: Para el caso de los vehículos que hayan obtenido una constancia tipo Exento, conforme a los criterios establecidos en los programas anteriores, será reconocida la vigencia otorgada en su momento. En caso de que su holograma no incluya vigencia, la misma se considera a partir de la adquisición del automotor.
+            - paragraph [ref=e396]:
+              - text: Los vehículos que hayan obtenido un holograma tipo
+              - strong [ref=e397]: Exento
+              - text: conforme a los criterios establecidos en los programas anteriores y cuya vigencia haya llegado a su fin, deberán someterse a los criterios actuales para realizar su renovación, o en su caso, para aquellos vehículos que no sean candidatos a la renovación de la constancia tipo
+              - strong [ref=e398]: Exento
+              - text: podrán verificar dentro de los 180 días naturales contados a partir de la fecha de término de la vigencia del holograma tipo
+              - strong [ref=e399]: Exento
+              - text: ", si transcurriera dicho plazo y no aprobara la verificación, deberán pagar multa por verificación extemporánea para poder verificar la unidad, debiendo respetar a partir de ese semestre, los calendarios establecidos para verificar semestralmente la unidad."
+            - table [ref=e400]:
+              - rowgroup [ref=e401]:
+                - row [ref=e402]:
+                  - cell [ref=e403]:
+                    - link [ref=e404] [cursor=pointer]:
+                      - /url: https://verificacionvehicular.sedema.cdmx.gob.mx/Listado/Exentos
+                      - img [ref=e405]
+                  - cell [ref=e406]:
+                    - link:
+                      - /url: https://verificentros.sedema.cdmx.gob.mx/Listado/
+                    - strong [ref=e407]:
+                      - emphasis [ref=e408]:
+                        - link [ref=e409] [cursor=pointer]:
+                          - /url: https://verificacionvehicular.sedema.cdmx.gob.mx/Listado/
+                          - img [ref=e410]
+            - paragraph:
+              - link:
+                - /url: https://verificentros.sedema.cdmx.gob.mx/Listado/
+            - paragraph [ref=e412]: "Los vehículos automotores que hayan sido convertidos a eléctricos también podrán solicitar la emisión a su favor del holograma referido, para lo cual, los propietarios o poseedores deberán presentar en el Área de Atención Ciudadana de Verificación Vehicular, sita en Río de la Plata # 48, Piso 2, colonia Cuauhtémoc, Alcaldía en Cuauhtémoc, C.P. 06500, en días hábiles de 9:00 a 14:00 horas:"
+            - paragraph [ref=e413]:
+              - strong [ref=e414]: 1)
+              - text: Solicitud (Escrito Libre) por parte del legal poseedor del vehículo.
+            - paragraph [ref=e415]:
+              - strong [ref=e416]: "2"
+              - strong [ref=e417]: )
+              - text: Factura de la conversión a propulsión eléctrica.
+            - paragraph [ref=e418]:
+              - strong [ref=e419]: 3)
+              - text: Evidencia que avale que la conversión de tecnología cumple con alguno de los estándares internacionales en seguridad de las conversiones como ISO 6469-1, ISO 6469-2, ISO 6469-3, ISO 6469-4, el cambio de tecnología.
+            - paragraph [ref=e420]:
+              - strong [ref=e421]: "4"
+              - strong [ref=e422]: )
+              - text: Tarjeta de circulación que indique que el vehículo es eléctrico (Excepto vehículos del Estado de México).
+            - paragraph [ref=e423]: La vigencia del holograma, se calculará a partir de la fecha de emisión de la factura o evidencia del cambio de tecnología del vehículo.
+            - separator [ref=e424]
+            - paragraph [ref=e425]:
+              - strong [ref=e426]: Constancia tipo “00”
+            - paragraph [ref=e427]:
+              - text: Constancia tipo
+              - strong [ref=e428]: “00”
+              - text: (Constancia de verificación tipo “00”). Este holograma se otorga como reconocimiento a los automotores cuyo desempeño ambiental es superior al establecido en la regulación nacional vigente, de acuerdo con las condiciones establecidas por la Ciudad de México.
+            - paragraph [ref=e429]: Los propietarios o legales poseedores de vehículos de cualquier uso que utilicen gasolina, diésel, gas natural, gas licuado de petróleo, híbridos categoría III, que se encuentren en la lista publicada en la página de internet de la Secretaría (elaborada y actualizada con base en la información proporcionada por la industria automotriz), deberán acudir a cualquiera de los Centros de Verificación de Emisiones Vehiculares de la Ciudad de México a realizar el procedimiento de asignación del incentivo, debiendo cumplir con los siguientes valores obtenidos de la información proporcionada por los fabricantes de vehículos automotores a la Secretaría, señalados en los numerales 8.7.2.1. y 8.7.2.2.
+            - paragraph [ref=e430]: "Requisitos para obtener el incentivo “00” (Constancia de verificación tipo “00”) en vehículos a gasolina, gas natural, gas licuado de petróleo e híbridos categoría III:"
+            - paragraph [ref=e431]
+            - paragraph [ref=e432]:
+              - strong [ref=e433]: Valores para la asignación del Incentivo tipo “00”
+            - table [ref=e434]:
+              - rowgroup [ref=e435]:
+                - row "REQUERIMIENTOS PARA LA ASIGNACIÓN DEL INCENTIVO “00” RENDIMIENTO COMBINADO DE COMBUSTIBLE (gasolina) OTORGAMIENTO DE INCENTIVO “00”" [ref=e436]:
+                  - cell "REQUERIMIENTOS PARA LA ASIGNACIÓN DEL INCENTIVO “00”" [ref=e437]:
+                    - paragraph [ref=e438]:
+                      - strong [ref=e439]: REQUERIMIENTOS PARA LA ASIGNACIÓN DEL
+                      - strong [ref=e440]: INCENTIVO “00”
+                  - cell "RENDIMIENTO COMBINADO DE COMBUSTIBLE (gasolina)" [ref=e441]:
+                    - paragraph [ref=e442]:
+                      - strong [ref=e443]: RENDIMIENTO COMBINADO DE COMBUSTIBLE (gasolina)
+                  - cell "OTORGAMIENTO DE INCENTIVO “00”" [ref=e444]:
+                    - paragraph [ref=e445]:
+                      - strong [ref=e446]: OTORGAMIENTO DE INCENTIVO
+                    - strong [ref=e447]: “00”
+                - row "1. Vehículos y camionetas que se encuentren certificados con emisiones equivalente a Tier 3 Bin 160 americana. - 100 mg/km de la suma de gases orgánicos no metano y óxido de nitrógeno, 4.2 mg/km de monóxido de carbono, con durabilidad de 240 mil kilómetros. 2. Vehículos con límites máximos de emisión iguales o menores a los establecidos en la regulación Euro 6 europea. - Vehículos de pasajeros y vehículos utilitarios clase 1 con emisiones máximas de 0.068 g/km para hidrocarburos no metano. No aplica Hasta por tres ocasiones" [ref=e448]:
+                  - cell "1. Vehículos y camionetas que se encuentren certificados con emisiones equivalente a Tier 3 Bin 160 americana. - 100 mg/km de la suma de gases orgánicos no metano y óxido de nitrógeno, 4.2 mg/km de monóxido de carbono, con durabilidad de 240 mil kilómetros. 2. Vehículos con límites máximos de emisión iguales o menores a los establecidos en la regulación Euro 6 europea. - Vehículos de pasajeros y vehículos utilitarios clase 1 con emisiones máximas de 0.068 g/km para hidrocarburos no metano." [ref=e449]:
+                    - strong [ref=e450]: "1."
+                    - text: Vehículos y camionetas que se encuentren certificados con emisiones equivalente a Tier 3 Bin 160 americana.
+                    - text: "- 100 mg/km de la suma de gases orgánicos no metano y óxido de nitrógeno, 4.2 mg/km de monóxido de carbono, con durabilidad de 240 mil kilómetros."
+                    - strong [ref=e451]: "2."
+                    - text: Vehículos con límites máximos de emisión iguales o menores a los establecidos en la regulación Euro 6 europea.
+                    - text: "- Vehículos de pasajeros y vehículos utilitarios clase 1 con emisiones máximas de 0.068 g/km para hidrocarburos no metano."
+                  - cell "No aplica" [ref=e452]:
+                    - paragraph [ref=e453]
+                    - paragraph [ref=e454]
+                    - paragraph [ref=e455]
+                    - paragraph [ref=e456]
+                    - paragraph [ref=e457]: No aplica
+                  - cell "Hasta por tres ocasiones" [ref=e458]:
+                    - paragraph [ref=e459]
+                    - paragraph [ref=e460]
+                    - paragraph [ref=e461]
+                    - paragraph [ref=e462]
+                    - paragraph [ref=e463]: Hasta por tres ocasiones
+                - row "- Vehículos de pasajeros y vehículos utilitarios clase 1 con emisiones máximas de 0.068 g/km para hidrocarburos no metano, 0.1 g/km para hidrocarburos totales, 1.0 g/km para monóxido de carbono y 0.06 g/km para óxidos de nitrógeno con durabilidad de 160,000 km. - Vehículos utilitarios clase 2 con emisiones máximas de 0.090 g/km para hidrocarburos no metano, 0.13 g/km para hidrocarburos totales, 1.81 g/km para monóxido de carbono y 0.075 g/km para óxidos de nitrógeno con durabilidad de 160,000 km." [ref=e464]:
+                  - cell "- Vehículos de pasajeros y vehículos utilitarios clase 1 con emisiones máximas de 0.068 g/km para hidrocarburos no metano, 0.1 g/km para hidrocarburos totales, 1.0 g/km para monóxido de carbono y 0.06 g/km para óxidos de nitrógeno con durabilidad de 160,000 km. - Vehículos utilitarios clase 2 con emisiones máximas de 0.090 g/km para hidrocarburos no metano, 0.13 g/km para hidrocarburos totales, 1.81 g/km para monóxido de carbono y 0.075 g/km para óxidos de nitrógeno con durabilidad de 160,000 km." [ref=e465]:
+                    - text: "- Vehículos de pasajeros y vehículos utilitarios clase 1 con emisiones máximas de 0.068 g/km para hidrocarburos no metano, 0.1 g/km para hidrocarburos totales, 1.0 g/km para monóxido de carbono y 0.06 g/km para óxidos de nitrógeno con durabilidad de 160,000 km."
+                    - text: "- Vehículos utilitarios clase 2 con emisiones máximas de 0.090 g/km para hidrocarburos no metano, 0.13 g/km para hidrocarburos totales, 1.81 g/km para monóxido de carbono y 0.075 g/km para óxidos de nitrógeno con durabilidad de 160,000 km."
+                - row "3. Vehículos con límites máximos de emisión iguales o menores a los establecidos en la regulación Tier 2 Bin 5 americana. Mayor o igual a 16 km/l Hasta por dos ocasiones" [ref=e466]:
+                  - cell "3. Vehículos con límites máximos de emisión iguales o menores a los establecidos en la regulación Tier 2 Bin 5 americana." [ref=e467]:
+                    - strong [ref=e468]: "3."
+                    - text: Vehículos con límites máximos de emisión iguales o menores a los establecidos en la regulación Tier 2 Bin 5 americana.
+                  - cell "Mayor o igual a 16 km/l" [ref=e469]:
+                    - paragraph [ref=e470]
+                    - paragraph [ref=e471]
+                    - paragraph [ref=e472]
+                    - paragraph [ref=e473]
+                    - paragraph [ref=e474]
+                    - paragraph [ref=e475]: Mayor o igual a 16 km/l
+                  - cell "Hasta por dos ocasiones" [ref=e476]:
+                    - paragraph [ref=e477]
+                    - paragraph [ref=e478]
+                    - paragraph [ref=e479]
+                    - paragraph [ref=e480]
+                    - paragraph [ref=e481]
+                    - paragraph [ref=e482]: Hasta por dos ocasiones
+                - row "- Unidades con emisiones máximas de 0.045 g/km para hidrocarburos no metano, 2.11 g/km para monóxido de carbono y 0.031 g/km para óxidos de nitrógeno con durabilidad de 80,000 km y emisiones evaporativas máximas de 2.0 g/prueba; ó" [ref=e483]:
+                  - cell "- Unidades con emisiones máximas de 0.045 g/km para hidrocarburos no metano, 2.11 g/km para monóxido de carbono y 0.031 g/km para óxidos de nitrógeno con durabilidad de 80,000 km y emisiones evaporativas máximas de 2.0 g/prueba; ó" [ref=e484]: "- Unidades con emisiones máximas de 0.045 g/km para hidrocarburos no metano, 2.11 g/km para monóxido de carbono y 0.031 g/km para óxidos de nitrógeno con durabilidad de 80,000 km y emisiones evaporativas máximas de 2.0 g/prueba; ó"
+                - row "4. Vehículos con límites máximos de emisión iguales o menores a los establecidos en la regulación Euro 5 europea." [ref=e485]:
+                  - cell "4. Vehículos con límites máximos de emisión iguales o menores a los establecidos en la regulación Euro 5 europea." [ref=e486]:
+                    - strong [ref=e487]: "4."
+                    - text: Vehículos con límites máximos de emisión iguales o menores a los establecidos en la regulación Euro 5 europea.
+                - row "- Vehículos de pasajeros y vehículos utilitarios clase 1 con emisiones máximas de 0.068 g/km para hidrocarburos no metano, 0.1 g/km para hidrocarburos totales, 1.0 g/km para monóxido de carbono y 0.06 g/km para óxidos de nitrógeno con durabilidad de 100,000 km y emisiones evaporativas máximas de 2.0 g/prueba" [ref=e488]:
+                  - cell "- Vehículos de pasajeros y vehículos utilitarios clase 1 con emisiones máximas de 0.068 g/km para hidrocarburos no metano, 0.1 g/km para hidrocarburos totales, 1.0 g/km para monóxido de carbono y 0.06 g/km para óxidos de nitrógeno con durabilidad de 100,000 km y emisiones evaporativas máximas de 2.0 g/prueba" [ref=e489]: "- Vehículos de pasajeros y vehículos utilitarios clase 1 con emisiones máximas de 0.068 g/km para hidrocarburos no metano, 0.1 g/km para hidrocarburos totales, 1.0 g/km para monóxido de carbono y 0.06 g/km para óxidos de nitrógeno con durabilidad de 100,000 km y emisiones evaporativas máximas de 2.0 g/prueba"
+                - row "- Vehículos utilitarios clase 2 con emisiones máximas de 0.090 g/km para hidrocarburos no metano, 0.13 g/km para hidrocarburos totales, 1.81 g/km para monóxido de carbono y 0.075 g/km para óxidos de nitrógeno con durabilidad de 100,000 km y emisiones evaporativas máximas de 2.0 g/prueba" [ref=e490]:
+                  - cell "- Vehículos utilitarios clase 2 con emisiones máximas de 0.090 g/km para hidrocarburos no metano, 0.13 g/km para hidrocarburos totales, 1.81 g/km para monóxido de carbono y 0.075 g/km para óxidos de nitrógeno con durabilidad de 100,000 km y emisiones evaporativas máximas de 2.0 g/prueba" [ref=e491]: "- Vehículos utilitarios clase 2 con emisiones máximas de 0.090 g/km para hidrocarburos no metano, 0.13 g/km para hidrocarburos totales, 1.81 g/km para monóxido de carbono y 0.075 g/km para óxidos de nitrógeno con durabilidad de 100,000 km y emisiones evaporativas máximas de 2.0 g/prueba"
+                - row "- Vehículos utilitarios clase 3 con emisiones máximas de 0.108 g/km para hidrocarburos no metano, 0.16 g/km para hidrocarburos totales, 2.27 g/km para monóxido de carbono y 0.082 g/km para óxidos de nitrógeno con durabilidad de 100,000 km y emisiones evaporativas máximas de 2.0 g/prueba." [ref=e492]:
+                  - cell "- Vehículos utilitarios clase 3 con emisiones máximas de 0.108 g/km para hidrocarburos no metano, 0.16 g/km para hidrocarburos totales, 2.27 g/km para monóxido de carbono y 0.082 g/km para óxidos de nitrógeno con durabilidad de 100,000 km y emisiones evaporativas máximas de 2.0 g/prueba." [ref=e493]: "- Vehículos utilitarios clase 3 con emisiones máximas de 0.108 g/km para hidrocarburos no metano, 0.16 g/km para hidrocarburos totales, 2.27 g/km para monóxido de carbono y 0.082 g/km para óxidos de nitrógeno con durabilidad de 100,000 km y emisiones evaporativas máximas de 2.0 g/prueba."
+                - row "5. Vehículos y camionetas ligeras nuevas, incluidos híbridos categoría III, realizando para fines estadísticos una prueba de emisiones y una prueba SDB. No aplica Una ocasión" [ref=e494]:
+                  - cell "5. Vehículos y camionetas ligeras nuevas, incluidos híbridos categoría III, realizando para fines estadísticos una prueba de emisiones y una prueba SDB." [ref=e495]:
+                    - strong [ref=e496]: "5."
+                    - text: Vehículos y camionetas ligeras nuevas, incluidos híbridos categoría III, realizando para fines estadísticos una prueba de emisiones y una prueba SDB.
+                  - cell "No aplica" [ref=e497]:
+                    - paragraph [ref=e498]: No aplica
+                  - cell "Una ocasión" [ref=e499]:
+                    - paragraph [ref=e500]: Una ocasión
+            - paragraph [ref=e501]
+            - paragraph [ref=e502]
+            - paragraph [ref=e503]
+            - paragraph [ref=e504]
+            - paragraph [ref=e505]
+            - paragraph [ref=e506]
+            - paragraph [ref=e507]
+            - paragraph [ref=e508]
+            - paragraph [ref=e509]
+            - paragraph [ref=e510]
+            - paragraph [ref=e511]
+            - paragraph [ref=e512]
+            - paragraph [ref=e513]
+            - paragraph [ref=e514]
+            - paragraph [ref=e515]
+            - paragraph [ref=e516]
+            - paragraph [ref=e517]:
+              - text: Vehículos y camionetas ligeras nuevos, incluidos híbridos categoría III, que cumplen con el estándar nacional vigente (C de la
+              - strong [ref=e518]: NOM-042-SEMARNAT-2003
+              - text: ). Se les aplicará la prueba de emisiones vehiculares dinámica o estática de acuerdo con lo establecido en la
+              - strong [ref=e519]: NOM-047-SEMARNAT-2014
+              - text: ", debiendo cumplir con los límites máximos permisibles establecidos en la"
+              - strong [ref=e520]: Tabla 2
+              - text: ", así como una prueba"
+              - strong [ref=e521]: SDB
+              - text: con fines estadísticos.
+            - paragraph [ref=e522]:
+              - text: Los valores establecidos en la tabla anterior deberán ser documentados ante la
+              - strong [ref=e523]: Dirección General de Calidad del Aire
+              - text: "de la Secretaría para que los automotores puedan ser considerados para recibir la constancia “00”, debiendo considerarse lo siguiente:"
+            - paragraph [ref=e524]:
+              - strong [ref=e525]: a)
+              - text: Las emisiones evaporativas reportadas deberán ser bajo protocolo de 24, 48 o 72 horas.
+            - paragraph [ref=e526]:
+              - strong [ref=e527]: b)
+              - text: El rendimiento de combustible deberá ser calculado y reportado usando el protocolo referido en la
+              - strong [ref=e528]: NOM-163-SEMARNAT-ENER-SCFI-2013
+              - text: .
+            - paragraph [ref=e529]
+            - paragraph [ref=e530]:
+              - strong [ref=e531]: "- Requisitos para vehículos a diésel:"
+            - paragraph [ref=e532]:
+              - text: Podrán obtener este incentivo los propietarios o legales poseedores de vehículos de cualquier uso, con
+              - strong [ref=e533]: PBV
+              - text: mayor a 3,857 kg., que cumplan con el estándar 1AA, 1B, 2B, 3B o 4B, que se indica en la regulación nacional de la
+              - strong [ref=e534]: NOM-044-SEMARNAT-2017
+              - text: .
+            - paragraph [ref=e535]:
+              - text: Los valores de los estándares referidos en el párrafo anterior deberán ser documentados ante la
+              - strong [ref=e536]: Dirección General de Calidad del Aire
+              - text: de la Secretaría del Medio Ambiente de la Ciudad de México para que los automotores puedan ser considerados para recibir la constancia “00”; en el supuesto de automotores que se les instaló una trampa de partículas y que originalmente no contaban con este sistema de control de emisiones, el doble cero se entregará administrativamente.
+            - paragraph [ref=e537]
+            - paragraph [ref=e538]:
+              - strong [ref=e539]: "- Requisitos para vehículos a Gas Natural:"
+            - paragraph [ref=e540]:
+              - text: Podrán obtener este incentivo los propietarios o legales poseedores de vehículos nuevos de cualquier uso, con
+              - strong [ref=e541]: PBV
+              - text: mayor a 3,857 kg., que utilicen gas natural como combustible y que cumplan con el estándar B de la tabla 1, 2, 3 o 4 de la
+              - strong [ref=e542]: NOM076-SEMARNAT-2012
+              - text: .
+            - paragraph [ref=e543]:
+              - text: La información sobre el nivel de emisión de contaminantes y el rendimiento de cada submarca deberá ser proporcionado por cada empresa fabricante o importadora de los automotores. En caso de que la misma no sea proporcionada a la Secretaría, los mismos no podrán ser valorados y no obtendrán el incentivo del
+              - strong [ref=e544]: Holograma “00”
+              - text: .
+            - paragraph [ref=e545]:
+              - text: En el supuesto de que algún vehículo no haya obtenido el
+              - strong [ref=e546]: Holograma “00
+              - text: ” debido a la falta de información de parte de las empresas que comercializan dicho automotor, podrá acudir nuevamente al
+              - strong [ref=e547]: Centros de Verificación de Emisiones Vehiculares
+              - text: de su preferencia posterior a que dicho vehículo se encuentre en la lista de los vehículos candidatos, debiendo cubrir la tarifa respectiva para verificar.
+            - paragraph [ref=e548]: La vigencia se calculará a partir de la fecha de emisión de la factura o carta factura, y/o contrato de arrendamiento de vehículos nuevos. Para los casos de vehículos extranjeros el título de propiedad donde se informe la fecha de adquisición del automotor.
+            - paragraph [ref=e549]: Al término de la vigencia de este holograma, se podrá otorgar por única ocasión un nuevo holograma por dos años, siempre y cuando se cumpla con lo establecido en el presente Programa y se encuentren dentro del listado publicado en la página de internet de la Secretaría, la vigencia de este “Holograma “00” se calculará a partir de la fecha de terminación de la vigencia del certificado de Verificación Vehicular obtenido en el periodo inmediato anterior, misma que deberá ser ingresada al sistema durante el proceso de captura correspondiente.
+            - paragraph [ref=e550]:
+              - text: Los vehículos que porten
+              - strong [ref=e551]: Holograma “00
+              - text: "”, cuya vigencia llegue a su término durante el presente Programa, mantendrán el beneficio de exención a las limitaciones a la circulación establecidas en el Programa Hoy No Circula, en tanto realizan su próxima verificación (haya ocurrido o no un cambio de matrícula) de conformidad con lo siguiente:"
+            - paragraph [ref=e552]:
+              - text: Si la vigencia del
+              - strong [ref=e553]: Holograma “00”
+              - text: culmina en el periodo de verificación correspondiente a la terminación de la placa del vehículo, deberá verificar en dicho periodo, pudiendo hacerlo desde el primer día al último de su periodo, aún si la vigencia del holograma no ha concluido.
+            - paragraph [ref=e554]: Si el período de verificación al que corresponden las placas ha concluido o no ha iniciado, deberá verificar desde el día siguiente del vencimiento de su holograma y hasta el último día de su período inmediato de verificación vehicular, de acuerdo con la terminación de su placa y/o matrícula.
+            - separator [ref=e555]
+            - paragraph [ref=e556]:
+              - strong [ref=e557]: CONSTANCIA PARA EL PROGRAMA DE AUTORREGULACIÓN AMBIENTAL DE VEHÍCULOS A DIÉSEL O PARA IMPULSAR LA ELECTROMOVILIDAD EN VEHÍCULOS LIGEROS DE LA CIUDAD DE MÉXICO.
+            - paragraph [ref=e558]: Los vehículos que utilicen diésel como combustible o vehículos ligeros que de manera voluntaria participen en el Programa de Autorregulación para vehículos a diésel o para impulsar la electromovilidad en vehículos ligeros, deberán sujetarse al procedimiento, requisitos y periodos establecidos en los Programas publicados en la Gaceta Oficial de la Ciudad de México el 16 de junio y 2 de diciembre del 2022 respectivamente.
+            - separator [ref=e559]
+            - paragraph [ref=e560]:
+              - strong [ref=e561]: CONSTANCIA PARA EL USO DE COMBUSTIBLES ALTERNOS EN VEHÍCULOS DE USO PARTICULAR E INTENSIVO DE LA CIUDAD DE MÉXICO
+            - paragraph [ref=e562]:
+              - text: Los vehículos que instalen un Sistema Integral de Inyección Electrónica a Gas Natural Comprimido (
+              - strong [ref=e563]: GNC
+              - text: ) o Gas Licuado de Petróleo (
+              - strong [ref=e564]: GLP
+              - text: ") con las personas certificadas y/o autorizadas por la Secretaría y que estén matriculados en la Ciudad de México o que porten matrícula federal o que verifiquen voluntariamente en la Ciudad de México, interesados en exentar las restricciones a la circulación establecidas en el Programa Hoy No Circula, deberán de apegarse a lo establecido en lo siguiente:"
+            - paragraph [ref=e565]:
+              - text: Las personas interesadas deberán realizar el trámite denominado “Registro y Control de Vehículos de uso particular e intensivo que carburan a Gas Licuado de Petróleo (
+              - strong [ref=e566]: GLP
+              - text: ) o Gas Natural Comprimido (
+              - strong [ref=e567]: GNC)
+              - text: ”, ante la
+              - strong [ref=e568]: Dirección General de Calidad del Aire
+              - text: "de la Secretaría, cuyo formato de trámite se puede obtener en la siguiente dirección electrónica:"
+              - link "cdmx.gob.mx/public/InformacionTramite.xhtml?idTramite=62." [ref=e569] [cursor=pointer]:
+                - /url: https://cdmx.gob.mx/public/InformacionTramite.xhtml?idTramite=62
+                - strong [ref=e570]: cdmx.gob.mx/public/InformacionTramite.xhtml?idTramite=62
+                - text: .
+            - paragraph [ref=e571]:
+              - text: La instalación de los equipos de gas será por medio de las personas certificados y/o autorizados por la Secretaría, y sólo podrán emplear los Sistemas Integrales de Inyección Electrónica a Gas Natural Comprimido (
+              - strong [ref=e572]: GNC
+              - text: ) o Gas Licuado de Petróleo (
+              - strong [ref=e573]: GLP
+              - text: ).
+            - paragraph [ref=e574]:
+              - text: Los vehículos registrados en el presente Programa podrán obtener el holograma de verificación vehicular tipo
+              - strong [ref=e575]: “0”.
+            - paragraph [ref=e576]: Los hologramas emitidos por el Estado de México dentro del Programa de Combustibles Alternos son reconocidos en la Ciudad de México.
+            - separator [ref=e577]
+            - paragraph [ref=e578]:
+              - strong [ref=e579]: "CONSTANCIA DE VERIFICACIÓN TIPO CERO “0” (HOLOGRAMA “0”). SE PODRÁ OTORGAR ESTE TIPO DE HOLOGRAMA A LOS:"
+            - paragraph [ref=e580]:
+              - text: Vehículos a gasolina, híbridos categoría III, gas natural, gas licuado de petróleo u otros combustibles alternos que hayan cumplido con cualquiera de los estándares de emisiones de la norma
+              - strong [ref=e581]: NOM-042-SEMARNAT-2003
+              - text: conforme a la lista publicada en la página de internet de la
+              - strong [ref=e582]: Secretaría del Medio Ambiente
+              - text: ", año modelo 2006 y posteriores, que aprueben la prueba"
+              - strong [ref=e583]: SDB
+              - text: (Sistema de Diagnóstico a Bordo) de acuerdo con lo establecido en la
+              - strong [ref=e584]: NOM-167-SEMARNAT-2017
+              - text: . Adicionalmente para vehículos año-modelo 2006 a 2009 con el estándar A de la norma
+              - strong [ref=e585]: NOM-042-SEMARNAT-2003
+              - text: ", se deberá realizar una prueba de emisiones."
+            - paragraph [ref=e586]:
+              - text: En el caso que el vehículo automotor, de acuerdo con la información del fabricante, deba de ser evaluado por
+              - strong [ref=e587]: SDB
+              - text: y el sistema de verificación vehicular no logre una conexión con la computadora de abordo conforme a lo establecido en la
+              - strong [ref=e588]: NOM-167-SEMARNAT-2017
+              - text: se deberá de dar inicio nuevamente a la prueba siguiendo las instrucciones que el sistema de verificación vehicular reporte en la pantalla de la Estación de Inspección Visual y Prueba
+              - strong [ref=e589]: SDB
+              - text: ", si persiste la desconexión, el vehículo será evaluado por emisiones, debiendo cumplir con los límites máximos permisibles establecidos en la"
+              - strong [ref=e590]: Tabla 2.
+            - paragraph [ref=e591]:
+              - text: En aquellos en donde se haya logrado comunicación con el sistema
+              - strong [ref=e592]: SDB
+              - text: pero no cumpla con los criterios de aprobación establecidos en el numeral 4.1.2 de la Norma Oficial Mexicana
+              - strong [ref=e593]: NOM-167-SEMARNAT-2017
+              - text: deberá cumplir con los límites máximos permisibles establecidos en la
+              - strong [ref=e594]: Tabla 2
+              - text: .
+            - paragraph [ref=e595]:
+              - text: En caso de que algunos de los monitores de los sistemas de control de emisiones requeridos en el numeral 4.1.2 de la Norma Oficial Mexicana
+              - strong [ref=e596]: NOM-167-SEMARNAT-2017
+              - text: no se encuentren en estado completado, el vehículo será evaluado por emisiones y deberá cumplir con los límites establecidos en la
+              - strong [ref=e597]: Tabla 2
+              - text: .
+            - paragraph [ref=e598]: Vehículos diésel 2012 o posteriores cuyos niveles de emisiones no rebasen, en la prueba de opacidad, el límite máximo permisible de 1.0 m-1 de coeficiente de absorción de luz.
+            - paragraph [ref=e599]
+            - paragraph [ref=e600]:
+              - strong [ref=e601]: Tabla 2. Límites máximos permisibles para vehículos a Gasolina, Gas Natural, Gas Licuado de Petróleo y vehículos,
+              - strong [ref=e602]: Híbridos a gasolina en su categoría III
+            - table [ref=e603]:
+              - rowgroup [ref=e604]:
+                - row "Hidrocarburos (HC) mol/mol (ppmh) Monóxido de Carbono (CO) cmol/mol (% vol.) Óxidos de Nitrógeno (NOx)1 mol/mol (ppm) Oxígeno (O2) cmol/mol (% vol.) Dilución (CO+CO2) cmol/mol (% vol.) Factor Lambda" [ref=e605]:
+                  - cell "Hidrocarburos (HC) mol/mol (ppmh)" [ref=e606]:
+                    - paragraph [ref=e607]:
+                      - strong [ref=e608]: Hidrocarburos (HC) mol/mol (ppmh)
+                  - cell "Monóxido de Carbono (CO) cmol/mol (% vol.)" [ref=e609]:
+                    - paragraph [ref=e610]:
+                      - strong [ref=e611]: Monóxido de Carbono (CO) cmol/mol (% vol.)
+                  - cell "Óxidos de Nitrógeno (NOx)1 mol/mol (ppm)" [ref=e612]:
+                    - paragraph [ref=e613]:
+                      - strong [ref=e614]:
+                        - text: Óxidos de Nitrógeno (NOx)
+                        - superscript [ref=e615]: "1"
+                        - text: mol/mol (ppm)
+                  - cell "Oxígeno (O2) cmol/mol (% vol.)" [ref=e616]:
+                    - paragraph [ref=e617]:
+                      - strong [ref=e618]: Oxígeno (O2) cmol/mol (% vol.)
+                  - cell "Dilución (CO+CO2) cmol/mol (% vol.)" [ref=e619]:
+                    - paragraph [ref=e620]:
+                      - strong [ref=e621]: Dilución (CO+CO2) cmol/mol (% vol.)
+                  - cell "Factor Lambda" [ref=e622]:
+                    - paragraph [ref=e623]:
+                      - strong [ref=e624]: Factor Lambda
+                - row "Min. Máx." [ref=e625]:
+                  - cell "Min." [ref=e626]:
+                    - paragraph [ref=e627]: Min.
+                  - cell "Máx." [ref=e628]:
+                    - paragraph [ref=e629]: Máx.
+                - row "80 0.4 250 0.4 13 16.5 1.033" [ref=e630]:
+                  - cell "80" [ref=e631]:
+                    - paragraph [ref=e632]: "80"
+                  - cell "0.4" [ref=e633]:
+                    - paragraph [ref=e634]: "0.4"
+                  - cell "250" [ref=e635]:
+                    - paragraph [ref=e636]: "250"
+                  - cell "0.4" [ref=e637]:
+                    - paragraph [ref=e638]: "0.4"
+                  - cell "13" [ref=e639]:
+                    - paragraph [ref=e640]: "13"
+                  - cell "16.5" [ref=e641]:
+                    - paragraph [ref=e642]: "16.5"
+                  - cell "1.033" [ref=e643]:
+                    - paragraph [ref=e644]:
+                      - text: "1.03"
+                      - superscript [ref=e645]: "3"
+                - row "72 14.32" [ref=e646]:
+                  - cell "72" [ref=e647]:
+                    - paragraph [ref=e648]:
+                      - text: "7"
+                      - superscript [ref=e649]: "2"
+                  - cell "14.32" [ref=e650]:
+                    - paragraph [ref=e651]:
+                      - text: "14.3"
+                      - superscript [ref=e652]: "2"
+            - paragraph [ref=e653]
+            - paragraph [ref=e654]
+            - paragraph [ref=e655]
+            - paragraph [ref=e656]
+            - paragraph [ref=e657]
+            - paragraph [ref=e658]
+            - paragraph [ref=e659]:
+              - emphasis [ref=e660]: "Nota de equivalencias: ppmh, partes por millón referido al hexano."
+            - paragraph [ref=e661]:
+              - emphasis [ref=e662]: (1) Los óxidos de nitrógeno que se señalan en la presente Tabla no aplican en la prueba estática.
+            - paragraph [ref=e663]:
+              - emphasis [ref=e664]: (2) Valores aplicados para vehículos automotores a gas natural y gas licuado de petróleo.
+            - paragraph [ref=e665]:
+              - emphasis [ref=e666]: (3) No aplica en la fase ralentí de la prueba estática.
+            - separator [ref=e667]
+            - paragraph [ref=e668]
+            - paragraph [ref=e669]:
+              - strong [ref=e670]: "CONSTANCIA DE VERIFICACIÓN TIPO UNO (HOLOGRAMA “1”) SE PODRÁ OTORGAR ESTE TIPO DE HOLOGRAMA A LOS:"
+            - paragraph [ref=e671]:
+              - text: Vehículos a gasolina que cumplieron con el estándar para automóviles modelos 1994 y posteriores definidos en la
+              - strong [ref=e672]: NTE-CCAT-004/88 o NOM-CCAT-004-ECOL-1993 (NOM-042-ECOL-1993
+              - text: ", nomenclatura del acuerdo secretarial por el que se actualizaron 58 normas oficiales mexicanas DOF 29/11/94), año modelo 1994 a 2005, cuyos niveles de emisión no sobrepasen los límites en prueba dinámica o estática, establecidos en la"
+              - strong [ref=e673]: Tabla 3
+              - text: .
+            - paragraph [ref=e674]:
+              - strong [ref=e675]: Tabla 3. Límites máximos permisibles para vehículos a gasolina
+            - table [ref=e676]:
+              - rowgroup [ref=e677]:
+                - row "Prueba HC (ppm) CO (% vol.) NOx (ppm) CO+ CO2 (% vol.) O2 (% vol.) Factor Lambda" [ref=e678]:
+                  - cell "Prueba" [ref=e679]:
+                    - paragraph [ref=e680]:
+                      - strong [ref=e681]: Prueba
+                  - cell "HC (ppm)" [ref=e682]:
+                    - paragraph [ref=e683]:
+                      - strong [ref=e684]: HC (ppm)
+                  - cell "CO (% vol.)" [ref=e685]:
+                    - paragraph [ref=e686]:
+                      - strong [ref=e687]: CO (% vol.)
+                  - cell "NOx (ppm)" [ref=e688]:
+                    - paragraph [ref=e689]:
+                      - strong [ref=e690]: NOx (ppm)
+                  - cell "CO+ CO2 (% vol.)" [ref=e691]:
+                    - paragraph [ref=e692]:
+                      - strong [ref=e693]:
+                        - text: CO+ CO
+                        - subscript [ref=e694]: "2"
+                        - text: (% vol.)
+                  - cell "O2 (% vol.)" [ref=e695]:
+                    - paragraph [ref=e696]:
+                      - strong [ref=e697]:
+                        - text: O
+                        - subscript [ref=e698]: "2"
+                        - text: (% vol.)
+                  - cell "Factor Lambda" [ref=e699]:
+                    - paragraph [ref=e700]:
+                      - strong [ref=e701]: Factor Lambd
+                      - strong [ref=e702]: a
+                - row "Min Max" [ref=e703]:
+                  - cell "Min" [ref=e704]:
+                    - paragraph [ref=e705]: Min
+                  - cell "Max" [ref=e706]:
+                    - paragraph [ref=e707]: Max
+                - row "Dinámica 100 0.7 700 13 16.5 2 1.03" [ref=e708]:
+                  - cell "Dinámica" [ref=e709]:
+                    - paragraph [ref=e710]: Dinámica
+                  - cell "100" [ref=e711]:
+                    - paragraph [ref=e712]: "100"
+                  - cell "0.7" [ref=e713]:
+                    - paragraph [ref=e714]: "0.7"
+                  - cell "700" [ref=e715]:
+                    - paragraph [ref=e716]: "700"
+                  - cell "13" [ref=e717]:
+                    - paragraph [ref=e718]: "13"
+                  - cell "16.5" [ref=e719]:
+                    - paragraph [ref=e720]: "16.5"
+                  - cell "2" [ref=e721]:
+                    - paragraph [ref=e722]: "2"
+                  - cell "1.03" [ref=e723]:
+                    - paragraph [ref=e724]: "1.03"
+                - row "Estática 100 0.5 NA 2 1.031" [ref=e725]:
+                  - cell "Estática" [ref=e726]:
+                    - paragraph [ref=e727]: Estática
+                  - cell "100" [ref=e728]:
+                    - paragraph [ref=e729]: "100"
+                  - cell "0.5" [ref=e730]:
+                    - paragraph [ref=e731]: "0.5"
+                  - cell "NA" [ref=e732]:
+                    - paragraph [ref=e733]: NA
+                  - cell "2" [ref=e734]:
+                    - paragraph [ref=e735]: "2"
+                  - cell "1.031" [ref=e736]:
+                    - paragraph [ref=e737]:
+                      - text: "1.03"
+                      - superscript [ref=e738]: "1"
+            - paragraph [ref=e739]
+            - paragraph [ref=e740]
+            - paragraph [ref=e741]
+            - paragraph [ref=e742]
+            - paragraph [ref=e743]
+            - paragraph [ref=e744]:
+              - emphasis [ref=e745]: (1) No aplica en la fase ralentí de la prueba estática.
+            - paragraph [ref=e746]
+            - paragraph [ref=e747]:
+              - text: Vehículos a gasolina, gas natural, gas licuado de petróleo u otros combustibles alternos, que cumplieron con los limites de emisiones establecidos en la Norma Técnica Ecológica
+              - strong [ref=e748]: NTE-CCAT-004/88
+              - text: ", año modelo 1993 y anteriores, cuyos niveles de emisión no sobrepasen los límites en prueba dinámica o estática, establecidos en la"
+              - strong [ref=e749]: Tabla 4.
+            - paragraph [ref=e750]:
+              - strong [ref=e751]: Tabla 4. Límites máximos permisibles para vehículos a gas natural, gas licuado de petróleo u otros combustibles alternos
+            - table [ref=e752]:
+              - rowgroup [ref=e753]:
+                - row "Prueba HC (ppm) CO (% vol.) NOx (ppm) CO+ CO2 (% vol.) O2 (% vol.) Factor Lambda" [ref=e754]:
+                  - cell "Prueba" [ref=e755]:
+                    - paragraph [ref=e756]:
+                      - strong [ref=e757]: Prueba
+                  - cell "HC (ppm)" [ref=e758]:
+                    - paragraph [ref=e759]:
+                      - strong [ref=e760]: HC (ppm)
+                  - cell "CO (% vol.)" [ref=e761]:
+                    - paragraph [ref=e762]:
+                      - strong [ref=e763]: CO (% vol.)
+                  - cell "NOx (ppm)" [ref=e764]:
+                    - paragraph [ref=e765]:
+                      - strong [ref=e766]: NOx (ppm)
+                  - cell "CO+ CO2 (% vol.)" [ref=e767]:
+                    - paragraph [ref=e768]:
+                      - strong [ref=e769]:
+                        - text: CO+ CO
+                        - subscript [ref=e770]: "2"
+                        - text: (% vol.)
+                  - cell "O2 (% vol.)" [ref=e771]:
+                    - paragraph [ref=e772]:
+                      - strong [ref=e773]:
+                        - text: O
+                        - subscript [ref=e774]: "2"
+                        - text: (% vol.)
+                  - cell "Factor Lambda" [ref=e775]:
+                    - paragraph [ref=e776]:
+                      - strong [ref=e777]: Factor Lambda
+                - row "Min Max" [ref=e778]:
+                  - cell "Min" [ref=e779]:
+                    - paragraph [ref=e780]: Min
+                  - cell "Max" [ref=e781]:
+                    - paragraph [ref=e782]: Max
+                - row "Dinámica 100 1 1000 7 14.3 2 1.05" [ref=e783]:
+                  - cell "Dinámica" [ref=e784]:
+                    - paragraph [ref=e785]: Dinámica
+                  - cell "100" [ref=e786]:
+                    - paragraph [ref=e787]: "100"
+                  - cell "1" [ref=e788]:
+                    - paragraph [ref=e789]: "1"
+                  - cell "1000" [ref=e790]:
+                    - paragraph [ref=e791]: "1000"
+                  - cell "7" [ref=e792]:
+                    - paragraph [ref=e793]: "7"
+                  - cell "14.3" [ref=e794]:
+                    - paragraph [ref=e795]: "14.3"
+                  - cell "2" [ref=e796]:
+                    - paragraph [ref=e797]: "2"
+                  - cell "1.05" [ref=e798]:
+                    - paragraph [ref=e799]: "1.05"
+                - row "Estática 100 1 NA 2 1.051" [ref=e800]:
+                  - cell "Estática" [ref=e801]:
+                    - paragraph [ref=e802]: Estática
+                  - cell "100" [ref=e803]:
+                    - paragraph [ref=e804]: "100"
+                  - cell "1" [ref=e805]:
+                    - paragraph [ref=e806]: "1"
+                  - cell "NA" [ref=e807]:
+                    - paragraph [ref=e808]: NA
+                  - cell "2" [ref=e809]:
+                    - paragraph [ref=e810]: "2"
+                  - cell "1.051" [ref=e811]:
+                    - paragraph [ref=e812]:
+                      - text: "1.05"
+                      - superscript [ref=e813]: "1"
+            - paragraph [ref=e814]
+            - paragraph [ref=e815]
+            - paragraph [ref=e816]
+            - paragraph [ref=e817]
+            - paragraph [ref=e818]
+            - paragraph [ref=e819]:
+              - emphasis [ref=e820]: (1) No aplica en la fase ralentí de la prueba estática.
+            - paragraph [ref=e821]: Vehículos a diésel cuya emisión no rebase 1.2 m-1 de coeficiente de absorción de luz.
+            - separator [ref=e822]
+            - paragraph [ref=e823]
+            - paragraph [ref=e824]:
+              - strong [ref=e825]: "CONSTANCIA DE VERIFICACIÓN TIPO DOS (HOLOGRAMA “2”). SE PODRÁ OTORGAR ESTE TIPO DE HOLOGRAMA A LOS:"
+            - paragraph [ref=e826]: Vehículos modelo 1993 y anteriores a gasolina, gas natural, gas licuado de petróleo u otros combustibles alternos, cuyos niveles de emisión no sobrepasen los límites en prueba dinámica o estática, establecidos en las Tablas 5 o 6.
+            - paragraph [ref=e827]
+            - paragraph [ref=e828]:
+              - strong [ref=e829]: Tabla 5. Límites máximos permisibles para vehículos a gasolina
+            - table [ref=e830]:
+              - rowgroup [ref=e831]:
+                - row "Prueba HC (ppm) CO (% vol.) NOx (ppm) CO+ CO2 (% vol.) O2 (% vol.) Factor Lambda" [ref=e832]:
+                  - cell "Prueba" [ref=e833]:
+                    - paragraph [ref=e834]:
+                      - strong [ref=e835]: Prueba
+                  - cell "HC (ppm)" [ref=e836]:
+                    - paragraph [ref=e837]:
+                      - strong [ref=e838]: HC (ppm)
+                  - cell "CO (% vol.)" [ref=e839]:
+                    - paragraph [ref=e840]:
+                      - strong [ref=e841]: CO (% vol.
+                      - strong [ref=e842]: )
+                  - cell "NOx (ppm)" [ref=e843]:
+                    - paragraph [ref=e844]:
+                      - strong [ref=e845]: NOx (ppm)
+                  - cell "CO+ CO2 (% vol.)" [ref=e846]:
+                    - paragraph [ref=e847]:
+                      - strong [ref=e848]:
+                        - text: CO+ CO
+                        - subscript [ref=e849]: "2"
+                        - text: (% vol.)
+                  - cell "O2 (% vol.)" [ref=e850]:
+                    - paragraph [ref=e851]:
+                      - strong [ref=e852]:
+                        - text: O
+                        - subscript [ref=e853]: "2"
+                        - text: (% vol.)
+                  - cell "Factor Lambda" [ref=e854]:
+                    - paragraph [ref=e855]:
+                      - strong [ref=e856]: Factor Lambda
+                - row "Min Max" [ref=e857]:
+                  - cell "Min" [ref=e858]:
+                    - paragraph [ref=e859]: Min
+                  - cell "Max" [ref=e860]:
+                    - paragraph [ref=e861]: Max
+                - row "Dinámica 350 2.5 2000 13 16.5 2.0 1.05" [ref=e862]:
+                  - cell "Dinámica" [ref=e863]:
+                    - paragraph [ref=e864]: Dinámica
+                  - cell "350" [ref=e865]:
+                    - paragraph [ref=e866]: "350"
+                  - cell "2.5" [ref=e867]:
+                    - paragraph [ref=e868]: "2.5"
+                  - cell "2000" [ref=e869]:
+                    - paragraph [ref=e870]: "2000"
+                  - cell "13" [ref=e871]:
+                    - paragraph [ref=e872]: "13"
+                  - cell "16.5" [ref=e873]:
+                    - paragraph [ref=e874]: "16.5"
+                  - cell "2.0" [ref=e875]:
+                    - paragraph [ref=e876]: "2.0"
+                  - cell "1.05" [ref=e877]:
+                    - paragraph [ref=e878]: "1.05"
+                - row "Estática 400 3.0 N/A 2.0 1.051" [ref=e879]:
+                  - cell "Estática" [ref=e880]:
+                    - paragraph [ref=e881]: Estática
+                  - cell "400" [ref=e882]:
+                    - paragraph [ref=e883]: "400"
+                  - cell "3.0" [ref=e884]:
+                    - paragraph [ref=e885]: "3.0"
+                  - cell "N/A" [ref=e886]:
+                    - paragraph [ref=e887]: N/A
+                  - cell "2.0" [ref=e888]:
+                    - paragraph [ref=e889]: "2.0"
+                  - cell "1.051" [ref=e890]:
+                    - paragraph [ref=e891]:
+                      - text: "1.05"
+                      - superscript [ref=e892]: "1"
+            - paragraph [ref=e893]
+            - paragraph [ref=e894]
+            - paragraph [ref=e895]
+            - paragraph [ref=e896]
+            - paragraph [ref=e897]
+            - paragraph [ref=e898]:
+              - emphasis [ref=e899]: (1) No aplica en la fase ralentí de la prueba estática.
+            - paragraph [ref=e900]
+            - paragraph [ref=e901]:
+              - strong [ref=e902]: Tabla 6. Límites máximos permisibles para vehículos a gas natural, gas licuado de petróleo u otros combustibles alternos
+            - table [ref=e903]:
+              - rowgroup [ref=e904]:
+                - row "Prueba HC (ppm) CO (% vol.) NOx (ppm) CO+ CO2 (% vol.) O2 (% vol.) Factor Lambda" [ref=e905]:
+                  - cell "Prueba" [ref=e906]:
+                    - paragraph [ref=e907]:
+                      - strong [ref=e908]: Prueba
+                  - cell "HC (ppm)" [ref=e909]:
+                    - paragraph [ref=e910]:
+                      - strong [ref=e911]: HC (ppm)
+                  - cell "CO (% vol.)" [ref=e912]:
+                    - paragraph [ref=e913]:
+                      - strong [ref=e914]: CO (% vol.)
+                  - cell "NOx (ppm)" [ref=e915]:
+                    - paragraph [ref=e916]:
+                      - strong [ref=e917]: NOx (ppm)
+                  - cell "CO+ CO2 (% vol.)" [ref=e918]:
+                    - paragraph [ref=e919]:
+                      - strong [ref=e920]:
+                        - text: CO+ CO
+                        - subscript [ref=e921]: "2"
+                        - text: (% vol.)
+                  - cell "O2 (% vol.)" [ref=e922]:
+                    - paragraph [ref=e923]:
+                      - strong [ref=e924]:
+                        - text: O
+                        - subscript [ref=e925]: "2"
+                        - text: (% vol.)
+                  - cell "Factor Lambda" [ref=e926]:
+                    - paragraph [ref=e927]:
+                      - strong [ref=e928]: Factor Lambda
+                - row "Min Max" [ref=e929]:
+                  - cell "Min" [ref=e930]:
+                    - paragraph [ref=e931]: Min
+                  - cell "Max" [ref=e932]:
+                    - paragraph [ref=e933]: Max
+                - row "Dinámica 200 1 1000 7 14.3 2.0 1.05" [ref=e934]:
+                  - cell "Dinámica" [ref=e935]:
+                    - paragraph [ref=e937]: Dinámica
+                  - cell "200" [ref=e938]:
+                    - paragraph [ref=e939]: "200"
+                  - cell "1" [ref=e940]:
+                    - paragraph [ref=e941]: "1"
+                  - cell "1000" [ref=e942]:
+                    - paragraph [ref=e943]: "1000"
+                  - cell "7" [ref=e944]:
+                    - paragraph [ref=e945]: "7"
+                  - cell "14.3" [ref=e946]:
+                    - paragraph [ref=e947]: "14.3"
+                  - cell "2.0" [ref=e948]:
+                    - paragraph [ref=e949]: "2.0"
+                  - cell "1.05" [ref=e950]:
+                    - paragraph [ref=e951]: "1.05"
+                - row "Estática 200 1 NA 2.0 1.051" [ref=e952]:
+                  - cell "Estática" [ref=e953]:
+                    - paragraph [ref=e954]: Estática
+                  - cell "200" [ref=e955]:
+                    - paragraph [ref=e956]: "200"
+                  - cell "1" [ref=e957]:
+                    - paragraph [ref=e958]: "1"
+                  - cell "NA" [ref=e959]:
+                    - paragraph [ref=e960]: NA
+                  - cell "2.0" [ref=e961]:
+                    - paragraph [ref=e962]: "2.0"
+                  - cell "1.051" [ref=e963]:
+                    - paragraph [ref=e964]:
+                      - text: "1.05"
+                      - superscript [ref=e965]: "1"
+            - paragraph [ref=e966]
+            - paragraph [ref=e967]
+            - paragraph [ref=e968]
+            - paragraph [ref=e969]
+            - paragraph [ref=e970]
+            - paragraph [ref=e971]
+            - paragraph [ref=e972]:
+              - emphasis [ref=e973]: (1) No aplica en la fase ralentí de la prueba estática.
+            - paragraph [ref=e974]
+            - paragraph [ref=e975]: A los vehículos destinados a cualquier uso que utilicen diésel, de cualquier año modelo, cuya emisión no rebase los coeficientes de absorción de luz establecidos en la Tabla 7.
+            - paragraph [ref=e976]
+            - paragraph [ref=e977]:
+              - strong [ref=e978]: Tabla 7. Límites de opacidad para vehículos automotores a diésel
+            - table [ref=e979]:
+              - rowgroup [ref=e980]:
+                - row "Característica del tren motriz Peso bruto vehicular Coeficiente de absorción de luz (m-1)" [ref=e981]:
+                  - cell "Característica del tren motriz" [ref=e982]:
+                    - paragraph [ref=e983]:
+                      - strong [ref=e984]: Característica del tren motriz
+                  - cell "Peso bruto vehicular" [ref=e985]:
+                    - paragraph [ref=e986]:
+                      - strong [ref=e987]: Peso bruto vehicular
+                  - cell "Coeficiente de absorción de luz (m-1)" [ref=e988]:
+                    - paragraph [ref=e989]:
+                      - strong [ref=e990]: Coeficiente de absorción de luz (m-1)
+                - row "2003 y anteriores Mayor de 400 hasta 3,857 2.00" [ref=e991]:
+                  - cell "2003 y anteriores" [ref=e992]:
+                    - paragraph [ref=e993]: 2003 y anteriores
+                  - cell "Mayor de 400 hasta 3,857" [ref=e994]:
+                    - paragraph [ref=e995]: Mayor de 400 hasta 3,857
+                  - cell "2.00" [ref=e996]:
+                    - paragraph [ref=e997]: "2.00"
+                - row "2004 y posteriores 1.50" [ref=e998]:
+                  - cell "2004 y posteriores" [ref=e999]:
+                    - paragraph [ref=e1000]: 2004 y posteriores
+                  - cell "1.50" [ref=e1001]:
+                    - paragraph [ref=e1002]: "1.50"
+                - row "1997 y anteriores Mayor de 3,857 2.25" [ref=e1003]:
+                  - cell "1997 y anteriores" [ref=e1004]:
+                    - paragraph [ref=e1005]: 1997 y anteriores
+                  - cell "Mayor de 3,857" [ref=e1006]:
+                    - paragraph [ref=e1007]: Mayor de 3,857
+                  - cell "2.25" [ref=e1008]:
+                    - paragraph [ref=e1009]: "2.25"
+                - row "1998 y posteriores 1.50" [ref=e1010]:
+                  - cell "1998 y posteriores" [ref=e1011]:
+                    - paragraph [ref=e1012]: 1998 y posteriores
+                  - cell "1.50" [ref=e1013]:
+                    - paragraph [ref=e1014]: "1.50"
+            - paragraph [ref=e1015]
+            - paragraph [ref=e1016]
+            - paragraph [ref=e1017]
+            - paragraph [ref=e1018]
+            - paragraph [ref=e1019]
+            - paragraph [ref=e1020]
+            - paragraph [ref=e1021]
+            - paragraph [ref=e1022]
+            - separator [ref=e1023]
+            - paragraph [ref=e1024]:
+              - strong [ref=e1025]: CONSTANCIA DE VERIFICACIÓN DE NO APROBACIÓN (RECHAZO). ESTE DOCUMENTO LO OBTENDRÁN AQUELLOS
+              - text: ":"
+            - paragraph [ref=e1026]:
+              - text: Vehículos que no acrediten el proceso de revisión visual de conformidad con el numeral 5.5.4 del Manual para los vehículos a que usen gasolina como carburante, para los vehículos con gas natural comprimido o gas licuado del petróleo no se revisa el componente “Tapón de gasolina” para vehículos a diésel el proceso de revisión visual debe realizarse de conformidad con el numeral 5.1 de la
+              - strong [ref=e1027]: NOM-045-SEMARNAT-2017.
+            - paragraph [ref=e1028]:
+              - text: Los vehículos que hayan sido verificados durante el semestre vigente con un resultado aprobatorio y haya realizado una nueva verificación obteniendo como resultado un “Rechazo”, dispondrán de 30 días naturales contados a partir de la emisión del rechazo para obtener un resultado aprobatorio y deberán respetar el
+              - strong [ref=e1029]: Programa Hoy No Circula
+              - text: como lo hace un vehículo que porta un “Holograma “2”, si trascurrido el término otorgado no se acredita la aprobación de la prueba de verificación vehicular, se deberá pagar multa por verificación extemporánea en razón de no contar con un certificado vigente.
+            - separator [ref=e1030]
+            - paragraph [ref=e1031]:
+              - strong [ref=e1032]: CONSTANCIA DE PRUEBA DE EVALUACIÓN TÉCNICA (PET)
+            - paragraph [ref=e1033]:
+              - text: En el formato de la Constancia de Verificación de No Aprobación (Rechazo) se imprimirá la
+              - strong [ref=e1034]: PET
+              - text: que se entregará al parque vehicular al que se practique una prueba de evaluación técnica, misma que se aplica con el objeto de valorar elementos de control de emisiones vehiculares, para evaluar las emisiones de los vehículos que van a comercializarse o introducirse en el país por cuestiones diplomáticas, para conocer la emisión de los vehículos que participen en el Programa de Autorregulación, y para aquellos vehículos que sean detectados y sancionados por ser ostensiblemente contaminantes.
+            - paragraph [ref=e1035]:
+              - text: Para el caso de los vehículos provenientes de otros países, que requieran acreditar ante las Autoridades aduanales competentes la aprobación de los límites de emisiones contaminantes, deberán acudir a cualquier
+              - strong [ref=e1036]: Centro de Verificación de Emisiones Vehiculares
+              - text: "de la Ciudad de México, a solicitar la realización de una Prueba de Evaluación Técnica de conformidad con lo siguiente:"
+            - paragraph [ref=e1037]: "Para acreditar la legal posesión del vehículo, el usuario deberá exhibir cualquiera de los siguientes documentos: el permiso de importación temporal expedido por la Autoridad competente, la factura, carta factura, pedimento de importación o el título de propiedad del vehículo, así mismo, deberá presentar identificación oficial."
+            - paragraph [ref=e1038]:
+              - text: El
+              - strong [ref=e1039]: Centro de Verificación de Emisiones Vehiculares
+              - text: que reciba a estos vehículos, procederá a solicitar mediante el sistema de Tickets de la
+              - strong [ref=e1040]: Dirección General de Calidad del Aire
+              - text: de la Secretaría, la asignación de clave del vehículo a verificar, misma que deberá ser capturada en el apartado de matrícula de circulación del vehículo solicitado por el sistema de verificación vehicular de esta Secretaría, en el apartado de fecha de la tarjeta de circulación, se deberá capturar la fecha en la que se presente el vehículo a realizar la prueba y en el apartado de folio de la tarjeta de circulación, se deberá capturar el folio del documento que presente para acreditar la legal posesión del vehículo.
+            - separator [ref=e1041]
+            - paragraph [ref=e1042]
+            - paragraph [ref=e1043]:
+              - strong [ref=e1044]: OBLIGACIONES DE LOS RESPONSABLES DE LOS VEHÍCULOS QUE SERÁN VERIFICADOS
+            - paragraph [ref=e1045]: "Los propietarios y/o legales poseedores deberán presentar su unidad:"
+            - paragraph [ref=e1046]:
+              - strong [ref=e1047]: a)
+              - text: Con previa cita otorgada vía telefónica por el
+              - strong [ref=e1048]: Centro de Verificación
+              - strong [ref=e1049]: de Emisiones
+              - strong [ref=e1050]: Vehicular
+              - strong [ref=e1051]: es
+              - strong [ref=e1052]
+              - text: o por Internet mediante el “Sistema Verificitas CDMX”; en la siguiente página web
+              - link "citasverificentros.cdmx.gob.mx" [ref=e1053] [cursor=pointer]:
+                - /url: http://https//:citasverificentros.cdmx.gob.mx
+                - strong [ref=e1054]: citasverificentros.cdmx.gob.mx
+              - text: el usuario no cuenta con una cita y solicita el servicio de verificación vehicular, el
+              - strong [ref=e1055]: Centro de Verificación
+              - strong [ref=e1056]: de
+              - strong [ref=e1057]
+              - strong [ref=e1058]: Emisiones
+              - strong [ref=e1059]: Vehicular
+              - strong [ref=e1060]: es
+              - strong [ref=e1061]
+              - text: deberá brindarle el servicio cuando éste no afecte el servicio de los usuarios con cita; es decir siempre y cuando exista espacio disponible en las líneas de verificación y no se hagan filas de espera de automóviles en el exterior.
+            - paragraph [ref=e1062]:
+              - strong [ref=e1063]: b)
+              - text: Con una identificación oficial (ej. credencial para votar o cédula profesional o pasaporte o licencia de conducir o cartilla del Servicio Militar Nacional o del
+              - strong [ref=e1064]: INAPAM
+              - text: ", entre otros), deberá portar ambas placas excepto si se encuentra entre los supuestos indicados en el inciso 9.2."
+            - paragraph [ref=e1065]:
+              - strong [ref=e1066]: c)
+              - text: Dentro del período de verificación, conforme al calendario establecido en el presente Programa. En buenas condiciones mecánicas, con el motor encendido a temperatura normal de operación y propulsado por su propio motor (no se deben verificar automotores que lleguen al Verificentro siendo empujados o arrastrados o transportados en plataforma);
+              - strong [ref=e1067]: d)
+              - text: Sin adeudos por infracciones al
+              - strong [ref=e1068]: Reglamento de Tránsito de la Ciudad de México
+              - text: ", impuestas a partir del año 2009, sin adeudos del Impuesto Sobre Tenencia y Uso Vehicular de los años 2005 y posteriores, así como sin adeudos por sanciones aplicadas por incumplimiento al"
+              - strong [ref=e1069]: Reglamento de la Ley Ambiental de la Ciudad de México
+              - text: ", en Materia de Verificación Vehicular, y Fotocívicas (conforme al número de puntos correspondiente), lo anterior deberá validarse en el portal oficial de Internet de la Agencia Digital de Innovación Publica:"
+              - link "https://tramites.cdmx.gob.mx/fotocivicas/public/consulta-verificacion," [ref=e1070] [cursor=pointer]:
+                - /url: https://tramites.cdmx.gob.mx/fotocivicas/public/consulta-verificacion,
+              - text: "o en el portal oficial de Fotocívicas de la Secretaría de Movilidad:"
+              - link "https://tramites.cdmx.gob.mx/fotocivicas/public/," [ref=e1071] [cursor=pointer]:
+                - /url: https://tramites.cdmx.gob.mx/fotocivicas/public/,
+              - text: "o en el portal oficial de Internet de la Secretaría de Administración y Finanzas:"
+              - link "https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana/" [ref=e1072] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana/
+              - text: lo cual deberá reflejarse en el
+              - link "https://data.finanzas.cdmx.gob.mx/consulta_adeudos" [ref=e1073] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/consulta_adeudos
+            - paragraph [ref=e1074]:
+              - text: "Aquellos vehículos que no se encuentren registrados en el portal de la Agencia Digital de Innovación Pública y de la Secretaría de Administración y Finanzas ambas de la Ciudad de México, deberán ser canalizados a las áreas de Administración Tributaria o Centros de Servicio de la Tesorería más cercanos a su domicilio, de lunes a viernes de las 9:00 a 13:30 horas, a fin de registrar los datos de sus vehículos, presentando los siguientes documentos en original y copia para cotejo, debiendo asentar en el expediente el nombre y firma de quien los recibe y valida:"
+              - strong [ref=e1075]: 1)
+              - text: Identificación oficial con fotografía Vigente (INE, IFE, Pasaporte o cedula profesional).
+              - strong [ref=e1076]: 2)
+              - text: Comprobante de domicilio de la Ciudad de México vigente (luz, agua, predial o teléfono fijo máximo 3 meses de antigüedad).
+              - strong [ref=e1077]: 3)
+              - text: Factura (primera enajenación) o carta factura vigente acompañada de copia de factura.
+              - strong [ref=e1078]: 4)
+              - text: Tarjeta de Circulación.
+              - strong [ref=e1079]: 5)
+              - text: Comprobante de pago del impuesto sobre tenencia que a la fecha del trámite les sean exigibles.
+              - text: Aquellos vehículos que presenten alguna leyenda en cualquiera de los conceptos a validar distinta a la referida anteriormente, que impida verificar su estatus, deberán acudir a la Secretaría de Seguridad Ciudadana, a la Secretaría de Movilidad, a la
+              - strong [ref=e1080]: Dirección General de Inspección y Vigilancia Ambiental
+              - text: de la Secretaría, todas de la Ciudad de México, según sea el caso, lo anterior a efecto de regularizar sus infracciones y/o sanciones.
+              - text: Una vez hecho lo anterior, siempre y cuando se acredite en el portal de la Agencia Digital de Innovación Pública, de la Secretaría de Administración y Finanzas y de la Secretaría de Movilidad todas de la Ciudad de México, que utilizan los
+              - strong [ref=e1081]: Centros de Verificación
+              - strong [ref=e1082]: de Emisiones
+              - strong [ref=e1083]: Vehicular
+              - strong [ref=e1084]: es
+              - text: ", que el vehículo no cuenta con adeudos por tenencia e infracciones al Reglamento de Tránsito de la Ciudad de México, sanciones aplicadas por incumplimiento al Reglamento de la Ley Ambiental de la Ciudad de México en Materia de Verificación Vehicular, Fotocívicas o alguna leyenda en cualquiera de los conceptos a validar distinta a las referidas anteriormente, que impidan verificar su estatus, los titulares de los"
+              - strong [ref=e1085]: Centros de Verificación de Emisiones Vehiculares
+              - text: ", estarán en condiciones de prestar el servicio de Verificación Vehicular a éstos vehículos."
+              - strong [ref=e1086]: e)
+              - text: Los servicios que proporcionan los preverificadores y gestores no se encuentran autorizados, registrados, ni reconocidos por la Secretaría, razón por la cual se recomienda no contratar dichos servicios.
+              - text: El estado físico y mecánico de los vehículos automotores que se presenten a realizar la prueba de verificación vehicular es responsabilidad de los propietarios y/o legales poseedores de estos.
+              - text: "Portar ambas placas, salvo por las siguientes excepciones:"
+              - strong [ref=e1087]: a)
+              - text: Cuando se presente robo o extravío de una o ambas placas de circulación, para lo cual, el conductor deberá presentar el acta respectiva levantada ante la Agencia del Ministerio Público o Fiscalía correspondiente y/o Juez Cívico para el caso de vehículos dedicados a transporte público de pasajeros, las unidades deberán estar rotuladas con la placa asignada. (Se aceptarán actas generadas por mecanismos digitales y generados en las oficinas de la Agencia del Ministerio Público o Fiscalía correspondiente y/o Juez Cívico).
+            - paragraph [ref=e1088]:
+              - strong [ref=e1089]: b)
+              - text: Cuando se le hubiera retirado por alguna Autoridad (federal o local) en el ejercicio de sus funciones, deberá presentarse el documento vigente que lo acredite con una antigüedad máxima de 180 días naturales.
+            - paragraph [ref=e1090]:
+              - strong [ref=e1091]: c)
+              - text: Cuando los vehículos de transporte público de pasajeros y carga no hayan recibido las placas metálicas o se encuentren en trámite de sustitución o alta ante la Secretaría de Movilidad de la Ciudad de México, para el caso de vehículos dedicados a transporte público de pasajeros, las unidades deberán estar rotuladas con la placa asignada.
+            - paragraph [ref=e1092]:
+              - strong [ref=e1093]: d)
+              - text: Cuando los vehículos particulares cuenten con placa digital u otra modalidad que no considere una placa física, deberá presentarse con el documento que compruebe su registro.
+            - paragraph [ref=e1094]
+            - paragraph [ref=e1095]: Durante el proceso de verificación el Centro deberá colocar una copia del documento en un lugar visible de la unidad.
+            - paragraph [ref=e1096]: Todos los documentos mencionados a continuación, requeridos para el proceso de Verificación Vehicular deberán presentarse en original y copia simple legible, excepto la factura del auto, en cuyo caso y por seguridad sólo debe llevar copia simple legible, dejando un tanto en el Verificentro. El Verificentro, a través de su personal, es responsable de la compulsa de los originales con las copias que se incorporan en el expediente de verificación, y asentar que son copias fieles de los originales y deben estar integrados en el expediente de la verificación, asentando el nombre y firma de la persona que realizó la compulsa.
+            - paragraph [ref=e1097]:
+              - text: Para el caso de
+              - strong [ref=e1098]: vehículos registrados por primera vez
+              - strong [ref=e1099]: o que realicen nuevamente alta de matrícula
+              - strong [ref=e1100]: en la Ciudad de México
+              - text: ", la tarjeta de circulación deberá indicar en el campo de trámite, el número o código correspondiente al concepto de “Alta” conforme a la modalidad asignada (uso), en cuyo caso, deberá permitir que el Verificentro compile una imagen fotográfica de dicha tarjeta de circulación por ambos lados para integrarla en el expediente y deberán ser verificados dentro de los 180 días naturales contados a partir de la fecha de expedición de la tarjeta de circulación."
+            - paragraph [ref=e1101]: Si la unidad no cuenta con tarjeta de circulación debido a la perdida, extravío o robo, deberá presentar acta levantada ante la Agencia del Ministerio Público o Fiscalía correspondiente y/o Juez Cívico, con una antigüedad máxima de 180 días naturales. Se aceptarán actas generadas por mecanismos digitales y generadas en las oficinas de la Agencia del Ministerio Público o Fiscalía correspondiente y/o Juez Cívico.
+            - paragraph [ref=e1102]:
+              - text: Si la
+              - strong [ref=e1103]: unidad no cuenta con tarjeta de circulación
+              - text: debido a su
+              - strong [ref=e1104]: retiro por alguna Autoridad
+              - text: (federal o local) en el ejercicio de sus funciones, deberá presentarse el documento vigente que lo acredite, si la unidad no cuenta con tarjeta de circulación por un trámite de alta, actualización o reposición ante la Secretaría de Movilidad de la Ciudad de México, se deberá presentar el documento que acredite dicha situación o bien el permiso para circular sin tarjeta de circulación expedido por la Autoridad competente, pudiendo ser verificado en sustitución de la tarjeta de circulación, en el apartado de fecha de la tarjeta de circulación, se deberá capturar la fecha de expedición del documento que presente y en el apartado de folio de la tarjeta de circulación, se deberá capturar el folio del documento que presente; asimismo, se podrá presentar la tarjeta de circulación o refrendo en medio electrónico (en su caso, el personal del
+              - strong [ref=e1105]: Centro de Verificación
+              - strong [ref=e1106]: de Emisiones
+              - strong [ref=e1107]: Vehicular
+              - strong [ref=e1108]: es
+              - strong [ref=e1109]
+              - strong [ref=e1110]
+              - text: deberá decodificar el código
+              - strong [ref=e1111]: QR
+              - text: ) a través de dispositivos móviles u otros medios, debiendo el personal del
+              - strong [ref=e1112]: Centro de Verificación
+              - strong [ref=e1113]: de Emisiones
+              - strong [ref=e1114]: Vehicular
+              - strong [ref=e1115]: es
+              - strong [ref=e1116]
+              - text: imprimir dicho documento electrónico para integrarse al expediente.
+            - paragraph [ref=e1117]:
+              - text: Si la unidad cumple con los requisitos para obtener el
+              - strong [ref=e1118]: “Holograma “00”
+              - text: ", y se encuentra dentro del listado publicado en la página de la Secretaría del Medio Ambiente entonces se deberá presentar copia legible de la factura, carta factura o contrato de arrendamiento en donde se informe sobre la fecha de adquisición del automotor, la cual deberá estar integrada al expediente."
+            - paragraph [ref=e1119]: En el caso de vehículos que cuenten con verificación previa en la Ciudad de México, se deberá presentar la tarjeta de circulación y/o acta respectiva levantada ante la Agencia del Ministerio Público o Fiscalía correspondiente y/o Juez Cívico en caso de pérdida o extravío de la misma, con una antigüedad máxima de 180 días naturales. Se aceptarán actas generadas por mecanismos digitales y generadas en las oficinas de la Agencia del Ministerio Público o Fiscalía correspondiente y/o Juez Cívico, así como la baja y/o pago de la baja y el certificado de verificación inmediato anterior (en caso de no presentar el certificado de verificación vehicular, la unidad podrá ser verificada siempre y cuando el Equipo de Verificación Vehicular de la Ciudad de México, presente en pantalla la verificación vehicular de su período inmediato anterior, la consulta sin costo, deberá ser integrada en el expediente de verificación). En aquellos casos que, de acuerdo con las fechas de la última verificación y el alta vehicular, se observe que los periodos para verificar la unidad se encuentran vigentes, no será necesario solicitar la baja o el pago de la baja de la placa anterior.
+            - paragraph [ref=e1120]:
+              - text: Si la
+              - strong [ref=e1121]: unidad no cuenta con tarjeta de circulación
+              - text: debido a su
+              - strong [ref=e1122]: retiro por alguna Autoridad
+              - text: (federal o local) en el ejercicio de sus funciones, deberá presentarse el documento vigente que lo acredite, si la unidad no cuenta con tarjeta de circulación por un trámite de alta, actualización o reposición ante la Secretaría de Movilidad de la Ciudad de México, se deberá presentar el documento que acredite dicha situación o bien el permiso para circular sin tarjeta de circulación expedido por la Autoridad competente, pudiendo ser verificado en sustitución de la tarjeta de circulación, en el apartado de fecha de la tarjeta de circulación, se deberá capturar la fecha de expedición del documento que presente y en el apartado de folio de la tarjeta de circulación, se deberá capturar el folio del documento que presente; asimismo, se podrá presentar la tarjeta de circulación o refrendo en medio electrónico (en su caso, el personal del
+              - strong [ref=e1123]: Centro de Verificación
+              - strong [ref=e1124]: de Emisiones
+              - strong [ref=e1125]: Vehicular
+              - strong [ref=e1126]: es
+              - strong [ref=e1127]
+              - strong [ref=e1128]
+              - text: deberá decodificar el código
+              - strong [ref=e1129]: QR
+              - text: ) a través de dispositivos móviles u otros medios, debiendo el personal del
+              - strong [ref=e1130]: Centro de Verificación
+              - strong [ref=e1131]: de Emisiones
+              - strong [ref=e1132]: Vehicular
+              - strong [ref=e1133]: es
+              - strong [ref=e1134]
+              - text: imprimir dicho documento electrónico para integrarse al expediente.
+            - paragraph [ref=e1135]:
+              - text: El
+              - strong [ref=e1136]: Centro de Verificación
+              - strong [ref=e1137]: de Emisiones
+              - strong [ref=e1138]: Vehicular
+              - strong [ref=e1139]: es
+              - strong [ref=e1140]
+              - strong [ref=e1141]
+              - text: debe consultar en la base de datos que exista el registro de la verificación vehicular anterior, en caso contrario el vehículo no podrá verificar hasta en tanto no se pague una multa por verificación extemporánea. Si el ciudadano tiene el certificado de verificación vehicular, que acredite la verificación vehicular anterior, el
+              - strong [ref=e1142]: Centro de Verificación
+              - strong [ref=e1143]: de Emisiones
+              - strong [ref=e1144]: Vehicular
+              - strong [ref=e1145]: es
+              - strong [ref=e1146]
+              - strong [ref=e1147]
+              - text: de la Ciudad de México deberá solicitar mediante el sistema de tickets de la
+              - strong [ref=e1148]: Dirección General de Calidad del Aire
+              - text: de la Secretaría adjuntando copia de la constancia de verificación vehicular, la revisión del documento exhibido y en su caso se procederá a dar de alta en el sistema de verificación vehicular los datos de la última verificación para que el vehículo sea verificado.
+            - paragraph [ref=e1149]:
+              - text: En caso de vehículos que hayan sido convertidos al uso de gas licuado de petróleo o gas natural y que deseen obtener el “Holograma “0”, además de los documentos requeridos para el proceso de Verificación Vehicular, deberán presentar el holograma adherido en un lugar visible y el oficio de autorización vigente emitido por la
+              - strong [ref=e1150]: Dirección General de Calidad del Aire
+              - text: de la Secretaría, en donde se acredita el uso de sistemas integrales certificados autorizados por la misma, además deben entregar copia del dictamen técnico vigente otorgado por alguna Unidad de Verificación acreditada en alcance a la Norma Oficial Mexicana NOM-005-SESH-2010, Equipos de Carburación de Gas L.P. en motores de combustión interna. Instalación y mantenimiento, autorizada por la Secretaría de Energía, y la NOM-011-SECRE-2000, Gas Natural Comprimido para uso automotor. Requisitos mínimos de seguridad en instalaciones vehiculares, autorizada por la Comisión Reguladora de Energía.
+              - text: En caso de vehículos que desde agencia fueron vendidos con la posibilidad de utilizar gas licuado de petróleo o gas natural y que deseen obtener el “Holograma “0”, además de los documentos requeridos para el proceso de Verificación Vehicular, deberán presentar copia de la factura o carta factura en donde se especifique que de fábrica la unidad cuenta con sistemas de uso de gas natural o gas licuado de petróleo, además deben entregar copia del dictamen técnico vigente otorgado por alguna Unidad de Verificación acreditada en alcance a la Norma Oficial Mexicana NOM-005-SESH-2010, Equipos de carburación de Gas L.P. en motores de combustión interna. Instalación y mantenimiento, autorizada por la Secretaría de Energía para los vehículos que usen Gas Licuado de Petróleo, o la Norma Oficial Mexicana NOM-011-SECRE-2000, Gas Natural Comprimido para uso automotor. Requisitos mínimos de seguridad en instalaciones vehiculares, autorizada por la Comisión Reguladora de Energía.
+              - text: En el caso de vehículos matriculados en la Ciudad de México, con verificación previa en esta entidad que hayan realizado la baja vehicular con posterioridad a la vigencia del certificado anterior deberá presentar el pago de multa por verificación extemporánea con la placa nueva y/o actual, en caso de no contar con el pago de la multa original, se podrá exhibir copia certificada del pago emitida por la Secretaría de Administración y Finanzas de la Ciudad de México, lo cual deberá ser verificado por el Centro de Verificación de Emisiones Vehiculares asentando el nombre y firma de la persona que realizó la compulsa con base en la información en el portal de pagos (
+              - strong [ref=e1151]:
+                - link "https://data.finanzas.cdmx.gob.mx/consultas_pagos/consulta_pagos" [ref=e1152] [cursor=pointer]:
+                  - /url: https://data.finanzas.cdmx.gob.mx/consultas_pagos/consulta_pagos
+              - text: ).
+            - paragraph [ref=e1153]:
+              - strong [ref=e1154]: E
+              - strong [ref=e1155]: "n el caso de los vehículos sancionados dentro del Programa de Vehículos Contaminantes, se deberán presentar los siguientes documentos:"
+            - paragraph [ref=e1156]: Para vehículos matriculados en la Ciudad de México, que se encuentren dentro de su periodo de Verificación, deberá presentar el Certificado de Verificación y Holograma vigente, tarjeta de circulación, identificación oficial, boleta de sanción y el pago de la sanción respectiva.
+            - paragraph [ref=e1157]: "Para vehículos matriculados en la Ciudad de México, que se encuentren fuera de su periodo de Verificación sin Certificado de Verificación y Holograma vigente, deberán presentar entre otros: la tarjeta de circulación, identificación oficial, boleta de sanción y el pago de la sanción respectiva y la multa por verificación extemporánea correspondiente."
+            - paragraph [ref=e1158]: Para vehículos matriculados en una Entidad Federativa distinta a la Ciudad de México o que porten placas Federales, deberán presentar la tarjeta de circulación, identificación oficial, boleta sanción y pago de la sanción respectiva.
+            - paragraph [ref=e1159]: Para vehículos matriculados en las demás Entidades Federativas que conforman la Megalópolis, deberán presentar la tarjeta de circulación, identificación oficial, boleta de sanción y pago de la sanción correspondiente.
+            - paragraph [ref=e1160]: En el caso de las verificaciones voluntarias se deberá presentar tarjeta de circulación o, en el caso de unidades matriculadas en el extranjero, documento de ingreso al país.
+            - paragraph [ref=e1161]: En caso de no contar con tarjeta de circulación, una o ambas placas por robo extravío, se deberán presentar los documentos señalados en los numerales 9.2. y 9.3.1. del presente programa.
+            - paragraph [ref=e1162]: Aquellos vehículos con número de matrícula ya asignada, que no cuenten son las placas físicas, deberán portar el documento emitido por la dependencia correspondiente, mediante el cual se observe dicha asignación y vigencia del documento, estar colocado en un lugar visible del vehículo y adjuntar copia del mismo al expediente de verificación.
+            - paragraph [ref=e1163]:
+              - text: En el caso de vehículos a los que se les haya cambiado la matrícula, previamente registrados en la Ciudad de México, con verificación previa en esta entidad, se deberá presentar la tarjeta de circulación, así como la solicitud y/o el pago de la baja. En aquellos casos que, de acuerdo con las fechas de la última verificación y el alta vehicular, se observe que los periodos para verificar la unidad se encuentran vigentes, no será necesario solicitar la baja o el pago de la baja de la placa anterior.
+              - text: En caso de baja de una matrícula por sustitución del vehículo, como es el caso del servicio público de pasajeros (incluidos taxis), se deberá presentar la tarjeta de circulación, así como el documento oficial que acredite dicha sustitución.
+            - paragraph [ref=e1164]: Los vehículos que hubiesen obtenido un oficio vigente para la ampliación al período de verificación emitido por la Secretaría, o presenten el pago de multa por verificación extemporánea realizada por cualquier medio vigente o copia certificada del pago emitida por la Secretaría de Administración y Finanzas de la Ciudad de México, estarán exentos de las restricciones establecidas en el Programa Hoy No Circula y en el Programa para Prevenir y Responder a Contingencias Ambientales Atmosféricas en la Ciudad de México, solamente cuando circulen con dirección a un Centro de Verificación de Emisiones Vehiculares con el objetivo de verificar las emisiones de su vehículo, siempre y cuando lleven consigo el original y una copia del documento correspondiente y hayan obtenido una cita, esta última deberá portarse en medio impreso o electrónico.
+            - paragraph [ref=e1165]:
+              - text: Es obligación del personal del
+              - strong [ref=e1166]: Centro de Verificación
+              - strong [ref=e1167]: de Emisiones
+              - strong [ref=e1168]: Vehicular
+              - strong [ref=e1169]: es
+              - text: adhiera la Constancia de Verificación tipo “0”, “1”, “2” o el incentivo “00, según le corresponda, al vehículo en la parte superior derecha del parabrisas del vehículo y, en caso de tener franja entintada superior, el holograma deberá colocarse debajo de esta (lo más arriba posible) y quedará libre de obstáculos que impidan su identificación, salvo cuando la unidad sea blindada, en cuyo caso se adherirá a una mica o cristal, misma que se le entregará al conductor de la unidad. En caso de rechazo se emitirá la constancia respectiva.
+            - paragraph [ref=e1170]:
+              - text: Permitir retirar y destruir obligatoriamente todos los hologramas anteriores al obtenido, así como los residuos de hologramas anteriores, para no obstaculizar la identificación del holograma vigente (salvo en el caso de la constancia de rechazo, por no obtener el holograma y mantendrán los beneficios a la circulación de acuerdo al tipo de holograma que hayan obtenido continuando con su vigencia en tanto obtengan un resultado aprobatorio dentro del plazo que corresponda). El personal del
+              - strong [ref=e1171]: Centro de Verificación
+              - strong [ref=e1172]: de Emisiones
+              - strong [ref=e1173]: Vehicular
+              - strong [ref=e1174]: es
+              - text: deberá retirar obligatoriamente sin costo alguno todos los hologramas anteriores adheridos en el cristal delantero de la unidad y no colocará el nuevo holograma hasta que se hayan retirado y destruido los hologramas anteriores.
+            - paragraph [ref=e1175]: Tramitar la reposición del certificado de la constancia de verificación y/u holograma de aprobación de la verificación en caso de pérdida, robo o destrucción, conforme a lo establecido en el numeral 19.1.5 del presente programa.
+            - paragraph [ref=e1176]: "En caso de no contar con el certificado, se deberá solicitar una copia del mismo en el Verificentro en el que realizó la verificación de emisiones inmediata anterior conforme a la tarifa señalada en el numeral 7.5 del presente programa. Para emitir dicha copia, el personal autorizado por el Verificentro deberá asentar en la misma: el nombre, la firma, la clave única de verificación contenida en su credencial, así como el sello del Verificentro."
+            - paragraph [ref=e1177]:
+              - text: Para el caso de los vehículos que se presenten en cualquier
+              - strong [ref=e1178]: Centro de Verificación de Emisiones Vehiculares
+              - text: a realizar la prueba de verificación correspondiente y no cuenten con holograma o certificado de verificación anterior, podrán ser verificados sin necesidad de tramitar la reposición del certificado y holograma siempre y cuando el sistema de verificación vehicular de la Ciudad de México, presente en la pantalla el registro de la verificación vehicular de su período inmediato anterior, para tal caso los Centros de Verificación de Emisiones Vehiculares deberán realizar y anexar al expediente la consulta. En el caso de no contar con el holograma se deberá, exhibir original y copia para cotejo del acta levantada ante la Agencia del Ministerio Público o Fiscalía o Juez Cívico. Se aceptarán actas generadas por mecanismos digitales y generados en las oficinas de Agencia del Ministerio Público o Fiscalía correspondiente y/o Juez Cívico.
+            - separator [ref=e1179]
+            - paragraph [ref=e1180]
+            - paragraph [ref=e1181]:
+              - strong [ref=e1182]: VERIFICACIÓN EXTEMPORÁNEA
+            - paragraph [ref=e1183]:
+              - text: "Los vehículos que sean llevados a verificar sus emisiones en el primer semestre de 2026 y que no hayan aprobado la verificación en el período de tiempo correspondiente, deberán pagar una multa por verificación vehicular extemporánea, de acuerdo con lo siguiente:"
+              - text: Pagar una multa por verificación vehicular extemporánea por 20 veces la Unidad de Medida y Actualización vigente. La vigencia del pago de la multa es de 30 días naturales contados a partir del día siguiente a la realización del pago de la misma, siendo el tiempo que se tiene para poder realizar y aprobar la verificación vehicular del automotor. El pago de la multa no exime a los vehículos de respetar las limitaciones a la circulación establecidas en el Programa Hoy No Circula y en el Programa para Prevenir y Responder a Contingencias Ambientales Atmosféricas, salvo en el caso, que se traslade al
+              - strong [ref=e1184]: Centro de Verificación de Emisiones Vehiculares
+              - text: ", con una cita vigente para verificar en el día en cuestión, conforme el numeral 9.3.10 del presente."
+            - paragraph [ref=e1185]: En caso de no obtener una constancia de verificación aprobatoria en los 30 días de la vigencia del pago de la multa de Verificación extemporánea, se deberán pagar las multas por verificación vehicular extemporánea que amparen el monto de 40 veces la Unidad de Medida y Actualización vigente, con lo cual se adquiere un nuevo plazo de 30 días naturales para aprobar la verificación de emisiones vehiculares.
+            - paragraph [ref=e1186]: En caso de no obtener una constancia de verificación aprobatoria en los 30 días de la vigencia del pago de la multa establecida en el párrafo anterior, se deberán pagar las multas por verificación vehicular extemporánea que amparen el monto de 80 veces la Unidad de Medida y Actualización vigente, con lo cual se adquiere un nuevo plazo de 30 días naturales para aprobar la verificación vehicular. Si el plazo para verificar se vence nuevamente sin que la unidad hubiese aprobado la verificación, se deberá repetir este mecanismo tantas veces sea necesario, hasta que la unidad apruebe la verificación vehicular.
+            - paragraph [ref=e1187]
+            - paragraph [ref=e1188]:
+              - text: "El procedimiento para realizar la verificación vehicular de unidades con multa por verificación extemporánea es el siguiente:"
+              - text: Obtener una línea de captura para el pago de la multa por verificación extemporánea, la cual se obtiene en el portal oficial de Internet de la Secretaría de Administración y Finanzas de la Ciudad de México (
+              - strong:
+                - link:
+                  - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/ambiente/50
+              - link "https://data.finanzas.cdmx.gob.mx/formato_lc/ambiente/50" [ref=e1189] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/ambiente/50
+                - strong [ref=e1190]: https://data.finanzas.cdmx.gob.mx/formato_lc/ambiente/50
+              - text: ) o en Locatel en el teléfono 55-56-58-11-11. El Formato Múltiple de Pago a la Tesorería establece, en un recuadro colocado en la parte central inferior del mismo, la vigencia para pagar la línea de captura, misma que no corresponde a la vigencia del pago de la multa por verificación extemporánea.
+            - paragraph [ref=e1191]:
+              - text: En el supuesto de que el vehículo se presente a verificar sin el original de la línea de captura generada para el pago de multa por verificación extemporánea, se podrá prestar el servicio, siempre y cuando se exhiba el comprobante de pago original realizado por cualquier medio y el personal del Centro de Verificación de Emisiones Vehiculares realice una consulta en el portal de la Secretaría de Administración y Finanzas de la Ciudad de México (
+              - strong [ref=e1192]:
+                - link "https://data.finanzas.cdmx.gob.mx/consultas_pagos/consulta_pagos" [ref=e1193] [cursor=pointer]:
+                  - /url: https://data.finanzas.cdmx.gob.mx/consultas_pagos/consulta_pagos
+              - text: ), validando el pago de la misma, imprimiendo y anexando al expediente administrativo la consulta realizada, así como, el comprobante de pago original asentando el nombre y firma de la persona que realizó la consulta y validación.
+            - paragraph [ref=e1194]: Realizar el pago de la multa por el número de veces de la Unidad de Medida y Actualización vigente correspondientes, de acuerdo con lo establecido en el presente procedimiento.
+            - paragraph [ref=e1195]:
+              - text: Llevar su auto a verificar hasta que el pago de la multa por verificación extemporánea se vea reflejado en el Sistema de la Secretaría de Administración y Finanzas de la Ciudad de México (
+              - link "https://data.finanzas.cdmx.gob.mx/consultas_pagos/consulta_pagos" [ref=e1196] [cursor=pointer]:
+                - /url: https://data.finanzas.cdmx.gob.mx/consultas_pagos/consulta_pagos
+                - text: https://
+                - strong [ref=e1197]: data.finanzas.cdmx.gob.mx/consultas_pagos/consulta_pagos
+              - text: ), en tanto no ocurra la unidad no podrá ser verificada hasta que en el sistema de la Secretaría de Administración y Finanzas de la Ciudad de México que revisa el personal del Verificentro, aparezca como pagada la línea de captura que se presente.
+            - paragraph [ref=e1198]:
+              - text: Una vez realizado el pago de la multa por verificación extemporánea, el legal poseedor del vehículo deberá trasladar el mismo a un taller mecánico y/o a un
+              - strong [ref=e1199]: Centro de Verificación de Emisiones Vehiculares
+              - text: (para este último caso con cita), dentro del plazo de 30 días naturales contados a partir del día siguiente a la realización del pago de la misma.
+            - paragraph [ref=e1200]:
+              - text: Antes de pagar su multa por verificación extemporánea, se deberán asegurar que el vehículo no cuente con adeudos por tenencia, refrendo e infracciones al Reglamento de Tránsito de la Ciudad de México, sanciones aplicadas por incumplimiento al Reglamento de la Ley Ambiental de la Ciudad de México en Materia de Verificación Vehicular, Fotocívicas, o alguna leyenda en cualquiera de los conceptos a validar distinta a las referidas anteriormente que impidan verificar su estatus, con el objeto de evitar que se venza la vigencia del pago de su multa y que tenga la obligación de volver a pagarla.
+              - text: Realizar la verificación vehicular, debiendo entregar al usuario, en original, la parte correspondiente al contribuyente del Formato Múltiple de Pago a la Tesorería o copia simple del pago de la multa por verificación extemporánea realizada por cualquier medio vigente o copia certificada del pago emitida por la Secretaría de Administración y Finanzas de la Ciudad de México, utilizada para verificar el vehículo. La constancia de verificación aprobatoria recibida corresponderá al semestre en que se obtenga.
+              - text: Quedan exceptuados de la multa por verificación extemporánea, los vehículos candidatos a obtener el incentivo “00” en sus primeros dos años contados a partir de la fecha de la primera enajenación del vehículo.
+              - text: Los propietarios o legales poseedores de los vehículos que hayan sido objeto de extemporaneidad y no puedan hacer uso de la línea de captura generada por concepto de multa por verificación extemporánea y pagada con errores de datos, deberán acudir a las oficinas de la Administración Tributaria de la Secretaría de Administración y Finanzas, a solicitar la corrección de la línea de captura, debiendo presentar en el
+              - strong [ref=e1201]: Centro de Verificación
+              - strong [ref=e1202]: de Emisiones
+              - strong [ref=e1203]: Vehicular
+              - strong [ref=e1204]: es
+              - text: el original del oficio donde se subsanen las inconsistencias, documento con el cual podrá trasladar el vehículo para verificar.
+              - text: Los titulares de los
+              - strong [ref=e1205]: Centro de Verificación
+              - strong [ref=e1206]: de Emisiones
+              - strong [ref=e1207]: Vehicular
+              - strong [ref=e1208]: es
+              - text: deberán anexar al expediente administrativo el oficio donde se subsanen las inconsistencias.
+              - text: "Los vehículos que se presenten a verificar con el pago de la multa generada por la verificación vehicular extemporánea cuya referencia de placa, marca o modelo se encuentre incorrecta con la tarjeta de circulación del vehículo, deberán ser verificados siempre y cuando exhiban los siguientes documentos:"
+              - strong [ref=e1209]: "1."
+              - text: El comprobante de pago original con errores de impresión del semestre correspondiente al que se presenta a verificar.
+              - strong [ref=e1210]: "2."
+              - text: Volante de aclaraciones con fecha del sello del semestre en curso en el que se presenta a verificar, emitido por cualquier Módulo de la Tesorería de Administración Tributaria, o la Impresión del Sistema (
+              - strong [ref=e1211]: SISCOR
+              - text: ) donde se indique el valor actual o en su caso el oficio de corrección emitido por las Administraciones Tributarias de la Tesorería de la Ciudad de México.
+              - text: El computo de los 30 días naturales para hacer uso de la multa por verificación extemporánea, se renovará a partir de la fecha de obtención de los documentos enunciados en el punto 2 del presente numeral, pudiendo verificar los vehículos presentando el pago de las multas por verificación extemporáneas que con motivo de las hipótesis contempladas en el presente numeral hayan perdido su vigencia.
+              - text: "Los propietarios o legales poseedores de los vehículos que hayan sido objeto de extemporaneidad para verificar por falta de actualización oportuna del Portal de Consulta de Adeudos por tenencias, refrendos, infracciones de tránsito y del Reglamento de la Ley Ambiental de la Ciudad de México en Materia de Verificación Vehicular; y sanciones impuestas por la Secretaría de Administración y Finanzas de la Ciudad de México, deberán acudir a realizar su trámite de corrección o aclaración de pagos ante alguna Administración Tributaria o Administración Auxiliar, para expresar en el formato denominado “volante de aclaraciones” o en escrito libre, el motivo del trámite de corrección o aclaración de pagos, debiendo presentar en original y copia los siguientes documentos:"
+              - strong [ref=e1212]: a)
+              - text: El pago sujeto a aclaración o corrección.
+              - strong [ref=e1213]: b)
+              - text: Tarjeta de circulación.
+              - strong [ref=e1214]: c)
+              - text: Identificación del contribuyente (en caso de representación, el documento con el que se acredite personalidad).
+              - text: Una vez obtenida la consulta de la Secretaría de Administración y Finanzas que muestre la leyenda “Permitir Verificar sin multa de verificación extemporánea”, se deberá presentar en el
+              - strong [ref=e1215]: Centro de Verificación
+              - strong [ref=e1216]: de Emisiones
+              - strong [ref=e1217]: Vehicular
+              - strong [ref=e1218]: es
+              - text: el original de la consulta, documento con el cual podrá trasladar el vehículo para verificar el día de su cita.
+              - text: Los titulares de los centros de verificación vehicular deberán anexar al expediente administrativo la consulta que muestre la leyenda “Permitir Verificar sin multa de verificación extemporánea”.
+            - paragraph [ref=e1219]
+            - separator [ref=e1220]
+            - paragraph [ref=e1221]:
+              - strong [ref=e1222]: VERIFICACIÓN DE VEHÍCULOS MATRICULADOS FUERA DE LA CIUDAD DE MÉXICO
+            - paragraph [ref=e1223]:
+              - text: Las fuentes móviles o vehículos de otras Entidades Federativas, exceptuando vehículos automotores matriculados en el Estado de México, así como los que cuenten con placas Federales y del Extranjero, podrán obtener un holograma mediante la verificación vehicular voluntaria de acuerdo con los lineamientos establecidos en el presente programa, con el objeto de exentar algunas o todas las limitaciones a la circulación establecidas en los programas ambientales de la Ciudad de México. La obtención de un holograma en el programa de la Ciudad de México no exime al automotor del cumplimiento del programa de verificación vehicular que exista en la entidad federativa en la que se encuentre matriculado.
+              - text: La verificación voluntaria podrá realizarse en cualquier momento de la vigencia del presente programa, en cualquiera de los Verificentros autorizados de la Ciudad de México, y para cualquier constancia, debiendo presentar los documentos establecidos en el presente programa.
+              - text: Para mayor comodidad del usuario del servicio, podrá generar una cita vía telefónica por el
+              - strong [ref=e1224]: Centro de Verificación
+              - strong [ref=e1225]: de Emisiones
+              - strong [ref=e1226]: Vehicular
+              - strong [ref=e1227]: es
+              - text: "o por Internet en la siguiente liga:"
+              - link "citasverificentros.cdmx.gob.mx/" [ref=e1228] [cursor=pointer]:
+                - /url: https://citasverificentros.cdmx.gob.mx/
+                - strong [ref=e1229]: citasverificentros.cdmx.gob.mx/
+              - text: La vigencia de los hologramas obtenidos voluntariamente será contada a partir de la fecha de emisión de los mismos.
+              - text: Los vehículos verificados voluntariamente que, por sus emisiones hubiesen obtenido un holograma de menor beneficio al que puedan obtener, podrán verificar tantas veces como sea necesario hasta obtener el holograma deseado, previa cancelación y retiro del holograma en el Verificentro que lo emitió, si dicha verificación tiene menos de 150 días naturales contados a partir de su emisión, pagando la tarifa correspondiente tantas veces como el servicio de verificación de emisiones sea solicitado.
+              - text: "Los certificados de verificación de emisiones vehiculares que sean generados bajo la aplicación de una verificación vehicular voluntaria deberán ser sellados en la parte trasera, con la siguiente leyenda: “Este certificado no exenta al presente vehículo del cumplimiento de la verificación de emisiones vehiculares establecida en su Entidad Federativa”."
+            - paragraph [ref=e1230]
+            - separator [ref=e1231]
+            - paragraph [ref=e1232]:
+              - strong [ref=e1233]: PRESTACIÓN DEL SERVICIO DE VERIFICACIÓN VEHICULAR
+            - paragraph [ref=e1234]:
+              - text: Todos los
+              - strong [ref=e1235]: Centro de Verificación
+              - strong [ref=e1236]: de Emisiones
+              - strong [ref=e1237]: Vehicular
+              - strong [ref=e1238]: es
+              - text: cuentan con la infraestructura necesaria para evaluar las emisiones vehiculares de los vehículos que utilizan gasolina, gas natural, gas licuado de petróleo y otros combustibles alternos, de acuerdo con lo que establece en las Normas Oficiales Mexicanas y el presente programa.
+            - paragraph [ref=e1239]:
+              - text: Sólo algunos
+              - strong [ref=e1240]: Centros de Verificación
+              - strong [ref=e1241]: de Emisiones
+              - strong [ref=e1242]: Vehicular
+              - strong [ref=e1243]: es
+              - text: "tienen el equipamiento para evaluar las emisiones generadas por automotores a diésel, por lo que se deberá revisar en el link de la página oficial de Internet de la Secretaría, la información sobre la dirección y el tipo de automotores que cada Verificentro de la Ciudad de México puede verificar:"
+              - link "citasverificentros.cdmx.gob.mx/" [ref=e1244] [cursor=pointer]:
+                - /url: https://citasverificentros.cdmx.gob.mx/
+                - strong [ref=e1245]: citasverificentros.cdmx.gob.mx/
+            - paragraph [ref=e1246]: El servicio de verificación vehicular se deberá prestar de lunes a sábado, en el horario comprendido de las 8:00 a las 20:00 horas, este horario podrá modificarse conforme lo que indique el Aviso por el que se da a conocer el Manual para la operación y funcionamiento de los Equipos, Instrumentos, Instalaciones y demás elementos necesarios para la adecuada operación y funcionamiento de los Equipos y Sistemas de Verificación Vehicular, lo cual no impide que se suspenda el servicio solamente los días no laborables conforme a la legislación laboral, situación que deberá hacerse por escrito del conocimiento de la Secretaría, y de los usuarios con un aviso pegado al exterior del Verificentro, por lo menos con un día hábil de anticipación.
+            - paragraph [ref=e1247]: La prestación de servicio podrá ser modificado en sus días y sus horarios conforme a las necesidades que así lo requieran, en todos casos, la Secretaría hará del conocimiento de los Centros de Verificación Vehicular, así como al público usuario.
+            - paragraph [ref=e1248]:
+              - text: No se encuentra autorizado el uso de software, accesorios o equipos electrónicos que no formen parte de los equipos y/o aditamentos autorizados por la Secretaría; así mismo, no se deberán realizar reparaciones mecánicas y/o eléctricas y/o pre - verificaciones al interior del
+              - strong [ref=e1249]: Centro de Verificación de Emisiones Vehiculares
+              - text: de igual manera, no se verificarán vehículos que tengan dispositivos o equipos electrónicos intermedios conectados que impidan la realización de las pruebas de verificación. El personal que labora en dicho Centro de Verificación de Emisiones Vehiculares será el responsable de reportar al Gerente y Supervisor cuando identifiquen dichas actividades para que a su vez notifiquen al Centro de Inspección y Vigilancia Ambiental Remota (
+              - strong [ref=e1250]: CIVAR
+              - text: ) al número telefónico 55-9689-5009 extensión 5000 y/o al correo de
+              - strong [ref=e1251]: avisos.civar@gmail.com.mx.
+            - paragraph [ref=e1252]:
+              - text: Durante todo el procedimiento de la prueba de verificación, todos los pasajeros y ocupantes de los vehículos automotores deberán esperar en la zona que para tal efecto se designa en cada
+              - strong [ref=e1253]: Centro de Verificación
+              - strong [ref=e1254]: de Emisiones
+              - strong [ref=e1255]: Vehicular
+              - strong [ref=e1256]: es
+              - text: . En caso de presentarse con personas vulnerables el personal de atención ciudadana deberá apoyar al usuario para resguardarse en el área destinada para personas vulnerables.
+            - paragraph [ref=e1257]:
+              - text: En todas sus etapas la prueba deberá aplicarse con los accesorios del vehículo apagados (aire acondicionado, equipo de sonido, centro de entretenimiento, geoposicionador y luces), salvo en el caso de los automotores que, por diseño de fabricación, presentan faros que no pueden ser apagados. Asimismo, para realizar la prueba, el personal técnico del
+              - strong [ref=e1258]: Centro de Verificación
+              - strong [ref=e1259]: de Emisiones
+              - strong [ref=e1260]: Vehicular
+              - strong [ref=e1261]: es
+              - text: deberá evitar que se utilice peso adicional al vehículo mediante objetos o personas con el objeto de pretender aumentar la tracción de los neumáticos sobre los rodillos del dinamómetro.
+            - paragraph [ref=e1262]: En caso de que se detecte un error en el año modelo del automotor reportado por la Tarjeta de Circulación, prevalecerá el modelo especificado por el número de identificación vehicular “NIV” marcado en la carrocería del vehículo establecido bajo el criterio de año modelo en la Norma Oficial Mexicana NOM-001-SSP Vigente.
+            - paragraph [ref=e1263]: Los vehículos sólo podrán ser verificados en sus emisiones vehiculares, siempre y cuando exista el registro de las características tecnológicas de los mismos en la base de datos que utilizan los equipos de la Secretaría o de modelos vehiculares que contiene las especificaciones técnicas y los protocolos de prueba asignados para cada vehículo por la industria automotriz. Lo anterior, para evitar la aplicación de un protocolo de prueba que pudiera dañar alguno de los sistemas que componen al vehículo.
+            - paragraph [ref=e1264]:
+              - text: Cuando un vehículo no se encuentre registrado en el catalogo vehicular dispuesto en el numeral 3.2 de la NOM-167-SEMARNAT-2017, personal de
+              - strong [ref=e1265]: Centro de Verificación de Emisiones Vehiculares
+              - text: ", deberá reportarlo ante la"
+              - strong [ref=e1266]: Dirección General de Calidad del Aire
+              - text: de la Secretaría, mediante la mesa de servicio dispuesta en la red interna, en donde se procederá a buscar la información técnica correspondiente para registrar dicha unidad en el catalogo vehicular.
+            - paragraph [ref=e1267]:
+              - text: Cuando durante el proceso de Verificación Vehicular, el personal de los
+              - strong [ref=e1268]: Centros de Verificación de Emisiones Vehiculares
+              - text: presuma que el propietario o poseedor del vehículo en trámite de verificación presente documentación presuntamente apócrifa o falsificada o alterada, deberá notificarlo de inmediato a la
+              - strong [ref=e1269]: DGIVA
+              - text: para los efectos que conforme a derecho procedan.
+            - paragraph [ref=e1270]:
+              - text: Los
+              - strong [ref=e1271]: Centros de Verificación de Emisiones Vehiculares
+              - text: deberán abstenerse de prestar el servicio de verificación a vehículos cuya circulación se encuentre restringida por el programa “Hoy No Circula”, o por el
+              - strong [ref=e1272]: Programa para Prevenir y Responder a Contingencias Ambientales Atmosféricas
+              - text: ", salvo los casos señalados en el numeral 9.3.10."
+            - paragraph [ref=e1273]:
+              - text: Los
+              - strong [ref=e1274]: Centros de Verificación de Emisiones Vehiculares
+              - text: deberán validar la información que se desprende del código QR de los vehículos que hubiesen obtenido un Pase Turístico Metropolitano o Pase Turístico Paisano, permiso por discapacidad, oficio vigente para la ampliación al período de verificación emitido por la Secretaría.
+            - paragraph [ref=e1275]
+            - separator [ref=e1276]
+            - paragraph [ref=e1277]:
+              - strong [ref=e1278]: DISPOSICIONES COMPLEMENTARIAS DEL PROGRAMA “HOY NO CIRCULA”
+            - paragraph [ref=e1279]:
+              - text: DISPOSICIONES COMPLEMENTARIAS DEL PROGRAMA “HOY NO CIRCULA”
+              - text: "Además de lo establecido en el numeral VII del Programa Hoy No Circula se encuentran exentos de las limitaciones los siguientes supuestos:"
+              - strong [ref=e1280]: I.-
+              - text: Tractores agrícolas.
+              - strong [ref=e1281]: II.-
+              - text: Maquinaria dedicada a las industrias de la construcción y minera.
+              - strong [ref=e1282]: III.-
+              - text: Motocicletas.
+              - strong [ref=e1283]: IV.-
+              - text: Vehículos con peso bruto vehicular menor o igual a 400 kilogramos.
+              - strong [ref=e1284]: V.-
+              - text: Vehículos eléctricos.
+              - strong [ref=e1285]: VI.-
+              - text: Vehículos híbridos categoría I y II con motores de propulsión a gasolina y eléctrico.
+              - strong [ref=e1286]: VII.-
+              - text: Vehículos con matrícula de auto antiguo y/o clásico.
+              - strong [ref=e1287]: VIII.-
+              - text: Automotores con matrícula de demostración y/o traslado.
+              - strong [ref=e1288]: IX.-
+              - text: Vehículos cuya tecnología impida la aplicación de la Norma Oficial Mexicana correspondiente.
+              - strong [ref=e1289]: X.-
+              - text: Vehículos que porten Holograma “EXENTO”.
+              - strong [ref=e1290]: XI.-
+              - text: Vehículos que porten Constancia de Verificación y holograma tipo “00” por dos años salvo cuando exista contingencia ambiental atmosférica por contaminantes y la
+              - strong [ref=e1291]: CAMe
+              - text: emita restricciones a la circulación para alguno de los casos referidos.
+              - strong [ref=e1292]: XII.-
+              - text: Vehículos que porten Constancia de Verificación y holograma tipo “0”, por seis meses salvo cuando exista contingencia ambiental atmosférica por contaminantes y la
+              - strong [ref=e1293]: CAMe
+              - text: emita restricciones a la circulación para alguno de los casos referidos.
+              - strong [ref=e1294]: XIII.-
+              - text: Vehículos que porten Constancia tipo “Permiso Especial para Circular”, siempre y cuando transporten a personas con discapacidad, sin importar la constancia de verificación vehicular que obtenga en el cumplimiento del Programa de Verificación Vehicular.
+            - paragraph [ref=e1295]:
+              - strong [ref=e1296]: XIV.-
+              - text: Vehículos que porten Constancia tipo "Autorregulación”, que participen en el Programa de Autorregulación Ambiental de vehículos a diésel o para impulsar la electromovilidad en vehículos ligeros.
+            - paragraph [ref=e1297]:
+              - strong [ref=e1298]: XV.-
+              - text: Vehículos que porten placas para personas con discapacidad, sin importar la constancia de verificación vehicular que obtenga en el cumplimiento del Programa de Verificación Vehicular.
+              - strong [ref=e1299]: XVI.-
+              - text: Vehículos que porten Pase Turístico Metropolitano,, dos veces por semestre por siete días, una vez por semestre por 14 días, Vehículos que porten Pase Turístico Paisano durante la activación de puentes largos oficiales y durante la activación del Programa Paisano.
+              - strong [ref=e1300]: XVII.-
+              - text: Vehículos que porten los oficios de Ampliación al Periodo de Verificación Vehicular, en la vigencia establecida en dicho oficio, emitidos por la Secretaría.
+            - paragraph [ref=e1301]:
+              - strong [ref=e1302]: XVIII.-
+              - text: Vehículos que porten en lugar visible oficio emitido por la Secretaría del Medio Ambiente de la Ciudad de México, para exentar las limitaciones a la circulación.
+            - paragraph [ref=e1303]:
+              - text: "Además de lo establecido en el Programa Hoy No Circula, se encuentran sujetos a las limitaciones a la circulación los:"
+              - strong [ref=e1304]: I.-
+              - text: Vehículos que porten Constancia de Verificación y holograma tipo “1” limitan su circulación un día entre semana y dos sábados cada mes hasta por seis meses. En el evento que en el mes exista un quinto sábado, los vehículos con esta constancia podrán circular de acuerdo con las condiciones ambientales que se presenten y sean definidas en el programa y/o aviso correspondiente que en su caso dé a conocer la Secretaría o la Comisión Ambiental de la Megalópolis.
+              - strong [ref=e1305]: II.-
+              - text: Vehículos que porten Constancia de Verificación y holograma tipo “2”, limitan su circulación un día entre semana y todos los sábados del mes, durante la vigencia de su holograma.
+              - strong [ref=e1306]: III.-
+              - text: Vehículos que porten Permiso para Circular sin placas y sin tarjeta de circulación, serán tratados como si contaran con un certificado y holograma del tipo “2”, por lo que no deberán circular un día entre semana (viernes) y todos los sábados del mes, así como de lunes a jueves de 05:00 a 11:00 horas.
+              - strong [ref=e1307]: IV.-
+              - text: Vehículos nuevos y usados que no se encuentren matriculados en la Ciudad de México y que no cuenten con alguno de los certificados y hologramas de verificación vehicular emitidos por la Secretaría, Estados que conforman la Megalópolis o que cuenten con convenio de homologación, limitan su circulación como si contaran con un certificado y holograma del tipo “2”, un día entre semana de acuerdo a la terminación de la placa de circulación y todos los sábados del mes, así como de lunes a viernes de 05:00 a 11:00 horas.
+            - paragraph [ref=e1308]:
+              - strong [ref=e1309]: V.-
+              - text: Vehículos nuevos y usados que se encuentren matriculados en la Ciudad de México y que no cuenten con alguno de los certificados y hologramas de verificación vehicular emitidos por la Secretaría (incluidos los que cuenten con Multas por Verificación Extemporánea), limitan su circulación como si contaran con un certificado y holograma del tipo “2”, un día entre semana y todos los sábados del mes.
+            - paragraph [ref=e1310]:
+              - strong [ref=e1311]: VI.
+              - text: "Vehículos de transporte colectivo de pasajeros que cuenten con la autorización correspondiente de la Secretaría de Movilidad de la Ciudad de México en caso de obtener hologramas “1” ó “2” deberán limitar su circulación un día entre semana y un sábado del mes, de acuerdo con la terminación de su placa en un horario de las 10:00 a las 22:00 horas, la limitación a la circulación los días sábado será de la siguiente manera:"
+              - text: "- El primer sábado de cada mes, los vehículos con terminación de placas 5 y 6."
+              - text: "- El segundo sábado de cada mes, los vehículos con terminación de placas 7 y 8."
+              - text: "- El tercer sábado de cada mes, los vehículos con terminación de placas 3 y 4."
+              - text: "- El cuarto sábado de cada mes, los vehículos con terminación de placas 1 y 2."
+              - text: "- El quinto sábado, en aquellos meses que lo contengan, los vehículos con terminación de placas 9 y 0, o con permisos de circulación que no cuenten con el número de placa pre asignado."
+              - text: Las limitaciones a la circulación durante las contingencias ambientales atmosféricas para los vehículos referidos anteriormente se definirán en el programa y/o aviso correspondiente que en su caso dé a conocer la Secretaría o la Comisión Ambiental de la Megalópolis.
+              - text: El Gobierno de la Ciudad de México reconoce los hologramas de verificación vehicular Tipo “E”, “00”, “0”, “1” y “2” otorgados por los Estados que integran la Comisión Ambiental de la Megalópolis (Estado de México, Hidalgo, Morelos, Puebla, Querétaro y Tlaxcala), así como por los Estados que cuenten con Convenio de Coordinación con la CDMX vigente (Guanajuato) entregados a vehículos automotores matriculados en dichas entidades, otorgados bajo los mismos criterios definidos en el presente Programa. Vehículos verificados con criterios distintos serán considerados como unidades con holograma “2”
+            - paragraph [ref=e1312]: El Gobierno de la Ciudad de México reconoce los hologramas de verificación vehicular Tipo “E", "00", "0", "1" y "2" otorgados por el Gobierno del Estado de México bajo los criterios del presente programa, excepto a los automotores matriculados en la Ciudad de México, bajo pruebas voluntarias de verificación vehicular. No se reconocerán las verificaciones voluntarias otorgadas en Guanajuato, Hidalgo, Michoacán, Morelos, Puebla, Querétaro y Tlaxcala, dichos automotores serán considerados como no verificados.
+            - separator [ref=e1313]
+            - paragraph [ref=e1314]:
+              - strong [ref=e1315]: ANTES DE PAGAR SU MULTA POR VERIFICACIÓN EXTEMPORÁNEA, SE DEBERÁN ASEGURAR QUE EL VEHÍCULO NO CUENTE CON ADEUDOS POR TENENCIA, REFRENDO E INFRACCIONES AL REGLAMENTO DE TRÁNSITO DE LA CIUDAD DE MÉXICO, SANCIONES APLICADAS POR INCUMPLIMIENTO AL REGLAMENTO DE LA LEY AMBIENTAL DE LA CIUDAD DE MÉXICO EN MATERIA DE VERIFICACIÓN VEHICULAR, FOTO – CÍVICAS, O ALGUNA LEYENDA EN CUALQUIERA DE LOS CONCEPTOS A VALIDAR DISTINTA A LAS REFERIDAS ANTERIORMENTE QUE IMPIDAN VERIFICAR SU ESTATUS, CON EL OBJETO DE EVITAR QUE SE VENZA LA VIGENCIA DEL PAGO DE SU MULTA Y QUE TENGA LA OBLIGACIÓN DE VOLVER A PAGARLA.
+            - separator [ref=e1316]
+            - paragraph [ref=e1317]
+            - paragraph [ref=e1318]:
+              - strong [ref=e1319]: PROGRAMA DE VEHÍCULOS CONTAMINANTES (PVC)
+            - paragraph [ref=e1320]:
+              - text: La
+              - strong [ref=e1321]: Dirección General de Inspección y Vigilancia Ambiental
+              - text: de la Secretaría, está facultada para detectar, detener, inspeccionar y, en su caso, sancionar a los vehículos que circulen en las vialidades de la Ciudad de México y que contravengan las disposiciones de este programa, del Programa Hoy No circula, del Programa para Prevenir y Responder a Contingencias Ambientales Atmosféricas en la Ciudad de México o del Reglamento de la Ley Ambiental de la Ciudad de México en Materia de Verificación Vehicular, sea cual fuere el origen de la placa, así como a los vehículos que no comprueben la verificación vehicular de la entidad en la que se encuentran obligados a cumplir. Para realizar las referidas funciones se consideran hábiles todos los días y horas del año.
+            - paragraph [ref=e1322]:
+              - text: "En el caso de vehículos sancionados con motivo de la operación del Programa de Vehículos Contaminantes, la sanción será de 20 veces la Unidad de Medida y Actualización y se deberá pagar utilizando el Formato Múltiple de Pago a la Tesorería, que se podrá obtener ingresando en cualquiera de la siguiente dirección electrónica:"
+              - strong [ref=e1323]
+              - link:
+                - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/ambiente
+              - strong [ref=e1324]:
+                - link "data.finanzas.cdmx.gob.mx/formato_lc/conceptos/ambiente/51" [ref=e1325] [cursor=pointer]:
+                  - /url: https://data.finanzas.cdmx.gob.mx/formato_lc/conceptos/ambiente/51
+              - strong [ref=e1326]: ","
+              - text: en donde se debe utilizar la clave 51 para los vehículos sancionados por dicho motivo, tomando como referencia el folio de la boleta de sanción. Con estos elementos se generará la línea de captura que deberá ser pagada en bancos, centros comerciales, en las oficinas de recaudación correspondientes de la Tesorería de la Ciudad de México o en línea.
+            - paragraph [ref=e1327]: En los casos que haya sido procedente la imposición de medida cautelar, recoger su placa o placas de circulación en el Módulo de Atención Ciudadana del Programa de Vehículos Contaminantes y Programa de Inspección y Vigilancia a Suelo Urbano de la Secretaría, ubicada en Acceso 1 del Bosque de San Juan de Aragón, Avenida José Loreto Fabela sin número, Colonia San Juan de Aragón, Alcaldía Gustavo A. Madero, Código Postal 07969, Ciudad de México, de lunes a viernes dentro de un horario de 09:00 a 15:00 horas en días hábiles.
+            - paragraph [ref=e1328]:
+              - strong [ref=e1329]: Requisitos para la Recuperación de Placa
+              - strong [ref=e1330]: a)
+              - text: Boleta de sanción en original, en caso de extravío o robo deberá levantar acta ante la Agencia del Ministerio Público o la Fiscalía o Juez Cívico competente (incluidas las actas generadas mediante mecanismos digitales) y copia de la misma para su integración en el respectivo expediente.
+            - paragraph [ref=e1331]:
+              - strong [ref=e1332]: b)
+              - text: Tarjeta de circulación vigente y copia de la misma. Si la tarjeta no está actualizada con el nombre del propietario, deberá presentar el documento que acredite la propiedad del vehículo y entregar copia del mismo.
+            - paragraph [ref=e1333]:
+              - strong [ref=e1334]: c)
+              - text: Prueba de Evaluación Técnica (PET) en caso de haber sido sancionado por emisión de humo, y copia de la misma. La Constancia de Prueba de Evaluación Técnica, deberá exhibir el sello de APROBADO y haber sido emitida por un Verificentro de la Ciudad de México.
+            - paragraph [ref=e1335]:
+              - strong [ref=e1336]: d)
+              - text: Formato Múltiple de Pago a la Tesorería de la Ciudad de México con clave 51, con original del recibo y sello del banco o establecimiento donde se realizó el pago de la sanción; o bien, referencia bancaria en el caso de que el pago se haya realizado mediante transferencia o utilizando la aplicación bancaria; o recibo de pago en el supuesto de que se haya realizado en línea o en un Kiosco de la Tesorería de la Ciudad de México. En caso de contar únicamente con imagen, copia de la línea de captura o del comprobante de pago, se requiere original de la certificación de pago realizado ante la Tesorería de la Ciudad de México.
+            - paragraph [ref=e1337]:
+              - strong [ref=e1338]: e)
+              - text: Identificación oficial vigente (pasaporte, cartilla del Servicio Militar Nacional, cédula profesional, identificación para votar vigente o licencia para conducir si fue emitida por el Gobierno de la Ciudad de México) y copia de la misma.
+            - paragraph [ref=e1339]:
+              - strong [ref=e1340]: f)
+              - text: ) En caso de no ser el titular del vehículo y/o la persona sancionada cuyo nombre y firma aparezca en la boleta de sanción, se requiere original de carta poder simple dirigida a la Secretaría, firmada por quien otorga el poder, quien lo recibe y dos testigos, con copia de identificación oficial vigente de los cuatro firmantes.
+            - paragraph [ref=e1341]:
+              - strong [ref=e1342]: g)
+              - text: Si es persona moral, el representante legal deberá acreditarlo con copia del poder notarial, en cuyo caso deberá realizar la gestión de forma personal. En el caso de vehículos oficiales, copia del resguardo del vehículo y del nombramiento expedido por la dependencia correspondiente.
+              - text: La liberación de la matrícula y/o placa retenida del vehículo sancionado deberá ser en un término máximo de 30 días naturales contados a partir del día siguiente de la imposición de la sanción. Transcurrido dicho término, la Secretaría podrá disponer de la(s) placa(s) de circulación retenida(s) y darle(s) el destino que determine; para tal efecto, el propietario, legal poseedor o conductor sancionado, podrá acudir al domicilio señalado con el fin de que se le proporcione información sobre su(s) placa(s).
+            - separator [ref=e1343]
+            - paragraph [ref=e1344]
+            - paragraph [ref=e1345]:
+              - strong [ref=e1346]: FALTAS EN LA PRESTACIÓN DEL SERVICIO
+            - paragraph [ref=e1347]:
+              - text: Corresponde a la
+              - strong [ref=e1348]: Dirección General de Inspección y Vigilancia Ambiental
+              - text: de la Secretaría en el ámbito de su competencia, vigilar que los Verificentros, los proveedores de equipos, programas de cómputo y servicios operen correctamente los sistemas, procedimientos, instalaciones, equipos, plazos y condiciones establecidos en la Ley Ambiental de la Ciudad de México, Normas Oficiales Mexicanas, Normas Ambientales para la Ciudad de México, Autorizaciones, Revalidaciones de Autorización, Reglamento de la Ley Ambiental de la Ciudad de México en Materia de Verificación Vehicular,
+              - strong [ref=e1349]: Programa Hoy No Circula,
+              - text: el presente programa, y demás disposiciones jurídicas y administrativas aplicables; así como iniciar procedimientos administrativos con base en la documentación e información que se proporcione o con la que disponga la Secretaría.
+            - paragraph [ref=e1350]:
+              - text: Dado lo anterior, cualquier anomalía en la prestación del servicio se podrá reportar en la
+              - strong [ref=e1351]: Dirección General de Inspección y Vigilancia Ambiental
+              - text: de la Secretaría, ubicada en Acceso 1 del Bosque de San Juan de Aragón, Avenida José Loreto Fabela sin número, Colonia San Juan de Aragón, Alcaldía Gustavo A. Madero, Código Postal 07969, Ciudad de México, de lunes a viernes dentro de un horario de 09:00 a 15:00 horas en días hábiles y laborables, de lunes a sábado dentro de un horario de 08:00 a 20:00 horas en días hábiles y laborables en el teléfono 55-9689-5009 ext. 5000 o en Locatel al teléfono 55-5658-1111. Asimismo, podrá presentar su inconformidad en los buzones de quejas y sugerencias instalados en los
+              - strong [ref=e1352]: Centro de Verificación
+              - strong [ref=e1353]: de Emisiones
+              - strong [ref=e1354]: Vehicular
+              - strong [ref=e1355]: es
+              - text: ", o a través del correo electrónico de denuncias de la Secretaría"
+              - link "denuncias@sedema.cdmx.gob.mx" [ref=e1356] [cursor=pointer]:
+                - /url: mailto:denuncias@sedema.cdmx.gob.mx
+                - strong [ref=e1357]: denuncias@sedema.cdmx.gob.mx
+            - paragraph [ref=e1358]:
+              - text: Asimismo, podrá presentar su inconformidad en los buzones de quejas y sugerencias instalados en los
+              - strong [ref=e1359]: Centros de Verificación de Emisiones Vehiculares
+              - text: .
+            - paragraph [ref=e1360]: "Los datos necesarios para atender y dar seguimiento a una denuncia son:"
+            - paragraph [ref=e1361]: · Nombre completo y datos de ubicación del denunciante (Indicar dirección, teléfono y/o correo electrónico del denunciante para poder contactarlo de ser necesario).
+            - paragraph [ref=e1362]:
+              - text: · Lugar de los hechos (Señalar calle, número, colonia, alcaldía, código postal, clave del
+              - strong [ref=e1363]: Centros de Verificación de Emisiones Vehiculares
+              - text: o datos que permitan ubicar el predio).
+            - paragraph [ref=e1364]: · Hechos denunciados (Describir los hechos que se denuncian y las afectaciones al medio ambiente en su caso).
+            - paragraph [ref=e1365]: · Momento en que se suscitan los hechos (Indicar cuándo ocurrieron los hechos, fecha y horario aproximado).
+            - paragraph [ref=e1366]: · Personas presuntas responsables (Señalar, de ser posible, el nombre y cargo de las personas que participaron en los hechos).
+            - paragraph [ref=e1367]: · Información complementaria (Cualquier información que permita ubicar y dar seguimiento a los hechos referidos).
+            - paragraph [ref=e1368]: "· Elementos probatorios (Referir y anexar todas las pruebas que se tengan para acreditar los hechos, como son: documentos, fotografías y videos, entre otros)."
+            - separator [ref=e1369]
+            - heading "¿A quién acudir en caso de abusos por parte de la policía?" [level=3] [ref=e1370]:
+              - strong [ref=e1371]: ¿A quién acudir en caso de abusos por parte de la policía?
+            - paragraph [ref=e1372]:
+              - strong [ref=e1373]: "SISTEMA DE DENUNCIA CIUDADANA DE LA SECRETARÍA DE LA CONTRALORÍA GENERAL DE LA CIUDAD DE MÉXICO:"
+            - paragraph [ref=e1374]:
+              - link "Anticorrupción" [ref=e1375] [cursor=pointer]:
+                - /url: http://www.contraloria.cdmx.gob.mx/#1
+                - strong [ref=e1376]: Anticorrupción
+            - paragraph [ref=e1377]:
+              - text: "Denuncia de irregularidades al 55 5627 9700 y 55 5627 9739 o al siguiente link:"
+              - link:
+                - /url: http://www.contraloria.cdmx.gob.mx/pcontraloria/denuncia.php
+              - strong [ref=e1378]:
+                - link "www.contraloria.cdmx.gob.mx/pcontraloria/denuncia.php" [ref=e1379] [cursor=pointer]:
+                  - /url: https://www.contraloria.cdmx.gob.mx/pcontraloria/denuncia.php
+            - paragraph [ref=e1380]:
+              - strong [ref=e1381]: "EN CASO DE ALGÚN ABUSO POR PERSONAL DE TRÁNSITO DE LA CIUDAD DE MÉXICO, COMUNÍCATE A:"
+            - paragraph [ref=e1382]: Secretaría de Seguridad Ciudadana, Unidad de Asuntos Internos al 55 5242 5100 Ext. 1121 y 1122
+            - paragraph [ref=e1383]:
+              - strong [ref=e1384]: "EN CASO DE ALGÚN ABUSO POR PERSONAL DE TRÁNSITO DEL ESTADO DE MÉXICO, COMUNÍCATE A:"
+            - paragraph [ref=e1385]: Secretaría de Seguridad Ciudadana 722 275 83 00, Infracción Transparente 800 900 3300, denuncia anónima 089, correo asuntos.internos@ssedomex.gob.mx , Centro de Atención Telefónica del Gobierno del Estado de México (CATGEM) 800 696 9696.
+            - paragraph [ref=e1386]
+        - img "centrodeverificacion.jpg" [ref=e1389]
+        - generic [ref=e1390]:
+          - tab "Objetivo " [ref=e1391]:
+            - heading "Objetivo" [level=2] [ref=e1393]
+            - link "" [expanded] [ref=e1395] [cursor=pointer]:
+              - /url: "#collapse1"
+          - tabpanel [ref=e1396]:
+            - generic [ref=e1397]:
+              - paragraph [ref=e1398]:
+                - strong [ref=e1399]: Objetivos del programa de Verificación Vehicular
+              - list [ref=e1400]:
+                - listitem [ref=e1401]: Establecer el calendario y los lineamientos conforme a los cuales, los vehículos automotores de combustión interna matriculados en la Ciudad de México, y/o que soliciten de manera voluntaria el servicio de verificación, deberán ser evaluados de conformidad con las normas y procedimientos aplicables.
+                - listitem [ref=e1402]: Evaluar los límites de emisiones contaminantes provenientes del escape y la condición operativa de los componentes de control ambiental de los vehículos automotores en circulación que usan gasolina, gas, diésel u otro combustible alterno, que se encuentren matriculados o que circulen en vialidades de la Ciudad de México.
+                - listitem [ref=e1403]: Identificar a los vehículos automotores con alta tasa de emisión de contaminantes e inducir una reducción en los mismos a partir de la aplicación de mantenimiento correctivo en los vehículos.
+                - listitem [ref=e1404]: Establecer los mecanismos, procedimientos y trámites que coadyuven en la prevención, control y disminución de emisiones contaminantes a la atmósfera provenientes de los vehículos automotores.
+            - heading "Beneficiarios" [level=3] [ref=e1406]
+            - paragraph [ref=e1408]: Toda la ciudadanía.
+        - generic [ref=e1409]:
+          - generic [ref=e1410]:
+            - img [ref=e1411]
+            - img [ref=e1412]
+          - generic [ref=e1413]:
+            - paragraph [ref=e1414]: Este programa es de carácter público, no es patrocinado ni promovido por partido político alguno y sus recursos provienen de los impuestos que pagan todos los contribuyentes. Esta prohibido el uso de este programa con fines políticos, electorales, de lucro y otros distintos a los establecidos.
+            - paragraph [ref=e1415]: Quien haga uso indebido de los recursos de este programa en la Ciudad de México, será sancionado de acuerdo con la ley aplicable y ante la autoridad competente.
+        - generic [ref=e1416]:
+          - generic [ref=e1417]:
+            - generic [ref=e1418]: Compartir
+            - generic [ref=e1419]:
+              - link "" [ref=e1420] [cursor=pointer]:
+                - /url: mailto:?subject=Te comparto este programa&body=Entra a Programas CDMX https://www.sedema.cdmx.gob.mx/programas/programa/verificacion-vehicular
+                - generic [ref=e1421]: 
+              - link "" [ref=e1422] [cursor=pointer]:
+                - /url: http://twitter.com/share?url=https://www.sedema.cdmx.gob.mx/programas/programa/verificacion-vehicular
+                - generic [ref=e1423]: 
+              - link "" [ref=e1424] [cursor=pointer]:
+                - /url: http://www.facebook.com/sharer.php?u=https://www.sedema.cdmx.gob.mx/programas/programa/verificacion-vehicular
+                - generic [ref=e1425]: 
+              - text: 
+          - generic [ref=e1426]:
+            - generic [ref=e1427]: Imprimir
+            - link "" [ref=e1429] [cursor=pointer]:
+              - /url: javascript:window.print();
+              - generic [ref=e1430]: 
+    - text: 
+  - contentinfo [ref=e1431]:
+    - generic [ref=e1433]:
+      - generic [ref=e1434]:
+        - generic [ref=e1435]:
+          - img "Logo de la Dependencia" [ref=e1437]
+          - generic [ref=e1438]:
+            - heading "Atención ciudadana" [level=3] [ref=e1440]
+            - generic [ref=e1441]:
+              - generic [ref=e1442]:
+                - strong [ref=e1443]: "Dirección:"
+                - text: 0 Plaza de la Constitución 1, piso tercero
+                - text: Colonia Centro, Alcaldía Cuauhtémoc C.P. 06000, Ciudad de México
+              - heading "Teléfonos:" [level=4] [ref=e1445]
+              - generic [ref=e1446]: 55 5345 8187, 55 5345 8188
+              - generic [ref=e1448]:
+                - strong [ref=e1449]: "Correo electrónico:"
+                - text: atencionciudadana@sedema.cdmx.gob.mx
+              - heading "Horario:" [level=4] [ref=e1451]
+              - generic [ref=e1452]: Martes 10:00 a 13:00 hrs.
+        - list [ref=e1453]:
+          - listitem [ref=e1454]:
+            - heading "Redes sociales" [level=3] [ref=e1455]
+          - listitem [ref=e1456]:
+            - link "" [ref=e1457] [cursor=pointer]:
+              - /url: https://www.facebook.com/Secretar%C3%ADa-del-Medio-Ambiente-120208740359/
+              - generic [ref=e1458]: 
+          - listitem [ref=e1459]:
+            - link "" [ref=e1460] [cursor=pointer]:
+              - /url: https://twitter.com/SEDEMA_CDMX
+              - generic [ref=e1461]: 
+          - listitem [ref=e1462]:
+            - link "" [ref=e1463] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCzYbjrNZgUZ16NXvzoehAuQ
+              - generic [ref=e1464]: 
+          - listitem [ref=e1465]:
+            - link "" [ref=e1466] [cursor=pointer]:
+              - /url: https://www.instagram.com/sedemacdmx/
+              - generic [ref=e1467]: 
+      - list [ref=e1470]:
+        - listitem [ref=e1471]:
+          - heading "Navegación" [level=3] [ref=e1472]
+        - listitem [ref=e1473]:
+          - link "Inicio" [ref=e1474] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx
+        - listitem [ref=e1475]:
+          - link "Secretaría" [ref=e1476] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx/secretaria
+        - listitem [ref=e1477]:
+          - link "Servicios" [ref=e1478] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx/servicios
+        - listitem [ref=e1479]:
+          - link "Programas" [ref=e1480] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx/programas
+        - listitem [ref=e1481]:
+          - link "Convocatorias" [ref=e1482] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx/convocatorias/licitaciones
+        - listitem [ref=e1483]:
+          - link "Impacto ambiental" [ref=e1484] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx/impacto-ambiental
+        - listitem [ref=e1485]:
+          - link "Ver más" [ref=e1486] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx
+      - list [ref=e1489]:
+        - listitem [ref=e1490]:
+          - heading "Sitios relacionados" [level=3] [ref=e1491]
+        - listitem [ref=e1492]:
+          - link "Atención Ciudadana" [ref=e1493] [cursor=pointer]:
+            - /url: https://311locatel.cdmx.gob.mx/
+        - listitem [ref=e1494]:
+          - link "Agencia de Atención Animal CDMX" [ref=e1495] [cursor=pointer]:
+            - /url: https://www.agatan.cdmx.gob.mx/
+        - listitem [ref=e1496]:
+          - link "Calidad del Aire" [ref=e1497] [cursor=pointer]:
+            - /url: http://www.aire.cdmx.gob.mx/default.php
+        - listitem [ref=e1498]:
+          - link "Página oficial del Bosque de Chapultepec" [ref=e1499] [cursor=pointer]:
+            - /url: http://bosquedechapultepec.mx:9000/bosquedechapultepec/
+        - listitem [ref=e1500]:
+          - link "Síguenos en Instagram del Bosque de San Juan de Aragón" [ref=e1501] [cursor=pointer]:
+            - /url: https://www.instagram.com/bosquearagoncdmx?igsh=MW81cG96cm1jeTVtZQ==
+        - listitem [ref=e1502]:
+          - link "Página de Facebook del Museo de Historia Natural y Cultura Ambiental" [ref=e1503] [cursor=pointer]:
+            - /url: https://www.facebook.com/museodehistorianaturalcdmx?mibextid=LQQJ4d
+        - listitem [ref=e1504]:
+          - link "Comisión de Recursos Naturales y Desarrollo Rural (CORENADR)" [ref=e1505] [cursor=pointer]:
+            - /url: https://altepetl.cdmx.gob.mx/
+        - listitem [ref=e1506]:
+          - link "Sitios autorizados para manejo de residuos" [ref=e1507] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx/impacto-ambiental/listado-de-sitios-autorizados-para-el-manejo-de-residuos-de-la-construccion
+      - generic [ref=e1509]:
+        - link "Plan General de Desarrollo 2025-2045" [ref=e1511] [cursor=pointer]:
+          - /url: https://plazapublica.cdmx.gob.mx/processes/consultaPGD2025
+          - img "Plan General de Desarrollo 2025-2045" [ref=e1512]
+        - link "Datos abiertos" [ref=e1514] [cursor=pointer]:
+          - /url: https://datos.cdmx.gob.mx/
+          - img "Datos abiertos" [ref=e1515]
+        - link "Tianguis Digital" [ref=e1517] [cursor=pointer]:
+          - /url: https://www.tianguisdigital.cdmx.gob.mx/
+          - img "Tianguis Digital" [ref=e1518]
+    - generic [ref=e1521]:
+      - generic [ref=e1522]: CMS CDMX v2.8.0 2026
+      - link "Términos y Condiciones" [ref=e1524] [cursor=pointer]:
+        - /url: https://www.sedema.cdmx.gob.mx/terminos-y-condiciones
+      - link "Política de privacidad" [ref=e1526] [cursor=pointer]:
+        - /url: https://www.sedema.cdmx.gob.mx/terminos-y-condiciones#Datos-personales
+      - link "Licencia de Gobierno Abierto CDMX" [ref=e1528] [cursor=pointer]:
+        - /url: http://www.cdmx.gob.mx/lgacdmx
+  - generic:
+    - generic:
+      - img "Imagen de footer"
+    - generic:
+      - img "Imagen de footer"
+  - text: "["

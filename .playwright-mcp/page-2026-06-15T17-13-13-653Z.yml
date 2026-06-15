@@ -1,0 +1,278 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwiZ54yI34mVAxXrm2oFHTa4IbMQPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: pago predial merida yucatan sitio:merida.gob.mx pago predial merida yucatan sitio:merida.gob.mx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dpago%2Bpredial%2Bmerida%2Byucatan%2Bsitio:merida.gob.mx&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=pago+predial+merida+yucatan+sitio:merida.gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RA2mp6TdO4pyP06X1sAp9qh51p_82bpAlQBwQQZ-VF9-sRlAIlLasSkDAgk0GKGqxw8cUBeootVq8a3L7BJ9HuTwD0ZPbDuegrShD-z9jPUMdJU6vA&aep=1&ntc=1&sa=X&ved=2ahUKEwiZ54yI34mVAxXrm2oFHTa4IbMQ2J8OegQIERAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=pago+predial+merida+yucatan+sitio:merida.gob.mx&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RA2mp6TdO4pyP06X1sAp9qh51p_82bpAlQBwQQZ-VF9-sRlAIlLasSkDAgk0GKGqxw8cUBeootVq8a3L7BJ9HuTwD0ZPbDuegrShD-z9jPUMdJU6vA&sa=X&ved=2ahUKEwiZ54yI34mVAxXrm2oFHTa4IbMQ0pQJegQIFxAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Imágenes" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RA2mp6TdO4pyP06X1sAp9qh51p_82bpAlQBwQQZ-VF9-sRlAIlLasSkDAgk0GKGqxw8cUBeootVq8a3L7BJ9HuTwD0ZPbDuegrShD-z9jPUMdJU6vA&q=pago+predial+merida+yucatan+sitio:merida.gob.mx&sa=X&ved=2ahUKEwiZ54yI34mVAxXrm2oFHTa4IbMQtKgLegQIExAB
+              - generic [ref=e88]: Imágenes
+          - listitem [ref=e89]:
+            - link "Shopping" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RA2mp6TdO4pyP06X1sAp9qh51p_82bpAlQBwQQZ-VF9-sRlAIlLasSkDAgk0GKGqxw8cUBeootVq8a3L7BJ9HuTwD0ZPbDuegrShD-z9jPUMdJU6vA&q=pago+predial+merida+yucatan+sitio:merida.gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e92]: Shopping
+          - listitem [ref=e93]:
+            - link "Videos" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RA2mp6TdO4pyP06X1sAp9qh51p_82bpAlQBwQQZ-VF9-sRlAIlLasSkDAgk0GKGqxw8cUBeootVq8a3L7BJ9HuTwD0ZPbDuegrShD-z9jPUMdJU6vA&q=pago+predial+merida+yucatan+sitio:merida.gob.mx&sa=X&ved=2ahUKEwiZ54yI34mVAxXrm2oFHTa4IbMQtKgLegQIFBAB
+              - generic [ref=e96]: Videos
+          - listitem [ref=e97]:
+            - link "Videos cortos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RA2mp6TdO4pyP06X1sAp9qh51p_82bpAlQBwQQZ-VF9-sRlAIlLasSkDAgk0GKGqxw8cUBeootVq8a3L7BJ9HuTwD0ZPbDuegrShD-z9jPUMdJU6vA&q=pago+predial+merida+yucatan+sitio:merida.gob.mx&sa=X&ved=2ahUKEwiZ54yI34mVAxXrm2oFHTa4IbMQs6gLegQIFhAB
+              - generic [ref=e100]: Videos cortos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - main [ref=e123]:
+      - generic [ref=e127]:
+        - generic [ref=e130]:
+          - heading "Resultados web" [level=2] [ref=e131]
+          - generic [ref=e132]:
+            - generic [ref=e135]:
+              - link "Predial Base Valor Catastral Ayuntamiento de Mérida Yucatán https://isla.merida.gob.mx › serviciosinternet › predialmid" [ref=e137] [cursor=pointer]:
+                - /url: https://isla.merida.gob.mx/serviciosinternet/predialmid/index.php
+                - heading "Predial Base Valor Catastral" [level=3] [ref=e138]
+                - generic [ref=e144]:
+                  - generic [ref=e146]: Ayuntamiento de Mérida Yucatán
+                  - generic [ref=e148]: https://isla.merida.gob.mx › serviciosinternet › predialmid
+              - button "Acerca de este resultado" [ref=e149] [cursor=pointer]:
+                - img [ref=e152]
+            - generic [ref=e156]:
+              - emphasis [ref=e157]: Genera y descarga tus comprobantes digitales de pago
+              - text: de forma rápida y segura. Genérala. ico-reciboElectrónico. Certificado de. No Adeudo Predial. Confirma ...
+        - generic [ref=e168]:
+          - heading "Pensando" [level=2] [ref=e172]:
+            - generic [ref=e173]: Pensando
+          - progressbar "Generando" [ref=e174]
+        - generic [ref=e178]:
+          - heading "Resultados web" [level=2] [ref=e179]
+          - generic [ref=e180]:
+            - generic [ref=e183]:
+              - link "Ayuntamiento de Mérida Yucatán Ayuntamiento de Mérida Yucatán https://www.merida.gob.mx" [ref=e185] [cursor=pointer]:
+                - /url: https://www.merida.gob.mx/
+                - heading "Ayuntamiento de Mérida Yucatán" [level=3] [ref=e186]
+                - generic [ref=e192]:
+                  - generic [ref=e194]: Ayuntamiento de Mérida Yucatán
+                  - generic [ref=e196]: https://www.merida.gob.mx
+              - button "Acerca de este resultado" [ref=e197] [cursor=pointer]:
+                - img [ref=e200]
+            - generic [ref=e204]:
+              - text: Del 1 al 31 de marzo, obtén el 8% de descuento en el
+              - emphasis [ref=e205]: pago
+              - text: anual de tu
+              - emphasis [ref=e206]: Predial
+              - text: Base Valor Catastral. ¡Págalo en línea!
+              - emphasis [ref=e207]: merida
+              - text: .
+              - emphasis [ref=e208]: gob
+              - text: .
+              - emphasis [ref=e209]: mx
+              - text: /
+              - emphasis [ref=e210]: predial
+              - text: . Diseña Tu Ciudad.
+        - generic [ref=e214]:
+          - generic [ref=e217]:
+            - link "Pago del Impuesto Predial base Valor Catastral (predio) Ayuntamiento de Mérida Yucatán https://isla.merida.gob.mx › tramites › detalle" [ref=e219] [cursor=pointer]:
+              - /url: https://isla.merida.gob.mx/serviciosinternet/tramites/detalle/520
+              - heading "Pago del Impuesto Predial base Valor Catastral (predio)" [level=3] [ref=e220]
+              - generic [ref=e226]:
+                - generic [ref=e228]: Ayuntamiento de Mérida Yucatán
+                - generic [ref=e230]: https://isla.merida.gob.mx › tramites › detalle
+            - button "Acerca de este resultado" [ref=e231] [cursor=pointer]:
+              - img [ref=e234]
+          - generic [ref=e237]:
+            - generic [ref=e238]: 9 feb 2026 —
+            - generic [ref=e239]:
+              - emphasis [ref=e240]: "PRESENCIAL: Acudir a cualquier caja recaudadora del Ayuntamiento de Mérida"
+              - text: ; Proporcionar los requisitos solicitados para identificar el predio a ...
+        - generic [ref=e244]:
+          - generic [ref=e247]:
+            - link "Finanzas y Tesorería del Ayuntamiento de Mérida Yucatán Ayuntamiento de Mérida Yucatán https://www.merida.gob.mx › contenido › tystesoreria" [ref=e249] [cursor=pointer]:
+              - /url: https://www.merida.gob.mx/municipio/portal/finanzas/contenido/tystesoreria.php
+              - heading "Finanzas y Tesorería del Ayuntamiento de Mérida Yucatán" [level=3] [ref=e250]
+              - generic [ref=e256]:
+                - generic [ref=e258]: Ayuntamiento de Mérida Yucatán
+                - generic [ref=e260]: https://www.merida.gob.mx › contenido › tystesoreria
+            - button "Acerca de este resultado" [ref=e261] [cursor=pointer]:
+              - img [ref=e264]
+          - generic [ref=e268]:
+            - emphasis [ref=e269]: PAGO DEL IMPUESTO SOBRE ESPECTÁCULOS Y DIVERSIONES PÚBLICAS
+            - text: ; Solicitud de información para la realización de Eventos Públicos que causan el Impuesto sobre ...
+        - generic [ref=e273]:
+          - generic [ref=e276]:
+            - link "Predial Base Contraprestación Ayuntamiento de Mérida Yucatán https://isla.merida.gob.mx › Finanzas › PredialBR" [ref=e278] [cursor=pointer]:
+              - /url: https://isla.merida.gob.mx/serviciosinternet/pagoselectronicos/Tramite/Finanzas/PredialBR.aspx
+              - heading "Predial Base Contraprestación" [level=3] [ref=e279]
+              - generic [ref=e285]:
+                - generic [ref=e287]: Ayuntamiento de Mérida Yucatán
+                - generic [ref=e289]: https://isla.merida.gob.mx › Finanzas › PredialBR
+            - button "Acerca de este resultado" [ref=e290] [cursor=pointer]:
+              - img [ref=e293]
+          - generic [ref=e297]:
+            - emphasis [ref=e298]: Lunes a Viernes de 8:00 a.m. a 3:00 p.m
+            - text: ".; Teléfono: 999 942 00 00; Extensiones 80610, 80655, 80681 y 80684; asistencia.contribuyente@merida.gob.mx; WhatsApp: ..."
+        - generic [ref=e302]:
+          - generic [ref=e305]:
+            - link "Pagos Electrónicos Ayuntamiento de Mérida Yucatán https://isla.merida.gob.mx › pagoselectronicos" [ref=e307] [cursor=pointer]:
+              - /url: https://isla.merida.gob.mx/serviciosinternet/pagoselectronicos/
+              - heading "Pagos Electrónicos" [level=3] [ref=e308]
+              - generic [ref=e314]:
+                - generic [ref=e316]: Ayuntamiento de Mérida Yucatán
+                - generic [ref=e318]: https://isla.merida.gob.mx › pagoselectronicos
+            - button "Acerca de este resultado" [ref=e319] [cursor=pointer]:
+              - img [ref=e322]
+          - generic [ref=e326]:
+            - emphasis [ref=e327]: Lunes a Viernes de 8:00 a.m. a 3:00 p.m
+            - text: ".; Teléfono: 999 942 00 00; Extensiones 80610, 80655, 80681 y 80684; asistencia.contribuyente@merida.gob.mx; WhatsApp: ..."
+        - generic [ref=e331]:
+          - generic [ref=e334]:
+            - link "💻✅ ¡Pagar tu predial es muy sencillo! Ingresa a http ... Facebook · AyuntaMÉRIDA Más de 20 reacciones · hace 4 meses" [ref=e336] [cursor=pointer]:
+              - /url: https://www.facebook.com/AyuntaMeridaOficial/posts/-pagar-tu-predial-es-muy-sencillo-ingresa-a-y-hazlo-desde-tu-dispositivo-de-mane/1387424416762210/
+              - heading "💻✅ ¡Pagar tu predial es muy sencillo! Ingresa a http ..." [level=3] [ref=e337]
+              - generic [ref=e343]:
+                - generic [ref=e345]: Facebook · AyuntaMÉRIDA
+                - generic [ref=e347]: Más de 20 reacciones · hace 4 meses
+            - button "Acerca de este resultado" [ref=e348] [cursor=pointer]:
+              - img [ref=e351]
+          - generic [ref=e355]:
+            - text: Los
+            - emphasis [ref=e356]: pagos
+            - text: también pueden realizarse en línea o en los 25
+            - emphasis [ref=e357]: sitios
+            - text: dispuestos estratégicamente en toda la ciudad, ventanillas únicas, oficinas ...
+        - generic [ref=e361]:
+          - generic [ref=e364]:
+            - link "Predial Catastral - Programa de Estímulo Ayuntamiento de Mérida Yucatán https://isla.merida.gob.mx › estimulo-pagopredial" [ref=e366] [cursor=pointer]:
+              - /url: https://isla.merida.gob.mx/serviciosinternet/predialmid/estimulo-pagopredial.php
+              - heading "Predial Catastral - Programa de Estímulo" [level=3] [ref=e367]
+              - generic [ref=e373]:
+                - generic [ref=e375]: Ayuntamiento de Mérida Yucatán
+                - generic [ref=e377]: https://isla.merida.gob.mx › estimulo-pagopredial
+            - button "Acerca de este resultado" [ref=e378] [cursor=pointer]:
+              - img [ref=e381]
+          - generic [ref=e385]:
+            - text: Este programa tiene como objetivo apoyar e incentivar a las personas contribuyentes que son sujetas al
+            - emphasis [ref=e386]: pago
+            - text: del Impuesto
+            - emphasis [ref=e387]: Predial
+            - text: base Valor Catastral del ...
+        - generic [ref=e391]:
+          - generic [ref=e394]:
+            - link "Pago de Impuesto Predial renta Ayuntamiento de Mérida Yucatán https://isla.merida.gob.mx › tramites › detalle" [ref=e396] [cursor=pointer]:
+              - /url: https://isla.merida.gob.mx/serviciosinternet/tramites/detalle/519
+              - heading "Pago de Impuesto Predial renta" [level=3] [ref=e397]
+              - generic [ref=e403]:
+                - generic [ref=e405]: Ayuntamiento de Mérida Yucatán
+                - generic [ref=e407]: https://isla.merida.gob.mx › tramites › detalle
+            - button "Acerca de este resultado" [ref=e408] [cursor=pointer]:
+              - img [ref=e411]
+          - generic [ref=e414]:
+            - generic [ref=e415]: 9 feb 2026 —
+            - generic [ref=e416]:
+              - emphasis [ref=e417]: "PRESENCIAL: Acuda a cualquier caja recaudadora del Ayuntamiento de Mérida"
+              - text: ; Presente el formato de Declaración de Pago del Impuesto Predial base ...
+      - navigation [ref=e420]:
+        - heading "Navegación de páginas" [level=1] [ref=e421]
+        - text: "1"
+        - link "Page 2" [ref=e424] [cursor=pointer]:
+          - /url: /search?q=pago+predial+merida+yucatan+sitio:merida.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=qDIwapnzPOu3qtsPtvCGmQs&start=10&sa=N&sstk=AU9db-DTZUD8C6qmGHVcOHoKUzfnAPNNQgGxVUVO7fJfDldsi6oKfUEgVuA1cFcEyG99jDh3n59a9M6yzunpKpljxSr5PENzza4mAA&ved=2ahUKEwiZ54yI34mVAxXrm2oFHTa4IbMQ8tMDegQIHhAE
+          - text: "2"
+        - link "Page 3" [ref=e426] [cursor=pointer]:
+          - /url: /search?q=pago+predial+merida+yucatan+sitio:merida.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=qDIwapnzPOu3qtsPtvCGmQs&start=20&sa=N&sstk=AU9db-DTZUD8C6qmGHVcOHoKUzfnAPNNQgGxVUVO7fJfDldsi6oKfUEgVuA1cFcEyG99jDh3n59a9M6yzunpKpljxSr5PENzza4mAA&ved=2ahUKEwiZ54yI34mVAxXrm2oFHTa4IbMQ8tMDegQIHhAG
+          - text: "3"
+        - link "Page 4" [ref=e428] [cursor=pointer]:
+          - /url: /search?q=pago+predial+merida+yucatan+sitio:merida.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=qDIwapnzPOu3qtsPtvCGmQs&start=30&sa=N&sstk=AU9db-DTZUD8C6qmGHVcOHoKUzfnAPNNQgGxVUVO7fJfDldsi6oKfUEgVuA1cFcEyG99jDh3n59a9M6yzunpKpljxSr5PENzza4mAA&ved=2ahUKEwiZ54yI34mVAxXrm2oFHTa4IbMQ8tMDegQIHhAI
+          - text: "4"
+        - link "Page 5" [ref=e430] [cursor=pointer]:
+          - /url: /search?q=pago+predial+merida+yucatan+sitio:merida.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=qDIwapnzPOu3qtsPtvCGmQs&start=40&sa=N&sstk=AU9db-DTZUD8C6qmGHVcOHoKUzfnAPNNQgGxVUVO7fJfDldsi6oKfUEgVuA1cFcEyG99jDh3n59a9M6yzunpKpljxSr5PENzza4mAA&ved=2ahUKEwiZ54yI34mVAxXrm2oFHTa4IbMQ8tMDegQIHhAK
+          - text: "5"
+        - link "Page 6" [ref=e432] [cursor=pointer]:
+          - /url: /search?q=pago+predial+merida+yucatan+sitio:merida.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=qDIwapnzPOu3qtsPtvCGmQs&start=50&sa=N&sstk=AU9db-DTZUD8C6qmGHVcOHoKUzfnAPNNQgGxVUVO7fJfDldsi6oKfUEgVuA1cFcEyG99jDh3n59a9M6yzunpKpljxSr5PENzza4mAA&ved=2ahUKEwiZ54yI34mVAxXrm2oFHTa4IbMQ8tMDegQIHhAM
+          - text: "6"
+        - link "Page 7" [ref=e434] [cursor=pointer]:
+          - /url: /search?q=pago+predial+merida+yucatan+sitio:merida.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=qDIwapnzPOu3qtsPtvCGmQs&start=60&sa=N&sstk=AU9db-DTZUD8C6qmGHVcOHoKUzfnAPNNQgGxVUVO7fJfDldsi6oKfUEgVuA1cFcEyG99jDh3n59a9M6yzunpKpljxSr5PENzza4mAA&ved=2ahUKEwiZ54yI34mVAxXrm2oFHTa4IbMQ8tMDegQIHhAO
+          - text: "7"
+        - link "Page 8" [ref=e436] [cursor=pointer]:
+          - /url: /search?q=pago+predial+merida+yucatan+sitio:merida.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=qDIwapnzPOu3qtsPtvCGmQs&start=70&sa=N&sstk=AU9db-DTZUD8C6qmGHVcOHoKUzfnAPNNQgGxVUVO7fJfDldsi6oKfUEgVuA1cFcEyG99jDh3n59a9M6yzunpKpljxSr5PENzza4mAA&ved=2ahUKEwiZ54yI34mVAxXrm2oFHTa4IbMQ8tMDegQIHhAQ
+          - text: "8"
+        - heading "Siguiente" [level=2] [ref=e438]:
+          - link "Siguiente" [ref=e439] [cursor=pointer]:
+            - /url: /search?q=pago+predial+merida+yucatan+sitio:merida.gob.mx&sca_esv=c6c16ab1eb0a4421&ei=qDIwapnzPOu3qtsPtvCGmQs&start=10&sa=N&sstk=AU9db-DTZUD8C6qmGHVcOHoKUzfnAPNNQgGxVUVO7fJfDldsi6oKfUEgVuA1cFcEyG99jDh3n59a9M6yzunpKpljxSr5PENzza4mAA&ved=2ahUKEwiZ54yI34mVAxXrm2oFHTa4IbMQ8NMDegQIHhAS
+            - generic [ref=e441]: Siguiente
+      - navigation
+    - contentinfo [ref=e442]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e443]
+      - generic [ref=e447]:
+        - generic [ref=e449]:
+          - text: México
+          - generic [ref=e451]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - A través de tu dirección IP" [ref=e453] [cursor=pointer]:
+              - generic [ref=e454]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e456]:
+                - text: "-"
+                - generic [ref=e457]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e459] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e462]:
+          - link "Ayuda" [ref=e463] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e464] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e465] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e466] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

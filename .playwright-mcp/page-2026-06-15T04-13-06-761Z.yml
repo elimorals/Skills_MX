@@ -1,0 +1,260 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - link "P&aacutegina de inicio, Gobierno de M&eacutexico" [ref=e4] [cursor=pointer]:
+          - /url: https://www.gob.mx/
+          - img "P&aacutegina de inicio, Gobierno de M&eacutexico" [ref=e5]
+        - generic [ref=e7]:
+          - link "Trámites" [ref=e8] [cursor=pointer]:
+            - /url: https://www.gob.mx/tramites
+          - link "Gobierno" [ref=e9] [cursor=pointer]:
+            - /url: https://www.gob.mx/gobierno
+          - link "" [ref=e10] [cursor=pointer]:
+            - /url: https://www.gob.mx/busqueda
+            - generic [ref=e11]: 
+  - generic [ref=e12]:
+    - navigation [ref=e13]:
+      - generic [ref=e14]:
+        - link [ref=e15] [cursor=pointer]:
+          - /url: /inicio
+        - list [ref=e17]:
+          - listitem [ref=e18] [cursor=pointer]:
+            - link "Inicio" [ref=e19]:
+              - /url: /
+          - listitem [ref=e20] [cursor=pointer]:
+            - link "Búsqueda por metadatos" [ref=e21]:
+              - /url: /busc
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - paragraph [ref=e25]: El portal para la visualización electrónica de documentos de propiedad industrial (ViDoc), permite la consulta y descarga digital de los expedientes de propiedad industrial de carácter público con que cuenta el Instituto Mexicano de la Propiedad Industrial.
+          - heading "Documentos Recientes:" [level=4] [ref=e26]
+          - generic [ref=e27]:
+            - tablist [ref=e30]:
+              - generic [ref=e31]:
+                - tab "Títulos de marcas" [selected] [ref=e32] [cursor=pointer]:
+                  - generic [ref=e34]: Títulos de marcas
+                - tab "Títulos de patentes" [ref=e35] [cursor=pointer]:
+                  - generic [ref=e37]: Títulos de patentes
+                - tab "Asuntos Contenciosos Resueltos" [ref=e38] [cursor=pointer]:
+                  - generic [ref=e40]: Asuntos Contenciosos Resueltos
+            - generic [ref=e41]:
+              - tabpanel "Títulos de marcas" [ref=e42]:
+                - generic [ref=e44]:
+                  - generic [ref=e45]:
+                    - img [ref=e46] [cursor=pointer]
+                    - img [ref=e47] [cursor=pointer]
+                  - generic [ref=e49]:
+                    - table [ref=e50]:
+                      - row "select page Código de barras Documento Serie Folio Fecha Expediente" [ref=e51]:
+                        - columnheader "select page" [ref=e52]:
+                          - generic [ref=e55] [cursor=pointer]:
+                            - checkbox "select page" [ref=e57]
+                            - generic:
+                              - img
+                        - columnheader "Código de barras" [ref=e58]:
+                          - button "Código de barras" [ref=e59] [cursor=pointer]:
+                            - generic [ref=e60]:
+                              - text: Código de barras
+                              - button [ref=e61]:
+                                - img [ref=e62]: more_vert
+                            - img [ref=e66]
+                        - columnheader "Documento" [ref=e68]:
+                          - button "Documento" [ref=e69] [cursor=pointer]:
+                            - generic [ref=e70]:
+                              - text: Documento
+                              - button [ref=e71]:
+                                - img [ref=e72]: more_vert
+                            - img [ref=e76]
+                        - columnheader "Serie" [ref=e78]:
+                          - button "Serie" [ref=e79] [cursor=pointer]:
+                            - generic [ref=e80]:
+                              - text: Serie
+                              - button [ref=e81]:
+                                - img [ref=e82]: more_vert
+                            - img [ref=e86]
+                        - columnheader "Folio" [ref=e88]:
+                          - button "Folio" [ref=e89] [cursor=pointer]:
+                            - generic [ref=e90]:
+                              - text: Folio
+                              - button [ref=e91]:
+                                - img [ref=e92]: more_vert
+                            - img [ref=e96]
+                        - columnheader "Fecha" [ref=e98]:
+                          - button "Fecha" [ref=e99] [cursor=pointer]:
+                            - generic [ref=e100]:
+                              - text: Fecha
+                              - button [ref=e101]:
+                                - img [ref=e102]: more_vert
+                            - img [ref=e106]
+                        - columnheader "Expediente" [ref=e108]:
+                          - button "Expediente" [ref=e109] [cursor=pointer]:
+                            - generic [ref=e110]:
+                              - text: Expediente
+                              - button [ref=e111]:
+                                - img [ref=e112]: more_vert
+                            - img [ref=e116]
+                    - group "Select page" [ref=e118]:
+                      - generic [ref=e120]:
+                        - generic [ref=e121]:
+                          - generic [ref=e122]: Elementos por página
+                          - combobox "12 Elementos por página" [ref=e127] [cursor=pointer]:
+                            - generic [ref=e128]:
+                              - generic [ref=e130]: "12"
+                              - img [ref=e133]
+                        - generic [ref=e136]:
+                          - generic [ref=e137]: 0 de 0
+                          - button "Primera página" [disabled] [ref=e138]:
+                            - img [ref=e139]
+                          - button "Página anterior" [disabled] [ref=e143]:
+                            - img [ref=e144]
+                          - button "Siguiente página" [disabled] [ref=e148]:
+                            - img [ref=e149]
+                          - button "Última página" [disabled] [ref=e153]:
+                            - img [ref=e154]
+              - tabpanel [ref=e158]
+              - tabpanel [ref=e159]
+          - generic [ref=e162]:
+            - generic [ref=e163] [cursor=pointer]:
+              - link [ref=e165]:
+                - /url: /busc
+              - heading "Búsqueda por Metadatos" [level=2] [ref=e166]:
+                - strong [ref=e167]: Búsqueda por Metadatos
+            - generic [ref=e168]: Permite localizar información de Expedientes y Documentos Públicos de Propiedad Industrial en México (IMPI).
+        - generic [ref=e169]:
+          - paragraph [ref=e170]:
+            - text: "Si tienes dudas o comentarios escríbenos a:"
+            - link "buzon@impi.gob.mx" [ref=e171] [cursor=pointer]:
+              - /url: mailto:buzon@impi.gob.mx
+          - paragraph [ref=e172]: © Todos los derechos reservados 2025 - Instituto Mexicano de la Propiedad Industrial
+          - paragraph [ref=e173]:
+            - text: Periférico Sur No. 3106, Col. Jardines del Pedregal, Del. Álvaro Obregón, Ciudad de México, C.P. 01900.
+            - text: Arenal 550, Xochimilco, Pueblo Santa María Tepepan, 16020 Ciudad de México
+      - paragraph [ref=e174]: VIDOC. 4.0.1
+      - button [ref=e176] [cursor=pointer]:
+        - img [ref=e177]: import_contacts
+  - generic "Menu Accesibilidad":
+    - navigation:
+      - link [ref=e181] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e182]:  􏊚
+      - listitem [ref=e183]:
+        - list [ref=e184]:
+          - listitem [ref=e185] [cursor=pointer]:
+            - checkbox [ref=e186]
+            - generic [ref=e187]: 
+            - generic [ref=e188]: Restablecer
+          - listitem [ref=e189] [cursor=pointer]:
+            - checkbox [ref=e190]
+            - generic [ref=e191]: 
+            - generic [ref=e192]: Cambiar escala de grises
+          - listitem [ref=e193] [cursor=pointer]:
+            - checkbox [ref=e194]
+            - generic [ref=e195]: 
+            - generic [ref=e196]: Usar un lector de pantalla
+          - listitem [ref=e197] [cursor=pointer]:
+            - checkbox [ref=e198]
+            - generic [ref=e199]: 
+            - generic [ref=e200]: Cambiar tamaño de cursor
+          - listitem [ref=e201] [cursor=pointer]:
+            - checkbox [ref=e202]
+            - generic [ref=e203]: 
+            - generic [ref=e204]: Cambiar el contraste de color
+          - listitem [ref=e205] [cursor=pointer]:
+            - checkbox [ref=e206]
+            - generic [ref=e207]: 
+            - generic [ref=e208]: Mascara de lectura
+          - listitem [ref=e209] [cursor=pointer]:
+            - checkbox [ref=e210]
+            - generic [ref=e211]: 
+            - generic [ref=e212]: Guia de Lectura
+          - listitem [ref=e213] [cursor=pointer]:
+            - checkbox [ref=e214]
+            - generic [ref=e215]: 
+            - generic [ref=e216]: Cambio de tipografia dislexia
+          - listitem [ref=e217] [cursor=pointer]:
+            - checkbox [ref=e218]
+            - generic [ref=e219]: 
+            - generic [ref=e220]: Espaciado vertical
+          - listitem [ref=e226] [cursor=pointer]:
+            - checkbox [ref=e227]
+            - generic [ref=e228]: 
+            - generic [ref=e229]: Espaciado Horizontal
+          - listitem [ref=e235] [cursor=pointer]:
+            - generic [ref=e236]:
+              - generic [ref=e237]: 
+              - generic [ref=e238]: 
+            - generic [ref=e239]:
+              - generic [ref=e240]: 
+              - generic [ref=e241]: 
+            - generic [ref=e242]: Cambiar tamaño
+          - listitem [ref=e243] [cursor=pointer]:
+            - checkbox [ref=e244]
+            - generic [ref=e245]: 
+            - generic [ref=e246]: Resaltar Enlaces
+  - contentinfo [ref=e247]:
+    - generic [ref=e250]:
+      - img "logo gobierno de méxico" [ref=e252]
+      - generic [ref=e253]:
+        - heading "Enlaces" [level=5] [ref=e255] [cursor=pointer]
+        - list [ref=e258]:
+          - listitem [ref=e259]:
+            - link "Datos abiertos de la SABG" [ref=e260] [cursor=pointer]:
+              - /url: " https://data.buengobierno.gob.mx/"
+          - listitem [ref=e261]:
+            - link "Marco Jurídico" [ref=e262] [cursor=pointer]:
+              - /url: http://www.ordenjuridico.gob.mx
+          - listitem [ref=e263]:
+            - link "Plataforma Nacional de Transparencia" [ref=e264] [cursor=pointer]:
+              - /url: https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/faces/view/consultaPublica.xhtml#inicio
+          - listitem [ref=e265]:
+            - link "Transparencia para el pueblo" [ref=e266] [cursor=pointer]:
+              - /url: https://transparencia.gob.mx
+          - listitem [ref=e267]:
+            - link "Alerta" [ref=e268] [cursor=pointer]:
+              - /url: https://alertadores.buengobierno.gob.mx/
+      - generic [ref=e269]:
+        - heading "¿Qué es gob.mx?" [level=5] [ref=e271] [cursor=pointer]
+        - generic [ref=e273]:
+          - paragraph [ref=e274]:
+            - text: Es el portal único de trámites, información y participación ciudadana.
+            - link "Leer más" [ref=e275] [cursor=pointer]:
+              - /url: https://www.gob.mx/que-es-gobmx
+          - list [ref=e276]:
+            - listitem [ref=e277]:
+              - link "Portal de datos abiertos" [ref=e278] [cursor=pointer]:
+                - /url: https://datos.gob.mx
+            - listitem [ref=e279]:
+              - link "Declaración de accesibilidad" [ref=e280] [cursor=pointer]:
+                - /url: https://www.gob.mx/accesibilidad
+            - listitem [ref=e281]:
+              - link "Términos y Condiciones" [ref=e282] [cursor=pointer]:
+                - /url: https://www.gob.mx/terminos
+      - generic [ref=e283]:
+        - heading "Denuncia contra servidores públicos" [level=5] [ref=e284]:
+          - link "Denuncia contra servidores públicos" [ref=e285] [cursor=pointer]:
+            - /url: https://sidec.buengobierno.gob.mx/#!/
+        - generic [ref=e286]: Síguenos en
+        - list [ref=e287]:
+          - listitem [ref=e288]:
+            - link "Facebook" [ref=e289] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobmexico
+              - img "Facebook" [ref=e290]
+          - listitem [ref=e291]:
+            - link "Twitter" [ref=e292] [cursor=pointer]:
+              - /url: https://twitter.com/GobiernoMX
+              - img "Twitter" [ref=e293]
+          - listitem [ref=e294]:
+            - link "Instagram" [ref=e295] [cursor=pointer]:
+              - /url: https://www.instagram.com/gobmexico/
+              - img "Instagram" [ref=e296]
+          - listitem [ref=e297]:
+            - link "Youtube" [ref=e298] [cursor=pointer]:
+              - /url: https://www.youtube.com/@gobiernodemexico
+              - img "Youtube" [ref=e299]
+        - list [ref=e300]:
+          - listitem [ref=e301]:
+            - link "logo 079" [ref=e303] [cursor=pointer]:
+              - /url: tel:+079
+              - img "logo 079" [ref=e304]

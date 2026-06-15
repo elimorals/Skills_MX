@@ -1,0 +1,64 @@
+- generic [active]:
+  - generic:
+    - generic [ref=e1]:
+      - img "logo" [ref=e4]
+      - heading "Consulta de Línea de Captura para pago de Impuesto Predial en Línea, Bancos y/o Tiendas de Conveniencia" [level=4] [ref=e6]
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - img "logo" [ref=e10]
+          - paragraph [ref=e11]: © Municipio de Querétaro
+          - paragraph [ref=e12]: Todos los Derechos Reservados
+          - paragraph [ref=e13]:
+            - text: Revisa nuestro
+            - link "Aviso de Privacidad" [ref=e14] [cursor=pointer]:
+              - /url: https://municipiodequeretaro.gob.mx/avisosdeprivacidad/
+              - strong [ref=e15]: Aviso de Privacidad
+          - generic [ref=e16]:
+            - link [ref=e17] [cursor=pointer]:
+              - /url: https://www.facebook.com/QroMunicipio
+            - link [ref=e18] [cursor=pointer]:
+              - /url: https://twitter.com/qromunicipio
+            - link [ref=e19] [cursor=pointer]:
+              - /url: https://instagram.com/qromunicipio
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - banner
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e32]: Clave Catastral
+          - textbox "Clave Catastral" [ref=e33]:
+            - /placeholder: Ingresa los 15 digítos
+        - button "CONSULTAR" [ref=e35] [cursor=pointer]
+      - contentinfo [ref=e38]:
+        - paragraph [ref=e39]:
+          - strong [ref=e40]: FORMAS DE PAGO AUTORIZADAS
+        - list [ref=e41]:
+          - listitem [ref=e42]: Efectivo, Tarjeta de crédito o débito (excepto American Express) y Transferencia (SPEI).
+        - paragraph [ref=e43]:
+          - strong [ref=e44]: DESCARGA DEL RECIBO OFICIAL DE PAGO
+        - paragraph [ref=e45]: La descarga del recibo oficial de los pagos efectuados en instituciones bancarias, tiendas de conveniencia y medios electrónicos (referenciados y SPEI), se realiza 24 hrs. posteriores al cierre de las operaciones diarias.
+        - list [ref=e46]:
+          - listitem [ref=e47]: "Para la descarga de pagos por Impuesto Predial, deberá capturar los siguientes datos: *Clave catastral *Año en que realizó el pago *Importe pagado (sin signos, comas o puntos)."
+        - paragraph [ref=e48]:
+          - text: Emitido el CFDI, se pone a su disposición de manera digital, ingresando al link
+          - link "https://gestion.municipiodequeretaro.gob.mx/sello_digital" [ref=e49] [cursor=pointer]:
+            - /url: https://gestion.municipiodequeretaro.gob.mx/sello_digital
+          - text: .
+        - paragraph [ref=e50]:
+          - strong [ref=e51]: SOLICITUD DE CFDI
+        - paragraph [ref=e52]:
+          - text: Si requiere CFDI o el mismo presenta error, deberá solicitarlo a través del correo electrónico
+          - link "facturaelectronica@municipiodequeretaro.gob.mx" [ref=e53] [cursor=pointer]:
+            - /url: mailto:facturaelectronica@municipiodequeretaro.gob.mx
+          - text: ", adjuntando en archivo digital lo siguiente:"
+        - list [ref=e54]:
+          - listitem [ref=e55]: Constancia de situación fiscal actualizada, legible y con régimen fiscal del contribuyente, recibo de pago oficial expedido por el Municipio de Querétaro, señalar uso de CFDI y teléfono.
+        - paragraph [ref=e56]: Únicamente se emite CFDI a nombre del sujeto pasivo al que se generó el recibo.
+        - paragraph [ref=e57]:
+          - strong [ref=e58]: MARCO NORMATIVO
+        - paragraph [ref=e59]: Art. 29 y 29-A del Código Fiscal Federal; Art. 36 al 40 del Reglamento del Código Fiscal Federal; y Capítulo 2.7.1.33 párrafo cuarto de la Resolución Miscelánea Fiscal 2022.
+        - paragraph [ref=e60]:
+          - strong [ref=e61]: AVISOS IMPORTANTES
+        - list [ref=e62]:
+          - listitem [ref=e63]: Banamex, Banorte, App, Web Municipio, Cajero Cerca, y QR, se aplican en línea.
+          - listitem [ref=e64]: Se recomienda conservar la liquidación de pago o pase de caja; así como, el talón de pago que emite la institución bancaria o tienda de conveniencia, para cualquier aclaración.

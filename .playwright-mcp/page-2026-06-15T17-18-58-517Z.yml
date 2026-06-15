@@ -1,0 +1,50 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - link [ref=e4] [cursor=pointer]:
+        - /url: http://www.cespm.gob.mx/
+        - img [ref=e5]
+      - link [ref=e6] [cursor=pointer]:
+        - /url: http://www.bajacalifornia.gob.mx/
+        - img [ref=e7]
+      - navigation [ref=e8]:
+        - link "Registro en línea" [ref=e9] [cursor=pointer]:
+          - /url: https://www.ecespm.gob.mx/cespm-registro/registroenlinea.aspx
+        - link "Salir" [ref=e10] [cursor=pointer]:
+          - /url: "#"
+    - generic [ref=e14]:
+      - img [ref=e16]
+      - generic [ref=e17]:
+        - heading "Acceso a Servicios en Línea" [level=1] [ref=e18]
+        - paragraph [ref=e19]: Sí usted ya tiene una una cuenta de usuario, por favor, introduzca su nombre de usuario y contraseña para iniciar sesión en el sistema de servicios en línea.
+        - textbox "Nombre de usuario" [active] [ref=e20]
+        - textbox "Contraseña" [ref=e21]
+        - generic [ref=e22]:
+          - paragraph [ref=e24]:
+            - text: ¿Olvidaste tus datos?
+            - link "Recuperar Cuenta" [ref=e25] [cursor=pointer]:
+              - /url: javascript:__doPostBack('ctl00$ContentPlaceHolder2$btn_recpass_acceso','')
+          - button "Entra" [ref=e27] [cursor=pointer]
+        - generic [ref=e28]:
+          - paragraph [ref=e29]: PAGAR CUENTA SIN REGISTRO
+          - textbox [ref=e30]
+          - text: "Ejemplo: 01-021-3442-11 (con guiones)"
+          - button "Pagar" [ref=e31] [cursor=pointer]
+      - strong
+      - strong
+  - contentinfo [ref=e32]:
+    - generic [ref=e33]:
+      - img [ref=e36]
+      - generic [ref=e37]:
+        - paragraph [ref=e39]:
+          - link "Aviso de Privacidad" [ref=e40] [cursor=pointer]:
+            - /url: aviso-privacidad.pdf
+          - text: Calle Río Sinaloa No. 1399. Colonia Vallarta. Conmutador 5641900 con 60 líneas. ©1998-2026.
+          - text: CESPM. Departamento de Informática.
+        - generic [ref=e41]:
+          - link [ref=e42] [cursor=pointer]:
+            - /url: https://www.facebook.com/cespmbc/
+            - img [ref=e43]
+          - link [ref=e44] [cursor=pointer]:
+            - /url: https://www.instagram.com/cespmexicali/
+            - img [ref=e45]

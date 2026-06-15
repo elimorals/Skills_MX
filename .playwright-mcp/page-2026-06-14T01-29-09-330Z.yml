@@ -1,0 +1,177 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]: PLUGINS MX
+    - generic [ref=e5]: ·
+    - generic [ref=e6]: PRODUCTO 02 · COMPLIANCE REPSE
+    - generic [ref=e7]: ·
+    - generic [ref=e8]: 4M empresas afectadas · Sin captcha
+  - navigation [ref=e10]:
+    - generic [ref=e11]:
+      - link "P·MX Compliance Infrastructure" [ref=e12] [cursor=pointer]:
+        - /url: ../index.html
+        - generic [ref=e13]: P·MX
+        - generic [ref=e14]: Compliance Infrastructure
+      - list [ref=e15]:
+        - listitem [ref=e16]:
+          - link "← Volver" [ref=e17] [cursor=pointer]:
+            - /url: ../index.html#productos
+        - listitem [ref=e18]:
+          - link "Predial" [ref=e19] [cursor=pointer]:
+            - /url: predial.html
+        - listitem [ref=e20]:
+          - link "ISN" [ref=e21] [cursor=pointer]:
+            - /url: isn.html
+        - listitem [ref=e22]:
+          - link "Agendar demo →" [ref=e23] [cursor=pointer]:
+            - /url: ../index.html#demo
+  - banner [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - link "Productos" [ref=e27] [cursor=pointer]:
+          - /url: ../index.html
+        - generic [ref=e28]: ›
+        - generic [ref=e29]: Compliance REPSE
+      - generic [ref=e30]: "[02] Cumplimiento laboral · Art. 15 LFT"
+      - heading "Compliance REPSE Art. 15 LFT." [level=1] [ref=e31]:
+        - generic [ref=e32]: Compliance
+        - emphasis [ref=e34]: REPSE Art. 15 LFT.
+      - paragraph [ref=e35]:
+        - text: Si contratas proveedores de servicios especializados sin REPSE vigente, te conviertes en
+        - strong [ref=e36]: responsable solidario laboral y fiscal
+        - text: "de sus trabajadores. Verifica en segundos. Sin captcha. Decisión binaria: puede_contratar: bool."
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - strong [ref=e39]: "Lanzamiento:"
+          - text: 2026-06-14
+        - generic [ref=e40]:
+          - strong [ref=e41]: "Estado:"
+          - text: Producción
+        - generic [ref=e42]:
+          - strong [ref=e43]: "Tests:"
+          - text: 21 pasando
+        - generic [ref=e44]:
+          - strong [ref=e45]: "Validado:"
+          - text: Playwright MCP en MANPOWER
+    - generic [ref=e47]:
+      - generic [ref=e48]:
+        - generic [ref=e49]: ● Vigente
+        - generic [ref=e50]: FOLIO 2334
+      - heading "MANPOWER CORPORATIVO SA DE CV" [level=4] [ref=e51]
+      - generic [ref=e52]:
+        - term [ref=e53]: Núm. Registro
+        - definition [ref=e54]: "669356"
+        - term [ref=e55]: Aviso
+        - definition [ref=e56]: AR6169 · 2024-06-12
+        - term [ref=e57]: Vigencia
+        - definition [ref=e58]: 2027-06-12
+        - term [ref=e59]: Entidad
+        - definition [ref=e60]: CDMX · Benito Juárez
+      - generic [ref=e61]: ✓ Puede prestar servicios especializados
+  - generic [ref=e62]:
+    - generic [ref=e63]:
+      - generic [ref=e64]: "01"
+      - heading "El riesgo, en una sola línea." [level=2] [ref=e65]:
+        - text: El riesgo, en
+        - emphasis [ref=e66]: una sola línea
+        - text: .
+    - generic [ref=e67]:
+      - text: "\"Sin REPSE vigente del proveedor,"
+      - emphasis [ref=e68]: el contratante
+      - text: paga finiquitos, IMSS, INFONAVIT y créditos fiscales de los trabajadores ajenos."
+  - generic [ref=e69]:
+    - generic [ref=e70]:
+      - generic [ref=e71]: "02"
+      - heading "Tools expuestas." [level=2] [ref=e72]:
+        - text: Tools
+        - emphasis [ref=e73]: expuestas
+        - text: .
+      - paragraph [ref=e74]: 3 tools MCP. La principal es repse_verificar_proveedor — empaqueta toda la decisión legal en una sola llamada.
+    - generic [ref=e75]:
+      - article [ref=e76]:
+        - generic [ref=e77]: →
+        - generic [ref=e78]:
+          - heading "repse_consultar_por_razon_social" [level=3] [ref=e79]
+          - paragraph [ref=e80]: Búsqueda fuzzy por nombre o razón social. Devuelve coincidencias con número de registro.
+          - code [ref=e81]: repse_consultar_por_razon_social(razon_social, [limite])
+      - article [ref=e82]:
+        - generic [ref=e83]: →
+        - generic [ref=e84]:
+          - heading "repse_consultar_por_numero_registro" [level=3] [ref=e85]
+          - paragraph [ref=e86]: "Detalle completo: razón social, entidad, AR, fecha aviso, vigencia, servicios autorizados."
+          - code [ref=e87]: repse_consultar_por_numero_registro(numero_registro)
+      - article [ref=e88]:
+        - generic [ref=e89]: ★
+        - generic [ref=e90]:
+          - heading "repse_verificar_proveedor" [level=3] [ref=e91]
+          - paragraph [ref=e92]: "Tool de alto nivel: pasa razón social, recibe puede_contratar_servicios_especializados: bool + advertencias legales. Compliance binario."
+          - code [ref=e93]: repse_verificar_proveedor(razon_social, [numero_registro])
+  - generic [ref=e94]:
+    - generic [ref=e95]:
+      - generic [ref=e96]: "03"
+      - heading "Contexto legal." [level=2] [ref=e97]:
+        - text: Contexto
+        - emphasis [ref=e98]: legal
+        - text: .
+    - generic [ref=e99]:
+      - article [ref=e100]:
+        - heading "Reforma 2021 al Art. 15 LFT" [level=4] [ref=e101]
+        - paragraph [ref=e102]: Establece que toda persona física o moral que provea servicios especializados u obras especializadas mediante subcontratación debe contar con registro ante STPS (REPSE).
+      - article [ref=e103]:
+        - heading "Responsabilidad solidaria" [level=4] [ref=e104]
+        - paragraph [ref=e105]: El contratante responde solidariamente por las obligaciones laborales, fiscales y de seguridad social del proveedor cuyo REPSE no esté vigente.
+      - article [ref=e106]:
+        - heading "Vigencia del registro" [level=4] [ref=e107]
+        - paragraph [ref=e108]: 3 años desde la fecha del aviso de registro (AR). Después debe renovarse. Es responsabilidad del contratante verificar antes de cada contrato.
+      - article [ref=e109]:
+        - heading "Universo afectado" [level=4] [ref=e110]
+        - paragraph [ref=e111]:
+          - strong [ref=e112]: ~4 millones de empresas formales
+          - text: mexicanas que contratan IT, limpieza, seguridad, contabilidad, marketing, nómina, etc.
+  - generic [ref=e113]:
+    - generic [ref=e114]:
+      - generic [ref=e115]: "04"
+      - heading "Cómo se ve el código." [level=2] [ref=e116]:
+        - text: Cómo se ve el
+        - emphasis [ref=e117]: código
+        - text: .
+    - generic [ref=e118]:
+      - generic [ref=e123]: validar_proveedor.py
+      - generic [ref=e124]: "from mp_repse_stps import RepseStpsClient cliente = RepseStpsClient() # Validación binaria antes de firmar PO resultado = cliente.verificar_proveedor( razon_social=\"MANPOWER CORPORATIVO SA DE CV\" ) if resultado[\"puede_contratar_servicios_especializados\"]: print(f\"✓ Vigente hasta {resultado['detalle']['vigencia']}\") # ✓ Vigente hasta 2027-06-12 firmar_po(proveedor) else: for advertencia in resultado[\"advertencias\"]: print(f\"⚠ {advertencia}\") bloquear_contratacion() # ⚠ Registro REPSE NO vigente (venció 2024-03-15). # El proveedor debe renovar antes de prestar servicios."
+  - generic [ref=e126]:
+    - heading "¿Tu empresa contrata más de 10 proveedores especializados?" [level=2] [ref=e127]:
+      - text: ¿Tu empresa contrata
+      - emphasis [ref=e128]: más de 10 proveedores
+      - text: especializados?
+    - paragraph [ref=e129]: Demo de 20 minutos. Te muestro la validación en vivo de proveedores reales de tu cartera + cron mensual de revalidación automática.
+    - link "Agendar mi demo" [ref=e130] [cursor=pointer]:
+      - /url: ../index.html#demo
+      - generic [ref=e131]: Agendar mi demo
+      - img [ref=e132]
+  - contentinfo [ref=e134]:
+    - generic [ref=e135]:
+      - generic [ref=e136]:
+        - generic [ref=e137]: P·MX
+        - paragraph [ref=e138]: Infraestructura de compliance fiscal y municipal para México.
+      - generic [ref=e139]:
+        - heading "Productos" [level=4] [ref=e140]
+        - link "Cartera Predial" [ref=e141] [cursor=pointer]:
+          - /url: predial.html
+        - link "Compliance REPSE" [ref=e142] [cursor=pointer]:
+          - /url: repse.html
+        - link "ISN-as-a-Service" [ref=e143] [cursor=pointer]:
+          - /url: isn.html
+      - generic [ref=e144]:
+        - heading "Sitio" [level=4] [ref=e145]
+        - link "Inicio" [ref=e146] [cursor=pointer]:
+          - /url: ../index.html
+        - link "MCPs" [ref=e147] [cursor=pointer]:
+          - /url: ../index.html#mcps
+        - link "Verticales" [ref=e148] [cursor=pointer]:
+          - /url: ../index.html#verticales
+      - generic [ref=e149]:
+        - heading "Contacto" [level=4] [ref=e150]
+        - link "elias@cipreholding.com" [ref=e151] [cursor=pointer]:
+          - /url: mailto:elias@cipreholding.com
+    - generic [ref=e152]:
+      - generic [ref=e153]: © 2026 Plugins MX · CDMX
+      - generic [ref=e154]: Producto 02 · v3.59

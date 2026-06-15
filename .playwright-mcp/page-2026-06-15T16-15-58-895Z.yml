@@ -1,0 +1,52 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - img "Logotipo del SIAPA. Dos gotas de agua dentro de una cuadro azul con leyenda 'agua'." [ref=e6]
+    - heading "Trámites y servicios en línea." [level=1] [ref=e8]
+  - separator [ref=e9]
+  - generic [ref=e11]:
+    - paragraph [ref=e12]: Bienvenido, en esta página usted podrá realizar el pago en línea de su recibo de agua potable en la Área Metropolitana de Guadalajara.
+    - generic [ref=e13]:
+      - paragraph [ref=e14]: "Observaciones:"
+      - list [ref=e15]:
+        - listitem [ref=e16]:
+          - strong [ref=e17]: El pago puede tardar hasta 72 hrs hábiles en procesarse.
+        - listitem [ref=e18]:
+          - strong [ref=e19]: Si tiene algún problema al momento de realizar su pago con su tarjeta, favor de reportarlo con su banco emisor.
+      - paragraph [ref=e20]
+    - img "usted esta en el paso uno de tres" [ref=e22]
+    - generic [ref=e24]:
+      - paragraph [ref=e25]:
+        - text: Por favor, escriba su número de
+        - strong [ref=e26]: Cuenta Contrato como aparece en su recibo
+        - text: .
+      - generic [ref=e27]:
+        - generic [ref=e28]: Cuenta contrato
+        - textbox "Cuenta contrato" [ref=e29]
+        - generic [ref=e30]:
+          - generic [ref=e31]: Clave de SIAPA.
+          - textbox "Clave de SIAPA." [ref=e32]
+      - generic [ref=e33]:
+        - iframe [ref=e37]:
+          - generic [ref=f2e2]:
+            - generic [ref=f2e3]:
+              - checkbox "No soy un robot" [ref=f2e7]
+              - generic [ref=f2e11]: No soy un robot
+              - generic [ref=f2e13]:
+                - text: reCAPTCHA cambiará sus Condiciones del Servicio.
+                - link "Toma medidas." [ref=f2e14] [cursor=pointer]:
+                  - /url: https://google.com/recaptcha/admin/migrate
+            - generic [ref=f2e18]: reCAPTCHA
+        - paragraph [ref=e38]:
+          - button "Siguiente" [ref=e39] [cursor=pointer]
+        - paragraph [ref=e40]:
+          - link "Aviso de Privacidad" [ref=e41] [cursor=pointer]:
+            - /url: https://siapa.gob.mx/sites/default/files/aviso_de_privacidad_integral.pdf
+    - separator [ref=e42]
+    - paragraph [ref=e43]:
+      - text: Tiene una duda, escriba a
+      - link "comercial@siapa.gob.mx" [ref=e44] [cursor=pointer]:
+        - /url: mailto:comercial@siapa.gob.mx
+      - text: ", tiene problema con el sistema de pago, contáctanos"
+      - link "webmaster@siapa.gob.mx" [ref=e45] [cursor=pointer]:
+        - /url: mailto:webmaster@siapa.gob.mx
+      - text: ó a SIAPATEL al 36682482.

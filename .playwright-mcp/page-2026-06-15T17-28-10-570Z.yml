@@ -1,0 +1,203 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - img "Direccion Catastro" [ref=e5]
+    - list [ref=e6]:
+      - link "INICIO" [ref=e7] [cursor=pointer]:
+        - /url: ./
+      - link "VALORES CATASTRALES" [ref=e8] [cursor=pointer]:
+        - /url: valores_catastrales.html
+      - link "CARTOGRAFÍA" [ref=e9] [cursor=pointer]:
+        - /url: cartografia.html
+      - link "MODELADO 3D" [ref=e10] [cursor=pointer]:
+        - /url: modelado_3d.html
+      - link "NUBE DE PUNTOS" [ref=e11] [cursor=pointer]:
+        - /url: nube_de_puntos.html
+    - img "Jalisco" [ref=e13]
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - article [ref=e16]:
+        - img "Dirección de Catastro del Estado de Jalisco" [ref=e18]
+        - generic [ref=e20]:
+          - heading "Dirección de Catastro del Estado de Jalisco" [level=1] [ref=e21]
+          - heading "Secretaría de la Hacienda Pública" [level=2] [ref=e22]
+          - paragraph [ref=e23]: Coadyuvar con la Secretaría de la Hacienda Pública para proponer a los Gobiernos Municipales, medidas en material catastral, que les permitan mejorar las condiciones financieras o socioeconómicas de Jalisco
+      - article [ref=e24]:
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - img "Valores catastrales" [ref=e28]
+            - list [ref=e29]:
+              - listitem [ref=e30]:
+                - link "CONSULTAR" [ref=e31] [cursor=pointer]:
+                  - /url: valores_catastrales.html
+                  - paragraph [ref=e32]: CONSULTAR
+          - generic [ref=e33]: VALORES CATASTRALES
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - img "Cartografía" [ref=e37]
+            - list [ref=e38]:
+              - listitem [ref=e39]:
+                - link "CONSULTAR" [ref=e40] [cursor=pointer]:
+                  - /url: cartografia.html
+                  - paragraph [ref=e41]: CONSULTAR
+          - generic [ref=e42]: CARTOGRAFÍA
+        - generic [ref=e43]:
+          - generic [ref=e44]:
+            - img "Modelado 3D" [ref=e46]
+            - list [ref=e47]:
+              - listitem [ref=e48]:
+                - link "CONSULTAR" [ref=e49] [cursor=pointer]:
+                  - /url: modelado_3d.html
+                  - paragraph [ref=e50]: CONSULTAR
+          - generic [ref=e51]: MODELADO 3D
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - img "Nube de puntos LiDAR" [ref=e55]
+            - list [ref=e56]:
+              - listitem [ref=e57]:
+                - link "CONSULTAR" [ref=e58] [cursor=pointer]:
+                  - /url: nube_de_puntos.html
+                  - paragraph [ref=e59]: CONSULTAR
+          - generic [ref=e60]: NUBE DE PUNTOS LiDAR
+    - generic [ref=e61]:
+      - img "Jalisco en numeros" [ref=e62]
+      - article [ref=e63]:
+        - generic [ref=e64]:
+          - heading "78,588 km²" [level=3] [ref=e65]
+          - separator [ref=e66]
+          - paragraph [ref=e67]: Superficie total del Estado
+        - generic [ref=e68]:
+          - heading "1,560 km²" [level=3] [ref=e69]
+          - separator [ref=e70]
+          - paragraph [ref=e71]: Vuelo fotogramétrico LiDAR - Oblicuo
+        - generic [ref=e72]:
+          - heading "125" [level=3] [ref=e73]
+          - separator [ref=e74]
+          - paragraph [ref=e75]: Municipios
+        - generic [ref=e76]:
+          - heading "116" [level=3] [ref=e77]
+          - separator [ref=e78]
+          - paragraph [ref=e79]: Municipios sincronizados
+        - generic [ref=e80]:
+          - heading "4'000,250" [level=3] [ref=e81]
+          - separator [ref=e82]
+          - paragraph [ref=e83]: Claves catastrales
+        - generic [ref=e84]:
+          - heading "110" [level=3] [ref=e85]
+          - separator [ref=e86]
+          - paragraph [ref=e87]: Tablas publicadas
+    - generic [ref=e88]:
+      - heading "Sistemas" [level=2] [ref=e89]
+      - article [ref=e90]:
+        - generic [ref=e92]:
+          - heading "eCarto" [level=3] [ref=e93]
+          - paragraph [ref=e94]: Plataforma
+          - paragraph [ref=e95]: Geográfica Estatal
+          - link "ENTRAR" [ref=e97] [cursor=pointer]:
+            - /url: https://catastro.jalisco.gob.mx/ecarto
+        - generic:
+          - img "eCarto"
+        - generic:
+          - img "eCédula"
+        - generic [ref=e100]:
+          - heading "eCédula" [level=3] [ref=e101]
+          - paragraph [ref=e102]: Consulta de la cédula
+          - paragraph [ref=e103]: única registral y catastral
+          - link "ENTRAR" [ref=e105] [cursor=pointer]:
+            - /url: https://catastro.jalisco.gob.mx/ecedula
+    - heading "Eventos" [level=2] [ref=e108]
+    - generic [ref=e109]:
+      - article [ref=e110]:
+        - heading "Servicios" [level=2] [ref=e111]
+        - paragraph [ref=e112]: Funciones de la Dirección de Catastro del Estado
+        - list [ref=e113]:
+          - listitem [ref=e114]: Asesorar, capacitar y auxiliar a todo municipio que requiera apoyo.
+          - listitem [ref=e115]: Sugerir valores unitarios al Consejo Técnico de Catastro.
+          - listitem [ref=e116]: Registrar a los peritos valuadores que practiquen avalúos.
+          - listitem [ref=e117]: Aplicar las sanciones a los peritos por infringir la Ley de Catastro.
+          - listitem [ref=e118]: Coordinar los trabajos técnicos y de investigación científica.
+          - listitem [ref=e119]: Contratar trabajos catastrales a personas físicas o jurídicas.
+          - listitem [ref=e120]: Coordinarse con dependencias e instituciones públicas.
+      - article [ref=e121]:
+        - generic [ref=e122]:
+          - img "Director catastro"
+        - generic [ref=e123]: José de Jesús Sánchez Mariscal
+        - paragraph [ref=e124]: Director de Catastro
+    - generic [ref=e125]:
+      - heading "Enlaces de interes" [level=2] [ref=e126]
+      - article [ref=e127]:
+        - generic [ref=e128]:
+          - heading "Marco Jurídico" [level=3] [ref=e129]: Marco Jurídico
+          - list [ref=e130]:
+            - listitem [ref=e131]:
+              - link "Ley de Catastro Municipal del Estado de Jalisco." [ref=e132] [cursor=pointer]:
+                - /url: https://drive.google.com/drive/u/3/folders/1O_pUGF7oqXry3UkNFd-pnzvi6bqoPRbS
+            - listitem [ref=e133]:
+              - link "Reglamento de la Ley de Catastro Municipal del Estado de Jalisco." [ref=e134] [cursor=pointer]:
+                - /url: https://drive.google.com/drive/u/3/folders/1isccItKzXT3FHOklMlhCKuQJdqagzemd
+            - listitem [ref=e135]:
+              - link "Reglamento interno de la Secretaría de Hacienda Pública del Estado de Jalisco." [ref=e136] [cursor=pointer]:
+                - /url: https://drive.google.com/drive/folders/10VEH0Wm_0_BgviGfyaC-uurx2WjggiPb
+            - listitem [ref=e137]:
+              - link "Reglamento de Sesiones del Consejo Técnico Catastral del Estado." [ref=e138] [cursor=pointer]:
+                - /url: https://drive.google.com/drive/u/3/folders/1fFf3yZc_7ZhAH_Eb8Rq-bgnbVih6tkDU
+            - listitem [ref=e139]:
+              - link "Formato de Avalúo para Transmisión de Dominio." [ref=e140] [cursor=pointer]:
+                - /url: https://drive.google.com/drive/u/3/folders/18MkLJ4jiEBvQypC63-ilxVC0yZKinxYr
+            - listitem [ref=e141]:
+              - link "Formato de Aviso de Transmisión Patrimonial." [ref=e142] [cursor=pointer]:
+                - /url: https://drive.google.com/drive/u/3/folders/1z-f9lg4SjcVus1zfKH9pWOm8IG-q43AJ
+        - generic [ref=e143]:
+          - heading "Normatividad y Vinculación" [level=3] [ref=e144]: Normatividad y Vinculación
+          - list [ref=e145]:
+            - listitem [ref=e146]:
+              - link "Leyes de Ingresos." [ref=e147] [cursor=pointer]:
+                - /url: https://periodicooficial.jalisco.gob.mx/seccion/tipos/ingreso
+            - listitem [ref=e148]:
+              - link "Tablas de Valores Catastrales." [ref=e149] [cursor=pointer]:
+                - /url: https://periodicooficial.jalisco.gob.mx/seccion/tipos/catastral
+          - strong [ref=e150]: Peritos Valuadores
+          - list [ref=e151]:
+            - listitem [ref=e152]:
+              - link "Requisitos para registro." [ref=e153] [cursor=pointer]:
+                - /url: https://drive.google.com/drive/folders/1oMkWGG6bAFmMcua1bDZx4C6rmmJMcSrB?usp=sharing
+            - listitem [ref=e154]:
+              - link "Conceptos de cobro." [ref=e155] [cursor=pointer]:
+                - /url: https://drive.google.com/drive/folders/1oMkWGG6bAFmMcua1bDZx4C6rmmJMcSrB?usp=sharing
+            - listitem [ref=e156]:
+              - link "Estatus de peritos." [ref=e157] [cursor=pointer]:
+                - /url: https://drive.google.com/drive/folders/1oMkWGG6bAFmMcua1bDZx4C6rmmJMcSrB?usp=sharing
+        - generic [ref=e158]:
+          - heading "Formación y Asesoría" [level=3] [ref=e159]: Formación y Asesoría
+          - list [ref=e160]:
+            - listitem [ref=e161]:
+              - link "Calendario de capacitación jurídica y técnica" [ref=e162] [cursor=pointer]:
+                - /url: https://drive.google.com/drive/folders/1fGbHiXkQfg3NhBmp4l5F9uAUZH09MfEl?usp=sharing
+        - generic [ref=e163]:
+          - heading "Consejo Técnico Catastral del Estado" [level=3] [ref=e164]: Consejo Técnico Catastral del Estado
+          - list [ref=e165]:
+            - listitem [ref=e166]:
+              - link "Instituciones representadas en el Consejo Técnico Catastral del Estado." [ref=e167] [cursor=pointer]:
+                - /url: https://drive.google.com/drive/u/3/folders/1CLyXcJ7IAhwYuzGT2T-u6phzwH8JUJS0
+            - listitem [ref=e168]:
+              - link "Calendario de sesiones del Consejo y sus comisiones." [ref=e169] [cursor=pointer]:
+                - /url: https://drive.google.com/drive/u/3/folders/1VlZ66ZJIIf8guU795dxzSy63vI2apOln
+            - listitem [ref=e170]:
+              - link "Actas de sesiones." [ref=e171] [cursor=pointer]:
+                - /url: https://drive.google.com/drive/u/3/folders/1l02wYpniVA3SEK3hn9OgTepTH0978UNg
+            - listitem [ref=e172]:
+              - link "Sesiones del Consejo Técnico Catastral." [ref=e173] [cursor=pointer]:
+                - /url: https://drive.google.com/drive/folders/1vTRd2MG_XYcyD1jStHrhCW7aMmhh9BVY
+    - generic [ref=e174]:
+      - img "Jalisco" [ref=e177]
+      - generic [ref=e178]:
+        - generic [ref=e179]: Dirección de Catastro | Secretaría de la Hacienda Pública
+        - paragraph [ref=e180]:
+          - link "C. Pedro Moreno 281, 5° Piso, Zona Centro, CP 44100 Guadalajara, Jalisco." [ref=e181] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/9wJGUhwgthHfptRd9
+        - paragraph [ref=e182]:
+          - generic [ref=e183]: (33) 3819 2361
+          - generic [ref=e184]: 8:00 a 16:00 Hrs.
+      - generic [ref=e185]:
+        - link "Políticas de uso y privacidad." [ref=e186] [cursor=pointer]:
+          - /url: https://info.jalisco.gob.mx/politicas
+        - paragraph [ref=e187]: Gobierno del Estado de Jalisco, algunos derechos reservados © 2024

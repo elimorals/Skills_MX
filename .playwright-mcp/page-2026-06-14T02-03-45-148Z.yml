@@ -1,0 +1,275 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - link "gobierno de mexico" [ref=e5] [cursor=pointer]:
+          - /url: https://www.gob.mx/
+          - img "gobierno de mexico" [ref=e6]
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Trámites" [ref=e10] [cursor=pointer]:
+              - /url: https://www.gob.mx/tramites
+          - listitem [ref=e11]:
+            - link "Gobierno" [ref=e12] [cursor=pointer]:
+              - /url: https://www.gob.mx/gobierno
+          - listitem [ref=e13]:
+            - link "Búsqueda " [ref=e14] [cursor=pointer]:
+              - /url: https://www.gob.mx/busqueda
+              - generic [ref=e15]: Búsqueda
+              - generic [ref=e16]: 
+  - generic [ref=e20]:
+    - generic [ref=e28]:
+      - navigation [ref=e29]:
+        - generic [ref=e30]:
+          - link "Página de inicio, Gobierno de México" [ref=e32] [cursor=pointer]:
+            - /url: https://www.gob.mx/
+            - img "Página de inicio, Gobierno de México" [ref=e33]
+          - list [ref=e35]:
+            - listitem [ref=e36]:
+              - link "Trámites" [ref=e37] [cursor=pointer]:
+                - /url: https://www.gob.mx/tramites
+            - listitem [ref=e38]:
+              - link "Gobierno" [ref=e39] [cursor=pointer]:
+                - /url: https://www.gob.mx/gobierno
+            - listitem [ref=e40]:
+              - link "Búsqueda " [ref=e41] [cursor=pointer]:
+                - /url: https://www.gob.mx/busqueda
+                - generic [ref=e42]: Búsqueda
+                - generic [ref=e43]: 
+      - generic "Contenido de la página" [ref=e49]:
+        - paragraph [ref=e50]
+        - generic [ref=e56]:
+          - heading "Búsqueda" [level=3] [ref=e57]
+          - generic [ref=e58]:
+            - generic [ref=e59]:
+              - generic [ref=e61]:
+                - generic [ref=e62]:
+                  - text: Denominación o razón social
+                  - text: ":"
+                - textbox "Ingresa la denominación o razón social" [ref=e63]
+              - generic [ref=e65]:
+                - generic [ref=e66]:
+                  - text: Nombre comercial
+                  - text: ":"
+                - textbox "Ingresa nombre comercial" [ref=e67]
+              - generic [ref=e69]:
+                - generic [ref=e70]:
+                  - text: Descripción del modelo novedoso
+                  - text: ":"
+                - textbox "Ingresa palabra clave de descripción" [ref=e71]
+            - generic [ref=e72]:
+              - generic [ref=e74]:
+                - generic [ref=e75]:
+                  - text: Vigencia de la autorización
+                  - text: ":"
+                - textbox "Fecha Inicio" [ref=e76]
+                - generic: 
+              - generic [ref=e78]:
+                - generic [ref=e79]:
+                  - text: Vigencia de la autorización
+                  - text: ":"
+                - textbox "Fecha Fin" [ref=e80]
+                - generic: 
+              - generic [ref=e82]:
+                - generic [ref=e83]:
+                  - text: Tipo Anotación
+                  - text: ":"
+                - combobox [ref=e84]:
+                  - option "Selecciona..." [selected]
+                  - option "Inscripción"
+                  - option "Modificación"
+                  - option "Prórroga"
+                  - option "Cancelación – Revocación"
+                  - option "Cancelación – Conclusión"
+                  - option "Cancelación – Autorización definitiva"
+            - generic [ref=e86]:
+              - button "Limpiar" [ref=e87] [cursor=pointer]
+              - button "Buscar" [ref=e88] [cursor=pointer]
+          - generic [ref=e90]:
+            - generic [ref=e91]: Loading...
+            - grid [ref=e92]:
+              - link [ref=e94] [cursor=pointer]
+              - table "Loading... Folio de registro Nombre comercial Vigencia autorización Anotación actual Page 1 of 0 10 No records to view" [ref=e98]:
+                - row "Folio de registro Nombre comercial Vigencia autorización Anotación actual" [ref=e99]:
+                  - columnheader [ref=e100]
+                  - columnheader "Folio de registro" [ref=e102]:
+                    - generic [ref=e104] [cursor=pointer]: Folio de registro
+                  - columnheader "Nombre comercial" [ref=e107]:
+                    - generic [ref=e109] [cursor=pointer]: Nombre comercial
+                  - columnheader "Vigencia autorización" [ref=e110]:
+                    - generic [ref=e112] [cursor=pointer]: Vigencia autorización
+                  - columnheader "Anotación actual" [ref=e113]:
+                    - generic [ref=e115] [cursor=pointer]: Anotación actual
+              - generic:
+                - generic:
+                  - table "Loading... Folio de registro Nombre comercial Vigencia autorización Anotación actual Page 1 of 0 10 No records to view":
+                    - rowgroup:
+                      - row:
+                        - gridcell
+                        - gridcell
+                        - gridcell
+                        - gridcell
+                        - gridcell
+            - group [ref=e117]:
+              - table [ref=e118]:
+                - rowgroup [ref=e119]:
+                  - row "Page 1 of 0 10 No records to view" [ref=e120]:
+                    - cell [ref=e121]
+                    - cell "Page 1 of 0 10" [ref=e122]:
+                      - table [ref=e123]:
+                        - rowgroup [ref=e124]:
+                          - row "Page 1 of 0 10" [ref=e125]:
+                            - cell [ref=e126]
+                            - cell [ref=e128]
+                            - cell [ref=e130]
+                            - cell "Page 1 of 0" [ref=e132]:
+                              - text: Page
+                              - textbox [ref=e133]: "1"
+                              - text: of 0
+                            - cell [ref=e134]
+                            - cell [ref=e136] [cursor=pointer]
+                            - cell [ref=e138] [cursor=pointer]
+                            - cell "10" [ref=e140]:
+                              - listbox [ref=e141]:
+                                - option "10" [selected]
+                                - option "20"
+                                - option "40"
+                                - option "50"
+                    - cell "No records to view" [ref=e142]:
+                      - generic [ref=e143]: No records to view
+    - contentinfo [ref=e146]:
+      - generic [ref=e148]:
+        - img "logo gobierno de méxico" [ref=e150]
+        - generic [ref=e151]:
+          - heading "Enlaces" [level=2] [ref=e152]
+          - list [ref=e153]:
+            - listitem [ref=e154]:
+              - link "Participa" [ref=e155] [cursor=pointer]:
+                - /url: http://www.participa.gob.mx
+            - listitem [ref=e156]:
+              - link "Datos" [ref=e157] [cursor=pointer]:
+                - /url: https://datos.gob.mx/
+            - listitem [ref=e158]:
+              - link "Publicaciones Oficiales" [ref=e159] [cursor=pointer]:
+                - /url: https://www.gob.mx/publicaciones
+            - listitem [ref=e160]:
+              - link "Portal de Obligaciones de Transparencia" [ref=e161] [cursor=pointer]:
+                - /url: http://portaltransparencia.gob.mx/buscador/search/search.do?method=begin&searchBy=0&idDependenciaZoom=06100
+            - listitem [ref=e162]:
+              - link "Sistema Infomex" [ref=e163] [cursor=pointer]:
+                - /url: https://www.infomex.org.mx/gobiernofederal/home.action
+            - listitem [ref=e164]:
+              - link "INAI" [ref=e165] [cursor=pointer]:
+                - /url: http://www.inai.org.mx
+        - generic [ref=e166]:
+          - heading "¿Qué es gob.mx?" [level=2] [ref=e167]
+          - paragraph [ref=e168]:
+            - text: Es el portal único de trámites, información y participación ciudadana.
+            - link "Leer más" [ref=e169] [cursor=pointer]:
+              - /url: /que-es-gobmx
+          - list [ref=e170]:
+            - listitem [ref=e171]:
+              - link "Temas" [ref=e172] [cursor=pointer]:
+                - /url: /temas
+            - listitem [ref=e173]:
+              - link "Declaración de Accesibilidad" [ref=e174] [cursor=pointer]:
+                - /url: /accesibilidad
+            - listitem [ref=e175]:
+              - link "Aviso de privacidad integral" [ref=e176] [cursor=pointer]:
+                - /url: /privacidadintegral
+            - listitem [ref=e177]:
+              - link "Aviso de privacidad simplificado" [ref=e178] [cursor=pointer]:
+                - /url: /privacidadsimplificado
+            - listitem [ref=e179]:
+              - link "Términos y Condiciones" [ref=e180] [cursor=pointer]:
+                - /url: /terminos
+            - listitem [ref=e181]:
+              - link "Política de seguridad" [ref=e182] [cursor=pointer]:
+                - /url: /terminos#medidas-seguridad-informacion
+            - listitem [ref=e183]:
+              - link "Marco Jurídico" [ref=e184] [cursor=pointer]:
+                - /url: http://www.ordenjuridico.gob.mx
+            - listitem [ref=e185]:
+              - link "Mapa de sitio" [ref=e186] [cursor=pointer]:
+                - /url: /sitemap
+        - generic [ref=e187]:
+          - heading "Contacto" [level=2] [ref=e188]
+          - paragraph [ref=e189]:
+            - text: Dudas e información a
+            - link "info@cnbv.gob.mx" [ref=e190] [cursor=pointer]:
+              - /url: mailto:info@cnbv.gob.mx
+          - heading "Síguenos en" [level=2] [ref=e191]
+          - list [ref=e192]:
+            - listitem [ref=e193]:
+              - link "Facebook" [ref=e194] [cursor=pointer]:
+                - /url: https://www.facebook.com/gobmexico
+                - img "Facebook" [ref=e195]
+            - listitem [ref=e196]:
+              - link "Twitter" [ref=e197] [cursor=pointer]:
+                - /url: https://twitter.com/GobiernoMX
+                - img "Twitter" [ref=e198]
+  - contentinfo [ref=e199]:
+    - generic [ref=e202]:
+      - img "logo gobierno de méxico" [ref=e204]
+      - generic [ref=e205]:
+        - heading "Enlaces" [level=5] [ref=e207] [cursor=pointer]
+        - list [ref=e210]:
+          - listitem [ref=e211]:
+            - link "Datos abiertos de la SABG" [ref=e212] [cursor=pointer]:
+              - /url: https://data.buengobierno.gob.mx/databuengobierno
+          - listitem [ref=e213]:
+            - link "Marco Jurídico" [ref=e214] [cursor=pointer]:
+              - /url: http://www.ordenjuridico.gob.mx
+          - listitem [ref=e215]:
+            - link "Plataforma Nacional de Transparencia" [ref=e216] [cursor=pointer]:
+              - /url: https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/faces/view/consultaPublica.xhtml#inicio
+          - listitem [ref=e217]:
+            - link "Transparencia para el pueblo" [ref=e218] [cursor=pointer]:
+              - /url: https://transparencia.gob.mx
+          - listitem [ref=e219]:
+            - link "Alerta" [ref=e220] [cursor=pointer]:
+              - /url: https://alertadores.buengobierno.gob.mx/
+      - generic [ref=e221]:
+        - heading "¿Qué es gob.mx?" [level=5] [ref=e223] [cursor=pointer]
+        - generic [ref=e225]:
+          - paragraph [ref=e226]:
+            - text: Es el portal único de trámites, información y participación ciudadana.
+            - link "Leer más" [ref=e227] [cursor=pointer]:
+              - /url: https://www.gob.mx/que-es-gobmx
+          - list [ref=e228]:
+            - listitem [ref=e229]:
+              - link "Portal de datos abiertos" [ref=e230] [cursor=pointer]:
+                - /url: https://datos.gob.mx
+            - listitem [ref=e231]:
+              - link "Declaración de accesibilidad" [ref=e232] [cursor=pointer]:
+                - /url: https://www.gob.mx/accesibilidad
+            - listitem [ref=e233]:
+              - link "Términos y Condiciones" [ref=e234] [cursor=pointer]:
+                - /url: https://www.gob.mx/terminos
+      - generic [ref=e235]:
+        - heading "Denuncia contra servidores públicos" [level=5] [ref=e236]:
+          - link "Denuncia contra servidores públicos" [ref=e237] [cursor=pointer]:
+            - /url: https://sidec.buengobierno.gob.mx/#!/
+        - generic [ref=e238]: Síguenos en
+        - list [ref=e239]:
+          - listitem [ref=e240]:
+            - link "Facebook" [ref=e241] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobmexico
+              - img "Facebook" [ref=e242]
+          - listitem [ref=e243]:
+            - link "Twitter" [ref=e244] [cursor=pointer]:
+              - /url: https://twitter.com/GobiernoMX
+              - img "Twitter" [ref=e245]
+          - listitem [ref=e246]:
+            - link "Instagram" [ref=e247] [cursor=pointer]:
+              - /url: https://www.instagram.com/gobmexico/
+              - img "Instagram" [ref=e248]
+          - listitem [ref=e249]:
+            - link "Youtube" [ref=e250] [cursor=pointer]:
+              - /url: https://www.youtube.com/@gobiernodemexico
+              - img "Youtube" [ref=e251]
+        - list [ref=e252]:
+          - listitem [ref=e253]:
+            - link "logo 079" [ref=e255] [cursor=pointer]:
+              - /url: tel:+079
+              - img "logo 079" [ref=e256]

@@ -1,0 +1,83 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - img "Escudo" [ref=e3]
+    - img "seguimos avanzando" [ref=e4]
+  - generic [ref=e5]:
+    - img "close" [ref=e42] [cursor=pointer]
+    - generic [ref=e6]:
+      - generic [ref=e7] [cursor=pointer]:
+        - img "PREDIAL"
+        - heading "Paga tu predial" [level=3] [ref=e8]
+        - heading "Consulta y pago de saldos de prediales" [level=5] [ref=e9]
+      - generic [ref=e10] [cursor=pointer]:
+        - img "OOMAPASC"
+        - heading "OOMAPASC" [level=3] [ref=e11]
+        - heading "Consulta y pago de recibo de agua" [level=5] [ref=e12]
+    - generic [ref=e13]:
+      - generic [ref=e15]: ÚLTIMAS NOTICIAS
+      - generic [ref=e17]:
+        - img "Carrucel 3" [ref=e19]
+        - img "Carrucel 1" [ref=e21]
+        - img "Carrucel 2" [ref=e23]
+        - img "Carrucel 3" [ref=e25]
+        - img "Carrucel 1" [ref=e27]
+        - generic [ref=e28]:
+          - radio [ref=e29] [cursor=pointer]
+          - radio [checked] [ref=e30] [cursor=pointer]
+          - radio [ref=e31] [cursor=pointer]
+        - generic [ref=e32]:
+          - img "Anterior" [ref=e39] [cursor=pointer]
+          - img "siguiente" [ref=e41] [cursor=pointer]
+  - contentinfo [ref=e33]:
+    - link "whatsapp" [ref=e34] [cursor=pointer]:
+      - /url: https://wa.me/526444105110
+      - img "whatsapp" [ref=e35]
+    - link "emergencia" [ref=e36] [cursor=pointer]:
+      - /url: tel:911
+      - img "emergencia" [ref=e37]
+  - iframe [ref=e43]:
+    - generic [active] [ref=f1e1]:
+      - img "logoPredial"
+      - generic [ref=f1e2]: Paga tu predial
+      - generic [ref=f1e3]:
+        - generic [ref=f1e4]:
+          - heading "Si usted desea imprimir su recibo oficial pulse aquí." [level=5] [ref=f1e5]:
+            - link "Si usted desea imprimir su recibo oficial pulse aquí." [ref=f1e6] [cursor=pointer]:
+              - /url: https://recibos.cajeme.gob.mx/
+          - heading "Clave Catastral:" [level=4] [ref=f1e7]
+          - searchbox [ref=f1e8]
+          - heading "*Proporciona la clave catastral sin espacios en blanco ni guiones." [level=6] [ref=f1e9]
+          - button "Buscar" [ref=f1e10] [cursor=pointer]
+        - generic [ref=f1e11]:
+          - generic [ref=f1e12]:
+            - generic [ref=f1e13]: "CLAVE CATASTRAL:"
+            - generic [ref=f1e14]: "PARTICIPE:"
+            - generic [ref=f1e15]: "DIRECCIÓN:"
+          - generic [ref=f1e16]:
+            - generic [ref=f1e18]: DESGLOSE DE CARGOS
+            - generic [ref=f1e19]:
+              - generic [ref=f1e20]: IMPORTE
+              - generic [ref=f1e21]: $0.00
+            - generic [ref=f1e22]:
+              - generic [ref=f1e23]: RECARGOS
+              - generic [ref=f1e24]: $0.00
+            - generic [ref=f1e25]:
+              - generic [ref=f1e26]: DESCUENTO BASE
+              - generic [ref=f1e27]: $0.00
+            - generic [ref=f1e28]:
+              - generic [ref=f1e29]: DESCUENTO RECARGOS
+              - generic [ref=f1e30]: $0.00
+            - separator [ref=f1e31]
+            - generic [ref=f1e32]:
+              - heading "TOTAL A PAGAR" [level=3] [ref=f1e33]
+              - heading "$0.00" [level=3] [ref=f1e34]
+          - generic [ref=f1e35]:
+            - button "Pagar en linea" [disabled] [ref=f1e36] [cursor=pointer]
+            - button "Imprimir" [disabled] [ref=f1e37] [cursor=pointer]
+      - contentinfo [ref=f1e38]:
+        - link "whatsapp" [ref=f1e39] [cursor=pointer]:
+          - /url: https://wa.me/526444105110
+          - img "whatsapp"
+        - link "emergencia" [ref=f1e40] [cursor=pointer]:
+          - /url: tel:911
+          - img "emergencia"

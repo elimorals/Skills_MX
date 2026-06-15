@@ -1,0 +1,58 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - link [ref=e4] [cursor=pointer]:
+          - /url: http://www.ooapas.gob.mx/
+          - img [ref=e5]
+        - list [ref=e7]:
+          - listitem [ref=e8]:
+            - link "" [ref=e9] [cursor=pointer]:
+              - /url: https://www.facebook.com/MoreliaOoapas/
+              - generic [ref=e10]: 
+          - listitem [ref=e11]:
+            - link "" [ref=e12] [cursor=pointer]:
+              - /url: https://twitter.com/ooapasmorelia
+              - generic [ref=e13]: 
+  - main [ref=e14]:
+    - generic [ref=e16]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - link [ref=e23] [cursor=pointer]:
+            - /url: https://pagoenlinea.ooapas.gob.mx
+          - generic [ref=e24]:
+            - generic [ref=e25]: 
+            - textbox "Número de contrato" [ref=e26]
+            - generic [ref=e27]: Número de contrato
+          - generic [ref=e28]:
+            - generic [ref=e29]: 
+            - textbox "Contraseña" [ref=e30]
+            - generic [ref=e31]: Contraseña
+          - generic [ref=e32]:
+            - checkbox "Recordar contraseña" [ref=e33]
+            - generic [ref=e34]: Recordar contraseña
+          - button "Ingresar" [ref=e35] [cursor=pointer]
+          - link "Olvide mi contraseña" [ref=e38] [cursor=pointer]:
+            - /url: recordar.html
+          - paragraph [ref=e41]:
+            - text: ¿No tienes cuenta?
+            - link "Registrate" [ref=e42] [cursor=pointer]:
+              - /url: registroUsuario.php
+        - generic [ref=e44]:
+          - iframe [ref=e45]:
+            - link "Compartir" [ref=f26e6] [cursor=pointer]:
+              - /url: /sharer/sharer.php?kid_directed_site=0&u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&display=popup&ref=plugin&src=share_button
+              - button "Compartir" [ref=f26e8]:
+                - generic [ref=f26e10]: Compartir
+          - link "Tweet to @ooapasmorelia" [ref=e46] [cursor=pointer]:
+            - /url: https://twitter.com/intent/tweet?screen_name=ooapasmorelia&ref_src=twsrc%5Etfw
+      - generic [ref=e49]:
+        - heading "PagoExpress ya llegó" [level=5] [ref=e50]
+        - paragraph [ref=e51]: Ahora más fácil que nunca, prueba nuestro nuevo servicio pago express y sin necesidad de cuenta. Haz click aquí
+        - link "PagoExpress" [ref=e52] [cursor=pointer]:
+          - /url: index_pago_express.php
+  - contentinfo [ref=e53]:
+    - generic [ref=e54]:
+      - text: "© 2019 OOAPAS:"
+      - link "www.ooapas.gob.mx" [ref=e55] [cursor=pointer]:
+        - /url: https://mdbootstrap.com/education/bootstrap/

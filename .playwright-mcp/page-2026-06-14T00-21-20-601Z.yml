@@ -1,0 +1,24 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]: H. AYUNTAMIENTO DE SAN MARTÍN TEXMELUCAN
+    - text: 2024 - 2027
+  - list [ref=e7]:
+    - listitem [ref=e8]:
+      - link "Pago de Predial" [ref=e9] [cursor=pointer]:
+        - /url: adeudo.php
+    - listitem [ref=e10]:
+      - link "Verifica Pago" [ref=e11] [cursor=pointer]:
+        - /url: verifica.php
+    - listitem [ref=e12]:
+      - link "Contacto" [ref=e13] [cursor=pointer]:
+        - /url: contacto.php
+  - generic [ref=e14]:
+    - img [ref=e16]
+    - generic [ref=e18]: Consulta y Pago de Impuesto Predial en Línea.
+  - generic [ref=e19]:
+    - paragraph
+    - generic [ref=e21]:
+      - text: Derechos reservados 2018-2026
+      - link "alidevelopment.net" [ref=e22] [cursor=pointer]:
+        - /url: http://alidevelopment.net
+    - paragraph

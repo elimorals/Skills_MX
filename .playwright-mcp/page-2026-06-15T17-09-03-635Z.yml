@@ -1,0 +1,5 @@
+- generic [active] [ref=e1]:
+  - heading "Server Error" [level=1] [ref=e3]
+  - group [ref=e6]:
+    - heading "404 - File or directory not found." [level=2] [ref=e7]
+    - heading "The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable." [level=3] [ref=e8]

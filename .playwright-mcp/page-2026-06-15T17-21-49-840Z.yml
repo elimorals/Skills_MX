@@ -1,0 +1,43 @@
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - img [ref=e7]
+    - img "Ilustracion" [ref=e8]
+  - banner [ref=e9]:
+    - link [ref=e11] [cursor=pointer]:
+      - /url: /
+      - img
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - img [ref=e15]
+      - img "Ilustracion" [ref=e16]
+    - generic [ref=e20]:
+      - generic [ref=e22]:
+        - img [ref=e24]
+        - img [ref=e25]
+        - img "background-image" [ref=e26]
+      - generic [ref=e27]:
+        - generic [ref=e28]:
+          - heading "¡Bienvenido a nuestra oficina virtual!" [level=1] [ref=e29]
+          - paragraph [ref=e30]: Tu asistente digital para gestionar todos los trámites relacionados con tus servicios de agua.
+        - generic [ref=e31]:
+          - link "Iniciar sesión" [ref=e32] [cursor=pointer]:
+            - /url: /login/
+          - link "Crear cuenta" [ref=e33] [cursor=pointer]:
+            - /url: /registro/
+  - contentinfo [ref=e34]:
+    - generic [ref=e35]:
+      - img
+      - generic [ref=e36]:
+        - generic [ref=e37]: "Síguenos en:"
+        - link [ref=e38] [cursor=pointer]:
+          - /url: https://es-la.facebook.com/aguasdesaltillo
+          - img
+        - link [ref=e39] [cursor=pointer]:
+          - /url: https://twitter.com/aguasdesaltillo?lang=es
+          - img
+        - link [ref=e40] [cursor=pointer]:
+          - /url: https://www.youtube.com/channel/UC0M6ywuPQyG88ZzApUCoplA
+          - img
+        - link [ref=e41] [cursor=pointer]:
+          - /url: https://www.instagram.com/aguasdesaltillo_
+          - img

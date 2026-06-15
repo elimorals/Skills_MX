@@ -47,3 +47,4 @@ build/
 # Memoria/sesión local del usuario (no es código)
 .remember/
 webhooks/.venv/
+.vercel

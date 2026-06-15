@@ -1,0 +1,289 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4QPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: pago predial culiacan sinaloa sitio:gob.mx pago predial culiacan sinaloa sitio:gob.mx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dpago%2Bpredial%2Bculiacan%2Bsinaloa%2Bsitio:gob.mx&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=pago+predial+culiacan+sinaloa+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&aep=1&ntc=1&sa=X&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4Q2J8OegQIEBAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=pago+predial+culiacan+sinaloa+sitio:gob.mx&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&sa=X&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4Q0pQJegQIFhAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Imágenes" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+culiacan+sinaloa+sitio:gob.mx&sa=X&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4QtKgLegQIFRAB
+              - generic [ref=e88]: Imágenes
+          - listitem [ref=e89]:
+            - link "Shopping" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+culiacan+sinaloa+sitio:gob.mx&ved=1t:220175&ictx=111
+              - generic [ref=e92]: Shopping
+          - listitem [ref=e93]:
+            - link "Videos" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+culiacan+sinaloa+sitio:gob.mx&sa=X&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4QtKgLegQIFBAB
+              - generic [ref=e96]: Videos
+          - listitem [ref=e97]:
+            - link "Videos cortos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn_x-KoZgS_dIzvUJcCpPvNisF2DcSRPJpJfBfbNP3o4JvepbQzJ6mD3zLYA6JaRRgT1nrRmCZ03lqWGmZ1oQ2RDMyNE6pPLPU58IVGl7_kBNkRy2ReOmmUvlqV1WgY3trYDQQFfLG8DmXFM4TYH6akVTvRfauqNPO4IW75pmgCRUUbIYjr3Dmjhr5bs250iHZY-n20Q&q=pago+predial+culiacan+sinaloa+sitio:gob.mx&sa=X&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4Qs6gLegQIEhAB
+              - generic [ref=e100]: Videos cortos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - main [ref=e123]:
+      - generic [ref=e127]:
+        - generic [ref=e130]:
+          - heading "Resultados web" [level=2] [ref=e131]
+          - generic [ref=e132]:
+            - generic [ref=e135]:
+              - link "Gobierno de Culiacán - Predial en Línea Ayuntamiento de Culiacán https://pagos.culiacan.gob.mx › miclave" [ref=e137] [cursor=pointer]:
+                - /url: https://pagos.culiacan.gob.mx/miclave
+                - heading "Gobierno de Culiacán - Predial en Línea" [level=3] [ref=e138]
+                - generic [ref=e144]:
+                  - generic [ref=e146]: Ayuntamiento de Culiacán
+                  - generic [ref=e148]: https://pagos.culiacan.gob.mx › miclave
+              - button "Acerca de este resultado" [ref=e149] [cursor=pointer]:
+                - img [ref=e152]
+            - generic [ref=e156]:
+              - emphasis [ref=e157]: Pago de predial en línea
+              - text: . Ingrese Su Clave Catastral. -. -. -. -. -. Buscar. Su información está segura con nosotros. Av. Alvaro Obregón y Mariano Escobedo ...
+        - generic [ref=e168]:
+          - heading "Pensando" [level=2] [ref=e172]:
+            - generic [ref=e173]: Pensando
+          - progressbar "Generando" [ref=e174]
+        - generic [ref=e178]:
+          - heading "Resultados web" [level=2] [ref=e179]
+          - generic [ref=e180]:
+            - generic [ref=e183]:
+              - link "Gobierno de Culiacán - Ayuntamiento de Culiacán https://pagos.culiacan.gob.mx" [ref=e185] [cursor=pointer]:
+                - /url: https://pagos.culiacan.gob.mx/
+                - heading "Gobierno de Culiacán -" [level=3] [ref=e186]
+                - generic [ref=e192]:
+                  - generic [ref=e194]: Ayuntamiento de Culiacán
+                  - generic [ref=e196]: https://pagos.culiacan.gob.mx
+              - button "Acerca de este resultado" [ref=e197] [cursor=pointer]:
+                - img [ref=e200]
+            - generic [ref=e204]:
+              - text: Bienvenido, para verificar su adeudo por favor seleccione su tipo de
+              - emphasis [ref=e205]: pago
+              - text: . · Impuesto
+              - emphasis [ref=e206]: Predial
+              - text: · Multas de Tránsito · Multas Federales · Multas Municipales ...
+        - generic [ref=e210]:
+          - generic [ref=e213]:
+            - link "H. Ayuntamiento de Culiacán Ayuntamiento de Culiacán https://www.culiacan.gob.mx" [ref=e215] [cursor=pointer]:
+              - /url: https://www.culiacan.gob.mx/
+              - heading "H. Ayuntamiento de Culiacán" [level=3] [ref=e216]
+              - generic [ref=e222]:
+                - generic [ref=e224]: Ayuntamiento de Culiacán
+                - generic [ref=e226]: https://www.culiacan.gob.mx
+            - button "Acerca de este resultado" [ref=e227] [cursor=pointer]:
+              - img [ref=e230]
+          - generic [ref=e234]:
+            - emphasis [ref=e235]: Pago del Impuesto Predial
+            - text: . Pagar. Reporte Ciudadano. Reportar. Trámites y Servicios ... Culiacán, Sinaloa, México. Teléfono (667) 7580101 info@culiacan.gob.mx.
+        - generic [ref=e239]:
+          - generic [ref=e242]:
+            - link "Servicios Ayuntamiento de Culiacán https://www.culiacan.gob.mx › servicios" [ref=e244] [cursor=pointer]:
+              - /url: https://www.culiacan.gob.mx/servicios
+              - heading "Servicios" [level=3] [ref=e245]
+              - generic [ref=e251]:
+                - generic [ref=e253]: Ayuntamiento de Culiacán
+                - generic [ref=e255]: https://www.culiacan.gob.mx › servicios
+            - button "Acerca de este resultado" [ref=e256] [cursor=pointer]:
+              - img [ref=e259]
+          - generic [ref=e263]:
+            - text: Servicios en Línea ·
+            - emphasis [ref=e264]: Pago del Impuesto Predial
+            - text: · Reportes WhatsApp · Trámites y Servicios · Multas de Tránsito · Multas Municipales · Multas Federales · Verificación ...
+        - generic [ref=e269]:
+          - heading "Más preguntas" [level=2] [ref=e271]
+          - generic [ref=e272]:
+            - button "¿Cómo checar cuánto debo de predial en Culiacán?" [ref=e278] [cursor=pointer]:
+              - generic [ref=e280]: ¿Cómo checar cuánto debo de predial en Culiacán?
+              - img [ref=e283]
+            - button "¿Cómo bajar el recibo de predial 2026?" [ref=e292] [cursor=pointer]:
+              - generic [ref=e294]: ¿Cómo bajar el recibo de predial 2026?
+              - img [ref=e297]
+            - button "¿Cómo pago el predial en línea?" [ref=e306] [cursor=pointer]:
+              - generic [ref=e308]: ¿Cómo pago el predial en línea?
+              - img [ref=e311]
+            - button "¿Cuándo hay descuento de predial en Culiacán?" [ref=e320] [cursor=pointer]:
+              - generic [ref=e322]: ¿Cuándo hay descuento de predial en Culiacán?
+              - img [ref=e325]
+        - generic [ref=e330]:
+          - heading "Resultados web" [level=2] [ref=e331]
+          - generic [ref=e332]:
+            - generic [ref=e335]:
+              - link "Recepción del pago por concepto del impuesto predial ... Gobierno del Estado de Sinaloa https://rmtysculiacan.sinaloa.gob.mx › Portal › Consulta" [ref=e337] [cursor=pointer]:
+                - /url: https://rmtysculiacan.sinaloa.gob.mx/Portal/CatalogoTramites/Consulta?Tramite=MgAwADIANwAxAA==
+                - heading "Recepción del pago por concepto del impuesto predial ..." [level=3] [ref=e338]
+                - generic [ref=e340]:
+                  - img [ref=e345]
+                  - generic [ref=e347]:
+                    - generic [ref=e349]: Gobierno del Estado de Sinaloa
+                    - generic [ref=e351]: https://rmtysculiacan.sinaloa.gob.mx › Portal › Consulta
+              - button "Acerca de este resultado" [ref=e352] [cursor=pointer]:
+                - img [ref=e355]
+            - generic [ref=e359]:
+              - emphasis [ref=e360]: Recepción del pago por concepto del impuesto predial
+              - text: "de propiedades registradas en el municipio. Dirección web: Medio de Presentacion: Solicitud Presencial y en ..."
+        - generic [ref=e364]:
+          - generic [ref=e367]:
+            - link "Descuento en multas y recargos Predial e ISAI febrero 2026 Ayuntamiento de Culiacán https://www.culiacan.gob.mx › prensa › descuento-en-..." [ref=e369] [cursor=pointer]:
+              - /url: https://www.culiacan.gob.mx/prensa/descuento-en-multas-y-recargos-predial-e-isai-febrero-2026
+              - heading "Descuento en multas y recargos Predial e ISAI febrero 2026" [level=3] [ref=e370]
+              - generic [ref=e376]:
+                - generic [ref=e378]: Ayuntamiento de Culiacán
+                - generic [ref=e380]: https://www.culiacan.gob.mx › prensa › descuento-en-...
+            - button "Acerca de este resultado" [ref=e381] [cursor=pointer]:
+              - img [ref=e384]
+          - generic [ref=e387]:
+            - generic [ref=e388]: 6 feb 2026 —
+            - generic [ref=e389]:
+              - emphasis [ref=e390]: Los pagos pueden realizarse en línea, a través del portal www.culiacan.gob.mx
+              - text: ", así como en las oficinas del Ayuntamiento de Culiacán y en ..."
+        - generic [ref=e394]:
+          - generic [ref=e397]:
+            - link "Trámites y Servicios Ayuntamiento de Culiacán https://www.culiacan.gob.mx › tramites-y-servicios" [ref=e399] [cursor=pointer]:
+              - /url: https://www.culiacan.gob.mx/ayuntamiento/tramites-y-servicios
+              - heading "Trámites y Servicios" [level=3] [ref=e400]
+              - generic [ref=e406]:
+                - generic [ref=e408]: Ayuntamiento de Culiacán
+                - generic [ref=e410]: https://www.culiacan.gob.mx › tramites-y-servicios
+            - button "Acerca de este resultado" [ref=e411] [cursor=pointer]:
+              - img [ref=e414]
+          - generic [ref=e418]:
+            - emphasis [ref=e419]: Cobro del Impuesto Predial Urbano
+            - text: . Leer Más. Carta de Residencia. Leer Más ... Sinaloa, México. Teléfono (667) 7580101 info@culiacan.gob.mx · Trámites y ...
+        - generic [ref=e423]:
+          - generic [ref=e426]:
+            - link "Pagar Predial en Culiacán, Sinaloa 2026 | Sistema Oficial pesqueria.gob.mx https://pesqueria.gob.mx › wp-content › uploads › pred..." [ref=e428] [cursor=pointer]:
+              - /url: https://pesqueria.gob.mx/wp-content/uploads/predial/index.php?estado=sinaloa&municipio=culiacan
+              - heading "Pagar Predial en Culiacán, Sinaloa 2026 | Sistema Oficial" [level=3] [ref=e429]
+              - generic [ref=e435]:
+                - generic [ref=e437]: pesqueria.gob.mx
+                - generic [ref=e439]: https://pesqueria.gob.mx › wp-content › uploads › pred...
+            - button "Acerca de este resultado" [ref=e440] [cursor=pointer]:
+              - img [ref=e443]
+          - generic [ref=e447]:
+            - emphasis [ref=e448]: Para pagar tu predial en línea solo necesitas seleccionar el estado y municipio de tu propiedad
+            - text: ", ingresar tu número de cuenta catastral, consultar el adeudo, ..."
+        - generic [ref=e452]:
+          - generic [ref=e455]:
+            - link "¡Aprovecha los descuento del impuesto predial! 💸 Paga a ... Facebook · Ayuntamiento de Culiacán Más de 30 reacciones · hace 1 año" [ref=e457] [cursor=pointer]:
+              - /url: https://www.facebook.com/AyuntamientoCLN/photos/aprovecha-los-descuento-del-impuesto-predial-paga-a-tiempo-y-ahorra-no-dejes-pas/993483532824090/
+              - heading "¡Aprovecha los descuento del impuesto predial! 💸 Paga a ..." [level=3] [ref=e458]
+              - generic [ref=e464]:
+                - generic [ref=e466]: Facebook · Ayuntamiento de Culiacán
+                - generic [ref=e468]: Más de 30 reacciones · hace 1 año
+            - button "Acerca de este resultado" [ref=e469] [cursor=pointer]:
+              - img [ref=e472]
+          - generic [ref=e476]:
+            - text: Paga a tiempo y ahorra. ¡No dejes pasar esta oportunidad!
+            - emphasis [ref=e477]: "Consulta y paga el predial en: pagos.culiacan.gob.mx"
+            - text: . Armando Heráldez and 38 ...
+      - navigation [ref=e480]:
+        - heading "Navegación de páginas" [level=1] [ref=e481]
+        - text: "1"
+        - link "Page 2" [ref=e484] [cursor=pointer]:
+          - /url: /search?q=pago+predial+culiacan+sinaloa+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=1TIwas_9EduiqtsPn8PJ8AM&start=10&sa=N&sstk=AU9db-CNVuaWmnmsR-uuF5L2Und5TcXQCP5Psdi2TQpKKxK9uOGzzWL7BawzbZ6txDtqtB4lZ1SWYCD5dm2-PlETJ9_0vdcP1E7P0A&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4Q8tMDegQIHRAE
+          - text: "2"
+        - link "Page 3" [ref=e486] [cursor=pointer]:
+          - /url: /search?q=pago+predial+culiacan+sinaloa+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=1TIwas_9EduiqtsPn8PJ8AM&start=20&sa=N&sstk=AU9db-CNVuaWmnmsR-uuF5L2Und5TcXQCP5Psdi2TQpKKxK9uOGzzWL7BawzbZ6txDtqtB4lZ1SWYCD5dm2-PlETJ9_0vdcP1E7P0A&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4Q8tMDegQIHRAG
+          - text: "3"
+        - link "Page 4" [ref=e488] [cursor=pointer]:
+          - /url: /search?q=pago+predial+culiacan+sinaloa+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=1TIwas_9EduiqtsPn8PJ8AM&start=30&sa=N&sstk=AU9db-CNVuaWmnmsR-uuF5L2Und5TcXQCP5Psdi2TQpKKxK9uOGzzWL7BawzbZ6txDtqtB4lZ1SWYCD5dm2-PlETJ9_0vdcP1E7P0A&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4Q8tMDegQIHRAI
+          - text: "4"
+        - link "Page 5" [ref=e490] [cursor=pointer]:
+          - /url: /search?q=pago+predial+culiacan+sinaloa+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=1TIwas_9EduiqtsPn8PJ8AM&start=40&sa=N&sstk=AU9db-CNVuaWmnmsR-uuF5L2Und5TcXQCP5Psdi2TQpKKxK9uOGzzWL7BawzbZ6txDtqtB4lZ1SWYCD5dm2-PlETJ9_0vdcP1E7P0A&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4Q8tMDegQIHRAK
+          - text: "5"
+        - link "Page 6" [ref=e492] [cursor=pointer]:
+          - /url: /search?q=pago+predial+culiacan+sinaloa+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=1TIwas_9EduiqtsPn8PJ8AM&start=50&sa=N&sstk=AU9db-CNVuaWmnmsR-uuF5L2Und5TcXQCP5Psdi2TQpKKxK9uOGzzWL7BawzbZ6txDtqtB4lZ1SWYCD5dm2-PlETJ9_0vdcP1E7P0A&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4Q8tMDegQIHRAM
+          - text: "6"
+        - link "Page 7" [ref=e494] [cursor=pointer]:
+          - /url: /search?q=pago+predial+culiacan+sinaloa+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=1TIwas_9EduiqtsPn8PJ8AM&start=60&sa=N&sstk=AU9db-CNVuaWmnmsR-uuF5L2Und5TcXQCP5Psdi2TQpKKxK9uOGzzWL7BawzbZ6txDtqtB4lZ1SWYCD5dm2-PlETJ9_0vdcP1E7P0A&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4Q8tMDegQIHRAO
+          - text: "7"
+        - link "Page 8" [ref=e496] [cursor=pointer]:
+          - /url: /search?q=pago+predial+culiacan+sinaloa+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=1TIwas_9EduiqtsPn8PJ8AM&start=70&sa=N&sstk=AU9db-CNVuaWmnmsR-uuF5L2Und5TcXQCP5Psdi2TQpKKxK9uOGzzWL7BawzbZ6txDtqtB4lZ1SWYCD5dm2-PlETJ9_0vdcP1E7P0A&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4Q8tMDegQIHRAQ
+          - text: "8"
+        - link "Page 9" [ref=e498] [cursor=pointer]:
+          - /url: /search?q=pago+predial+culiacan+sinaloa+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=1TIwas_9EduiqtsPn8PJ8AM&start=80&sa=N&sstk=AU9db-CNVuaWmnmsR-uuF5L2Und5TcXQCP5Psdi2TQpKKxK9uOGzzWL7BawzbZ6txDtqtB4lZ1SWYCD5dm2-PlETJ9_0vdcP1E7P0A&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4Q8tMDegQIHRAS
+          - text: "9"
+        - link "Page 10" [ref=e500] [cursor=pointer]:
+          - /url: /search?q=pago+predial+culiacan+sinaloa+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=1TIwas_9EduiqtsPn8PJ8AM&start=90&sa=N&sstk=AU9db-CNVuaWmnmsR-uuF5L2Und5TcXQCP5Psdi2TQpKKxK9uOGzzWL7BawzbZ6txDtqtB4lZ1SWYCD5dm2-PlETJ9_0vdcP1E7P0A&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4Q8tMDegQIHRAU
+          - text: "10"
+        - heading "Siguiente" [level=2] [ref=e502]:
+          - link "Siguiente" [ref=e503] [cursor=pointer]:
+            - /url: /search?q=pago+predial+culiacan+sinaloa+sitio:gob.mx&sca_esv=c6c16ab1eb0a4421&ei=1TIwas_9EduiqtsPn8PJ8AM&start=10&sa=N&sstk=AU9db-CNVuaWmnmsR-uuF5L2Und5TcXQCP5Psdi2TQpKKxK9uOGzzWL7BawzbZ6txDtqtB4lZ1SWYCD5dm2-PlETJ9_0vdcP1E7P0A&ved=2ahUKEwiPvJyd34mVAxVbkWoFHZ9hEj4Q8NMDegQIHRAW
+            - generic [ref=e505]: Siguiente
+      - navigation
+    - contentinfo [ref=e506]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e507]
+      - generic [ref=e511]:
+        - generic [ref=e513]:
+          - text: México
+          - generic [ref=e515]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - A través de tu dirección IP" [ref=e517] [cursor=pointer]:
+              - generic [ref=e518]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e520]:
+                - text: "-"
+                - generic [ref=e521]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e523] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e526]:
+          - link "Ayuda" [ref=e527] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e528] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e529] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e530] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

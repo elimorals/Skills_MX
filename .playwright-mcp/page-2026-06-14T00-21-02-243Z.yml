@@ -1,0 +1,32 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - img "Logo" [ref=e5]
+      - navigation:
+        - list [ref=e6]:
+          - listitem [ref=e7]:
+            - strong [ref=e10]: Inicio
+          - listitem [ref=e11]:
+            - link "Tu Municipio" [ref=e13] [cursor=pointer]:
+              - /url: https://www.chicoloapan.gob.mx/tu-municipio
+              - strong [ref=e14]: Tu Municipio
+          - listitem [ref=e15]:
+            - link "Tu Gobierno" [ref=e16] [cursor=pointer]:
+              - /url: https://www.chicoloapan.gob.mx/index
+          - listitem [ref=e17]:
+            - link "Simplificación y Dig" [ref=e19] [cursor=pointer]:
+              - /url: https://www.chicoloapan.gob.mx/coordinacion-de-simplificacion-y-digitalizacion
+              - strong [ref=e20]: Simplificación y Dig
+          - listitem [ref=e21]:
+            - generic [ref=e22]: Transparencia
+          - listitem [ref=e23]:
+            - link "UIPPE 2025-2027" [ref=e25] [cursor=pointer]:
+              - /url: https://www.chicoloapan.gob.mx/uippe-20025-2027
+              - strong [ref=e26]: UIPPE 2025-2027
+          - listitem [ref=e27]:
+            - link "Boletines Informativos" [ref=e29] [cursor=pointer]:
+              - /url: https://www.chicoloapan.gob.mx/boletines-informativos-2025-2027
+              - strong [ref=e30]: Boletines Informativos
+  - heading "Error 404 La página solicitada no existe" [level=1] [ref=e33]:
+    - text: Error 404
+    - text: La página solicitada no existe

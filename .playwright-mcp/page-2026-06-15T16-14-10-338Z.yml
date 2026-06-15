@@ -1,0 +1,260 @@
+- generic [active] [ref=e1]:
+  - link "Pasar al contenido principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e8]:
+        - link [ref=e13] [cursor=pointer]:
+          - /url: https://www.siapa.gob.mx
+        - list [ref=e17]:
+          - listitem [ref=e18]:
+            - link "Trámites y Servicios" [ref=e19] [cursor=pointer]:
+              - /url: /servicios
+          - listitem [ref=e20]:
+            - link "Órganos de Gobierno" [ref=e21] [cursor=pointer]:
+              - /url: /gobierno
+          - listitem [ref=e22]:
+            - link "Sala de Prensa" [ref=e23] [cursor=pointer]:
+              - /url: /prensa
+          - listitem [ref=e24]:
+            - link "Transparencia" [ref=e25] [cursor=pointer]:
+              - /url: /transparencia
+        - generic [ref=e31]:
+          - heading "Search form" [level=2] [ref=e32]
+          - generic [ref=e33]:
+            - generic [ref=e34]: Search this site
+            - textbox "Search this site" [ref=e35]:
+              - /placeholder: Búsqueda
+          - button "Submit" [ref=e37] [cursor=pointer]
+    - generic [ref=e38]:
+      - generic [ref=e46]:
+        - paragraph
+        - link [ref=e48] [cursor=pointer]:
+          - /url: https://www.siapa.gob.mx
+        - paragraph
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - heading "Se encuentra usted aquí" [level=2] [ref=e52]
+          - generic [ref=e53]:
+            - link "SIAPA" [ref=e54] [cursor=pointer]:
+              - /url: /
+            - text: »
+            - link "Trámites y Servicios" [ref=e55] [cursor=pointer]:
+              - /url: /servicios
+        - generic [ref=e57]:
+          - heading "Pago de Recibo" [level=1] [ref=e58]
+          - article [ref=e62]:
+            - generic [ref=e63]:
+              - paragraph [ref=e70]: Realizar su pago para mantener su cuenta al corriente
+              - generic [ref=e71]:
+                - generic [ref=e72]: "Requisitos:"
+                - generic [ref=e74]:
+                  - paragraph [ref=e75]: Presentar su recibo actualizado en ventanilla
+                  - link [ref=e77] [cursor=pointer]:
+                    - /url: /aplicaciones/pagoenlinea/
+              - generic [ref=e78]:
+                - generic [ref=e79]: "Comentarios y observaciones:"
+                - generic [ref=e81]:
+                  - list [ref=e82]:
+                    - listitem [ref=e83]: Si el pago es vía telefónica proporcionar cuenta contrato SIAPA y número de tarjeta a que se realizará el cargo.
+                    - listitem [ref=e84]:
+                      - text: "Si el pago es en Línea indicar cuenta contrato SIAPA y número de tarjeta a que se realizará el cargo (página WEB). Nota: Cualquier cuestión relacionada con el pago en línea, favor de contactar a:"
+                      - link "comercial@siapa.gob.mx" [ref=e85] [cursor=pointer]:
+                        - /url: mailto:comercial@siapa.gob.mx
+                  - paragraph [ref=e86]: Para realizar el trámite es necesario acudir a uno de nuestros 4 centros operativos SIAPA, llamar al centro telefónico SIAPATEL, consultar nuestra página WEB y/o centros afiliados (se indican en la parte inferior de esta página).
+                  - paragraph [ref=e87]:
+                    - strong [ref=e88]:
+                      - text: Pagos de Servicios de Agua Vía Transferencia Electrónica ó Depósito
+                      - text: "NOTA: Aplica principalmente a empresas."
+                  - paragraph [ref=e89]: "El nuevo proceso para acreditar el pago de Servicios de Agua y Alcantarillado por medio de transferencia es el siguiente:"
+                  - list [ref=e90]:
+                    - listitem [ref=e91]:
+                      - text: Depositar o transferir (SPEI) la cantidad que desea pagar, en la cuenta
+                      - strong [ref=e92]: Banamex Sucursal 110 Cuenta 1616599 Clabe 002320011016165994
+                      - text: .
+                    - listitem [ref=e93]:
+                      - text: Es
+                      - strong [ref=e94]: necesario
+                      - text: realizar un deposito por cada cuenta contrato a pagar., a su vez es obligatorio incluir
+                      - strong [ref=e95]: la referencia alfanumérica
+                      - text: y para poder obtener su referencia alfanumérica de 10 dígitos (siempre será la misma), captura tu cuenta contrato en el siguiente
+                      - link "enlace." [ref=e96] [cursor=pointer]:
+                        - /url: https://siapa.gob.mx/generacion-de-referencia-banamex
+                    - listitem [ref=e97]:
+                      - text: Al realizar la transferencia, captura en el apartado de la referencia alfanumérica o en su caso en el renglón de concepto de pago,
+                      - strong [ref=e98]: solamente los 10 dígitos.
+                    - listitem [ref=e99]:
+                      - text: Favor de esperar al día siguiente hábil para que su pago quede aplicado.
+                      - strong [ref=e100]: Ya no será necesario
+                      - text: notificar su pago como antes, ni enviar el formato anterior.
+                    - listitem [ref=e101]: Cualquier duda referente al proceso de transferencias, favor de comunicarse al tel. 33-3837-4200 ext. 4127.
+                  - separator [ref=e102]
+                  - paragraph [ref=e103]:
+                    - link "Facturación Electrónica" [ref=e104] [cursor=pointer]:
+                      - /url: /factura-siapa
+                      - strong [ref=e105]: Facturación Electrónica
+                  - separator [ref=e106]
+                  - paragraph [ref=e107]: "Se reciben los pagos en los siguientes establecimientos:"
+                  - paragraph [ref=e108]:
+                    - strong [ref=e110]: "Centros autorizados sin cobro de comisión:"
+                  - paragraph [ref=e111]: "Bancos:"
+                  - paragraph [ref=e112]:
+                    - img "Banjército" [ref=e113]
+                    - img "Banregio" [ref=e114]
+                  - separator [ref=e115]
+                  - paragraph [ref=e116]: "Cajas populares:"
+                  - paragraph [ref=e117]:
+                    - img "Caja Popular San Rafael" [ref=e118]
+                  - separator [ref=e119]
+                  - paragraph [ref=e120]: "Recaudadoras municipales y kioskos en ayuntamientos:"
+                  - generic [ref=e121]:
+                    - table [ref=e122]:
+                      - rowgroup [ref=e123]:
+                        - row [ref=e124]:
+                          - cell [ref=e125]
+                          - cell [ref=e126]
+                          - cell [ref=e127]
+                    - paragraph [ref=e128]: "Camara:"
+                    - paragraph [ref=e129]:
+                      - img "Cámara de Comercio" [ref=e130]
+                    - separator [ref=e131]
+                    - paragraph [ref=e132]:
+                      - strong [ref=e134]: Centros autorizados con cobro de comisión
+                    - paragraph [ref=e135]: "Bancos:"
+                    - paragraph [ref=e136]:
+                      - img "Bajío" [ref=e137]
+                      - img "Banamex" [ref=e138]
+                      - img "Banorte" [ref=e139]
+                      - img "Bansí" [ref=e140]
+                      - img "Santander Serfín" [ref=e141]
+                      - img "Scotiabank" [ref=e142]
+                      - img "HSBC" [ref=e143]
+                      - img "Afirme" [ref=e144]
+                    - separator [ref=e145]
+                    - paragraph [ref=e146]
+                    - paragraph [ref=e147]: "Cajas populares:"
+                    - paragraph [ref=e148]:
+                      - img "Caja Popular Oblatos" [ref=e149]
+                      - img "Caja Popular Cihualpilli" [ref=e150]
+                      - img "Caja Tepeyac" [ref=e151]
+                    - separator [ref=e152]
+                    - paragraph [ref=e153]
+                    - paragraph [ref=e154]: "Tiendas comerciales:"
+                    - paragraph [ref=e155]:
+                      - img "OXXO" [ref=e156]
+                      - img "7-Eleven" [ref=e157]
+                      - img "Soriana" [ref=e158]
+                      - img "Tiendas Extra" [ref=e159]
+                    - separator [ref=e160]
+                    - paragraph [ref=e161]: "Otros medios de pago:"
+                  - generic [ref=e163]:
+                    - separator [ref=e164]
+                    - paragraph [ref=e165]: "Sistemas de pago:"
+                  - paragraph [ref=e167]
+            - navigation [ref=e169]:
+              - list [ref=e170]:
+                - listitem [ref=e171]: 7562178 lecturas
+        - complementary [ref=e172]:
+          - generic [ref=e176]:
+            - paragraph [ref=e177]:
+              - link [ref=e178] [cursor=pointer]:
+                - /url: https://tramites.jalisco.gob.mx/catalogo.jalisco/ciudadania/buscar?value=&dependence=19
+            - paragraph [ref=e179]:
+              - link [ref=e180] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/reciboenlinea
+            - paragraph [ref=e181]:
+              - link [ref=e182] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/factura-siapa
+            - paragraph [ref=e183]:
+              - link [ref=e184] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/servicios/pago-de-recibo
+            - paragraph [ref=e185]:
+              - link [ref=e186] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/quejas-y-sugerencias
+            - paragraph [ref=e187]:
+              - link [ref=e188] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/establecimientos-afiliados
+            - paragraph [ref=e189]:
+              - link [ref=e190] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/sucursales
+            - paragraph [ref=e191]:
+              - link [ref=e192] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/transparencia
+            - paragraph [ref=e193]:
+              - link [ref=e194] [cursor=pointer]:
+                - /url: /transparencia/licitaciones-estatales-y-federales
+            - paragraph [ref=e195]:
+              - link [ref=e196] [cursor=pointer]:
+                - /url: https://siapa.gob.mx/transparencia/convocatoria-proceso-competitivo-instrumento-derivado
+            - paragraph [ref=e197]:
+              - link [ref=e198] [cursor=pointer]:
+                - /url: /transparencia/resolutivo-tarifario
+            - paragraph [ref=e199]:
+              - link [ref=e200] [cursor=pointer]:
+                - /url: /transparencia/contabilidad-gubernamental
+            - paragraph [ref=e201]:
+              - link [ref=e202] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/contraloria-siapa
+            - paragraph [ref=e203]:
+              - link [ref=e204] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/transparencia/criterios-y-lineamientos-tecnicos-para-factibilidades-en-la-zmg
+            - paragraph [ref=e205]:
+              - link [ref=e206] [cursor=pointer]:
+                - /url: https://servicios.siapa.gob.mx/controldeaguasresiduales/Account/Login?ReturnUrl=%2Fcontroldeaguasresiduales%2F
+            - paragraph [ref=e207]:
+              - link [ref=e208] [cursor=pointer]:
+                - /url: https://servicios.siapa.gob.mx/WaEncuesta/Acceso/Login
+            - paragraph [ref=e209]
+            - paragraph [ref=e210]
+            - paragraph [ref=e212]
+            - paragraph [ref=e213]
+    - contentinfo [ref=e214]:
+      - generic [ref=e216]:
+        - generic [ref=e221]:
+          - heading [level=5] [ref=e222]
+          - table [ref=e223]:
+            - rowgroup [ref=e224]:
+              - row "Organos de Gobierno Sala de Prensa Transparencia Aviso de Privacidad Integral Junta de Gobierno Comisión Tarifaria" [ref=e225]:
+                - cell [ref=e226]
+                - cell "Organos de Gobierno Sala de Prensa Transparencia Aviso de Privacidad Integral Junta de Gobierno Comisión Tarifaria" [ref=e227]:
+                  - paragraph [ref=e228]:
+                    - strong [ref=e230]:
+                      - link "Organos de Gobierno" [ref=e231] [cursor=pointer]:
+                        - /url: /gobierno
+                      - link "Sala de Prensa" [ref=e232] [cursor=pointer]:
+                        - /url: /prensa
+                      - link "Transparencia" [ref=e233] [cursor=pointer]:
+                        - /url: https://www.siapa.gob.mx/node/13
+                      - link "Aviso de Privacidad Integral" [ref=e234] [cursor=pointer]:
+                        - /url: https://www.siapa.gob.mx/sites/default/files/siapa_aviso_de_privacidad_integral_2025.pdf
+                  - paragraph [ref=e235]:
+                    - strong [ref=e237]:
+                      - link "Junta de Gobierno" [ref=e238] [cursor=pointer]:
+                        - /url: /gobierno/consejo-de-administracion
+                    - strong [ref=e239]:
+                      - link "Comisión Tarifaria" [ref=e240] [cursor=pointer]:
+                        - /url: /gobierno/consejo-tarifario
+          - paragraph [ref=e241]: "Para el correcto funcionamiento de nuestro sitio web es necesario contar con un navegador actual: recomendamos Edge, Chrome, Firefox, Opera o Safari."
+          - paragraph [ref=e242]
+          - paragraph [ref=e243]
+          - paragraph [ref=e244]
+          - paragraph [ref=e245]
+          - paragraph [ref=e246]
+          - paragraph [ref=e247]
+        - generic [ref=e252]:
+          - generic [ref=e253]:
+            - paragraph
+            - paragraph [ref=e254]: Siapatel al 33-3668-2482
+          - paragraph [ref=e255]: "Av. Dr. R. Michel # 461 esquina con González Gallo, Col. Las Conchas, Sector Reforma. C.P. 44460. Guadalajara, Jalisco, México."
+          - paragraph [ref=e256]:
+            - link "Facebook" [ref=e257] [cursor=pointer]:
+              - /url: https://www.facebook.com/siapagdl
+              - img "Facebook" [ref=e258]
+            - link "Youtube" [ref=e259] [cursor=pointer]:
+              - /url: https://www.youtube.com/siapaweb
+              - img "Youtube" [ref=e260]
+            - link "Twitter" [ref=e261] [cursor=pointer]:
+              - /url: https://www.twitter.com/siapagdl
+              - img "Twitter" [ref=e262]
+          - paragraph [ref=e263]
+          - paragraph [ref=e264]

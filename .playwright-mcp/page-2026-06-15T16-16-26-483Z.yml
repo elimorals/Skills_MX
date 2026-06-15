@@ -1,0 +1,585 @@
+- generic [active] [ref=e1]:
+  - complementary [ref=e2]:
+    - link "Registra tu línea celular para acabar con el anonimato. Hazlo antes del 30 de junio." [ref=e3] [cursor=pointer]:
+      - /url: https://portal.crt.gob.mx/gestion-de-lineas-telefonicas-moviles
+      - img "Registra tu línea celular para acabar con el anonimato. Hazlo antes del 30 de junio." [ref=e4]
+  - generic:
+    - generic:
+      - img "Imagen de header"
+    - generic:
+      - img "Imagen de header"
+  - banner [ref=e5]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - link [ref=e11] [cursor=pointer]:
+          - /url: https://www.semovi.cdmx.gob.mx
+          - img [ref=e12]
+          - img [ref=e13]
+        - generic [ref=e16]:
+          - textbox "Buscar en el sitio" [ref=e17]
+          - button "" [ref=e19] [cursor=pointer]:
+            - generic [ref=e20]: 
+      - list [ref=e22]:
+        - listitem [ref=e23]:
+          - link "CDMX" [ref=e24] [cursor=pointer]:
+            - /url: http://www.cdmx.gob.mx
+          - text: /
+          - link "Secretarías" [ref=e25] [cursor=pointer]:
+            - /url: https://www.ciudadanos.cdmx.gob.mx/gobierno/gabinete/secretarias
+          - text: / SEMOVI
+        - listitem [ref=e26]:
+          - link "Transparencia" [ref=e27] [cursor=pointer]:
+            - /url: http://www.semovi.cdmx.gob.mx/transparencia
+        - listitem [ref=e28]:
+          - link "Atención Ciudadana" [ref=e29] [cursor=pointer]:
+            - /url: https://www.atencionciudadana.cdmx.gob.mx/
+        - listitem [ref=e30]:
+          - link "Trámites y Servicios" [ref=e31] [cursor=pointer]:
+            - /url: http://www.tramites.cdmx.gob.mx/
+    - generic [ref=e32]:
+      - text:  
+      - list [ref=e33]:
+        - list [ref=e35]:
+          - text:   
+          - listitem [ref=e36]:
+            - link "Inicio" [ref=e37] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx
+          - listitem [ref=e38]:
+            - link "Secretaría " [ref=e39] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/secretaria
+          - listitem [ref=e40]:
+            - link "Programas de mejora del Transporte Público" [ref=e41] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/programas-de-mejora-del-transporte-publico
+          - listitem [ref=e42]:
+            - link "Movilidad Integrada " [ref=e43] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/movilidad-integrada
+          - listitem [ref=e44]:
+            - link "Trámites y Servicios " [ref=e45] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios
+          - listitem [ref=e46]:
+            - link "Gobierno Abierto " [ref=e47] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/transparencia
+  - main [ref=e48]:
+    - generic [ref=e49]:
+      - generic:
+        - generic [ref=e52]:
+          - generic [ref=e54]:
+            - generic [ref=e57]:
+              - link "Da clic aquí" [ref=e59] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/vehiculos-particulares/licencia-permanente-preguntas-frecuentes
+                - img "Da clic aquí" [ref=e60]
+              - heading "Da clic aquí" [level=3] [ref=e62]:
+                - link "Da clic aquí" [ref=e63] [cursor=pointer]:
+                  - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/vehiculos-particulares/licencia-permanente-preguntas-frecuentes
+            - generic [ref=e66]:
+              - link "Da clic aquí" [ref=e68] [cursor=pointer]:
+                - /url: https://app.semovi.cdmx.gob.mx/citas/
+                - img "Da clic aquí" [ref=e69]
+              - heading "Da clic aquí" [level=3] [ref=e71]:
+                - link "Da clic aquí" [ref=e72] [cursor=pointer]:
+                  - /url: https://app.semovi.cdmx.gob.mx/citas/
+            - generic [ref=e75]:
+              - link "Conoce más de la convocatoria para pertenecer a la Red de Contralorías Ciudadanas aquí" [ref=e77] [cursor=pointer]:
+                - /url: https://contraloria.cdmx.gob.mx//ciudadana/convocatoriaRed.php
+                - img "Conoce más de la convocatoria para pertenecer a la Red de Contralorías Ciudadanas aquí" [ref=e78]
+              - heading "Conoce más de la convocatoria para pertenecer a la Red de Contralorías Ciudadanas aquí" [level=3] [ref=e80]:
+                - link "Conoce más de la convocatoria para pertenecer a la Red de Contralorías Ciudadanas aquí" [ref=e81] [cursor=pointer]:
+                  - /url: https://contraloria.cdmx.gob.mx//ciudadana/convocatoriaRed.php
+            - generic [ref=e84]:
+              - link "Consúltalo aquí" [ref=e86] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/storage/app/media/Publicaciones/guia_basica_seguridad_vial.pdf
+                - img "Consúltalo aquí" [ref=e87]
+              - heading "Consúltalo aquí" [level=3] [ref=e89]:
+                - link "Consúltalo aquí" [ref=e90] [cursor=pointer]:
+                  - /url: https://www.semovi.cdmx.gob.mx/storage/app/media/Publicaciones/guia_basica_seguridad_vial.pdf
+            - generic [ref=e93]:
+              - link "Declaración de Modificación de Situación Patrimonial de Intereses" [ref=e95] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/
+                - img "Declaración de Modificación de Situación Patrimonial de Intereses" [ref=e96]
+              - heading "Declaración de Modificación de Situación Patrimonial de Intereses" [level=3] [ref=e98]:
+                - link "Declaración de Modificación de Situación Patrimonial de Intereses" [ref=e99] [cursor=pointer]:
+                  - /url: https://www.semovi.cdmx.gob.mx/
+            - generic [ref=e102]:
+              - link "CONVOCATORIA" [ref=e104] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/
+                - img "CONVOCATORIA" [ref=e105]
+              - heading "CONVOCATORIA" [level=3] [ref=e107]:
+                - link "CONVOCATORIA" [ref=e108] [cursor=pointer]:
+                  - /url: https://www.semovi.cdmx.gob.mx/
+            - generic [ref=e111]:
+              - link "Da clic aquí" [ref=e113] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/vehiculos-particulares/licencia-permanente-preguntas-frecuentes
+                - img "Da clic aquí" [ref=e114]
+              - heading "Da clic aquí" [level=3] [ref=e116]:
+                - link "Da clic aquí" [ref=e117] [cursor=pointer]:
+                  - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/vehiculos-particulares/licencia-permanente-preguntas-frecuentes
+            - generic [ref=e120]:
+              - link "Da clic aquí" [ref=e122] [cursor=pointer]:
+                - /url: https://app.semovi.cdmx.gob.mx/citas/
+                - img "Da clic aquí" [ref=e123]
+              - heading "Da clic aquí" [level=3] [ref=e125]:
+                - link "Da clic aquí" [ref=e126] [cursor=pointer]:
+                  - /url: https://app.semovi.cdmx.gob.mx/citas/
+            - generic [ref=e129]:
+              - link "Conoce más de la convocatoria para pertenecer a la Red de Contralorías Ciudadanas aquí" [ref=e131] [cursor=pointer]:
+                - /url: https://contraloria.cdmx.gob.mx//ciudadana/convocatoriaRed.php
+                - img "Conoce más de la convocatoria para pertenecer a la Red de Contralorías Ciudadanas aquí" [ref=e132]
+              - heading "Conoce más de la convocatoria para pertenecer a la Red de Contralorías Ciudadanas aquí" [level=3] [ref=e134]:
+                - link "Conoce más de la convocatoria para pertenecer a la Red de Contralorías Ciudadanas aquí" [ref=e135] [cursor=pointer]:
+                  - /url: https://contraloria.cdmx.gob.mx//ciudadana/convocatoriaRed.php
+            - generic [ref=e138]:
+              - link "Consúltalo aquí" [ref=e140] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/storage/app/media/Publicaciones/guia_basica_seguridad_vial.pdf
+                - img "Consúltalo aquí" [ref=e141]
+              - heading "Consúltalo aquí" [level=3] [ref=e143]:
+                - link "Consúltalo aquí" [ref=e144] [cursor=pointer]:
+                  - /url: https://www.semovi.cdmx.gob.mx/storage/app/media/Publicaciones/guia_basica_seguridad_vial.pdf
+          - generic [ref=e146]:
+            - generic [ref=e148] [cursor=pointer]: 
+            - generic [ref=e150] [cursor=pointer]: 
+        - generic [ref=e164]:
+          - generic [ref=e165]:
+            - link "Mesa de trabajo 1 copia 28 (1).png" [ref=e167] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/vehiculos-particulares
+              - img "Mesa de trabajo 1 copia 28 (1).png" [ref=e168]
+            - heading "Trámites de control vehicular" [level=3] [ref=e170]:
+              - link "Trámites de control vehicular" [ref=e171] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/vehiculos-particulares
+          - link "WhatsApp Image 2024-10-30 at 13.43.05.jpeg" [ref=e174] [cursor=pointer]:
+            - /url: https://app.semovi.cdmx.gob.mx/validacion-documentos/
+            - img "WhatsApp Image 2024-10-30 at 13.43.05.jpeg" [ref=e175]
+      - generic:
+        - generic [ref=e178]:
+          - heading "Sitios más consultados" [level=2] [ref=e180]
+          - generic [ref=e181]:
+            - link "Renovación de licencia para conducir Tipo A" [ref=e183] [cursor=pointer]:
+              - /url: https://www.cdmx.gob.mx/public/InformacionTramite.xhtml?idTramite=2500
+              - img "Renovación de licencia para conducir Tipo A" [ref=e184]
+            - heading "Renovación de licencia para conducir Tipo A" [level=4] [ref=e186]:
+              - link "Renovación de licencia para conducir Tipo A" [ref=e187] [cursor=pointer]:
+                - /url: https://www.cdmx.gob.mx/public/InformacionTramite.xhtml?idTramite=2500
+          - generic [ref=e188]:
+            - link "Alta de placas vehículos usados de otra entidad federativa" [ref=e190] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/vehiculos-particulares/placas/alta-de-placas-vehiculos-usados
+              - img "Alta de placas vehículos usados de otra entidad federativa" [ref=e191]
+            - heading "Alta de placas vehículos usados de otra entidad federativa" [level=4] [ref=e193]:
+              - link "Alta de placas vehículos usados de otra entidad federativa" [ref=e194] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/vehiculos-particulares/placas/alta-de-placas-vehiculos-usados
+          - generic [ref=e195]:
+            - link "Alta de Placas Vehículo Nuevo" [ref=e197] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/vehiculos-particulares/placas/alta-de-placas-de-vehiculo-nuevo
+              - img "Alta de Placas Vehículo Nuevo" [ref=e198]
+            - heading "Alta de Placas Vehículo Nuevo" [level=4] [ref=e200]:
+              - link "Alta de Placas Vehículo Nuevo" [ref=e201] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/vehiculos-particulares/placas/alta-de-placas-de-vehiculo-nuevo
+          - generic [ref=e202]:
+            - link "Tarjeta de Circulación" [ref=e204] [cursor=pointer]:
+              - /url: https://www.cdmx.gob.mx/public/InformacionTramite.xhtml?faces-redirect=true&idTramite=223
+              - img "Tarjeta de Circulación" [ref=e205]
+            - heading "Tarjeta de Circulación" [level=4] [ref=e207]:
+              - link "Tarjeta de Circulación" [ref=e208] [cursor=pointer]:
+                - /url: https://www.cdmx.gob.mx/public/InformacionTramite.xhtml?faces-redirect=true&idTramite=223
+          - generic [ref=e209]:
+            - link "Alta de placas de Auto Nuevo a través de Agencia" [ref=e211] [cursor=pointer]:
+              - /url: https://www.cdmx.gob.mx/public/InformacionTramite.xhtml?faces-redirect=true&idTramite=2585
+              - img "Alta de placas de Auto Nuevo a través de Agencia" [ref=e212]
+            - heading "Alta de placas de Auto Nuevo a través de Agencia" [level=4] [ref=e214]:
+              - link "Alta de placas de Auto Nuevo a través de Agencia" [ref=e215] [cursor=pointer]:
+                - /url: https://www.cdmx.gob.mx/public/InformacionTramite.xhtml?faces-redirect=true&idTramite=2585
+          - generic [ref=e216]:
+            - link "Mi Bici" [ref=e218] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/mi-bici
+              - img "Mi Bici" [ref=e219]
+            - heading "Mi Bici" [level=4] [ref=e221]:
+              - link "Mi Bici" [ref=e222] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/mi-bici
+          - generic [ref=e223]:
+            - link "Trámite de Licencia A" [ref=e225] [cursor=pointer]:
+              - /url: https://www.cdmx.gob.mx/public/InformacionTramite.xhtml?idTramite=2506
+              - img "Trámite de Licencia A" [ref=e226]
+            - heading "Trámite de Licencia A" [level=4] [ref=e228]:
+              - link "Trámite de Licencia A" [ref=e229] [cursor=pointer]:
+                - /url: https://www.cdmx.gob.mx/public/InformacionTramite.xhtml?idTramite=2506
+          - generic [ref=e230]:
+            - link "Digitalización de la licencia Tipo B para taxistas" [ref=e232] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/taxis/expedicion-renovacion-o-reposicion-de-licencia-tipo-b-para-operador-de-taxi/licencia-digital-tipo-b
+              - img "Digitalización de la licencia Tipo B para taxistas" [ref=e233]
+            - heading "Digitalización de la licencia Tipo B para taxistas" [level=4] [ref=e235]:
+              - link "Digitalización de la licencia Tipo B para taxistas" [ref=e236] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/taxis/expedicion-renovacion-o-reposicion-de-licencia-tipo-b-para-operador-de-taxi/licencia-digital-tipo-b
+        - generic [ref=e238]:
+          - generic [ref=e239]:
+            - heading [level=2]
+          - generic [ref=e240]:
+            - link "Trámites de control vehicular" [ref=e242] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/vehiculos-particulares
+              - img "Trámites de control vehicular" [ref=e243]
+            - heading "Trámites de control vehicular" [level=4] [ref=e245]:
+              - link "Trámites de control vehicular" [ref=e246] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/vehiculos-particulares
+          - generic [ref=e247]:
+            - link "Documentos para consulta" [ref=e249] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/transparencia/reportes-informes-manuales
+              - img "Documentos para consulta" [ref=e250]
+            - heading "Documentos para consulta" [level=4] [ref=e252]:
+              - link "Documentos para consulta" [ref=e253] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/transparencia/reportes-informes-manuales
+          - generic [ref=e254]:
+            - link "Movilidad de Barrio Segura" [ref=e256] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/movilidad-integrada/mi-movilidad-de-barrio1/censo-movilidad-de-barrio-segura1
+              - img "Movilidad de Barrio Segura" [ref=e257]
+            - heading "Movilidad de Barrio Segura" [level=4] [ref=e259]:
+              - link "Movilidad de Barrio Segura" [ref=e260] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/movilidad-integrada/mi-movilidad-de-barrio1/censo-movilidad-de-barrio-segura1
+          - generic [ref=e261]:
+            - link "Cursos Vehiculares" [ref=e263] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/cursos-vehiculares
+              - img "Cursos Vehiculares" [ref=e264]
+            - heading "Cursos Vehiculares" [level=4] [ref=e266]:
+              - link "Cursos Vehiculares" [ref=e267] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/cursos-vehiculares
+          - generic [ref=e268]:
+            - link "Trámites para empresas" [ref=e270] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/tramites_de_control_vehicular/tramites-para-empresas
+              - img "Trámites para empresas" [ref=e271]
+            - heading "Trámites para empresas" [level=4] [ref=e273]:
+              - link "Trámites para empresas" [ref=e274] [cursor=pointer]:
+                - /url: https://www.semovi.cdmx.gob.mx/tramites_de_control_vehicular/tramites-para-empresas
+      - generic:
+        - heading "Comunicación" [level=2] [ref=e278]
+        - generic [ref=e279]:
+          - generic [ref=e280]:
+            - link "SEMOVI IMPULSA LA “CAMPAÑA VIVA DE EMPATÍA Y SEGURIDAD VIAL” PARA FORTALECER LA CONVIVENCIA EN LAS CALLES" [ref=e283] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/comunicacion/nota/semovi-impulsa-la-campana-viva-de-empatia-y-seguridad-vial-para-fortalecer-la-convivencia-en-las-calles
+              - img "SEMOVI IMPULSA LA “CAMPAÑA VIVA DE EMPATÍA Y SEGURIDAD VIAL” PARA FORTALECER LA CONVIVENCIA EN LAS CALLES" [ref=e284]
+            - generic [ref=e285]:
+              - generic [ref=e286]:
+                - link "Boletín" [ref=e287] [cursor=pointer]:
+                  - /url: https://www.semovi.cdmx.gob.mx/comunicacion/tipo/boletin
+                - text: 28 Mayo 2026
+              - heading "SEMOVI IMPULSA LA “CAMPAÑA VIVA DE EMPATÍA Y..." [level=4] [ref=e289]:
+                - link "SEMOVI IMPULSA LA “CAMPAÑA VIVA DE EMPATÍA Y..." [ref=e290] [cursor=pointer]:
+                  - /url: https://www.semovi.cdmx.gob.mx/comunicacion/nota/semovi-impulsa-la-campana-viva-de-empatia-y-seguridad-vial-para-fortalecer-la-convivencia-en-las-calles
+          - generic [ref=e292]:
+            - link "Noticia sin imagen" [ref=e295] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/comunicacion/nota/llama-semovi-realizar-tramites-vehiculares-en-sus-distintos-modulos
+              - img "Noticia sin imagen" [ref=e296]
+            - generic [ref=e297]:
+              - generic [ref=e298]:
+                - link "Boletín" [ref=e299] [cursor=pointer]:
+                  - /url: https://www.semovi.cdmx.gob.mx/comunicacion/tipo/boletin
+                - text: 28 Mayo 2026
+              - heading "LLAMA SEMOVI A REALIZAR TRÁMITES VEHICULARES EN SUS..." [level=4] [ref=e301]:
+                - link "LLAMA SEMOVI A REALIZAR TRÁMITES VEHICULARES EN SUS..." [ref=e302] [cursor=pointer]:
+                  - /url: https://www.semovi.cdmx.gob.mx/comunicacion/nota/llama-semovi-realizar-tramites-vehiculares-en-sus-distintos-modulos
+          - generic [ref=e304]:
+            - link "Noticia sin imagen" [ref=e307] [cursor=pointer]:
+              - /url: https://www.semovi.cdmx.gob.mx/comunicacion/nota/ecobici-mantiene-operacion-solida-y-preferencia-de-los-usuarios-en-la-ciudad-de-mexico
+              - img "Noticia sin imagen" [ref=e308]
+            - generic [ref=e309]:
+              - generic [ref=e310]:
+                - link "Boletín" [ref=e311] [cursor=pointer]:
+                  - /url: https://www.semovi.cdmx.gob.mx/comunicacion/tipo/boletin
+                - text: 22 Mayo 2026
+              - heading "ECOBICI MANTIENE OPERACIÓN SÓLIDA Y PREFERENCIA DE..." [level=4] [ref=e313]:
+                - link "ECOBICI MANTIENE OPERACIÓN SÓLIDA Y PREFERENCIA DE..." [ref=e314] [cursor=pointer]:
+                  - /url: https://www.semovi.cdmx.gob.mx/comunicacion/nota/ecobici-mantiene-operacion-solida-y-preferencia-de-los-usuarios-en-la-ciudad-de-mexico
+          - link "Ver todas las publicaciones " [ref=e317] [cursor=pointer]:
+            - /url: /comunicacion
+        - generic [ref=e319]:
+          - heading "Últimos tweets" [level=3] [ref=e321]
+          - generic [ref=e324]:
+            - generic [ref=e326]:
+              - generic [ref=e327]:
+                - link "@LaSEMOVI" [ref=e328] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e329]: "@LaSEMOVI"
+                - text: "@alberto99132726 Con su Llave, ingrese a:"
+                - link "https://t.co/BlZTkQeEv0" [ref=e330] [cursor=pointer]:
+                  - /url: https://t.co/BlZTkQeEv0
+              - generic [ref=e331]:
+                - link "@LaSEMOVI" [ref=e332] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e333]: "@LaSEMOVI"
+                - text: "@HurtaditoPete @locatel_mx Durante la semana se estuvieron abriendo espacios y lugares para realizarlo, por ello, s…"
+                - link "https://t.co/krP4QsO2kR" [ref=e334] [cursor=pointer]:
+                  - /url: https://t.co/krP4QsO2kR
+              - generic [ref=e335]:
+                - link "@LaSEMOVI" [ref=e336] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e337]: "@LaSEMOVI"
+                - text: "@dennysale8a ¡Hola! Envíenos un mensaje directo."
+            - generic [ref=e339]:
+              - generic [ref=e340]:
+                - link "@LaSEMOVI" [ref=e341] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e342]: "@LaSEMOVI"
+                - text: "@Andrs54241826 ¿A qué trámite se refiere?"
+              - generic [ref=e343]:
+                - link "@LaSEMOVI" [ref=e344] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e345]: "@LaSEMOVI"
+                - text: "RT @GobCDMX:"
+                - link "#EnVivo" [ref=e346] [cursor=pointer]:
+                  - /url: https://twitter.com/hashtag/EnVivo
+                - text: ▶️
+                - link "#Videoconferencia" [ref=e347] [cursor=pointer]:
+                  - /url: https://twitter.com/hashtag/Videoconferencia
+                - text: de prensa, con @SeGobCDMX.
+                - link "https://t.co/gz7QXXZsjB" [ref=e348] [cursor=pointer]:
+                  - /url: https://t.co/gz7QXXZsjB
+              - generic [ref=e349]:
+                - link "@LaSEMOVI" [ref=e350] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e351]: "@LaSEMOVI"
+                - text: "@Hpalaci01 Sí, como se indica en la página si ingresa."
+            - generic [ref=e353]:
+              - generic [ref=e354]:
+                - link "@LaSEMOVI" [ref=e355] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e356]: "@LaSEMOVI"
+                - text: ¿Vas de regreso a casa? 👀 Como parte de las recomendaciones para evitar aglomeraciones en este…
+                - link "https://t.co/4g8r46yOq1" [ref=e357] [cursor=pointer]:
+                  - /url: https://t.co/4g8r46yOq1
+              - generic [ref=e358]:
+                - link "@LaSEMOVI" [ref=e359] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e360]: "@LaSEMOVI"
+                - text: "@SauloSinControl @Claudiashein @locatel_mx @SacmexCDMX @andreslajous ¡Hola! Con gusto revisamos tu caso. Envíanos mensaje directo."
+              - generic [ref=e361]:
+                - link "@LaSEMOVI" [ref=e362] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e363]: "@LaSEMOVI"
+                - text: "@marisoldelolmo"
+                - link "https://t.co/or00ntQTMp" [ref=e364] [cursor=pointer]:
+                  - /url: https://t.co/or00ntQTMp
+            - generic [ref=e366]:
+              - generic [ref=e367]:
+                - link "@LaSEMOVI" [ref=e368] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e369]: "@LaSEMOVI"
+                - text: "@miguelmore94 @andreslajous ¡Hola! Envíanos un mensaje directo, por favor."
+              - generic [ref=e370]:
+                - link "@LaSEMOVI" [ref=e371] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e372]: "@LaSEMOVI"
+                - text: ¡Ya están en circulación las unidades eléctricas de @MetrobusCDMX en L3! ⚡️ ✅ Son silenciosas ✅ 100% accesibles ✅…
+                - link "https://t.co/DxpFL3Lsnf" [ref=e373] [cursor=pointer]:
+                  - /url: https://t.co/DxpFL3Lsnf
+              - generic [ref=e374]:
+                - link "@LaSEMOVI" [ref=e375] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e376]: "@LaSEMOVI"
+                - text: "@RobertoZaldiva3 El trámite se realiza desde la cuenta Llave de la persona titular. Con la Llave que se inició es c…"
+                - link "https://t.co/GEgY6PDMQS" [ref=e377] [cursor=pointer]:
+                  - /url: https://t.co/GEgY6PDMQS
+            - generic [ref=e379]:
+              - generic [ref=e380]:
+                - link "@LaSEMOVI" [ref=e381] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e382]: "@LaSEMOVI"
+                - text: "@_bxmxc Envíanos un mensaje directo."
+              - generic [ref=e383]:
+                - link "@LaSEMOVI" [ref=e384] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e385]: "@LaSEMOVI"
+                - text: "@chabelinga21 ¡Hola! El equipo está dando respuesta a cada una de las solicitudes. Gracias por su tiempo de espera."
+              - generic [ref=e386]:
+                - link "@LaSEMOVI" [ref=e387] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e388]: "@LaSEMOVI"
+                - text: "@shsantr Las citas se agendan en Centros de Servicio de Tesorería: En el apartado de licencia, de acuerdo a su pago…"
+                - link "https://t.co/RDpMRXX4o0" [ref=e389] [cursor=pointer]:
+                  - /url: https://t.co/RDpMRXX4o0
+            - generic [ref=e391]:
+              - generic [ref=e392]:
+                - link "@LaSEMOVI" [ref=e393] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e394]: "@LaSEMOVI"
+                - text: "@alberto99132726 Con su Llave, ingrese a:"
+                - link "https://t.co/BlZTkQeEv0" [ref=e395] [cursor=pointer]:
+                  - /url: https://t.co/BlZTkQeEv0
+              - generic [ref=e396]:
+                - link "@LaSEMOVI" [ref=e397] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e398]: "@LaSEMOVI"
+                - text: "@HurtaditoPete @locatel_mx Durante la semana se estuvieron abriendo espacios y lugares para realizarlo, por ello, s…"
+                - link "https://t.co/krP4QsO2kR" [ref=e399] [cursor=pointer]:
+                  - /url: https://t.co/krP4QsO2kR
+              - generic [ref=e400]:
+                - link "@LaSEMOVI" [ref=e401] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e402]: "@LaSEMOVI"
+                - text: "@dennysale8a ¡Hola! Envíenos un mensaje directo."
+            - generic [ref=e404]:
+              - generic [ref=e405]:
+                - link "@LaSEMOVI" [ref=e406] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e407]: "@LaSEMOVI"
+                - text: "@Andrs54241826 ¿A qué trámite se refiere?"
+              - generic [ref=e408]:
+                - link "@LaSEMOVI" [ref=e409] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e410]: "@LaSEMOVI"
+                - text: "RT @GobCDMX:"
+                - link "#EnVivo" [ref=e411] [cursor=pointer]:
+                  - /url: https://twitter.com/hashtag/EnVivo
+                - text: ▶️
+                - link "#Videoconferencia" [ref=e412] [cursor=pointer]:
+                  - /url: https://twitter.com/hashtag/Videoconferencia
+                - text: de prensa, con @SeGobCDMX.
+                - link "https://t.co/gz7QXXZsjB" [ref=e413] [cursor=pointer]:
+                  - /url: https://t.co/gz7QXXZsjB
+              - generic [ref=e414]:
+                - link "@LaSEMOVI" [ref=e415] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e416]: "@LaSEMOVI"
+                - text: "@Hpalaci01 Sí, como se indica en la página si ingresa."
+            - generic [ref=e418]:
+              - generic [ref=e419]:
+                - link "@LaSEMOVI" [ref=e420] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e421]: "@LaSEMOVI"
+                - text: ¿Vas de regreso a casa? 👀 Como parte de las recomendaciones para evitar aglomeraciones en este…
+                - link "https://t.co/4g8r46yOq1" [ref=e422] [cursor=pointer]:
+                  - /url: https://t.co/4g8r46yOq1
+              - generic [ref=e423]:
+                - link "@LaSEMOVI" [ref=e424] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e425]: "@LaSEMOVI"
+                - text: "@SauloSinControl @Claudiashein @locatel_mx @SacmexCDMX @andreslajous ¡Hola! Con gusto revisamos tu caso. Envíanos mensaje directo."
+              - generic [ref=e426]:
+                - link "@LaSEMOVI" [ref=e427] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e428]: "@LaSEMOVI"
+                - text: "@marisoldelolmo"
+                - link "https://t.co/or00ntQTMp" [ref=e429] [cursor=pointer]:
+                  - /url: https://t.co/or00ntQTMp
+            - generic [ref=e431]:
+              - generic [ref=e432]:
+                - link "@LaSEMOVI" [ref=e433] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e434]: "@LaSEMOVI"
+                - text: "@miguelmore94 @andreslajous ¡Hola! Envíanos un mensaje directo, por favor."
+              - generic [ref=e435]:
+                - link "@LaSEMOVI" [ref=e436] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e437]: "@LaSEMOVI"
+                - text: ¡Ya están en circulación las unidades eléctricas de @MetrobusCDMX en L3! ⚡️ ✅ Son silenciosas ✅ 100% accesibles ✅…
+                - link "https://t.co/DxpFL3Lsnf" [ref=e438] [cursor=pointer]:
+                  - /url: https://t.co/DxpFL3Lsnf
+              - generic [ref=e439]:
+                - link "@LaSEMOVI" [ref=e440] [cursor=pointer]:
+                  - /url: https://twitter.com/LaSEMOVI
+                  - strong [ref=e441]: "@LaSEMOVI"
+                - text: "@RobertoZaldiva3 El trámite se realiza desde la cuenta Llave de la persona titular. Con la Llave que se inició es c…"
+                - link "https://t.co/GEgY6PDMQS" [ref=e442] [cursor=pointer]:
+                  - /url: https://t.co/GEgY6PDMQS
+    - text: 
+  - contentinfo [ref=e455]:
+    - generic [ref=e457]:
+      - generic [ref=e458]:
+        - generic [ref=e459]:
+          - img "Logo de la Dependencia" [ref=e461]
+          - generic [ref=e462]:
+            - heading "Atención ciudadana" [level=3] [ref=e464]
+            - generic [ref=e465]:
+              - generic [ref=e466]:
+                - strong [ref=e467]: "Dirección:"
+                - text: Avenida Álvaro Obregón 269
+                - text: Colonia Roma Norte, Alcaldía Cuauhtémoc C.P. 06700, Ciudad de México
+              - heading "Teléfonos:" [level=4] [ref=e469]
+              - generic [ref=e470]: "Trámites, servicios y orientación telefónica con LOCATEL: 56581111 de lunes a viernes las 24 h del día, conmutador SEMOVI: actualmente se encuentra fuera de servicio por emergencia sanitaria, para dudas o ayuda, a través de la plataforma SUAC: https://atencionciudadana.cdmx.gob.mx/"
+              - heading "Horarios:" [level=4] [ref=e472]
+              - generic [ref=e473]: "Secretaría de Movilidad: lunes a viernes 09:00 a 21:00 hrs."
+        - list [ref=e474]:
+          - listitem [ref=e475]:
+            - heading "Redes sociales" [level=3] [ref=e476]
+          - listitem [ref=e477]:
+            - link "" [ref=e478] [cursor=pointer]:
+              - /url: https://www.facebook.com/lasemovi/timeline
+              - generic [ref=e479]: 
+          - listitem [ref=e480]:
+            - link "" [ref=e481] [cursor=pointer]:
+              - /url: https://twitter.com/LaSEMOVI
+              - generic [ref=e482]: 
+          - listitem [ref=e483]:
+            - link "" [ref=e484] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCWSEwAlBKGMwc93Ixrx8ktg
+              - generic [ref=e485]: 
+          - listitem [ref=e486]:
+            - link "" [ref=e487] [cursor=pointer]:
+              - /url: https://www.instagram.com/semovicdmx/
+              - generic [ref=e488]: 
+      - list [ref=e491]:
+        - listitem [ref=e492]:
+          - heading "Navegación" [level=3] [ref=e493]
+        - listitem [ref=e494]:
+          - link "Inicio" [ref=e495] [cursor=pointer]:
+            - /url: https://www.semovi.cdmx.gob.mx
+        - listitem [ref=e496]:
+          - link "Secretaría" [ref=e497] [cursor=pointer]:
+            - /url: https://www.semovi.cdmx.gob.mx/secretaria
+        - listitem [ref=e498]:
+          - link "Programas de mejora del Transporte Público" [ref=e499] [cursor=pointer]:
+            - /url: https://www.semovi.cdmx.gob.mx/programas-de-mejora-del-transporte-publico
+        - listitem [ref=e500]:
+          - link "Movilidad Integrada" [ref=e501] [cursor=pointer]:
+            - /url: https://www.semovi.cdmx.gob.mx/movilidad-integrada
+        - listitem [ref=e502]:
+          - link "Trámites y Servicios" [ref=e503] [cursor=pointer]:
+            - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios
+        - listitem [ref=e504]:
+          - link "Gobierno Abierto" [ref=e505] [cursor=pointer]:
+            - /url: https://www.semovi.cdmx.gob.mx/tramites-y-servicios/transparencia
+        - listitem [ref=e506]:
+          - link "Transparencia" [ref=e507] [cursor=pointer]:
+            - /url: /transparencia
+      - list [ref=e510]:
+        - listitem [ref=e511]:
+          - heading "Sitios relacionados" [level=3] [ref=e512]
+        - listitem [ref=e513]:
+          - link "Secretaría del Medio Ambiente" [ref=e514] [cursor=pointer]:
+            - /url: http://www.sedema.cdmx.gob.mx/
+        - listitem [ref=e515]:
+          - link "Secretaría de Seguridad Pública" [ref=e516] [cursor=pointer]:
+            - /url: http://www.ssp.cdmx.gob.mx/
+        - listitem [ref=e517]:
+          - link "Servicio de Transportes Eléctricos" [ref=e518] [cursor=pointer]:
+            - /url: http://www.ste.cdmx.gob.mx
+        - listitem [ref=e519]:
+          - link "Sistema de Transporte Colectivo" [ref=e520] [cursor=pointer]:
+            - /url: http://www.stc.cdmx.gob.mx
+        - listitem [ref=e521]:
+          - link "Metrobús" [ref=e522] [cursor=pointer]:
+            - /url: http://www.metrobus.cdmx.gob.mx
+        - listitem [ref=e523]:
+          - link "Red de Transportes de Pasajeros" [ref=e524] [cursor=pointer]:
+            - /url: http://www.rtp.gob.mx
+        - listitem [ref=e525]:
+          - link "CETRAM" [ref=e526] [cursor=pointer]:
+            - /url: http://www.cetram.cdmx.gob.mx/
+      - generic [ref=e528]:
+        - link "Plan General de Desarrollo 2025-2045" [ref=e530] [cursor=pointer]:
+          - /url: https://plazapublica.cdmx.gob.mx/processes/consultaPGD2025
+          - img "Plan General de Desarrollo 2025-2045" [ref=e531]
+        - link "Datos abiertos" [ref=e533] [cursor=pointer]:
+          - /url: https://datos.cdmx.gob.mx/
+          - img "Datos abiertos" [ref=e534]
+        - link "Tianguis Digital" [ref=e536] [cursor=pointer]:
+          - /url: https://www.tianguisdigital.cdmx.gob.mx/
+          - img "Tianguis Digital" [ref=e537]
+    - generic [ref=e540]:
+      - generic [ref=e541]: CMS CDMX v2.8.0 2026
+      - link "Términos y Condiciones" [ref=e543] [cursor=pointer]:
+        - /url: https://www.semovi.cdmx.gob.mx/terminos-y-condiciones
+      - link "Política de privacidad" [ref=e545] [cursor=pointer]:
+        - /url: https://www.semovi.cdmx.gob.mx/terminos-y-condiciones#Datos-personales
+      - link "Licencia de Gobierno Abierto CDMX" [ref=e547] [cursor=pointer]:
+        - /url: http://www.cdmx.gob.mx/lgacdmx
+  - generic:
+    - generic:
+      - img "Imagen de footer"
+    - generic:
+      - img "Imagen de footer"
+  - text: "["

@@ -1,0 +1,52 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - img "Secretaría del trabajo y previsión social, REPSE" [ref=e4]
+  - generic [ref=e9]:
+    - heading "Padrón Público de Contratistas de Servicios Especializados u Obras Especializadas." [level=4] [ref=e10]
+    - heading "Registro de prestadoras de servicios especializados y obras especializadas" [level=5] [ref=e11]
+  - generic [ref=e12]:
+    - generic [ref=e14]: Localiza la empresa por nombre o razón social
+    - generic [ref=e15]:
+      - textbox "Razón social" [ref=e17]: MANPOWER
+      - button "Buscar" [ref=e19] [cursor=pointer]
+      - generic [ref=e20]:
+        - separator [ref=e21]
+        - separator [ref=e22]
+      - table [ref=e27]:
+        - rowgroup [ref=e28]:
+          - row "Razon social Número de registro" [ref=e29]:
+            - columnheader "Razon social" [ref=e30]
+            - columnheader "Número de registro" [ref=e31]
+            - columnheader [ref=e32]
+        - rowgroup [ref=e33]:
+          - row "MANPOWER CORPORATIVO SA DE CV 669356 Seleccionar" [ref=e34]:
+            - cell "MANPOWER CORPORATIVO SA DE CV" [ref=e35]
+            - cell "669356" [ref=e36]
+            - cell "Seleccionar" [ref=e37]:
+              - button "Seleccionar" [ref=e39] [cursor=pointer]
+          - row "MANPOWER PROFESSIONAL SA DE CV 651051 Seleccionar" [ref=e40]:
+            - cell "MANPOWER PROFESSIONAL SA DE CV" [ref=e41]
+            - cell "651051" [ref=e42]
+            - cell "Seleccionar" [ref=e43]:
+              - button "Seleccionar" [ref=e45] [cursor=pointer]
+        - rowgroup
+      - navigation [ref=e47]:
+        - list [ref=e48]:
+          - listitem [ref=e49]:
+            - generic [ref=e50]:
+              - generic: ‹
+          - listitem [ref=e51]:
+            - generic [ref=e52]: "1"
+          - listitem [ref=e53]:
+            - generic [ref=e54]:
+              - generic: ›
+  - iframe [ref=e25]:
+    - generic [ref=f5e5]:
+      - generic [ref=f5e6]:
+        - text: protegido por
+        - strong [ref=f5e7]: reCAPTCHA
+      - generic [ref=f5e9]:
+        - text: "Para el propietario del sitio: v1beta1 dejó de estar disponible."
+        - link "Toma medidas." [ref=f5e10] [cursor=pointer]:
+          - /url: https://docs.cloud.google.com/recaptcha/docs/migration-v1

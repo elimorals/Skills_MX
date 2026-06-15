@@ -1,0 +1,84 @@
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido" [ref=e2] [cursor=pointer]:
+    - /url: "#site-content"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e7]:
+          - generic [ref=e11]:
+            - generic [ref=e15]: ¿Tienes alguna duda?
+            - list [ref=e20]:
+              - listitem [ref=e21]:
+                - link "443 113 2200" [ref=e22] [cursor=pointer]:
+                  - /url: tel:4431132200
+                  - generic [ref=e24]: 
+                  - generic [ref=e25]: 443 113 2200
+          - list [ref=e32]:
+            - listitem [ref=e33]:
+              - link "Facebook" [ref=e34] [cursor=pointer]:
+                - /url: https://www.facebook.com/MoreliaOoapas/
+                - generic [ref=e35]: Facebook
+                - generic [ref=e36]: 
+            - listitem [ref=e37]:
+              - link "Twitter" [ref=e38] [cursor=pointer]:
+                - /url: https://twitter.com/ooapasmorelia
+                - generic [ref=e39]: Twitter
+                - generic [ref=e40]: 
+        - navigation [ref=e52]:
+          - list [ref=e53]:
+            - listitem [ref=e54]:
+              - link "Inicio" [ref=e55] [cursor=pointer]:
+                - /url: https://www.ooapas.gob.mx/
+            - listitem [ref=e56]:
+              - button "Conozca " [ref=e57]:
+                - link "Conozca " [ref=e58] [cursor=pointer]:
+                  - /url: "#"
+                  - text: Conozca
+                  - generic [ref=e60]: 
+            - listitem [ref=e61]:
+              - button "Trámites y servicios " [ref=e62]:
+                - link "Trámites y servicios " [ref=e63] [cursor=pointer]:
+                  - /url: "#"
+                  - text: Trámites y servicios
+                  - generic [ref=e65]: 
+            - listitem [ref=e66]:
+              - link "Transparencia" [ref=e67] [cursor=pointer]:
+                - /url: https://www.ooapas.gob.mx/transparencia/
+            - listitem [ref=e68]:
+              - link "Noticias" [ref=e69] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e70]:
+              - link "Contacto" [ref=e71] [cursor=pointer]:
+                - /url: https://www.ooapas.gob.mx/contacto/
+            - listitem [ref=e72]:
+              - link "Aviso de privacidad" [ref=e73] [cursor=pointer]:
+                - /url: /wp-content/uploads/2024/10/AVISO-DE-PRIVACIDAD-OOAPAS.pdf
+    - generic [ref=e84]:
+      - generic [ref=e91]: 
+      - generic [ref=e93]:
+        - heading "Paga y consulta tu recibo del agua" [level=3] [ref=e96]
+        - generic [ref=e98]:
+          - text: Registrate en nuestra página
+          - link "pagoenlinea.ooapas.gob.mx" [ref=e99] [cursor=pointer]:
+            - /url: https://pagoenlinea.ooapas.gob.mx/
+          - text: y paga en línea.
+    - contentinfo [ref=e108]:
+      - generic [ref=e114]:
+        - generic [ref=e116]: © 2019 OOAPAS | Derechos Reservados.
+        - list [ref=e119]:
+          - listitem [ref=e120]:
+            - link "Facebook" [ref=e121] [cursor=pointer]:
+              - /url: https://www.facebook.com/MoreliaOoapas/
+              - generic [ref=e122]: Facebook
+              - generic [ref=e123]: 
+          - listitem [ref=e124]:
+            - link "Twitter" [ref=e125] [cursor=pointer]:
+              - /url: https://twitter.com/ooapasmorelia
+              - generic [ref=e126]: Twitter
+              - generic [ref=e127]: 
+          - listitem [ref=e128]:
+            - link "Whatsapp" [ref=e129] [cursor=pointer]:
+              - /url: http://wa.me/5214433684805
+              - generic [ref=e130]: Whatsapp
+              - generic [ref=e131]: 
+  - generic [ref=e132]: desktop

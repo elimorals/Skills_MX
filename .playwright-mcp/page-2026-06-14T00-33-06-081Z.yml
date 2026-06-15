@@ -1,0 +1,77 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - link "RENAPO" [ref=e6] [cursor=pointer]:
+        - /url: /
+    - main [ref=e7]:
+      - generic [ref=e8]:
+        - list [ref=e9]:
+          - listitem [ref=e10]:
+            - link "" [ref=e11] [cursor=pointer]:
+              - /url: https://www.gob.mx
+              - generic [ref=e12]: 
+          - listitem [ref=e13]:
+            - text: 
+            - link "Inicio" [ref=e14] [cursor=pointer]:
+              - /url: https://www.gob.mx/curp
+          - listitem [ref=e15]: Consulta tu CURP
+        - heading "Consulta tu CURP" [level=1] [ref=e16]
+        - generic [ref=e18]:
+          - list [ref=e20]:
+            - listitem [ref=e21]:
+              - heading "Paso 1" [level=5] [ref=e22]
+              - text: Búsqueda
+            - listitem [ref=e23]:
+              - heading "Paso 2" [level=5] [ref=e24]
+              - text: Descargar CURP
+            - listitem [ref=e25]
+          - generic [ref=e30]:
+            - heading "Búsqueda" [level=2] [ref=e31]
+            - separator [ref=e32]
+            - generic [ref=e34]:
+              - paragraph [ref=e35]: La consulta puede efectuarse indicando la clave CURP cuando ya la conoce o proporcionando su nombre y datos de nacimiento.
+              - list [ref=e36]:
+                - listitem [ref=e37]:
+                  - link "Clave Única de Registro de Población" [ref=e38]:
+                    - /url: "#tab-01"
+                - listitem [ref=e39]:
+                  - link "Datos Personales" [ref=e40] [cursor=pointer]:
+                    - /url: "#tab-02"
+              - generic [ref=e41]:
+                - generic [ref=e44]:
+                  - generic [ref=e45]: "Clave Única de Registro de Población (CURP)*:"
+                  - textbox "Clave Única de Registro de Población (CURP)*:" [ref=e46]:
+                    - /placeholder: Ingresa tu CURP
+                  - link "¿No conoces tu CURP?" [ref=e47] [cursor=pointer]:
+                    - /url: "#"
+                - text: 
+            - separator [ref=e50]
+            - generic [ref=e51]:
+              - generic [ref=e52]: "* Campos obligatorios"
+              - button " Buscar" [ref=e54] [cursor=pointer]:
+                - generic [ref=e55]: 
+                - text: Buscar
+            - generic [ref=e56]:
+              - generic [ref=e58]:
+                - strong [ref=e59]: ¡Sugerencia!
+                - text: "Para solicitar asistencia telefónica sobre el servicio de la CURP, puedes comunicarte al Centro de Atención y Servicios, de lunes a viernes, de 08:00 a 16:00 horas, a los números telefónicos:"
+                - list [ref=e60]:
+                  - listitem [ref=e61]: 800 9 11 11 11, extensiones 15100 y 15101.
+              - generic [ref=e63]:
+                - paragraph [ref=e64]:
+                  - strong [ref=e65]: Aviso de privacidad simplificado de consulta de CURP en línea
+                - paragraph [ref=e66]:
+                  - text: La recolección de datos personales se lleva a cabo a través de
+                  - link "https://www.gob.mx/curp" [ref=e67] [cursor=pointer]:
+                    - /url: /curp/
+                  - text: ", cuyo administrador y responsable del trámite de CURP es la Dirección General del Registro Nacional de Población e Identidad de la Secretaría de Gobernación."
+                - paragraph [ref=e68]: Los datos personales que se recaban serán utilizados con la finalidad de buscar, validar y obtener la CURP.
+                - paragraph [ref=e69]:
+                  - text: Conoce el aviso de privacidad integral en
+                  - link "https://www.gob.mx/curp/privacidadintegral" [ref=e70] [cursor=pointer]:
+                    - /url: /curp/privacidadintegral
+                  - text: .
+  - iframe [ref=e73]:
+    - generic [ref=f6e6]:
+      - text: protegido por
+      - strong [ref=f6e7]: reCAPTCHA

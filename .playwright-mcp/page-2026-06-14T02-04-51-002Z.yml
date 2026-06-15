@@ -1,0 +1,609 @@
+- generic [active] [ref=e1]:
+  - paragraph
+  - paragraph
+  - textbox "buscar" [ref=e7]
+  - generic [ref=e8]:
+    - table [ref=e9]:
+      - rowgroup [ref=e10]:
+        - row "Usuario Clave Ingresar ¿Olvidó su clave? ¿Olvidó su usuario? Inicio | Contacto | Mapa del Sitio | Ayuda . RSS Buscar... Submit Regresar Ejemplar de hoy Trámites Servicios Leyes y Reglamentos Preguntas Frecuentes ayuda twitter" [ref=e11]:
+          - cell "Usuario Clave Ingresar ¿Olvidó su clave? ¿Olvidó su usuario? Inicio | Contacto | Mapa del Sitio | Ayuda . RSS Buscar... Submit Regresar Ejemplar de hoy Trámites Servicios Leyes y Reglamentos Preguntas Frecuentes ayuda twitter" [ref=e12]:
+            - generic [ref=e13]:
+              - generic [ref=e14]:
+                - generic [ref=e15]:
+                  - generic:
+                    - paragraph [ref=e16]:
+                      - textbox "Usuario" [ref=e17]
+                      - textbox "Clave" [ref=e18]
+                      - button "Ingresar" [ref=e19]
+                    - paragraph [ref=e20]:
+                      - link "¿Olvidó su clave?" [ref=e21] [cursor=pointer]:
+                        - /url: olvido_clave.php
+                      - link "¿Olvidó su usuario?" [ref=e22] [cursor=pointer]:
+                        - /url: olvido_usuario.php
+                - generic [ref=e23]:
+                  - link "Inicio" [ref=e24] [cursor=pointer]:
+                    - /url: index.php
+                  - text: "|"
+                  - link "Contacto" [ref=e25] [cursor=pointer]:
+                    - /url: contactenos.php
+                  - text: "|"
+                  - link "Mapa del Sitio" [ref=e26] [cursor=pointer]:
+                    - /url: mapa.php
+                  - text: "|"
+                  - link "Ayuda" [ref=e27] [cursor=pointer]:
+                    - /url: ayuda.php
+              - generic [ref=e28]:
+                - link "." [ref=e30] [cursor=pointer]:
+                  - /url: index.php
+                - generic [ref=e31]:
+                  - link "RSS" [ref=e33] [cursor=pointer]:
+                    - /url: sumario.xml
+                    - img "RSS" [ref=e34]
+                  - generic [ref=e35]:
+                    - generic:
+                      - textbox "Busqueda" [ref=e36]: Buscar...
+                      - button "Submit" [ref=e38]
+              - generic [ref=e39]:
+                - generic [ref=e40]:
+                  - link "Regresar" [ref=e41] [cursor=pointer]:
+                    - /url: http://dof.gob.mx/index.php
+                    - img "Regresar" [ref=e42]
+                  - link "Ejemplar de hoy" [ref=e43] [cursor=pointer]:
+                    - /url: index.php
+                  - link "Trámites" [ref=e44] [cursor=pointer]:
+                    - /url: tramites1.php?info=completa
+                  - link "Servicios" [ref=e45] [cursor=pointer]:
+                    - /url: "#"
+                  - link "Leyes y Reglamentos" [ref=e46] [cursor=pointer]:
+                    - /url: http://www.ordenjuridico.gob.mx/leyes.php
+                  - link "Preguntas Frecuentes" [ref=e47] [cursor=pointer]:
+                    - /url: faqs.php
+                  - link "ayuda" [ref=e48] [cursor=pointer]:
+                    - /url: "#"
+                    - img "ayuda" [ref=e49]
+                - link "twitter" [ref=e50] [cursor=pointer]:
+                  - /url: http://twitter.com/#!/DOF_segob
+                  - img "twitter" [ref=e51]
+        - row [ref=e52]:
+          - cell [ref=e53]:
+            - table [ref=e54]:
+              - rowgroup [ref=e55]:
+                - row [ref=e56]:
+                  - cell [ref=e57]:
+                    - table [ref=e58]:
+                      - rowgroup [ref=e59]:
+                        - row [ref=e60]:
+                          - cell [ref=e61]:
+                            - table [ref=e62]:
+                              - rowgroup [ref=e63]:
+                                - row [ref=e64]:
+                                  - cell [ref=e65]:
+                                    - table [ref=e66]:
+                                      - rowgroup [ref=e67]:
+                                        - row "download Ver ejemplar completo en PDF . Ver Imagen . Indice Portada . Ver Imagen" [ref=e68]:
+                                          - cell "download Ver ejemplar completo en PDF . Ver Imagen . Indice Portada . Ver Imagen" [ref=e69]:
+                                            - table [ref=e70]:
+                                              - rowgroup [ref=e71]:
+                                                - row "download Ver ejemplar completo en PDF . Ver Imagen . Indice Portada . Ver Imagen" [ref=e72]:
+                                                  - cell "download Ver ejemplar completo en PDF" [ref=e73]:
+                                                    - iframe
+                                                    - img "Ver ejemplar completo en PDF" [ref=e75] [cursor=pointer]
+                                                  - cell "." [ref=e76]:
+                                                    - img "." [ref=e77]
+                                                  - cell "Ver Imagen" [ref=e78]:
+                                                    - link "Ver Imagen" [ref=e79] [cursor=pointer]:
+                                                      - /url: nota_to_imagen_fs.php?cod_diario=327885&pagina=0&fecha=12/06/2026
+                                                      - img "Ver Imagen" [ref=e80]
+                                                  - cell "." [ref=e81]:
+                                                    - img "." [ref=e82]
+                                                  - cell "Indice" [ref=e83]
+                                                  - cell [ref=e84]
+                                                  - cell "Portada" [ref=e85]
+                                                  - cell "." [ref=e86]:
+                                                    - img "." [ref=e87]
+                                                  - cell "Ver Imagen" [ref=e88]:
+                                                    - link "Ver Imagen" [ref=e89] [cursor=pointer]:
+                                                      - /url: nota_to_imagen_fs.php?cod_diario=327885&pagina=-1&fecha=12/06/2026
+                                                      - img "Ver Imagen" [ref=e90]
+                                        - row "Edición Matutina" [ref=e91]:
+                                          - cell "Edición Matutina" [ref=e92]:
+                                            - table [ref=e93]:
+                                              - rowgroup [ref=e94]:
+                                                - row "Edición Matutina" [ref=e95]:
+                                                  - cell "Edición Matutina" [ref=e96]:
+                                                    - link "Edición Matutina" [ref=e97] [cursor=pointer]:
+                                                      - /url: index.php?year=2026&month=06&day=12&edicion=MAT
+                                        - 'row "Fecha: 12/06/2026 - Edición Vespertina" [ref=e98]':
+                                          - 'cell "Fecha: 12/06/2026 - Edición Vespertina" [ref=e99]'
+                                        - row "." [ref=e100]:
+                                          - cell "." [ref=e101]:
+                                            - img "." [ref=e102]
+                                        - row "UNICA SECCION" [ref=e103]:
+                                          - cell "UNICA SECCION" [ref=e104]
+                                        - row [ref=e105]:
+                                          - cell [ref=e106]
+                                        - row "PODER EJECUTIVO" [ref=e107]:
+                                          - cell "PODER EJECUTIVO" [ref=e108]
+                                        - row "." [ref=e109]:
+                                          - cell "." [ref=e110]:
+                                            - img "." [ref=e111]
+                                        - row "SECRETARIA DE HACIENDA Y CREDITO PUBLICO Ver WORD" [ref=e112]:
+                                          - cell "SECRETARIA DE HACIENDA Y CREDITO PUBLICO Ver WORD" [ref=e113]:
+                                            - text: SECRETARIA DE HACIENDA Y CREDITO PUBLICO
+                                            - link "Ver WORD" [ref=e114] [cursor=pointer]:
+                                              - /url: /nota_to_doc.php?codnota=5790516
+                                              - img "Ver WORD" [ref=e115]
+                                        - row "." [ref=e116]:
+                                          - cell "." [ref=e117]:
+                                            - img "." [ref=e118]
+                                        - row "Ver Imagen Acuerdo por el que se dan a conocer los porcentajes, los montos del estímulo fiscal y las cuotas disminuidas del impuesto especial sobre producción y servicios, así como las cantidades por litro aplicables a los combustibles que se indican, correspondientes al periodo que se especifica." [ref=e119]:
+                                          - cell "Ver Imagen" [ref=e120]:
+                                            - link "Ver Imagen" [ref=e121] [cursor=pointer]:
+                                              - /url: nota_to_imagen_fs.php?codnota=5790517&fecha=12/06/2026&cod_diario=327885
+                                              - img "Ver Imagen" [ref=e122]
+                                          - cell [ref=e123]
+                                          - cell "Acuerdo por el que se dan a conocer los porcentajes, los montos del estímulo fiscal y las cuotas disminuidas del impuesto especial sobre producción y servicios, así como las cantidades por litro aplicables a los combustibles que se indican, correspondientes al periodo que se especifica." [ref=e124]:
+                                            - link "Acuerdo por el que se dan a conocer los porcentajes, los montos del estímulo fiscal y las cuotas disminuidas del impuesto especial sobre producción y servicios, así como las cantidades por litro aplicables a los combustibles que se indican, correspondientes al periodo que se especifica." [ref=e125] [cursor=pointer]:
+                                              - /url: /nota_detalle.php?codigo=5790517&fecha=12/06/2026
+                                          - cell
+                                        - row "." [ref=e126]:
+                                          - cell "." [ref=e127]:
+                                            - img "." [ref=e128]
+                                        - row "Ver Imagen Acuerdo por el cual se dan a conocer los montos de los estímulos fiscales aplicables a la enajenación de gasolinas en la región fronteriza con los Estados Unidos de América, correspondientes al periodo que se especifica." [ref=e129]:
+                                          - cell "Ver Imagen" [ref=e130]:
+                                            - link "Ver Imagen" [ref=e131] [cursor=pointer]:
+                                              - /url: nota_to_imagen_fs.php?codnota=5790518&fecha=12/06/2026&cod_diario=327885
+                                              - img "Ver Imagen" [ref=e132]
+                                          - cell [ref=e133]
+                                          - cell "Acuerdo por el cual se dan a conocer los montos de los estímulos fiscales aplicables a la enajenación de gasolinas en la región fronteriza con los Estados Unidos de América, correspondientes al periodo que se especifica." [ref=e134]:
+                                            - link "Acuerdo por el cual se dan a conocer los montos de los estímulos fiscales aplicables a la enajenación de gasolinas en la región fronteriza con los Estados Unidos de América, correspondientes al periodo que se especifica." [ref=e135] [cursor=pointer]:
+                                              - /url: /nota_detalle.php?codigo=5790518&fecha=12/06/2026
+                                          - cell
+                                        - row "." [ref=e136]:
+                                          - cell "." [ref=e137]:
+                                            - img "." [ref=e138]
+                                        - row "Ver Imagen Acuerdo por el cual se dan a conocer los montos de los estímulos fiscales aplicables a la enajenación de gasolinas en la región fronteriza con Guatemala, correspondientes al periodo que se especifica." [ref=e139]:
+                                          - cell "Ver Imagen" [ref=e140]:
+                                            - link "Ver Imagen" [ref=e141] [cursor=pointer]:
+                                              - /url: nota_to_imagen_fs.php?codnota=5790519&fecha=12/06/2026&cod_diario=327885
+                                              - img "Ver Imagen" [ref=e142]
+                                          - cell [ref=e143]
+                                          - cell "Acuerdo por el cual se dan a conocer los montos de los estímulos fiscales aplicables a la enajenación de gasolinas en la región fronteriza con Guatemala, correspondientes al periodo que se especifica." [ref=e144]:
+                                            - link "Acuerdo por el cual se dan a conocer los montos de los estímulos fiscales aplicables a la enajenación de gasolinas en la región fronteriza con Guatemala, correspondientes al periodo que se especifica." [ref=e145] [cursor=pointer]:
+                                              - /url: /nota_detalle.php?codigo=5790519&fecha=12/06/2026
+                                          - cell
+                                    - table [ref=e146]:
+                                      - rowgroup [ref=e147]:
+                                        - row:
+                                          - cell
+                                        - row "Imprimir" [ref=e148]:
+                                          - cell "Imprimir" [ref=e149]:
+                                            - link "Imprimir" [ref=e150] [cursor=pointer]:
+                                              - /url: javascript:void(window.open('fileSave.php?print=true&urlSave=/index.php&print=true','',''))
+                                              - img "Imprimir" [ref=e151]
+                                    - table [ref=e152]:
+                                      - rowgroup [ref=e153]:
+                                        - row "." [ref=e154]:
+                                          - cell "." [ref=e155]:
+                                            - img "." [ref=e156]
+                            - img "." [ref=e157]
+                          - cell "." [ref=e158]:
+                            - img "." [ref=e159]
+                  - cell "CONSULTA POR FECHA Jun 2026 Do Lu Ma Mi Ju Vi Sá 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 crear usuario Crear Usuario busqueda avanzada Búsqueda Avanzada top notas Top Notas tramites Normas Oficiales quejas y sugerencias Quejas y Sugerencias copia Obtener Copia del DOF versif. copia Verificar Copia del DOF enlaces relevantes Enlaces Relevantes Contacto Contáctenos historia Historia del Diario Oficial estadisticas Vacantes en Gobierno estadisticas Ex-trabajadores Migratorios INDICADORES Tipo de Cambio y Tasas al 13/06/2026 UDIS 8.827635 Ver más ENCUESTAS ¿Le gustó la nueva imagen de la página web del Diario Oficial de la Federación? No Sí Votar 0.821786001312920061.gif 0.475545001508857915.jpg" [ref=e160]:
+                    - table [ref=e161]:
+                      - rowgroup [ref=e162]:
+                        - row "CONSULTA POR FECHA Jun 2026 Do Lu Ma Mi Ju Vi Sá 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 crear usuario Crear Usuario busqueda avanzada Búsqueda Avanzada top notas Top Notas tramites Normas Oficiales quejas y sugerencias Quejas y Sugerencias copia Obtener Copia del DOF versif. copia Verificar Copia del DOF enlaces relevantes Enlaces Relevantes Contacto Contáctenos historia Historia del Diario Oficial estadisticas Vacantes en Gobierno estadisticas Ex-trabajadores Migratorios INDICADORES Tipo de Cambio y Tasas al 13/06/2026 UDIS 8.827635 Ver más ENCUESTAS ¿Le gustó la nueva imagen de la página web del Diario Oficial de la Federación? No Sí Votar" [ref=e163]:
+                          - cell "CONSULTA POR FECHA Jun 2026 Do Lu Ma Mi Ju Vi Sá 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 crear usuario Crear Usuario busqueda avanzada Búsqueda Avanzada top notas Top Notas tramites Normas Oficiales quejas y sugerencias Quejas y Sugerencias copia Obtener Copia del DOF versif. copia Verificar Copia del DOF enlaces relevantes Enlaces Relevantes Contacto Contáctenos historia Historia del Diario Oficial estadisticas Vacantes en Gobierno estadisticas Ex-trabajadores Migratorios INDICADORES Tipo de Cambio y Tasas al 13/06/2026 UDIS 8.827635 Ver más ENCUESTAS ¿Le gustó la nueva imagen de la página web del Diario Oficial de la Federación? No Sí Votar" [ref=e164]:
+                            - table [ref=e165]:
+                              - rowgroup [ref=e166]:
+                                - row "CONSULTA POR FECHA" [ref=e167]:
+                                  - cell "CONSULTA POR FECHA" [ref=e168]
+                                - row "Jun 2026 Do Lu Ma Mi Ju Vi Sá 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30" [ref=e169]:
+                                  - cell "Jun 2026 Do Lu Ma Mi Ju Vi Sá 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30" [ref=e170]:
+                                    - table [ref=e173]:
+                                      - rowgroup [ref=e174]:
+                                        - row "Jun 2026" [ref=e175]:
+                                          - cell "Jun 2026" [ref=e176]:
+                                            - table [ref=e177]:
+                                              - rowgroup [ref=e178]:
+                                                - row "Jun 2026" [ref=e179]:
+                                                  - cell [ref=e180]
+                                                  - cell "Jun" [ref=e181]:
+                                                    - combobox [ref=e182]:
+                                                      - option "Ene"
+                                                      - option "Feb"
+                                                      - option "Mar"
+                                                      - option "Abr"
+                                                      - option "May"
+                                                      - option "Jun" [selected]
+                                                      - option "Jul"
+                                                      - option "Ago"
+                                                      - option "Sep"
+                                                      - option "Oct"
+                                                      - option "Nov"
+                                                      - option "Dic"
+                                                  - cell "2026" [ref=e183]:
+                                                    - combobox [ref=e184]:
+                                                      - option "2026" [selected]
+                                                      - option "2025"
+                                                      - option "2024"
+                                                      - option "2023"
+                                                      - option "2022"
+                                                      - option "2021"
+                                                      - option "2020"
+                                                      - option "2019"
+                                                      - option "2018"
+                                                      - option "2017"
+                                                      - option "2016"
+                                                      - option "2015"
+                                                      - option "2014"
+                                                      - option "2013"
+                                                      - option "2012"
+                                                      - option "2011"
+                                                      - option "2010"
+                                                      - option "2009"
+                                                      - option "2008"
+                                                      - option "2007"
+                                                      - option "2006"
+                                                      - option "2005"
+                                                      - option "2004"
+                                                      - option "2003"
+                                                      - option "2002"
+                                                      - option "2001"
+                                                      - option "2000"
+                                                      - option "1999"
+                                                      - option "1998"
+                                                      - option "1997"
+                                                      - option "1996"
+                                                      - option "1995"
+                                                      - option "1994"
+                                                      - option "1993"
+                                                      - option "1992"
+                                                      - option "1991"
+                                                      - option "1990"
+                                                      - option "1989"
+                                                      - option "1988"
+                                                      - option "1987"
+                                                      - option "1986"
+                                                      - option "1985"
+                                                      - option "1984"
+                                                      - option "1983"
+                                                      - option "1982"
+                                                      - option "1981"
+                                                      - option "1980"
+                                                      - option "1979"
+                                                      - option "1978"
+                                                      - option "1977"
+                                                      - option "1976"
+                                                      - option "1975"
+                                                      - option "1974"
+                                                      - option "1973"
+                                                      - option "1972"
+                                                      - option "1971"
+                                                      - option "1970"
+                                                      - option "1969"
+                                                      - option "1968"
+                                                      - option "1967"
+                                                      - option "1966"
+                                                      - option "1965"
+                                                      - option "1964"
+                                                      - option "1963"
+                                                      - option "1962"
+                                                      - option "1961"
+                                                      - option "1960"
+                                                      - option "1959"
+                                                      - option "1958"
+                                                      - option "1957"
+                                                      - option "1956"
+                                                      - option "1955"
+                                                      - option "1954"
+                                                      - option "1953"
+                                                      - option "1952"
+                                                      - option "1951"
+                                                      - option "1950"
+                                                      - option "1949"
+                                                      - option "1948"
+                                                      - option "1947"
+                                                      - option "1946"
+                                                      - option "1945"
+                                                      - option "1944"
+                                                      - option "1943"
+                                                      - option "1942"
+                                                      - option "1941"
+                                                      - option "1940"
+                                                      - option "1939"
+                                                      - option "1938"
+                                                      - option "1937"
+                                                      - option "1936"
+                                                      - option "1935"
+                                                      - option "1934"
+                                                      - option "1933"
+                                                      - option "1932"
+                                                      - option "1931"
+                                                      - option "1930"
+                                                      - option "1929"
+                                                      - option "1928"
+                                                      - option "1927"
+                                                      - option "1926"
+                                                      - option "1925"
+                                                      - option "1924"
+                                                      - option "1923"
+                                                      - option "1922"
+                                                      - option "1921"
+                                                      - option "1920"
+                                                      - option "1919"
+                                                      - option "1918"
+                                                      - option "1917"
+                                                  - cell [ref=e185]
+                                        - row "Do Lu Ma Mi Ju Vi Sá" [ref=e186]:
+                                          - cell "Do Lu Ma Mi Ju Vi Sá" [ref=e187]:
+                                            - table [ref=e188]:
+                                              - rowgroup [ref=e189]:
+                                                - row "Do Lu Ma Mi Ju Vi Sá" [ref=e190]:
+                                                  - cell "Do" [ref=e191]:
+                                                    - generic [ref=e192]: Do
+                                                  - cell "Lu" [ref=e193]:
+                                                    - generic [ref=e194]: Lu
+                                                  - cell "Ma" [ref=e195]:
+                                                    - generic [ref=e196]: Ma
+                                                  - cell "Mi" [ref=e197]:
+                                                    - generic [ref=e198]: Mi
+                                                  - cell "Ju" [ref=e199]:
+                                                    - generic [ref=e200]: Ju
+                                                  - cell "Vi" [ref=e201]:
+                                                    - generic [ref=e202]: Vi
+                                                  - cell "Sá" [ref=e203]:
+                                                    - generic [ref=e204]: Sá
+                                        - row "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30" [ref=e205]:
+                                          - cell "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30" [ref=e206]:
+                                            - table [ref=e208]:
+                                              - rowgroup [ref=e209]:
+                                                - row "1 2 3 4 5 6" [ref=e210]:
+                                                  - cell [ref=e211]
+                                                  - cell "1" [ref=e213]:
+                                                    - link "1" [ref=e214] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=01
+                                                  - cell "2" [ref=e215]:
+                                                    - link "2" [ref=e216] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=02
+                                                  - cell "3" [ref=e217]:
+                                                    - link "3" [ref=e218] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=03
+                                                  - cell "4" [ref=e219]:
+                                                    - link "4" [ref=e220] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=04
+                                                  - cell "5" [ref=e221]:
+                                                    - link "5" [ref=e222] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=05
+                                                  - cell "6" [ref=e223]:
+                                                    - generic [ref=e224]: "6"
+                                                - row "7 8 9 10 11 12 13" [ref=e225]:
+                                                  - cell "7" [ref=e226]:
+                                                    - generic [ref=e227]: "7"
+                                                  - cell "8" [ref=e228]:
+                                                    - link "8" [ref=e229] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=08
+                                                  - cell "9" [ref=e230]:
+                                                    - link "9" [ref=e231] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=09
+                                                  - cell "10" [ref=e232]:
+                                                    - link "10" [ref=e233] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=10
+                                                  - cell "11" [ref=e234]:
+                                                    - link "11" [ref=e235] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=11
+                                                  - cell "12" [ref=e236]:
+                                                    - link "12" [ref=e237] [cursor=pointer]:
+                                                      - /url: index_111.php?year=2026&month=06&day=12
+                                                  - cell "13" [ref=e238]:
+                                                    - generic [ref=e239]: "13"
+                                                - row "14 15 16 17 18 19 20" [ref=e240]:
+                                                  - cell "14" [ref=e241]:
+                                                    - generic [ref=e242]: "14"
+                                                  - cell "15" [ref=e243]:
+                                                    - generic [ref=e244]: "15"
+                                                  - cell "16" [ref=e245]:
+                                                    - generic [ref=e246]: "16"
+                                                  - cell "17" [ref=e247]:
+                                                    - generic [ref=e248]: "17"
+                                                  - cell "18" [ref=e249]:
+                                                    - generic [ref=e250]: "18"
+                                                  - cell "19" [ref=e251]:
+                                                    - generic [ref=e252]: "19"
+                                                  - cell "20" [ref=e253]:
+                                                    - generic [ref=e254]: "20"
+                                                - row "21 22 23 24 25 26 27" [ref=e255]:
+                                                  - cell "21" [ref=e256]:
+                                                    - generic [ref=e257]: "21"
+                                                  - cell "22" [ref=e258]:
+                                                    - generic [ref=e259]: "22"
+                                                  - cell "23" [ref=e260]:
+                                                    - generic [ref=e261]: "23"
+                                                  - cell "24" [ref=e262]:
+                                                    - generic [ref=e263]: "24"
+                                                  - cell "25" [ref=e264]:
+                                                    - generic [ref=e265]: "25"
+                                                  - cell "26" [ref=e266]:
+                                                    - generic [ref=e267]: "26"
+                                                  - cell "27" [ref=e268]:
+                                                    - generic [ref=e269]: "27"
+                                                - row "28 29 30" [ref=e270]:
+                                                  - cell "28" [ref=e271]:
+                                                    - generic [ref=e272]: "28"
+                                                  - cell "29" [ref=e273]:
+                                                    - generic [ref=e274]: "29"
+                                                  - cell "30" [ref=e275]:
+                                                    - generic [ref=e276]: "30"
+                                                  - cell [ref=e277]
+                                                  - cell [ref=e279]
+                                                  - cell [ref=e281]
+                                                  - cell [ref=e283]
+                            - table [ref=e285]:
+                              - rowgroup [ref=e286]:
+                                - row "crear usuario Crear Usuario busqueda avanzada Búsqueda Avanzada top notas Top Notas tramites Normas Oficiales quejas y sugerencias Quejas y Sugerencias copia Obtener Copia del DOF versif. copia Verificar Copia del DOF enlaces relevantes Enlaces Relevantes Contacto Contáctenos historia Historia del Diario Oficial estadisticas Vacantes en Gobierno estadisticas Ex-trabajadores Migratorios" [ref=e287]:
+                                  - cell "crear usuario Crear Usuario busqueda avanzada Búsqueda Avanzada top notas Top Notas tramites Normas Oficiales quejas y sugerencias Quejas y Sugerencias copia Obtener Copia del DOF versif. copia Verificar Copia del DOF enlaces relevantes Enlaces Relevantes Contacto Contáctenos historia Historia del Diario Oficial estadisticas Vacantes en Gobierno estadisticas Ex-trabajadores Migratorios" [ref=e288]:
+                                    - table [ref=e289]:
+                                      - rowgroup [ref=e290]:
+                                        - row "crear usuario Crear Usuario" [ref=e291]:
+                                          - cell "crear usuario" [ref=e292]:
+                                            - link "crear usuario" [ref=e293] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "crear usuario" [ref=e294]
+                                          - cell "Crear Usuario" [ref=e295]:
+                                            - link "Crear Usuario" [ref=e296] [cursor=pointer]:
+                                              - /url: admin_usuarios.php
+                                        - row "busqueda avanzada Búsqueda Avanzada" [ref=e297]:
+                                          - cell "busqueda avanzada" [ref=e298]:
+                                            - link "busqueda avanzada" [ref=e299] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "busqueda avanzada" [ref=e300]
+                                          - cell "Búsqueda Avanzada" [ref=e301]:
+                                            - link "Búsqueda Avanzada" [ref=e302] [cursor=pointer]:
+                                              - /url: busqueda_avanzada.php?pb=S&cod_orga=TODOS
+                                        - row "top notas Top Notas" [ref=e303]:
+                                          - cell "top notas" [ref=e304]:
+                                            - link "top notas" [ref=e305] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "top notas" [ref=e306]
+                                          - cell "Top Notas" [ref=e307]:
+                                            - link "Top Notas" [ref=e308] [cursor=pointer]:
+                                              - /url: index.php?vertopnotas=1
+                                        - row "tramites Normas Oficiales" [ref=e309]:
+                                          - cell "tramites" [ref=e310]:
+                                            - link "tramites" [ref=e311] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "tramites" [ref=e312]
+                                          - cell "Normas Oficiales" [ref=e313]:
+                                            - link "Normas Oficiales" [ref=e314] [cursor=pointer]:
+                                              - /url: normasOficiales.php
+                                        - row "quejas y sugerencias Quejas y Sugerencias" [ref=e315]:
+                                          - cell "quejas y sugerencias" [ref=e316]:
+                                            - link "quejas y sugerencias" [ref=e317] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "quejas y sugerencias" [ref=e318]
+                                          - cell "Quejas y Sugerencias" [ref=e319]:
+                                            - link "Quejas y Sugerencias" [ref=e320] [cursor=pointer]:
+                                              - /url: quejas.php
+                                        - row "copia Obtener Copia del DOF" [ref=e321]:
+                                          - cell "copia" [ref=e322]:
+                                            - link "copia" [ref=e323] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "copia" [ref=e324]
+                                          - cell "Obtener Copia del DOF" [ref=e325]:
+                                            - link "Obtener Copia del DOF" [ref=e326] [cursor=pointer]:
+                                              - /url: copias_cert.php
+                                        - row "versif. copia Verificar Copia del DOF" [ref=e327]:
+                                          - cell "versif. copia" [ref=e328]:
+                                            - link "versif. copia" [ref=e329] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "versif. copia" [ref=e330]
+                                          - cell "Verificar Copia del DOF" [ref=e331]:
+                                            - link "Verificar Copia del DOF" [ref=e332] [cursor=pointer]:
+                                              - /url: copias_verif.php
+                                        - row "enlaces relevantes Enlaces Relevantes" [ref=e333]:
+                                          - cell "enlaces relevantes" [ref=e334]:
+                                            - link "enlaces relevantes" [ref=e335] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "enlaces relevantes" [ref=e336]
+                                          - cell "Enlaces Relevantes" [ref=e337]:
+                                            - link "Enlaces Relevantes" [ref=e338] [cursor=pointer]:
+                                              - /url: enlaces_dependencias.php
+                                        - row "Contacto Contáctenos" [ref=e339]:
+                                          - cell "Contacto" [ref=e340]:
+                                            - link "Contacto" [ref=e341] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "Contacto" [ref=e342]
+                                          - cell "Contáctenos" [ref=e343]:
+                                            - link "Contáctenos" [ref=e344] [cursor=pointer]:
+                                              - /url: contactenos.php
+                                        - row "historia Historia del Diario Oficial" [ref=e345]:
+                                          - cell "historia" [ref=e346]:
+                                            - link "historia" [ref=e347] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "historia" [ref=e348]
+                                          - cell "Historia del Diario Oficial" [ref=e349]:
+                                            - link "Historia del Diario Oficial" [ref=e350] [cursor=pointer]:
+                                              - /url: historia.php
+                                        - row "estadisticas Vacantes en Gobierno" [ref=e351]:
+                                          - cell "estadisticas" [ref=e352]:
+                                            - link "estadisticas" [ref=e353] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "estadisticas" [ref=e354]
+                                          - cell "Vacantes en Gobierno" [ref=e355]:
+                                            - link "Vacantes en Gobierno" [ref=e356] [cursor=pointer]:
+                                              - /url: vacantes.php
+                                        - row "estadisticas Ex-trabajadores Migratorios" [ref=e357]:
+                                          - cell "estadisticas" [ref=e358]:
+                                            - link "estadisticas" [ref=e359] [cursor=pointer]:
+                                              - /url: "#"
+                                              - img "estadisticas" [ref=e360]
+                                          - cell "Ex-trabajadores Migratorios" [ref=e361]:
+                                            - link "Ex-trabajadores Migratorios" [ref=e362] [cursor=pointer]:
+                                              - /url: extrabmigmex.php
+                            - table [ref=e363]:
+                              - rowgroup [ref=e364]:
+                                - row "INDICADORES" [ref=e365]:
+                                  - cell "INDICADORES" [ref=e366]
+                                - row "Tipo de Cambio y Tasas al 13/06/2026 UDIS 8.827635 Ver más" [ref=e367]:
+                                  - cell "Tipo de Cambio y Tasas al 13/06/2026 UDIS 8.827635 Ver más" [ref=e368]:
+                                    - table [ref=e369]:
+                                      - rowgroup [ref=e370]:
+                                        - row "Tipo de Cambio y Tasas al 13/06/2026" [ref=e371]:
+                                          - cell "Tipo de Cambio y Tasas al 13/06/2026" [ref=e372]
+                                        - row [ref=e373]:
+                                          - cell [ref=e374]
+                                        - row "UDIS 8.827635" [ref=e375]:
+                                          - cell "UDIS 8.827635" [ref=e376]:
+                                            - paragraph [ref=e377]:
+                                              - text: UDIS
+                                              - text: "8.827635"
+                                        - row "Ver más" [ref=e378]:
+                                          - cell "Ver más" [ref=e379]:
+                                            - link "Ver más" [ref=e380] [cursor=pointer]:
+                                              - /url: indicadores.php
+                            - table [ref=e381]:
+                              - rowgroup [ref=e382]:
+                                - row "ENCUESTAS" [ref=e383]:
+                                  - cell "ENCUESTAS" [ref=e384]
+                                - row "¿Le gustó la nueva imagen de la página web del Diario Oficial de la Federación? No Sí Votar" [ref=e385]:
+                                  - cell "¿Le gustó la nueva imagen de la página web del Diario Oficial de la Federación? No Sí Votar" [ref=e386]:
+                                    - paragraph [ref=e387]: ¿Le gustó la nueva imagen de la página web del Diario Oficial de la Federación?
+                                    - generic [ref=e388]:
+                                      - paragraph [ref=e389]:
+                                        - radio "No" [ref=e390]
+                                        - text: "No"
+                                        - radio "Sí" [checked] [ref=e391]
+                                        - text: Sí
+                                      - paragraph [ref=e392]
+                                      - button "Votar" [ref=e394]
+                        - row [ref=e395]:
+                          - cell [ref=e396]
+                        - row "0.821786001312920061.gif 0.475545001508857915.jpg" [ref=e397]:
+                          - cell "0.821786001312920061.gif 0.475545001508857915.jpg" [ref=e398]:
+                            - link "0.821786001312920061.gif" [ref=e399] [cursor=pointer]:
+                              - /url: http://dof.gob.mx/red-boa.php
+                              - img "0.821786001312920061.gif" [ref=e400]
+                            - link "0.475545001508857915.jpg" [ref=e401] [cursor=pointer]:
+                              - /url: https://www.gob.mx/
+                              - img "0.475545001508857915.jpg" [ref=e402]
+                  - cell
+    - generic [ref=e403]:
+      - generic:
+        - link:
+          - /url: red-boa.php
+          - img [ref=e404] [cursor=pointer]
+      - generic [ref=e405]:
+        - link "Diario Oficial de la Federación" [ref=e406] [cursor=pointer]:
+          - /url: https://goo.gl/maps/grL3boxiDMjLhmLS6
+        - paragraph [ref=e407]:
+          - text: Río Amazonas No. 62, Col. Cuauhtémoc, C.P. 06500, Ciudad de México
+          - text: Tel. (55) 5093-3200, donde podrá acceder a nuestro menú de servicios
+          - text: "Dirección electrónica:"
+          - link "www.dof.gob.mx" [ref=e408] [cursor=pointer]:
+            - /url: http://www.dof.gob.mx
+      - img [ref=e410]
+      - text: "111"
+      - paragraph [ref=e411]:
+        - link "AVISO LEGAL" [ref=e412] [cursor=pointer]:
+          - /url: "#"
+        - text: "| ALGUNOS DERECHOS RESERVADOS © 2026"

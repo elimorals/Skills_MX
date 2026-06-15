@@ -1,0 +1,35 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - img "Secretaría del trabajo y previsión social, REPSE" [ref=e4]
+  - generic [ref=e9]:
+    - heading "Padrón Público de Contratistas de Servicios Especializados u Obras Especializadas." [level=4] [ref=e10]
+    - heading "Registro de prestadoras de servicios especializados y obras especializadas" [level=5] [ref=e11]
+    - 'heading "Fecha de consulta: 2026-06-13" [level=6] [ref=e12]'
+  - generic [ref=e13]:
+    - 'heading "REGISTRO LOCALIZADO FOLIO: 2334" [level=3] [ref=e17]'
+    - generic [ref=e18]:
+      - generic [ref=e20]:
+        - generic [ref=e22]:
+          - paragraph [ref=e23]: Nombre o Razón Social
+          - paragraph [ref=e24]: MANPOWER CORPORATIVO SA DE CV
+        - generic [ref=e26]:
+          - paragraph [ref=e27]: Entidad / Municipio
+          - paragraph [ref=e28]: Ciudad de México / Benito Juárez
+        - generic [ref=e30]:
+          - paragraph [ref=e31]: Aviso de registro N. / Fecha de aviso de registro
+          - paragraph [ref=e32]: AR6169 / 2024-06-12
+        - generic [ref=e34]:
+          - paragraph [ref=e35]: Vigencia del Registro
+          - paragraph [ref=e36]: 2027-06-12
+      - generic [ref=e38]:
+        - paragraph [ref=e39]: Ofreciendo los siguientes servicios
+        - separator [ref=e40]
+        - paragraph
+        - paragraph
+        - list [ref=e41]: "- La prestación de servicios especializados en la organización y administración de negocios, desarrollo empresarial y comercial, mercadotecnia, mercadeo o marketing, así como servicios de asesoría, gestoría, consultoría y atención telefónica en cuestiones de asistencia legal y laborales, de cobranza, tecnología y sistemas."
+        - list [ref=e42]: "- Prestar servicios especializados en gestión y planeación financiera, economía, tesorería y gestión del flujo de caja."
+        - list [ref=e43]: "- Proporcionar servicios especializados de consultoría, organización interna, auditoría, control interno, administrativos de negocios, así como servicios especializados en capital humano, gestión del talento, en asuntos legales, fiscales, tecnología y sistemas, así como en áreas administrativas especializadas, mediante el apoyo de los recursos materiales y tecnológicos que se requieran para la realización y gestión de proyectos empresariales."
+        - paragraph
+        - paragraph
+      - button "Regresar" [ref=e46] [cursor=pointer]

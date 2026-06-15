@@ -1,0 +1,109 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - img "logo-zumpango-white" [ref=e8]
+    - generic [ref=e12]:
+      - heading "¿Adquiriste una propiedad y aún no has regularizado el pago del predial a tu nombre?" [level=2] [ref=e15]
+      - heading "¡Este es el mejor momento para hacerlo!" [level=2] [ref=e18]
+      - heading "Aprovecha el mejor descuento que tenemos para ti, todo este mes de JUNIO Y JULIO" [level=2] [ref=e21]
+      - link "Click aquí para Pagar Predial 👈" [ref=e25] [cursor=pointer]:
+        - /url: https://pagosytramites.edomex.gob.mx/predial/faces/FormatoPagoPredialResponsive.xhtml
+        - generic [ref=e27]: Click aquí para Pagar Predial 👈
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - heading "Sabias que..." [level=2] [ref=e40]
+        - 'heading "Con mipredial.mx puedes evitar las costosas multas y recargos generados por no pagar a tu predial. Regularizar tu predial hoy mismo te permitirá ahorrar no solo dinero, sino también evitarte molestias y estrés a futuro. Pagar en mipredial.mx es seguro, rápido y fácil: hazlo desde cualquier lugar, sin lar as filas ni complicaciones." [level=2] [ref=e43]':
+          - text: Con mipredial.mx puedes evitar las costosas multas y recargos generados por no pagar a tu predial. Regularizar tu predial hoy mismo te permitirá ahorrar no solo dinero, sino también evitarte molestias y estrés a futuro.
+          - text: "Pagar en mipredial.mx es seguro, rápido y fácil: hazlo desde cualquier lugar, sin lar as filas ni complicaciones."
+        - link "¡Haz clic aquí para pagar tu predial! 👈" [ref=e47] [cursor=pointer]:
+          - /url: https://pagosytramites.edomex.gob.mx/predial/faces/FormatoPagoPredialResponsive.xhtml
+          - generic [ref=e49]: ¡Haz clic aquí para pagar tu predial! 👈
+      - generic [ref=e50]:
+        - heading "Ponte al corriente y olvidate de las preocupaciones" [level=2] [ref=e53]
+        - heading "Este mes de Junio y Julio es tu oportunidad para pagar el predial sin multas ni recargos. NO esperes más, asegura tu tranquilidad y Ia de tu familia, y regulariza tu situación fiscal." [level=2] [ref=e56]
+        - 'heading "Recuerda, la mayor inversión es la tranquilidad: mipredial.mx lo hace posible." [level=2] [ref=e59]':
+          - generic [ref=e60]:
+            - text: "Recuerda, la mayor inversión es la tranquilidad:"
+            - text: mipredial.mx lo hace posible.
+    - generic [ref=e64]:
+      - generic [ref=e67]:
+        - img [ref=e70]
+        - generic [ref=e72]:
+          - heading "Recuerda que..." [level=3] [ref=e73]
+          - paragraph [ref=e74]: El 100% del pago de tu predial se destina a mejorar los servicios e infraestructura de nuestra comunidad. Contribuye a construir un mejor futuro pagando hoy con mipredial.mx
+      - link "Click aquí para ver las obras 👈" [ref=e78] [cursor=pointer]:
+        - /url: https://www.facebook.com/AyuntamientoDeZumpangoOficial
+        - generic [ref=e80]: Click aquí para ver las obras 👈
+    - generic [ref=e84]:
+      - heading "¡Obtén el descuento ahora!" [level=2] [ref=e87]
+      - link "Click aquí para Pagar Predial 👈" [ref=e91] [cursor=pointer]:
+        - /url: https://pagosytramites.edomex.gob.mx/predial/faces/FormatoPagoPredialResponsive.xhtml
+        - generic [ref=e93]: Click aquí para Pagar Predial 👈
+    - generic [ref=e98]:
+      - heading "Visítanos" [level=2] [ref=e101]
+      - heading "Te esperamos en cajas de Tesoreria Municipal para asesorarte en todo lo que necesites. También puedes realizar el pago de tu predial en línea de manera rápida y segura a través de mipredial.mx" [level=2] [ref=e104]
+    - generic [ref=e107]:
+      - generic [ref=e108]:
+        - generic [ref=e111]:
+          - img [ref=e114]
+          - generic [ref=e116]:
+            - heading "SAN JUAN ZITLALTEPEC EN EL CENTRO EN LA DELEGACIÓN" [level=3] [ref=e117]
+            - paragraph [ref=e118]: Delegacion Municipal San Juan Zitlaltepec Av 16 de Septiembre, Josefa Ortiz de Domínguez esquina, San Lorenzo Zitlaltepec, 55628 San Juan Zitlaltepec, Méx. 591 611 0089
+        - link "Abrir mapa" [ref=e122] [cursor=pointer]:
+          - /url: https://goo.gl/maps/wbipDULTz9HvzXm79
+          - generic [ref=e123]:
+            - img [ref=e125]
+            - generic [ref=e127]: Abrir mapa
+      - generic [ref=e128]:
+        - generic [ref=e131]:
+          - img [ref=e134]
+          - generic [ref=e136]:
+            - heading "SAN BARTOLO CENTRO EN LA DELEGACIÓN" [level=3] [ref=e137]
+            - paragraph [ref=e138]: 2 de Marzo SN, San Bartolo Cuautlalpan, 55630 San Bartolo Cuautlalpan, Méx.
+        - link "Abrir mapa" [ref=e142] [cursor=pointer]:
+          - /url: https://goo.gl/maps/cWR1Y96TcQ7jdToLA
+          - generic [ref=e143]:
+            - img [ref=e145]
+            - generic [ref=e147]: Abrir mapa
+      - generic [ref=e148]:
+        - generic [ref=e151]:
+          - img [ref=e154]
+          - generic [ref=e156]:
+            - heading "PRESIDENCIA" [level=3] [ref=e157]
+            - paragraph [ref=e158]: Palacio Municipal de Zumpango Juárez n, Centro, 55600 Zumpango de Ocampo, Méx. 591 917 08 97
+        - link "Abrir mapa" [ref=e162] [cursor=pointer]:
+          - /url: https://goo.gl/maps/iWKJM7zHh9huVJXT9
+          - generic [ref=e163]:
+            - img [ref=e165]
+            - generic [ref=e167]: Abrir mapa
+      - generic [ref=e168]:
+        - generic [ref=e171]:
+          - img [ref=e174]
+          - generic [ref=e176]:
+            - heading "TOWCENTER" [level=3] [ref=e177]
+            - paragraph [ref=e178]: Carr Zumpango - Tecamac 2000, Buenavista, 55635 Zumpango de Ocampo, Méx.
+        - link "Abrir mapa" [ref=e182] [cursor=pointer]:
+          - /url: https://goo.gl/maps/5ghnc9ScYwtCaXXN8
+          - generic [ref=e183]:
+            - img [ref=e185]
+            - generic [ref=e187]: Abrir mapa
+    - generic [ref=e194]:
+      - img [ref=e197]
+      - generic [ref=e199]:
+        - heading "Horarios de Atención" [level=3] [ref=e200]
+        - paragraph [ref=e201]:
+          - text: Lunes a Viernes de 9:00 AM - 6:00 PM
+          - text: Sábado de 9:00 AM - 1:00 PM
+    - generic [ref=e205]:
+      - heading "¡Obtén el descuento en multas y recargos ahora!" [level=2] [ref=e208]
+      - link "Haz click aquí para pagar tu predial y evitar cargos adicionales 👈" [ref=e212] [cursor=pointer]:
+        - /url: https://pagosytramites.edomex.gob.mx/predial/faces/FormatoPagoPredialResponsive.xhtml
+        - generic [ref=e214]: Haz click aquí para pagar tu predial y evitar cargos adicionales 👈
+    - generic [ref=e219]:
+      - img "logo-zumpango-1" [ref=e222]
+      - heading "© Gobierno Municipal de Zumpango | Todos los derechos son reservados" [level=2] [ref=e225]
+  - link "Seraphinite Accelerator Optimized by Seraphinite Accelerator Turns on site high speed to be attractive for people and search engines." [ref=e226] [cursor=pointer]:
+    - /url: https://www.s-sols.com/products/wordpress/accelerator?utm_source=usersite&utm_medium=banner&utm_campaign=free_lim_ver&utm_term=accel
+    - img "Seraphinite Accelerator" [ref=e227]
+    - generic [ref=e228]:
+      - text: Optimized by Seraphinite Accelerator
+      - text: Turns on site high speed to be attractive for people and search engines.

@@ -1,0 +1,130 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - link "gob.mx" [ref=e5] [cursor=pointer]:
+          - /url: http://www.gob.mx
+          - img "gob.mx" [ref=e6]
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Trámites" [ref=e10] [cursor=pointer]:
+              - /url: http://www.gob.mx/tramites
+          - listitem [ref=e11]:
+            - link "Gobierno" [ref=e12] [cursor=pointer]:
+              - /url: http://www.gob.mx/presidencia
+            - link "Búsqueda " [ref=e13] [cursor=pointer]:
+              - /url: /sat/archivo/todos
+              - generic [ref=e14]: Búsqueda
+              - generic [ref=e15]: 
+    - navigation [ref=e16]:
+      - generic [ref=e17]:
+        - link "Servicio de Administración Tributaria" [ref=e19] [cursor=pointer]:
+          - /url: /sat
+        - list [ref=e21]:
+          - listitem [ref=e22]:
+            - link "Información" [ref=e23] [cursor=pointer]:
+              - /url: /sat/archivo/articulos
+          - listitem [ref=e24]:
+            - link "Multimedia" [ref=e25] [cursor=pointer]:
+              - /url: /sat/archivo/multimedia
+          - listitem [ref=e26]:
+            - link "Acciones y Programas" [ref=e27] [cursor=pointer]:
+              - /url: /sat/archivo/acciones_y_programas
+          - listitem [ref=e28]:
+            - link "Documentos" [ref=e29] [cursor=pointer]:
+              - /url: /sat/archivo/documentos
+  - main [ref=e30]:
+    - generic [ref=e31]:
+      - list [ref=e32]:
+        - listitem [ref=e33]:
+          - link "" [ref=e34] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e35]: 
+        - listitem [ref=e36]: Error
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - heading "La página solicitada no se encuentra en este servidor" [level=1] [ref=e40]
+          - heading "Error 404" [level=3] [ref=e41]
+          - paragraph [ref=e42]: La página solicitada puede no estar disponible, haber cambiado de dirección (URL) o no existir. Con frecuencia es debido a algún error al escribir la dirección en la página (URL). Compruebe de nuevo si es correcta.
+          - separator [ref=e44]
+        - generic [ref=e45]:
+          - figure [ref=e46]:
+            - img "gob.mx" [ref=e47]
+          - heading [level=3]
+          - list [ref=e48]:
+            - listitem [ref=e49]:
+              - link "Regresar al inicio" [ref=e50] [cursor=pointer]:
+                - /url: http://www.gob.mx/
+            - listitem [ref=e51]:
+              - link "Ver archivo de gob.mx" [ref=e52] [cursor=pointer]:
+                - /url: http://www.gob.mx/busqueda
+            - listitem [ref=e53]:
+              - link "Volver a la página anterior e intentarlo de nuevo" [ref=e54] [cursor=pointer]:
+                - /url: ""
+  - contentinfo [ref=e55]:
+    - generic [ref=e57]:
+      - generic:
+        - img "logo gobierno de méxico" [ref=e59]
+        - generic [ref=e60]:
+          - heading "Enlaces" [level=4] [ref=e61]
+          - list [ref=e63]:
+            - listitem [ref=e64]:
+              - link "Datos" [ref=e65] [cursor=pointer]:
+                - /url: https://datos.gob.mx/
+            - listitem [ref=e66]:
+              - link "Portal de Obligaciones de Transparencia" [ref=e67] [cursor=pointer]:
+                - /url: https://www.sat.gob.mx/minisitio/Transparencia/obligaciones_transparencia.html
+            - listitem [ref=e68]:
+              - link "PNT" [ref=e69] [cursor=pointer]:
+                - /url: https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/
+            - listitem [ref=e70]:
+              - link "Transparencia para el Pueblo" [ref=e71] [cursor=pointer]:
+                - /url: https://transparencia.gob.mx/home.html
+            - listitem [ref=e72]:
+              - link "Alerta" [ref=e73] [cursor=pointer]:
+                - /url: http://alertadores.funcionpublica.gob.mx/
+            - listitem [ref=e74]:
+              - link "Denuncia" [ref=e75] [cursor=pointer]:
+                - /url: https://sidec.buengobierno.gob.mx/#!/
+        - generic [ref=e76]:
+          - heading "¿Qué es gob.mx?" [level=4] [ref=e77]
+          - paragraph
+          - paragraph [ref=e78]:
+            - text: Es el portal único de trámites, información y participación ciudadana.
+            - link "Leer más" [ref=e79] [cursor=pointer]:
+              - /url: /que-es-gobmx
+          - paragraph
+          - list [ref=e80]:
+            - listitem [ref=e81]:
+              - link "Declaración de Accesibilidad" [ref=e82] [cursor=pointer]:
+                - /url: /accesibilidad
+            - listitem [ref=e83]:
+              - link "Términos y Condiciones" [ref=e84] [cursor=pointer]:
+                - /url: /terminos
+        - generic [ref=e85]:
+          - heading "Denuncia contra servidores públicos" [level=5] [ref=e86]:
+            - link "Denuncia contra servidores públicos" [ref=e87] [cursor=pointer]:
+              - /url: https://sidec.buengobierno.gob.mx/#!/
+          - heading "Síguenos en" [level=4] [ref=e88]
+          - list [ref=e89]:
+            - listitem [ref=e90]:
+              - link "Facebook" [ref=e91] [cursor=pointer]:
+                - /url: https://www.facebook.com/gobmexico
+                - img "Facebook" [ref=e92]
+            - listitem [ref=e93]:
+              - link "Twitter" [ref=e94] [cursor=pointer]:
+                - /url: https://twitter.com/GobiernoMX
+                - img "Twitter" [ref=e95]
+            - listitem [ref=e96]:
+              - link "gob.mx" [ref=e97] [cursor=pointer]:
+                - /url: https://www.instagram.com/gobmexico/
+                - img "gob.mx" [ref=e98]
+            - listitem [ref=e99]:
+              - link "gob.mx" [ref=e100] [cursor=pointer]:
+                - /url: https://www.youtube.com/@gobiernodemexico
+                - img "gob.mx" [ref=e101]
+          - list [ref=e102]:
+            - listitem [ref=e103]:
+              - link "logo 079" [ref=e105] [cursor=pointer]:
+                - /url: tel:+079
+                - img "logo 079" [ref=e106]

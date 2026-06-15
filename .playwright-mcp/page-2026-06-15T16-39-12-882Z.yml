@@ -1,0 +1,193 @@
+- generic [ref=e2]:
+  - link "Pasar al contenido principal ➔" [ref=e3] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - generic [ref=e10]:
+            - text: ">"
+            - generic [ref=e12]: Toluca
+          - generic [ref=e14]:
+            - generic [ref=e15]: 15 Jun
+            - img [ref=e17]
+            - generic [ref=e53]: 18°C
+          - generic [ref=e55]:
+            - generic [ref=e56]: 16 Jun
+            - img [ref=e58]
+            - generic [ref=e94]: 19°C
+          - generic [ref=e96]:
+            - generic [ref=e97]: 17 Jun
+            - img [ref=e99]
+            - generic [ref=e135]: 18°C
+          - generic [ref=e137]:
+            - generic [ref=e138]: 18 Jun
+            - img [ref=e140]
+            - generic [ref=e176]: 18°C
+          - generic [ref=e178]:
+            - generic [ref=e179]: 19 Jun
+            - img [ref=e181]
+            - generic [ref=e217]: 17°C
+          - generic [ref=e219]:
+            - generic [ref=e220]: 20 Jun
+            - img [ref=e222]
+            - generic [ref=e251]: 18°C
+          - generic [ref=e253]:
+            - generic [ref=e254]: 21 Jun
+            - img [ref=e256]
+            - generic [ref=e292]: 17°C
+        - generic [ref=e293]:
+          - generic [ref=e294]:
+            - text: ">"
+            - generic [ref=e296]: Toluca
+          - generic [ref=e298]:
+            - generic [ref=e299]: 15 Jun
+            - img [ref=e301]
+            - generic [ref=e337]: 18°C
+          - generic [ref=e339]:
+            - generic [ref=e340]: 16 Jun
+            - img [ref=e342]
+            - generic [ref=e378]: 19°C
+          - generic [ref=e380]:
+            - generic [ref=e381]: 17 Jun
+            - img [ref=e383]
+            - generic [ref=e419]: 18°C
+          - generic [ref=e421]:
+            - generic [ref=e422]: 18 Jun
+            - img [ref=e424]
+            - generic [ref=e460]: 18°C
+          - generic [ref=e462]:
+            - generic [ref=e463]: 19 Jun
+            - img [ref=e465]
+            - generic [ref=e501]: 17°C
+          - generic [ref=e503]:
+            - generic [ref=e504]: 20 Jun
+            - img [ref=e506]
+            - generic [ref=e535]: 18°C
+          - generic [ref=e537]:
+            - generic [ref=e538]: 21 Jun
+            - img [ref=e540]
+            - generic [ref=e576]: 17°C
+        - img [ref=e578]
+      - link "PORTAL CIUDADANO" [ref=e581] [cursor=pointer]:
+        - /url: https://edomex.gob.mx
+        - heading "PORTAL CIUDADANO" [level=6] [ref=e582]
+      - link "CONSULTA LA CALIDAD DEL AIRE" [ref=e584] [cursor=pointer]:
+        - /url: http://rama.edomex.gob.mx/calidaddelaire
+        - heading "CONSULTA LA CALIDAD DEL AIRE" [level=6] [ref=e585]
+    - generic [ref=e586]:
+      - navigation [ref=e587]:
+        - generic [ref=e588]:
+          - link "Secretaría del Medio Ambiente y Desarrollo Sostenible" [ref=e589] [cursor=pointer]:
+            - /url: "#"
+            - img "Secretaría del Medio Ambiente y Desarrollo Sostenible" [ref=e590]
+          - navigation "Menu Top" [ref=e593]:
+            - heading "Menu Top" [level=2] [ref=e594]
+            - list [ref=e597]:
+              - listitem [ref=e598]:
+                - link "Trámites y Servicios" [ref=e599] [cursor=pointer]:
+                  - /url: /tramites-servicios
+      - navigation "Navegación principal" [ref=e601]:
+        - heading "Navegación principal" [level=2] [ref=e602]
+        - list [ref=e605]:
+          - listitem [ref=e606]:
+            - link "Inicio" [ref=e607] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e608]:
+            - link "Acerca de" [ref=e609] [cursor=pointer]:
+              - /url: /acerca-de
+          - listitem [ref=e610]:
+            - link "Concertación y Participación Ciudadana" [ref=e611] [cursor=pointer]:
+              - /url: /concertacion-participacion-ciudadana
+          - listitem [ref=e612]:
+            - link "Parques y Áreas Naturales" [ref=e613] [cursor=pointer]:
+              - /url: /parques-areas-naturales
+          - listitem [ref=e614]:
+            - link "ECO-Diviértete" [ref=e615] [cursor=pointer]:
+              - /url: /eco-diviertete
+    - generic [ref=e618]:
+      - generic [ref=e621]:
+        - heading "Secretaría del Medio Ambiente y Desarrollo Sostenible" [level=1] [ref=e622]
+        - heading "Gobierno del Estado de México" [level=4] [ref=e623]
+      - search [ref=e629]:
+        - generic [ref=e631]:
+          - generic [ref=e632]:
+            - generic [ref=e633] [cursor=pointer]: Buscar
+            - searchbox "Buscar" [ref=e634]
+          - button [ref=e636] [cursor=pointer]:
+            - generic [ref=e637]: 
+    - main [ref=e641]:
+      - generic [ref=e642]:
+        - heading "Página no encontrada" [level=2] [ref=e644]
+        - generic [ref=e646]: No se ha encontrado la página solicitada.
+    - contentinfo [ref=e647]:
+      - generic [ref=e651]:
+        - generic [ref=e652]:
+          - img "GEM" [ref=e653]
+          - img "GEM" [ref=e654]
+        - generic [ref=e665]:
+          - generic [ref=e666]:
+            - heading "Acerca del Sitio" [level=4] [ref=e667]
+            - list [ref=e669]:
+              - listitem [ref=e670]:
+                - link "Acerca del sitio" [ref=e671] [cursor=pointer]:
+                  - /url: https://sma.edomex.gob.mx/acerca-de
+              - listitem [ref=e672]:
+                - link "Marco Jurídico" [ref=e673] [cursor=pointer]:
+                  - /url: https://sma.edomex.gob.mx/marco-juridico
+              - listitem [ref=e674]:
+                - link "Ética, Igualdad y Género" [ref=e675] [cursor=pointer]:
+                  - /url: https://sma.edomex.gob.mx/etica-igualdad-genero
+              - listitem [ref=e676]:
+                - link "Aviso de Privacidad" [ref=e677] [cursor=pointer]:
+                  - /url: https://sma.edomex.gob.mx/aviso-privacidad
+              - listitem [ref=e678]:
+                - link "Jornadas de Restauración" [ref=e679] [cursor=pointer]:
+                  - /url: https://sma.edomex.gob.mx/jornadas-restauracion
+              - listitem [ref=e680]:
+                - link "Jardines de Refugio para Polinizadores" [ref=e681] [cursor=pointer]:
+                  - /url: https://sma.edomex.gob.mx/jardines-refugio-para-polinizadores
+          - generic [ref=e682]:
+            - heading "Transparencia" [level=4] [ref=e683]
+            - list [ref=e685]:
+              - listitem [ref=e686]:
+                - link "Ipomex" [ref=e687] [cursor=pointer]:
+                  - /url: https://www.ipomex.org.mx/ipo3/lgt/indice/sma.web
+              - listitem [ref=e688]:
+                - link "Ipomex 4.0" [ref=e689] [cursor=pointer]:
+                  - /url: https://infoem2.ipomex.org.mx/ipomex/#/obligaciones/60
+              - listitem [ref=e690]:
+                - link "SAIMEX" [ref=e691] [cursor=pointer]:
+                  - /url: http://www.saimex.org.mx/saimex/ciudadano/login.page
+              - listitem [ref=e692]:
+                - link "SARCOEM" [ref=e693] [cursor=pointer]:
+                  - /url: https://www.sarcoem.org.mx/sarcoem/ciudadano/login.page
+              - listitem [ref=e694]:
+                - link "SIPOT" [ref=e695] [cursor=pointer]:
+                  - /url: https://consultapublicamx.inai.org.mx/vut-web/faces/view/consultaPublica.xhtml#inicio
+              - listitem [ref=e696]:
+                - link "Presentar Denuncias, Sugerencias o Reconocimiento (SAM)" [ref=e697] [cursor=pointer]:
+                  - /url: http://secogem.gob.mx/SAM/sit_atn_mex.asp
+          - generic [ref=e698]:
+            - heading "Enlaces de Interés" [level=4] [ref=e699]
+            - list [ref=e701]:
+              - listitem [ref=e702]:
+                - link "Rutas Turísticas" [ref=e703] [cursor=pointer]:
+                  - /url: https://experiencia.edomex.gob.mx/#mapa_pagina_frontal_mostrarMapa
+              - listitem [ref=e704]:
+                - link "Pueblos Mágicos" [ref=e705] [cursor=pointer]:
+                  - /url: https://experiencia.edomex.gob.mx/paradas_turisticas/PueblosMagicos
+              - listitem [ref=e706]:
+                - link "Sistema de Información Ambiental del Estado de México" [ref=e707] [cursor=pointer]:
+                  - /url: https://sistemaambiental.edomex.gob.mx/MedioAmbiente/visorgeo
+              - listitem [ref=e708]:
+                - link "SIREM" [ref=e709] [cursor=pointer]:
+                  - /url: http://187.188.85.202:8095/consulta-sirem/
+        - generic [ref=e712]:
+          - generic [ref=e713]: "Ultima actualización:"
+          - generic [ref=e714]: 01/06/2026
+      - generic [ref=e717]:
+        - generic [ref=e718]: GOBIERNO DEL ESTADO DE MÉXICO
+        - paragraph [ref=e720]:
+          - link "Creado por la Agencia Digital del Estado de México" [ref=e721] [cursor=pointer]:
+            - /url: https://agenciadigital.edomex.gob.mx

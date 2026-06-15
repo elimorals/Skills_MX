@@ -1,0 +1,50 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e7]:
+      - heading "SGC" [level=1] [ref=e8]
+      - heading "Sistema Integral de Gestión Catastral e Información Geográfica y Digital del Estado de Nuevo León" [level=3] [ref=e9]:
+        - text: Sistema Integral de Gestión Catastral e Información
+        - text: Geográfica y Digital del Estado de Nuevo León
+      - img [ref=e10]
+    - generic [ref=e14]:
+      - img "Logo del login" [ref=e16]
+      - heading "Iniciar sesión" [level=2] [ref=e17]
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - textbox "usuario" [ref=e20]:
+            - /placeholder: Nombre de usuario
+          - generic [ref=e21]: Usuario
+        - generic [ref=e22]:
+          - textbox "password" [ref=e23]:
+            - /placeholder: ingrese su contraseña
+          - generic [ref=e24]: Contraseña
+        - button "Iniciar sesión" [ref=e25] [cursor=pointer]
+        - link "Ayuda" [ref=e26] [cursor=pointer]:
+          - /url: https://ircnl.gob.mx/reportes-sgc/
+  - generic [ref=e29]:
+    - generic [ref=e31]:
+      - link [ref=e33] [cursor=pointer]:
+        - /url: https://maps.app.goo.gl/cZ2kLkjLA9mR5GtB68
+        - img [ref=e34]
+      - paragraph [ref=e36]:
+        - text: "Dirección:"
+        - link "Calle Washington 2000 Oriente,Pabellón Ciudadano." [ref=e37] [cursor=pointer]:
+          - /url: https://maps.app.goo.gl/cZ2kLkjLA9mR5GtB68
+    - generic [ref=e39]:
+      - link [ref=e41] [cursor=pointer]:
+        - /url: https://wa.me/5218110818888
+        - img [ref=e42]
+      - generic [ref=e43]:
+        - paragraph [ref=e44]: WhatsApp (Sólo mensajes)
+        - link "+52 (81) 1081 8888" [ref=e45] [cursor=pointer]:
+          - /url: https://wa.me/5218110818888
+          - paragraph [ref=e46]: +52 (81) 1081 8888
+    - generic [ref=e48]:
+      - link [ref=e50] [cursor=pointer]:
+        - /url: mailto:hola@ircnl.gob.mx
+        - img [ref=e51]
+      - generic [ref=e52]:
+        - paragraph [ref=e53]: Correo electrónico
+        - link "hola@ircnl.gob.mx" [ref=e54] [cursor=pointer]:
+          - /url: mailto:hola@ircnl.gob.mx
+          - paragraph [ref=e55]: hola@ircnl.gob.mx

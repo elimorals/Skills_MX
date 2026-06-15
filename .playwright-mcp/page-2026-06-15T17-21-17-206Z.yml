@@ -1,0 +1,344 @@
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e9]:
+      - generic [ref=e10] [cursor=pointer]:
+        - img
+      - navigation [ref=e11]:
+        - generic [ref=e12]:
+          - link "Nosotros" [ref=e13] [cursor=pointer]:
+            - /url: /acerca-de-nosotros/
+          - link "Transparencia" [ref=e14] [cursor=pointer]:
+            - /url: /transparencia/
+          - link "Reportes" [ref=e15] [cursor=pointer]:
+            - /url: /reporte/
+        - link [ref=e16] [cursor=pointer]:
+          - /url: /
+          - img
+        - link "Pago en Línea" [ref=e18] [cursor=pointer]:
+          - /url: https://oficina.aguasdesaltillo.com/#/main
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - generic [ref=e23]:
+        - generic [ref=e26]:
+          - generic [ref=e38]:
+            - heading [level=2] [ref=e39]: ¡Realiza el pago de tu servicio a tiempo!
+            - paragraph [ref=e40]:
+              - strong [ref=e41]: Contamos con diferentes canales de pago.
+          - heading "Porque el agua es de todos. Y lo que es de todos, se cuida." [level=2] [ref=e53]
+          - generic [ref=e63]:
+            - heading [level=2] [ref=e65]: Conoce cómo Manchas nos ayuda a preservar el agua
+            - link [ref=e67] [cursor=pointer]:
+              - /url: https://www.aguasdesaltillo.com/blog/manchas/conagua-reconoce-a-manchas-como-guardian-del-agua-manchas/
+              - text: Conoce Más
+          - generic [ref=e79]:
+            - heading [level=2] [ref=e80]: Y tú, ¿Cómo estás cuidando el agua?
+            - paragraph [ref=e81]: Cuidarla es mucho más que cerrar la llave o reparar fugas.
+          - heading [level=2] [ref=e94]: Conoce los horarios de distribución de agua en tu colonia
+          - generic [ref=e106]:
+            - heading [level=2] [ref=e107]: ¡Realiza el pago de tu servicio a tiempo!
+            - paragraph [ref=e108]:
+              - strong [ref=e109]: Contamos con diferentes canales de pago.
+          - heading [level=2] [ref=e121]: Porque el agua es de todos. Y lo que es de todos, se cuida.
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - generic [ref=e130]: "01"
+            - generic [ref=e131]: /
+            - generic [ref=e132]: "05"
+          - generic [ref=e133]:
+            - button [ref=e134]:
+              - img
+            - button [ref=e137]:
+              - img
+      - generic [ref=e148]:
+        - generic [ref=e150]:
+          - generic [ref=e151]:
+            - generic [ref=e152]: Sector
+            - generic [ref=e153]: Nombre del sector
+          - generic [ref=e154]:
+            - generic [ref=e155]: Lunes
+            - generic [ref=e156]: "-"
+          - generic [ref=e157]:
+            - generic [ref=e158]: Martes
+            - generic [ref=e159]: "-"
+          - generic [ref=e160]:
+            - generic [ref=e161]: Miércoles
+            - generic [ref=e162]: "-"
+          - generic [ref=e163]:
+            - generic [ref=e164]: Jueves
+            - generic [ref=e165]: "-"
+          - generic [ref=e166]:
+            - generic [ref=e167]: Viernes
+            - generic [ref=e168]: "-"
+          - generic [ref=e169]:
+            - generic [ref=e170]: Sábado
+            - generic [ref=e171]: "-"
+          - generic [ref=e172]:
+            - generic [ref=e173]: Domingo
+            - generic [ref=e174]: "-"
+        - generic [ref=e175]:
+          - generic [ref=e176]:
+            - img
+            - generic [ref=e177]:
+              - heading "Consulta los horarios del servicio de agua en tu colonia" [level=2] [ref=e178]:
+                - text: Consulta los horarios del
+                - strong [ref=e179]: servicio de agua
+                - text: en tu colonia
+              - paragraph [ref=e180]: "*Estos horarios son aproximados y pueden variar por incidencias, trabajos de mantenimiento y mejoras en la red."
+          - generic [ref=e182]:
+            - log [ref=e184]
+            - generic [ref=e185] [cursor=pointer]:
+              - generic [ref=e186]:
+                - generic [ref=e187]: Escribe tu colonia
+                - combobox [ref=e189]
+              - generic [ref=e191]:
+                - img
+      - generic [ref=e196]:
+        - generic [ref=e197]:
+          - heading "¿Qué estás buscando?" [level=1] [ref=e198]
+          - paragraph [ref=e200]: Nuestros accesos más buscados en un solo click.
+        - generic [ref=e201]:
+          - link "Quiero generar un reporte" [ref=e202] [cursor=pointer]:
+            - /url: /reporte/
+            - text: Quiero generar un reporte
+          - link "Quiero realizar un pago" [ref=e204] [cursor=pointer]:
+            - /url: https://oficina.aguasdesaltillo.com/
+            - text: Quiero realizar un pago
+          - link "Centros de atención y pagos" [ref=e206] [cursor=pointer]:
+            - /url: /centros-de-atencion-y-pagos/
+            - text: Centros de atención y pagos
+          - link "Contratar un servicio" [ref=e208] [cursor=pointer]:
+            - /url: /nuevo-contrato/
+            - text: Contratar un servicio
+      - generic [ref=e216]:
+        - generic [ref=e218]:
+          - generic [ref=e219]:
+            - heading "Sucursal" [level=2] [ref=e220]
+            - heading "Madero" [level=2] [ref=e221]
+          - generic [ref=e222]:
+            - generic [ref=e223]:
+              - img
+              - paragraph [ref=e224]: Calzada Francisco I. Madero No. 1169 casi esquina con Murguía en Zona Centro
+            - generic [ref=e225]:
+              - img
+              - generic [ref=e226]:
+                - generic [ref=e227]:
+                  - heading "Servicio al cliente" [level=4] [ref=e228]
+                  - generic [ref=e229]:
+                    - generic [ref=e230]:
+                      - heading "De lunes a viernes" [level=5] [ref=e231]
+                      - paragraph [ref=e232]: 7:30 a.m. a 4:30 p.m.
+                    - generic [ref=e233]:
+                      - heading "Sábados" [level=5] [ref=e234]
+                      - paragraph [ref=e235]: 9:00 a.m. a 1:00 p.m.
+                - generic [ref=e236]:
+                  - heading "Cajeros automáticos" [level=4] [ref=e237]
+                  - generic [ref=e239]:
+                    - heading "De lunes a domingo" [level=5] [ref=e240]
+                    - paragraph [ref=e241]: 7:00 a.m. a 9:00 p.m.
+        - generic [ref=e242]:
+          - generic [ref=e244]:
+            - generic [ref=e245]:
+              - img
+            - generic [ref=e246]:
+              - log [ref=e248]
+              - generic [ref=e249] [cursor=pointer]:
+                - generic [ref=e250]:
+                  - generic [ref=e251]: Sucursal Madero
+                  - combobox [ref=e252]
+                - generic [ref=e254]:
+                  - img
+          - generic [ref=e257]:
+            - generic:
+              - button "Combinaciones de teclas"
+            - region "Mapa" [ref=e258]
+            - generic [ref=e259]:
+              - img "Aguas de Saltillo Sucursal Madero" [ref=e301] [cursor=pointer]
+              - iframe [ref=e302]:
+                
+              - button "Activar o desactivar la vista de pantalla completa" [ref=e303] [cursor=pointer]
+              - link "Abrir esta área en Google Maps (se abre en una ventana nueva)" [ref=e305] [cursor=pointer]:
+                - /url: https://maps.google.com/maps?ll=25.426796,-101.012051&z=19&t=m&hl=es-419&gl=US&mapclient=apiv3
+                - img "Google" [ref=e307]
+              - generic [ref=e308]:
+                - button "Combinaciones de teclas" [ref=e314] [cursor=pointer]
+                - generic [ref=e319]: Datos del mapa ©2026 INEGI
+                - link "Condiciones (se abre en una nueva pestaña)" [ref=e324] [cursor=pointer]:
+                  - /url: https://www.google.com/intl/es-419_US/help/terms_maps.html
+                  - text: Condiciones
+                - link "Informar un error en el mapa (se abre en una nueva pestaña)" [ref=e329] [cursor=pointer]:
+                  - /url: https://www.google.com/maps/@25.4267962,-101.0120505,19z/data=!10m1!1e1!12b1?source=apiv3&rapsrc=apiv3
+                  - text: Informar un error en el mapa
+      - generic [ref=e332]:
+        - generic [ref=e335]:
+          - img
+          - heading "Menos papel, más e-mail" [level=2] [ref=e336]:
+            - paragraph [ref=e337]:
+              - strong [ref=e338]: Menos papel,
+            - paragraph [ref=e339]: más e-mail
+        - generic [ref=e343]:
+          - paragraph [ref=e344]:
+            - text: Regístrate al programa de facturación electrónica para recibir por e-mail tu recibo y evitar el uso de papel.
+            - text: Por cada cliente inscrito a este programa, nos comprometemos a sembrar un árbol en la Sierra de Zapalinamé, para más información comunícate con nosotros al 073.
+          - paragraph [ref=e345]: ¡Únete y juntos cuidemos la naturaleza!
+      - generic [ref=e349]:
+        - heading "Donde puedes pagar tu recibo" [level=2] [ref=e352]:
+          - paragraph [ref=e353]:
+            - text: Donde puedes
+            - strong [ref=e354]: pagar tu recibo
+        - paragraph [ref=e358]: Localiza los sitios autorizados donde puedes pagar tu recibo de agua y encuentra uno cerca de ti.
+        - generic [ref=e360]:
+          - generic [ref=e362]:
+            - generic [ref=e365]:
+              - link [ref=e368] [cursor=pointer]:
+                - /url: https://www.google.com.mx/maps/search/Afirme+Saltillo/
+              - link [ref=e372] [cursor=pointer]:
+                - /url: https://www.google.com.mx/maps/search/Oxxo+Saltillo/
+              - link [ref=e376] [cursor=pointer]:
+                - /url: https://www.google.com.mx/maps/search/7+Eleven+Saltillo/
+              - link [ref=e380] [cursor=pointer]:
+                - /url: https://www.google.com.mx/maps/search/Farmacias+del+Ahorro+Saltillo/
+              - link [ref=e384] [cursor=pointer]:
+                - /url: https://www.google.com.mx/maps/search/Farmacias+Benavides+Saltillo/
+              - link [ref=e388] [cursor=pointer]:
+                - /url: https://www.google.com.mx/maps/search/Farmacias+Guadalajara+Saltillo/
+              - link [ref=e392] [cursor=pointer]:
+                - /url: https://www.xaldo.com
+              - link [ref=e396] [cursor=pointer]:
+                - /url: https://www.google.com.mx/maps/search/H-E-B+Saltillo/
+              - link [ref=e400] [cursor=pointer]:
+                - /url: https://www.google.com.mx/maps/search/Alsuper+Saltillo/
+              - link [ref=e404] [cursor=pointer]:
+                - /url: https://www.google.com.mx/maps/search/Merco+Saltillo/
+              - link [ref=e408] [cursor=pointer]:
+                - /url: https://www.google.com.mx/maps/search/Mi+Tienda+del+Ahorro+Saltillo/
+              - link [ref=e412] [cursor=pointer]:
+                - /url: https://www.google.com.mx/maps/search/Banregio+Saltillo/
+              - link [ref=e416] [cursor=pointer]:
+                - /url: https://www.google.com.mx/maps/search/Afirme+Saltillo/
+              - link [ref=e420] [cursor=pointer]:
+                - /url: https://www.google.com.mx/maps/search/Oxxo+Saltillo/
+            - generic:
+              - generic:
+                - generic:
+                  - button [ref=e422]:
+                    - img
+                  - button [ref=e423]:
+                    - img
+          - link "Ver más" [ref=e425] [cursor=pointer]:
+            - /url: /centros-de-atencion-y-pagos/
+      - generic [ref=e441]:
+        - heading "Síguenos en nuestras redes sociales" [level=4] [ref=e442]
+        - heading "Aguas de Saltillo siempre cerca de ti" [level=2] [ref=e443]
+        - paragraph [ref=e445]: Sigue las redes oficiales de Aguas de Saltillo donde puedes hacer reportes, estar informado o aclarar tus dudas.
+        - link "Ver más" [ref=e447] [cursor=pointer]:
+          - /url: /contacto/
+      - generic [ref=e458]:
+        - heading "Productos y servicios" [level=4] [ref=e459]
+        - heading "Adquiere productos o servicios y págalos a través de tu recibo" [level=2] [ref=e460]
+        - paragraph [ref=e462]: Tinacos, calentadores de agua y servicios de limpieza de aljibe son algunos de los productos y servicios que tenemos a tu disposición.
+      - generic [ref=e468]:
+        - generic [ref=e469]:
+          - generic:
+            - img
+        - generic [ref=e471]:
+          - heading "Juntos hacemos ciudad" [level=2] [ref=e472]:
+            - text: Juntos hacemos
+            - strong [ref=e473]: ciudad
+          - paragraph [ref=e474]: Con pequeñas acciones, logramos grandes cambios.
+      - generic [ref=e476]:
+        - heading "Nuestro Blog" [level=2] [ref=e479]
+        - generic [ref=e480]:
+          - paragraph [ref=e483]: Mantente informado, visita esta sección y conócenos más, encuentra eventos, notas destacadas y consejos.
+          - link "Ver noticias" [ref=e486] [cursor=pointer]:
+            - /url: /blog/
+        - generic [ref=e489]:
+          - generic [ref=e492]:
+            - generic [ref=e493]:
+              - heading "Noticias" [level=3] [ref=e494]
+              - generic [ref=e495]: 24 de Abril, 2026
+              - generic [ref=e496]: Encuentro Nacional por la Cultura del Agua
+            - link "Leer nota" [ref=e497] [cursor=pointer]:
+              - /url: /blog/noticias/encuentro-nacional-por-la-cultura-del-agua/
+              - text: Leer nota
+              - img
+          - generic [ref=e500]:
+            - generic [ref=e501]:
+              - heading "Resposabilidad Social" [level=3] [ref=e502]
+              - generic [ref=e503]: 27 de Marzo, 2026
+              - generic [ref=e504]: Concurso de video Caza Fugas
+            - link "Leer nota" [ref=e505] [cursor=pointer]:
+              - /url: /blog/resposabilidad-social/concurso-de-video-caza-fugas/
+              - text: Leer nota
+              - img
+          - generic [ref=e508]:
+            - generic [ref=e509]:
+              - heading "Resposabilidad Social" [level=3] [ref=e510]
+              - generic [ref=e511]: 22 de Marzo, 2026
+              - generic [ref=e512]: Impulsamos la biodiversidad con nuestro primer Jardín Polinizador
+            - link "Leer nota" [ref=e513] [cursor=pointer]:
+              - /url: /blog/resposabilidad-social/impulsamos-la-biodiversidad-con-nuestro-primer-jardin-polinizador/
+              - text: Leer nota
+              - img
+      - generic [ref=e519]:
+        - img
+        - generic [ref=e520]:
+          - heading "Descarga la app móvil" [level=2] [ref=e521]
+          - paragraph [ref=e522]: Descarga la aplicación móvil de Aguas de Saltillo disponible para iOS y Android. Consulta tus facturas, recibe noticias y paga desde tu celular.
+        - generic [ref=e523]:
+          - link [ref=e524] [cursor=pointer]:
+            - /url: https://apps.apple.com/mx/app/aguas-de-saltillo/id1175505665
+          - link [ref=e525] [cursor=pointer]:
+            - /url: https://play.google.com/store/apps/details?id=com.aguasdesaltillo.app&hl=es_MX
+  - contentinfo [ref=e528]:
+    - generic [ref=e529]:
+      - generic [ref=e530]:
+        - generic [ref=e532]:
+          - img
+        - generic [ref=e534]:
+          - generic [ref=e535]: "Síguenos en:"
+          - link [ref=e536] [cursor=pointer]:
+            - /url: https://es-la.facebook.com/aguasdesaltillo
+            - img
+          - link [ref=e537] [cursor=pointer]:
+            - /url: https://twitter.com/aguasdesaltillo?lang=es
+            - img
+          - link [ref=e538] [cursor=pointer]:
+            - /url: https://www.youtube.com/channel/UC0M6ywuPQyG88ZzApUCoplA
+            - img
+          - link [ref=e539] [cursor=pointer]:
+            - /url: https://www.instagram.com/aguasdesaltillo_
+            - img
+      - generic [ref=e540]:
+        - generic [ref=e543]:
+          - heading "Quienes Somos" [level=4] [ref=e544]
+          - generic [ref=e545]:
+            - link "Acerca de nosotros" [ref=e546] [cursor=pointer]:
+              - /url: /acerca-de-nosotros/
+            - link "Código de ética" [ref=e547] [cursor=pointer]:
+              - /url: /codigo-de-etica/
+            - link "Únete al equipo" [ref=e548] [cursor=pointer]:
+              - /url: /unete-al-equipo/
+        - generic [ref=e550]:
+          - heading "Enlaces de interés" [level=4] [ref=e551]
+          - generic [ref=e552]:
+            - link "Conagua" [ref=e553] [cursor=pointer]:
+              - /url: http://www.conagua.gob.mx/
+            - link "Gobierno de Coahuila" [ref=e554] [cursor=pointer]:
+              - /url: http://www.coahuila.gob.mx/
+            - link "Gobierno Municipal" [ref=e555] [cursor=pointer]:
+              - /url: http://www.saltillo.gob.mx/
+        - generic [ref=e557]:
+          - heading "Trámites y Servicios" [level=4] [ref=e558]
+          - generic [ref=e559]:
+            - link "Trámites" [ref=e560] [cursor=pointer]:
+              - /url: /tramites/
+            - link "Nuevo contrato" [ref=e561] [cursor=pointer]:
+              - /url: /nuevo-contrato/
+            - link "Tarifas" [ref=e562] [cursor=pointer]:
+              - /url: /tarifas/
+            - link "Productos y Servicios" [ref=e563] [cursor=pointer]:
+              - /url: /productos-y-servicios/
+            - link "Descuento de Pensionado" [ref=e564] [cursor=pointer]:
+              - /url: /descuento-de-pensionado/
+      - link "Aviso de Privacidad" [ref=e569] [cursor=pointer]:
+        - /url: /aviso-de-privacidad/

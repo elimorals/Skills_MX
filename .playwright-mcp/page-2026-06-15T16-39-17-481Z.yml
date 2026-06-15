@@ -1,0 +1,416 @@
+- generic [ref=e2]:
+  - link "Pasar al contenido principal ➔" [ref=e3] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - generic [ref=e10]:
+            - text: ">"
+            - generic [ref=e12]: Toluca
+          - generic [ref=e14]:
+            - generic [ref=e15]: 15 Jun
+            - img [ref=e17]
+            - generic [ref=e53]: 18°C
+          - generic [ref=e55]:
+            - generic [ref=e56]: 16 Jun
+            - img [ref=e58]
+            - generic [ref=e94]: 19°C
+          - generic [ref=e96]:
+            - generic [ref=e97]: 17 Jun
+            - img [ref=e99]
+            - generic [ref=e135]: 18°C
+          - generic [ref=e137]:
+            - generic [ref=e138]: 18 Jun
+            - img [ref=e140]
+            - generic [ref=e176]: 18°C
+          - generic [ref=e178]:
+            - generic [ref=e179]: 19 Jun
+            - img [ref=e181]
+            - generic [ref=e217]: 17°C
+          - generic [ref=e219]:
+            - generic [ref=e220]: 20 Jun
+            - img [ref=e222]
+            - generic [ref=e251]: 18°C
+          - generic [ref=e253]:
+            - generic [ref=e254]: 21 Jun
+            - img [ref=e256]
+            - generic [ref=e292]: 17°C
+        - generic [ref=e293]:
+          - generic [ref=e294]:
+            - text: ">"
+            - generic [ref=e296]: Toluca
+          - generic [ref=e298]:
+            - generic [ref=e299]: 15 Jun
+            - img [ref=e301]
+            - generic [ref=e337]: 18°C
+          - generic [ref=e339]:
+            - generic [ref=e340]: 16 Jun
+            - img [ref=e342]
+            - generic [ref=e378]: 19°C
+          - generic [ref=e380]:
+            - generic [ref=e381]: 17 Jun
+            - img [ref=e383]
+            - generic [ref=e419]: 18°C
+          - generic [ref=e421]:
+            - generic [ref=e422]: 18 Jun
+            - img [ref=e424]
+            - generic [ref=e460]: 18°C
+          - generic [ref=e462]:
+            - generic [ref=e463]: 19 Jun
+            - img [ref=e465]
+            - generic [ref=e501]: 17°C
+          - generic [ref=e503]:
+            - generic [ref=e504]: 20 Jun
+            - img [ref=e506]
+            - generic [ref=e535]: 18°C
+          - generic [ref=e537]:
+            - generic [ref=e538]: 21 Jun
+            - img [ref=e540]
+            - generic [ref=e576]: 17°C
+        - img [ref=e578]
+      - link "PORTAL CIUDADANO" [ref=e581] [cursor=pointer]:
+        - /url: https://edomex.gob.mx
+        - heading "PORTAL CIUDADANO" [level=6] [ref=e582]
+      - link "CONSULTA LA CALIDAD DEL AIRE" [ref=e584] [cursor=pointer]:
+        - /url: http://rama.edomex.gob.mx/calidaddelaire
+        - heading "CONSULTA LA CALIDAD DEL AIRE" [level=6] [ref=e585]
+    - generic [ref=e586]:
+      - navigation [ref=e587]:
+        - generic [ref=e588]:
+          - link "Secretaría del Medio Ambiente y Desarrollo Sostenible" [ref=e589] [cursor=pointer]:
+            - /url: "#"
+            - img "Secretaría del Medio Ambiente y Desarrollo Sostenible" [ref=e590]
+          - navigation "Menu Top" [ref=e593]:
+            - heading "Menu Top" [level=2] [ref=e594]
+            - list [ref=e597]:
+              - listitem [ref=e598]:
+                - link "Trámites y Servicios" [ref=e599] [cursor=pointer]:
+                  - /url: /tramites-servicios
+      - navigation "Navegación principal" [ref=e601]:
+        - heading "Navegación principal" [level=2] [ref=e602]
+        - list [ref=e605]:
+          - listitem [ref=e606]:
+            - link "Inicio" [ref=e607] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e608]:
+            - link "Acerca de" [ref=e609] [cursor=pointer]:
+              - /url: /node/503
+          - listitem [ref=e610]:
+            - link "Concertación y Participación Ciudadana" [ref=e611] [cursor=pointer]:
+              - /url: /node/544
+          - listitem [ref=e612]:
+            - link "Parques y Áreas Naturales" [ref=e613] [cursor=pointer]:
+              - /url: /node/561
+          - listitem [ref=e614]:
+            - link "ECO-Diviértete" [ref=e615] [cursor=pointer]:
+              - /url: /node/586
+    - generic [ref=e618]:
+      - generic [ref=e621]:
+        - heading "Secretaría del Medio Ambiente y Desarrollo Sostenible" [level=1] [ref=e622]
+        - heading "Gobierno del Estado de México" [level=4] [ref=e623]
+      - search [ref=e629]:
+        - generic [ref=e631]:
+          - generic [ref=e632]:
+            - generic [ref=e633] [cursor=pointer]: Buscar
+            - searchbox "Buscar" [ref=e634]
+          - button [ref=e636] [cursor=pointer]:
+            - generic [ref=e637]: 
+    - generic [ref=e643]:
+      - generic [ref=e652]:
+        - list [ref=e653]:
+          - listitem [ref=e654]:
+            - link "Jornada de Limpieza Simultanea 2026" [ref=e657] [cursor=pointer]:
+              - /url: https://sma.edomex.gob.mx/sites/sma.edomex.gob.mx/files/files/EventosConvocatorias/JornadaLimpieza/JornadaDeLimpiezaSimultanea_2026.pdf
+              - img "Jornada de Limpieza Simultanea 2026" [ref=e658]
+          - listitem [ref=e659]:
+            - link "ECO SÚMATE PARTICIPA" [ref=e662] [cursor=pointer]:
+              - /url: https://sma.edomex.gob.mx/eventos-convocatorias
+              - img "ECO SÚMATE PARTICIPA" [ref=e663]
+          - listitem [ref=e664]:
+            - link "Aprende en Verde Cuentos varios" [ref=e667] [cursor=pointer]:
+              - /url: https://sma.edomex.gob.mx/aprende-en-verde
+              - img "Aprende en Verde Cuentos varios" [ref=e668]
+          - listitem [ref=e669]:
+            - link "Hoy No Circula Estado de México 2026" [ref=e672] [cursor=pointer]:
+              - /url: https://sma.edomex.gob.mx/hoynocircula
+              - img "Hoy No Circula Estado de México 2026" [ref=e673]
+          - listitem [ref=e674]:
+            - link "Mejora el aire que respiramos" [ref=e677] [cursor=pointer]:
+              - /url: https://sma.edomex.gob.mx/hoynocircula
+              - img "Mejora el aire que respiramos" [ref=e678]
+          - listitem [ref=e679]:
+            - link "Hoy no Circula 18 Municipios EDOMEX" [ref=e682] [cursor=pointer]:
+              - /url: https://sma.edomex.gob.mx/sites/sma.edomex.gob.mx/files/files/TramitesServicios/VerificacioVehicular/HoyNoCircula/HNC%20EDOMEX.pdf
+              - img "Hoy no Circula 18 Municipios EDOMEX" [ref=e683]
+          - listitem [ref=e684]:
+            - link "Mi futuro ante el cambio climático" [ref=e687] [cursor=pointer]:
+              - /url: https://heyzine.com/flip-book/172b8e1fdb.html
+              - img "Mi futuro ante el cambio climático" [ref=e688]
+          - listitem [ref=e689]:
+            - link "Sistema de Información Ambiental de la SMAyDS EDOMEX" [ref=e692] [cursor=pointer]:
+              - /url: https://sistemaambiental.edomex.gob.mx/MedioAmbiente/visorgeo
+              - img "Sistema de Información Ambiental de la SMAyDS EDOMEX" [ref=e693]
+        - list [ref=e694]:
+          - listitem [ref=e695]:
+            - link "1" [ref=e696]:
+              - /url: "#"
+          - listitem [ref=e697]:
+            - link "2" [ref=e698] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e699]:
+            - link "3" [ref=e700] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e701]:
+            - link "4" [ref=e702] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e703]:
+            - link "5" [ref=e704] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e705]:
+            - link "6" [ref=e706] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e707]:
+            - link "7" [ref=e708] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e709]:
+            - link "8" [ref=e710] [cursor=pointer]:
+              - /url: "#"
+        - list:
+          - listitem:
+            - link " Previous" [ref=e711] [cursor=pointer]:
+              - /url: "#"
+          - listitem:
+            - link " Next" [ref=e712] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e713]:
+        - heading "LO MÁS DESTACADO" [level=2] [ref=e714]
+        - list [ref=e724]:
+          - listitem [ref=e725]:
+            - link "Procuraduría de Protección al Ambiente del Estado de México" [ref=e726] [cursor=pointer]:
+              - /url: https://propaem.edomex.gob.mx/
+            - text: .
+          - listitem [ref=e727]:
+            - link "Instituto Estatal de Energía y Cambio Climático." [ref=e728] [cursor=pointer]:
+              - /url: https://ieecc.edomex.gob.mx/
+          - listitem [ref=e729]:
+            - link "Comisión Estatal de Parques Naturales y de la Fauna." [ref=e730] [cursor=pointer]:
+              - /url: https://cepanaf.edomex.gob.mx/
+          - listitem [ref=e731]:
+            - link "Dirección General para el Territorio Sostenible" [ref=e732] [cursor=pointer]:
+              - /url: https://dgts.edomex.gob.mx/
+            - text: .
+    - generic [ref=e739]:
+      - heading "LO MÁS BUSCADO" [level=2] [ref=e742]:
+        - text: LO MÁS
+        - strong [ref=e743]: BUSCADO
+      - generic [ref=e747]:
+        - generic [ref=e749]:
+          - heading "Directorio de Verificentros y Talleres PIREC" [level=5] [ref=e750]:
+            - link "Directorio de Verificentros y Talleres PIREC" [ref=e751] [cursor=pointer]:
+              - /url: https://sma.edomex.gob.mx/directorio-verificentros-talleres
+          - generic [ref=e753]:
+            - generic [ref=e755]: 
+            - generic [ref=e756]: Consulta las ubicaciones de los verificentros.
+        - generic [ref=e758]:
+          - heading "Programa Hoy No Circula" [level=5] [ref=e759]:
+            - link "Programa Hoy No Circula" [ref=e760] [cursor=pointer]:
+              - /url: https://sma.edomex.gob.mx/hoynocircula
+          - generic [ref=e762]:
+            - generic [ref=e764]: 
+            - generic [ref=e765]: Consulta si tu automóvil circula hoy
+        - generic [ref=e767]:
+          - heading "Monitoreo Atmosférico" [level=5] [ref=e768]:
+            - link "Monitoreo Atmosférico" [ref=e769] [cursor=pointer]:
+              - /url: https://rama.edomex.gob.mx/calidaddelaire
+          - generic [ref=e771]:
+            - generic [ref=e773]: 
+            - generic [ref=e774]: Calidad del aire de la Zona Metropolitana del Valle de Toluca
+        - generic [ref=e776]:
+          - heading "Centros Ecoturísticos y de Educación Ambiental" [level=5] [ref=e777]:
+            - link "Centros Ecoturísticos y de Educación Ambiental" [ref=e778] [cursor=pointer]:
+              - /url: https://sma.edomex.gob.mx/centros-ecoturisticos-educacion-ambiental
+          - generic [ref=e780]:
+            - generic [ref=e782]: 
+            - generic [ref=e783]: Educación Ambiental para la Conservación Ecológica y Cambio Climático.
+        - generic [ref=e785]:
+          - heading "Aprende en Verde" [level=5] [ref=e786]:
+            - link "Aprende en Verde" [ref=e787] [cursor=pointer]:
+              - /url: https://sma.edomex.gob.mx/aprende-en-verde
+          - generic [ref=e789]:
+            - generic [ref=e791]: 
+            - generic [ref=e792]: Folletos digitales
+        - generic [ref=e794]:
+          - heading "Red de Servicio Voluntario Ambientalista" [level=5] [ref=e795]:
+            - link "Red de Servicio Voluntario Ambientalista" [ref=e796] [cursor=pointer]:
+              - /url: https://sma.edomex.gob.mx/red-servicio-voluntario-ambientalista
+          - generic [ref=e798]:
+            - generic [ref=e800]: 
+            - generic [ref=e801]: ¿Quieres formar parte del equipo de Voluntarios?
+    - generic [ref=e804]:
+      - heading "CONTÁCTANOS" [level=2] [ref=e810]
+      - generic [ref=e822]:
+        - generic [ref=e823]:
+          - paragraph [ref=e824]
+          - heading "MAESTRA ALHELY RUBIO ARRONIS" [level=2] [ref=e825]
+          - heading "Secretaria del Medio Ambiente y" [level=1] [ref=e826]
+          - heading "Desarrollo Sostenible" [level=1] [ref=e827]
+          - generic [ref=e828]:
+            - link [ref=e829] [cursor=pointer]:
+              - /url: https://www.facebook.com/share/15gZFr85oM/
+            - link [ref=e830] [cursor=pointer]:
+              - /url: https://x.com/AmbienteEdomex?t=OTu2in-uDNQkhh9XvOOY7w&s=08
+            - link [ref=e831] [cursor=pointer]:
+              - /url: https://www.instagram.com/ambienteedomex?utm_source=qr&igsh=dWMxencyNzhkeGg5
+        - generic [ref=e836]:
+          - generic:
+            - paragraph:
+              - button "Abierta opciones de configuración" [ref=e837] [cursor=pointer]
+          - generic [ref=e842]:
+            - 'heading "Verificación Vehicular Toluca Tel.: 722 2 382 268 - Tlalnepantla Tel.: 55 53 66 82 67" [level=5] [ref=e846]':
+              - link "Verificación Vehicular" [ref=e847] [cursor=pointer]:
+                - /url: https://sma.edomex.gob.mx/verificacion-vehicular
+              - 'link "Toluca Tel.: 722 2 382 268 - Tlalnepantla Tel.: 55 53 66 82 67" [ref=e848] [cursor=pointer]':
+                - /url: https://sma.edomex.gob.mx/verificacion-vehicular
+                - strong [ref=e849]: "Toluca Tel.: 722 2 382 268 - Tlalnepantla Tel.: 55 53 66 82 67"
+            - 'heading "Red de Servicios Voluntarios Ambientales Tel.: 7222 758 991 Ext. 5229" [level=5] [ref=e853]':
+              - link "Red de Servicios Voluntarios Ambientales" [ref=e854] [cursor=pointer]:
+                - /url: https://sma.edomex.gob.mx/red-servicio-voluntario-ambientalista
+              - 'link "Tel.: 7222 758 991 Ext. 5229" [ref=e855] [cursor=pointer]':
+                - /url: https://sma.edomex.gob.mx/red-servicio-voluntario-ambientalista
+                - strong [ref=e856]: "Tel.: 7222 758 991 Ext. 5229"
+            - 'heading "Educación y Difusión de la Cultura Ambiental Tel.: 7222 758 991 Ext. 8230" [level=5] [ref=e860]':
+              - link "Educación y Difusión de la Cultura Ambiental" [ref=e861] [cursor=pointer]:
+                - /url: https://sma.edomex.gob.mx/educacion-difusion-cultura-ambiental
+              - 'link "Tel.: 7222 758 991 Ext. 8230" [ref=e862] [cursor=pointer]':
+                - /url: https://sma.edomex.gob.mx/educacion-difusion-cultura-ambiental
+                - strong [ref=e863]: "Tel.: 7222 758 991 Ext. 8230"
+            - 'heading "Programa para Mejorar la Calidad del Aire Tel.: 7222 756 220Ext. 60151" [level=5] [ref=e867]':
+              - link "Programa para Mejorar la Calidad del Aire" [ref=e868] [cursor=pointer]:
+                - /url: https://proaire.edomex.gob.mx
+              - 'link "Tel.: 7222 756 220Ext. 60151" [ref=e869] [cursor=pointer]':
+                - /url: https://proaire.edomex.gob.mx
+                - strong [ref=e870]: "Tel.: 7222 756 220Ext. 60151"
+            - 'heading "Áreas Naturales Protegidas Tel.: 7222 125 575" [level=5] [ref=e874]':
+              - link "Áreas Naturales Protegidas" [ref=e875] [cursor=pointer]:
+                - /url: https://sma.edomex.gob.mx/areas-naturales-protegidas
+              - 'link "Tel.: 7222 125 575" [ref=e876] [cursor=pointer]':
+                - /url: https://sma.edomex.gob.mx/areas-naturales-protegidas
+                - strong [ref=e877]: "Tel.: 7222 125 575"
+            - 'heading "Sistema Estatal de la Denuncia Ambiental (ECOTEL) Tel.: 7222 192 661 Ext. 5223" [level=5] [ref=e881]':
+              - link "Sistema Estatal de la Denuncia Ambiental (ECOTEL)" [ref=e882] [cursor=pointer]:
+                - /url: https://sma.edomex.gob.mx/sistema-estatal-atencion-denuncia-materia-ambiental
+              - 'link "Tel.: 7222 192 661 Ext. 5223" [ref=e883] [cursor=pointer]':
+                - /url: https://sma.edomex.gob.mx/sistema-estatal-atencion-denuncia-materia-ambiental
+                - strong [ref=e884]: "Tel.: 7222 192 661 Ext. 5223"
+    - generic [ref=e889]:
+      - heading "TE PUEDE INTERESAR" [level=2] [ref=e892]:
+        - text: TE PUEDE
+        - strong [ref=e893]: INTERESAR
+      - generic [ref=e897]:
+        - generic [ref=e899]:
+          - heading "Diplomado Herramientas para el Desarrollo Sostenible, próximamente" [level=5] [ref=e900]:
+            - link "Diplomado Herramientas para el Desarrollo Sostenible, próximamente" [ref=e901] [cursor=pointer]:
+              - /url: https://sma.edomex.gob.mx
+          - generic [ref=e902]:
+            - generic [ref=e903]: 
+            - paragraph [ref=e904]: Capacítate en Línea
+        - generic [ref=e906]:
+          - heading "Parque Ecológico Zacango" [level=5] [ref=e907]:
+            - link "Parque Ecológico Zacango" [ref=e908] [cursor=pointer]:
+              - /url: http://zacango.edomex.gob.mx/
+          - generic [ref=e909]:
+            - generic [ref=e910]: 
+            - paragraph [ref=e911]: Colaboramos en la rehabilitación y conservación de especies de fauna
+        - generic [ref=e913]:
+          - heading "Personal Técnico Acreditado en las NTEA 018 y 019" [level=5] [ref=e914]:
+            - link "Personal Técnico Acreditado en las NTEA 018 y 019" [ref=e915] [cursor=pointer]:
+              - /url: https://sma.edomex.gob.mx/relacion-personal-tecnico-acreditado
+          - generic [ref=e916]:
+            - generic [ref=e917]: 
+            - paragraph [ref=e918]: Normas Técnicas Estatales Ambientales, de Manejo de Arbolado
+    - generic [ref=e929]:
+      - paragraph
+      - generic [ref=e930]:
+        - table [ref=e931]:
+          - rowgroup [ref=e932]:
+            - row [ref=e933]:
+              - cell [ref=e934]:
+                - link [ref=e935] [cursor=pointer]:
+                  - /url: https://sma.edomex.gob.mx/sistema-estatal-atencion-denuncia-materia-ambiental
+              - cell [ref=e936]
+              - cell [ref=e937]:
+                - link [ref=e938] [cursor=pointer]:
+                  - /url: https://tramitesyservicios.edomex.gob.mx/dencma/
+        - paragraph
+    - contentinfo [ref=e939]:
+      - generic [ref=e943]:
+        - generic [ref=e944]:
+          - img "GEM" [ref=e945]
+          - img "GEM" [ref=e946]
+        - generic [ref=e957]:
+          - generic [ref=e958]:
+            - heading "Acerca del Sitio" [level=4] [ref=e959]
+            - list [ref=e961]:
+              - listitem [ref=e962]:
+                - link "Acerca del sitio" [ref=e963] [cursor=pointer]:
+                  - /url: https://sma.edomex.gob.mx/acerca-de
+              - listitem [ref=e964]:
+                - link "Marco Jurídico" [ref=e965] [cursor=pointer]:
+                  - /url: https://sma.edomex.gob.mx/marco-juridico
+              - listitem [ref=e966]:
+                - link "Ética, Igualdad y Género" [ref=e967] [cursor=pointer]:
+                  - /url: https://sma.edomex.gob.mx/etica-igualdad-genero
+              - listitem [ref=e968]:
+                - link "Aviso de Privacidad" [ref=e969] [cursor=pointer]:
+                  - /url: https://sma.edomex.gob.mx/aviso-privacidad
+              - listitem [ref=e970]:
+                - link "Jornadas de Restauración" [ref=e971] [cursor=pointer]:
+                  - /url: https://sma.edomex.gob.mx/jornadas-restauracion
+              - listitem [ref=e972]:
+                - link "Jardines de Refugio para Polinizadores" [ref=e973] [cursor=pointer]:
+                  - /url: https://sma.edomex.gob.mx/jardines-refugio-para-polinizadores
+          - generic [ref=e974]:
+            - heading "Transparencia" [level=4] [ref=e975]
+            - list [ref=e977]:
+              - listitem [ref=e978]:
+                - link "Ipomex" [ref=e979] [cursor=pointer]:
+                  - /url: https://www.ipomex.org.mx/ipo3/lgt/indice/sma.web
+              - listitem [ref=e980]:
+                - link "Ipomex 4.0" [ref=e981] [cursor=pointer]:
+                  - /url: https://infoem2.ipomex.org.mx/ipomex/#/obligaciones/60
+              - listitem [ref=e982]:
+                - link "SAIMEX" [ref=e983] [cursor=pointer]:
+                  - /url: http://www.saimex.org.mx/saimex/ciudadano/login.page
+              - listitem [ref=e984]:
+                - link "SARCOEM" [ref=e985] [cursor=pointer]:
+                  - /url: https://www.sarcoem.org.mx/sarcoem/ciudadano/login.page
+              - listitem [ref=e986]:
+                - link "SIPOT" [ref=e987] [cursor=pointer]:
+                  - /url: https://consultapublicamx.inai.org.mx/vut-web/faces/view/consultaPublica.xhtml#inicio
+              - listitem [ref=e988]:
+                - link "Presentar Denuncias, Sugerencias o Reconocimiento (SAM)" [ref=e989] [cursor=pointer]:
+                  - /url: http://secogem.gob.mx/SAM/sit_atn_mex.asp
+          - generic [ref=e990]:
+            - heading "Enlaces de Interés" [level=4] [ref=e991]
+            - list [ref=e993]:
+              - listitem [ref=e994]:
+                - link "Rutas Turísticas" [ref=e995] [cursor=pointer]:
+                  - /url: https://experiencia.edomex.gob.mx/#mapa_pagina_frontal_mostrarMapa
+              - listitem [ref=e996]:
+                - link "Pueblos Mágicos" [ref=e997] [cursor=pointer]:
+                  - /url: https://experiencia.edomex.gob.mx/paradas_turisticas/PueblosMagicos
+              - listitem [ref=e998]:
+                - link "Sistema de Información Ambiental del Estado de México" [ref=e999] [cursor=pointer]:
+                  - /url: https://sistemaambiental.edomex.gob.mx/MedioAmbiente/visorgeo
+              - listitem [ref=e1000]:
+                - link "SIREM" [ref=e1001] [cursor=pointer]:
+                  - /url: http://187.188.85.202:8095/consulta-sirem/
+        - generic [ref=e1004]:
+          - generic [ref=e1005]: "Ultima actualización:"
+          - generic [ref=e1006]: 31/05/2026
+      - generic [ref=e1009]:
+        - generic [ref=e1010]: GOBIERNO DEL ESTADO DE MÉXICO
+        - paragraph [ref=e1012]:
+          - link "Creado por la Agencia Digital del Estado de México" [ref=e1013] [cursor=pointer]:
+            - /url: https://agenciadigital.edomex.gob.mx

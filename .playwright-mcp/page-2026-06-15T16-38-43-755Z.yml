@@ -1,0 +1,21 @@
+- generic [active] [ref=e1]:
+  - img [ref=e4]
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - heading "El futuro es digital, el futuro es verde 🌱" [level=2] [ref=e7]
+      - paragraph [ref=e8]: Cada recibo digital evita talar árboles y suma vida al planeta.
+      - img "Paperless" [ref=e10]
+    - generic [ref=e11]:
+      - paragraph [ref=e12]: ¿Te gustaría tu recibo CFDI en formato digital?
+      - generic [ref=e13] [cursor=pointer]: ✅ Sí, en digital
+      - generic [ref=e14] [cursor=pointer]: 📄 No, en papel
+      - generic [ref=e15] [cursor=pointer]:
+        - checkbox "Al dar click en Enviar, confirmo que soy el titular o persona autorizada por el titular del servicio de distribución de gas, y acepto recibir mi CFDI en el correo electrónico que he indicado en este formulario, conforme a los términos y condiciones." [ref=e16]
+        - generic [ref=e18]:
+          - text: Al dar click en
+          - strong [ref=e19]: Enviar
+          - text: ", confirmo que soy el titular o persona autorizada por el titular del servicio de distribución de gas, y acepto recibir mi CFDI en el correo electrónico que he indicado en este formulario, conforme a los"
+          - link "términos y condiciones" [ref=e20]:
+            - /url: https://image.gas.naturgy.com/lib/fe3711717564047d761378/m/1/5deb146b-bdab-43c4-8e39-621951bc1764.pdf
+          - text: .
+      - button "Enviar" [disabled] [ref=e21]

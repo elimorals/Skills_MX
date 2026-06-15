@@ -1,0 +1,53 @@
+- generic [active] [ref=e1]:
+  - text: 
+  - table [ref=e5]:
+    - rowgroup [ref=e6]:
+      - row [ref=e7]:
+        - cell [ref=e8]:
+          - img [ref=e10]
+      - row [ref=e11]:
+        - cell [ref=e12]
+      - 'row "Consulta de Multas de Tránsito Placa: Favor de teclear el número de placa, sin espacios ni guiones intermedios. Consultar Si desea: Consulta de Pagos de Multas de Tránsito por Internet (Solo los pagos realizados con Tarjeta de Crédito)." [ref=e13]':
+        - 'cell "Consulta de Multas de Tránsito Placa: Favor de teclear el número de placa, sin espacios ni guiones intermedios. Consultar Si desea: Consulta de Pagos de Multas de Tránsito por Internet (Solo los pagos realizados con Tarjeta de Crédito)." [ref=e14]':
+          - heading "Consulta de Multas de Tránsito" [level=1] [ref=e15]
+          - table [ref=e16]:
+            - rowgroup [ref=e17]:
+              - 'row "Placa: Favor de teclear el número de placa, sin espacios ni guiones intermedios. Consultar Si desea: Consulta de Pagos de Multas de Tránsito por Internet (Solo los pagos realizados con Tarjeta de Crédito)." [ref=e18]':
+                - 'cell "Placa: Favor de teclear el número de placa, sin espacios ni guiones intermedios. Consultar Si desea: Consulta de Pagos de Multas de Tránsito por Internet (Solo los pagos realizados con Tarjeta de Crédito)." [ref=e19]':
+                  - generic [ref=e20]:
+                    - table [ref=e21]:
+                      - rowgroup [ref=e22]:
+                        - 'row "Placa: Favor de teclear el número de placa, sin espacios ni guiones intermedios. Consultar" [ref=e23]':
+                          - 'cell "Placa: Favor de teclear el número de placa, sin espacios ni guiones intermedios. Consultar" [ref=e24]':
+                            - table [ref=e25]:
+                              - rowgroup [ref=e26]:
+                                - row "Placa:" [ref=e27]:
+                                  - cell "Placa:" [ref=e28]:
+                                    - strong [ref=e29]: "Placa:"
+                                    - textbox [ref=e30]
+                                - row "Favor de teclear el número de placa, sin espacios ni guiones intermedios." [ref=e31]:
+                                  - cell "Favor de teclear el número de placa, sin espacios ni guiones intermedios." [ref=e32]
+                                - row "Consultar" [ref=e33]:
+                                  - cell "Consultar" [ref=e34]:
+                                    - paragraph [ref=e37]:
+                                      - button "Consultar" [ref=e38] [cursor=pointer]
+                                - row [ref=e39]:
+                                  - cell [ref=e40]
+                    - paragraph
+                    - paragraph [ref=e41]:
+                      - text: "Si desea:"
+                      - link "Consulta de Pagos de Multas de Tránsito por Internet" [ref=e42] [cursor=pointer]:
+                        - /url: consultapagos.asp
+                      - text: (Solo los pagos realizados con Tarjeta de Crédito).
+                  - paragraph [ref=e43]
+      - 'row "INFORMES: Coordinación de Ingresos Diversos Juárez y Libertad S/N 2do. Piso del Palacio Municipal Tel: 84004400 Extension: 4584 Oficina de la Tesorería en Seguridad Pública Ave. Lazaro Cardenas 2232, Valle Oriente Tel: 84004584" [ref=e44]':
+        - 'cell "INFORMES: Coordinación de Ingresos Diversos Juárez y Libertad S/N 2do. Piso del Palacio Municipal Tel: 84004400 Extension: 4584 Oficina de la Tesorería en Seguridad Pública Ave. Lazaro Cardenas 2232, Valle Oriente Tel: 84004584" [ref=e45]':
+          - paragraph [ref=e46]:
+            - strong [ref=e47]: "INFORMES:"
+            - text: Coordinación de Ingresos Diversos
+            - text: Juárez y Libertad S/N 2do. Piso del Palacio Municipal
+            - text: "Tel: 84004400 Extension: 4584"
+            - text: Oficina de la Tesorería en Seguridad Pública
+            - text: Ave. Lazaro Cardenas 2232, Valle Oriente
+            - text: "Tel: 84004584"
+          - paragraph [ref=e48]

@@ -1,0 +1,110 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Inicio — Heroica Zitácuaro" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "Logo Zitácuaro" [ref=e5]
+      - list [ref=e6]:
+        - listitem [ref=e7]:
+          - link " INICIO" [ref=e8] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e9]: 
+            - text: INICIO
+        - listitem [ref=e10]:
+          - link "TRANSPARENCIA" [ref=e11] [cursor=pointer]:
+            - /url: "#"
+            - text: TRANSPARENCIA
+          - text: › › › › › › › › › › ›
+        - listitem [ref=e13]:
+          - link "TRÁMITES" [ref=e14] [cursor=pointer]:
+            - /url: "#"
+            - text: TRÁMITES
+          - text: › ›
+        - listitem [ref=e16]:
+          - link "PRENSA" [ref=e17] [cursor=pointer]:
+            - /url: "#"
+            - text: PRENSA
+        - listitem [ref=e19]:
+          - link "ZITÁCUARO" [ref=e20] [cursor=pointer]:
+            - /url: "#"
+            - text: ZITÁCUARO
+        - listitem [ref=e22]:
+          - link "CONTACTO" [ref=e23] [cursor=pointer]:
+            - /url: "#"
+            - text: CONTACTO
+          - text: ›
+      - generic [ref=e25]:
+        - link "Facebook" [ref=e26] [cursor=pointer]:
+          - /url: https://www.facebook.com/ayuntamientozitacuaro/
+          - generic [ref=e27]: 
+        - link "Correo institucional" [ref=e28] [cursor=pointer]:
+          - /url: https://www.zitacuaro.gob.mx:2096
+          - generic [ref=e29]: 
+        - link "Buscador" [ref=e30] [cursor=pointer]:
+          - /url: buscador.html
+          - generic [ref=e31]: 
+  - main [ref=e32]:
+    - generic [ref=e34]:
+      - heading "404 Error" [level=1] [ref=e35]:
+        - strong [ref=e36]: 404 Error
+      - heading "Ayuntamiento de Zitácuaro, Michoacán, Administración 2024 - 2027." [level=2] [ref=e37]
+    - paragraph [ref=e38]
+    - img "Lo sentimos esta página no esta disponible, regrese a la página anterior" [ref=e41]
+    - paragraph [ref=e42]
+    - button " Atrás" [ref=e45] [cursor=pointer]:
+      - generic [ref=e46]: 
+      - text: Atrás
+    - paragraph [ref=e47]
+  - contentinfo [ref=e48]:
+    - generic [ref=e49]:
+      - img "Escudo de Zitácuaro" [ref=e51]
+      - generic [ref=e52]:
+        - heading " Guía contacto municipal  |  Aviso de privacidad" [level=4] [ref=e53]:
+          - generic "Guía contacto municipal" [ref=e54]:
+            - generic [ref=e55]: 
+            - text: Guía contacto municipal
+            - generic [ref=e56]: 
+          - text: "|"
+          - link " Aviso de privacidad" [ref=e57] [cursor=pointer]:
+            - /url: javascript:;
+            - generic [ref=e58]: 
+            - text: Aviso de privacidad
+        - heading " Aviso de privacidad de la Contraloría Municipal" [level=4] [ref=e59]:
+          - link " Aviso de privacidad de la Contraloría Municipal" [ref=e60] [cursor=pointer]:
+            - /url: javascript:;
+            - generic [ref=e61]: 
+            - text: Aviso de privacidad de la Contraloría Municipal
+        - paragraph [ref=e62]: Programación y Diseño Web, Coordinación Gobierno Digital
+        - paragraph [ref=e63]: Administración, Sala de Prensa y Diseño Gráfico, Coordinación de Comunicación Social
+      - generic [ref=e64]:
+        - paragraph [ref=e65]: "Síguenos en:"
+        - generic [ref=e66]:
+          - link "Facebook" [ref=e67] [cursor=pointer]:
+            - /url: https://www.facebook.com/ayuntamientozitacuaro/
+            - img "Facebook" [ref=e68]
+          - link "Instagram" [ref=e69] [cursor=pointer]:
+            - /url: https://www.instagram.com/ayuntamientodezitacuaro/
+            - img "Instagram" [ref=e70]
+          - link "YouTube" [ref=e71] [cursor=pointer]:
+            - /url: https://www.youtube.com/channel/UC2m9bHbE2dXqnagMYmEag3A
+            - img "YouTube" [ref=e72]
+        - paragraph [ref=e73]: "Sistemas de Información Municipal:"
+        - generic [ref=e74]:
+          - link "Ventanilla única" [ref=e75] [cursor=pointer]:
+            - /url: https://zitacuaro.sytes.net/ventanilla
+            - img "Ventanilla única" [ref=e76]
+          - link "Sistema de Recibos" [ref=e77] [cursor=pointer]:
+            - /url: https://zitacuaro.sytes.net/recibos
+            - img "Sistema de Recibos" [ref=e78]
+          - link "Correo institucional" [ref=e79] [cursor=pointer]:
+            - /url: https://www.zitacuaro.gob.mx:2096
+            - img "Correo institucional" [ref=e80]
+          - link "Call Center" [ref=e81] [cursor=pointer]:
+            - /url: https://zitacuaro.sytes.net/ccenter/
+            - img "Call Center" [ref=e82]
+    - generic [ref=e83]: Copyright © Ayuntamiento de Zitácuaro | Todos los derechos reservados
+  - text:      
+  - iframe [ref=e86]:
+    - generic [ref=f3e6]:
+      - text: protegido por
+      - strong [ref=f3e7]: reCAPTCHA

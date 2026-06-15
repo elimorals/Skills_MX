@@ -1,0 +1,386 @@
+- generic [active] [ref=e1]:
+  - complementary [ref=e2]:
+    - link "Registra tu línea celular para acabar con el anonimato. Hazlo antes del 30 de junio." [ref=e3] [cursor=pointer]:
+      - /url: https://portal.crt.gob.mx/gestion-de-lineas-telefonicas-moviles
+      - img "Registra tu línea celular para acabar con el anonimato. Hazlo antes del 30 de junio." [ref=e4]
+  - generic:
+    - generic:
+      - img "Imagen de header"
+  - banner [ref=e5]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - link [ref=e11] [cursor=pointer]:
+          - /url: https://www.sedema.cdmx.gob.mx
+          - img [ref=e12]
+          - img [ref=e13]
+        - generic [ref=e16]:
+          - textbox "Buscar en el sitio" [ref=e17]
+          - button "" [ref=e19] [cursor=pointer]:
+            - generic [ref=e20]: 
+      - list [ref=e22]:
+        - listitem [ref=e23]:
+          - link "CDMX" [ref=e24] [cursor=pointer]:
+            - /url: http://www.cdmx.gob.mx
+          - text: /
+          - link "Secretarías" [ref=e25] [cursor=pointer]:
+            - /url: https://www.ciudadanos.cdmx.gob.mx/gobierno/gabinete/secretarias
+          - text: / SEDEMA
+        - listitem [ref=e26]:
+          - link "Transparencia" [ref=e27] [cursor=pointer]:
+            - /url: https://www.transparencia.cdmx.gob.mx/secretaria-del-medio-ambiente
+        - listitem [ref=e28]:
+          - link "Atención Ciudadana" [ref=e29] [cursor=pointer]:
+            - /url: https://311locatel.cdmx.gob.mx/
+        - listitem [ref=e30]:
+          - link "Trámites y Servicios" [ref=e31] [cursor=pointer]:
+            - /url: https://www.cdmx.gob.mx/
+    - generic [ref=e32]:
+      - text:  
+      - list [ref=e33]:
+        - list [ref=e35]:
+          - text:   
+          - listitem [ref=e36]:
+            - link "Inicio" [ref=e37] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx
+          - listitem [ref=e38]:
+            - link "Secretaría " [ref=e39] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/secretaria
+          - listitem [ref=e40]:
+            - link "Servicios" [ref=e41] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/servicios
+          - listitem [ref=e42]:
+            - link "Programas" [ref=e43] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas
+          - listitem [ref=e44]:
+            - link "Convocatorias" [ref=e45] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/convocatorias/licitaciones
+          - listitem [ref=e46]:
+            - link "Impacto ambiental " [ref=e47] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/impacto-ambiental
+          - listitem [ref=e48]:
+            - link "Ver más " [ref=e49] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx
+  - main [ref=e50]:
+    - generic [ref=e51]:
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - link "Programas" [ref=e55] [cursor=pointer]:
+            - /url: "#"
+            - heading "Programas" [level=2] [ref=e57]
+          - text: 
+        - list [ref=e59]:
+          - listitem [ref=e60]:
+            - link "Cosecha de lluvia y calentadores solares para transformar la Ciudad" [ref=e61] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/cosecha-de-lluvia-y-calentadores-solares-para-transformar-la-ciudad
+          - listitem [ref=e62]:
+            - link "Saneamiento del arbolado" [ref=e63] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/saneamiento
+          - listitem [ref=e64]:
+            - link "Sello Verde" [ref=e65] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/sello-verde
+          - listitem [ref=e66]:
+            - link "Reto Verde" [ref=e67] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/reto-verde
+          - listitem [ref=e68]:
+            - link "Residuos Sólidos" [ref=e69] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/residuos-solidos
+          - listitem [ref=e70]:
+            - link "Registros Ambientales" [ref=e71] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/registros-ambientales
+          - listitem [ref=e72]:
+            - link "Reciclatrón" [ref=e73] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/reciclatron
+          - listitem [ref=e74]:
+            - link "Ponte Pilas con tu Ciudad" [ref=e75] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/ponte-pilas-con-tu-ciudad
+          - listitem [ref=e76]:
+            - link "Mercado de Trueque" [ref=e77] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/mercado-de-trueque
+          - listitem [ref=e78]:
+            - link "Vehículos Contaminantes (PVC)" [ref=e79] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/vehiculos-contaminantes-pvc
+          - listitem [ref=e80]:
+            - link "Inventario de Áreas Verdes" [ref=e81] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/inventario-de-areas-verdes
+          - listitem [ref=e82]:
+            - link "Infraestructura Verde" [ref=e83] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/infraestructura-verde
+          - listitem [ref=e84]:
+            - link "Hoy No Circula" [ref=e85] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/hoy-no-circula
+          - listitem [ref=e86]:
+            - link "Cambio Climático" [ref=e87] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/cambio-climatico
+          - listitem [ref=e88]:
+            - link "Basura Cero" [ref=e89] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/basura-cero
+          - listitem [ref=e90]:
+            - link "Verificación Vehicular" [ref=e91] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/verificacion-vehicular
+          - listitem [ref=e92]:
+            - link "Cosecha de Lluvia" [ref=e93] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/cosecha-de-lluvia
+          - listitem [ref=e94]:
+            - link "Altépetl Bienestar" [ref=e95] [cursor=pointer]:
+              - /url: https://www.sedema.cdmx.gob.mx/programas/programa/altepetl
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - heading "Hoy No Circula" [level=1] [ref=e99]
+          - generic [ref=e100]:
+            - paragraph
+            - paragraph [ref=e101]: Establecer medidas aplicables a la circulación vehicular de fuentes móviles o vehículos automotores, con el objetivo de prevenir, minimizar y controlar la emisión de contaminantes provenientes de fuentes móviles que circulan en la Ciudad de México sea cual fuere el origen de las placas y/o matrícula del vehículo, mediante la limitación de su circulación.
+        - img "hoynocirculan.jpg" [ref=e104]
+        - generic [ref=e105]:
+          - tab "Objetivo " [ref=e106]:
+            - heading "Objetivo" [level=2] [ref=e108]
+            - link "" [expanded] [ref=e110] [cursor=pointer]:
+              - /url: "#collapse1"
+          - tabpanel [ref=e111]:
+            - generic [ref=e112]:
+              - paragraph [ref=e113]:
+                - strong [ref=e114]: Conoce el
+                - link "Decreto por el que se expide el Programa Hoy No Circula" [ref=e115] [cursor=pointer]:
+                  - /url: https://www.sedema.cdmx.gob.mx/storage/app/media/programas/hoy-no-circula/decreto-programa-hoy-no-circula-segundo-semestre-2016.pdf
+                  - strong [ref=e116]: Decreto por el que se expide el Programa Hoy No Circula
+              - paragraph [ref=e117]:
+                - strong [ref=e118]: Ámbito de aplicación del programa
+              - paragraph [ref=e119]: "El presente Programa rige en todo el territorio de la Ciudad de México, para dicho efecto, las medidas aplicables a la circulación vehicular de las fuentes móviles o vehículos automotores deberá ajustarse a los siguientes criterios:"
+              - paragraph [ref=e120]:
+                - strong [ref=e121]: I.-
+                - text: Días
+              - paragraph [ref=e122]:
+                - strong [ref=e123]: II.-
+                - text: Horarios
+              - paragraph [ref=e124]: La aplicación del presente Programa corresponde a la Secretaría del Medio Ambiente de la Ciudad de México. En todo lo no previsto en el presente Programa, se aplicarán las disposiciones contenidas en otras leyes, reglamentos, normas y demás ordenamientos jurídicos relacionados con la materia que incidan en este instrumento.
+              - paragraph [ref=e125]: Además de las medidas establecidas en el presente Programa, se podrán determinar y establecer a través de otros programas, días y horarios, a los que deberá ajustarse la circulación vehicular de las fuentes móviles o vehículos automotores en la Ciudad de México.
+              - paragraph [ref=e126]:
+                - strong [ref=e127]
+              - paragraph [ref=e128]:
+                - strong [ref=e129]: DISPOSICIONES COMPLEMENTARIAS DEL PROGRAMA “HOY NO CIRCULA”
+              - paragraph [ref=e130]: "Además de lo establecido en el numeral VII del Programa Hoy No Circula se encuentran exentos de las limitaciones los siguientes supuestos:"
+              - paragraph [ref=e131]:
+                - strong [ref=e132]: I.-
+                - text: Tractores agrícolas.
+              - paragraph [ref=e133]:
+                - strong [ref=e134]: II.-
+                - text: Maquinaria dedicada a las industrias de la construcción y minera.
+              - paragraph [ref=e135]:
+                - strong [ref=e136]: III.-
+                - text: Motocicletas.
+              - paragraph [ref=e137]:
+                - strong [ref=e138]: IV.-
+                - text: Vehículos con peso bruto vehicular menor o igual a 400 kilogramos.
+              - paragraph [ref=e139]:
+                - strong [ref=e140]: V.-
+                - text: Vehículos eléctricos.
+              - paragraph [ref=e141]:
+                - strong [ref=e142]: VI.-
+                - text: Vehículos híbridos categoría I y II con motores de propulsión a gasolina y eléctrico.
+              - paragraph [ref=e143]:
+                - strong [ref=e144]: VII.-
+                - text: Vehículos con matrícula de auto antiguo y/o clásico.
+              - paragraph [ref=e145]:
+                - strong [ref=e146]: VIII.-
+                - text: Automotores con matrícula de demostración y/o traslado.
+              - paragraph [ref=e147]:
+                - strong [ref=e148]: IX.-
+                - text: Vehículos cuya tecnología impida la aplicación de la Norma Oficial Mexicana correspondiente.
+              - paragraph [ref=e149]:
+                - strong [ref=e150]: X.-
+                - text: Vehículos que porten Holograma “EXENTO”.
+              - paragraph [ref=e151]:
+                - strong [ref=e152]: XI.-
+                - text: Vehículos que porten Constancia de Verificación y holograma tipo “00” por dos años, salvo cuando exista contingencia ambiental atmosférica por contaminantes y la
+                - strong [ref=e153]: CAMe
+                - text: emita restricciones a la circulación para alguno de los casos referidos.
+              - paragraph [ref=e154]:
+                - strong [ref=e155]: XII.-
+                - text: Vehículos que porten Constancia de Verificación y holograma tipo “0”, por seis meses, salvo cuando exista contingencia ambiental atmosférica por contaminantes y la
+                - strong [ref=e156]: CAMe
+                - text: emita restricciones a la circulación para alguno de los casos referidos.
+              - paragraph [ref=e157]:
+                - strong [ref=e158]: XIII.-
+                - text: Vehículos que porten Constancia tipo “Permiso Especial para Circular”, siempre y cuando transporten a personas con discapacidad.
+              - paragraph [ref=e159]:
+                - strong [ref=e160]: XIV.-
+                - text: Vehículos que porten Constancia tipo “Autorregulación”, que participen en el Programa de Autorregulación Ambiental de vehículos a diésel o para impulsar la electromovilidad en vehículos ligeros.
+              - paragraph [ref=e161]:
+                - strong [ref=e162]: XV.-
+                - text: Vehículos que porten placas para personas con discapacidad.
+              - paragraph [ref=e163]:
+                - strong [ref=e164]: XVI.-
+                - text: Vehículos que porten Pase Turístico Metropolitano, dos veces por semestre por siete días, una vez por semestre por 14 días, Vehículos que porten Pase Turístico Paisano durante la activación de puentes largos oficiales y durante la activación del Programa Paisano.
+              - paragraph [ref=e165]:
+                - strong [ref=e166]: XVII.-
+                - text: Vehículos que porten los oficios de Ampliación al Periodo de Verificación Vehicular, en la vigencia establecida en dicho oficio, emitidos por la Secretaría.
+              - paragraph [ref=e167]:
+                - strong [ref=e168]: XVIII.-
+                - text: Vehículos que porten en lugar visible oficio emitido por la Secretaría del Medio Ambiente de la Ciudad de México, para exentar las limitaciones a la circulación.
+              - paragraph [ref=e169]:
+                - img [ref=e170]
+              - paragraph [ref=e171]:
+                - img [ref=e172]
+              - separator [ref=e173]
+              - paragraph [ref=e174]:
+                - strong [ref=e175]: Programa para Prevenir y Responder a Contingencias Ambientales Atmosféricas. (Apartado Hoy no Circula).
+              - paragraph [ref=e176]:
+                - strong [ref=e177]: Fase Preventiva
+              - list [ref=e178]:
+                - listitem [ref=e179]: Dejan de circular 50% de los automotores administrativos de gobiernos locales, municipales, alcaldías y federal
+              - paragraph [ref=e180]:
+                - strong [ref=e181]: Fase 1
+              - list [ref=e182]:
+                - listitem [ref=e183]: Dejan de circular 100% de los automotores administrativos de gobiernos locales, municipales, alcaldías y federal
+                - listitem [ref=e184]: Dejan de circular el 20% de los hologramas “00”, “0” de acuerdo a la terminación de su placa, nones o pares de holograma “1” y el 100% de los hologramas “2”
+              - paragraph [ref=e185]
+              - paragraph [ref=e186]:
+                - strong [ref=e187]:
+                  - emphasis [ref=e188]:
+                    - text: Consulta el Programa
+                    - strong [ref=e189]: para Prevenir y Responder a Contingencias Ambientales Atmosféricas en la Ciudad de México
+              - paragraph [ref=e190]:
+                - strong [ref=e191]:
+                  - link "https://data.consejeria.cdmx.gob.mx/portal_old/uploads/gacetas/25a1ef7295458ade0faad3daebb31f05.pdf" [ref=e192] [cursor=pointer]:
+                    - /url: https://data.consejeria.cdmx.gob.mx/portal_old/uploads/gacetas/25a1ef7295458ade0faad3daebb31f05.pdf
+            - heading "Beneficiarios" [level=3] [ref=e194]
+            - paragraph [ref=e196]: Toda la ciudadanía.
+        - generic [ref=e197]:
+          - generic [ref=e198]:
+            - img [ref=e199]
+            - img [ref=e200]
+          - generic [ref=e201]:
+            - paragraph [ref=e202]: Este programa es de carácter público, no es patrocinado ni promovido por partido político alguno y sus recursos provienen de los impuestos que pagan todos los contribuyentes. Esta prohibido el uso de este programa con fines políticos, electorales, de lucro y otros distintos a los establecidos.
+            - paragraph [ref=e203]: Quien haga uso indebido de los recursos de este programa en la Ciudad de México, será sancionado de acuerdo con la ley aplicable y ante la autoridad competente.
+        - generic [ref=e204]:
+          - generic [ref=e205]:
+            - generic [ref=e206]: Compartir
+            - generic [ref=e207]:
+              - link "" [ref=e208] [cursor=pointer]:
+                - /url: mailto:?subject=Te comparto este programa&body=Entra a Programas CDMX https://www.sedema.cdmx.gob.mx/programas/programa/hoy-no-circula
+                - generic [ref=e209]: 
+              - link "" [ref=e210] [cursor=pointer]:
+                - /url: http://twitter.com/share?url=https://www.sedema.cdmx.gob.mx/programas/programa/hoy-no-circula
+                - generic [ref=e211]: 
+              - link "" [ref=e212] [cursor=pointer]:
+                - /url: http://www.facebook.com/sharer.php?u=https://www.sedema.cdmx.gob.mx/programas/programa/hoy-no-circula
+                - generic [ref=e213]: 
+              - text: 
+          - generic [ref=e214]:
+            - generic [ref=e215]: Imprimir
+            - link "" [ref=e217] [cursor=pointer]:
+              - /url: javascript:window.print();
+              - generic [ref=e218]: 
+    - text: 
+  - contentinfo [ref=e219]:
+    - generic [ref=e221]:
+      - generic [ref=e222]:
+        - generic [ref=e223]:
+          - img "Logo de la Dependencia" [ref=e225]
+          - generic [ref=e226]:
+            - heading "Atención ciudadana" [level=3] [ref=e228]
+            - generic [ref=e229]:
+              - generic [ref=e230]:
+                - strong [ref=e231]: "Dirección:"
+                - text: 0 Plaza de la Constitución 1, piso tercero
+                - text: Colonia Centro, Alcaldía Cuauhtémoc C.P. 06000, Ciudad de México
+              - heading "Teléfonos:" [level=4] [ref=e233]
+              - generic [ref=e234]: 55 5345 8187, 55 5345 8188
+              - generic [ref=e236]:
+                - strong [ref=e237]: "Correo electrónico:"
+                - text: atencionciudadana@sedema.cdmx.gob.mx
+              - heading "Horario:" [level=4] [ref=e239]
+              - generic [ref=e240]: Martes 10:00 a 13:00 hrs.
+        - list [ref=e241]:
+          - listitem [ref=e242]:
+            - heading "Redes sociales" [level=3] [ref=e243]
+          - listitem [ref=e244]:
+            - link "" [ref=e245] [cursor=pointer]:
+              - /url: https://www.facebook.com/Secretar%C3%ADa-del-Medio-Ambiente-120208740359/
+              - generic [ref=e246]: 
+          - listitem [ref=e247]:
+            - link "" [ref=e248] [cursor=pointer]:
+              - /url: https://twitter.com/SEDEMA_CDMX
+              - generic [ref=e249]: 
+          - listitem [ref=e250]:
+            - link "" [ref=e251] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCzYbjrNZgUZ16NXvzoehAuQ
+              - generic [ref=e252]: 
+          - listitem [ref=e253]:
+            - link "" [ref=e254] [cursor=pointer]:
+              - /url: https://www.instagram.com/sedemacdmx/
+              - generic [ref=e255]: 
+      - list [ref=e258]:
+        - listitem [ref=e259]:
+          - heading "Navegación" [level=3] [ref=e260]
+        - listitem [ref=e261]:
+          - link "Inicio" [ref=e262] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx
+        - listitem [ref=e263]:
+          - link "Secretaría" [ref=e264] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx/secretaria
+        - listitem [ref=e265]:
+          - link "Servicios" [ref=e266] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx/servicios
+        - listitem [ref=e267]:
+          - link "Programas" [ref=e268] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx/programas
+        - listitem [ref=e269]:
+          - link "Convocatorias" [ref=e270] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx/convocatorias/licitaciones
+        - listitem [ref=e271]:
+          - link "Impacto ambiental" [ref=e272] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx/impacto-ambiental
+        - listitem [ref=e273]:
+          - link "Ver más" [ref=e274] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx
+      - list [ref=e277]:
+        - listitem [ref=e278]:
+          - heading "Sitios relacionados" [level=3] [ref=e279]
+        - listitem [ref=e280]:
+          - link "Atención Ciudadana" [ref=e281] [cursor=pointer]:
+            - /url: https://311locatel.cdmx.gob.mx/
+        - listitem [ref=e282]:
+          - link "Agencia de Atención Animal CDMX" [ref=e283] [cursor=pointer]:
+            - /url: https://www.agatan.cdmx.gob.mx/
+        - listitem [ref=e284]:
+          - link "Calidad del Aire" [ref=e285] [cursor=pointer]:
+            - /url: http://www.aire.cdmx.gob.mx/default.php
+        - listitem [ref=e286]:
+          - link "Página oficial del Bosque de Chapultepec" [ref=e287] [cursor=pointer]:
+            - /url: http://bosquedechapultepec.mx:9000/bosquedechapultepec/
+        - listitem [ref=e288]:
+          - link "Síguenos en Instagram del Bosque de San Juan de Aragón" [ref=e289] [cursor=pointer]:
+            - /url: https://www.instagram.com/bosquearagoncdmx?igsh=MW81cG96cm1jeTVtZQ==
+        - listitem [ref=e290]:
+          - link "Página de Facebook del Museo de Historia Natural y Cultura Ambiental" [ref=e291] [cursor=pointer]:
+            - /url: https://www.facebook.com/museodehistorianaturalcdmx?mibextid=LQQJ4d
+        - listitem [ref=e292]:
+          - link "Comisión de Recursos Naturales y Desarrollo Rural (CORENADR)" [ref=e293] [cursor=pointer]:
+            - /url: https://altepetl.cdmx.gob.mx/
+        - listitem [ref=e294]:
+          - link "Sitios autorizados para manejo de residuos" [ref=e295] [cursor=pointer]:
+            - /url: https://www.sedema.cdmx.gob.mx/impacto-ambiental/listado-de-sitios-autorizados-para-el-manejo-de-residuos-de-la-construccion
+      - generic [ref=e297]:
+        - link "Plan General de Desarrollo 2025-2045" [ref=e299] [cursor=pointer]:
+          - /url: https://plazapublica.cdmx.gob.mx/processes/consultaPGD2025
+          - img "Plan General de Desarrollo 2025-2045" [ref=e300]
+        - link "Datos abiertos" [ref=e302] [cursor=pointer]:
+          - /url: https://datos.cdmx.gob.mx/
+          - img "Datos abiertos" [ref=e303]
+        - link "Tianguis Digital" [ref=e305] [cursor=pointer]:
+          - /url: https://www.tianguisdigital.cdmx.gob.mx/
+          - img "Tianguis Digital" [ref=e306]
+    - generic [ref=e309]:
+      - generic [ref=e310]: CMS CDMX v2.8.0 2026
+      - link "Términos y Condiciones" [ref=e312] [cursor=pointer]:
+        - /url: https://www.sedema.cdmx.gob.mx/terminos-y-condiciones
+      - link "Política de privacidad" [ref=e314] [cursor=pointer]:
+        - /url: https://www.sedema.cdmx.gob.mx/terminos-y-condiciones#Datos-personales
+      - link "Licencia de Gobierno Abierto CDMX" [ref=e316] [cursor=pointer]:
+        - /url: http://www.cdmx.gob.mx/lgacdmx
+  - generic:
+    - generic:
+      - img "Imagen de footer"
+    - generic:
+      - img "Imagen de footer"
+  - text: "["

@@ -1,0 +1,339 @@
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido" [ref=e2] [cursor=pointer]:
+    - /url: "#site-content"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e7]:
+          - generic [ref=e11]:
+            - generic [ref=e15]: ¿Tienes alguna duda?
+            - list [ref=e20]:
+              - listitem [ref=e21]:
+                - link "443 113 2200" [ref=e22] [cursor=pointer]:
+                  - /url: tel:4431132200
+                  - generic [ref=e24]: 
+                  - generic [ref=e25]: 443 113 2200
+          - list [ref=e32]:
+            - listitem [ref=e33]:
+              - link "Facebook" [ref=e34] [cursor=pointer]:
+                - /url: https://www.facebook.com/MoreliaOoapas/
+                - generic [ref=e35]: Facebook
+                - generic [ref=e36]: 
+            - listitem [ref=e37]:
+              - link "Twitter" [ref=e38] [cursor=pointer]:
+                - /url: https://twitter.com/ooapasmorelia
+                - generic [ref=e39]: Twitter
+                - generic [ref=e40]: 
+        - navigation [ref=e52]:
+          - list [ref=e53]:
+            - listitem [ref=e54]:
+              - link "Inicio" [ref=e55] [cursor=pointer]:
+                - /url: https://www.ooapas.gob.mx/
+            - listitem [ref=e56]:
+              - button "Conozca " [ref=e57]:
+                - link "Conozca " [ref=e58] [cursor=pointer]:
+                  - /url: "#"
+                  - text: Conozca
+                  - generic [ref=e60]: 
+            - listitem [ref=e61]:
+              - button "Trámites y servicios " [ref=e62]:
+                - link "Trámites y servicios " [ref=e63] [cursor=pointer]:
+                  - /url: "#"
+                  - text: Trámites y servicios
+                  - generic [ref=e65]: 
+            - listitem [ref=e66]:
+              - link "Transparencia" [ref=e67] [cursor=pointer]:
+                - /url: https://www.ooapas.gob.mx/transparencia/
+            - listitem [ref=e68]:
+              - link "Noticias" [ref=e69] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e70]:
+              - link "Contacto" [ref=e71] [cursor=pointer]:
+                - /url: https://www.ooapas.gob.mx/contacto/
+            - listitem [ref=e72]:
+              - link "Aviso de privacidad" [ref=e73] [cursor=pointer]:
+                - /url: /wp-content/uploads/2024/10/AVISO-DE-PRIVACIDAD-OOAPAS.pdf
+    - generic [ref=e74]:
+      - generic [ref=e94]:
+        - generic [ref=e95]: 
+        - text: Servicios a la comunidad
+        - generic [ref=e96]: 
+      - generic [ref=e106]:
+        - generic [ref=e108]:
+          - link [ref=e112] [cursor=pointer]:
+            - /url: https://pagoenlinea.ooapas.gob.mx/
+            - generic [ref=e113]: 
+          - generic [ref=e115]: Pago en línea
+          - generic [ref=e117]: Pagar tu recibo nunca fue tan sencillo. Consulta tu recibo y págalo directamente sin necesidad de salir de tu casa.
+        - generic [ref=e119]:
+          - link [ref=e123] [cursor=pointer]:
+            - /url: https://pagoenlinea.ooapas.gob.mx/index_pago_express.php
+            - generic [ref=e124]: 
+          - generic [ref=e126]: Pago Express
+          - generic [ref=e128]: Ahora más fácil que nunca, prueba nuestro nuevo servicio pago express y sin necesidad de cuenta.
+        - generic [ref=e130]:
+          - link [ref=e134] [cursor=pointer]:
+            - /url: http://wa.me/525535539083
+            - generic [ref=e135]: 
+          - generic [ref=e137]: Chatbot
+          - paragraph [ref=e140]: Con este nuevo canal de comunicación, ofrecemos una mejor atención a las y los usuarios.
+        - generic [ref=e143]:
+          - link [ref=e147] [cursor=pointer]:
+            - /url: /convocatoria-y-bases-de-licitacion/
+            - generic [ref=e148]: 
+          - generic [ref=e150]: Licitaciones
+          - generic [ref=e152]: Información relacionada a las Licitaciones Públicas.
+        - generic [ref=e154]:
+          - link [ref=e158] [cursor=pointer]:
+            - /url: http://prevencion.ooapas.gob.mx/sistmon.php
+            - generic [ref=e159]: 
+          - generic [ref=e161]: Estaciones metereológicas
+          - generic [ref=e163]: Conoce las condiciones climatológicas de Morelia con nuestras 10 estaciones meteorológicas.
+      - paragraph [ref=e174]: Información de Interés
+      - region "Carrusel de Imágenes" [ref=e187]:
+        - generic [ref=e188]:
+          - group [ref=e189]:
+            - figure [ref=e190]:
+              - img [ref=e191]
+          - group "1 / 3" [ref=e192]:
+            - figure [ref=e193]:
+              - img "Numero de contacto" [ref=e194]
+          - group [ref=e195]:
+            - figure [ref=e196]:
+              - img [ref=e197]
+          - group [ref=e198]:
+            - figure [ref=e199]:
+              - img [ref=e200]
+          - group [ref=e201]:
+            - figure [ref=e202]:
+              - img [ref=e203]
+        - button "Diapositiva anterior" [ref=e204] [cursor=pointer]:
+          - generic [ref=e205]: 
+        - button "Diapositiva siguiente" [ref=e206] [cursor=pointer]:
+          - generic [ref=e207]: 
+        - generic [ref=e208]:
+          - button "Ir a la diapositiva 1" [ref=e209] [cursor=pointer]
+          - button "Ir a la diapositiva 2" [ref=e210] [cursor=pointer]
+          - button "Ir a la diapositiva 3" [ref=e211] [cursor=pointer]
+      - generic [ref=e215]:
+        - generic [ref=e219]:
+          - generic [ref=e226]: 
+          - generic [ref=e228]:
+            - generic [ref=e230]: De boca en boca
+            - generic [ref=e232]: Lleva a la oficina tu taza favorita para tomar café y evita usar vasos desechables.
+        - generic [ref=e236]:
+          - generic [ref=e243]: 
+          - generic [ref=e245]:
+            - generic [ref=e247]: ¿Lo sabías?
+            - generic [ref=e249]: Los rayos UV ayudan a blanquear la ropa percudida. Deja tus sábanas o camisas al sol para blanquear los textiles. Recuerda seguir las instrucciones de las etiquetas, para que tu ropa dure más.
+        - generic [ref=e253]:
+          - generic [ref=e260]: 
+          - generic [ref=e262]:
+            - generic [ref=e264]: OOAPASTIPS
+            - generic [ref=e266]: Revisa periódicamente las instalaciones del tanque del inodoro, evita fugas temporales por mal funcionamiento. A veces es tan sencillo como retirar el sarro que impide que el tapón selle perfectamente la salida del agua.
+      - generic [ref=e268]:
+        - generic [ref=e272]:
+          - generic [ref=e279]: 
+          - generic [ref=e281]:
+            - generic [ref=e283]: Recuerda
+            - generic [ref=e285]:
+              - text: Los trámites de suspensión temporal y tarifa especial para adulto mayor deben renovarse cada año para que sigan vigentes. Para mayor información, llama al
+              - link "113 2200" [ref=e286] [cursor=pointer]:
+                - /url: tel:4431132200
+              - text: .
+        - generic [ref=e290]:
+          - generic [ref=e297]: 
+          - generic [ref=e299]:
+            - generic [ref=e301]: Recicla
+            - generic [ref=e303]: La composta es una excelente forma de aprovechar los residuos orgánicos.
+        - generic [ref=e307]:
+          - generic [ref=e314]: 
+          - generic [ref=e316]:
+            - generic [ref=e318]: Trabajador OOAPAS
+            - list [ref=e321]:
+              - listitem [ref=e322]:
+                - link "Cartel para presentación de declaración patrimonial" [ref=e323] [cursor=pointer]:
+                  - /url: /wp-content/uploads/2024/10/Cartel-para-presentacion-de-declaracion-patrimonial.pdf
+                  - generic [ref=e324]: Cartel para presentación de declaración patrimonial
+              - listitem [ref=e325]:
+                - link "Lineamientos Entrega y Recepción OOAPAS 2020" [ref=e326] [cursor=pointer]:
+                  - /url: /wp-content/uploads/2024/10/LINEAMIENTOS-2020.pdf
+                  - generic [ref=e327]: Lineamientos Entrega y Recepción OOAPAS 2020
+              - listitem [ref=e328]:
+                - link "Modelo Acta Entrega y Recepción OOAPAS 2020" [ref=e329] [cursor=pointer]:
+                  - /url: /wp-content/uploads/2024/10/Modelo-Acta-Entrega-Recepcion.doc
+                  - generic [ref=e330]: Modelo Acta Entrega y Recepción OOAPAS 2020
+              - listitem [ref=e331]:
+                - link "Formatos de Entrega y Recepción OOAPAS 2020" [ref=e332] [cursor=pointer]:
+                  - /url: /wp-content/uploads/2024/10/FORMATOS-E-R.rar
+                  - generic [ref=e333]: Formatos de Entrega y Recepción OOAPAS 2020
+      - generic [ref=e347]: Síguenos en nuestras redes sociales
+      - generic [ref=e349]:
+        - link "Tweets by ooapasmorelia" [ref=e354] [cursor=pointer]:
+          - /url: https://twitter.com/ooapasmorelia?ref_src=twsrc%5Etfw
+        - iframe [ref=e361]:
+          - generic [ref=f22e3]:
+            - link:
+              - /url: https://www.facebook.com/MoreliaOoapas?ref=embed_page
+            - generic [ref=f22e6]:
+              - generic [ref=f22e7]:
+                - link [ref=f22e8] [cursor=pointer]:
+                  - /url: https://www.facebook.com/1009980862370210?ref=embed_page
+                - generic [ref=f22e10]:
+                  - img [ref=f22e15]
+                  - generic [ref=f22e17]:
+                    - generic [ref=f22e18]:
+                      - img [ref=f22e21]
+                      - generic [ref=f22e25]:
+                        - generic [ref=f22e27]: Ooapas Morelia
+                        - generic [ref=f22e28]: 25 mil seguidores
+                    - generic [ref=f22e31]: Organismo Operador de Agua Potable, Alcantarillado y Saneamiento de Morelia (OOAPAS).
+                    - generic [ref=f22e32]:
+                      - img [ref=f22e33]
+                      - generic [ref=f22e35]: Organización gubernamental
+                      - generic [ref=f22e36]: ·
+                      - img [ref=f22e37]
+                      - generic [ref=f22e39]: +52 443 113 2200
+                    - link "Seguir" [ref=f22e42] [cursor=pointer]:
+                      - /url: https://www.facebook.com/1009980862370210?ref=embed_page
+                      - generic [ref=f22e43]:
+                        - img [ref=f22e44]
+                        - generic [ref=f22e47]: Seguir
+              - generic [ref=f22e48]:
+                - 'link "Ooapas Morelia 2h Porque sabemos que el tiempo de las y los usuarios es valioso, contamos con módulos de atención en distintos puntos de la ciudad. Con ellos, buscamos acercar nuestros servicios y brindar más opciones a las y los morelianos para realizar sus trámites de manera práctica y oportuna. #OOAPASMásPorTi #UnPasoAdelante 14 0 4" [ref=f22e49] [cursor=pointer]':
+                  - /url: https://www.facebook.com/1009980862370210?ref=embed_page
+                  - generic [ref=f22e50]:
+                    - img [ref=f22e52]
+                    - generic [ref=f22e56]:
+                      - generic [ref=f22e58]: Ooapas Morelia
+                      - generic [ref=f22e59]: 2h
+                  - generic [ref=f22e62]: "Porque sabemos que el tiempo de las y los usuarios es valioso, contamos con módulos de atención en distintos puntos de la ciudad. Con ellos, buscamos acercar nuestros servicios y brindar más opciones a las y los morelianos para realizar sus trámites de manera práctica y oportuna. #OOAPASMásPorTi #UnPasoAdelante"
+                  - generic [ref=f22e71]:
+                    - generic [ref=f22e72]:
+                      - img [ref=f22e73]
+                      - generic [ref=f22e75]: "14"
+                    - generic [ref=f22e76]:
+                      - img [ref=f22e77]
+                      - generic [ref=f22e79]: "0"
+                    - generic [ref=f22e80]:
+                      - img [ref=f22e81]
+                      - generic [ref=f22e83]: "4"
+                - 'link "Ooapas Morelia 2d Cada niña y cada niño que aprende a cuidar el agua se convierte en un aliado para el futuro de Morelia. A través del programa Guardianes del Agua visitamos el Colegio Liceo Madero, donde las y los estudiantes conocieron de manera dinámica e interactiva la importancia del uso responsable del agua, así como el proceso que sigue este recurso para llegar a nuestros hogares. Seguimos impulsando acciones de educación ambiental que contribuyan a formar nuevas generaciones más conscientes sobre el valor del agua y la importancia de cuidarla todos los días. #GuardianesDelAgua #OOAPASMásPorTi 18 0 3" [ref=f22e84] [cursor=pointer]':
+                  - /url: https://www.facebook.com/1009980862370210?ref=embed_page
+                  - generic [ref=f22e85]:
+                    - img [ref=f22e87]
+                    - generic [ref=f22e91]:
+                      - generic [ref=f22e93]: Ooapas Morelia
+                      - generic [ref=f22e94]: 2d
+                  - generic [ref=f22e97]: "Cada niña y cada niño que aprende a cuidar el agua se convierte en un aliado para el futuro de Morelia. A través del programa Guardianes del Agua visitamos el Colegio Liceo Madero, donde las y los estudiantes conocieron de manera dinámica e interactiva la importancia del uso responsable del agua, así como el proceso que sigue este recurso para llegar a nuestros hogares. Seguimos impulsando acciones de educación ambiental que contribuyan a formar nuevas generaciones más conscientes sobre el valor del agua y la importancia de cuidarla todos los días. #GuardianesDelAgua #OOAPASMásPorTi"
+                  - generic [ref=f22e106]:
+                    - generic [ref=f22e107]:
+                      - img [ref=f22e108]
+                      - generic [ref=f22e110]: "18"
+                    - generic [ref=f22e111]:
+                      - img [ref=f22e112]
+                      - generic [ref=f22e114]: "0"
+                    - generic [ref=f22e115]:
+                      - img [ref=f22e116]
+                      - generic [ref=f22e118]: "3"
+                - 'link "Ooapas Morelia 3d ¿Necesitas realizar el pago de tu recibo? Recuerda que con tu recibo vigente puedes pagar de manera rápida y segura en cualquier tienda OXXO, los 7 días de la semana. Seguimos trabajando para brindarte alternativas que te permitan realizar tus pagos de forma sencilla y sin contratiempos. #OOAPASMásPorTi #UnPasoAdelante 10 5 1" [ref=f22e119] [cursor=pointer]':
+                  - /url: https://www.facebook.com/1009980862370210?ref=embed_page
+                  - generic [ref=f22e120]:
+                    - img [ref=f22e122]
+                    - generic [ref=f22e126]:
+                      - generic [ref=f22e128]: Ooapas Morelia
+                      - generic [ref=f22e129]: 3d
+                  - generic [ref=f22e132]: "¿Necesitas realizar el pago de tu recibo? Recuerda que con tu recibo vigente puedes pagar de manera rápida y segura en cualquier tienda OXXO, los 7 días de la semana. Seguimos trabajando para brindarte alternativas que te permitan realizar tus pagos de forma sencilla y sin contratiempos. #OOAPASMásPorTi #UnPasoAdelante"
+                  - generic [ref=f22e134]:
+                    - generic [ref=f22e135]:
+                      - img [ref=f22e136]
+                      - generic [ref=f22e138]: "10"
+                    - generic [ref=f22e139]:
+                      - img [ref=f22e140]
+                      - generic [ref=f22e142]: "5"
+                    - generic [ref=f22e143]:
+                      - img [ref=f22e144]
+                      - generic [ref=f22e146]: "1"
+                - 'link "Ooapas Morelia 3d Atender cada reporte ciudadano es una prioridad. Por ello, continuamos realizando trabajos de rehabilitación en distintos puntos de Morelia, restituyendo las vialidades intervenidas tras reparaciones de agua potable y drenaje sanitario. Gracias al compromiso de nuestras y nuestros trabajadores, seguimos fortaleciendo la atención a la ciudadanía y mejorando los servicios para las familias morelianas. #OOAPASMásPorTi #UnPasoAdelante +3 82 20 9" [ref=f22e147] [cursor=pointer]':
+                  - /url: https://www.facebook.com/1009980862370210?ref=embed_page
+                  - generic [ref=f22e148]:
+                    - img [ref=f22e150]
+                    - generic [ref=f22e154]:
+                      - generic [ref=f22e156]: Ooapas Morelia
+                      - generic [ref=f22e157]: 3d
+                  - generic [ref=f22e160]: "Atender cada reporte ciudadano es una prioridad. Por ello, continuamos realizando trabajos de rehabilitación en distintos puntos de Morelia, restituyendo las vialidades intervenidas tras reparaciones de agua potable y drenaje sanitario. Gracias al compromiso de nuestras y nuestros trabajadores, seguimos fortaleciendo la atención a la ciudadanía y mejorando los servicios para las familias morelianas. #OOAPASMásPorTi #UnPasoAdelante"
+                  - generic [ref=f22e173]: "+3"
+                  - generic [ref=f22e174]:
+                    - generic [ref=f22e175]:
+                      - img [ref=f22e176]
+                      - generic [ref=f22e178]: "82"
+                    - generic [ref=f22e179]:
+                      - img [ref=f22e180]
+                      - generic [ref=f22e182]: "20"
+                    - generic [ref=f22e183]:
+                      - img [ref=f22e184]
+                      - generic [ref=f22e186]: "9"
+                - link [ref=f22e187] [cursor=pointer]:
+                  - /url: https://www.facebook.com/1009980862370210?ref=embed_page
+                  - generic [ref=f22e188]:
+                    - img [ref=f22e190]
+                    - generic [ref=f22e194]:
+                      - generic [ref=f22e196]: Ooapas Morelia
+                      - generic [ref=f22e197]: 4d
+                  - generic [ref=f22e200]: "Morelia avanza en la modernización de su infraestructura hidráulica con la reingeniería de la PTAR Itzícuaros, un proyecto que incorporará un proceso terciario de desmineralización para mejorar la calidad del agua tratada y fortalecer su reúso. La obra permitirá tratar hasta 220 litros por segundo y obtener agua con mejores características para distintos aprovechamientos, impulsando un uso más eficiente y sostenible del recurso hídrico. Además, permitirá ampliar las posibilidades de aprovechamiento del agua tratada, liberando agua de primer uso proveniente de un manantial estratégico para la ciudad, contribuyendo a la preservación de este importante recurso natural y asegurando que el agua de mejor calidad pueda destinarse a usos prioritarios. Con acciones como esta, el OOAPAS fortalece la infraestructura hidráulica de Morelia, impulsa soluciones innovadoras para el aprovechamiento responsable del agua y avanza en la construcción de una ciudad con mayor seguridad hídrica y sustentabilidad. #OOAPASMásPorTi #UnPasoAdelante"
+                  - generic [ref=f22e213]: "+4"
+                  - generic [ref=f22e214]:
+                    - generic [ref=f22e215]:
+                      - img [ref=f22e216]
+                      - generic [ref=f22e218]: "50"
+                    - generic [ref=f22e219]:
+                      - img [ref=f22e220]
+                      - generic [ref=f22e222]: "2"
+                    - generic [ref=f22e223]:
+                      - img [ref=f22e224]
+                      - generic [ref=f22e226]: "5"
+                - link "See more on Facebook" [ref=f22e228] [cursor=pointer]:
+                  - /url: https://www.facebook.com/1009980862370210?ref=embed_page
+                  - generic [ref=f22e231]: See more on Facebook
+        - generic [ref=e367]:
+          - generic [ref=e369]: Oficinas Centrales
+          - list [ref=e372]:
+            - listitem [ref=e373]:
+              - 'link "Domicilio: Av. Acueducto 1896, Col. Chapultepec Norte. Morelia, Michoacán 58260." [ref=e374] [cursor=pointer]':
+                - /url: https://maps.app.goo.gl/oZqxWtej8PnZfRCz8
+                - generic [ref=e376]: 
+                - generic [ref=e377]:
+                  - text: "Domicilio:"
+                  - text: Av. Acueducto 1896,
+                  - text: Col. Chapultepec Norte.
+                  - text: Morelia, Michoacán 58260.
+            - listitem [ref=e378]:
+              - link "443 113 2200" [ref=e379] [cursor=pointer]:
+                - /url: tel:4431132200
+                - generic [ref=e381]: 
+                - generic [ref=e382]: 443 113 2200
+            - listitem [ref=e383]:
+              - link "www.ooapas.gob.mx" [ref=e384] [cursor=pointer]:
+                - /url: https://www.ooapas.gob.mx/
+                - generic [ref=e386]: 
+                - generic [ref=e387]: www.ooapas.gob.mx
+    - contentinfo [ref=e388]:
+      - generic [ref=e394]:
+        - generic [ref=e396]: © 2019 OOAPAS | Derechos Reservados.
+        - list [ref=e399]:
+          - listitem [ref=e400]:
+            - link "Facebook" [ref=e401] [cursor=pointer]:
+              - /url: https://www.facebook.com/MoreliaOoapas/
+              - generic [ref=e402]: Facebook
+              - generic [ref=e403]: 
+          - listitem [ref=e404]:
+            - link "Twitter" [ref=e405] [cursor=pointer]:
+              - /url: https://twitter.com/ooapasmorelia
+              - generic [ref=e406]: Twitter
+              - generic [ref=e407]: 
+          - listitem [ref=e408]:
+            - link "Whatsapp" [ref=e409] [cursor=pointer]:
+              - /url: http://wa.me/5214433684805
+              - generic [ref=e410]: Whatsapp
+              - generic [ref=e411]: 
+  - generic [ref=e412]: desktop

@@ -1,0 +1,226 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "CONDUSEF" [ref=e5] [cursor=pointer]:
+        - /url: "http://www.gob.mx/condusef/ "
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Inicio" [ref=e9] [cursor=pointer]:
+            - /url: "#index"
+        - listitem [ref=e10]:
+          - link "Soy una Entidad Financiera" [ref=e11] [cursor=pointer]:
+            - /url: https://pur.condusef.gob.mx
+        - listitem [ref=e12]:
+          - button "Contenido" [ref=e13] [cursor=pointer]: Contenido
+        - listitem [ref=e15]:
+          - link "Contacto" [ref=e16] [cursor=pointer]:
+            - /url: http://www.condusef.gob.mx/?p=contacto
+  - generic [ref=e17]:
+    - list [ref=e18]:
+      - listitem [ref=e19]:
+        - link "" [ref=e20] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e21]: 
+      - listitem [ref=e22]:
+        - text: 
+        - link "Comisión Nacional para Protección y Defensa de los Usuarios de Servicios Financieros" [ref=e23] [cursor=pointer]:
+          - /url: https://www.gob.mx/condusef
+      - listitem [ref=e24]: SIPRES
+    - img [ref=e25]
+    - heading "Sistema de Registro de Prestadores de Servicios Financieros" [level=3] [ref=e27]
+    - generic [ref=e28]:
+      - heading "Bienvenido, conoce los datos de las Instituciones Financieras." [level=3] [ref=e29]
+      - separator [ref=e30]
+      - generic [ref=e31]:
+        - text: Una alternativa a tu alcance para saber quiénes conforman el mercado financiero.
+        - img [ref=e32]
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - heading "Buscar Instituciones" [level=4] [ref=e36]:
+              - link "Buscar Instituciones" [expanded] [ref=e37] [cursor=pointer]:
+                - /url: "#panelbus-01"
+            - button [ref=e38] [cursor=pointer]
+          - text:                                                                             
+        - generic [ref=e40]:
+          - heading "Buscar Funcionarios" [level=4] [ref=e41]:
+            - link "Buscar Funcionarios" [expanded] [ref=e42] [cursor=pointer]:
+              - /url: "#panelbus-02"
+          - button [ref=e43] [cursor=pointer]
+        - generic [ref=e45]:
+          - heading "En trámite de Inscripción" [level=4] [ref=e46]:
+            - link "En trámite de Inscripción" [expanded] [ref=e47] [cursor=pointer]:
+              - /url: "#panelbus-03"
+          - button [ref=e48] [cursor=pointer]
+      - generic [ref=e49]:
+        - button "Close" [ref=e50] [cursor=pointer]: ×
+        - strong [ref=e51]: ¡ADVERTENCIA!
+        - text: Todos los trámites ante la CONDUSEF relacionados al SIPRES son gratuitos.
+      - button "Soy una Entidad Financiera " [ref=e52] [cursor=pointer]:
+        - text: Soy una Entidad Financiera
+        - generic [ref=e53]: 
+    - generic [ref=e54]:
+      - heading "¿Qué es el SIPRES?" [level=3] [ref=e55]
+      - separator [ref=e56]
+      - generic [ref=e57]:
+        - text: Es un registro de carácter público creado por ministerio de ley (Ley de Protección y Defensa al Usuario de Servicios Financieros), cuyo objetivo principal consiste en proporcionar información corporativa y general de las instituciones financieras que son competencia de la CONDUSEF.
+        - text: Permite conocer al público en general información relativa a las instituciones financieras tales como su domicilio, estatus (situación jurídico administrativa), capital mínimo fijo, etc., datos todos que representan la información mínima que se requiere conocer de cada institución financiera para el efecto de su contratación.
+        - text: "Si la Institución que buscas no se encuentra en este Registro se debe a:"
+      - list [ref=e58]:
+        - listitem [ref=e59]: No se trata de una Institución Financiera o,
+        - listitem [ref=e60]: está incumpliendo con la normatividad aplicable.
+      - paragraph [ref=e61]: ¿Cuáles son los objetivos del Registro?
+      - list [ref=e62]:
+        - listitem [ref=e63]: Ubicar las instituciones financieras que podrán ser llamadas a un procedimiento conciliatorio dentro de la CONDUSEF derivado de una reclamación formal presentada por algún usuario de servicios financieros.
+        - listitem [ref=e64]: Contar con mejores estrategias de orientación y asesoría para los usuarios.
+        - listitem [ref=e65]: Contribuir al fomento de la cultura financiera y el sano desarrollo del Sistema Financiero Nacional.
+    - generic [ref=e66]:
+      - heading "Marco Legal" [level=3] [ref=e67]
+      - separator [ref=e68]
+      - list [ref=e69]:
+        - listitem [ref=e70]:
+          - text: Ley de Protección y Defensa al Usuario de Servicios Financieros.
+          - generic [ref=e71]:
+            - strong [ref=e72]: Artículo 2o.-
+            - text: "Para los efectos de esta Ley, se entiende por:"
+            - text: "- - -"
+            - paragraph [ref=e73]:
+              - strong [ref=e74]: IV.
+              - text: Institución Financiera, en singular o plural, a las sociedades controladoras, instituciones de crédito, sociedades financieras de objeto múltiple, sociedades de información crediticia, casas de bolsa, fondos de inversión, almacenes generales de depósito, uniones de crédito, casas de cambio, instituciones de seguros, sociedades mutualistas de seguros, instituciones de fianzas, administradoras de fondos para el retiro, PENSIONISSSTE, empresas operadoras de la base de datos nacional del sistema de ahorro para el retiro, Instituto del Fondo Nacional para el Consumo de los Trabajadores, sociedades cooperativas de ahorro y préstamo, sociedades financieras populares, sociedades financieras comunitarias, las instituciones de tecnología financiera, y cualquiera otra sociedad que requiera de la autorización de la Secretaría de Hacienda y Crédito Público o de cualesquiera de las Comisiones Nacionales para constituirse y funcionar como tales y ofrecer un producto o servicio financiero a los Usuarios.
+            - paragraph [ref=e75]:
+              - strong [ref=e76]: Artículo 8o.-
+              - text: La Comisión Nacional, con la información que le proporcionen las autoridades competentes y las Instituciones Financieras, establecerá y mantendrá actualizado un Registro de Prestadores de Servicios Financieros, en los términos y condiciones que señala esta Ley. Lo anterior, sin perjuicio de los demás registros que corresponda llevar a otras autoridades.
+            - paragraph
+            - paragraph [ref=e77]:
+              - strong [ref=e78]: Artículo 46.-
+              - text: La Comisión Nacional tendrá a su cargo el Registro de Prestadores de Servicios Financieros, cuya organización y funcionamiento se sujetará a las disposiciones que al efecto expida la propia Comisión Nacional.
+        - listitem [ref=e79]:
+          - link "Disposición en Materia de Registros ante la CONDUSEF." [ref=e80] [cursor=pointer]:
+            - /url: https://webapps.condusef.gob.mx/SistRegistro/pdf/DISPOSICIONES_SIPRES.pdf
+    - generic [ref=e81]:
+      - heading "Preguntas Frecuentes" [level=3] [ref=e82]
+      - separator [ref=e83]
+      - generic [ref=e84]:
+        - generic [ref=e86]:
+          - heading "1.- ¿Qué es el Registro de Prestadores de Servicios Financieros?" [level=4] [ref=e87]:
+            - link "1.- ¿Qué es el Registro de Prestadores de Servicios Financieros?" [expanded] [ref=e88] [cursor=pointer]:
+              - /url: "#panel-01"
+          - button [ref=e89] [cursor=pointer]
+        - generic [ref=e91]:
+          - heading "2.- ¿Para qué sirve?" [level=4] [ref=e92]:
+            - link "2.- ¿Para qué sirve?" [expanded] [ref=e93] [cursor=pointer]:
+              - /url: "#panel-02"
+          - button [ref=e94] [cursor=pointer]
+        - generic [ref=e96]:
+          - heading "3.- ¿Cuáles son los objetivos del Registro?" [level=4] [ref=e97]:
+            - link "3.- ¿Cuáles son los objetivos del Registro?" [expanded] [ref=e98] [cursor=pointer]:
+              - /url: "#panel-03"
+          - button [ref=e99] [cursor=pointer]
+        - generic [ref=e101]:
+          - heading "4.- ¿Qué información contiene el Registro?" [level=4] [ref=e102]:
+            - link "4.- ¿Qué información contiene el Registro?" [expanded] [ref=e103] [cursor=pointer]:
+              - /url: "#panel-04"
+          - button [ref=e104] [cursor=pointer]
+        - generic [ref=e106]:
+          - heading "5.- ¿Cuáles son las Instituciones Financieras incluidas en el Registro?" [level=4] [ref=e107]:
+            - link "5.- ¿Cuáles son las Instituciones Financieras incluidas en el Registro?" [expanded] [ref=e108] [cursor=pointer]:
+              - /url: "#panel-05"
+          - button [ref=e109] [cursor=pointer]
+        - generic [ref=e111]:
+          - heading "6.- ¿Cómo se actualiza el Registro de Prestadores de Servicios Financieros?" [level=4] [ref=e112]:
+            - link "6.- ¿Cómo se actualiza el Registro de Prestadores de Servicios Financieros?" [expanded] [ref=e113] [cursor=pointer]:
+              - /url: "#panel-06"
+          - button [ref=e114] [cursor=pointer]
+        - generic [ref=e116]:
+          - heading "7.- Si soy una Institución Financiera ¿Cómo actualizo la información en el SIPRES?" [level=4] [ref=e117]:
+            - link "7.- Si soy una Institución Financiera ¿Cómo actualizo la información en el SIPRES?" [expanded] [ref=e118] [cursor=pointer]:
+              - /url: "#panel-07"
+          - button [ref=e119] [cursor=pointer]
+        - generic [ref=e121]:
+          - heading "8.- ¿Quién puede consultar el Registro?" [level=4] [ref=e122]:
+            - link "8.- ¿Quién puede consultar el Registro?" [expanded] [ref=e123] [cursor=pointer]:
+              - /url: "#panel-08"
+          - button [ref=e124] [cursor=pointer]
+        - generic [ref=e126]:
+          - heading "9.- ¿Qué debo entender si la Institución que busco no se encuentra en este Registro?" [level=4] [ref=e127]:
+            - link "9.- ¿Qué debo entender si la Institución que busco no se encuentra en este Registro?" [expanded] [ref=e128] [cursor=pointer]:
+              - /url: "#panel-09"
+          - button [ref=e129] [cursor=pointer]
+    - generic [ref=e130]:
+      - heading "Glosario" [level=3] [ref=e131]
+      - separator [ref=e132]
+      - strong [ref=e133]: "Autoridades:"
+      - text: A la Secretaría de Hacienda y Crédito Público, la CNBV, la Comisión Nacional de Seguros y Fianzas, y la Comisión Nacional del Sistema de Ahorro para el Retiro;
+      - strong [ref=e134]: "CASFIM:"
+      - text: Al Catálogo del Sistema Financiero Mexicano, que tiene a su cargo la Secretaría de Hacienda y Crédito Público;
+      - strong [ref=e135]: "Clave Institucional:"
+      - text: Al medio de identificación electrónica y contraseña proporcionada a la Institución Financiera por la Comisión Nacional, que sirve de acceso al Portal del SIPRES;
+      - strong [ref=e136]: "Clave de Registro:"
+      - text: Al número de identificación asignado a la Institución Financiera por el CASFIM o la Comisión Nacional;
+      - strong [ref=e137]: "Comisión Nacional:"
+      - text: A la Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros;
+      - strong [ref=e138]: "CNBV:"
+      - text: A la Comisión Nacional Bancaria y de Valores;
+      - strong [ref=e139]: "Unidad de Atención a Usuarios:"
+      - text: A la unidad administrativa desconcentrada de la Comisión Nacional, ya sea regional, estatal o local;
+      - strong [ref=e140]: "Días hábiles:"
+      - text: A los establecidos en el acuerdo que cada año publica la Comisión Nacional, en el Diario Oficial de la Federación, donde se señalan los días en que cerrará sus puertas y suspenderá operaciones;
+      - strong [ref=e141]: "Dictamen Técnico:"
+      - text: Al emitido por la CNBV a las SOFOM E.N.R., en materia de prevención, detección y reporte de actos, omisiones u operaciones que pudiesen vincularse con terrorismo, terrorismo internacional u operaciones con recursos de procedencia ilícita;
+      - strong [ref=e142]: "Estatus:"
+      - text: A la situación jurídico administrativa que refleja la condición actual de la Institución Financiera;
+      - strong [ref=e143]: "Folio:"
+      - text: Al número electrónico que identifica una solicitud de opinión de estatutos para constituir una SOFOM, o para renovar su registro;
+      - strong [ref=e144]: "Institución Financiera:"
+      - text: A las instituciones mencionadas en el artículo 2, fracción IV, de la Ley;
+      - strong [ref=e145]: "Ley:"
+      - text: A la Ley de Protección y Defensa al Usuario de Servicios Financieros;
+      - strong [ref=e146]: "LGOAAC:"
+      - text: A la Ley General de Organizaciones y Actividades Auxiliares del Crédito;
+      - strong [ref=e147]: "Manual:"
+      - text: Al Manual para actualizar, completar y validar información en el SIPRES;
+      - strong [ref=e148]: "Opinión Desfavorable:"
+      - text: A la respuesta electrónica que emite la Comisión Nacional cuando un proyecto de estatutos sociales para constituir una SOFOM debe ser corregido o modificado;
+      - strong [ref=e149]: "Opinión Favorable:"
+      - text: A la respuesta electrónica que emite la Comisión Nacional cuando un proyecto de estatutos sociales para constituir una SOFOM ha sido autorizado;
+      - strong [ref=e150]: "Período de Validación:"
+      - text: A los primeros diez días hábiles de los meses de enero, abril, julio y octubre de cada año;
+      - strong [ref=e151]: "Portal de Registro:"
+      - text: A la herramienta electrónica dentro del portal del SIPRES que la Comisión Nacional pone a disposición de las SOFOM para su registro;
+      - strong [ref=e152]: "Portal del SIPRES:"
+      - text: A la herramienta informática que la Comisión Nacional, a través de su página electrónica, pone a disposición de las Instituciones Financieras, para que capturen su información y la mantengan actualizada;
+      - strong [ref=e153]: "Promovente:"
+      - text: A la persona interesada en constituir una SOFOM;
+      - strong [ref=e154]: "SIPRES:"
+      - text: Al Registro de Prestadores de Servicios Financieros a cargo de la Comisión Nacional;
+      - strong [ref=e155]: "SOFOM:"
+      - text: A la Sociedad Financiera de Objeto Múltiple, la cual podrá ser entidad regulada o entidad no regulada, de conformidad con lo establecido en la LGOAAC;
+      - strong [ref=e156]: "Titular de la Clave Institucional:"
+      - text: Al representante legal de la Institución Financiera a quien le fue otorgada la Clave Institucional, y
+      - strong [ref=e157]: "Usuario:"
+      - text: En singular o plural a la persona que contrata, utiliza o por cualquier otra causa tenga algún derecho frente a la Institución Financiera como resultado de la operación o servicio prestado.
+    - generic [ref=e158]:
+      - heading "Unes" [level=3] [ref=e159]
+      - separator [ref=e160]
+      - strong [ref=e161]: Conoce las Unidades Especializadas de Atención a Usuarios (UNES) de las Instituciones Financieras
+      - text: La Ley de Protección y Defensa al Usuario de Servicios Financieros, establece que cada Institución Financiera debe contar con una Unidad Especializada de Atención a Usuarios para atender quejas e inconformidades. Por ello, si necesitas orientación o tienes algún problema con tu Institución, acércate a la UNE y contarás con apoyo especializado.
+      - text: Para conocer la UNE de tu Institución da clic
+      - link "aquí" [ref=e162] [cursor=pointer]:
+        - /url: http://eduweb.condusef.gob.mx/Reune/ditue.aspx
+      - text: .
+    - generic [ref=e163]:
+      - heading "¿Tienes algún problema con una Institución Financiera?" [level=3] [ref=e164]
+      - separator [ref=e165]
+      - text: "En CONDUSEF, trabajamos para proteger y defender tus derechos como usuario de servicios y productos financieros. Por ello:"
+      - list [ref=e166]:
+        - listitem [ref=e167]: Atendemos Consultas y Reclamaciones.
+        - listitem [ref=e168]: Analizamos y verificamos la información generada por las instituciones financieras del país.
+      - text: Si necesitas ayuda, da clic
+      - link "aquí" [ref=e169] [cursor=pointer]:
+        - /url: https://phpapps.condusef.gob.mx/condusefenlinea/TATJ.php
+      - text: .
+  - generic [ref=e171]:
+    - link "Contáctanos" [ref=e172] [cursor=pointer]:
+      - /url: html/contacto.htm
+    - text: "| Visitas 53208441"
+    - paragraph [ref=e173]: "Fuente: Dirección General de Desarrollo Financiero, Estadístico y Operativo con información de las propias Instituciones Financieras."

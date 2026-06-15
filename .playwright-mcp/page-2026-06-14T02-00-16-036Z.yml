@@ -1,0 +1,118 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la rabona" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwjfgKKR0YWVAxX1mmoFHRlNG74QPQgK
+          - 'img "Copa Mundial 2026: El arte de la rabona" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: padron donatarias autorizadas SAT 2026 filetype:xlsx padron donatarias autorizadas SAT 2026 filetype:xlsx
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dpadron%2Bdonatarias%2Bautorizadas%2BSAT%2B2026%2Bfiletype:xlsx%26sei%3DLwsuatKBAtW7mtkPzr2jkA0&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=padron+donatarias+autorizadas+SAT+2026+filetype:xlsx&sca_esv=e7d38744cd64d9bd&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg0IA2nDWC3A9mnYKHxHonOwOArVa2mNEvEuOSTSa1dtwqTXiOEVAUkLmHqJS4NtOQCeNVgAUlQx60gHh-KFJ6DWIQOsuhu3QADbzPGw1vfkIC-CPFUYVgj3_2qhR_DzDLlOZ93cHQmeJZ890bJQ2AlA9PWOZQ&aep=1&ntc=1&sa=X&ved=2ahUKEwjfgKKR0YWVAxX1mmoFHRlNG74Q2J8OegQIDxAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Imágenes" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=e7d38744cd64d9bd&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg0IA2nDWC3A9mnYKHxHonOwOArVa2mNEvEuOSTSa1dtwqTXiOEVAUkLmHqJS4NtOQCeNVgAUlQx60gHh-KFJ6DWIQOsuhu3QADbzPGw1vfkIC-CPFUYVgj3_2qhR_DzDLlOZ93cHQmeJZ890bJQ2AlA9PWOZQ&q=padron+donatarias+autorizadas+SAT+2026+filetype:xlsx&sa=X&ved=2ahUKEwjfgKKR0YWVAxX1mmoFHRlNG74QtKgLegQIFRAB
+              - generic [ref=e84]: Imágenes
+          - listitem [ref=e85]:
+            - link "Videos" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=e7d38744cd64d9bd&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg0IA2nDWC3A9mnYKHxHonOwOArVa2mNEvEuOSTSa1dtwqTXiOEVAUkLmHqJS4NtOQCeNVgAUlQx60gHh-KFJ6DWIQOsuhu3QADbzPGw1vfkIC-CPFUYVgj3_2qhR_DzDLlOZ93cHQmeJZ890bJQ2AlA9PWOZQ&q=padron+donatarias+autorizadas+SAT+2026+filetype:xlsx&sa=X&ved=2ahUKEwjfgKKR0YWVAxX1mmoFHRlNG74QtKgLegQIEhAB
+              - generic [ref=e88]: Videos
+          - listitem [ref=e89]:
+            - link "Shopping" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=e7d38744cd64d9bd&udm=28&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg0IA2nDWC3A9mnYKHxHonOwOArVa2mNEvEuOSTSa1dtwqTXiOEVAUkLmHqJS4NtOQCeNVgAUlQx60gHh-KFJ6DWIQOsuhu3QADbzPGw1vfkIC-CPFUYVgj3_2qhR_DzDLlOZ93cHQmeJZ890bJQ2AlA9PWOZQ&q=padron+donatarias+autorizadas+SAT+2026+filetype:xlsx&ved=1t:220175&ictx=111
+              - generic [ref=e92]: Shopping
+          - listitem [ref=e93]:
+            - link "Noticias" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=e7d38744cd64d9bd&q=padron+donatarias+autorizadas+SAT+2026+filetype:xlsx&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg0IA2nDWC3A9mnYKHxHonOwOArVa2mNEvEuOSTSa1dtwqTXiOEVAUkLmHqJS4NtOQCeNVgAUlQx60gHh-KFJ6DWIQOsuhu3QADbzPGw1vfkIC-CPFUYVgj3_2qhR_DzDLlOZ93cHQmeJZ890bJQ2AlA9PWOZQ&sa=X&ved=2ahUKEwjfgKKR0YWVAxX1mmoFHRlNG74Q0pQJegQIExAB
+              - generic [ref=e96]: Noticias
+          - listitem [ref=e97]:
+            - link "Videos cortos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=e7d38744cd64d9bd&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg0IA2nDWC3A9mnYKHxHonOwOArVa2mNEvEuOSTSa1dtwqTXiOEVAUkLmHqJS4NtOQCeNVgAUlQx60gHh-KFJ6DWIQOsuhu3QADbzPGw1vfkIC-CPFUYVgj3_2qhR_DzDLlOZ93cHQmeJZ890bJQ2AlA9PWOZQ&q=padron+donatarias+autorizadas+SAT+2026+filetype:xlsx&sa=X&ved=2ahUKEwjfgKKR0YWVAxX1mmoFHRlNG74Qs6gLegQIERAB
+              - generic [ref=e100]: Videos cortos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - main [ref=e123]:
+      - generic [ref=e125]:
+        - generic [ref=e127]:
+          - heading "No se han encontrado resultados para tu búsqueda (padron donatarias autorizadas SAT 2026 filetype:xlsx)." [level=3] [ref=e128]:
+            - text: No se han encontrado resultados para tu búsqueda (
+            - emphasis [ref=e130]: padron donatarias autorizadas SAT 2026 filetype:xlsx
+            - text: ).
+          - paragraph [ref=e131]: "Sugerencias:"
+          - list [ref=e132]:
+            - listitem [ref=e133]: Asegúrate de que todas las palabras estén escritas correctamente.
+            - listitem [ref=e134]: Prueba diferentes palabras clave.
+            - listitem [ref=e135]: Prueba palabras clave más generales.
+            - listitem [ref=e136]: Prueba menos palabras clave.
+          - img "Imagen de un yeti pescando en el hielo" [ref=e140]:
+            - img [ref=e144]
+        - navigation
+      - navigation
+    - contentinfo [ref=e227]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e228]
+      - generic [ref=e232]:
+        - generic [ref=e234]:
+          - text: México
+          - generic [ref=e236]:
+            - button "Cuauhtémoc, Ciudad de México, CDMX - A través de tu dirección IP" [ref=e238] [cursor=pointer]:
+              - generic [ref=e239]: Cuauhtémoc, Ciudad de México, CDMX
+              - generic [ref=e241]:
+                - text: "-"
+                - generic [ref=e242]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e244] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e247]:
+          - link "Ayuda" [ref=e248] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e249] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e250] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e251] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

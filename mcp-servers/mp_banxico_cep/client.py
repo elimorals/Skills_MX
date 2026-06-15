@@ -2,7 +2,14 @@
 
 ⚠ Banxico NO expone API REST oficial. La consulta CEP está en
 https://www.banxico.org.mx/cep/ y requiere POST de form-data + parseo HTML.
-Eventualmente también CAPTCHA en algunos endpoints.
+
+Validado Playwright MCP 2026-06-13: selectores reales del form:
+- input#input_fecha (10 chars, formato DD/MM/YYYY)
+- input#input_criterio (40 chars, "Clave de rastreo SPEI")
+- input#input_cuenta (18 chars, "Cuenta beneficiaria" — CLABE)
+- input#input_monto (15 chars, "Monto del pago")
+- input#input_captcha (sin maxLength — CAPTCHA visual)
+⚠ TIENE CAPTCHA — path real requiere humano-en-loop o servicio externo.
 
 Este cliente implementa:
 1. **Modo mock determinístico** (default): genera CEPs plausibles cuya respuesta

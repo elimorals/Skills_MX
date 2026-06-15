@@ -1,0 +1,271 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]
+    - generic [ref=e4]:
+      - text: COMPROBANTE ELECTRÓNICO DE PAGO (CEP)CONSULTA
+      - link "¿Ya tienes tu CEP y quieres validarlo?" [ref=e5] [cursor=pointer]:
+        - /url: https://www.banxico.org.mx/validador-cep-spei/
+        - text: ¿Ya tienes tu CEP y quieres validarlo?
+        - generic [ref=e6]: 
+    - main [ref=e7]:
+      - complementary [ref=e8]:
+        - paragraph [ref=e9]: Aviso de privacidad
+        - paragraph [ref=e10]:
+          - text: Antes de ingresar sus datos le sugerimos consultar el aviso sobre el uso, incorporación, trato y protección que el Banco de México da a los datos personales de los particulares. Más información en
+          - link "https://transparencia.banxico.org.mx/documentos/%7BCC1169A2-D511-47D6-FA05-FA56CF0156A4%7D.pdf" [ref=e11] [cursor=pointer]:
+            - /url: https://transparencia.banxico.org.mx/documentos/%7BCC1169A2-D511-47D6-FA05-FA56CF0156A4%7D.pdf
+      - text: Aquí usted puede obtener el CEP de un pago realizado a través del SPEI®.
+      - search [ref=e12]:
+        - generic [ref=e14]:
+          - generic [ref=e15]: "Fecha en la que realizó el pago:"
+          - textbox "Fecha en la que realizó el pago:" [ref=e16]: 13-06-2026
+        - generic: El horario de consulta es de 09:30-23:00 hrs de Lunes a Domingo
+        - generic [ref=e18]:
+          - generic [ref=e19]:
+            - generic [ref=e20]: Criterio de búsqueda
+            - combobox "Criterio de búsqueda" [ref=e22]:
+              - option "Clave de rastreo" [selected]
+              - option "Número de referencia"
+          - generic [ref=e23]:
+            - generic [ref=e24]: Clave de rastreo
+            - textbox "Clave de rastreo" [ref=e25]
+          - generic [ref=e26]:
+            - generic [ref=e27]: Institución emisora del pago
+            - combobox "Institución emisora del pago" [ref=e29]:
+              - option "ACTINVER" [selected]
+              - option "AFIRME"
+              - option "albo"
+              - option "ARCUS FI"
+              - option "ASP INTEGRA OPC"
+              - option "AZTECA"
+              - option "BaBien"
+              - option "BAJIO"
+              - option "BANAMEX"
+              - option "BANCO COVALTO"
+              - option "BANCOMEXT"
+              - option "BANCOPPEL"
+              - option "BANCO S3"
+              - option "BANCREA"
+              - option "BANJERCITO"
+              - option "BANKAOOL"
+              - option "BANK OF AMERICA"
+              - option "BANK OF CHINA"
+              - option "BANOBRAS"
+              - option "BANORTE"
+              - option "BANREGIO"
+              - option "BANSI"
+              - option "BANXICO"
+              - option "BARCLAYS"
+              - option "BBASE"
+              - option "BBVA MEXICO"
+              - option "BMONEX"
+              - option "CAJA POP MEXICA"
+              - option "CAJA TELEFONIST"
+              - option "CASHI CUENTA"
+              - option "CI BOLSA"
+              - option "CITI MEXICO"
+              - option "Clip"
+              - option "CLS"
+              - option "CoDi Valida"
+              - option "COMPARTAMOS"
+              - option "CONSUBANCO"
+              - option "COOPDESARROLLO"
+              - option "CREDICAPITAL"
+              - option "CREDICLUB"
+              - option "CRISTOBAL COLON"
+              - option "Cuenca"
+              - option "Dep y Pag Dig"
+              - option "DONDE"
+              - option "FINAMEX"
+              - option "FINCOMUN"
+              - option "FINCO PAY"
+              - option "FINTOC"
+              - option "FONDEADORA"
+              - option "FONDO (FIRA)"
+              - option "GBM"
+              - option "HEY BANCO"
+              - option "HIPOTECARIA FED"
+              - option "HSBC"
+              - option "ICBC"
+              - option "INBURSA"
+              - option "INDEVAL"
+              - option "INMOBILIARIO"
+              - option "INTERCAM BANCO"
+              - option "INVEX"
+              - option "JP MORGAN"
+              - option "KAPITAL"
+              - option "KLAR"
+              - option "KUSPIT"
+              - option "LIBERTAD"
+              - option "MASARI"
+              - option "Mercado Pago W"
+              - option "MexPago"
+              - option "MIFEL"
+              - option "MIZUHO BANK"
+              - option "MONEXCB"
+              - option "MUFG"
+              - option "MULTIVA BANCO"
+              - option "NAFIN"
+              - option "NU MEXICO"
+              - option "NVIO"
+              - option "PAGATODO"
+              - option "Peibo"
+              - option "PPBALANCEMX"
+              - option "PROFUTURO"
+              - option "SABADELL"
+              - option "SANTANDER"
+              - option "SCOTIABANK"
+              - option "SHINHAN"
+              - option "SPIN BY OXXO"
+              - option "STP"
+              - option "TESORED"
+              - option "TRANSFER"
+              - option "TRANSFER DIRECT"
+              - option "UALA"
+              - option "UNAGRA"
+              - option "VALMEX"
+              - option "VALUE"
+              - option "VE POR MAS"
+              - option "VOLKSWAGEN"
+          - generic [ref=e30]:
+            - generic [ref=e31]: Institución receptora del pago
+            - combobox "Institución receptora del pago" [ref=e33]:
+              - option "ACTINVER" [selected]
+              - option "AFIRME"
+              - option "albo"
+              - option "ARCUS FI"
+              - option "ASP INTEGRA OPC"
+              - option "AZTECA"
+              - option "BaBien"
+              - option "BAJIO"
+              - option "BANAMEX"
+              - option "BANCO COVALTO"
+              - option "BANCOMEXT"
+              - option "BANCOPPEL"
+              - option "BANCO S3"
+              - option "BANCREA"
+              - option "BANJERCITO"
+              - option "BANKAOOL"
+              - option "BANK OF AMERICA"
+              - option "BANK OF CHINA"
+              - option "BANOBRAS"
+              - option "BANORTE"
+              - option "BANREGIO"
+              - option "BANSI"
+              - option "BANXICO"
+              - option "BARCLAYS"
+              - option "BBASE"
+              - option "BBVA MEXICO"
+              - option "BMONEX"
+              - option "CAJA POP MEXICA"
+              - option "CAJA TELEFONIST"
+              - option "CASHI CUENTA"
+              - option "CI BOLSA"
+              - option "CITI MEXICO"
+              - option "Clip"
+              - option "CLS"
+              - option "CoDi Valida"
+              - option "COMPARTAMOS"
+              - option "CONSUBANCO"
+              - option "COOPDESARROLLO"
+              - option "CREDICAPITAL"
+              - option "CREDICLUB"
+              - option "CRISTOBAL COLON"
+              - option "Cuenca"
+              - option "Dep y Pag Dig"
+              - option "DONDE"
+              - option "FINAMEX"
+              - option "FINCOMUN"
+              - option "FINCO PAY"
+              - option "FINTOC"
+              - option "FONDEADORA"
+              - option "FONDO (FIRA)"
+              - option "GBM"
+              - option "HEY BANCO"
+              - option "HIPOTECARIA FED"
+              - option "HSBC"
+              - option "ICBC"
+              - option "INBURSA"
+              - option "INDEVAL"
+              - option "INMOBILIARIO"
+              - option "INTERCAM BANCO"
+              - option "INVEX"
+              - option "JP MORGAN"
+              - option "KAPITAL"
+              - option "KLAR"
+              - option "KUSPIT"
+              - option "LIBERTAD"
+              - option "MASARI"
+              - option "Mercado Pago W"
+              - option "MexPago"
+              - option "MIFEL"
+              - option "MIZUHO BANK"
+              - option "MONEXCB"
+              - option "MUFG"
+              - option "MULTIVA BANCO"
+              - option "NAFIN"
+              - option "NU MEXICO"
+              - option "NVIO"
+              - option "PAGATODO"
+              - option "Peibo"
+              - option "PPBALANCEMX"
+              - option "PROFUTURO"
+              - option "SABADELL"
+              - option "SANTANDER"
+              - option "SCOTIABANK"
+              - option "SHINHAN"
+              - option "SPIN BY OXXO"
+              - option "STP"
+              - option "TESORED"
+              - option "TRANSFER"
+              - option "TRANSFER DIRECT"
+              - option "UALA"
+              - option "UNAGRA"
+              - option "VALMEX"
+              - option "VALUE"
+              - option "VE POR MAS"
+              - option "VOLKSWAGEN"
+          - generic [ref=e34]:
+            - generic [ref=e35]: Cuenta Beneficiaria *
+            - textbox "Cuenta Beneficiaria * (CLABE, tarjeta de débito o número de celular)" [ref=e36]:
+              - /placeholder: Cuenta beneficiaria
+          - generic [ref=e38]: (CLABE, tarjeta de débito o número de celular)
+          - generic [ref=e39]:
+            - generic [ref=e40]: Pago a Banco *
+            - checkbox "Pago a Banco *" [ref=e41]
+          - generic [ref=e42]:
+            - generic [ref=e43]: Monto del pago *
+            - textbox "Monto del pago *" [ref=e44]:
+              - /placeholder: Monto del pago
+          - generic [ref=e45]:
+            - generic "Limpiar formulario" [ref=e46] [cursor=pointer]:
+              - generic [ref=e47]: 
+            - generic [ref=e48]:
+              - generic [ref=e49]: 
+              - text: Descargar CEP
+            - link "¿Deseas descargar más de un CEP?" [ref=e50] [cursor=pointer]:
+              - /url: https://www.banxico.org.mx/cep-scl/
+            - generic [ref=e51]:
+              - text: "* Si no cuentas con la cuenta beneficiaria y el monto del pago, puedes consultar el estado del pago."
+              - generic [ref=e52]:
+                - generic [ref=e53]: 
+                - text: Consultar Pago
+      - text: 
+      - contentinfo [ref=e54]:
+        - heading "Notas" [level=3] [ref=e55]
+        - table [ref=e56]:
+          - rowgroup [ref=e57]:
+            - row "Número de referencia Es un número de identificación de hasta siete posiciones que el usuario selecciona al momento de instruir su pago." [ref=e58]:
+              - cell "Número de referencia" [ref=e59]
+              - cell "Es un número de identificación de hasta siete posiciones que el usuario selecciona al momento de instruir su pago." [ref=e60]
+            - row "Clave de rastreo Es un identificador de hasta 30 posiciones alfanuméricas que la institución le proporciona al usuario al momento en que se instruye el pago." [ref=e61]:
+              - cell "Clave de rastreo" [ref=e62]
+              - cell "Es un identificador de hasta 30 posiciones alfanuméricas que la institución le proporciona al usuario al momento en que se instruye el pago." [ref=e63]
+      - complementary [ref=e64]:
+        - generic [ref=e65] [cursor=pointer]: Obligaciones de las instituciones financieras
+        - paragraph [ref=e66]: EXENCIÓN DE RESPONSABILIDAD
+        - paragraph [ref=e67]: Los Comprobantes Electrónicos de Pago se generan con base en la información proporcionada por las entidades receptoras de los pagos (Participantes Emisores de las Confirmaciones de Abono) bajo su responsabilidad exclusiva; se emiten con fines informativos y están dirigidos únicamente a los usuarios del Sistema de Pagos Electrónicos Interbancarios (SPEI®) relacionados con la Orden de Transferencia Aceptada correspondiente, por lo que Banco de México no tiene responsabilidad alguna sobre tal información.
+        - paragraph [ref=e68]: Para obtener el Comprobante Electrónico de Pago de una Orden de Transferencia Aceptada, el usuario deberá proporcionar información confidencial cuyo acceso y uso fueron previamente pactados, entre la entidad que proporcione el servicio de transferencia electrónica vía SPEI® o la entidad que lleve la cuenta en que se depositaron los recursos, según corresponda, por lo que Banco de México no es responsable por el manejo que se dé o llegare a darse a los números de referencia, claves de rastreo y/o cualquier otro dato relacionado con el Comprobante Electrónico de Pago o con la Orden de Transferencia Aceptada respectivos.
+        - paragraph [ref=e69]: Para mayor información o aclaraciones respecto del Comprobante Electrónico de Pago y/o de la Orden de Transferencia Aceptada, el usuario respectivo deberá consultar a la entidad que haya proporcionado el servicio de transferencia electrónica vía SPEI® o a la que lleve la cuenta en que se recibieron los recursos.
+      - generic [ref=e70]: v.3.8.6
+  - generic [ref=e71]: 

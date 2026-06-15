@@ -1,0 +1,48 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - img "Trabajo 2021" [ref=e5]
+      - img "Registro público de empresas de subcontratación" [ref=e7]
+      - generic [ref=e8]:
+        - heading "La Ley Federal del Trabajo en su artículo 15 establece que las personas físicas o morales que proporcionen servicios especializados o ejecuten obras especializadas deben contar con un registro ante la Secretaría del Trabajo y Previsión Social." [level=4] [ref=e9]
+        - separator [ref=e10]
+        - heading "En cumplimiento a dicha disposición, la Secretaría del Trabajo y Previsión Social pone a su disposición la plataforma repse.stps.gob.mx, plataforma que le permite ingresar su solicitud de registro al Padrón Público de Contratistas de Servicios Especializados u Obras Especializadas." [level=5] [ref=e11]
+        - separator [ref=e12]
+        - generic [ref=e13]:
+          - button "Preguntas Frecuentes" [ref=e14] [cursor=pointer]:
+            - generic [ref=e15]: Preguntas Frecuentes
+          - button "Guía registro" [ref=e16] [cursor=pointer]:
+            - link "Guía registro" [ref=e17]:
+              - /url: /assets/GUIA_REPSE.pdf
+              - generic [ref=e18]: Guía registro
+    - generic [ref=e19]:
+      - generic:
+        - generic [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: ¿Para qué es el registro?
+          - img "abrir" [ref=e22]
+        - generic [ref=e23] [cursor=pointer]:
+          - generic [ref=e24]: ¿Cuál es el procedimiento?
+          - img "abrir" [ref=e25]
+        - generic [ref=e26] [cursor=pointer]:
+          - generic [ref=e27]: ¿Cómo reviso el estatus de mi trámite?
+          - img "abrir" [ref=e28]
+  - generic [ref=e31]:
+    - generic [ref=e34] [cursor=pointer]:
+      - img "Ingresa a REPSE" [ref=e35]
+      - generic [ref=e36]:
+        - generic [ref=e37]: Ingresar
+        - generic [ref=e38]: Registrarme
+    - generic [ref=e41] [cursor=pointer]:
+      - img "Consulta en REPSE" [ref=e42]
+      - generic [ref=e43]:
+        - generic [ref=e44]: Consulta
+        - generic [ref=e45]: el catálogo
+  - iframe [ref=e49]:
+    - generic [ref=f1e5]:
+      - generic [ref=f1e6]:
+        - text: protegido por
+        - strong [ref=f1e7]: reCAPTCHA
+      - generic [ref=f1e9]:
+        - text: "Para el propietario del sitio: v1beta1 dejó de estar disponible."
+        - link "Toma medidas." [ref=f1e10] [cursor=pointer]:
+          - /url: https://docs.cloud.google.com/recaptcha/docs/migration-v1

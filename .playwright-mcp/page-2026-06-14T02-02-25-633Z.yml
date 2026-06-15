@@ -1,0 +1,186 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - link "gobierno de mexico" [ref=e5] [cursor=pointer]:
+          - /url: https://www.gob.mx/
+          - img "gobierno de mexico" [ref=e6]
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Trámites" [ref=e10] [cursor=pointer]:
+              - /url: https://www.gob.mx/tramites
+          - listitem [ref=e11]:
+            - link "Gobierno" [ref=e12] [cursor=pointer]:
+              - /url: https://www.gob.mx/gobierno
+          - listitem [ref=e13]:
+            - link "Búsqueda " [ref=e14] [cursor=pointer]:
+              - /url: https://www.gob.mx/busqueda
+              - generic [ref=e15]: Búsqueda
+              - generic [ref=e16]: 
+  - generic [ref=e20]:
+    - generic [ref=e30]:
+      - navigation [ref=e31]:
+        - generic [ref=e32]:
+          - link "CNBV" [ref=e34] [cursor=pointer]:
+            - /url: http://www.gob.mx/cnbv
+          - generic [ref=e35]:
+            - list [ref=e36]:
+              - listitem [ref=e37]:
+                - button "" [ref=e38] [cursor=pointer]: 
+                - text: ✉
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "Publicaciones" [ref=e42] [cursor=pointer]:
+                  - /url: /Paginas/Contenidos-Temas.aspx
+            - list [ref=e43]:
+              - listitem [ref=e44]:
+                - button "Ligas de Interés" [ref=e45] [cursor=pointer]: Ligas de Interés
+      - generic "Contenido de la página" [ref=e51]:
+        - heading "La página que busca no existe." [level=2] [ref=e52]
+        - paragraph [ref=e53]
+        - paragraph [ref=e54]:
+          - text: Compruebe que la dirección URL esté bien escrita, o
+          - link "vaya a la página principal del sitio" [ref=e55] [cursor=pointer]:
+            - /url: /portal/portafolioInfo
+    - contentinfo [ref=e58]:
+      - generic [ref=e60]:
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - heading "Enlaces" [level=5] [ref=e63]
+            - list [ref=e64]:
+              - listitem [ref=e65]:
+                - link "Declaración de Accesibilidad" [ref=e66] [cursor=pointer]:
+                  - /url: https://www.gob.mx/accesibilidad
+              - listitem [ref=e67]:
+                - link "Política de privacidad" [ref=e68] [cursor=pointer]:
+                  - /url: https://www.gob.mx/privacidad
+              - listitem [ref=e69]:
+                - link "Términos y Condiciones" [ref=e70] [cursor=pointer]:
+                  - /url: https://www.gob.mx/terminos
+              - listitem [ref=e71]:
+                - link "Marco Jurídico" [ref=e72] [cursor=pointer]:
+                  - /url: http://www.ordenjuridico.gob.mx
+              - listitem [ref=e73]:
+                - link "Portal de Obligaciones de Transparencia" [ref=e74] [cursor=pointer]:
+                  - /url: http://portaltransparencia.gob.mx
+              - listitem [ref=e75]:
+                - link "Sistema Infomex" [ref=e76] [cursor=pointer]:
+                  - /url: https://www.infomex.org.mx/gobiernofederal/home.action
+              - listitem [ref=e77]:
+                - link "INAI" [ref=e78] [cursor=pointer]:
+                  - /url: http://inicio.ifai.org.mx/SitePages/ifai.aspx
+              - listitem [ref=e79]:
+                - link "Mapa de sitio" [ref=e80] [cursor=pointer]:
+                  - /url: https://www.gob.mx/sitemap
+          - generic [ref=e81]:
+            - heading "¿Qué es gob.mx?" [level=5] [ref=e82]
+            - paragraph [ref=e83]:
+              - text: Es el portal único de trámites, información y participación ciudadana.
+              - link "Leer más" [ref=e84] [cursor=pointer]:
+                - /url: https://www.gob.mx/que-es-gobmx
+            - list [ref=e85]:
+              - listitem [ref=e86]:
+                - link "English" [ref=e87] [cursor=pointer]:
+                  - /url: https://www.gob.mx/en/index
+              - listitem [ref=e88]:
+                - link "Temas" [ref=e89] [cursor=pointer]:
+                  - /url: https://www.gob.mx/temas
+              - listitem [ref=e90]:
+                - link "Reformas" [ref=e91] [cursor=pointer]:
+                  - /url: http://reformas.gob.mx
+          - generic [ref=e92]:
+            - heading "Contacto" [level=5] [ref=e93]
+            - paragraph [ref=e94]:
+              - text: "Mesa de ayuda: dudas e información"
+              - text: gobmx@funcionpublica.gob.mx
+            - paragraph [ref=e95]:
+              - link "Denuncia contra servidores públicos" [ref=e96] [cursor=pointer]:
+                - /url: https://www.gob.mx/tramites/ficha/presentacion-de-quejas-y-denuncias-en-la-sfp/SFP54
+        - generic [ref=e97]:
+          - group "Suscríbete" [ref=e99]:
+            - generic [ref=e100]: Suscríbete
+            - generic [ref=e101]: Mantente informado. Suscríbete.
+            - generic [ref=e102]:
+              - textbox "Ingresa tu correo electronico" [ref=e103]:
+                - /placeholder: usuario@ejemplo.com
+              - button "Suscríbete " [ref=e104] [cursor=pointer]:
+                - generic [ref=e105]: Suscríbete
+                - generic [ref=e106]: 
+          - generic [ref=e107]:
+            - heading "Síguenos en" [level=5] [ref=e108]
+            - list [ref=e109]:
+              - listitem [ref=e110]:
+                - link "Facebook de presidencia" [ref=e111] [cursor=pointer]:
+                  - /url: https://www.facebook.com/gobmx
+              - listitem [ref=e112]:
+                - link "Twitter de presidencia" [ref=e113] [cursor=pointer]:
+                  - /url: https://twitter.com/gobmx
+      - generic [ref=e115]:
+        - img "Página de inicio, Gobierno de México" [ref=e117]
+        - img "gob.mx" [ref=e119]
+      - img "*" [ref=e120]
+  - contentinfo [ref=e121]:
+    - generic [ref=e124]:
+      - img "logo gobierno de méxico" [ref=e126]
+      - generic [ref=e127]:
+        - heading "Enlaces" [level=5] [ref=e129] [cursor=pointer]
+        - list [ref=e132]:
+          - listitem [ref=e133]:
+            - link "Datos abiertos de la SABG" [ref=e134] [cursor=pointer]:
+              - /url: https://data.buengobierno.gob.mx/databuengobierno
+          - listitem [ref=e135]:
+            - link "Marco Jurídico" [ref=e136] [cursor=pointer]:
+              - /url: http://www.ordenjuridico.gob.mx
+          - listitem [ref=e137]:
+            - link "Plataforma Nacional de Transparencia" [ref=e138] [cursor=pointer]:
+              - /url: https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/faces/view/consultaPublica.xhtml#inicio
+          - listitem [ref=e139]:
+            - link "Transparencia para el pueblo" [ref=e140] [cursor=pointer]:
+              - /url: https://transparencia.gob.mx
+          - listitem [ref=e141]:
+            - link "Alerta" [ref=e142] [cursor=pointer]:
+              - /url: https://alertadores.buengobierno.gob.mx/
+      - generic [ref=e143]:
+        - heading "¿Qué es gob.mx?" [level=5] [ref=e145] [cursor=pointer]
+        - generic [ref=e147]:
+          - paragraph [ref=e148]:
+            - text: Es el portal único de trámites, información y participación ciudadana.
+            - link "Leer más" [ref=e149] [cursor=pointer]:
+              - /url: https://www.gob.mx/que-es-gobmx
+          - list [ref=e150]:
+            - listitem [ref=e151]:
+              - link "Portal de datos abiertos" [ref=e152] [cursor=pointer]:
+                - /url: https://datos.gob.mx
+            - listitem [ref=e153]:
+              - link "Declaración de accesibilidad" [ref=e154] [cursor=pointer]:
+                - /url: https://www.gob.mx/accesibilidad
+            - listitem [ref=e155]:
+              - link "Términos y Condiciones" [ref=e156] [cursor=pointer]:
+                - /url: https://www.gob.mx/terminos
+      - generic [ref=e157]:
+        - heading "Denuncia contra servidores públicos" [level=5] [ref=e158]:
+          - link "Denuncia contra servidores públicos" [ref=e159] [cursor=pointer]:
+            - /url: https://sidec.buengobierno.gob.mx/#!/
+        - generic [ref=e160]: Síguenos en
+        - list [ref=e161]:
+          - listitem [ref=e162]:
+            - link "Facebook" [ref=e163] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobmexico
+              - img "Facebook" [ref=e164]
+          - listitem [ref=e165]:
+            - link "Twitter" [ref=e166] [cursor=pointer]:
+              - /url: https://twitter.com/GobiernoMX
+              - img "Twitter" [ref=e167]
+          - listitem [ref=e168]:
+            - link "Instagram" [ref=e169] [cursor=pointer]:
+              - /url: https://www.instagram.com/gobmexico/
+              - img "Instagram" [ref=e170]
+          - listitem [ref=e171]:
+            - link "Youtube" [ref=e172] [cursor=pointer]:
+              - /url: https://www.youtube.com/@gobiernodemexico
+              - img "Youtube" [ref=e173]
+        - list [ref=e174]:
+          - listitem [ref=e175]:
+            - link "logo 079" [ref=e177] [cursor=pointer]:
+              - /url: tel:+079
+              - img "logo 079" [ref=e178]

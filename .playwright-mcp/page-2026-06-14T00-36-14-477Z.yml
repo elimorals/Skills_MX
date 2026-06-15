@@ -1,0 +1,549 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - generic: 
+      - generic [ref=e8]:
+        - img [ref=e9]
+        - heading "Administración y Legales" [level=4] [ref=e10]
+        - navigation [ref=e11]:
+          - list [ref=e12]:
+            - generic [ref=e13]:
+              - listitem [ref=e14]:
+                - link "CONSEJO DE ADMINISTRACIÓN" [ref=e15] [cursor=pointer]:
+                  - /url: /consejo/Pages/default.aspx
+              - listitem [ref=e16]:
+                - link "FINANZAS" [ref=e17] [cursor=pointer]:
+                  - /url: /finanzas/Pages/default.aspx
+              - listitem [ref=e18]:
+                - link "CONCURSOS Y CONTRATOS" [ref=e19] [cursor=pointer]:
+                  - /url: /concursoscontratos/Pages/default.aspx
+              - listitem [ref=e20]:
+                - link "Proveedores" [ref=e21] [cursor=pointer]:
+                  - /url: https://msc.cfe.mx/Aplicaciones/NCFE/Concursos/Proveedor/PadronProveedores
+              - listitem [ref=e22]:
+                - link "Sistema Electrónico de Contrataciones" [ref=e23] [cursor=pointer]:
+                  - /url: https://msc.cfe.mx/Aplicaciones/NCFE/Concursos/
+              - listitem [ref=e24]:
+                - link "Cumplimiento Regulatorio" [ref=e25] [cursor=pointer]:
+                  - /url: /distribucion/cumplimiento/pages/default.aspx
+              - listitem [ref=e26]:
+                - link "Informes de la Calidad en el Suministro Básico" [ref=e27] [cursor=pointer]:
+                  - /url: /suministrobasico/informesb/pages/default.aspx
+    - banner [ref=e28]:
+      - generic [ref=e30]:
+        - generic:
+          - generic: 
+        - link "CFE" [ref=e32] [cursor=pointer]:
+          - /url: /
+          - img "CFE" [ref=e33]
+        - link " Mi CFE" [ref=e35] [cursor=pointer]:
+          - /url: https://app.cfe.mx/Aplicaciones/CCFE/MiEspacio/Login.aspx
+          - generic [ref=e36]: 
+          - text: Mi CFE
+        - navigation [ref=e37]:
+          - list [ref=e38]:
+            - listitem [ref=e39]:
+              - link "Contratación" [ref=e40] [cursor=pointer]:
+                - /url: https://cfecontigocontratos.cfe.mx/cfe/
+            - listitem [ref=e41]:
+              - link "Trámites y Servicios" [ref=e42] [cursor=pointer]:
+                - /url: "#"
+          - link "" [ref=e44] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e45]: 
+      - link "" [ref=e48] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e49]: 
+      - generic [ref=e50]:
+        - link "Paga tu recibo " [ref=e51] [cursor=pointer]:
+          - /url: https://app.cfe.mx/Aplicaciones/CCFE/MiEspacio/default.aspx
+          - text: Paga tu recibo
+          - generic [ref=e52]: 
+        - link "Llama al 071 " [ref=e53] [cursor=pointer]:
+          - /url: tel:071
+          - text: Llama al 071
+          - generic [ref=e54]: 
+    - generic [ref=e57]:
+      - navigation [ref=e58]:
+        - list [ref=e59]:
+          - listitem [ref=e60]:
+            - link "Justicia Energética" [ref=e61] [cursor=pointer]:
+              - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/Prensa?c=19
+              - generic [ref=e62]: Justicia Energética
+          - listitem [ref=e63]:
+            - link "Prensa" [ref=e64] [cursor=pointer]:
+              - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/AcercaDe
+              - generic [ref=e65]: Prensa
+          - listitem [ref=e66]:
+            - link "Preguntas Frecuentes" [ref=e67] [cursor=pointer]:
+              - /url: /Pages/preguntas_frecuentes.aspx
+              - generic [ref=e68]: Preguntas Frecuentes
+          - listitem [ref=e69]:
+            - link "" [ref=e70] [cursor=pointer]:
+              - /url: http://facebook.com/cfenacional
+              - generic [ref=e71]: 
+          - listitem [ref=e72]:
+            - link "" [ref=e73] [cursor=pointer]:
+              - /url: https://twitter.com/cfemx
+              - generic [ref=e74]: 
+          - listitem [ref=e75]:
+            - link "" [ref=e76] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UC5YjgDMZ08jSn4LxPom7O2Q/videos
+              - generic [ref=e78]: 
+          - listitem [ref=e79]:
+            - link "" [ref=e80] [cursor=pointer]:
+              - /url: https://www.instagram.com/cfe_nacional/
+              - generic [ref=e82]: 
+          - listitem [ref=e83]:
+            - link "" [ref=e84] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@cfe_nacional
+              - generic [ref=e86]: 
+          - listitem [ref=e87]:
+            - generic [ref=e89]:
+              - textbox "buscar en CFE..." [ref=e90]
+              - button "" [ref=e92] [cursor=pointer]:
+                - generic [ref=e93]: 
+      - generic:
+        - generic: 
+    - generic [ref=e95]:
+      - generic [ref=e99]:
+        - generic [ref=e100]:
+          - link [ref=e102] [cursor=pointer]:
+            - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/Prensa?c=19
+            - generic [ref=e103]:
+              - generic:
+                - heading [level=2]
+                - paragraph
+          - link [ref=e105] [cursor=pointer]:
+            - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10572
+            - generic [ref=e106]:
+              - generic:
+                - heading [level=2]
+                - paragraph
+          - link [ref=e108] [cursor=pointer]:
+            - /url: https://scoee.cfe.mx/Portal/
+            - generic [ref=e109]:
+              - generic:
+                - heading [level=2]
+                - paragraph
+          - link [ref=e111] [cursor=pointer]:
+            - /url: https://app.cfe.mx/Aplicaciones/CCFE/MiEspacio/Login.aspx
+            - generic [ref=e112]:
+              - generic:
+                - heading [level=2]
+                - paragraph
+          - link [ref=e114] [cursor=pointer]:
+            - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/Prensa?c=19
+            - generic [ref=e115]:
+              - generic:
+                - heading [level=2]
+                - paragraph
+          - link [ref=e117] [cursor=pointer]:
+            - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10572
+            - generic [ref=e118]:
+              - generic:
+                - heading [level=2]
+                - paragraph
+        - button "Previous slide" [ref=e119] [cursor=pointer]:
+          - generic [ref=e120]: 
+        - button "Next slide" [ref=e121] [cursor=pointer]:
+          - generic [ref=e122]: 
+      - generic [ref=e124]:
+        - generic [ref=e133]:
+          - tablist [ref=e134]:
+            - tab "Servicios a Usuarios" [expanded] [selected] [ref=e135]:
+              - link "Servicios a Usuarios" [ref=e136] [cursor=pointer]:
+                - /url: "#serviciosUsuarios"
+                - heading "Servicios a Usuarios" [level=4] [ref=e137]
+            - tab "Concursos, Enajenación y Proveedores/Contratistas" [ref=e138]:
+              - link "Concursos, Enajenación y Proveedores/Contratistas" [ref=e139] [cursor=pointer]:
+                - /url: "#procedimientoContratacion"
+                - heading "Concursos, Enajenación y Proveedores/Contratistas" [level=4] [ref=e140]
+          - tabpanel "Servicios a Usuarios" [ref=e142]:
+            - generic [ref=e143]:
+              - link "Mi CFE Consulta, descarga y paga tu recibo" [ref=e145] [cursor=pointer]:
+                - /url: https://app.cfe.mx/Aplicaciones/CCFE/MiEspacio/Login.aspx
+                - generic [ref=e146]:
+                  - img [ref=e148]
+                  - generic [ref=e149]:
+                    - heading "Mi CFE" [level=3] [ref=e150]
+                    - paragraph [ref=e151]: Consulta, descarga y paga tu recibo
+              - link "APP CFE Contigo Descarga la aplicación oficial disponible en IOS y Android" [ref=e153] [cursor=pointer]:
+                - /url: /Pages/cfe_contigo.aspx
+                - generic [ref=e154]:
+                  - img [ref=e156]
+                  - generic [ref=e157]:
+                    - heading "APP CFE Contigo" [level=3] [ref=e158]
+                    - paragraph [ref=e159]: Descarga la aplicación oficial disponible en IOS y Android
+              - link "Centros de Atención Ubica el Centro más cercano" [ref=e161] [cursor=pointer]:
+                - /url: https://app.cfe.mx/Aplicaciones/CCFE/CentrosdeAtencion/CentrosDeAtencion.aspx
+                - generic [ref=e162]:
+                  - img [ref=e164]
+                  - generic [ref=e165]:
+                    - heading "Centros de Atención" [level=3] [ref=e166]
+                    - paragraph [ref=e167]: Ubica el Centro más cercano
+              - link "Contratación en línea Contrata tu servicio eléctrico" [ref=e169] [cursor=pointer]:
+                - /url: https://cfecontigocontratos.cfe.mx/cfe/
+                - generic [ref=e170]:
+                  - img [ref=e172]
+                  - generic [ref=e173]:
+                    - heading "Contratación en línea" [level=3] [ref=e174]
+                    - paragraph [ref=e175]: Contrata tu servicio eléctrico
+              - link " Hogar" [ref=e177] [cursor=pointer]:
+                - /url: /hogar
+                - generic [ref=e178]:
+                  - generic [ref=e180]: 
+                  - heading "Hogar" [level=3] [ref=e182]
+              - link " Negocio" [ref=e184] [cursor=pointer]:
+                - /url: /negocio
+                - generic [ref=e185]:
+                  - generic [ref=e187]: 
+                  - heading "Negocio" [level=3] [ref=e189]
+              - link " Industria" [ref=e191] [cursor=pointer]:
+                - /url: /industria
+                - generic [ref=e192]:
+                  - generic [ref=e194]: 
+                  - heading "Industria" [level=3] [ref=e196]
+              - link " Agrícola y Servicios" [ref=e198] [cursor=pointer]:
+                - /url: /agricolayservicios
+                - generic [ref=e199]:
+                  - generic [ref=e201]: 
+                  - heading "Agrícola y Servicios" [level=3] [ref=e203]
+        - link " Contrata ahora" [ref=e214] [cursor=pointer]:
+          - /url: https://cfecontigocontratos.cfe.mx/cfe/
+          - generic [ref=e215]: 
+          - text: Contrata ahora
+        - generic [ref=e224]:
+          - tablist [ref=e225]:
+            - tab "Sitios de Interés" [expanded] [selected] [ref=e226]:
+              - link "Sitios de Interés" [ref=e227] [cursor=pointer]:
+                - /url: "#interes"
+                - heading "Sitios de Interés" [level=4] [ref=e228]
+            - tab "Filiales" [ref=e229]:
+              - link "Filiales" [ref=e230] [cursor=pointer]:
+                - /url: "#filiales"
+                - heading "Filiales" [level=4] [ref=e231]
+          - tabpanel "Sitios de Interés" [ref=e233]:
+            - generic [ref=e234]:
+              - link "CFE Internet para todos" [ref=e236] [cursor=pointer]:
+                - /url: https://cfeinternet.mx
+                - generic [ref=e237]:
+                  - img [ref=e239]
+                  - heading "CFE Internet para todos" [level=3] [ref=e241]
+              - link "Desarrollo Social" [ref=e243] [cursor=pointer]:
+                - /url: /desarrollo_social
+                - generic [ref=e244]:
+                  - img [ref=e246]
+                  - heading "Desarrollo Social" [level=3] [ref=e248]
+              - link "Unidad de Género" [ref=e250] [cursor=pointer]:
+                - /url: /unidaddegenero
+                - generic [ref=e251]:
+                  - img [ref=e253]
+                  - heading "Unidad de Género" [level=3] [ref=e255]
+              - link "Unidad de Archivos" [ref=e257] [cursor=pointer]:
+                - /url: /ah
+                - generic [ref=e258]:
+                  - img [ref=e260]
+                  - heading "Unidad de Archivos" [level=3] [ref=e262]
+              - link "LAPEM" [ref=e264] [cursor=pointer]:
+                - /url: /lapem
+                - generic [ref=e265]:
+                  - img [ref=e267]
+                  - heading "LAPEM" [level=3] [ref=e269]
+              - link "PAESE" [ref=e271] [cursor=pointer]:
+                - /url: /paese/Pages/paese.aspx
+                - generic [ref=e272]:
+                  - img [ref=e274]
+                  - heading "PAESE" [level=3] [ref=e276]
+        - generic [ref=e278]:
+          - generic [ref=e279]:
+            - heading "Prensa" [level=3] [ref=e281]
+            - generic [ref=e282]:
+              - generic [ref=e284]:
+                - link [ref=e286] [cursor=pointer]:
+                  - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10653
+                - 'heading "SIN CFE NO HABRÍA SOBERANÍA ENERGÉTICA; FORTALECERLA ES AMAR A MÉXICO: PRESIDENTA INAUGURA CENTRAL CICLO COMBINADO EN MANZANILLO, COLIMA" [level=3] [ref=e288]':
+                  - 'link "SIN CFE NO HABRÍA SOBERANÍA ENERGÉTICA; FORTALECERLA ES AMAR A MÉXICO: PRESIDENTA INAUGURA CENTRAL CICLO COMBINADO EN MANZANILLO, COLIMA" [ref=e289] [cursor=pointer]':
+                    - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10653
+                - list [ref=e290]:
+                  - listitem [ref=e291]:
+                    - generic [ref=e292]: 
+                    - text: 13/06/2026
+                  - listitem [ref=e293]:
+                    - text: /
+                    - link "" [ref=e294] [cursor=pointer]:
+                      - /url: ""
+                      - generic [ref=e295]: 
+                - generic [ref=e296]:
+                  - paragraph [ref=e297]: “Esto no se podría hacer nunca si no fuera por las y los trabajadores de Comisión Federal de Electricidad, que son los que sostienen la empresa”, reconocióLa nueva Central Ciclo Combinado en Colima ge...
+                  - link "Leer más" [ref=e298] [cursor=pointer]:
+                    - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10653
+              - generic [ref=e299]:
+                - generic [ref=e300]:
+                  - link [ref=e302] [cursor=pointer]:
+                    - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10652
+                  - generic [ref=e303]:
+                    - heading "AL PERSONAL JUBILADO DE CONFIANZA DE CFE" [level=4] [ref=e305]:
+                      - link "AL PERSONAL JUBILADO DE CONFIANZA DE CFE" [ref=e306] [cursor=pointer]:
+                        - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10652
+                    - list:
+                      - listitem [ref=e307]:
+                        - generic [ref=e308]: 
+                        - text: 10/06/2026
+                - generic [ref=e309]:
+                  - link [ref=e311] [cursor=pointer]:
+                    - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10651
+                  - generic [ref=e312]:
+                    - heading "AVANZA EL PROGRAMA DE OBRAS DE ELECTRIFICACIÓN EN MICHOACÁN Y LAS FERIAS DEL BIENESTAR, EN EL MARCO DEL PLAN POR LA PAZ Y LA JUSTICIA" [level=4] [ref=e314]:
+                      - link "AVANZA EL PROGRAMA DE OBRAS DE ELECTRIFICACIÓN EN MICHOACÁN Y LAS FERIAS DEL BIENESTAR, EN EL MARCO DEL PLAN POR LA PAZ Y LA JUSTICIA" [ref=e315] [cursor=pointer]:
+                        - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10651
+                    - list:
+                      - listitem [ref=e316]:
+                        - generic [ref=e317]: 
+                        - text: 09/06/2026
+                - generic [ref=e318]:
+                  - link [ref=e320] [cursor=pointer]:
+                    - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10650
+                  - generic [ref=e321]:
+                    - heading "LA CFE CONCLUYE REUNIÓN DE SEGUIMIENTO A PROYECTOS PARA LA RED NACIONAL DE TRANSMISIÓN" [level=4] [ref=e323]:
+                      - link "LA CFE CONCLUYE REUNIÓN DE SEGUIMIENTO A PROYECTOS PARA LA RED NACIONAL DE TRANSMISIÓN" [ref=e324] [cursor=pointer]:
+                        - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10650
+                    - list:
+                      - listitem [ref=e325]:
+                        - generic [ref=e326]: 
+                        - text: 08/06/2026
+                - generic [ref=e327]:
+                  - link [ref=e329] [cursor=pointer]:
+                    - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10649
+                  - generic [ref=e330]:
+                    - heading "CFE GARANTIZA ABASTO DE MEDIDORES BIDIRECCIONALES EN EL ESTADO DE CHIHUAHUA" [level=4] [ref=e332]:
+                      - link "CFE GARANTIZA ABASTO DE MEDIDORES BIDIRECCIONALES EN EL ESTADO DE CHIHUAHUA" [ref=e333] [cursor=pointer]:
+                        - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10649
+                    - list:
+                      - listitem [ref=e334]:
+                        - generic [ref=e335]: 
+                        - text: 08/06/2026
+              - generic [ref=e337]:
+                - link "NO. 16 REVISTA ALTERNA MARZO 2026" [ref=e339] [cursor=pointer]:
+                  - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10508
+                  - img "NO. 16 REVISTA ALTERNA MARZO 2026" [ref=e340]
+                - heading "NO. 16 REVISTA ALTERNA MARZO 2026" [level=2] [ref=e342]:
+                  - link "NO. 16 REVISTA ALTERNA MARZO 2026" [ref=e343] [cursor=pointer]:
+                    - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10508
+                - list [ref=e344]:
+                  - listitem [ref=e345]:
+                    - generic [ref=e346]: 
+                    - text: 31/03/2026
+                  - listitem [ref=e347]:
+                    - text: /
+                    - link "" [ref=e348] [cursor=pointer]:
+                      - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/boletin?i=10508
+                      - generic [ref=e349]: 
+          - heading "CON OBRAS DE JUSTICIA ENERGÉTICA, LA CFE ALCANZÓ EN ABRIL DE 2026 50 MILLONES DE CLIENTES ACTIVOS" [level=3] [ref=e351]
+    - contentinfo [ref=e352]:
+      - generic [ref=e354]:
+        - generic [ref=e355]:
+          - img "CFE" [ref=e358]
+          - generic [ref=e359]:
+            - link " Descarga en la Apple Store" [ref=e360] [cursor=pointer]:
+              - /url: https://apps.apple.com/mx/app/cfe-contigo/id1354232135
+              - generic [ref=e361]: 
+              - generic [ref=e362]:
+                - generic [ref=e363]: Descarga en la
+                - generic [ref=e364]: Apple Store
+            - link " Descarga en la Google Play" [ref=e365] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=mx.com.cfe.cfecontigo&hl=es_MX
+              - generic [ref=e366]: 
+              - generic [ref=e367]:
+                - generic [ref=e368]: Descarga en la
+                - generic [ref=e369]: Google Play
+            - link " Descarga en la AppGallery" [ref=e370] [cursor=pointer]:
+              - /url: https://appgallery5.huawei.com/#/app/C101693327
+              - generic [ref=e371]: 
+              - generic [ref=e372]:
+                - generic [ref=e373]: Descarga en la
+                - generic [ref=e374]: AppGallery
+        - generic [ref=e378]:
+          - generic [ref=e380]:
+            - heading "Nuestra Empresa" [level=4] [ref=e381]
+            - list [ref=e382]:
+              - listitem [ref=e383]:
+                - link "¿Quienes Somos?" [ref=e384] [cursor=pointer]:
+                  - /url: /nuestraempresa/pages/queeslacfe.aspx
+              - listitem [ref=e385]:
+                - link "Misión" [ref=e386] [cursor=pointer]:
+                  - /url: /nuestraempresa/pages/mision.aspx
+              - listitem [ref=e387]:
+                - link "Visión" [ref=e388] [cursor=pointer]:
+                  - /url: /nuestraempresa/pages/vision.aspx
+              - listitem [ref=e389]:
+                - link "Directora General" [ref=e390] [cursor=pointer]:
+                  - /url: /nuestraempresa/Pages/DG.aspx
+              - listitem [ref=e391]:
+                - link "Directoras y Directores" [ref=e392] [cursor=pointer]:
+                  - /url: /nuestraempresa/Pages/directores.aspx
+              - listitem [ref=e393]:
+                - link "Marco Legal y Normativo" [ref=e394] [cursor=pointer]:
+                  - /url: https://app.cfe.mx/normateca/
+              - listitem [ref=e395]:
+                - link "Solicitudes de Empleo" [ref=e396] [cursor=pointer]:
+                  - /url: https://apps.cfe.mx/SolicitudesEmpleo/Solicitud/Inicio
+          - generic [ref=e398]:
+            - heading "Clientes" [level=4] [ref=e399]
+            - list [ref=e400]:
+              - listitem [ref=e401]:
+                - link "Hogar" [ref=e402] [cursor=pointer]:
+                  - /url: /Hogar/Pages/default.aspx
+              - listitem [ref=e403]:
+                - link "Negocio" [ref=e404] [cursor=pointer]:
+                  - /url: /Negocio/Pages/default.aspx
+              - listitem [ref=e405]:
+                - link "Industria" [ref=e406] [cursor=pointer]:
+                  - /url: /Industria/Pages/default.aspx
+              - listitem [ref=e407]:
+                - link "Agrícola y Servicios" [ref=e408] [cursor=pointer]:
+                  - /url: /Agricolayservicios/Pages/default.aspx
+              - listitem [ref=e409]:
+                - link "Externos" [ref=e410] [cursor=pointer]:
+                  - /url: /servicios_externos/Paginas/default.aspx
+          - generic [ref=e412]:
+            - heading "Comunicación" [level=4] [ref=e413]
+            - list [ref=e414]:
+              - listitem [ref=e415]:
+                - link "Prensa" [ref=e416] [cursor=pointer]:
+                  - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/Prensa?c=1
+              - listitem [ref=e417]:
+                - link "Galería" [ref=e418] [cursor=pointer]:
+                  - /url: https://app.cfe.mx/Aplicaciones/OTROS/Boletines/StockFotos
+              - listitem [ref=e419]:
+                - link "Contacto" [ref=e420] [cursor=pointer]:
+                  - /url: /dir_comunicacion/Pages/default.aspx
+          - generic [ref=e422]:
+            - heading "ÉTICA / TRANSPARENCIA" [level=4] [ref=e423]
+            - list [ref=e424]:
+              - listitem [ref=e425]:
+                - link "Ética" [ref=e426] [cursor=pointer]:
+                  - /url: https://www.cfe.gob.mx/transparencia_etica/etica/pages/acciones-%c3%a9tica.aspx
+              - listitem [ref=e427]:
+                - link "Plataforma de Transparencia" [ref=e428] [cursor=pointer]:
+                  - /url: https://www.plataformadetransparencia.org.mx/
+              - listitem [ref=e429]:
+                - link "Obligaciones de Transparencia" [ref=e430] [cursor=pointer]:
+                  - /url: /transparencia_etica/transparencia/pages/transparencia.aspx
+              - listitem [ref=e431]:
+                - link "Protección de Datos Personales" [ref=e432] [cursor=pointer]:
+                  - /url: /transparencia_etica/transparencia/Pages/datos_personales.aspx
+              - listitem [ref=e433]:
+                - link "Transparencia" [ref=e434] [cursor=pointer]:
+                  - /url: /transparencia_etica
+        - heading "" [level=3] [ref=e436]:
+          - generic [ref=e437]: 
+        - generic [ref=e438]:
+          - generic [ref=e441]:
+            - generic [ref=e443]:
+              - strong [ref=e445]: "Atención al Cliente:"
+              - strong [ref=e447]: Marca 071
+            - generic [ref=e449]:
+              - strong [ref=e451]: "Oficinas Nacionales:"
+              - text: Av. Paseo de la Reforma 164, Col. Juárez, C.P. 06600, Ciudad de México. México
+          - generic [ref=e453]:
+            - link " " [ref=e454] [cursor=pointer]:
+              - /url: http://facebook.com/cfenacional
+              - generic [ref=e455]: 
+              - generic [ref=e456]: 
+            - link " " [ref=e457] [cursor=pointer]:
+              - /url: https://twitter.com/cfemx
+              - generic [ref=e458]: 
+              - generic [ref=e459]: 
+            - link " " [ref=e460] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UC5YjgDMZ08jSn4LxPom7O2Q/videos
+              - generic [ref=e461]: 
+              - generic [ref=e462]: 
+            - link " " [ref=e463] [cursor=pointer]:
+              - /url: https://www.instagram.com/cfe_nacional/
+              - generic [ref=e464]: 
+              - generic [ref=e465]: 
+            - link " " [ref=e466] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@cfe_nacional
+              - generic [ref=e467]: 
+              - generic [ref=e468]: 
+      - generic [ref=e472]:
+        - text: © Derechos reservados.
+        - link "Términos y condiciones" [ref=e473] [cursor=pointer]:
+          - /url: /Pages/TerminosyCondiciones.aspx
+          - strong [ref=e474]: Términos y condiciones
+        - text: /
+        - link "Política de privacidad" [ref=e475] [cursor=pointer]:
+          - /url: /Pages/Politica_de_privacidad.aspx
+          - strong [ref=e476]: Política de privacidad
+  - text: 
+  - generic "Menu Accesibilidad":
+    - navigation:
+      - link [ref=e477] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e478]:  􏊚
+      - listitem [ref=e479]:
+        - list [ref=e480]:
+          - listitem [ref=e481] [cursor=pointer]:
+            - checkbox [ref=e482]
+            - generic [ref=e483]: 
+            - text: Restablecer
+          - listitem [ref=e484] [cursor=pointer]:
+            - text: 
+            - checkbox [ref=e485]
+            - generic [ref=e486]: 
+            - text: Cambiar escala de grises
+          - listitem [ref=e487] [cursor=pointer]:
+            - text: 
+            - checkbox [ref=e488]
+            - generic [ref=e489]: 
+            - text: Usar un lector de pantalla
+          - listitem [ref=e490] [cursor=pointer]:
+            - text: 
+            - checkbox [ref=e491]
+            - generic [ref=e492]: 
+            - text: Cambiar tamaño de cursor
+          - listitem [ref=e493] [cursor=pointer]:
+            - text: 
+            - checkbox [ref=e494]
+            - generic [ref=e495]: 
+            - text: Cambiar el contraste de color
+          - listitem [ref=e496] [cursor=pointer]:
+            - text: 
+            - checkbox [ref=e497]
+            - generic [ref=e498]: 
+            - text: Mascara de lectura
+          - listitem [ref=e499] [cursor=pointer]:
+            - text: 
+            - checkbox [ref=e500]
+            - generic [ref=e501]: 
+            - text: Guia de Lectura
+          - listitem [ref=e502] [cursor=pointer]:
+            - text: 
+            - checkbox [ref=e503]
+            - generic [ref=e504]: 
+            - text: Cambio de tipografia dislexia
+          - listitem [ref=e505] [cursor=pointer]:
+            - text: 
+            - checkbox [ref=e506]
+            - generic [ref=e507]: 
+            - text: Espaciado vertical
+          - listitem [ref=e512] [cursor=pointer]:
+            - text: 
+            - checkbox [ref=e513]
+            - generic [ref=e514]: 
+            - text: Espaciado Horizontal
+          - listitem [ref=e519] [cursor=pointer]:
+            - text: 
+            - generic [ref=e520]:
+              - generic [ref=e521]: 
+              - generic [ref=e522]: 
+            - generic [ref=e523]:
+              - generic [ref=e524]: 
+              - generic [ref=e525]: 
+            - text: Cambiar tamaño
+          - listitem [ref=e526] [cursor=pointer]:
+            - text: 
+            - checkbox [ref=e527]
+            - generic [ref=e528]: 
+            - text: Resaltar Enlaces

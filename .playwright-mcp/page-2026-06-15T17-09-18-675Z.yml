@@ -1,0 +1,310 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - banner [ref=e4]:
+        - link [ref=e6] [cursor=pointer]:
+          - /url: https://pagos.tijuana.gob.mx
+          - img [ref=e7]
+        - generic [ref=e8]:
+          - link "Ayuntamiento de Tijuana" [ref=e10] [cursor=pointer]:
+            - /url: https://www.tijuana.gob.mx/index.aspx
+            - img "Ayuntamiento de Tijuana" [ref=e11]
+          - generic [ref=e12]:
+            - navigation [ref=e13]:
+              - list [ref=e14]:
+                - listitem [ref=e15]:
+                  - link "Inicio" [ref=e16] [cursor=pointer]:
+                    - /url: https://www.tijuana.gob.mx
+                - listitem [ref=e17]:
+                  - link "Ayuntamiento 3" [ref=e18] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e19]:
+                  - link "Dependencias" [ref=e20] [cursor=pointer]:
+                    - /url: https://www.tijuana.gob.mx/dependencias
+                - listitem [ref=e21]:
+                  - link "Delegaciones 3" [ref=e22] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e23]:
+                  - link "Paramunicipales 3" [ref=e24] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e25]:
+                  - link "Transparencia" [ref=e26] [cursor=pointer]:
+                    - /url: https://transparencia.tijuana.gob.mx
+                - listitem [ref=e27]:
+                  - link "Mi cuenta" [ref=e28] [cursor=pointer]:
+                    - /url: https://pagos.tijuana.gob.mx/PagosEnLinea/index.aspx
+            - link:
+              - /url: javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$lbServicios", "", false, "", "https://pagos.tijuana.gob.mx/PagosenLinea/Servicios/servicios.aspx", false, true))
+            - text: a
+      - article [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - generic [ref=e35]: COMUNICADOS DE PRENSA
+            - generic [ref=e36]:
+              - generic [ref=e42]:
+                - link [ref=e45] [cursor=pointer]:
+                  - /url: noticiaDependencia.aspx?idComunicado=36729
+                  - img [ref=e46]
+                - generic [ref=e47]:
+                  - paragraph [ref=e49]: 14/06/2026
+                  - heading "Firma Gobierno Municipal de Tijuana convenio con Universidad Vizcaya para fortalecer acciones de sal..." [level=4] [ref=e50]:
+                    - link "Firma Gobierno Municipal de Tijuana convenio con Universidad Vizcaya para fortalecer acciones de sal..." [ref=e51] [cursor=pointer]:
+                      - /url: noticiaDependencia.aspx?idComunicado=36729
+                  - link "más detalles" [ref=e53] [cursor=pointer]:
+                    - /url: noticiaDependencia.aspx?idComunicado=36729
+              - generic [ref=e54]:
+                - generic [ref=e55]:
+                  - generic [ref=e57]:
+                    - link [ref=e59] [cursor=pointer]:
+                      - /url: noticiaDependencia.aspx?idComunicado=36730
+                      - img [ref=e60]
+                    - generic [ref=e61]:
+                      - paragraph [ref=e63]: 14/06/2026
+                      - heading "Capacita XXV Ayuntamiento de Tijuana a 400 Comisarios Sociales en el uso del 'Botón Verde'" [level=4] [ref=e65]:
+                        - link "Capacita XXV Ayuntamiento de Tijuana a 400 Comisarios Sociales en el uso del 'Botón Verde'" [ref=e66] [cursor=pointer]:
+                          - /url: noticiaDependencia.aspx?idComunicado=36730
+                      - paragraph
+                      - link "más detalles" [ref=e68] [cursor=pointer]:
+                        - /url: noticiaDependencia.aspx?idComunicado=36730
+                  - generic [ref=e70]:
+                    - link [ref=e72] [cursor=pointer]:
+                      - /url: noticiaDependencia.aspx?idComunicado=36727
+                      - img [ref=e73]
+                    - generic [ref=e74]:
+                      - paragraph [ref=e76]: 13/06/2026
+                      - heading "Beneficia Gobierno Municipal a más de 48 mil personas a través de los centros de desarrollo comunitario de DIF Tijuana" [level=4] [ref=e78]:
+                        - link "Beneficia Gobierno Municipal a más de 48 mil personas a través de los centros de desarrollo comunitario de DIF Tijuana" [ref=e79] [cursor=pointer]:
+                          - /url: noticiaDependencia.aspx?idComunicado=36727
+                      - paragraph
+                      - link "más detalles" [ref=e81] [cursor=pointer]:
+                        - /url: noticiaDependencia.aspx?idComunicado=36727
+                  - generic [ref=e83]:
+                    - link [ref=e85] [cursor=pointer]:
+                      - /url: noticiaDependencia.aspx?idComunicado=36728
+                      - img [ref=e86]
+                    - generic [ref=e87]:
+                      - paragraph [ref=e89]: 13/06/2026
+                      - heading "Fortalece Gobierno Municipal de Tijuana inclusión educativa de jóvenes en contexto de movilidad" [level=4] [ref=e91]:
+                        - link "Fortalece Gobierno Municipal de Tijuana inclusión educativa de jóvenes en contexto de movilidad" [ref=e92] [cursor=pointer]:
+                          - /url: noticiaDependencia.aspx?idComunicado=36728
+                      - paragraph
+                      - link "más detalles" [ref=e94] [cursor=pointer]:
+                        - /url: noticiaDependencia.aspx?idComunicado=36728
+                - link "Ver todos los comunicados" [ref=e96] [cursor=pointer]:
+                  - /url: https://www.tijuana.gob.mx/noticialistadoDependencia.aspx
+          - generic [ref=e97]:
+            - link:
+              - /url: https://www.tijuana.gob.mx/guia/
+          - generic [ref=e100]:
+            - generic "Carousel Navigation":
+              - button "" [ref=e101] [cursor=pointer]
+              - button "" [ref=e102] [cursor=pointer]
+            - generic [ref=e103]:
+              - generic [ref=e104]: slide 2 to 5 of 6
+              - generic [ref=e107]:
+                - link [ref=e109] [cursor=pointer]:
+                  - /url: https://implan.tijuana.gob.mx/implan/planes-y-programas/pdf/PMD_25-27_2.pdf
+                  - img [ref=e110]
+                - link "img" [ref=e112] [cursor=pointer]:
+                  - /url: https://www.tijuana.gob.mx/dependencias/tesoreria/CuentaPublica.aspx
+                  - img "img" [ref=e113]
+                - link "img" [ref=e115] [cursor=pointer]:
+                  - /url: https://sedeti.tijuana.gob.mx
+                  - img "img" [ref=e116]
+                - link "img" [ref=e118] [cursor=pointer]:
+                  - /url: https://www.tijuana.gob.mx/dependencias/Cabildo/gaceta_municipal.aspx
+                  - img "img" [ref=e119]
+                - link "img" [ref=e121] [cursor=pointer]:
+                  - /url: https://www.tijuana.gob.mx/dependencias/OM/index.aspx
+                  - img "img" [ref=e122]
+                - link [ref=e124] [cursor=pointer]:
+                  - /url: https://www.tijuana.gob.mx/dependencias/RegistroCivil/index.aspx
+                  - img [ref=e125]
+          - generic [ref=e126]:
+            - heading "Trámites en Línea" [level=1] [ref=e127]
+            - generic [ref=e128]:
+              - link [ref=e132] [cursor=pointer]:
+                - /url: https://pagos.tijuana.gob.mx/PagosEnLinea/seguro
+              - link [ref=e136] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/recibo
+              - link [ref=e140] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=252
+              - link [ref=e144] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/dependencias/AsuntosReligiosos/registro.aspx
+              - link [ref=e148] [cursor=pointer]:
+                - /url: https://apps.tijuana.gob.mx/decap
+              - link [ref=e152] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=130
+              - link [ref=e156] [cursor=pointer]:
+                - /url: http://sindicatura.gob.mx/#/VehiculosRemolcados
+              - link [ref=e160] [cursor=pointer]:
+                - /url: https://pagos.tijuana.gob.mx/PagosEnLinea/index.aspx
+              - link [ref=e164] [cursor=pointer]:
+                - /url: https://pagos.tijuana.gob.mx/PagosEnLinea/index.aspx
+              - link [ref=e168] [cursor=pointer]:
+                - /url: https://pagos.tijuana.gob.mx/PagosEnLinea/index.aspx
+              - link [ref=e172] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=302
+              - link [ref=e176] [cursor=pointer]:
+                - /url: https://pagos.tijuana.gob.mx/PagosEnLinea/index.aspx
+              - link [ref=e180] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=231
+              - link [ref=e184] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=120
+              - link [ref=e188] [cursor=pointer]:
+                - /url: https://pagos.tijuana.gob.mx/PagosEnLinea/index.aspx
+              - link [ref=e192] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=100
+              - link [ref=e196] [cursor=pointer]:
+                - /url: https://pagos.tijuana.gob.mx/PagosEnLinea/index.aspx
+              - link [ref=e200] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=75
+              - link [ref=e204] [cursor=pointer]:
+                - /url: https://t-atiende.tijuana.gob.mx
+              - link [ref=e208] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=96
+              - link [ref=e212] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=79
+              - link [ref=e216] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=103
+              - link [ref=e220] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=231
+              - link [ref=e224] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=72
+              - link [ref=e228] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=314
+              - link [ref=e232] [cursor=pointer]:
+                - /url: https://pagos.tijuana.gob.mx/PagosEnLinea/index.aspx
+              - link [ref=e236] [cursor=pointer]:
+                - /url: https://pagos.tijuana.gob.mx/PagosEnLinea/index.aspx
+              - link [ref=e240] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=74
+              - link [ref=e244] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=172
+              - link [ref=e248] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/dependencias/tesoreria/facturae.aspx
+              - link [ref=e252] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=73
+              - link [ref=e256] [cursor=pointer]:
+                - /url: http://www.sindicatura.gob.mx/#/default
+              - link [ref=e260] [cursor=pointer]:
+                - /url: https://plataforma.tijuana.gob.mx/Proveedores/
+              - link [ref=e264] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=117
+              - link [ref=e268] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=293
+              - link [ref=e272] [cursor=pointer]:
+                - /url: https://www.tijuana.gob.mx/tramite.aspx?tramite=95
+          - generic [ref=e273]:
+            - heading "Trámites Federales y Estatales" [level=1] [ref=e274]
+            - generic [ref=e275]:
+              - link [ref=e279] [cursor=pointer]:
+                - /url: https://www.gob.mx/actas
+              - link [ref=e283] [cursor=pointer]:
+                - /url: https://www.gob.mx/curp/
+              - link [ref=e287] [cursor=pointer]:
+                - /url: https://www.ine.mx/servicios-ine
+              - link [ref=e291] [cursor=pointer]:
+                - /url: https://www.gob.mx/tramites/ficha/renovacion-de-pasaporte-a-personas-mayores-de-edad/SRE113
+              - link [ref=e295] [cursor=pointer]:
+                - /url: https://tramites.ebajacalifornia.gob.mx/ventanillaunica/tramites/licencias
+              - link [ref=e299] [cursor=pointer]:
+                - /url: https://tramites.ebajacalifornia.gob.mx/ventanillaunica/tramites/controlvehicular
+              - link [ref=e303] [cursor=pointer]:
+                - /url: https://www.seguridadbc.gob.mx/contenidos/costancias.php
+        - generic [ref=e305]:
+          - link [ref=e309] [cursor=pointer]:
+            - /url: https://consultapublicamx.inai.org.mx/vut-web/?idSujetoObigadoParametro=590&idEntidadParametro=02&idSectorParametro=26
+            - img [ref=e310]
+          - link [ref=e314] [cursor=pointer]:
+            - /url: https://www.plataformadetransparencia.org.mx/web/guest/inicio
+            - img [ref=e315]
+    - contentinfo [ref=e316]:
+      - generic [ref=e318]:
+        - generic [ref=e320]:
+          - heading "Ayuntamiento de Tijuana, B.C." [level=3] [ref=e321]
+          - paragraph [ref=e322]:
+            - generic [ref=e323]:
+              - text: Avenida Independencia 1350, Zona Urbana Río, C. P. 22010
+              - text: Tijuana, Baja California, México
+              - text: (664) 973-7000
+          - iframe [ref=e325]:
+            - generic [ref=f1e2]:
+              - table [ref=f1e3]:
+                - rowgroup [ref=f1e4]:
+                  - row "22°C 6 km/h Hoy Mañana Miércoles" [ref=f1e5]:
+                    - cell [ref=f1e6]:
+                      - link [ref=f1e7] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tijuana.html
+                    - cell "22°C 6 km/h" [ref=f1e8]:
+                      - strong [ref=f1e10]: 22°C
+                      - text: 6 km/h
+                    - cell "Hoy" [ref=f1e11]:
+                      - generic [ref=f1e12]: Hoy
+                    - cell "Mañana" [ref=f1e13]:
+                      - generic [ref=f1e14]: Mañana
+                    - cell "Miércoles" [ref=f1e15]:
+                      - generic [ref=f1e16]: Miércoles
+                  - row [ref=f1e17]:
+                    - cell [ref=f1e18]:
+                      - link [ref=f1e19] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tijuana.html
+                    - cell [ref=f1e20]:
+                      - link [ref=f1e21] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tijuana.html
+                    - cell [ref=f1e22]:
+                      - link [ref=f1e23] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tijuana.html
+                  - row "23° | 19° 23° | 18° 22° | 18°" [ref=f1e24]:
+                    - cell "23° | 19°" [ref=f1e25]:
+                      - generic [ref=f1e26]: 23°
+                      - generic [ref=f1e27]: "|"
+                      - generic [ref=f1e28]: 19°
+                    - cell "23° | 18°" [ref=f1e29]:
+                      - generic [ref=f1e30]: 23°
+                      - generic [ref=f1e31]: "|"
+                      - generic [ref=f1e32]: 18°
+                    - cell "22° | 18°" [ref=f1e33]:
+                      - generic [ref=f1e34]: 22°
+                      - generic [ref=f1e35]: "|"
+                      - generic [ref=f1e36]: 18°
+              - generic [ref=f1e37]:
+                - link "© Tutiempo.net" [ref=f1e39] [cursor=pointer]:
+                  - /url: https://www.tutiempo.net/
+                - link "»»»" [ref=f1e41] [cursor=pointer]:
+                  - /url: https://www.tutiempo.net/tijuana.html
+                  - strong [ref=f1e42]: »»»
+          - paragraph
+        - generic [ref=e328]:
+          - heading "Servicios de Emergencia" [level=3] [ref=e329]
+          - list [ref=e330]:
+            - listitem [ref=e331]:
+              - link "Protección Civil" [ref=e332] [cursor=pointer]:
+                - /url: https://proteccioncivil.tijuana.gob.mx
+            - listitem [ref=e333]:
+              - link "Bomberos" [ref=e334] [cursor=pointer]:
+                - /url: https://bomberos.tijuana.gob.mx/
+            - listitem [ref=e335]:
+              - link "Secretaría de Seguridad y Protección Ciudadana" [ref=e336] [cursor=pointer]:
+                - /url: https://policia.tijuana.gob.mx/
+          - generic [ref=e337]:
+            - img "911" [ref=e339]
+            - link "911" [ref=e341] [cursor=pointer]:
+              - /url: https://www.seguridadbc.gob.mx/contenidos/089.php
+              - img "911" [ref=e342]
+  - generic [ref=e344]:
+    - generic [ref=e345] [cursor=pointer]:
+      - img [ref=e347]
+      - generic [ref=e348]:
+        - generic [ref=e349]: Chat 24/7
+        - generic [ref=e350]: Ayuntamiento de Tijuana
+      - img [ref=e353]
+    - iframe [ref=e357]:
+      - generic [ref=f2e3]:
+        - heading "¡Bienvenido al Asistente Virtual del Ayuntamiento de Tijuana!" [level=1] [ref=f2e4]
+        - paragraph [ref=f2e5]: Compártenos tus datos para poder apoyarte mejor con información sobre trámites, servicios y reportes ciudadanos. El número de teléfono es opcional y solo se utilizará si deseas que te contactemos.
+        - generic [ref=f2e6]:
+          - textbox "Nombre (Obligatorio)" [ref=f2e7]
+          - textbox "Teléfono" [ref=f2e8]
+          - textbox "Colonia (Obligatorio)" [ref=f2e9]
+        - button "Continuar" [ref=f2e10] [cursor=pointer]

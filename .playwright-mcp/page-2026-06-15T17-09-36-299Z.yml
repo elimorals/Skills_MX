@@ -1,0 +1,129 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - banner [ref=e4]:
+        - link [ref=e6] [cursor=pointer]:
+          - /url: https://pagos.tijuana.gob.mx
+          - img [ref=e7]
+        - generic [ref=e8]:
+          - link "Ayuntamiento de Tijuana" [ref=e10] [cursor=pointer]:
+            - /url: https://www.tijuana.gob.mx/index.aspx
+            - img "Ayuntamiento de Tijuana" [ref=e11]
+          - generic [ref=e12]:
+            - navigation [ref=e13]:
+              - list [ref=e14]:
+                - listitem [ref=e15]:
+                  - link "Inicio" [ref=e16] [cursor=pointer]:
+                    - /url: https://www.tijuana.gob.mx
+                - listitem [ref=e17]:
+                  - link "Ayuntamiento 3" [ref=e18] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e19]:
+                  - link "Dependencias" [ref=e20] [cursor=pointer]:
+                    - /url: https://www.tijuana.gob.mx/dependencias
+                - listitem [ref=e21]:
+                  - link "Delegaciones 3" [ref=e22] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e23]:
+                  - link "Paramunicipales 3" [ref=e24] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e25]:
+                  - link "Transparencia" [ref=e26] [cursor=pointer]:
+                    - /url: https://transparencia.tijuana.gob.mx
+                - listitem [ref=e27]:
+                  - link "Mi cuenta" [ref=e28] [cursor=pointer]:
+                    - /url: https://pagos.tijuana.gob.mx/PagosEnLinea/index.aspx
+            - link:
+              - /url: javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$lbServicios", "", false, "", "https://pagos.tijuana.gob.mx/PagosenLinea/Servicios/servicios.aspx", false, true))
+            - text: a
+      - article [ref=e31]:
+        - img [ref=e34]
+    - contentinfo [ref=e35]:
+      - generic [ref=e37]:
+        - generic [ref=e39]:
+          - heading "Ayuntamiento de Tijuana, B.C." [level=3] [ref=e40]
+          - paragraph [ref=e41]:
+            - generic [ref=e42]:
+              - text: Avenida Independencia 1350, Zona Urbana Río, C. P. 22010
+              - text: Tijuana, Baja California, México
+              - text: (664) 973-7000
+          - iframe [ref=e44]:
+            - generic [ref=f9e2]:
+              - table [ref=f9e3]:
+                - rowgroup [ref=f9e4]:
+                  - row "22°C 6 km/h Hoy Mañana Miércoles" [ref=f9e5]:
+                    - cell [ref=f9e6]:
+                      - link [ref=f9e7] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tijuana.html
+                    - cell "22°C 6 km/h" [ref=f9e8]:
+                      - strong [ref=f9e10]: 22°C
+                      - text: 6 km/h
+                    - cell "Hoy" [ref=f9e11]:
+                      - generic [ref=f9e12]: Hoy
+                    - cell "Mañana" [ref=f9e13]:
+                      - generic [ref=f9e14]: Mañana
+                    - cell "Miércoles" [ref=f9e15]:
+                      - generic [ref=f9e16]: Miércoles
+                  - row [ref=f9e17]:
+                    - cell [ref=f9e18]:
+                      - link [ref=f9e19] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tijuana.html
+                    - cell [ref=f9e20]:
+                      - link [ref=f9e21] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tijuana.html
+                    - cell [ref=f9e22]:
+                      - link [ref=f9e23] [cursor=pointer]:
+                        - /url: https://www.tutiempo.net/tijuana.html
+                  - row "23° | 19° 23° | 18° 22° | 18°" [ref=f9e24]:
+                    - cell "23° | 19°" [ref=f9e25]:
+                      - generic [ref=f9e26]: 23°
+                      - generic [ref=f9e27]: "|"
+                      - generic [ref=f9e28]: 19°
+                    - cell "23° | 18°" [ref=f9e29]:
+                      - generic [ref=f9e30]: 23°
+                      - generic [ref=f9e31]: "|"
+                      - generic [ref=f9e32]: 18°
+                    - cell "22° | 18°" [ref=f9e33]:
+                      - generic [ref=f9e34]: 22°
+                      - generic [ref=f9e35]: "|"
+                      - generic [ref=f9e36]: 18°
+              - generic [ref=f9e37]:
+                - link "© Tutiempo.net" [ref=f9e39] [cursor=pointer]:
+                  - /url: https://www.tutiempo.net/
+                - link "»»»" [ref=f9e41] [cursor=pointer]:
+                  - /url: https://www.tutiempo.net/tijuana.html
+                  - strong [ref=f9e42]: »»»
+          - paragraph
+        - generic [ref=e47]:
+          - heading "Servicios de Emergencia" [level=3] [ref=e48]
+          - list [ref=e49]:
+            - listitem [ref=e50]:
+              - link "Protección Civil" [ref=e51] [cursor=pointer]:
+                - /url: https://proteccioncivil.tijuana.gob.mx
+            - listitem [ref=e52]:
+              - link "Bomberos" [ref=e53] [cursor=pointer]:
+                - /url: https://bomberos.tijuana.gob.mx/
+            - listitem [ref=e54]:
+              - link "Secretaría de Seguridad y Protección Ciudadana" [ref=e55] [cursor=pointer]:
+                - /url: https://policia.tijuana.gob.mx/
+          - generic [ref=e56]:
+            - img "911" [ref=e58]
+            - link "911" [ref=e60] [cursor=pointer]:
+              - /url: https://www.seguridadbc.gob.mx/contenidos/089.php
+              - img "911" [ref=e61]
+  - generic [ref=e63]:
+    - generic [ref=e64] [cursor=pointer]:
+      - img [ref=e66]
+      - generic [ref=e67]:
+        - generic [ref=e68]: Chat 24/7
+        - generic [ref=e69]: Ayuntamiento de Tijuana
+      - img [ref=e72]
+    - iframe [ref=e76]:
+      - generic [ref=f10e3]:
+        - heading "¡Bienvenido al Asistente Virtual del Ayuntamiento de Tijuana!" [level=1] [ref=f10e4]
+        - paragraph [ref=f10e5]: Compártenos tus datos para poder apoyarte mejor con información sobre trámites, servicios y reportes ciudadanos. El número de teléfono es opcional y solo se utilizará si deseas que te contactemos.
+        - generic [ref=f10e6]:
+          - textbox "Nombre (Obligatorio)" [ref=f10e7]
+          - textbox "Teléfono" [ref=f10e8]
+          - textbox "Colonia (Obligatorio)" [ref=f10e9]
+        - button "Continuar" [ref=f10e10] [cursor=pointer]

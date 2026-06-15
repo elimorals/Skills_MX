@@ -1,0 +1,6 @@
+- generic [ref=e3]:
+  - img "Chania" [ref=e4]
+  - img "Chania" [ref=e5]
+  - link "Chania" [ref=e6] [cursor=pointer]:
+    - /url: https://silaodelavictoria.gob.mx/enlinea/simprecad.php
+    - img "Chania" [ref=e7]

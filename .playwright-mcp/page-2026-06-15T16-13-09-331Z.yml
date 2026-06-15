@@ -1,0 +1,142 @@
+- generic [active] [ref=e1]:
+  - link "Pasar al contenido principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e8]:
+        - link [ref=e13] [cursor=pointer]:
+          - /url: https://www.siapa.gob.mx
+        - list [ref=e17]:
+          - listitem [ref=e18]:
+            - link "Trámites y Servicios" [ref=e19] [cursor=pointer]:
+              - /url: /servicios
+          - listitem [ref=e20]:
+            - link "Órganos de Gobierno" [ref=e21] [cursor=pointer]:
+              - /url: /gobierno
+          - listitem [ref=e22]:
+            - link "Sala de Prensa" [ref=e23] [cursor=pointer]:
+              - /url: /prensa
+          - listitem [ref=e24]:
+            - link "Transparencia" [ref=e25] [cursor=pointer]:
+              - /url: /transparencia
+        - generic [ref=e31]:
+          - heading "Search form" [level=2] [ref=e32]
+          - generic [ref=e33]:
+            - generic [ref=e34]: Search this site
+            - textbox "Search this site" [ref=e35]:
+              - /placeholder: Búsqueda
+          - button "Submit" [ref=e37] [cursor=pointer]
+    - generic [ref=e38]:
+      - generic [ref=e46]:
+        - paragraph
+        - link [ref=e48] [cursor=pointer]:
+          - /url: https://www.siapa.gob.mx
+        - paragraph
+      - generic [ref=e50]:
+        - generic [ref=e52]:
+          - heading "Página no encontrada" [level=1] [ref=e53]
+          - generic [ref=e56]: The requested page "/pago-de-tu-recibo" could not be found.
+        - complementary [ref=e57]:
+          - generic [ref=e61]:
+            - paragraph [ref=e62]:
+              - link [ref=e63] [cursor=pointer]:
+                - /url: https://tramites.jalisco.gob.mx/catalogo.jalisco/ciudadania/buscar?value=&dependence=19
+            - paragraph [ref=e64]:
+              - link [ref=e65] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/reciboenlinea
+            - paragraph [ref=e66]:
+              - link [ref=e67] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/factura-siapa
+            - paragraph [ref=e68]:
+              - link [ref=e69] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/servicios/pago-de-recibo
+            - paragraph [ref=e70]:
+              - link [ref=e71] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/quejas-y-sugerencias
+            - paragraph [ref=e72]:
+              - link [ref=e73] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/establecimientos-afiliados
+            - paragraph [ref=e74]:
+              - link [ref=e75] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/sucursales
+            - paragraph [ref=e76]:
+              - link [ref=e77] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/transparencia
+            - paragraph [ref=e78]:
+              - link [ref=e79] [cursor=pointer]:
+                - /url: /transparencia/licitaciones-estatales-y-federales
+            - paragraph [ref=e80]:
+              - link [ref=e81] [cursor=pointer]:
+                - /url: https://siapa.gob.mx/transparencia/convocatoria-proceso-competitivo-instrumento-derivado
+            - paragraph [ref=e82]:
+              - link [ref=e83] [cursor=pointer]:
+                - /url: /transparencia/resolutivo-tarifario
+            - paragraph [ref=e84]:
+              - link [ref=e85] [cursor=pointer]:
+                - /url: /transparencia/contabilidad-gubernamental
+            - paragraph [ref=e86]:
+              - link [ref=e87] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/contraloria-siapa
+            - paragraph [ref=e88]:
+              - link [ref=e89] [cursor=pointer]:
+                - /url: https://www.siapa.gob.mx/transparencia/criterios-y-lineamientos-tecnicos-para-factibilidades-en-la-zmg
+            - paragraph [ref=e90]:
+              - link [ref=e91] [cursor=pointer]:
+                - /url: https://servicios.siapa.gob.mx/controldeaguasresiduales/Account/Login?ReturnUrl=%2Fcontroldeaguasresiduales%2F
+            - paragraph [ref=e92]:
+              - link [ref=e93] [cursor=pointer]:
+                - /url: https://servicios.siapa.gob.mx/WaEncuesta/Acceso/Login
+            - paragraph [ref=e94]
+            - paragraph [ref=e95]
+            - paragraph [ref=e97]
+            - paragraph [ref=e98]
+    - contentinfo [ref=e99]:
+      - generic [ref=e101]:
+        - generic [ref=e106]:
+          - heading [level=5] [ref=e107]
+          - table [ref=e108]:
+            - rowgroup [ref=e109]:
+              - row "Organos de Gobierno Sala de Prensa Transparencia Aviso de Privacidad Integral Junta de Gobierno Comisión Tarifaria" [ref=e110]:
+                - cell [ref=e111]
+                - cell "Organos de Gobierno Sala de Prensa Transparencia Aviso de Privacidad Integral Junta de Gobierno Comisión Tarifaria" [ref=e112]:
+                  - paragraph [ref=e113]:
+                    - strong [ref=e115]:
+                      - link "Organos de Gobierno" [ref=e116] [cursor=pointer]:
+                        - /url: /gobierno
+                      - link "Sala de Prensa" [ref=e117] [cursor=pointer]:
+                        - /url: /prensa
+                      - link "Transparencia" [ref=e118] [cursor=pointer]:
+                        - /url: https://www.siapa.gob.mx/node/13
+                      - link "Aviso de Privacidad Integral" [ref=e119] [cursor=pointer]:
+                        - /url: https://www.siapa.gob.mx/sites/default/files/siapa_aviso_de_privacidad_integral_2025.pdf
+                  - paragraph [ref=e120]:
+                    - strong [ref=e122]:
+                      - link "Junta de Gobierno" [ref=e123] [cursor=pointer]:
+                        - /url: /gobierno/consejo-de-administracion
+                    - strong [ref=e124]:
+                      - link "Comisión Tarifaria" [ref=e125] [cursor=pointer]:
+                        - /url: /gobierno/consejo-tarifario
+          - paragraph [ref=e126]: "Para el correcto funcionamiento de nuestro sitio web es necesario contar con un navegador actual: recomendamos Edge, Chrome, Firefox, Opera o Safari."
+          - paragraph [ref=e127]
+          - paragraph [ref=e128]
+          - paragraph [ref=e129]
+          - paragraph [ref=e130]
+          - paragraph [ref=e131]
+          - paragraph [ref=e132]
+        - generic [ref=e137]:
+          - generic [ref=e138]:
+            - paragraph
+            - paragraph [ref=e139]: Siapatel al 33-3668-2482
+          - paragraph [ref=e140]: "Av. Dr. R. Michel # 461 esquina con González Gallo, Col. Las Conchas, Sector Reforma. C.P. 44460. Guadalajara, Jalisco, México."
+          - paragraph [ref=e141]:
+            - link "Facebook" [ref=e142] [cursor=pointer]:
+              - /url: https://www.facebook.com/siapagdl
+              - img "Facebook" [ref=e143]
+            - link "Youtube" [ref=e144] [cursor=pointer]:
+              - /url: https://www.youtube.com/siapaweb
+              - img "Youtube" [ref=e145]
+            - link "Twitter" [ref=e146] [cursor=pointer]:
+              - /url: https://www.twitter.com/siapagdl
+              - img "Twitter" [ref=e147]
+          - paragraph [ref=e148]
+          - paragraph [ref=e149]

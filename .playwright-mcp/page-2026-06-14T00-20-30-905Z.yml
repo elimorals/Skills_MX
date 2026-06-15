@@ -1,0 +1,201 @@
+- generic [ref=e2]:
+  - text: 
+  - generic [ref=e5]:
+    - link [ref=e8] [cursor=pointer]:
+      - /url: /
+    - navigation [ref=e11]:
+      - list [ref=e12]:
+        - listitem [ref=e13] [cursor=pointer]:
+          - link "Inicio" [ref=e14]:
+            - /url: /index.php
+            - generic [ref=e15]: Inicio
+        - listitem [ref=e16] [cursor=pointer]:
+          - generic [ref=e18]: Municipio
+        - listitem [ref=e19] [cursor=pointer]:
+          - generic [ref=e21]: Ayuntamiento
+        - listitem [ref=e22] [cursor=pointer]:
+          - generic [ref=e23]:
+            - generic [ref=e24]: Dependencias
+            - generic [ref=e25]: 
+        - listitem [ref=e26] [cursor=pointer]:
+          - generic [ref=e27]:
+            - generic [ref=e28]: Transparencia
+            - generic [ref=e29]: 
+        - listitem [ref=e30] [cursor=pointer]:
+          - generic [ref=e32]: Contacto
+    - link "" [ref=e37] [cursor=pointer]:
+      - /url: https://www.facebook.com/edvino.hernandez.2025
+      - generic [ref=e38]: 
+  - generic [ref=e45]:
+    - generic [ref=e46]:
+      - generic [ref=e48]:
+        - generic [ref=e51]:
+          - heading "EVALUACIÓN TÉCNICA TERRENO CECYTEV" [level=1] [ref=e52]
+          - paragraph [ref=e53]: Recorrimos el predio donde se proyecta la construcción del nuevo plantel CECyTEV en Benito Juárez
+          - link "Leer más" [ref=e54] [cursor=pointer]:
+            - /url: https://benitojuarez.gob.mx/index.php/secretaria/noticias/obras-publicas/evaluacion-tecnica-de-terreno-junto-a-secretaria-de-infraestructura-y-obras-publicas-del-estado-y-directivos-cecytev
+        - generic [ref=e58]:
+          - heading "BANDERAZO SANTA LUCIA" [level=1] [ref=e59]
+          - paragraph [ref=e60]: Arrancó la obra de construcción de cuartos dormitorio
+          - link "Leer más" [ref=e61] [cursor=pointer]:
+            - /url: https://benitojuarez.gob.mx/index.php/secretaria/noticias/obras-publicas/banderazo-de-obra-santa-lucia
+        - generic [ref=e65]:
+          - heading "RECONOCIMIENTO PEMEX" [level=1] [ref=e66]
+          - paragraph
+          - link "Leer más" [ref=e67] [cursor=pointer]:
+            - /url: https://benitojuarez.gob.mx/index.php/component/content/article/reconocimiento-pemex?catid=18:secretaria
+        - generic [ref=e71]:
+          - heading "RODADA DIA DEL NIÑO" [level=1] [ref=e72]
+          - paragraph [ref=e73]: Rodada 30 de abril
+          - link "Leer más" [ref=e74] [cursor=pointer]:
+            - /url: https://benitojuarez.gob.mx/index.php/secretaria/eventos/dif/rodada-del-dia-del-nino
+      - generic [ref=e76]:
+        - button [ref=e77] [cursor=pointer]
+        - button [ref=e78] [cursor=pointer]
+        - button [ref=e79] [cursor=pointer]
+        - button [ref=e80] [cursor=pointer]
+    - generic [ref=e81]:
+      - generic [ref=e83]:
+        - generic [ref=e87] [cursor=pointer]: EVALUACIÓN TÉCNICA TERRENO CECYTEV
+        - generic [ref=e91] [cursor=pointer]: BANDERAZO SANTA LUCIA
+        - generic [ref=e95] [cursor=pointer]: RECONOCIMIENTO PEMEX
+        - generic [ref=e99] [cursor=pointer]: RODADA DIA DEL NIÑO
+      - text:  
+  - generic [ref=e104]:
+    - heading "NOTICIAS DESTACADAS" [level=3] [ref=e105]
+    - generic [ref=e107]:
+      - generic [ref=e108]:
+        - generic [ref=e111]:
+          - link [ref=e113] [cursor=pointer]:
+            - /url: /index.php/secretaria/noticias/obras-publicas/evaluacion-tecnica-de-terreno-junto-a-secretaria-de-infraestructura-y-obras-publicas-del-estado-y-directivos-cecytev
+          - heading "EVALUACIÓN TECNICA DE..." [level=3] [ref=e115]:
+            - link "EVALUACIÓN TECNICA DE..." [ref=e116] [cursor=pointer]:
+              - /url: /index.php/secretaria/noticias/obras-publicas/evaluacion-tecnica-de-terreno-junto-a-secretaria-de-infraestructura-y-obras-publicas-del-estado-y-directivos-cecytev
+          - generic [ref=e117]:
+            - generic [ref=e118]: 27 May 2026
+            - generic [ref=e119]:  OBRAS PÚBLICAS
+            - generic [ref=e120]:  51
+          - generic [ref=e121]: Hoy dimos un paso importante para el futuro de nuestra juventud. 🌱 Recorrimos...
+          - link "Leer más" [ref=e123] [cursor=pointer]:
+            - /url: /index.php/secretaria/noticias/obras-publicas/evaluacion-tecnica-de-terreno-junto-a-secretaria-de-infraestructura-y-obras-publicas-del-estado-y-directivos-cecytev
+        - generic [ref=e126]:
+          - link [ref=e128] [cursor=pointer]:
+            - /url: /index.php/secretaria/noticias/obras-publicas/banderazo-de-obra-en-chila
+          - heading "BANDERAZO DE OBRA EN CHILA" [level=3] [ref=e130]:
+            - link "BANDERAZO DE OBRA EN CHILA" [ref=e131] [cursor=pointer]:
+              - /url: /index.php/secretaria/noticias/obras-publicas/banderazo-de-obra-en-chila
+          - generic [ref=e132]:
+            - generic [ref=e133]: 8 May 2026
+            - generic [ref=e134]:  OBRAS PÚBLICAS
+            - generic [ref=e135]:  88
+          - generic [ref=e136]: Las obras que transforman comienzan escuchando a la gente. 🚧🌱 Hoy dimos el...
+          - link "Leer más" [ref=e138] [cursor=pointer]:
+            - /url: /index.php/secretaria/noticias/obras-publicas/banderazo-de-obra-en-chila
+        - generic [ref=e141]:
+          - link [ref=e143] [cursor=pointer]:
+            - /url: /index.php/secretaria/noticias/dif/obsequios-dia-de-las-madres
+          - heading "OBSEQUIOS DIA DE LAS MADRES" [level=3] [ref=e145]:
+            - link "OBSEQUIOS DIA DE LAS MADRES" [ref=e146] [cursor=pointer]:
+              - /url: /index.php/secretaria/noticias/dif/obsequios-dia-de-las-madres
+          - generic [ref=e147]:
+            - generic [ref=e148]: 7 May 2026
+            - generic [ref=e149]:  DIF
+            - generic [ref=e150]:  69
+          - generic [ref=e151]: Hoy consentimos a las reinas del hogar. 💐 A través del DIF Municipal,...
+          - link "Leer más" [ref=e153] [cursor=pointer]:
+            - /url: /index.php/secretaria/noticias/dif/obsequios-dia-de-las-madres
+        - generic [ref=e156]:
+          - link [ref=e158] [cursor=pointer]:
+            - /url: /index.php/secretaria/noticias/presidencia/toma-de-protesta-agentes-municipales
+          - heading "TOMA DE PROTESTA AGENTES..." [level=3] [ref=e160]:
+            - link "TOMA DE PROTESTA AGENTES..." [ref=e161] [cursor=pointer]:
+              - /url: /index.php/secretaria/noticias/presidencia/toma-de-protesta-agentes-municipales
+          - generic [ref=e162]:
+            - generic [ref=e163]: 3 May 2026
+            - generic [ref=e164]:  PRESIDENCIA
+            - generic [ref=e165]:  55
+          - generic [ref=e166]: En Benito Juárez seguimos fortaleciendo la participación ciudadana a través de...
+          - link "Leer más" [ref=e168] [cursor=pointer]:
+            - /url: /index.php/secretaria/noticias/presidencia/toma-de-protesta-agentes-municipales
+      - generic [ref=e169]:
+        - generic [ref=e172]:
+          - link [ref=e174] [cursor=pointer]:
+            - /url: /index.php/secretaria/noticias/presidencia/dia-del-nino-en-huayacocotla
+          - heading "DIA DEL NIÑO EN HUAYACOCOTLA" [level=3] [ref=e176]:
+            - link "DIA DEL NIÑO EN HUAYACOCOTLA" [ref=e177] [cursor=pointer]:
+              - /url: /index.php/secretaria/noticias/presidencia/dia-del-nino-en-huayacocotla
+          - generic [ref=e178]:
+            - generic [ref=e179]: 3 May 2026
+            - generic [ref=e180]:  PRESIDENCIA
+            - generic [ref=e181]:  75
+          - generic [ref=e182]: Tuve la oportunidad de acompañar en Huayacocotla las actividades del Día del...
+          - link "Leer más" [ref=e184] [cursor=pointer]:
+            - /url: /index.php/secretaria/noticias/presidencia/dia-del-nino-en-huayacocotla
+        - generic [ref=e187]:
+          - link [ref=e189] [cursor=pointer]:
+            - /url: /index.php/secretaria/eventos/dif/rodada-del-dia-del-nino
+          - heading "RODADA DEL DIA DEL NIÑO" [level=3] [ref=e191]:
+            - link "RODADA DEL DIA DEL NIÑO" [ref=e192] [cursor=pointer]:
+              - /url: /index.php/secretaria/eventos/dif/rodada-del-dia-del-nino
+          - generic [ref=e193]:
+            - generic [ref=e194]: 28 Abril 2026
+            - generic [ref=e195]:  DIF
+            - generic [ref=e196]:  150
+          - generic [ref=e197]: 🚴‍♀️🌱 Cada pedaleo es una semilla que sembramos en su futuro. Este 30 de abril...
+          - link "Leer más" [ref=e199] [cursor=pointer]:
+            - /url: /index.php/secretaria/eventos/dif/rodada-del-dia-del-nino
+        - generic [ref=e202]:
+          - link [ref=e204] [cursor=pointer]:
+            - /url: /index.php/secretaria/noticias/secretaria/reconocimiento-pemex
+          - heading "RECONOCIMIENTO PEMEX" [level=3] [ref=e206]:
+            - link "RECONOCIMIENTO PEMEX" [ref=e207] [cursor=pointer]:
+              - /url: /index.php/secretaria/noticias/secretaria/reconocimiento-pemex
+          - generic [ref=e208]:
+            - generic [ref=e209]: 27 Abril 2026
+            - generic [ref=e210]:  SECRETARÍA
+            - generic [ref=e211]:  207
+          - generic [ref=e212]: Con motivo de las donaciones de combustible al Municipio de Benito Juárez,...
+          - link "Leer más" [ref=e214] [cursor=pointer]:
+            - /url: /index.php/secretaria/noticias/secretaria/reconocimiento-pemex
+        - generic [ref=e217]:
+          - link [ref=e219] [cursor=pointer]:
+            - /url: /index.php/secretaria/noticias/presidencia/entrega-jardin-de-ninos
+          - heading "ENTREGA JARDÍN DE NIÑOS" [level=3] [ref=e221]:
+            - link "ENTREGA JARDÍN DE NIÑOS" [ref=e222] [cursor=pointer]:
+              - /url: /index.php/secretaria/noticias/presidencia/entrega-jardin-de-ninos
+          - generic [ref=e223]:
+            - generic [ref=e224]: 27 Abril 2026
+            - generic [ref=e225]:  PRESIDENCIA
+            - generic [ref=e226]:  94
+          - generic [ref=e227]: El bienestar de nuestras niñas y niños no puede esperar. Hoy visité el Jardín...
+          - link "Leer más" [ref=e229] [cursor=pointer]:
+            - /url: /index.php/secretaria/noticias/presidencia/entrega-jardin-de-ninos
+  - contentinfo [ref=e230]:
+    - generic [ref=e235]:
+      - heading "Enlaces" [level=6] [ref=e236]
+      - list [ref=e237]:
+        - listitem [ref=e238]:
+          - generic [ref=e239]: 
+          - link "Gobierno Federal" [ref=e240] [cursor=pointer]:
+            - /url: https://www.gob.mx/
+        - listitem [ref=e241]:
+          - generic [ref=e242]: 
+          - link "Gobierno Estatal" [ref=e243] [cursor=pointer]:
+            - /url: https://www.veracruz.gob.mx/
+        - listitem [ref=e244]:
+          - generic [ref=e245]: 
+          - link "Gobernadora" [ref=e246] [cursor=pointer]:
+            - /url: https://www.veracruz.gob.mx/gobiernover/gobernador/
+        - listitem [ref=e247]:
+          - generic [ref=e248]: 
+          - link "Programas" [ref=e249] [cursor=pointer]:
+            - /url: https://www.veracruz.gob.mx/finanzas/planeacion/programas-sectoriales-especiales-y-prioritario-2019-2024/
+        - listitem [ref=e250]:
+          - generic [ref=e251]: 
+          - link "Hacienda" [ref=e252] [cursor=pointer]:
+            - /url: https://www.ovh.gob.mx/
+  - generic [ref=e259]:
+    - text: © 2026
+    - link "H. Ayuntamiento Benito Juárez, Veracruz. Administración 2026 - 2029." [ref=e260] [cursor=pointer]:
+      - /url: https://benitojuarez.gob.mx/
+    - text: . Derechos Reservados.

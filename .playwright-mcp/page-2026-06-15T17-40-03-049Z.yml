@@ -1,0 +1,368 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-419
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - generic:
+              - img
+        - 'link "Copa Mundial 2026: El arte de la atajada" [ref=e13] [cursor=pointer]':
+          - /url: https://www.google.com/webhp?hl=es-419&ictx=2&sa=X&ved=0ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8QPQgK
+          - 'img "Copa Mundial 2026: El arte de la atajada" [ref=e14]'
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - combobox "Buscar" [ref=e19]: infracciones transito monterrey nuevo leon consulta placa infracciones transito monterrey nuevo leon consulta placa
+            - generic [ref=e20]:
+              - button "Borrar" [ref=e22] [cursor=pointer]:
+                - img [ref=e24]
+              - generic [ref=e27]:
+                - button "Búsqueda por voz" [ref=e28] [cursor=pointer]:
+                  - img [ref=e29]
+                - button "Búsqueda por imagen" [ref=e31] [cursor=pointer]:
+                  - img [ref=e32]
+          - button "Buscar" [ref=e34] [cursor=pointer]:
+            - img [ref=e37]
+    - generic [ref=e39]:
+      - button "Configuración" [ref=e41] [cursor=pointer]:
+        - img [ref=e44]
+      - generic [ref=e47]:
+        - button "Apps de Google" [ref=e49] [cursor=pointer]:
+          - img [ref=e50]
+        - link "Acceder" [ref=e54] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dinfracciones%2Btransito%2Bmonterrey%2Bnuevo%2Bleon%2Bconsulta%2Bplaca&ec=futura_srp_og_si_72236_p
+  - generic [ref=e56]:
+    - navigation [ref=e62]:
+      - generic [ref=e68]:
+        - list [ref=e69]:
+          - listitem [ref=e70]:
+            - link "Modo IA" [ref=e73] [cursor=pointer]:
+              - /url: /search?q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&sca_esv=c6c16ab1eb0a4421&udm=50&fbs=ADc_l-ZsP6SKvhKiwE9NNegOps-9ryZRMQGZQtVxgdNcrEdHTvzas1qJxZwwr-iDXFZzP_FXek8mpN-HA_qz5qS3ZkMx76-vDK4ixzNbe1xndD-sCjaXOblYVL4ZKtI-sULfbnQo-uvriYw2RDPU3CXSu6KUi94PHcnvrSD2p7ZUg1WrXbudkxzB3gcAwLll5M7rzMB0PTOZTMLc0EqwBGM-oja0tIlMjA&aep=1&ntc=1&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q2J8OegQIERAD
+              - generic [ref=e76]: Modo IA
+          - listitem [ref=e77]:
+            - link "Todo" [disabled] [ref=e78]:
+              - generic [ref=e80]: Todo
+          - listitem [ref=e81]:
+            - link "Noticias" [ref=e82] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&tbm=nws&source=lnms&fbs=ADc_l-ZsP6SKvhKiwE9NNegOps-9ryZRMQGZQtVxgdNcrEdHTvzas1qJxZwwr-iDXFZzP_FXek8mpN-HA_qz5qS3ZkMx76-vDK4ixzNbe1xndD-sCjaXOblYVL4ZKtI-sULfbnQo-uvriYw2RDPU3CXSu6KUi94PHcnvrSD2p7ZUg1WrXbudkxzB3gcAwLll5M7rzMB0PTOZTMLc0EqwBGM-oja0tIlMjA&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q0pQJegQIFhAB
+              - generic [ref=e84]: Noticias
+          - listitem [ref=e85]:
+            - link "Shopping" [ref=e86] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=28&fbs=ADc_l-ZsP6SKvhKiwE9NNegOps-9ryZRMQGZQtVxgdNcrEdHTvzas1qJxZwwr-iDXFZzP_FXek8mpN-HA_qz5qS3ZkMx76-vDK4ixzNbe1xndD-sCjaXOblYVL4ZKtI-sULfbnQo-uvriYw2RDPU3CXSu6KUi94PHcnvrSD2p7ZUg1WrXbudkxzB3gcAwLll5M7rzMB0PTOZTMLc0EqwBGM-oja0tIlMjA&q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&ved=1t:220175&ictx=111
+              - generic [ref=e88]: Shopping
+          - listitem [ref=e89]:
+            - link "Videos cortos" [ref=e90] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=39&fbs=ADc_l-ZsP6SKvhKiwE9NNegOps-9ryZRMQGZQtVxgdNcrEdHTvzas1qJxZwwr-iDXFZzP_FXek8mpN-HA_qz5qS3ZkMx76-vDK4ixzNbe1xndD-sCjaXOblYVL4ZKtI-sULfbnQo-uvriYw2RDPU3CXSu6KUi94PHcnvrSD2p7ZUg1WrXbudkxzB3gcAwLll5M7rzMB0PTOZTMLc0EqwBGM-oja0tIlMjA&q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Qs6gLegQIFxAB
+              - generic [ref=e92]: Videos cortos
+          - listitem [ref=e93]:
+            - link "Imágenes" [ref=e94] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=2&fbs=ADc_l-ZsP6SKvhKiwE9NNegOps-9ryZRMQGZQtVxgdNcrEdHTvzas1qJxZwwr-iDXFZzP_FXek8mpN-HA_qz5qS3ZkMx76-vDK4ixzNbe1xndD-sCjaXOblYVL4ZKtI-sULfbnQo-uvriYw2RDPU3CXSu6KUi94PHcnvrSD2p7ZUg1WrXbudkxzB3gcAwLll5M7rzMB0PTOZTMLc0EqwBGM-oja0tIlMjA&q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8QtKgLegQIGBAB
+              - generic [ref=e96]: Imágenes
+          - listitem [ref=e97]:
+            - link "Videos" [ref=e98] [cursor=pointer]:
+              - /url: /search?sca_esv=c6c16ab1eb0a4421&udm=7&fbs=ADc_l-ZsP6SKvhKiwE9NNegOps-9ryZRMQGZQtVxgdNcrEdHTvzas1qJxZwwr-iDXFZzP_FXek8mpN-HA_qz5qS3ZkMx76-vDK4ixzNbe1xndD-sCjaXOblYVL4ZKtI-sULfbnQo-uvriYw2RDPU3CXSu6KUi94PHcnvrSD2p7ZUg1WrXbudkxzB3gcAwLll5M7rzMB0PTOZTMLc0EqwBGM-oja0tIlMjA&q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8QtKgLegQIFBAB
+              - generic [ref=e100]: Videos
+          - listitem [ref=e101]:
+            - button "Más filtros" [ref=e102] [cursor=pointer]:
+              - generic "Más filtros" [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Más
+                  - img [ref=e107]
+        - button "Herramientas" [ref=e110] [cursor=pointer]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: Herramientas
+            - img [ref=e115]
+    - heading "Resultados de búsqueda" [level=1] [ref=e117]
+    - generic [ref=e122]:
+      - generic [ref=e141]:
+        - heading "Pensando Buscando Pensando un poco más" [level=2] [ref=e145]:
+          - generic [ref=e146]:
+            - generic [ref=e148]: Pensando
+            - generic [ref=e150]: Buscando
+            - generic [ref=e160]: Pensando un poco más
+        - progressbar "Generando" [ref=e162]
+      - main [ref=e204]:
+        - generic [ref=e208]:
+          - generic [ref=e211]:
+            - heading "Resultados web" [level=2] [ref=e212]
+            - generic [ref=e213]:
+              - generic [ref=e216]:
+                - link "Consulta y Pago de Refrendo Control Vehicular https://www.icvnl.gob.mx › estadodecuenta" [ref=e218] [cursor=pointer]:
+                  - /url: https://www.icvnl.gob.mx/estadodecuenta
+                  - heading "Consulta y Pago de Refrendo" [level=3] [ref=e219]
+                  - generic [ref=e225]:
+                    - generic [ref=e227]: Control Vehicular
+                    - generic [ref=e229]: https://www.icvnl.gob.mx › estadodecuenta
+                - button "Acerca de este resultado" [ref=e230] [cursor=pointer]:
+                  - img [ref=e233]
+              - generic [ref=e237]:
+                - emphasis [ref=e238]: El usuario deberá de proporcionar el número de placa para llevar a cabo la consulta
+                - text: . 3. Durante el proceso de consulta no se entregarán datos personales, ...
+          - generic [ref=e242]:
+            - generic [ref=e245]:
+              - link "Tenencia, refrendo y multas de tránsito Gobierno del Estado de Nuevo León https://egobierno.nl.gob.mx › egob › AMEX › terminos" [ref=e247] [cursor=pointer]:
+                - /url: https://egobierno.nl.gob.mx/egob/AMEX/terminos.php
+                - heading "Tenencia, refrendo y multas de tránsito" [level=3] [ref=e248]
+                - generic [ref=e254]:
+                  - generic [ref=e256]: Gobierno del Estado de Nuevo León
+                  - generic [ref=e258]: https://egobierno.nl.gob.mx › egob › AMEX › terminos
+              - button "Acerca de este resultado" [ref=e259] [cursor=pointer]:
+                - img [ref=e262]
+            - generic [ref=e266]:
+              - text: El servicio consiste en
+              - emphasis [ref=e267]: consultar
+              - text: sin costo el estado de cuenta de vehículos automotores particulares (Automóvil, vehículos para discapacitados) incluyendo ...
+          - generic [ref=e271]:
+            - generic [ref=e274]:
+              - link "Instituto de Control Vehicular Control Vehicular https://www.icvnl.gob.mx" [ref=e276] [cursor=pointer]:
+                - /url: https://www.icvnl.gob.mx/
+                - heading "Instituto de Control Vehicular" [level=3] [ref=e277]
+                - generic [ref=e283]:
+                  - generic [ref=e285]: Control Vehicular
+                  - generic [ref=e287]: https://www.icvnl.gob.mx
+              - button "Acerca de este resultado" [ref=e288] [cursor=pointer]:
+                - img [ref=e291]
+            - generic [ref=e295]:
+              - emphasis [ref=e296]: Consulta
+              - text: y Pago de Refrendo · Ventanilla Empresarial Online. · Trámites en Linea · Requisitos para Trámites · Ubica tu Delegación · Factura Electrónica (CFDI).
+          - generic [ref=e300]:
+            - generic [ref=e303]:
+              - link "🥇 Multas de tránsito en Monterrey Comparaencasa https://www.comparaencasa.com › ... › Tramites" [ref=e305] [cursor=pointer]:
+                - /url: https://www.comparaencasa.com/mx/multas-de-transito-en-monterrey/
+                - heading "🥇 Multas de tránsito en Monterrey" [level=3] [ref=e306]
+                - generic [ref=e312]:
+                  - generic [ref=e314]: Comparaencasa
+                  - generic [ref=e316]: https://www.comparaencasa.com › ... › Tramites
+              - button "Acerca de este resultado" [ref=e317] [cursor=pointer]:
+                - img [ref=e320]
+            - generic [ref=e323]:
+              - generic [ref=e324]: 29 abr 2026 —
+              - generic [ref=e325]:
+                - emphasis [ref=e326]: Ingresa al portal oficial del municipio de Monterrey, sección de multas
+                - text: . · Introduce el número de placa y consulta las infracciones. · Selecciona ...
+            - 'img "Calificación: 4.8 de 5, (27) opiniones de usuarios" [ref=e331]':
+              - text: "4.8"
+              - img [ref=e332]
+              - text: (27)
+            - list [ref=e336]:
+              - listitem [ref=e337]:
+                - link "Introducción" [ref=e338] [cursor=pointer]:
+                  - /url: https://www.comparaencasa.com/mx/multas-de-transito-en-monterrey/#1.-Introducci%C3%B3n
+                  - generic [ref=e340]: Introducción
+              - listitem [ref=e341]:
+                - link "¿Qué son las multas de..." [ref=e342] [cursor=pointer]:
+                  - /url: https://www.comparaencasa.com/mx/multas-de-transito-en-monterrey/#2.-%C2%BFQu%C3%A9-son-las-multas-de-tr%C3%A1nsito-en-Monterrey?
+                  - generic [ref=e344]: ¿Qué son las multas de...
+              - listitem [ref=e345]:
+                - link "Motivos por los que pueden..." [ref=e346] [cursor=pointer]:
+                  - /url: https://www.comparaencasa.com/mx/multas-de-transito-en-monterrey/#3.-Motivos-por-los-que-pueden-imponerse-multas
+                  - generic [ref=e348]: Motivos por los que pueden...
+          - generic [ref=e353]:
+            - heading "Más preguntas" [level=2] [ref=e355]
+            - generic [ref=e356]:
+              - button "¿Cómo ver si tu placa tiene multas?" [ref=e362] [cursor=pointer]:
+                - generic [ref=e364]: ¿Cómo ver si tu placa tiene multas?
+                - img [ref=e367]
+              - button "¿Cómo checar adeudos de placas en Nuevo León?" [ref=e376] [cursor=pointer]:
+                - generic [ref=e378]: ¿Cómo checar adeudos de placas en Nuevo León?
+                - img [ref=e381]
+              - button "¿Cómo puedo revisar si tengo alguna multa de tránsito?" [ref=e390] [cursor=pointer]:
+                - generic [ref=e392]: ¿Cómo puedo revisar si tengo alguna multa de tránsito?
+                - img [ref=e395]
+              - button "¿Dónde puedo ver si me han puesto una multa?" [ref=e404] [cursor=pointer]:
+                - generic [ref=e406]: ¿Dónde puedo ver si me han puesto una multa?
+                - img [ref=e409]
+          - generic [ref=e414]:
+            - heading "Resultados web" [level=2] [ref=e415]
+            - generic [ref=e416]:
+              - generic [ref=e419]:
+                - link "Consulta de Multas de Tránsito - San Pedro Garza García sanpedro.gob.mx https://aplicativos.sanpedro.gob.mx › multas › multasnew" [ref=e421] [cursor=pointer]:
+                  - /url: https://aplicativos.sanpedro.gob.mx/esanpedro/multas/multasnew.asp
+                  - heading "Consulta de Multas de Tránsito - San Pedro Garza García" [level=3] [ref=e422]
+                  - generic [ref=e428]:
+                    - generic [ref=e430]: sanpedro.gob.mx
+                    - generic [ref=e432]: https://aplicativos.sanpedro.gob.mx › multas › multasnew
+                - button "Acerca de este resultado" [ref=e433] [cursor=pointer]:
+                  - img [ref=e436]
+              - generic [ref=e440]:
+                - text: "Consulta de Multas de Tránsito. Placa:"
+                - emphasis [ref=e441]: Favor de teclear el número de placa
+                - text: ", sin espacios ni guiones intermedios. Si desea: Consulta de Pagos de Multas de ..."
+          - generic [ref=e445]:
+            - generic [ref=e448]:
+              - link "Tenencia, refrendo y multas de tránsito Gobierno del Estado de Nuevo León https://egobierno.nl.gob.mx › egob › terminos" [ref=e450] [cursor=pointer]:
+                - /url: https://egobierno.nl.gob.mx/egob/terminos.php
+                - heading "Tenencia, refrendo y multas de tránsito" [level=3] [ref=e451]
+                - generic [ref=e457]:
+                  - generic [ref=e459]: Gobierno del Estado de Nuevo León
+                  - generic [ref=e461]: https://egobierno.nl.gob.mx › egob › terminos
+              - button "Acerca de este resultado" [ref=e462] [cursor=pointer]:
+                - img [ref=e465]
+            - generic [ref=e469]:
+              - text: El servicio consiste en
+              - emphasis [ref=e470]: consultar
+              - text: sin costo el estado de cuenta de vehículos automotores particulares (Automóvil, vehículos para discapacitados) incluyendo ...
+          - generic [ref=e474]:
+            - generic [ref=e477]:
+              - link "Consulta de Placas sanicolas.gob.mx https://consulta.sanicolas.gob.mx › consultaweb › Placas" [ref=e479] [cursor=pointer]:
+                - /url: https://consulta.sanicolas.gob.mx/consultaweb/Placas.aspx
+                - heading "Consulta de Placas" [level=3] [ref=e480]
+                - generic [ref=e486]:
+                  - generic [ref=e488]: sanicolas.gob.mx
+                  - generic [ref=e490]: https://consulta.sanicolas.gob.mx › consultaweb › Placas
+              - button "Acerca de este resultado" [ref=e491] [cursor=pointer]:
+                - img [ref=e494]
+            - generic [ref=e498]:
+              - emphasis [ref=e499]: Consulta de Placas
+              - text: "Verificacion: domingo, 14 de junio de 2026. BBVA Bancomer: CIE# 1542605/ CLABE Bancomer Interbancaria: 012914002015426052 (Favor de poner ..."
+            - generic [ref=e501]:
+              - text: "Falta(n): monterrey ‎| Realizar una búsqueda con lo siguiente:"
+              - link "monterrey" [ref=e502] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=infracciones+transito+%22monterrey%22+nuevo+leon+consulta+placa&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q5t4CegQIQhAB
+          - generic [ref=e506]:
+            - generic [ref=e509]:
+              - 'link "Multas de tránsito en Nuevo León: dónde revisar y ... Milenio https://www.milenio.com › sociedad › multas-de-transit..." [ref=e511] [cursor=pointer]':
+                - /url: https://www.milenio.com/sociedad/multas-de-transito-en-nuevo-leon-donde-revisar-y-descuentos
+                - 'heading "Multas de tránsito en Nuevo León: dónde revisar y ..." [level=3] [ref=e512]'
+                - generic [ref=e518]:
+                  - generic [ref=e520]: Milenio
+                  - generic [ref=e522]: https://www.milenio.com › sociedad › multas-de-transit...
+              - button "Acerca de este resultado" [ref=e523] [cursor=pointer]:
+                - img [ref=e526]
+            - generic [ref=e529]:
+              - generic [ref=e530]: 30 dic 2022 —
+              - generic [ref=e531]:
+                - text: Para revisar las
+                - emphasis [ref=e532]: multas
+                - text: que se te han aplicado pueden ingresar a la página web del Instituto de Control Vehicular de
+                - emphasis [ref=e533]: Nuevo León
+                - text: a través de la ...
+          - generic [ref=e537]:
+            - generic [ref=e540]:
+              - link "Gobierno Municipal de Monterrey, Nuevo León monterrey.gob.mx https://portal.monterrey.gob.mx › informacionsolicitud2" [ref=e542] [cursor=pointer]:
+                - /url: https://portal.monterrey.gob.mx/transparencia/informacionsolicitud2.html
+                - heading "Gobierno Municipal de Monterrey, Nuevo León" [level=3] [ref=e543]
+                - generic [ref=e549]:
+                  - generic [ref=e551]: monterrey.gob.mx
+                  - generic [ref=e553]: https://portal.monterrey.gob.mx › informacionsolicitud2
+              - button "Acerca de este resultado" [ref=e554] [cursor=pointer]:
+                - img [ref=e557]
+            - generic [ref=e561]:
+              - text: Accesa a los servicios en línea que el Gobierno Municipal de
+              - emphasis [ref=e562]: Monterrey
+              - text: ofrece para ti. Pago de Predial
+              - emphasis [ref=e563]: Multas
+              - text: de
+              - emphasis [ref=e564]: Tránsito
+              - text: Seguimiento a trámites SEDUE · Pago ...
+            - generic [ref=e566]:
+              - text: "Falta(n): placa ‎| Realizar una búsqueda con lo siguiente:"
+              - link "placa" [ref=e567] [cursor=pointer]:
+                - /url: /search?sca_esv=c6c16ab1eb0a4421&q=infracciones+transito+monterrey+nuevo+leon+consulta+%22placa%22&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q5t4CegQISRAB
+        - generic [ref=e569]:
+          - generic [ref=e574]:
+            - heading "También se buscó" [level=2] [ref=e576]
+            - generic [ref=e578]:
+              - generic [ref=e579]:
+                - link "Revisar multas de tránsito Monterrey" [ref=e583] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Revisar+multas+de+tr%C3%A1nsito+Monterrey&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q1QJ6BAghEAE
+                  - generic [ref=e584]:
+                    - generic [ref=e589]: Revisar multas de tránsito Monterrey
+                    - img [ref=e593]
+                - link "Checar multas de tránsito" [ref=e598] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Checar+multas+de+tr%C3%A1nsito&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q1QJ6BAgyEAE
+                  - generic [ref=e599]:
+                    - generic [ref=e604]: Checar multas de tránsito
+                    - img [ref=e608]
+                - link "Checar adeudo de placas Nuevo León" [ref=e613] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Checar+adeudo+de+placas+Nuevo+Le%C3%B3n&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q1QJ6BAgxEAE
+                  - generic [ref=e614]:
+                    - generic [ref=e619]: Checar adeudo de placas Nuevo León
+                    - img [ref=e623]
+                - link "Control Vehicular checar placas y multas Nuevo León" [ref=e628] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Control+Vehicular+checar+placas+y+multas+Nuevo+Le%C3%B3n&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q1QJ6BAgvEAE
+                  - generic [ref=e629]:
+                    - generic [ref=e634]: Control Vehicular checar placas y multas Nuevo León
+                    - img [ref=e638]
+              - generic [ref=e640]:
+                - link "Pagar multas de tránsito Monterrey" [ref=e644] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Pagar+multas+de+tr%C3%A1nsito+Monterrey&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q1QJ6BAgsEAE
+                  - generic [ref=e645]:
+                    - generic [ref=e650]: Pagar multas de tránsito Monterrey
+                    - img [ref=e654]
+                - link "Consulta de placas Nuevo León" [ref=e659] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Consulta+de+placas+Nuevo+Le%C3%B3n&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q1QJ6BAgnEAE
+                  - generic [ref=e660]:
+                    - generic [ref=e665]: Consulta de placas Nuevo León
+                    - img [ref=e669]
+                - link "Control Vehicular multas" [ref=e674] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Control+Vehicular+multas&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q1QJ6BAgkEAE
+                  - generic [ref=e675]:
+                    - generic [ref=e680]: Control Vehicular multas
+                    - img [ref=e684]
+                - link "Tesorería del Estado de Nuevo León placas y tenencias" [ref=e689] [cursor=pointer]:
+                  - /url: /search?sca_esv=c6c16ab1eb0a4421&q=Tesorer%C3%ADa+del+Estado+de+Nuevo+Le%C3%B3n+placas+y+tenencias&sa=X&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q1QJ6BAgjEAE
+                  - generic [ref=e690]:
+                    - generic [ref=e695]: Tesorería del Estado de Nuevo León placas y tenencias
+                    - img [ref=e699]
+          - navigation [ref=e701]:
+            - heading "Navegación de páginas" [level=1] [ref=e702]
+            - text: "1"
+            - link "Page 2" [ref=e705] [cursor=pointer]:
+              - /url: /search?q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&sca_esv=c6c16ab1eb0a4421&ei=8TgwaqLaKN-zqtsPrq6X-Qo&start=10&sa=N&sstk=AU9db-DbORM19ag3acsmydVKyuZIqFx0pFue1_e1c1Obvmq1SZOyUzfJO3dPwvgyo6W81IouiGAaMubbC2kSbTnOvM05Bvxlj2gjqg&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q8tMDegQIShAE
+              - text: "2"
+            - link "Page 3" [ref=e707] [cursor=pointer]:
+              - /url: /search?q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&sca_esv=c6c16ab1eb0a4421&ei=8TgwaqLaKN-zqtsPrq6X-Qo&start=20&sa=N&sstk=AU9db-DbORM19ag3acsmydVKyuZIqFx0pFue1_e1c1Obvmq1SZOyUzfJO3dPwvgyo6W81IouiGAaMubbC2kSbTnOvM05Bvxlj2gjqg&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q8tMDegQIShAG
+              - text: "3"
+            - link "Page 4" [ref=e709] [cursor=pointer]:
+              - /url: /search?q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&sca_esv=c6c16ab1eb0a4421&ei=8TgwaqLaKN-zqtsPrq6X-Qo&start=30&sa=N&sstk=AU9db-DbORM19ag3acsmydVKyuZIqFx0pFue1_e1c1Obvmq1SZOyUzfJO3dPwvgyo6W81IouiGAaMubbC2kSbTnOvM05Bvxlj2gjqg&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q8tMDegQIShAI
+              - text: "4"
+            - link "Page 5" [ref=e711] [cursor=pointer]:
+              - /url: /search?q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&sca_esv=c6c16ab1eb0a4421&ei=8TgwaqLaKN-zqtsPrq6X-Qo&start=40&sa=N&sstk=AU9db-DbORM19ag3acsmydVKyuZIqFx0pFue1_e1c1Obvmq1SZOyUzfJO3dPwvgyo6W81IouiGAaMubbC2kSbTnOvM05Bvxlj2gjqg&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q8tMDegQIShAK
+              - text: "5"
+            - link "Page 6" [ref=e713] [cursor=pointer]:
+              - /url: /search?q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&sca_esv=c6c16ab1eb0a4421&ei=8TgwaqLaKN-zqtsPrq6X-Qo&start=50&sa=N&sstk=AU9db-DbORM19ag3acsmydVKyuZIqFx0pFue1_e1c1Obvmq1SZOyUzfJO3dPwvgyo6W81IouiGAaMubbC2kSbTnOvM05Bvxlj2gjqg&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q8tMDegQIShAM
+              - text: "6"
+            - link "Page 7" [ref=e715] [cursor=pointer]:
+              - /url: /search?q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&sca_esv=c6c16ab1eb0a4421&ei=8TgwaqLaKN-zqtsPrq6X-Qo&start=60&sa=N&sstk=AU9db-DbORM19ag3acsmydVKyuZIqFx0pFue1_e1c1Obvmq1SZOyUzfJO3dPwvgyo6W81IouiGAaMubbC2kSbTnOvM05Bvxlj2gjqg&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q8tMDegQIShAO
+              - text: "7"
+            - link "Page 8" [ref=e717] [cursor=pointer]:
+              - /url: /search?q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&sca_esv=c6c16ab1eb0a4421&ei=8TgwaqLaKN-zqtsPrq6X-Qo&start=70&sa=N&sstk=AU9db-DbORM19ag3acsmydVKyuZIqFx0pFue1_e1c1Obvmq1SZOyUzfJO3dPwvgyo6W81IouiGAaMubbC2kSbTnOvM05Bvxlj2gjqg&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q8tMDegQIShAQ
+              - text: "8"
+            - link "Page 9" [ref=e719] [cursor=pointer]:
+              - /url: /search?q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&sca_esv=c6c16ab1eb0a4421&ei=8TgwaqLaKN-zqtsPrq6X-Qo&start=80&sa=N&sstk=AU9db-DbORM19ag3acsmydVKyuZIqFx0pFue1_e1c1Obvmq1SZOyUzfJO3dPwvgyo6W81IouiGAaMubbC2kSbTnOvM05Bvxlj2gjqg&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q8tMDegQIShAS
+              - text: "9"
+            - link "Page 10" [ref=e721] [cursor=pointer]:
+              - /url: /search?q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&sca_esv=c6c16ab1eb0a4421&ei=8TgwaqLaKN-zqtsPrq6X-Qo&start=90&sa=N&sstk=AU9db-DbORM19ag3acsmydVKyuZIqFx0pFue1_e1c1Obvmq1SZOyUzfJO3dPwvgyo6W81IouiGAaMubbC2kSbTnOvM05Bvxlj2gjqg&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q8tMDegQIShAU
+              - text: "10"
+            - heading "Siguiente" [level=2] [ref=e723]:
+              - link "Siguiente" [ref=e724] [cursor=pointer]:
+                - /url: /search?q=infracciones+transito+monterrey+nuevo+leon+consulta+placa&sca_esv=c6c16ab1eb0a4421&ei=8TgwaqLaKN-zqtsPrq6X-Qo&start=10&sa=N&sstk=AU9db-DbORM19ag3acsmydVKyuZIqFx0pFue1_e1c1Obvmq1SZOyUzfJO3dPwvgyo6W81IouiGAaMubbC2kSbTnOvM05Bvxlj2gjqg&ved=2ahUKEwjilpaH5YmVAxXfmWoFHS7XJa8Q8NMDegQIShAW
+                - generic [ref=e726]: Siguiente
+        - navigation
+    - contentinfo [ref=e727]:
+      - heading "Vínculos a pie de página" [level=1] [ref=e728]
+      - generic [ref=e732]:
+        - generic [ref=e734]:
+          - text: México
+          - generic [ref=e736]:
+            - button "Miguel Hidalgo, Ciudad de México, CDMX - A través de tu dirección IP" [ref=e738] [cursor=pointer]:
+              - generic [ref=e739]: Miguel Hidalgo, Ciudad de México, CDMX
+              - generic [ref=e741]:
+                - text: "-"
+                - generic [ref=e742]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=e744] [cursor=pointer]: Actualizar ubicación
+        - generic [ref=e747]:
+          - link "Ayuda" [ref=e748] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-419&fg=1
+          - link "Enviar comentarios" [ref=e749] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e750] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-419&fg=1
+          - link "Condiciones" [ref=e751] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-419&fg=1

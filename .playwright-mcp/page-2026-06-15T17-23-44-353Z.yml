@@ -1,0 +1,45 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - link [ref=e4] [cursor=pointer]:
+          - /url: http://www.ooapas.gob.mx/
+          - img [ref=e5]
+        - link "Pago en línea" [ref=e7] [cursor=pointer]:
+          - /url: index.php
+        - list [ref=e9]:
+          - listitem [ref=e10]:
+            - link "" [ref=e11] [cursor=pointer]:
+              - /url: https://www.facebook.com/MoreliaOoapas/
+              - generic [ref=e12]: 
+          - listitem [ref=e13]:
+            - link "" [ref=e14] [cursor=pointer]:
+              - /url: https://twitter.com/ooapasmorelia
+              - generic [ref=e15]: 
+  - main [ref=e16]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - link [ref=e25] [cursor=pointer]:
+          - /url: https://pagoenlinea.ooapas.gob.mx
+        - paragraph [ref=e27]:
+          - text: ¿Cuál es mi folio del recibo?
+          - generic [ref=e29] [cursor=pointer]: 
+        - generic [ref=e30]:
+          - generic [ref=e31]: 
+          - textbox "Folio del Recibo (código de barras)" [ref=e32]
+          - generic [ref=e33]: Folio del Recibo (código de barras)
+        - button "Ingresar" [ref=e34] [cursor=pointer]
+        - paragraph [ref=e37]: Paga tu recibo de manera rápida con solo tu folio del recibo
+      - generic [ref=e39]:
+        - iframe [ref=e40]:
+          - link "Compartir" [ref=f30e6] [cursor=pointer]:
+            - /url: /sharer/sharer.php?kid_directed_site=0&u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&display=popup&ref=plugin&src=share_button
+            - button "Compartir" [ref=f30e8]:
+              - generic [ref=f30e10]: Compartir
+        - link "Tweet to @ooapasmorelia" [ref=e41] [cursor=pointer]:
+          - /url: https://twitter.com/intent/tweet?screen_name=ooapasmorelia&ref_src=twsrc%5Etfw
+  - contentinfo [ref=e42]:
+    - generic [ref=e43]:
+      - text: "© 2019 OOAPAS:"
+      - link "www.ooapas.gob.mx" [ref=e44] [cursor=pointer]:
+        - /url: https://mdbootstrap.com/education/bootstrap/

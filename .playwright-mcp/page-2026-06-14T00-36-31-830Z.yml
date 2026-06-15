@@ -1,0 +1,35 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e8]:
+    - link [ref=e10] [cursor=pointer]:
+      - /url: default.aspx
+      - img [ref=e11]
+    - generic [ref=e12]:
+      - text: 
+      - generic [ref=e13]: 
+      - text: Usuarios registrados
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17] [cursor=pointer]: "Usuario:"
+        - textbox [ref=e18]
+      - generic [ref=e19]:
+        - generic [ref=e20] [cursor=pointer]: "Contraseña:"
+        - textbox [ref=e21]
+        - generic [ref=e22]: 
+      - generic [ref=e24]:
+        - img [ref=e25]
+        - generic [ref=e26] [cursor=pointer]: "Ingresa el texto que aparece en la imagen:"
+        - textbox [ref=e27]
+      - generic [ref=e28]:
+        - button "Ingresar" [ref=e29] [cursor=pointer]
+        - link "¿Olvidaste tu contraseña?" [ref=e30] [cursor=pointer]:
+          - /url: RecuperaPassword.aspx
+    - generic [ref=e31] [cursor=pointer]:
+      - generic [ref=e32]: 
+      - text:  ¿Aún no tienes cuenta?
+      - strong [ref=e33]: Regístrate
+    - link "Regresar" [ref=e35] [cursor=pointer]:
+      - /url: https://www.cfe.mx
+    - link [ref=e37] [cursor=pointer]:
+      - /url: https://www.cfe.mx
+      - img [ref=e38]
+  - text: 

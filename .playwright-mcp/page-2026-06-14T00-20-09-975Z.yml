@@ -1,0 +1,39 @@
+- generic [ref=e2]:
+  - img [ref=e4]
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - heading "PREDIAL EN LÍNEA" [level=2] [ref=e7]
+      - strong [ref=e8]: "Proporcione su clave catastral :"
+      - table [ref=e9]:
+        - rowgroup [ref=e10]:
+          - row "003 - - - - -" [ref=e11]:
+            - cell "003 -" [ref=e12]:
+              - textbox [disabled] [ref=e13]: "003"
+              - text: "-"
+            - cell "-" [ref=e14]:
+              - textbox "Pob" [active] [ref=e15]
+              - text: "-"
+            - cell "-" [ref=e16]:
+              - textbox "Ctl" [ref=e17]
+              - text: "-"
+            - cell "-" [ref=e18]:
+              - textbox "Man" [ref=e19]
+              - text: "-"
+            - cell "-" [ref=e20]:
+              - textbox "Lot" [ref=e21]
+              - text: "-"
+            - cell [ref=e22]:
+              - textbox "Csc" [ref=e23]
+      - button "Consultar" [ref=e24] [cursor=pointer]
+      - button "Limpiar campos" [ref=e25] [cursor=pointer]
+      - paragraph [ref=e26]: ¿En qué parte del recibo encuentro mi clave catastral?
+      - paragraph [ref=e27]:
+        - link "Reimprimir comprobante de pago" [ref=e28] [cursor=pointer]:
+          - /url: ReimpresionComprobante
+        - link [ref=e29] [cursor=pointer]:
+          - /url: ReimpresionComprobante
+          - img [ref=e30]
+      - paragraph [ref=e31]:
+        - generic [ref=e32]: Sitio optimizado para Firefox y Chrome
+    - separator [ref=e33]
+    - img [ref=e35]

@@ -1,0 +1,199 @@
+- generic [active] [ref=e1]:
+  - iframe [ref=e2]:
+    - banner [ref=f3e2]:
+      - generic [ref=f3e5]:
+        - link [ref=f3e8] [cursor=pointer]:
+          - /url: https://www.sat.gob.mx
+          - img [ref=f3e9]
+          - img [ref=f3e10]
+        - generic [ref=f3e12]:
+          - link "Trámites" [ref=f3e13] [cursor=pointer]:
+            - /url: https://www.gob.mx/tramites
+          - link "Gobierno" [ref=f3e14] [cursor=pointer]:
+            - /url: https://www.gob.mx/gobierno
+          - link [ref=f3e15] [cursor=pointer]:
+            - /url: https://www.gob.mx/busqueda
+            - img [ref=f3e16]
+  - generic:
+    - banner:
+      - navigation [ref=e3]:
+        - list [ref=e6]:
+          - listitem [ref=e7]:
+            - link "enlace a página de inicio" [ref=e8] [cursor=pointer]:
+              - /url: index.html
+              - text: Inicio
+  - generic [ref=e10]:
+    - paragraph [ref=e11]: Contribuyentes publicados y acciones contra la delincuencia
+    - heading "Número de contribuyentes incumplidos por motivo de publicación" [level=3] [ref=e14]:
+      - list [ref=e15]:
+        - listitem [ref=e16]:
+          - link "Número de contribuyentes incumplidos por motivo de publicación" [ref=e17] [cursor=pointer]:
+            - /url: https://wu1agsprosta001.blob.core.windows.net/agsc-publicaciones/Datos_abiertos/AGR/03_02_26/FORMATO_32_ContribIncumplidos.xls
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - link:
+          - /url: "#collapseTwo1"
+          - img [ref=e25] [cursor=pointer]
+      - link "Artículo 69 del Código Fiscal de la Federación" [ref=e27] [cursor=pointer]:
+        - /url: "#collapseTwo1"
+        - paragraph [ref=e28]: Artículo 69 del Código Fiscal de la Federación
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - link:
+          - /url: "#collapseTwo2"
+          - img [ref=e38] [cursor=pointer]
+      - link "Artículo 69-B del Código Fiscal de la Federación" [ref=e40] [cursor=pointer]:
+        - /url: "#collapseTwo2"
+        - paragraph [ref=e41]: Artículo 69-B del Código Fiscal de la Federación
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - link:
+          - /url: "#collapseTwo3"
+          - img [ref=e51] [cursor=pointer]
+      - link "Artículo 69-B Bis del Código Fiscal de la Federación" [ref=e53] [cursor=pointer]:
+        - /url: "#collapseTwo3"
+        - paragraph [ref=e54]: Artículo 69-B Bis del Código Fiscal de la Federación
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - link:
+          - /url: "#collapseTwo4"
+          - img [ref=e64] [cursor=pointer]
+      - link "Mesa de Combate a la Ilegalidad" [ref=e66] [cursor=pointer]:
+        - /url: "#collapseTwo4"
+        - paragraph [ref=e67]: Mesa de Combate a la Ilegalidad
+  - iframe [ref=e72]:
+    - generic [active] [ref=f4e1]:
+      - generic [ref=f4e4]:
+        - generic [ref=f4e5]:
+          - generic [ref=f4e6]:
+            - paragraph [ref=f4e7]: Portal de trámites y servicios
+            - generic [ref=f4e8]:
+              - link "Prensa" [ref=f4e9] [cursor=pointer]:
+                - /url: https://www.gob.mx/sat/archivo/prensa
+              - link "Derechos del Contribuyente" [ref=f4e10] [cursor=pointer]:
+                - /url: https://www.sat.gob.mx/portal/public/tramites/derechos-del-contribuyente
+              - link "Datos abiertos" [ref=f4e11] [cursor=pointer]:
+                - /url: http://omawww.sat.gob.mx/cifras_sat/Paginas/inicio.html
+              - link "Aviso de privacidad" [ref=f4e12] [cursor=pointer]:
+                - /url: https://www.sat.gob.mx/portal/public/aviso-de-privacidad
+              - link "Guía de usuario nuevo Portal" [ref=f4e13] [cursor=pointer]:
+                - /url: http://omawww.sat.gob.mx/documentossat/Documents/PortalSAT/Guia_de_usuario_Nuevo_Portal_de_SAT.pdf
+              - link "Conciliación de factura" [ref=f4e14] [cursor=pointer]:
+                - /url: https://aplicacionesc.mat.sat.gob.mx/mx.gob.sat.agsc.solicitud.internet.cfdi.web/home.aspx
+              - link "Buscador de correos falsos" [ref=f4e15] [cursor=pointer]:
+                - /url: https://www.sat.gob.mx/minisitio/BuscadorCorreosFalsos/buscador.html
+              - paragraph [ref=f4e16]: Denuncias SAT
+              - link "Quejas o denuncias" [ref=f4e17] [cursor=pointer]:
+                - /url: https://www.sat.gob.mx/portal/public/tramites/quejas-o-denuncias
+              - link "Nueva denuncia" [ref=f4e18] [cursor=pointer]:
+                - /url: https://aplicacionesc.mat.sat.gob.mx/sat.gob.mx.age.sipreqd.internet/denunciaInternet.aspx
+              - link "55 8852 2222":
+                - /url: ""
+              - link "Denuncia a factureras" [ref=f4e19] [cursor=pointer]:
+                - /url: https://aplicacionesc.mat.sat.gob.mx/sat.gob.mx.age.sipreqd.internet/QdTc/inicio.aspx
+              - paragraph [ref=f4e20]
+          - paragraph [ref=f4e21]
+        - generic [ref=f4e22]:
+          - paragraph [ref=f4e23]: Servicio de Administración Tributaria
+          - generic [ref=f4e24]:
+            - paragraph [ref=f4e25]:
+              - text: Av. Hidalgo núm. 77, Col. Guerrero,
+              - text: 06300, Alc. Cuauhtémoc, Ciudad de
+              - text: México.
+            - paragraph [ref=f4e26]: Oficinas Desconcentradas
+            - link "Directorio nacional" [ref=f4e27] [cursor=pointer]:
+              - /url: https://www.sat.gob.mx/portal/public/directorio
+            - paragraph [ref=f4e28]:
+              - text: Horario de atención
+              - text: "Lunes a jueves: de 9:00 a 16:00 horas."
+              - text: "Viernes: de 8:30 a 15:00 horas."
+        - generic [ref=f4e29]:
+          - paragraph [ref=f4e30]: Contacto
+          - generic [ref=f4e31]:
+            - text: MarcaSAT 55 627 22 728
+            - paragraph [ref=f4e32]:
+              - text: desde cualquier parte del país
+              - text: y para el exterior del país
+              - text: (+52) 55 627 22 728, de lunes a viernes
+              - text: de 9:00 a 18:00 horas, excepto días inhábiles.
+            - link "Chat uno a uno" [ref=f4e33] [cursor=pointer]:
+              - /url: http://chat.sat.gob.mx/
+              - paragraph [ref=f4e34]: Chat uno a uno
+            - paragraph [ref=f4e35]: Redes sociales
+            - link [ref=f4e36] [cursor=pointer]:
+              - /url: https://www.facebook.com/satmexico
+              - img [ref=f4e37]
+              - img [ref=f4e38]
+            - link [ref=f4e39] [cursor=pointer]:
+              - /url: https://twitter.com/SATMX
+              - img [ref=f4e40]
+              - img [ref=f4e41]
+            - link [ref=f4e42] [cursor=pointer]:
+              - /url: https://www.instagram.com/satmx
+              - img [ref=f4e43]
+              - img [ref=f4e44]
+            - link [ref=f4e45] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/satmx
+              - img [ref=f4e46]
+              - img [ref=f4e47]
+            - link [ref=f4e48] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@sat_mx?_t=ZM-8tdgMdE1t70&_r=1
+              - img [ref=f4e49]
+              - img [ref=f4e50]
+      - contentinfo [ref=f4e51]:
+        - generic [ref=f4e53]:
+          - generic [ref=f4e54]:
+            - img [ref=f4e55]
+            - img [ref=f4e56]
+          - generic [ref=f4e57]:
+            - paragraph [ref=f4e58]: Enlaces
+            - link "gob.mx/sat" [ref=f4e59] [cursor=pointer]:
+              - /url: https://www.gob.mx/sat
+            - link "Datos" [ref=f4e60] [cursor=pointer]:
+              - /url: https://datos.gob.mx/
+            - link "Portal de Obligaciones de Transparencia" [ref=f4e61] [cursor=pointer]:
+              - /url: http://omawww.sat.gob.mx/gobmxtransparencia/Paginas/default.html
+            - link "Transparencia para el Pueblo" [ref=f4e62] [cursor=pointer]:
+              - /url: https://transparencia.gob.mx/home.html
+            - link "Alerta" [ref=f4e63] [cursor=pointer]:
+              - /url: http://alertadores.funcionpublica.gob.mx/
+            - link "Denuncia" [ref=f4e64] [cursor=pointer]:
+              - /url: http://sidec.funcionpublica.gob.mx/
+          - generic [ref=f4e65]:
+            - paragraph [ref=f4e66]: ¿Qué es gob.mx?
+            - paragraph [ref=f4e67]:
+              - text: Es el portal único de trámites, información y participación ciudadana.
+              - link "Leer más" [ref=f4e68] [cursor=pointer]:
+                - /url: https://datos.gob.mx/
+            - link "Declaración de Accesibilidad" [ref=f4e69] [cursor=pointer]:
+              - /url: https://www.gob.mx/accesibilidad
+            - link "Aviso de privacidad" [ref=f4e70] [cursor=pointer]:
+              - /url: https://www.gob.mx/privacidadintegral
+            - link "Aviso de privacidad simplificado" [ref=f4e71] [cursor=pointer]:
+              - /url: https://www.gob.mx/privacidadsimplificado
+            - link "Términos y condiciones" [ref=f4e72] [cursor=pointer]:
+              - /url: https://www.gob.mx/terminos
+            - link "Política de seguridad" [ref=f4e73] [cursor=pointer]:
+              - /url: https://www.gob.mx/terminos#medidas-seguridad-informacion
+            - link "Marco jurídico" [ref=f4e74] [cursor=pointer]:
+              - /url: http://www.ordenjuridico.gob.mx/
+            - link "Mapa de sitio" [ref=f4e75] [cursor=pointer]:
+              - /url: https://www.gob.mx/sitemap
+          - generic [ref=f4e76]:
+            - paragraph [ref=f4e77]: Síguenos en
+            - link [ref=f4e78] [cursor=pointer]:
+              - /url: https://www.facebook.com/gobmexico
+              - img [ref=f4e79]
+              - img [ref=f4e80]
+            - link [ref=f4e81] [cursor=pointer]:
+              - /url: https://twitter.com/GobiernoMX
+              - img [ref=f4e82]
+              - img [ref=f4e83]
+            - link [ref=f4e84] [cursor=pointer]:
+              - /url: https://www.instagram.com/gobmexico
+              - img [ref=f4e85]
+              - img [ref=f4e86]
+            - link [ref=f4e87] [cursor=pointer]:
+              - /url: https://www.youtube.com/@gobiernodemexico
+              - img [ref=f4e88]
+              - img [ref=f4e89]

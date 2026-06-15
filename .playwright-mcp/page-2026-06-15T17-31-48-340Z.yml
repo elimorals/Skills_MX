@@ -1,0 +1,87 @@
+- generic [active] [ref=e1]:
+  - img [ref=e4]
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e8]: CONSULTA Y COBRO
+        - generic [ref=e9]: DE INFRACCIONES
+      - generic [ref=e11]:
+        - generic [ref=e12]: Información del Vehículo
+        - generic [ref=e14]:
+          - generic [ref=e15]:
+            - generic [ref=e16]: Tipo de documento
+            - combobox [ref=e17]:
+              - option "PLACA" [selected]
+              - option "PERMISO"
+              - option "NÚMERO DE SERIE"
+          - generic [ref=e18]:
+            - generic [ref=e19]: Número de documento
+            - textbox "Número de documento" [ref=e20]:
+              - /placeholder: ""
+          - button "Consultar" [ref=e24] [cursor=pointer]
+      - generic [ref=e25]:
+        - button "Antecedentes" [ref=e27] [cursor=pointer]:
+          - img "Antecedentes" [ref=e28]
+        - button "Descuentos" [ref=e30] [cursor=pointer]:
+          - img "Descuentos" [ref=e31]
+        - button "Restricciones" [ref=e33] [cursor=pointer]:
+          - img "Restricciones" [ref=e34]
+        - button "Fundamento" [ref=e36] [cursor=pointer]:
+          - img "Fundamento" [ref=e37]
+    - text: ✓ ✓
+  - generic [ref=e42]:
+    - generic [ref=e43]:
+      - heading "Conoce el estado" [level=5] [ref=e44]
+      - list [ref=e46]:
+        - listitem [ref=e47]:
+          - link "Portal del Gobierno del Estado de México" [ref=e48] [cursor=pointer]:
+            - /url: http://edomex.gob.mx
+        - listitem [ref=e49]:
+          - link "Quejas y Denuncias" [ref=e50] [cursor=pointer]:
+            - /url: http://www.secogem.gob.mx/SAM/sit_atn_mex.asp
+        - listitem [ref=e51]:
+          - link "Comisión Estatal de Mejora Regulatoria" [ref=e52] [cursor=pointer]:
+            - /url: http://cemer.edomex.gob.mx/
+        - listitem [ref=e53]:
+          - link "Información Pública de Oficio Mexiquense" [ref=e54] [cursor=pointer]:
+            - /url: https://www.ipomex.org.mx/ipo3/lgt/indice/ssem.web
+        - listitem [ref=e55]:
+          - link "Solicitud de Información" [ref=e56] [cursor=pointer]:
+            - /url: http://www.saimex.org.mx/saimex/ciudadano/login.page
+        - listitem [ref=e57]:
+          - link "Plataforma Nacional de Transparencia" [ref=e58] [cursor=pointer]:
+            - /url: https://www.plataformadetransparencia.org.mx/
+        - listitem [ref=e59]:
+          - link "Denuncia en Materia de Transparencia" [ref=e60] [cursor=pointer]:
+            - /url: https://sistemas2.infoem.org.mx/denuncias/
+    - generic [ref=e61]:
+      - heading "Acerca del sitio" [level=5] [ref=e62]
+      - list [ref=e64]:
+        - listitem [ref=e65]:
+          - link "Avisos de privacidad" [ref=e66] [cursor=pointer]:
+            - /url: https://sseguridad.edomex.gob.mx/avisos-privacidad
+    - generic [ref=e67]:
+      - heading "Contacto" [level=5] [ref=e68]
+      - list [ref=e70]:
+        - listitem [ref=e71]:
+          - text: Gobierno del Estado de México
+          - text: Secretaría de Seguridad del Estado de México
+        - listitem [ref=e72]: Boulevard Miguel Alemán Valdés No. 175, San Pedro Totoltepec, Toluca, Estado de México.
+        - listitem [ref=e73]:
+          - link "722 275 8300" [ref=e74] [cursor=pointer]:
+            - /url: callto:2758300
+    - generic [ref=e75]:
+      - heading "Enlaces de interés" [level=5] [ref=e76]
+      - list [ref=e78]:
+        - listitem [ref=e79]:
+          - link "Sistema Nacional de Seguridad Pública" [ref=e80] [cursor=pointer]:
+            - /url: https://www.gob.mx/sesnsp
+        - listitem [ref=e81]:
+          - link "Participación Ciudadana" [ref=e82] [cursor=pointer]:
+            - /url: //sseguridad.edomex.gob.mx/participacion_ciudadana
+        - listitem [ref=e83]:
+          - link "Cámaras de Seguridad" [ref=e84] [cursor=pointer]:
+            - /url: https://sseguridad.edomex.gob.mx/c-5
+        - listitem [ref=e85]:
+          - link "Edictos" [ref=e86] [cursor=pointer]:
+            - /url: http://www.edomex.gob.mx/edictos

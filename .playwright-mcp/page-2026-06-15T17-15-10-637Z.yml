@@ -1,0 +1,49 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - img "Escudo de Armas de Cancún" [ref=e5]
+  - main [ref=e6]:
+    - generic [ref=e7]:
+      - heading "Servicios de Tesorería en Línea" [level=1] [ref=e8]
+      - paragraph [ref=e9]: Realiza tus trámites manera rápida y segura desde la comodidad de tu hogar u oficina. El municipio de Benito Juárez pone a tu disposición estos servicios digitales.
+    - generic [ref=e11]:
+      - generic [ref=e13]:
+        - img [ref=e15]
+        - generic [ref=e16]:
+          - heading "Obtén tu Pase de Caja" [level=3] [ref=e17]
+          - paragraph [ref=e18]: Genera tu pase de caja electrónico para realizar pagos en ventanilla sin necesidad de hacer fila. Presenta el código QR en cualquier módulo de atención.
+          - link " Generar Pase de Caja" [ref=e19] [cursor=pointer]:
+            - /url: https://cancun-digital.mx/tramites/tipo/pipcan/inicio
+            - generic [ref=e20]: 
+            - text: Generar Pase de Caja
+      - generic [ref=e22]:
+        - img [ref=e24]
+        - generic [ref=e25]:
+          - heading "Módulos de Atención" [level=3] [ref=e26]
+          - paragraph [ref=e27]: Consulta la ubicación, horarios y servicios disponibles en los diferentes módulos de atención de la Tesorería Municipal de Benito Juárez.
+          - link " Consultar Módulos (PDF)" [ref=e28] [cursor=pointer]:
+            - /url: https://cancun.gob.mx/assets/pdf/tesoreria/modulos.pdf
+            - generic [ref=e29]: 
+            - text: Consultar Módulos (PDF)
+      - generic [ref=e31]:
+        - img [ref=e33]
+        - generic [ref=e34]:
+          - heading "Verifica y Obtén tu Recibo" [level=3] [ref=e35]
+          - paragraph [ref=e36]: Consulta, verifica y descarga tus recibos de pago de manera rápida y sencilla a través de nuestro sistema en línea.
+          - link " Consultar Recibo" [ref=e37] [cursor=pointer]:
+            - /url: https://recibo.tesoreriacancun.com
+            - generic [ref=e38]: 
+            - text: Consultar Recibo
+      - generic [ref=e40]:
+        - img [ref=e42]
+        - generic [ref=e43]:
+          - heading "Facturación Electrónica" [level=3] [ref=e44]
+          - paragraph [ref=e45]: Accede al sistema de facturación electrónica para generar y administrar tus facturas de manera digital con validez oficial. Sistema expedidor de facturas para el municipio de Benito Juárez.
+          - link " Acceder a Facturación" [ref=e46] [cursor=pointer]:
+            - /url: https://benitojuarez.expidefactura.com/
+            - generic [ref=e47]: 
+            - text: Acceder a Facturación
+  - contentinfo [ref=e48]:
+    - generic [ref=e50]:
+      - img "Escudo de Armas de Cancún en blanco" [ref=e51]
+      - img "logo tesoreria" [ref=e52]
+      - paragraph [ref=e53]: Tesorería Municipal de Benito Juárez, Quintana Roo
