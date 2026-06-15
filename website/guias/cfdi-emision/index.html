@@ -17,6 +17,13 @@
 .g-back { display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--f-mono);font-size:0.74rem;letter-spacing:0.06em;color:var(--c-ink-3);text-decoration:none;margin-bottom:1.5rem; }
 .g-back:hover { color: var(--c-terra); }
 
+.subnav { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; padding: 0.7rem 0; margin-bottom: 1.5rem; border-bottom: 1px solid var(--c-rule); }
+.subnav a { display: inline-flex; align-items: center; gap: 0.3rem; font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--c-ink-3); text-decoration: none; padding: 0.35rem 0.7rem; border-radius: 5px; border: 1px solid transparent; transition: all 0.15s; }
+.subnav a:hover { color: var(--c-ink); border-color: var(--c-rule); background: var(--c-paper); }
+.subnav a.is-current { color: var(--c-ink); border-color: var(--c-ink); background: var(--c-paper); font-weight: 600; }
+.subnav-sep { width: 1px; height: 14px; background: var(--c-rule); margin: 0 0.2rem; }
+@media (max-width: 600px) { .subnav { padding: 0.5rem 0; gap: 0.3rem; } .subnav a { padding: 0.3rem 0.55rem; font-size: 0.66rem; } .subnav-sep { display: none; } }
+
 .g-tag { display:inline-block;font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.22rem 0.6rem;background:rgba(160,62,27,0.13);color:var(--c-terra);border-radius:4px;margin-bottom:1rem; }
 .g-h1 { font-family: var(--f-display); font-size: clamp(2.2rem,5vw,3.4rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.05; margin: 0 0 0.8rem; }
 .g-lead { font-family: var(--f-display); font-style: italic; font-size: 1.3rem; color: var(--c-ink-3); margin: 0 0 2rem; line-height: 1.4; }
@@ -78,7 +85,14 @@
 
 <div class="g-container">
 
-  <a href="/guias/" class="g-back">← guías</a>
+  <nav class="subnav" aria-label="Navegación principal">
+    <a href="/">← Inicio</a>
+    <span class="subnav-sep"></span>
+    <a href="/marketplace/">Marketplace</a>
+    <a href="/portales/">Portales</a>
+    <a href="/guias/" class="is-current">Guías</a>
+    <a href="/guias/" style="margin-left:auto;color:var(--c-terra);">↩ Volver a guías</a>
+  </nav>
 
   <span class="g-tag">CFDI 4.0 · Fiscal</span>
   <h1 class="g-h1">Cómo emitir un CFDI 4.0 desde cero</h1>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página no encontrada · Plugins MX</title>
+<meta name="description" content="Esta página no existe o aún está en construcción. Vuelve al inicio, al marketplace de skills, al hub de portales gob.mx, o explora las guías disponibles.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Instrument+Serif:ital@0;1&family=Geist:wght@100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.nf-body { background: var(--c-cream); color: var(--c-ink); font-family: var(--f-body); min-height: 100vh; display: flex; flex-direction: column; }
+.nf-container { max-width: 920px; margin: 0 auto; padding: 2.5rem clamp(1rem,4vw,3rem) 4rem; flex: 1; display: flex; flex-direction: column; }
+
+.subnav { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; padding: 0.7rem 0; margin-bottom: 2.5rem; border-bottom: 1px solid var(--c-rule); }
+.subnav a { display: inline-flex; align-items: center; gap: 0.3rem; font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--c-ink-3); text-decoration: none; padding: 0.35rem 0.7rem; border-radius: 5px; border: 1px solid transparent; transition: all 0.15s; }
+.subnav a:hover { color: var(--c-ink); border-color: var(--c-rule); background: var(--c-paper); }
+.subnav-sep { width: 1px; height: 14px; background: var(--c-rule); margin: 0 0.2rem; }
+@media (max-width: 600px) { .subnav { padding: 0.5rem 0; gap: 0.3rem; } .subnav a { padding: 0.3rem 0.55rem; font-size: 0.66rem; } .subnav-sep { display: none; } }
+
+.nf-hero { margin: 2rem 0 3rem; }
+.nf-code { font-family: var(--f-mono); font-size: 0.8rem; color: var(--c-terra); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.8rem; display: block; }
+.nf-h1 { font-family: var(--f-display); font-size: clamp(2.5rem,7vw,4.5rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.0; margin: 0 0 1rem; }
+.nf-h1 em { font-style: italic; color: var(--c-terra); }
+.nf-lead { font-family: var(--f-display); font-style: italic; font-size: 1.3rem; color: var(--c-ink-3); margin: 0; line-height: 1.4; max-width: 660px; }
+
+.nf-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 2.5rem 0; }
+.nf-option { background: var(--c-paper); border: 1px solid var(--c-rule); border-radius: 10px; padding: 1.4rem 1.6rem; text-decoration: none; color: inherit; transition: all 0.18s ease; position: relative; }
+.nf-option:hover { transform: translateY(-3px); border-color: var(--c-ink); box-shadow: 0 8px 22px rgba(22,19,19,0.08); }
+.nf-option-tag { display: inline-block; font-family: var(--f-mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.18rem 0.5rem; border-radius: 4px; margin-bottom: 0.6rem; background: rgba(160,62,27,0.13); color: var(--c-terra); }
+.nf-option-h { font-family: var(--f-display); font-size: 1.25rem; font-weight: 600; margin: 0 0 0.4rem; }
+.nf-option-desc { font-size: 0.88rem; color: var(--c-ink-3); line-height: 1.5; margin: 0; }
+.nf-option-arrow { position: absolute; top: 1.4rem; right: 1.4rem; font-family: var(--f-display); font-size: 1.2rem; color: var(--c-terra); opacity: 0; transition: all 0.2s; }
+.nf-option:hover .nf-option-arrow { opacity: 1; right: 1.1rem; }
+
+.nf-note { background: var(--c-paper); border: 1px solid var(--c-rule); border-left: 4px solid var(--c-jade); border-radius: 6px; padding: 1rem 1.3rem; font-size: 0.92rem; color: var(--c-ink-2); line-height: 1.6; margin-top: 2rem; }
+.nf-note strong { color: var(--c-ink); }
+</style>
+</head>
+<body class="nf-body">
+<div class="nf-container">
+
+  <nav class="subnav" aria-label="Navegación principal">
+    <a href="/">← Inicio</a>
+    <span class="subnav-sep"></span>
+    <a href="/marketplace/">Marketplace</a>
+    <a href="/portales/">Portales</a>
+    <a href="/guias/">Guías</a>
+  </nav>
+
+  <header class="nf-hero">
+    <span class="nf-code">404 · Página no encontrada</span>
+    <h1 class="nf-h1">Aquí <em>no hay nada</em><br>todavía.</h1>
+    <p class="nf-lead">La página que buscas no existe o aún está en construcción. Si llegaste desde una guía vinculada, esa receta se publica en los próximos sprints. Mientras tanto, te recomendamos:</p>
+  </header>
+
+  <div class="nf-options">
+    <a class="nf-option" href="/marketplace/">
+      <span class="nf-option-tag">62 skills</span>
+      <h3 class="nf-option-h">Marketplace</h3>
+      <p class="nf-option-desc">Catálogo navegable de los 62 MCPs categorizados por dominio mexicano.</p>
+      <span class="nf-option-arrow">→</span>
+    </a>
+    <a class="nf-option" href="/portales/">
+      <span class="nf-option-tag">32 estados</span>
+      <h3 class="nf-option-h">Hub portales gob.mx</h3>
+      <p class="nf-option-desc">Mapa interactivo con dependencias, endpoints y patrones CAPTCHA documentados.</p>
+      <span class="nf-option-arrow">→</span>
+    </a>
+    <a class="nf-option" href="/guias/">
+      <span class="nf-option-tag">30 guías</span>
+      <h3 class="nf-option-h">Guías visuales</h3>
+      <p class="nf-option-desc">Recetas operativas paso a paso: CFDI, ISN, predial, REPSE y más.</p>
+      <span class="nf-option-arrow">→</span>
+    </a>
+    <a class="nf-option" href="/">
+      <span class="nf-option-tag">Productos</span>
+      <h3 class="nf-option-h">Inicio</h3>
+      <p class="nf-option-desc">Cartera Predial · Compliance REPSE · ISN-as-a-Service. Los 3 productos en producción.</p>
+      <span class="nf-option-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="nf-note">
+    <strong>¿Buscabas algo específico?</strong> Si la URL la viste en un link reciente que NO estaba en construcción, escribe a <a href="mailto:elimoralsmendox@gmail.com?subject=404%20en%20plugins-mx" style="color:var(--c-terra);">elimoralsmendox@gmail.com</a> con la URL exacta y la arreglamos en menos de 24h.
+  </div>
+
+</div>
+</body>
+</html>
