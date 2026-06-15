@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hub de portales gob.mx · Plugins MX</title>
+<meta name="description" content="Mapa interactivo de 62 portales gubernamentales mexicanos cubiertos: SAT, IMSS, INFONAVIT, predial municipal, catastros estatales, multas, verificación, servicios públicos. Categorizado por estado y dependencia.">
+<link rel="canonical" href="https://skills-mexico.vercel.app/portales/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800&family=Geist:wght@100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.hub-body {
+  background: var(--c-cream);
+  color: var(--c-ink);
+  font-family: var(--f-body);
+  min-height: 100vh;
+}
+
+.hub-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2.5rem clamp(1rem, 4vw, 3rem) 4rem;
+}
+
+.hub-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--f-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  color: var(--c-ink-3);
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+.hub-back:hover { color: var(--c-terra); }
+
+.hub-head {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--c-ink);
+}
+
+.hub-h1 {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin: 0 0 0.6rem;
+}
+.hub-h1 em { font-style: italic; color: var(--c-terra); }
+
+.hub-sub {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--c-ink-3);
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+}
+
+.hub-stats {
+  display: flex;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+}
+.hub-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+.hub-stat strong {
+  font-family: var(--f-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--c-ink);
+}
+.hub-stat span { color: var(--c-ink-3); }
+
+.hub-section {
+  margin-bottom: 3rem;
+}
+.hub-section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--c-rule);
+}
+.hub-section-h {
+  font-family: var(--f-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+.hub-section-count {
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  color: var(--c-ink-3);
+  letter-spacing: 0.08em;
+}
+
+/* Estados grid */
+.estados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.estado-card {
+  background: var(--c-paper);
+  border: 1px solid var(--c-rule);
+  border-radius: 10px;
+  padding: 1.2rem 1.3rem;
+  transition: all 0.18s ease;
+  cursor: pointer;
+}
+.estado-card:hover {
+  border-color: var(--c-ink);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 19, 19, 0.06);
+}
+.estado-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+.estado-card-code {
+  font-family: var(--f-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+  background: var(--c-bone);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+.estado-card-cobertura {
+  font-family: var(--f-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+.estado-card-cobertura.alta  { background: rgba(45, 95, 63, 0.13);   color: var(--c-jade); }
+.estado-card-cobertura.media { background: rgba(232, 184, 60, 0.20); color: #8C6E1A; }
+.estado-card-cobertura.baja  { background: rgba(160, 62, 27, 0.13);  color: var(--c-terra); }
+
+.estado-card-name {
+  font-family: var(--f-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0.2rem 0 0.4rem;
+}
+.estado-card-pob {
+  font-family: var(--f-mono);
+  font-size: 0.74rem;
+  color: var(--c-ink-3);
+  margin-bottom: 0.7rem;
+}
+.estado-card-deps {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  color: var(--c-ink-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.estado-card-dep {
+  background: var(--c-cream-2);
+  padding: 0.12rem 0.45rem;
+  border-radius: 3px;
+}
+
+/* Detalle dependencia (modal/expand) */
+.estado-detail {
+  display: none;
+  background: var(--c-paper);
+  border: 1px solid var(--c-ink);
+  border-radius: 10px;
+  padding: 1.6rem 1.8rem;
+  margin-top: 1rem;
+}
+.estado-detail.is-open { display: block; }
+.estado-detail-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--c-rule);
+}
+.estado-detail-name {
+  font-family: var(--f-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+}
+.estado-detail-close {
+  background: transparent;
+  border: 1px solid var(--c-rule);
+  color: var(--c-ink-3);
+  padding: 0.3rem 0.7rem;
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dependencia-card {
+  background: var(--c-cream);
+  border: 1px solid var(--c-rule);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.7rem;
+}
+.dependencia-name {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 0 0.4rem;
+}
+.dependencia-endpoint {
+  font-family: var(--f-mono);
+  font-size: 0.74rem;
+  color: var(--c-cobalt);
+  word-break: break-all;
+  margin-bottom: 0.5rem;
+}
+.dependencia-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+}
+.dependencia-meta span {
+  background: var(--c-bone);
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+  color: var(--c-ink-2);
+}
+.dependencia-meta .meta-validado { background: rgba(45, 95, 63, 0.13); color: var(--c-jade); }
+.dependencia-meta .meta-captcha  { background: rgba(232, 184, 60, 0.2); color: #8C6E1A; }
+.dependencia-mcps {
+  margin-top: 0.5rem;
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  color: var(--c-ink-3);
+}
+
+/* Federales */
+.federales-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.9rem;
+}
+.federal-card {
+  background: var(--c-paper);
+  border: 1px solid var(--c-rule);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+}
+.federal-name {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 0 0.3rem;
+}
+.federal-endpoint {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  color: var(--c-cobalt);
+  margin-bottom: 0.4rem;
+}
+.federal-mcps {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  color: var(--c-ink-3);
+}
+
+/* Patrones CAPTCHA */
+.captcha-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+.captcha-card {
+  background: var(--c-paper);
+  border: 1px solid var(--c-rule);
+  border-left: 3px solid var(--c-terra);
+  border-radius: 6px;
+  padding: 0.9rem 1.1rem;
+}
+.captcha-name {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.02rem;
+  margin: 0 0 0.3rem;
+}
+.captcha-count {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  color: var(--c-ink-3);
+  margin-bottom: 0.4rem;
+}
+.captcha-patron {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  color: var(--c-jade);
+  line-height: 1.4;
+}
+
+/* Filtros */
+.hub-filters {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.hub-filter {
+  background: transparent;
+  border: 1px solid var(--c-rule);
+  color: var(--c-ink-3);
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.hub-filter:hover { color: var(--c-ink); border-color: var(--c-ink); }
+.hub-filter.is-on {
+  background: var(--c-ink);
+  color: var(--c-cream);
+  border-color: var(--c-ink);
+}
+</style>
+</head>
+<body class="hub-body">
+
+<div class="hub-container">
+
+  <a href="/" class="hub-back">← plugins·mx</a>
+
+  <header class="hub-head">
+    <h1 class="hub-h1">Hub de portales <em>gob.mx</em></h1>
+    <p class="hub-sub">Mapa interactivo de 62 portales gubernamentales mexicanos: federales, estatales y municipales.</p>
+
+    <div class="hub-stats">
+      <div class="hub-stat"><strong>32</strong><span>estados</span></div>
+      <div class="hub-stat"><strong>62</strong><span>MCPs</span></div>
+      <div class="hub-stat"><strong>71</strong><span>muns validados Playwright</span></div>
+      <div class="hub-stat"><strong>12</strong><span>dependencias federales</span></div>
+      <div class="hub-stat"><strong>6</strong><span>patrones CAPTCHA documentados</span></div>
+    </div>
+  </header>
+
+  <!-- Filtros por cobertura -->
+  <div class="hub-filters">
+    <button class="hub-filter is-on" data-filter="all">todos</button>
+    <button class="hub-filter" data-filter="alta">cobertura alta</button>
+    <button class="hub-filter" data-filter="media">cobertura media</button>
+    <button class="hub-filter" data-filter="baja">cobertura baja</button>
+  </div>
+
+  <!-- Estados -->
+  <section class="hub-section">
+    <div class="hub-section-head">
+      <h2 class="hub-section-h">Estados &amp; municipios</h2>
+      <span class="hub-section-count" id="estadoCount">16 estados con discovery validado</span>
+    </div>
+    <div class="estados-grid" id="estadosGrid"></div>
+    <div class="estado-detail" id="estadoDetail"></div>
+  </section>
+
+  <!-- Dependencias federales -->
+  <section class="hub-section">
+    <div class="hub-section-head">
+      <h2 class="hub-section-h">Dependencias federales</h2>
+      <span class="hub-section-count">12 cubiertas</span>
+    </div>
+    <div class="federales-grid" id="federalesGrid"></div>
+  </section>
+
+  <!-- Patrones CAPTCHA -->
+  <section class="hub-section">
+    <div class="hub-section-head">
+      <h2 class="hub-section-h">Patrones CAPTCHA documentados</h2>
+      <span class="hub-section-count">6 patrones reusables</span>
+    </div>
+    <div class="captcha-grid" id="captchaGrid"></div>
+  </section>
+
+</div>
+
+<script>
+let DATA = null;
+let CURRENT_FILTER = 'all';
+
+async function loadData() {
+  const r = await fetch('/api/portales-coverage.json');
+  DATA = await r.json();
+  renderEstados();
+  renderFederales();
+  renderCaptcha();
+}
+
+function renderEstados() {
+  const grid = document.getElementById('estadosGrid');
+  let states = DATA.estados;
+  if (CURRENT_FILTER !== 'all') states = states.filter(s => s.cobertura === CURRENT_FILTER);
+  document.getElementById('estadoCount').textContent = `${states.length} estados con discovery validado`;
+  grid.innerHTML = states.map(e => `
+    <div class="estado-card" data-code="${e.code}" onclick="openEstado('${e.code}')">
+      <div class="estado-card-head">
+        <span class="estado-card-code">${e.code}</span>
+        <span class="estado-card-cobertura ${e.cobertura}">${e.cobertura}</span>
+      </div>
+      <h3 class="estado-card-name">${e.nombre}</h3>
+      <div class="estado-card-pob">${(e.pob/1e6).toFixed(1)}M hab</div>
+      <div class="estado-card-deps">
+        ${e.dependencias.slice(0,3).map(d => `<span class="estado-card-dep">${d.id.split('_')[0]}</span>`).join('')}
+        ${e.dependencias.length > 3 ? `<span class="estado-card-dep">+${e.dependencias.length-3}</span>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function openEstado(code) {
+  const estado = DATA.estados.find(e => e.code === code);
+  if (!estado) return;
+  const detail = document.getElementById('estadoDetail');
+  detail.classList.add('is-open');
+  detail.innerHTML = `
+    <div class="estado-detail-head">
+      <div>
+        <span style="font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.12em; color: var(--c-ink-3); text-transform: uppercase;">${estado.code}</span>
+        <h3 class="estado-detail-name">${estado.nombre}</h3>
+      </div>
+      <button class="estado-detail-close" onclick="document.getElementById('estadoDetail').classList.remove('is-open')">cerrar ×</button>
+    </div>
+    ${estado.dependencias.map(d => `
+      <div class="dependencia-card">
+        <h4 class="dependencia-name">${d.nombre}</h4>
+        <div class="dependencia-endpoint">${d.endpoint}</div>
+        <div class="dependencia-meta">
+          ${d.captcha ? `<span class="meta-captcha">CAPTCHA: ${d.captcha}</span>` : ''}
+          <span class="meta-validado">${d.validado}</span>
+        </div>
+        <div class="dependencia-mcps">MCPs: ${d.mcps.join(' · ')}</div>
+      </div>
+    `).join('')}
+  `;
+  detail.scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+function renderFederales() {
+  const grid = document.getElementById('federalesGrid');
+  grid.innerHTML = DATA.dependencias_federales.map(d => `
+    <div class="federal-card">
+      <h4 class="federal-name">${d.nombre}</h4>
+      <div class="federal-endpoint">${d.endpoint}</div>
+      <div class="federal-mcps">${d.mcps.join(' · ')}</div>
+    </div>
+  `).join('');
+}
+
+function renderCaptcha() {
+  const grid = document.getElementById('captchaGrid');
+  grid.innerHTML = DATA.patrones_captcha.map(p => `
+    <div class="captcha-card">
+      <h4 class="captcha-name">${p.nombre}</h4>
+      <div class="captcha-count">${p.count_endpoints} endpoints</div>
+      ${p.patron_implementacion ? `<div class="captcha-patron">${p.patron_implementacion}</div>` : ''}
+    </div>
+  `).join('');
+}
+
+document.querySelectorAll('.hub-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    CURRENT_FILTER = btn.dataset.filter;
+    document.querySelectorAll('.hub-filter').forEach(b => b.classList.toggle('is-on', b === btn));
+    renderEstados();
+  });
+});
+
+loadData();
+</script>
+
+</body>
+</html>

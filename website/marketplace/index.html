@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketplace · Plugins MX · 62 skills mexicanas categorizadas</title>
+<meta name="description" content="Catálogo navegable de 62 MCPs y 6 subagentes especializados para México. Categorizado por Fiscal, Laboral, Municipal, Verificación vehicular, Servicios públicos, Compliance horizontal, Pagos.">
+<link rel="canonical" href="https://skills-mexico.vercel.app/marketplace">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800&family=Geist:wght@100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+/* ============================================================
+   MARKETPLACE — UI navegable tipo Anthropic pero paleta tierra MX
+   ============================================================ */
+
+.mp-shell {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+  background: var(--c-ink);
+  color: var(--c-cream);
+  font-family: var(--f-body);
+}
+
+@media (max-width: 900px) {
+  .mp-shell { grid-template-columns: 1fr; }
+  .mp-sidebar { display: none; }
+}
+
+/* Sidebar de categorías */
+.mp-sidebar {
+  background: #0E0C0B;
+  border-right: 1px solid #2A2520;
+  padding: 1.5rem 1rem;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+}
+
+.mp-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #2A2520;
+}
+.mp-brand a {
+  text-decoration: none;
+  color: var(--c-cream);
+  font-family: var(--f-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+.mp-brand-pulse {
+  width: 8px; height: 8px;
+  background: var(--c-maize);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(232, 184, 60, 0.18);
+  animation: mpPulse 2.4s ease-in-out infinite;
+}
+@keyframes mpPulse {
+  0%, 100% { opacity: 0.95; transform: scale(1); }
+  50%      { opacity: 0.55; transform: scale(1.16); }
+}
+
+.mp-section-label {
+  font-family: var(--f-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6A5E4F;
+  margin: 1.4rem 0 0.6rem;
+  padding-left: 0.25rem;
+}
+
+.mp-cat-list { list-style: none; padding: 0; margin: 0; }
+.mp-cat-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #B5A893;
+  font-size: 0.88rem;
+  transition: all 0.18s ease;
+  margin-bottom: 0.1rem;
+}
+.mp-cat-list li:hover {
+  background: #1A1614;
+  color: var(--c-cream);
+}
+.mp-cat-list li.is-active {
+  background: #2A2218;
+  color: var(--c-cream);
+  font-weight: 500;
+}
+.mp-cat-list li .mp-cat-icon {
+  width: 22px; height: 22px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+.mp-cat-list li .mp-cat-icon.c-terra  { background: rgba(160, 62, 27, 0.22);  color: #E6815A; }
+.mp-cat-list li .mp-cat-icon.c-jade   { background: rgba(45, 95, 63, 0.25);   color: #74C593; }
+.mp-cat-list li .mp-cat-icon.c-cobalt { background: rgba(30, 58, 95, 0.30);   color: #6E9DD0; }
+.mp-cat-list li .mp-cat-icon.c-maize  { background: rgba(232, 184, 60, 0.20); color: var(--c-maize); }
+.mp-cat-list li .mp-cat-icon.c-ink    { background: #2A2520; color: var(--c-cream); }
+.mp-cat-list li .mp-cat-count {
+  margin-left: auto;
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  color: #6A5E4F;
+}
+
+/* Panel central — Lista skills */
+.mp-main {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  height: 100vh;
+  overflow: hidden;
+}
+@media (max-width: 1200px) {
+  .mp-main { grid-template-columns: 1fr; }
+  .mp-detail { display: none; }
+  .mp-detail.is-open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: #161313;
+  }
+}
+
+.mp-list {
+  border-right: 1px solid #2A2520;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.mp-list-head {
+  position: sticky;
+  top: 0;
+  background: #161313;
+  z-index: 5;
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid #2A2520;
+}
+.mp-list-title {
+  font-family: var(--f-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.4rem;
+  color: var(--c-cream);
+}
+.mp-list-desc {
+  color: #8A7E6F;
+  font-size: 0.85rem;
+  margin: 0 0 0.9rem;
+}
+
+.mp-search {
+  width: 100%;
+  background: #0E0C0B;
+  border: 1px solid #2A2520;
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  color: var(--c-cream);
+  font-family: var(--f-body);
+  font-size: 0.88rem;
+  transition: border-color 0.18s;
+}
+.mp-search:focus {
+  outline: none;
+  border-color: var(--c-terra);
+}
+.mp-search::placeholder { color: #5A4F44; }
+
+.mp-filters {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+  flex-wrap: wrap;
+}
+.mp-filter {
+  background: #1A1614;
+  border: 1px solid #2A2520;
+  color: #B5A893;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-family: var(--f-mono);
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: all 0.15s;
+}
+.mp-filter:hover { color: var(--c-cream); border-color: #4A3F35; }
+.mp-filter.is-on {
+  background: var(--c-terra);
+  border-color: var(--c-terra);
+  color: var(--c-cream);
+}
+
+.mp-skill-list { padding: 0.5rem; }
+.mp-skill {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 0.25rem;
+  border: 1px solid transparent;
+  transition: all 0.16s;
+}
+.mp-skill:hover {
+  background: #1A1614;
+  border-color: #2A2520;
+}
+.mp-skill.is-selected {
+  background: #2A2218;
+  border-color: rgba(232, 184, 60, 0.25);
+}
+.mp-skill-tier {
+  width: 24px; height: 24px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.mp-skill-tier.t-s { background: var(--c-jade);   color: #fff; }
+.mp-skill-tier.t-a { background: var(--c-cobalt); color: #fff; }
+.mp-skill-tier.t-b { background: var(--c-maize);  color: #161313; }
+.mp-skill-tier.t-c { background: #5A4F44;         color: var(--c-cream); }
+
+.mp-skill-body { flex: 1; min-width: 0; }
+.mp-skill-id {
+  font-family: var(--f-mono);
+  font-size: 0.86rem;
+  color: var(--c-cream);
+  font-weight: 500;
+  margin-bottom: 0.18rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mp-skill-desc {
+  font-size: 0.78rem;
+  color: #8A7E6F;
+  line-height: 1.4;
+  margin-bottom: 0.35rem;
+}
+.mp-skill-tag {
+  display: inline-block;
+  font-family: var(--f-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.05em;
+  padding: 0.1rem 0.45rem;
+  background: #1F1B17;
+  border: 1px solid #2A2520;
+  color: #8A7E6F;
+  border-radius: 4px;
+  text-transform: lowercase;
+}
+
+/* Panel detalle (derecha) */
+.mp-detail {
+  overflow-y: auto;
+  height: 100vh;
+  background: #1A1614;
+}
+
+.mp-detail-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #5A4F44;
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+.mp-detail-content { padding: 2rem 2.2rem; }
+
+.mp-detail-back {
+  display: none;
+  background: transparent;
+  border: 1px solid #2A2520;
+  color: #B5A893;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--f-mono);
+  font-size: 0.74rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 1200px) {
+  .mp-detail-back { display: inline-block; }
+}
+
+.mp-detail-head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+.mp-detail-id {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.7rem;
+  letter-spacing: -0.02em;
+  color: var(--c-cream);
+  margin: 0;
+}
+.mp-detail-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 0.6rem 0 1.4rem;
+}
+.mp-detail-tag {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.55rem;
+  background: #2A2218;
+  border: 1px solid #3A2F22;
+  color: var(--c-cream);
+  border-radius: 4px;
+}
+
+.mp-detail-section { margin-bottom: 1.7rem; }
+.mp-detail-section h3 {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6A5E4F;
+  margin: 0 0 0.5rem;
+}
+.mp-detail-section p {
+  font-size: 0.92rem;
+  color: #C7BBA8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.mp-detail-code {
+  background: #0E0C0B;
+  border: 1px solid #2A2520;
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  font-family: var(--f-mono);
+  font-size: 0.82rem;
+  color: var(--c-cream);
+  white-space: pre-wrap;
+  overflow-x: auto;
+  line-height: 1.55;
+}
+
+.mp-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.7rem;
+}
+.mp-meta-cell {
+  background: #221E1A;
+  border: 1px solid #2A2520;
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+}
+.mp-meta-cell .mp-meta-label {
+  font-family: var(--f-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6A5E4F;
+  margin-bottom: 0.25rem;
+}
+.mp-meta-cell .mp-meta-value {
+  color: var(--c-cream);
+  font-size: 0.88rem;
+}
+
+/* Tier badge in detail */
+.mp-detail-tier {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  margin-left: auto;
+}
+
+/* Footer-actions */
+.mp-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.mp-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: 7px;
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.18s;
+  cursor: pointer;
+  border: none;
+}
+.mp-action-primary {
+  background: var(--c-maize);
+  color: #161313;
+}
+.mp-action-primary:hover { background: #FFD158; }
+.mp-action-ghost {
+  background: transparent;
+  border: 1px solid #4A3F35;
+  color: var(--c-cream);
+}
+.mp-action-ghost:hover {
+  background: #2A2218;
+  border-color: var(--c-cream);
+}
+</style>
+</head>
+<body class="mp-body">
+
+<div class="mp-shell">
+
+  <!-- SIDEBAR — CATEGORÍAS -->
+  <aside class="mp-sidebar">
+    <div class="mp-brand">
+      <span class="mp-brand-pulse"></span>
+      <a href="/">plugins<i>·mx</i></a>
+    </div>
+
+    <div class="mp-section-label">Marketplace</div>
+    <ul class="mp-cat-list" id="categoryList">
+      <li data-cat="all" class="is-active">
+        <span class="mp-cat-icon c-ink">★</span>
+        <span>Todas</span>
+        <span class="mp-cat-count">62</span>
+      </li>
+    </ul>
+
+    <div class="mp-section-label">Subagentes</div>
+    <ul class="mp-cat-list" id="agentList">
+      <!-- populated by JS -->
+    </ul>
+
+    <div class="mp-section-label">Recursos</div>
+    <ul class="mp-cat-list">
+      <li onclick="window.location.href='/portales/'">
+        <span class="mp-cat-icon c-cobalt">P</span>
+        <span>Hub portales gob.mx</span>
+      </li>
+      <li onclick="window.location.href='/guias/'">
+        <span class="mp-cat-icon c-jade">G</span>
+        <span>Guías visuales</span>
+      </li>
+      <li onclick="window.location.href='/api/skills-catalog.json'">
+        <span class="mp-cat-icon c-maize">J</span>
+        <span>API catálogo (JSON)</span>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- MAIN — LISTA + DETALLE -->
+  <main class="mp-main">
+
+    <!-- LISTA SKILLS -->
+    <div class="mp-list">
+      <div class="mp-list-head">
+        <h1 class="mp-list-title" id="listTitle">Todas las skills</h1>
+        <p class="mp-list-desc" id="listDesc">62 MCPs categorizados para automatizar compliance fiscal, laboral, municipal y servicios públicos en México.</p>
+        <input class="mp-search" id="searchBox" placeholder="Buscar mp_predial, REPSE, agua, multas..." autocomplete="off">
+        <div class="mp-filters">
+          <button class="mp-filter is-on" data-tier="all">todas</button>
+          <button class="mp-filter" data-tier="S">tier S</button>
+          <button class="mp-filter" data-tier="A">tier A</button>
+          <button class="mp-filter" data-tier="B">tier B</button>
+          <button class="mp-filter" data-tier="C">tier C</button>
+        </div>
+      </div>
+      <div class="mp-skill-list" id="skillList"></div>
+    </div>
+
+    <!-- PANEL DETALLE -->
+    <div class="mp-detail" id="detailPanel">
+      <div class="mp-detail-empty">
+        <span style="font-size: 2rem;">→</span>
+        <span>Selecciona una skill para ver detalles</span>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+let CATALOG = null;
+let CURRENT_CAT = 'all';
+let CURRENT_TIER = 'all';
+let CURRENT_QUERY = '';
+let SELECTED_ID = null;
+
+async function loadCatalog() {
+  const r = await fetch('/api/skills-catalog.json');
+  CATALOG = await r.json();
+  renderCategories();
+  renderAgents();
+  renderSkills();
+}
+
+function renderCategories() {
+  const ul = document.getElementById('categoryList');
+  // mantenemos la primera (Todas)
+  const totalNow = CATALOG.categorias.reduce((s, c) => s + c.skills.length, 0);
+  ul.querySelector('.mp-cat-count').textContent = totalNow;
+
+  CATALOG.categorias.forEach(cat => {
+    const li = document.createElement('li');
+    li.dataset.cat = cat.id;
+    li.innerHTML = `
+      <span class="mp-cat-icon c-${cat.color}">${cat.icon}</span>
+      <span>${cat.label}</span>
+      <span class="mp-cat-count">${cat.skills.length}</span>
+    `;
+    li.addEventListener('click', () => selectCategory(cat.id));
+    ul.appendChild(li);
+  });
+
+  ul.querySelector('[data-cat="all"]').addEventListener('click', () => selectCategory('all'));
+}
+
+function renderAgents() {
+  const ul = document.getElementById('agentList');
+  CATALOG.agents.forEach(a => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span class="mp-cat-icon c-jade">A</span>
+      <span style="font-size:0.82rem;">${a.id}</span>
+    `;
+    li.title = a.desc;
+    li.addEventListener('click', () => window.open('/agents/' + a.id, '_blank'));
+    ul.appendChild(li);
+  });
+}
+
+function selectCategory(catId) {
+  CURRENT_CAT = catId;
+  document.querySelectorAll('#categoryList li').forEach(li => {
+    li.classList.toggle('is-active', li.dataset.cat === catId);
+  });
+  const cat = CATALOG.categorias.find(c => c.id === catId);
+  if (cat) {
+    document.getElementById('listTitle').textContent = cat.label;
+    document.getElementById('listDesc').textContent = cat.descripcion;
+  } else {
+    document.getElementById('listTitle').textContent = 'Todas las skills';
+    document.getElementById('listDesc').textContent = '62 MCPs categorizados para automatizar compliance fiscal, laboral, municipal y servicios públicos en México.';
+  }
+  renderSkills();
+}
+
+function getFilteredSkills() {
+  let skills = [];
+  if (CURRENT_CAT === 'all') {
+    CATALOG.categorias.forEach(c => {
+      c.skills.forEach(s => skills.push({...s, _cat: c.label, _color: c.color}));
+    });
+  } else {
+    const cat = CATALOG.categorias.find(c => c.id === CURRENT_CAT);
+    if (cat) skills = cat.skills.map(s => ({...s, _cat: cat.label, _color: cat.color}));
+  }
+  if (CURRENT_TIER !== 'all') skills = skills.filter(s => s.tier === CURRENT_TIER);
+  if (CURRENT_QUERY) {
+    const q = CURRENT_QUERY.toLowerCase();
+    skills = skills.filter(s =>
+      s.id.toLowerCase().includes(q) ||
+      s.desc.toLowerCase().includes(q) ||
+      (s.tag || '').toLowerCase().includes(q)
+    );
+  }
+  return skills;
+}
+
+function renderSkills() {
+  const skills = getFilteredSkills();
+  const list = document.getElementById('skillList');
+  if (!skills.length) {
+    list.innerHTML = '<div style="padding: 2rem; color:#5A4F44; text-align:center; font-family: var(--f-display); font-style:italic;">Sin resultados.</div>';
+    return;
+  }
+  list.innerHTML = skills.map(s => `
+    <div class="mp-skill ${SELECTED_ID === s.id ? 'is-selected' : ''}" data-id="${s.id}">
+      <div class="mp-skill-tier t-${(s.tier || 'b').toLowerCase()}">${s.tier || 'B'}</div>
+      <div class="mp-skill-body">
+        <div class="mp-skill-id">${s.id}</div>
+        <div class="mp-skill-desc">${s.desc}</div>
+        ${s.tag ? `<span class="mp-skill-tag">${s.tag}</span>` : ''}
+      </div>
+    </div>
+  `).join('');
+  list.querySelectorAll('.mp-skill').forEach(el => {
+    el.addEventListener('click', () => selectSkill(el.dataset.id));
+  });
+}
+
+function selectSkill(id) {
+  SELECTED_ID = id;
+  document.querySelectorAll('.mp-skill').forEach(s => {
+    s.classList.toggle('is-selected', s.dataset.id === id);
+  });
+  let skill = null;
+  let catLabel = '';
+  for (const c of CATALOG.categorias) {
+    const found = c.skills.find(s => s.id === id);
+    if (found) { skill = found; catLabel = c.label; break; }
+  }
+  if (!skill) return;
+
+  const tier = skill.tier || 'B';
+  const tierColor = {S:'jade', A:'cobalt', B:'maize', C:'ink'}[tier];
+  const detail = document.getElementById('detailPanel');
+  detail.classList.add('is-open');
+  detail.innerHTML = `
+    <div class="mp-detail-content">
+      <button class="mp-detail-back" onclick="document.getElementById('detailPanel').classList.remove('is-open')">← Volver</button>
+
+      <div class="mp-detail-head">
+        <h2 class="mp-detail-id">${skill.id}</h2>
+        <span class="mp-skill-tier t-${tier.toLowerCase()}" style="margin-left:auto;">${tier}</span>
+      </div>
+      <div style="color:#8A7E6F; font-size:0.86rem; margin-bottom:0.6rem;">${catLabel}${skill.tag ? ' · ' + skill.tag : ''}</div>
+
+      <div class="mp-detail-section">
+        <h3>Descripción</h3>
+        <p>${skill.desc}</p>
+      </div>
+
+      <div class="mp-detail-section">
+        <h3>Metadata</h3>
+        <div class="mp-detail-grid">
+          <div class="mp-meta-cell">
+            <div class="mp-meta-label">Tier</div>
+            <div class="mp-meta-value">${tier}</div>
+          </div>
+          <div class="mp-meta-cell">
+            <div class="mp-meta-label">Categoría</div>
+            <div class="mp-meta-value">${catLabel}</div>
+          </div>
+          <div class="mp-meta-cell">
+            <div class="mp-meta-label">Tag</div>
+            <div class="mp-meta-value">${skill.tag || '—'}</div>
+          </div>
+          <div class="mp-meta-cell">
+            <div class="mp-meta-label">Mock-first</div>
+            <div class="mp-meta-value">✓ sí</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mp-detail-section">
+        <h3>Instalar en Claude Code</h3>
+        <pre class="mp-detail-code"># Clonar el monorepo
+git clone https://github.com/elimorals/Skills_MX
+cd Skills_MX
+
+# Instalar dependencias
+cd mcp-servers && pip install -e ".[dev]"
+
+# Conectar el MCP a Claude Code
+# (ver mcp-servers/${skill.id}/example.mcp.json)</pre>
+      </div>
+
+      <div class="mp-actions">
+        <a class="mp-action mp-action-primary" href="https://github.com/elimorals/Skills_MX/tree/main/mcp-servers/${skill.id}" target="_blank" rel="noopener">
+          Código →
+        </a>
+        <a class="mp-action mp-action-ghost" href="/portales/" >
+          Cobertura
+        </a>
+        <a class="mp-action mp-action-ghost" href="/api/skills-catalog.json" target="_blank">
+          JSON
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+document.getElementById('searchBox').addEventListener('input', e => {
+  CURRENT_QUERY = e.target.value.trim();
+  renderSkills();
+});
+document.querySelectorAll('.mp-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    CURRENT_TIER = btn.dataset.tier;
+    document.querySelectorAll('.mp-filter').forEach(b => b.classList.toggle('is-on', b === btn));
+    renderSkills();
+  });
+});
+
+loadCatalog();
+</script>
+
+</body>
+</html>

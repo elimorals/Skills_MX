@@ -1,0 +1,141 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-06-15",
+  "total_estados": 32,
+  "estados_cubiertos": 32,
+  "total_municipios_catalogados": 243,
+  "municipios_validados_playwright": 71,
+  "estados": [
+    {
+      "code": "cdmx", "nombre": "Ciudad de México", "pob": 9209944, "cobertura": "alta",
+      "dependencias": [
+        {"id": "saf_cdmx", "nombre": "Secretaría de Administración y Finanzas (SAF)", "endpoint": "data.finanzas.cdmx.gob.mx/sma/Consultaciudadana", "captcha": "imagen", "mcps": ["mp_verificacion_vehicular_mx", "mp_tenencia_mx", "mp_multas_vehiculares_mx"], "validado": "Playwright 2026-06-15 calibrado en vivo"},
+        {"id": "sacmex", "nombre": "Sistema de Aguas CDMX (SACMEX)", "endpoint": "sacmex.cdmx.gob.mx", "captcha": "503 dominical", "mcps": ["mp_agua_mx"], "validado": "Pendiente día hábil"},
+        {"id": "ovica", "nombre": "Oficina Virtual del Catastro (OVICA)", "endpoint": "ovica.finanzas.cdmx.gob.mx", "captcha": "login Material Angular", "mcps": ["mp_catastro_estatal_mx"], "validado": "Discovery 2026-06-15"},
+        {"id": "cfe_nacional", "nombre": "CFE Mi Espacio (nacional)", "endpoint": "app.cfe.mx/Aplicaciones/CCFE/MiEspacio", "captcha": "imagen ASP.NET", "mcps": ["mp_cfe_facturacion"], "validado": "Sprint A2 2026-06-14"}
+      ]
+    },
+    {
+      "code": "edomex", "nombre": "Estado de México", "pob": 17427790, "cobertura": "alta",
+      "dependencias": [
+        {"id": "infracciones_edomex", "nombre": "Secretaría de Seguridad EdoMex", "endpoint": "infracciones.ssedomex.gob.mx/Search", "captcha": "Cloudflare Turnstile", "mcps": ["mp_multas_vehiculares_mx"], "validado": "Discovery 2026-06-15"},
+        {"id": "verificarte_edomex", "nombre": "Verificación EdoMex", "endpoint": "verificacion.edomex.gob.mx", "captcha": "DNS_NOT_RESOLVED", "mcps": ["mp_verificacion_vehicular_mx"], "validado": "Hallazgo negativo: sin portal público"},
+        {"id": "igecem", "nombre": "IGECEM Catastro EdoMex", "endpoint": "igecem.edomex.gob.mx", "captcha": "captcha imagen", "mcps": ["mp_catastro_estatal_mx"], "validado": "Tier B documentado"}
+      ]
+    },
+    {
+      "code": "nl", "nombre": "Nuevo León", "pob": 5784442, "cobertura": "alta",
+      "dependencias": [
+        {"id": "icvnl", "nombre": "Instituto Control Vehicular NL (refrendo)", "endpoint": "icvnl.gob.mx/estadodecuenta", "captcha": "n/d", "mcps": ["mp_multas_vehiculares_mx"], "validado": "Discovery 2026-06-15 (refrendo, no multas)"},
+        {"id": "sanpedro_multas", "nombre": "Multas San Pedro Garza García", "endpoint": "aplicativos.sanpedro.gob.mx/esanpedro/multas/multasnew.asp", "captcha": "reCAPTCHA v2", "mcps": ["mp_multas_vehiculares_mx"], "validado": "Discovery 2026-06-15 sitekey 6LfCmAEoAAAA..."},
+        {"id": "sgcnl", "nombre": "SGC Catastro NL", "endpoint": "catastro.ircnl.gob.mx/sgcnl/", "captcha": "login", "mcps": ["mp_catastro_estatal_mx"], "validado": "Discovery negativo: login-only"}
+      ]
+    },
+    {
+      "code": "jal", "nombre": "Jalisco", "pob": 8348151, "cobertura": "alta",
+      "dependencias": [
+        {"id": "siapa", "nombre": "SIAPA Guadalajara (agua)", "endpoint": "siapa.gob.mx/aplicaciones/pagoenlinea", "captcha": "reCAPTCHA v2", "mcps": ["mp_agua_mx"], "validado": "Sprint A1 — sitekey 6LdsJiUUAAAAAIjV..."},
+        {"id": "vehiculares_jal", "nombre": "Servicios Vehiculares Jalisco", "endpoint": "gobiernoenlinea1.jalisco.gob.mx/serviciosVehiculares/adeudos", "captcha": "reCAPTCHA v2", "mcps": ["mp_multas_vehiculares_mx"], "validado": "Discovery 2026-06-15 sitekey 6LehxCgfAAAA..."},
+        {"id": "catastro_jal", "nombre": "Dirección de Catastro Jalisco", "endpoint": "catastro.jalisco.gob.mx", "captcha": "n/a", "mcps": ["mp_catastro_estatal_mx"], "validado": "Hallazgo: info-only, sin consulta pública"}
+      ]
+    },
+    {
+      "code": "chih", "nombre": "Chihuahua", "pob": 3741869, "cobertura": "media",
+      "dependencias": [
+        {"id": "jmas_juarez", "nombre": "JMAS Juárez (agua)", "endpoint": "jmasjuarez.gob.mx/v026/saldo.php", "captcha": "ninguno", "mcps": ["mp_agua_mx"], "validado": "Sprint D2 — público sin captcha"}
+      ]
+    },
+    {
+      "code": "mich", "nombre": "Michoacán", "pob": 4748846, "cobertura": "alta",
+      "dependencias": [
+        {"id": "sacpi", "nombre": "SACPI Michoacán (95 muns)", "endpoint": "sacpi.michoacan.gob.mx", "captcha": "n/a", "mcps": ["mp_sacpi_michoacan", "mp_predial_mx"], "validado": "Ratio 95:1 — 95 muns via 1 URL"},
+        {"id": "ooapas_morelia", "nombre": "OOAPAS Morelia (agua)", "endpoint": "pagoenlinea.ooapas.gob.mx/index_pago_express.php", "captcha": "ninguno", "mcps": ["mp_agua_mx"], "validado": "Sprint D2 — PagoExpress sin login"}
+      ]
+    },
+    {
+      "code": "bc", "nombre": "Baja California", "pob": 3769020, "cobertura": "media",
+      "dependencias": [
+        {"id": "predial_mexicali", "nombre": "Predial Mexicali", "endpoint": "mexicali.gob.mx/portalmexicali/predial", "captcha": "ninguno", "mcps": ["mp_predial_mx"], "validado": "Sprint D1 — SPA con #claveCatastral"},
+        {"id": "pagos_tijuana", "nombre": "Pagos en Línea Tijuana", "endpoint": "pagos.tijuana.gob.mx/PagosenLinea", "captcha": "login user+pass", "mcps": ["mp_predial_mx", "mp_tijuana_municipal"], "validado": "Sprint D1 — requiere registro previo"}
+      ]
+    },
+    {
+      "code": "gto", "nombre": "Guanajuato", "pob": 6166934, "cobertura": "alta",
+      "dependencias": [
+        {"id": "pagonet_leon", "nombre": "PAGONET León (predial)", "endpoint": "pagos.leon.gob.mx/pagonet2/Services/Predial", "captcha": "reCAPTCHA", "mcps": ["mp_predial_mx"], "validado": "Sprint D1 — ASP.NET + reCAPTCHA 6LeXK64UAAAA..."},
+        {"id": "finanzas_gto", "nombre": "Secretaría de Finanzas GTO", "endpoint": "finanzas.guanajuato.gob.mx", "captcha": "n/a", "mcps": ["mp_catastro_estatal_mx"], "validado": "Hallazgo: solo disposiciones administrativas"}
+      ]
+    },
+    {
+      "code": "qro", "nombre": "Querétaro", "pob": 2368467, "cobertura": "alta",
+      "dependencias": [
+        {"id": "predial_qro", "nombre": "Municipio de Querétaro (webservices)", "endpoint": "webservices.municipiodequeretaro.gob.mx/consultaLC/v2", "captcha": "ninguno", "mcps": ["mp_predial_mx", "mp_queretaro_municipal"], "validado": "Sprint D1 — Cvecatastral 15 dígitos + 4 letras propietario"}
+      ]
+    },
+    {
+      "code": "yuc", "nombre": "Yucatán", "pob": 2320898, "cobertura": "alta",
+      "dependencias": [
+        {"id": "predial_merida", "nombre": "Predial Mérida (isla.merida.gob.mx)", "endpoint": "isla.merida.gob.mx/serviciosinternet/predialmid", "captcha": "ninguno", "mcps": ["mp_predial_mx", "mp_merida_municipal"], "validado": "Sprint D1 — PHP custom multi-campo"}
+      ]
+    },
+    {
+      "code": "sin", "nombre": "Sinaloa", "pob": 3026943, "cobertura": "media",
+      "dependencias": [
+        {"id": "predial_culiacan", "nombre": "Predial Culiacán (Mi Clave)", "endpoint": "pagos.culiacan.gob.mx/miclave", "captcha": "ninguno", "mcps": ["mp_predial_mx"], "validado": "Sprint D1 — SPA clave segmentada"}
+      ]
+    },
+    {
+      "code": "qroo", "nombre": "Quintana Roo", "pob": 1857985, "cobertura": "media",
+      "dependencias": [
+        {"id": "predial_cancun", "nombre": "Cancún Digital (Benito Juárez)", "endpoint": "cancun-digital.mx/tramites/tipo/pipcan", "captcha": "ninguno", "mcps": ["mp_predial_mx"], "validado": "Sprint D1 — SPA React"}
+      ]
+    },
+    {
+      "code": "pue", "nombre": "Puebla", "pob": 6583278, "cobertura": "alta",
+      "dependencias": [
+        {"id": "ircep", "nombre": "IRCEP Catastro Puebla", "endpoint": "ircep.puebla.gob.mx/consulta-publica", "captcha": "login", "mcps": ["mp_catastro_estatal_mx", "mp_puebla_municipal"], "validado": "Tier B documentado"}
+      ]
+    },
+    {
+      "code": "ver", "nombre": "Veracruz", "pob": 8062579, "cobertura": "media",
+      "dependencias": [
+        {"id": "catastro_ver", "nombre": "Dirección Catastro Veracruz", "endpoint": "catastro.veracruz.gob.mx", "captcha": "n/d", "mcps": ["mp_catastro_estatal_mx"], "validado": "Tier B documentado"}
+      ]
+    },
+    {
+      "code": "son", "nombre": "Sonora", "pob": 2944840, "cobertura": "baja",
+      "dependencias": [
+        {"id": "icreson", "nombre": "ICRESON Sonora", "endpoint": "icreson.sonora.gob.mx", "captcha": "n/a", "mcps": ["mp_catastro_estatal_mx"], "validado": "Hallazgo: trámites presenciales"},
+        {"id": "aguah_hermosillo", "nombre": "Agua de Hermosillo", "endpoint": "aguadehermosillo.gob.mx/aguah/pago-en-linea", "captcha": "n/a", "mcps": ["mp_agua_mx"], "validado": "Hallazgo negativo: solo app móvil"}
+      ]
+    },
+    {
+      "code": "coah", "nombre": "Coahuila", "pob": 3146771, "cobertura": "baja",
+      "dependencias": [
+        {"id": "simas_saltillo", "nombre": "Aguas de Saltillo (SIMAS)", "endpoint": "oficina.aguasdesaltillo.com", "captcha": "login", "mcps": ["mp_agua_mx"], "validado": "Hallazgo: login obligatorio"}
+      ]
+    }
+  ],
+  "dependencias_federales": [
+    {"id": "sat", "nombre": "SAT", "endpoint": "sat.gob.mx", "mcps": ["mp_sat_portal", "mp_sat_opinion_32d", "mp_sat_ws", "mp_facturama_extendido"], "cobertura": "federal"},
+    {"id": "imss", "nombre": "IMSS Patronal (IDSE)", "endpoint": "idse.imss.gob.mx", "captcha": "e.firma", "mcps": ["mp_imss_patronal"], "cobertura": "federal"},
+    {"id": "infonavit", "nombre": "INFONAVIT Patronal", "endpoint": "infonavit.gob.mx", "captcha": "e.firma", "mcps": ["mp_infonavit_patronal"], "cobertura": "federal"},
+    {"id": "renapo", "nombre": "RENAPO (CURP)", "endpoint": "renapo.gob.mx", "captcha": "imagen", "mcps": ["mp_curp_renapo"], "cobertura": "federal"},
+    {"id": "stps_repse", "nombre": "STPS REPSE", "endpoint": "repse.stps.gob.mx", "captcha": "ninguno", "mcps": ["mp_repse_stps"], "cobertura": "federal"},
+    {"id": "sep", "nombre": "SEP Cédula Profesional", "endpoint": "cedulaprofesional.sep.gob.mx", "captcha": "ninguno", "mcps": ["mp_sep_profesional"], "cobertura": "federal"},
+    {"id": "dof", "nombre": "DOF", "endpoint": "dof.gob.mx", "captcha": "ninguno", "mcps": ["mp_dof_api"], "cobertura": "federal"},
+    {"id": "cnbv", "nombre": "CNBV Fintech", "endpoint": "cnbv.gob.mx", "captcha": "n/a", "mcps": ["mp_cnbv_fintech"], "cobertura": "federal"},
+    {"id": "impi", "nombre": "IMPI Marcanet", "endpoint": "marcanet.impi.gob.mx", "captcha": "reCAPTCHA v3", "mcps": ["mp_impi_marcanet"], "cobertura": "federal"},
+    {"id": "condusef_sipres", "nombre": "CONDUSEF SIPRES", "endpoint": "sipres.condusef.gob.mx", "captcha": "imagen", "mcps": ["mp_condusef_sipres"], "cobertura": "federal"},
+    {"id": "repuve", "nombre": "REPUVE", "endpoint": "repuve.gob.mx", "captcha": "imagen", "mcps": ["mp_repuve"], "cobertura": "federal"},
+    {"id": "banxico", "nombre": "Banco de México", "endpoint": "banxico.org.mx", "captcha": "n/a", "mcps": ["mp_banxico", "mp_banxico_cep"], "cobertura": "federal"}
+  ],
+  "patrones_captcha": [
+    {"id": "ninguno", "nombre": "Sin CAPTCHA", "count_endpoints": 18},
+    {"id": "imagen", "nombre": "Imagen alfanumérica (ASP.NET o GET)", "count_endpoints": 6, "patron_implementacion": "Screenshot + cascada env/TTY/fail"},
+    {"id": "recaptcha_v2", "nombre": "reCAPTCHA v2 checkbox", "count_endpoints": 5, "patron_implementacion": "wait_for_function('g-recaptcha-response.value.length > 20')"},
+    {"id": "recaptcha_v3", "nombre": "reCAPTCHA Enterprise v3 invisible", "count_endpoints": 2, "patron_implementacion": "page.click('Continuar') — resuelve solo"},
+    {"id": "turnstile", "nombre": "Cloudflare Turnstile", "count_endpoints": 1, "patron_implementacion": "sitekey extraída en discovery + cascada"},
+    {"id": "login", "nombre": "Login obligatorio", "count_endpoints": 4, "patron_implementacion": "Cliente provee credenciales"}
+  ]
+}
