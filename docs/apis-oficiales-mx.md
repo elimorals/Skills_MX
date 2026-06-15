@@ -350,6 +350,61 @@ demanda penal contra el operador.
 
 ---
 
+## 7.5. INEGI WSCatGeo — API oficial de catálogo municipal MX (Descubierto 2026-06-13)
+
+**Endpoint**: `https://gaia.inegi.org.mx/wscatgeo/v2/mgem/agem/`
+
+API REST pública del INEGI que devuelve los **2,478 municipios oficiales** de México
+con nombres, códigos INEGI (cve_ent, cve_mun, cvegeo), población total/femenina/masculina,
+viviendas, y nombres de cabeceras municipales.
+
+### Características
+- ✅ Oficial (Instituto Nacional de Estadística y Geografía)
+- ✅ Pública sin auth
+- ✅ Estable (sin cambios estructurales recientes)
+- ✅ Gratis
+- ✅ JSON limpio
+
+### Uso
+
+```bash
+# Devuelve TODOS los municipios MX (path ignorado, no filtra)
+curl https://gaia.inegi.org.mx/wscatgeo/v2/mgem/agem/01
+
+# Schema de respuesta:
+# {"datos": [
+#   {
+#     "cvegeo": "01001",       # código geoestadístico completo
+#     "cve_ent": "01",          # código estado (01=AGS, 02=BC, ...)
+#     "cve_mun": "001",         # código municipio dentro del estado
+#     "nomgeo": "Aguascalientes",  # nombre oficial
+#     "cve_cab": "0001",
+#     "nom_cab": "Aguascalientes",  # cabecera municipal
+#     "pob_total": "948990",
+#     "pob_femenina": "486917",
+#     "pob_masculina": "462073",
+#     "total_viviendas_habitadas": "266942"
+#   },
+#   ...
+# ]}
+```
+
+### Cuándo usarla
+- Generar catálogos de muns (vez vs scrapear listas)
+- Validar nombres oficiales (vs slugs no estándar)
+- Bootstrap de cualquier proyecto que necesite datos municipales MX
+- Stats poblacionales para escalado
+
+### Caveats
+- El path `/01` se ignora — siempre devuelve los 2,478
+- Filtra por `cve_ent` localmente con Python después de descargar
+- Rate limit: respetar ~1 req/seg (cortés)
+
+### Implementación en plugins-mx
+Ver `scripts/generar-lista-inegi.py` y `tmp/descargar-inegi-completo.py`.
+
+---
+
 ## 8. Referencias normativas
 
 - **CFF Art. 30** — conservación de comprobantes 5 años
