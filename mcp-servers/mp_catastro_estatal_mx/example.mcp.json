@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "catastro_estatal_mx": {
+      "command": "python",
+      "args": ["-m", "mp_catastro_estatal_mx.server"],
+      "env": {"PLUGINS_MX_MOCK": "1"}
+    }
+  }
+}
