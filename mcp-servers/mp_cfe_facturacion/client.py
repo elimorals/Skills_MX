@@ -230,21 +230,53 @@ class CfeFactClient:
                 "y que el humano completó el CAPTCHA durante el flow.",
                 {"hint": "Setea PLUGINS_MX_CFE_LIVE=1 para activar Playwright headed."},
             )
-        # En v1 el browser captura cookies — el scraping específico de Pagar.aspx
-        # / HistorialConsumo.aspx queda como extension point.
-        raise McpError(
-            "descargar_factura_mes path real requiere implementación del scraper "
-            "de Pagar.aspx — placeholder en v1. Mock funciona normal.",
-            {"siguiente_paso": "implementar parser HTML de la página de factura"},
-        )
+
+        html = self._fetch_with_cookies(cookies, URL_CFE_MIESPACIO_FACTURA)
+        parsed = _parse_cfe_factura_html(html, rpu)
+        parsed["periodo"] = periodo or parsed.get("periodo_detectado", "")
+        parsed["session_used"] = "cached"
+        parsed["fecha_consulta"] = datetime.now(timezone.utc).isoformat()
+        parsed["fuente"] = URL_CFE_MIESPACIO_FACTURA
+        parsed["simulated"] = False
+        return parsed
 
     def _real_consumo(self, rpu: str, meses: int) -> dict[str, Any]:
         cookies = self._get_or_create_session(rpu)
         if not cookies:
             raise UpstreamError("No fue posible obtener sesión CFE.")
-        raise McpError(
-            "consumo_historico path real requiere parser HistorialConsumo.aspx — placeholder.",
-        )
+        html = self._fetch_with_cookies(cookies, URL_CFE_MIESPACIO_CONSUMO)
+        parsed = _parse_cfe_consumo_html(html, rpu, meses)
+        parsed["session_used"] = "cached"
+        parsed["fecha_consulta"] = datetime.now(timezone.utc).isoformat()
+        parsed["fuente"] = URL_CFE_MIESPACIO_CONSUMO
+        parsed["simulated"] = False
+        return parsed
+
+    def _fetch_with_cookies(self, cookies: list[dict], url: str) -> str:
+        """Reabre Playwright con cookies cacheadas y descarga HTML de la página."""
+        try:
+            from playwright.sync_api import sync_playwright  # type: ignore
+        except ImportError as e:
+            raise ConfigError("Playwright no disponible.", {"raw": str(e)})
+
+        headless = os.getenv("PLUGINS_MX_CFE_HEADLESS", "1") == "1"
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=headless)
+            ctx = browser.new_context(locale="es-MX")
+            # Las cookies de Playwright tienen formato distinto; convertimos
+            ctx.add_cookies([{
+                "name": c.get("name", ""),
+                "value": c.get("value", ""),
+                "domain": c.get("domain", "app.cfe.mx"),
+                "path": c.get("path", "/"),
+            } for c in cookies if c.get("name")])
+            page = ctx.new_page()
+            page.set_default_timeout(45000)
+            page.goto(url, wait_until="domcontentloaded")
+            page.wait_for_load_state("networkidle", timeout=30000)
+            html = page.content()
+            browser.close()
+            return html
 
     def _get_or_create_session(self, rpu: str) -> Optional[list[dict]]:
         """Obtiene cookies de sesión cacheadas o lanza human-in-loop para crear."""
@@ -284,28 +316,83 @@ class CfeFactClient:
         return cookies
 
     def _human_in_loop_login(self, rpu: str, password: str) -> Optional[list[dict]]:
-        """Lanza Playwright HEADED para que humano resuelva CAPTCHA + login.
+        """Lanza Playwright para login con CAPTCHA human-in-loop.
 
         Flujo:
-          1. Abre Chromium headed con CFE Mi Espacio Login.
-          2. Pre-llena usuario (RPU) y password.
-          3. PAUSA — espera input del humano (manual CAPTCHA + click submit).
-          4. Verifica que la URL post-login sea /Default.aspx (sesión válida).
-          5. Captura cookies del contexto.
-
-        NOTA v1: este método está skeleton — la pausa requiere un mecanismo
-        de notificación (signal, file, env var) que no puede ser bloqueante
-        infinito en un MCP server. Producción usar: input() local + browser
-        headed visible al usuario.
+          1. Abre Chromium (headless o headed según PLUGINS_MX_CFE_HEADLESS).
+          2. Navega a Login.aspx, prellenado usuario+password.
+          3. Captura screenshot del CAPTCHA imagen.
+          4. Resuelve captcha vía cascada:
+             - env PLUGINS_MX_CFE_CAPTCHA (single-use), o
+             - input() interactivo si stdin es TTY, o
+             - falla con McpError.
+          5. Click btnIngresar, verifica redirect a Default.aspx (sesión válida).
+          6. Extrae cookies del contexto y las devuelve.
         """
-        raise McpError(
-            "Human-in-loop login para CFE está en skeleton (v1). "
-            "Para implementar: lanzar Playwright headed via subprocess, "
-            "esperar marker file (ej. ~/.cfe_login_complete) creado por el humano, "
-            "luego extraer cookies. Por ahora, set PLUGINS_MX_MOCK=1 (default) o "
-            "implementar el handler humano completo.",
-            {"reference": "shared/playwright_session.py + CFE_RPU + CFE_PASSWORD"},
-        )
+        try:
+            from playwright.sync_api import sync_playwright  # type: ignore
+        except ImportError as e:
+            raise ConfigError(
+                "Playwright requerido para login CFE.",
+                {"hint": "pip install playwright && playwright install chromium",
+                 "raw": str(e)},
+            )
+
+        headless = os.getenv("PLUGINS_MX_CFE_HEADLESS", "1") == "1"
+        timeout_ms = int(os.getenv("PLUGINS_MX_CFE_TIMEOUT_MS", "90000"))
+        captcha_dir = Path(os.getenv("PLUGINS_MX_CAPTCHA_DIR", "/tmp/plugins_mx_captcha"))
+        captcha_dir.mkdir(parents=True, exist_ok=True)
+
+        try:
+            with sync_playwright() as p:
+                browser = p.chromium.launch(headless=headless)
+                ctx = browser.new_context(locale="es-MX")
+                page = ctx.new_page()
+                page.set_default_timeout(timeout_ms)
+
+                page.goto(URL_CFE_MIESPACIO_LOGIN, wait_until="domcontentloaded")
+                page.wait_for_selector(SELECTORES_CFE_LOGIN["usuario"], state="visible")
+                page.fill(SELECTORES_CFE_LOGIN["usuario"], rpu)
+                page.fill(SELECTORES_CFE_LOGIN["password"], password)
+
+                captcha_path = captcha_dir / f"cfe_{rpu}_{int(datetime.now(timezone.utc).timestamp())}.png"
+                page.locator(SELECTORES_CFE_LOGIN["captcha_img"]).first.screenshot(path=str(captcha_path))
+
+                code = _resolve_cfe_captcha(captcha_path, rpu)
+                if not code:
+                    raise McpError(
+                        "Captcha CFE no resuelto — proporcionar via PLUGINS_MX_CFE_CAPTCHA "
+                        "o ejecutar interactivamente.",
+                        {"captcha_path": str(captcha_path)},
+                    )
+                page.fill(SELECTORES_CFE_LOGIN["captcha"], code)
+                page.click(SELECTORES_CFE_LOGIN["submit"])
+
+                # Login OK redirige a Default.aspx. Si falla, queda en Login.aspx con mensaje.
+                try:
+                    page.wait_for_url(re.compile(r"/Default\.aspx", re.I), timeout=20000)
+                except Exception:
+                    err = ""
+                    try:
+                        err = page.locator(".lblError, [id*='Error']").first.inner_text(timeout=2000)
+                    except Exception:
+                        pass
+                    raise UpstreamError(
+                        f"Login CFE falló (URL no llegó a Default.aspx): {err or 'razón no detectada'}",
+                        {"hint": "Captcha incorrecto o credenciales inválidas."},
+                    )
+
+                cookies = ctx.cookies()
+                browser.close()
+                return cookies
+
+        except (McpError, UpstreamError):
+            raise
+        except Exception as e:
+            raise UpstreamError(
+                f"CFE login Playwright falló: {type(e).__name__}: {e}",
+                {"rpu_hash": self.bitacora.hash_sensitive(rpu)},
+            )
 
     def _session_aun_viva(self, cached: dict) -> bool:
         try:
@@ -379,3 +466,113 @@ class CfeFactClient:
             "fecha_consulta": datetime.now(timezone.utc).isoformat(),
             "fuente": URL_CFE_MIESPACIO_LOGIN,
         })
+
+
+# ============================================================
+# Captcha resolver + HTML parsers
+# ============================================================
+def _resolve_cfe_captcha(captcha_path: Path, rpu: str) -> Optional[str]:
+    """Cascada: env → TTY → None.
+
+    1. PLUGINS_MX_CFE_CAPTCHA (single-use por ejecución).
+    2. input() interactivo si stdin es TTY.
+    3. None (caller debe lanzar McpError con captcha_path para inspección).
+    """
+    env_code = os.getenv("PLUGINS_MX_CFE_CAPTCHA", "").strip()
+    if env_code:
+        return env_code
+
+    import sys as _sys
+    if _sys.stdin.isatty():
+        try:
+            print(f"\n[plugins-mx] CAPTCHA CFE para RPU {rpu[:4]}...{rpu[-4:]}")
+            print(f"  Imagen guardada en: {captcha_path}")
+            return input("  Código: ").strip() or None
+        except (EOFError, KeyboardInterrupt):
+            return None
+    return None
+
+
+def _strip_html(html: str) -> str:
+    """Strip tags y colapsa whitespace para parseo robusto."""
+    text = re.sub(r"<[^>]+>", " ", html)
+    return re.sub(r"\s+", " ", text)
+
+
+def _parse_cfe_factura_html(html: str, rpu: str) -> dict[str, Any]:
+    """Extrae datos de Pagar.aspx — monto, kWh, vencimiento, estatus."""
+    text = _strip_html(html)
+    result: dict[str, Any] = {
+        "operation": "descargar_factura_mes",
+        "rpu": rpu,
+    }
+
+    def _grab(pattern: str) -> Optional[str]:
+        m = re.search(pattern, text, re.IGNORECASE | re.DOTALL)
+        return m.group(1).strip() if m else None
+
+    monto = _grab(r"[Tt]otal\s+a\s+pagar[^\d]{0,80}\$\s*([0-9]{1,3}(?:[,\.][0-9]{3})*[\.,][0-9]{2})")
+    if not monto:
+        monto = _grab(r"\$\s*([0-9]{1,3}(?:[,\.][0-9]{3})*[\.,][0-9]{2})")
+    if monto:
+        try:
+            result["monto_total_mxn"] = float(monto.replace(",", ""))
+        except ValueError:
+            result["monto_total_raw"] = monto
+
+    consumo = _grab(r"([0-9]{1,5})\s*kWh")
+    if consumo:
+        result["consumo_kwh"] = int(consumo)
+
+    venc = _grab(r"[Vv]encimiento[^\d]{0,80}(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})")
+    if venc:
+        result["vencimiento"] = venc
+
+    estatus = _grab(r"\b(PAGADA|PENDIENTE|VENCIDA|EN\s+TR[ÁA]MITE)\b")
+    if estatus:
+        result["estatus"] = estatus.upper()
+
+    periodo = _grab(r"[Pp]eriodo[^\d]{0,30}(\d{4}-\d{2}|[A-Za-z]+\s+\d{4})")
+    if periodo:
+        result["periodo_detectado"] = periodo
+
+    if "monto_total_mxn" not in result and "monto_total_raw" not in result:
+        result["parse_partial"] = True
+        result["html_snippet"] = text[:500]
+    return result
+
+
+def _parse_cfe_consumo_html(html: str, rpu: str, meses: int) -> dict[str, Any]:
+    """Extrae histórico kWh de HistorialConsumo.aspx.
+
+    El portal renderiza una tabla con columnas: mes, kWh, monto. Buscamos
+    todas las parejas (mes, kwh) y devolvemos hasta `meses` entradas.
+    """
+    text = _strip_html(html)
+    # Patrones flexibles: "Mayo 2026 ... 245 kWh ... $ 698.25"
+    rows = re.findall(
+        r"([A-Za-z]{3,12}\s+\d{4})\s+([0-9]{1,5})\s*kWh\s*[\$\s]*([0-9]{1,3}(?:[,\.][0-9]{3})*[\.,][0-9]{2})?",
+        text,
+    )
+    consumo_kwh_por_mes: list[dict[str, Any]] = []
+    for mes, kwh, monto in rows[:meses]:
+        entry: dict[str, Any] = {"mes": mes, "kwh": int(kwh)}
+        if monto:
+            try:
+                entry["monto_mxn"] = float(monto.replace(",", ""))
+            except ValueError:
+                pass
+        consumo_kwh_por_mes.append(entry)
+
+    promedio = (
+        round(sum(e["kwh"] for e in consumo_kwh_por_mes) / len(consumo_kwh_por_mes), 1)
+        if consumo_kwh_por_mes else 0.0
+    )
+    return {
+        "operation": "consumo_historico",
+        "rpu": rpu,
+        "meses_solicitados": meses,
+        "consumo_kwh_por_mes": consumo_kwh_por_mes,
+        "promedio_kwh_mensual": promedio,
+        "parse_partial": len(consumo_kwh_por_mes) == 0,
+    }

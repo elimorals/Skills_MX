@@ -39,7 +39,8 @@ SIAPA_FIELDS = {
     "cuenta_contrato": "cuenta_contrato",
     "clavesiapa": "clavesiapa",
 }
-# SIAPA usa reCAPTCHA v2 checkbox. Leer site_key del DOM en runtime.
+# SIAPA usa reCAPTCHA v2 checkbox. site_key verificado en vivo:
+SIAPA_RECAPTCHA_SITE_KEY = "6LdsJiUUAAAAAIjV_N2F3sd58XYDYznuyNn9ROva"
 
 # SACMEX: portal con 503 dominical persistente (2026-06-15). Reintentar lunes.
 URL_SACMEX_PORTAL = "https://www.sacmex.cdmx.gob.mx"

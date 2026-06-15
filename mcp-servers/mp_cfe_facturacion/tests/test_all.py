@@ -115,16 +115,43 @@ class TestValidarSession:
 # ============================================================
 
 class TestRealPath:
-    def test_real_path_con_creds_lanza_error_explicativo(self, monkeypatch, tmp_path):
-        # Con creds + PLUGINS_MX_MOCK=0 + LIVE=1 — el client intenta human-in-loop
-        # pero falla con mensaje explicativo (no implementado completo en v1)
-        monkeypatch.setenv("PLUGINS_MX_MOCK", "0")
-        monkeypatch.setenv("PLUGINS_MX_CFE_LIVE", "1")
-        monkeypatch.setenv("CFE_RPU", "123456789012")
-        monkeypatch.setenv("CFE_PASSWORD", "test")
-        monkeypatch.setenv("PLUGINS_MX_CACHE_DIR", str(tmp_path / "cache"))
-        monkeypatch.setenv("PLUGINS_MX_BITACORA_DIR", str(tmp_path / "bita"))
-        c = CfeFactClient()
-        with pytest.raises(McpError) as exc:
-            c.descargar_factura_mes(rpu="123456789012")
-        assert "human-in-loop" in str(exc.value).lower() or "playwright" in str(exc.value).lower() or "skeleton" in str(exc.value).lower()
+    def test_parser_factura_extrae_monto_y_consumo(self):
+        from mp_cfe_facturacion.client import _parse_cfe_factura_html
+        html = """
+        <html><body>
+          <table>
+            <tr><td>Total a pagar:</td><td>$ 1,245.50</td></tr>
+            <tr><td>Consumo:</td><td>245 kWh</td></tr>
+            <tr><td>Vencimiento:</td><td>30/06/2026</td></tr>
+            <tr><td>Estatus:</td><td>PENDIENTE</td></tr>
+            <tr><td>Periodo:</td><td>2026-05</td></tr>
+          </table>
+        </body></html>
+        """
+        r = _parse_cfe_factura_html(html, "123456789012")
+        assert r["monto_total_mxn"] == 1245.50
+        assert r["consumo_kwh"] == 245
+        assert r["vencimiento"] == "30/06/2026"
+        assert r["estatus"] == "PENDIENTE"
+        assert "parse_partial" not in r
+
+    def test_parser_consumo_extrae_meses(self):
+        from mp_cfe_facturacion.client import _parse_cfe_consumo_html
+        html = """
+        <table>
+          <tr><td>Mayo 2026</td><td>245 kWh</td><td>$ 698.25</td></tr>
+          <tr><td>Abril 2026</td><td>231 kWh</td><td>$ 658.35</td></tr>
+          <tr><td>Marzo 2026</td><td>218 kWh</td><td>$ 621.30</td></tr>
+        </table>
+        """
+        r = _parse_cfe_consumo_html(html, "123456789012", meses=3)
+        assert len(r["consumo_kwh_por_mes"]) == 3
+        assert r["consumo_kwh_por_mes"][0]["kwh"] == 245
+        assert r["promedio_kwh_mensual"] > 200
+
+    def test_captcha_resolver_lee_env(self, tmp_path, monkeypatch):
+        from mp_cfe_facturacion.client import _resolve_cfe_captcha
+        monkeypatch.setenv("PLUGINS_MX_CFE_CAPTCHA", "AB12CD")
+        fake_img = tmp_path / "cap.png"
+        fake_img.write_bytes(b"")
+        assert _resolve_cfe_captcha(fake_img, "123456789012") == "AB12CD"
