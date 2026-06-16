@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onboarding · Plugins MX — Qué pasa los primeros 30 días</title>
+<meta name="description" content="Cómo es la implementación de Plugins MX día por día. Kickoff, alcance, credenciales, primer MCP en producción y entregables del piloto.">
+<meta name="author" content="Elías Rashid Morales Mendoza">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<link rel="canonical" href="https://skills-mexico.vercel.app/onboarding/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plugins MX">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="https://skills-mexico.vercel.app/onboarding/">
+<meta property="og:title" content="Onboarding Plugins MX — Qué pasa los primeros 30 días">
+<meta property="og:description" content="Día por día del piloto: kickoff, credenciales, integración, capacitación, primer MCP en producción.">
+<meta property="og:image" content="https://skills-mexico.vercel.app/og-image.png">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=Instrument+Serif:ital@0;1&family=Geist:wght@100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+
+<style>
+.ob-hero {
+  background: var(--c-paper);
+  padding: 7rem 2rem 3.5rem;
+  border-bottom: 1px solid var(--c-rule);
+}
+.ob-hero-inner { max-width: 1000px; margin: 0 auto; }
+.ob-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-terra);
+  margin-bottom: 1.4rem;
+}
+.ob-h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.2rem;
+  max-width: 22ch;
+}
+.ob-h1 em {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--c-terra);
+}
+.ob-lede {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--c-ink-3);
+  max-width: 62ch;
+}
+
+.weeks {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+.week {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  border-top: 1px solid var(--c-rule);
+  padding: 2.2rem 0 2.4rem;
+}
+.week:last-of-type { border-bottom: 1px solid var(--c-rule); }
+@media (max-width: 720px) {
+  .week { grid-template-columns: 1fr; gap: 0.8rem; }
+}
+.week-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-terra);
+  font-weight: 600;
+}
+.week-h {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  color: var(--c-ink);
+  margin: 0.3rem 0 0;
+}
+.week-content h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.45rem;
+  color: var(--c-ink);
+  margin: 0 0 0.8rem;
+  line-height: 1.3;
+}
+.week-content p {
+  font-family: 'Geist', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--c-ink-2);
+  margin: 0 0 1rem;
+}
+.week-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+  font-family: 'Geist', sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+.week-content ul li {
+  padding: 0.3rem 0 0.3rem 1.4rem;
+  position: relative;
+  color: var(--c-ink-2);
+}
+.week-content ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--c-maize-dk);
+}
+.week-deliverable {
+  background: rgba(232,184,60,0.12);
+  border-left: 3px solid var(--c-maize-dk);
+  padding: 0.9rem 1.2rem;
+  margin: 1.2rem 0 0;
+  font-family: 'Geist', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--c-ink-2);
+}
+.week-deliverable strong {
+  color: var(--c-terra-dk);
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* Credentials section */
+.creds {
+  background: var(--c-cream-2);
+  padding: 5rem 2rem;
+  border-top: 1px solid var(--c-rule);
+  border-bottom: 1px solid var(--c-rule);
+}
+.creds-inner { max-width: 1000px; margin: 0 auto; }
+.creds h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  margin: 0 0 0.6rem;
+  color: var(--c-ink);
+  letter-spacing: -0.015em;
+}
+.creds-sub {
+  font-family: 'Geist', sans-serif;
+  font-size: 1rem;
+  color: var(--c-ink-3);
+  margin: 0 0 2.2rem;
+  max-width: 60ch;
+}
+.creds-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+@media (max-width: 720px) { .creds-grid { grid-template-columns: 1fr; } }
+.cred-card {
+  background: var(--c-paper);
+  border: 1px solid var(--c-rule);
+  padding: 1.4rem 1.6rem;
+}
+.cred-card h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem;
+  color: var(--c-ink);
+}
+.cred-card .cred-where {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+  color: var(--c-jade);
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.cred-card p {
+  font-family: 'Geist', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--c-ink-3);
+  margin: 0;
+}
+
+/* CTA final */
+.ob-final {
+  background: var(--c-ink);
+  color: var(--c-cream);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.ob-final h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  margin: 0 0 1.2rem;
+  letter-spacing: -0.015em;
+}
+.ob-final h2 em {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  color: var(--c-maize);
+}
+.ob-final p {
+  font-family: 'Geist', sans-serif;
+  font-size: 1.05rem;
+  color: var(--c-bone);
+  max-width: 60ch;
+  margin: 0 auto 2rem;
+  line-height: 1.55;
+}
+.ob-final .btn {
+  padding: 0.95rem 1.8rem;
+  background: var(--c-terra);
+  color: var(--c-cream);
+  font-family: 'Geist', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 2px;
+  display: inline-flex;
+  gap: 0.4rem;
+  transition: background 120ms ease;
+}
+.ob-final .btn:hover { background: var(--c-maize); color: var(--c-ink); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <span class="brand-glyph">P<span class="brand-mx">·</span>MX</span>
+      <span class="brand-sub">Plugins MX</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/marketplace/">Marketplace</a></li>
+      <li><a href="/portales/">Portales</a></li>
+      <li><a href="/guias/">Guías</a></li>
+      <li><a href="/precios/">Precios</a></li>
+      <li><a href="/onboarding/" aria-current="page">Onboarding</a></li>
+      <li><a href="/#demo" class="nav-cta">Agendar demo →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="ob-hero">
+  <div class="ob-hero-inner">
+    <div class="ob-eyebrow">02 · ONBOARDING · PILOTO 30 DÍAS</div>
+    <h1 class="ob-h1">Día por día. <em>Sin sorpresas.</em></h1>
+    <p class="ob-lede">
+      Después de firmar el SOW del piloto, esto es lo que pasa cada semana. Cuatro semanas. Un vertical funcionando en producción. Entregables medibles cada viernes.
+    </p>
+  </div>
+</header>
+
+<section class="weeks">
+  <div class="week">
+    <div>
+      <div class="week-num">SEMANA 01 · DÍAS 1-7</div>
+      <h3 class="week-h">Kickoff y alcance.</h3>
+    </div>
+    <div class="week-content">
+      <h4>Decidimos qué vertical es el primero.</h4>
+      <p>Lunes: reunión de kickoff por Google Meet (90 min). Defines qué problema duele más hoy: cartera predial, validación REPSE, ISN multi-estado, o algo específico de tu giro. Acordamos el alcance escrito en un SOW de máximo 2 páginas que ambos firmamos al final de la semana.</p>
+      <ul>
+        <li>Diagnóstico del flujo manual actual (qué se hace hoy y cuánto tarda)</li>
+        <li>Selección de los 1-3 MCPs que más mueven la aguja</li>
+        <li>Definición de éxito: métricas concretas (ej. "consultar 50 propiedades en &lt;3min")</li>
+        <li>Lista de credenciales que tendrás que generar (sin compartirme aún)</li>
+      </ul>
+      <div class="week-deliverable">
+        <strong>Entregable viernes</strong>
+        SOW firmado por ambos · Roadmap visual con hitos por semana · Lista de credenciales que necesitarás generar antes del lunes
+      </div>
+    </div>
+  </div>
+
+  <div class="week">
+    <div>
+      <div class="week-num">SEMANA 02 · DÍAS 8-14</div>
+      <h3 class="week-h">Setup técnico.</h3>
+    </div>
+    <div class="week-content">
+      <h4>Instalo Plugins MX en tu infraestructura.</h4>
+      <p>Te entrego un contenedor Docker y la configuración para Claude Code o tu cliente MCP. Si el plan incluye path real Playwright, ese contenedor corre en TU servidor — tus credenciales nunca tocan mi infra. Yo solo veo respuestas mock.</p>
+      <ul>
+        <li>Docker container <span class="mono">plugins-mx:3.59</span> en tu VPS, on-prem o cloud</li>
+        <li>Configuración de variables de entorno con tus credenciales (las pones tú)</li>
+        <li>Conexión MCP probada desde Claude Code o tu cliente</li>
+        <li>Primer health-check que confirma que los 76 portales responden</li>
+        <li>Bitácora hasheada habilitada (compatible LFPDPPP)</li>
+      </ul>
+      <div class="week-deliverable">
+        <strong>Entregable viernes</strong>
+        Container corriendo en tu infra · Conexión MCP probada · 1 consulta real ejecutada exitosamente · Documento de runbook básico
+      </div>
+    </div>
+  </div>
+
+  <div class="week">
+    <div>
+      <div class="week-num">SEMANA 03 · DÍAS 15-21</div>
+      <h3 class="week-h">Workflows + integración.</h3>
+    </div>
+    <div class="week-content">
+      <h4>Conectamos los MCPs a tu proceso real.</h4>
+      <p>Construimos el primer workflow Claude Agent SDK que combina los MCPs elegidos con tu sistema (ERP, CRM, hoja de cálculo, lo que sea). Sesión técnica de 2-3 horas con tu equipo IT o el contador titular.</p>
+      <ul>
+        <li>1 workflow productivo conectado a tu stack actual</li>
+        <li>Output configurado (Excel, PDF firmable, payload JSON a tu API, lo que necesites)</li>
+        <li>Cron para que corra automáticamente (diario/semanal/mensual)</li>
+        <li>Alertas WhatsApp/Email cuando algo necesita atención humana</li>
+        <li>Capacitación 2h con tu equipo operativo (3-8 personas)</li>
+      </ul>
+      <div class="week-deliverable">
+        <strong>Entregable viernes</strong>
+        Workflow productivo corriendo en automático · Tu equipo capacitado · 1 reporte real generado contra datos de tu cartera actual
+      </div>
+    </div>
+  </div>
+
+  <div class="week">
+    <div>
+      <div class="week-num">SEMANA 04 · DÍAS 22-30</div>
+      <h3 class="week-h">Producción + decisión.</h3>
+    </div>
+    <div class="week-content">
+      <h4>El sistema corre solo. Tú decides si firmas anual.</h4>
+      <p>Una semana de operación real con tu volumen completo. Yo monitoreo de cerca pero no intervengo salvo que algo se rompa. Al día 28 nos sentamos a revisar: ¿se cumplieron las métricas del SOW? ¿el equipo lo está usando? ¿vale la pena renovar?</p>
+      <ul>
+        <li>Operación real sin mi intervención directa</li>
+        <li>Métricas de uso reales (cuántas consultas, cuánto tiempo ahorrado, errores detectados)</li>
+        <li>Sesión de revisión día 28: lecciones aprendidas + comparativa contra SOW inicial</li>
+        <li>Propuesta de contrato Producción anual (si tiene sentido para ambos)</li>
+        <li>Opción de cerrar limpiamente sin renovar — sin presión, sin penalización</li>
+      </ul>
+      <div class="week-deliverable">
+        <strong>Entregable día 30</strong>
+        Reporte ejecutivo del piloto · Métricas reales vs SOW · Decisión clara: firmar Producción, ajustar alcance, o cerrar sin renovar
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="creds">
+  <div class="creds-inner">
+    <h2>Credenciales que vas a generar.</h2>
+    <p class="creds-sub">
+      Estas las tramitas tú directamente con cada autoridad. Yo nunca veo los archivos ni las contraseñas — solo te indico exactamente qué generar y dónde ponerlo dentro del contenedor Docker.
+    </p>
+
+    <div class="creds-grid">
+      <div class="cred-card">
+        <h4>e.firma SAT (FIEL)</h4>
+        <div class="cred-where">SAT.gob.mx · presencial o renovación digital</div>
+        <p>Archivos <span class="mono">.cer</span> + <span class="mono">.key</span> + contraseña. Vigencia 4 años. Necesario para Buzón Tributario, descarga masiva CFDI, declaraciones e histórico.</p>
+      </div>
+      <div class="cred-card">
+        <h4>RFC + CIEC SAT</h4>
+        <div class="cred-where">SAT.gob.mx/personas/iniciar-sesion</div>
+        <p>Usuario + contraseña de 8 caracteres. Necesario para consultas básicas del padrón, descarga CSF, agendar citas.</p>
+      </div>
+      <div class="cred-card">
+        <h4>NPIE IMSS</h4>
+        <div class="cred-where">IMSS Desde Su Empresa (IDSE)</div>
+        <p>Número Patronal de Identificación Electrónica con tarjeta física + PIN. Permite SUA, movimientos afiliatorios, EMCR, cédulas.</p>
+      </div>
+      <div class="cred-card">
+        <h4>Usuario INFONAVIT Empresarial</h4>
+        <div class="cred-where">Portal Empresarial INFONAVIT</div>
+        <p>Usuario + contraseña del responsable patronal. Permite EMIS, descuentos por trabajador, créditos vigentes, avisos.</p>
+      </div>
+      <div class="cred-card">
+        <h4>API keys de tus pasarelas de pago</h4>
+        <div class="cred-where">Mercado Pago / Conekta / Stripe / etc.</div>
+        <p>Tokens production o sandbox según el alcance del piloto. Lectura de transacciones, no movimientos de fondos.</p>
+      </div>
+      <div class="cred-card">
+        <h4>Llave MX (opcional)</h4>
+        <div class="cred-where">llave.gob.mx</div>
+        <p>Necesaria solo si el vertical involucra trámites federales ciudadanos (becas, INE, salud pública). SSO 8h.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ob-final">
+  <h2>¿Listo para arrancar el <em>kickoff</em>?</h2>
+  <p>Tu Semana 1 puede empezar el próximo lunes hábil. Solo necesito que agendes 20 minutos para revisar si esto realmente te encaja antes de firmar SOW.</p>
+  <a href="/#demo" class="btn">Agendar demo previa →</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col footer-brand">
+      <span class="brand-glyph footer-glyph">P<span class="brand-mx">·</span>MX</span>
+      <p>Infraestructura de compliance fiscal y municipal para México.</p>
+      <p class="footer-author">Construido por <strong>Elías Rashid Morales</strong> en Ciudad de México.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Productos</h4>
+      <a href="/productos/predial.html">Cartera Predial</a>
+      <a href="/productos/repse.html">Compliance REPSE</a>
+      <a href="/productos/isn.html">ISN-as-a-Service</a>
+    </div>
+    <div class="footer-col">
+      <h4>Comercial</h4>
+      <a href="/precios/">Precios</a>
+      <a href="/onboarding/">Onboarding</a>
+      <a href="/#demo">Agendar demo</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="mailto:elimoralsmendox@gmail.com">elimoralsmendox@gmail.com</a>
+      <a href="https://wa.me/522711428381" target="_blank" rel="noopener">WhatsApp +52 271 142 8381</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Plugins MX · CDMX · Hecho con ☕ y pytest</span>
+    <span class="footer-version">v3.60 · Junio 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

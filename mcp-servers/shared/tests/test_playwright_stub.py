@@ -10,6 +10,7 @@ from shared.playwright_stub import (
     info_path_real,
     mock_response_playwright,
     raise_playwright_real_no_implementado,
+    respuesta_real_no_implementada,
 )
 
 
@@ -62,3 +63,14 @@ def test_info_path_real_retorna_dict() -> None:
     info = info_path_real()
     assert "como_activar_real" in info
     assert "PLUGINS_MX_PLAYWRIGHT_REAL" in info["como_activar_real"]
+
+
+def test_respuesta_real_no_implementada_es_dict_honesto() -> None:
+    r = respuesta_real_no_implementada("imss_idse", "imss_consultar_sbc")
+    assert r["simulated"] is False
+    assert r["real_implementado"] is False
+    assert r["portal"] == "imss_idse"
+    assert r["tool"] == "imss_consultar_sbc"
+    assert r["estado"] == "no_implementado"
+    assert "elimoralsmendox@gmail.com" in r["razon"]
+    assert "SETUP_PLAYWRIGHT_REAL.md" in r["siguiente_paso"]

@@ -99,4 +99,20 @@
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://skills-mexico.vercel.app/guias/cfdi-emision"/>
   </url>
 
+  <url>
+    <loc>https://skills-mexico.vercel.app/precios/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://skills-mexico.vercel.app/precios/"/>
+  </url>
+
+  <url>
+    <loc>https://skills-mexico.vercel.app/onboarding/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://skills-mexico.vercel.app/onboarding/"/>
+  </url>
+
 </urlset>
