@@ -1,9 +1,11 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "generated_at": "2026-06-15",
-  "total_skills": 76,
-  "sprint": "E (Tier P0–P3 normativa 2026)",
-  "tests_passing": 1514,
+  "total_skills": 83,
+  "sprint": "H (Nivel 2 preparación + workflow RESICO HITL)",
+  "sprints_resumen": "E (14 normativa 2026) · F (14 tools profundización SAT/IMSS/INFONAVIT) · G (5 productos B2G) · H (2 MCPs preparación + 1 workflow)",
+  "tests_passing": 1667,
+  "workflows_ejecutables": 28,
   "categorias": [
     {
       "id": "fiscal",
@@ -232,6 +234,31 @@
         {"id": "mp_aspel_contpaqi", "tier": "B", "tag": "CSV", "desc": "Pólizas + balanza + P&L parser CSV"},
         {"id": "mp_softrestaurant", "tier": "B", "tag": "CSV", "desc": "Corte Z + ventas + meseros parser CSV"},
         {"id": "mp_bancos_mx", "tier": "C", "tag": "Playwright", "desc": "BBVA/Banamex/Santander/Banorte stub"}
+      ]
+    },
+    {
+      "id": "gobierno_b2g",
+      "label": "Gobierno B2G",
+      "icon": "G",
+      "color": "cobalt",
+      "descripcion": "Tracker Llave MX, catálogo CONAMER, auditor LNETB, monitor portales gob.mx, continuidad IMSS",
+      "skills": [
+        {"id": "mp_llave_mx_tracker", "tier": "A", "tag": "ATDT/IMCO", "desc": "Tracker adopción Llave MX por dependencia federal y estatal (20 monitoreadas)", "sprint": "G"},
+        {"id": "mp_retys_catalogo", "tier": "B", "tag": "CONAMER DCAT", "desc": "Catálogo Nacional de Regulaciones normalizado a DCAT compatible datos.gob.mx", "sprint": "G"},
+        {"id": "mp_lnetb_auditor", "tier": "A", "tag": "32 estados", "desc": "Auditor LNETB (DOF 16-jul-2025) con 10 indicadores ponderados + ranking estatal", "sprint": "G"},
+        {"id": "mp_portales_monitor", "tier": "A", "tag": "25 portales", "desc": "Monitor continuo de portales gob.mx (federales/estatales/municipales) con alertas WhatsApp/email/Slack", "sprint": "G"},
+        {"id": "mp_imss_continuidad", "tier": "A", "tag": "8 sistemas", "desc": "Adapter IMSS Continuidad Operativa (RTO/RPO + plan DR + reporte ejecutivo)", "sprint": "G"}
+      ]
+    },
+    {
+      "id": "preparacion_documental",
+      "label": "Preparación documental (Nivel 2)",
+      "icon": "P",
+      "color": "jade",
+      "descripcion": "Autollenado formularios públicos + monitor ÉTICO de cupos SAT/IMSS/SRE",
+      "skills": [
+        {"id": "mp_form_filler_public", "tier": "B", "tag": "8 formularios", "desc": "Autollenado de formularios públicos gob.mx sin login (SAT, REPUVE, REPSE, REPEP, CURP, etc.). NUNCA bypasea CAPTCHAs", "sprint": "H"},
+        {"id": "mp_citas_monitor", "tier": "B", "tag": "LFPDPPP", "desc": "Monitor ético cupos SAT/IMSS/SRE/INE con consent_token vinculado a CURP. Alerta al titular, no acapara", "sprint": "H"}
       ]
     }
   ],

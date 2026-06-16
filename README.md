@@ -2,15 +2,82 @@
 
 Monorepo de **plugins de Claude Code**, **MCP servers** y **skills standalone** para operación diaria de PyMEs y profesionistas en México. Cubre fiscal (CFDI 4.0, SAT, IMSS, INFONAVIT), pagos (TDC, OXXO, SPEI, transferencia), marketplaces (ML, Shopify, Amazon MX), municipales (CDMX, EdoMex, MTY), inmobiliaria, salud veterinaria, eventos, restaurantes, salones, **servicios públicos (agua, gas, CFE, Telmex), tenencia/verificación/multas vehiculares** y más.
 
-## Estado a 2026-06-15 (post-Sprint D — discovery nacional servicios públicos)
+## Estado a 2026-06-15 (post-Sprint H — Nivel 2 preparación documental + workflow demo HITL)
 
 | Capa | Cantidad real | Notas |
 |---|---|---|
-| **MCP servers** | **62** | Crecimiento Sprint A/B/C/D: `mp_agua_mx` (17 organismos), `mp_cfe_facturacion REAL`, `mp_tenencia_mx` (20 estados), `mp_catastro_estatal_mx` (10 sistemas), `mp_ish_mx` (32 estados), `mp_verificacion_vehicular_mx` (7 estados + SAF CDMX real), `mp_gas_natural_mx` (5 distribuidores), `mp_telmex_facturacion REAL` (pago_sin_login), **`mp_multas_vehiculares_mx` (NUEVO Sprint D · 5 sistemas)** |
-| **Tests pytest** | **1,380 ✅** (1 skip) | Suite completa pasa en 6.9s |
-| **Catálogo central municipios MX** | 243 muns (32 estados) | **71 validados Playwright en vivo** (top-7 Sprint D + 64 pre-existentes) |
+| **MCP servers** | **83** | Sprints E (14) + G (5) + H (2) sumados al Sprint D (62). Detalle por sprint abajo. |
+| **Tools nuevos Sprints E→H** | ~95 | Distribuidos en 21 MCPs nuevos + 3 MCPs profundizados (SAT/IMSS/INFONAVIT) |
+| **Tests pytest** | **1,667 ✅** (1 skip) | +287 desde Sprint D. Suite completa pasa en 6.8s |
+| **Workflows ejecutables** | **28** | +4 esta sesión incluyendo `declaracion-resico-mensual` con HITL WhatsApp |
+| **Páginas comerciales website** | 2 nuevas | `/precios/` (3 tiers MXN) + `/onboarding/` (timeline 4 sem piloto) |
+| **Path real Playwright opt-in B2B** | 3 SETUP docs | SAT + IMSS + INFONAVIT — `respuesta_real_no_implementada` helper + flag dual de escritura |
+| **Catálogo central municipios MX** | 243 muns (32 estados) | 71 validados Playwright |
 | **Cobertura urbana servicios públicos** | ~50% agua + 100% ISH + 88% verificación info + cálculo tenencia 20 estados | Path real opt-in con flags por capítulo |
-| **Cobertura multas vehiculares** | ~22M vehículos (CDMX + EdoMex + NL San Pedro + JAL) | MCP nuevo Sprint D |
+| **Cobertura multas vehiculares** | ~22M vehículos (CDMX + EdoMex + NL San Pedro + JAL) | MCP Sprint D |
+| **Cobertura normativa 2026** | Ley Silla NOM-037 · ECE NOM-024 · RESICO · Desconexión digital · Anexo 30 CRE · LNETB | Sprint E completo |
+
+### 🆕 Sprint E/F/G/H — Compliance 2026 + Productos B2G + Nivel 2 (2026-06-15)
+
+**Detalle ejecutivo**: `docs/sprints/SPRINTS-E-F-G-H-RESUMEN-2026-06-15.md`
+
+#### Sprint E — 14 MCPs bloqueadores normativos 2026
+
+Cubre 12 nuevos + 3 profundizados del plan `plugins-mx-gaps-integraciones-2026-06-15.md`.
+
+- **Tier P0** (multas vigentes 2026): `mp_ley_silla_nom037` ($282k-$586k STPS), `mp_expediente_clinico_nom024` (DOF 15-ene-2026), `mp_resico_sat` (expulsión automática SCJN 2026)
+- **Tier P1** (identidad + servicios): `mp_llave_mx` (✅ OAuth2 validado vivo en `llave.gob.mx/oauthV2.xhtml`), `mp_ine_verificacion`, `mp_cfe_interconexion_solar` (factor 0.70), `mp_conagua_repda`, `mp_desconexion_digital`
+- **Tier P2/P3**: `mp_cofepris_aviso_funcionamiento`, `mp_repep_profeco`, `mp_concilianet_profeco`, `mp_cre_hidrocarburos`, `mp_sedatu_uso_suelo`, `mp_simplifica_ciudadano`
+
+**134 tests · 3 commits** (`4459fd9` · `91cec58` · `7c87d0a`)
+
+#### Sprint F — Profundización SAT + IMSS + INFONAVIT (14 tools)
+
+- `mp_sat_portal` +5: `sat_calendario_fiscal_por_regimen`, `sat_cfdi_prevalidar` (local CFDI 4.0), `sat_declaraciones_historico` (alerta SCJN 3 omisiones), `sat_devolucion_estatus`, `sat_buzon_tributario_resumen`
+- `mp_imss_patronal` +5: `imss_sbc_calcular` (UMA 2026 $113.07 + tope 25 UMAs), `imss_ema_vs_eba_diferencias`, `imss_calendario_obligaciones`, `imss_simulador_costo_patronal`, `imss_riesgo_trabajo_prima_cambio` (Art. 72 LSS)
+- `mp_infonavit_patronal` +4: `infonavit_descuento_calcular` (5 tipos crédito + cap LFT Art. 110), `infonavit_creditos_sin_reporte`, `infonavit_emis_historico` (10 años), `infonavit_conciliacion_nomina` (5000 registros)
+
+**51 tests · commit `de7b660`**
+
+#### Sprint G — 5 productos B2G gobierno
+
+Diseñados desde research profundo (civica.digital + ATDT + dolor ciudadano).
+
+| MCP | Comprador objetivo |
+|---|---|
+| `mp_llave_mx_tracker` | ATDT (José Merino) · IMCO · México Evalúa |
+| `mp_retys_catalogo` | CONAMER + datos.gob.mx (Sistema Ajolote) — exportador DCAT |
+| `mp_lnetb_auditor` | IMCO + México Evalúa + prensa — ranking 32 estados |
+| `mp_portales_monitor` | Estados rezagados (Oax/Chis/Gro/Tab) vía ComprasMX MIPYME |
+| `mp_imss_continuidad` | IMSS directo o integradora — licitación mayo 2026 |
+
+Discovery Playwright en vivo Sprint G: ✅ `catalogonacional.gob.mx` (CONAMER ASP.NET + AntiForgeryToken).
+
+**Diferenciador comprobado**: Cívica Digital usa Ruby/Elixir/Python pero **NO tiene browser automation gob.mx**. Codeando México, SocialTIC, OPI Analytics hacen data/análisis pero NO operación. Los 5 MCPs Sprint G son infraestructura de **operación** que complementa civic-tech.
+
+**58 tests · commit `d2de5af`**
+
+#### Sprint H — Nivel 2: preparación documental + workflow demo HITL
+
+- `mp_form_filler_public` (17 tests): 8 formularios públicos gob.mx sin login con selectores validados (SAT padrón, Verifica CFDI, REPSE, REPUVE, REPEP, CURP, Buró Comercial, SAT 32-D). NUNCA bypasea CAPTCHAs.
+- `mp_citas_monitor` (16 tests): monitor **ético** de cupos SAT/IMSS/SRE/INE con `consent_token` LFPDPPP vinculado a CURP. Throttling mínimo 60s · sin auto-reserva · reportable a PFDC.
+
+**Workflow demo vendible** `declaracion-resico-mensual.workflow.js`: orquesta 6 MCPs end-to-end con human-in-loop por WhatsApp. Universo 2.5M PF RESICO · 4 min vs 2h manual · precio $99-149 MXN B2C.
+
+**33 tests · commit `b85042a`**
+
+### 🆕 Paquete comercial + Playwright opt-in B2B (2026-06-15)
+
+- **`/precios/`** página live: 3 tiers (Piloto $45k · Producción $18k/mes · Empresarial cotizar) + FAQ 8 preguntas + JSON-LD PriceSpecification
+- **`/onboarding/`** página live: timeline 4 semanas piloto + lista de credenciales que aporta el cliente
+- **SOW template** `website/assets/sow-piloto-30dias.md` firmable con placeholders + garantía 50% devolución
+- **SETUP_PLAYWRIGHT_REAL.md** para SAT (existente), IMSS y INFONAVIT (nuevos): activación opt-in con `PLUGINS_MX_PLAYWRIGHT_REAL=1` + credenciales del cliente. Costo cotizado: ~$35-65k MXN por integración.
+
+**Commit `0626c13`**
+
+---
+
+## Estado a 2026-06-15 (post-Sprint D — referencia histórica, **superado por Sprints E/F/G/H arriba**)
 
 ### 🆕 Sprint A/B/C/D — Servicios públicos + fiscal vehicular (2026-06-14 → 2026-06-15)
 
