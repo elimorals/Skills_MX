@@ -1,8 +1,8 @@
 # Catálogo de MCPs — plugins-mx
 
-**Última actualización**: 2026-06-15 (post-Sprint G · 5 productos gobierno)
-**Total MCPs**: 81
-**Tests pasando**: 1,634
+**Última actualización**: 2026-06-15 (post-Sprint H · Nivel 2 preparación + workflow RESICO HITL)
+**Total MCPs**: 83
+**Tests pasando**: 1,667
 
 Catálogo central de los 76 MCP servers del monorepo, organizados por **Tier de producción** y categoría. Cada MCP cumple el contrato mock-first: corre sin credenciales con respuestas plausibles marcadas `simulated: true`.
 
@@ -253,6 +253,45 @@ Productos diseñados a partir de research profundo (civica.digital + ATDT + dolo
 - Cívica Digital usa Ruby/Elixir/Python pero **NO tiene browser automation gob.mx**
 - Codeando México, SocialTIC, OPI Analytics: data/análisis, NO operación de portales
 - Estos 5 MCPs son **infraestructura de operación** que complementa (no compite) civic-tech UI/SaaS
+
+---
+
+## Sprint H — Nivel 2: preparación documental + workflow RESICO HITL (2026-06-15)
+
+Implementa el Nivel 2 del análisis "automatización de trámites MX" (legal + factible).
+
+### MCPs nuevos
+
+| MCP | Universo | Tests |
+|---|---|---|
+| `mp_form_filler_public` | 8 formularios públicos sin login (SAT, REPUVE, REPSE, REPEP, CURP, etc.) | ✅ 17 |
+| `mp_citas_monitor` | Monitor **ético** cupos SAT/IMSS/SRE/INE con `consent_token` LFPDPPP | ✅ 16 |
+
+### Workflow demo vendible
+
+**`core-mexico/workflows/declaracion-resico-mensual.workflow.js`** — orquesta 6 MCPs:
+
+1. `mp_sat_portal` → verifica régimen RESICO + omisiones SCJN 2026
+2. `mp_resico_sat` → calcula ISR (Sprint E) + retenciones plataformas
+3. `mp_sat_portal` → calendario fiscal (Sprint F) + pre-validar
+4. `mp_clabe_validador_oficial` → verifica CLABE Banxico
+5. HITL WhatsApp → autorización del titular (24h timeout)
+6. Preparación paquete documental + reporte ejecutivo
+
+**Métricas comerciales**:
+- Universo: ~2.5M PF RESICO
+- Tiempo: 4 min vs 2h manual
+- Precio sugerido: $99-149 MXN B2C / $18k/mes B2B contadores
+- Cobertura legal: CFF Art. 17-D + LFPDPPP Art. 13
+
+### Diferenciador ético sobre mercado negro
+
+`mp_citas_monitor` se distingue del mercado negro de citas SAT ($1k/cita) por:
+- 1 alerta vinculada a 1 CURP (consent_token)
+- Throttling mínimo 60s
+- NO auto-reserva — solo alerta al titular
+- Bitácora LFPDPPP-compliant
+- Reportable a PFDC en caso de uso indebido
 
 ## Convención para agregar un MCP nuevo
 
