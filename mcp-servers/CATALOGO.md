@@ -1,8 +1,8 @@
 # Catálogo de MCPs — plugins-mx
 
-**Última actualización**: 2026-06-15 (post-Sprint E)
+**Última actualización**: 2026-06-15 (post-Sprint F · profundización SAT/IMSS/INFONAVIT)
 **Total MCPs**: 76
-**Tests pasando**: 1,514
+**Tests pasando**: 1,565
 
 Catálogo central de los 76 MCP servers del monorepo, organizados por **Tier de producción** y categoría. Cada MCP cumple el contrato mock-first: corre sin credenciales con respuestas plausibles marcadas `simulated: true`.
 
@@ -188,6 +188,49 @@ Sin portal público a scrapear — son calculadoras normativas, validadores de c
 - **Mock-only definitivo + calculadoras/validadores normativos**: 21 MCPs (incluye 9 Sprint E Tier C)
 - **Tests totales**: 1,514 pasando (1,380 anteriores + 134 Sprint E)
 - **Cobertura normativa 2026**: Ley Silla NOM-037 + ECE NOM-024 + RESICO + Desconexión Digital + Simplifica + Anexo 30 CRE
+
+---
+
+## Sprint F — Profundización SAT/IMSS/INFONAVIT (14 tools nuevos)
+
+Lote agregado 2026-06-15 cubriendo los gaps de profundización del plan original (sección 3): operación mensual del agente `auditor-fiscal-mx` (SAT) + compliance laboral profundo (IMSS + INFONAVIT).
+
+### `mp_sat_portal` — +5 tools
+
+| Tool | Implementación | Tests |
+|---|---|---|
+| `sat_calendario_fiscal_por_regimen` | Local · 4 regímenes (601/605/612/626) · fechas día 17 + anual | ✅ 5 |
+| `sat_cfdi_prevalidar` | Local · valida 10 elementos requeridos CFDI 4.0 + complementos PAGO/NOMINA/CARTAPORTE | ✅ 5 |
+| `sat_declaraciones_historico` | Mock + e.firma · alerta RESICO 3 omisiones (SCJN 2026) | ✅ 3 |
+| `sat_devolucion_estatus` | Mock + e.firma · 6 fases + plazo legal 40 días hábiles | ✅ 3 |
+| `sat_buzon_tributario_resumen` | Mock + e.firma · conteo urgentes 5d + vencidas + Art. 17-K CFF | ✅ 2 |
+
+### `mp_imss_patronal` — +5 tools
+
+| Tool | Implementación | Tests |
+|---|---|---|
+| `imss_sbc_calcular` | Local · factor integración + tope 25 UMAs ($2,826.75/d 2026) | ✅ 5 |
+| `imss_ema_vs_eba_diferencias` | Mock + e.firma · DIFERENCIA_CUOTAS/MOV_NO_APLICADO/INTERESES_MORA | ✅ 2 |
+| `imss_calendario_obligaciones` | Local · 12 mensuales + 6 bimestrales + anual RT | ✅ 3 |
+| `imss_simulador_costo_patronal` | Local · 9 cuotas LSS + INFONAVIT + provisiones LFT · factor real | ✅ 3 |
+| `imss_riesgo_trabajo_prima_cambio` | Local · fórmula Art. 72 LSS + tope ±1% Art. 74 | ✅ 4 |
+
+### `mp_infonavit_patronal` — +4 tools
+
+| Tool | Implementación | Tests |
+|---|---|---|
+| `infonavit_descuento_calcular` | Local · 5 tipos crédito + cap LFT Art. 110 (30% SBC) | ✅ 6 |
+| `infonavit_creditos_sin_reporte` | Mock · intereses moratorios 1.8%/mes estimados | ✅ 3 |
+| `infonavit_emis_historico` | Mock · hasta 10 años bimestral · PAGADO/OMISO | ✅ 3 |
+| `infonavit_conciliacion_nomina` | Local + mock · hasta 5000 registros · diff por trabajador | ✅ 4 |
+
+**Total Sprint F**: 14 tools nuevos · 51 tests · 174/174 pasando en los 3 MCPs.
+
+### Lo que sigue NO implementado del plan original
+
+Ningún gap del Top 15 ni de la sección 3 queda pendiente. Próxima frontera (no estaba en el plan):
+- Path real Playwright para SAT/IMSS/INFONAVIT (requiere e.firma del cliente — opt-in B2B)
+- Empaquetamiento comercial + landing pricing + primer piloto pagante (recomendación honesta sección 7 del plan)
 
 ## Convención para agregar un MCP nuevo
 

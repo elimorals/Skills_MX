@@ -177,6 +177,66 @@ class ActualizarObligacionesInput(BaseModel):
         return v.strip().upper()
 
 
+# ---------- Sprint F: profundización inputs ----------
+
+
+class CalendarioFiscalInput(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True, extra="forbid")
+
+    rfc: str = Field(..., min_length=12, max_length=13)
+    regimen: str = Field(
+        ...,
+        description="Clave régimen SAT: 601, 605, 612, 626 (RESICO).",
+        min_length=2,
+        max_length=20,
+    )
+    anio: int = Field(2026, description="Año fiscal a calendarizar.", ge=2020, le=2100)
+
+    @field_validator("rfc")
+    @classmethod
+    def _norm_rfc(cls, v: str) -> str:
+        return v.strip().upper()
+
+
+class CfdiPrevalidarInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    xml: str = Field(..., description="Contenido XML del CFDI 4.0 a pre-validar.", min_length=1)
+    tipo: Literal["INGRESO", "EGRESO", "TRASLADO", "NOMINA", "PAGO", "CARTAPORTE"] = Field(
+        ..., description="Tipo de comprobante CFDI 4.0."
+    )
+
+
+class DeclaracionesHistoricoInput(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True, extra="forbid")
+
+    rfc: str = Field(..., min_length=12, max_length=13)
+    anio: int = Field(..., ge=2014, le=2100)
+
+    @field_validator("rfc")
+    @classmethod
+    def _norm_rfc(cls, v: str) -> str:
+        return v.strip().upper()
+
+
+class DevolucionEstatusInput(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True, extra="forbid")
+
+    folio: str = Field(..., description="Folio de solicitud de devolución (Forma 41/14).", min_length=4, max_length=50)
+
+
+class BuzonResumenInput(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True, extra="forbid")
+
+    rfc: str = Field(..., min_length=12, max_length=13)
+    solo_pendientes: bool = Field(True, description="Filtrar solo notificaciones no leídas.")
+
+    @field_validator("rfc")
+    @classmethod
+    def _norm_rfc(cls, v: str) -> str:
+        return v.strip().upper()
+
+
 # ---------- error helper ----------
 
 
@@ -511,6 +571,114 @@ async def sat_listar_catalogos() -> dict:
             "en RMF y conviene confirmarlos antes de uso fiscal."
         ),
     }
+
+
+# ---------- Sprint F: profundización tools ----------
+
+
+@mcp.tool(
+    annotations={
+        "title": "Calendario fiscal por régimen (local, sin red)",
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+    },
+)
+async def sat_calendario_fiscal_por_regimen(args: CalendarioFiscalInput) -> dict:
+    """Construye calendario fiscal anual por régimen (601/605/612/626) y año.
+
+    Local — calcula fechas vencimiento día 17 mensual + anual marzo/abril
+    según LISR Art. 14, 113-E, 113-J. Útil para `auditor-fiscal-mx`.
+    """
+    try:
+        return _client.calendario_fiscal_por_regimen(args.rfc, args.regimen, args.anio)
+    except McpError as exc:
+        return exc.to_dict()
+
+
+@mcp.tool(
+    annotations={
+        "title": "Pre-validar CFDI 4.0 estructural (local, sin red, sin timbrar)",
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+    },
+)
+async def sat_cfdi_prevalidar(args: CfdiPrevalidarInput) -> dict:
+    """Pre-validación estructural CFDI 4.0 antes de enviar al PAC.
+
+    Detecta errores comunes (falta RegimenFiscalReceptor, ObjetoImp, complementos
+    requeridos, RFC inválido) que el PAC rechazaría con costo. Local.
+    """
+    try:
+        return _client.cfdi_prevalidar(args.xml, args.tipo)
+    except McpError as exc:
+        return exc.to_dict()
+
+
+@mcp.tool(
+    annotations={
+        "title": "Histórico declaraciones por RFC y año",
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": True,
+    },
+)
+async def sat_declaraciones_historico(args: DeclaracionesHistoricoInput) -> dict:
+    """Histórico de declaraciones del contribuyente para un año.
+
+    Alerta especial RESICO: marca `alerta_resico_3_omisiones=true` cuando
+    detecta 3+ declaraciones omitidas (SCJN 2026 — expulsión automática).
+    """
+    try:
+        return _client.declaraciones_historico(args.rfc, args.anio)
+    except McpError as exc:
+        return exc.to_dict()
+
+
+@mcp.tool(
+    annotations={
+        "title": "Estatus solicitud de devolución (Forma 41/14)",
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": True,
+    },
+)
+async def sat_devolucion_estatus(args: DevolucionEstatusInput) -> dict:
+    """Estatus actual de una solicitud de devolución por folio.
+
+    Fases: RECIBIDA → EN_REVISION → AUTORIZADA → DEPOSITADA (o RECHAZADA /
+    INFO_ADICIONAL_REQUERIDA). Plazo legal: 40 días hábiles.
+    """
+    try:
+        return _client.devolucion_estatus(args.folio)
+    except McpError as exc:
+        return exc.to_dict()
+
+
+@mcp.tool(
+    annotations={
+        "title": "Resumen Buzón Tributario con conteo de urgentes",
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": False,
+        "openWorldHint": True,
+    },
+)
+async def sat_buzon_tributario_resumen(args: BuzonResumenInput) -> dict:
+    """Resumen agregado del Buzón con métricas operativas.
+
+    Devuelve total_urgentes_5d, total_vencidas, requiere_atencion_inmediata.
+    Crítico para evitar caducidad de plazos legales (Art. 17-K CFF).
+    """
+    try:
+        return _client.buzon_notificaciones_resumen(args.rfc, args.solo_pendientes)
+    except McpError as exc:
+        return exc.to_dict()
 
 
 # ---------- entry point ----------

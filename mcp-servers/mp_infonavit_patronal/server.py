@@ -97,6 +97,98 @@ async def infonavit_consultar_avisos_pendientes(args: RegistroInput) -> dict:
         return exc.to_dict()
 
 
+# ---------- Sprint F: profundización ----------
+
+
+from typing import Any as _Any, Literal as _Literal, Optional as _Optional  # noqa: E402
+
+
+class DescuentoCalcularInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    sbc_diario_mxn: float = Field(..., gt=0, le=100000)
+    credito_tipo: _Literal[
+        "PESOS_NORMAL", "VSM_NORMAL", "CUOTA_FIJA_PESOS",
+        "REESTRUCTURADO_VSM", "OMISIONES_PASIVAS",
+    ] = Field(...)
+    factor_o_monto: _Optional[float] = Field(None, ge=0, description="Factor (0.05-0.30) o monto fijo MXN según tipo.")
+    dias_mes: int = Field(30, ge=28, le=31)
+
+
+class CreditosSinReporteInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    registro_patronal: str = Field(..., min_length=8, max_length=15)
+
+
+class EmisHistoricoInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    registro_patronal: str = Field(..., min_length=8, max_length=15)
+    anios: int = Field(3, ge=1, le=10)
+
+
+class DescuentoItem(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    nss: str = Field(..., min_length=1, max_length=20)
+    monto_mxn: float = Field(..., ge=0)
+    periodo: str = Field(..., pattern=r"^\d{4}-\d{2}$")
+
+
+class ConciliacionNominaInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    registro_patronal: str = Field(..., min_length=8, max_length=15)
+    descuentos_nomina: list[DescuentoItem] = Field(..., min_length=1, max_length=5000)
+
+
+@mcp.tool(annotations={"title": "Calcular descuento INFONAVIT por trabajador", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": False})
+async def infonavit_descuento_calcular(args: DescuentoCalcularInput) -> dict:
+    """Auto-cálculo descuento mensual INFONAVIT por trabajador.
+
+    Soporta 5 tipos de crédito (Art. 29 LFINFONAVIT). Aplica cap LFT Art. 110 (30% SBC).
+    """
+    try:
+        return _client.descuento_calcular(
+            args.sbc_diario_mxn,
+            args.credito_tipo,
+            args.factor_o_monto,
+            args.dias_mes,
+        )
+    except McpError as exc:
+        return exc.to_dict()
+
+
+@mcp.tool(annotations={"title": "Créditos sin reporte en nómina (riesgo intereses moratorios)", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": True})
+async def infonavit_creditos_sin_reporte(args: CreditosSinReporteInput) -> dict:
+    """Detecta créditos INFONAVIT activos NO aplicados en nómina.
+
+    Calcula intereses moratorios estimados (~1.8%/mes). Crítico para liquidaciones.
+    """
+    try:
+        return _client.creditos_sin_reporte(args.registro_patronal)
+    except McpError as exc:
+        return exc.to_dict()
+
+
+@mcp.tool(annotations={"title": "EMIS histórico por bimestre y año", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": True})
+async def infonavit_emis_historico(args: EmisHistoricoInput) -> dict:
+    """Histórico EMIS bimestral hasta 10 años. Útil para auditorías, juicios."""
+    try:
+        return _client.emis_historico(args.registro_patronal, args.anios)
+    except McpError as exc:
+        return exc.to_dict()
+
+
+@mcp.tool(annotations={"title": "Conciliación nómina vs INFONAVIT (cruzada)", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": True})
+async def infonavit_conciliacion_nomina(args: ConciliacionNominaInput) -> dict:
+    """Compara descuentos en nómina vs cuotas esperadas por INFONAVIT.
+
+    Devuelve diferencias por trabajador + acción recomendada. Acepta hasta 5000 registros.
+    """
+    try:
+        descuentos = [d.model_dump() for d in args.descuentos_nomina]
+        return _client.conciliacion_nomina(args.registro_patronal, descuentos)
+    except McpError as exc:
+        return exc.to_dict()
+
+
 @mcp.tool(annotations={"title": "Catálogos Infonavit: tipos descuento, status crédito, productos", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": False})
 async def infonavit_listar_catalogos() -> dict:
     """Discovery offline."""
