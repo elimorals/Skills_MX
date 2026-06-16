@@ -151,6 +151,124 @@ async def imss_consultar_padron_trabajadores(args: RegistroInput) -> dict:
         return exc.to_dict()
 
 
+# ---------- Sprint F: profundización ----------
+
+
+class SbcCalcularInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    salario_diario_base: float = Field(..., gt=0, le=100000, description="Salario diario base MXN.")
+    bono_anual_mxn: float = Field(0.0, ge=0)
+    dias_aguinaldo: int = Field(15, ge=15, le=60)
+    dias_prima_vacacional: int = Field(6, ge=0, le=100, description="% prima vacacional (default 25%).")
+    otras_percepciones_anuales_mxn: float = Field(0.0, ge=0)
+
+
+class EmaEbaInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    registro_patronal: str = Field(..., min_length=8, max_length=15)
+    periodo: str = Field(..., pattern=r"^\d{4}-\d{2}$", description="YYYY-MM")
+
+
+class CalendarioObligacionesInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    giro: str = Field("comercio", min_length=1, max_length=50)
+    clase_riesgo: Literal["I", "II", "III", "IV", "V"] = Field("I")
+
+
+class SimuladorCostoInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    salario_diario_base: float = Field(..., gt=0, le=100000)
+    bono_anual_mxn: float = Field(0.0, ge=0)
+    clase_riesgo: Literal["I", "II", "III", "IV", "V"] = Field("I")
+
+
+class PrimaRiesgoInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    prima_actual: float = Field(..., gt=0, lt=0.20, description="Prima vigente como decimal (ej 0.025 = 2.5%).")
+    s_dias_subsidiados: int = Field(0, ge=0)
+    n_total_trabajadores: int = Field(..., gt=0)
+    v_casos_invalidez: int = Field(0, ge=0)
+    i_casos_incapacidad_permanente_parcial: float = Field(0.0, ge=0)
+    d_casos_defuncion: int = Field(0, ge=0)
+
+
+@mcp.tool(annotations={"title": "Calcular SBC con factor integración + tope UMAs 2026", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": False})
+async def imss_sbc_calcular(args: SbcCalcularInput) -> dict:
+    """Auto-cálculo SBC (Art. 27 LSS) con UMA 2026 ($113.07).
+
+    Tope: 25 UMAs diarias = $2,826.75. Local, sin red.
+    """
+    try:
+        return _client.sbc_calcular(
+            args.salario_diario_base,
+            bono_anual_mxn=args.bono_anual_mxn,
+            dias_aguinaldo=args.dias_aguinaldo,
+            dias_prima_vacacional=args.dias_prima_vacacional,
+            otras_percepciones_anuales_mxn=args.otras_percepciones_anuales_mxn,
+        )
+    except McpError as exc:
+        return exc.to_dict()
+
+
+@mcp.tool(annotations={"title": "Diferencias EMA (Empresa) vs EBA (Banco)", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": True})
+async def imss_ema_vs_eba_diferencias(args: EmaEbaInput) -> dict:
+    """Compara cédula EMA vs comprobante bancario EBA (Art. 39-A LSS).
+
+    Detecta diferencias cuotas, movimientos no aplicados, intereses por mora.
+    """
+    try:
+        return _client.ema_vs_eba_diferencias(args.registro_patronal, args.periodo)
+    except McpError as exc:
+        return exc.to_dict()
+
+
+@mcp.tool(annotations={"title": "Calendario obligaciones IMSS por giro y clase de riesgo", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": False})
+async def imss_calendario_obligaciones(args: CalendarioObligacionesInput) -> dict:
+    """Calendario anual: mensuales (cuotas), bimestrales (INFONAVIT+RCV), anual (RT).
+
+    Local. Fechas día 17 del mes/bimestre siguiente.
+    """
+    try:
+        return _client.calendario_obligaciones(args.giro, args.clase_riesgo)
+    except McpError as exc:
+        return exc.to_dict()
+
+
+@mcp.tool(annotations={"title": "Simulador costo patronal mensual + anual por colaborador", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": False})
+async def imss_simulador_costo_patronal(args: SimuladorCostoInput) -> dict:
+    """Costo total patronal: salario + IMSS + INFONAVIT + provisiones LFT.
+
+    Devuelve factor_costo_sobre_salario — utilidad para presupuestos.
+    """
+    try:
+        return _client.simulador_costo_patronal(
+            args.salario_diario_base,
+            bono_anual_mxn=args.bono_anual_mxn,
+            clase_riesgo=args.clase_riesgo,
+        )
+    except McpError as exc:
+        return exc.to_dict()
+
+
+@mcp.tool(annotations={"title": "Proyección prima Riesgo de Trabajo siguiente año (Art. 72 LSS)", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": False})
+async def imss_riesgo_trabajo_prima_cambio(args: PrimaRiesgoInput) -> dict:
+    """Calcula prima RT siguiente año con fórmula oficial IMSS.
+
+    Aplica tope ±1% (Art. 74 LSS). Fecha límite: 28 feb año siguiente.
+    """
+    try:
+        return _client.riesgo_trabajo_prima_cambio(
+            args.prima_actual,
+            s_dias_subsidiados=args.s_dias_subsidiados,
+            n_total_trabajadores=args.n_total_trabajadores,
+            v_casos_invalidez=args.v_casos_invalidez,
+            i_casos_incapacidad_permanente_parcial=args.i_casos_incapacidad_permanente_parcial,
+            d_casos_defuncion=args.d_casos_defuncion,
+        )
+    except McpError as exc:
+        return exc.to_dict()
+
+
 @mcp.tool(annotations={"title": "Catálogos IMSS: tipos movimiento, causas baja, riesgo", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": False})
 async def imss_listar_catalogos() -> dict:
     """Discovery: catálogos completos IMSS."""
