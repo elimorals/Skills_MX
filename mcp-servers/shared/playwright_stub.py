@@ -70,13 +70,40 @@ def mock_response_playwright(
 
 
 def raise_playwright_real_no_implementado(portal: str) -> None:
-    """Lanza UpstreamError consistente cuando alguien pide path real sin tenerlo."""
+    """Lanza UpstreamError consistente cuando alguien pide path real sin tenerlo.
+
+    Para clientes B2B que prefieren un dict honesto (en lugar de excepción), usar
+    `respuesta_real_no_implementada(portal, tool)` directamente.
+    """
     raise UpstreamError(
         f"Path Playwright real para {portal} no implementado. "
         f"Setear PLUGINS_MX_MOCK=1 para forzar mock, o esperar a que se construya "
         f"el scraper con tests específicos contra el portal vigente.",
         {"portal": portal, "estado": "no_implementado"},
     )
+
+
+def respuesta_real_no_implementada(portal: str, tool: str) -> dict[str, Any]:
+    """Respuesta honesta cuando hay credenciales pero el path real aún no se implementa.
+
+    Devuelve dict con checklist + siguiente paso en lugar de lanzar excepción.
+    Útil para clientes B2B que activaron `PLUGINS_MX_PLAYWRIGHT_REAL=1` y quieren
+    seguir operando contra mock + recibir el flag explícito.
+    """
+    return {
+        "simulated": False,
+        "real_implementado": False,
+        "portal": portal,
+        "tool": tool,
+        "estado": "no_implementado",
+        "razon": (
+            f"El path Playwright real para {portal} no está implementado todavía. "
+            f"Setear PLUGINS_MX_MOCK=1 para forzar respuesta mock, o cotizar "
+            f"implementación específica con elimoralsmendox@gmail.com."
+        ),
+        "siguiente_paso": "Ver SETUP_PLAYWRIGHT_REAL.md del MCP correspondiente.",
+        "credenciales_detectadas": True,
+    }
 
 
 def info_path_real() -> dict[str, str]:
