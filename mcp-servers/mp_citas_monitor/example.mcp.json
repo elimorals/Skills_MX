@@ -1,0 +1,1 @@
+{"mcpServers": {"citas_monitor": {"command": "python", "args": ["-m", "mp_citas_monitor.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}

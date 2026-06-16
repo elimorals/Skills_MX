@@ -1,0 +1,1 @@
+{"mcpServers": {"form_filler_public": {"command": "python", "args": ["-m", "mp_form_filler_public.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
