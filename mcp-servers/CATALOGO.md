@@ -1,8 +1,8 @@
 # Catálogo de MCPs — plugins-mx
 
-**Última actualización**: 2026-06-15 (post-Sprint F · profundización SAT/IMSS/INFONAVIT)
-**Total MCPs**: 76
-**Tests pasando**: 1,565
+**Última actualización**: 2026-06-15 (post-Sprint G · 5 productos gobierno)
+**Total MCPs**: 81
+**Tests pasando**: 1,634
 
 Catálogo central de los 76 MCP servers del monorepo, organizados por **Tier de producción** y categoría. Cada MCP cumple el contrato mock-first: corre sin credenciales con respuestas plausibles marcadas `simulated: true`.
 
@@ -231,6 +231,28 @@ Lote agregado 2026-06-15 cubriendo los gaps de profundización del plan original
 Ningún gap del Top 15 ni de la sección 3 queda pendiente. Próxima frontera (no estaba en el plan):
 - Path real Playwright para SAT/IMSS/INFONAVIT (requiere e.firma del cliente — opt-in B2B)
 - Empaquetamiento comercial + landing pricing + primer piloto pagante (recomendación honesta sección 7 del plan)
+
+---
+
+## Sprint G — 5 productos gobierno B2G (2026-06-15)
+
+Productos diseñados a partir de research profundo (civica.digital + ATDT + dolor ciudadano). Aprovechan que **ningún civic-tech MX tiene browser automation gob.mx en producción** — diferenciador clave.
+
+| MCP | Comprador objetivo | Vehículo | Tests |
+|---|---|---|---|
+| `mp_llave_mx_tracker` | ATDT (José Merino), IMCO, México Evalúa | Open source + servicios | ✅ 11 |
+| `mp_retys_catalogo` | CONAMER + datos.gob.mx (Sistema Ajolote) | Donación cívica + mantenimiento | ✅ 11 |
+| `mp_lnetb_auditor` | ATDT + IMCO + México Evalúa | Piloto think tank → escalar | ✅ 12 |
+| `mp_portales_monitor` | Estados rezagados (Oax/Chis/Gro/Tab) | Licitación menor MIPYME via ComprasMX | ✅ 13 |
+| `mp_imss_continuidad` | IMSS directo o integradora primaria | Subcontrato MIPYME (licitación mayo 2026) | ✅ 11 |
+
+**Total Sprint G**: 5 MCPs · 58 tests · 1,634 totales · path real opt-in vía `MP_PLAYWRIGHT_PUBLIC=1`.
+
+### Diferenciador frente a Cívica Digital y peers
+
+- Cívica Digital usa Ruby/Elixir/Python pero **NO tiene browser automation gob.mx**
+- Codeando México, SocialTIC, OPI Analytics: data/análisis, NO operación de portales
+- Estos 5 MCPs son **infraestructura de operación** que complementa (no compite) civic-tech UI/SaaS
 
 ## Convención para agregar un MCP nuevo
 

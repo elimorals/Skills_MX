@@ -1,0 +1,1 @@
+{"mcpServers": {"imss_continuidad": {"command": "python", "args": ["-m", "mp_imss_continuidad.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}

@@ -1,0 +1,1 @@
+{"mcpServers": {"portales_monitor": {"command": "python", "args": ["-m", "mp_portales_monitor.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}

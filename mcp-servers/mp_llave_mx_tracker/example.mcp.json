@@ -1,0 +1,1 @@
+{"mcpServers": {"llave_mx_tracker": {"command": "python", "args": ["-m", "mp_llave_mx_tracker.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}

@@ -1,0 +1,1 @@
+{"mcpServers": {"retys_catalogo": {"command": "python", "args": ["-m", "mp_retys_catalogo.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
