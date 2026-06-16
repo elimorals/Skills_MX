@@ -1,6 +1,6 @@
 # Plugins MX
 
-> Infraestructura de cumplimiento fiscal y municipal para México. 62 MCPs (Model Context Protocol) production-ready que automatizan SAT, IMSS, REPSE, ISN estatal en 32 entidades federativas, predial municipal en 243 ayuntamientos (71 validados Playwright), servicios públicos (CFE Mi Espacio real, Telmex pago sin login, 17 organismos de agua) y fiscal vehicular (tenencia 20 estados, ISH 32 estados, verificación con SAF CDMX real, multas en 5 sistemas). Construido para despachos contables, inmobiliarias, anfitriones Airbnb, talleres y áreas fiscales corporativas.
+> Infraestructura de cumplimiento fiscal y municipal para México. 83 MCPs (Model Context Protocol) production-ready con 1,667 tests pasando · 28 workflows · cobertura SAT, IMSS, INFONAVIT, REPSE, ISN 32 estados, Compliance normativa 2026 (Ley Silla NOM-037, ECE NOM-024, RESICO con alerta SCJN 3 omisiones, Llave MX validado vivo en llave.gob.mx/oauthV2.xhtml, Desconexión Digital LFT Art. 132, Anexo 30 CRE), 5 productos B2G gobierno (Llave MX Tracker para ATDT/IMCO, RETyS catálogo CONAMER, auditor LNETB 32 estados, monitor 25 portales gob.mx, adapter IMSS Continuidad Operativa licitación 2026), preparación documental Nivel 2 (form filler 8 portales públicos sin login, monitor ético cupos SAT/IMSS/SRE con consent_token LFPDPPP), predial municipal 243 muns (71 validados Playwright), servicios públicos (CFE Mi Espacio real, Telmex pago sin login, 17 organismos agua) y fiscal vehicular (tenencia 20 estados, ISH 32 estados, SAF CDMX real, multas 5 sistemas). Construido para despachos contables, inmobiliarias, anfitriones Airbnb, talleres, áreas fiscales corporativas y dependencias gob.mx.
 
 **Autor:** Elías Rashid Morales Mendoza · Ciudad de México · contacto: elimoralsmendox@gmail.com
 **Sitio:** https://skills-mexico.vercel.app
@@ -43,7 +43,7 @@
 
 ## Métricas verificables
 
-- **62** MCPs production-ready
+- **83** MCPs production-ready · **1,667** tests pasando · **28** workflows ejecutables
 - **307** Skills empaquetados (con SKILL.md + evals)
 - **24** Workflows ejecutables (cobranza, cierre fiscal, due diligence)
 - **281** Evals para triggering (ratio 0.92 promedio)
