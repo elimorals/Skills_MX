@@ -1,0 +1,1 @@
+{"mcpServers": {"lnetb_auditor": {"command": "python", "args": ["-m", "mp_lnetb_auditor.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
