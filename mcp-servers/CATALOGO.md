@@ -161,15 +161,15 @@ Sin portal público a scrapear — son calculadoras normativas, validadores de c
 
 | MCP | Categoría | Razón Tier C | Tests |
 |---|---|---|---|
-| `mp_ley_silla_nom037` | Compliance laboral | Calculadora multas STPS (UMA 113.07) + checklist NOM-035/037/desconexión + generador política SST | ✅ |
+| `mp_ley_silla_nom037` | Compliance laboral | Calculadora multas LFT (UMA 2026 117.31) + checklist Ley Silla/NOM-035/037 + generador política SST | ✅ |
 | `mp_expediente_clinico_nom024` | Salud digital | Validador 10 requisitos NOM-024 + clasificador medicamentos COFEPRIS (fracciones I-V) | ✅ |
 | `mp_resico_sat` | Fiscal | Calculadora ISR mensual 5 tramos (1.00-2.50%) + alerta tope $3.5M + 12 plataformas digitales retención 2.5% | ✅ |
 | `mp_ine_verificacion` | Identidad | Portal INE solo informativo (B2G/B2B vía convenio) — validado vivo 2026-06-15 | ✅ |
 | `mp_cfe_interconexion_solar` | Energía renovable | Simulador ahorro + tarifas DAC/PDBT/GDMTH (factor exportación 0.70 vigente 2026) | ✅ |
-| `mp_desconexion_digital` | Compliance laboral | Checklist 8 items reforma 2026 + generador política firmable + plantilla capacitación 45min | ✅ |
+| `mp_desconexion_digital` | Compliance laboral | Checklist desconexión en teletrabajo (LFT 330-E fr. VI + NOM-037 5.2) + política + plantilla capacitación | ✅ |
 | `mp_cofepris_aviso_funcionamiento` | Salud | Clasificador 19 giros A/B/C (NOM-167-SSA1) — portal Digipro requiere login | ✅ |
 | `mp_sedatu_uso_suelo` | Inmobiliario/Urbano | Catálogo 6 trámites + 13 usos suelo + estimador MIA/EIU/MIV (>10k m²) — competencia municipal varía | ✅ |
-| `mp_simplifica_ciudadano` | Tracker estatal | Avance Ley Nacional Trámites Burocráticos (DOF 16-jul-2025) en 32 estados — datos estadísticos curados | ✅ |
+| `mp_simplifica_ciudadano` | Tracker estatal | Avance Ley Nacional Trámites Burocráticos (DOF 16-jul-2025) en 32 estados — sin fuente pública: solo mock | ⚠️ |
 
 ### Tier S · Cobertura federal anclada en SAT (1)
 

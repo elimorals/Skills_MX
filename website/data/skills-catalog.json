@@ -36,7 +36,7 @@
         {"id": "mp_isn_mx", "tier": "B", "tag": "32 estados", "desc": "Impuesto sobre Nómina multi-estado 1.8%–3.0%"},
         {"id": "mp_sep_profesional", "tier": "A", "tag": "público", "desc": "Validación cédula profesional SEP sin captcha"},
         {"id": "mp_no_antecedentes_penales_mx", "tier": "B", "tag": "Playwright", "desc": "Carta no antecedentes penales federal"},
-        {"id": "mp_ley_silla_nom037", "tier": "C", "tag": "NOM-037 P0", "desc": "Calculadora multas STPS (UMA 113.07) + checklist NOM-035/037 + política SST firmable", "sprint": "E"},
+        {"id": "mp_ley_silla_nom037", "tier": "C", "tag": "NOM-037 P0", "desc": "Calculadora multas LFT (UMA 2026 117.31) + checklist NOM-035/037 + política SST firmable", "sprint": "E"},
         {"id": "mp_desconexion_digital", "tier": "C", "tag": "reforma 2026", "desc": "Checklist 8 items + política firmable + plantilla capacitación 45min", "sprint": "E"}
       ]
     },
