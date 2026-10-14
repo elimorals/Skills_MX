@@ -13,6 +13,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from mp_gas_natural_mx.client import GasNaturalMxClient  # noqa: E402
+from shared.errors import McpError  # noqa: E402
 
 
 mcp = FastMCP("gas_natural_mx")
@@ -25,10 +26,28 @@ class ConsultarInput(BaseModel):
     contrato: str = Field(..., min_length=4, max_length=30)
 
 
-@mcp.tool(annotations={"title": "Consultar recibo gas natural", "readOnlyHint": True, "openWorldHint": True})
+class TarifasInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    distribuidor: str = Field("ecogas", min_length=3, max_length=20)
+    zona: str | None = Field(None, max_length=30, description="Ej. mexicali, chihuahua, durango, laguna.")
+
+
+@mcp.tool(annotations={"title": "Recibo gas natural (handoff: login del titular)", "readOnlyHint": True, "openWorldHint": True})
 def gas_consultar_recibo(args: ConsultarInput) -> dict:
-    """Consulta recibo + consumo m³ + monto."""
-    return _client.consultar_recibo(args.distribuidor, args.contrato)
+    """Recibo del titular. Todos los portales exigen login: devuelve pasos para una persona."""
+    try:
+        return _client.consultar_recibo(args.distribuidor, args.contrato)
+    except McpError as exc:
+        return exc.to_dict()
+
+
+@mcp.tool(annotations={"title": "Tarifas vigentes gas natural", "readOnlyHint": True, "openWorldHint": True})
+def gas_tarifas_vigentes(args: TarifasInput) -> dict:
+    """Precio mensual y tarifas máximas publicadas por el distribuidor (PDF oficial citado)."""
+    try:
+        return _client.tarifas_vigentes(args.distribuidor, args.zona)
+    except McpError as exc:
+        return exc.to_dict()
 
 
 @mcp.tool(annotations={"title": "Listar distribuidores gas", "readOnlyHint": True, "idempotentHint": True})
