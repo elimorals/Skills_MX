@@ -144,6 +144,10 @@ Catálogos publicados en el Anexo 20 de la Resolución Miscelánea Fiscal. Vigen
 | 02 | Sí objeto del impuesto |
 | 03 | Sí objeto del impuesto y no obligado al desglose |
 | 04 | Sí objeto del impuesto y no causa impuesto |
+| 05 | Sí objeto del impuesto, IVA crédito PODEBI |
+| 06 | Sí objeto del IVA, No traslado IVA |
+| 07 | No traslado del IVA, Sí desglose IEPS |
+| 08 | No traslado del IVA, No desglose IEPS |
 
 **Regla**: si cualquier concepto tiene ObjetoImp = 02, el nodo `Impuestos` a nivel comprobante es obligatorio. Si todos los conceptos son 01, no debe existir.
 
@@ -244,7 +248,7 @@ Varía mucho por SKU. Patrón: buscar la categoría más específica del product
 | CNY | Yuan Chino |
 | XXX | Sin denominación (uso muy específico) |
 
-**Regla**: si moneda ≠ MXN, agregar campo `TipoCambio` con valor positivo del DOF del día hábil anterior.
+**Regla**: si moneda ≠ MXN, `TipoCambio` es obligatorio: el publicado en el DOF el día anterior a la operación (Art. 20 CFF; si ese día no hubo publicación, el último publicado). Con MXN puede omitirse o ir en `1`.
 
 ---
 

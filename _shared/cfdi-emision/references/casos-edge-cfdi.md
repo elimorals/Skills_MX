@@ -119,7 +119,7 @@ Paso 2: Emitir CFDI nuevo
 Paso 3: Cancelar el CFDI original (orden real):
    → En realidad muchos PACs requieren cancelar primero y emitir después.
      Verificar el flujo específico del PAC.
-   → La cancelación necesita aceptación del receptor si pasaron >72h o monto >$1,000 MXN.
+   → La cancelación necesita aceptación del receptor salvo excepciones de la regla 2.7.1.35 RMF 2026 (total ≤ $1,000, dentro de 24 h de emitido, etc.).
 ```
 
 ### Buenas prácticas

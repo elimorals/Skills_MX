@@ -65,6 +65,9 @@ Componentes:
 
 Casos especiales:
 - Cero pesos: `CERO PESOS 00/100 M.N.`
+- Apócope ante sustantivo: `VEINTIÚN PESOS`, `VEINTIÚN MIL`, `TREINTA Y UN PESOS` (no "veintiuno pesos").
+- Millones exactos llevan "DE": `UN MILLÓN DE PESOS 00/100 M.N.`, `DOS MILLONES DE PESOS 00/100 M.N.`.
+- CFDI 4.0 **no** exige importe con letra; es convención de la representación impresa, contratos y pagarés.
 - Solo centavos: `CERO PESOS 50/100 M.N.`
 - Miles, millones: respetando reglas RAE de números (catorce mil, no diecicuatromil; cien mil sin "uno"; mil sin "uno": "mil pesos" no "un mil pesos" salvo en contexto contable formal).
 
@@ -79,7 +82,7 @@ Este skill acepta entradas en cualquier formato común y las normaliza:
 | `$1,234.56` | `$1,234.56` |
 | `1.234,56` (europeo) | `$1,234.56` (advertir cambio) |
 | `$1,234` | `$1,234.00` |
-| `mil doscientos pesos` | `$1,200.00` |
+| `mil doscientos pesos` | `$1,200.00` (solo LLM; `format_mxn.py` no parsea letras) |
 | `1.5k` | `$1,500.00` |
 | `2 millones` | `$2,000,000.00` |
 | `$1234.567` | `$1,234.57` (redondeo) y advertencia |
@@ -91,7 +94,7 @@ Este skill acepta entradas en cualquier formato común y las normaliza:
 Reglas para CFDI:
 - Redondeo a 2 decimales con regla matemática estándar (>= 5 sube).
 - En sumatorias, redondear cada subtotal antes de sumar puede generar diferencias de centavos vs sumar primero y redondear al final.
-- Convención SAT: redondear cada concepto y sumar. Diferencias deben absorberse o ajustarse con un concepto de "redondeo" con valor mínimo si es necesario.
+- Anexo 20 CFDI 4.0: cada `Importe` se redondea a los decimales de la moneda y se valida contra límites inferior/superior (tolerancia de centavos). Nunca agregar un concepto ficticio de "redondeo".
 
 Reglas para contratos:
 - Si el contrato es a precio fijo: redondear a 2 decimales, sin ajustes posteriores.
@@ -101,7 +104,7 @@ Reglas para contratos:
 
 Para conversión MXN ↔ USD/EUR/GBP/CAD/JPY:
 1. Tipo de cambio del **Diario Oficial de la Federación (DOF)** publicado por Banxico.
-2. SAT requiere usar el TC del día hábil **anterior** al acto que se factura (no el del día mismo).
+2. Art. 20 CFF: se usa el TC **publicado en el DOF el día anterior** a aquél en que se causa la contribución (Banxico lo determina un día hábil antes de publicarlo); si ese día no hubo publicación, el último publicado antes.
 
 ### MCP disponible: `banxico`
 
