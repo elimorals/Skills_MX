@@ -53,3 +53,18 @@ def test_comparar_lista_vacia():
     c = SimplificaCiudadanoClient()
     with pytest.raises(ValidationError):
         c.comparar_estados(estados_claves=[])
+
+
+def test_fuera_de_mock_no_presenta_cifras(monkeypatch):
+    from mp_simplifica_ciudadano.client import SimplificaCiudadanoClient
+    from shared.errors import ConfigError
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "0")
+    c = SimplificaCiudadanoClient()
+    for llamada in (lambda: c.estado("cdmx"), c.tracker_nacional, lambda: c.comparar_estados(["cdmx"])):
+        with pytest.raises(ConfigError):
+            llamada()
+
+
+def test_mock_marcado():
+    from mp_simplifica_ciudadano.client import SimplificaCiudadanoClient
+    assert SimplificaCiudadanoClient().tracker_nacional()["simulated"] is True
