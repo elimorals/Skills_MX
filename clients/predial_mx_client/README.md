@@ -21,8 +21,8 @@ Requisitos:
 ```python
 from predial_mx_client import PredialMxClient
 
-# Modo mock (default — sin red, respuestas simuladas)
-client = PredialMxClient(modo="mock")
+# Modo real (default). Para datos simulados: PredialMxClient(modo="mock")
+client = PredialMxClient()
 
 # Consulta
 r = client.consultar(estado="jal", municipio="guadalajara", cuenta="U12345678")
@@ -44,15 +44,17 @@ print(f"Total municipios: {stats['municipios_totales']}")
 print(f"Cobertura validada: {stats['cobertura_efectiva']}")
 ```
 
-## Modo real (consultas reales con Playwright)
+## Modo real (default)
+
+Sin fallback silencioso: si el portal falla se levanta `PortalCaidoError`; si
+el portal exige CAPTCHA (CDMX/OVICA) se levanta `CaptchaRequeridoError` con
+`url_consulta_manual`. Toluca usa httpx (validado en vivo 2026-10-14); el resto
+de municipios con portal propio usa Playwright (`pip install playwright`).
 
 ```python
-import os
-os.environ["MP_PLAYWRIGHT_PUBLIC"] = "1"
-
-client = PredialMxClient(modo="real")
-r = client.consultar(estado="jal", municipio="guadalajara", cuenta="U_REAL_AQUÍ")
-print(r.adeudo_total_mxn)  # consulta real al portal
+client = PredialMxClient()
+r = client.consultar(estado="edomex", municipio="toluca", cuenta="<16 dígitos>")
+print(r.conceptos)
 ```
 
 ## Casos especiales

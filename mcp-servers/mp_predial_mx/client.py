@@ -9,7 +9,8 @@ Auto-routing por (estado, municipio):
 2. ¿Tiene portal_predial_url? → invocar shared.playwright_municipal_generic.consulta_portal
 3. Ninguno → ValidationError con instrucciones
 
-Modo mock por default (sin Playwright real). Activar real con MP_PLAYWRIGHT_PUBLIC=1.
+Real por default (httpx/Playwright según portal). Mock solo con PLUGINS_MX_MOCK=1;
+sin fallback silencioso: si el portal falla se levanta UpstreamError.
 """
 
 from __future__ import annotations
@@ -37,10 +38,8 @@ from shared.catalogo_municipios_mx import (  # noqa: E402
 from shared.errors import McpError, UpstreamError, ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
 from shared.playwright_municipal_generic import consulta_portal  # noqa: E402
-from shared.playwright_real import (  # noqa: E402
-    is_public_real_enabled,
-    with_real_or_fallback,
-)
+from shared.portal_handoff import OVICA_CDMX_PREDIAL, handoff_humano, mock_forzado  # noqa: E402
+from mp_edomex_municipal import toluca  # noqa: E402
 from shared.plataformas_saas_mx import (  # noqa: E402
     consulta_sacpi,
     codigo_municipio_sacpi,
@@ -49,6 +48,12 @@ from shared.plataformas_saas_mx import (  # noqa: E402
 )
 
 NAMESPACE = "predial_mx"
+
+
+def _marcar_real(result: dict[str, Any], portal: str) -> dict[str, Any]:
+    result.setdefault("simulated", False)
+    result["portal"] = portal
+    return result
 
 
 def _normalizar_clave(s: str) -> str:
@@ -131,9 +136,16 @@ class PredialMxClient:
                 f"Soportados: {soportados[:10]}{'...' if len(soportados) > 10 else ''}"
             )
 
-        # Mock mode si no está habilitado Playwright público
-        if not is_public_real_enabled():
+        # Datos simulados SOLO con PLUGINS_MX_MOCK=1. Sin fallback silencioso:
+        # si el portal real falla se propaga UpstreamError.
+        if mock_forzado():
             return mark_simulated(self._mock_response(estado_norm, mun_norm, cuenta_predial, cfg))
+
+        # ROUTING 0: portales verificados a mano (2026-10-14)
+        if (estado_norm, mun_norm) == ("cdmx", "ciudad_de_mexico"):
+            return handoff_humano(OVICA_CDMX_PREDIAL, cuenta_predial_hash=cuenta_predial[:4] + "***")
+        if (estado_norm, mun_norm) == ("edomex", "toluca"):
+            return toluca.consultar(cuenta_predial)
 
         # ROUTING 1: ¿Plataforma SaaS?
         if cfg.plataforma_saas == "SACPI":
@@ -144,13 +156,9 @@ class PredialMxClient:
                     {"municipio": cfg.nombre},
                 )
             tipo_codigo = "1" if tipo == "urbano" else "2"
-            return with_real_or_fallback(
-                real_fn=lambda: consulta_sacpi(codigo, cuenta_predial, tipo=tipo_codigo),
-                fallback_fn=lambda: self._mock_response(estado_norm, mun_norm, cuenta_predial, cfg),
-                portal="sacpi_michoacan",
-            )
+            return _marcar_real(consulta_sacpi(codigo, cuenta_predial, tipo=tipo_codigo), "sacpi_michoacan")
 
-        # ROUTING 2: ¿Portal directo en catálogo?
+        # ROUTING 2: ¿Portal directo en catálogo? (Playwright genérico)
         if cfg.portal_predial_url and cfg.selectores_predial:
             portal_cfg = cfg.to_predial_config()
             if portal_cfg is None:
@@ -160,11 +168,7 @@ class PredialMxClient:
                 )
             # Caso especial Mérida: busca por dirección, no cuenta
             identificador = direccion if (estado_norm == "yuc" and mun_norm == "merida" and direccion) else cuenta_predial
-            return with_real_or_fallback(
-                real_fn=lambda: consulta_portal(portal_cfg, identificador),
-                fallback_fn=lambda: self._mock_response(estado_norm, mun_norm, cuenta_predial, cfg),
-                portal=f"{estado_norm}_{mun_norm}",
-            )
+            return _marcar_real(consulta_portal(portal_cfg, identificador), f"{estado_norm}_{mun_norm}")
 
         # ROUTING 3: Sin URL ni SaaS — no automatizable
         raise UpstreamError(
@@ -250,7 +254,7 @@ class PredialMxClient:
         return resultados[:20]
 
     # ============================================================
-    # Mock response (fallback cuando MP_PLAYWRIGHT_PUBLIC=0)
+    # Mock response (solo con PLUGINS_MX_MOCK=1)
     # ============================================================
 
     def _mock_response(
