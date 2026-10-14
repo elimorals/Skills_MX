@@ -1,0 +1,20 @@
+{
+  "skill": "mxn-formato",
+  "script": "scripts/format_mxn.py",
+  "cases": [
+    {"id": "basico", "args": ["--", "1234.56"], "expect": {"formato_corto": "$1,234.56", "formato_largo": "$1,234.56 MXN", "letra": "UN MIL DOSCIENTOS TREINTA Y CUATRO PESOS 56/100 M.N."}, "fuente": "Convención contable MX (UN MIL en documentos formales)"},
+    {"id": "europeo", "args": ["--", "1.234,56"], "expect": {"monto_normalizado": 1234.56}, "expect_contains": {"alertas.0": "europeo"}, "fuente": "Normalización"},
+    {"id": "redondeo-3-decimales", "args": ["--", "$1234.567"], "expect": {"monto_normalizado": 1234.57, "formato_corto": "$1,234.57"}, "expect_contains": {"alertas.0": "3 decimales"}, "fuente": "ROUND_HALF_UP a 2 decimales"},
+    {"id": "solo-centavos", "args": ["--", "0.5"], "expect": {"formato_corto": "$0.50", "letra": "CERO PESOS 50/100 M.N."}, "fuente": "Convención CFDI"},
+    {"id": "veintiun-pesos", "args": ["--", "21"], "expect": {"letra": "VEINTIÚN PESOS 00/100 M.N."}, "fuente": "RAE: apócope ante sustantivo"},
+    {"id": "veintiun-mil", "args": ["--", "121000"], "expect": {"letra": "CIENTO VEINTIÚN MIL PESOS 00/100 M.N."}, "fuente": "RAE: apócope ante 'mil'"},
+    {"id": "un-millon-de-pesos", "args": ["--", "1000000"], "expect": {"formato_corto": "$1,000,000.00", "letra": "UN MILLÓN DE PESOS 00/100 M.N."}, "fuente": "RAE: 'un millón de'"},
+    {"id": "millones-con-resto", "args": ["--", "2500000"], "expect": {"letra": "DOS MILLONES QUINIENTOS MIL PESOS 00/100 M.N."}, "fuente": "RAE"},
+    {"id": "cien-vs-ciento", "args": ["--", "100"], "expect": {"letra": "CIEN PESOS 00/100 M.N."}, "fuente": "RAE"},
+    {"id": "ciento-un", "args": ["--", "101"], "expect": {"letra": "CIENTO UN PESOS 00/100 M.N."}, "fuente": "RAE"},
+    {"id": "negativo-nota-credito", "args": ["--", "-500"], "expect": {"formato_corto": "-$500.00"}, "fuente": "Convención"},
+    {"id": "sufijo-k", "args": ["--", "1.5k"], "expect": {"monto_normalizado": 1500.0}, "fuente": "Normalización"},
+    {"id": "palabra-millones", "args": ["--", "2 millones"], "expect": {"monto_normalizado": 2000000.0, "letra": "DOS MILLONES DE PESOS 00/100 M.N."}, "fuente": "Normalización"},
+    {"id": "usd-singular", "args": ["--moneda", "USD", "--", "1"], "expect": {"letra": "UN DÓLAR AMERICANO 00/100 USD", "formato_largo": "$1.00 USD"}, "fuente": "Convención"}
+  ]
+}
