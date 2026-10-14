@@ -27,6 +27,8 @@ class TelInput(BaseModel):
 class LoteInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
     telefonos: list[str] = Field(..., min_length=1, max_length=5000)
+    lista_repep_path: str | None = Field(
+        None, description="Ruta al archivo de la lista oficial comprada en PROFECO (Comprar listas REPEP)")
 
 
 class InscribirInput(BaseModel):
@@ -42,10 +44,10 @@ def repep_consultar(args: TelInput) -> dict:
 
 @mcp.tool(annotations={"title": "Filtrar lote contactables", "readOnlyHint": True})
 def repep_filtrar_lote(args: LoteInput) -> dict:
-    return _client.filtrar_lote(telefonos=args.telefonos)
+    return _client.filtrar_lote(telefonos=args.telefonos, lista_repep_path=args.lista_repep_path)
 
 
-@mcp.tool(annotations={"title": "Inscribir teléfono en REPEP", "readOnlyHint": True})
+@mcp.tool(annotations={"title": "Cómo inscribir un teléfono (handoff)", "readOnlyHint": True})
 def repep_inscribir(args: InscribirInput) -> dict:
     return _client.inscribir(telefono=args.telefono, propietario_curp=args.propietario_curp)
 
