@@ -36,6 +36,7 @@ class EfirmaMetadata:
     rfc: str
     nombre: str | None
     numero_serie: str
+    numero_certificado: str
     not_before: datetime
     not_after: datetime
     issuer: str
@@ -47,6 +48,7 @@ class EfirmaMetadata:
             "rfc": self.rfc,
             "nombre": self.nombre,
             "numero_serie": self.numero_serie,
+            "numero_certificado": self.numero_certificado,
             "vigencia_desde": self.not_before.isoformat(),
             "vigencia_hasta": self.not_after.isoformat(),
             "issuer": self.issuer,
@@ -76,6 +78,7 @@ class EfirmaLoader:
         self._password = password  # no se expone via getter
         self._cached_metadata: EfirmaMetadata | None = None
         self._cached_key_valid: bool | None = None
+        self._cached_private_key = None
         self._validate_paths()
 
     @classmethod
@@ -146,6 +149,7 @@ class EfirmaLoader:
             rfc=rfc,
             nombre=nombre,
             numero_serie=serial,
+            numero_certificado=_numero_certificado(cert.serial_number),
             not_before=not_before,
             not_after=not_after,
             issuer=cert.issuer.rfc4514_string(),
@@ -166,31 +170,11 @@ class EfirmaLoader:
         if self._cached_key_valid is not None:
             return self._cached_key_valid
 
-        try:
-            from cryptography.hazmat.primitives import hashes, serialization
-            from cryptography.hazmat.primitives.asymmetric import padding
-        except ImportError:
-            raise ConfigError(
-                "Package `cryptography` no instalado. Ejecuta: pip install cryptography",
-                {"hint": "instalar cryptography"},
-            )
+        from cryptography.hazmat.primitives import hashes
+        from cryptography.hazmat.primitives.asymmetric import padding
 
         cert = _parse_cert(self.cert_path)
-        key_bytes = self.key_path.read_bytes()
-        try:
-            private_key = serialization.load_der_private_key(
-                key_bytes, password=self._password.encode("utf-8")
-            )
-        except Exception:
-            try:
-                private_key = serialization.load_pem_private_key(
-                    key_bytes, password=self._password.encode("utf-8")
-                )
-            except Exception as exc:
-                raise ValidationError(
-                    "No se pudo abrir la llave .key — password incorrecto o formato inesperado",
-                    {"raw_error": type(exc).__name__},
-                )
+        private_key = self._private_key()
 
         nonce = b"plugins-mx-efirma-validation-nonce"
         sig = private_key.sign(
@@ -210,6 +194,39 @@ class EfirmaLoader:
             self._cached_key_valid = False
 
         return self._cached_key_valid
+
+    def _private_key(self):
+        """Abre el .key (PKCS#8 DER cifrado, o PEM). Nunca se expone fuera."""
+        if self._cached_private_key is not None:
+            return self._cached_private_key
+        try:
+            from cryptography.hazmat.primitives import serialization
+        except ImportError:
+            raise ConfigError(
+                "Package `cryptography` no instalado. Ejecuta: pip install -e '.[sat-portal]'",
+                {"hint": "instalar cryptography"},
+            )
+        key_bytes = self.key_path.read_bytes()
+        password = self._password.encode("utf-8")
+        try:
+            key = serialization.load_der_private_key(key_bytes, password=password)
+        except Exception:
+            try:
+                key = serialization.load_pem_private_key(key_bytes, password=password)
+            except Exception as exc:
+                raise ValidationError(
+                    "No se pudo abrir la llave .key — password incorrecto o formato inesperado",
+                    {"raw_error": type(exc).__name__},
+                )
+        self._cached_private_key = key
+        return key
+
+    def firmar_sha1(self, data: bytes) -> bytes:
+        """Firma PKCS#1 v1.5 + SHA-1 (lo que exige el login FIEL del portal SAT)."""
+        from cryptography.hazmat.primitives import hashes
+        from cryptography.hazmat.primitives.asymmetric import padding
+
+        return self._private_key().sign(data, padding.PKCS1v15(), hashes.SHA1())
 
 
 # ---------- helpers ----------
@@ -236,6 +253,22 @@ def _parse_cert(path: Path):
                 f"Certificado en {path.name} no parsea como DER ni PEM",
                 {"raw_error": type(exc).__name__},
             )
+
+
+def _numero_certificado(serial_number: int) -> str:
+    """Número de certificado SAT (20 dígitos).
+
+    El SAT codifica el número como ASCII dentro del serial X.509:
+    0x3330303031... → "30001...". Si no sigue ese patrón, devuelve el hex.
+    """
+    hexa = format(serial_number, "x")
+    if len(hexa) % 2:
+        hexa = "0" + hexa
+    try:
+        texto = bytes.fromhex(hexa).decode("ascii")
+    except ValueError:
+        return hexa.upper()
+    return texto if texto.isdigit() else hexa.upper()
 
 
 def _extract_rfc(cert) -> str:

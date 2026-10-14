@@ -1,6 +1,9 @@
-"""Cliente Playwright para el portal SAT (path real, opt-in).
+"""Cliente Playwright para el portal SAT (LEGADO, opt-in).
 
-⚠ ESTE MÓDULO ES EL ESQUELETO DEL PATH REAL.
+⚠ El path real vigente NO usa Playwright: `SatPortalClient` hace login FIEL por
+httpx (`shared/sat_portal_fiel.py`). Este módulo se conserva solo como respaldo
+si el SAT llegara a exigir JavaScript en el login. Con credenciales, cualquier
+operación sin scraper implementado levanta UpstreamError (nada de mock).
 
 Los métodos de scraping del portal SAT (CSF, Buzón Tributario, descarga masiva
 CFDIs, etc.) están implementados como stubs que retornan dict con
@@ -177,22 +180,19 @@ class SatPlaywrightClient:
     def verificar_efirma_vigente(self, rfc: str) -> dict[str, Any]:
         """Caso especial: si tenemos e.firma cargada, podemos responder sin Playwright."""
         if self.efirma is not None:
-            try:
-                meta = self.efirma.metadata()
-                self.bitacora.log(
-                    "verificar_efirma_vigente",
-                    success=True,
-                    params_summary={"rfc_hash": Bitacora.hash_sensitive(rfc)},
-                    result_summary={"days_until_expiry": meta.days_until_expiry},
-                )
-                return {
-                    "operation": "verificar_efirma_vigente",
-                    "data": meta.to_dict(),
-                    "simulated": False,
-                    "notes": ["data obtenida del .cer local, no del portal SAT"],
-                }
-            except Exception:
-                pass
+            meta = self.efirma.metadata()
+            self.bitacora.log(
+                "verificar_efirma_vigente",
+                success=True,
+                params_summary={"rfc_hash": Bitacora.hash_sensitive(rfc)},
+                result_summary={"days_until_expiry": meta.days_until_expiry},
+            )
+            return {
+                "operation": "verificar_efirma_vigente",
+                "data": meta.to_dict(),
+                "simulated": False,
+                "notes": ["data obtenida del .cer local, no del portal SAT"],
+            }
         return self._dispatch(
             "verificar_efirma_vigente", {"rfc": rfc}, self._real_verificar_efirma_vigente
         )
@@ -209,8 +209,14 @@ class SatPlaywrightClient:
         mode = self.get_mode()
         safe_params = self._summarize_params(params)
         try:
-            if mode == "mock" or mode == "blocked":
-                result = self._mock_response(op, params, blocked=mode == "blocked")
+            if mode == "blocked":
+                raise ConfigError(
+                    f"{op}: hay e.firma pero falta PLUGINS_MX_PLAYWRIGHT_REAL=1 o playwright. "
+                    "Usa SatPortalClient (httpx) para el path real.",
+                    {"mode": mode},
+                )
+            if mode == "mock":
+                result = self._mock_response(op, params, blocked=False)
                 self.bitacora.log(op, success=True, params_summary=safe_params, result_summary={"mode": mode})
                 return result
             # mode == "real"
@@ -356,13 +362,11 @@ class SatPlaywrightClient:
         return self._real_not_implemented("descargar_acuse", params)
 
     def _real_not_implemented(self, op: str, params: dict[str, Any]) -> dict[str, Any]:
-        """Placeholder honest: el método existe pero scraper específico no.
-
-        En lugar de retornar data inventada en modo real, retorna mock + flag
-        explícito. Mejor que crash silencioso. Esto permite que el resto de la
-        app siga funcionando mientras se implementa el scraper.
-        """
-        return self._mock_response(op, params, blocked=False)
+        """El scraper Playwright de `op` no existe: error explícito, nunca mock."""
+        raise UpstreamError(
+            f"{op}: scraper Playwright no implementado. Usa SatPortalClient (httpx).",
+            {"operation": op},
+        )
 
 
 # ---------- module-level helpers ----------

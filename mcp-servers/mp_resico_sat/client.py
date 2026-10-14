@@ -1,4 +1,10 @@
-"""Cliente mp_resico_sat."""
+"""Cliente mp_resico_sat.
+
+Todo es cálculo local sobre tablas normativas embebidas (shared/resico_sat_mx.py):
+no hay upstream que consultar, así que las respuestas son `simulated: False`
+salvo `solicitar_devolucion_mensual`, que es una operación de escritura que NO se
+automatiza (solo genera una referencia simulada).
+"""
 from __future__ import annotations
 
 import sys
@@ -36,7 +42,8 @@ class RESICOClient:
         r = calcular_isr_resico(ingreso_mes_mxn)
         r["fecha_calculo"] = datetime.now(timezone.utc).isoformat()
         r["base_legal"] = "RESICO 2026 — Art. 113-E LISR + RMF 2026"
-        return mark_simulated(r)
+        r["simulated"] = False
+        return r
 
     def evaluar_estatus(
         self, rfc: str, periodos_omitidos: int, declaracion_anual_presentada: bool,
@@ -91,7 +98,8 @@ class RESICOClient:
         self._bitacora.log("evaluar_estatus", success=True,
                            params_summary={"rfc_hash": self._bitacora.hash_sensitive(rfc),
                                            "estatus": estatus})
-        return mark_simulated({
+        return {
+            "simulated": False,
             "rfc": rfc,
             "estatus": estatus,
             "score_riesgo": score_riesgo,
@@ -101,9 +109,9 @@ class RESICOClient:
             "tope_anual_mxn": RESICO_TOPE_ANUAL_MXN,
             "periodos_omitidos": periodos_omitidos,
             "e_firma_vigente": e_firma_vigente,
-            "base_legal": "SCJN 2026: expulsión automática sin previo aviso por 3 omisiones",
+            "base_legal": "Art. 113-I LISR (salida de RESICO); criterio 'SCJN 2026' sin fuente primaria verificada",
             "fecha_evaluacion": datetime.now(timezone.utc).isoformat(),
-        })
+        }
 
     def calendario_declaraciones(self, anio: int, mes_actual: int) -> dict[str, Any]:
         """Devuelve calendario de próximas 12 declaraciones mensuales."""
@@ -147,7 +155,12 @@ class RESICOClient:
         except ValueError as e:
             raise ValidationError(str(e))
         r["nota"] = "Tasa estandarizada 2.5% ISR 2026 (RMF 2026 plataformas digitales)."
-        return mark_simulated(r)
+        r["advertencias"] = [
+            "Tasa única 2.5% sin verificar contra fuente primaria (LIF 2026 / DOF). El Art. 113-A "
+            "LISR fija 1% bienes, 2.1% transporte/entrega, 4% hospedaje; confirmar antes de declarar."
+        ]
+        r["simulated"] = False
+        return r
 
     def solicitar_devolucion_mensual(
         self, rfc: str, periodo: str, monto_solicitado_mxn: float,
