@@ -24,6 +24,10 @@ dev = [
     "respx>=0.21,<1.0",
     "cryptography>=42,<46",
 ]
+# Login e.firma por httpx a los portales SAT (CSF, padrón, opinión 32-D propia)
+sat-portal = [
+    "cryptography>=42,<46",
+]
 sat-playwright = [
     "cryptography>=42,<46",
     "playwright>=1.42,<2.0",

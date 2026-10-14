@@ -1,12 +1,13 @@
 """mp_sat_portal — MCP para el portal SAT (verificación, listas 69/69-B, CSF, Buzón).
 
 11 tools:
-- 4 PÚBLICOS (intentan HTTP real, fallback mock):
-    * sat_consultar_padron
-    * sat_consultar_69b_efos
-    * sat_consultar_69_incumplidos
+- 3 PÚBLICOS:
+    * sat_consultar_69b_efos, sat_consultar_69_incumplidos (real por default;
+      error explícito si el SAT no responde, sin fallback a mock)
     * sat_verificar_cfdi_uuid
-- 6 con AUTH (mock por default; path real con Playwright opcional):
+- e.firma (login FIEL por httpx, shared/sat_portal_fiel.py; mock sin credenciales):
+    * sat_consultar_padron
+- 6 con AUTH:
     * sat_descargar_csf
     * sat_descargar_buzon_tributario
     * sat_descargar_cfdi_masivo
@@ -18,8 +19,7 @@
 - 1 utilitario LOCAL (validación estructural UUID, sin red):
     * sat_validar_uuid_estructura
 
-⚠ El portal SAT cambia con frecuencia. Si los selectores rompen los tools
-de auth requieren actualización del path Playwright (no incluido por default).
+Estado real por tool: ver README.md, sección "Estado real".
 """
 
 from __future__ import annotations
@@ -267,12 +267,13 @@ def _wrap_errors(fn):
     },
 )
 async def sat_consultar_padron(args: RfcInput) -> dict:
-    """Consulta el status del RFC en el padrón SAT (público).
+    """Consulta si un RFC existe en la LCO del SAT (padrón) y sus datos de LCO.
 
-    Retorna status (ACTIVO/SUSPENDIDO/CANCELADO/NO_LOCALIZADO/DESCONOCIDO),
-    nombre y régimen de capital cuando aplica.
-
-    Modo mock cuando no hay credenciales o falla la red.
+    Real: login con la e.firma propia (SAT_EFIRMA_*) al portal de Factura
+    electrónica (ExisteLrfc + ValidaLco); devuelve `encontrado` y `lco`.
+    Sin e.firma: error con `handoff_url` a la consulta pública (tiene CAPTCHA,
+    la resuelve un humano). Mock (`simulated: true`) solo sin credenciales o con
+    PLUGINS_MX_MOCK=1.
     """
     try:
         return _client.consultar_padron(args.rfc)
@@ -397,10 +398,11 @@ async def sat_validar_uuid_estructura(args: UuidInput) -> dict:
     },
 )
 async def sat_descargar_csf(args: RfcInput) -> dict:
-    """Descarga la CSF del contribuyente.
+    """Descarga la Constancia de Situación Fiscal (PDF) del titular de la e.firma.
 
-    En modo real requiere RFC + Contraseña (CIEC) o e.firma. En modo mock
-    (default sin credenciales) retorna estructura plausible con `simulated: true`.
+    Real: login FIEL (SAT_EFIRMA_CERT/KEY/PASSWORD); el RFC debe ser el de la
+    e.firma. Guarda el PDF (permisos 600) y devuelve `pdf_path`, tamaño y sha256.
+    El contenido del PDF aún no se extrae. Mock solo sin credenciales.
     """
     try:
         return _client.descargar_csf(args.rfc)
@@ -420,8 +422,8 @@ async def sat_descargar_csf(args: RfcInput) -> dict:
 async def sat_descargar_buzon_tributario(args: RfcInput) -> dict:
     """Lista notificaciones pendientes del Buzón Tributario.
 
-    Requiere e.firma vigente. Retorna folios, tipo (requerimiento/citatorio/etc.),
-    fechas y urgencia. Crítico para no perder requerimientos con plazo.
+    Path real NO implementado: con credenciales devuelve error explícito con
+    `handoff_url` para revisarlo a mano. Sin credenciales: mock `simulated: true`.
     """
     try:
         return _client.descargar_buzon_tributario(args.rfc)
@@ -486,10 +488,12 @@ async def sat_agendar_cita(args: CitaSatInput) -> dict:
     },
 )
 async def sat_verificar_efirma_vigente(args: RfcInput) -> dict:
-    """Verifica el status y fecha de vencimiento de la e.firma del contribuyente.
+    """Verifica la e.firma configurada en SAT_EFIRMA_* (real, sin mock con credenciales).
 
-    Crítico para mantener: una e.firma vencida bloquea descargas masivas,
-    Buzón Tributario y trámites de modificación. Alerta cuando faltan < 90 días.
+    Local: lee el .cer (RFC, número de certificado, vigencia) y comprueba que el
+    .key abre con la contraseña y corresponde al certificado. Portal: intenta el
+    login FIEL; si el SAT la rechaza ("Certificado Revocado", "Caduco"…) lo
+    reporta en `verificacion_portal`. `vigente` combina ambos.
     """
     try:
         return _client.verificar_efirma_vigente(args.rfc)
@@ -509,7 +513,8 @@ async def sat_verificar_efirma_vigente(args: RfcInput) -> dict:
 async def sat_descargar_acuse(args: FolioInput) -> dict:
     """Descarga el PDF de acuse de una declaración o trámite previamente presentado.
 
-    Útil para reconstruir bitácora fiscal o aportar evidencia en revisión.
+    Path real NO implementado: con credenciales devuelve error explícito con
+    `handoff_url`. Sin credenciales: mock `simulated: true`.
     """
     try:
         return _client.descargar_acuse(args.folio)

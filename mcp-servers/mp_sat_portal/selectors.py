@@ -45,8 +45,11 @@ class SelectorsV1:
     version: str = "v1-2026-Q2-hypothetical"
 
     # ---------- Login con e.firma ----------
-    login_url: str = "https://siat.sat.gob.mx/PTSC/auth/login.jsf"
-    """URL de login con e.firma (FIEL)."""
+    login_url: str = "https://loginda.siat.sat.gob.mx/nidp/app/login?id=fiel"
+    """URL de login con e.firma (FIEL). Validada 2026-10-14: el NIDP sirve un
+    `<form id="certform">` con `guid` de reto; el login real va por httpx
+    (`shared/sat_portal_fiel.py`), estos selectores solo aplican al cliente
+    Playwright legado."""
 
     login_input_cer: str = "input[type='file'][accept*='.cer']"
     """Input para subir el certificado .cer."""
