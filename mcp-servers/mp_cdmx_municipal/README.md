@@ -20,8 +20,12 @@ Si el portal está caído o cambió, el tool devuelve `upstream_error`; nunca ca
 | Consulta | URL | Status | Resultado |
 |---|---|---|---|
 | Predial | https://ovica.finanzas.cdmx.gob.mx/cuenta-predial-liquidacion | 200 | ALTCHA (proof-of-work) → handoff humano |
-| Tenencia / multas | https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana | 200 | `captcha_code` imagen → handoff humano |
+| Tenencia / multas | https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana | 200 | `captcha_code` imagen → handoff humano; con solver opt-in: real sin validar en vivo (falta llave) |
 | Hoy No Circula | — | — | Cálculo local; no consulta contingencias (CAMe) |
+
+Solver opt-in (`PLUGINS_MX_CAPTCHA_SOLVER=2captcha` + `TWOCAPTCHA_API_KEY`): GET al formulario, captcha a 2captcha,
+POST AJAX a `/consulta_adeudos/obtenAdeudos` con `X-CSRF-TOKEN`; hasta 3 intentos si el captcha es incorrecto
+(`shared/saf_cdmx.py`). Estado: con solver opt-in: real sin validar en vivo (falta llave). Test live: `TWOCAPTCHA_API_KEY` + `SAF_CDMX_PLACA_LIVE`.
 
 Validación: `PLUGINS_MX_LIVE=1 pytest -m live mp_cdmx_municipal shared/tests/test_portal_handoff.py`
 (2026-10-14T19:47Z, verde). Solo se carga la página: no se envía ninguna placa ni cuenta.

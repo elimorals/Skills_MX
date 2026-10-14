@@ -1,0 +1,39 @@
+<!-- Capturado en vivo (GET) de https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana el 2026-10-14; recortado al formulario, token y llave del captcha sustituidos. -->
+<html><head>
+        <meta name="csrf-token" content="TOKENFIXTURE" />
+</head><body>
+                                    <form class="kt-form" id="form_adeudos">
+                                        <div class="kt-portlet__body">
+                                            <div class="kt-section kt-section--first">
+                                                <div class="">
+                                                    <div class="form-group">
+                                                        <label>Placa</label>
+                                                        <input type="text" id="inputPlaca" name="inputPlaca" class="form-control" placeholder="Ingresa una placa" maxlength="20" value="">
+                                                        <span class="form-text text-muted">Escriba el número de placa que desea buscar sin espacios</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group col-6">
+                                                        <div class="captcha">
+                                                            <button type="button" class="btn btn-outline-brand btn-icon btn-lg" class="reload" id="reload" onclick="reloadCaptcha()"><i class="fa fa-sync-alt"></i></button>
+                                                            <span><img src="https://data.finanzas.cdmx.gob.mx/captcha/flat?FIXTURE" ></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group col-6">
+                                                        <input id="captcha_code" type="text" class="form-control " placeholder="Ingrese el texto de la imagen" name="captcha_code">
+                                                                                                            </div>
+                                                </div>
+
+                                                <div id="divMensajeVerificacion">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="kt-portlet__foot">
+                                            <div class="kt-form__actions text-right">
+                                                <button type="submit" class="btn btn-cdmx">Buscar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+</body></html>

@@ -17,7 +17,7 @@ Un GET por portal con ≥5 s entre llamadas (`PLUGINS_MX_LIVE=1 pytest -m live m
 
 | Estado | URL | Status | CAPTCHA |
 |---|---|---|---|
-| cdmx | https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana | 200 | imagen |
+| cdmx | https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana | 200 | imagen (con solver opt-in: real sin validar en vivo (falta llave)) |
 | edomex | https://infracciones.ssedomex.gob.mx/Search | 200 | Cloudflare Turnstile |
 | nl | https://www.icvnl.gob.mx/estadodecuenta | 200 | — (consulta manual) |
 | nl_sanpedro | https://aplicativos.sanpedro.gob.mx/esanpedro/multas/multasnew.asp | 200 | reCAPTCHA v2 |

@@ -15,10 +15,12 @@ deliberado (REPEP): ver `PORTALES_EXCLUIDOS`.
 from __future__ import annotations
 
 import base64
+import html
 import os
 import re
 import time
 from typing import Any
+from urllib.parse import urljoin
 
 import httpx
 
@@ -33,6 +35,8 @@ ERRORES_FATALES = {
     "ERROR_ACCOUNT_SUSPENDED", "ERROR_WRONG_USER_KEY",
 }
 PORTALES_EXCLUIDOS = {"citas_monitor", "repep_profeco"}
+# Intentos con captcha de imagen antes de rendirse (cada uno recarga el formulario).
+REINTENTOS_CAPTCHA = 3
 
 
 def solver_activo(portal: str | None = None) -> bool:
@@ -115,6 +119,22 @@ class CaptchaSolver:
         if accion:
             task["action"] = accion
         return self.resolver(task)["token"]
+
+
+def imagen_de_src(http: httpx.Client, src: str, base: str) -> bytes:
+    """Bytes del captcha a partir del `src` de su <img>: data: URI o URL (con las cookies de `http`)."""
+    if src.startswith("data:"):
+        return base64.b64decode(src.split(",", 1)[1])
+    r = http.get(urljoin(base, html.unescape(src)))
+    r.raise_for_status()
+    return r.content
+
+
+def texto_html(fragmento: str) -> str:
+    """Texto plano de un fragmento HTML (sin scripts/estilos, espacios colapsados)."""
+    sin = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", fragmento)
+    sin = re.sub(r"(?s)<[^>]+>", " ", sin)
+    return re.sub(r"\s+", " ", html.unescape(sin)).strip()
 
 
 def _vision_respaldo(png: bytes) -> str:

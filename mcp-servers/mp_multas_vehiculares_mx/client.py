@@ -22,6 +22,7 @@ from shared.cache import FileCache  # noqa: E402
 from shared.errors import NotFoundError, ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
 from shared import portal_handoff as ph  # noqa: E402
+from shared.saf_cdmx import adeudos_o_handoff  # noqa: E402
 from shared.multas_vehiculares_mx import (  # noqa: E402
     CATALOGO_MULTAS,
     SistemaMultas,
@@ -66,13 +67,15 @@ class MultasVehicularesMxClient:
                                            "placa_hash": self._bitacora.hash_sensitive(placa)})
         if ph.mock_forzado():
             return self._mock(sistema, placa)
+        if PORTALES[sistema.clave] is ph.SAF_CDMX_ADEUDOS:
+            return adeudos_o_handoff(placa, organismo=sistema.organismo)
         return ph.handoff_humano(PORTALES[sistema.clave], placa=placa, organismo=sistema.organismo)
 
     def calcular_total(self, estado: str, placa: str) -> dict[str, Any]:
         """Suma multas + descuentos. Solo hay montos con PLUGINS_MX_MOCK=1; en real
-        devuelve el handoff (los portales exigen CAPTCHA)."""
+        devuelve el handoff o, con solver de CAPTCHA, la consulta real (sin montos desglosados)."""
         consulta = self.consultar_por_placa(estado, placa)
-        if consulta.get("status") == "requiere_humano":
+        if not consulta.get("simulated"):
             return consulta
         multas = consulta.get("multas", [])
         total_bruto = sum(m.get("monto_mxn", 0) for m in multas)

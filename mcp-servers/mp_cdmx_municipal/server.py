@@ -101,7 +101,7 @@ async def cdmx_listar_catalogos() -> dict:
         "tipo_multa": TIPO_MULTA,
         "hoy_no_circula": HOY_NO_CIRCULA,
         "hologramas": HOLOGRAMAS,
-        "estado_real": "Predial y adeudos vehiculares CDMX exigen CAPTCHA: los tools devuelven handoff humano.",
+        "estado_real": "Predial y adeudos vehiculares CDMX exigen CAPTCHA: handoff humano; adeudos SAF con solver opt-in: real sin validar en vivo (falta llave).",
     }
 
 

@@ -21,7 +21,8 @@ from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
-from shared.portal_handoff import handoff_humano, mock_forzado  # noqa: E402
+from shared.portal_handoff import SAF_CDMX_ADEUDOS, handoff_humano, mock_forzado  # noqa: E402
+from shared.saf_cdmx import adeudos_o_handoff  # noqa: E402
 
 from mp_multas_mx.catalogo_multas import (  # noqa: E402
     ESTADOS_SIN_PORTAL,
@@ -74,6 +75,8 @@ class MultasMxClient:
         self._log("consultar_multas", {"estado": estado_norm, "placa": placa_norm})
         if mock_forzado():
             return self._mock_response(estado_norm, placa_norm)
+        if PORTALES_MULTAS[estado_norm] is SAF_CDMX_ADEUDOS:
+            return adeudos_o_handoff(placa_norm, estado=estado_norm, nota=NOTAS_ESTADO.get(estado_norm))
         return handoff_humano(
             PORTALES_MULTAS[estado_norm],
             estado=estado_norm,
