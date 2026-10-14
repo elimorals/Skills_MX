@@ -1,17 +1,6 @@
-"""mp_impi_marcanet — MCP para búsqueda de marcas en IMPI (vía ViDoc).
+"""mp_impi_marcanet — búsqueda de marcas en el IMPI vía MARCia (https://marcia.impi.gob.mx/).
 
-IMPI = Instituto Mexicano de la Propiedad Industrial.
-Antes: MARCANET (descontinuado). Hoy: ViDoc (https://vidoc.impi.gob.mx).
-
-Universo: legaltech, agencias creativas, startups, marketplaces — validar
-denominación de marca antes de lanzar producto en MX.
-
-Protecciones del portal:
-  - Angular SPA (no httpx-only)
-  - reCAPTCHA v3 invisible (Google site key 6LefZpMqAAAAA...)
-  - XSRF Token (ASP.NET Core DataProtection)
-
-Por eso este MCP usa **Playwright** en modo real (3-5s/query), o mock
-determinístico en CI/dev (default).
+MARCANET ya no existe; ViDoc exige reCAPTCHA v3. MARCia expone una API JSON
+pública sin CAPTCHA que este MCP consume con httpx.
 """
 __all__: list[str] = []
