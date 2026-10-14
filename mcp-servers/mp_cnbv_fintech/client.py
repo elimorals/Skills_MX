@@ -7,6 +7,10 @@ Tools:
 4. **listar_modelos_novedosos()** — Sandbox regulatorio (Art. 80 Ley Fintech)
 5. **verificar_contraparte(rfc, tipo_operacion)** — Compliance KYC
 
+Path real: Padrón de Entidades Supervisadas (https://pes.cnbv.gob.mx/, ver
+`pes.py`). El PES no publica RFC: la búsqueda real es por nombre/razón social.
+Mock (snapshot curado, `simulated: true`) solo con PLUGINS_MX_MOCK=1.
+
 Cache 60 días — el padrón cambia raramente (autorizaciones nuevas son anuales).
 """
 
@@ -25,23 +29,28 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
-from shared.errors import McpError, NotFoundError, ValidationError  # noqa: E402
-from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from mp_cnbv_fintech import pes  # noqa: E402
+from shared.errors import McpError, ValidationError  # noqa: E402
+from shared.mock import mark_simulated  # noqa: E402
+
+
+class SinFuentePublicaError(McpError):
+    """No hay fuente pública estructurada para este dato."""
+
+    code = "sin_fuente_publica"
 
 
 NAMESPACE = "cnbv_fintech"
 
 RFC_REGEX = re.compile(r"^[A-ZÑ&]{3,4}\d{6}[A-Z0-9]{3}$")
 
-URL_PADRON_CNBV = "https://www.cnbv.gob.mx/Paginas/PADRON-DE-ENTIDADES-SUPERVISADAS.aspx"
+URL_PADRON_CNBV = "https://pes.cnbv.gob.mx/"
 URL_FINTECH_INFO = (
     "https://www.gob.mx/cnbv/articulos/"
     "cnbv-actualiza-informacion-respecto-al-proceso-de-autorizacion-de-instituciones-de-tecnologia-financiera"
 )
 
-# Catálogo curado de ITF autorizadas (snapshot conocido junio 2026)
-# Path real debe actualizar este catálogo periódicamente desde el Padrón CNBV
-# Fuente: Padrón de Entidades Supervisadas (PES) + autorizaciones publicadas DOF.
+# Snapshot SOLO para modo mock (PLUGINS_MX_MOCK=1): RFCs ilustrativos, no reales.
 ITF_AUTORIZADAS_SNAPSHOT = {
     # IFPE — Instituciones de Fondos de Pago Electrónico
     "ifpe": [
@@ -97,9 +106,7 @@ class CnbvFintechClient:
         self._bitacora = bitacora or Bitacora(NAMESPACE)
 
     def _is_mock(self) -> bool:
-        if os.environ.get("MP_CNBV_FINTECH_REAL") == "1":
-            return False
-        return is_mock_mode(credential_env_vars=[])
+        return os.environ.get("PLUGINS_MX_MOCK") == "1"
 
     def _log(self, op: str, params: dict[str, Any]) -> None:
         safe = dict(params)
@@ -159,6 +166,17 @@ class CnbvFintechClient:
     def listar_ifpe(self) -> dict[str, Any]:
         """Lista IFPE (Instituciones de Fondos de Pago Electrónico) autorizadas."""
         self._log("listar_ifpe", {})
+        if not self._is_mock():
+            items = self._listar_real(pes.SECTOR_IFPE)
+            return {
+                "tipo": "ifpe",
+                "tipo_descripcion": "Instituciones de Fondos de Pago Electrónico (Art. 24 Ley Fintech)",
+                "total": len(items),
+                "itf": items,
+                "url_consultado": URL_PADRON_CNBV,
+                "fuente": "CNBV — Padrón de Entidades Supervisadas (en vivo)",
+                "simulated": False,
+            }
         items = ITF_AUTORIZADAS_SNAPSHOT["ifpe"]
         return mark_simulated({
             "tipo": "ifpe",
@@ -166,12 +184,23 @@ class CnbvFintechClient:
             "total": len(items),
             "itf": items,
             "url_consultado": URL_PADRON_CNBV,
-            "fuente": "Snapshot junio 2026 — actualizar mensual",
+            "fuente": "Snapshot ilustrativo (mock)",
         })
 
     def listar_ifc(self) -> dict[str, Any]:
         """Lista IFC (Instituciones de Financiamiento Colectivo / crowdfunding) autorizadas."""
         self._log("listar_ifc", {})
+        if not self._is_mock():
+            items = self._listar_real(pes.SECTOR_IFC)
+            return {
+                "tipo": "ifc",
+                "tipo_descripcion": "Instituciones de Financiamiento Colectivo (Art. 15 Ley Fintech)",
+                "total": len(items),
+                "itf": items,
+                "url_consultado": URL_PADRON_CNBV,
+                "fuente": "CNBV — Padrón de Entidades Supervisadas (en vivo)",
+                "simulated": False,
+            }
         items = ITF_AUTORIZADAS_SNAPSHOT["ifc"]
         return mark_simulated({
             "tipo": "ifc",
@@ -179,12 +208,18 @@ class CnbvFintechClient:
             "total": len(items),
             "itf": items,
             "url_consultado": URL_PADRON_CNBV,
-            "fuente": "Snapshot junio 2026 — actualizar mensual",
+            "fuente": "Snapshot ilustrativo (mock)",
         })
 
     def listar_modelos_novedosos(self) -> dict[str, Any]:
         """Sandbox regulatorio (Art. 80 Ley Fintech)."""
         self._log("listar_modelos_novedosos", {})
+        if not self._is_mock():
+            raise SinFuentePublicaError(
+                "La CNBV no publica un padrón estructurado de autorizaciones temporales "
+                "(modelos novedosos, Art. 80 Ley Fintech). Consultar comunicados en gob.mx/cnbv o el DOF.",
+                {"sugerencia": "dof_buscar_texto('modelo novedoso')"},
+            )
         return mark_simulated({
             "total": len(MODELOS_NOVEDOSOS_SNAPSHOT),
             "modelos": MODELOS_NOVEDOSOS_SNAPSHOT,
@@ -194,8 +229,9 @@ class CnbvFintechClient:
 
     def verificar_contraparte(
         self,
-        rfc: str,
+        rfc: Optional[str] = None,
         tipo_operacion: Literal["fondos_pago", "crowdfunding", "cualquiera"] = "cualquiera",
+        nombre: Optional[str] = None,
     ) -> dict[str, Any]:
         """Tool compliance: ¿esta contraparte puede operar legalmente?
 
@@ -204,13 +240,13 @@ class CnbvFintechClient:
         - crowdfunding: solo IFC pueden operar (intermediación financiamiento colectivo)
         - cualquiera: vale ambas
         """
-        rfc_norm = rfc.upper().strip()
-        if not RFC_REGEX.match(rfc_norm):
+        rfc_norm = rfc.upper().strip() if rfc else None
+        if rfc_norm and not RFC_REGEX.match(rfc_norm):
             raise ValidationError(f"RFC '{rfc}' inválido.")
 
         self._log("verificar_contraparte", {"rfc": rfc_norm, "tipo": tipo_operacion})
 
-        consulta = self.consultar_itf(rfc=rfc_norm)
+        consulta = self.consultar_itf(rfc=rfc_norm, nombre=nombre)
         if not consulta.get("encontrada"):
             return {
                 "rfc": rfc_norm,
@@ -235,7 +271,7 @@ class CnbvFintechClient:
             "rfc": rfc_norm,
             "tipo_itf": tipo_itf,
             "tipo_operacion_solicitada": tipo_operacion,
-            "puede_operar": compatible and consulta.get("estado") == "Autorizada",
+            "puede_operar": compatible and consulta.get("estado") in ("Autorizada", "Supervisada (PES)"),
             "estado_actual": consulta.get("estado"),
             "nombre": consulta.get("nombre"),
             "marca": consulta.get("marca"),
@@ -288,9 +324,47 @@ class CnbvFintechClient:
         b = buscado.lower().strip()
         return b in nombre_oficial.lower() or b in marca.lower() or marca.lower() in b
 
+    def _listar_real(self, sector: str) -> list[dict[str, Any]]:
+        key = f"pes_{pes.SECTOR_A_TIPO[sector]}"
+        cached = self._cache.get(key)
+        if cached is not None:
+            return cached
+        items = pes.consultar(sector=sector)
+        self._cache.set(key, items, ttl_days=7)
+        return items
+
     def _consultar_real(self, rfc, nombre):
-        raise McpError(
-            "Path real CNBV requiere parser HTML del portal SharePoint. "
-            "Padrón disponible en: " + URL_PADRON_CNBV,
-            {"hint": "implementar scraping + parser tabla PES"},
-        )
+        if not nombre:
+            raise ValidationError(
+                "El Padrón de Entidades Supervisadas de la CNBV no publica RFC: "
+                "pase `nombre` (razón social o nombre comercial)."
+            )
+        candidatos = pes.consultar(entidad=nombre) or pes.consultar(nombre_corto=nombre)
+        itf = [c for c in candidatos if c["sector"] in pes.SECTOR_A_TIPO]
+        if not itf:
+            return {
+                "encontrada": False,
+                "tipo": None,
+                "rfc": rfc,
+                "nombre_buscado": nombre,
+                "puede_operar_legalmente": False,
+                "otras_entidades_supervisadas": candidatos[:10],
+                "advertencia": "No aparece como ITF (IFPE/IFC) en el Padrón de Entidades Supervisadas.",
+                "url_consultado": URL_PADRON_CNBV,
+                "simulated": False,
+            }
+        e = itf[0]
+        return {
+            "encontrada": True,
+            "tipo": pes.SECTOR_A_TIPO[e["sector"]],
+            "rfc": rfc,
+            "nombre": e["razon_social"],
+            "marca": e["nombre_corto"],
+            "casfim": e["casfim"],
+            "estado": "Supervisada (PES)",
+            "puede_operar_legalmente": True,
+            "detalle_url": e["detalle_url"],
+            "coincidencias": itf,
+            "url_consultado": URL_PADRON_CNBV,
+            "simulated": False,
+        }
