@@ -2,7 +2,8 @@
 
 Estado real (2026-10-14):
 - Predial: OVICA exige ALTCHA → handoff humano (GET real que confirma el portal).
-- Tenencia / multas: SAF Consultaciudadana exige CAPTCHA imagen → handoff humano.
+- Tenencia / multas: SAF Consultaciudadana exige CAPTCHA imagen → handoff humano,
+  o consulta real si el solver opt-in está activo (`shared.captcha_solver`).
 - Hoy No Circula: reglas oficiales calculadas localmente (no es mock).
 
 Datos simulados solo con PLUGINS_MX_MOCK=1.
@@ -25,11 +26,10 @@ from shared.errors import ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
 from shared.portal_handoff import (  # noqa: E402
     OVICA_CDMX_PREDIAL,
-    SAF_CDMX_ADEUDOS,
     handoff_humano,
     mock_forzado,
 )
-from shared.saf_cdmx import normalizar_placa  # noqa: E402
+from shared.saf_cdmx import adeudos_o_handoff  # noqa: E402
 
 from mp_cdmx_municipal import mock_data  # noqa: E402
 
@@ -116,7 +116,7 @@ class CdmxMunicipalClient:
         self._log("tenencia", {"placa": placa})
         if mock_forzado():
             return mark_simulated(mock_data.mock_tenencia(placa))
-        return handoff_humano(SAF_CDMX_ADEUDOS, placa=normalizar_placa(placa), seccion="Tenencia")
+        return adeudos_o_handoff(placa, seccion="Tenencia")
 
     def consultar_multas(self, placa: str) -> dict[str, Any]:
         if not placa or len(placa) < 5:
@@ -124,7 +124,7 @@ class CdmxMunicipalClient:
         self._log("multas", {"placa": placa})
         if mock_forzado():
             return mark_simulated(mock_data.mock_multas(placa))
-        return handoff_humano(SAF_CDMX_ADEUDOS, placa=normalizar_placa(placa), seccion="Infracciones")
+        return adeudos_o_handoff(placa, seccion="Infracciones")
 
     def consultar_calendario_hoy_no_circula(self, fecha: str) -> dict[str, Any]:
         try:

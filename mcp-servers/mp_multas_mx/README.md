@@ -10,7 +10,7 @@ requiere_humano`, URL y pasos). Mock solo con `PLUGINS_MX_MOCK=1`.
 
 | Estado | URL | Status | CAPTCHA |
 |---|---|---|---|
-| cdmx | https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana | 200 | imagen |
+| cdmx | https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana | 200 | imagen (con solver opt-in: real sin validar en vivo (falta llave)) |
 | edomex | https://infracciones.ssedomex.gob.mx/Search | 200 | Turnstile |
 | jal | https://gobiernoenlinea1.jalisco.gob.mx/serviciosVehiculares/adeudos | 200 | reCAPTCHA v2 |
 | nl | https://www.icvnl.gob.mx/estadodecuenta | 200 | — (solo refrendo; multas son municipales) |

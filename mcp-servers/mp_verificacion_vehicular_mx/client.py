@@ -2,7 +2,7 @@
 
 Estado real (2026-10-14):
 - `consultar_estatus` CDMX: SAF Consultaciudadana exige CAPTCHA imagen →
-  handoff humano tras un GET real. Ya no se pide el CAPTCHA por env/stdin.
+  handoff humano tras un GET real, o consulta real con el solver opt-in activo.
 - Otros estados: sin consulta pública automatizable → UpstreamError explícito.
 - `proximo_periodo`: calendario oficial 2026 calculado localmente.
 
@@ -24,7 +24,8 @@ from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
 from shared.errors import NotFoundError, UpstreamError, ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
-from shared.portal_handoff import SAF_CDMX_ADEUDOS, handoff_humano, mock_forzado  # noqa: E402
+from shared.portal_handoff import mock_forzado  # noqa: E402
+from shared.saf_cdmx import adeudos_o_handoff  # noqa: E402
 from shared.verificacion_vehicular import (  # noqa: E402
     CATALOGO_VERIFICACION,
     FUENTES_CALENDARIO_2026,
@@ -60,7 +61,7 @@ class VerificacionVehicularClient:
         if mock_forzado():
             return self._mock(p, placa)
         if p.clave == "cdmx":
-            return handoff_humano(SAF_CDMX_ADEUDOS, placa=placa, seccion="Sanciones ambientales")
+            return adeudos_o_handoff(placa, seccion="Sanciones ambientales")
         raise UpstreamError(
             f"{p.nombre_estado} no publica consulta de estatus de verificación por placa automatizable.",
             {"estado": p.clave, "portal": p.portal_url, "estado_impl": "no_disponible"},

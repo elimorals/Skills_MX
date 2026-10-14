@@ -15,7 +15,7 @@ env var / stdin: un agente podía leer la imagen y resolverlo, lo cual es un byp
 
 | Qué | Fuente / URL | Resultado |
 |---|---|---|
-| Estatus CDMX | https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana (200, `captcha_code`) | Handoff humano |
+| Estatus CDMX | https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana (200, `captcha_code`) | Handoff humano; con solver opt-in: real sin validar en vivo (falta llave) |
 | Calendario 2026 | SEDEMA, Gaceta 2-ene-2026 (vía Crónica, N+) | Corregido: amarillo ene–feb/jul–ago, rosa feb–mar/ago–sep, rojo mar–abr/sep–oct, verde abr–may/oct–nov, azul may–jun/nov–dic |
 | Costo CDMX | El Universal 2026 | $765.45 (5.625 UMA + IVA) |
 | Costo EdoMex | UnoTV 2026 | $469.24 hologramas 1 y 2 |

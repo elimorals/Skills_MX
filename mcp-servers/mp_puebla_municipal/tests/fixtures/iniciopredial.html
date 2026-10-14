@@ -1,0 +1,96 @@
+<!-- Capturado en vivo (GET) de https://srvappayt.pueblacapital.gob.mx:7016/pabel/iniciopredial el 2026-10-14; recortado al formulario, _csrf sustituido. -->
+<html><body>
+<form id="forma" class="form-horizontal needs-validation" action="/pabel/iniciopredial" method="post" autocomplete="off">
+    <div class="row">
+        <div class="col-md-5 col-sm-4 text-center">
+            <img src="/pabel/recursos/images/zoom_predial.jpg" alt="Cuenta predial"
+                 class="img-fluid" style="width: 450px;"/>
+        </div>
+        <div class="col-md-7 col-sm-8">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4 class="text-infrac">Escriba la cuenta predial:</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 text-infrac">Tipo:</div>
+                <div class="col-md-8 col-sm-8">
+                    <select id="tipo" name="tipo" class="form-control">
+                        <option value="PU">PU: Predial Urbano</option>
+                        <option value="PR">PR: Predial Rústico</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-4 col-sm-4 text-infrac">Cuenta predial:</div>
+                <div class="col-md-8 col-sm-8">
+                    <input id="cuenta" name="cuenta" class="form-control validate" style="width:auto;" data-numbers="true" type="text" value="" size="9" maxlength="7"/>
+
+                    <div class="invalid-feedback text-infrac">La cuenta predial acepta sólo
+                        dígitos numéricos
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-4 col-sm-4 text-infrac">Delegación:</div>
+                <div class="col-md-8 col-sm-8">
+                    <input id="delegacion" name="delegacion" class="form-control validate" style="width:auto;" data-numbers="true" type="text" value="" size="4" maxlength="2"/>
+
+                    <div class="invalid-feedback text-infrac">La delegación acepta sólo
+                        dígitos numéricos
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="text-infrac">o la línea de captura:</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 text-infrac">Línea de captura:</div>
+                <div class="col-md-8 col-sm-8">
+                    <input id="lc" name="lc" class="form-control validate ic" data-numbers="true" type="text" value="" size="33" maxlength="24"/>
+                    <i class="form-control-feedback fa fa-keyboard-o"
+                       aria-hidden="true"></i>
+                    <div class="invalid-feedback text-infrac">La línea de captura debe ser
+                        de 24 dígitos numéricos
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="simpleImg.jpg" border="0" id="captcha"> <a
+                        href="javascript:void(0)" onclick='changeRefresh()'> <img
+                        alt="Mostrar otra imagen" src="/pabel/recursos/images/refresh.png"
+                        width="40"/>
+                </a>
+                </div>
+                <div class="col-md-12 text-infrac">Ingrese el código que aparece en la
+                    imagen
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="answer"
+                           style="width: auto;" size="5" maxlength="5"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button class="btn btn-ayto" type="submit" value="Submit">
+                Consultar</button>
+        </div>
+    </div>
+<div>
+<input type="hidden" name="_csrf" value="CSRFFIXTURE" />
+</div></form>
+</body></html>
