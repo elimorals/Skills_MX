@@ -47,7 +47,7 @@ def form_validar_inputs(args: ValidarInput) -> dict:
     return _client.validar_inputs(args.clave, args.datos)
 
 
-@mcp.tool(annotations={"title": "Llenar formulario público (Playwright opt-in)", "readOnlyHint": False})
+@mcp.tool(annotations={"title": "Preparar formulario público (handoff humano)", "readOnlyHint": True})
 def form_llenar(args: LlenarInput) -> dict:
     return _client.llenar(args.clave, args.datos, screenshot=args.screenshot)
 
