@@ -14,8 +14,8 @@ from shared.agua_mx import CATALOGO_AGUA, buscar_organismo
 
 
 D2_AGREGADOS = [
-    ("jmas_juarez", True, 1500000),
-    ("ooapas", True, 750000),
+    ("jmas_juarez", True, 1500000),   # validado en vivo 2026-10-14
+    ("ooapas", False, 750000),       # parser pendiente de folio real
     ("cespm", False, 1050000),       # login required
     ("aguah", False, 936000),         # app-only
     ("simas_saltillo", False, 880000),  # login required
