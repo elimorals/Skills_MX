@@ -10,7 +10,7 @@ sys.path.insert(0, str(_HERE.parent.parent))
 
 @pytest.fixture(autouse=True)
 def _env(monkeypatch, tmp_path):
-    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "0")
     monkeypatch.setenv("PLUGINS_MX_CACHE_DIR", str(tmp_path / "cache"))
     monkeypatch.setenv("PLUGINS_MX_BITACORA_DIR", str(tmp_path / "bita"))
 
@@ -31,10 +31,12 @@ def test_verificar_con_faltas():
     c = LeySillaNomClient()
     r = c.verificar_compliance(rfc="XAXX010101000", num_empleados=20,
                                 giro="manufactura",
-                                faltas_marcadas=["silla_ergonomica_disponible",
-                                                  "evaluacion_ergonomica_puestos"])
+                                faltas_marcadas=["sillas_industria_si_lo_permite",
+                                                  "no_obligar_estar_de_pie"])
     assert r["no_cumplidas"] == 2
-    assert r["multa_potencial_min_mxn"] > 0
+    # Ambas por Art. 1002 LFT: 50-5000 UMA cada una, UMA 2026 = 117.31
+    assert r["multa_potencial_min_mxn"] == round(2 * 50 * 117.31, 2)
+    assert r["multa_potencial_max_mxn"] == round(2 * 5000 * 117.31, 2)
     assert r["riesgo_inspeccion_stps"] in ("medio", "medio_alto", "alto")
 
 
@@ -52,10 +54,31 @@ def test_empresa_50_empleados_nom035_completo():
     r = c.verificar_compliance(rfc="XAXX010101000", num_empleados=75,
                                 giro="oficina_administrativo")
     obligaciones_nom035 = [o for o in r["checklist"] if o["marco"] == "NOM-035"]
-    # >50 empleados dispara Guía III + programa + capacitación
+    # NOM-035 numeral 2 c): >50 → 5.1, 5.3-5.8 (sin 5.2)
     claves = {o["clave"] for o in obligaciones_nom035}
-    assert "cuestionario_entorno_organizacional_50" in claves
-    assert "programa_prevencion_documentado" in claves
+    assert "identificar_factores_y_entorno_mas_50" in claves
+    assert "identificar_factores_riesgo_16_50" not in claves
+    assert "identificar_acontecimientos_traumaticos" in claves
+
+
+def test_nom035_hasta_15_solo_numerales_basicos():
+    from mp_ley_silla_nom037.client import LeySillaNomClient
+    r = LeySillaNomClient().verificar_compliance(rfc="XAXX010101000", num_empleados=15,
+                                                 giro="oficina_administrativo")
+    claves = {o["clave"] for o in r["checklist"] if o["marco"] == "NOM-035"}
+    # numeral 2 a): 5.1, 5.4, 5.5, 5.7
+    assert claves == {"politica_prevencion_psicosociales", "medidas_prevencion_control",
+                      "identificar_acontecimientos_traumaticos", "difundir_informacion"}
+
+
+def test_desconexion_solo_teletrabajo():
+    from mp_ley_silla_nom037.client import LeySillaNomClient
+    c = LeySillaNomClient()
+    presencial = c.verificar_compliance(rfc="XAXX010101000", num_empleados=5, giro="retail_comercio")
+    assert not any(o["marco"] == "Desconexión digital" for o in presencial["checklist"])
+    remoto = c.verificar_compliance(rfc="XAXX010101000", num_empleados=5, giro="oficina_administrativo",
+                                    modalidad_remota=True)
+    assert any(o["base_legal"].startswith("LFT Art. 330-E") for o in remoto["checklist"])
 
 
 def test_rfc_invalido_lanza():
@@ -78,16 +101,17 @@ def test_giro_invalido_lanza():
 def test_calcular_multa_grave():
     from mp_ley_silla_nom037.client import LeySillaNomClient
     c = LeySillaNomClient()
-    r = c.calcular_multa(severidad="grave")
-    assert r["multa_min_mxn"] > 50_000
-    assert r["multa_max_mxn"] < 1_000_000
+    r = c.calcular_multa(fundamento="lft_994_v")
+    assert r["rango_uma"] == [250, 5000]
+    assert r["multa_min_mxn"] == round(250 * 117.31, 2)
+    assert r["multa_max_mxn"] == round(5000 * 117.31, 2)
 
 
 def test_calcular_multa_reincidente_duplica():
     from mp_ley_silla_nom037.client import LeySillaNomClient
     c = LeySillaNomClient()
-    base = c.calcular_multa(severidad="muy_grave", reincidente=False)
-    rein = c.calcular_multa(severidad="muy_grave", reincidente=True)
+    base = c.calcular_multa(fundamento="lft_1002", reincidente=False)
+    rein = c.calcular_multa(fundamento="lft_1002", reincidente=True)
     assert rein["multa_max_mxn"] == base["multa_max_mxn"] * 2
 
 
@@ -101,6 +125,8 @@ def test_generar_politica_devuelve_markdown():
     assert "DEMO SA DE CV" in r["contenido_md"]
     assert "Ley Silla" in r["contenido_md"]
     assert "Desconexión digital" in r["contenido_md"]
+    assert "marzo 2026" not in r["contenido_md"]
+    assert "XVII Bis" in r["contenido_md"]
     assert r["longitud_chars"] > 500
 
 
@@ -125,5 +151,6 @@ def test_riesgo_critico_con_muy_grave():
     c = LeySillaNomClient()
     r = c.verificar_compliance(rfc="XAXX010101000", num_empleados=30,
                                 giro="oficina_administrativo",
-                                faltas_marcadas=["medidas_contra_violencia_laboral"])
+                                modalidad_remota=True,
+                                faltas_marcadas=["contrato_escrito"])
     assert r["riesgo_inspeccion_stps"] == "critico"
