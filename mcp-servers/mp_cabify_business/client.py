@@ -1,11 +1,17 @@
-"""Cliente Cabify Business."""
+"""Cliente Cabify Business — Ride-Hailing API v4.
+
+Doc oficial: https://developers.cabify.com/docs/ride-hailing (índice: https://cabify-api.readme.io/llms.txt)
+Auth: OAuth2 client_credentials con el "OAuth UUID" y "Secret" de la integración
+creada en el panel de Cabify Business → Integración. Token válido ~30 días.
+Las paradas van por coordenadas `loc: [lat, lon]`; antes de pedir un viaje hay que
+llamar a /estimates y usar el `product.id` devuelto.
+"""
 
 from __future__ import annotations
 
 import os
-import secrets
 import sys
-from datetime import datetime, timedelta, timezone
+import time
 from pathlib import Path
 from typing import Any
 
@@ -16,251 +22,148 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared.bitacora import Bitacora  # noqa: E402
-from shared.cache import FileCache  # noqa: E402
-from shared.errors import ConfigError, McpError, NotFoundError, handle_httpx_error  # noqa: E402
+from shared.errors import ConfigError, handle_httpx_error  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
 
 NAMESPACE = "cabify_business_mcp"
-CABIFY_API_URL = "https://api.cabify.com"
+HOSTS = {"production": "https://cabify.com", "sandbox": "https://cabify-sandbox.com"}
+CRED_VARS = ["CABIFY_CLIENT_ID", "CABIFY_CLIENT_SECRET"]
 REQUEST_TIMEOUT_S = 20.0
 
 
-def _now_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
+def _parada(lat: float, lon: float, **extra: Any) -> dict[str, Any]:
+    return {"loc": [lat, lon], **{k: v for k, v in extra.items() if v}}
 
 
 class CabifyBusinessClient:
-    def __init__(
-        self,
-        api_key: str | None = None,
-        cache: FileCache | None = None,
-        bitacora: Bitacora | None = None,
-    ) -> None:
-        explicit = api_key is not None
-        if api_key is None:
-            api_key = os.environ.get("CABIFY_API_KEY", "").strip() or None
-
-        self._api_key = api_key
-        self._cache = cache or FileCache(NAMESPACE)
+    def __init__(self, bitacora: Bitacora | None = None, transport: httpx.AsyncBaseTransport | None = None) -> None:
+        env = os.environ.get("CABIFY_ENV", "production").strip().lower()
+        if env not in HOSTS:
+            raise ConfigError(f"CABIFY_ENV debe ser production o sandbox, no {env!r}")
+        self.host = HOSTS[env]
         self._bitacora = bitacora or Bitacora(NAMESPACE)
-
-        if os.environ.get("PLUGINS_MX_MOCK") == "1":
-            self._mock = True
-        elif explicit or api_key:
-            self._mock = False
-        else:
-            self._mock = is_mock_mode(["CABIFY_API_KEY"])
+        self._transport = transport
+        self._token: str | None = None
+        self._token_exp = 0.0
 
     @property
     def is_mock(self) -> bool:
-        return self._mock
+        return is_mock_mode(CRED_VARS)
 
-    def _require_key(self) -> None:
-        if not self._api_key:
-            raise ConfigError("CABIFY_API_KEY no configurado.")
+    def _http(self) -> httpx.AsyncClient:
+        return httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S, transport=self._transport)
 
-    def _headers(self) -> dict[str, str]:
-        self._require_key()
-        return {
-            "Authorization": f"Bearer {self._api_key}",
-            "Content-Type": "application/json",
-        }
-
-    def _log(self, op: str, params: dict[str, Any]) -> None:
-        safe = dict(params)
-        if "passenger_email" in safe and safe["passenger_email"]:
-            safe["passenger_email_hash"] = Bitacora.hash_sensitive(
-                str(safe.pop("passenger_email"))
-            )
-        self._bitacora.log(op, success=True, params_summary=safe)
-
-    # ---------- tools ----------
-
-    async def schedule_ride(
-        self,
-        passenger_email: str,
-        pickup_address: str,
-        destination_address: str,
-        pickup_datetime: str,
-        vehicle_type: str = "lite",
-        cost_center: str | None = None,
-    ) -> dict[str, Any]:
-        self._log("schedule_ride", {
-            "passenger_email": passenger_email,
-            "pickup": pickup_address[:30],
-            "destination": destination_address[:30],
-            "vehicle_type": vehicle_type,
-        })
-
-        if self._mock:
-            ride_id = f"cabify_ride_{secrets.token_hex(8)}"
-            return mark_simulated({
-                "ride_id": ride_id,
-                "passenger_email_hash": Bitacora.hash_sensitive(passenger_email),
-                "pickup_address": pickup_address,
-                "destination_address": destination_address,
-                "pickup_datetime": pickup_datetime,
-                "vehicle_type": vehicle_type,
-                "cost_center": cost_center,
-                "status": "scheduled",
-                "estimated_price_mxn": 285.00,
-                "estimated_duration_min": 32,
-                "estimated_distance_km": 12.5,
-                "currency": "MXN",
-                "scheduled_at": _now_iso(),
-            })
-
-        self._require_key()
-        url = f"{CABIFY_API_URL}/v1/rides"
-        body = {
-            "passenger": {"email": passenger_email},
-            "pickup": {"address": pickup_address},
-            "destination": {"address": destination_address},
-            "pickup_datetime": pickup_datetime,
-            "vehicle_type": vehicle_type,
-            "cost_center": cost_center,
-        }
+    async def _auth(self) -> str:
+        if self._token and time.time() < self._token_exp - 3600:
+            return self._token
+        cid, secret = (os.environ.get(v, "").strip() for v in CRED_VARS)
+        if not (cid and secret):
+            raise ConfigError("Faltan CABIFY_CLIENT_ID / CABIFY_CLIENT_SECRET (OAuth UUID y Secret).")
         try:
-            async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
-                resp = await client.post(url, headers=self._headers(), json=body)
-                resp.raise_for_status()
-                return {**resp.json(), "simulated": False}
-        except Exception as exc:
-            raise handle_httpx_error(exc) from exc
-
-    async def list_rides(
-        self, fecha_desde: str | None = None, status: str | None = None, limit: int = 50
-    ) -> dict[str, Any]:
-        self._log("list_rides", {"fecha_desde": fecha_desde, "status": status, "limit": limit})
-
-        if self._mock:
-            return mark_simulated({
-                "rides": [
-                    {
-                        "ride_id": f"cabify_ride_{i:04d}",
-                        "passenger_email_hash": "demo_hash",
-                        "pickup_datetime": _now_iso(),
-                        "vehicle_type": "lite" if i % 2 == 0 else "premium",
-                        "status": "completed",
-                        "price_mxn": 250.00 * (i + 1),
-                    }
-                    for i in range(min(limit, 3))
-                ],
-                "total_count": 47,
-            })
-
-        self._require_key()
-        params: dict[str, str] = {"limit": str(limit)}
-        if fecha_desde:
-            params["from"] = fecha_desde
-        if status:
-            params["status"] = status
-        try:
-            async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
-                resp = await client.get(
-                    f"{CABIFY_API_URL}/v1/rides",
-                    headers=self._headers(),
-                    params=params,
+            async with self._http() as c:
+                r = await c.post(
+                    f"{self.host}/auth/api/authorization",
+                    data={"grant_type": "client_credentials", "client_id": cid, "client_secret": secret},
                 )
-                resp.raise_for_status()
-                return {**resp.json(), "simulated": False}
+                r.raise_for_status()
         except Exception as exc:
             raise handle_httpx_error(exc) from exc
+        body = r.json()
+        self._token = body["access_token"]
+        self._token_exp = time.time() + float(body.get("expires_in", 0))
+        return self._token
 
-    async def get_ride(self, ride_id: str) -> dict[str, Any]:
-        cache_key = f"ride_{ride_id}"
-        cached = self._cache.get(cache_key)
-        if cached is not None:
-            return dict(cached)
-
-        self._log("get_ride", {"ride_id": ride_id})
-
-        if self._mock:
-            r = mark_simulated({
-                "ride_id": ride_id,
-                "status": "completed",
-                "pickup_address": "Av. Demo 123, Polanco",
-                "destination_address": "Aeropuerto AICM T1",
-                "pickup_datetime": _now_iso(),
-                "completion_datetime": (datetime.now(timezone.utc) + timedelta(minutes=32)).isoformat(),
-                "vehicle_type": "premium",
-                "driver_name": "Carlos R.",
-                "driver_rating": 4.9,
-                "price_mxn": 385.00,
-                "tip_mxn": 30.00,
-                "distance_km": 18.2,
-                "duration_min": 35,
-            })
-            self._cache.set(cache_key, r, ttl_minutes=2)
-            return r
-
-        self._require_key()
-        url = f"{CABIFY_API_URL}/v1/rides/{ride_id}"
+    async def _call(self, method: str, path: str, json: Any = None) -> Any:
+        token = await self._auth()
         try:
-            async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
-                resp = await client.get(url, headers=self._headers())
-                if resp.status_code == 404:
-                    raise NotFoundError(f"Ride {ride_id} no encontrado.")
-                resp.raise_for_status()
-                body = resp.json()
-        except McpError:
-            raise
+            async with self._http() as c:
+                r = await c.request(
+                    method,
+                    f"{self.host}/api/v4{path}",
+                    json=json,
+                    headers={"Authorization": f"Bearer {token}", "Accept": "application/json"},
+                )
+                r.raise_for_status()
         except Exception as exc:
             raise handle_httpx_error(exc) from exc
+        return r.json() if r.content else {}
 
-        r = {**body, "simulated": False}
-        self._cache.set(cache_key, r, ttl_minutes=2)
-        return r
+    def _log(self, op: str, **params: Any) -> None:
+        self._bitacora.log(op, success=True, params_summary={k: str(v)[:40] for k, v in params.items()})
 
-    async def cancel_ride(self, ride_id: str, reason: str = "user_request") -> dict[str, Any]:
-        self._log("cancel_ride", {"ride_id": ride_id, "reason": reason})
-
-        if self._mock:
-            return mark_simulated({
-                "ride_id": ride_id,
-                "status": "cancelled_by_user",
-                "cancellation_fee_mxn": 30.00 if reason != "driver_late" else 0.00,
-                "cancelled_at": _now_iso(),
-            })
-
-        self._require_key()
-        url = f"{CABIFY_API_URL}/v1/rides/{ride_id}/cancel"
-        try:
-            async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
-                resp = await client.post(url, headers=self._headers(), json={"reason": reason})
-                resp.raise_for_status()
-                return {**resp.json(), "simulated": False}
-        except Exception as exc:
-            raise handle_httpx_error(exc) from exc
-
-    async def generate_invoice(
-        self, mes: int, ejercicio: int, rfc_empresa: str
+    async def estimar(
+        self,
+        requester_id: str,
+        origen: tuple[float, float],
+        destino: tuple[float, float],
+        inicio: str | None = None,
     ) -> dict[str, Any]:
-        """Genera factura mensual consolidada de viajes corporativos."""
-        self._log("generate_invoice", {"mes": mes, "ejercicio": ejercicio, "rfc_empresa": rfc_empresa})
+        """Precios y productos disponibles (POST /api/v4/estimates)."""
+        self._log("estimar", requester_id=requester_id)
+        if self.is_mock:
+            return mark_simulated({"estimaciones": [{"product": {"id": "mock-lite", "name": "Lite"}, "total": {"amount": 28500, "currency": "MXN"}}]})
+        body = {
+            "requester_id": requester_id,
+            "start_type": "reserved" if inicio else "asap",
+            "stops": [_parada(*origen), _parada(*destino)],
+        }
+        if inicio:
+            body["start_at"] = inicio
+        return {"estimaciones": await self._call("POST", "/estimates", body), "simulated": False}
 
-        if self._mock:
-            return mark_simulated({
-                "factura_id": f"cabify_invoice_{ejercicio}{mes:02d}",
-                "periodo": f"{ejercicio}-{mes:02d}",
-                "rfc_empresa": rfc_empresa,
-                "total_viajes": 47,
-                "subtotal_mxn": 14_500.00,
-                "iva_mxn": 2_320.00,
-                "total_mxn": 16_820.00,
-                "url_pdf": None,
-                "uuid_cfdi": "ABCD-1234-5678-9012-...",
-                "fecha_emision": _now_iso(),
-            })
+    async def pedir_viaje(
+        self,
+        requester_id: str,
+        product_id: str,
+        origen: tuple[float, float],
+        destino: tuple[float, float],
+        rider: dict[str, Any],
+        inicio: str | None = None,
+        origen_direccion: str | None = None,
+        destino_direccion: str | None = None,
+        label_slug: str | None = None,
+        mensaje: str | None = None,
+    ) -> dict[str, Any]:
+        """Crea un viaje real (POST /api/v4/journey). Genera cargo a la empresa."""
+        self._log("pedir_viaje", requester_id=requester_id, product_id=product_id)
+        if self.is_mock:
+            return mark_simulated({"id": "mock-journey"})
+        body: dict[str, Any] = {
+            "requester_id": requester_id,
+            "product_id": product_id,
+            "rider": rider,
+            "stops": [_parada(*origen, addr=origen_direccion), _parada(*destino, addr=destino_direccion)],
+        }
+        for k, v in (("start_at", inicio), ("label_slug", label_slug), ("message", mensaje)):
+            if v:
+                body[k] = v
+        return {**await self._call("POST", "/journey", body), "simulated": False}
 
-        self._require_key()
-        url = f"{CABIFY_API_URL}/v1/invoices"
-        body = {"month": mes, "year": ejercicio, "rfc": rfc_empresa}
-        try:
-            async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
-                resp = await client.post(url, headers=self._headers(), json=body)
-                resp.raise_for_status()
-                return {**resp.json(), "simulated": False}
-        except Exception as exc:
-            raise handle_httpx_error(exc) from exc
+    async def consultar_viaje(self, journey_id: str) -> dict[str, Any]:
+        """Detalle, estado final y totales (GET /api/v4/journey/{id})."""
+        self._log("consultar_viaje", journey_id=journey_id)
+        if self.is_mock:
+            return mark_simulated({"id": journey_id, "finished": True, "end_state": "drop off"})
+        return {**await self._call("GET", f"/journey/{journey_id}"), "simulated": False}
+
+    async def estado_viaje(self, journey_id: str) -> dict[str, Any]:
+        """Estado operativo en vivo: conductor, vehículo, ruta (GET /api/v4/journey/{id}/state)."""
+        self._log("estado_viaje", journey_id=journey_id)
+        if self.is_mock:
+            return mark_simulated({"id": journey_id, "name": "hired"})
+        return {**await self._call("GET", f"/journey/{journey_id}/state"), "simulated": False}
+
+    async def cancelar_viaje(self, journey_id: str) -> dict[str, Any]:
+        """Cancela (POST /api/v4/journey/{id}/state). Con conductor asignado puede cobrar; 409 si ya no se puede."""
+        self._log("cancelar_viaje", journey_id=journey_id)
+        if self.is_mock:
+            return mark_simulated({"id": journey_id})
+        return {**await self._call("POST", f"/journey/{journey_id}/state"), "simulated": False}
+
+    async def ventas_viaje(self, journey_id: str) -> dict[str, Any]:
+        """Recibos (sales) del viaje, disponibles cuando pasa a `terminated` (GET /api/v4/journey/{id}/sales)."""
+        self._log("ventas_viaje", journey_id=journey_id)
+        if self.is_mock:
+            return mark_simulated({"ventas": []})
+        return {"ventas": await self._call("GET", f"/journey/{journey_id}/sales"), "simulated": False}
