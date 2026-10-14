@@ -565,7 +565,7 @@
         "mp_banxico_cep"
       ],
       "cobertura": "federal",
-      "validado": "Estado 2026-10-14 · mp_banxico: Sin verificar · mp_banxico_cep: Real, validado en vivo"
+      "validado": "Estado 2026-10-14 · mp_banxico: Real sin validar (requiere credenciales) · mp_banxico_cep: Real, validado en vivo"
     }
   ],
   "patrones_captcha": [

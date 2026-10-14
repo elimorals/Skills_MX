@@ -239,3 +239,8 @@ Cobertura actual: **75 tests** cubriendo:
 - 22 tests de webhooks (firma válida, todos los failure modes, anti-replay, parse header con whitespace/orden invertido)
 - 21 tests del cliente (mock determinístico, env detection, cache, bitácora con hashing)
 - 20 tests end-to-end de los 9 tools del server
+
+## Estado real (2026-10-14)
+
+- ✅ Rutas cotejadas con la doc oficial: `/checkout/preferences`, `/v1/payments/search`, `/v1/payments/{id}/refunds`.
+- ⚠️ Sin validar en vivo: falta `MERCADOPAGO_ACCESS_TOKEN` (TEST-…).

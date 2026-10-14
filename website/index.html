@@ -344,12 +344,12 @@
       <span class="bs-d">Python + FastMCP. Estado de cada uno en su README.</span>
     </div>
     <div class="bs">
-      <span class="bs-n" data-target="23">23</span>
+      <span class="bs-n" data-target="24">24</span>
       <span class="bs-l">Real, validado en vivo</span>
       <span class="bs-d">Consultados contra la fuente oficial el 2026-10-14; varios son parciales.</span>
     </div>
     <div class="bs">
-      <span class="bs-n" data-target="8">8</span>
+      <span class="bs-n" data-target="13">13</span>
       <span class="bs-l">Real sin validar (requiere credenciales)</span>
       <span class="bs-d">Cliente escrito contra la API documentada; falta una cuenta o sandbox para probarlo.</span>
     </div>
@@ -364,9 +364,9 @@
       <span class="bs-d">Constantes contra ley o NOM; algunos solo contra fuentes secundarias (lo dice su nota).</span>
     </div>
     <div class="bs">
-      <span class="bs-n" data-target="25">25</span>
+      <span class="bs-n" data-target="19">19</span>
       <span class="bs-l">Sin API, bloqueados o sin verificar</span>
-      <span class="bs-d">6 sin API pública, 2 bloqueados, 17 sin sección &quot;Estado real&quot;.</span>
+      <span class="bs-d">6 sin API pública, 2 bloqueados, 11 sin sección &quot;Estado real&quot;.</span>
     </div>
 <!-- estado-stats:fin -->
   </div>
@@ -385,7 +385,7 @@
   </div>
 
   <!-- estado-mcps:inicio -->
-<p class="cat-note">Estado al 2026-10-14: Real, validado en vivo: 23 · Real sin validar (requiere credenciales): 8 · Entrega a humano (CAPTCHA o login): 17 · Sin API pública: 6 · Cálculo normativo verificado: 10 · Bloqueado: 2 · Sin verificar: 17. Detalle por MCP en <a href="/data/mcp-estado.json">/data/mcp-estado.json</a>.</p>
+<p class="cat-note">Estado al 2026-10-14: Real, validado en vivo: 24 · Real sin validar (requiere credenciales): 13 · Entrega a humano (CAPTCHA o login): 17 · Sin API pública: 6 · Cálculo normativo verificado: 10 · Bloqueado: 2 · Sin verificar: 11. Detalle por MCP en <a href="/data/mcp-estado.json">/data/mcp-estado.json</a>.</p>
 <div class="mcp-cat">
   <div class="mcp-cat-head">
     <span class="cat-no">A.</span>
@@ -563,16 +563,16 @@
     <span class="cat-count">12</span>
   </div>
   <div class="mcp-list">
-    <span class="mcp-item" title="El README no tiene sección &#x27;Estado real&#x27; de la oleada 1.">mp_mercado_pago · Sin verificar</span>
-    <span class="mcp-item" title="El README no tiene sección &#x27;Estado real&#x27; de la oleada 1.">mp_banxico · Sin verificar</span>
+    <span class="mcp-item" title="Rutas coinciden con la doc oficial (preferences, payments/search, refunds); falta access token de prueba.">mp_mercado_pago · Real sin validar (requiere credenciales)</span>
+    <span class="mcp-item" title="SIE API v1 real; requiere BANXICO_TOKEN gratuito. Mock usa UMA 2026 = 117.31.">mp_banxico · Real sin validar (requiere credenciales)</span>
     <span class="mcp-item" title="Consulta de estado y &#x27;no encontrado&#x27; validadas; descarga de un SPEI existente sin validar. Handoff si vuelve el CAPTCHA.">mp_banxico_cep · Real, validado en vivo</span>
-    <span class="mcp-item" title="El README no tiene sección &#x27;Estado real&#x27; de la oleada 1.">mp_conekta · Sin verificar</span>
+    <span class="mcp-item" title="Rutas API 2.1.0 coinciden con la doc oficial; falta llave sandbox.">mp_conekta · Real sin validar (requiere credenciales)</span>
     <span class="mcp-item" title="Cliente contra el OpenAPI oficial (transactions, balances); falta app REST con credenciales.">mp_paypal_mx · Real sin validar (requiere credenciales)</span>
     <span class="mcp-item" title="Sin documentación pública de API; con credenciales devuelve ConfigError.">mp_klap · Sin API pública</span>
     <span class="mcp-item" title="Reescrito contra developer.clip.mx (payments, refunds, devices, settlements); falta credencial de pruebas.">mp_clip_terminal · Real sin validar (requiere credenciales)</span>
     <span class="mcp-item" title="API solo para comercios afiliados; con credenciales devuelve ConfigError.">mp_kueski · Sin API pública</span>
     <span class="mcp-item" title="Trustly no opera en México; con credenciales devuelve ConfigError.">mp_trustly_mx · Sin API pública</span>
-    <span class="mcp-item" title="El README no tiene sección &#x27;Estado real&#x27; de la oleada 1.">mp_bitso · Sin verificar</span>
+    <span class="mcp-item" title="Ticker, order book y pares públicos validados en vivo sin llaves (2026-10-14); endpoints privados requieren BITSO_API_KEY/SECRET.">mp_bitso · Real, validado en vivo</span>
     <span class="mcp-item" title="Catálogo SPEI de Banxico validado en vivo.">mp_clabe_validador_oficial · Real, validado en vivo</span>
     <span class="mcp-item" title="El README no tiene sección &#x27;Estado real&#x27; de la oleada 1.">mp_buro_credito_personal · Sin verificar</span>
   </div>
@@ -584,9 +584,9 @@
     <span class="cat-count">3</span>
   </div>
   <div class="mcp-list">
-    <span class="mcp-item" title="El README no tiene sección &#x27;Estado real&#x27; de la oleada 1.">mp_mercado_libre · Sin verificar</span>
+    <span class="mcp-item" title="Rutas cotejadas; reputación corregida a GET /users/{id} → seller_reputation. Falta app OAuth.">mp_mercado_libre · Real sin validar (requiere credenciales)</span>
     <span class="mcp-item" title="Rutas SP-API verificadas (Orders, Listings, Fees); falta una app SP-API autorizada.">mp_amazon_mx_seller · Real sin validar (requiere credenciales)</span>
-    <span class="mcp-item" title="El README no tiene sección &#x27;Estado real&#x27; de la oleada 1.">mp_shopify_mx · Sin verificar</span>
+    <span class="mcp-item" title="REST Admin API; versión por defecto subida a 2026-07 (2024-10 sin soporte). Falta tienda de desarrollo.">mp_shopify_mx · Real sin validar (requiere credenciales)</span>
   </div>
 </div>
 <div class="mcp-cat">

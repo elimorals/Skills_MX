@@ -22,13 +22,13 @@
 ## MCPs por estado (2026-10-14)
 
 <!-- estado-mcps:inicio -->
-- **Real, validado en vivo (23):** mp_agua_mx, mp_banxico_cep, mp_clabe_validador_oficial, mp_cnbv_fintech, mp_conagua_repda, mp_concilianet_profeco, mp_condusef_sipres, mp_cre_hidrocarburos, mp_dof_api, mp_donatarias_sat, mp_edomex_municipal, mp_gas_natural_mx, mp_impi_marcanet, mp_llave_mx_tracker, mp_monterrey_municipal, mp_portales_monitor, mp_predial_mx, mp_queretaro_municipal, mp_repse_stps, mp_retys_catalogo, mp_sat_opinion_32d, mp_sat_portal, mp_tijuana_municipal
-- **Real sin validar (requiere credenciales) (8):** mp_amazon_mx_seller, mp_cabify_business, mp_clip_terminal, mp_facturama_extendido, mp_llave_mx, mp_paypal_mx, mp_rappi_partners, mp_sat_ws
+- **Real, validado en vivo (24):** mp_agua_mx, mp_banxico_cep, mp_bitso, mp_clabe_validador_oficial, mp_cnbv_fintech, mp_conagua_repda, mp_concilianet_profeco, mp_condusef_sipres, mp_cre_hidrocarburos, mp_dof_api, mp_donatarias_sat, mp_edomex_municipal, mp_gas_natural_mx, mp_impi_marcanet, mp_llave_mx_tracker, mp_monterrey_municipal, mp_portales_monitor, mp_predial_mx, mp_queretaro_municipal, mp_repse_stps, mp_retys_catalogo, mp_sat_opinion_32d, mp_sat_portal, mp_tijuana_municipal
+- **Real sin validar (requiere credenciales) (13):** mp_amazon_mx_seller, mp_banxico, mp_cabify_business, mp_clip_terminal, mp_conekta, mp_facturama_extendido, mp_llave_mx, mp_mercado_libre, mp_mercado_pago, mp_paypal_mx, mp_rappi_partners, mp_sat_ws, mp_shopify_mx
 - **Entrega a humano (CAPTCHA o login) (17):** mp_catastro_estatal_mx, mp_cdmx_municipal, mp_citas_monitor, mp_curp_renapo, mp_form_filler_public, mp_guadalajara_municipal, mp_ine_verificacion, mp_merida_municipal, mp_multas_mx, mp_multas_vehiculares_mx, mp_no_antecedentes_penales_mx, mp_puebla_municipal, mp_repep_profeco, mp_repuve, mp_sedatu_uso_suelo, mp_sep_profesional, mp_verificacion_vehicular_mx
 - **Sin API pública (6):** mp_didi_food_partners, mp_didi_partners, mp_klap, mp_kueski, mp_trustly_mx, mp_uber_eats_partners
 - **Cálculo normativo verificado (10):** mp_cfe_interconexion_solar, mp_cofepris_aviso_funcionamiento, mp_desconexion_digital, mp_expediente_clinico_nom024, mp_ish_mx, mp_isn_mx, mp_ley_silla_nom037, mp_lnetb_auditor, mp_resico_sat, mp_tenencia_mx
 - **Bloqueado (2):** mp_sacpi_michoacan, mp_simplifica_ciudadano
-- **Sin verificar (17):** mp_aspel_contpaqi, mp_bancos_mx, mp_banxico, mp_bitso, mp_buro_credito_personal, mp_cfe_facturacion, mp_conekta, mp_imss_continuidad, mp_imss_patronal, mp_infonavit_patronal, mp_inmuebles24, mp_mercado_libre, mp_mercado_pago, mp_shopify_mx, mp_softrestaurant, mp_telmex_facturacion, mp_vivanuncios
+- **Sin verificar (11):** mp_aspel_contpaqi, mp_bancos_mx, mp_buro_credito_personal, mp_cfe_facturacion, mp_imss_continuidad, mp_imss_patronal, mp_infonavit_patronal, mp_inmuebles24, mp_softrestaurant, mp_telmex_facturacion, mp_vivanuncios
 <!-- estado-mcps:fin -->
 
 ## Endpoints públicos para agentes

@@ -9,13 +9,13 @@ Generado por `scripts/generar-estado-mcps.py` desde la sección "Estado real" de
 
 | Categoría | MCPs |
 |---|---|
-| Real, validado en vivo | 23 |
-| Real sin validar (requiere credenciales) | 8 |
+| Real, validado en vivo | 24 |
+| Real sin validar (requiere credenciales) | 13 |
 | Entrega a humano (CAPTCHA o login) | 17 |
 | Sin API pública | 6 |
 | Cálculo normativo verificado | 10 |
 | Bloqueado | 2 |
-| Sin verificar | 17 |
+| Sin verificar | 11 |
 <!-- estado-mcps:fin -->
 
 > Las secciones "Estado a 2026-06-…" de abajo son históricas: describen el diseño mock-first previo a la oleada 1 y sus cifras no se revalidaron. El estado vigente es el bloque de arriba.

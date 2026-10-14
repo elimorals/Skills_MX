@@ -4,13 +4,13 @@
   "total_skills": 83,
   "fuente_estado": "Sección 'Estado real' de mcp-servers/mp_*/README.md",
   "conteos_estado": {
-    "real_validado": 23,
-    "real_sin_validar": 8,
+    "real_validado": 24,
+    "real_sin_validar": 13,
     "handoff": 17,
     "sin_api": 6,
     "calculo_normativo": 10,
     "bloqueado": 2,
-    "sin_verificar": 17
+    "sin_verificar": 11
   },
   "categorias": [
     {
@@ -791,9 +791,9 @@
       "skills": [
         {
           "id": "mp_mercado_pago",
-          "estado": "sin_verificar",
-          "estado_label": "Sin verificar",
-          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "estado": "real_sin_validar",
+          "estado_label": "Real sin validar (requiere credenciales)",
+          "desc": "Rutas coinciden con la doc oficial (preferences, payments/search, refunds); falta access token de prueba.",
           "tools": [
             "mercadopago_create_preference",
             "mercadopago_get_preference",
@@ -807,9 +807,9 @@
         },
         {
           "id": "mp_banxico",
-          "estado": "sin_verificar",
-          "estado_label": "Sin verificar",
-          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "estado": "real_sin_validar",
+          "estado_label": "Real sin validar (requiere credenciales)",
+          "desc": "SIE API v1 real; requiere BANXICO_TOKEN gratuito. Mock usa UMA 2026 = 117.31.",
           "tools": [
             "banxico_get_tc_dof",
             "banxico_get_tc_dia_habil_anterior",
@@ -840,9 +840,9 @@
         },
         {
           "id": "mp_conekta",
-          "estado": "sin_verificar",
-          "estado_label": "Sin verificar",
-          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "estado": "real_sin_validar",
+          "estado_label": "Real sin validar (requiere credenciales)",
+          "desc": "Rutas API 2.1.0 coinciden con la doc oficial; falta llave sandbox.",
           "tools": [
             "conekta_create_order",
             "conekta_get_order",
@@ -920,9 +920,9 @@
         },
         {
           "id": "mp_bitso",
-          "estado": "sin_verificar",
-          "estado_label": "Sin verificar",
-          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Ticker, order book y pares públicos validados en vivo sin llaves (2026-10-14); endpoints privados requieren BITSO_API_KEY/SECRET.",
           "tools": [
             "bitso_get_ticker",
             "bitso_get_order_book",
@@ -971,9 +971,9 @@
       "skills": [
         {
           "id": "mp_mercado_libre",
-          "estado": "sin_verificar",
-          "estado_label": "Sin verificar",
-          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "estado": "real_sin_validar",
+          "estado_label": "Real sin validar (requiere credenciales)",
+          "desc": "Rutas cotejadas; reputación corregida a GET /users/{id} → seller_reputation. Falta app OAuth.",
           "tools": [
             "mercadolibre_get_me",
             "mercadolibre_list_items",
@@ -1009,9 +1009,9 @@
         },
         {
           "id": "mp_shopify_mx",
-          "estado": "sin_verificar",
-          "estado_label": "Sin verificar",
-          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "estado": "real_sin_validar",
+          "estado_label": "Real sin validar (requiere credenciales)",
+          "desc": "REST Admin API; versión por defecto subida a 2026-07 (2024-10 sin soporte). Falta tienda de desarrollo.",
           "tools": [
             "shopify_list_products",
             "shopify_get_product",
