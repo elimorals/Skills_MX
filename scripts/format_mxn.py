@@ -28,11 +28,12 @@ class ResultadoFormato:
     alertas: list = field(default_factory=list)
 
 
-# Tablas para conversión a letra
+# Tablas para conversión a letra. Formas apocopadas ("UN", "VEINTIÚN") porque
+# siempre van seguidas de sustantivo: MIL, MILLONES o la unidad monetaria.
 UNIDADES = [
     "", "UN", "DOS", "TRES", "CUATRO", "CINCO", "SEIS", "SIETE", "OCHO", "NUEVE",
     "DIEZ", "ONCE", "DOCE", "TRECE", "CATORCE", "QUINCE", "DIECISÉIS",
-    "DIECISIETE", "DIECIOCHO", "DIECINUEVE", "VEINTE", "VEINTIUNO", "VEINTIDÓS",
+    "DIECISIETE", "DIECIOCHO", "DIECINUEVE", "VEINTE", "VEINTIÚN", "VEINTIDÓS",
     "VEINTITRÉS", "VEINTICUATRO", "VEINTICINCO", "VEINTISÉIS", "VEINTISIETE",
     "VEINTIOCHO", "VEINTINUEVE",
 ]
@@ -125,7 +126,9 @@ def monto_a_letra(monto: float, moneda: str = "MXN") -> str:
         sufijo = moneda
 
     letras_enteros = numero_a_letras(enteros)
-    return f"{letras_enteros} {unidad} {centavos:02d}/100 {sufijo}"
+    # RAE: "un millón de pesos", "dos millones de pesos" (millones exactos).
+    de = " DE" if enteros >= 1_000_000 and enteros % 1_000_000 == 0 else ""
+    return f"{letras_enteros}{de} {unidad} {centavos:02d}/100 {sufijo}"
 
 
 def normalizar_monto(input_str: str) -> tuple[float, list]:

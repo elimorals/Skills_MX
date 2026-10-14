@@ -11,22 +11,38 @@
     },
     "concepto": {
       "tipo": "servicio_profesional",
-      "monto_base": 10000.00,
+      "monto_base": 10000.0,
       "ubicacion_emisor": "CDMX"
     }
   },
   "expected_output": {
-    "subtotal": 10000.00,
+    "subtotal": 10000.0,
     "impuestos_trasladados": [
-      {"tipo": "IVA", "tasa_factor": "Tasa", "tasa": 0.16, "importe": 1600.00}
+      {
+        "tipo": "IVA",
+        "tasa_factor": "Tasa",
+        "tasa": 0.16,
+        "importe": 1600.0
+      }
     ],
     "impuestos_retenidos": [
-      {"tipo": "ISR", "tasa": 0.0125, "importe": 125.00, "razon": "RESICO PF, retención reducida 1.25%"}
+      {
+        "tipo": "ISR",
+        "tasa": 0.0125,
+        "importe": 125.0,
+        "razon": "RESICO PF, retención 1.25% (Art. 113-J LISR)"
+      },
+      {
+        "tipo": "IVA",
+        "tasa": 0.106667,
+        "importe": 1066.67,
+        "razon": "Retención IVA 2/3 partes (Art. 1-A fr. II a) LIVA)"
+      }
     ],
-    "total_comprobante": 11600.00,
-    "neto_a_pagar_emisor": 11475.00
+    "total_comprobante": 10408.33,
+    "neto_a_pagar_emisor": 10408.33
   },
   "vigencia_validada": null,
-  "fuente_verificacion": "RMF — confirmar tasa 1.25% RESICO PF vigente",
-  "notas": "RESICO PF no genera retención IVA, solo ISR reducido. Diferencia clave con PFAE."
+  "fuente_verificacion": "Art. 113-J LISR (1.25%); Art. 1-A fr. II a) LIVA y Art. 3 RLIVA (2/3 IVA); Anexo 20 CFDI 4.0, atributo Total = SubTotal − Descuento + Trasladados − Retenidos",
+  "notas": "RESICO PF sí sufre retención de IVA 2/3 cuando presta servicios a PM; solo el ISR se reduce a 1.25%."
 }

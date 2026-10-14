@@ -97,10 +97,16 @@ run_iva_retenciones() {
 
   if [ -n "$input_emisor" ] && [ -n "$input_receptor" ]; then
     local result
+    local extra=()
+    local t
+    t=$(jq -r '.input.emisor.tipo // ""' "$fixture"); [ -n "$t" ] && extra+=(--tipo-persona-emisor "$t")
+    t=$(jq -r '.input.receptor.tipo // ""' "$fixture"); [ -n "$t" ] && extra+=(--tipo-persona-receptor "$t")
+    jq -e '.input.emisor.frontera_norte == true' "$fixture" > /dev/null && extra+=(--frontera)
     result=$(python3 "$ROOT/scripts/calcular_iva_retenciones.py" \
       --emisor "$input_emisor" \
       --receptor "$input_receptor" \
       --monto "$input_monto" \
+      "${extra[@]}" \
       --json 2>/dev/null || echo "{}")
 
     local actual_total
@@ -108,7 +114,9 @@ run_iva_retenciones() {
     local actual_neto
     actual_neto=$(echo "$result" | jq -r '.neto_a_pagar_emisor // 0')
 
-    if [ "$actual_total" = "$expected_total" ] && [ "$actual_neto" = "$expected_neto" ]; then
+    # Comparación numérica (jq conserva "5800.00" del fixture; Python emite 5800.0).
+    if awk -v a="$actual_total" -v e="$expected_total" -v b="$actual_neto" -v f="$expected_neto" \
+         'BEGIN { exit !((a - e) ^ 2 < 1e-6 && (b - f) ^ 2 < 1e-6) }'; then
       ok "$name"
     else
       fail "$name (expected total=$expected_total neto=$expected_neto, got total=$actual_total neto=$actual_neto)"
@@ -134,7 +142,9 @@ run_rfc_validacion() {
   fi
 
   local result
-  result=$(python3 "$ROOT/scripts/validar_rfc.py" --json "$input" 2>/dev/null || echo "[{}]")
+  # validar_rfc.py sale con 1 si el RFC es inválido; eso no es error del harness.
+  result=$(python3 "$ROOT/scripts/validar_rfc.py" --json "$input" 2>/dev/null || true)
+  [ -n "$result" ] || result="[{}]"
   local actual_valido
   actual_valido=$(echo "$result" | jq -r '.[0].valido_estructura // false')
 
