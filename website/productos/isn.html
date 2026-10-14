@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ISN-as-a-Service · 32 estados · Plugins MX</title>
-<meta name="description" content="Calcula ISN, genera línea de captura y descarga declaración en cualquiera de las 32 entidades mexicanas con una sola API. Universo: 4M empresas con nómina.">
+<meta name="description" content="Calcula el ISN con la tasa 2026 de cada una de las 32 entidades (2.5%–4.25%). Cálculo local; la línea de captura y la declaración requieren la sesión del contribuyente.">
 <meta name="author" content="Elías Rashid Morales Mendoza">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
@@ -16,14 +16,14 @@
 <meta property="og:locale" content="es_MX">
 <meta property="og:url" content="https://skills-mexico.vercel.app/productos/isn">
 <meta property="og:title" content="ISN-as-a-Service · 32 estados, una API · Plugins MX">
-<meta property="og:description" content="Calcula ISN, genera línea de captura y descarga declaración en las 32 entidades federativas con una sola API. Tasas 1.8%–3.0%.">
+<meta property="og:description" content="Cálculo de ISN para las 32 entidades con la tasa 2026 del catálogo (2.5%–4.25%, fuente secundaria).">
 <meta property="og:image" content="https://skills-mexico.vercel.app/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ISN-as-a-Service · 32 estados · Plugins MX">
-<meta name="twitter:description" content="Una sola API para ISN en las 32 entidades. Offline-first para cálculo. Tasas 1.8%–3.0%.">
+<meta name="twitter:description" content="Cálculo local de ISN para las 32 entidades. Tasas 2.5%–4.25% (fuente secundaria).">
 <meta name="twitter:image" content="https://skills-mexico.vercel.app/og-image.png">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -54,16 +54,15 @@
       "applicationSubCategory": "Payroll Tax Compliance",
       "operatingSystem": "Cross-platform (Python 3.11+, MCP)",
       "url": "https://skills-mexico.vercel.app/productos/isn",
-      "description": "Servidor MCP que calcula el Impuesto sobre Nómina (ISN), genera línea de captura para pago referenciado y descarga la declaración mensual en cualquiera de las 32 entidades federativas mexicanas. Tasas estatales 1.8% a 3.0%. Cálculo offline-first sin credenciales para asesoría fiscal multi-estado.",
+      "description": "Servidor MCP que calcula el Impuesto sobre Nómina (ISN) con la tasa 2026 de cada una de las 32 entidades federativas: 2.5% (Aguascalientes) a 4.25% (Baja California); Sinaloa y Tabasco tienen rango y no se calculan. Cálculo local, sin credenciales. La línea de captura y la descarga de la declaración devuelven error: requieren la sesión del contribuyente en el portal estatal.",
       "softwareVersion": "3.59.0",
       "datePublished": "2026-06-14",
-      "dateModified": "2026-06-14",
+      "dateModified": "2026-10-14",
       "inLanguage": "es-MX",
       "featureList": [
-        "Tasas 1.8% (Baja California) a 3.0% (CDMX, Jalisco, NL, EdoMex, Querétaro)",
-        "Cálculo offline desde catálogo central",
-        "8 estados con portal validado Playwright",
-        "Optimización fiscal multi-estado"
+        "Tasas 2026: 2.5% (Aguascalientes) a 4.25% (Baja California); Sinaloa y Tabasco tienen rango y no se calculan",
+        "Cálculo local desde el catálogo; fuente secundaria (BHR 2026), confianza media",
+        "Sin automatización de pagos ni declaraciones"
       ],
       "offers": { "@type": "Offer", "priceCurrency": "MXN", "price": "0", "availability": "https://schema.org/InStock", "url": "https://skills-mexico.vercel.app/#demo" },
       "provider": { "@type": "Organization", "name": "Plugins MX", "url": "https://skills-mexico.vercel.app/" }
@@ -88,17 +87,17 @@
         {
           "@type": "Question",
           "name": "¿Qué es el ISN (Impuesto sobre Nómina)?",
-          "acceptedAnswer": { "@type": "Answer", "text": "El ISN es un impuesto estatal que grava las erogaciones por concepto de remuneraciones al trabajo personal subordinado, prestado dentro del territorio de cada entidad federativa mexicana. Es obligación de toda empresa formal con al menos un trabajador. Cada estado fija su propia tasa (entre 1.8% y 3.0% para 2026) y su día de vencimiento mensual." }
+          "acceptedAnswer": { "@type": "Answer", "text": "El ISN es un impuesto estatal que grava las erogaciones por concepto de remuneraciones al trabajo personal subordinado, prestado dentro del territorio de cada entidad federativa mexicana. Es obligación de toda empresa formal con al menos un trabajador. Cada estado fija su propia tasa (2.5%–4.25% en 2026 según el catálogo del MCP, con fuente secundaria) y su día de vencimiento mensual." }
         },
         {
           "@type": "Question",
           "name": "¿Cuál es la tasa de ISN en CDMX para 2026?",
-          "acceptedAnswer": { "@type": "Answer", "text": "La tasa de ISN en la Ciudad de México es del 3.0% para 2026. El pago vence el día 17 del mes siguiente al periodo declarado. CDMX, Jalisco, Nuevo León, Estado de México y Querétaro son las entidades con la tasa más alta (3.0%)." }
+          "acceptedAnswer": { "@type": "Answer", "text": "La tasa de ISN en la Ciudad de México es del 4.0% para 2026 (Código Fiscal CDMX art. 158, reforma Gaceta 27-dic-2024). El pago vence el día 17 del mes siguiente al periodo declarado." }
         },
         {
           "@type": "Question",
           "name": "¿Cuál es la entidad con la tasa de ISN más baja?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Baja California tiene la tasa de ISN más baja del país: 1.8% para 2026. Yucatán (2.5%), Guanajuato (2.0%), Aguascalientes (2.0%) y Coahuila (2.0%) también ofrecen tasas competitivas comparadas con CDMX o Nuevo León (3.0%). Cambiar la nómina de Jalisco a Baja California puede ahorrar hasta 40% de ISN." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Según el catálogo del MCP (fuente secundaria BHR 2026), la tasa fija más baja es la de Aguascalientes (2.5%). Sinaloa aplica una tarifa por tramos de 2.4% a 3.0% cuyos tramos 2026 no están verificados. Baja California pasó a una tasa única de 4.25% en 2026." }
         },
         {
           "@type": "Question",
@@ -108,12 +107,12 @@
         {
           "@type": "Question",
           "name": "¿Quién está obligado a pagar el ISN?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Toda persona física o moral, residente en México o en el extranjero con establecimiento permanente, que realice pagos por concepto de salarios, prestaciones o cualquier otra remuneración al trabajo personal subordinado prestado dentro del estado. Aplica desde el primer trabajador. Universo estimado: 4 millones de empresas formales mexicanas." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Toda persona física o moral, residente en México o en el extranjero con establecimiento permanente, que realice pagos por concepto de salarios, prestaciones o cualquier otra remuneración al trabajo personal subordinado prestado dentro del estado. Aplica desde el primer trabajador. " }
         },
         {
           "@type": "Question",
           "name": "¿Puedo calcular ISN sin tener credenciales del estado?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Sí. La tool isn_calcular(nomina_gravable, estado) de Plugins MX funciona offline-first contra el catálogo central de tasas. No requiere credenciales del cliente. Útil para asesoría fiscal multi-estado: en milisegundos comparas el ISN de tu nómina en CDMX vs Yucatán vs Baja California sin tocar ningún portal estatal." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Sí. La tool isn_calcular(nomina_gravable, estado) calcula localmente con la tasa del catálogo, sin credenciales ni portales. En Sinaloa y Tabasco no devuelve monto porque la tasa depende de tramos o criterios 2026 no verificados." }
         }
       ]
     }
@@ -131,7 +130,7 @@
     <span class="strip-dot">·</span>
     <span class="strip-vol">PRODUCTO 03 · ISN-AS-A-SERVICE</span>
     <span class="strip-dot strip-dot-end">·</span>
-    <span class="strip-live"><span class="pulse"></span> 32 estados · tasas 1.8% — 3.0%</span>
+    <span class="strip-live"><span class="pulse"></span> 32 estados · tasas 2.5%–4.25% · cálculo local</span>
   </div>
 </div>
 
@@ -166,14 +165,13 @@
     </h1>
 
     <p class="prod-hero-lede">
-      El Impuesto sobre Nómina es obligación de <strong>toda empresa formal con un solo trabajador</strong>. 32 portales distintos, tasas de 1.8% a 3.0%, vencimientos día 10–17. Una sola interfaz unifica las 32 entidades.
+      El Impuesto sobre Nómina es obligación de <strong>toda empresa formal con un solo trabajador</strong>. Cada entidad fija su tasa: 2.5% (Aguascalientes) a 4.25% (Baja California); Sinaloa y Tabasco tienen rango y no se calculan. Vencimientos del día 10 al 17. El MCP calcula con un solo catálogo; no entra a los portales estatales.
     </p>
 
     <div class="prod-hero-meta">
-      <span><strong>Lanzamiento:</strong> 2026-06-14</span>
-      <span><strong>Estados:</strong> 32 catalogados / 8 validados</span>
-      <span><strong>Tests:</strong> 24 pasando</span>
-      <span><strong>Universo:</strong> ~4M empresas</span>
+      <span><strong>Estado (2026-10-14):</strong> cálculo local</span>
+      <span><strong>Estados:</strong> 32 en catálogo</span>
+      <span><strong>Fuente de tasas:</strong> secundaria, confianza media</span>
     </div>
   </div>
 
@@ -183,15 +181,18 @@
         <tr><th>Estado</th><th>Tasa</th><th>Vence</th></tr>
       </thead>
       <tbody>
-        <tr><td>Baja California</td><td>1.8%</td><td>día 17</td></tr>
-        <tr><td>Guanajuato</td><td>2.0%</td><td>día 17</td></tr>
-        <tr><td>Yucatán</td><td>2.5%</td><td>día 10</td></tr>
-        <tr class="hl"><td>CDMX</td><td>3.0%</td><td>día 17</td></tr>
-        <tr class="hl"><td>Jalisco</td><td>3.0%</td><td>día 12</td></tr>
-        <tr class="hl"><td>Nuevo León</td><td>3.0%</td><td>día 17</td></tr>
-        <tr class="hl"><td>EdoMex</td><td>3.0%</td><td>día 10</td></tr>
-        <tr class="hl"><td>Querétaro</td><td>3.0%</td><td>día 17</td></tr>
-        <tr><td>+ 24 estados más</td><td>varía</td><td>varía</td></tr>
+        <!-- isn-hero:inicio -->
+        <tr><td>Baja California</td><td>4.25%</td><td>día 17</td></tr>
+        <tr><td>Chihuahua</td><td>4.0%</td><td>día 17</td></tr>
+        <tr><td>Ciudad de México</td><td>4.0%</td><td>día 17</td></tr>
+        <tr><td>Quintana Roo</td><td>4.0%</td><td>día 17</td></tr>
+        <tr><td>Yucatán</td><td>3.75%</td><td>día 10</td></tr>
+        <tr><td>Zacatecas</td><td>3.5%</td><td>día 17</td></tr>
+        <tr><td>Tabasco</td><td>3.0%–3.5% (no calculable)</td><td>día 17</td></tr>
+        <tr><td>Aguascalientes</td><td>2.5%</td><td>día 17</td></tr>
+        <tr><td>Sinaloa</td><td>2.4%–3.0% (no calculable)</td><td>día 17</td></tr>
+        <tr><td>Resto (23 estados)</td><td>3.0%</td><td>varía</td></tr>
+<!-- isn-hero:fin -->
       </tbody>
     </table>
   </div>
@@ -205,7 +206,7 @@
   </div>
 
   <div class="frase-grande">
-    "Cambiar la nómina de Jalisco a Yucatán <em>ahorra</em> 17% de ISN. Saberlo en segundos vs descubrirlo en una junta."
+    "El ISN depende de <em>dónde se presta el trabajo</em>. Compara la tasa de cada entidad antes de la junta, no después."
   </div>
 </section>
 
@@ -214,7 +215,7 @@
   <div class="section-head">
     <span class="section-no">02</span>
     <h2 class="section-h">5 tools <em>expuestas</em>.</h2>
-    <p class="section-desc">La primera (<span class="mono">isn_calcular</span>) funciona offline desde catálogo — no toca ningún portal. Útil para asesoría fiscal sin credenciales del cliente.</p>
+    <p class="section-desc">Las tres primeras trabajan sobre el catálogo local, sin portales ni credenciales. Las dos últimas no están automatizadas: fuera de <span class="mono">PLUGINS_MX_MOCK=1</span> devuelven error porque requieren la sesión del contribuyente.</p>
   </div>
 
   <div class="tools-list">
@@ -222,7 +223,7 @@
       <span class="tool-no">★</span>
       <div>
         <h3><span class="mono mono-strong">isn_calcular</span></h3>
-        <p>Calcula ISN del periodo aplicando la tasa del estado. <strong>Offline-first:</strong> no requiere credenciales.</p>
+        <p>Calcula ISN del periodo aplicando la tasa del estado. Local, sin credenciales. Sinaloa y Tabasco: sin monto (tasa con rango).</p>
         <code class="tool-sig">isn_calcular(nomina_gravable: float, estado: str)</code>
       </div>
     </article>
@@ -231,7 +232,7 @@
       <span class="tool-no">→</span>
       <div>
         <h3><span class="mono mono-strong">isn_listar_estados</span></h3>
-        <p>Lista los 32 estados con su configuración: tasa, portal, vencimiento, validado sí/no.</p>
+        <p>Lista los 32 estados con tasa, fuente, portal y vencimiento.</p>
         <code class="tool-sig">isn_listar_estados([solo_validados])</code>
       </div>
     </article>
@@ -249,7 +250,7 @@
       <span class="tool-no">→</span>
       <div>
         <h3><span class="mono mono-strong">isn_generar_linea_captura</span></h3>
-        <p>Línea de captura para pago referenciado. Path real requiere credenciales del estado.</p>
+        <p>No automatizada: devuelve error porque requiere la sesión del contribuyente en el portal estatal.</p>
         <code class="tool-sig">isn_generar_linea_captura(estado, periodo, rfc, nomina_gravable)</code>
       </div>
     </article>
@@ -258,7 +259,7 @@
       <span class="tool-no">→</span>
       <div>
         <h3><span class="mono mono-strong">isn_descargar_declaracion</span></h3>
-        <p>PDF de la declaración del periodo desde la bóveda estatal. Cache 90 días.</p>
+        <p>No automatizada: devuelve error porque requiere la sesión del contribuyente.</p>
         <code class="tool-sig">isn_descargar_declaracion(estado, periodo, rfc)</code>
       </div>
     </article>
@@ -270,47 +271,48 @@
   <div class="section-head">
     <span class="section-no">03</span>
     <h2 class="section-h">Catálogo <em>completo</em>.</h2>
-    <p class="section-desc">32 estados. Tasas, portales y status de validación. Verde = portal validado Playwright MCP.</p>
+    <p class="section-desc">32 estados con la tasa 2026 del catálogo del MCP. * = tasa con rango, el MCP no calcula el monto. Datos en <a href="/api/isn-tasas.json"><span class="mono">/api/isn-tasas.json</span></a>.</p>
   </div>
 
   <div class="catalogo-grid">
-    <div class="cat-state cat-val"><span class="cat-state-n">CDMX</span><span class="cat-state-r">3.0%</span></div>
-    <div class="cat-state cat-val"><span class="cat-state-n">Jalisco</span><span class="cat-state-r">3.0%</span></div>
-    <div class="cat-state cat-val"><span class="cat-state-n">Nuevo León</span><span class="cat-state-r">3.0%</span></div>
-    <div class="cat-state cat-val"><span class="cat-state-n">EdoMex</span><span class="cat-state-r">3.0%</span></div>
-    <div class="cat-state cat-val"><span class="cat-state-n">Querétaro</span><span class="cat-state-r">3.0%</span></div>
-    <div class="cat-state cat-val"><span class="cat-state-n">Guanajuato</span><span class="cat-state-r">2.0%</span></div>
-    <div class="cat-state cat-val"><span class="cat-state-n">Yucatán</span><span class="cat-state-r">2.5%</span></div>
-    <div class="cat-state cat-val"><span class="cat-state-n">Baja California</span><span class="cat-state-r">1.8%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Puebla</span><span class="cat-state-r">3.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Veracruz</span><span class="cat-state-r">3.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Chihuahua</span><span class="cat-state-r">3.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Coahuila</span><span class="cat-state-r">2.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Sinaloa</span><span class="cat-state-r">2.4%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Sonora</span><span class="cat-state-r">2.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Tamaulipas</span><span class="cat-state-r">3.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Oaxaca</span><span class="cat-state-r">3.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Michoacán</span><span class="cat-state-r">3.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Guerrero</span><span class="cat-state-r">2.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Quintana Roo</span><span class="cat-state-r">3.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Aguascalientes</span><span class="cat-state-r">2.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">San Luis Potosí</span><span class="cat-state-r">2.5%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Zacatecas</span><span class="cat-state-r">3.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Durango</span><span class="cat-state-r">2.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Morelos</span><span class="cat-state-r">2.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Tlaxcala</span><span class="cat-state-r">3.0%</span></div>
+    <!-- isn-grid:inicio -->
+    <div class="cat-state"><span class="cat-state-n">Baja California</span><span class="cat-state-r">4.25%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Chihuahua</span><span class="cat-state-r">4.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Ciudad de México</span><span class="cat-state-r">4.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Quintana Roo</span><span class="cat-state-r">4.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Yucatán</span><span class="cat-state-r">3.75%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Zacatecas</span><span class="cat-state-r">3.5%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Baja California Sur</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Campeche</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Chiapas</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Coahuila</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Colima</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Durango</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Estado de México</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Guanajuato</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Guerrero</span><span class="cat-state-r">3.0%</span></div>
     <div class="cat-state"><span class="cat-state-n">Hidalgo</span><span class="cat-state-r">3.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Chiapas</span><span class="cat-state-r">2.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Tabasco</span><span class="cat-state-r">2.5%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Campeche</span><span class="cat-state-r">2.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Nayarit</span><span class="cat-state-r">2.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">Colima</span><span class="cat-state-r">2.0%</span></div>
-    <div class="cat-state"><span class="cat-state-n">BCS</span><span class="cat-state-r">2.5%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Jalisco</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Michoacán</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Morelos</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Nayarit</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Nuevo León</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Oaxaca</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Puebla</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Querétaro</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">San Luis Potosí</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Sonora</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Tabasco</span><span class="cat-state-r">3.0%–3.5%*</span></div>
+    <div class="cat-state"><span class="cat-state-n">Tamaulipas</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Tlaxcala</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Veracruz</span><span class="cat-state-r">3.0%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Aguascalientes</span><span class="cat-state-r">2.5%</span></div>
+    <div class="cat-state"><span class="cat-state-n">Sinaloa</span><span class="cat-state-r">2.4%–3.0%*</span></div>
+<!-- isn-grid:fin -->
   </div>
 
   <div class="vert-legend">
-    <span><span class="dot" style="background: var(--c-jade);"></span> Portal validado Playwright</span>
-    <span><span class="dot" style="background: var(--c-bone); border: 1px solid var(--c-rule);"></span> Catálogo + URL, validación en pipeline</span>
+    <span>Fuente base: BHR "Contribuciones locales, cambios relevantes 2026" (secundaria); no se abrió la ley de cada estado.</span>
   </div>
 </section>
 
@@ -331,24 +333,20 @@
 cliente <span class="c-op">=</span> IsnMxClient<span class="c-pn">()</span>
 nomina <span class="c-op">=</span> <span class="c-fn">500_000</span>  <span class="c-cm"># MXN gravables mensuales</span>
 
-<span class="c-cm"># Comparativo entre 4 estados en milisegundos — offline</span>
-<span class="c-kw">for</span> estado <span class="c-kw">in</span> <span class="c-pn">[</span><span class="c-st">"CDMX"</span>, <span class="c-st">"JAL"</span>, <span class="c-st">"GTO"</span>, <span class="c-st">"BC"</span><span class="c-pn">]</span><span class="c-op">:</span>
+<span class="c-cm"># Comparativo local entre 4 estados</span>
+<span class="c-kw">for</span> estado <span class="c-kw">in</span> <span class="c-pn">[</span><span class="c-st">"CDMX"</span>, <span class="c-st">"JAL"</span>, <span class="c-st">"BC"</span>, <span class="c-st">"SIN"</span><span class="c-pn">]</span><span class="c-op">:</span>
     r <span class="c-op">=</span> cliente<span class="c-pn">.</span>calcular<span class="c-pn">(</span>nomina, estado<span class="c-pn">)</span>
     <span class="c-fn">print</span><span class="c-pn">(</span><span class="c-st">f"</span><span class="c-pn">{</span>r<span class="c-pn">[</span><span class="c-st">'estado'</span><span class="c-pn">]</span><span class="c-op">:&lt;20</span><span class="c-pn">}</span><span class="c-st"> </span><span class="c-pn">{</span>r<span class="c-pn">[</span><span class="c-st">'tasa_pct'</span><span class="c-pn">]</span><span class="c-pn">}</span><span class="c-st">% → $</span><span class="c-pn">{</span>r<span class="c-pn">[</span><span class="c-st">'isn_a_pagar'</span><span class="c-pn">]</span><span class="c-op">:,.2f</span><span class="c-pn">}</span><span class="c-st">"</span><span class="c-pn">)</span>
 
-<span class="c-cm"># Ciudad de México       3.0% → $15,000.00</span>
-<span class="c-cm"># Jalisco                3.0% → $15,000.00</span>
-<span class="c-cm"># Guanajuato             2.0% → $10,000.00   ← 33% ahorro</span>
-<span class="c-cm"># Baja California        1.8% → $ 9,000.00   ← 40% ahorro</span>
+<!-- isn-ejemplo:inicio -->
+<span class="c-cm"># Ciudad de México            4.0% → $ 20,000.00</span>
+<span class="c-cm"># Jalisco                     3.0% → $ 15,000.00</span>
+<span class="c-cm"># Baja California            4.25% → $ 21,250.00</span>
+<span class="c-cm"># Sinaloa                2.4%–3.0% → no calculable (tramos 2026 sin verificar)</span>
+<!-- isn-ejemplo:fin -->
 
-<span class="c-cm"># Genera línea de captura del mes</span>
-linea <span class="c-op">=</span> cliente<span class="c-pn">.</span>generar_linea_captura<span class="c-pn">(</span>
-    estado<span class="c-op">=</span><span class="c-st">"CDMX"</span>,
-    periodo<span class="c-op">=</span><span class="c-st">"2026-05"</span>,
-    rfc<span class="c-op">=</span><span class="c-st">"ABC120101AB1"</span>,
-    nomina_gravable<span class="c-op">=</span>nomina,
-<span class="c-pn">)</span>
-<span class="c-fn">print</span><span class="c-pn">(</span><span class="c-st">f"Pagar $</span><span class="c-pn">{</span>linea<span class="c-pn">[</span><span class="c-st">'monto_a_pagar'</span><span class="c-pn">]</span><span class="c-pn">}</span><span class="c-st"> con línea </span><span class="c-pn">{</span>linea<span class="c-pn">[</span><span class="c-st">'linea_captura'</span><span class="c-pn">]</span><span class="c-pn">}</span><span class="c-st">"</span><span class="c-pn">)</span></pre>
+<span class="c-cm"># generar_linea_captura() y descargar_declaracion() no están automatizadas:</span>
+<span class="c-cm"># fuera de PLUGINS_MX_MOCK=1 levantan ConfigError (requieren sesión del contribuyente).</span></pre>
   </div>
 </section>
 
@@ -363,17 +361,17 @@ linea <span class="c-op">=</span> cliente<span class="c-pn">.</span>generar_line
   <dl class="faq-list">
     <div class="faq-item">
       <dt>¿Qué es el ISN (Impuesto sobre Nómina)?</dt>
-      <dd>El <strong>ISN</strong> es un impuesto estatal que grava las erogaciones por concepto de remuneraciones al trabajo personal subordinado prestado dentro del territorio de cada entidad federativa mexicana. Es obligación de <strong>toda empresa formal con al menos un trabajador</strong>. Cada estado fija su propia tasa (1.8% a 3.0% para 2026) y día de vencimiento mensual.</dd>
+      <dd>El <strong>ISN</strong> es un impuesto estatal que grava las erogaciones por concepto de remuneraciones al trabajo personal subordinado prestado dentro del territorio de cada entidad federativa mexicana. Es obligación de <strong>toda empresa formal con al menos un trabajador</strong>. Cada estado fija su propia tasa (2.5%–4.25% en 2026 según el catálogo, fuente secundaria) y día de vencimiento mensual.</dd>
     </div>
 
     <div class="faq-item">
       <dt>¿Cuál es la tasa de ISN en CDMX para 2026?</dt>
-      <dd>La tasa en la <strong>Ciudad de México es 3.0%</strong> para 2026. Pago vence el día 17 del mes siguiente. CDMX, Jalisco, Nuevo León, Estado de México y Querétaro tienen la tasa más alta (3.0%).</dd>
+      <dd>La tasa en la <strong>Ciudad de México es 4.0%</strong> para 2026 (Código Fiscal CDMX art. 158). Pago vence el día 17 del mes siguiente.</dd>
     </div>
 
     <div class="faq-item">
       <dt>¿Cuál es la entidad con la tasa de ISN más baja?</dt>
-      <dd><strong>Baja California (1.8%)</strong> tiene la tasa más baja del país para 2026. Yucatán (2.5%), Guanajuato (2.0%), Aguascalientes (2.0%) y Coahuila (2.0%) son alternativas competitivas. Cambiar la nómina de Jalisco a Baja California puede <strong>ahorrar hasta 40%</strong> de ISN.</dd>
+      <dd>Según el catálogo (fuente secundaria), la tasa fija más baja es <strong>Aguascalientes (2.5%)</strong>. Sinaloa aplica tramos de 2.4% a 3.0% no verificados para 2026. Baja California pasó a 4.25% única en 2026.</dd>
     </div>
 
     <div class="faq-item">
@@ -383,12 +381,12 @@ linea <span class="c-op">=</span> cliente<span class="c-pn">.</span>generar_line
 
     <div class="faq-item">
       <dt>¿Quién está obligado a pagar el ISN?</dt>
-      <dd>Toda persona física o moral, residente en México o en el extranjero con establecimiento permanente, que pague salarios, prestaciones o remuneraciones al trabajo personal subordinado prestado <strong>dentro del estado</strong>. Aplica desde el primer trabajador. Universo: <strong>~4M empresas formales</strong>.</dd>
+      <dd>Toda persona física o moral, residente en México o en el extranjero con establecimiento permanente, que pague salarios, prestaciones o remuneraciones al trabajo personal subordinado prestado <strong>dentro del estado</strong>. Aplica desde el primer trabajador.</dd>
     </div>
 
     <div class="faq-item">
       <dt>¿Puedo calcular ISN sin credenciales del estado?</dt>
-      <dd>Sí. <span class="mono">isn_calcular(nomina_gravable, estado)</span> funciona <strong>offline-first</strong> contra el catálogo central de tasas — sin credenciales. Útil para asesoría fiscal multi-estado: en milisegundos comparas el ISN de tu nómina en CDMX vs Yucatán vs Baja California sin tocar ningún portal estatal.</dd>
+      <dd>Sí. <span class="mono">isn_calcular(nomina_gravable, estado)</span> calcula localmente con la tasa del catálogo, sin credenciales ni portales. En Sinaloa y Tabasco no devuelve monto.</dd>
     </div>
   </dl>
 </section>

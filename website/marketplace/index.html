@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marketplace · Plugins MX · 62 skills mexicanas categorizadas</title>
+<title>Marketplace · Plugins MX · 83 MCPs con su estado real</title>
 <meta name="description" content="Catálogo navegable de 83 MCPs y 6 subagentes especializados para México. Categorizado por Fiscal, Laboral, Municipal, Verificación vehicular, Servicios públicos, Compliance horizontal, Pagos.">
 <link rel="canonical" href="https://skills-mexico.vercel.app/marketplace">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -552,7 +552,7 @@
       <li data-cat="all" class="is-active">
         <span class="mp-cat-icon c-ink">★</span>
         <span>Todas</span>
-        <span class="mp-cat-count">62</span>
+        <span class="mp-cat-count">83</span>
       </li>
     </ul>
 
@@ -589,14 +589,17 @@
     <div class="mp-list">
       <div class="mp-list-head">
         <h1 class="mp-list-title" id="listTitle">Todas las skills</h1>
-        <p class="mp-list-desc" id="listDesc">83 MCPs categorizados para automatizar compliance fiscal 2026, laboral, municipal, gobierno B2G y servicios públicos en México.</p>
+        <p class="mp-list-desc" id="listDesc">83 MCPs por categoría, cada uno con su estado real al 14-oct-2026.</p>
         <input class="mp-search" id="searchBox" placeholder="Buscar mp_predial, REPSE, agua, multas..." autocomplete="off">
         <div class="mp-filters">
           <button class="mp-filter is-on" data-tier="all">todas</button>
-          <button class="mp-filter" data-tier="S">tier S</button>
-          <button class="mp-filter" data-tier="A">tier A</button>
-          <button class="mp-filter" data-tier="B">tier B</button>
-          <button class="mp-filter" data-tier="C">tier C</button>
+          <button class="mp-filter" data-tier="real_validado">validado en vivo</button>
+          <button class="mp-filter" data-tier="real_sin_validar">sin validar</button>
+          <button class="mp-filter" data-tier="handoff">entrega a humano</button>
+          <button class="mp-filter" data-tier="calculo_normativo">cálculo normativo</button>
+          <button class="mp-filter" data-tier="sin_api">sin API</button>
+          <button class="mp-filter" data-tier="bloqueado">bloqueado</button>
+          <button class="mp-filter" data-tier="sin_verificar">sin verificar</button>
         </div>
       </div>
       <div class="mp-skill-list" id="skillList"></div>
@@ -673,7 +676,7 @@ function selectCategory(catId) {
     document.getElementById('listDesc').textContent = cat.descripcion;
   } else {
     document.getElementById('listTitle').textContent = 'Todas las skills';
-    document.getElementById('listDesc').textContent = '83 MCPs categorizados para automatizar compliance fiscal 2026, laboral, municipal, gobierno B2G y servicios públicos en México.';
+    document.getElementById('listDesc').textContent = '83 MCPs por categoría, cada uno con su estado real al 14-oct-2026.';
   }
   renderSkills();
 }
@@ -688,13 +691,14 @@ function getFilteredSkills() {
     const cat = CATALOG.categorias.find(c => c.id === CURRENT_CAT);
     if (cat) skills = cat.skills.map(s => ({...s, _cat: cat.label, _color: cat.color}));
   }
-  if (CURRENT_TIER !== 'all') skills = skills.filter(s => s.tier === CURRENT_TIER);
+  if (CURRENT_TIER !== 'all') skills = skills.filter(s => s.estado === CURRENT_TIER);
   if (CURRENT_QUERY) {
     const q = CURRENT_QUERY.toLowerCase();
     skills = skills.filter(s =>
       s.id.toLowerCase().includes(q) ||
       s.desc.toLowerCase().includes(q) ||
-      (s.tag || '').toLowerCase().includes(q)
+      (s.estado_label || '').toLowerCase().includes(q) ||
+      (s.tools || []).some(t => t.includes(q))
     );
   }
   return skills;
@@ -709,11 +713,11 @@ function renderSkills() {
   }
   list.innerHTML = skills.map(s => `
     <div class="mp-skill ${SELECTED_ID === s.id ? 'is-selected' : ''}" data-id="${s.id}">
-      <div class="mp-skill-tier t-${(s.tier || 'b').toLowerCase()}">${s.tier || 'B'}</div>
+
       <div class="mp-skill-body">
         <div class="mp-skill-id">${s.id}</div>
         <div class="mp-skill-desc">${s.desc}</div>
-        ${s.tag ? `<span class="mp-skill-tag">${s.tag}</span>` : ''}
+        <span class="mp-skill-tag">${s.estado_label}</span>
       </div>
     </div>
   `).join('');
@@ -735,8 +739,6 @@ function selectSkill(id) {
   }
   if (!skill) return;
 
-  const tier = skill.tier || 'B';
-  const tierColor = {S:'jade', A:'cobalt', B:'maize', C:'ink'}[tier];
   const detail = document.getElementById('detailPanel');
   detail.classList.add('is-open');
   detail.innerHTML = `
@@ -745,12 +747,11 @@ function selectSkill(id) {
 
       <div class="mp-detail-head">
         <h2 class="mp-detail-id">${skill.id}</h2>
-        <span class="mp-skill-tier t-${tier.toLowerCase()}" style="margin-left:auto;">${tier}</span>
       </div>
-      <div style="color:#8A7E6F; font-size:0.86rem; margin-bottom:0.6rem;">${catLabel}${skill.tag ? ' · ' + skill.tag : ''}</div>
+      <div style="color:#8A7E6F; font-size:0.86rem; margin-bottom:0.6rem;">${catLabel} · ${skill.estado_label}</div>
 
       <div class="mp-detail-section">
-        <h3>Descripción</h3>
+        <h3>Estado real</h3>
         <p>${skill.desc}</p>
       </div>
 
@@ -758,22 +759,23 @@ function selectSkill(id) {
         <h3>Metadata</h3>
         <div class="mp-detail-grid">
           <div class="mp-meta-cell">
-            <div class="mp-meta-label">Tier</div>
-            <div class="mp-meta-value">${tier}</div>
-          </div>
-          <div class="mp-meta-cell">
             <div class="mp-meta-label">Categoría</div>
             <div class="mp-meta-value">${catLabel}</div>
           </div>
           <div class="mp-meta-cell">
-            <div class="mp-meta-label">Tag</div>
-            <div class="mp-meta-value">${skill.tag || '—'}</div>
+            <div class="mp-meta-label">Estado</div>
+            <div class="mp-meta-value">${skill.estado_label}</div>
           </div>
           <div class="mp-meta-cell">
-            <div class="mp-meta-label">Mock-first</div>
-            <div class="mp-meta-value">✓ sí</div>
+            <div class="mp-meta-label">Tools</div>
+            <div class="mp-meta-value">${(skill.tools || []).length}</div>
           </div>
         </div>
+      </div>
+
+      <div class="mp-detail-section">
+        <h3>Tools</h3>
+        <p class="mono">${(skill.tools || []).join(' · ')}</p>
       </div>
 
       <div class="mp-detail-section">

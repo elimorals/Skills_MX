@@ -90,8 +90,8 @@
   <section class="principios">
     <div class="principio">
       <div class="principio-n">PRINCIPIO 01</div>
-      <h4 class="principio-h">Mock-first siempre</h4>
-      <p class="principio-d">Toda guía corre primero con datos simulados. Conectas credenciales reales solo cuando estés listo.</p>
+      <h4 class="principio-h">Estado real primero</h4>
+      <p class="principio-d">Cada guía dice si el MCP consulta en vivo, entrega a humano o es cálculo local. Los datos simulados solo salen con <code>PLUGINS_MX_MOCK=1</code>.</p>
     </div>
     <div class="principio">
       <div class="principio-n">PRINCIPIO 02</div>
@@ -101,7 +101,7 @@
     <div class="principio">
       <div class="principio-n">PRINCIPIO 03</div>
       <h4 class="principio-h">Human-in-loop para CAPTCHA</h4>
-      <p class="principio-d">Sin bypass de CAPTCHA. El operador resuelve cuando corresponde; el flujo continúa.</p>
+      <p class="principio-d">Sin bypass de CAPTCHA. El MCP devuelve la URL, los pasos y los datos prellenados; la persona hace el trámite.</p>
     </div>
     <div class="principio">
       <div class="principio-n">PRINCIPIO 04</div>
@@ -188,7 +188,7 @@
       <a href="/guias/isn-multi-estado" class="guia-card">
         <span class="guia-card-tag laboral">ISN 32 estados</span>
         <h3 class="guia-card-h">Calcular ISN multi-estado en bulk</h3>
-        <p class="guia-card-desc">Empresa con nómina en CDMX (3%) + JAL (2%) + EdoMex (3%). Cálculo + línea de captura + descarga declaración.</p>
+        <p class="guia-card-desc">Empresa con nómina en CDMX (4%) + JAL (3%) + EdoMex (3%). Cálculo local; línea de captura y declaración, en el portal estatal.</p>
         <div class="guia-card-meta"><span>10 min</span><span>mp_isn_mx</span></div>
         <span class="guia-card-arrow">→</span>
       </a>
@@ -204,7 +204,7 @@
       <a href="/guias/cedula-profesional" class="guia-card">
         <span class="guia-card-tag laboral">Cédula SEP</span>
         <h3 class="guia-card-h">Validar cédula profesional para telemedicina</h3>
-        <p class="guia-card-desc">NOM-004 compliance. Sin captcha. Desbloquea vertical telemedicina-mx.</p>
+        <p class="guia-card-desc">El portal de la SEP exige reCAPTCHA: el MCP entrega URL, pasos y datos prellenados.</p>
         <div class="guia-card-meta"><span>2 min</span><span>mp_sep_profesional</span></div>
         <span class="guia-card-arrow">→</span>
       </a>
@@ -266,7 +266,7 @@
       <a href="/guias/multas-saf-cdmx" class="guia-card">
         <span class="guia-card-tag veh">SAF CDMX</span>
         <h3 class="guia-card-h">Multas + tenencia + verificación CDMX en 1 endpoint</h3>
-        <p class="guia-card-desc">Calibrado en vivo 2026-06-15. 3 MCPs reusan 1 URL pública con CAPTCHA imagen.</p>
+        <p class="guia-card-desc">La consulta de la SAF tiene CAPTCHA de imagen: los 3 MCPs entregan a humano (2026-10-14).</p>
         <div class="guia-card-meta"><span>10 min</span><span>3 MCPs · 1 endpoint</span></div>
         <span class="guia-card-arrow">→</span>
       </a>
@@ -274,7 +274,7 @@
       <a href="/guias/tenencia-comparativa" class="guia-card">
         <span class="guia-card-tag veh">Tenencia</span>
         <h3 class="guia-card-h">Comparar tenencia entre estados antes de re-plaquear</h3>
-        <p class="guia-card-desc">Calculadora 20 estados con factor depreciación 0-9 años. Ahorro_max_mxn.</p>
+        <p class="guia-card-desc">Cálculo local con montos 2026 de notas de prensa (confianza media o baja); estados sin fuente retirados.</p>
         <div class="guia-card-meta"><span>5 min</span><span>mp_tenencia_mx</span></div>
         <span class="guia-card-arrow">→</span>
       </a>
@@ -282,7 +282,7 @@
       <a href="/guias/verificacion-engomado" class="guia-card">
         <span class="guia-card-tag veh">Engomado</span>
         <h3 class="guia-card-h">Próxima fecha de verificación por placa</h3>
-        <p class="guia-card-desc">Color engomado + meses obligatorios + costo verificentro.</p>
+        <p class="guia-card-desc">Calendario CDMX 2026 corregido y costos de prensa; el estatus por placa entrega a humano.</p>
         <div class="guia-card-meta"><span>2 min</span><span>mp_verificacion_vehicular_mx</span></div>
         <span class="guia-card-arrow">→</span>
       </a>
@@ -301,7 +301,7 @@
       <a href="/guias/cfe-mi-espacio" class="guia-card">
         <span class="guia-card-tag sp">CFE</span>
         <h3 class="guia-card-h">Descargar recibo CFE Mi Espacio (human-in-loop)</h3>
-        <p class="guia-card-desc">Playwright + cookies cache 30 min. Operador resuelve CAPTCHA imagen ASP.NET una vez por sesión.</p>
+        <p class="guia-card-desc">MCP sin sección "Estado real" en la oleada 1: sin verificar.</p>
         <div class="guia-card-meta"><span>10 min</span><span>mp_cfe_facturacion</span></div>
         <span class="guia-card-arrow">→</span>
       </a>
@@ -309,7 +309,7 @@
       <a href="/guias/telmex-pago-sin-login" class="guia-card">
         <span class="guia-card-tag sp">Telmex</span>
         <h3 class="guia-card-h">Telmex pago sin login (sin credenciales)</h3>
-        <p class="guia-card-desc">reCAPTCHA Enterprise v3 invisible. Solo teléfono + correo. Sin credenciales del usuario.</p>
+        <p class="guia-card-desc">MCP sin sección "Estado real" en la oleada 1: sin verificar.</p>
         <div class="guia-card-meta"><span>5 min</span><span>mp_telmex_facturacion</span></div>
         <span class="guia-card-arrow">→</span>
       </a>
@@ -317,7 +317,7 @@
       <a href="/guias/agua-multi-organismo" class="guia-card">
         <span class="guia-card-tag sp">Agua</span>
         <h3 class="guia-card-h">Consultar adeudo de agua multi-organismo</h3>
-        <p class="guia-card-desc">17 organismos catalogados. SIAPA + JMAS Juárez + OOAPAS son públicos consultables.</p>
+        <p class="guia-card-desc">JMAS Juárez consulta en vivo; SIAPA tiene reCAPTCHA; CESPT da 404; OOAPAS sin parser validado.</p>
         <div class="guia-card-meta"><span>10 min</span><span>mp_agua_mx</span></div>
         <span class="guia-card-arrow">→</span>
       </a>
