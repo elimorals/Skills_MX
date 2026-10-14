@@ -26,6 +26,7 @@ if str(_REPO_ROOT) not in sys.path:
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 
 NAMESPACE = "repep_profeco"
@@ -77,21 +78,20 @@ class REPEPClient:
                                    "puede_contactar": not inscrito})
         self._bitacora.log("consultar_handoff", success=True,
                            params_summary={"tel_hash": self._bitacora.hash_sensitive(tel)})
-        return {
-            "telefono": tel,
-            "inscrito_repep": None,
-            "puede_contactar": None,
-            "handoff_humano": True,
-            "motivo": ("La consulta individual de PROFECO es para el titular de la línea y "
-                       "bloquea la automatización; no se evade."),
-            "url": URL_CONSULTA,
-            "pasos": [
+        return armar_handoff(
+            motivo="bloqueo_portal",
+            detalle=("La consulta individual de PROFECO es para el titular de la línea y "
+                     "bloquea la automatización; no se evade."),
+            url=URL_CONSULTA,
+            pasos=[
                 "El titular abre la URL, escribe el número a 10 dígitos (sin pegar) y pulsa Consultar.",
                 "Para campañas: usar repep_filtrar_lote con la lista oficial comprada en PROFECO.",
             ],
-            "fecha_consulta": datetime.now(timezone.utc).isoformat(),
-            "simulated": False,
-        }
+            telefono=tel,
+            inscrito_repep=None,
+            puede_contactar=None,
+            fecha_consulta=datetime.now(timezone.utc).isoformat(),
+        )
 
     def filtrar_lote(self, telefonos: list[str], lista_repep_path: str | None = None) -> dict[str, Any]:
         """Separa contactables vs inscritos usando la lista oficial descargada de PROFECO."""
@@ -113,18 +113,17 @@ class REPEPClient:
                                    "bloqueados_repep": bloq, "invalidos": invalidos})
 
         if not lista_repep_path:
-            return {
-                "total_input": len(telefonos),
-                "filtrado": False,
-                "handoff_humano": True,
-                "motivo": "Sin la lista oficial REPEP no se puede afirmar que un número es contactable.",
-                "url": URL_LISTAS,
-                "pasos": [
+            return armar_handoff(
+                motivo="requiere_lista_oficial",
+                detalle="Sin la lista oficial REPEP no se puede afirmar que un número es contactable.",
+                url=URL_LISTAS,
+                pasos=[
                     "Registrarse como proveedor en repep.profeco.gob.mx y comprar la lista REPEP.",
                     "Pasar la ruta del archivo descargado en lista_repep_path.",
                 ],
-                "simulated": False,
-            }
+                total_input=len(telefonos),
+                filtrado=False,
+            )
 
         inscritos = cargar_lista_repep(lista_repep_path)
         bloqueados = [t for t in validos if t in inscritos]
@@ -149,18 +148,18 @@ class REPEPClient:
     def inscribir(self, telefono: str, propietario_curp: str | None = None) -> dict[str, Any]:
         """Nunca inscribe: devuelve los canales oficiales para que el titular lo haga."""
         tel = _normalizar_telefono(telefono)
-        return {
-            "telefono": tel,
-            "inscrito": False,
-            "handoff_humano": True,
-            "motivo": "La inscripción la hace el titular de la línea; este MCP es de solo lectura.",
-            "url": URL_REGISTRO,
-            "pasos": [
+        return armar_handoff(
+            motivo="accion_del_titular",
+            detalle="La inscripción la hace el titular de la línea; este MCP es de solo lectura.",
+            url=URL_REGISTRO,
+            pasos=[
                 "Registrar en línea en la URL, o llamar desde la línea al 96 28 00 00 "
                 "(CDMX, Guadalajara, Monterrey) o al 800 962 8000 (resto del país).",
             ],
-            "fuente": URL_REPEP,
-        }
+            telefono=tel,
+            inscrito=False,
+            fuente=URL_REPEP,
+        )
 
     def estadisticas(self) -> dict[str, Any]:
         """Sin cifras inventadas: el número de inscritos no se publica en el portal."""

@@ -35,6 +35,7 @@ if str(_REPO_ROOT) not in sys.path:
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 from shared.no_antecedentes import (  # noqa: E402
     CDMX_PORTAL_URL,
     EDOMEX_PORTAL_URL,
@@ -183,19 +184,17 @@ class NoAntecedentesClient:
                 "Pedir el PDF original con folio y código de verificación.",
                 "Confirmar con la Fiscalía General de Justicia del Estado de México (FGJEM).",
             ]
-        return {
-            "requiere_humano": True,
-            "motivo": "sin_verificador_publico",
-            "url": url,
-            "pasos": pasos,
-            "campos_prellenados": {"curp": curp, "folio": folio, "entidad": ent},
-            "curp": curp,
-            "entidad": ent,
-            "estado": "DESCONOCIDO",
-            "es_apta_para_contratacion": None,
-            "fecha_consulta": datetime.now(timezone.utc).isoformat(),
-            "simulated": False,
-        }
+        return armar_handoff(
+            motivo="sin_verificador_publico",
+            url=url,
+            pasos=pasos,
+            campos_prellenados={"curp": curp, "folio": folio, "entidad": ent},
+            curp=curp,
+            entidad=ent,
+            estado="DESCONOCIDO",
+            es_apta_para_contratacion=None,
+            fecha_consulta=datetime.now(timezone.utc).isoformat(),
+        )
 
     # ============================================================
     # Mock path

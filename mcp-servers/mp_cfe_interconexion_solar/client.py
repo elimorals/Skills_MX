@@ -29,6 +29,7 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 
 NAMESPACE = "cfe_interconexion_solar"
@@ -81,37 +82,37 @@ class CFEInterconexionClient:
         clasif = clasificar_central(kw_instalados)
         self._bitacora.log("solicitar_interconexion_handoff", success=True,
                            params_summary={"rpu_hash": self._bitacora.hash_sensitive(rpu), "kw": kw_instalados})
-        return {
-            "rpu_hash": self._bitacora.hash_sensitive(rpu),
-            "kw_instalados": kw_instalados,
-            "tipo_sistema": tipo_sistema,
-            "tarifa_actual": tarifa_actual,
-            "tension": tension,
-            **clasif,
-            "enviada": False,
-            "handoff_humano": True,
-            "motivo": "La solicitud de interconexión la presenta el titular del servicio ante CFE.",
-            "pasos": [
+        return armar_handoff(
+            motivo="accion_del_titular",
+            detalle="La solicitud de interconexión la presenta el titular del servicio ante CFE.",
+            pasos=[
                 "Reunir diagrama unifilar y fichas técnicas de inversor/módulos/protecciones (lista orientativa; "
                 "confirmar la vigente con CFE Distribución).",
                 "Presentar la solicitud de interconexión en el centro de atención o canal digital de CFE.",
                 "Tras la inspección, firmar el contrato de interconexión y obtener medidor bidireccional.",
             ],
-            "url": URL_CFE,
-            "fuente_legal": URL_LSE,
-        }
+            url=URL_CFE,
+            rpu_hash=self._bitacora.hash_sensitive(rpu),
+            kw_instalados=kw_instalados,
+            tipo_sistema=tipo_sistema,
+            tarifa_actual=tarifa_actual,
+            tension=tension,
+            **clasif,
+            enviada=False,
+            fuente_legal=URL_LSE,
+        )
 
     def consultar_estatus_solicitud(self, folio: str) -> dict[str, Any]:
         """No hay consulta pública del estatus: handoff (antes el estatus salía del último carácter)."""
         if not folio or len(folio) < 4:
             raise ValidationError(f"folio inválido: {folio!r}")
-        return {
-            "folio": folio,
-            "estatus": None,
-            "handoff_humano": True,
-            "pasos": ["Consultar el folio con CFE (centro de atención o 071)."],
-            "url": URL_CFE,
-        }
+        return armar_handoff(
+            motivo="sin_consulta_publica",
+            pasos=["Consultar el folio con CFE (centro de atención o 071)."],
+            url=URL_CFE,
+            folio=folio,
+            estatus=None,
+        )
 
     def simular_ahorro_prosumidor(self, costo_kwh_mxn: float, kwh_consumo_promedio_mensual: float,
                                   kwh_generacion_solar_estimada: float, esquema: str = "medicion_neta",

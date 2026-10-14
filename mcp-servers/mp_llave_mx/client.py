@@ -46,6 +46,7 @@ from shared.llave_mx import (  # noqa: E402
     tramites_por_dependencia,
 )
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 
 NAMESPACE = "llave_mx"
@@ -188,10 +189,10 @@ class LlaveMXClient:
     def vincular_e_firma(self, curp: str) -> dict[str, Any]:
         """La vinculación la hace el titular en llave.gob.mx: handoff, nunca se suben .key/.cer aquí."""
         curp = _validar_curp(curp)
-        return {
-            "curp_hash": self._bitacora.hash_sensitive(curp),
-            "e_firma_vinculada": None,
-            "handoff_humano": True,
-            "url": URL_LLAVE_MX,
-            "pasos": ["El titular inicia sesión en llave.gob.mx y sigue la opción de su cuenta."],
-        }
+        return armar_handoff(
+            motivo="accion_del_titular",
+            url=URL_LLAVE_MX,
+            pasos=["El titular inicia sesión en llave.gob.mx y sigue la opción de su cuenta."],
+            curp_hash=self._bitacora.hash_sensitive(curp),
+            e_firma_vinculada=None,
+        )

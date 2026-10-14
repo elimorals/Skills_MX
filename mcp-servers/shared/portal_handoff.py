@@ -182,30 +182,63 @@ def verificar_portal(portal: PortalCaptcha, *, timeout: float = 30.0) -> dict[st
     }
 
 
-def handoff_humano(portal: PortalCaptcha, **extra: Any) -> dict[str, Any]:
-    """Respuesta real (no simulada): el portal está arriba y requiere a una persona."""
-    evidencia = verificar_portal(portal)
-    razon = (
-        f"El portal oficial exige CAPTCHA ({portal.captcha_tipo}); no se automatiza."
-        if portal.motivo == "captcha"
-        else "El flujo del portal oficial no está automatizado; consulta manual."
-    )
+def armar_handoff(
+    *,
+    motivo: str,
+    pasos: list[str] | tuple[str, ...],
+    url: str | None = None,
+    portal: str | None = None,
+    detalle: str = "",
+    captcha_tipo: str | None = None,
+    campos_prellenados: dict[str, Any] | None = None,
+    portal_verificado: dict[str, Any] | None = None,
+    **extra: Any,
+) -> dict[str, Any]:
+    """Única forma de salida de un handoff humano en todos los MCPs.
+
+    `motivo` es un código corto: captcha | login | bot_manager | flujo_no_automatizado |
+    envio_manual | sin_verificador_publico | sin_consulta_publica | accion_del_titular |
+    requiere_lista_oficial | bloqueo_portal. La explicación en texto va en `detalle`.
+    """
     return {
-        "simulated": False,
+        "requiere_humano": True,
         "status": "requiere_humano",
-        "motivo": portal.motivo,
-        "captcha_tipo": portal.captcha_tipo,
-        "portal": portal.nombre,
-        "url_consulta_manual": portal.url,
-        "pasos": list(portal.pasos),
-        "razon": razon,
-        "portal_verificado": evidencia,
+        "consultado": False,
+        "simulated": False,
+        "motivo": motivo,
+        "detalle": detalle,
+        "portal": portal,
+        "url": url,
+        "pasos": list(pasos),
+        "captcha_tipo": captcha_tipo,
+        "campos_prellenados": campos_prellenados or {},
+        "portal_verificado": portal_verificado,
         **extra,
     }
 
 
+def handoff_humano(portal: PortalCaptcha, **extra: Any) -> dict[str, Any]:
+    """Respuesta real (no simulada): el portal está arriba y requiere a una persona."""
+    evidencia = verificar_portal(portal)
+    detalle = (
+        f"El portal oficial exige CAPTCHA ({portal.captcha_tipo}); no se automatiza."
+        if portal.motivo == "captcha"
+        else "El flujo del portal oficial no está automatizado; consulta manual."
+    )
+    return armar_handoff(
+        motivo=portal.motivo,
+        detalle=detalle,
+        portal=portal.nombre,
+        url=portal.url,
+        pasos=portal.pasos,
+        captcha_tipo=portal.captcha_tipo,
+        portal_verificado=evidencia,
+        **extra,
+    )
+
+
 __all__ = [
-    "PortalCaptcha", "mock_forzado", "verificar_portal", "handoff_humano",
+    "PortalCaptcha", "mock_forzado", "verificar_portal", "handoff_humano", "armar_handoff",
     "SAF_CDMX_ADEUDOS", "OVICA_CDMX_PREDIAL", "EDOMEX_INFRACCIONES",
     "EDOMEX_RECAUDACION", "SAN_PEDRO_MULTAS", "JALISCO_ADEUDOS",
     "ICVNL_ESTADO_CUENTA", "IGECEM_EDOMEX",

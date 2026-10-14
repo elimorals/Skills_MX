@@ -28,7 +28,7 @@ def test_real_handoff_es_captcha_error(monkeypatch):
     monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
     c = PredialMxClient()
     monkeypatch.setattr(c._core, "consultar", lambda **k: {
-        "status": "requiere_humano", "razon": "CAPTCHA", "url_consulta_manual": "https://x"})
+        "requiere_humano": True, "status": "requiere_humano", "detalle": "CAPTCHA", "url": "https://x"})
     with pytest.raises(CaptchaRequeridoError) as e:
         c.consultar("cdmx", "ciudad_de_mexico", "123456789012")
     assert e.value.url_consulta_manual == "https://x"

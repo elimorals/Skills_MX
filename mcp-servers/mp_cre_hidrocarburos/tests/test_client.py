@@ -57,7 +57,7 @@ def test_no_encontrado_no_afirma_invalidez():
     r = CREClient().consultar_permiso("G/1234/TRA/DUC/2016")
     assert r["encontrado"] is False
     assert "NO prueba" in r["nota"]
-    assert r["handoff_humano"]
+    assert r["handoff"]["requiere_humano"] is True
 
 
 @respx.mock
@@ -95,7 +95,7 @@ def test_anexo30_umbral_litros():
 def test_reportar_zeros_es_handoff_nunca_envia():
     r = CREClient().reportar_zeros("PL/658/EXP/ES/2015", "2026-09")
     assert r["enviado"] is False
-    assert r["handoff_humano"] is True
+    assert r["requiere_humano"] is True
     assert "folio" not in r
     with pytest.raises(ValidationError):
         CREClient().reportar_zeros("PL/658/EXP/ES/2015", "2026/09")

@@ -23,7 +23,7 @@ def _env(monkeypatch, tmp_path):
 
 def test_verificar_modelo_g_es_handoff():
     r = INEVerificacionClient().verificar_datos("G", AUT, cic="012345678", id_ciudadano="000123456")
-    assert r["handoff_humano"] is True
+    assert r["requiere_humano"] is True
     assert r["en_lista_nominal"] is None
     assert r["campos_a_capturar"] == ["cic", "id_ciudadano"]
 

@@ -47,7 +47,7 @@ class ConsultarMultasInput(BaseModel):
 def multas_consultar(args: ConsultarMultasInput) -> dict:
     """Multas por placa: GET real al portal oficial + handoff humano (CAPTCHA).
 
-    Returns: {"status": "requiere_humano", "url_consulta_manual", "pasos", "portal_verificado", ...}
+    Returns: {"requiere_humano": true, "status": "requiere_humano", "url", "pasos", "portal_verificado", ...}
     o {"error": true, "code": "upstream_error"} si el portal está caído o cambió.
     """
     try:

@@ -33,6 +33,7 @@ from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
 from shared.errors import UpstreamError, ValidationError, handle_httpx_error  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 
 NAMESPACE = "cre_hidrocarburos"
@@ -138,8 +139,8 @@ class CREClient:
             out["nota"] = ("No aparece en el padrón de estaciones. Eso NO prueba que el permiso no "
                            "exista o no esté vigente: otros tipos de permiso no se publican aquí. "
                            "Confirmar con la CNE.")
-            out["handoff_humano"] = {"url": URL_CNE,
-                                     "pasos": ["Solicitar constancia/estatus del permiso a la CNE."]}
+            out["handoff"] = armar_handoff(motivo="sin_consulta_publica", url=URL_CNE,
+                                           pasos=["Solicitar constancia/estatus del permiso a la CNE."])
         return out
 
     def calendar_reporte_mensual(self, anio: int, mes_actual: int) -> dict[str, Any]:
@@ -206,20 +207,20 @@ class CREClient:
             raise ValidationError(f"num_permiso inválido: {num_permiso!r}")
         if not re.match(r"^\d{4}-\d{2}$", periodo):
             raise ValidationError(f"periodo debe ser YYYY-MM: {periodo!r}")
-        return {
-            "num_permiso": num_permiso,
-            "periodo": periodo,
-            "enviado": False,
-            "handoff_humano": True,
-            "motivo": "Presentar reportes ante el regulador es una acción con efectos legales; "
-                      "este MCP es de solo lectura.",
-            "pasos": [
+        return armar_handoff(
+            motivo="accion_del_titular",
+            detalle="Presentar reportes ante el regulador es una acción con efectos legales; "
+                    "este MCP es de solo lectura.",
+            pasos=[
                 "Entrar a la Oficialía de Partes Electrónica / sistema de reportes de la CNE con la e.firma del permisionario.",
                 f"Seleccionar el permiso {num_permiso} y el periodo {periodo}.",
                 "Capturar volúmenes en cero y firmar; conservar el acuse.",
             ],
-            "url": URL_CNE,
-        }
+            url=URL_CNE,
+            num_permiso=num_permiso,
+            periodo=periodo,
+            enviado=False,
+        )
 
     def listar_tipos_permiso(self) -> dict[str, Any]:
         return {

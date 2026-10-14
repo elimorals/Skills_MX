@@ -94,7 +94,7 @@ def test_mock_solo_con_flag(monkeypatch):
 def test_calendario_trimestral_es_handoff():
     r = CONAGUARepdaClient().estado_reporte_semestral("11CHS158257/30EMDA26", "T2")
     assert r["presentado"] is None
-    assert r["handoff_humano"] is True
+    assert r["requiere_humano"] is True
     assert "julio" in r["fecha_limite"]
     with pytest.raises(ValidationError):
         CONAGUARepdaClient().estado_reporte_semestral("11CHS158257/30EMDA26", "1er_semestre")

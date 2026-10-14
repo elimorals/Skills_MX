@@ -35,6 +35,7 @@ from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 NAMESPACE = "curp_renapo_mcp"
 CACHE_DIAS = 90
@@ -52,14 +53,12 @@ def handoff_renapo(curp: str, motivo: str = "consulta") -> dict[str, Any]:
     ]
     if motivo == "constancia":
         pasos.append("En el resultado, pulsar 'Descargar PDF' para obtener la constancia.")
-    return {
-        "requiere_humano": True,
-        "motivo": "captcha_requerido",
-        "url": PORTAL_URL,
-        "pasos": pasos,
-        "campos_prellenados": {"curp": curp},
-        "simulated": False,
-    }
+    return armar_handoff(
+        motivo="captcha",
+        url=PORTAL_URL,
+        pasos=pasos,
+        campos_prellenados={"curp": curp},
+    )
 
 
 class RenapoClient:

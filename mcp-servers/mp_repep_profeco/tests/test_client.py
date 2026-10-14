@@ -29,7 +29,7 @@ def test_normaliza_formatos():
 
 def test_consultar_es_handoff_sin_inventar():
     r = REPEPClient().consultar("5555688722")
-    assert r["handoff_humano"] is True
+    assert r["requiere_humano"] is True
     assert r["inscrito_repep"] is None
     assert r["simulated"] is False
 
@@ -60,7 +60,7 @@ def test_lista_ilegible_no_vuelve_todo_contactable(tmp_path):
 def test_inscribir_nunca_inscribe():
     r = REPEPClient().inscribir("5555688722")
     assert r["inscrito"] is False
-    assert r["handoff_humano"] is True
+    assert r["requiere_humano"] is True
 
 
 def test_estadisticas_sin_cifras_inventadas():

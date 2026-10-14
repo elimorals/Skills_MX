@@ -32,6 +32,7 @@ from shared.bitacora import Bitacora  # noqa: E402
 from shared.errors import UpstreamError, ValidationError, handle_httpx_error  # noqa: E402
 from shared.http_helpers import build_ssl_verify  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 
 NAMESPACE = "conagua_repda"
@@ -211,21 +212,21 @@ class CONAGUARepdaClient:
         }
         if periodo not in vencimientos:
             raise ValidationError("periodo debe ser T1, T2, T3 o T4 (la declaración es trimestral)")
-        return {
-            "num_titulo": num_titulo,
-            "periodo": periodo,
-            "fecha_limite": vencimientos[periodo],
-            "presentado": None,
-            "handoff_humano": True,
-            "motivo": "No existe consulta pública del cumplimiento; revisar acuses del contribuyente.",
-            "pasos": [
+        return armar_handoff(
+            motivo="sin_consulta_publica",
+            detalle="No existe consulta pública del cumplimiento; revisar acuses del contribuyente.",
+            pasos=[
                 "Revisar el acuse de la declaración trimestral del derecho sobre agua (SAT / e5cinco).",
                 "Si no se presentó, declarar y pagar con actualización y recargos.",
             ],
-            "base_legal": "Art. 226 LFD: cálculo trimestral, pago a más tardar el último día hábil "
-                          "de enero, abril, julio y octubre.",
-            "fuente": URL_LFD,
-        }
+            num_titulo=num_titulo,
+            periodo=periodo,
+            fecha_limite=vencimientos[periodo],
+            presentado=None,
+            base_legal="Art. 226 LFD: cálculo trimestral, pago a más tardar el último día hábil "
+                       "de enero, abril, julio y octubre.",
+            fuente=URL_LFD,
+        )
 
     def calcular_pago_lfd(self, num_titulo: str, m3_extraidos: float,
                           zona_disponibilidad: int,

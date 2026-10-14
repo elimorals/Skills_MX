@@ -25,6 +25,7 @@ from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 from shared.repuve import (  # noqa: E402
     PORTAL_URL,
     VehiculoREPUVE,
@@ -165,23 +166,21 @@ class RepuveClient:
     @staticmethod
     def _handoff(tipo: str, valor: str) -> dict[str, Any]:
         campo = "Número de Identificación Vehicular (NIV)" if tipo == "niv" else "Número de Placa"
-        return {
-            "requiere_humano": True,
-            "motivo": "captcha_requerido",
-            "url": PORTAL_URL,
-            "pasos": [
+        return armar_handoff(
+            motivo="captcha",
+            url=PORTAL_URL,
+            pasos=[
                 "Abrir la URL en un navegador.",
                 f"Capturar solo el campo '{campo}' con el valor prellenado.",
                 "Pulsar 'Buscar' (el reCAPTCHA invisible se valida en el navegador).",
                 "Leer 'Estatus' / reporte de robo en el resultado.",
             ],
-            "campos_prellenados": {tipo: valor},
-            "tipo": tipo,
-            "valor": valor,
-            "encontrado": None,
-            "fecha_consulta": datetime.now(timezone.utc).isoformat(),
-            "simulated": False,
-        }
+            campos_prellenados={tipo: valor},
+            tipo=tipo,
+            valor=valor,
+            encontrado=None,
+            fecha_consulta=datetime.now(timezone.utc).isoformat(),
+        )
 
     # ============================================================
     # Mock path

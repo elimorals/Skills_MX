@@ -34,6 +34,7 @@ from shared.cache import FileCache  # noqa: E402
 from shared.errors import UpstreamError, ValidationError, handle_httpx_error  # noqa: E402
 from shared.http_helpers import default_user_agent  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 
 NAMESPACE = "concilianet"
@@ -204,14 +205,14 @@ class ConcilianetClient:
     def estatus_caso(self, folio: str) -> dict[str, Any]:
         if not folio or len(folio) < 6:
             raise ValidationError(f"folio inválido: {folio!r}")
-        return {
-            "folio": folio,
-            "fase_actual": None,
-            "handoff_humano": True,
-            "motivo": "El expediente solo es visible para el consumidor con su cuenta de Concilianet.",
-            "url": URL_CONCILIANET,
-            "pasos": ["Iniciar sesión en Concilianet con la cuenta del consumidor y abrir el folio."],
-        }
+        return armar_handoff(
+            motivo="login",
+            detalle="El expediente solo es visible para el consumidor con su cuenta de Concilianet.",
+            url=URL_CONCILIANET,
+            pasos=["Iniciar sesión en Concilianet con la cuenta del consumidor y abrir el folio."],
+            folio=folio,
+            fase_actual=None,
+        )
 
     def listar_proveedores_convenio(self) -> dict[str, Any]:
         """Los listados oficiales son PDF con columnas de logos; se entregan las fuentes y se
@@ -228,15 +229,15 @@ class ConcilianetClient:
             raise ValidationError("proveedor requerido")
         if not descripcion or len(descripcion) < 20:
             raise ValidationError("descripcion debe ser ≥20 caracteres")
-        return {
-            "proveedor": proveedor,
-            "registrada": False,
-            "handoff_humano": True,
-            "motivo": "Presentar una queja es un acto del consumidor; este MCP es de solo lectura.",
-            "url": URL_CONCILIANET + "registro.jsp",
-            "pasos": [
+        return armar_handoff(
+            motivo="accion_del_titular",
+            detalle="Presentar una queja es un acto del consumidor; este MCP es de solo lectura.",
+            url=URL_CONCILIANET + "registro.jsp",
+            pasos=[
                 "Registrarse en Concilianet (si el proveedor está en convenio) o acudir a la ODECO.",
                 "Capturar la reclamación con la descripción preparada y anexar comprobantes.",
             ],
-            "borrador": {"descripcion": descripcion, "monto_reclamado_mxn": monto_reclamado_mxn},
-        }
+            proveedor=proveedor,
+            registrada=False,
+            borrador={"descripcion": descripcion, "monto_reclamado_mxn": monto_reclamado_mxn},
+        )

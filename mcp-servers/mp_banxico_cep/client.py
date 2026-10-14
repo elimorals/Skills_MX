@@ -36,6 +36,7 @@ from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 NAMESPACE = "banxico_cep_mcp"
 CACHE_CEP_DIAS = 90
@@ -44,18 +45,16 @@ CACHE_CONSULTA_DIAS = 30
 
 def handoff_captcha(campos: dict[str, Any]) -> dict[str, Any]:
     """Respuesta para cuando Banxico exige CAPTCHA: lo completa una persona."""
-    return {
-        "requiere_humano": True,
-        "motivo": "captcha_requerido",
-        "url": spei.BASE_URL,
-        "pasos": [
+    return armar_handoff(
+        motivo="captcha",
+        url=spei.BASE_URL,
+        pasos=[
             "Abrir la URL en un navegador.",
             "Capturar fecha, clave de rastreo, instituciones emisora/receptora, cuenta y monto (abajo).",
             "Escribir el código de la imagen de seguridad y pulsar 'Descargar CEP' o 'Consultar Pago'.",
         ],
-        "campos_prellenados": campos,
-        "simulated": False,
-    }
+        campos_prellenados=campos,
+    )
 
 
 class BanxicoCepClient:

@@ -141,13 +141,13 @@ class TestRevisar:
         respx.get(URL_SAT_MENU).mock(return_value=httpx.Response(200, json=MENU))
         r = self.c.revisar_cupos("sat_citas", "csf_descarga")
         assert r["tiene_cupos"] is None
-        assert r["handoff_humano"] is True
-        assert "401" in r["motivo"]
+        assert r["requiere_humano"] is True
+        assert "401" in r["detalle"]
         assert any("Constancia de Situación Fiscal" in a["nombre"] for a in r["alternativas_digitales"])
 
     def test_revisar_sre_captcha_handoff(self):
         r = self.c.revisar_cupos("sre_mexitel", "pasaporte_ordinario_nuevo")
-        assert "Radware" in r["motivo"]
+        assert "Radware" in r["detalle"]
         assert r["tiene_cupos"] is None
 
     def test_portal_invalido_falla(self):

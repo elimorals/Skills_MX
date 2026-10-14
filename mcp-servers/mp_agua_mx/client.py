@@ -33,7 +33,7 @@ from shared.agua_mx import (  # noqa: E402
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
 from shared.errors import NotFoundError, UpstreamError, ValidationError, handle_httpx_error  # noqa: E402
-from shared.handoff_humano import handoff_humano  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
 
@@ -198,8 +198,8 @@ class AguaMxClient:
         }
 
     def _handoff(self, org: OrganismoAgua, cuenta: str) -> dict[str, Any]:
-        return handoff_humano(
-            portal=org.url_consulta or org.url_portal,
+        return armar_handoff(
+            url=org.url_consulta or org.url_portal,
             motivo="captcha",
             detalle=org.notas,
             organismo=org.clave,
