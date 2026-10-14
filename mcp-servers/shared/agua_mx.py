@@ -32,7 +32,12 @@ from dataclasses import dataclass, field
 from typing import Literal, Optional
 
 
-# SIAPA: formulario con reCAPTCHA v2 (verificado 2026-10-14) → solo handoff humano.
+# SIAPA: formulario con reCAPTCHA v2 checkbox (verificado 2026-10-14) → handoff humano,
+# también con solver activo: POST busca_cta-sntdr.php {cuenta_contrato, clavesiapa,
+# g-recaptcha-response} es el arranque del pago con Santander, no una consulta; cualquier
+# fallo redirige a index.php?error=1 sin distinguir captcha de cuenta mala, y no hay
+# evidencia de cómo se ve la página de éxito sin enviar datos de un tercero.
+SIAPA_SITEKEY = "6LdsJiUUAAAAAIjV_N2F3sd58XYDYznuyNn9ROva"
 URL_SIAPA_CONSULTA = "https://www.siapa.gob.mx/aplicaciones/pagoenlinea/"
 
 # SACMEX: portal con 503 dominical persistente (2026-06-15). Reintentar lunes.
@@ -97,7 +102,8 @@ CATALOGO_AGUA: list[OrganismoAgua] = [
         frecuencia_recibo="bimestral",
         poblacion_aprox=5000000,
         consultable=False,
-        notas="Pide cuenta + clave SIAPA del recibo y reCAPTCHA v2 → handoff humano.",
+        notas=("Pide cuenta contrato (8) + clave SIAPA (14) del recibo y reCAPTCHA v2 → handoff "
+               "humano (sin solver: el formulario es el inicio del pago, no una consulta)."),
     ),
     OrganismoAgua(
         clave="sadm",
