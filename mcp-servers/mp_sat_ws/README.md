@@ -39,25 +39,38 @@ Descarga un ZIP cuando la solicitud está TERMINADA.
 
 ## Estado del MCP
 
-- ✅ Estructura SOAP completa (4 endpoints, schemas, error handling)
-- ✅ Mock determinístico para CI/dev
-- ✅ Validación de RFC + rangos de fecha ISO
-- ✅ Tests unitarios
-- ⚠️ **Modo real requiere XMLSignature** con e.firma — placeholder en v1.
-  Cuando el usuario provea cert/key/password, implementar `_real_solicitud()`
-  con `signxml` o `lxml + cryptography`.
+- Firma XMLDSig (RSA-SHA1, exc-c14n) implementada en `SatWsClient._firmar_soap_request`,
+  portada de [phpcfdi/sat-ws-descarga-masiva](https://github.com/phpcfdi/sat-ws-descarga-masiva) (MIT).
+  Solo depende de `cryptography` (extra `[sat-ws]`).
+- Flujo real completo: Autenticación (token WRAP, se reutiliza 4 min) →
+  SolicitaDescargaEmitidos/Recibidos → VerificaSolicitudDescarga → Descargar.
+- Sin fallback a mock con credenciales: un `CodEstatus` distinto de 5000 levanta
+  `UpstreamError` con `details.cod_estatus_sat` (300-305, 404, 5002, 5005…); un
+  SOAP Fault de seguridad levanta `AuthError`.
+- Mock solo con `PLUGINS_MX_MOCK=1` o sin `SAT_EFIRMA_*` (respuestas `simulated: true`).
+- `sat_descargar_cfdi_masivo` de `mp_sat_portal` usa este cliente para la solicitud del mes.
+
+## Estado real (validación en vivo)
+
+| Qué | Cómo se validó | Resultado |
+|---|---|---|
+| Firma byte a byte | `tests/test_firma.py`: DigestValue y SignatureValue idénticos a los requests de phpcfdi con la e.firma de prueba EKU9003173C9; firma verificada con la llave pública; digest re-verificado una vez con exc-c14n de `lxml` | OK |
+| Autenticación | 2026-10-14, `POST .../Autenticacion/Autenticacion.svc` con la e.firma **de prueba** EKU9003173C9 | HTTP 200, token devuelto |
+| Verifica / Descargar | 2026-10-14, mismas credenciales de prueba, id ficticio | `CodEstatus 305 Certificado Inválido` (el SAT parsea el sobre y la firma; rechaza el certificado de prueba, esperado) |
+| Solicitud / Verifica / Descarga con e.firma real | **No validado.** Pendiente de correr `test_live.py` con la e.firma del usuario | — |
+
+No se probó `SolicitaDescarga` en vivo: crea una solicitud real (consume cupo del SAT).
 
 ## Auth (modo real)
 
-3 env vars requeridas:
 ```bash
-export SAT_EFIRMA_CERT=/path/to/cert.cer
-export SAT_EFIRMA_KEY=/path/to/key.key
+pip install -e '.[sat-ws]'
+export SAT_EFIRMA_CERT=/path/to/cert.cer      # DER
+export SAT_EFIRMA_KEY=/path/to/key.key        # PKCS#8 DER cifrado
 export SAT_EFIRMA_PASSWORD="..."
-export PLUGINS_MX_SAT_WS_LIVE=1
 ```
 
-Sin estas vars, el MCP corre 100% en mock.
+Sin estas vars (o con `PLUGINS_MX_MOCK=1`) el MCP corre en mock.
 
 ## Limitaciones del SAT
 
@@ -65,9 +78,17 @@ Sin estas vars, el MCP corre 100% en mock.
 - Cada solicitud cubre **máximo 200,000 CFDIs**.
 - Las solicitudes **expiran a los 7 días**.
 - Polling **mínimo cada 30 segundos** (rate limit).
+- Recibidos en XML: el SAT solo acepta `EstadoComprobante=Vigente` (el cliente lo fija).
+- `rfc_emisor` debe ser el RFC de la e.firma cargada (si no, `ValidationError`).
 
 ## Tests
 
 ```bash
-PYTHONPATH=mcp-servers pytest mcp-servers/mp_sat_ws/tests -v
+cd mcp-servers && .venv/bin/pytest -q mp_sat_ws
+# en vivo (solo Autenticación, no crea solicitudes):
+PLUGINS_MX_LIVE=1 SAT_EFIRMA_CERT=... SAT_EFIRMA_KEY=... SAT_EFIRMA_PASSWORD=... \
+  .venv/bin/pytest -q mp_sat_ws/tests/test_live.py
 ```
+
+Fixtures: e.firma de prueba EKU9003173C9 (publicada por el SAT en RFC-PAC-SC.zip) y
+respuestas XML del SAT, ambas tomadas de phpcfdi/sat-ws-descarga-masiva (MIT).

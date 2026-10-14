@@ -28,7 +28,9 @@ class SolicitarDescargaInput(BaseModel):
     fecha_final: str = Field(..., description="ISO YYYY-MM-DDTHH:MM:SS")
     tipo_solicitud: str = Field("CFDI", pattern="^(CFDI|Metadata)$")
     tipo_comprobante: Optional[str] = Field(None, pattern="^[IETPN]$")
-    rfc_receptor: str = Field("", max_length=13)
+    rfc_receptor: str = Field("", max_length=13, description="Filtro de receptor (solo emitidos).")
+    tipo_descarga: str = Field("emitidos", pattern="^(emitidos|recibidos)$")
+    rfc_emisor_filtro: str = Field("", max_length=13, description="Filtro de emisor (solo recibidos).")
 
 
 class VerificarSolicitudInput(BaseModel):
@@ -53,6 +55,8 @@ def sat_ws_solicitar_descarga(args: SolicitarDescargaInput) -> dict:
         tipo_solicitud=args.tipo_solicitud,  # type: ignore[arg-type]
         tipo_comprobante=args.tipo_comprobante,  # type: ignore[arg-type]
         rfc_receptor=args.rfc_receptor,
+        tipo_descarga=args.tipo_descarga,  # type: ignore[arg-type]
+        rfc_emisor_filtro=args.rfc_emisor_filtro,
     )
     return _client.solicitar_descarga(sol)
 

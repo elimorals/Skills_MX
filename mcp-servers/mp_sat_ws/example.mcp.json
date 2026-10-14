@@ -12,7 +12,7 @@
         "Web Service SOAP oficial SAT — requiere e.firma vigente.",
         "Para path real: SAT_EFIRMA_CERT, SAT_EFIRMA_KEY, SAT_EFIRMA_PASSWORD.",
         "Universo: despacho-contable (200+ clientes), ERPs (Aspel/Contpaqi), auditoría.",
-        "Implementación real requiere XMLSignature con e.firma — placeholder en v1."
+        "Modo real: quita PLUGINS_MX_MOCK e instala el extra [sat-ws] (cryptography)."
       ]
     }
   }

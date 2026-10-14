@@ -35,6 +35,26 @@ URL_DESCARGAR_MASIVA = "https://cfdidescargamasiva.clouda.sat.gob.mx/DescargaMas
 # Endpoint legacy aún operativo para pruebas:
 URL_PRUEBAS_BASE = "https://srvprodescargacfdi.clouda.sat.gob.mx"
 
+# Códigos CodEstatus / CodigoEstadoSolicitud documentados por el SAT
+# (fuente: phpcfdi/sat-ws-descarga-masiva docs/CodigosDeServicios.md).
+CODIGOS_SAT: dict[int, str] = {
+    300: "Usuario no válido",
+    301: "XML mal formado",
+    302: "Sello mal formado",
+    303: "Sello no corresponde con RfcSolicitante",
+    304: "Certificado revocado o caduco",
+    305: "Certificado inválido",
+    404: "Error no controlado: reintentar más tarde",
+    5000: "Solicitud recibida con éxito",
+    5001: "Tercero no autorizado",
+    5002: "Se agotaron las solicitudes de por vida con los mismos parámetros",
+    5003: "Tope máximo de CFDI o Metadata superado",
+    5004: "No se encontró la información / solicitud",
+    5005: "Solicitud duplicada: existe una solicitud vigente con los mismos parámetros",
+    5006: "Error interno en el proceso",
+    5011: "Límite de descargas por folio por día",
+}
+
 
 # Estados de la solicitud SAT (código numérico oficial)
 ESTADO_ACEPTADA = 1       # aceptada por el SAT, en cola
@@ -57,6 +77,7 @@ ESTADO_NOMBRE: dict[int, str] = {
 # Tipos de comprobante (oficiales SAT)
 TipoComprobante = Literal["I", "E", "T", "P", "N"]
 TipoSolicitud = Literal["Metadata", "CFDI"]  # XML completos o solo metadatos
+TipoDescarga = Literal["emitidos", "recibidos"]
 
 
 @dataclass
@@ -69,6 +90,7 @@ class SolicitudDescarga:
     tipo_comprobante: TipoComprobante | None = None  # None = todos
     rfc_receptor: str = ""    # filtrar por receptor específico
     rfc_emisor_filtro: str = ""  # filtrar por emisor (si soy receptor)
+    tipo_descarga: TipoDescarga = "emitidos"
 
     def validar(self) -> None:
         """Validaciones básicas pre-envío al SAT."""
@@ -80,6 +102,8 @@ class SolicitudDescarga:
             raise ValueError(f"fecha_final debe ser ISO YYYY-MM-DDTHH:MM:SS: {self.fecha_final}")
         if self.fecha_final < self.fecha_inicial:
             raise ValueError("fecha_final no puede ser anterior a fecha_inicial")
+        if self.tipo_descarga not in ("emitidos", "recibidos"):
+            raise ValueError(f"tipo_descarga debe ser emitidos|recibidos: {self.tipo_descarga}")
 
 
 def parsear_estado_solicitud(codigo: int) -> str:
@@ -97,6 +121,7 @@ __all__ = [
     "URL_SOLICITAR_DESCARGA",
     "URL_VERIFICAR_SOLICITUD",
     "URL_DESCARGAR_MASIVA",
+    "CODIGOS_SAT",
     "ESTADO_NOMBRE",
     "ESTADO_ACEPTADA",
     "ESTADO_EN_PROCESO",
@@ -106,6 +131,7 @@ __all__ = [
     "ESTADO_VENCIDA",
     "SolicitudDescarga",
     "TipoComprobante",
+    "TipoDescarga",
     "TipoSolicitud",
     "parsear_estado_solicitud",
     "estado_es_terminal",
