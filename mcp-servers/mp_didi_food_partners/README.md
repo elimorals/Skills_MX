@@ -12,3 +12,9 @@ MCP para restaurantes en DiDi Food MX. Mock-first hasta tener credenciales Partn
 ## Tools
 
 6 tools idénticos en estructura a `mp_rappi_partners`: listar/consultar órdenes, menú, disponibilidad, ranking, comisiones (~30%).
+
+## Estado real (2026-10-14)
+
+- ❌ **Sin API pública.** DiDi Food no publica API de comercios; solo integra vía socios POS (p.ej. Deliverect).
+- Con credenciales configuradas, cada tool devuelve `ConfigError` con `motivo: sin_api_publica` y la alternativa: Usa el portal DiDi Food Merchant o un integrador POS con acceso a DiDi Food.
+- Sin credenciales responde datos simulados marcados `simulated: true` (solo para demos).

@@ -12,9 +12,11 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared.bitacora import Bitacora  # noqa: E402
-from shared.errors import McpError  # noqa: E402
+from shared.errors import ConfigError  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
+SIN_API_PUBLICA = 'DiDi no publica API para conductores.'
+ALTERNATIVA = 'Descarga el resumen de ganancias desde la app DiDi Conductor o tus CFDI de retenciones en el SAT.'
 NAMESPACE = "didi_partners"
 CRED_VARS = ["DIDI_DRIVER_TOKEN"]
 
@@ -36,7 +38,7 @@ class DidiPartnersClient:
                 "data": {"placeholder": True, "ns": "didi_partners", "kwargs_received": list(kwargs.keys())},
                 "real_implementation_pending": True,
             })
-        raise McpError("listar_viajes path real no implementado — ver README", {"hint": "implementar HTTP/API real"})
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})
 
     def consultar_viaje(self, **kwargs) -> dict:
         self.bitacora.log("consultar_viaje", success=True, params_summary={k: str(v)[:20] for k, v in kwargs.items()})
@@ -46,7 +48,7 @@ class DidiPartnersClient:
                 "data": {"placeholder": True, "ns": "didi_partners", "kwargs_received": list(kwargs.keys())},
                 "real_implementation_pending": True,
             })
-        raise McpError("consultar_viaje path real no implementado — ver README", {"hint": "implementar HTTP/API real"})
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})
 
     def comisiones_mes(self, **kwargs) -> dict:
         self.bitacora.log("comisiones_mes", success=True, params_summary={k: str(v)[:20] for k, v in kwargs.items()})
@@ -56,4 +58,4 @@ class DidiPartnersClient:
                 "data": {"placeholder": True, "ns": "didi_partners", "kwargs_received": list(kwargs.keys())},
                 "real_implementation_pending": True,
             })
-        raise McpError("comisiones_mes path real no implementado — ver README", {"hint": "implementar HTTP/API real"})
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})

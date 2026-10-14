@@ -12,9 +12,11 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared.bitacora import Bitacora  # noqa: E402
-from shared.errors import McpError  # noqa: E402
+from shared.errors import ConfigError  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
+SIN_API_PUBLICA = 'No se encontró documentación pública de API de Klap en México.'
+ALTERNATIVA = 'Exporta los pagos desde el portal de Klap.'
 NAMESPACE = "klap"
 CRED_VARS = ["KLAP_API_KEY"]
 
@@ -36,7 +38,7 @@ class KlapClient:
                 "data": {"placeholder": True, "ns": "klap", "kwargs_received": list(kwargs.keys())},
                 "real_implementation_pending": True,
             })
-        raise McpError("listar_pagos path real no implementado — ver README", {"hint": "implementar HTTP/API real"})
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})
 
     def consultar_pago(self, **kwargs) -> dict:
         self.bitacora.log("consultar_pago", success=True, params_summary={k: str(v)[:20] for k, v in kwargs.items()})
@@ -46,4 +48,4 @@ class KlapClient:
                 "data": {"placeholder": True, "ns": "klap", "kwargs_received": list(kwargs.keys())},
                 "real_implementation_pending": True,
             })
-        raise McpError("consultar_pago path real no implementado — ver README", {"hint": "implementar HTTP/API real"})
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})
