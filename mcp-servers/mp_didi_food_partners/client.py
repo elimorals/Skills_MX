@@ -14,9 +14,11 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared.bitacora import Bitacora  # noqa: E402
-from shared.errors import McpError  # noqa: E402
+from shared.errors import ConfigError  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
+SIN_API_PUBLICA = 'DiDi Food no publica API de comercios; solo integra vía socios POS (p.ej. Deliverect).'
+ALTERNATIVA = 'Usa el portal DiDi Food Merchant o un integrador POS con acceso a DiDi Food.'
 NAMESPACE = "didi_food_partners"
 CRED_VARS = ["DIDI_FOOD_TOKEN", "DIDI_FOOD_RESTAURANT_ID"]
 
@@ -49,7 +51,7 @@ class DidiFoodPartnersClient:
             if estado != "all":
                 ordenes = [o for o in ordenes if o["estado"] == estado]
             return mark_simulated({"restaurant_id_hash": Bitacora.hash_sensitive(self._rest_id or "MOCK"), "total": len(ordenes), "ordenes": ordenes})
-        raise McpError("Real path no implementado — DiDi Food requiere onboarding como Partner")
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})
 
     def consultar_orden(self, orden_id: str) -> dict[str, Any]:
         if self._is_mock():
@@ -67,7 +69,7 @@ class DidiFoodPartnersClient:
                 "neto_mxn": "147.00",
                 "cliente_hash": Bitacora.hash_sensitive("MOCK_CLIENT"),
             })
-        raise McpError("Real path no implementado")
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})
 
     def listar_productos_menu(self) -> dict[str, Any]:
         if self._is_mock():
@@ -79,12 +81,12 @@ class DidiFoodPartnersClient:
                 ],
                 "total": 2,
             })
-        raise McpError("Real path no implementado")
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})
 
     def actualizar_disponibilidad(self, sku: str, disponible: bool) -> dict[str, Any]:
         if self._is_mock():
             return mark_simulated({"sku": sku, "disponible": disponible, "actualizado_en": datetime.now(timezone.utc).isoformat()})
-        raise McpError("Real path no implementado")
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})
 
     def consultar_ranking_zona(self) -> dict[str, Any]:
         if self._is_mock():
@@ -95,7 +97,7 @@ class DidiFoodPartnersClient:
                 "rating_promedio": 4.4,
                 "reviews_count": 187,
             })
-        raise McpError("Real path no implementado")
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})
 
     def estimar_comisiones_mes(self, mes: str | None = None) -> dict[str, Any]:
         if self._is_mock():
@@ -108,4 +110,4 @@ class DidiFoodPartnersClient:
                 "comision_porcentaje": 30.0,
                 "neto_mxn": "33950.00",
             })
-        raise McpError("Real path no implementado")
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})

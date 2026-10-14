@@ -112,3 +112,12 @@ async def test_catalogos() -> None:
     r = await trustly_listar_catalogos()
     assert "payment_status" in r
     assert "bbva" in r["bancos_soportados"]
+
+
+async def test_con_credenciales_error_sin_api_publica(monkeypatch) -> None:
+    from shared.errors import ConfigError
+
+    monkeypatch.setenv("TRUSTLY_API_KEY", "k")
+    with pytest.raises(ConfigError) as e:
+        await TrustlyMxClient().get_payment_status("p1")
+    assert e.value.details["motivo"] == "sin_api_publica"
