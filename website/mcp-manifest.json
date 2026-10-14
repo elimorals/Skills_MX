@@ -314,6 +314,7 @@
         "curp_validar_lote",
         "curp_generar_desde_datos",
         "curp_consultar_renapo",
+        "curp_consultar_renapo_por_datos",
         "curp_descargar_constancia_renapo",
         "curp_listar_catalogos"
       ]
@@ -951,7 +952,7 @@
   ],
   "stats": {
     "totalServers": 83,
-    "totalTools": 416,
+    "totalTools": 417,
     "estadoFecha": "2026-10-14",
     "porEstado": {
       "real_validado": 24,

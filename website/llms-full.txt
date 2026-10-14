@@ -89,7 +89,7 @@ Despacho contable con 200 clientes en 32 estados. Bulk de `isn_calcular()` con s
 <!-- estado-mcps:inicio -->
 ## Estado a 2026-10-14 (oleada 1: mock → real)
 
-Generado por `scripts/generar-estado-mcps.py` desde la sección "Estado real" de cada README. 83 MCPs, 416 tools.
+Generado por `scripts/generar-estado-mcps.py` desde la sección "Estado real" de cada README. 83 MCPs, 417 tools.
 
 | Categoría | MCPs |
 |---|---|
@@ -126,7 +126,7 @@ Generado por `scripts/generar-estado-mcps.py` desde la sección "Estado real" de
 | `mp_condusef_sipres` | Real, validado en vivo | SIPRES validado en vivo (requiere extra truststore por TLS incompleto). | `sipres_buscar_institucion`, `sipres_verificar_autorizada` |
 | `mp_conekta` | Real sin validar (requiere credenciales) | Rutas API 2.1.0 coinciden con la doc oficial; falta llave sandbox. | `conekta_create_order`, `conekta_get_order`, `conekta_list_orders`, `conekta_create_charge_on_order`, `conekta_refund_order`, `conekta_create_customer`, `conekta_get_customer`, `conekta_create_payment_link`, `conekta_subscription_create`, `conekta_subscription_update`, `conekta_subscription_cancel`, `conekta_validate_webhook`, `conekta_listar_catalogos` |
 | `mp_cre_hidrocarburos` | Real, validado en vivo | XML público de precios/permisos (15,046 estaciones) validado en vivo. | `cre_consultar_permiso`, `cre_calendar_reporte`, `cre_evaluar_anexo30`, `cre_reportar_zeros`, `cre_listar_tipos_permiso` |
-| `mp_curp_renapo` | Entrega a humano (CAPTCHA o login) | gob.mx/curp con challenge Akamai y reCAPTCHA Enterprise; validación local de la CURP. | `curp_validar_estructura`, `curp_derivar_fecha_nacimiento`, `curp_derivar_sexo`, `curp_derivar_estado`, `curp_validar_lote`, `curp_generar_desde_datos`, `curp_consultar_renapo`, `curp_descargar_constancia_renapo`, `curp_listar_catalogos` |
+| `mp_curp_renapo` | Entrega a humano (CAPTCHA o login) | gob.mx/curp con challenge Akamai y reCAPTCHA Enterprise; validación local de la CURP. | `curp_validar_estructura`, `curp_derivar_fecha_nacimiento`, `curp_derivar_sexo`, `curp_derivar_estado`, `curp_validar_lote`, `curp_generar_desde_datos`, `curp_consultar_renapo`, `curp_consultar_renapo_por_datos`, `curp_descargar_constancia_renapo`, `curp_listar_catalogos` |
 | `mp_desconexion_digital` | Cálculo normativo verificado | LFT vigente: desconexión solo en teletrabajo (Art. 330-E); no existe la 'reforma Art. 132 marzo 2026'. | `desconexion_checklist`, `desconexion_generar_politica`, `desconexion_template_capacitacion` |
 | `mp_didi_food_partners` | Sin API pública | DiDi Food no publica API de comercios; con credenciales devuelve ConfigError. | `didi_food_listar_ordenes`, `didi_food_consultar_orden`, `didi_food_listar_productos_menu`, `didi_food_actualizar_disponibilidad`, `didi_food_consultar_ranking_zona`, `didi_food_estimar_comisiones_mes` |
 | `mp_didi_partners` | Sin API pública | DiDi no publica API para conductores; con credenciales devuelve ConfigError. | `didi_partners_listar_viajes`, `didi_partners_consultar_viaje`, `didi_partners_comisiones_mes` |

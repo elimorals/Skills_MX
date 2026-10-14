@@ -5,7 +5,7 @@ Monorepo de **plugins de Claude Code**, **MCP servers** y **skills standalone** 
 <!-- estado-mcps:inicio -->
 ## Estado a 2026-10-14 (oleada 1: mock → real)
 
-Generado por `scripts/generar-estado-mcps.py` desde la sección "Estado real" de cada README. 83 MCPs, 416 tools.
+Generado por `scripts/generar-estado-mcps.py` desde la sección "Estado real" de cada README. 83 MCPs, 417 tools.
 
 | Categoría | MCPs |
 |---|---|
