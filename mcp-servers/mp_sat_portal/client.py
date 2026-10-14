@@ -268,17 +268,11 @@ class SatPortalClient:
         rfc_receptor: str,
         total: str,
     ) -> dict[str, Any]:
-        """Verifica status de un CFDI contra el portal público SAT.
+        """Verifica el estado de un CFDI con el web service SOAP público del SAT.
 
-        Estrategia:
-        1. Valida UUID estructuralmente (siempre real, no requiere red)
-        2. Si UUID válido y NO mock: intenta GET al verificador SAT
-        3. El portal devuelve HTML; parseamos con regex sencillo
-        4. Si la red falla o el HTML cambió → mock
-
-        ⚠ La respuesta del verificador puede tener varias formas. Esta
-        implementación captura los casos comunes pero puede fallar si SAT
-        cambia su markup.
+        `ConsultaCFDIService` no requiere e.firma ni CAPTCHA; pide UUID, RFC
+        emisor, RFC receptor y total. Si el SAT no responde → UpstreamError
+        (sin fallback a mock).
         """
         validacion = uuid_validator.validar_uuid(uuid)
         if not validacion["valido"]:
@@ -300,36 +294,23 @@ class SatPortalClient:
             },
         )
 
-        if self._mock():
+        # Servicio público: mock solo si se pide explícitamente (PLUGINS_MX_MOCK=1).
+        if is_mock_mode([], default_when_no_creds=False):
             base = mock_data.mock_verificacion_uuid(
                 validacion["uuid_normalizado"], rfc_emisor, rfc_receptor, total
             )
             base["valido_estructuralmente"] = True
             return mark_simulated(
                 base,
-                "Validación estructural real; portal SAT no consultado (modo mock).",
+                "Validación estructural real; SAT no consultado (PLUGINS_MX_MOCK=1).",
             )
 
-        url = uuid_validator.construir_url_verificacion(
-            validacion["uuid_normalizado"], rfc_emisor, rfc_receptor, total
-        )
-        html = self._http_get_text(url, ttl_hours=0.0833)  # ~5 min
-        if html is None:
-            base = mock_data.mock_verificacion_uuid(
-                validacion["uuid_normalizado"], rfc_emisor, rfc_receptor, total
-            )
-            base["valido_estructuralmente"] = True
-            return mark_simulated(
-                base,
-                "Portal SAT no respondió. Devolviendo simulación.",
-            )
-
-        return _parsear_html_verificacfdi(
-            html,
+        return _consultar_cfdi_soap(
             validacion["uuid_normalizado"],
             rfc_emisor,
             rfc_receptor,
             total,
+            self.http_timeout,
         )
 
     # ---------- tools con auth (siempre mock por ahora) ----------
@@ -363,18 +344,48 @@ class SatPortalClient:
         mes: int,
         tipo: str,
     ) -> dict[str, Any]:
+        """Solicita al WS Descarga Masiva del SAT (vía mp_sat_ws) los CFDI de un mes."""
         self._log(
             "descargar_cfdi_masivo",
             {"rfc": rfc, "ejercicio": ejercicio, "mes": mes, "tipo": tipo},
         )
-        if not self._mock():
-            raise UpstreamError(
-                "Path real requiere Playwright + e.firma. No implementado todavía."
+        if self._mock():
+            return mark_simulated(
+                mock_data.mock_cfdi_masivo(rfc, ejercicio, mes, tipo),
+                "Descarga masiva requiere e.firma — simulación de solicitud.",
             )
-        return mark_simulated(
-            mock_data.mock_cfdi_masivo(rfc, ejercicio, mes, tipo),
-            "Descarga masiva requiere e.firma — simulación de solicitud.",
+        from calendar import monthrange
+
+        from mp_sat_ws.client import Fiel, SatWsClient
+        from shared.sat_ws import URL_SOLICITAR_DESCARGA, SolicitudDescarga
+
+        ultimo_dia = monthrange(ejercicio, mes)[1]
+        sol = SolicitudDescarga(
+            rfc_emisor=rfc.strip().upper(),
+            fecha_inicial=f"{ejercicio:04d}-{mes:02d}-01T00:00:00",
+            fecha_final=f"{ejercicio:04d}-{mes:02d}-{ultimo_dia:02d}T23:59:59",
+            tipo_solicitud="CFDI",
+            tipo_descarga=tipo.lower(),  # type: ignore[arg-type]
         )
+        # Fiel.from_env() levanta ConfigError si faltan SAT_EFIRMA_*: nunca cae a mock.
+        r = SatWsClient(fiel=Fiel.from_env()).solicitar_descarga(sol)
+        return {
+            "rfc": r["rfc_emisor"],
+            "ejercicio": ejercicio,
+            "mes": mes,
+            "tipo": tipo.lower(),
+            "solicitud_id": r["id_solicitud"],
+            "estado_solicitud": "ACEPTADA",
+            "cod_estatus": r["cod_estatus"],
+            "mensaje": r["mensaje"],
+            "fecha_solicitud": r["fecha_solicitud"],
+            "instrucciones": (
+                "Consulta el avance con sat_ws_verificar_solicitud(id_solicitud, rfc_emisor) "
+                "cada >=30 s; cuando esté TERMINADA baja cada paquete con sat_ws_descargar_paquete."
+            ),
+            "fuente": URL_SOLICITAR_DESCARGA,
+            "simulated": False,
+        }
 
     def agendar_cita_sat(
         self,
@@ -806,58 +817,77 @@ class SatPortalClient:
         )
 
 
-# ---------- parseo HTML del verificador ----------
+# ---------- ConsultaCFDIService (SOAP público del SAT) ----------
 
-import re as _re
-
-_REGEX_ESTADO_CFDI = _re.compile(
-    r"Estado CFDI[^<]*<[^>]+>\s*([^<]+)", _re.IGNORECASE
-)
-_REGEX_ESTADO_CANCELACION = _re.compile(
-    r"Estatus de cancelaci[oó]n[^<]*<[^>]+>\s*([^<]+)", _re.IGNORECASE
-)
+URL_CONSULTA_CFDI = "https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc"
+_ACCION_CONSULTA_CFDI = "http://tempuri.org/IConsultaCFDIService/Consulta"
+_NS_CONSULTA = "http://schemas.datacontract.org/2004/07/Sat.Cfdi.Negocio.ConsultaCfdi.Servicio"
 
 
-def _parsear_html_verificacfdi(
-    html: str,
-    uuid: str,
-    rfc_emisor: str,
-    rfc_receptor: str,
-    total: str,
+def _consultar_cfdi_soap(
+    uuid: str, rfc_emisor: str, rfc_receptor: str, total: str, timeout: float = 30.0
 ) -> dict[str, Any]:
-    """Extrae estado del CFDI del HTML del verificador SAT.
+    """POST a ConsultaCFDIService y normaliza la respuesta."""
+    import xml.etree.ElementTree as ET
+    from decimal import Decimal, InvalidOperation
+    from xml.sax.saxutils import escape
 
-    El portal devuelve un ASPX con varias celdas. Buscamos los textos clave
-    con regex tolerante. Si no se encuentra estructura conocida, devolvemos
-    fallback con `parseo_fallido: true`.
-    """
-    m_estado = _REGEX_ESTADO_CFDI.search(html)
-    m_cancel = _REGEX_ESTADO_CANCELACION.search(html)
+    from shared.errors import ValidationError, handle_httpx_error
 
-    if not m_estado:
-        return {
-            "uuid": uuid,
-            "rfc_emisor": rfc_emisor.strip().upper(),
-            "rfc_receptor": rfc_receptor.strip().upper(),
-            "total_consultado": str(total),
-            "estado_cfdi": None,
-            "estado_cancelacion": None,
-            "parseo_fallido": True,
-            "razon": "El HTML del portal cambió o el CFDI no fue encontrado.",
-            "fuente": URL_VERIFICACFDI,
-            "valido_estructuralmente": True,
-            "simulated": False,
-        }
+    rfc_e, rfc_r = rfc_emisor.strip().upper(), rfc_receptor.strip().upper()
+    try:
+        tt = f"{Decimal(str(total).replace(',', '')):.6f}"
+    except InvalidOperation:
+        raise ValidationError(f"total no es numérico: {total!r}")
+    expresion = f"?re={rfc_e}&rr={rfc_r}&tt={tt}&id={uuid}"
+    cuerpo = (
+        '<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body>'
+        '<c:Consulta xmlns:c="http://tempuri.org/"><c:expresionImpresa>'
+        f"{escape(expresion)}</c:expresionImpresa></c:Consulta></s:Body></s:Envelope>"
+    )
+    try:
+        resp = httpx.post(
+            URL_CONSULTA_CFDI,
+            content=cuerpo.encode("utf-8"),
+            headers={
+                "Content-Type": "text/xml; charset=utf-8",
+                "SOAPAction": _ACCION_CONSULTA_CFDI,
+            },
+            timeout=timeout,
+        )
+        resp.raise_for_status()
+    except httpx.HTTPError as exc:
+        raise handle_httpx_error(exc)
+    try:
+        raiz = ET.fromstring(resp.content)
+    except ET.ParseError:
+        raise UpstreamError(
+            "ConsultaCFDIService respondió sin XML válido.",
+            {"body_preview": resp.text[:300]},
+        )
 
+    def campo(nombre: str) -> str | None:
+        valor = raiz.findtext(f".//{{{_NS_CONSULTA}}}{nombre}")
+        return (valor or "").strip() or None
+
+    codigo = campo("CodigoEstatus")
+    if codigo is None:
+        raise UpstreamError(
+            "Respuesta de ConsultaCFDIService sin CodigoEstatus.",
+            {"body_preview": resp.text[:300]},
+        )
     return {
         "uuid": uuid,
-        "rfc_emisor": rfc_emisor.strip().upper(),
-        "rfc_receptor": rfc_receptor.strip().upper(),
-        "total_consultado": str(total),
-        "estado_cfdi": m_estado.group(1).strip(),
-        "estado_cancelacion": m_cancel.group(1).strip() if m_cancel else None,
-        "parseo_fallido": False,
-        "fuente": URL_VERIFICACFDI,
+        "rfc_emisor": rfc_e,
+        "rfc_receptor": rfc_r,
+        "total_consultado": tt,
+        "encontrado": codigo.startswith("S"),  # "S - Comprobante obtenido…" | "N - 60x: …"
+        "codigo_estatus": codigo,
+        "estado_cfdi": campo("Estado"),  # Vigente | Cancelado | No Encontrado
+        "es_cancelable": campo("EsCancelable"),
+        "estado_cancelacion": campo("EstatusCancelacion"),
+        "validacion_efos": campo("ValidacionEFOS"),
+        "fuente": URL_CONSULTA_CFDI,
         "valido_estructuralmente": True,
         "simulated": False,
     }

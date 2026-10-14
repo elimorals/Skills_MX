@@ -345,10 +345,11 @@ async def sat_consultar_69_incumplidos(args: RfcOpcionalInput) -> dict:
     },
 )
 async def sat_verificar_cfdi_uuid(args: VerificarCfdiInput) -> dict:
-    """Verifica un CFDI contra el verificador público SAT.
+    """Verifica un CFDI con el web service público ConsultaCFDIService del SAT.
 
-    Requiere los 4 datos que el portal exige: UUID, RFC emisor, RFC receptor
-    y total exacto. Si falta alguno o el portal rechaza, retorna parseo_fallido.
+    Requiere UUID, RFC emisor, RFC receptor y total exacto (sin e.firma ni
+    CAPTCHA). Devuelve estado_cfdi (Vigente | Cancelado | No Encontrado),
+    es_cancelable, estado_cancelacion y validacion_efos.
 
     Útil para validar que un CFDI fue timbrado correctamente y no fue cancelado
     sin que nos enteremos (cancelación retroactiva).
@@ -439,13 +440,12 @@ async def sat_descargar_buzon_tributario(args: RfcInput) -> dict:
     },
 )
 async def sat_descargar_cfdi_masivo(args: DescargaMasivaInput) -> dict:
-    """Solicita al SAT descarga masiva de CFDIs por periodo.
+    """Solicita al SAT descarga masiva de CFDIs (XML) de un mes completo.
 
-    El SAT procesa la solicitud asíncrona y devuelve un ZIP con metadata + XMLs
-    en 1-4 horas. Esta tool registra la solicitud; la descarga del ZIP es paso
-    aparte cuando esté disponible.
-
-    Requiere e.firma.
+    Usa el web service Descarga Masiva (mp_sat_ws) firmado con la e.firma de
+    SAT_EFIRMA_CERT/KEY/PASSWORD. Devuelve solicitud_id; el avance y la
+    descarga de paquetes ZIP se hacen con sat_ws_verificar_solicitud y
+    sat_ws_descargar_paquete. Errores del SAT llegan con details.cod_estatus_sat.
     """
     try:
         return _client.descargar_cfdi_masivo(

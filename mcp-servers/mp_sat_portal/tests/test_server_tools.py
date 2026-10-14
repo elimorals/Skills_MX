@@ -74,7 +74,8 @@ async def test_consultar_69_incumplidos_con_rfc(monkeypatch) -> None:
 
 
 @pytest.mark.asyncio
-async def test_verificar_cfdi_uuid_estructura_valida_modo_mock() -> None:
+async def test_verificar_cfdi_uuid_estructura_valida_modo_mock(monkeypatch) -> None:
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
     r = await sat_verificar_cfdi_uuid(
         VerificarCfdiInput(
             uuid=DEMO_UUID_VALIDO,
