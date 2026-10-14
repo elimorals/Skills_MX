@@ -661,7 +661,7 @@ class SatPortalClient:
             "anio": anio,
             "total_declaraciones": len(declaraciones),
             "declaraciones": declaraciones,
-            "nota_uma_2026": "UMA 2026 diaria: $113.07 — usar para topes IMSS/INFONAVIT relacionados.",
+            "nota_uma_2026": "UMA 2026 diaria: $117.31 (INEGI, DOF 09-01-2026) — usar para topes IMSS/INFONAVIT relacionados.",
             "fuente": "RMF 2026 + LISR Art. 14, 113-E, 113-J",
         }
 

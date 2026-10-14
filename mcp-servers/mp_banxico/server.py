@@ -441,9 +441,9 @@ async def banxico_get_uma(params: GetReferenciaInput) -> dict:
 
     Returns:
         {
-            "valor_diario": 108.57,
-            "valor_mensual": 3303.16,    # diario * 30.4
-            "valor_anual": 39637.92,     # diario * 365
+            "valor_diario": 117.31,
+            "valor_mensual": 3566.22,    # diario * 30.4
+            "valor_anual": 42818.15,     # diario * 365
             "fecha_aplicable": "YYYY-MM-DD",
             "serie": "SP74660",
             "fuente": "...", "simulated": bool, "advertencias": [...]

@@ -14,6 +14,7 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
+from shared.ley_silla_nom_mx import UMA_2026_DIARIA  # noqa: E402
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
 from shared.errors import McpError, ValidationError  # noqa: E402
@@ -169,10 +170,10 @@ class ImssPatronalClient:
     # ============ Sprint F — profundización ============
 
     # Constantes 2026 oficiales
-    UMA_2026_DIARIA: float = 113.07
+    UMA_2026_DIARIA: float = UMA_2026_DIARIA  # 117.31, INEGI DOF 09-01-2026
     TOPE_SBC_UMAS: int = 25  # Art. 28 LSS
-    TOPE_SBC_DIARIO_MXN: float = 113.07 * 25  # $2,826.75
-    SMG_DIARIO_2026: float = 313.06  # zona libre frontera norte se ajusta por separado
+    TOPE_SBC_DIARIO_MXN: float = UMA_2026_DIARIA * 25
+    SMG_DIARIO_2026: float = 315.04  # CONASAMI 2026; ZLFN 440.87 se ajusta por separado
 
     # Cuotas patronales (% sobre SBC) — LSS 2026 vigente
     CUOTA_ENF_MAT_FIJA_UMA: float = 0.204  # 20.40% sobre 1 UMA por trabajador
@@ -242,7 +243,7 @@ class ImssPatronalClient:
             "uma_2026_diaria": self.UMA_2026_DIARIA,
             "fundamento": "Art. 27, 28 LSS + UMA 2026 (DOF Banxico)",
             "advertencia_smg": (
-                "Por debajo de SMG diario 2026 ($313.06)"
+                "Por debajo de SMG diario 2026 ($315.04)"
                 if salario_diario_base < self.SMG_DIARIO_2026
                 else None
             ),

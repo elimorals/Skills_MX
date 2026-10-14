@@ -34,7 +34,7 @@ Cubre 12 nuevos + 3 profundizados del plan `plugins-mx-gaps-integraciones-2026-0
 #### Sprint F — Profundización SAT + IMSS + INFONAVIT (14 tools)
 
 - `mp_sat_portal` +5: `sat_calendario_fiscal_por_regimen`, `sat_cfdi_prevalidar` (local CFDI 4.0), `sat_declaraciones_historico` (alerta SCJN 3 omisiones), `sat_devolucion_estatus`, `sat_buzon_tributario_resumen`
-- `mp_imss_patronal` +5: `imss_sbc_calcular` (UMA 2026 $113.07 + tope 25 UMAs), `imss_ema_vs_eba_diferencias`, `imss_calendario_obligaciones`, `imss_simulador_costo_patronal`, `imss_riesgo_trabajo_prima_cambio` (Art. 72 LSS)
+- `mp_imss_patronal` +5: `imss_sbc_calcular` (UMA 2026 $117.31 + tope 25 UMAs), `imss_ema_vs_eba_diferencias`, `imss_calendario_obligaciones`, `imss_simulador_costo_patronal`, `imss_riesgo_trabajo_prima_cambio` (Art. 72 LSS)
 - `mp_infonavit_patronal` +4: `infonavit_descuento_calcular` (5 tipos crédito + cap LFT Art. 110), `infonavit_creditos_sin_reporte`, `infonavit_emis_historico` (10 años), `infonavit_conciliacion_nomina` (5000 registros)
 
 **51 tests · commit `de7b660`**

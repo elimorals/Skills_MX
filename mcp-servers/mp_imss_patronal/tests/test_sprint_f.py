@@ -25,13 +25,13 @@ class TestSbcCalcular:
         assert 1.04 <= r["factor_integracion"] <= 1.06
         assert r["sbc_final_mxn"] == round(500 * r["factor_integracion"], 2)
         assert r["aplicado_tope_25_umas"] is False
-        assert r["uma_2026_diaria"] == 113.07
+        assert r["uma_2026_diaria"] == 117.31
 
     def test_tope_25_umas_aplica(self):
         # Salario muy alto debe topar a 25 UMAs
         r = self.c.sbc_calcular(5000.0)
         assert r["aplicado_tope_25_umas"] is True
-        assert r["sbc_final_mxn"] == 113.07 * 25
+        assert r["sbc_final_mxn"] == round(117.31 * 25, 2)
 
     def test_smg_advertencia(self):
         r = self.c.sbc_calcular(200.0)
