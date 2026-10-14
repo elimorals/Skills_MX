@@ -1,0 +1,50 @@
+# Casos de salida para _shared/iva-retenciones-mx. Mismos números que evals/golden/.
+- description: "iva: PFAE 612 → PM, $10,000 (ISR 10% + IVA 2/3, Total CFDI)"
+  vars:
+    skill: file://../../_shared/iva-retenciones-mx/SKILL.md
+    question: "Soy persona física en régimen 612 y le voy a facturar $10,000 más IVA de consultoría a una SA de CV. ¿Qué retenciones van y cuál es el Total del CFDI?"
+  assert:
+    - type: regex
+      value: "1,?000\\.00"
+    - type: regex
+      value: "1,?066\\.67"
+    - type: regex
+      value: "9,?533\\.33"
+    - type: llm-rubric
+      value: "Afirma que el atributo Total del CFDI es 9,533.33 (las retenciones se restan del Total según Anexo 20) y NO afirma que el Total del CFDI sea 11,600."
+
+- description: "iva: RESICO PF → PM retiene ISR 1.25% y también IVA 2/3"
+  vars:
+    skill: file://../../_shared/iva-retenciones-mx/SKILL.md
+    question: "Estoy en RESICO persona física. Facturo $10,000 + IVA de diseño a una persona moral. ¿Qué me retienen?"
+  assert:
+    - type: regex
+      value: "1\\.25\\s?%"
+    - type: regex
+      value: "125(\\.00)?"
+    - type: regex
+      value: "1,?066\\.67"
+    - type: llm-rubric
+      value: "Indica que la persona moral retiene ISR 1.25% ($125) Y además 2/3 del IVA ($1,066.67). Falla si dice que RESICO no tiene retención de IVA."
+
+- description: "iva: región fronteriza 8% → retención IVA 5.3333%"
+  vars:
+    skill: file://../../_shared/iva-retenciones-mx/SKILL.md
+    question: "Soy PFAE 612 en Tijuana, inscrito en el padrón del estímulo fronterizo. Facturo honorarios de $10,000 a una empresa. ¿Cuánto IVA traslado y cuánto me retienen de IVA?"
+  assert:
+    - type: regex
+      value: "800(\\.00)?"
+    - type: regex
+      value: "533\\.33"
+    - type: llm-rubric
+      value: "Usa IVA 8% ($800) y retención de IVA de 2/3 de ese 8% ($533.33, 5.3333%), no 10.6667%."
+
+- description: "iva: autotransporte → IVA 4%, sin ISR 4%"
+  vars:
+    skill: file://../../_shared/iva-retenciones-mx/SKILL.md
+    question: "Una persona física (régimen 612) me presta flete terrestre por $20,000 + IVA y yo soy persona moral. ¿Qué le retengo?"
+  assert:
+    - type: regex
+      value: "800(\\.00)?"
+    - type: llm-rubric
+      value: "Indica retención de IVA del 4% del valor ($800) por autotransporte de bienes y NO indica una retención de ISR del 4%."

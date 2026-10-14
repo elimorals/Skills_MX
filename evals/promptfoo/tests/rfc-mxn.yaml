@@ -1,0 +1,43 @@
+- description: "rfc: dígito verificador correcto"
+  vars:
+    skill: file://../../_shared/rfc-validacion/SKILL.md
+    question: "¿Es válido el RFC GODE561231GR8? Revisa también el dígito verificador."
+  assert:
+    - type: icontains
+      value: "1956"
+    - type: llm-rubric
+      value: "Concluye que es estructuralmente válido, persona física nacida el 31-dic-1956, y que el dígito verificador (8) coincide."
+
+- description: "rfc: dígito verificador incorrecto"
+  vars:
+    skill: file://../../_shared/rfc-validacion/SKILL.md
+    question: "Valida el RFC de persona moral IBM970131DRA."
+  assert:
+    - type: llm-rubric
+      value: "Señala que la estructura y la fecha (31-ene-1997) son válidas pero que el dígito verificador no coincide (debería ser 3, no A), por lo que probablemente hay un error de captura."
+
+- description: "mxn: apócope veintiún mil"
+  vars:
+    skill: file://../../_shared/mxn-formato/SKILL.md
+    question: "Escribe con letra, formato de contrato, el monto $21,000.00 MXN."
+  assert:
+    - type: icontains
+      value: "VEINTIÚN MIL PESOS 00/100 M.N."
+    - type: not-icontains
+      value: "VEINTIUNO MIL"
+
+- description: "mxn: millón de pesos"
+  vars:
+    skill: file://../../_shared/mxn-formato/SKILL.md
+    question: "Pon en letra $1,000,000.00 MXN para un pagaré."
+  assert:
+    - type: icontains
+      value: "UN MILLÓN DE PESOS 00/100 M.N."
+
+- description: "mxn: tipo de cambio para CFDI"
+  vars:
+    skill: file://../../_shared/mxn-formato/SKILL.md
+    question: "Facturo hoy en dólares. ¿Qué tipo de cambio uso?"
+  assert:
+    - type: llm-rubric
+      value: "Indica el tipo de cambio publicado en el DOF el día anterior (Art. 20 CFF), y que si ese día no hubo publicación se usa el último publicado."
