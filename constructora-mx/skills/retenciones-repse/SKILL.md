@@ -33,6 +33,6 @@ Antes de pagar al subcontratista:
 ## CFDI de retenciones
 
 Por cada subcontratista REPSE, mensualmente:
-- CFDI tipo R (Retenciones y pagos)
-- Concepto: "Retenciones por servicios especializados Art. 27 LISR"
-- ImpRetenido = 6% del IVA trasladado
+- CFDI de Retenciones e información de pagos (estándar Retenciones 2.0, no es un TipoDeComprobante de CFDI 4.0)
+- Concepto: retención de IVA por servicios especializados (Art. 1-A fr. IV LIVA)
+- ImpRetenido = **6% del valor de la contraprestación sin IVA** (no 6% del IVA). Ej.: servicio $100,000 + IVA $16,000 → retención $6,000
