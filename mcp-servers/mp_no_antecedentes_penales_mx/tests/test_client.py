@@ -121,3 +121,39 @@ class TestVerificarApto:
         r = c.verificar_apto_contratacion("PERD850301HDFRZG02", "FOLIOX", "cdmx")
         assert r["apto_para_contratacion"] is False
         assert "expirada" in r["razon"].lower() or "vigencia" in r["razon"].lower()
+
+
+# ---------- modo real: handoff humano ----------
+
+
+@pytest.fixture
+def real_client(tmp_path, monkeypatch):
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+    monkeypatch.setenv("PLUGINS_MX_CACHE_DIR", str(tmp_path / "c"))
+    monkeypatch.setenv("PLUGINS_MX_AUDIT_DIR", str(tmp_path / "a"))
+    from mp_no_antecedentes_penales_mx.client import NoAntecedentesClient
+
+    return NoAntecedentesClient()
+
+
+@pytest.mark.parametrize("entidad", ["cdmx", "edomex"])
+def test_real_handoff_sin_estado_inventado(real_client, entidad):
+    r = real_client.verificar_constancia("PERD850301HDFRZG02", "FOLIO123", entidad)
+    assert r["requiere_humano"] is True
+    assert r["estado"] == "DESCONOCIDO"
+    assert r["es_apta_para_contratacion"] is None
+    assert r["simulated"] is False
+
+
+def test_real_apto_es_desconocido(real_client):
+    r = real_client.verificar_apto_contratacion("PERD850301HDFRZG02", "FOLIO123", "cdmx")
+    assert r["apto_para_contratacion"] is None
+
+
+@pytest.mark.live
+def test_live_edomex_verificador_sigue_caido():
+    """Si este test falla, el verificador EdoMex volvió: revisar si es consultable."""
+    import socket
+
+    with pytest.raises(socket.gaierror):
+        socket.getaddrinfo("carta-no-antecedentes.edomex.gob.mx", 443)
