@@ -34,6 +34,7 @@ class Anexo30Input(BaseModel):
     model_config = ConfigDict(extra="forbid")
     litros_mes_max: float = Field(..., ge=0)
     tiene_permiso_cre: bool = False
+    gas_natural_gj_anio: float = Field(0.0, ge=0)
 
 
 class ZerosInput(BaseModel):
@@ -42,7 +43,7 @@ class ZerosInput(BaseModel):
     periodo: str = Field(..., pattern=r"^\d{4}-\d{2}$")
 
 
-@mcp.tool(annotations={"title": "Consultar permiso CRE", "readOnlyHint": True})
+@mcp.tool(annotations={"title": "Consultar permiso de expendio CRE/CNE", "readOnlyHint": True})
 def cre_consultar_permiso(args: IdInput) -> dict:
     return _client.consultar_permiso(identificador=args.identificador)
 
@@ -55,10 +56,11 @@ def cre_calendar_reporte(args: CalendInput) -> dict:
 @mcp.tool(annotations={"title": "Evaluar aplicación Anexo 30 SAT", "readOnlyHint": True, "idempotentHint": True})
 def cre_evaluar_anexo30(args: Anexo30Input) -> dict:
     return _client.evaluar_anexo30(litros_mes_max=args.litros_mes_max,
-                                     tiene_permiso_cre=args.tiene_permiso_cre)
+                                     tiene_permiso_cre=args.tiene_permiso_cre,
+                                     gas_natural_gj_anio=args.gas_natural_gj_anio)
 
 
-@mcp.tool(annotations={"title": "Reportar ceros (sin actividad)", "readOnlyHint": True})
+@mcp.tool(annotations={"title": "Pasos para reportar ceros (handoff, no envía)", "readOnlyHint": True})
 def cre_reportar_zeros(args: ZerosInput) -> dict:
     return _client.reportar_zeros(num_permiso=args.num_permiso, periodo=args.periodo)
 
