@@ -293,3 +293,50 @@ class TestNormalizarResultadoIntegracion:
         assert e0["clave_registro"] == "40165"
         assert "Banco Bineo" in e0["denominacion"]
         assert e0["idins"] == "16316"
+
+
+# ============================================================
+# Path real con respx + live
+# ============================================================
+
+
+def test_real_post_y_parseo(monkeypatch):
+    import respx
+
+    from mp_condusef_sipres.client import CondusefSipresClient
+    from shared.sipres_condusef import ENDPOINT_BUSQUEDA
+
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+    with respx.mock() as router:
+        route = router.post(ENDPOINT_BUSQUEDA).respond(
+            200, content=FIXTURE_HTML_BANORTE.encode("latin-1"),
+            headers={"content-type": "text/html"},
+        )
+        r = CondusefSipresClient().buscar_institucion(nombre="BANORTE")
+        assert b"pnom=BANORTE" in route.calls[0].request.content
+    assert r["simulated"] is False
+    assert r["resultados"][0]["clave_registro"] == "40165"
+
+
+def test_real_upstream_caido(monkeypatch):
+    import respx
+
+    from mp_condusef_sipres.client import CondusefSipresClient
+    from shared.errors import UpstreamError
+    from shared.sipres_condusef import ENDPOINT_BUSQUEDA
+
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+    with respx.mock() as router:
+        router.post(ENDPOINT_BUSQUEDA).respond(503)
+        with pytest.raises(UpstreamError):
+            CondusefSipresClient().buscar_institucion(nombre="BANORTE")
+
+
+@pytest.mark.live
+def test_live_sipres_bbva(monkeypatch):
+    from mp_condusef_sipres.client import CondusefSipresClient
+
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+    r = CondusefSipresClient().buscar_institucion(nombre="BBVA")
+    assert r["simulated"] is False
+    assert any(e["clave_registro"] == "40012" for e in r["resultados"])

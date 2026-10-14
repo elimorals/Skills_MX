@@ -1,0 +1,107 @@
+{
+ "request": {
+  "searchId": "b282996a-adac-48a6-a918-34f221b53044",
+  "pageSize": 5,
+  "pageNumber": 0,
+  "sort": "",
+  "statusFilter": [],
+  "viennaCodeFilter": [],
+  "niceClassFilter": []
+ },
+ "pageSize": 5,
+ "pageNumber": 0,
+ "totalResults": 5305,
+ "resultPage": [
+  {
+   "id": "RM198600012166",
+   "applicationNumber": "12166",
+   "registrationNumber": "340988",
+   "title": "TELMEX",
+   "status": "REGISTRADO",
+   "appType": "REGISTRO DE MARCA",
+   "owners": [
+    "MARTEX POTOSI, S.A. DE C.V.  "
+   ],
+   "dates": {
+    "application": "24/7/1986",
+    "cancellation": "24/07/2031",
+    "expiry": "24/07/2031"
+   },
+   "goodsAndServices": "",
+   "classes": [],
+   "images": "/marcas/image/RM198600012166"
+  },
+  {
+   "id": "RM199000097492",
+   "applicationNumber": "97492",
+   "title": "TELMEX",
+   "status": "EN TRÁMITE",
+   "appType": "REGISTRO DE MARCA",
+   "owners": [
+    "TELEFONOS DE MEXICO, S.A. DE C.V."
+   ],
+   "dates": {
+    "application": "28/9/1990"
+   },
+   "goodsAndServices": "",
+   "classes": []
+  },
+  {
+   "id": "RM199600279869",
+   "applicationNumber": "279869",
+   "registrationNumber": "537647",
+   "title": "TELMEX",
+   "status": "REGISTRADO",
+   "appType": "REGISTRO DE MARCA",
+   "owners": [
+    "TELEFONOS DE MEXICO, S.A.B. DE C.V."
+   ],
+   "dates": {
+    "application": "15/11/1996",
+    "registration": "01/04/1980",
+    "cancellation": "15/11/2026",
+    "expiry": "15/11/2026"
+   },
+   "goodsAndServices": "",
+   "classes": []
+  },
+  {
+   "id": "RM199600280202",
+   "applicationNumber": "280202",
+   "registrationNumber": "537688",
+   "title": "TELMEX",
+   "status": "REGISTRADO",
+   "appType": "REGISTRO DE MARCA",
+   "owners": [
+    "TELEFONOS DE MEXICO, S.A.B. DE C.V."
+   ],
+   "dates": {
+    "application": "19/11/1996",
+    "registration": "01/04/1980",
+    "cancellation": "19/11/2026",
+    "expiry": "19/11/2026"
+   },
+   "goodsAndServices": "",
+   "classes": []
+  },
+  {
+   "id": "RM199600280203",
+   "applicationNumber": "280203",
+   "registrationNumber": "537689",
+   "title": "TELMEX",
+   "status": "REGISTRADO",
+   "appType": "REGISTRO DE MARCA",
+   "owners": [
+    "TELEFONOS DE MEXICO, S.A.B. DE C.V."
+   ],
+   "dates": {
+    "application": "19/11/1996",
+    "registration": "01/04/1980",
+    "cancellation": "19/11/2026",
+    "expiry": "19/11/2026"
+   },
+   "goodsAndServices": "",
+   "classes": []
+  }
+ ]
+}

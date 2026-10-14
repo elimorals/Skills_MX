@@ -1,10 +1,10 @@
-"""mp_curp_renapo — validación CURP + consulta RENAPO (mock).
+"""mp_curp_renapo — validación CURP + consulta RENAPO (handoff humano).
 
 8 tools:
 - Validación estructural pura (5 tools, sin red, instantáneos)
 - Generación reversa desde datos personales
 - Validación batch
-- Consulta RENAPO (mock por default; Playwright pendiente)
+- Consulta RENAPO: handoff humano (reCAPTCHA Enterprise); mock solo con PLUGINS_MX_MOCK=1
 
 Caso de uso: colegios identifican alumnos por CURP, salud por paciente,
 migración para inscribir extranjeros al SAT. La capa estructural detecta
@@ -261,11 +261,10 @@ async def curp_consultar_renapo(params: CurpInput) -> dict:
 
     Devuelve estado (VIGENTE/DUPLICADO/etc.) y datos de la persona.
 
-    ⚠ En modo mock (default): devuelve datos plausibles derivados de la propia
-    CURP. En modo real: requiere Playwright integrado con bypass CAPTCHA
-    (todavía no implementado — devuelve `not_implemented_error`).
-
-    Cache 90 días — los datos del padrón cambian raramente.
+    RENAPO (gob.mx/curp) exige reCAPTCHA Enterprise + challenge anti-bot: el
+    modo real devuelve un handoff humano (`requiere_humano: true`, URL, pasos,
+    CURP prellenada y su validación local). Nunca se evade el CAPTCHA.
+    Mock solo con PLUGINS_MX_MOCK=1.
     """
     try:
         return await _renapo.consultar(params.curp)
@@ -286,8 +285,8 @@ async def curp_consultar_renapo(params: CurpInput) -> dict:
 async def curp_descargar_constancia_renapo(params: CurpInput) -> dict:
     """Descarga el PDF oficial de constancia de la CURP.
 
-    Mismo backend que `curp_consultar_renapo`: mock por default, Playwright
-    pendiente. En mock devuelve metadata con path simulado.
+    Mismo backend que `curp_consultar_renapo`: handoff humano en real
+    (CAPTCHA), metadata simulada solo con PLUGINS_MX_MOCK=1.
     """
     try:
         return await _renapo.descargar_constancia(params.curp)

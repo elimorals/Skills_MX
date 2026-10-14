@@ -1,0 +1,727 @@
+<link href="/Content/css/site.css" rel="stylesheet">
+<link href="/Content/css/corev4.css" rel="stylesheet">
+<link href="/Content/css/PIestilo.css" rel="stylesheet">
+<link href="/Content/css/styles.css" rel="stylesheet">
+<link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+
+
+<script src="/Scripts/custom/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="/Scripts/custom/bootstrap.min.js" type="text/javascript"></script>
+
+<script src="/Scripts/html5-canvas.js" type="text/javascript"></script>
+
+<title>Consulta</title>
+<link rel="stylesheet" type="text/css" href="/DXR.axd?r=1_8,0_3281,0_3279,1_7,0_3144,1_4,0_3146-rNkuw" /><link rel="stylesheet" type="text/css" href="/DXR.axd?r=0_3156,4_2,0_3158,5_1,0_3236,0_3152,0_3154,0_3215,0_3217,7_1,7_0,1_1,0_3114,0_3298,0_3231,8_2,0_3233,8_0,0_3244,6_2,0_3246-rNkuw" />
+<script id="dxis_1001292417" src="/DXR.axd?r=1_145,1_81,1_137,1_91,1_114,14_25,14_11,1_99,1_106,1_130,1_135,1_121,1_129,1_80,14_2,1_126,1_84,14_6,1_88,14_7,1_78,1_128,1_90,1_89,14_8,1_143,1_144,1_109,14_9,1_136,14_24,1_131,1_85,1_110,1_140,1_118,1_120,14_15,1_123,14_16,14_18,1_127,1_134,1_138,14_21,14_23,1_87,5_5,5_4,4_11,4_10,4_6,4_7,4_9,14_12,4_5,1_98,1_101,4_12,4_13,1_97,1_139,1_115,1_133,7_51,1_83,7_53,14_17,1_92,1_95,1_102,14_0,1_105,1_93,14_1,1_94,14_3,1_96,1_107,14_5,1_119,1_104,14_13,14_14,1_103,1_108,10_2,10_1,10_3,10_4,14_4,9_1,9_5,14_19,9_4,8_10,8_17,8_24,8_26,8_9,8_12,8_13,8_18,14_20,8_21,8_23,8_22,8_16,8_19,8_20,8_14,8_15,8_25,8_11,6_12,14_22-xNkuw" type="text/javascript"></script><script id="dxss_1233158606" type="text/javascript">
+<!--
+ASPxHtmlEditorDialogSR={PasteFromWord:'Pegar desde Word',InsertImage:'Insertar imagen',ChangeImage:'Cambiar Imagen',InsertLink:'Insertar enlace',ChangeLink:'Cambiar Enlace',InsertTable:'Insertar una Tabla',ChangeTable:'Propiedades de Tablas...',ChangeTableCell:'Propiedades de Celdas...',ChangeTableColumn:'Propiedades de Columnas...',ChangeTableRow:'Propiedades de Filas...'}
+//-->
+</script><script id="dxss_1753561832" type="text/javascript">
+<!--
+(function(){var a = ({'currency':'€','shortDate':'dd/MM/yyyy','abbrMonthNames':['ene.','feb.','mar.','abr.','may.','jun.','jul.','ago.','sep.','oct.','nov.','dic.',''],'currDecimalPoint':',','currGroupSeparator':'.','am':'','currPosPattern':3,'longDate':'dddd, d\' de \'MMMM\' de \'yyyy','genMonthNames':['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre',''],'twoDigitYearMax':2049,'monthDay':'d \'de\' MMMM','abbrDayNames':['do.','lu.','ma.','mi.','ju.','vi.','sá.'],'numDecimalPoint':',','currNegPattern':8,'monthNames':['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre',''],'pm':'','numGroupSeparator':'.','longTime':'H:mm:ss','yearMonth':'MMMM\' de \'yyyy','shortTime':'H:mm','percentPattern':0,'dayNames':['domingo','lunes','martes','miércoles','jueves','viernes','sábado']});for(var b in a) __aspxCultureInfo[b] = a[b];})();
+//-->
+</script>
+<header class="header">
+    <div class="col-md-12">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default" style="visibility:hidden" onclick="location.href = '/'">BÚSQUEDAS</button>
+        <button type="button" class="btn btn-default" style="visibility:hidden" onclick="location.href = '/Clasificador'">ENTIDADES POR SECTOR</button>
+    </div>
+</div>
+
+
+
+</header>
+<div role="main">
+    <div class="container">
+        
+<script src="/Scripts/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+
+
+<style>
+    #loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 2600px;
+        width: 100%;
+        background-color: #000000;
+        -khtml-opacity: .50;
+        -moz-opacity: .50;
+        filter: alpha(opacity=50);
+        opacity: .50;
+        zoom: 1;
+        cursor: wait;
+        z-index: 100;
+        animation: spin 2s linear infinite;
+    }
+
+    
+     .customHeaderStyle {
+                background-color: #F0F1F7 !important;
+                font-size: 14px;
+            }
+
+     .customDetailStyle {
+                font-size: 12px;
+            }
+
+     .rounded-corners
+        {
+            border: 1px solid #DAD9D9;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .Grid td,.Grid th
+        {
+             border:1px solid #A1DCF2
+        }
+</style>
+<script type="text/javascript">
+    
+    function Mostrar() {
+        //var element = document.getElementById("ExportarExcel");
+        $('#ExportarExcel').show();
+        document.getElementById('Total').innerHTML = "TOTAL DE REGISTROS: " + GridViewEntidad.pageRowCount + "<br/>"
+    }
+    function EndCallback() {
+        document.getElementById('Total').innerHTML = "TOTAL DE REGISTROS: " + GridViewEntidad.pageRowCount + "<br/>";
+    }
+    function load() {
+        document.getElementById('loading').style.display = 'block';
+    }
+    function limpiar() {
+        document.getElementById('loading').style.display = 'block';
+        var url = '/';
+        window.location.href = url;
+    }
+
+    $(document).ready(function () {
+        
+        $("#resetvalues").click(function () {
+            limpiar();
+        });
+
+        $('#find_form').submit(function () {
+            $('#executed').val('true');
+            load();
+        });
+
+        $('#subsectorName').on('change', function () {
+            $('#ExportarExcel').hide();
+        });
+
+        $("#ExportarExcel").click(function () {
+            if (($("#entidad").val() == '' && $("#nombreCorto").val() == '' && $("#subsectorName").val() == 'NULL') && $('#executed').val() == '0' )
+            {
+                alert('Ejecuta la consulta, para poder descargar la información!');
+                return false;
+            }
+            $('#executed').val('false')
+            $('#ExportarExcel').hide();
+        });
+    });
+
+</script>
+<input type="hidden" id="executed" value="1" />
+<div class="col-md-11">
+    <div class="form-group">
+        <h3>
+            CONSULTA GENERAL
+            <a id="ExportarExcel"class="btn btn-default pull-right btn-sm glyphicon glyphicon-download-alt" style="text-decoration:none; font-weight:normal !important; color: #676767 !important; display:none;" name="Limpiar" href="/Consulta/ExportarExcel?Subsector=INSTITUCIONES%20DE%20FONDOS%20DE%20PAGO%20ELECTR%C3%93NICO"> Exportar a PDF</a>
+        </h3>
+        <hr class="red">
+    </div>
+</div>
+
+
+<form id="find_form" action="/Consulta/ConsultaEntidad" method="get" role="form">
+    <div class="col-md-11">
+        <div class="form-group">
+            <label class="control-label" for="entidad">RAZÓN SOCIAL:</label>
+            <input class="form-control" id="entidad" name="entidad" placeholder="Razón social" type="text" data-toggle="tooltip" title="PARA EFECTUAR SU BÚSQUEDA PUEDE ESCRIBIR EL NOMBRE COMPLETO O COMPONENTES DEL MISMO" value="">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="nombreCorto">NOMBRE CORTO: </label>
+            <input class="form-control" id="nombreCorto" name="nombreCorto" placeholder="Nombre corto" type="text" value="">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="subsectorName">SECTOR:</label>
+            <select class="form-control" name="subsectorName" id="subsectorName">
+                <option value="NULL" >Seleccione un sector</option>
+                    <option >ALMACENES GENERALES DE DEP&#211;SITO</option>
+                    <option >ASESORES EN INVERSI&#211;N PERSONAS F&#205;SICAS</option>
+                    <option >ASESORES EN INVERSI&#211;N PERSONAS MORALES</option>
+                    <option >ASESORES EN INVERSI&#211;N PERSONAS MORALES NO INDEPENDIENTES</option>
+                    <option >BOLSA DE CONTRATOS DE DERIVADOS</option>
+                    <option >BOLSAS DE VALORES</option>
+                    <option >C&#193;MARAS DE COMPENSACI&#211;N DEL MERCADO DE CONTRATOS DE DERIVADOS</option>
+                    <option >CASAS DE BOLSA</option>
+                    <option >CASAS DE CAMBIO</option>
+                    <option >CENTROS CAMBIARIOS</option>
+                    <option >CONTRAPARTES CENTRALES DE VALORES</option>
+                    <option >EMISORAS</option>
+                    <option >EMPRESAS DE SERVICIOS COMPLEMENTARIOS O CONEXOS DE BANCA</option>
+                    <option >EMPRESAS DE SERVICIOS COMPLEMENTARIOS O CONEXOS DE GRUPOS FINANCIEROS</option>
+                    <option >EMPRESAS DE SERVICIOS COMPLEMENTARIOS O CONEXOS DE ORGANIZACIONES AUXILIARES</option>
+                    <option >ENTIDADES DISTRIBUIDORAS INTEGRALES</option>
+                    <option >FEDERACIONES DE ENTIDADES DE AHORRO Y CR&#201;DITO POPULAR</option>
+                    <option >FIDEICOMISOS P&#218;BLICOS DE FOMENTO ECON&#211;MICO FINANCIERO</option>
+                    <option >FONDO DE PROTECCI&#211;N DE SOCIEDADES FINANCIERAS POPULARES Y DE PROTECCI&#211;N A SUS AHORRADORES</option>
+                    <option >FONDO DE SUPERVISI&#211;N AUXILIAR DE SOCIEDADES COOPERATIVAS DE AHORRO Y PR&#201;STAMO</option>
+                    <option >FONDOS DE INVERSI&#211;N DE CAPITALES</option>
+                    <option >FONDOS DE INVERSI&#211;N DE RENTA VARIABLE</option>
+                    <option >FONDOS DE INVERSI&#211;N EN INSTRUMENTOS DE DEUDA</option>
+                    <option >INMOBILIARIAS BANCARIAS</option>
+                    <option >INSTITUCIONES CALIFICADORAS DE VALORES</option>
+                    <option >INSTITUCIONES DE BANCA DE DESARROLLO</option>
+                    <option >INSTITUCIONES DE BANCA M&#218;LTIPLE</option>
+                    <option >INSTITUCIONES DE FINANCIAMIENTO COLECTIVO</option>
+                    <option selected>INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</option>
+                    <option >INSTITUCIONES PARA EL DEP&#211;SITO DE VALORES</option>
+                    <option >MECANISMOS ELECTR&#211;NICOS DE DIVULGACI&#211;N DE INFORMACI&#211;N</option>
+                    <option >MECANISMOS ELECTR&#211;NICOS DE NEGOCIACI&#211;N DE ACCIONES DE FONDOS DE INVERSI&#211;N</option>
+                    <option >OFICINAS DE REPRESENTACI&#211;N DE CASAS DE BOLSA</option>
+                    <option >OFICINAS DE REPRESENTACI&#211;N Y AGENCIAS DE BANCOS EXTRANJEROS</option>
+                    <option >OPERADORES PARTICIPANTES DEL MERCADO DE CONTRATOS DE DERIVADOS</option>
+                    <option >ORGANISMOS AUTORREGULATORIOS DEL MERCADO DE VALORES</option>
+                    <option >ORGANISMOS DE FOMENTO</option>
+                    <option >PARTICIPANTES EN REDES DE MEDIOS DE DISPOSICI&#211;N RELEVANTES</option>
+                    <option >PROVEEDORES DE PRECIOS</option>
+                    <option >SOCIEDADES CONTROLADORAS DE GRUPOS FINANCIEROS</option>
+                    <option >SOCIEDADES COOPERATIVAS DE AHORRO Y PR&#201;STAMO</option>
+                    <option >SOCIEDADES DE INFORMACI&#211;N CREDITICIA</option>
+                    <option >SOCIEDADES DE INVERSI&#211;N EN INSTRUMENTOS DE DEUDA</option>
+                    <option >SOCIEDADES DISTRIBUIDORAS INTEGRALES</option>
+                    <option >SOCIEDADES FINANCIERAS DE OBJETO M&#218;LTIPLE</option>
+                    <option >SOCIEDADES FINANCIERAS DE OBJETO M&#218;LTIPLE, ENTIDADES NO REGULADAS</option>
+                    <option >SOCIEDADES FINANCIERAS POPULARES</option>
+                    <option >SOCIEDADES OPERADORAS DE FONDOS DE INVERSI&#211;N DE CAPITALES</option>
+                    <option >SOCIEDADES OPERADORAS DE FONDOS DE INVERSI&#211;N EN INSTRUMENTOS DE DEUDA Y DE RENTA VARIABLE</option>
+                    <option >SOCIEDADES OPERADORAS DE SOCIEDADES DE INVERSI&#211;N DE CAPITAL</option>
+                    <option >SOCIEDADES OPERADORAS DE SOCIEDADES DE INVERSI&#211;N DE RENTA VARIABLE E INSTRUMENTOS DE DEUDA</option>
+                    <option >SOCIEDADES OPERADORAS LIMITADAS DE FONDOS DE INVERSI&#211;N</option>
+                    <option >SOCIEDADES QUE ADMINISTREN SISTEMAS PARA FACILITAR OPERACIONES CON VALORES</option>
+                    <option >SOCIEDADES VALUADORAS DE ACCIONES DE FONDOS DE INVERSI&#211;N</option>
+                    <option >SOCIOS LIQUIDADORES PARTICIPANTES DEL MERCADO DE CONTRATOS DE DERIVADOS</option>
+                    <option >SUBCONTROLADORAS</option>
+                    <option >TRANSMISORES DE DINERO</option>
+                    <option >UNIONES DE CR&#201;DITO</option>
+            </select>
+        </div>
+        <div class="modal-footer pull-right">
+            <input type="button" class="btn btn-default" id="resetvalues" name="resetvalues" value="LIMPIAR" />
+            <button class="btn btn-primary" name="Buscar" id="EjecutaBuscar" type="submit" onclick="load"><span class="glyphicon glyphicon-search"></span> BUSCAR</button>
+        </div>
+
+    </div>
+</form>
+
+
+
+<div id="loading" style="display: none"></div>
+<br />
+
+<div class="col-md-11" id="content-sectores">
+    <div align="right" id="Total" title="NÚMERO TOTAL DE ENTIDADES FINANCIERAS QUE INTEGRAN LA CONSULTA REALIZADA"></div>
+    <div id="infoSector">
+<input type="hidden"/><table class="dxgvControl_Office2010Silver padding-left:35px; rounded-corners" cellspacing="0" cellpadding="0" id="GridViewEntidad" width="100%" style="border-collapse:separate;">
+	<tr>
+		<td><table id="GridViewEntidad_DXMainTable" class="dxgvTable_Office2010Silver" cellspacing="0" cellpadding="0" onclick="aspxGVTableClick(&#39;GridViewEntidad&#39;, event);" width="100%" style="empty-cells:show;">
+			<tr id="GridViewEntidad_DXHeadersRow0">
+				<td id="GridViewEntidad_col0" title="NÚMERO EN EL CATÁLOGO DEL SISTEMA FINANCIERO MEXICANO. REGISTRO NUMÉRICO ADMINISTRADO POR LA SHCP, QUE IDENTIFICA A LAS ENTIDADES FINANCIERAS, AGRUPÁNDOLAS POR SECTOR" class="dxgvHeader_Office2010Silver customHeaderStyle" onmousedown="aspxGVHeaderMouseDown(&#39;GridViewEntidad&#39;, this, event);" width="10%" style="text-align:Center;border-top-width:0px;border-left-width:0px;"><font size="3"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td style="text-align:Center;"><font size="3">CASFIM</font></td>
+					</tr>
+				</table></font></td><td id="GridViewEntidad_col1" title="NOMBRE LEGAL DE LA ENTIDAD" class="dxgvHeader_Office2010Silver customHeaderStyle" onmousedown="aspxGVHeaderMouseDown(&#39;GridViewEntidad&#39;, this, event);" width="40%" style="text-align:Center;border-top-width:0px;border-left-width:0px;"><font size="3"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td style="text-align:Center;"><font size="3">RAZÓN SOCIAL</font></td>
+					</tr>
+				</table></font></td><td id="GridViewEntidad_col2" title="NOMBRE ABREVIADO DE LA ENTIDAD O ACRÓNIMO DE DOMINIO PÚBLICO" class="dxgvHeader_Office2010Silver customHeaderStyle" onmousedown="aspxGVHeaderMouseDown(&#39;GridViewEntidad&#39;, this, event);" width="20%" style="text-align:Center;border-top-width:0px;border-left-width:0px;"><font size="3"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td style="text-align:Center;"><font size="3">NOMBRE CORTO</font></td>
+					</tr>
+				</table></font></td><td id="GridViewEntidad_col3" title="RAMA, ACTIVIDAD O SEGMENTO DEL SISTEMA FINANCIERO MEXICANO AL QUE PERTENECE LA ENTIDAD FINANCIERA" class="dxgvHeader_Office2010Silver customHeaderStyle" onmousedown="aspxGVHeaderMouseDown(&#39;GridViewEntidad&#39;, this, event);" width="30%" style="text-align:Center;border-top-width:0px;border-left-width:0px;"><font size="3"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td style="text-align:Center;"><font size="3">SECTOR</font></td>
+					</tr>
+				</table></font></td><td id="GridViewEntidad_col4" class="dxgvHeader_Office2010Silver customHeaderStyle" onmousedown="aspxGVHeaderMouseDown(&#39;GridViewEntidad&#39;, this, event);" width="70" style="text-align:Center;border-top-width:0px;border-left-width:0px;border-right-width:0px;cursor:default;"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td style="text-align:Center;">&nbsp;</td>
+					</tr>
+				</table></td>
+			</tr><tr class="dxgvFilterRow_Office2010Silver">
+				<td class="dxgv"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td width="100%" style="padding-right:2px;"><table class="dxeTextBoxSys dxeTextBox_Office2010Silver" cellspacing="0" cellpadding="0" id="GridViewEntidad_DXFREditorcol0" width="100%">
+							<tr>
+								<td class="dxic" width="100%"><input class="dxeEditArea_Office2010Silver dxeEditAreaSys" id="GridViewEntidad_DXFREditorcol0_I" name="GridViewEntidad$DXFREditorcol0" onfocus="aspxEGotFocus(&#39;GridViewEntidad_DXFREditorcol0&#39;)" onblur="aspxELostFocus(&#39;GridViewEntidad_DXFREditorcol0&#39;)" onchange="aspxEValueChanged(&#39;GridViewEntidad_DXFREditorcol0&#39;)" onkeydown="aspxEKeyDown(&#39;GridViewEntidad_DXFREditorcol0&#39;, event)" onkeyup="aspxEKeyUp(&#39;GridViewEntidad_DXFREditorcol0&#39;, event)" type="text" /></td>
+							</tr>
+						</table><script id="dxss_695571215" type="text/javascript">
+<!--
+aspxAddDisabledItems('GridViewEntidad_DXFREditorcol0',[[['dxeDisabled_Office2010Silver'],[''],['','I']]]);
+
+var dxo = new ASPxClientTextBox('GridViewEntidad_DXFREditorcol0');
+window['GridViewEntidad_DXFREditorcol0'] = dxo;
+dxo.uniqueID = 'GridViewEntidad$DXFREditorcol0';
+dxo.renderIFrameForPopupElements = true;
+dxo.ValueChanged.AddHandler(function(s, event) { aspxGVFilterChanged('GridViewEntidad',s);; });
+dxo.KeyDown.AddHandler(function(s, event) { aspxGVFilterKeyPress('GridViewEntidad',s,event);; });
+dxo.RequireStyleDecoration();
+dxo.styleDecoration.AddStyle('F','dxeFocused_Office2010Silver','');
+dxo.InlineInitialize();
+
+//-->
+</script></td><td><img class="dxGridView_gvFilterRowButton_Office2010Silver" onclick="aspxGVFilterRowMenu(&#39;GridViewEntidad&#39;,0,this)" src="/DXR.axd?r=1_10-rNkuw" alt="[Condición]" title="" style="cursor:pointer;" /></td>
+					</tr>
+				</table></td><td class="dxgv"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td width="100%" style="padding-right:2px;"><table class="dxeTextBoxSys dxeTextBox_Office2010Silver" cellspacing="0" cellpadding="0" id="GridViewEntidad_DXFREditorcol1" width="100%">
+							<tr>
+								<td class="dxic" width="100%"><input class="dxeEditArea_Office2010Silver dxeEditAreaSys" id="GridViewEntidad_DXFREditorcol1_I" name="GridViewEntidad$DXFREditorcol1" onfocus="aspxEGotFocus(&#39;GridViewEntidad_DXFREditorcol1&#39;)" onblur="aspxELostFocus(&#39;GridViewEntidad_DXFREditorcol1&#39;)" onchange="aspxEValueChanged(&#39;GridViewEntidad_DXFREditorcol1&#39;)" onkeydown="aspxEKeyDown(&#39;GridViewEntidad_DXFREditorcol1&#39;, event)" onkeyup="aspxEKeyUp(&#39;GridViewEntidad_DXFREditorcol1&#39;, event)" type="text" /></td>
+							</tr>
+						</table><script id="dxss_794605295" type="text/javascript">
+<!--
+aspxAddDisabledItems('GridViewEntidad_DXFREditorcol1',[[['dxeDisabled_Office2010Silver'],[''],['','I']]]);
+
+var dxo = new ASPxClientTextBox('GridViewEntidad_DXFREditorcol1');
+window['GridViewEntidad_DXFREditorcol1'] = dxo;
+dxo.uniqueID = 'GridViewEntidad$DXFREditorcol1';
+dxo.renderIFrameForPopupElements = true;
+dxo.ValueChanged.AddHandler(function(s, event) { aspxGVFilterChanged('GridViewEntidad',s);; });
+dxo.KeyDown.AddHandler(function(s, event) { aspxGVFilterKeyPress('GridViewEntidad',s,event);; });
+dxo.RequireStyleDecoration();
+dxo.styleDecoration.AddStyle('F','dxeFocused_Office2010Silver','');
+dxo.InlineInitialize();
+
+//-->
+</script></td><td><img class="dxGridView_gvFilterRowButton_Office2010Silver" onclick="aspxGVFilterRowMenu(&#39;GridViewEntidad&#39;,1,this)" src="/DXR.axd?r=1_10-rNkuw" alt="[Condición]" title="" style="cursor:pointer;" /></td>
+					</tr>
+				</table></td><td class="dxgv"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td width="100%" style="padding-right:2px;"><table class="dxeTextBoxSys dxeTextBox_Office2010Silver" cellspacing="0" cellpadding="0" id="GridViewEntidad_DXFREditorcol2" width="100%">
+							<tr>
+								<td class="dxic" width="100%"><input class="dxeEditArea_Office2010Silver dxeEditAreaSys" id="GridViewEntidad_DXFREditorcol2_I" name="GridViewEntidad$DXFREditorcol2" onfocus="aspxEGotFocus(&#39;GridViewEntidad_DXFREditorcol2&#39;)" onblur="aspxELostFocus(&#39;GridViewEntidad_DXFREditorcol2&#39;)" onchange="aspxEValueChanged(&#39;GridViewEntidad_DXFREditorcol2&#39;)" onkeydown="aspxEKeyDown(&#39;GridViewEntidad_DXFREditorcol2&#39;, event)" onkeyup="aspxEKeyUp(&#39;GridViewEntidad_DXFREditorcol2&#39;, event)" type="text" /></td>
+							</tr>
+						</table><script id="dxss_1129488387" type="text/javascript">
+<!--
+aspxAddDisabledItems('GridViewEntidad_DXFREditorcol2',[[['dxeDisabled_Office2010Silver'],[''],['','I']]]);
+
+var dxo = new ASPxClientTextBox('GridViewEntidad_DXFREditorcol2');
+window['GridViewEntidad_DXFREditorcol2'] = dxo;
+dxo.uniqueID = 'GridViewEntidad$DXFREditorcol2';
+dxo.renderIFrameForPopupElements = true;
+dxo.ValueChanged.AddHandler(function(s, event) { aspxGVFilterChanged('GridViewEntidad',s);; });
+dxo.KeyDown.AddHandler(function(s, event) { aspxGVFilterKeyPress('GridViewEntidad',s,event);; });
+dxo.RequireStyleDecoration();
+dxo.styleDecoration.AddStyle('F','dxeFocused_Office2010Silver','');
+dxo.InlineInitialize();
+
+//-->
+</script></td><td><img class="dxGridView_gvFilterRowButton_Office2010Silver" onclick="aspxGVFilterRowMenu(&#39;GridViewEntidad&#39;,2,this)" src="/DXR.axd?r=1_10-rNkuw" alt="[Condición]" title="" style="cursor:pointer;" /></td>
+					</tr>
+				</table></td><td class="dxgv"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td width="100%" style="padding-right:2px;"><table class="dxeTextBoxSys dxeTextBox_Office2010Silver" cellspacing="0" cellpadding="0" id="GridViewEntidad_DXFREditorcol3" width="100%">
+							<tr>
+								<td class="dxic" width="100%"><input class="dxeEditArea_Office2010Silver dxeEditAreaSys" id="GridViewEntidad_DXFREditorcol3_I" name="GridViewEntidad$DXFREditorcol3" onfocus="aspxEGotFocus(&#39;GridViewEntidad_DXFREditorcol3&#39;)" onblur="aspxELostFocus(&#39;GridViewEntidad_DXFREditorcol3&#39;)" onchange="aspxEValueChanged(&#39;GridViewEntidad_DXFREditorcol3&#39;)" onkeydown="aspxEKeyDown(&#39;GridViewEntidad_DXFREditorcol3&#39;, event)" onkeyup="aspxEKeyUp(&#39;GridViewEntidad_DXFREditorcol3&#39;, event)" type="text" /></td>
+							</tr>
+						</table><script id="dxss_721967983" type="text/javascript">
+<!--
+aspxAddDisabledItems('GridViewEntidad_DXFREditorcol3',[[['dxeDisabled_Office2010Silver'],[''],['','I']]]);
+
+var dxo = new ASPxClientTextBox('GridViewEntidad_DXFREditorcol3');
+window['GridViewEntidad_DXFREditorcol3'] = dxo;
+dxo.uniqueID = 'GridViewEntidad$DXFREditorcol3';
+dxo.renderIFrameForPopupElements = true;
+dxo.ValueChanged.AddHandler(function(s, event) { aspxGVFilterChanged('GridViewEntidad',s);; });
+dxo.KeyDown.AddHandler(function(s, event) { aspxGVFilterKeyPress('GridViewEntidad',s,event);; });
+dxo.RequireStyleDecoration();
+dxo.styleDecoration.AddStyle('F','dxeFocused_Office2010Silver','');
+dxo.InlineInitialize();
+
+//-->
+</script></td><td><img class="dxGridView_gvFilterRowButton_Office2010Silver" onclick="aspxGVFilterRowMenu(&#39;GridViewEntidad&#39;,3,this)" src="/DXR.axd?r=1_10-rNkuw" alt="[Condición]" title="" style="cursor:pointer;" /></td>
+					</tr>
+				</table></td><td class="dxgv" style="border-right-width:0px;">&nbsp;</td>
+			</tr><tr id="GridViewEntidad_DXDataRow0" class="dxgvFocusedRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-061</font></td><td class="dxgv" align="left"><font size="2">ACCESA M&#201;XICO PAGOS DIGITALES, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">ACCESA</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell0_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=1Az9MYLDKUsBgaW7nhAZ6W25XQ9S6qjOPqRPNOjSakl6E1Xs05wGD_InJTzpYl0XBgah45fgMkJF9un-vlukRw&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow1" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-054</font></td><td class="dxgv" align="left"><font size="2">ALTO AZAREO TECNOLOG&#205;A, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">ALTO AZAREO</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell1_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=FhYaZ3Nw9S6dbKaNe8BQerajW1S41Ld7Iav-aL7CmlSA8aUhMiK_ycfkmw95eVpriu6k8SrFlq29PFpYxDdpiw&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow2" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-066</font></td><td class="dxgv" align="left"><font size="2">ARCUS F.I., S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">ARCUS FI</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell2_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=t6z790-sMmILH111vthp56xDM31wOa-UxyrQ8r--MgjE4JgLuKk9JKD-B7krzkikPfC2RUSbZsOIAohOAxsZ8g&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow3" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-040</font></td><td class="dxgv" align="left"><font size="2">ARES FINTECH, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">ARES</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell3_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=MrGsr6zoYd_QHhMz28ubLfqsTPZ__48fIN1fvH1XNm0AAjHIdvJ3Fe-zY-wsC66ZpA4m2Eb-rsjjdZNsllM65Q&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow4" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-034</font></td><td class="dxgv" align="left"><font size="2">BELVO PAGOS, S.A.P.I. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">BELVO</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell4_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=SywJ2IfGFRQ-Nom0xYubBZJVDA1B1ACPfYg3ouUvxG2OuRLp5sTiV4VI6T3xie_diKtM1KfCMzJaKwSdyiMvxQ&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow5" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-072</font></td><td class="dxgv" align="left"><font size="2">BEYAPSI, S.A.P.I. DE C.V. INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">BEYAPSI</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell5_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=6RFbLSCktJhvNDdosGSxXAQS9GAz-wcd5lw4HeuaRkP4_VKtkzp7sH8D9GBA4ZSQM3viXOEy2KA99tfR_8x2Yg&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow6" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-009</font></td><td class="dxgv" align="left"><font size="2">BKBN, S.A.P.I DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">BKBN</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell6_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=_w2S0NniwwADdA81ELVXmMiE2AixaJndLeeHVr_Hrnp0dyHlgpOFjzZOn0-_CRBJM1_ZNVWK9oXriwJ_OGoDeA&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow7" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-003</font></td><td class="dxgv" align="left"><font size="2">BRX PAYMENTS, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">BRX PAYMENTS</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell7_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=8D78sq6d-6vJuDf76SdkMoNRvmX5oWhjeZHjSKozW5VUeEOn_uxf-MTPNIRNrlrAHjtcYflmv30Z27KX5BFjXQ&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow8" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-004</font></td><td class="dxgv" align="left"><font size="2">CARTERA DIGITAL WALMART, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">CASHI CUENTA</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell8_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=zlJmiyTWtpdyFbMsNJrNrpkvzgRNRk2shYJZ5zqqR0gUVNsd222o0toDet7gv5m-GS8SbJVDblOvgJmYQRe7gQ&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow9" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-065</font></td><td class="dxgv" align="left"><font size="2">CASHMIND, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">CASHMIND</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell9_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=HZi-RSw_U-23sgbIFvMyJV64nfqAKcTjEsFo1N_0oSs8gE5TjmsbNkc7eNCSOkWVu4OQ_j5WP_Fk0ygZ1pTJLQ&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow10" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-035</font></td><td class="dxgv" align="left"><font size="2">CLIP AI, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">CLIP</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell10_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=dBToA3NTBw840vmWH6Wv8GxEddkxl5p5JGX_NsI5NAdqXlUt-xwzms27Ky7IEuMcCtnnxr_6vFz_mXEBzA3uEQ&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow11" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-012</font></td><td class="dxgv" align="left"><font size="2">COLTOMONEY, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">COLTOMONEY</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell11_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=sCe5AyAoTJdjQ0_0y9In2lJr4vrg1oAGw803R8tlAu1HynWnQ647z9YRumGhw6CdpiyPeOUUNtIbAW8lg1eXSA&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow12" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-041</font></td><td class="dxgv" align="left"><font size="2">COMPROPAGO, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">SPIN BY OXXO</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell12_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=Z93HaD8-FlA-U1aOjjGQ8KgQgGiUduJeTweMQI5DeBy8Jd9Vlz5Xy806bccH_awLPRQgp8z7qnUyvTwGHvlLvw&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow13" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-014</font></td><td class="dxgv" align="left"><font size="2">CUENCA TECNOLOG&#205;A FINANCIERA, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">CUENCA</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell13_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=FXl_U0b48pOfwq3kXll1iHnN52IKqngv9ofYixoVeT79zNX8rzL6AtL3LZwjnye0xuv2EVI00rmt-l5c-EwRyA&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow14" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-042</font></td><td class="dxgv" align="left"><font size="2">DEP&#211;SITOS Y PAGOS DIGITALES, S.A.P.I. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">DEP Y PAG DIG</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell14_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=Q0q7Co5p_kvd3lsOPPIh_dKhCmakFDLhXWSe-bkTxRAvGNBHlfvBRZ6A0iaq1TFxtO3458YY5kYpox6Y2eE1wg&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow15" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-048</font></td><td class="dxgv" align="left"><font size="2">EDENRED M&#201;XICO FINTECH, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">EDENRED</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell15_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=n-oyCNhqx4CzyxEEiPaM2GUChvCFFto9BuQ0v_uWc1RAD8IT5gJ8EZJLm2WFyyc3Vt_r9euCj2QFzrZ7mS_rrg&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow16" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-062</font></td><td class="dxgv" align="left"><font size="2">EFECTIFINTECH, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">EFECTIVALE / EFECTIFINTECH</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell16_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=PzAselw41sGHP9V48VYr7Na1H_vl1CTptLTYP6-5KDredinS6XKrDk5M0IUpJmZxc6KnBhJ14nkutDwCKocdow&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow17" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-074</font></td><td class="dxgv" align="left"><font size="2">ENSO FINVE, S.A.P.I DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">FINVE</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell17_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=-2G54aTgKi3uifCBfko5CNAXoItHKz-YIVYiiDcDr3B0k3KyuChuWEkdcibdktPJh4VHNWtM7x8sXEi2Sv9D-w&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow18" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-064</font></td><td class="dxgv" align="left"><font size="2">FINALITIX, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">FINALITIX</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell18_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=ZvncToNNhThxP3PpRR6noVcUqS7TJ7-4T2JF1qspHmbdxauyub_ThR-PfF1ZllNz06dO9yZ84VrpCSQOyAdbHQ&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow19" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-020</font></td><td class="dxgv" align="left"><font size="2">FINTECH ON DEMAND, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">FOD</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell19_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=CBBQmj7iamPr9G_PPTMIqYysMY0_Eg9AVfBxmD4Ug6cVY4sCkg-sMNkHleEZIpbjnsE-7aoLv4RthnV4LHxgkQ&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow20" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-032</font></td><td class="dxgv" align="left"><font size="2">INTELIGENCIA EN FINANZAS, S.A.P.I. DE C.V, INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">ALBO</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell20_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=bLEP_m2-jF8zhufzSSwTtIXUs2AOq0Tl310DaSkKkG8-dioMZ_9LrHxk_gM8Uf_-OYtzRQ1B3YRAn4x9jcnAlg&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow21" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">&nbsp;</font></td><td class="dxgv" align="left"><font size="2">JP 3 FINANCIAL, S.A.P.I. DE C.V, INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">PAYCASTER</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell21_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=7mYi_OWIkjpdYw15ptzB_-sTqMHZ8fjQqKe0Q2oKN70R_DCSPIn3p_zie2D57xfZFnG22IlZOI5tG48ogq3r5Q&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow22" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-070</font></td><td class="dxgv" align="left"><font size="2">KLU TECH, S.A.P.I. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">KLU</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell22_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=Wbo0IjaKdX5HlKl1MKNhTIGYawB3si0ax-_H7YUsknPVpIotwG17XSyhRoA85XlT3XFv_HsvfTvWft7RyF9FEA&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow23" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-059</font></td><td class="dxgv" align="left"><font size="2">KUHNIPAY, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">KUHNIPAY</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell23_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=T8G2GSv0SxOQ_OnsaT08ZFnE8KO--NKuMCPQDVSVpMUFKNgUwHDQ6KnNXxomyBcoiSa7pabDK4iTXzjns7e38Q&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow24" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-021</font></td><td class="dxgv" align="left"><font size="2">LANAPAY M&#201;XICO, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">LANAPAY</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell24_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=n2jRKWsLgcuDf83QsP5xJAe_H_0os1oVvI4B-HB28tbUxp-c5K7LiaTiArJHS2iInw6nURq2L5c1_2n9HUyt1g&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow25" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-031</font></td><td class="dxgv" align="left"><font size="2">LIFTOFF S.A. DE C.V, INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">LIFTOFF</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell25_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=_cofo3JGVedRd-sP2s4BDShNNOTMJyxumOYdzVkZLIcr46xG37Ic7a1MWQeaI5fweasCk2YNL67l8UnxhRacnQ&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow26" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-033</font></td><td class="dxgv" align="left"><font size="2">MERCADOLIBRE, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">MERCADO PAGO W</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell26_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=1WBXasqAcqbQlpJZQY_BonugNjp68ruT4DpObk82WNBqEeRCSpW94vlRSmmRvMC4_hhLm4s6NJ4qITq8XvkAsA&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow27" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-017</font></td><td class="dxgv" align="left"><font size="2">MEXPAGO TRANSACCIONES, S.A.P.I. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">MEXPAGO</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell27_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=1r__eYnhYqmzYT-5f2CDrBJiGOxYXjrsMkLxv2I2b5SPmqDW5B2M37k53PVFoF7PyiT0CvW2eq2H7ooM-5uC9Q&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow28" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-080</font></td><td class="dxgv" align="left"><font size="2">MONEYPOOL, S.A.P.I. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">MONEYPOOL</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell28_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=UaT0pgSINtyAb2d-zSZAi_coJVK--ytNdy57LczTzl1j9w2IfJ-JUWsa3dtOSgg1gC35yC58n6Nwq4LZtOZZEg&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow29" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-045</font></td><td class="dxgv" align="left"><font size="2">MOZPER M&#201;XICO, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">MOZPER</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell29_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=IUVtTYHjAzem5w88MLJk8G4ofj1IGZ2bwO9hjylBHpigvsnXf1Gfan_1tOpYrFEfSLYR-CIkHTV19BFWPPpZgA&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow30" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-001</font></td><td class="dxgv" align="left"><font size="2">NVIO PAGOS M&#201;XICO, S.A.P.I. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">NVIO</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell30_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=ZRpUAHP-IW3IE7AlebR7p63oCic5Il4drGWg9ecrogs_x5R8oeXWMhg-GiL4RKq5K7jMMxpjjM-hjCv79q1aIw&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow31" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-071</font></td><td class="dxgv" align="left"><font size="2">PAGAPHONE SMARTPAY, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">PAGAPHONE</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell31_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=O2QgdzyMpVUBla5s9LZlZehNgZzpuh9v0If2c-w1N_k947-JD9ykDINBI-zTYOjboihfYP1_AMQkGM3wigpvcg&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow32" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-075</font></td><td class="dxgv" align="left"><font size="2">PAGO CONFIADO, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">PAGO CONFIADO</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell32_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=LKcaP2lc-W6u5YhUIyfkCAaDFjHgmJVQKT0cWRWgtoyyD-kU8KRlCn7T58U9FrLg63exJUP-fG3FFx42fOydNQ&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow33" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-005</font></td><td class="dxgv" align="left"><font size="2">PAYPAL PAYMENTS M&#201;XICO, S.A.P.I. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">PPBALANCEMX</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell33_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=24p5QU1fLMi5gaQEy7o6c7cWJW0hkqsIhN7U_0FHi0C9jDKjWQfzlNqzYljp7AeXP7nivzOzfBcx0UfEVVXaYA&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow34" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-039</font></td><td class="dxgv" align="left"><font size="2">PEIBO FINTECH, S.A.P.I. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">PEIBO</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell34_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=q_xwIQJRTQ5cjhZsu5n7bEu7jNaFokSWgoMmpn7Edu7mbA6-6XtltCw2tLqocwztpLz_AabcX6pxNUVTq1tf1A&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow35" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-063</font></td><td class="dxgv" align="left"><font size="2">PLUXEE M&#201;XICO FINTECH, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">PLUXEE</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell35_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=SnLevo7eivMdh0_TH79EmSqMBaLuyebTpdxuVoyzZJcP55jRMciZR-0BYp4MPmEZmCR_wILXXMtTgEqF43I6aw&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow36" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-060</font></td><td class="dxgv" align="left"><font size="2">PRETECH, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">PRETECH</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell36_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=P7YtsVmnI1TLr_B-bcK_RLlyW1M4_CP60vWq4L9M70Wd_fPP1AB09hKtJAomttV_UzB6qotav_aLY9hyNc8p5Q&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow37" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-030</font></td><td class="dxgv" align="left"><font size="2">PROGRAMAS DE RELACIONAMIENTO MED&#193;, S.A.P.I. DE C.V. INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">MED&#193;</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell37_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=Kz2Eh6G6_102xTJ0XYRxnLBo9cyLkVfMW2AJc5IB_d3-rUpTTceFLsy3pLccFQuPS3d1ozmH1TGOM51G0yldWA&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow38" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-024</font></td><td class="dxgv" align="left"><font size="2">PTMPRIME, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">PTM PRIME</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell38_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=J87SEzUWu6HizxJDfOQ_T2-iTBrWU9MUzObnBowKO4amrxuTgoCJgwPcCfLQmAItzK69kF7EceG4G9BsDNT6Fg&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow39" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-036</font></td><td class="dxgv" align="left"><font size="2">SACB&#201;PAYMENTS DE M&#201;XICO, S.A.P.I. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">SACB&#201;PAYMENTS</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell39_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=6WYbp-lk9zs1K3Rjgx7dydW0kiPawca9iX__6csQwcWUeCb5l4AlcI6w6EbU76N2soWzTrnOUtzxGOpyF-93qg&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow40" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-049</font></td><td class="dxgv" align="left"><font size="2">SERVICIOS DE CATERING MERCI, S.A.P.I. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">MERCI PAY</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell40_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=kpBfRoUMmjGFPX8FMbvwD5t-SHHRl08-d_GyiCdxFAcZ9KmYpYigSk9UIkUGo3mEJedHmBSczsUoyk60jY-ShA&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow41" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-067</font></td><td class="dxgv" align="left"><font size="2">SERVICIOS DE OCCIDENTE MAPA, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">SERVICIOS DE OCCIDENTE MAPA</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell41_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=T9tGyA8dmSw0wiJY5cpd0fY8n3YBz6i7f4KE6uKcfXmKdbzlVWNyzCCXKT1ls_JFtnz3utFH30iJD4nYT1zp1A&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow42" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-047</font></td><td class="dxgv" align="left"><font size="2">S&#205; VALE FINTECH, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">S&#205; VALE</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell42_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=58ejH8kBAmoBOv1uXBi9b1Um7NupcdaHSuBWPaxYKONXuspUJSwuOW3k8XrRBp7jSGtjMH3NPKThKKQsuDhOag&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow43" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-010</font></td><td class="dxgv" align="left"><font size="2">SISTEMA DE TRANSFERENCIAS Y PAGOS STP, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">STP</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell43_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=PT3Qs7U8WJgVn5KqtVOgYN8G-jdL8UVBSSHHpvdhZ5V7mqj4eDnu_AmBqcmtdZllX_20EAAmsKEepC2Zhwu0pQ&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow44" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-053</font></td><td class="dxgv" align="left"><font size="2">SYLON CAPITAL, S.A.P.I. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">SYLON</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell44_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=N1_v6VSBA2jy7j2Nj477-qyQV3X8F-1grTxLJUxxzUXeiOhJVuHGm9Spt_vAX1IFi61q9L8w8l_NDHb6EAeL4A&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow45" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-078</font></td><td class="dxgv" align="left"><font size="2">TECNOLOG&#205;A E INNOVACI&#211;N EN PAGOS EKT, S.A DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">MII</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell45_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=SHXgUm7sOSqdy26K2JRbNlq5Xisgyz_9-hAI3KMas9hOtW_wL43tQ2bDPps_pLOopyDrP_MR7mOgM74Auo9qzA&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow46" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-027</font></td><td class="dxgv" align="left"><font size="2">TODITO PAGOS, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">TODITO PAGOS</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell46_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=AaAIXCr3r4YDJsePCx0cwbVg1vV9agDvrhXF9zBIxENAdz2TOekrfUsVqgay3XI48-0cHD1Xr1tjj_bdfRHwsA&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow47" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-038</font></td><td class="dxgv" align="left"><font size="2">TOKA FINTECH S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">TOKA FINTECH</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell47_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=V0cYa6pcZ-L1JogzjdmhWxzVP0bw9Y8FY9L5LCeu4M5wMplBK6VflgFjnyQNNBxWGa7bY3_mcPCyK9baH4NQmQ&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow48" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-007</font></td><td class="dxgv" align="left"><font size="2">TU DINERO DIGITAL, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">CTA MONEDERO</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell48_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=Q1ODSD5quvnBT906Upbnd5VGBqDPOIm7eIrk9hkaz1ZxS-T1rg1PgfIC_RyySxVc2Eys40WtatEJuAASDTscNw&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow49" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center"><font size="2">65-057</font></td><td class="dxgv" align="left"><font size="2">UBR PAGOS M&#201;XICO, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left"><font size="2">UBER</font></td><td class="dxgv"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell49_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;"><font size="1"><a href="/DetalleEntidad?q=60j8INcUGDTdqpGhBaPkV6DLEmHQD3SDEQdRVm3jtQ94Vb7WXP-Jtfv66fDs4omQdeFMr_5CEJh-VAINIcHmUQ&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr><tr id="GridViewEntidad_DXDataRow50" class="dxgvDataRow_Office2010Silver">
+				<td class="dxgv" align="center" style="border-bottom-width:0px;"><font size="2">65-068</font></td><td class="dxgv" align="left" style="border-bottom-width:0px;"><font size="2">XC NETWORKS, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left" style="border-bottom-width:0px;"><font size="2">PAGANDO</font></td><td class="dxgv" style="border-bottom-width:0px;"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell50_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;border-bottom-width:0px;"><font size="1"><a href="/DetalleEntidad?q=EE56FnHU3jNkDeP2FqWdo7S6F8WPbn5YuVQ88ID8oCiCqqbw9Sn65ipsgBlU8ncv1nHz04kOiKzlboiobIFglw&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr>
+		</table><img id="GridViewEntidad_IADD" class="dxGridView_gvDragAndDropArrowDown_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="|" title="" style="position:absolute;visibility:hidden;top:-100px;" /><img id="GridViewEntidad_IADU" class="dxGridView_gvDragAndDropArrowUp_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="|" title="" style="position:absolute;visibility:hidden;top:-100px;" /><img id="GridViewEntidad_IDHF" class="dxGridView_gvDragAndDropHideColumn_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="Ocultar" title="" style="position:absolute;visibility:hidden;top:-100px;" /><table id="GridViewEntidad_LP" class="dxgvLoadingPanel_Office2010Silver" cellspacing="0" cellpadding="0" style="left:0px;top:0px;z-index:30000;display:none;">
+			<tr>
+				<td class="dx" style="padding-right:5px;"><img src="/DXR.axd?r=0_3151-qNkuw" alt="" align="middle" /></td><td class="dx" style="padding-left:0px;"><span id="GridViewEntidad_TL">Cargando&hellip;</span></td>
+			</tr>
+		</table><div id="GridViewEntidad_LD" class="dxgvLoadingDiv_Office2010Silver" style="display:none;z-index:29999;position:absolute;">
+
+		</div><input type="hidden" name="GridViewEntidad$DXSelInput" id="GridViewEntidad_DXSelInput" /><input type="hidden" name="GridViewEntidad$DXKVInput" id="GridViewEntidad_DXKVInput" value="[&#39;1Az9MYLDKUsBgaW7nhAZ6W25XQ9S6qjOPqRPNOjSakl6E1Xs05wGD_InJTzpYl0XBgah45fgMkJF9un-vlukRw&#39;,&#39;FhYaZ3Nw9S6dbKaNe8BQerajW1S41Ld7Iav-aL7CmlSA8aUhMiK_ycfkmw95eVpriu6k8SrFlq29PFpYxDdpiw&#39;,&#39;t6z790-sMmILH111vthp56xDM31wOa-UxyrQ8r-\-MgjE4JgLuKk9JKD-B7krzkikPfC2RUSbZsOIAohOAxsZ8g&#39;,&#39;MrGsr6zoYd_QHhMz28ubLfqsTPZ__48fIN1fvH1XNm0AAjHIdvJ3Fe-zY-wsC66ZpA4m2Eb-rsjjdZNsllM65Q&#39;,&#39;SywJ2IfGFRQ-Nom0xYubBZJVDA1B1ACPfYg3ouUvxG2OuRLp5sTiV4VI6T3xie_diKtM1KfCMzJaKwSdyiMvxQ&#39;,&#39;6RFbLSCktJhvNDdosGSxXAQS9GAz-wcd5lw4HeuaRkP4_VKtkzp7sH8D9GBA4ZSQM3viXOEy2KA99tfR_8x2Yg&#39;,&#39;_w2S0NniwwADdA81ELVXmMiE2AixaJndLeeHVr_Hrnp0dyHlgpOFjzZOn0-_CRBJM1_ZNVWK9oXriwJ_OGoDeA&#39;,&#39;8D78sq6d-6vJuDf76SdkMoNRvmX5oWhjeZHjSKozW5VUeEOn_uxf-MTPNIRNrlrAHjtcYflmv30Z27KX5BFjXQ&#39;,&#39;zlJmiyTWtpdyFbMsNJrNrpkvzgRNRk2shYJZ5zqqR0gUVNsd222o0toDet7gv5m-GS8SbJVDblOvgJmYQRe7gQ&#39;,&#39;HZi-RSw_U-23sgbIFvMyJV64nfqAKcTjEsFo1N_0oSs8gE5TjmsbNkc7eNCSOkWVu4OQ_j5WP_Fk0ygZ1pTJLQ&#39;,&#39;dBToA3NTBw840vmWH6Wv8GxEddkxl5p5JGX_NsI5NAdqXlUt-xwzms27Ky7IEuMcCtnnxr_6vFz_mXEBzA3uEQ&#39;,&#39;sCe5AyAoTJdjQ0_0y9In2lJr4vrg1oAGw803R8tlAu1HynWnQ647z9YRumGhw6CdpiyPeOUUNtIbAW8lg1eXSA&#39;,&#39;Z93HaD8-FlA-U1aOjjGQ8KgQgGiUduJeTweMQI5DeBy8Jd9Vlz5Xy806bccH_awLPRQgp8z7qnUyvTwGHvlLvw&#39;,&#39;FXl_U0b48pOfwq3kXll1iHnN52IKqngv9ofYixoVeT79zNX8rzL6AtL3LZwjnye0xuv2EVI00rmt-l5c-EwRyA&#39;,&#39;Q0q7Co5p_kvd3lsOPPIh_dKhCmakFDLhXWSe-bkTxRAvGNBHlfvBRZ6A0iaq1TFxtO3458YY5kYpox6Y2eE1wg&#39;,&#39;n-oyCNhqx4CzyxEEiPaM2GUChvCFFto9BuQ0v_uWc1RAD8IT5gJ8EZJLm2WFyyc3Vt_r9euCj2QFzrZ7mS_rrg&#39;,&#39;PzAselw41sGHP9V48VYr7Na1H_vl1CTptLTYP6-5KDredinS6XKrDk5M0IUpJmZxc6KnBhJ14nkutDwCKocdow&#39;,&#39;-2G54aTgKi3uifCBfko5CNAXoItHKz-YIVYiiDcDr3B0k3KyuChuWEkdcibdktPJh4VHNWtM7x8sXEi2Sv9D-w&#39;,&#39;ZvncToNNhThxP3PpRR6noVcUqS7TJ7-4T2JF1qspHmbdxauyub_ThR-PfF1ZllNz06dO9yZ84VrpCSQOyAdbHQ&#39;,&#39;CBBQmj7iamPr9G_PPTMIqYysMY0_Eg9AVfBxmD4Ug6cVY4sCkg-sMNkHleEZIpbjnsE-7aoLv4RthnV4LHxgkQ&#39;,&#39;bLEP_m2-jF8zhufzSSwTtIXUs2AOq0Tl310DaSkKkG8-dioMZ_9LrHxk_gM8Uf_-OYtzRQ1B3YRAn4x9jcnAlg&#39;,&#39;7mYi_OWIkjpdYw15ptzB_-sTqMHZ8fjQqKe0Q2oKN70R_DCSPIn3p_zie2D57xfZFnG22IlZOI5tG48ogq3r5Q&#39;,&#39;Wbo0IjaKdX5HlKl1MKNhTIGYawB3si0ax-_H7YUsknPVpIotwG17XSyhRoA85XlT3XFv_HsvfTvWft7RyF9FEA&#39;,&#39;T8G2GSv0SxOQ_OnsaT08ZFnE8KO-\-NKuMCPQDVSVpMUFKNgUwHDQ6KnNXxomyBcoiSa7pabDK4iTXzjns7e38Q&#39;,&#39;n2jRKWsLgcuDf83QsP5xJAe_H_0os1oVvI4B-HB28tbUxp-c5K7LiaTiArJHS2iInw6nURq2L5c1_2n9HUyt1g&#39;,&#39;_cofo3JGVedRd-sP2s4BDShNNOTMJyxumOYdzVkZLIcr46xG37Ic7a1MWQeaI5fweasCk2YNL67l8UnxhRacnQ&#39;,&#39;1WBXasqAcqbQlpJZQY_BonugNjp68ruT4DpObk82WNBqEeRCSpW94vlRSmmRvMC4_hhLm4s6NJ4qITq8XvkAsA&#39;,&#39;1r__eYnhYqmzYT-5f2CDrBJiGOxYXjrsMkLxv2I2b5SPmqDW5B2M37k53PVFoF7PyiT0CvW2eq2H7ooM-5uC9Q&#39;,&#39;UaT0pgSINtyAb2d-zSZAi_coJVK-\-ytNdy57LczTzl1j9w2IfJ-JUWsa3dtOSgg1gC35yC58n6Nwq4LZtOZZEg&#39;,&#39;IUVtTYHjAzem5w88MLJk8G4ofj1IGZ2bwO9hjylBHpigvsnXf1Gfan_1tOpYrFEfSLYR-CIkHTV19BFWPPpZgA&#39;,&#39;ZRpUAHP-IW3IE7AlebR7p63oCic5Il4drGWg9ecrogs_x5R8oeXWMhg-GiL4RKq5K7jMMxpjjM-hjCv79q1aIw&#39;,&#39;O2QgdzyMpVUBla5s9LZlZehNgZzpuh9v0If2c-w1N_k947-JD9ykDINBI-zTYOjboihfYP1_AMQkGM3wigpvcg&#39;,&#39;LKcaP2lc-W6u5YhUIyfkCAaDFjHgmJVQKT0cWRWgtoyyD-kU8KRlCn7T58U9FrLg63exJUP-fG3FFx42fOydNQ&#39;,&#39;24p5QU1fLMi5gaQEy7o6c7cWJW0hkqsIhN7U_0FHi0C9jDKjWQfzlNqzYljp7AeXP7nivzOzfBcx0UfEVVXaYA&#39;,&#39;q_xwIQJRTQ5cjhZsu5n7bEu7jNaFokSWgoMmpn7Edu7mbA6-6XtltCw2tLqocwztpLz_AabcX6pxNUVTq1tf1A&#39;,&#39;SnLevo7eivMdh0_TH79EmSqMBaLuyebTpdxuVoyzZJcP55jRMciZR-0BYp4MPmEZmCR_wILXXMtTgEqF43I6aw&#39;,&#39;P7YtsVmnI1TLr_B-bcK_RLlyW1M4_CP60vWq4L9M70Wd_fPP1AB09hKtJAomttV_UzB6qotav_aLY9hyNc8p5Q&#39;,&#39;Kz2Eh6G6_102xTJ0XYRxnLBo9cyLkVfMW2AJc5IB_d3-rUpTTceFLsy3pLccFQuPS3d1ozmH1TGOM51G0yldWA&#39;,&#39;J87SEzUWu6HizxJDfOQ_T2-iTBrWU9MUzObnBowKO4amrxuTgoCJgwPcCfLQmAItzK69kF7EceG4G9BsDNT6Fg&#39;,&#39;6WYbp-lk9zs1K3Rjgx7dydW0kiPawca9iX__6csQwcWUeCb5l4AlcI6w6EbU76N2soWzTrnOUtzxGOpyF-93qg&#39;,&#39;kpBfRoUMmjGFPX8FMbvwD5t-SHHRl08-d_GyiCdxFAcZ9KmYpYigSk9UIkUGo3mEJedHmBSczsUoyk60jY-ShA&#39;,&#39;T9tGyA8dmSw0wiJY5cpd0fY8n3YBz6i7f4KE6uKcfXmKdbzlVWNyzCCXKT1ls_JFtnz3utFH30iJD4nYT1zp1A&#39;,&#39;58ejH8kBAmoBOv1uXBi9b1Um7NupcdaHSuBWPaxYKONXuspUJSwuOW3k8XrRBp7jSGtjMH3NPKThKKQsuDhOag&#39;,&#39;PT3Qs7U8WJgVn5KqtVOgYN8G-jdL8UVBSSHHpvdhZ5V7mqj4eDnu_AmBqcmtdZllX_20EAAmsKEepC2Zhwu0pQ&#39;,&#39;N1_v6VSBA2jy7j2Nj477-qyQV3X8F-1grTxLJUxxzUXeiOhJVuHGm9Spt_vAX1IFi61q9L8w8l_NDHb6EAeL4A&#39;,&#39;SHXgUm7sOSqdy26K2JRbNlq5Xisgyz_9-hAI3KMas9hOtW_wL43tQ2bDPps_pLOopyDrP_MR7mOgM74Auo9qzA&#39;,&#39;AaAIXCr3r4YDJsePCx0cwbVg1vV9agDvrhXF9zBIxENAdz2TOekrfUsVqgay3XI48-0cHD1Xr1tjj_bdfRHwsA&#39;,&#39;V0cYa6pcZ-L1JogzjdmhWxzVP0bw9Y8FY9L5LCeu4M5wMplBK6VflgFjnyQNNBxWGa7bY3_mcPCyK9baH4NQmQ&#39;,&#39;Q1ODSD5quvnBT906Upbnd5VGBqDPOIm7eIrk9hkaz1ZxS-T1rg1PgfIC_RyySxVc2Eys40WtatEJuAASDTscNw&#39;,&#39;60j8INcUGDTdqpGhBaPkV6DLEmHQD3SDEQdRVm3jtQ94Vb7WXP-Jtfv66fDs4omQdeFMr_5CEJh-VAINIcHmUQ&#39;,&#39;EE56FnHU3jNkDeP2FqWdo7S6F8WPbn5YuVQ88ID8oCiCqqbw9Sn65ipsgBlU8ncv1nHz04kOiKzlboiobIFglw&#39;]" /><table id="GridViewEntidad_DXStyleTable" style="display:none;">
+			<tr>
+				<td></td>
+			</tr><tr class="dxgvEditingErrorRow_Office2010Silver">
+				<td class="dxgv" colspan="5" style="border-right-width:0px;"></td>
+			</tr><tr class="dxgvSelectedRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvFocusedRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvFocusedGroupRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr>
+		</table><input type="hidden" name="GridViewEntidad$CallbackState" id="GridViewEntidad_CallbackState" value="BwMHAQIFU3RhdGUHvAcFBwACAQcBAgEHAgIBBwMCAQcEAgEHAAcFBwAHAAcBBwAHAgcABwMHAAcEBwAHAAcAAgAHAAcCVjFBejlNWUxES1VzQmdhVzduaEFaNlcyNVhROVM2cWpPUHFSUE5PalNha2w2RTFYczA1d0dEX0luSlR6cFlsMFhCZ2FoNDVmZ01rSkY5dW4tdmx1a1J3AgdBcmJvbElkBwECB0FyYm9sSWQHCQIAAgADBwQCAAcAAgEHMwcAAgEHAAcAAhBGaWx0ZXJFeHByZXNzaW9uBwIAAghQYWdlU2l6ZQMHMw==" /><input type="hidden" name="GridViewEntidad$DXFocusedRowInput" id="GridViewEntidad_DXFocusedRowInput" /><input type="hidden" id="GridViewEntidad_DXFilterRowMenuCI" name="GridViewEntidad_DXFilterRowMenuCI" value="" /><div id="GridViewEntidad_DXFilterRowMenu" style="position:absolute;left:0px;top:0px;z-index:19998;visibility:hidden;display:none;">
+			<table id="GridViewEntidad_DXFilterRowMenu_DXMST_" cellspacing="0" cellpadding="0" style="border-collapse:separate;position:relative;">
+				<tr>
+					<td class="dxmSubMenu_Office2010Silver"><table cellspacing="0" cellpadding="0" style="border-collapse:separate;">
+						<tr id="GridViewEntidad_DXFilterRowMenu_DXI0_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;0&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI0_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI0_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI0_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI0_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Comienza con</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI0_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI1_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;1&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI1_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI1_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI1_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI1_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Contiene</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI1_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI2_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;2&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI2_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI2_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI2_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI2_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">No contiene</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI2_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI3_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;3&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI3_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI3_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI3_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI3_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Acaba con</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI3_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI4_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;4&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI4_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI4_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI4_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI4_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Igual</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI4_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI5_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;5&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI5_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI5_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI5_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI5_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">No igual</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI5_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI6_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;6&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI6_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI6_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI6_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI6_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Es menor que</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI6_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI7_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;7&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI7_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI7_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI7_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI7_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Es menor o igual que</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI7_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI8_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;8&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI8_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI8_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI8_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI8_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Es mayor que</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI8_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI9_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;9&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI9_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI9_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI9_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI9_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Es mayor o igual que</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI9_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI10_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;10&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI10_I" title="Hay dos símbolos comodines soportados:
+ &#39;%&#39; substituye cero o más caracteres;
+ &#39;_&#39; substituye un solo carácter." class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI10_Img" title="Hay dos símbolos comodines soportados:
+ &#39;%&#39; substituye cero o más caracteres;
+ &#39;_&#39; substituye un solo carácter." class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI10_N" title="Hay dos símbolos comodines soportados:
+ &#39;%&#39; substituye cero o más caracteres;
+ &#39;_&#39; substituye un solo carácter." class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI10_T" title="Hay dos símbolos comodines soportados:
+ &#39;%&#39; substituye cero o más caracteres;
+ &#39;_&#39; substituye un solo carácter." class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Como (&#39;%&#39;, &#39;_&#39;)</span></td>
+						</tr>
+					</table></td><td style="background:url('/DXR.axd?r=1_65-rNkuw') no-repeat left top;"></td>
+				</tr><tr>
+					<td style="background:url('/DXR.axd?r=1_64-rNkuw') no-repeat left top;"></td><td style="background:url('/DXR.axd?r=1_66-rNkuw') no-repeat left top;"><div>
+
+					</div></td>
+				</tr>
+			</table>
+		</div><iframe id="GridViewEntidad_DXFilterRowMenu_DXMIF0" src="javascript:false" scrolling="no" frameborder="0" style="position:absolute;display:none;z-index:19997;filter:progid:DXImageTransform.Microsoft.Alpha(Style=0, Opacity=0);">
+
+		</iframe><script id="dxss_1291449283" type="text/javascript">
+<!--
+aspxAddHoverItems('GridViewEntidad_DXFilterRowMenu',[[[''],[''],['DXM_']],[['dxmSubMenuItemHoverWithImage_Office2010Silver'],[''],['DXI0_','DXI1_','DXI2_','DXI3_','DXI4_','DXI5_','DXI6_','DXI7_','DXI8_','DXI9_','DXI10_'],['I','N','T','P'],[[''],[''],[''],[''],[''],[''],[''],[''],[''],[''],['']],['Img','PImg']]]);
+aspxAddSelectedItems('GridViewEntidad_DXFilterRowMenu',[[['dxmSubMenuItemCheckedWithImage_Office2010Silver'],[''],['DXI0_','DXI1_','DXI2_','DXI3_','DXI4_','DXI5_','DXI6_','DXI7_','DXI8_','DXI9_','DXI10_'],['I','N','T','P'],[[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}]],['Img','PImg']]]);
+aspxAddDisabledItems('GridViewEntidad_DXFilterRowMenu',[[['dxmDisabled_Office2010Silver'],[''],['DXI0_','DXI1_','DXI2_','DXI3_','DXI4_','DXI5_','DXI6_','DXI7_','DXI8_','DXI9_','DXI10_'],['I','N','T','P'],[[''],[''],[''],[''],[''],[''],[''],[''],[''],[''],['']],['Img','PImg']]]);
+
+var dxo = new ASPxClientPopupMenu('GridViewEntidad_DXFilterRowMenu');
+window['GridViewEntidad_DXFilterRowMenu'] = dxo;
+dxo.uniqueID = 'GridViewEntidad$DXFilterRowMenu';
+dxo.renderIFrameForPopupElements = true;
+dxo.ItemClick.AddHandler(function(s,e){aspxGVFilterRowMenuClick('GridViewEntidad',e)});
+dxo.allowCheckItems=true;
+dxo.itemCheckedGroups=[['0','1','2','3','4','5','6','7','8','9','10']];
+dxo.CreateItems([['1|S',,,,,[]],['3|S',,,,,[]],['4|S',,,,,[]],['2|S',,,,,[]],['5|SN',,,,,[]],['10|SN',,,,,[]],['6|N',,,,,[]],['7|N',,,,,[]],['8|N',,,,,[]],['9|N',,,,,[]],['11|L',,,,,[]]]);
+dxo.popupVerticalAlign='Below';
+dxo.InlineInitialize();
+
+//-->
+</script></td>
+	</tr>
+</table><script id="dxss_1046528651" type="text/javascript">
+<!--
+
+var dxo = new MVCxClientGridView('GridViewEntidad');
+window['GridViewEntidad'] = dxo;
+dxo.callBack = function(arg) { ; };
+dxo.renderIFrameForPopupElements = true;
+dxo.Init.AddHandler(Mostrar);
+dxo.EndCallback.AddHandler(EndCallback);
+dxo.callBacksEnabled=true;
+dxo.pageRowCount=51;
+dxo.pageRowSize=51;
+dxo.pageIndex=0;
+dxo.pageCount=1;
+dxo.selectedWithoutPageRowCount=0;
+dxo.visibleStartIndex=0;
+dxo.focusedRowIndex=0;
+dxo.allowFocusedRow=true;
+dxo.allowSelectByRowClick=false;
+dxo.allowSelectSingleRowOnly=false;
+dxo.isDefaultLoadingPanelMode=true;
+dxo.indentColumnCount=0;
+dxo.callbackOnFocusedRowChanged=false;
+dxo.callbackOnSelectionChanged=false;
+dxo.autoFilterDelay='1200';
+dxo.columns = [new ASPxClientGridViewColumn('ClaveCasfim',0,-1,'ClaveCasfim',1,'S',0,1,1,1,0,0,0),
+new ASPxClientGridViewColumn('Nombre',1,-1,'Nombre',1,'S',0,1,1,1,0,0,0),
+new ASPxClientGridViewColumn('NombreCorto',2,-1,'NombreCorto',1,'S',0,1,1,1,0,0,0),
+new ASPxClientGridViewColumn('Subsector',3,-1,'Subsector',1,'S',0,1,1,1,0,0,0),
+new ASPxClientGridViewColumn('',4,-1,'',1,'S',0,0,0,0,0,0,0)];
+dxo.pendingEvents=['RaiseFocusedRowChanged'];
+dxo.filterRowConditions=({'4':1,'3':1,'2':1,'1':1,'0':1});
+dxo.editState=0;
+dxo.editMode=2;
+dxo.editingRowVisibleIndex=-1;
+dxo.callbackUrl="/Consulta/CallbackConsultaEntidad?Subsector=INSTITUCIONES%20DE%20FONDOS%20DE%20PAGO%20ELECTR%C3%93NICO";
+dxo.keyName="ArbolId";
+dxo.InlineInitialize();
+
+//-->
+</script>    </div>
+    <div style="visibility: collapse; display:none">
+    </div>
+</div>
+
+
+    </div>
+</div>
+

@@ -10,31 +10,20 @@ import pytest
 from mp_curp_renapo.renapo import RenapoClient
 from mp_curp_renapo.tests.conftest import make_valid_curp
 from shared.bitacora import Bitacora
-from shared.errors import McpError, ValidationError
+from shared.errors import ValidationError
 
 
 # ---------- modo mock detección ----------
 
 
-def test_default_es_mock_sin_envs(monkeypatch) -> None:
+def test_default_es_real_sin_envs(monkeypatch) -> None:
     monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
-    monkeypatch.delenv("CURP_RENAPO_PLAYWRIGHT", raising=False)
-    c = RenapoClient()
-    assert c.is_mock is True
+    assert RenapoClient().is_mock is False
 
 
 def test_mock_explicito(monkeypatch) -> None:
     monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
-    monkeypatch.setenv("CURP_RENAPO_PLAYWRIGHT", "1")
-    c = RenapoClient()
-    # PLUGINS_MX_MOCK gana sobre CURP_RENAPO_PLAYWRIGHT
-    assert c.is_mock is True
-
-
-def test_real_solo_con_playwright_env(monkeypatch) -> None:
-    monkeypatch.setenv("CURP_RENAPO_PLAYWRIGHT", "1")
-    c = RenapoClient()
-    assert c.is_mock is False
+    assert RenapoClient().is_mock is True
 
 
 # ---------- consulta mock ----------
@@ -122,13 +111,33 @@ async def test_descargar_constancia_curp_invalida(monkeypatch) -> None:
         await c.descargar_constancia("XX")
 
 
-# ---------- modo real sin Playwright ----------
+# ---------- modo real: handoff humano (CAPTCHA) ----------
 
 
 @pytest.mark.asyncio
-async def test_consultar_modo_real_devuelve_not_implemented(monkeypatch) -> None:
-    monkeypatch.setenv("CURP_RENAPO_PLAYWRIGHT", "1")
-    c = RenapoClient()
-    with pytest.raises(McpError) as exc:
-        await c.consultar("PERZ821223HDFRRL09")
-    assert exc.value.code == "not_implemented_error"
+async def test_consultar_real_devuelve_handoff(monkeypatch) -> None:
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+    r = await RenapoClient().consultar("PERZ821223HDFRRL09")
+    assert r["requiere_humano"] is True
+    assert r["url"] == "https://www.gob.mx/curp/"
+    assert r["campos_prellenados"] == {"curp": "PERZ821223HDFRRL09"}
+    assert r["validacion_local"]["valido_estructura"] is True
+    assert r["simulated"] is False
+
+
+@pytest.mark.asyncio
+async def test_constancia_real_devuelve_handoff(monkeypatch) -> None:
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+    r = await RenapoClient().descargar_constancia("PERZ821223HDFRRL09")
+    assert r["requiere_humano"] is True
+    assert any("PDF" in p for p in r["pasos"])
+
+
+@pytest.mark.live
+def test_live_portal_sigue_exigiendo_captcha() -> None:
+    """Confirma que gob.mx/curp sigue protegido (si deja de estarlo, revisar el handoff)."""
+    import httpx
+
+    r = httpx.get("https://www.gob.mx/curp/", timeout=30, follow_redirects=True)
+    body = r.text.lower()
+    assert "recaptcha" in body or "challenge" in body or r.status_code in (403, 429)

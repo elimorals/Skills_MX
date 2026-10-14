@@ -2,11 +2,11 @@
 
 MCP server para cerrar el ciclo de cobranza: **cliente paga SPEI → este MCP confirma el pago contra Banxico → el flujo marca el CFDI como cobrado**. Cubre validación CLABE local + consulta CEP (Constancia de Pago Electrónico).
 
-## Filosofía: capa local 100% real, capa Banxico mock-friendly
+## Filosofía: capa local + capa Banxico real
 
-Igual que `mp_curp_renapo`, la mayor parte del valor está en las **4 herramientas locales** que validan CLABE, parsean claves de rastreo y miran el catálogo de bancos. Estas son siempre reales — sin red, sin credenciales, instantáneas.
-
-Las **4 herramientas remotas** (generar CEP, validar CEP, descargar PDF, consultar pago) arrancan en **mock determinístico** porque Banxico no tiene API REST. Para modo real hace falta Playwright + parseo HTML (todavía no implementado, ver "Integración real" abajo).
+Las **4 herramientas locales** (CLABE, clave de rastreo, catálogo) no usan red.
+Las **4 herramientas remotas** consultan el portal CEP de Banxico con `httpx`
+(sin Playwright). Mock solo con `PLUGINS_MX_MOCK=1` (respuestas `simulated: true`).
 
 ## Tools expuestos
 
@@ -52,34 +52,35 @@ Ejemplos de códigos de banco más usados:
 8. Si era PPD → emitir CFDI de Pagos (REP)
 ```
 
-## Configuración
+## Estado real
 
-### Modo mock (default)
+| Fecha | URL | Resultado |
+|---|---|---|
+| 2026-10-14 | `GET https://www.banxico.org.mx/cep/` | 200, CAPTCHA oculto (`captcha=c` precargado por el portal) |
+| 2026-10-14 | `GET https://www.banxico.org.mx/cep/instituciones.do?fecha=10-10-2026` | 200 JSON, catálogo SPEI |
+| 2026-10-14 | `POST https://www.banxico.org.mx/cep/valida.do` (tipoConsulta=0, clave inexistente) | 200, "Operación no encontrada" |
+| 2026-10-14 | `POST .../valida.do` (SPEI de 2019) | 200, "[BE] No se encontró ningún pago" |
 
-Sin envs, las 4 tools locales funcionan reales y las 4 remotas devuelven respuestas plausibles **determinísticas** (mismo input → mismo output). Útil para desarrollo, demos y tests del flujo de conciliación sin tocar Banxico.
+- Estado: **real validado** para consulta de estado y respuestas "no encontrado".
+  El camino de un SPEI existente (`descarga.do?formato=XML|PDF` y parseo de
+  `SPEI_Tercero`) está implementado pero **no validado en vivo**: no hay una
+  clave de rastreo pública de prueba. Validar con un SPEI propio.
+- Endpoints (leídos de `js/cep-min.js`): `instituciones.do` (JSON), `valida.do`
+  (form), `descarga.do`. Ver `spei.py`.
+- CAPTCHA: si el portal vuelve a mostrar la imagen de seguridad, las tools
+  devuelven un handoff humano (`requiere_humano: true`, URL, pasos y campos
+  prellenados). Nunca se resuelve el CAPTCHA.
+- Errores del portal → `UpstreamError`. Nunca hay fallback a mock.
+- `generar_cep`/`descargar_pdf` exigen `cuenta_beneficiaria`; `validar_cep`
+  exige `fecha_operacion`, `banco_emisor` y `banco_receptor`.
+- Horario de consulta del portal: 09:30–23:00.
 
-Heurística: validar_cep usa el primer hex char del SHA-256 de la clave — par = existe, impar = no encontrado. Predecible y testeable.
-
-### Integración real (todavía no implementada)
-
-```bash
-export BANXICO_CEP_PLAYWRIGHT=1
-```
-
-Esto activa el camino real. Pero las tools remotas devolverán `not_implemented_error` con guía. Para integrar:
-
-1. `pip install playwright && playwright install chromium`
-2. Implementar el flujo POST a `https://www.banxico.org.mx/cep/` con los datos del SPEI
-3. Parsear el HTML de respuesta — extraer hora, ordenante enmascarado, beneficiario, monto, etc.
-4. Descargar el PDF firmado si hace falta
-5. Reemplazar los `_NotImplementedError` en `client.py` con la lógica Playwright
-
-Las 4 tools locales no requieren nada de esto.
+Test live: `PLUGINS_MX_LIVE=1 .venv/bin/pytest mp_banxico_cep -m live`.
 
 ## Seguridad
 
 - **PII en bitácora**: las claves de rastreo SPEI se **hashean** (SHA-256) antes de loggear. Nunca se persiste en claro.
-- **Cuentas bancarias**: en las respuestas (real y mock) las cuentas se devuelven enmascaradas (`**** XXXX` últimos 4).
+- **Cuentas bancarias**: en las respuestas las cuentas se devuelven enmascaradas (`**** XXXX` últimos 4).
 - **Cache**: respuestas CEP viven solo en disco local del usuario.
 
 ## Verticales que lo consumen

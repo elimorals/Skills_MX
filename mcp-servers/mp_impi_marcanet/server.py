@@ -1,12 +1,11 @@
-"""mp_impi_marcanet — MCP standalone para IMPI ViDoc (búsqueda marcas).
+"""mp_impi_marcanet — MCP standalone para búsqueda de marcas IMPI (MARCia).
 
 Tools:
 - impi_buscar(query, [limite, incluir_raw])              — búsqueda libre
 - impi_verificar_denominacion(denominacion)              — para legaltech / startups
 
-Portal: https://vidoc.impi.gob.mx/busc (reemplazó MARCANET descontinuado).
-Backend: POST /api/BusquedaDocumentos/getBusquedaSimpleNdjson — requiere
-reCAPTCHA v3 + XSRF token → MCP usa Playwright en modo real.
+Portal: https://marcia.impi.gob.mx/ — API JSON sin CAPTCHA (httpx, ver marcia.py).
+Mock solo con PLUGINS_MX_MOCK=1.
 """
 from __future__ import annotations
 
@@ -63,7 +62,7 @@ class VerificarDenominacionInput(BaseModel):
 
 
 @mcp.tool(annotations={
-    "title": "Buscar marcas en IMPI ViDoc",
+    "title": "Buscar marcas en IMPI (MARCia)",
     "readOnlyHint": True,
     "idempotentHint": True,
     "openWorldHint": True,
@@ -86,7 +85,7 @@ def impi_buscar(args: BuscarInput) -> dict:
             }
           ],
           "fuente": URL portal,
-          "modo": "mock" | "playwright" | "cache",
+          "modo": "mock" | "marcia" | "cache",
         }
     """
     return _client.buscar(

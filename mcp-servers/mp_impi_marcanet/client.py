@@ -1,14 +1,14 @@
-"""Cliente IMPI ViDoc — búsqueda de marcas/patentes/diseños.
+"""Cliente IMPI — búsqueda de marcas.
 
-3 modos de operación:
-  1. **mock** (default CI/dev): respuestas determinísticas con 2-3 marcas ejemplo.
-  2. **playwright** (PLUGINS_MX_IMPI_LIVE=1): browser headless emite token reCAPTCHA v3.
-  3. **2captcha** (futuro): solver externo para batch grandes.
+Path real: API JSON de MARCia (https://marcia.impi.gob.mx/, ver `marcia.py`),
+sin CAPTCHA. ViDoc (vidoc.impi.gob.mx) exige token reCAPTCHA v3 y ya no se usa.
+Mock solo con PLUGINS_MX_MOCK=1. Errores → UpstreamError.
 
 Cache 30 días por query.
 """
 from __future__ import annotations
 
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -21,22 +21,12 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
-from shared.errors import McpError, UpstreamError, ValidationError  # noqa: E402
-from shared.impi_vidoc import (  # noqa: E402
-    API_URL_PATTERN,
-    PORTAL_URL,
-    SEARCH_BUTTON_SELECTOR,
-    SEARCH_INPUT_SELECTOR,
-    MarcaIMPI,
-    parsear_ndjson_response,
-    validar_query,
-)
-from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
-from shared.playwright_session import (  # noqa: E402
-    PlaywrightNotAvailable,
-    PortalSession,
-    should_use_real_browser,
-)
+from mp_impi_marcanet import marcia  # noqa: E402
+from shared.errors import ValidationError  # noqa: E402
+from shared.impi_vidoc import MarcaIMPI, validar_query  # noqa: E402
+from shared.mock import mark_simulated  # noqa: E402
+
+PORTAL_URL = marcia.PORTAL_URL
 
 
 NAMESPACE = "impi_marcanet"
@@ -46,14 +36,7 @@ DEFAULT_LIMITE = 20
 
 
 class ImpiMarcanetClient:
-    """Cliente unificado búsqueda IMPI ViDoc.
-
-    El cliente NO mantiene el browser abierto entre instancias —
-    cada `buscar()` abre/cierra una `PortalSession`. Si necesitas batch
-    de cientos de queries, instancia `PortalSession` directamente y reutilízala.
-    """
-
-    LIVE_ENV_FLAG = "PLUGINS_MX_IMPI_LIVE"
+    """Cliente búsqueda de marcas IMPI (MARCia)."""
 
     def __init__(
         self,
@@ -110,8 +93,7 @@ class ImpiMarcanetClient:
             )
             return {**cached, "modo": "cache"}
 
-        # Mock por default; PLUGINS_MX_IMPI_LIVE=1 + playwright instalado → real
-        if not should_use_real_browser(self.LIVE_ENV_FLAG):
+        if os.environ.get("PLUGINS_MX_MOCK") == "1":
             result = self._mock_buscar(query_norm, limite)
         else:
             result = self._buscar_real(query_norm, limite)
@@ -197,90 +179,21 @@ class ImpiMarcanetClient:
         }
 
     # ============================================================
-    # Playwright path
+    # Path real: MARCia
     # ============================================================
 
-    def _buscar_real(self, query: str, limite: int) -> dict[str, Any]:
-        """Llama a IMPI ViDoc vía Playwright headless."""
-        try:
-            with PortalSession(
-                portal_url=PORTAL_URL,
-                api_url_pattern=API_URL_PATTERN,
-                ready_selector=SEARCH_INPUT_SELECTOR,
-            ) as sess:
-                captured = sess.query(
-                    fill_action=lambda page: self._fill_search(page, query),
-                    submit_action=lambda page: page.click(SEARCH_BUTTON_SELECTOR),
-                    wait_after_submit_ms=5000,
-                )
-        except PlaywrightNotAvailable as e:
-            raise UpstreamError(
-                "Playwright no disponible en este entorno. "
-                "Para modo real: pip install playwright && playwright install chromium",
-                {"raw": str(e)},
-            ) from e
-        except Exception as e:
-            raise UpstreamError(
-                f"Error en sesión Playwright contra IMPI: {type(e).__name__}: {e}",
-            ) from e
-
-        if not captured:
-            raise UpstreamError(
-                "Ningún XHR a /api/BusquedaDocumentos/getBusquedaSimpleNdjson "
-                "fue capturado. Probable causa: timeout reCAPTCHA o portal caído.",
-            )
-
-        # Usamos el primer XHR capturado (el front puede emitir más en navegación)
-        resp = captured[0]
-        if resp.status >= 400:
-            raise UpstreamError(
-                f"IMPI ViDoc respondió HTTP {resp.status}.",
-                {"body_preview": resp.body[:300]},
-            )
-
-        return self._normalizar_resultado(
-            query=query,
-            limite=limite,
-            ndjson_body=resp.body,
-            modo="playwright",
-        )
-
     @staticmethod
-    def _fill_search(page, query: str) -> None:
-        """Llena el searchbox usando el setter nativo (Angular reactive forms)."""
-        page.evaluate(
-            """({selector, value}) => {
-                const sb = document.querySelector(selector);
-                if (!sb) throw new Error('searchbox not found');
-                sb.focus();
-                const setter = Object.getOwnPropertyDescriptor(
-                    window.HTMLInputElement.prototype, 'value'
-                ).set;
-                setter.call(sb, value);
-                sb.dispatchEvent(new Event('input', { bubbles: true }));
-            }""",
-            {"selector": SEARCH_INPUT_SELECTOR, "value": query},
-        )
-
-    @staticmethod
-    def _normalizar_resultado(
-        query: str,
-        limite: int,
-        ndjson_body: str,
-        modo: str,
-    ) -> dict[str, Any]:
-        """Parsea NDJSON y devuelve el shape canónico."""
-        marcas: list[MarcaIMPI] = list(parsear_ndjson_response(ndjson_body))
-        total = len(marcas)
-        devueltos = marcas[:limite]
+    def _buscar_real(query: str, limite: int) -> dict[str, Any]:
+        r = marcia.buscar(query, limite)
+        resultados = [marcia.mapear(i) for i in r["items"][:limite]]
         return {
             "query": query,
-            "total_encontrados": total,
-            "devueltos": len(devueltos),
-            "resultados": [m.to_dict() for m in devueltos],
+            "total_encontrados": r["total"],
+            "devueltos": len(resultados),
+            "resultados": resultados,
             "fecha_consulta": datetime.now(timezone.utc).isoformat(),
             "fuente": PORTAL_URL,
-            "modo": modo,
+            "modo": "marcia",
             "simulated": False,
         }
 

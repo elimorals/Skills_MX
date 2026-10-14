@@ -1,118 +1,72 @@
 # mp_impi_marcanet
 
-MCP standalone para búsqueda en el padrón del **IMPI ViDoc** (Instituto Mexicano
-de la Propiedad Industrial).
-
-> Aunque el MCP se llama `mp_impi_marcanet` por consistencia con la doc de
-> priorización Top 15, el portal real es **ViDoc** — MARCANET fue descontinuado.
+Búsqueda de marcas en el IMPI vía **MARCia** (https://marcia.impi.gob.mx/).
+El nombre `marcanet` se conserva por compatibilidad; MARCANET ya no existe.
 
 ## Por qué importa
 
 - **Universo**: legaltech, agencias creativas, startups, marketplaces.
-- **Caso de uso**: validar si una denominación está registrada antes de gastar
-  $5K-15K MXN en un trámite IMPI fallido.
-- **Top 15 #7** del roadmap (alto valor, bajo esfuerzo original — quedó medio
-  por reCAPTCHA v3).
-
-## Portal
-
-- **URL**: https://vidoc.impi.gob.mx/busc
-- **Stack**: Angular SPA + ASP.NET Core backend + reCAPTCHA v3 + XSRF token
-- **Endpoint backend**: `POST /api/BusquedaDocumentos/getBusquedaSimpleNdjson`
-- **Respuesta**: `application/x-ndjson` (newline-delimited JSON, ~860 docs típicos)
+- **Caso de uso**: validar si una denominación ya está registrada antes de pagar
+  un trámite IMPI.
 
 ## Tools
 
 ### `impi_buscar(query, limite=20, incluir_raw=False)`
-
-Búsqueda libre. Devuelve marcas, patentes, diseños y asuntos contenciosos que
-matchean el término. Cada resultado incluye denominación, titular, clase Niza,
-fechas y ficha normalizada.
+Búsqueda rápida (denominación, titular o número). Devuelve total y los primeros
+`limite` resultados.
 
 ### `impi_verificar_denominacion(denominacion)`
+Cuenta coincidencias exactas/similares en la primera página. No sustituye el
+análisis de similitud fonética/gráfica que hace el IMPI.
 
-Decisión de alto nivel para legaltech: ¿esta denominación parece ya estar
-registrada? Devuelve `coincidencias_exactas` y `coincidencias_similares` con
-advertencias contextuales.
+## Estado real
 
-**Importante**: IMPI evalúa similitud fonética/gráfica/conceptual. La ausencia
-de coincidencias en texto NO garantiza registrabilidad — siempre validar con
-un abogado de PI antes de operar.
-
-## Modos de operación
-
-| Modo | Trigger | Latencia | Costo |
-|---|---|---|---|
-| `mock` | Default | <10ms | $0 |
-| `playwright` | `PLUGINS_MX_IMPI_LIVE=1` + Playwright instalado | 3-5s/query | $0 |
-| `cache` | Hit | <5ms | $0 |
-
-Cache 30 días por query.
-
-## Configuración
-
-| Env var | Default | Descripción |
+| Fecha | URL | Resultado |
 |---|---|---|
-| `PLUGINS_MX_MOCK` | `1` | `1` = mock determinístico, `0` = permite path real |
-| `PLUGINS_MX_IMPI_LIVE` | unset | `1` para activar Playwright real (también requiere `MOCK=0` o sin set) |
-| `PLUGINS_MX_CACHE_DIR` | `~/.cache/plugins-mx` | Storage local |
+| 2026-10-14 | `GET https://marcia.impi.gob.mx/marcas/search/quick` | 200, cookies `JSESSIONID`, `SESSIONTOKEN`, `XSRF-TOKEN` |
+| 2026-10-14 | `POST .../marcas/search/internal/record` (`TELMEX`) | 200 JSON, `count` 5305 |
+| 2026-10-14 | `POST .../marcas/search/internal/result` | 200 JSON, `resultPage` con registro 340988 |
+| 2026-10-14 | `https://vidoc.impi.gob.mx` (fuente anterior) | exige token reCAPTCHA v3: descartada |
 
-## Quickstart
+- Estado: **real validado** (test `@pytest.mark.live` en `tests/test_marcia.py`).
+- Sin CAPTCHA ni login; el único requisito es reenviar la cookie `XSRF-TOKEN`
+  como header `X-XSRF-TOKEN`.
+- Errores → `UpstreamError`; sin fallback a mock.
+- Mock solo con `PLUGINS_MX_MOCK=1` (`simulated: true`).
 
-### Modo mock (default — sin dependencias extra)
-
-```bash
-python -m mp_impi_marcanet.server
-```
-
-### Modo real (con browser)
-
-```bash
-pip install playwright
-playwright install chromium
-
-PLUGINS_MX_MOCK=0 PLUGINS_MX_IMPI_LIVE=1 python -m mp_impi_marcanet.server
-```
-
-## Schema de respuesta normalizado
+## Schema de respuesta (real)
 
 ```json
 {
   "query": "TELMEX",
-  "total_encontrados": 864,
-  "devueltos": 20,
+  "total_encontrados": 5305,
+  "devueltos": 5,
   "resultados": [
     {
-      "expediente": "MA/M/1985/3502080",
-      "numero_expediente": "3502080",
+      "expediente": "RM198600012166",
+      "numero_expediente": "12166",
+      "numero_registro": "340988",
       "area": "MARCAS",
-      "anio": 2025,
-      "tipo_expediente": "MARCA",
-      "denominacion": "RELLAMADO TELMEX",
-      "titular": "TELEFONOS DE MEXICO, S.A.B. DE C.V.",
-      "titular_nacionalidad": "MEXICO",
-      "titular_estado": "CUAUHTEMOC, CIUDAD DE MEXICO",
-      "clase_niza": "38",
-      "tipo_descripcion": "DENOMINACION",
-      "fecha": "2025-11-11T14:21:29"
+      "tipo_expediente": "REGISTRO DE MARCA",
+      "denominacion": "TELMEX",
+      "estatus": "REGISTRADO",
+      "titular": "MARTEX POTOSI, S.A. DE C.V.",
+      "titulares": ["MARTEX POTOSI, S.A. DE C.V."],
+      "clases_niza": [],
+      "fecha_solicitud": "24/7/1986",
+      "fecha_vigencia": "24/07/2031",
+      "imagen_url": "https://marcia.impi.gob.mx/marcas/image/RM198600012166"
     }
   ],
-  "fuente": "https://vidoc.impi.gob.mx/busc",
-  "modo": "playwright"
+  "fuente": "https://marcia.impi.gob.mx/marcas/search/quick",
+  "modo": "marcia",
+  "simulated": false
 }
 ```
-
-## Discovery + decisiones de diseño
-
-Documentadas en `docs/DISCOVERY-MCPS-2026-06-15.md`. Highlights:
-
-1. **MARCANET migró a ViDoc** — la URL del Top 15 original (`marcanet.impi.gob.mx`) ya no resuelve DNS.
-2. **3 protecciones** (Angular + reCAPTCHA + XSRF) hacen imposible un cliente httpx-only sin un solver de reCAPTCHA v3 pago.
-3. El **NDJSON streaming** NO pagina server-side — devuelve todos los matches en una sola respuesta de hasta 1MB.
-4. Reutilizamos `shared/playwright_session.py` — same helper para futuros MCPs (CONDUSEF, COFEPRIS, REPUVE).
 
 ## Tests
 
 ```bash
-PYTHONPATH=mcp-servers pytest mcp-servers/mp_impi_marcanet/tests -v
+.venv/bin/pytest mp_impi_marcanet
+PLUGINS_MX_LIVE=1 .venv/bin/pytest mp_impi_marcanet -k live
 ```

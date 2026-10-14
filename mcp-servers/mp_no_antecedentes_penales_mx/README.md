@@ -42,16 +42,20 @@ Decisión binaria RRHH. Devuelve `apto_para_contratacion: bool` + razón.
 
 | Env var | Default | Descripción |
 |---|---|---|
-| `PLUGINS_MX_MOCK` | `1` | Mock override. |
-| `PLUGINS_MX_NOANT_LIVE` | unset | Activa Playwright real (placeholder en v1). |
+| `PLUGINS_MX_MOCK` | unset | `1` = mock determinístico (`simulated: true`). |
 
-## Estado v1
+## Estado real
 
-- ✅ Schemas, validación CURP, validación folio, validación entidad
-- ✅ Mock determinístico con 5 escenarios
-- ✅ Tests
-- ⚠️ Modo real: placeholder — CDMX requiere SSO Llave, EdoMex pendiente discovery
-  del endpoint público de verificación
+| Fecha | URL | Resultado |
+|---|---|---|
+| 2026-10-14 | `https://noantecedentes.cdmx.gob.mx/` | Redirige a la ficha del trámite 872 en cdmx.gob.mx; sin verificador público por folio/CURP |
+| 2026-10-14 | `https://carta-no-antecedentes.edomex.gob.mx/verificar` | DNS no resuelve (`ERR_NAME_NOT_RESOLVED`) |
+
+- Estado: **handoff humano** (sin verificador público consultable).
+- En modo real las tools devuelven `requiere_humano: true`, `estado: "DESCONOCIDO"`,
+  `es_apta_para_contratacion: null` y pasos para validar el PDF (QR, firma digital,
+  confirmación con la fiscalía). Nunca se inventa un estado.
+- Test live (`-k live`) avisa cuando el verificador EdoMex vuelva a resolver DNS.
 
 ## Tests
 

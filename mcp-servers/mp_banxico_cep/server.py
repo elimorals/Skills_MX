@@ -6,10 +6,10 @@ Banxico → el flow marca el CFDI como cobrado.
 
 7 tools:
 - 3 locales (validar CLABE, decodificar CLABE, parsear clave rastreo) — siempre reales
-- 3 remotos a Banxico (generar/validar/descargar CEP) — mock por default
+- 3 remotos a Banxico (generar/validar/descargar CEP) — httpx real; mock solo con PLUGINS_MX_MOCK=1
 - 1 catálogo (listar bancos CLABE)
 
-⚠ Banxico no tiene API REST oficial. La integración real requiere Playwright.
+Banxico no tiene API REST oficial: se replican los endpoints del portal (ver spei.py).
 """
 
 from __future__ import annotations
@@ -92,6 +92,21 @@ class GenerarCepInput(BaseModel):
         max_length=3,
     )
     monto: float = Field(..., description="Monto exacto del SPEI.", gt=0)
+    cuenta_beneficiaria: Optional[str] = Field(
+        None,
+        description="Cuenta beneficiaria (CLABE 18, tarjeta 16 o celular 10). Banxico la exige para emitir el CEP.",
+        min_length=10,
+        max_length=18,
+    )
+
+
+class ValidarCepInput(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True, extra="forbid")
+
+    clave_rastreo: str = Field(..., description="Clave de rastreo SPEI.", min_length=1, max_length=50)
+    fecha_operacion: Optional[date] = Field(None, description="Fecha del SPEI (YYYY-MM-DD). Requerida en modo real.")
+    banco_emisor: Optional[str] = Field(None, description="Código CLABE 3 dígitos del emisor. Requerido en modo real.", min_length=3, max_length=3)
+    banco_receptor: Optional[str] = Field(None, description="Código CLABE 3 dígitos del receptor. Requerido en modo real.", min_length=3, max_length=3)
 
 
 class CodigoBancoInput(BaseModel):
@@ -233,7 +248,7 @@ async def banxico_cep_generar_cep(params: GenerarCepInput) -> dict:
 
     Cache 90 días — los SPEI ya liquidados no cambian.
 
-    ⚠ Modo mock por default. Real requiere Playwright (TODO).
+    Real vía httpx contra banxico.org.mx/cep (mock solo con PLUGINS_MX_MOCK=1).
     """
     try:
         return await _client.generar_cep(
@@ -242,6 +257,7 @@ async def banxico_cep_generar_cep(params: GenerarCepInput) -> dict:
             banco_emisor=params.banco_emisor,
             banco_receptor=params.banco_receptor,
             monto=params.monto,
+            cuenta_beneficiaria=params.cuenta_beneficiaria,
         )
     except McpError as err:
         return err.to_dict()
@@ -257,13 +273,18 @@ async def banxico_cep_generar_cep(params: GenerarCepInput) -> dict:
         "openWorldHint": True,
     },
 )
-async def banxico_cep_validar_cep(params: ClaveRastreoInput) -> dict:
+async def banxico_cep_validar_cep(params: ValidarCepInput) -> dict:
     """Check liviano de existencia: ¿hay CEP para esta clave?
 
     Más barato que `generar_cep` cuando solo necesitas yes/no. Cache 30 días.
     """
     try:
-        return await _client.validar_cep(params.clave_rastreo)
+        return await _client.validar_cep(
+            params.clave_rastreo,
+            params.fecha_operacion,
+            params.banco_emisor,
+            params.banco_receptor,
+        )
     except McpError as err:
         return err.to_dict()
 
@@ -290,6 +311,7 @@ async def banxico_cep_descargar_pdf(params: GenerarCepInput) -> dict:
             banco_emisor=params.banco_emisor,
             banco_receptor=params.banco_receptor,
             monto=params.monto,
+            cuenta_beneficiaria=params.cuenta_beneficiaria,
         )
     except McpError as err:
         return err.to_dict()

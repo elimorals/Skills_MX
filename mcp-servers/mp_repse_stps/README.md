@@ -2,7 +2,7 @@
 
 MCP standalone para consulta REPSE STPS (Registro Público de empresas de Subcontratación).
 
-**Portal**: https://repse.stps.gob.mx/app/ — **reCAPTCHA v1beta1 deprecated**, automatizable 100%.
+**Portal**: https://repse.stps.gob.mx/ — consulta pública sin CAPTCHA ni login; el MCP llama con `httpx` a los endpoints JSON del formulario "Consultar Padrón".
 
 ## Por qué importa
 
@@ -36,17 +36,28 @@ input: razon_social="MANPOWER CORPORATIVO"
 
 ## Tipos de datos REPSE
 
-- **Número de registro**: 4-7 dígitos (ej. `669356`)
-- **Folio**: número interno padrón
-- **AR (Aviso de Registro)**: ej. `AR6169`
+- **Número de registro / folio REPSE**: el folio que muestra el portal (ej. `2775`).
+  La búsqueda acepta folio, RFC o razón social.
+- **Aviso de registro**: `<abreviatura>-<num_emi>/<año>` (ej. `ARRMGST-6/2024`)
+- **id_padron**: id interno que devuelve la búsqueda (no es el folio)
 - **Vigencia**: 3 años desde la fecha de aviso de registro
 
-## Modos
+## Estado real
 
-| Variable | Default | Efecto |
-|----------|---------|--------|
-| `PLUGINS_MX_MOCK=1` | ✅ | Datos simulados, no toca STPS |
-| `MP_PLAYWRIGHT_PUBLIC=1` | — | Playwright real contra `repse.stps.gob.mx/app/` |
+| Fecha | URL | Resultado |
+|---|---|---|
+| 2026-10-14 | `GET https://repse.stps.gob.mx/busca_razon_social?term=BIMBO` | 200 JSON, 2 coincidencias |
+| 2026-10-14 | `POST https://repse.stps.gob.mx/buscar-padron` (id 2235) | 200 JSON, folio 2775, vigencia 2027-05-09 |
+| 2026-10-14 | `POST .../buscar-padron` (id inexistente) | 200 JSON `registro: 0` → `NotFoundError` |
+
+- Estado: **real validado** (test `@pytest.mark.live` en `tests/test_real.py`).
+- Flujo: `GET /` (cookie + meta `csrf-token`) → `GET /busca_razon_social?term=` →
+  `POST /buscar-padron` (multipart `razon_social=<id>`, header `X-CSRF-TOKEN`).
+- Errores del portal → `UpstreamError`; sin fallback a mock.
+- Mock solo con `PLUGINS_MX_MOCK=1` (`simulated: true`).
+- `/app/` (la SPA anterior) devuelve 404 desde 2026.
+
+Test live: `PLUGINS_MX_LIVE=1 .venv/bin/pytest mp_repse_stps -m live`.
 
 ## Cache
 
@@ -56,17 +67,4 @@ input: razon_social="MANPOWER CORPORATIVO"
 
 ```bash
 PYTHONPATH=mcp-servers pytest mcp-servers/mp_repse_stps/tests/ -v
-```
-
-## Selectores DOM validados Playwright MCP 2026-06-14
-
-```python
-SELECTORES_REPSE = {
-    "input_razon_social": "input[placeholder*='Razón social']",
-    "boton_buscar": "button:has-text('Buscar')",
-    "tabla_resultados": "table tbody tr",
-    "boton_seleccionar": "tr button:has-text('Seleccionar')",
-    "detalle_folio_heading": "h3:has-text('REGISTRO LOCALIZADO FOLIO')",
-    # más en shared/repse_stps.py
-}
 ```

@@ -2,11 +2,10 @@
 
 MCP standalone para validación de cédulas profesionales SEP (Registro Nacional de Profesionistas).
 
-**Portal**: https://cedulaprofesional.sep.gob.mx/ — **SIN CAPTCHA**, automatizable 100%.
+**Portal**: https://cedulaprofesional.sep.gob.mx/ — cada consulta exige token **reCAPTCHA v3**; el MCP devuelve handoff humano.
 
 ## Por qué importa
 
-- **Único portal federal MX de validación profesional que se puede automatizar end-to-end** (sin humano en loop).
 - Desbloquea verticales que por ley requieren validar cédula:
   - **`telemedicina-mx`** (NOM-004-SSA3-2012 + Acuerdo COFEPRIS 28-mar-2024)
   - **`consultorio-especialista-mx`**, `clinica-salud-mx`, `psicoterapia-mx`
@@ -43,12 +42,19 @@ input: cedula="1234567", cedula_especialidad="7654321"
         - cumple_cofepris_2024 = puede_dar_consulta
 ```
 
-## Modos
+## Estado real
 
-| Variable | Default | Efecto |
-|----------|---------|--------|
-| `PLUGINS_MX_MOCK=1` | ✅ | Datos simulados, no toca SEP |
-| `MP_PLAYWRIGHT_PUBLIC=1` | — | Activa Playwright real contra `cedulaprofesional.sep.gob.mx` |
+| Fecha | URL | Resultado |
+|---|---|---|
+| 2026-10-14 | `GET https://cedulaprofesional.sep.gob.mx/assets/config.json` | 200, declara `recaptchaSiteKey` |
+| 2026-10-14 | `main.*.js` del portal | `POST /api/rnp/solr/profesionista/consultar/byDetalle` exige `Authorization: Bearer` + `X-Recaptcha-Token` |
+
+- Estado: **handoff humano**. Las tools devuelven `requiere_humano: true`,
+  URL, pasos y los datos prellenados. No se genera ni evade el token reCAPTCHA.
+- `sep_validar_medico_para_consulta` en real devuelve `puede_dar_consulta: null`
+  (desconocido) con el handoff, nunca `true`/`false` sin dato.
+- Mock solo con `PLUGINS_MX_MOCK=1` (`simulated: true`).
+- Test live verifica que el portal siga declarando reCAPTCHA.
 
 ## Caché
 

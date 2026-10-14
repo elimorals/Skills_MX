@@ -1,0 +1,228 @@
+  
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no" />
+<meta charset="utf-8" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=edge" />
+<link rel="apple-touch-icon" href="images/icon.png"/>
+<link rel="shortcut icon" href="images/icon.png">
+<!--Bootstrap-->
+<!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+<link rel=stylesheet href="css/bootstrap/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/bootstrap/dataTables.bootstrap.min.css" type="text/css" >-->
+<link rel=stylesheet href="css/fuentes.css" type="text/css">
+
+    <link rel=stylesheet href="css/cep-min.css" type="text/css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/datepicker-es.js"></script>
+
+<!-- Validations -->
+<script type="text/javascript" src="js/validations/validateInput.js"></script>
+<script type="text/javascript" src="js/validations/validateEvents.js"></script>
+<script type="text/javascript" src="js/validations/validateWriting.js"></script>
+<script type="text/javascript" src="js/validations/validationBussines.js"></script>
+
+<!--Bootstrap-->
+<!--<script src="js/bootstrap/bootstrap.min.js"></script>-->
+<!--Bootbox Alert-->
+<!--<script type="text/javascript" src="js/bootstrap/bootbox.min.js"></script>-->
+<!--Bootstrap Tables-->
+<!--<script type="text/javascript" src="js/bootstrap/dataTables.bootstrap.min.js"></script>-->
+
+        <title>Comprobante Electr&oacute;nico de Pago</title>
+    </head>
+    <body>
+        
+        <div id="pagewidth" >
+            <div id="header" role="banner">
+                <div id="headermobile"></div>
+            </div>
+            <div id="appHead"><span class="appName">COMPROBANTE ELECTR&Oacute;NICO DE PAGO (CEP)</span>CONSULTA<a class="enlace-validador-top" href="https://www.banxico.org.mx/validador-cep-spei/" target="_blank">¿Ya tienes tu CEP y quieres validarlo?<i class="icon-shield2" style="margin-left: 5px;vertical-align: initial;font-size: 10pt;"></i></a></div>
+            <div id="appMain" style="text-align: center;" role="main">
+                <div class="avisoPrivacidad" role="complementary"><p class="titulo">Aviso de privacidad</p>
+                    <p class="aviso">
+                        Antes de ingresar sus datos le sugerimos consultar el aviso sobre el uso, incorporaci&oacute;n, trato y protecci&oacute;n que el Banco de M&eacute;xico da a los datos personales de los particulares.
+                        M&aacute;s informaci&oacute;n en <a href="https://transparencia.banxico.org.mx/documentos/%7BCC1169A2-D511-47D6-FA05-FA56CF0156A4%7D.pdf" target="_blank">https://transparencia.banxico.org.mx/documentos/%7BCC1169A2-D511-47D6-FA05-FA56CF0156A4%7D.pdf</a>
+                    </p>
+                </div>
+                Aqu&iacute; usted puede obtener el CEP de un pago realizado a trav&eacute;s del SPEI&reg;.
+                <br/>
+                <form id="fConsulta" class="styled" style="margin-top: 20px;" action="valida.do" method="POST" role="search">
+                    <br>
+                    <div id="fechaOperacion">
+                        <div class="entrada" style=" column-count: 2;">
+                            <label  for="input_fecha">Fecha en la que realiz&oacute; el pago:</label>
+<!--                            <input type="text" id="input_fecha" name='fecha'/>-->                           
+                    <!--<input id= "input_fecha"  maxlength="10" name="fecha" class="form-control"  type="text"  readonly>-->                   
+                            <input id= "input_fecha"  maxlength="10" name="fecha" type="text"  readonly>                   
+                
+				<input type="hidden" id="dtp_input2" value="" /><br/>           
+                        </div>
+                    </div>
+                    
+                        <div id="msg_fecha" class="hidden">El horario de consulta es de 09:30-23:00 hrs de Lunes a Domingo</div>
+                    
+                        <div id="busqueda_wrapper">
+                        <div id="busqueda">
+                            <div class="entrada" style=" column-count: 2;">
+                                <label for="input_tipoCriterio">Criterio de b&uacute;squeda</label>
+                                <span class="dropdown">
+                                    <select id="input_tipoCriterio" name="tipoCriterio" title="Criterio mediante el cual se realizará la consulta.">
+                                        <option value="T">Clave de rastreo</option>
+                                        <option value="R">N&uacute;mero de referencia</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="entrada" style=" column-count: 2;">
+                                <label for="input_criterio">Clave de rastreo</label>
+                                <input id="input_criterio" onkeypress="writeValidCharacterClaveRastreo(event);" maxlength="40" type="text" name="criterio"  placeholder="Clave de rastreo" title="Es un identificador de hasta 30 posiciones alfanuméricas que la institución le proporciona al usuario al momento en que se instruye el pago."/>
+                            </div>
+                            <div class="entrada" style=" column-count: 2;">
+                                <label for="input_emisor">Instituci&oacute;n emisora del pago</label>
+                                <span class="dropdown">
+                                    <select id="input_emisor" name="emisor" title="Institución desde la cual se emite la transferencia electrónica."></select>
+                                </span>
+                            </div>
+                            <div class="entrada" style=" column-count: 2;">
+                                <label for="input_receptor">Instituci&oacute;n receptora del pago</label>
+                                <span class="dropdown">
+                                    <select id="input_receptor" name="receptor" title="Institución que recibe la transferencia electrónica." ></select>
+                                </span>
+                            </div>
+                            <!--<div class="entrada" style=" column-count: 2; height: auto">-->
+                            <div class="entrada req_cep" style=" column-count: 2; height: auto">
+                                <label id="lbl_input_cuenta" for="input_cuenta">Cuenta Beneficiaria *
+                                    <!--<span class="sublabel" style="line-height: 13px;">(CLABE, tarjeta de d&eacute;bito o n&uacute;mero de celular)</span>-->
+                                </label>
+                                <input id="input_cuenta" onkeypress="onlyWriteNumber(event)" maxlength="18" type="text" name="cuenta" placeholder="Cuenta beneficiaria"  title="Cuenta que recibe la transferencia electrónica.&#13;En el caso de ser cuenta CLABE, se compone de 18 dígitos.&#13;En el caso de ser tarjeta de débito, se compone de 16 dígitos.&#13;En caso de haber realizado la transferencia hacia una cuenta identificada por el teléfono celular, se compone de 10 dígitos."/>
+                            </div>
+                            <!--<div class="entrada" style=" column-count: 1; margin-top: -5px; max-height: 40px">-->
+                            <div class="entrada req_cep" style=" column-count: 1; margin-top: -5px; max-height: 40px">
+                                <label for="input_cuenta">
+                                    <span class="sublabel" style="line-height: 13px;">(CLABE, tarjeta de d&eacute;bito o n&uacute;mero de celular)</span>
+                                </label>
+                            </div>
+                            <!--<div class="entrada" style=" column-count: 2; height: auto">-->
+                            <div class="entrada req_cep" style=" column-count: 2; height: auto">
+                                <label for="input_benef_es_part">Pago a Banco *</label>
+                                <input id="input_benef_es_part" onclick="cambiaTextosFormulario()" type="checkbox" name="receptorParticipante" value="0" title="Indica que el beneficiario de la transferencia es directamente la Institución Receptora del pago y no uno de sus cuentahabientes."/>
+                            </div>
+                            <!--<div class="entrada" style=" column-count: 2;">-->
+                            <div class="entrada req_cep" style=" column-count: 2;">
+                                <label for="input_monto">Monto del pago *</label>
+                                <input id="input_monto" maxlength="15" onkeypress="writeNumberMonto(event)" type="text" name="monto" placeholder="Monto del pago"   title="Monto de la transferencia."/>
+                            </div>
+                            <div id="captchaImage" class="entrada captcha oculta" style=" column-count: 2; height:80px;">
+                                <label for="img_captcha">Imagen de seguridad
+                                    <a id="btn_ReloadCaptcha" class="reloadCaptcha" >Intentar otra imagen</a>
+                                </label>
+                                <img id="img_captcha" src="stickyImg?b_capt=1792006015159" title="Escriba los caracteres que aparecen en esta imagen" />
+                            </div>
+                            <div id="captchaInput" class="entrada oculta" style=" column-count: 2;">
+                                <label for="input_captcha">C&oacute;digo de seguridad.</label>
+                                <input id="input_captcha"  type="text" name="captcha" placeholder="C&oacute;digo de seguridad" autocomplete="off" autocapitalize="off" value="c" title="Escriba los caracteres que aparecen en la imagen." />
+                            </div>
+                            <input type="hidden" name="tipoConsulta" />
+                            <div class="footer">
+                                <a class="boton boton-limpiar" id="btn_Limpiar" title="Limpiar formulario" tabindex="0">
+                                    <i class="icon-bin"></i>
+                                </a>
+                                
+                                   
+                                <a id="btn_Descargar" style="cursor:default;" class="boton disabled" tabindex="0">
+                                        <i class="icon-download3" style="margin-right: 5px;"></i>
+                                        Descargar CEP
+                                    </a>
+                                
+                                <a href="https://www.banxico.org.mx/cep-scl/" class="enlaceSCL">¿Deseas descargar más de un CEP?</a>
+                                <div id="div_hint_buscar_pago" class="info_mispei" style="text-align: center;">
+                                    <!--Para tener certeza de que se trata del pago que está buscando, se requiere proporcionar la Cuenta Beneficiaria y el Monto del pago.-->
+                                     * Si no cuentas con la cuenta beneficiaria y el monto del pago, puedes consultar el estado del pago.
+                                    <br/>
+                                            <a id="btn_Consultar" style="cursor:default;" class="boton disabled"  tabindex="0">
+                                                <i class="icon-search" style="margin-right: 5px;"></i>
+                                                Consultar Pago
+                                            </a>                                                                          
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div id="otras_operaciones" role="complementary">
+                    Sugerimos tambi&eacute;n utilizar las siguientes herramientas:
+                    <div class="opciones">
+                        <a href="https://www.banxico.org.mx/validador-cep-spei/" class="boton" target="_blank">
+                            <i class="icon-shield2" style="margin-right: 5px;"></i>
+                            Validar CEP(XML)
+                        </a>
+                    </div>
+                </div>
+                <div class="grupo notas" role="contentinfo">
+                    <h3>Notas</h3> 
+                    <table>
+                        <tr>
+                            <td>N&uacute;mero de referencia</td>
+                            <td>Es un n&uacute;mero de identificaci&oacute;n de hasta siete posiciones que el usuario selecciona al momento de instruir su pago. </td>
+                        </tr>
+                        <tr>
+                            <td>Clave de rastreo</td>
+                            <td>Es un identificador de hasta 30 posiciones alfanum&eacute;ricas que la instituci&oacute;n le proporciona al usuario al momento en que se instruye el pago.</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="disclaimer" role="complementary">
+    <a class="boton boton-responsabilidades-bancos" id="btn_Responsabilidades" tabindex="0">Obligaciones de las instituciones financieras</a>
+    <p style="font-weight: bold">EXENCI&Oacute;N DE RESPONSABILIDAD</p>
+    <br>
+    <p>
+        Los Comprobantes Electr&oacute;nicos de Pago se generan con base en la informaci&oacute;n proporcionada por las entidades receptoras de los pagos (Participantes Emisores de las Confirmaciones de Abono) bajo su responsabilidad exclusiva; se emiten con fines informativos y est&aacute;n dirigidos &uacute;nicamente a los usuarios del Sistema de Pagos Electr&oacute;nicos Interbancarios (SPEI&reg;) relacionados con la Orden de Transferencia Aceptada correspondiente, por lo que Banco de M&eacute;xico no tiene responsabilidad alguna sobre tal informaci&oacute;n.
+    </p><p>
+        Para obtener el Comprobante Electr&oacute;nico de Pago de una Orden de Transferencia Aceptada, el usuario deber&aacute; proporcionar informaci&oacute;n confidencial cuyo acceso y uso fueron previamente pactados, entre la entidad que proporcione el servicio de transferencia electr&oacute;nica v&iacute;a SPEI&reg; o la entidad que lleve la cuenta en que se depositaron los recursos, seg&uacute;n corresponda, por lo que Banco de M&eacute;xico no es responsable por el manejo que se d&eacute; o llegare a darse a los n&uacute;meros de referencia, claves de rastreo y/o cualquier otro dato relacionado con el Comprobante Electr&oacute;nico de Pago o con la Orden de Transferencia Aceptada respectivos.
+    </p><p>
+        Para mayor informaci&oacute;n o aclaraciones respecto del Comprobante Electr&oacute;nico de Pago y/o de la Orden de Transferencia Aceptada, el usuario respectivo deber&aacute; consultar a la entidad que haya proporcionado el servicio de transferencia electr&oacute;nica v&iacute;a SPEI&reg; o a la que lleve la cuenta en que se recibieron los recursos.
+    </p>
+</div>
+
+                <br>
+                <div style="font-size: 10px;color: silver;">v.3.8.6</div>
+            </div>
+        </div>
+        
+        <div id="divValidacionPertenencia" style="display:none;">
+            <div class="bg"></div>
+            <div class="msg-banxico">
+                <div class="contenido">
+                </div>
+                <div class="footer-bar">
+                    <a id="btnCerrar" class="boton">
+                        <i class="icon-times-circle" style="margin-right: 5px;"></i>
+                        Cerrar
+                    </a>
+                </div>
+            </div>
+            <div class="gif-loader"><div class="cargadorCSS3"></div><br /><span id="msg-loader"></span></div>
+        </div>        
+        <script type="text/javascript" nonce="EDNnf03nceIOfn39fn3e9h3sdfa" >
+            //$("#input_benef_es_part").val("0");
+            var callbackInitFx = null;
+            var callbackPostFecha = null;
+            
+
+            var initData = {
+                minDate:1330063200000,
+                fIni247:20150306,
+                ultimaFechaVentana:20210607
+            };
+            //    CEP.init(1330063200000, callbackInitFx, 20150306, 20210607);
+            //});
+        </script>       
+        <script type="text/javascript" src="js/cep-min.js"></script>
+    </body>
+</html>

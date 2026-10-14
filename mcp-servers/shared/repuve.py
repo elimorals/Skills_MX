@@ -1,18 +1,11 @@
 """Utilidades para REPUVE — Registro Público Vehicular.
 
 Portal:   https://www2.repuve.gob.mx:8443/ciudadania/
-Stack:    Angular SPA + reCAPTCHA v3 invisible + jQuery
-Site key: 6Lfy8AEoAAAAANclz0Doczn6y826fM0BjOPXEn9B
-
-Discovery 2026-06-15 con Playwright MCP:
-- 4 modos de búsqueda: placa, número de serie (NIV), folio, número de constancia
-- reCAPTCHA v3 emitido al cargar la página (textarea g-recaptcha-response-100000)
-- Endpoint backend exacto pendiente captura (Angular timing race conditions).
-  Patrón esperado por familia: POST a /ciudadania/api/consulta o similar con
-  body {tipo, valor, recaptcha_token}.
-
-Cuando el endpoint se confirme en una sesión próxima de discovery, actualizar
-API_URL_PATTERN y el handler de _normalizar_resultado.
+Stack:    Angular SPA + reCAPTCHA v3 invisible
+Endpoint: POST https://www2.repuve.gob.mx:8443/consulta/consulta/repuve
+          (body JSON cifrado en el navegador: criterio, llave + token reCAPTCHA).
+          Verificado 2026-10-14: un navegador automatizado recibe 401
+          "El reCaptcha no fue superado correctamente" → el MCP hace handoff humano.
 """
 from __future__ import annotations
 
@@ -23,18 +16,8 @@ from typing import Optional
 
 PORTAL_URL = "https://www2.repuve.gob.mx:8443/ciudadania/"
 RECAPTCHA_SITE_KEY = "6Lfy8AEoAAAAANclz0Doczn6y826fM0BjOPXEn9B"
+API_URL = "https://www2.repuve.gob.mx:8443/consulta/consulta/repuve"
 
-# Pendiente captura exacta — Angular timing race en discovery sesión actual.
-# Patrón típico de los portales mexicanos similares (IMPI, CONDUSEF):
-# probablemente POST a algo como /ciudadania/api/* con body JSON + token.
-API_URL_PATTERN = r"/ciudadania/(api|services)/.*(consulta|busqueda|search)"
-
-# Selectores Angular descubiertos (placa, NIV, folio, constancia)
-SEARCH_INPUT_PLACA = 'input[placeholder*="placa" i]'
-SEARCH_INPUT_NIV = 'input[placeholder*="serie" i], input[placeholder*="niv" i]'
-SEARCH_INPUT_FOLIO = 'input[placeholder*="folio" i]'
-SEARCH_INPUT_CONSTANCIA = 'input[placeholder*="constancia" i]'
-SEARCH_BUTTON = 'button.btn.btn-primary'
 
 # Regex NIV/VIN: 17 caracteres alfanuméricos (sin I, O, Q por estándar ISO 3779)
 _NIV_PATTERN = re.compile(r"^[A-HJ-NPR-Z0-9]{17}$")
@@ -105,10 +88,6 @@ def validar_placa(placa: str) -> str:
 __all__ = [
     "PORTAL_URL",
     "RECAPTCHA_SITE_KEY",
-    "API_URL_PATTERN",
-    "SEARCH_INPUT_NIV",
-    "SEARCH_INPUT_PLACA",
-    "SEARCH_BUTTON",
     "VehiculoREPUVE",
     "validar_niv",
     "validar_placa",
