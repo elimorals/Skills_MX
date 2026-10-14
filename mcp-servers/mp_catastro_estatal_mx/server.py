@@ -12,6 +12,7 @@ _REPO_ROOT = _HERE.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
+from shared.errors import McpError  # noqa: E402
 from mp_catastro_estatal_mx.client import CatastroEstatalClient  # noqa: E402
 
 
@@ -29,7 +30,10 @@ class ConsultarInput(BaseModel):
 @mcp.tool(annotations={"title": "Consultar valor catastral", "readOnlyHint": True, "openWorldHint": True})
 def catastro_consultar_valor(args: ConsultarInput) -> dict:
     """Consulta valor catastral + superficie + uso de suelo."""
-    return _client.consultar_valor(args.sistema, args.cuenta_catastral)
+    try:
+        return _client.consultar_valor(args.sistema, args.cuenta_catastral)
+    except McpError as exc:
+        return exc.to_dict()
 
 
 @mcp.tool(annotations={"title": "Listar sistemas catastrales estatales", "readOnlyHint": True, "idempotentHint": True})
