@@ -1,10 +1,13 @@
-"""Cliente mp_lnetb_auditor — auditor LNETB (Ley Nacional Eliminar Trámites Burocráticos).
+"""Cliente mp_lnetb_auditor — Ley Nacional para Eliminar Trámites Burocráticos (LNETB).
 
-LNETB publicada DOF 16-jul-2025. Meta: 80% trámites digitales para 2030.
-México Evalúa documentó (2026-03-29) que NO existe ranking público nominal
-de avance estatal/municipal — este MCP construye uno con metodología explícita.
+Ley verificada: texto vigente en https://www.diputados.gob.mx/LeyesBiblio/pdf/LNETB.pdf
+("Nueva Ley DOF 16-07-2025", consultado 2026-10-14). Entra en vigor al día siguiente (17-jul-2025).
 
-Producto: para IMCO, México Evalúa, ATDT, prensa y periodismo de datos.
+Real: `plazos_legales()` calcula los plazos de los artículos transitorios a partir de esa fecha.
+
+No real: los scores por estado (EVALUACION_ESTADOS) eran números curados a mano sin fuente
+trazable, y la "meta 80 % de trámites digitales para 2030" no aparece en la Ley. Esos scores solo
+se sirven con PLUGINS_MX_MOCK=1; fuera de mock las tools de score devuelven ConfigError.
 """
 from __future__ import annotations
 
@@ -19,12 +22,17 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared.bitacora import Bitacora  # noqa: E402
-from shared.errors import ValidationError  # noqa: E402
-from shared.mock import mark_simulated  # noqa: E402
+from shared.errors import ConfigError, ValidationError  # noqa: E402
+from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+
+from datetime import date, timedelta  # noqa: E402
 
 
 NAMESPACE = "lnetb_auditor"
 URL_LEY_DOF = "https://dof.gob.mx/nota_detalle.php?codigo=5763166&fecha=16/07/2025"
+URL_LEY_TEXTO = "https://www.diputados.gob.mx/LeyesBiblio/pdf/LNETB.pdf"
+FECHA_VIGOR = date(2025, 7, 17)  # Transitorio Primero: día siguiente a la publicación
+# Umbral de referencia SOLO para el modo mock (no está en la Ley).
 META_2030_PCT = 80.0
 FECHA_LEY = "2025-07-16"
 
@@ -52,8 +60,7 @@ INDICADORES_LNETB: list[dict[str, Any]] = [
      "peso": 5, "max_score": 100},
 ]
 
-# Datos por estado al 2026-06-15 — curados de fuentes públicas (URBEM, México Evalúa, IMCO Subnacional)
-# Score por indicador 0-100; nulls = sin dato verificable.
+# SOLO MOCK: scores curados a mano sin fuente trazable. No usar como dato real.
 EVALUACION_ESTADOS: dict[str, dict[str, Any]] = {
     "cdmx": {"nombre": "Ciudad de México", "scores": {
         "i1_portal_unificado": 85, "i2_sso_ciudadano": 75, "i3_pagos_digitales": 80,
@@ -259,6 +266,34 @@ def _calcular_score_compuesto(scores: dict[str, int]) -> float:
     return round(total, 2)
 
 
+# Transitorios con plazo (texto de la Ley). "hábiles" no se calcula: depende del calendario
+# oficial de días inhábiles; se informa el plazo y la base.
+TRANSITORIOS = [
+    {"transitorio": "Cuarto", "plazo": "30 días hábiles", "desde": "vigor",
+     "obligacion": "Se extingue la Comisión Nacional de Mejora Regulatoria (CONAMER); sus menciones pasan a la ATDT."},
+    {"transitorio": "Quinto", "plazo": "30 días hábiles", "desde": "vigor",
+     "obligacion": "Adecuar el Reglamento Interior de la ATDT."},
+    {"transitorio": "Noveno", "plazo": "90 días hábiles", "desde": "vigor",
+     "obligacion": "APF transfiere a la ATDT recursos de centros de atención telefónica."},
+    {"transitorio": "Décimo", "plazo": "30 días hábiles", "desde": "vigor",
+     "obligacion": "La Autoridad Nacional emite los Lineamientos de los Modelos Nacionales."},
+    {"transitorio": "Décimo Primero", "plazo": "30 días hábiles", "desde": "vigor",
+     "obligacion": "Sujetos obligados federales designan Enlaces de Simplificación y Digitalización."},
+    {"transitorio": "Décimo Segundo", "plazo": "30 días hábiles", "desde": "vigor",
+     "obligacion": "Sujetos obligados federales informan sus soluciones tecnológicas a la ATDT."},
+    {"transitorio": "Décimo Tercero", "plazo": "180 días naturales", "dias_naturales": 180, "desde": "vigor",
+     "obligacion": "Se abrogan leyes locales de mejora regulatoria; congresos locales armonizan."},
+    {"transitorio": "Décimo Cuarto", "plazo": "180 días naturales", "dias_naturales": 180, "desde": "vigor",
+     "obligacion": "Entidades y municipios establecen sus Autoridades de Simplificación y Digitalización."},
+    {"transitorio": "Décimo Quinto", "plazo": "30 días naturales tras el plazo del Décimo Cuarto",
+     "dias_naturales": 210, "desde": "vigor",
+     "obligacion": "Sujetos obligados estatales/municipales designan Enlaces y lo notifican a la ATDT."},
+    {"transitorio": "Décimo Sexto", "plazo": "30 días naturales tras el plazo del Décimo Cuarto",
+     "dias_naturales": 210, "desde": "vigor",
+     "obligacion": "Sujetos obligados estatales/municipales informan sus soluciones tecnológicas a la ATDT."},
+]
+
+
 class LnetbAuditorClient:
     def __init__(self, bitacora: Bitacora | None = None) -> None:
         self._bitacora = bitacora or Bitacora(NAMESPACE)
@@ -276,9 +311,45 @@ class LnetbAuditorClient:
             "fuente_ley": URL_LEY_DOF,
         }
 
+    def _solo_mock(self, tool: str) -> None:
+        if not is_mock_mode([], default_when_no_creds=False):
+            raise ConfigError(
+                f"{tool}: los scores por estado no tienen fuente verificable; solo se sirven con "
+                "PLUGINS_MX_MOCK=1. Para datos reales usa lnetb_plazos_legales."
+            )
+
+    def plazos_legales(self, fecha_referencia: str | None = None) -> dict[str, Any]:
+        """Plazos de los transitorios de la LNETB y si ya vencieron a la fecha de referencia."""
+        self._log("plazos_legales", {"fecha": fecha_referencia})
+        try:
+            ref = date.fromisoformat(fecha_referencia) if fecha_referencia else datetime.now(timezone.utc).date()
+        except ValueError as e:
+            raise ValidationError("fecha_referencia debe ser YYYY-MM-DD") from e
+        plazos = []
+        for t in TRANSITORIOS:
+            item = dict(t)
+            if "dias_naturales" in t:
+                vence = FECHA_VIGOR + timedelta(days=t["dias_naturales"])
+                item["vence"] = vence.isoformat()
+                item["vencido"] = ref > vence
+            else:
+                item["vence"] = None
+                item["vencido"] = None
+                item["nota"] = "Plazo en días hábiles: depende del calendario oficial de inhábiles."
+            plazos.append(item)
+        return {
+            "ley": "Ley Nacional para Eliminar Trámites Burocráticos",
+            "publicacion_dof": FECHA_LEY,
+            "entrada_en_vigor": FECHA_VIGOR.isoformat(),
+            "fecha_referencia": ref.isoformat(),
+            "plazos": plazos,
+            "fuente": URL_LEY_TEXTO,
+        }
+
     def evaluar_estado(self, estado_clave: str) -> dict[str, Any]:
-        """Score compuesto + breakdown por indicador para un estado."""
+        """Score compuesto (SOLO MOCK) + breakdown por indicador para un estado."""
         self._log("evaluar_estado", {"estado": estado_clave})
+        self._solo_mock("lnetb_evaluar_estado")
         ek = (estado_clave or "").lower().strip()
         if ek not in EVALUACION_ESTADOS:
             raise ValidationError(
@@ -300,12 +371,13 @@ class LnetbAuditorClient:
                 "fecha_corte": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
                 "fuente_ley": URL_LEY_DOF,
             },
-            note="Score compuesto basado en evidencia pública. Metodología documentada.",
+            note="PLUGINS_MX_MOCK=1 — scores curados sin fuente trazable.",
         )
 
     def ranking_nacional(self, top: int = 32) -> dict[str, Any]:
-        """Ranking 32 estados con score compuesto."""
+        """Ranking con score compuesto (SOLO MOCK)."""
         self._log("ranking_nacional", {"top": top})
+        self._solo_mock("lnetb_ranking_nacional")
         if top < 1 or top > 32:
             raise ValidationError("top debe ser 1-32")
         scored = []
@@ -336,8 +408,9 @@ class LnetbAuditorClient:
         }
 
     def comparar_estados(self, estados_claves: list[str]) -> dict[str, Any]:
-        """Comparativa side-by-side de N estados."""
+        """Comparativa side-by-side de N estados (SOLO MOCK)."""
         self._log("comparar_estados", {"estados": estados_claves})
+        self._solo_mock("lnetb_comparar_estados")
         if not estados_claves:
             raise ValidationError("Lista de estados vacía")
         if len(estados_claves) > 10:

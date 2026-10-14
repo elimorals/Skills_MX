@@ -8,7 +8,9 @@ _HERE = Path(__file__).resolve().parent.parent.parent
 if str(_HERE) not in sys.path:
     sys.path.insert(0, str(_HERE))
 
+import httpx
 import pytest
+import respx
 
 from mp_portales_monitor.client import (
     PORTALES_CATALOGO,
@@ -40,19 +42,19 @@ class TestCheckHttp:
         self.c = PortalesMonitorClient(bitacora=None)
 
     def test_check_sat_padron_mock(self, monkeypatch):
-        monkeypatch.delenv("MP_PLAYWRIGHT_PUBLIC", raising=False)
+        monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
         r = self.c.check_http("sat_padron")
         assert r["simulated"] is True
         assert "http_status" in r
         assert "latencia_ms" in r
 
     def test_clave_invalida_falla(self, monkeypatch):
-        monkeypatch.delenv("MP_PLAYWRIGHT_PUBLIC", raising=False)
+        monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
         with pytest.raises(ValidationError):
             self.c.check_http("inexistente")
 
     def test_determinismo_mock(self, monkeypatch):
-        monkeypatch.delenv("MP_PLAYWRIGHT_PUBLIC", raising=False)
+        monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
         r1 = self.c.check_http("sat_padron")
         r2 = self.c.check_http("sat_padron")
         assert r1["http_status"] == r2["http_status"]
@@ -64,7 +66,7 @@ class TestFormRender:
         self.c = PortalesMonitorClient()
 
     def test_form_render_mock(self, monkeypatch):
-        monkeypatch.delenv("MP_PLAYWRIGHT_PUBLIC", raising=False)
+        monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
         r = self.c.check_form_render("sat_padron", "#txtRFC")
         assert "encontrado" in r
         assert r["simulated"] is True
@@ -97,7 +99,9 @@ class TestAlerta:
         r = self.c.configurar_alerta(
             "sat_padron", "whatsapp", "+5215512345678"
         )
-        assert r["estado"] == "activa"
+        assert r["estado"] == "especificacion_no_persistida"
+        assert r["persistida"] is False
+        assert "alerta_id" not in r
         assert r["canal"] == "whatsapp"
         # destinatario hasheado
         assert "+52" not in r["destinatario_hash"]
@@ -111,3 +115,52 @@ class TestAlerta:
             "sat_padron", "email", "ops@example.com", umbral_latencia_ms=2000
         )
         assert r["umbral_latencia_ms"] == 2000
+
+
+class TestCheckHttpReal:
+    """Path real (PLUGINS_MX_MOCK=0) con respx; el live va aparte."""
+
+    def setup_method(self):
+        self.c = PortalesMonitorClient()
+
+    @respx.mock
+    def test_portal_vivo(self, monkeypatch):
+        monkeypatch.setenv("PLUGINS_MX_MOCK", "0")
+        url = next(p["url"] for p in PORTALES_CATALOGO if p["clave"] == "dof")
+        respx.get(url).mock(return_value=httpx.Response(200, text="<html>DOF</html>"))
+        r = self.c.check_http("dof")
+        assert r["simulated"] is False
+        assert r["http_status"] == 200
+        assert r["vivo"] is True
+        assert "bloqueado_por_waf" not in r
+
+    @respx.mock
+    def test_akamai_no_es_caida(self, monkeypatch):
+        monkeypatch.setenv("PLUGINS_MX_MOCK", "0")
+        url = next(p["url"] for p in PORTALES_CATALOGO if p["clave"] == "conamer_catalogo")
+        # Cuerpo real devuelto por catalogonacional.gob.mx a clientes no-navegador (2026-10-14)
+        body = ("<HTML><HEAD><TITLE>Access Denied</TITLE></HEAD><BODY><H1>Access Denied</H1>"
+                "Reference&#32;&#35;18&#46;4e66cd17<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net"
+                "</BODY></HTML>")
+        respx.get(url).mock(return_value=httpx.Response(403, text=body))
+        r = self.c.check_http("conamer_catalogo")
+        assert r["bloqueado_por_waf"] == "akamai"
+        assert r["vivo"] is None
+
+    @respx.mock
+    def test_error_de_red_es_dato(self, monkeypatch):
+        monkeypatch.setenv("PLUGINS_MX_MOCK", "0")
+        url = next(p["url"] for p in PORTALES_CATALOGO if p["clave"] == "dof")
+        respx.get(url).mock(side_effect=httpx.ConnectError("boom"))
+        r = self.c.check_http("dof")
+        assert r["vivo"] is False
+        assert r["error_tipo"] == "ConnectError"
+        assert r["simulated"] is False
+
+
+@pytest.mark.live
+def test_live_check_http_gobmx(monkeypatch):
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "0")
+    r = PortalesMonitorClient().check_http("gobmx")
+    assert r["simulated"] is False
+    assert r["http_status"] == 200

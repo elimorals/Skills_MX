@@ -42,7 +42,18 @@ def concilianet_consultar_proveedor(args: ProveedorInput) -> dict:
     return _client.consultar_proveedor(razon_social=args.razon_social)
 
 
-@mcp.tool(annotations={"title": "Estatus caso conciliación", "readOnlyHint": True})
+class BuroInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    proveedor: str = Field(..., min_length=3)
+    anio: int | None = Field(None, ge=2019, le=2100)
+
+
+@mcp.tool(annotations={"title": "Quejas en Buró Comercial PROFECO", "readOnlyHint": True})
+def concilianet_buro_quejas(args: BuroInput) -> dict:
+    return _client.buro_quejas(proveedor=args.proveedor, anio=args.anio)
+
+
+@mcp.tool(annotations={"title": "Estatus caso conciliación (handoff)", "readOnlyHint": True})
 def concilianet_estatus_caso(args: FolioInput) -> dict:
     return _client.estatus_caso(folio=args.folio)
 
@@ -52,7 +63,7 @@ def concilianet_listar_proveedores() -> dict:
     return _client.listar_proveedores_convenio()
 
 
-@mcp.tool(annotations={"title": "Registrar queja PROFECO", "readOnlyHint": True})
+@mcp.tool(annotations={"title": "Preparar queja PROFECO (handoff, no registra)", "readOnlyHint": True})
 def concilianet_registrar_queja(args: QuejaInput) -> dict:
     return _client.registrar_queja(
         consumidor_curp_hash=args.consumidor_curp_hash, proveedor=args.proveedor,

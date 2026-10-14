@@ -71,3 +71,16 @@ def test_listar_tramites_6():
     r = c.listar_tramites()
     assert r["total"] >= 6
     assert len(r["usos_suelo_catalogo"]) >= 10
+
+
+def test_fuera_de_mock_uso_suelo_es_handoff(monkeypatch):
+    from mp_sedatu_uso_suelo.client import SEDATUUsoSueloClient
+    from shared.errors import ConfigError
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "0")
+    c = SEDATUUsoSueloClient()
+    r = c.consultar_uso_suelo_permitido("Jalisco", "Guadalajara", "restaurante")
+    assert r["permitido"] is None and r["handoff_humano"] is True
+    t = c.buscar_tramite("Jalisco", "Guadalajara", "licencia_uso_suelo")
+    assert t["verificado"] is False and "costo_aprox_mxn" not in t
+    with pytest.raises(ConfigError):
+        c.estimar_construccion("Jalisco", "Guadalajara", 100)

@@ -1,0 +1,54 @@
+
+
+
+<div class="row">
+            <div class="col-md-12 pt-3">
+                <label class="txt-title">No hay información disponible.</label>
+            </div>
+            <input type="hidden" value="42601: syntax error at or near &quot;[&quot;&#xA;&#xA;POSITION: 763" name="Error" />
+            <input type="hidden" name="Error2" />
+
+</div>
+<script>
+    $(document).ready(function () {
+        $('ul.pagination > li.disabled > a').addClass('page-link');
+        $("#PaginacionRegulaciones").find("a.page-link").addClass("page-inspeccion");
+        //$("#imgreg").remove();
+        if ($(document).width() < 500) {
+            $(".item-search-result").css("margin-top", "0px")
+        }
+    });
+    function GoToRegulacionid(homoclave) {
+        window.location.href = "/FichaRegulacionid" + "?regulacionId=" + homoclave;
+    }
+    function GoToRegulacion(homoclave) {
+        window.location.href = "/FichaRegulacion" + "?Homoclave=" + homoclave;
+    }
+    $(".paginacionregji").find("a.page-link").click(function (e) {
+        e.preventDefault();
+        if ($(this).hasClass("active") == false && $(this).hasClass("disabled") == false) {
+            var href = $(this).attr('href');
+            var i = href.lastIndexOf('=');
+            var page = "";
+            if (i>-1) {
+                page = $(this).text();
+                if (page != "") {
+                    StartLoading();
+                    $.ajaxSetup({ cache: false });
+                    var search = $("#hdSearchBusquedaAvanzada").val();
+                    var tipo = $("#hdTipoBusquedaAvanzada").val();
+                    var nivel = $("#hdNivelBusquedaAvanzada").val();
+                    var estado = $("#hdEstadoBusquedaAvanzada").val();
+                    var municipio = $("#hdMunicipioBusquedaAvanzada").val();
+                    var dependencia = $("#hdDependenciaBusquedaAvanzada").val();
+                    var tem = $("#hdTemas").val();
+                    $('#gridSearchRegulacion').load(urlGeneral + 'Buscador/SearchRegulacionResult?search=' + encodeURIComponent(search) + '&txtTipo=' + tipo + '&nivelId=' + nivel + '&estadoId=' + estado + '&municipioId=' + municipio + '&dependenciaId=' + dependencia + '&tem=' + tem + '&page=' + page, function (response, status, xhr) {
+                        //$("#txtSearch").val($("#hdSearchBusquedaAvanzada").val());
+                        StopLoading();
+                    });
+                }
+            }
+        }
+    });    
+    
+</script>

@@ -16,7 +16,14 @@ from mp_lnetb_auditor.client import (
     LnetbAuditorClient,
     META_2030_PCT,
 )
-from shared.errors import ValidationError
+from shared.errors import ConfigError, ValidationError
+
+
+@pytest.fixture(autouse=True)
+def _mock_para_scores(monkeypatch, tmp_path):
+    # Los scores por estado solo existen en mock; las clases de abajo los prueban así.
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
+    monkeypatch.setenv("PLUGINS_MX_BITACORA_DIR", str(tmp_path / "bita"))
 
 
 class TestIndicadores:
@@ -92,3 +99,30 @@ class TestComparar:
     def test_max_10_estados(self):
         with pytest.raises(ValidationError):
             self.c.comparar_estados(["cdmx"] * 11)
+
+
+class TestReal:
+    def setup_method(self):
+        self.c = LnetbAuditorClient()
+
+    def test_scores_bloqueados_fuera_de_mock(self, monkeypatch):
+        monkeypatch.setenv("PLUGINS_MX_MOCK", "0")
+        with pytest.raises(ConfigError):
+            self.c.evaluar_estado("cdmx")
+        with pytest.raises(ConfigError):
+            self.c.ranking_nacional()
+
+    def test_plazos_transitorios(self, monkeypatch):
+        monkeypatch.setenv("PLUGINS_MX_MOCK", "0")
+        r = self.c.plazos_legales("2026-01-13")
+        assert r["entrada_en_vigor"] == "2025-07-17"
+        p = {x["transitorio"]: x for x in r["plazos"]}
+        assert p["Décimo Cuarto"]["vence"] == "2026-01-13"
+        assert p["Décimo Cuarto"]["vencido"] is False
+        assert p["Décimo Quinto"]["vence"] == "2026-02-12"
+        assert p["Cuarto"]["vence"] is None  # días hábiles: no se inventa fecha
+        assert self.c.plazos_legales("2026-10-14")["plazos"][6]["vencido"] is True
+
+    def test_fecha_invalida(self):
+        with pytest.raises(ValidationError):
+            self.c.plazos_legales("14/10/2026")

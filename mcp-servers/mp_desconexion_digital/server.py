@@ -23,6 +23,7 @@ class ChecklistInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
     rfc: str = Field(..., min_length=12, max_length=13)
     faltas_marcadas: list[str] = Field(default_factory=list)
+    modalidad_teletrabajo: bool = Field(True, description="Relación de teletrabajo (> 40 % fuera, LFT 330-A)")
 
 
 class PoliticaInput(BaseModel):
@@ -36,7 +37,8 @@ class PoliticaInput(BaseModel):
 
 @mcp.tool(annotations={"title": "Checklist cumplimiento desconexión digital", "readOnlyHint": True})
 def desconexion_checklist(args: ChecklistInput) -> dict:
-    return _client.checklist_cumplimiento(rfc=args.rfc, faltas_marcadas=args.faltas_marcadas)
+    return _client.checklist_cumplimiento(rfc=args.rfc, faltas_marcadas=args.faltas_marcadas,
+                                         modalidad_teletrabajo=args.modalidad_teletrabajo)
 
 
 @mcp.tool(annotations={"title": "Generar política desconexión digital", "readOnlyHint": True})

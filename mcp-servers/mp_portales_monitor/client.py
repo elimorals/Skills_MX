@@ -24,7 +24,10 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
-from shared.mock import mark_simulated  # noqa: E402
+from shared.http_helpers import build_ssl_verify  # noqa: E402
+from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+
+import httpx  # noqa: E402
 
 
 NAMESPACE = "portales_monitor"
@@ -137,6 +140,31 @@ PORTALES_CATALOGO: list[dict[str, Any]] = [
 ]
 
 
+BROWSER_UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+)
+
+
+def _portal(clave: str) -> dict[str, Any]:
+    portal = next((p for p in PORTALES_CATALOGO if p["clave"] == clave), None)
+    if not portal:
+        raise ValidationError(f"clave no reconocida: {clave!r}")
+    return portal
+
+
+def _detectar_waf(r: httpx.Response) -> str | None:
+    """Reconoce bloqueos de WAF (Akamai / Cloudflare) vistos en portales gob.mx."""
+    if r.status_code not in (403, 429, 503):
+        return None
+    body = r.text[:2000]
+    if "edgesuite.net" in body or ("Access Denied" in body and "Reference" in body):
+        return "akamai"
+    if "Just a moment" in body or r.headers.get("cf-mitigated") or "cloudflare" in (r.headers.get("server") or "").lower():
+        return "cloudflare"
+    return None
+
+
 def _hash_estable(s: str) -> int:
     """Hash determinístico para tests."""
     import hashlib
@@ -163,15 +191,15 @@ class PortalesMonitorClient:
         }
 
     def check_http(self, clave: str) -> dict[str, Any]:
-        """Check HTTP HEAD/GET simple. Sin Playwright."""
-        self._log("check_http", {"clave": clave})
-        portal = next((p for p in PORTALES_CATALOGO if p["clave"] == clave), None)
-        if not portal:
-            raise ValidationError(f"clave no reconocida: {clave!r}")
+        """GET real con latencia + SLA. Mock solo con PLUGINS_MX_MOCK=1.
 
-        from shared.playwright_real import is_public_real_enabled
-        if not is_public_real_enabled():
-            # Mock determinístico por clave
+        Un portal caído o bloqueado es un resultado legítimo del monitor
+        (vivo=False), no un error del MCP.
+        """
+        self._log("check_http", {"clave": clave})
+        portal = _portal(clave)
+
+        if is_mock_mode([], default_when_no_creds=False):
             h = _hash_estable(clave)
             status = 200 if (h % 10) > 0 else 503
             latencia = (h % 4000) + 500
@@ -186,85 +214,99 @@ class PortalesMonitorClient:
                     "criticidad": portal["criticidad"],
                     "timestamp": datetime.now(timezone.utc).isoformat(),
                 },
-                note="Mock — para check real setear MP_PLAYWRIGHT_PUBLIC=1 (usa httpx).",
+                note="PLUGINS_MX_MOCK=1 — check simulado.",
             )
 
-        # Path real con httpx (sin Playwright porque es HEAD)
+        base = {
+            "clave": clave,
+            "url": portal["url"],
+            "criticidad": portal["criticidad"],
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "simulated": False,
+        }
+        # GET y no HEAD: varios servidores gob.mx responden 405/404 a HEAD.
+        # Timeout holgado (30 s) para poder medir "fuera de SLA" en vez de cortar.
+        inicio = time.monotonic()
         try:
-            import httpx
-            inicio = time.time()
-            r = httpx.head(portal["url"], timeout=portal["sla_max_ms"] / 1000, follow_redirects=True)
-            latencia = int((time.time() - inicio) * 1000)
-            return {
-                "clave": clave,
-                "url": portal["url"],
-                "http_status": r.status_code,
-                "latencia_ms": latencia,
-                "vivo": r.status_code < 400,
-                "dentro_sla": latencia <= portal["sla_max_ms"],
-                "criticidad": portal["criticidad"],
-                "timestamp": datetime.now(timezone.utc).isoformat(),
-                "simulated": False,
-            }
-        except Exception as e:
-            return {
-                "clave": clave,
-                "url": portal["url"],
-                "vivo": False,
-                "error_tipo": type(e).__name__,
-                "error_msg": str(e)[:200],
-                "timestamp": datetime.now(timezone.utc).isoformat(),
-                "simulated": False,
-            }
+            with httpx.Client(
+                verify=build_ssl_verify(),
+                timeout=30.0,
+                follow_redirects=True,
+                headers={"User-Agent": BROWSER_UA, "Accept-Language": "es-MX,es;q=0.9"},
+            ) as client:
+                r = client.get(portal["url"])
+        except httpx.HTTPError as e:
+            return {**base, "vivo": False, "error_tipo": type(e).__name__,
+                    "error_msg": str(e)[:200]}
+        latencia = int((time.monotonic() - inicio) * 1000)
+        waf = _detectar_waf(r)
+        out = {
+            **base,
+            "url_final": str(r.url),
+            "http_status": r.status_code,
+            "latencia_ms": latencia,
+            "vivo": r.status_code < 400,
+            "dentro_sla": latencia <= portal["sla_max_ms"],
+        }
+        if waf:
+            # 403 de un WAF ≠ portal caído: el sitio responde, pero bloquea clientes no-navegador.
+            out["bloqueado_por_waf"] = waf
+            out["vivo"] = None
+            out["nota"] = (f"{waf} bloqueó el cliente HTTP; usar portales_check_form_render "
+                           "(navegador real) para confirmar disponibilidad.")
+        return out
 
     def check_form_render(self, clave: str, selector: str) -> dict[str, Any]:
-        """Verifica que un selector clave renderice (Playwright opt-in)."""
+        """Verifica con Chromium real que `selector` renderice. Sin fallback a mock."""
         self._log("check_form_render", {"clave": clave, "selector": selector})
-        portal = next((p for p in PORTALES_CATALOGO if p["clave"] == clave), None)
-        if not portal:
-            raise ValidationError(f"clave no reconocida: {clave!r}")
+        portal = _portal(clave)
 
-        from shared.playwright_real import is_public_real_enabled
-        if not is_public_real_enabled():
+        if is_mock_mode([], default_when_no_creds=False):
             h = _hash_estable(clave + selector)
-            encontrado = (h % 10) > 1
             return mark_simulated(
                 {
                     "clave": clave,
                     "selector": selector,
-                    "encontrado": encontrado,
+                    "encontrado": (h % 10) > 1,
                     "criticidad": portal["criticidad"],
                     "timestamp": datetime.now(timezone.utc).isoformat(),
                 },
-                note="Mock — para path real setear MP_PLAYWRIGHT_PUBLIC=1",
+                note="PLUGINS_MX_MOCK=1 — render simulado.",
             )
 
-        from shared.playwright_real import playwright_session, with_real_or_fallback
+        from shared.playwright_real import playwright_session
 
-        def _real() -> dict[str, Any]:
-            with playwright_session() as page:
-                page.goto(portal["url"], wait_until="domcontentloaded")
-                count = page.locator(selector).count()
-                return {
-                    "clave": clave,
-                    "selector": selector,
-                    "encontrado": count > 0,
-                    "ocurrencias": count,
-                    "criticidad": portal["criticidad"],
-                    "timestamp": datetime.now(timezone.utc).isoformat(),
-                    "simulated": False,
-                }
-
-        def _fb() -> dict[str, Any]:
-            return {
+        with playwright_session() as page:  # UpstreamError si Playwright no está o falla
+            inicio = time.monotonic()
+            resp = page.goto(portal["url"], wait_until="domcontentloaded")
+            latencia = int((time.monotonic() - inicio) * 1000)
+            # Akamai a veces sirve un challenge JS que recarga la página: esperar al selector.
+            try:
+                page.wait_for_selector(selector, timeout=15000)
+            except Exception:  # timeout = el selector no renderizó; es el dato que medimos
+                pass
+            count = page.locator(selector).count()
+            waf = None
+            if resp is not None and resp.status == 403 and "Access Denied" in page.content():
+                waf = "akamai"
+            out = {
                 "clave": clave,
+                "url": portal["url"],
+                "url_final": page.url,
                 "selector": selector,
-                "encontrado": None,
-                "error": "Playwright falló, devolviendo fallback",
+                "http_status": resp.status if resp else None,
+                "latencia_ms": latencia,
+                "encontrado": count > 0,
+                "ocurrencias": count,
+                "criticidad": portal["criticidad"],
                 "timestamp": datetime.now(timezone.utc).isoformat(),
+                "simulated": False,
             }
-
-        return with_real_or_fallback(_real, _fb, portal="portales_monitor")
+            if waf:
+                # Verificado 2026-10-14: Akamai bloquea Chromium headless pero no con ventana.
+                out["bloqueado_por_waf"] = waf
+                out["nota"] = "Akamai bloquea Chromium headless; reintentar con MP_PLAYWRIGHT_HEADLESS=0."
+            return out
 
     def health_dashboard(self) -> dict[str, Any]:
         """Dashboard agregado: health % por categoría."""
@@ -295,7 +337,7 @@ class PortalesMonitorClient:
         destinatario: str,
         umbral_latencia_ms: int | None = None,
     ) -> dict[str, Any]:
-        """Registra una alerta (mock — un servicio dedicado lo persiste en producción)."""
+        """Valida y devuelve la especificación de una alerta (no la persiste)."""
         self._log("configurar_alerta", {
             "clave": clave, "canal": canal,
             "destinatario_hash": Bitacora.hash_sensitive(destinatario),
@@ -307,16 +349,16 @@ class PortalesMonitorClient:
         if not portal:
             raise ValidationError(f"clave no reconocida: {clave!r}")
         umbral = umbral_latencia_ms or portal["sla_max_ms"]
-        return mark_simulated(
-            {
-                "alerta_id": f"alert_{_hash_estable(clave + canal + destinatario) % 1000000:06d}",
-                "clave_portal": clave,
-                "canal": canal,
-                "destinatario_hash": Bitacora.hash_sensitive(destinatario),
-                "umbral_latencia_ms": umbral,
-                "criticidad_portal": portal["criticidad"],
-                "estado": "activa",
-                "creada_at": datetime.now(timezone.utc).isoformat(),
-            },
-            note="Mock — en producción persiste en sqlite del servicio.",
-        )
+        # Este MCP no tiene servicio de persistencia/envío de alertas: devolvemos la
+        # especificación para que el orquestador la guarde. No se inventa un id.
+        return {
+            "clave_portal": clave,
+            "canal": canal,
+            "destinatario_hash": Bitacora.hash_sensitive(destinatario),
+            "umbral_latencia_ms": umbral,
+            "criticidad_portal": portal["criticidad"],
+            "estado": "especificacion_no_persistida",
+            "persistida": False,
+            "nota": "Persistir y programar con tu scheduler; este MCP solo ejecuta checks.",
+            "creada_at": datetime.now(timezone.utc).isoformat(),
+        }

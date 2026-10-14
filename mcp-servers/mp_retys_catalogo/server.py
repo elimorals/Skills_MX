@@ -51,12 +51,12 @@ def retys_detalle_tramite(args: HomoclaveInput) -> dict:
     return _client.detalle_tramite(args.homoclave)
 
 
-@mcp.tool(annotations={"title": "Exportar catálogo en DCAT (datos.gob.mx)", "readOnlyHint": True, "idempotentHint": True})
+@mcp.tool(annotations={"title": "Exportar catálogo curado en DCAT (solo mock)", "readOnlyHint": True, "idempotentHint": True})
 def retys_exportar_dcat() -> dict:
     return _client.exportar_dcat()
 
 
-@mcp.tool(annotations={"title": "Buscar en vivo CONAMER (Playwright opt-in)", "readOnlyHint": True})
+@mcp.tool(annotations={"title": "Buscar regulaciones e inspecciones en vivo (CONAMER)", "readOnlyHint": True})
 def retys_buscar_en_vivo(args: QueryInput) -> dict:
     return _client.buscar_en_vivo(args.q)
 

@@ -1,7 +1,8 @@
 """Llave MX — identidad digital ciudadana unificada gob.mx.
 
-SSO ciudadano vinculado a CURP. Reemplaza claves separadas por dependencia.
-Catálogo curado de trámites disponibles a través de Portal Unificado.
+SSO ciudadano vinculado a CURP. Catálogo ORIENTATIVO de trámites ciudadanos: no está
+verificado qué trámites aceptan Llave MX (eso lo mide mp_llave_mx_tracker en vivo), y los
+campos requiere_e_firma / requiere_cita_presencial no se exponen por no estar verificados.
 """
 from __future__ import annotations
 
@@ -23,7 +24,7 @@ class TramiteLlaveMX:
     url_directa: str = ""
 
 
-# Catálogo demostrativo de trámites ciudadanos accesibles con Llave MX
+# Catálogo orientativo de trámites ciudadanos (no verificado contra Llave MX)
 CATALOGO_TRAMITES_LLAVE_MX: list[TramiteLlaveMX] = [
     TramiteLlaveMX("curp_consulta", "Consulta y descarga CURP", "RENAPO", "identidad",
                     url_directa="https://www.gob.mx/curp"),

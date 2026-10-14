@@ -1,21 +1,24 @@
-"""Cliente mp_cfe_interconexion_solar.
+"""Cliente mp_cfe_interconexion_solar — generación distribuida (prosumidor) con CFE.
 
-Trámite interconexión solar prosumidor con CFE:
-1. Solicitud (gratis) con diagrama eléctrico + specs
-2. Evaluación CFE de red local
-3. Instalación
-4. Inspección CFE
-5. Medidor bidireccional
-6. Contrato prosumidor
+Verificado 2026-10-14 contra la Ley del Sector Eléctrico (LSE, "Nueva Ley DOF 18-03-2025",
+https://www.diputados.gob.mx/LeyesBiblio/pdf/LSE.pdf):
+- Art. 19: centrales con capacidad ≥ 0.7 MW requieren permiso; < 0.7 MW son Generadoras Exentas.
+- Arts. 3 fr. XXII y 25: Generación Distribuida = Generadora Exenta (< 0.7 MW) interconectada a
+  un circuito de distribución con alta concentración de Centros de Carga.
+- Art. 27: puede vender energía a la Suministradora de Servicios Básicos; la CNE emite modelos de
+  contrato y metodologías de contraprestación.
+- Art. 30: autoconsumo (≥ 0.7 MW) requiere permiso; entre 0.7 y 20 MW, trámite simplificado.
 
-Cambios 2026: net metering 1:1 → autoconsumo inteligente (energía exportada vale menos).
+Lo que se retiró por no tener fuente: folios y estatus de solicitud inventados (la solicitud la
+presenta el titular ante CFE; este MCP es de solo lectura), costos por kWh "promedio" por tarifa,
+el umbral de 0.5 (que además comparaba kW contra MW) y el "factor de exportación 0.70 de 2026".
+El simulador ahora exige el costo por kWh del recibo y el esquema de compensación del contrato.
+CFE responde 403 a clientes no-navegador (www.cfe.mx → www.cfe.gob.mx, 2026-10-14).
 """
 from __future__ import annotations
 
-import hashlib
 import re
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Literal
 
@@ -26,176 +29,139 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
-from shared.mock import mark_simulated  # noqa: E402
 
 
 NAMESPACE = "cfe_interconexion_solar"
-URL_INTERCONEXION_CFE = "https://www.cfe.mx/casa/contratacion-distribuida/Pages/contratacion-distribuida.aspx"
+URL_CFE = "https://www.cfe.gob.mx/"
+URL_LSE = "https://www.diputados.gob.mx/LeyesBiblio/pdf/LSE.pdf"
+UMBRAL_GENERADORA_EXENTA_KW = 700.0  # LSE Art. 19: < 0.7 MW
+UMBRAL_AUTOCONSUMO_SIMPLIFICADO_KW = 20_000.0  # LSE Art. 30: 0.7-20 MW
 
-
-# Tarifas residenciales/PyME relevantes para autoconsumo (CFE 2026)
+# Nombres de tarifas CFE (sin precios: dependen de región, mes y bloque de consumo).
 TARIFAS_APLICABLES: dict[str, dict] = {
-    "DAC":      {"nombre": "Doméstica de Alto Consumo", "costo_kwh_promedio_mxn": 5.20},
-    "PDBT":     {"nombre": "Pequeña Demanda Baja Tensión (PyME)", "costo_kwh_promedio_mxn": 4.80},
-    "GDMTH":    {"nombre": "Gran Demanda Media Tensión Horaria", "costo_kwh_promedio_mxn": 3.20},
-    "GDMTO":    {"nombre": "Gran Demanda Media Tensión Ordinaria", "costo_kwh_promedio_mxn": 3.10},
-    "1":        {"nombre": "Tarifa 1 doméstica básica", "costo_kwh_promedio_mxn": 0.95},
+    "1": {"nombre": "Doméstica (tarifa 1 y regionales 1A-1F)"},
+    "DAC": {"nombre": "Doméstica de Alto Consumo"},
+    "PDBT": {"nombre": "Pequeña Demanda Baja Tensión"},
+    "GDBT": {"nombre": "Gran Demanda Baja Tensión"},
+    "GDMTO": {"nombre": "Gran Demanda Media Tensión Ordinaria"},
+    "GDMTH": {"nombre": "Gran Demanda Media Tensión Horaria"},
 }
 
-TipoSistema = Literal["fotovoltaico", "eolico", "biogas", "geotermia", "mixto"]
-EstatusSolicitud = Literal["registrada", "en_revision", "aprobada", "rechazada",
-                            "inspeccion_programada", "medidor_instalado", "contrato_firmado"]
-
-
+Esquema = Literal["medicion_neta", "facturacion_neta"]
 RPU_RE = re.compile(r"^\d{6,16}$")
+
+
+def clasificar_central(kw_instalados: float) -> dict[str, Any]:
+    if kw_instalados <= 0:
+        raise ValidationError("kw_instalados debe ser > 0")
+    if kw_instalados < UMBRAL_GENERADORA_EXENTA_KW:
+        return {"categoria": "generacion_distribuida_exenta", "requiere_permiso_cne": False,
+                "fundamento": "LSE Arts. 3 fr. XXII, 19 y 25 (< 0.7 MW)"}
+    if kw_instalados <= UMBRAL_AUTOCONSUMO_SIMPLIFICADO_KW:
+        return {"categoria": "autoconsumo_permiso_simplificado", "requiere_permiso_cne": True,
+                "fundamento": "LSE Arts. 19 y 30 (0.7-20 MW, trámite simplificado)"}
+    return {"categoria": "central_con_permiso", "requiere_permiso_cne": True,
+            "fundamento": "LSE Art. 19 (≥ 0.7 MW)"}
 
 
 class CFEInterconexionClient:
     def __init__(self, bitacora: Bitacora | None = None) -> None:
         self._bitacora = bitacora or Bitacora(NAMESPACE)
 
-    def solicitar_interconexion(
-        self,
-        rpu: str,
-        kw_instalados: float,
-        tarifa_actual: str,
-        tipo_sistema: str = "fotovoltaico",
-        tension: str = "baja",
-    ) -> dict[str, Any]:
+    def solicitar_interconexion(self, rpu: str, kw_instalados: float, tarifa_actual: str,
+                                tipo_sistema: str = "fotovoltaico", tension: str = "baja") -> dict[str, Any]:
+        """Clasifica la central y devuelve los pasos: nunca presenta la solicitud."""
         rpu = (rpu or "").strip()
         if not RPU_RE.match(rpu):
             raise ValidationError(f"RPU inválido: {rpu!r}")
-        if kw_instalados <= 0 or kw_instalados > 500:
-            raise ValidationError(f"kw_instalados fuera de rango: {kw_instalados}")
         if tarifa_actual not in TARIFAS_APLICABLES:
-            raise ValidationError(f"tarifa no soportada: {tarifa_actual}. "
-                                   f"Válidas: {list(TARIFAS_APLICABLES.keys())}")
+            raise ValidationError(f"tarifa no soportada: {tarifa_actual}. Válidas: {list(TARIFAS_APLICABLES)}")
         if tipo_sistema not in {"fotovoltaico", "eolico", "biogas", "geotermia", "mixto"}:
             raise ValidationError(f"tipo_sistema inválido: {tipo_sistema}")
-
-        ahora = datetime.now(timezone.utc)
-        folio = "SOL-" + hashlib.sha256(
-            f"{rpu}|{ahora.isoformat()}|cfe".encode("utf-8")
-        ).hexdigest()[:12].upper()
-
-        # Categoría regulatoria por tamaño
-        if kw_instalados <= 0.5:
-            categoria = "Pequeña escala (≤0.5 MW) — interconexión simplificada"
-            tiempo_dias = "30-45 días"
-        elif kw_instalados <= 100:  # 100 kW = simplificado en tensión < 1kV
-            categoria = "PyME generación distribuida"
-            tiempo_dias = "45-60 días"
-        else:
-            categoria = "Mediana generación distribuida"
-            tiempo_dias = "60-90 días"
-
-        self._bitacora.log("solicitar_interconexion", success=True,
-                           params_summary={"rpu_hash": self._bitacora.hash_sensitive(rpu),
-                                           "kw": kw_instalados})
-        return mark_simulated({
-            "folio": folio,
+        clasif = clasificar_central(kw_instalados)
+        self._bitacora.log("solicitar_interconexion_handoff", success=True,
+                           params_summary={"rpu_hash": self._bitacora.hash_sensitive(rpu), "kw": kw_instalados})
+        return {
             "rpu_hash": self._bitacora.hash_sensitive(rpu),
             "kw_instalados": kw_instalados,
             "tipo_sistema": tipo_sistema,
             "tarifa_actual": tarifa_actual,
-            "tarifa_descripcion": TARIFAS_APLICABLES[tarifa_actual]["nombre"],
             "tension": tension,
-            "categoria_regulatoria": categoria,
-            "tiempo_estimado_resolucion": tiempo_dias,
-            "costo_solicitud": 0.0,
-            "documentos_requeridos": [
-                "Diagrama eléctrico unifilar",
-                "Especificaciones técnicas equipos (inversor, paneles, protecciones)",
-                "Plan de protecciones",
-                "Certificados NMX-J-643 / IEC del inversor",
-                "Identificación oficial del titular del servicio",
+            **clasif,
+            "enviada": False,
+            "handoff_humano": True,
+            "motivo": "La solicitud de interconexión la presenta el titular del servicio ante CFE.",
+            "pasos": [
+                "Reunir diagrama unifilar y fichas técnicas de inversor/módulos/protecciones (lista orientativa; "
+                "confirmar la vigente con CFE Distribución).",
+                "Presentar la solicitud de interconexión en el centro de atención o canal digital de CFE.",
+                "Tras la inspección, firmar el contrato de interconexión y obtener medidor bidireccional.",
             ],
-            "estatus": "registrada",
-            "url_seguimiento": f"https://www.cfe.mx/interconexion/{folio}",
-            "fecha_solicitud": ahora.isoformat(),
-            "fuente": URL_INTERCONEXION_CFE,
-        })
+            "url": URL_CFE,
+            "fuente_legal": URL_LSE,
+        }
 
     def consultar_estatus_solicitud(self, folio: str) -> dict[str, Any]:
-        if not folio or not folio.startswith("SOL-"):
+        """No hay consulta pública del estatus: handoff (antes el estatus salía del último carácter)."""
+        if not folio or len(folio) < 4:
             raise ValidationError(f"folio inválido: {folio!r}")
-        # Mock determinístico por suffix folio
-        last = folio[-1]
-        estatus_map = {
-            "0": "registrada", "1": "en_revision", "2": "aprobada",
-            "3": "inspeccion_programada", "4": "medidor_instalado",
-            "5": "contrato_firmado", "6": "registrada", "7": "en_revision",
-            "8": "aprobada", "9": "medidor_instalado",
-            "A": "aprobada", "B": "contrato_firmado", "C": "en_revision",
-            "D": "inspeccion_programada", "E": "medidor_instalado",
-            "F": "registrada",
-        }
-        estatus = estatus_map.get(last.upper(), "registrada")
-        return mark_simulated({
+        return {
             "folio": folio,
-            "estatus": estatus,
-            "porcentaje_avance": _porcentaje_avance(estatus),
-            "siguiente_paso": _siguiente_paso(estatus),
-        })
+            "estatus": None,
+            "handoff_humano": True,
+            "pasos": ["Consultar el folio con CFE (centro de atención o 071)."],
+            "url": URL_CFE,
+        }
 
-    def simular_ahorro_prosumidor(
-        self, tarifa_actual: str, kwh_consumo_promedio_mensual: float,
-        kwh_generacion_solar_estimada: float,
-    ) -> dict[str, Any]:
-        if tarifa_actual not in TARIFAS_APLICABLES:
-            raise ValidationError(f"tarifa no soportada: {tarifa_actual}")
+    def simular_ahorro_prosumidor(self, costo_kwh_mxn: float, kwh_consumo_promedio_mensual: float,
+                                  kwh_generacion_solar_estimada: float, esquema: str = "medicion_neta",
+                                  precio_exportacion_mxn_kwh: float | None = None) -> dict[str, Any]:
+        """Modelo mensual simple con el costo marginal del recibo del usuario.
+
+        - medicion_neta: lo exportado compensa kWh consumidos en el periodo; el excedente sobre el
+          consumo no tiene valor monetario en el mes (queda como saldo de energía).
+        - facturacion_neta: lo exportado se paga a `precio_exportacion_mxn_kwh` (del contrato).
+        """
+        if costo_kwh_mxn <= 0:
+            raise ValidationError("costo_kwh_mxn debe venir del recibo (> 0)")
         if kwh_consumo_promedio_mensual < 0 or kwh_generacion_solar_estimada < 0:
             raise ValidationError("kwh no puede ser negativo")
+        if esquema not in ("medicion_neta", "facturacion_neta"):
+            raise ValidationError("esquema debe ser medicion_neta o facturacion_neta")
+        if esquema == "facturacion_neta" and (precio_exportacion_mxn_kwh is None or precio_exportacion_mxn_kwh < 0):
+            raise ValidationError("facturacion_neta requiere precio_exportacion_mxn_kwh del contrato")
 
-        costo_kwh = TARIFAS_APLICABLES[tarifa_actual]["costo_kwh_promedio_mxn"]
-        # Ahorro = energía solar autoconsumida * costo - excedente * factor_exportación
-        autoconsumo_kwh = min(kwh_consumo_promedio_mensual, kwh_generacion_solar_estimada)
-        exportacion_kwh = max(0, kwh_generacion_solar_estimada - autoconsumo_kwh)
-        # Cambio 2026: exportación vale ~70% de lo importado (autoconsumo inteligente)
-        factor_exportacion = 0.70
-        ahorro_autoconsumo = autoconsumo_kwh * costo_kwh
-        valor_exportacion = exportacion_kwh * costo_kwh * factor_exportacion
-        ahorro_mensual = ahorro_autoconsumo + valor_exportacion
-        ahorro_anual = ahorro_mensual * 12
-
-        return mark_simulated({
-            "tarifa_actual": tarifa_actual,
-            "costo_kwh_mxn": costo_kwh,
-            "kwh_consumo_mensual": kwh_consumo_promedio_mensual,
-            "kwh_generacion_solar": kwh_generacion_solar_estimada,
-            "autoconsumo_kwh": round(autoconsumo_kwh, 2),
-            "exportacion_kwh": round(exportacion_kwh, 2),
-            "factor_exportacion_2026": factor_exportacion,
-            "ahorro_mensual_mxn": round(ahorro_mensual, 2),
-            "ahorro_anual_mxn": round(ahorro_anual, 2),
-            "nota_2026": "CFE pasó de net metering 1:1 a autoconsumo inteligente. "
-                          "Exportación vale ~70% vs consumo evitado.",
-        })
+        consumo, gen = kwh_consumo_promedio_mensual, kwh_generacion_solar_estimada
+        if esquema == "medicion_neta":
+            compensado = min(consumo, gen)
+            excedente = max(0.0, gen - consumo)
+            ahorro = compensado * costo_kwh_mxn
+            detalle = {"kwh_compensados": round(compensado, 2), "kwh_saldo_a_favor": round(excedente, 2)}
+        else:
+            autoconsumo = min(consumo, gen)  # supuesto: generación y consumo simultáneos
+            exportado = max(0.0, gen - autoconsumo)
+            ahorro = autoconsumo * costo_kwh_mxn + exportado * precio_exportacion_mxn_kwh
+            detalle = {"kwh_autoconsumo": round(autoconsumo, 2), "kwh_exportados": round(exportado, 2),
+                       "precio_exportacion_mxn_kwh": precio_exportacion_mxn_kwh}
+        return {
+            "esquema": esquema,
+            "costo_kwh_mxn": costo_kwh_mxn,
+            "kwh_consumo_mensual": consumo,
+            "kwh_generacion_solar": gen,
+            **detalle,
+            "ahorro_mensual_mxn": round(ahorro, 2),
+            "ahorro_anual_mxn": round(ahorro * 12, 2),
+            "supuestos": [
+                "Costo por kWh constante (en tarifas escalonadas el kWh evitado es el del bloque más alto).",
+                "No incluye cargos fijos, IVA, DAP ni cambio de tarifa (p. ej. salir de DAC).",
+                "El esquema y precios de compensación los fija el contrato de interconexión (LSE Art. 27, CNE).",
+            ],
+        }
 
     def listar_tarifas(self) -> dict[str, Any]:
         return {
             "total": len(TARIFAS_APLICABLES),
             "tarifas": [{"clave": k, **v} for k, v in TARIFAS_APLICABLES.items()],
-            "nota_compatibilidad": "Todas son compatibles con autoconsumo. "
-                                    "Tarifas industriales (HM/HS) ya son intrínsecamente horarias.",
+            "nota": "Sin precios: varían por región, mes y bloque; usar el costo por kWh del recibo.",
+            "fuente": URL_CFE,
         }
-
-
-def _porcentaje_avance(estatus: str) -> int:
-    return {
-        "registrada": 15, "en_revision": 35, "aprobada": 60,
-        "inspeccion_programada": 75, "medidor_instalado": 90,
-        "contrato_firmado": 100, "rechazada": 0,
-    }.get(estatus, 0)
-
-
-def _siguiente_paso(estatus: str) -> str:
-    return {
-        "registrada": "Esperar evaluación CFE (45 días hábiles típicos)",
-        "en_revision": "Atender requerimientos CFE si los hay",
-        "aprobada": "Agendar inspección CFE",
-        "inspeccion_programada": "Realizar inspección + correcciones",
-        "medidor_instalado": "Firmar contrato prosumidor",
-        "contrato_firmado": "Operar normalmente",
-        "rechazada": "Subir requerimientos faltantes",
-    }.get(estatus, "Consultar CFE")

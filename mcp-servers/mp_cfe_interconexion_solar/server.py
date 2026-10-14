@@ -22,7 +22,7 @@ _client = CFEInterconexionClient()
 class SolicitarInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
     rpu: str = Field(..., min_length=6, max_length=16)
-    kw_instalados: float = Field(..., gt=0, le=500)
+    kw_instalados: float = Field(..., gt=0, le=100_000)
     tarifa_actual: str
     tipo_sistema: str = "fotovoltaico"
     tension: str = "baja"
@@ -35,12 +35,14 @@ class FolioInput(BaseModel):
 
 class SimularInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    tarifa_actual: str
+    costo_kwh_mxn: float = Field(..., gt=0, description="Costo por kWh del recibo CFE")
     kwh_consumo_promedio_mensual: float = Field(..., ge=0)
     kwh_generacion_solar_estimada: float = Field(..., ge=0)
+    esquema: str = Field("medicion_neta", description="medicion_neta | facturacion_neta")
+    precio_exportacion_mxn_kwh: float | None = Field(None, ge=0)
 
 
-@mcp.tool(annotations={"title": "Solicitar interconexión solar CFE", "readOnlyHint": True})
+@mcp.tool(annotations={"title": "Clasificar central y pasos de interconexión (handoff)", "readOnlyHint": True})
 def cfe_solar_solicitar(args: SolicitarInput) -> dict:
     return _client.solicitar_interconexion(
         rpu=args.rpu, kw_instalados=args.kw_instalados,
@@ -49,7 +51,7 @@ def cfe_solar_solicitar(args: SolicitarInput) -> dict:
     )
 
 
-@mcp.tool(annotations={"title": "Consultar estatus solicitud interconexión", "readOnlyHint": True})
+@mcp.tool(annotations={"title": "Estatus de solicitud (handoff)", "readOnlyHint": True})
 def cfe_solar_estatus(args: FolioInput) -> dict:
     return _client.consultar_estatus_solicitud(folio=args.folio)
 
@@ -57,9 +59,11 @@ def cfe_solar_estatus(args: FolioInput) -> dict:
 @mcp.tool(annotations={"title": "Simular ahorro prosumidor", "readOnlyHint": True, "idempotentHint": True})
 def cfe_solar_simular_ahorro(args: SimularInput) -> dict:
     return _client.simular_ahorro_prosumidor(
-        tarifa_actual=args.tarifa_actual,
+        costo_kwh_mxn=args.costo_kwh_mxn,
         kwh_consumo_promedio_mensual=args.kwh_consumo_promedio_mensual,
         kwh_generacion_solar_estimada=args.kwh_generacion_solar_estimada,
+        esquema=args.esquema,
+        precio_exportacion_mxn_kwh=args.precio_exportacion_mxn_kwh,
     )
 
 

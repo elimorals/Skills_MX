@@ -1,4 +1,18 @@
-"""Cliente mp_desconexion_digital — Reforma LFT Art. 132 marzo 2026."""
+"""Cliente mp_desconexion_digital — derecho a la desconexión (teletrabajo).
+
+Verificado 2026-10-14 contra la LFT vigente (diputados.gob.mx, última reforma DOF 14-05-2026):
+no existe una "reforma LFT Art. 132 de marzo 2026" sobre desconexión digital. El único
+fundamento legal es para teletrabajo (relaciones > 40 % del tiempo fuera, Art. 330-A):
+- LFT Art. 330-E fr. VI (DOF 11-01-2021): respetar el derecho a la desconexión al término de la jornada.
+- LFT Art. 330-B fr. VI: el contrato fija mecanismos de contacto y la duración/distribución de horarios.
+- NOM-037-STPS-2023 5.2 d) y e) (DOF 08-06-2023): la Política de Teletrabajo define reglas de
+  contacto que no interfieran trabajo-familia y el derecho a pausas y a la desconexión (incluida la
+  de TIC) fuera de jornada, vacaciones, permisos y licencias.
+Multa por incumplir: Art. 1002 LFT (50-5000 UMA) o Art. 994 fr. V si se trata de la NOM.
+
+Los demás ítems (capacitación de mandos, canal de denuncia, auditoría) son buenas prácticas,
+marcadas `obligatorio: false`.
+"""
 from __future__ import annotations
 
 import sys
@@ -13,37 +27,37 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
-from shared.mock import mark_simulated  # noqa: E402
 
 
 NAMESPACE = "desconexion_digital"
 
 
-CHECKLIST_REFORMA_2026 = [
-    {"clave": "politica_formal_publicada",
-     "descripcion": "Política formal de desconexión digital publicada en tableros.",
-     "severidad": "grave"},
-    {"clave": "incluida_reglamento_interior",
-     "descripcion": "Incluida en reglamento interior de trabajo.",
-     "severidad": "media"},
-    {"clave": "capacitacion_supervisores",
-     "descripcion": "Personal con mando jerárquico capacitado documentadamente.",
-     "severidad": "grave"},
-    {"clave": "canal_denuncia_interno",
-     "descripcion": "Canal interno (email/buzón) para denunciar violaciones.",
-     "severidad": "media"},
-    {"clave": "evidencias_no_comunicacion_fuera_jornada",
-     "descripcion": "Evidencias de NO comunicación digital fuera de jornada.",
-     "severidad": "grave"},
-    {"clave": "criterios_emergencia_documentados",
-     "descripcion": "Criterios de emergencia documentados (cuándo SÍ contactar).",
-     "severidad": "media"},
-    {"clave": "horarios_jornada_claros_contrato",
-     "descripcion": "Horarios de jornada claramente definidos en contrato individual.",
-     "severidad": "muy_grave"},
-    {"clave": "auditoria_anual",
-     "descripcion": "Auditoría interna anual de cumplimiento.",
-     "severidad": "leve"},
+URL_LFT = "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFT.pdf"
+URL_NOM037 = "https://dof.gob.mx/nota_detalle.php?codigo=5691672&fecha=08/06/2023"
+
+CHECKLIST_DESCONEXION = [
+    {"clave": "respetar_desconexion_fin_jornada", "obligatorio": True,
+     "descripcion": "No exigir actividad ni respuesta por medios digitales al término de la jornada.",
+     "base_legal": "LFT Art. 330-E fr. VI", "severidad": "grave"},
+    {"clave": "politica_teletrabajo_con_desconexion", "obligatorio": True,
+     "descripcion": ("Política de Teletrabajo escrita con horario, pausas y desconexión (incluida TIC) "
+                     "fuera de jornada, vacaciones, permisos y licencias."),
+     "base_legal": "NOM-037-STPS-2023 5.2 e)", "severidad": "grave"},
+    {"clave": "reglas_contacto_proporcionales", "obligatorio": True,
+     "descripcion": "Mecanismos y reglas de contacto que no interfieran la relación trabajo-familia.",
+     "base_legal": "NOM-037-STPS-2023 5.2 d)", "severidad": "media"},
+    {"clave": "contrato_con_horarios_y_contacto", "obligatorio": True,
+     "descripcion": "Contrato escrito con mecanismos de contacto y duración/distribución de horarios.",
+     "base_legal": "LFT Art. 330-B fr. VI", "severidad": "muy_grave"},
+    {"clave": "capacitacion_supervisores", "obligatorio": False,
+     "descripcion": "Capacitar a mandos sobre respetar la desconexión.",
+     "base_legal": None, "severidad": "media"},
+    {"clave": "canal_denuncia_interno", "obligatorio": False,
+     "descripcion": "Canal interno para reportar contactos fuera de jornada.",
+     "base_legal": None, "severidad": "leve"},
+    {"clave": "criterios_emergencia_documentados", "obligatorio": False,
+     "descripcion": "Criterios de emergencia documentados (cuándo sí contactar).",
+     "base_legal": None, "severidad": "leve"},
 ]
 
 
@@ -52,7 +66,7 @@ class DesconexionDigitalClient:
         self._bitacora = bitacora or Bitacora(NAMESPACE)
 
     def checklist_cumplimiento(
-        self, rfc: str, faltas_marcadas: list[str] | None = None,
+        self, rfc: str, faltas_marcadas: list[str] | None = None, modalidad_teletrabajo: bool = True,
     ) -> dict[str, Any]:
         if not rfc or len(rfc) < 12:
             raise ValidationError(f"RFC inválido: {rfc!r}")
@@ -60,7 +74,9 @@ class DesconexionDigitalClient:
 
         checklist = []
         no_cumplidas = 0
-        for item in CHECKLIST_REFORMA_2026:
+        for item in CHECKLIST_DESCONEXION:
+            if item["obligatorio"] and not modalidad_teletrabajo:
+                continue  # sin teletrabajo no hay obligación legal de desconexión
             cumplida = item["clave"] not in faltas_marcadas
             if not cumplida:
                 no_cumplidas += 1
@@ -70,15 +86,21 @@ class DesconexionDigitalClient:
         self._bitacora.log("checklist_cumplimiento", success=True,
                            params_summary={"rfc_hash": self._bitacora.hash_sensitive(rfc),
                                            "no_cumplidas": no_cumplidas})
-        return mark_simulated({
+        return {
             "rfc": rfc,
+            "modalidad_teletrabajo": modalidad_teletrabajo,
             "score_cumplimiento": score,
             "total": len(checklist),
             "no_cumplidas": no_cumplidas,
+            "obligatorias_incumplidas": sum(1 for c in checklist if c["obligatorio"] and not c["cumplida"]),
             "checklist": checklist,
-            "base_legal": "LFT Art. 132 reforma marzo 2026",
+            "base_legal": "LFT Arts. 330-B fr. VI y 330-E fr. VI; NOM-037-STPS-2023 5.2",
+            "nota": (None if modalidad_teletrabajo else
+                     "Sin teletrabajo (> 40 % del tiempo fuera, Art. 330-A) no hay obligación legal de "
+                     "desconexión; los ítems restantes son buenas prácticas."),
+            "fuentes": [URL_LFT, URL_NOM037],
             "fecha_evaluacion": datetime.now(timezone.utc).isoformat(),
-        })
+        }
 
     def generar_politica(
         self, rfc: str, razon_social: str, jornada_inicio: str, jornada_fin: str,
@@ -88,24 +110,28 @@ class DesconexionDigitalClient:
             raise ValidationError(f"RFC inválido: {rfc!r}")
         canal = canal_denuncia_email or f"denuncias-rh@{rfc.lower()}.mx"
         contenido = _plantilla(razon_social, rfc, jornada_inicio, jornada_fin, canal)
-        return mark_simulated({
+        return {
             "rfc": rfc,
             "razon_social": razon_social,
             "contenido_md": contenido,
             "fecha_emision": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
             "longitud_chars": len(contenido),
-            "base_legal": "LFT Art. 132 reforma marzo 2026",
-        })
+            "base_legal": "LFT Art. 330-E fr. VI; NOM-037-STPS-2023 5.2 e)",
+            "nota": "Plantilla orientativa; revisar con abogado laboral.",
+        }
 
     def template_capacitacion(self) -> dict[str, Any]:
-        return mark_simulated({
-            "titulo": "Capacitación obligatoria — Desconexión Digital LFT Art. 132 (Reforma marzo 2026)",
+        return {
+            "titulo": "Capacitación — Desconexión digital en teletrabajo (LFT 330-E fr. VI, NOM-037)",
+            "obligatoria": False,
+            "nota": ("La LFT no exige esta capacitación específica; NOM-037 5.9 pide capacitación anual "
+                     "en SST al personal en teletrabajo."),
             "duracion_estimada_min": 45,
             "audiencia": "Personal con mando jerárquico + RRHH",
             "agenda": [
                 {"tema": "Marco legal", "minutos": 5,
-                 "puntos": ["LFT Art. 132 reforma marzo 2026",
-                             "Sanciones STPS (50-5000 UMAs)",
+                 "puntos": ["LFT Art. 330-E fr. VI y NOM-037 5.2 e)",
+                             "Multas LFT: Art. 1002 (50-5000 UMA) / 994 fr. V (250-5000 UMA)",
                              "Cómo se evalúa la violación"]},
                 {"tema": "Política interna", "minutos": 10,
                  "puntos": ["Texto política", "Jornadas claras",
@@ -126,8 +152,8 @@ class DesconexionDigitalClient:
                 "Examen final corregido",
                 "Constancia individual entregada",
             ],
-            "frecuencia_minima": "Anual + al ingreso de cada nuevo mando",
-        })
+            "frecuencia_sugerida": "Anual + al ingreso de cada nuevo mando",
+        }
 
 
 def _plantilla(razon_social: str, rfc: str, ji: str, jf: str, canal: str) -> str:
@@ -135,13 +161,13 @@ def _plantilla(razon_social: str, rfc: str, ji: str, jf: str, canal: str) -> str
 
 **Empresa:** {razon_social}
 **RFC:** {rfc}
-**Vigencia:** Reforma LFT Art. 132 marzo 2026
+**Fundamento:** LFT Art. 330-E fr. VI; NOM-037-STPS-2023 numeral 5.2 e)
 
 ## 1. Reconocimiento del derecho
 
-{razon_social} reconoce el derecho de todas las personas trabajadoras a la
-desconexión digital, conforme al Art. 132 de la Ley Federal del Trabajo
-(reforma marzo 2026).
+{razon_social} reconoce el derecho a la desconexión digital de las personas
+trabajadoras en teletrabajo (LFT Art. 330-E fr. VI) y lo extiende como buena práctica
+al resto del personal.
 
 ## 2. Horario laboral establecido
 

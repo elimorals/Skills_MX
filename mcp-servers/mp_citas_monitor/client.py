@@ -27,8 +27,10 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared.bitacora import Bitacora  # noqa: E402
-from shared.errors import ValidationError  # noqa: E402
-from shared.mock import mark_simulated  # noqa: E402
+from shared.errors import ValidationError, handle_httpx_error  # noqa: E402
+from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+
+import httpx  # noqa: E402
 
 
 NAMESPACE = "citas_monitor"
@@ -46,12 +48,15 @@ PORTALES_CITAS: dict[str, dict[str, Any]] = {
             "csf_descarga",
             "aclaracion_devoluciones",
         ],
-        "selectores_validados": False,  # pendiente discovery
+        "selectores_validados": False,
         "polling_min_seconds": 120,
+        "bloqueo_verificado": ("La agenda exige sesión del titular: /api/account responde 401 "
+                               "antes de elegir servicio (2026-10-14)."),
     },
     "imss_citas": {
         "nombre": "IMSS — Citas pensión/cesantía/NSS",
         "url": "https://citas.imss.gob.mx/",
+        "bloqueo_verificado": "citas.imss.gob.mx no resuelve en DNS (2026-10-14); URL por confirmar.",
         "tramites": [
             "pension_cesantia_vejez",
             "pension_invalidez",
@@ -65,6 +70,7 @@ PORTALES_CITAS: dict[str, dict[str, Any]] = {
     "sre_mexitel": {
         "nombre": "SRE — Mexitel pasaporte",
         "url": "https://citas.sre.gob.mx/",
+        "bloqueo_verificado": "Redirige a validate.perfdrive.com (Radware Captcha Page) (2026-10-14).",
         "tramites": [
             "pasaporte_ordinario_nuevo",
             "pasaporte_ordinario_renovacion",
@@ -77,6 +83,7 @@ PORTALES_CITAS: dict[str, dict[str, Any]] = {
     "ine_modulos": {
         "nombre": "INE — Módulos credencial",
         "url": "https://www.ine.mx/credencial/",
+        "bloqueo_verificado": "Página informativa; la cita la agenda el titular (no hay consulta pública de cupos).",
         "tramites": [
             "credencial_reposicion",
             "credencial_cambio_domicilio",
@@ -93,6 +100,19 @@ ESTADOS_ALERTA = {"activa", "pausada", "consumida", "expirada", "cancelada"}
 
 # Vigencia máxima del consent_token (60 días por defecto)
 TTL_CONSENT_DIAS_MAX = 60
+
+URL_SAT_MENU = "https://citas.sat.gob.mx/content/json/tc_menu.json"
+
+
+def alternativas_digitales_sat() -> list[dict[str, Any]]:
+    """Trámites que el propio SAT sugiere hacer en línea en vez de pedir cita (JSON público)."""
+    try:
+        r = httpx.get(URL_SAT_MENU, timeout=30.0, follow_redirects=True)
+        r.raise_for_status()
+        menu = r.json()["tc_menu"]
+    except httpx.HTTPError as e:
+        raise handle_httpx_error(e) from e
+    return [{"nombre": m["nombre"], "url": m["url"]} for m in menu if m.get("activo")]
 
 
 class CitasMonitorClient:
@@ -203,31 +223,25 @@ class CitasMonitorClient:
         if fecha_min and fecha_max and fecha_min > fecha_max:
             raise ValidationError("fecha_min > fecha_max")
 
-        import hashlib
-        alerta_id = f"AL-{hashlib.sha256((consent_token + canal + destinatario).encode()).hexdigest()[:10].upper()}"
-
-        return mark_simulated(
-            {
-                "alerta_id": alerta_id,
-                "consent_token": consent_token,
-                "canal": canal,
-                "destinatario_hash": Bitacora.hash_sensitive(destinatario),
-                "entidad_preferida": entidad_preferida,
-                "ventana_fechas": {
-                    "min": fecha_min,
-                    "max": fecha_max,
-                },
-                "estado": "activa",
-                "polling_seconds": 120,
-                "creada_at": datetime.now(timezone.utc).isoformat(),
-                "advertencia_acaparamiento": (
-                    "Esta alerta NO reserva citas automáticamente. Cuando se abre "
-                    "cupo en la ventana, se envía un mensaje al destinatario y este "
-                    "decide si la reserva manualmente."
-                ),
-            },
-            note="Mock — en producción persiste en sqlite con cron de polling.",
-        )
+        if is_mock_mode([], default_when_no_creds=False):
+            return mark_simulated({"consent_token": consent_token, "canal": canal, "estado": "activa"})
+        return {
+            "consent_token": consent_token,
+            "canal": canal,
+            "destinatario_hash": Bitacora.hash_sensitive(destinatario),
+            "entidad_preferida": entidad_preferida,
+            "ventana_fechas": {"min": fecha_min, "max": fecha_max},
+            "estado": "especificacion_no_persistida",
+            "persistida": False,
+            "polling_seconds_minimo": 60,
+            "auto_reserva": False,
+            "nota": ("Ningún portal soportado permite consultar cupos sin el titular (ver "
+                     "citas_revisar_cupos); la alerta solo sirve como recordatorio programado."),
+            "creada_at": datetime.now(timezone.utc).isoformat(),
+            "advertencia_acaparamiento": (
+                "Esta alerta NO reserva citas. El titular decide y reserva manualmente."
+            ),
+        }
 
     def revisar_cupos(self, portal_clave: str, tramite: str) -> dict[str, Any]:
         """Revisa cupos disponibles para un trámite (read-only, sin titular)."""
@@ -238,40 +252,35 @@ class CitasMonitorClient:
         if tramite not in portal["tramites"]:
             raise ValidationError(f"tramite no disponible en {portal_clave}: {tramite!r}")
 
-        # Path real Playwright opt-in
-        from shared.playwright_real import is_public_real_enabled
-        if not is_public_real_enabled():
+        if is_mock_mode([], default_when_no_creds=False):
             import hashlib
             h = int(hashlib.sha256(f"{portal_clave}{tramite}".encode()).hexdigest(), 16)
-            tiene_cupos = (h % 10) > 7  # ~20% probabilidad
-            n_cupos = (h % 15) if tiene_cupos else 0
+            tiene_cupos = (h % 10) > 7
             return mark_simulated(
-                {
-                    "portal": portal_clave,
-                    "tramite": tramite,
-                    "tiene_cupos": tiene_cupos,
-                    "n_cupos_aprox": n_cupos,
-                    "siguiente_dia_disponible": (
-                        (datetime.now(timezone.utc) + timedelta(days=(h % 30) + 1)).date().isoformat()
-                        if tiene_cupos else None
-                    ),
-                    "timestamp": datetime.now(timezone.utc).isoformat(),
-                },
-                note="Mock — para path real setear MP_PLAYWRIGHT_PUBLIC=1.",
+                {"portal": portal_clave, "tramite": tramite, "tiene_cupos": tiene_cupos,
+                 "n_cupos_aprox": (h % 15) if tiene_cupos else 0,
+                 "timestamp": datetime.now(timezone.utc).isoformat()},
+                note="PLUGINS_MX_MOCK=1 — cupos simulados.",
             )
 
-        # Path real intencionalmente skeleton — discovery pendiente
-        return {
+        out: dict[str, Any] = {
             "portal": portal_clave,
             "tramite": tramite,
-            "real_implementado": False,
-            "razon": (
-                "Discovery Playwright pendiente. Los portales de citas usan "
-                "selectores que cambian y CAPTCHAs. Activación: ver SETUP."
-            ),
-            "siguiente_paso": "Coordinar con equipo legal del titular antes de polling.",
+            "tiene_cupos": None,
+            "handoff_humano": True,
+            "motivo": portal["bloqueo_verificado"],
+            "url": portal["url"],
+            "pasos": [
+                "El titular entra al portal con sus propios datos y revisa la agenda.",
+                "Nunca se automatiza la reserva ni se resuelven CAPTCHAs por el titular.",
+            ],
+            "timestamp": datetime.now(timezone.utc).isoformat(),
             "simulated": False,
         }
+        if portal_clave == "sat_citas":
+            # Dato real y público: lo que el SAT pide hacer en línea antes de buscar cita.
+            out["alternativas_digitales"] = alternativas_digitales_sat()
+        return out
 
     def estadisticas_eticas(self) -> dict[str, Any]:
         """Métricas de operación ética para auditoría."""

@@ -1,4 +1,10 @@
-"""Cliente mp_simplifica_ciudadano."""
+"""Cliente mp_simplifica_ciudadano — avance estatal de simplificación (LNETB).
+
+Estado 2026-10-14: no existe fuente pública oficial con avance por estado (% o número de
+trámites simplificados). Los datos de PROGRESO_POR_ESTADO_2026 eran un mock representativo
+sin fuente; solo se sirven con PLUGINS_MX_MOCK=1. Fuera de mock las tools devuelven ConfigError
+indicando que el dato no existe públicamente (bloqueado), en vez de presentarlo como real.
+"""
 from __future__ import annotations
 
 import sys
@@ -12,16 +18,17 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared.bitacora import Bitacora  # noqa: E402
-from shared.errors import ValidationError  # noqa: E402
-from shared.mock import mark_simulated  # noqa: E402
+from shared.errors import ConfigError, ValidationError  # noqa: E402
+from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
 
 NAMESPACE = "simplifica_ciudadano"
-URL_LEY_NACIONAL = "https://www.dof.gob.mx/nota_detalle.php?codigo=ley-nacional-eliminar-tramites-burocraticos-2025"
-FECHA_VIGENCIA_LEY = "2025-07-16"  # DOF
+URL_LEY_NACIONAL = "https://www.diputados.gob.mx/LeyesBiblio/pdf/LNETB.pdf"
+FECHA_PUBLICACION_LEY = "2025-07-16"  # DOF
+FECHA_VIGENCIA_LEY = "2025-07-17"  # Transitorio Primero: día siguiente a la publicación
 
 
-# Catálogo curado de simplificaciones reportadas por estado (mock representativo)
+# SOLO MOCK: cifras representativas sin fuente pública.
 PROGRESO_POR_ESTADO_2026: dict[str, dict] = {
     "cdmx":   {"avance_pct": 78, "tramites_simplificados": 124,
                 "destacados": ["Llave CDMX SSO", "Predial 100% digital", "Acta nacimiento QR"]},
@@ -72,11 +79,20 @@ PROGRESO_POR_ESTADO_2026: dict[str, dict] = {
 }
 
 
+def _solo_mock(tool: str) -> None:
+    if not is_mock_mode([], default_when_no_creds=False):
+        raise ConfigError(
+            f"{tool}: no hay fuente pública oficial del avance de simplificación por estado "
+            "(revisado 2026-10-14). Solo disponible con PLUGINS_MX_MOCK=1 como dato simulado."
+        )
+
+
 class SimplificaCiudadanoClient:
     def __init__(self, bitacora: Bitacora | None = None) -> None:
         self._bitacora = bitacora or Bitacora(NAMESPACE)
 
     def estado(self, estado_clave: str) -> dict[str, Any]:
+        _solo_mock("simplifica_estado")
         ek = (estado_clave or "").lower().strip()
         if ek not in PROGRESO_POR_ESTADO_2026:
             raise ValidationError(f"estado_clave no reconocida: {estado_clave!r}. "
@@ -91,9 +107,10 @@ class SimplificaCiudadanoClient:
         })
 
     def tracker_nacional(self) -> dict[str, Any]:
+        _solo_mock("simplifica_tracker_nacional")
         total_tramites = sum(v["tramites_simplificados"] for v in PROGRESO_POR_ESTADO_2026.values())
         avance_promedio = sum(v["avance_pct"] for v in PROGRESO_POR_ESTADO_2026.values()) / len(PROGRESO_POR_ESTADO_2026)
-        return {
+        return mark_simulated({
             "total_estados_monitoreados": len(PROGRESO_POR_ESTADO_2026),
             "total_tramites_simplificados_aprox": total_tramites,
             "avance_promedio_nacional_pct": round(avance_promedio, 1),
@@ -103,9 +120,10 @@ class SimplificaCiudadanoClient:
                                                key=lambda x: x[1]["avance_pct"])[:3],
             "fecha_vigencia_ley": FECHA_VIGENCIA_LEY,
             "fuente": URL_LEY_NACIONAL,
-        }
+        })
 
     def comparar_estados(self, estados_claves: list[str]) -> dict[str, Any]:
+        _solo_mock("simplifica_comparar_estados")
         if not estados_claves:
             raise ValidationError("Lista de estados vacía")
         if len(estados_claves) > 32:
@@ -117,8 +135,8 @@ class SimplificaCiudadanoClient:
                 continue
             comparacion.append({"estado": e, **PROGRESO_POR_ESTADO_2026[e]})
         comparacion.sort(key=lambda x: x["avance_pct"], reverse=True)
-        return {
+        return mark_simulated({
             "comparacion": comparacion,
             "lider": comparacion[0] if comparacion else None,
             "rezagado": comparacion[-1] if comparacion else None,
-        }
+        })
