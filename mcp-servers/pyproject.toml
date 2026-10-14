@@ -28,6 +28,7 @@ dev = [
 # y solo responden a un navegador real.
 publicos-federales-2 = [
     "playwright>=1.42,<2.0",
+    "pypdf>=4,<6",
 ]
 sat-playwright = [
     "cryptography>=42,<46",
