@@ -1,11 +1,17 @@
 {
-  "version": "1.2.0",
-  "generated_at": "2026-06-15",
+  "version": "2.0.0",
+  "generated_at": "2026-10-14",
   "total_skills": 83,
-  "sprint": "H (Nivel 2 preparación + workflow RESICO HITL)",
-  "sprints_resumen": "E (14 normativa 2026) · F (14 tools profundización SAT/IMSS/INFONAVIT) · G (5 productos B2G) · H (2 MCPs preparación + 1 workflow)",
-  "tests_passing": 1667,
-  "workflows_ejecutables": 28,
+  "fuente_estado": "Sección 'Estado real' de mcp-servers/mp_*/README.md",
+  "conteos_estado": {
+    "real_validado": 23,
+    "real_sin_validar": 8,
+    "handoff": 17,
+    "sin_api": 6,
+    "calculo_normativo": 10,
+    "bloqueado": 2,
+    "sin_verificar": 17
+  },
   "categorias": [
     {
       "id": "fiscal",
@@ -14,15 +20,147 @@
       "color": "terra",
       "descripcion": "CFDI 4.0, SAT, RESICO, retenciones, declaraciones",
       "skills": [
-        {"id": "mp_facturama_extendido", "tier": "S", "tag": "REST", "desc": "CFDI 4.0 timbrado + cancelación + complementos pago/nómina/CCP"},
-        {"id": "mp_sat_portal", "tier": "S", "tag": "público", "desc": "Padrón SAT, 69-B EFOS, 69 incumplidos, Verifica CFDI"},
-        {"id": "mp_sat_opinion_32d", "tier": "S", "tag": "público", "desc": "Opinión 32-D cumplimiento sin captcha"},
-        {"id": "mp_sat_ws", "tier": "B", "tag": "e.firma", "desc": "Web Services SAT para descarga masiva CFDI"},
-        {"id": "mp_donatarias_sat", "tier": "A", "tag": "RMF", "desc": "Padrón donatarias autorizadas (Anexo 14 RMF)"},
-        {"id": "mp_resico_sat", "tier": "S", "tag": "RESICO 2026", "desc": "ISR mensual 5 tramos + alerta tope $3.5M + 12 plataformas retención 2.5%", "sprint": "E"},
-        {"id": "mp_ish_mx", "tier": "B", "tag": "32 estados", "desc": "ISH 32 estados (27 cobran, 5 sin) — Airbnb/hospedaje"},
-        {"id": "mp_imss_patronal", "tier": "C", "tag": "e.firma", "desc": "IDSE altas/bajas, cédula EMCR, SBC"},
-        {"id": "mp_infonavit_patronal", "tier": "C", "tag": "e.firma", "desc": "Créditos INFONAVIT, EMIS, descuentos"}
+        {
+          "id": "mp_facturama_extendido",
+          "estado": "real_sin_validar",
+          "estado_label": "Real sin validar (requiere credenciales)",
+          "desc": "Rutas verificadas contra el cliente de satcfdi; falta cuenta sandbox.",
+          "tools": [
+            "facturama_validar_payload_local",
+            "facturama_timbrar_cfdi",
+            "facturama_cancelar_cfdi",
+            "facturama_consultar_estatus",
+            "facturama_descargar_xml",
+            "facturama_descargar_pdf",
+            "facturama_buscar_cfdis",
+            "facturama_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_sat_portal",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Parcial: listas 69 y 69-B validadas; login e.firma (CSF, padrón, vigencia) sin validar con e.firma real; buzón y acuses no implementados.",
+          "tools": [
+            "sat_consultar_padron",
+            "sat_consultar_69b_efos",
+            "sat_consultar_69_incumplidos",
+            "sat_verificar_cfdi_uuid",
+            "sat_validar_uuid_estructura",
+            "sat_descargar_csf",
+            "sat_descargar_buzon_tributario",
+            "sat_descargar_cfdi_masivo",
+            "sat_agendar_cita",
+            "sat_verificar_efirma_vigente",
+            "sat_descargar_acuse",
+            "sat_actualizar_obligaciones",
+            "sat_listar_catalogos",
+            "sat_calendario_fiscal_por_regimen",
+            "sat_cfdi_prevalidar",
+            "sat_declaraciones_historico",
+            "sat_devolucion_estatus",
+            "sat_buzon_tributario_resumen"
+          ]
+        },
+        {
+          "id": "mp_sat_opinion_32d",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Consulta pública 32-D validada; descarga propia con e.firma sin validar.",
+          "tools": [
+            "sat_opinion_32d_consultar",
+            "sat_opinion_32d_verificar_proveedor",
+            "sat_opinion_32d_descargar_propia"
+          ]
+        },
+        {
+          "id": "mp_sat_ws",
+          "estado": "real_sin_validar",
+          "estado_label": "Real sin validar (requiere credenciales)",
+          "desc": "Firma y autenticación validadas con e.firma de prueba; solicitud/descarga con e.firma real sin validar.",
+          "tools": [
+            "sat_ws_solicitar_descarga",
+            "sat_ws_verificar_solicitud",
+            "sat_ws_descargar_paquete"
+          ]
+        },
+        {
+          "id": "mp_donatarias_sat",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Directorio XLSX del SAT validado (10,017 RFC); no incluye revocaciones posteriores al corte.",
+          "tools": [
+            "donatarias_consultar",
+            "donatarias_buscar",
+            "donatarias_listar_por_entidad",
+            "donatarias_estadisticas",
+            "donatarias_listar_rubros"
+          ]
+        },
+        {
+          "id": "mp_resico_sat",
+          "estado": "calculo_normativo",
+          "estado_label": "Cálculo normativo verificado",
+          "desc": "Cálculo local sobre tablas LISR; la tasa de retención de plataformas y el criterio 'SCJN 2026' están sin verificar.",
+          "tools": [
+            "resico_calcular_isr",
+            "resico_evaluar_estatus",
+            "resico_calendario",
+            "resico_retencion_plataforma",
+            "resico_solicitar_devolucion",
+            "resico_listar_tasas",
+            "resico_listar_plataformas"
+          ]
+        },
+        {
+          "id": "mp_ish_mx",
+          "estado": "calculo_normativo",
+          "estado_label": "Cálculo normativo verificado",
+          "desc": "Cálculo local; tasas 2026 contra fuentes secundarias (confianza media, varias en conflicto).",
+          "tools": [
+            "ish_calcular",
+            "ish_info_estado",
+            "ish_listar_estados",
+            "ish_comparar_estados"
+          ]
+        },
+        {
+          "id": "mp_imss_patronal",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "imss_consultar_avisos_pendientes",
+            "imss_enviar_movimiento_afiliatorio",
+            "imss_descargar_cedula_autodeterminacion",
+            "imss_consultar_emcr",
+            "imss_consultar_sbc",
+            "imss_consultar_padron_trabajadores",
+            "imss_sbc_calcular",
+            "imss_ema_vs_eba_diferencias",
+            "imss_calendario_obligaciones",
+            "imss_simulador_costo_patronal",
+            "imss_riesgo_trabajo_prima_cambio",
+            "imss_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_infonavit_patronal",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "infonavit_consultar_creditos_trabajadores",
+            "infonavit_descargar_emis",
+            "infonavit_consultar_descuentos_mensuales",
+            "infonavit_consultar_avisos_pendientes",
+            "infonavit_descuento_calcular",
+            "infonavit_creditos_sin_reporte",
+            "infonavit_emis_historico",
+            "infonavit_conciliacion_nomina",
+            "infonavit_listar_catalogos"
+          ]
+        }
       ]
     },
     {
@@ -32,12 +170,75 @@
       "color": "jade",
       "descripcion": "Ley Silla NOM-037, NOM-035, REPSE, ISN, desconexión digital",
       "skills": [
-        {"id": "mp_repse_stps", "tier": "A", "tag": "público", "desc": "Compliance REPSE Art. 15 LFT decisión binaria"},
-        {"id": "mp_isn_mx", "tier": "B", "tag": "32 estados", "desc": "Impuesto sobre Nómina multi-estado 1.8%–3.0%"},
-        {"id": "mp_sep_profesional", "tier": "A", "tag": "público", "desc": "Validación cédula profesional SEP sin captcha"},
-        {"id": "mp_no_antecedentes_penales_mx", "tier": "B", "tag": "Playwright", "desc": "Carta no antecedentes penales federal"},
-        {"id": "mp_ley_silla_nom037", "tier": "C", "tag": "NOM-037 P0", "desc": "Calculadora multas LFT (UMA 2026 117.31) + checklist NOM-035/037 + política SST firmable", "sprint": "E"},
-        {"id": "mp_desconexion_digital", "tier": "C", "tag": "reforma 2026", "desc": "Checklist 8 items + política firmable + plantilla capacitación 45min", "sprint": "E"}
+        {
+          "id": "mp_repse_stps",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Búsqueda y padrón REPSE validados en vivo.",
+          "tools": [
+            "repse_consultar_por_razon_social",
+            "repse_consultar_por_numero_registro",
+            "repse_verificar_proveedor"
+          ]
+        },
+        {
+          "id": "mp_isn_mx",
+          "estado": "calculo_normativo",
+          "estado_label": "Cálculo normativo verificado",
+          "desc": "Cálculo local; tasas 2026 contra fuente secundaria.",
+          "tools": [
+            "isn_calcular",
+            "isn_listar_estados",
+            "isn_info_estado",
+            "isn_generar_linea_captura",
+            "isn_descargar_declaracion"
+          ]
+        },
+        {
+          "id": "mp_sep_profesional",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "Cédula profesional exige token reCAPTCHA; resultado null (desconocido) con handoff.",
+          "tools": [
+            "sep_consultar_cedula",
+            "sep_consultar_por_datos",
+            "sep_validar_medico_para_consulta",
+            "sep_listar_profesiones_reguladas"
+          ]
+        },
+        {
+          "id": "mp_no_antecedentes_penales_mx",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "Sin verificador público consultable (CDMX); EdoMex sin DNS.",
+          "tools": [
+            "noantecedentes_verificar_constancia",
+            "noantecedentes_verificar_apto"
+          ]
+        },
+        {
+          "id": "mp_ley_silla_nom037",
+          "estado": "calculo_normativo",
+          "estado_label": "Cálculo normativo verificado",
+          "desc": "LFT (Ley Silla DOF 19-12-2024), NOM-035, NOM-037 y UMA 2026 verificadas.",
+          "tools": [
+            "silla_verificar_compliance",
+            "silla_calcular_multa",
+            "silla_generar_politica",
+            "silla_listar_obligaciones"
+          ]
+        },
+        {
+          "id": "mp_desconexion_digital",
+          "estado": "calculo_normativo",
+          "estado_label": "Cálculo normativo verificado",
+          "desc": "LFT vigente: desconexión solo en teletrabajo (Art. 330-E); no existe la 'reforma Art. 132 marzo 2026'.",
+          "tools": [
+            "desconexion_checklist",
+            "desconexion_generar_politica",
+            "desconexion_template_capacitacion"
+          ]
+        }
       ]
     },
     {
@@ -47,8 +248,30 @@
       "color": "jade",
       "descripcion": "Expediente clínico electrónico NOM-024, COFEPRIS, telemedicina",
       "skills": [
-        {"id": "mp_expediente_clinico_nom024", "tier": "C", "tag": "NOM-024", "desc": "Validador 10 requisitos + clasificador medicamentos COFEPRIS fracciones I-V", "sprint": "E"},
-        {"id": "mp_cofepris_aviso_funcionamiento", "tier": "B", "tag": "Digipro", "desc": "Clasificador 19 giros A/B/C (NOM-167-SSA1) — Digipro login required", "sprint": "E"}
+        {
+          "id": "mp_expediente_clinico_nom024",
+          "estado": "calculo_normativo",
+          "estado_label": "Cálculo normativo verificado",
+          "desc": "NOM-024, NOM-004 y LGS verificadas; Reglamento de Insumos sin cotejar.",
+          "tools": [
+            "ece_generar_receta",
+            "ece_verificar_medico",
+            "ece_validar_sistema",
+            "ece_consentimiento_paciente"
+          ]
+        },
+        {
+          "id": "mp_cofepris_aviso_funcionamiento",
+          "estado": "calculo_normativo",
+          "estado_label": "Cálculo normativo verificado",
+          "desc": "Constantes de la LGS (reforma DOF 15-01-2026); giros por Acuerdo SSA sin cotejar.",
+          "tools": [
+            "cofepris_clasificar_giro",
+            "cofepris_requisitos_aviso",
+            "cofepris_consultar_aviso",
+            "cofepris_listar_giros"
+          ]
+        }
       ]
     },
     {
@@ -58,9 +281,51 @@
       "color": "cobalt",
       "descripcion": "Llave MX SSO, INE, RENAPO/CURP",
       "skills": [
-        {"id": "mp_curp_renapo", "tier": "S", "tag": "estructural", "desc": "CURP + RENAPO validación"},
-        {"id": "mp_llave_mx", "tier": "A", "tag": "OAuth2 validado", "desc": "SSO ciudadano (8h token) + 20 trámites + vinculación e.firma — llave.gob.mx", "sprint": "E"},
-        {"id": "mp_ine_verificacion", "tier": "C", "tag": "B2G convenio", "desc": "Modelos C/D/D1/E/F + autorización LFPDPPP — portal informativo (convenio requerido)", "sprint": "E"}
+        {
+          "id": "mp_curp_renapo",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "gob.mx/curp con challenge Akamai y reCAPTCHA Enterprise; validación local de la CURP.",
+          "tools": [
+            "curp_validar_estructura",
+            "curp_derivar_fecha_nacimiento",
+            "curp_derivar_sexo",
+            "curp_derivar_estado",
+            "curp_validar_lote",
+            "curp_generar_desde_datos",
+            "curp_consultar_renapo",
+            "curp_descargar_constancia_renapo",
+            "curp_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_llave_mx",
+          "estado": "real_sin_validar",
+          "estado_label": "Real sin validar (requiere credenciales)",
+          "desc": "Login con CAPTCHA; el canje de token requiere convenio con la ATDT. Estadísticas de adopción leídas de datos.gob.mx.",
+          "tools": [
+            "llave_iniciar_oauth",
+            "llave_estado_endpoints",
+            "llave_estadisticas_adopcion",
+            "llave_validar_token",
+            "llave_listar_tramites",
+            "llave_detalle_tramite",
+            "llave_vincular_e_firma"
+          ]
+        },
+        {
+          "id": "mp_ine_verificacion",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "Lista nominal con Cloudflare y reCAPTCHA v2; no se evade.",
+          "tools": [
+            "ine_verificar_datos",
+            "ine_verificar_qr",
+            "ine_consultar_vigencia",
+            "ine_generar_autorizacion",
+            "ine_listar_modelos"
+          ]
+        }
       ]
     },
     {
@@ -70,9 +335,42 @@
       "color": "maize",
       "descripcion": "CFE distribuida, interconexión solar, CRE hidrocarburos",
       "skills": [
-        {"id": "mp_cfe_facturacion", "tier": "A", "tag": "Playwright + CAPTCHA", "desc": "CFE Mi Espacio real con human-in-loop CAPTCHA"},
-        {"id": "mp_cfe_interconexion_solar", "tier": "C", "tag": "factor 0.70", "desc": "Simulador ahorro + tarifas DAC/PDBT/GDMTH (factor exportación 2026)", "sprint": "E"},
-        {"id": "mp_cre_hidrocarburos", "tier": "B", "tag": "RUPETH", "desc": "Permisos CRE + Anexo 30 (umbral 75,714 L/mes) + calendario 10 días hábiles", "sprint": "E"}
+        {
+          "id": "mp_cfe_facturacion",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "cfe_descargar_factura_mes",
+            "cfe_consumo_historico",
+            "cfe_validar_session"
+          ]
+        },
+        {
+          "id": "mp_cfe_interconexion_solar",
+          "estado": "calculo_normativo",
+          "estado_label": "Cálculo normativo verificado",
+          "desc": "Umbrales de la LSE (DOF 18-03-2025); sin tarifas ni folios inventados.",
+          "tools": [
+            "cfe_solar_solicitar",
+            "cfe_solar_estatus",
+            "cfe_solar_simular_ahorro",
+            "cfe_solar_listar_tarifas"
+          ]
+        },
+        {
+          "id": "mp_cre_hidrocarburos",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "XML público de precios/permisos (15,046 estaciones) validado en vivo.",
+          "tools": [
+            "cre_consultar_permiso",
+            "cre_calendar_reporte",
+            "cre_evaluar_anexo30",
+            "cre_reportar_zeros",
+            "cre_listar_tipos_permiso"
+          ]
+        }
       ]
     },
     {
@@ -82,7 +380,20 @@
       "color": "cobalt",
       "descripcion": "CONAGUA REPDA, LFD agua, concesiones",
       "skills": [
-        {"id": "mp_conagua_repda", "tier": "B", "tag": "REPDA público", "desc": "Tarifas LFD zonas 1-9 ($27.50-$0.62/m³) + umbral medidor 150k m³/año + 6 tipos uso", "sprint": "E"}
+        {
+          "id": "mp_conagua_repda",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Consulta REPDA (ASP.NET, sin CAPTCHA) validada en vivo.",
+          "tools": [
+            "repda_consultar_titular",
+            "repda_estado_reporte",
+            "repda_calcular_lfd",
+            "repda_vigencia",
+            "repda_requiere_medidor",
+            "repda_listar_tipos_uso"
+          ]
+        }
       ]
     },
     {
@@ -92,8 +403,31 @@
       "color": "terra",
       "descripcion": "REPEP, Concilianet, Buró Comercial",
       "skills": [
-        {"id": "mp_repep_profeco", "tier": "B", "tag": "público", "desc": "Filtro lote teléfonos ≤5000 + normalización +52 + inscripción", "sprint": "E"},
-        {"id": "mp_concilianet_profeco", "tier": "B", "tag": "32 proveedores", "desc": "Aeroméxico, Volaris, Telcel, Liverpool, Rappi, BBVA y 26 más", "sprint": "E"}
+        {
+          "id": "mp_repep_profeco",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "El portal tiene controles anti-automatización deliberados; no se emulan.",
+          "tools": [
+            "repep_consultar",
+            "repep_filtrar_lote",
+            "repep_inscribir",
+            "repep_estadisticas"
+          ]
+        },
+        {
+          "id": "mp_concilianet_profeco",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "PDFs de Concilianet y Buró Comercial validados en vivo.",
+          "tools": [
+            "concilianet_consultar_proveedor",
+            "concilianet_buro_quejas",
+            "concilianet_estatus_caso",
+            "concilianet_listar_proveedores",
+            "concilianet_registrar_queja"
+          ]
+        }
       ]
     },
     {
@@ -103,10 +437,53 @@
       "color": "terra",
       "descripcion": "SEDATU, usos suelo, catastros, inmobiliario",
       "skills": [
-        {"id": "mp_catastro_estatal_mx", "tier": "B", "tag": "10 sistemas", "desc": "IGECEM EdoMex + IRCEP Puebla + Veracruz +7"},
-        {"id": "mp_inmuebles24", "tier": "B", "tag": "Playwright", "desc": "Búsquedas + comparables + publicación"},
-        {"id": "mp_vivanuncios", "tier": "B", "tag": "Playwright", "desc": "Multi-categoría: autos/inmuebles/empleos"},
-        {"id": "mp_sedatu_uso_suelo", "tier": "C", "tag": "6 trámites", "desc": "Licencia uso suelo + construcción + 13 usos + MIA/EIU/MIV (>10k m²)", "sprint": "E"}
+        {
+          "id": "mp_catastro_estatal_mx",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "IGECEM: handoff; IRCEP sin DNS; IRCNL y OVICA exigen login.",
+          "tools": [
+            "catastro_consultar_valor",
+            "catastro_listar_sistemas"
+          ]
+        },
+        {
+          "id": "mp_inmuebles24",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "inm24_buscar_inmuebles",
+            "inm24_obtener_detalle",
+            "inm24_buscar_comparables_zona",
+            "inm24_publicar_listing",
+            "inm24_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_vivanuncios",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "viv_buscar_anuncios",
+            "viv_obtener_detalle",
+            "viv_publicar_anuncio",
+            "viv_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_sedatu_uso_suelo",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "Sin consulta pública nacional de uso de suelo; devuelve pasos con permitido: null.",
+          "tools": [
+            "sedatu_buscar_tramite",
+            "sedatu_consultar_uso_suelo",
+            "sedatu_estimar_construccion",
+            "sedatu_listar_tramites"
+          ]
+        }
       ]
     },
     {
@@ -116,7 +493,17 @@
       "color": "ink",
       "descripcion": "Tracker simplificación trámites burocráticos 32 estados",
       "skills": [
-        {"id": "mp_simplifica_ciudadano", "tier": "C", "tag": "DOF 16-jul-2025", "desc": "Avance Ley Nacional Eliminar Trámites Burocráticos en 32 estados (top 3 + rezagados)", "sprint": "E"}
+        {
+          "id": "mp_simplifica_ciudadano",
+          "estado": "bloqueado",
+          "estado_label": "Bloqueado",
+          "desc": "No hay fuente pública del avance por estado; fuera de mock devuelve ConfigError.",
+          "tools": [
+            "simplifica_estado",
+            "simplifica_tracker_nacional",
+            "simplifica_comparar_estados"
+          ]
+        }
       ]
     },
     {
@@ -126,16 +513,111 @@
       "color": "cobalt",
       "descripcion": "Predial, multas municipales, organismos de agua",
       "skills": [
-        {"id": "mp_predial_mx", "tier": "B", "tag": "243 muns", "desc": "Predial 243 municipios catalogados, 71 validados Playwright"},
-        {"id": "mp_sacpi_michoacan", "tier": "B", "tag": "95 muns", "desc": "SACPI Michoacán: 95 municipios via 1 URL"},
-        {"id": "mp_cdmx_municipal", "tier": "B", "tag": "16 alcaldías", "desc": "CDMX: predial, tenencia, multas, Hoy No Circula"},
-        {"id": "mp_edomex_municipal", "tier": "B", "tag": "125 muns", "desc": "EdoMex municipal"},
-        {"id": "mp_monterrey_municipal", "tier": "B", "tag": "AMM", "desc": "Predial AMM + multas NL + aire"},
-        {"id": "mp_guadalajara_municipal", "tier": "B", "tag": "ZMG", "desc": "Predial + multas Guadalajara"},
-        {"id": "mp_merida_municipal", "tier": "B", "tag": "Mérida", "desc": "Predial + multas Mérida (PHP custom)"},
-        {"id": "mp_puebla_municipal", "tier": "B", "tag": "Puebla", "desc": "Predial + multas Puebla"},
-        {"id": "mp_queretaro_municipal", "tier": "B", "tag": "QRO", "desc": "Predial + multas Querétaro (webservices)"},
-        {"id": "mp_tijuana_municipal", "tier": "C", "tag": "login", "desc": "Tijuana: requiere registro previo"}
+        {
+          "id": "mp_predial_mx",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Parcial: Toluca real; CDMX handoff (ALTCHA); resto del catálogo no revalidado en esta oleada.",
+          "tools": [
+            "predial_consultar",
+            "predial_listar_municipios",
+            "predial_buscar_municipio",
+            "predial_estadisticas_catalogo"
+          ]
+        },
+        {
+          "id": "mp_sacpi_michoacan",
+          "estado": "bloqueado",
+          "estado_label": "Bloqueado",
+          "desc": "Host sacpi.michoacan.gob.mx sin DNS (NXDOMAIN); selectores de 2026-06 sin revalidar.",
+          "tools": [
+            "sacpi_consultar",
+            "sacpi_listar_municipios",
+            "sacpi_codigo_municipio"
+          ]
+        },
+        {
+          "id": "mp_cdmx_municipal",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "Predial (ALTCHA) y tenencia/multas (CAPTCHA de imagen): handoff. Hoy No Circula: cálculo local.",
+          "tools": [
+            "cdmx_consultar_predial",
+            "cdmx_consultar_tenencia",
+            "cdmx_consultar_multas",
+            "cdmx_consultar_hoy_no_circula",
+            "cdmx_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_edomex_municipal",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Parcial: predial Toluca real; tenencia y multas handoff; Ecatepec, Naucalpan e Izcalli fallan.",
+          "tools": [
+            "edomex_consultar_predial",
+            "edomex_consultar_tenencia",
+            "edomex_consultar_multas",
+            "edomex_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_monterrey_municipal",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Predial (ASP.NET, sin CAPTCHA) validado con expediente inexistente; tabla de adeudo sin ver con caso real.",
+          "tools": [
+            "nl_consultar_predial",
+            "nl_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_guadalajara_municipal",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "Predial y adeudos vehiculares con reCAPTCHA.",
+          "tools": [
+            "guadalajara_mun_consultar_predial",
+            "guadalajara_mun_consultar_multas"
+          ]
+        },
+        {
+          "id": "mp_merida_municipal",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "Predial detrás de Radware Bot Manager con hCaptcha.",
+          "tools": [
+            "merida_mun_consultar_predial"
+          ]
+        },
+        {
+          "id": "mp_puebla_municipal",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "Predial con CAPTCHA.",
+          "tools": [
+            "puebla_mun_consultar_predial"
+          ]
+        },
+        {
+          "id": "mp_queretaro_municipal",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Endpoints JSON del portal validados con clave ficticia, sin CAPTCHA.",
+          "tools": [
+            "queretaro_mun_consultar_predial"
+          ]
+        },
+        {
+          "id": "mp_tijuana_municipal",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Consulta de vivienda asegurada validada en vivo, sin CAPTCHA.",
+          "tools": [
+            "tijuana_mun_consultar_predial",
+            "tijuana_mun_consultar_vivienda_asegurada"
+          ]
+        }
       ]
     },
     {
@@ -145,11 +627,61 @@
       "color": "maize",
       "descripcion": "Tenencia, verificación, multas, REPUVE, refrendo",
       "skills": [
-        {"id": "mp_verificacion_vehicular_mx", "tier": "A", "tag": "SAF CDMX real", "desc": "Verificación 7 estados + SAF CDMX calibrado en vivo"},
-        {"id": "mp_tenencia_mx", "tier": "B", "tag": "20 estados", "desc": "Cálculo tenencia + factor depreciación 0-9 años"},
-        {"id": "mp_multas_vehiculares_mx", "tier": "B", "tag": "5 sistemas", "desc": "CDMX + EdoMex + NL ICVNL + NL San Pedro + JAL"},
-        {"id": "mp_multas_mx", "tier": "B", "tag": "8 estados", "desc": "Multas vehiculares estatales legacy"},
-        {"id": "mp_repuve", "tier": "B", "tag": "Playwright", "desc": "Registro Público Vehicular"}
+        {
+          "id": "mp_verificacion_vehicular_mx",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "Estatus CDMX con CAPTCHA; calendario y costos 2026 de notas de prensa.",
+          "tools": [
+            "verificacion_consultar_estatus",
+            "verificacion_proximo_periodo",
+            "verificacion_listar_programas"
+          ]
+        },
+        {
+          "id": "mp_tenencia_mx",
+          "estado": "calculo_normativo",
+          "estado_label": "Cálculo normativo verificado",
+          "desc": "Cálculo local; montos 2026 de notas de prensa (confianza media o baja); se retiraron estados sin fuente.",
+          "tools": [
+            "tenencia_calcular",
+            "tenencia_info_estado",
+            "tenencia_listar_estados",
+            "tenencia_comparar_estados"
+          ]
+        },
+        {
+          "id": "mp_multas_vehiculares_mx",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "CDMX, EdoMex, Jalisco y San Pedro con CAPTCHA; NL consulta manual.",
+          "tools": [
+            "multas_consultar_por_placa",
+            "multas_calcular_total",
+            "multas_listar_sistemas"
+          ]
+        },
+        {
+          "id": "mp_multas_mx",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "CDMX, EdoMex, Jalisco y San Pedro con CAPTCHA; NL solo refrendo.",
+          "tools": [
+            "multas_consultar",
+            "multas_estados_disponibles"
+          ]
+        },
+        {
+          "id": "mp_repuve",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "reCAPTCHA v3 y body cifrado en el navegador; robo devuelve null (desconocido), nunca false.",
+          "tools": [
+            "repuve_consultar_niv",
+            "repuve_consultar_placa",
+            "repuve_verificar_robado"
+          ]
+        }
       ]
     },
     {
@@ -159,9 +691,40 @@
       "color": "terra",
       "descripcion": "Agua, Telmex, gas natural",
       "skills": [
-        {"id": "mp_telmex_facturacion", "tier": "A", "tag": "sin login", "desc": "Telmex pago_sin_login con reCAPTCHA Enterprise v3 invisible"},
-        {"id": "mp_agua_mx", "tier": "A", "tag": "17 organismos", "desc": "SACMEX + SIAPA + JMAS + OOAPAS + 13 más"},
-        {"id": "mp_gas_natural_mx", "tier": "C", "tag": "5 distribuidores", "desc": "Naturgy/ENGIE/Ecogas/Fenosa — sin portal público"}
+        {
+          "id": "mp_telmex_facturacion",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "telmex_descargar_factura",
+            "telmex_consumo_historico",
+            "telmex_listar_facturas"
+          ]
+        },
+        {
+          "id": "mp_agua_mx",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Parcial: JMAS Juárez real; SIAPA con reCAPTCHA; CESPT da 404; OOAPAS sin parser validado.",
+          "tools": [
+            "agua_consultar_adeudo",
+            "agua_listar_organismos",
+            "agua_buscar_por_estado",
+            "agua_estadisticas"
+          ]
+        },
+        {
+          "id": "mp_gas_natural_mx",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Parcial: tarifas Ecogas (PDF) validadas; otros distribuidores sin fuente → upstream_error.",
+          "tools": [
+            "gas_consultar_recibo",
+            "gas_tarifas_vigentes",
+            "gas_listar_distribuidores"
+          ]
+        }
       ]
     },
     {
@@ -171,10 +734,52 @@
       "color": "jade",
       "descripcion": "DOF, CNBV, IMPI, CONDUSEF, registros",
       "skills": [
-        {"id": "mp_dof_api", "tier": "A", "tag": "público", "desc": "Diario Oficial de la Federación: sumario diario + búsqueda full-text"},
-        {"id": "mp_cnbv_fintech", "tier": "B", "tag": "ITF", "desc": "Padrón ITF Ley Fintech (IFPE/IFC)"},
-        {"id": "mp_condusef_sipres", "tier": "B", "tag": "Playwright", "desc": "SIPRES entidades financieras"},
-        {"id": "mp_impi_marcanet", "tier": "B", "tag": "Playwright", "desc": "Marcanet IMPI marcas registradas"}
+        {
+          "id": "mp_dof_api",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "API JSON de SIDOF validada; búsqueda por título recorriendo sumarios diarios.",
+          "tools": [
+            "dof_sumario_dia",
+            "dof_buscar_texto",
+            "dof_detalle_nota",
+            "dof_monitorear_por_keyword",
+            "dof_listar_dependencias_comunes"
+          ]
+        },
+        {
+          "id": "mp_cnbv_fintech",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Padrón PES de la CNBV validado; no publica RFC; sin fuente para modelos novedosos.",
+          "tools": [
+            "cnbv_fintech_consultar_itf",
+            "cnbv_fintech_listar_ifpe",
+            "cnbv_fintech_listar_ifc",
+            "cnbv_fintech_listar_modelos_novedosos",
+            "cnbv_fintech_verificar_contraparte"
+          ]
+        },
+        {
+          "id": "mp_condusef_sipres",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "SIPRES validado en vivo (requiere extra truststore por TLS incompleto).",
+          "tools": [
+            "sipres_buscar_institucion",
+            "sipres_verificar_autorizada"
+          ]
+        },
+        {
+          "id": "mp_impi_marcanet",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "MARCia (IMPI) validado en vivo, sin CAPTCHA ni login.",
+          "tools": [
+            "impi_buscar",
+            "impi_verificar_denominacion"
+          ]
+        }
       ]
     },
     {
@@ -184,18 +789,177 @@
       "color": "cobalt",
       "descripcion": "MP, Conekta, Stripe, Bitso, Klap, Kueski, Clip",
       "skills": [
-        {"id": "mp_mercado_pago", "tier": "S", "tag": "webhook HMAC", "desc": "Pagos + refunds + suscripciones"},
-        {"id": "mp_banxico", "tier": "S", "tag": "REST", "desc": "TCs DOF + UMA + INPC + TIIE diario"},
-        {"id": "mp_banxico_cep", "tier": "S", "tag": "form-POST", "desc": "CLABE + CEP SPEI"},
-        {"id": "mp_conekta", "tier": "A", "tag": "REST", "desc": "Pasarela alterna MX"},
-        {"id": "mp_paypal_mx", "tier": "B", "tag": "REST", "desc": "PayPal MX wrapper"},
-        {"id": "mp_klap", "tier": "B", "tag": "POS", "desc": "Klap POS alterno"},
-        {"id": "mp_clip_terminal", "tier": "B", "tag": "POS", "desc": "Clip terminales mobile"},
-        {"id": "mp_kueski", "tier": "B", "tag": "BNPL", "desc": "Kueski Buy-Now-Pay-Later"},
-        {"id": "mp_trustly_mx", "tier": "B", "tag": "open banking", "desc": "Open banking pagos directos"},
-        {"id": "mp_bitso", "tier": "A", "tag": "cripto", "desc": "Ticker + balance + ledger + ISR cripto"},
-        {"id": "mp_clabe_validador_oficial", "tier": "B", "tag": "CNBV", "desc": "Validador CLABE reverso CNBV"},
-        {"id": "mp_buro_credito_personal", "tier": "B", "tag": "autorización", "desc": "Score + reporte con autorización titular"}
+        {
+          "id": "mp_mercado_pago",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "mercadopago_create_preference",
+            "mercadopago_get_preference",
+            "mercadopago_get_payment",
+            "mercadopago_list_payments",
+            "mercadopago_refund_payment",
+            "mercadopago_cancel_payment",
+            "mercadopago_validate_webhook_signature",
+            "mercadopago_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_banxico",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "banxico_get_tc_dof",
+            "banxico_get_tc_dia_habil_anterior",
+            "banxico_convertir_monto",
+            "banxico_get_uma",
+            "banxico_get_inpc",
+            "banxico_get_tiie_28",
+            "banxico_listar_monedas_soportadas"
+          ]
+        },
+        {
+          "id": "mp_banxico_cep",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Consulta de estado y 'no encontrado' validadas; descarga de un SPEI existente sin validar. Handoff si vuelve el CAPTCHA.",
+          "tools": [
+            "banxico_cep_validar_clabe",
+            "banxico_cep_decodificar_clabe",
+            "banxico_cep_parsear_clave_rastreo",
+            "banxico_cep_lookup_banco",
+            "banxico_cep_generar_cep",
+            "banxico_cep_validar_cep",
+            "banxico_cep_descargar_pdf",
+            "banxico_cep_consultar_pago_por_clave",
+            "banxico_cep_listar_bancos",
+            "banxico_cep_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_conekta",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "conekta_create_order",
+            "conekta_get_order",
+            "conekta_list_orders",
+            "conekta_create_charge_on_order",
+            "conekta_refund_order",
+            "conekta_create_customer",
+            "conekta_get_customer",
+            "conekta_create_payment_link",
+            "conekta_subscription_create",
+            "conekta_subscription_update",
+            "conekta_subscription_cancel",
+            "conekta_validate_webhook",
+            "conekta_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_paypal_mx",
+          "estado": "real_sin_validar",
+          "estado_label": "Real sin validar (requiere credenciales)",
+          "desc": "Cliente contra el OpenAPI oficial (transactions, balances); falta app REST con credenciales.",
+          "tools": [
+            "paypal_mx_listar_transacciones",
+            "paypal_mx_consultar_transaccion",
+            "paypal_mx_balance"
+          ]
+        },
+        {
+          "id": "mp_klap",
+          "estado": "sin_api",
+          "estado_label": "Sin API pública",
+          "desc": "Sin documentación pública de API; con credenciales devuelve ConfigError.",
+          "tools": [
+            "klap_listar_pagos",
+            "klap_consultar_pago"
+          ]
+        },
+        {
+          "id": "mp_clip_terminal",
+          "estado": "real_sin_validar",
+          "estado_label": "Real sin validar (requiere credenciales)",
+          "desc": "Reescrito contra developer.clip.mx (payments, refunds, devices, settlements); falta credencial de pruebas.",
+          "tools": [
+            "clip_list_charges",
+            "clip_get_charge",
+            "clip_refund_charge",
+            "clip_terminal_status",
+            "clip_get_settlement",
+            "clip_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_kueski",
+          "estado": "sin_api",
+          "estado_label": "Sin API pública",
+          "desc": "API solo para comercios afiliados; con credenciales devuelve ConfigError.",
+          "tools": [
+            "kueski_listar_pagos",
+            "kueski_consultar_pago",
+            "kueski_cancelar_pago"
+          ]
+        },
+        {
+          "id": "mp_trustly_mx",
+          "estado": "sin_api",
+          "estado_label": "Sin API pública",
+          "desc": "Trustly no opera en México; con credenciales devuelve ConfigError.",
+          "tools": [
+            "trustly_create_payment",
+            "trustly_get_payment",
+            "trustly_list_payments",
+            "trustly_refund_payment",
+            "trustly_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_bitso",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "bitso_get_ticker",
+            "bitso_get_order_book",
+            "bitso_list_available_books",
+            "bitso_get_account_status",
+            "bitso_get_balance",
+            "bitso_get_fees",
+            "bitso_get_ledger",
+            "bitso_list_fundings",
+            "bitso_list_withdrawals",
+            "bitso_list_open_orders",
+            "bitso_calcular_isr_cripto_mx",
+            "bitso_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_clabe_validador_oficial",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Catálogo SPEI de Banxico validado en vivo.",
+          "tools": [
+            "clabe_validador_validar_clabe",
+            "clabe_validador_info_banco_clabe"
+          ]
+        },
+        {
+          "id": "mp_buro_credito_personal",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "buro_consultar_score",
+            "buro_descargar_reporte_completo",
+            "buro_monitorear_alertas",
+            "buro_listar_catalogos"
+          ]
+        }
       ]
     },
     {
@@ -205,9 +969,63 @@
       "color": "maize",
       "descripcion": "ML, Shopify MX, Amazon SP-API",
       "skills": [
-        {"id": "mp_mercado_libre", "tier": "S", "tag": "REST", "desc": "Listings + órdenes + mensajes + reputación"},
-        {"id": "mp_amazon_mx_seller", "tier": "A", "tag": "LWA + SigV4", "desc": "Amazon MX SP-API"},
-        {"id": "mp_shopify_mx", "tier": "A", "tag": "REST", "desc": "Wrapper Shopify específico MX"}
+        {
+          "id": "mp_mercado_libre",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "mercadolibre_get_me",
+            "mercadolibre_list_items",
+            "mercadolibre_get_item",
+            "mercadolibre_update_stock",
+            "mercadolibre_update_price",
+            "mercadolibre_pause_item",
+            "mercadolibre_activate_item",
+            "mercadolibre_list_orders",
+            "mercadolibre_get_order",
+            "mercadolibre_list_messages",
+            "mercadolibre_send_message",
+            "mercadolibre_list_questions",
+            "mercadolibre_answer_question",
+            "mercadolibre_get_seller_reputation",
+            "mercadolibre_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_amazon_mx_seller",
+          "estado": "real_sin_validar",
+          "estado_label": "Real sin validar (requiere credenciales)",
+          "desc": "Rutas SP-API verificadas (Orders, Listings, Fees); falta una app SP-API autorizada.",
+          "tools": [
+            "amazon_mx_list_listings",
+            "amazon_mx_get_listing",
+            "amazon_mx_update_inventory",
+            "amazon_mx_list_orders",
+            "amazon_mx_get_order",
+            "amazon_mx_get_fees_estimate",
+            "amazon_mx_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_shopify_mx",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "shopify_list_products",
+            "shopify_get_product",
+            "shopify_get_inventory_level",
+            "shopify_update_inventory_level",
+            "shopify_list_orders",
+            "shopify_get_order",
+            "shopify_create_fulfillment",
+            "shopify_get_customer",
+            "shopify_list_webhooks",
+            "shopify_calculate_tax_mx",
+            "shopify_listar_catalogos"
+          ]
+        }
       ]
     },
     {
@@ -217,11 +1035,74 @@
       "color": "terra",
       "descripcion": "Cabify, DiDi, Uber Eats, Rappi (B2B)",
       "skills": [
-        {"id": "mp_cabify_business", "tier": "B", "tag": "REST stub", "desc": "Movilidad B2B + factura mensual"},
-        {"id": "mp_didi_partners", "tier": "C", "tag": "API restringida", "desc": "DiDi Partners movilidad"},
-        {"id": "mp_didi_food_partners", "tier": "C", "tag": "API restringida", "desc": "DiDi Food partners"},
-        {"id": "mp_rappi_partners", "tier": "C", "tag": "API restringida", "desc": "Rappi partners"},
-        {"id": "mp_uber_eats_partners", "tier": "C", "tag": "API restringida", "desc": "Uber Eats partners"}
+        {
+          "id": "mp_cabify_business",
+          "estado": "real_sin_validar",
+          "estado_label": "Real sin validar (requiere credenciales)",
+          "desc": "Reescrito contra la API oficial v4 (estimates, journey, sales); falta sandbox. Sin listado de viajes ni CFDI.",
+          "tools": [
+            "cabify_estimar",
+            "cabify_pedir_viaje",
+            "cabify_consultar_viaje",
+            "cabify_estado_viaje",
+            "cabify_cancelar_viaje",
+            "cabify_ventas_viaje",
+            "cabify_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_didi_partners",
+          "estado": "sin_api",
+          "estado_label": "Sin API pública",
+          "desc": "DiDi no publica API para conductores; con credenciales devuelve ConfigError.",
+          "tools": [
+            "didi_partners_listar_viajes",
+            "didi_partners_consultar_viaje",
+            "didi_partners_comisiones_mes"
+          ]
+        },
+        {
+          "id": "mp_didi_food_partners",
+          "estado": "sin_api",
+          "estado_label": "Sin API pública",
+          "desc": "DiDi Food no publica API de comercios; con credenciales devuelve ConfigError.",
+          "tools": [
+            "didi_food_listar_ordenes",
+            "didi_food_consultar_orden",
+            "didi_food_listar_productos_menu",
+            "didi_food_actualizar_disponibilidad",
+            "didi_food_consultar_ranking_zona",
+            "didi_food_estimar_comisiones_mes"
+          ]
+        },
+        {
+          "id": "mp_rappi_partners",
+          "estado": "real_sin_validar",
+          "estado_label": "Real sin validar (requiere credenciales)",
+          "desc": "Cliente contra el dev-portal; credenciales solo para aliados aprobados. Ranking y comisiones: sin endpoint.",
+          "tools": [
+            "rappi_listar_ordenes",
+            "rappi_consultar_orden",
+            "rappi_listar_productos_menu",
+            "rappi_actualizar_disponibilidad",
+            "rappi_consultar_ranking_zona",
+            "rappi_estimar_comisiones_mes"
+          ]
+        },
+        {
+          "id": "mp_uber_eats_partners",
+          "estado": "sin_api",
+          "estado_label": "Sin API pública",
+          "desc": "La doc de la Marketplace API no es pública; con credenciales devuelve ConfigError.",
+          "tools": [
+            "uber_eats_listar_ordenes",
+            "uber_eats_consultar_orden",
+            "uber_eats_listar_productos_menu",
+            "uber_eats_actualizar_disponibilidad",
+            "uber_eats_consultar_ranking_zona",
+            "uber_eats_estimar_comisiones_mes"
+          ]
+        }
       ]
     },
     {
@@ -231,9 +1112,51 @@
       "color": "ink",
       "descripcion": "Aspel CONTPAQi, SoftRestaurant, bancos MX",
       "skills": [
-        {"id": "mp_aspel_contpaqi", "tier": "B", "tag": "CSV", "desc": "Pólizas + balanza + P&L parser CSV"},
-        {"id": "mp_softrestaurant", "tier": "B", "tag": "CSV", "desc": "Corte Z + ventas + meseros parser CSV"},
-        {"id": "mp_bancos_mx", "tier": "C", "tag": "Playwright", "desc": "BBVA/Banamex/Santander/Banorte stub"}
+        {
+          "id": "mp_aspel_contpaqi",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "aspel_listar_polizas",
+            "aspel_get_poliza",
+            "aspel_obtener_balanza",
+            "aspel_obtener_catalogo_cuentas",
+            "aspel_obtener_estado_resultados",
+            "aspel_obtener_balance_general",
+            "aspel_parsear_export_csv",
+            "aspel_obtener_instrucciones_configuracion",
+            "aspel_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_softrestaurant",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "softrest_corte_z",
+            "softrest_ventas_periodo",
+            "softrest_inventario_actual",
+            "softrest_platillos_vendidos",
+            "softrest_meseros_ventas",
+            "softrest_mesas_estatus",
+            "softrest_parsear_export",
+            "softrest_listar_catalogos"
+          ]
+        },
+        {
+          "id": "mp_bancos_mx",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "bancos_listar_soportados",
+            "bancos_descargar_estado_cuenta",
+            "bancos_listar_movimientos",
+            "bancos_verificar_pago_por_referencia"
+          ]
+        }
       ]
     },
     {
@@ -243,11 +1166,69 @@
       "color": "cobalt",
       "descripcion": "Tracker Llave MX, catálogo CONAMER, auditor LNETB, monitor portales gob.mx, continuidad IMSS",
       "skills": [
-        {"id": "mp_llave_mx_tracker", "tier": "A", "tag": "ATDT/IMCO", "desc": "Tracker adopción Llave MX por dependencia federal y estatal (20 monitoreadas)", "sprint": "G"},
-        {"id": "mp_retys_catalogo", "tier": "B", "tag": "CONAMER DCAT", "desc": "Catálogo Nacional de Regulaciones normalizado a DCAT compatible datos.gob.mx", "sprint": "G"},
-        {"id": "mp_lnetb_auditor", "tier": "A", "tag": "32 estados", "desc": "Auditor LNETB (DOF 16-jul-2025) con 10 indicadores ponderados + ranking estatal", "sprint": "G"},
-        {"id": "mp_portales_monitor", "tier": "A", "tag": "25 portales", "desc": "Monitor continuo de portales gob.mx (federales/estatales/municipales) con alertas WhatsApp/email/Slack", "sprint": "G"},
-        {"id": "mp_imss_continuidad", "tier": "A", "tag": "8 sistemas", "desc": "Adapter IMSS Continuidad Operativa (RTO/RPO + plan DR + reporte ejecutivo)", "sprint": "G"}
+        {
+          "id": "mp_llave_mx_tracker",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Revisión de portadas de 20 portales validada en vivo; solo mira la portada.",
+          "tools": [
+            "llave_mx_listar_dependencias",
+            "llave_mx_estatus_dependencia",
+            "llave_mx_estadisticas_nacionales",
+            "llave_mx_verificar_en_vivo"
+          ]
+        },
+        {
+          "id": "mp_retys_catalogo",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Validado solo con Chromium con ventana (Akamai bloquea headless y httpx).",
+          "tools": [
+            "retys_listar_sectores",
+            "retys_buscar_tramite",
+            "retys_detalle_tramite",
+            "retys_exportar_dcat",
+            "retys_buscar_en_vivo"
+          ]
+        },
+        {
+          "id": "mp_lnetb_auditor",
+          "estado": "calculo_normativo",
+          "estado_label": "Cálculo normativo verificado",
+          "desc": "Plazos de los transitorios de la LNETB (DOF 16-07-2025); se retiraron scores por estado sin fuente.",
+          "tools": [
+            "lnetb_listar_indicadores",
+            "lnetb_plazos_legales",
+            "lnetb_evaluar_estado",
+            "lnetb_ranking_nacional",
+            "lnetb_comparar_estados"
+          ]
+        },
+        {
+          "id": "mp_portales_monitor",
+          "estado": "real_validado",
+          "estado_label": "Real, validado en vivo",
+          "desc": "Chequeo HTTP de 25 portales validado en vivo; los detrás de Akamai necesitan navegador con ventana.",
+          "tools": [
+            "portales_listar",
+            "portales_check_http",
+            "portales_check_form_render",
+            "portales_health_dashboard",
+            "portales_configurar_alerta"
+          ]
+        },
+        {
+          "id": "mp_imss_continuidad",
+          "estado": "sin_verificar",
+          "estado_label": "Sin verificar",
+          "desc": "El README no tiene sección 'Estado real' de la oleada 1.",
+          "tools": [
+            "imss_continuidad_listar_sistemas",
+            "imss_continuidad_health_check",
+            "imss_continuidad_plan",
+            "imss_continuidad_reporte_ejecutivo"
+          ]
+        }
       ]
     },
     {
@@ -257,30 +1238,74 @@
       "color": "jade",
       "descripcion": "Autollenado formularios públicos + monitor ÉTICO de cupos SAT/IMSS/SRE",
       "skills": [
-        {"id": "mp_form_filler_public", "tier": "B", "tag": "8 formularios", "desc": "Autollenado de formularios públicos gob.mx sin login (SAT, REPUVE, REPSE, REPEP, CURP, etc.). NUNCA bypasea CAPTCHAs", "sprint": "H"},
-        {"id": "mp_citas_monitor", "tier": "B", "tag": "LFPDPPP", "desc": "Monitor ético cupos SAT/IMSS/SRE/INE con consent_token vinculado a CURP. Alerta al titular, no acapara", "sprint": "H"}
+        {
+          "id": "mp_form_filler_public",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "Ya no abre navegador ni envía formularios: devuelve URL, pasos y campos prellenados.",
+          "tools": [
+            "form_listar_formularios",
+            "form_validar_inputs",
+            "form_llenar"
+          ]
+        },
+        {
+          "id": "mp_citas_monitor",
+          "estado": "handoff",
+          "estado_label": "Entrega a humano (CAPTCHA o login)",
+          "desc": "SAT exige sesión, SRE tiene Radware Captcha, IMSS sin DNS, INE informativo. No reserva citas.",
+          "tools": [
+            "citas_listar_portales",
+            "citas_generar_consent_token",
+            "citas_crear_alerta",
+            "citas_revisar_cupos",
+            "citas_estadisticas_eticas"
+          ]
+        }
       ]
     }
   ],
   "filtros": {
-    "tier": ["S", "A", "B", "C"],
-    "captcha": ["ninguno", "recaptcha_v2", "recaptcha_v3", "turnstile", "imagen", "human-in-loop"],
-    "metodo": ["REST", "Playwright", "form-POST", "CSV-parser", "e.firma", "OAuth2"],
-    "sprint": ["E"]
+    "estado": [
+      "real_validado",
+      "real_sin_validar",
+      "handoff",
+      "sin_api",
+      "calculo_normativo",
+      "bloqueado",
+      "sin_verificar"
+    ]
   },
   "agents": [
-    {"id": "auditor-fiscal-mx", "categoria": "fiscal", "desc": "Auditoría preventiva CFDI + RFC + 32-D mensual"},
-    {"id": "validador-cfdi", "categoria": "fiscal", "desc": "Validación CFDI 4.0 vs padrón SAT tiempo real"},
-    {"id": "recolector-evidencia-sat", "categoria": "fiscal", "desc": "Bundle archivable de evidencia SAT"},
-    {"id": "discovery-portales-mx", "categoria": "operativo", "desc": "Discovery semi-automático nuevos portales gob.mx"},
-    {"id": "compliance-repse", "categoria": "laboral", "desc": "Verificación binaria REPSE Art. 15 LFT"},
-    {"id": "codebase-auditor-mx", "categoria": "operativo", "desc": "Auditor estructural de MCPs nuevos"}
-  ],
-  "sprint_e_highlights": {
-    "p0_bloqueadores_2026": ["mp_ley_silla_nom037", "mp_expediente_clinico_nom024", "mp_resico_sat", "mp_llave_mx"],
-    "p1_alta_demanda": ["mp_ine_verificacion", "mp_cfe_interconexion_solar", "mp_conagua_repda", "mp_desconexion_digital"],
-    "p2_mediano_plazo": ["mp_cofepris_aviso_funcionamiento", "mp_repep_profeco", "mp_concilianet_profeco", "mp_cre_hidrocarburos"],
-    "p3_estrategicos": ["mp_sedatu_uso_suelo", "mp_simplifica_ciudadano"],
-    "validado_playwright_2026_06_15": ["mp_llave_mx", "mp_ine_verificacion"]
-  }
+    {
+      "id": "auditor-fiscal-mx",
+      "categoria": "fiscal",
+      "desc": "Auditoría preventiva CFDI + RFC + 32-D mensual"
+    },
+    {
+      "id": "validador-cfdi",
+      "categoria": "fiscal",
+      "desc": "Validación CFDI 4.0 vs padrón SAT tiempo real"
+    },
+    {
+      "id": "recolector-evidencia-sat",
+      "categoria": "fiscal",
+      "desc": "Bundle archivable de evidencia SAT"
+    },
+    {
+      "id": "discovery-portales-mx",
+      "categoria": "operativo",
+      "desc": "Discovery semi-automático nuevos portales gob.mx"
+    },
+    {
+      "id": "compliance-repse",
+      "categoria": "laboral",
+      "desc": "Verificación binaria REPSE Art. 15 LFT"
+    },
+    {
+      "id": "codebase-auditor-mx",
+      "categoria": "operativo",
+      "desc": "Auditor estructural de MCPs nuevos"
+    }
+  ]
 }

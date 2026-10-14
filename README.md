@@ -2,6 +2,24 @@
 
 Monorepo de **plugins de Claude Code**, **MCP servers** y **skills standalone** para operación diaria de PyMEs y profesionistas en México. Cubre fiscal (CFDI 4.0, SAT, IMSS, INFONAVIT), pagos (TDC, OXXO, SPEI, transferencia), marketplaces (ML, Shopify, Amazon MX), municipales (CDMX, EdoMex, MTY), inmobiliaria, salud veterinaria, eventos, restaurantes, salones, **servicios públicos (agua, gas, CFE, Telmex), tenencia/verificación/multas vehiculares** y más.
 
+<!-- estado-mcps:inicio -->
+## Estado a 2026-10-14 (oleada 1: mock → real)
+
+Generado por `scripts/generar-estado-mcps.py` desde la sección "Estado real" de cada README. 83 MCPs, 416 tools.
+
+| Categoría | MCPs |
+|---|---|
+| Real, validado en vivo | 23 |
+| Real sin validar (requiere credenciales) | 8 |
+| Entrega a humano (CAPTCHA o login) | 17 |
+| Sin API pública | 6 |
+| Cálculo normativo verificado | 10 |
+| Bloqueado | 2 |
+| Sin verificar | 17 |
+<!-- estado-mcps:fin -->
+
+> Las secciones "Estado a 2026-06-…" de abajo son históricas: describen el diseño mock-first previo a la oleada 1 y sus cifras no se revalidaron. El estado vigente es el bloque de arriba.
+
 ## Estado a 2026-06-15 (post-Sprint H — Nivel 2 preparación documental + workflow demo HITL)
 
 | Capa | Cantidad real | Notas |

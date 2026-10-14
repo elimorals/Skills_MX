@@ -2,7 +2,7 @@
   "$schema": "https://modelcontextprotocol.io/schemas/registry/v1.json",
   "name": "plugins-mx",
   "displayName": "Plugins MX — Compliance Infrastructure",
-  "description": "62 production-ready MCP servers covering Mexican federal, state, and municipal compliance: SAT, IMSS, REPSE, ISN (32 states), ISH hospedaje (32 states), tenencia (20 states), property tax (243 municipalities, 71 Playwright-validated), vehicular verification (CDMX SAF real), vehicular fines (5 systems · ~22M vehicles), utilities (CFE real, Telmex no-login, 17 water utilities), payments, marketplaces, POS, mobility.",
+  "description": "83 MCP servers para trámites y cumplimiento en México. Estado al 2026-10-14: 23 reales validados en vivo, 8 reales sin validar (requieren credenciales), 17 entregan a humano por CAPTCHA o login, 10 cálculos normativos, 6 sin API pública, 2 bloqueados y 17 sin verificar. Detalle por MCP en /data/mcp-estado.json.",
   "version": "3.62.0",
   "license": "MIT",
   "homepage": "https://skills-mexico.vercel.app",
@@ -29,97 +29,939 @@
   ],
   "language": "es-MX",
   "runtime": "python>=3.11",
-  "transport": ["stdio", "streamable-http"],
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
   "servers": [
-    { "id": "mp_sat_portal",             "category": "federal",        "displayName": "SAT — Servicio de Administración Tributaria", "validated": true },
-    { "id": "mp_curp_renapo",            "category": "federal",        "displayName": "CURP via RENAPO",                              "validated": true },
-    { "id": "mp_sep_profesional",        "category": "federal",        "displayName": "Cédula profesional SEP (CAPTCHA-free)",         "validated": true, "isNew": true },
-    { "id": "mp_repse_stps",             "category": "federal",        "displayName": "REPSE — STPS Art. 15 LFT",                       "validated": true, "isNew": true },
-    { "id": "mp_imss_patronal",          "category": "federal",        "displayName": "IMSS Patronal",                                  "validated": true },
-    { "id": "mp_infonavit_patronal",     "category": "federal",        "displayName": "INFONAVIT Patronal",                             "validated": true },
-    { "id": "mp_banxico",                "category": "federal",        "displayName": "Banco de México",                                "validated": true },
-    { "id": "mp_banxico_cep",            "category": "federal",        "displayName": "Banxico CEP",                                    "validated": true },
-
-    { "id": "mp_isn_mx",                 "category": "state",          "displayName": "ISN — 32 estados", "states": 32, "validated": 8, "isNew": true },
-    { "id": "mp_ish_mx",                 "category": "state",          "displayName": "ISH Hospedaje — 32 estados", "states": 32, "validated": true, "isNew": true },
-    { "id": "mp_tenencia_mx",            "category": "state",          "displayName": "Tenencia vehicular — 20 estados", "states": 20, "validated": true, "isNew": true },
-    { "id": "mp_verificacion_vehicular_mx","category": "state",        "displayName": "Verificación vehicular — 7 estados + SAF CDMX real", "states": 7, "validated": true, "isNew": true },
-    { "id": "mp_multas_vehiculares_mx",  "category": "state",          "displayName": "Multas vehiculares — CDMX·EdoMex·NL·JAL (~22M vehículos)", "states": 5, "validated": true, "isNew": true },
-    { "id": "mp_catastro_estatal_mx",    "category": "state",          "displayName": "Catastro estatal — 10 sistemas", "states": 10, "validated": true, "isNew": true },
-    { "id": "mp_predial_mx",             "category": "municipal",      "displayName": "Predial — 243 municipios (71 Playwright-validated)", "municipalities": 243, "validated": 71 },
-    { "id": "mp_sacpi_michoacan",        "category": "municipal",      "displayName": "SACPI Michoacán", "municipalities": 95 },
-    { "id": "mp_multas_mx",              "category": "state",          "displayName": "Multas — 8 estados", "states": 8 },
-    { "id": "mp_cdmx_municipal",         "category": "municipal",      "displayName": "CDMX Municipal" },
-    { "id": "mp_edomex_municipal",       "category": "municipal",      "displayName": "Estado de México Municipal" },
-    { "id": "mp_monterrey_municipal",    "category": "municipal",      "displayName": "Monterrey Municipal" },
-    { "id": "mp_guadalajara_municipal",  "category": "municipal",      "displayName": "Guadalajara Municipal" },
-    { "id": "mp_merida_municipal",       "category": "municipal",      "displayName": "Mérida Municipal" },
-    { "id": "mp_puebla_municipal",       "category": "municipal",      "displayName": "Puebla Municipal" },
-    { "id": "mp_queretaro_municipal",    "category": "municipal",      "displayName": "Querétaro Municipal" },
-    { "id": "mp_tijuana_municipal",      "category": "municipal",      "displayName": "Tijuana Municipal" },
-    { "id": "mp_clabe_validador_oficial","category": "banking",        "displayName": "CLABE Validador Oficial" },
-
-    { "id": "mp_mercado_pago",           "category": "payments",       "displayName": "Mercado Pago" },
-    { "id": "mp_conekta",                "category": "payments",       "displayName": "Conekta" },
-    { "id": "mp_paypal_mx",              "category": "payments",       "displayName": "PayPal MX" },
-    { "id": "mp_klap",                   "category": "payments",       "displayName": "Klap" },
-    { "id": "mp_clip_terminal",          "category": "payments",       "displayName": "Clip Terminal" },
-    { "id": "mp_kueski",                 "category": "fintech",        "displayName": "Kueski" },
-    { "id": "mp_trustly_mx",             "category": "fintech",        "displayName": "Trustly MX" },
-    { "id": "mp_bitso",                  "category": "crypto",         "displayName": "Bitso" },
-    { "id": "mp_facturama_extendido",    "category": "billing",        "displayName": "Facturama Extendido" },
-
-    { "id": "mp_cfe_facturacion",        "category": "utilities",      "displayName": "CFE Mi Espacio (REAL · human-in-loop CAPTCHA)", "validated": true, "isNew": true },
-    { "id": "mp_telmex_facturacion",     "category": "utilities",      "displayName": "Telmex (REAL · pago_sin_login Enterprise v3)", "validated": true, "isNew": true },
-    { "id": "mp_agua_mx",                "category": "utilities",      "displayName": "Agua — 17 organismos (SACMEX/SIAPA/JMAS/OOAPAS+)", "organizations": 17, "validated": true, "isNew": true },
-    { "id": "mp_gas_natural_mx",         "category": "utilities",      "displayName": "Gas Natural — 5 distribuidores (Naturgy/ENGIE+)", "distributors": 5, "isNew": true },
-    { "id": "mp_bancos_mx",              "category": "banking",        "displayName": "Bancos MX (BBVA/Banamex/Santander)" },
-
-    { "id": "mp_dof_api",                "category": "compliance",     "displayName": "DOF — Diario Oficial de la Federación" },
-    { "id": "mp_cnbv_fintech",           "category": "compliance",     "displayName": "CNBV Fintech — Padrón ITF" },
-    { "id": "mp_donatarias_sat",         "category": "compliance",     "displayName": "Donatarias SAT — Anexo 14 RMF" },
-    { "id": "mp_sat_opinion_32d",        "category": "compliance",     "displayName": "SAT Opinión 32-D Cumplimiento" },
-    { "id": "mp_no_antecedentes_penales_mx","category": "compliance",  "displayName": "No Antecedentes Penales MX" },
-    { "id": "mp_repuve",                 "category": "compliance",     "displayName": "REPUVE — Registro Público Vehicular" },
-    { "id": "mp_condusef_sipres",        "category": "compliance",     "displayName": "CONDUSEF SIPRES" },
-    { "id": "mp_impi_marcanet",          "category": "compliance",     "displayName": "IMPI Marcanet" },
-    { "id": "mp_sat_ws",                 "category": "compliance",     "displayName": "SAT Web Services (CFDI)" },
-
-    { "id": "mp_mercado_libre",          "category": "marketplace",    "displayName": "Mercado Libre" },
-    { "id": "mp_amazon_mx_seller",       "category": "marketplace",    "displayName": "Amazon MX Seller (SP-API)" },
-    { "id": "mp_shopify_mx",             "category": "marketplace",    "displayName": "Shopify MX" },
-    { "id": "mp_inmuebles24",            "category": "real-estate",    "displayName": "Inmuebles24" },
-    { "id": "mp_vivanuncios",            "category": "real-estate",    "displayName": "Vivanuncios" },
-    { "id": "mp_buro_credito_personal",  "category": "credit",         "displayName": "Buró de Crédito Personal" },
-
-    { "id": "mp_aspel_contpaqi",         "category": "erp",            "displayName": "Aspel / CONTPAQi" },
-    { "id": "mp_softrestaurant",         "category": "pos",            "displayName": "SoftRestaurant" },
-    { "id": "mp_cabify_business",        "category": "mobility",       "displayName": "Cabify Business" },
-    { "id": "mp_didi_partners",          "category": "mobility",       "displayName": "DiDi Partners" },
-    { "id": "mp_didi_food_partners",     "category": "delivery",       "displayName": "DiDi Food Partners" },
-    { "id": "mp_rappi_partners",         "category": "delivery",       "displayName": "Rappi Partners" },
-    { "id": "mp_uber_eats_partners",     "category": "delivery",       "displayName": "Uber Eats Partners" }
+    {
+      "id": "mp_agua_mx",
+      "estado": "real_validado",
+      "tools": [
+        "agua_consultar_adeudo",
+        "agua_listar_organismos",
+        "agua_buscar_por_estado",
+        "agua_estadisticas"
+      ]
+    },
+    {
+      "id": "mp_amazon_mx_seller",
+      "estado": "real_sin_validar",
+      "tools": [
+        "amazon_mx_list_listings",
+        "amazon_mx_get_listing",
+        "amazon_mx_update_inventory",
+        "amazon_mx_list_orders",
+        "amazon_mx_get_order",
+        "amazon_mx_get_fees_estimate",
+        "amazon_mx_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_aspel_contpaqi",
+      "estado": "sin_verificar",
+      "tools": [
+        "aspel_listar_polizas",
+        "aspel_get_poliza",
+        "aspel_obtener_balanza",
+        "aspel_obtener_catalogo_cuentas",
+        "aspel_obtener_estado_resultados",
+        "aspel_obtener_balance_general",
+        "aspel_parsear_export_csv",
+        "aspel_obtener_instrucciones_configuracion",
+        "aspel_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_bancos_mx",
+      "estado": "sin_verificar",
+      "tools": [
+        "bancos_listar_soportados",
+        "bancos_descargar_estado_cuenta",
+        "bancos_listar_movimientos",
+        "bancos_verificar_pago_por_referencia"
+      ]
+    },
+    {
+      "id": "mp_banxico",
+      "estado": "sin_verificar",
+      "tools": [
+        "banxico_get_tc_dof",
+        "banxico_get_tc_dia_habil_anterior",
+        "banxico_convertir_monto",
+        "banxico_get_uma",
+        "banxico_get_inpc",
+        "banxico_get_tiie_28",
+        "banxico_listar_monedas_soportadas"
+      ]
+    },
+    {
+      "id": "mp_banxico_cep",
+      "estado": "real_validado",
+      "tools": [
+        "banxico_cep_validar_clabe",
+        "banxico_cep_decodificar_clabe",
+        "banxico_cep_parsear_clave_rastreo",
+        "banxico_cep_lookup_banco",
+        "banxico_cep_generar_cep",
+        "banxico_cep_validar_cep",
+        "banxico_cep_descargar_pdf",
+        "banxico_cep_consultar_pago_por_clave",
+        "banxico_cep_listar_bancos",
+        "banxico_cep_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_bitso",
+      "estado": "sin_verificar",
+      "tools": [
+        "bitso_get_ticker",
+        "bitso_get_order_book",
+        "bitso_list_available_books",
+        "bitso_get_account_status",
+        "bitso_get_balance",
+        "bitso_get_fees",
+        "bitso_get_ledger",
+        "bitso_list_fundings",
+        "bitso_list_withdrawals",
+        "bitso_list_open_orders",
+        "bitso_calcular_isr_cripto_mx",
+        "bitso_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_buro_credito_personal",
+      "estado": "sin_verificar",
+      "tools": [
+        "buro_consultar_score",
+        "buro_descargar_reporte_completo",
+        "buro_monitorear_alertas",
+        "buro_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_cabify_business",
+      "estado": "real_sin_validar",
+      "tools": [
+        "cabify_estimar",
+        "cabify_pedir_viaje",
+        "cabify_consultar_viaje",
+        "cabify_estado_viaje",
+        "cabify_cancelar_viaje",
+        "cabify_ventas_viaje",
+        "cabify_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_catastro_estatal_mx",
+      "estado": "handoff",
+      "tools": [
+        "catastro_consultar_valor",
+        "catastro_listar_sistemas"
+      ]
+    },
+    {
+      "id": "mp_cdmx_municipal",
+      "estado": "handoff",
+      "tools": [
+        "cdmx_consultar_predial",
+        "cdmx_consultar_tenencia",
+        "cdmx_consultar_multas",
+        "cdmx_consultar_hoy_no_circula",
+        "cdmx_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_cfe_facturacion",
+      "estado": "sin_verificar",
+      "tools": [
+        "cfe_descargar_factura_mes",
+        "cfe_consumo_historico",
+        "cfe_validar_session"
+      ]
+    },
+    {
+      "id": "mp_cfe_interconexion_solar",
+      "estado": "calculo_normativo",
+      "tools": [
+        "cfe_solar_solicitar",
+        "cfe_solar_estatus",
+        "cfe_solar_simular_ahorro",
+        "cfe_solar_listar_tarifas"
+      ]
+    },
+    {
+      "id": "mp_citas_monitor",
+      "estado": "handoff",
+      "tools": [
+        "citas_listar_portales",
+        "citas_generar_consent_token",
+        "citas_crear_alerta",
+        "citas_revisar_cupos",
+        "citas_estadisticas_eticas"
+      ]
+    },
+    {
+      "id": "mp_clabe_validador_oficial",
+      "estado": "real_validado",
+      "tools": [
+        "clabe_validador_validar_clabe",
+        "clabe_validador_info_banco_clabe"
+      ]
+    },
+    {
+      "id": "mp_clip_terminal",
+      "estado": "real_sin_validar",
+      "tools": [
+        "clip_list_charges",
+        "clip_get_charge",
+        "clip_refund_charge",
+        "clip_terminal_status",
+        "clip_get_settlement",
+        "clip_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_cnbv_fintech",
+      "estado": "real_validado",
+      "tools": [
+        "cnbv_fintech_consultar_itf",
+        "cnbv_fintech_listar_ifpe",
+        "cnbv_fintech_listar_ifc",
+        "cnbv_fintech_listar_modelos_novedosos",
+        "cnbv_fintech_verificar_contraparte"
+      ]
+    },
+    {
+      "id": "mp_cofepris_aviso_funcionamiento",
+      "estado": "calculo_normativo",
+      "tools": [
+        "cofepris_clasificar_giro",
+        "cofepris_requisitos_aviso",
+        "cofepris_consultar_aviso",
+        "cofepris_listar_giros"
+      ]
+    },
+    {
+      "id": "mp_conagua_repda",
+      "estado": "real_validado",
+      "tools": [
+        "repda_consultar_titular",
+        "repda_estado_reporte",
+        "repda_calcular_lfd",
+        "repda_vigencia",
+        "repda_requiere_medidor",
+        "repda_listar_tipos_uso"
+      ]
+    },
+    {
+      "id": "mp_concilianet_profeco",
+      "estado": "real_validado",
+      "tools": [
+        "concilianet_consultar_proveedor",
+        "concilianet_buro_quejas",
+        "concilianet_estatus_caso",
+        "concilianet_listar_proveedores",
+        "concilianet_registrar_queja"
+      ]
+    },
+    {
+      "id": "mp_condusef_sipres",
+      "estado": "real_validado",
+      "tools": [
+        "sipres_buscar_institucion",
+        "sipres_verificar_autorizada"
+      ]
+    },
+    {
+      "id": "mp_conekta",
+      "estado": "sin_verificar",
+      "tools": [
+        "conekta_create_order",
+        "conekta_get_order",
+        "conekta_list_orders",
+        "conekta_create_charge_on_order",
+        "conekta_refund_order",
+        "conekta_create_customer",
+        "conekta_get_customer",
+        "conekta_create_payment_link",
+        "conekta_subscription_create",
+        "conekta_subscription_update",
+        "conekta_subscription_cancel",
+        "conekta_validate_webhook",
+        "conekta_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_cre_hidrocarburos",
+      "estado": "real_validado",
+      "tools": [
+        "cre_consultar_permiso",
+        "cre_calendar_reporte",
+        "cre_evaluar_anexo30",
+        "cre_reportar_zeros",
+        "cre_listar_tipos_permiso"
+      ]
+    },
+    {
+      "id": "mp_curp_renapo",
+      "estado": "handoff",
+      "tools": [
+        "curp_validar_estructura",
+        "curp_derivar_fecha_nacimiento",
+        "curp_derivar_sexo",
+        "curp_derivar_estado",
+        "curp_validar_lote",
+        "curp_generar_desde_datos",
+        "curp_consultar_renapo",
+        "curp_descargar_constancia_renapo",
+        "curp_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_desconexion_digital",
+      "estado": "calculo_normativo",
+      "tools": [
+        "desconexion_checklist",
+        "desconexion_generar_politica",
+        "desconexion_template_capacitacion"
+      ]
+    },
+    {
+      "id": "mp_didi_food_partners",
+      "estado": "sin_api",
+      "tools": [
+        "didi_food_listar_ordenes",
+        "didi_food_consultar_orden",
+        "didi_food_listar_productos_menu",
+        "didi_food_actualizar_disponibilidad",
+        "didi_food_consultar_ranking_zona",
+        "didi_food_estimar_comisiones_mes"
+      ]
+    },
+    {
+      "id": "mp_didi_partners",
+      "estado": "sin_api",
+      "tools": [
+        "didi_partners_listar_viajes",
+        "didi_partners_consultar_viaje",
+        "didi_partners_comisiones_mes"
+      ]
+    },
+    {
+      "id": "mp_dof_api",
+      "estado": "real_validado",
+      "tools": [
+        "dof_sumario_dia",
+        "dof_buscar_texto",
+        "dof_detalle_nota",
+        "dof_monitorear_por_keyword",
+        "dof_listar_dependencias_comunes"
+      ]
+    },
+    {
+      "id": "mp_donatarias_sat",
+      "estado": "real_validado",
+      "tools": [
+        "donatarias_consultar",
+        "donatarias_buscar",
+        "donatarias_listar_por_entidad",
+        "donatarias_estadisticas",
+        "donatarias_listar_rubros"
+      ]
+    },
+    {
+      "id": "mp_edomex_municipal",
+      "estado": "real_validado",
+      "tools": [
+        "edomex_consultar_predial",
+        "edomex_consultar_tenencia",
+        "edomex_consultar_multas",
+        "edomex_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_expediente_clinico_nom024",
+      "estado": "calculo_normativo",
+      "tools": [
+        "ece_generar_receta",
+        "ece_verificar_medico",
+        "ece_validar_sistema",
+        "ece_consentimiento_paciente"
+      ]
+    },
+    {
+      "id": "mp_facturama_extendido",
+      "estado": "real_sin_validar",
+      "tools": [
+        "facturama_validar_payload_local",
+        "facturama_timbrar_cfdi",
+        "facturama_cancelar_cfdi",
+        "facturama_consultar_estatus",
+        "facturama_descargar_xml",
+        "facturama_descargar_pdf",
+        "facturama_buscar_cfdis",
+        "facturama_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_form_filler_public",
+      "estado": "handoff",
+      "tools": [
+        "form_listar_formularios",
+        "form_validar_inputs",
+        "form_llenar"
+      ]
+    },
+    {
+      "id": "mp_gas_natural_mx",
+      "estado": "real_validado",
+      "tools": [
+        "gas_consultar_recibo",
+        "gas_tarifas_vigentes",
+        "gas_listar_distribuidores"
+      ]
+    },
+    {
+      "id": "mp_guadalajara_municipal",
+      "estado": "handoff",
+      "tools": [
+        "guadalajara_mun_consultar_predial",
+        "guadalajara_mun_consultar_multas"
+      ]
+    },
+    {
+      "id": "mp_impi_marcanet",
+      "estado": "real_validado",
+      "tools": [
+        "impi_buscar",
+        "impi_verificar_denominacion"
+      ]
+    },
+    {
+      "id": "mp_imss_continuidad",
+      "estado": "sin_verificar",
+      "tools": [
+        "imss_continuidad_listar_sistemas",
+        "imss_continuidad_health_check",
+        "imss_continuidad_plan",
+        "imss_continuidad_reporte_ejecutivo"
+      ]
+    },
+    {
+      "id": "mp_imss_patronal",
+      "estado": "sin_verificar",
+      "tools": [
+        "imss_consultar_avisos_pendientes",
+        "imss_enviar_movimiento_afiliatorio",
+        "imss_descargar_cedula_autodeterminacion",
+        "imss_consultar_emcr",
+        "imss_consultar_sbc",
+        "imss_consultar_padron_trabajadores",
+        "imss_sbc_calcular",
+        "imss_ema_vs_eba_diferencias",
+        "imss_calendario_obligaciones",
+        "imss_simulador_costo_patronal",
+        "imss_riesgo_trabajo_prima_cambio",
+        "imss_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_ine_verificacion",
+      "estado": "handoff",
+      "tools": [
+        "ine_verificar_datos",
+        "ine_verificar_qr",
+        "ine_consultar_vigencia",
+        "ine_generar_autorizacion",
+        "ine_listar_modelos"
+      ]
+    },
+    {
+      "id": "mp_infonavit_patronal",
+      "estado": "sin_verificar",
+      "tools": [
+        "infonavit_consultar_creditos_trabajadores",
+        "infonavit_descargar_emis",
+        "infonavit_consultar_descuentos_mensuales",
+        "infonavit_consultar_avisos_pendientes",
+        "infonavit_descuento_calcular",
+        "infonavit_creditos_sin_reporte",
+        "infonavit_emis_historico",
+        "infonavit_conciliacion_nomina",
+        "infonavit_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_inmuebles24",
+      "estado": "sin_verificar",
+      "tools": [
+        "inm24_buscar_inmuebles",
+        "inm24_obtener_detalle",
+        "inm24_buscar_comparables_zona",
+        "inm24_publicar_listing",
+        "inm24_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_ish_mx",
+      "estado": "calculo_normativo",
+      "tools": [
+        "ish_calcular",
+        "ish_info_estado",
+        "ish_listar_estados",
+        "ish_comparar_estados"
+      ]
+    },
+    {
+      "id": "mp_isn_mx",
+      "estado": "calculo_normativo",
+      "tools": [
+        "isn_calcular",
+        "isn_listar_estados",
+        "isn_info_estado",
+        "isn_generar_linea_captura",
+        "isn_descargar_declaracion"
+      ]
+    },
+    {
+      "id": "mp_klap",
+      "estado": "sin_api",
+      "tools": [
+        "klap_listar_pagos",
+        "klap_consultar_pago"
+      ]
+    },
+    {
+      "id": "mp_kueski",
+      "estado": "sin_api",
+      "tools": [
+        "kueski_listar_pagos",
+        "kueski_consultar_pago",
+        "kueski_cancelar_pago"
+      ]
+    },
+    {
+      "id": "mp_ley_silla_nom037",
+      "estado": "calculo_normativo",
+      "tools": [
+        "silla_verificar_compliance",
+        "silla_calcular_multa",
+        "silla_generar_politica",
+        "silla_listar_obligaciones"
+      ]
+    },
+    {
+      "id": "mp_llave_mx",
+      "estado": "real_sin_validar",
+      "tools": [
+        "llave_iniciar_oauth",
+        "llave_estado_endpoints",
+        "llave_estadisticas_adopcion",
+        "llave_validar_token",
+        "llave_listar_tramites",
+        "llave_detalle_tramite",
+        "llave_vincular_e_firma"
+      ]
+    },
+    {
+      "id": "mp_llave_mx_tracker",
+      "estado": "real_validado",
+      "tools": [
+        "llave_mx_listar_dependencias",
+        "llave_mx_estatus_dependencia",
+        "llave_mx_estadisticas_nacionales",
+        "llave_mx_verificar_en_vivo"
+      ]
+    },
+    {
+      "id": "mp_lnetb_auditor",
+      "estado": "calculo_normativo",
+      "tools": [
+        "lnetb_listar_indicadores",
+        "lnetb_plazos_legales",
+        "lnetb_evaluar_estado",
+        "lnetb_ranking_nacional",
+        "lnetb_comparar_estados"
+      ]
+    },
+    {
+      "id": "mp_mercado_libre",
+      "estado": "sin_verificar",
+      "tools": [
+        "mercadolibre_get_me",
+        "mercadolibre_list_items",
+        "mercadolibre_get_item",
+        "mercadolibre_update_stock",
+        "mercadolibre_update_price",
+        "mercadolibre_pause_item",
+        "mercadolibre_activate_item",
+        "mercadolibre_list_orders",
+        "mercadolibre_get_order",
+        "mercadolibre_list_messages",
+        "mercadolibre_send_message",
+        "mercadolibre_list_questions",
+        "mercadolibre_answer_question",
+        "mercadolibre_get_seller_reputation",
+        "mercadolibre_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_mercado_pago",
+      "estado": "sin_verificar",
+      "tools": [
+        "mercadopago_create_preference",
+        "mercadopago_get_preference",
+        "mercadopago_get_payment",
+        "mercadopago_list_payments",
+        "mercadopago_refund_payment",
+        "mercadopago_cancel_payment",
+        "mercadopago_validate_webhook_signature",
+        "mercadopago_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_merida_municipal",
+      "estado": "handoff",
+      "tools": [
+        "merida_mun_consultar_predial"
+      ]
+    },
+    {
+      "id": "mp_monterrey_municipal",
+      "estado": "real_validado",
+      "tools": [
+        "nl_consultar_predial",
+        "nl_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_multas_mx",
+      "estado": "handoff",
+      "tools": [
+        "multas_consultar",
+        "multas_estados_disponibles"
+      ]
+    },
+    {
+      "id": "mp_multas_vehiculares_mx",
+      "estado": "handoff",
+      "tools": [
+        "multas_consultar_por_placa",
+        "multas_calcular_total",
+        "multas_listar_sistemas"
+      ]
+    },
+    {
+      "id": "mp_no_antecedentes_penales_mx",
+      "estado": "handoff",
+      "tools": [
+        "noantecedentes_verificar_constancia",
+        "noantecedentes_verificar_apto"
+      ]
+    },
+    {
+      "id": "mp_paypal_mx",
+      "estado": "real_sin_validar",
+      "tools": [
+        "paypal_mx_listar_transacciones",
+        "paypal_mx_consultar_transaccion",
+        "paypal_mx_balance"
+      ]
+    },
+    {
+      "id": "mp_portales_monitor",
+      "estado": "real_validado",
+      "tools": [
+        "portales_listar",
+        "portales_check_http",
+        "portales_check_form_render",
+        "portales_health_dashboard",
+        "portales_configurar_alerta"
+      ]
+    },
+    {
+      "id": "mp_predial_mx",
+      "estado": "real_validado",
+      "tools": [
+        "predial_consultar",
+        "predial_listar_municipios",
+        "predial_buscar_municipio",
+        "predial_estadisticas_catalogo"
+      ]
+    },
+    {
+      "id": "mp_puebla_municipal",
+      "estado": "handoff",
+      "tools": [
+        "puebla_mun_consultar_predial"
+      ]
+    },
+    {
+      "id": "mp_queretaro_municipal",
+      "estado": "real_validado",
+      "tools": [
+        "queretaro_mun_consultar_predial"
+      ]
+    },
+    {
+      "id": "mp_rappi_partners",
+      "estado": "real_sin_validar",
+      "tools": [
+        "rappi_listar_ordenes",
+        "rappi_consultar_orden",
+        "rappi_listar_productos_menu",
+        "rappi_actualizar_disponibilidad",
+        "rappi_consultar_ranking_zona",
+        "rappi_estimar_comisiones_mes"
+      ]
+    },
+    {
+      "id": "mp_repep_profeco",
+      "estado": "handoff",
+      "tools": [
+        "repep_consultar",
+        "repep_filtrar_lote",
+        "repep_inscribir",
+        "repep_estadisticas"
+      ]
+    },
+    {
+      "id": "mp_repse_stps",
+      "estado": "real_validado",
+      "tools": [
+        "repse_consultar_por_razon_social",
+        "repse_consultar_por_numero_registro",
+        "repse_verificar_proveedor"
+      ]
+    },
+    {
+      "id": "mp_repuve",
+      "estado": "handoff",
+      "tools": [
+        "repuve_consultar_niv",
+        "repuve_consultar_placa",
+        "repuve_verificar_robado"
+      ]
+    },
+    {
+      "id": "mp_resico_sat",
+      "estado": "calculo_normativo",
+      "tools": [
+        "resico_calcular_isr",
+        "resico_evaluar_estatus",
+        "resico_calendario",
+        "resico_retencion_plataforma",
+        "resico_solicitar_devolucion",
+        "resico_listar_tasas",
+        "resico_listar_plataformas"
+      ]
+    },
+    {
+      "id": "mp_retys_catalogo",
+      "estado": "real_validado",
+      "tools": [
+        "retys_listar_sectores",
+        "retys_buscar_tramite",
+        "retys_detalle_tramite",
+        "retys_exportar_dcat",
+        "retys_buscar_en_vivo"
+      ]
+    },
+    {
+      "id": "mp_sacpi_michoacan",
+      "estado": "bloqueado",
+      "tools": [
+        "sacpi_consultar",
+        "sacpi_listar_municipios",
+        "sacpi_codigo_municipio"
+      ]
+    },
+    {
+      "id": "mp_sat_opinion_32d",
+      "estado": "real_validado",
+      "tools": [
+        "sat_opinion_32d_consultar",
+        "sat_opinion_32d_verificar_proveedor",
+        "sat_opinion_32d_descargar_propia"
+      ]
+    },
+    {
+      "id": "mp_sat_portal",
+      "estado": "real_validado",
+      "tools": [
+        "sat_consultar_padron",
+        "sat_consultar_69b_efos",
+        "sat_consultar_69_incumplidos",
+        "sat_verificar_cfdi_uuid",
+        "sat_validar_uuid_estructura",
+        "sat_descargar_csf",
+        "sat_descargar_buzon_tributario",
+        "sat_descargar_cfdi_masivo",
+        "sat_agendar_cita",
+        "sat_verificar_efirma_vigente",
+        "sat_descargar_acuse",
+        "sat_actualizar_obligaciones",
+        "sat_listar_catalogos",
+        "sat_calendario_fiscal_por_regimen",
+        "sat_cfdi_prevalidar",
+        "sat_declaraciones_historico",
+        "sat_devolucion_estatus",
+        "sat_buzon_tributario_resumen"
+      ]
+    },
+    {
+      "id": "mp_sat_ws",
+      "estado": "real_sin_validar",
+      "tools": [
+        "sat_ws_solicitar_descarga",
+        "sat_ws_verificar_solicitud",
+        "sat_ws_descargar_paquete"
+      ]
+    },
+    {
+      "id": "mp_sedatu_uso_suelo",
+      "estado": "handoff",
+      "tools": [
+        "sedatu_buscar_tramite",
+        "sedatu_consultar_uso_suelo",
+        "sedatu_estimar_construccion",
+        "sedatu_listar_tramites"
+      ]
+    },
+    {
+      "id": "mp_sep_profesional",
+      "estado": "handoff",
+      "tools": [
+        "sep_consultar_cedula",
+        "sep_consultar_por_datos",
+        "sep_validar_medico_para_consulta",
+        "sep_listar_profesiones_reguladas"
+      ]
+    },
+    {
+      "id": "mp_shopify_mx",
+      "estado": "sin_verificar",
+      "tools": [
+        "shopify_list_products",
+        "shopify_get_product",
+        "shopify_get_inventory_level",
+        "shopify_update_inventory_level",
+        "shopify_list_orders",
+        "shopify_get_order",
+        "shopify_create_fulfillment",
+        "shopify_get_customer",
+        "shopify_list_webhooks",
+        "shopify_calculate_tax_mx",
+        "shopify_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_simplifica_ciudadano",
+      "estado": "bloqueado",
+      "tools": [
+        "simplifica_estado",
+        "simplifica_tracker_nacional",
+        "simplifica_comparar_estados"
+      ]
+    },
+    {
+      "id": "mp_softrestaurant",
+      "estado": "sin_verificar",
+      "tools": [
+        "softrest_corte_z",
+        "softrest_ventas_periodo",
+        "softrest_inventario_actual",
+        "softrest_platillos_vendidos",
+        "softrest_meseros_ventas",
+        "softrest_mesas_estatus",
+        "softrest_parsear_export",
+        "softrest_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_telmex_facturacion",
+      "estado": "sin_verificar",
+      "tools": [
+        "telmex_descargar_factura",
+        "telmex_consumo_historico",
+        "telmex_listar_facturas"
+      ]
+    },
+    {
+      "id": "mp_tenencia_mx",
+      "estado": "calculo_normativo",
+      "tools": [
+        "tenencia_calcular",
+        "tenencia_info_estado",
+        "tenencia_listar_estados",
+        "tenencia_comparar_estados"
+      ]
+    },
+    {
+      "id": "mp_tijuana_municipal",
+      "estado": "real_validado",
+      "tools": [
+        "tijuana_mun_consultar_predial",
+        "tijuana_mun_consultar_vivienda_asegurada"
+      ]
+    },
+    {
+      "id": "mp_trustly_mx",
+      "estado": "sin_api",
+      "tools": [
+        "trustly_create_payment",
+        "trustly_get_payment",
+        "trustly_list_payments",
+        "trustly_refund_payment",
+        "trustly_listar_catalogos"
+      ]
+    },
+    {
+      "id": "mp_uber_eats_partners",
+      "estado": "sin_api",
+      "tools": [
+        "uber_eats_listar_ordenes",
+        "uber_eats_consultar_orden",
+        "uber_eats_listar_productos_menu",
+        "uber_eats_actualizar_disponibilidad",
+        "uber_eats_consultar_ranking_zona",
+        "uber_eats_estimar_comisiones_mes"
+      ]
+    },
+    {
+      "id": "mp_verificacion_vehicular_mx",
+      "estado": "handoff",
+      "tools": [
+        "verificacion_consultar_estatus",
+        "verificacion_proximo_periodo",
+        "verificacion_listar_programas"
+      ]
+    },
+    {
+      "id": "mp_vivanuncios",
+      "estado": "sin_verificar",
+      "tools": [
+        "viv_buscar_anuncios",
+        "viv_obtener_detalle",
+        "viv_publicar_anuncio",
+        "viv_listar_catalogos"
+      ]
+    }
   ],
   "stats": {
-    "totalServers": 62,
-    "totalSkills": 307,
-    "totalWorkflows": 24,
-    "totalEvals": 281,
-    "evalsTriggeringRatio": 0.92,
-    "totalTests": 1380,
-    "verticalsSupported": 40,
-    "statesIsnIntegrated": 32,
-    "statesIshIntegrated": 32,
-    "statesTenenciaIntegrated": 20,
-    "municipalitiesPredial": 243,
-    "municipalitiesValidated": 71,
-    "vehicularFinesSystems": 5,
-    "waterUtilities": 17,
-    "vehiclesCoveredFines": 22000000,
-    "populationCoverage": 35200000,
-    "populationCoveragePct": 26.7,
-    "sprintsCompleted": ["A", "B", "C", "D"],
-    "lastUpdated": "2026-06-15"
+    "totalServers": 83,
+    "totalTools": 416,
+    "estadoFecha": "2026-10-14",
+    "porEstado": {
+      "real_validado": 23,
+      "real_sin_validar": 8,
+      "handoff": 17,
+      "sin_api": 6,
+      "calculo_normativo": 10,
+      "bloqueado": 2,
+      "sin_verificar": 17
+    }
   },
   "endpoints": {
     "demo": "https://skills-mexico.vercel.app/#demo",
