@@ -14,6 +14,7 @@ import respx
 pytest.importorskip("cryptography")
 
 from mp_sat_ws.client import SatWsClient  # noqa: E402
+from mp_sat_ws.tests.efirma_prueba import generada  # noqa: E402
 from mp_sat_ws.tests.test_firma import fiel_prueba  # noqa: E402
 from shared.errors import AuthError, UpstreamError, ValidationError  # noqa: E402
 from shared.sat_ws import (  # noqa: E402
@@ -138,9 +139,10 @@ def test_rfc_distinto_a_la_efirma(cliente):
 
 def test_credenciales_en_env_activan_modo_real(monkeypatch):
     monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
-    monkeypatch.setenv("SAT_EFIRMA_CERT", str(FIX / "EKU9003173C9.cer"))
-    monkeypatch.setenv("SAT_EFIRMA_KEY", str(FIX / "EKU9003173C9.key"))
-    monkeypatch.setenv("SAT_EFIRMA_PASSWORD", "12345678a")
+    e = generada()
+    monkeypatch.setenv("SAT_EFIRMA_CERT", str(e.cer))
+    monkeypatch.setenv("SAT_EFIRMA_KEY", str(e.key))
+    monkeypatch.setenv("SAT_EFIRMA_PASSWORD", e.password)
     c = SatWsClient()
     assert c._mock() is False
     assert c._get_fiel().rfc == "EKU9003173C9"

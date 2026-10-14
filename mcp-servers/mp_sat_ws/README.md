@@ -90,5 +90,8 @@ PLUGINS_MX_LIVE=1 SAT_EFIRMA_CERT=... SAT_EFIRMA_KEY=... SAT_EFIRMA_PASSWORD=...
   .venv/bin/pytest -q mp_sat_ws/tests/test_live.py
 ```
 
-Fixtures: e.firma de prueba EKU9003173C9 (publicada por el SAT en RFC-PAC-SC.zip) y
-respuestas XML del SAT, ambas tomadas de phpcfdi/sat-ws-descarga-masiva (MIT).
+Fixtures: respuestas XML del SAT tomadas de phpcfdi/sat-ws-descarga-masiva (MIT). El repo no
+incluye ninguna e.firma: los tests generan una autofirmada al vuelo (`tests/efirma_prueba.py`).
+Las comparaciones byte a byte contra phpcfdi necesitan la e.firma de prueba del SAT
+(EKU9003173C9, RFC-PAC-SC.zip) en una carpeta fuera del repo:
+`SAT_EFIRMA_PRUEBA_DIR=/ruta/con/EKU9003173C9.{cer,key} y EKU9003173C9-password.txt`; sin ella se saltan.

@@ -13,14 +13,17 @@ from mp_sat_portal.client import SatPortalClient  # noqa: E402
 from mp_sat_portal.server import DescargaMasivaInput, sat_descargar_cfdi_masivo  # noqa: E402
 from shared.sat_ws import URL_AUTENTICACION, URL_SOLICITAR_DESCARGA  # noqa: E402
 
+from mp_sat_ws.tests.efirma_prueba import generada  # noqa: E402
+
 WS_FIX = Path(__file__).resolve().parents[2] / "mp_sat_ws" / "tests" / "fixtures"
 
 
 @pytest.fixture
 def efirma_prueba(monkeypatch):
-    monkeypatch.setenv("SAT_EFIRMA_CERT", str(WS_FIX / "EKU9003173C9.cer"))
-    monkeypatch.setenv("SAT_EFIRMA_KEY", str(WS_FIX / "EKU9003173C9.key"))
-    monkeypatch.setenv("SAT_EFIRMA_PASSWORD", "12345678a")
+    e = generada()
+    monkeypatch.setenv("SAT_EFIRMA_CERT", str(e.cer))
+    monkeypatch.setenv("SAT_EFIRMA_KEY", str(e.key))
+    monkeypatch.setenv("SAT_EFIRMA_PASSWORD", e.password)
 
 
 @respx.mock

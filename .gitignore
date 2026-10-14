@@ -9,6 +9,9 @@ secrets/
 *.key
 *.p12
 *.cer
+*.pfx
+*password*.txt
+*contraseña*
 
 # Archivos de prueba generados
 cfdi/*.xml
