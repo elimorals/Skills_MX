@@ -5,8 +5,8 @@ Auto-routing por estado: cada operación enruta al portal estatal correspondient
 Operaciones soportadas:
 1. **`calcular_isn`** (offline, sin tocar portal): cálculo determinístico desde el catálogo.
 2. **`listar_estados`** / **`info_estado`**: introspección del catálogo.
-3. **`generar_linea_captura`**: requiere acceso al portal (path real con Playwright).
-4. **`descargar_declaracion`**: descarga comprobante PDF desde bóveda estatal.
+3. **`generar_linea_captura`**: requiere sesión del contribuyente → ConfigError (mock solo con PLUGINS_MX_MOCK=1).
+4. **`descargar_declaracion`**: igual que 3.
 
 Cache 90 días para declaraciones (datos fiscales no cambian).
 """
@@ -33,11 +33,12 @@ from shared.catalogo_isn_estatal import (  # noqa: E402
     listar_estados,
 )
 from shared.errors import (  # noqa: E402
-    McpError,
+    ConfigError,
     NotFoundError,
     ValidationError,
 )
-from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.mock import mark_simulated  # noqa: E402
+from shared.portal_handoff import mock_forzado  # noqa: E402
 
 
 NAMESPACE = "isn_mx"
@@ -111,6 +112,9 @@ class IsnMxClient:
             "captcha_presente": cfg.captcha_presente,
             "selectores_documentados": cfg.selectores,
             "validado": cfg.validado,
+            "fuente_tasa": cfg.fuente_tasa,
+            "confianza_tasa": cfg.confianza_tasa,
+            "tasa_no_calculable": cfg.tasa_no_calculable or None,
             "notas": cfg.notas,
         }
 
@@ -127,8 +131,8 @@ class IsnMxClient:
     ) -> dict[str, Any]:
         """Genera línea de captura para pagar ISN del periodo.
 
-        Modo mock: devuelve línea simulada determinística.
-        Modo real: navega al portal estatal y obtiene línea oficial.
+        Con PLUGINS_MX_MOCK=1: línea simulada determinística.
+        Real: ConfigError (requiere sesión del contribuyente en el portal).
         """
         cfg = self._validar_inputs(estado, periodo, rfc, nomina_gravable)
 
@@ -174,8 +178,7 @@ class IsnMxClient:
     ) -> dict[str, Any]:
         """Descarga el comprobante PDF de la declaración del periodo desde bóveda estatal.
 
-        En modo mock: devuelve path simulado.
-        En real: navega al portal y descarga PDF.
+        Con PLUGINS_MX_MOCK=1: path simulado. Real: ConfigError (requiere sesión).
         """
         if not PERIODO_REGEX.match(periodo):
             raise ValidationError(f"periodo '{periodo}' inválido. Formato YYYY-MM.")
@@ -217,7 +220,7 @@ class IsnMxClient:
     # ============================================================
 
     def _is_mock(self) -> bool:
-        return is_mock_mode(credential_env_vars=[])
+        return mock_forzado()
 
     def _validar_inputs(self, estado, periodo, rfc, nomina_gravable):
         if not PERIODO_REGEX.match(periodo):
@@ -234,18 +237,18 @@ class IsnMxClient:
             )
         return cfg
 
+    # Línea de captura y declaraciones viven tras el login estatal (REC/usuario o
+    # e.firma) del contribuyente: grupo G del plan, no se automatizan aquí.
     def _generar_linea_real(self, cfg, periodo, rfc, nomina_gravable):
-        raise McpError(
-            f"Path real para {cfg.estado_clave} pendiente. Setear MP_PLAYWRIGHT_PUBLIC=1.",
-            {
-                "estado": cfg.estado_clave,
-                "portal_url": cfg.portal_url,
-                "selectores_disponibles": cfg.selectores,
-            },
+        raise ConfigError(
+            f"Generar línea de captura ISN en {cfg.estado_nombre} requiere sesión del contribuyente "
+            "en el portal estatal; no está automatizado. Genérala en el portal.",
+            {"estado": cfg.estado_clave, "portal_url": cfg.portal_url, "estado_impl": "requiere_login"},
         )
 
     def _descargar_declaracion_real(self, cfg, periodo, rfc):
-        raise McpError(
-            f"Descarga real para {cfg.estado_clave} pendiente.",
-            {"estado": cfg.estado_clave, "portal_url": cfg.portal_url},
+        raise ConfigError(
+            f"Descargar declaraciones ISN de {cfg.estado_nombre} requiere sesión del contribuyente; "
+            "no está automatizado.",
+            {"estado": cfg.estado_clave, "portal_url": cfg.portal_url, "estado_impl": "requiere_login"},
         )

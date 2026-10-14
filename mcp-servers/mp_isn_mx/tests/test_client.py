@@ -21,7 +21,7 @@ from shared.catalogo_isn_estatal import (  # noqa: E402
     get_estado_config,
     listar_estados,
 )
-from shared.errors import NotFoundError, ValidationError  # noqa: E402
+from shared.errors import ConfigError, NotFoundError, ValidationError  # noqa: E402
 
 
 @pytest.fixture
@@ -41,7 +41,8 @@ class TestCatalogo:
         cfg = get_estado_config("CDMX")
         assert cfg is not None
         assert cfg.estado_nombre == "Ciudad de México"
-        assert cfg.tasa_pct == 3.0
+        assert cfg.tasa_pct == 4.0  # 2026, Código Fiscal CDMX art. 158
+        assert "158" in cfg.fuente_tasa
         assert cfg.validado is True
 
     def test_busqueda_por_nombre(self):
@@ -66,20 +67,21 @@ class TestCatalogo:
 
 
 class TestCalcular:
-    def test_cdmx_3pct(self, tmp_client):
+    def test_cdmx_4pct(self, tmp_client):
         r = tmp_client.calcular(nomina_gravable=100_000, estado="CDMX")
-        assert r["isn_a_pagar"] == 3000.0
-        assert r["tasa_pct"] == 3.0
+        assert r["isn_a_pagar"] == 4000.0
+        assert r["tasa_pct"] == 4.0
+        assert r["simulated"] is False
         assert r["estado_clave"] == "CDMX"
 
-    def test_bc_1_8pct(self, tmp_client):
+    def test_bc_4_25pct(self, tmp_client):
         r = tmp_client.calcular(nomina_gravable=100_000, estado="BC")
-        assert r["isn_a_pagar"] == 1800.0
-        assert r["tasa_pct"] == 1.8
+        assert r["isn_a_pagar"] == 4250.0
+        assert r["tasa_pct"] == 4.25
 
-    def test_gto_2pct(self, tmp_client):
+    def test_gto_3pct(self, tmp_client):
         r = tmp_client.calcular(nomina_gravable=50_000, estado="GTO")
-        assert r["isn_a_pagar"] == 1000.0
+        assert r["isn_a_pagar"] == 1500.0
 
     def test_nomina_cero(self, tmp_client):
         r = tmp_client.calcular(nomina_gravable=0, estado="CDMX")
@@ -98,7 +100,7 @@ class TestInfoEstado:
     def test_cdmx_info(self, tmp_client):
         r = tmp_client.info_estado("CDMX")
         assert r["clave"] == "CDMX"
-        assert r["tasa_pct"] == 3.0
+        assert r["tasa_pct"] == 4.0
         assert r["requiere_efirma"] is True
         assert "selectores_documentados" in r
 
@@ -120,7 +122,7 @@ class TestLineaCaptura:
             nomina_gravable=100_000,
         )
         assert "linea_captura" in r
-        assert r["monto_a_pagar"] == 3000.0
+        assert r["monto_a_pagar"] == 4000.0
         assert r["estado"] == "CDMX"
         assert r.get("simulated") is True
 
@@ -182,3 +184,29 @@ class TestListar:
         r = tmp_client.listar(solo_validados=True)
         assert r["total"] < 32  # no todos están validados
         assert all(e["validado"] for e in r["estados"])
+
+
+class TestReal:
+    """Sin PLUGINS_MX_MOCK: nada simulado; lo que requiere login es error explícito."""
+
+    @pytest.fixture
+    def real_client(self, tmp_path, monkeypatch):
+        monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+        return IsnMxClient(cache=FileCache("isn_real", root=tmp_path / "c"),
+                           bitacora=Bitacora("isn_real", root=tmp_path / "b"))
+
+    def test_linea_captura_requiere_login(self, real_client):
+        with pytest.raises(ConfigError):
+            real_client.generar_linea_captura("CDMX", "2026-05", "ABC120101AB1", 1000)
+
+    def test_declaracion_requiere_login(self, real_client):
+        with pytest.raises(ConfigError):
+            real_client.descargar_declaracion("JAL", "2026-04", "XYZ010101XX1")
+
+    def test_tarifa_progresiva_no_inventa_monto(self):
+        r = calcular_isn(1_000_000, "SIN")
+        assert r["isn_a_pagar"] is None
+        assert r["advertencia"]
+
+    def test_todas_las_tasas_tienen_fuente(self):
+        assert all(c.fuente_tasa for c in CATALOGO_ISN.values())

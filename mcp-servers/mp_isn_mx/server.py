@@ -8,8 +8,9 @@ Tools:
 - isn_descargar_declaracion(estado, periodo, rfc)
 
 Universo: TODA empresa formal MX con al menos 1 trabajador (~4M empresas).
-8 estados validados con portal real: CDMX, JAL, NL, EdoMex, QRO, PUE, GTO, BC.
-24 estados restantes con catálogo básico + URL portal.
+Tasas 2026 verificadas contra fuente secundaria (BHR ene-2026; CDMX art. 158).
+Línea de captura y declaraciones requieren sesión del contribuyente → ConfigError
+(mock solo con PLUGINS_MX_MOCK=1).
 """
 
 from __future__ import annotations
@@ -27,6 +28,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from mp_isn_mx.client import IsnMxClient  # noqa: E402
+from shared.errors import McpError  # noqa: E402
 
 
 mcp = FastMCP("isn_mx")
@@ -134,7 +136,7 @@ def isn_info_estado(args: InfoEstadoInput) -> dict:
 def isn_generar_linea_captura(args: LineaCapturaInput) -> dict:
     """Genera línea de captura para pagar ISN del periodo.
 
-    Mock por default. Real requiere MP_PLAYWRIGHT_PUBLIC=1 + credenciales estatales.
+    Real: error explícito (requiere sesión del contribuyente). Mock solo con PLUGINS_MX_MOCK=1.
 
     Returns:
         {
@@ -148,12 +150,15 @@ def isn_generar_linea_captura(args: LineaCapturaInput) -> dict:
           "instrucciones": str
         }
     """
-    return _client.generar_linea_captura(
-        estado=args.estado,
-        periodo=args.periodo,
-        rfc=args.rfc,
-        nomina_gravable=args.nomina_gravable,
-    )
+    try:
+        return _client.generar_linea_captura(
+            estado=args.estado,
+            periodo=args.periodo,
+            rfc=args.rfc,
+            nomina_gravable=args.nomina_gravable,
+        )
+    except McpError as exc:
+        return exc.to_dict()
 
 
 @mcp.tool(annotations={
@@ -164,11 +169,14 @@ def isn_generar_linea_captura(args: LineaCapturaInput) -> dict:
 })
 def isn_descargar_declaracion(args: DescargarDeclaracionInput) -> dict:
     """Descarga el PDF de la declaración del periodo desde la bóveda estatal."""
-    return _client.descargar_declaracion(
-        estado=args.estado,
-        periodo=args.periodo,
-        rfc=args.rfc,
-    )
+    try:
+        return _client.descargar_declaracion(
+            estado=args.estado,
+            periodo=args.periodo,
+            rfc=args.rfc,
+        )
+    except McpError as exc:
+        return exc.to_dict()
 
 
 if __name__ == "__main__":
