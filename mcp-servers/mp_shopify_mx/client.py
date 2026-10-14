@@ -2,7 +2,7 @@
 
 Base URL: https://{shop}.myshopify.com/admin/api/{version}/{resource}.json
 Auth: X-Shopify-Access-Token header (custom app access token)
-API version: 2024-10 (LTS) o 2025-01
+API version: 2026-07 por defecto (SHOPIFY_API_VERSION la sobreescribe)
 
 Tools cubiertos:
 - list_products / get_product
@@ -46,7 +46,7 @@ from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
 
 NAMESPACE = "shopify_mx_mcp"
-DEFAULT_API_VERSION = "2024-10"
+DEFAULT_API_VERSION = "2026-07"  # 2024-10 ya no tiene soporte (12 meses por versión)
 REQUEST_TIMEOUT_S = 30.0
 
 
