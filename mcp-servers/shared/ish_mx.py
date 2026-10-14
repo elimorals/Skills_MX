@@ -1,13 +1,23 @@
-"""Catálogo Impuesto Sobre Hospedaje (ISH) por entidad federativa MX.
+"""Impuesto Sobre Hospedaje (ISH) por entidad federativa MX — tasas 2026.
 
-ISH es un impuesto ESTATAL que grava el hospedaje de personas físicas.
-Combo con airbnb-host-mx — los hosts retienen y enteran este impuesto.
+Revisado 2026-10-14 (grupo E1). Las 32 entidades lo cobran en 2026 (Veracruz
+con duda). Fuentes secundarias: no se abrió el texto legal primario de ningún
+estado, así que la confianza máxima es "media":
 
-Cobertura: 27 estados lo cobran. Tasas 1.5% - 6%.
+- [T] El Contribuyente, tabla ISH 2026: https://www.elcontribuyente.mx/impuesto-sobre-hospedaje/
+- [A] Airbnb, estados donde recauda y remite: https://es-l.airbnb.com/help/article/2288
+- [B] BHR ene-2026 (Yucatán, EdoMex): https://www.bhrmx.com/wp-content/uploads/2026/01/IMPUESTO-SOBRE-HOSPEDAJE-2026-NUEVAS-OBLIGACIONES-Y-BENEFICIOS.pdf
+- [C] El Contribuyente feb-2026: https://www.elcontribuyente.mx/2026/02/airbnb-hoteles-y-rentas-asi-cambia-el-impuesto-sobre-hospedaje-en-2026/
 """
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Optional
+
+T = "https://www.elcontribuyente.mx/impuesto-sobre-hospedaje/"
+A = "https://es-l.airbnb.com/help/article/2288"
+B = "https://www.bhrmx.com/wp-content/uploads/2026/01/IMPUESTO-SOBRE-HOSPEDAJE-2026-NUEVAS-OBLIGACIONES-Y-BENEFICIOS.pdf"
+C = "https://www.elcontribuyente.mx/2026/02/airbnb-hoteles-y-rentas-asi-cambia-el-impuesto-sobre-hospedaje-en-2026/"
 
 
 @dataclass
@@ -15,45 +25,51 @@ class EstadoISH:
     clave: str
     nombre_estado: str
     tasa_pct: float
+    tasa_plataformas_pct: Optional[float] = None  # casas/deptos vía plataformas digitales
     cobra_ish: bool = True
-    portal_url: str = ""
+    confianza: str = "media"
+    fuentes: tuple[str, ...] = (T,)
     notas: str = ""
 
 
 CATALOGO_ISH: list[EstadoISH] = [
-    EstadoISH("cdmx", "Ciudad de México", 3.5, portal_url="https://www.finanzas.cdmx.gob.mx", notas="ISH 3.5% sobre tarifa cuarto."),
-    EstadoISH("qroo", "Quintana Roo", 5.0, portal_url="https://sefiplan.qroo.gob.mx", notas="6% para Cancún/Cozumel turísticos."),
-    EstadoISH("bcs", "Baja California Sur", 4.0, portal_url="https://finanzasbcs.gob.mx", notas="Los Cabos tasa especial."),
-    EstadoISH("jal", "Jalisco", 3.0, portal_url="https://sepaf.jalisco.gob.mx"),
-    EstadoISH("yuc", "Yucatán", 3.0, portal_url="https://sefin.yucatan.gob.mx"),
-    EstadoISH("nay", "Nayarit", 3.0, portal_url="https://hacienda.nayarit.gob.mx", notas="Riviera Nayarit alto turismo."),
-    EstadoISH("oax", "Oaxaca", 3.0, portal_url="https://www.finanzasoaxaca.gob.mx"),
-    EstadoISH("gro", "Guerrero", 3.0, portal_url="https://sfa.guerrero.gob.mx", notas="Acapulco/Zihuatanejo."),
-    EstadoISH("ver", "Veracruz", 3.0, portal_url="https://www.veracruz.gob.mx/finanzas"),
-    EstadoISH("son", "Sonora", 3.0, portal_url="https://hacienda.sonora.gob.mx", notas="Puerto Peñasco/Bahía Kino."),
-    EstadoISH("sin", "Sinaloa", 3.0, portal_url="https://saf.sinaloa.gob.mx", notas="Mazatlán."),
-    EstadoISH("bc", "Baja California", 3.0, portal_url="https://www.bajacalifornia.gob.mx/finanzas"),
-    EstadoISH("col", "Colima", 3.0, portal_url="https://finanzas.col.gob.mx", notas="Manzanillo."),
-    EstadoISH("mich", "Michoacán", 3.0, portal_url="https://secfinanzas.michoacan.gob.mx"),
-    EstadoISH("chis", "Chiapas", 3.0, portal_url="https://haciendachiapas.gob.mx", notas="Palenque/San Cristóbal."),
-    EstadoISH("cam", "Campeche", 2.0, portal_url="https://finanzas.campeche.gob.mx"),
-    EstadoISH("nl", "Nuevo León", 3.0, portal_url="https://www.nl.gob.mx/finanzas"),
-    EstadoISH("pue", "Puebla", 3.0, portal_url="https://www.puebla.gob.mx/finanzas"),
-    EstadoISH("qro", "Querétaro", 3.0, portal_url="https://sfqro.gob.mx"),
-    EstadoISH("gto", "Guanajuato", 2.5, portal_url="https://finanzas.guanajuato.gob.mx", notas="San Miguel de Allende."),
-    EstadoISH("slp", "San Luis Potosí", 3.0, portal_url="https://finanzas.slp.gob.mx"),
-    EstadoISH("zac", "Zacatecas", 3.0, portal_url="https://finanzas.zacatecas.gob.mx"),
-    EstadoISH("ags", "Aguascalientes", 3.0, portal_url="https://eservicios2.aguascalientes.gob.mx"),
-    EstadoISH("dgo", "Durango", 3.0, portal_url="https://www.durango.gob.mx/sf"),
-    EstadoISH("hgo", "Hidalgo", 3.0, portal_url="https://sefinanzas.hidalgo.gob.mx"),
-    EstadoISH("mor", "Morelos", 3.0, portal_url="https://hacienda.morelos.gob.mx", notas="Tepoztlán/Cuernavaca."),
-    EstadoISH("tab", "Tabasco", 3.0, portal_url="https://finanzas.tabasco.gob.mx"),
-    # Sin ISH (5 estados)
-    EstadoISH("edomex", "Estado de México", 0.0, cobra_ish=False),
-    EstadoISH("coah", "Coahuila", 0.0, cobra_ish=False),
-    EstadoISH("chih", "Chihuahua", 0.0, cobra_ish=False),
-    EstadoISH("tlax", "Tlaxcala", 0.0, cobra_ish=False),
-    EstadoISH("tam", "Tamaulipas", 0.0, cobra_ish=False),
+    EstadoISH("ags", "Aguascalientes", 3.0),
+    EstadoISH("bc", "Baja California", 5.0, 5.0, fuentes=(T, A), notas="Moteles 7%."),
+    EstadoISH("bcs", "Baja California Sur", 4.0, fuentes=(T, A)),
+    EstadoISH("cam", "Campeche", 2.0, fuentes=(T, A)),
+    EstadoISH("chis", "Chiapas", 2.0, fuentes=(T, A), notas="Moteles 5%."),
+    EstadoISH("chih", "Chihuahua", 4.0, confianza="baja", notas="Otra fuente reporta 3%."),
+    EstadoISH("cdmx", "Ciudad de México", 3.5, 5.0, fuentes=(T, A),
+              notas="Código Fiscal CDMX art. 162 (3.5% hoteles; 5% casas/deptos/plataformas)."),
+    EstadoISH("coah", "Coahuila", 3.0),
+    EstadoISH("col", "Colima", 3.0, fuentes=(T, A), notas="Moteles 5%."),
+    EstadoISH("dgo", "Durango", 3.0, confianza="baja", notas="Moteles 5%. Un portal estatal reporta 2%/3% por tamaño."),
+    EstadoISH("edomex", "Estado de México", 4.0, fuentes=(T, B, C),
+              notas="Subsidio 50% a estancias > 15 días (LI EdoMex 2026 art. 12)."),
+    EstadoISH("gto", "Guanajuato", 4.0),
+    EstadoISH("gro", "Guerrero", 4.0, 5.0, fuentes=(T, A)),
+    EstadoISH("hgo", "Hidalgo", 3.0, confianza="baja", fuentes=(T, C), notas="[T] dice 2.5%, [C] 3%."),
+    EstadoISH("jal", "Jalisco", 4.0, confianza="baja", fuentes=(T, A), notas="Airbnb reporta 5%."),
+    EstadoISH("mich", "Michoacán", 3.0, fuentes=(T, A)),
+    EstadoISH("mor", "Morelos", 3.75),
+    EstadoISH("nay", "Nayarit", 5.0, fuentes=(T, A)),
+    EstadoISH("nl", "Nuevo León", 3.0, fuentes=(T, A)),
+    EstadoISH("oax", "Oaxaca", 3.0, confianza="baja", fuentes=(T, A), notas="Airbnb reporta 3–5%."),
+    EstadoISH("pue", "Puebla", 3.0, fuentes=(T, A)),
+    EstadoISH("qro", "Querétaro", 3.5, 5.0, fuentes=(T, A)),
+    EstadoISH("qroo", "Quintana Roo", 5.0, 6.0, fuentes=(C, A),
+              notas="Ley del Impuesto al Hospedaje del Estado de QRoo (reforma POE 16-dic-2025)."),
+    EstadoISH("slp", "San Luis Potosí", 4.0),
+    EstadoISH("sin", "Sinaloa", 3.0, fuentes=(T, A)),
+    EstadoISH("son", "Sonora", 3.0, fuentes=(T, A)),
+    EstadoISH("tab", "Tabasco", 3.0),
+    EstadoISH("tam", "Tamaulipas", 3.0),
+    EstadoISH("tlax", "Tlaxcala", 2.0, confianza="baja"),
+    EstadoISH("ver", "Veracruz", 2.0, confianza="baja",
+              fuentes=(T, "https://elcongresista.mx/politica/veracruz/impuesto-3-plataformas-hospedaje-veracruz-2026"),
+              notas="Vigencia dudosa; 3% a plataformas aprobado sin convenio con SAT."),
+    EstadoISH("yuc", "Yucatán", 4.5, fuentes=(B, C), notas="Baja a 4.5% en 2026."),
+    EstadoISH("zac", "Zacatecas", 3.0),
 ]
 
 
@@ -71,24 +87,28 @@ def listar_ish(solo_aplicables: bool = False) -> list[EstadoISH]:
     return list(CATALOGO_ISH)
 
 
-def calcular_ish(estado: str, monto_hospedaje: float) -> dict:
-    """Calcula ISH dado el monto del hospedaje (antes de IVA)."""
+def calcular_ish(estado: str, monto_hospedaje: float, plataforma_digital: bool = False) -> dict:
+    """ISH sobre el monto del hospedaje (antes de IVA)."""
     e = buscar_ish(estado)
     if e is None:
         raise ValueError(f"Estado '{estado}' no en catálogo.")
     if monto_hospedaje < 0:
         raise ValueError("monto_hospedaje no puede ser negativo.")
-    ish = round(monto_hospedaje * e.tasa_pct / 100, 2) if e.cobra_ish else 0.0
+    tasa = e.tasa_plataformas_pct if (plataforma_digital and e.tasa_plataformas_pct) else e.tasa_pct
+    ish = round(monto_hospedaje * tasa / 100, 2) if e.cobra_ish else 0.0
     return {
         "estado": e.clave,
         "estado_nombre": e.nombre_estado,
         "cobra_ish": e.cobra_ish,
-        "tasa_pct": e.tasa_pct,
+        "tasa_pct": tasa,
+        "plataforma_digital": plataforma_digital,
         "monto_hospedaje": monto_hospedaje,
         "ish_mxn": ish,
         "monto_total_con_ish": round(monto_hospedaje + ish, 2),
-        "fuente": e.portal_url,
+        "confianza": e.confianza,
+        "fuentes": list(e.fuentes),
         "notas": e.notas,
+        "simulated": False,
     }
 
 
