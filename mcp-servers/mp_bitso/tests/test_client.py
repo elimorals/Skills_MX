@@ -51,7 +51,8 @@ def test_require_creds_falla(client: BitsoClient) -> None:
 
 
 @pytest.mark.asyncio
-async def test_get_ticker_mock(client: BitsoClient) -> None:
+async def test_get_ticker_mock(client: BitsoClient, monkeypatch) -> None:
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
     r = await client.get_ticker("btc_mxn")
     assert r["simulated"] is True
     assert r["book"] == "btc_mxn"
@@ -67,7 +68,8 @@ async def test_get_ticker_usa_cache(client: BitsoClient) -> None:
 
 
 @pytest.mark.asyncio
-async def test_get_order_book_mock(client: BitsoClient) -> None:
+async def test_get_order_book_mock(client: BitsoClient, monkeypatch) -> None:
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
     r = await client.get_order_book("btc_mxn")
     assert r["simulated"] is True
     assert len(r["bids"]) > 0
@@ -75,7 +77,8 @@ async def test_get_order_book_mock(client: BitsoClient) -> None:
 
 
 @pytest.mark.asyncio
-async def test_list_available_books_mock(client: BitsoClient) -> None:
+async def test_list_available_books_mock(client: BitsoClient, monkeypatch) -> None:
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
     r = await client.list_available_books()
     assert r["simulated"] is True
     assert len(r["books"]) > 0
@@ -130,3 +133,10 @@ async def test_withdrawals_mock(client: BitsoClient) -> None:
 async def test_open_orders_mock(client: BitsoClient) -> None:
     r = await client.list_open_orders()
     assert r["simulated"] is True
+
+
+@pytest.mark.live
+@pytest.mark.asyncio
+async def test_live_ticker_publico_sin_llaves() -> None:
+    r = await BitsoClient().get_ticker("btc_mxn")
+    assert r["simulated"] is False and float(r["last"]) > 0

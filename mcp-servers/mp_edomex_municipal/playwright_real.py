@@ -10,7 +10,7 @@ Patrón general:
 2. Si está en catálogo y tiene URL + selectores → usa `consulta_portal()`.
 3. Si no está o no tiene URL → UpstreamError con instrucción al usuario.
 
-Tenencia estatal sigue siendo centralizada (SEF-EdoMex), se mantiene aparte.
+Tenencia estatal: ver client.py (handoff humano; el portal SEF viejo da 404).
 
 ⚠ Selectores marcados como "experimentales" — VALIDAR contra portal vigente
 antes de uso producción. Cron de salud mensual recomendado.
@@ -32,20 +32,9 @@ from shared.catalogo_municipios_mx import (  # noqa: E402
     listar_municipios_estado,
 )
 from shared.errors import UpstreamError  # noqa: E402
-from shared.playwright_municipal_generic import (  # noqa: E402
-    PortalConfig,
-    consulta_portal,
-)
+from shared.playwright_municipal_generic import consulta_portal  # noqa: E402
 
 
-# Tenencia estatal SEF-EdoMex sigue centralizada (no es un portal por municipio)
-CONFIG_TENENCIA = PortalConfig(
-    url="https://sfpya.edomexico.gob.mx/tenencia/",
-    input_selectors=["input[name='placa']", "input#placa"],
-    submit_selectors=["button:has-text('Consultar')", "button[type='submit']"],
-    result_selector="table, .resultado",
-    identificador_etiqueta="placa",
-)
 
 
 def _normalizar_clave_municipio(municipio: str) -> str:
@@ -118,17 +107,6 @@ def predial_real(municipio: str, cuenta_predial: str) -> dict[str, Any]:
 
     return consulta_portal(config, cuenta_predial)
 
-
-def tenencia_real(placa: str, ejercicio: int = 2026) -> dict[str, Any]:
-    """Consulta tenencia/refrendo vehicular EdoMex (portal SEF estatal centralizado)."""
-    # SEF-EdoMex tenencia centralizada — no consulta el catálogo municipal
-    config = PortalConfig(
-        **{
-            **CONFIG_TENENCIA.__dict__,
-            "extra_inputs": {"input[name='ejercicio']": str(ejercicio)},
-        }
-    )
-    return consulta_portal(config, placa)
 
 
 def municipios_soportados() -> list[dict[str, Any]]:

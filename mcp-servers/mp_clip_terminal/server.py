@@ -45,7 +45,8 @@ class ChargeIdInput(BaseModel):
 class RefundInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
     charge_id: str = Field(..., min_length=1, max_length=80)
-    amount_mxn: Optional[float] = Field(None, ge=0)
+    amount_mxn: Optional[float] = Field(None, ge=0, description="Vacío = reembolso total")
+    reason: str = Field("Solicitud del cliente", min_length=3, max_length=200)
 
 
 class TerminalIdInput(BaseModel):
@@ -77,7 +78,7 @@ async def clip_get_charge(args: ChargeIdInput) -> dict:
 @mcp.tool(annotations={"title": "Refund charge Clip", "readOnlyHint": False, "destructiveHint": True, "openWorldHint": True})
 async def clip_refund_charge(args: RefundInput) -> dict:
     try:
-        return await _client.refund_charge(args.charge_id, args.amount_mxn)
+        return await _client.refund_charge(args.charge_id, args.amount_mxn, args.reason)
     except McpError as exc:
         return exc.to_dict()
 

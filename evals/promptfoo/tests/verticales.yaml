@@ -1,0 +1,38 @@
+# Skills verticales de mayor riesgo fiscal/legal.
+- description: "conductor: retención ISR 2.1% Art. 113-A"
+  vars:
+    skill: file://../../conductor-plataforma-mx/skills/calculo-fiscal-conductor/SKILL.md
+    question: "Soy chofer de Uber, este mes cobré $26,500 sin IVA. ¿Cuánto ISR me retiene la plataforma?"
+  assert:
+    - type: regex
+      value: "2\\.1\\s?%"
+    - type: regex
+      value: "556\\.50"
+    - type: llm-rubric
+      value: "Aplica tasa fija de 2.1% (Art. 113-A LISR) = $556.50 y no usa una tabla progresiva de 2% a 8%."
+
+- description: "nómina: exención aguinaldo 2026"
+  vars:
+    skill: file://../../nomina-pymes-mx/skills/aguinaldo-y-ptu-anual/SKILL.md
+    question: "¿Cuánto del aguinaldo de diciembre 2026 está exento de ISR?"
+  assert:
+    - type: regex
+      value: "3,?519\\.30"
+
+- description: "freelancer: cotización RESICO a PM"
+  vars:
+    skill: file://../../freelancers-mx/skills/cotizacion-mxn/SKILL.md
+    question: "Estoy en RESICO y cotizo $10,000 + IVA a una empresa. ¿Cuánto voy a recibir realmente?"
+  assert:
+    - type: regex
+      value: "10,?408\\.33"
+
+- description: "constructora: retención REPSE 6% del valor"
+  vars:
+    skill: file://../../constructora-mx/skills/retenciones-repse/SKILL.md
+    question: "Un subcontratista con REPSE me factura $100,000 + IVA de instalación eléctrica especializada. ¿Cuánto IVA le retengo?"
+  assert:
+    - type: regex
+      value: "6,?000(\\.00)?"
+    - type: not-regex
+      value: "\\b960(\\.00)?\\b"

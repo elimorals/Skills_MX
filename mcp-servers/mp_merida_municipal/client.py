@@ -1,49 +1,47 @@
-"""Cliente mp_merida_municipal — mock-first."""
+"""Cliente mp_merida_municipal.
+
+Predial: isla.merida.gob.mx/serviciosinternet/predialmid está detrás de Radware
+Bot Manager, que redirige a un reto hCaptcha o responde 403 a httpx desde la
+segunda petición (verificado 2026-10-14) → handoff humano. El formulario en sí
+usa reCAPTCHA v3 (sitekey 6Lc3EjQmAAAAAEYFAUWTNk_k2wGN6rXoauSJ5jlS, acción
+"submit"), pero el solver opt-in NO se conecta: el bloqueo es del bot manager,
+no del captcha, y no se evade (sin stealth ni proxies).
+La búsqueda es por dirección (calle + número), no por cuenta.
+Multas estatales: sin portal público verificado (usar mp_multas_mx).
+"""
 
 from __future__ import annotations
 
-import os
 import sys
 from pathlib import Path
-from typing import Any
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared.bitacora import Bitacora  # noqa: E402
-from shared.errors import McpError  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
 NAMESPACE = "merida_mun"
-CRED_VARS = []
+URL_PREDIAL = "https://isla.merida.gob.mx/serviciosinternet/predialmid/index.php"
 
 
 class MeridaMunClient:
     def __init__(self, bitacora: Bitacora | None = None) -> None:
         self.bitacora = bitacora or Bitacora(NAMESPACE)
 
-    def _is_mock(self) -> bool:
-        if not CRED_VARS:
-            return True
-        return is_mock_mode(CRED_VARS)
-
-    def consultar_multas(self, **kwargs) -> dict:
-        self.bitacora.log("consultar_multas", success=True, params_summary={k: str(v)[:20] for k, v in kwargs.items()})
-        if self._is_mock():
-            return mark_simulated({
-                "operation": "consultar_multas",
-                "data": {"placeholder": True, "ns": "merida_mun", "kwargs_received": list(kwargs.keys())},
-                "real_implementation_pending": True,
-            })
-        raise McpError("consultar_multas path real no implementado — ver README", {"hint": "implementar HTTP/API real"})
-
-    def consultar_predial(self, **kwargs) -> dict:
-        self.bitacora.log("consultar_predial", success=True, params_summary={k: str(v)[:20] for k, v in kwargs.items()})
-        if self._is_mock():
-            return mark_simulated({
-                "operation": "consultar_predial",
-                "data": {"placeholder": True, "ns": "merida_mun", "kwargs_received": list(kwargs.keys())},
-                "real_implementation_pending": True,
-            })
-        raise McpError("consultar_predial path real no implementado — ver README", {"hint": "implementar HTTP/API real"})
+    def consultar_predial(self, calle: str, numero: str) -> dict:
+        self.bitacora.log("consultar_predial", success=True, params_summary={})
+        if is_mock_mode([], default_when_no_creds=False):
+            return mark_simulated({"calle": calle, "numero": numero, "adeudo_total_mxn": 890.0})
+        return armar_handoff(
+            url=URL_PREDIAL,
+            motivo="bot_manager",
+            detalle="Radware Bot Manager presenta un reto hCaptcha antes del formulario.",
+            pasos=[
+                f"Abrir {URL_PREDIAL} y resolver el reto de verificación",
+                f"Buscar por calle {calle} y número {numero}",
+                "Leer el adeudo del predio en la tabla de resultados",
+            ],
+        )

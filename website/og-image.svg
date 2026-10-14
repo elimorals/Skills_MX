@@ -14,7 +14,7 @@
 
   <!-- Top strip estilo periódico -->
   <rect x="0" y="0" width="1200" height="48" fill="#161313"/>
-  <text x="60" y="32" font-family="JetBrains Mono, monospace" font-size="14" fill="#F4EEE2" letter-spacing="2">PLUGINS·MX  ·  VOL. III  ·  Nº 56-59  ·  JUNIO 2026  ·  CDMX</text>
+  <text x="60" y="32" font-family="JetBrains Mono, monospace" font-size="14" fill="#F4EEE2" letter-spacing="2">PLUGINS·MX  ·  OCTUBRE 2026  ·  CDMX</text>
 
   <!-- Brand -->
   <text x="60" y="140" font-family="Fraunces, serif" font-weight="900" font-size="58" fill="#161313" letter-spacing="-1">P<tspan fill="#C2410C">·</tspan>MX</text>
@@ -26,29 +26,29 @@
   <text x="60" y="450" font-family="Fraunces, serif" font-weight="700" font-size="74" fill="#161313">fiscal para <tspan fill="#C2410C">México</tspan>.</text>
 
   <!-- Stats row -->
-  <g transform="translate(60, 510)">
-    <text x="0" y="0" font-family="Fraunces, serif" font-weight="900" font-size="56" fill="#161313">46</text>
-    <text x="0" y="32" font-family="Geist, sans-serif" font-size="13" fill="#161313" opacity="0.6" letter-spacing="1">MCPs</text>
+  <g transform="translate(60, 532)">
+    <text x="0" y="0" font-family="Fraunces, serif" font-weight="900" font-size="46" fill="#161313">83</text>
+    <text x="0" y="26" font-family="Geist, sans-serif" font-size="13" fill="#161313" opacity="0.6" letter-spacing="1">MCPs</text>
   </g>
-  <g transform="translate(220, 510)">
-    <text x="0" y="0" font-family="Fraunces, serif" font-weight="900" font-size="56" fill="#161313">32</text>
-    <text x="0" y="32" font-family="Geist, sans-serif" font-size="13" fill="#161313" opacity="0.6" letter-spacing="1">ESTADOS · ISN</text>
+  <g transform="translate(220, 532)">
+    <text x="0" y="0" font-family="Fraunces, serif" font-weight="900" font-size="46" fill="#161313">32</text>
+    <text x="0" y="26" font-family="Geist, sans-serif" font-size="13" fill="#161313" opacity="0.6" letter-spacing="1">ESTADOS · ISN</text>
   </g>
-  <g transform="translate(420, 510)">
-    <text x="0" y="0" font-family="Fraunces, serif" font-weight="900" font-size="56" fill="#161313">243</text>
-    <text x="0" y="32" font-family="Geist, sans-serif" font-size="13" fill="#161313" opacity="0.6" letter-spacing="1">MUNICIPIOS · PREDIAL</text>
+  <g transform="translate(420, 532)">
+    <text x="0" y="0" font-family="Fraunces, serif" font-weight="900" font-size="46" fill="#161313">243</text>
+    <text x="0" y="26" font-family="Geist, sans-serif" font-size="13" fill="#161313" opacity="0.6" letter-spacing="1">MUNICIPIOS · CATÁLOGO</text>
   </g>
-  <g transform="translate(680, 510)">
-    <text x="0" y="0" font-family="Fraunces, serif" font-weight="900" font-size="56" fill="#161313">4M</text>
-    <text x="0" y="32" font-family="Geist, sans-serif" font-size="13" fill="#161313" opacity="0.6" letter-spacing="1">EMPRESAS · COBERTURA</text>
+  <g transform="translate(680, 532)">
+    <text x="0" y="0" font-family="Fraunces, serif" font-weight="900" font-size="46" fill="#161313">23</text>
+    <text x="0" y="26" font-family="Geist, sans-serif" font-size="13" fill="#161313" opacity="0.6" letter-spacing="1">VALIDADOS EN VIVO</text>
   </g>
 
   <!-- Stamp lateral -->
   <g transform="translate(1000, 200) rotate(-8)">
     <rect x="0" y="0" width="170" height="170" fill="none" stroke="#C2410C" stroke-width="3" rx="6"/>
     <text x="85" y="50" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#C2410C" letter-spacing="2">VOL. III</text>
-    <text x="85" y="98" text-anchor="middle" font-family="Fraunces, serif" font-weight="900" font-size="34" fill="#C2410C">PROD</text>
-    <text x="85" y="130" text-anchor="middle" font-family="Fraunces, serif" font-weight="900" font-size="34" fill="#C2410C">READY</text>
+    <text x="85" y="98" text-anchor="middle" font-family="Fraunces, serif" font-weight="900" font-size="34" fill="#C2410C">DATOS</text>
+    <text x="85" y="130" text-anchor="middle" font-family="Fraunces, serif" font-weight="900" font-size="34" fill="#C2410C">REALES</text>
     <text x="85" y="160" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#C2410C" letter-spacing="1">2026 · MX</text>
   </g>
 

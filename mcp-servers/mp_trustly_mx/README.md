@@ -34,3 +34,11 @@ Mock-first sin credenciales.
 cd /Users/elias/Documents/Trabajo/skills/mcp-servers
 .venv/bin/python -m pytest mp_trustly_mx/tests/ -q
 ```
+
+## Estado real (2026-10-14)
+
+- ❌ **Trustly no opera en México.** Sus mercados documentados son Europa y Norteamérica, y los
+  endpoints que usaba este cliente (`api.trustly.com/v1/...`) no existen.
+- Con `TRUSTLY_API_KEY`, cada tool devuelve `ConfigError` `motivo: sin_api_publica`.
+  Para cobros por SPEI usa Conekta o Mercado Pago, y valida transferencias con `mp_banxico_cep`.
+- Sin credenciales responde datos simulados `simulated: true` (solo demos).

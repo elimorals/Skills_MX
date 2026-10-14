@@ -31,6 +31,7 @@ _REPO_ROOT = _HERE.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
+from shared.errors import McpError  # noqa: E402
 from mp_cnbv_fintech.client import CnbvFintechClient  # noqa: E402
 
 
@@ -48,7 +49,10 @@ class ConsultarItfInput(BaseModel):
 
 class VerificarContraparteInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    rfc: str = Field(..., min_length=12, max_length=13)
+    rfc: Optional[str] = Field(None, min_length=12, max_length=13,
+                                description="RFC (solo modo mock: el PES de la CNBV no publica RFC).")
+    nombre: Optional[str] = Field(None, min_length=2, max_length=200,
+                                   description="Razón social o nombre comercial (requerido en modo real).")
     tipo_operacion: Literal["fondos_pago", "crowdfunding", "cualquiera"] = Field(
         "cualquiera",
         description="Tipo de operación que se va a realizar con la contraparte.",
@@ -61,7 +65,9 @@ class VerificarContraparteInput(BaseModel):
     "idempotentHint": True,
 })
 def cnbv_fintech_consultar_itf(args: ConsultarItfInput) -> dict:
-    """Verifica si una entidad es ITF autorizada bajo Ley Fintech.
+    """Verifica si una entidad es ITF (IFPE/IFC) en el Padrón de Entidades Supervisadas.
+
+    En modo real busca por `nombre` (el PES no publica RFC).
 
     Returns: encontrada, tipo (ifpe/ifc), rfc, nombre, marca, estado, etc.
     """
@@ -74,7 +80,7 @@ def cnbv_fintech_consultar_itf(args: ConsultarItfInput) -> dict:
     "idempotentHint": True,
 })
 def cnbv_fintech_listar_ifpe() -> dict:
-    """Lista IFPE autorizadas. Snapshot curado de DOF + SIPRES."""
+    """Lista IFPE en el Padrón de Entidades Supervisadas de la CNBV (en vivo)."""
     return _client.listar_ifpe()
 
 
@@ -84,7 +90,7 @@ def cnbv_fintech_listar_ifpe() -> dict:
     "idempotentHint": True,
 })
 def cnbv_fintech_listar_ifc() -> dict:
-    """Lista IFC autorizadas (crowdfunding). Snapshot curado de DOF + SIPRES."""
+    """Lista IFC (crowdfunding) en el Padrón de Entidades Supervisadas de la CNBV (en vivo)."""
     return _client.listar_ifc()
 
 
@@ -94,8 +100,12 @@ def cnbv_fintech_listar_ifc() -> dict:
     "idempotentHint": True,
 })
 def cnbv_fintech_listar_modelos_novedosos() -> dict:
-    """Sandbox regulatorio Art. 80 Ley Fintech."""
-    return _client.listar_modelos_novedosos()
+    """Sandbox regulatorio Art. 80 Ley Fintech. Sin fuente pública estructurada:
+    en modo real devuelve error `sin_fuente_publica`."""
+    try:
+        return _client.listar_modelos_novedosos()
+    except McpError as e:
+        return e.to_dict()
 
 
 @mcp.tool(annotations={
@@ -114,7 +124,7 @@ def cnbv_fintech_verificar_contraparte(args: VerificarContraparteInput) -> dict:
     Si puede_operar=False: NO firmar contrato — Art. 5 Ley Fintech (reservado solo a ITF).
     """
     return _client.verificar_contraparte(
-        rfc=args.rfc, tipo_operacion=args.tipo_operacion,
+        rfc=args.rfc, tipo_operacion=args.tipo_operacion, nombre=args.nombre,
     )
 
 

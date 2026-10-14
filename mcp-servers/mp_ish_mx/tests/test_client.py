@@ -31,11 +31,24 @@ class TestCalcular:
         assert r["tasa_pct"] == 5.0
         assert r["ish_mxn"] == 100.0
 
-    def test_edomex_sin_ish(self):
+    def test_edomex_cobra_4pct(self):
+        """Corregido 2026-10-14: EdoMex SÍ cobra ISH (4%)."""
         from shared.ish_mx import calcular_ish
         r = calcular_ish("edomex", 1000)
-        assert r["cobra_ish"] is False
-        assert r["ish_mxn"] == 0.0
+        assert r["cobra_ish"] is True
+        assert r["ish_mxn"] == 40.0
+        assert r["simulated"] is False
+
+    def test_plataformas_cdmx_5pct(self):
+        from shared.ish_mx import calcular_ish
+        assert calcular_ish("cdmx", 1000, plataforma_digital=True)["ish_mxn"] == 50.0
+        assert calcular_ish("qroo", 1000, plataforma_digital=True)["tasa_pct"] == 6.0
+        # sin tasa especial → tasa general
+        assert calcular_ish("nl", 1000, plataforma_digital=True)["tasa_pct"] == 3.0
+
+    def test_todas_con_fuente(self):
+        from shared.ish_mx import CATALOGO_ISH
+        assert all(e.fuentes for e in CATALOGO_ISH)
 
     def test_estado_invalido(self):
         from shared.ish_mx import calcular_ish
@@ -56,7 +69,7 @@ class TestCatalogo:
     def test_solo_aplicables_27(self):
         from shared.ish_mx import listar_ish
         aplicables = listar_ish(solo_aplicables=True)
-        assert len(aplicables) >= 25  # 27 estados cobran ISH
+        assert len(aplicables) == 32  # 2026: las 32 entidades lo cobran
 
 
 class TestClientCompara:
@@ -65,8 +78,7 @@ class TestClientCompara:
         c = IshMxClient()
         r = c.comparar_estados(["cdmx", "qroo", "edomex"], 1000)
         assert r["comparados"] == 3
-        # EdoMex no cobra → ISH 0 → primero en ranking
-        assert r["barato_a_caro"][0]["ish_mxn"] == 0.0
+        assert [x["estado"] for x in r["barato_a_caro"]] == ["cdmx", "edomex", "qroo"]
 
     def test_compara_lista_vacia(self):
         from mp_ish_mx.client import IshMxClient

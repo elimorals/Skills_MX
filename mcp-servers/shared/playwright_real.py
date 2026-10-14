@@ -124,12 +124,10 @@ def with_real_or_fallback(
     fallback_fn: Callable[[], dict[str, Any]],
     portal: str,
 ) -> dict[str, Any]:
-    """Intenta `real_fn`. Si falla con UpstreamError, cae a `fallback_fn` con marca.
+    """Intenta `real_fn`. Si falla con UpstreamError, propaga el error.
 
-    Esto evita que un cambio en el portal rompa el MCP — devuelve mock con
-    advertencia explícita en lugar de propagar la excepción.
-
-    El caller decide cuándo usar esto vs propagar (depende de criticidad).
+    Solo con PLUGINS_MX_MOCK=1 cae a `fallback_fn` (marcado simulated): un mock
+    silencioso en producción se lee como dato real.
     """
     try:
         result = real_fn()
@@ -139,6 +137,8 @@ def with_real_or_fallback(
         result["scrape_metadata"]["timestamp"] = int(time.time())
         return result
     except UpstreamError as e:
+        if os.environ.get("PLUGINS_MX_MOCK", "").strip() != "1":
+            raise
         fallback = fallback_fn()
         fallback["simulated"] = True
         fallback.setdefault("advertencias", [])

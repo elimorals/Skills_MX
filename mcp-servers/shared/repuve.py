@@ -1,40 +1,127 @@
 """Utilidades para REPUVE — Registro Público Vehicular.
 
 Portal:   https://www2.repuve.gob.mx:8443/ciudadania/
-Stack:    Angular SPA + reCAPTCHA v3 invisible + jQuery
-Site key: 6Lfy8AEoAAAAANclz0Doczn6y826fM0BjOPXEn9B
+Stack:    Angular SPA + reCAPTCHA v3 invisible (acción "login").
+Endpoint: POST https://www2.repuve.gob.mx:8443/consulta/consulta/repuve
+          body JSON {criterio, llave, token}. Verificado 2026-10-14: un navegador
+          automatizado recibe 401 "El reCaptcha no fue superado correctamente".
 
-Discovery 2026-06-15 con Playwright MCP:
-- 4 modos de búsqueda: placa, número de serie (NIV), folio, número de constancia
-- reCAPTCHA v3 emitido al cargar la página (textarea g-recaptcha-response-100000)
-- Endpoint backend exacto pendiente captura (Angular timing race conditions).
-  Patrón esperado por familia: POST a /ciudadania/api/consulta o similar con
-  body {tipo, valor, recaptcha_token}.
-
-Cuando el endpoint se confirme en una sesión próxima de discovery, actualizar
-API_URL_PATTERN y el handler de _normalizar_resultado.
+Cifrado del lado cliente (leído de main.*.js público, 2026-10-14): `criterio`
+("1" placa, "2" NIV) y `llave` (el valor) van cifrados con RSA-1024
+PKCS#1 v1.5 (node-forge `publicKey.encrypt` por defecto) y en base64, con
+llaves públicas FIJAS embebidas en el bundle (`publicKeyRep` para /repuve,
+`publicKeyPgj` para /pgj, que da el estatus de robo). No hay llave por sesión
+ni otro anti-bot: es reproducible sin evadir nada más que el captcha, que se
+resuelve con el solver opt-in (shared/captcha_solver.py). Sin solver: handoff.
 """
 from __future__ import annotations
 
+import base64
 import re
+import ssl
 from dataclasses import dataclass, field
-from typing import Optional
+from typing import Any, Optional
+
+import httpx
+
+from shared.captcha_solver import TokenRechazado, extraer_sitekey
+from shared.errors import ConfigError, UpstreamError
 
 
 PORTAL_URL = "https://www2.repuve.gob.mx:8443/ciudadania/"
 RECAPTCHA_SITE_KEY = "6Lfy8AEoAAAAANclz0Doczn6y826fM0BjOPXEn9B"
+RECAPTCHA_ACCION = "login"  # recaptchaV3Service.execute("login") antes de /repuve
+API_BASE = "https://www2.repuve.gob.mx:8443/consulta/consulta"
+API_URL = f"{API_BASE}/repuve"
+API_PGJ = f"{API_BASE}/pgj"
+CRITERIO = {"placa": "1", "niv": "2"}
 
-# Pendiente captura exacta — Angular timing race en discovery sesión actual.
-# Patrón típico de los portales mexicanos similares (IMPI, CONDUSEF):
-# probablemente POST a algo como /ciudadania/api/* con body JSON + token.
-API_URL_PATTERN = r"/ciudadania/(api|services)/.*(consulta|busqueda|search)"
+# Respaldo si el bundle en vivo no se puede leer (valores del 2026-10-14).
+CLAVE_REP = (
+    "-----BEGIN PUBLIC KEY-----\n"
+    "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDVrrj9NHtVBAHCWhqGIiaNoaTBLqF0AAnB07PUnRJQ0YKTHvRyoLfllDkYrkmunGEFvyMoKUtPz8LBsyjZrW0pNQnaMBGp7TEFaYt/O436vIa1TSIvgULpKqE5PBgue/BZPnfD6x7qHkJTxjnSrUyG6YIWDIa30XLqYjl0/+NSzwIDAQAB\n"
+    "-----END PUBLIC KEY-----"
+)
+CLAVE_PGJ = (
+    "-----BEGIN PUBLIC KEY-----\n"
+    "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDVj7xC0/A+Sp5ZGoZ5nlxt46RTJ1owTBPXogRNX1Vyo6M8ZeJFTPne+uD1pu/0Yt5svw5cHZIKICBMTT8efMKada+84mjmJHQduGsNN9IKgVV4V858YmgVQLxoTMY9ILc+qHwVmm0YBD5hzaH8YBxdLOfxD41kSQ+4Wze4O3BwwIDAQAB\n"
+    "-----END PUBLIC KEY-----"
+)
+_CONFIG: dict[str, str] = {}  # se lee el bundle una vez por proceso
 
-# Selectores Angular descubiertos (placa, NIV, folio, constancia)
-SEARCH_INPUT_PLACA = 'input[placeholder*="placa" i]'
-SEARCH_INPUT_NIV = 'input[placeholder*="serie" i], input[placeholder*="niv" i]'
-SEARCH_INPUT_FOLIO = 'input[placeholder*="folio" i]'
-SEARCH_INPUT_CONSTANCIA = 'input[placeholder*="constancia" i]'
-SEARCH_BUTTON = 'button.btn.btn-primary'
+
+def ssl_legacy() -> ssl.SSLContext:
+    """El servidor REPUVE solo negocia cifrados TLS legacy."""
+    import certifi
+
+    ctx = ssl.create_default_context(cafile=certifi.where())
+    ctx.set_ciphers("DEFAULT:@SECLEVEL=1")
+    return ctx
+
+
+def cifrar(texto: str, pem: str) -> str:
+    """RSA PKCS#1 v1.5 + base64, igual que node-forge en el portal."""
+    try:
+        from cryptography.hazmat.primitives import serialization
+        from cryptography.hazmat.primitives.asymmetric import padding
+    except ImportError as exc:  # extra opcional
+        raise ConfigError("REPUVE con solver requiere `cryptography` (extra sat-ws o dev).") from exc
+    llave = serialization.load_pem_public_key(pem.encode())
+    return base64.b64encode(llave.encrypt(texto.encode("utf-8"), padding.PKCS1v15())).decode()
+
+
+def _clave(js: str, nombre: str, respaldo: str) -> str:
+    m = re.search(nombre + r'="(-----BEGIN PUBLIC KEY-----.*?-----END PUBLIC KEY-----)"', js, re.S)
+    return m.group(1).replace("\\n", "\n") if m else respaldo
+
+
+def config_portal(http: httpx.Client) -> dict[str, str]:
+    """Sitekey y llaves RSA del bundle en vivo; constantes documentadas si no aparecen."""
+    if _CONFIG:
+        return _CONFIG
+    js = ""
+    try:
+        html = http.get(PORTAL_URL).text
+        if m := re.search(r'src="\.?/?(main\.[\w]+\.js)"', html):
+            js = http.get(PORTAL_URL + m.group(1)).text
+    except httpx.HTTPError:
+        pass  # respaldo con constantes
+    _CONFIG.update(
+        sitekey=extraer_sitekey(js, RECAPTCHA_SITE_KEY),
+        rep=_clave(js, "publicKeyRep", CLAVE_REP),
+        pgj=_clave(js, "publicKeyPgj", CLAVE_PGJ),
+    )
+    return _CONFIG
+
+
+def enviar(http: httpx.Client, url: str, pem: str, tipo: str, valor: str, token: str) -> list[dict[str, Any]]:
+    """POST cifrado; devuelve las filas. TokenRechazado si el portal no acepta el reCAPTCHA."""
+    body = {"criterio": cifrar(CRITERIO[tipo], pem), "llave": cifrar(valor, pem), "token": token}
+    try:
+        r = http.post(url, json=body)
+    except httpx.HTTPError as exc:
+        raise UpstreamError(f"REPUVE no respondió: {type(exc).__name__}", {"url": url}) from exc
+    if r.status_code == 401 and "recaptcha" in r.text.lower():
+        raise TokenRechazado()
+    if r.status_code != 200:
+        raise UpstreamError(f"REPUVE respondió HTTP {r.status_code}.", {"url": url, "status_code": r.status_code})
+    data = r.json() if r.content else {}
+    # El portal recorre Object.entries(respuesta) y toma j[0]: dict de listas de filas.
+    filas: list[dict[str, Any]] = []
+    for v in (data.values() if isinstance(data, dict) else []):
+        if isinstance(v, list):
+            filas += [f for f in v if isinstance(f, dict)]
+    return filas
+
+
+def estatus_robo(filas_pgj: list[dict[str, Any]]) -> tuple[str, bool]:
+    """Sin filas en PGJ el portal muestra "NO ROBADO"."""
+    # ponytail: valores de ESTATUS_VHI_ROBO no validados en vivo; todo lo que no empiece con NO/SIN cuenta como robo.
+    estatus = next((str(f.get("ESTATUS_VHI_ROBO") or "").strip() for f in filas_pgj if f.get("ESTATUS_VHI_ROBO")), "")
+    if not estatus:
+        return "NO ROBADO", False
+    return estatus, not re.match(r"^(NO|SIN)\b", estatus.upper())
+
 
 # Regex NIV/VIN: 17 caracteres alfanuméricos (sin I, O, Q por estándar ISO 3779)
 _NIV_PATTERN = re.compile(r"^[A-HJ-NPR-Z0-9]{17}$")
@@ -105,10 +192,6 @@ def validar_placa(placa: str) -> str:
 __all__ = [
     "PORTAL_URL",
     "RECAPTCHA_SITE_KEY",
-    "API_URL_PATTERN",
-    "SEARCH_INPUT_NIV",
-    "SEARCH_INPUT_PLACA",
-    "SEARCH_BUTTON",
     "VehiculoREPUVE",
     "validar_niv",
     "validar_placa",

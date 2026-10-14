@@ -23,11 +23,39 @@ dev = [
     "pytest-asyncio>=0.23,<1.0",
     "respx>=0.21,<1.0",
     "cryptography>=42,<46",
+    "pypdf>=4.0,<7.0",
+]
+# Login e.firma por httpx a los portales SAT (CSF, padrón, opinión 32-D propia)
+sat-portal = [
+    "cryptography>=42,<46",
+]
+estatal-resto = [
+    "pypdf>=4.0,<7.0",  # mp_gas_natural_mx: tarifas publicadas en PDF
+]
+# Predial municipal vía Playwright genérico (mp_predial_mx, mp_edomex_municipal
+# fuera de Toluca). Lo demás del grupo E1 solo usa httpx.
+estatal-centro = [
+    "playwright>=1.42,<2.0",
+]
+# Portales federales públicos con cadena TLS incompleta (CONDUSEF, gov.mx):
+# truststore usa el almacén del sistema, que completa intermedios.
+publicos-federales = [
+    "truststore>=0.9,<1.0",
+]
+# Grupo D (federales públicos 2): RETyS/CONAMER y check_form_render van detrás de Akamai
+# y solo responden a un navegador real.
+publicos-federales-2 = [
+    "playwright>=1.42,<2.0",
+    "pypdf>=4,<6",
 ]
 sat-playwright = [
     "cryptography>=42,<46",
     "playwright>=1.42,<2.0",
     "playwright-stealth>=2.0,<3.0",
+]
+# WS Descarga Masiva SAT (firma XMLDSig con e.firma): solo cryptography.
+sat-ws = [
+    "cryptography>=42,<46",
 ]
 
 [tool.setuptools.packages.find]
@@ -35,49 +63,10 @@ where = ["."]
 include = ["shared*", "mp_*"]
 
 [tool.pytest.ini_options]
-testpaths = [
-    "shared/tests",
-    "mp_banxico/tests",
-    "mp_facturama_extendido/tests",
-    "mp_mercado_pago/tests",
-    "mp_mercado_libre/tests",
-    "mp_curp_renapo/tests",
-    "mp_banxico_cep/tests",
-    "mp_sat_portal/tests",
-    "mp_conekta/tests",
-    "mp_aspel_contpaqi/tests",
-    "mp_shopify_mx/tests",
-    "mp_bitso/tests",
-    "mp_bancos_mx/tests",
-    "mp_imss_patronal/tests",
-    "mp_infonavit_patronal/tests",
-    "mp_cdmx_municipal/tests",
-    "mp_edomex_municipal/tests",
-    "mp_monterrey_municipal/tests",
-    "mp_inmuebles24/tests",
-    "mp_vivanuncios/tests",
-    "mp_buro_credito_personal/tests",
-    "mp_trustly_mx/tests",
-    "mp_clip_terminal/tests",
-    "mp_cabify_business/tests",
-    "mp_amazon_mx_seller/tests",
-    "mp_softrestaurant/tests",
-    "mp_rappi_partners/tests",
-    "mp_didi_food_partners/tests",
-    "mp_uber_eats_partners/tests",
-    "mp_didi_partners/tests",
-    "mp_clabe_validador_oficial/tests",
-    "mp_paypal_mx/tests",
-    "mp_kueski/tests",
-    "mp_klap/tests",
-    "mp_guadalajara_municipal/tests",
-    "mp_puebla_municipal/tests",
-    "mp_queretaro_municipal/tests",
-    "mp_tijuana_municipal/tests",
-    "mp_merida_municipal/tests",
-    "mp_telmex_facturacion/tests",
-    "mp_cfe_facturacion/tests",
-]
+testpaths = ["shared/tests", "mp_*/tests"]
 python_files = ["test_*.py"]
 asyncio_mode = "auto"
+markers = [
+    "live: golpea el portal/API real; se salta salvo PLUGINS_MX_LIVE=1",
+]
 pythonpath = ["."]

@@ -11,7 +11,7 @@ Endpoints used:
 - POST /messages/packs/{pack_id}/sellers/{seller_id}  — send a message
 - GET /questions/search                 — questions on listings
 - POST /answers                         — answer a question
-- GET /users/{seller_id}/reputation     — seller reputation
+- GET /users/{seller_id}                — seller_reputation
 
 Rate limits: ~5000 req/hour per app. Pagination via limit + offset.
 
@@ -577,7 +577,8 @@ class MercadoLibreClient:
 
         if sid is None:
             sid = (await self.get_me())["id"]
-        url = f"{ML_BASE_URL}/users/{sid}/reputation"
+        # La reputación viene en GET /users/{id} → seller_reputation (no existe /users/{id}/reputation).
+        url = f"{ML_BASE_URL}/users/{sid}"
         headers = await self._auth_headers()
         try:
             async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
@@ -587,7 +588,7 @@ class MercadoLibreClient:
         except Exception as exc:
             raise handle_httpx_error(exc) from exc
 
-        response = {**body, "simulated": False}
+        response = {"seller_id": sid, **(body.get("seller_reputation") or {}), "simulated": False}
         self._cache.set(cache_key, response, ttl_minutes=30)
         return response
 

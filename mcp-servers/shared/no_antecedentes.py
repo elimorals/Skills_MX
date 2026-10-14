@@ -5,9 +5,9 @@ exigen no antecedentes), didi-partners, leasing, security clearance.
 
 Portales:
   CDMX  → https://www.cdmx.gob.mx/servicios/servicio/no-antecedentes-penales
-         Requiere Llave CDMX SSO (cuenta ciudadana).
+         Sin verificador público por folio/CURP (2026-10-14): validar QR del PDF.
   EdoMex → https://carta-no-antecedentes.edomex.gob.mx
-         100% digital, sin captcha visible.
+         Dominio sin DNS al 2026-10-14 (verificador no disponible).
 
 Otros estados (no implementados en v1, pendientes de discovery):
   Jalisco, Nuevo León, Puebla, Querétaro, Guanajuato — cada uno con portal propio.

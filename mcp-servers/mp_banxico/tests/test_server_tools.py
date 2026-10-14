@@ -196,7 +196,7 @@ async def test_get_uma_returns_diaria_mensual_anual() -> None:
 
 async def test_get_uma_in_mock_mode_returns_plausible_value() -> None:
     out = await banxico_get_uma(GetReferenciaInput())
-    # 2024 ref ~ 108.57; with ±1% jitter
+    # UMA 2026 ~ 117.31; with ±1% jitter
     assert 100 < out["valor_diario"] < 120
 
 

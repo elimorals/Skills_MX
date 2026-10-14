@@ -1,0 +1,64 @@
+{
+  "tc_menu": [
+    {
+      "id": 15,
+      "nombre": "Inscripción al RFC como Persona Física",
+      "url": "https://www.sat.gob.mx/portal/public/tramites/inscripcion-al-rfc-pf",
+      "activo": true
+    },
+    {
+      "id": 16,
+      "nombre": "Consulta del RFC",
+      "url": "https://www54.sat.gob.mx/curp/Consult",
+      "activo": true
+    },
+    {
+      "id": 17,
+      "nombre": "Constancia de Situación Fiscal con CIF (Portal SAT)",
+      "url": "https://www.sat.gob.mx/aplicacion/53027/genera-tu-constancia-de-situacion-fiscal",
+      "activo": true
+    },
+    {
+      "id": 18,
+      "nombre": "Constancia de Situación Fiscal con CIF (SATID)",
+      "url": "https://satid.sat.gob.mx/",
+      "activo": true
+    },
+    {
+      "id": 19,
+      "nombre": "Generar contraseña (SATID)",
+      "url": "https://satid.sat.gob.mx/",
+      "activo": true
+    },
+    {
+      "id": 20,
+      "nombre": "Genera y actualiza tu Contraseña (Portal SAT)",
+      "url": "https://www.sat.gob.mx/portal/public/tramites/contrasena",
+      "activo": true
+    },
+    {
+      "id": 21,
+      "nombre": "Certificado Vigente próximo a vencer Persona Física (Portal SAT)",
+      "url": "https://www.sat.gob.mx/portal/public/tramites/firma-electronica-avanzada-efirma",
+      "activo": true
+    },
+    {
+      "id": 22,
+      "nombre": "Certificado Vencido Persona Física (SATID)",
+      "url": "https://satid.sat.gob.mx/",
+      "activo": true
+    },
+    {
+      "id": 23,
+      "nombre": "Certificado Vigente próximo a vencer Persona Moral (Portal SAT)",
+      "url": "https://www.sat.gob.mx/portal/public/tramites/firma-electronica-avanzada-pm",
+      "activo": true
+    },
+    {
+      "id": 24,
+      "nombre": "Certificado Vencido Persona Moral (Portal SAT)",
+      "url": "https://www.sat.gob.mx/portal/public/tramites/firma-electronica-avanzada-pm",
+      "activo": true
+    }
+  ]
+}

@@ -15,21 +15,32 @@ MCP para REPUVE (Registro Público Vehicular). Top 15 #5.
 - **Site key reCAPTCHA**: `6Lfy8AEoAAAAANclz0Doczn6y826fM0BjOPXEn9B`
 - 4 modos de búsqueda: placa, número de serie (NIV), folio, número de constancia
 
-## Estado del MCP
+## Estado real
 
-| Componente | Estado |
-|---|---|
-| Estructura (client + server + schemas) | ✅ Listo |
-| Mock determinístico | ✅ Funciona |
-| Validación NIV (ISO 3779) / placa MX | ✅ Funciona |
-| Modo Playwright real | ⚠️ Esqueleto listo, endpoint exacto pendiente captura |
-| Tests | ✅ |
+| Fecha | URL | Resultado |
+|---|---|---|
+| 2026-10-14 | `GET https://www2.repuve.gob.mx:8443/ciudadania/` | 200, Angular + reCAPTCHA v3 invisible |
+| 2026-10-14 | `POST https://www2.repuve.gob.mx:8443/consulta/consulta/repuve` desde Chromium headless | 401 "El reCaptcha no fue superado correctamente" |
+| 2026-10-14 | mismo endpoint sin token (test live) | 401 reCaptcha |
+| 2026-10-14 | `GET /ciudadania/main.b6696a0b2d85ae16.js` (bundle público) | sitekey `6Lfy8AEoAAAAANclz0Doczn6y826fM0BjOPXEn9B`, acción `login`; `criterio`/`llave` cifrados RSA-1024 PKCS#1 v1.5 (node-forge) + base64 con llaves públicas fijas `publicKeyRep` (/repuve) y `publicKeyPgj` (/pgj, estatus de robo) |
 
-**NOTA**: Durante el discovery (2026-06-15) Angular tuvo race conditions
-con Playwright que impidieron capturar el endpoint backend en una sola
-toma. La infraestructura del MCP (PortalSession + selectores + flow) está
-lista; cuando se confirme el endpoint, basta ajustar `API_URL_PATTERN`
-en `shared/repuve.py`.
+- Estado: **con solver opt-in: real sin validar en vivo (falta llave)**.
+  Con `PLUGINS_MX_CAPTCHA_SOLVER=2captcha` + `TWOCAPTCHA_API_KEY`: lee sitekey y
+  llaves RSA del bundle en vivo (respaldo: constantes en `shared/repuve.py`),
+  pide token reCAPTCHA v3 (acción `login`), cifra `criterio` ("1" placa, "2" NIV)
+  y `llave`, y consulta `/repuve` (vehículo) y `/pgj` (estatus de robo). Si REPUVE
+  responde 401 reCaptcha se reintenta 2 veces y luego `UpstreamError`.
+  El cifrado es reproducible porque las llaves son públicas y fijas en el JS; no
+  hay llave por sesión ni otro anti-bot (el `rpv.min.js` externo llega vacío).
+- Pendiente de validar en vivo: forma exacta de la respuesta (dict de listas,
+  como la recorre el portal) y valores de `ESTATUS_VHI_ROBO`. Si `/pgj` falla,
+  `tiene_reporte_robo: null` con advertencia (no se cachea).
+- Sin solver: **handoff humano** (`requiere_humano: true`, URL, pasos, NIV/placa
+  prellenado) y `repuve_verificar_robado` devuelve `tiene_reporte_robo: null`
+  (desconocido), nunca `false`.
+- Live: `PLUGINS_MX_LIVE=1 TWOCAPTCHA_API_KEY=… REPUVE_LIVE_PLACA=<placa propia>`.
+- El servidor solo negocia cifrados TLS legacy (`@SECLEVEL=1`).
+- Mock solo con `PLUGINS_MX_MOCK=1` (`simulated: true`).
 
 ## Tools
 
@@ -40,14 +51,13 @@ Consulta por NIV/VIN (17 caracteres, sin I/O/Q). Devuelve datos del vehículo + 
 Consulta por placa mexicana.
 
 ### `repuve_verificar_robado(niv=..., placa=...)`
-Decisión binaria — devuelve `tiene_reporte_robo: bool` + advertencias.
+Devuelve `tiene_reporte_robo` (bool en mock; `null` + handoff en real) + advertencias.
 
 ## Configuración
 
 | Env var | Default | Descripción |
 |---|---|---|
-| `PLUGINS_MX_MOCK` | `1` | Override mock. |
-| `PLUGINS_MX_REPUVE_LIVE` | unset | `1` activa Playwright real. |
+| `PLUGINS_MX_MOCK` | unset | `1` = datos simulados (`simulated: true`). |
 | `PLUGINS_MX_CACHE_DIR` | `~/.cache/plugins-mx` | Cache local (7 días). |
 
 ## Tests

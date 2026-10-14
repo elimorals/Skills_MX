@@ -13,6 +13,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from mp_agua_mx.client import AguaMxClient  # noqa: E402
+from shared.errors import McpError  # noqa: E402
 
 
 mcp = FastMCP("agua_mx")
@@ -22,7 +23,7 @@ _client = AguaMxClient()
 class ConsultarAdeudoInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
     organismo: str = Field(..., min_length=2, max_length=40,
-                            description="Clave del organismo: sacmex, siapa, sadm, cespt, sapal, ceaq, japac, aguakan, etc.")
+                            description="Clave del organismo: jmas_juarez (real), siapa (handoff), sacmex, sadm, etc.")
     cuenta: str = Field(..., min_length=3, max_length=30,
                          description="Identificador del usuario (varía por organismo).")
 
@@ -39,8 +40,12 @@ class BuscarPorEstadoInput(BaseModel):
 
 @mcp.tool(annotations={"title": "Consultar adeudo de agua", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": True})
 def agua_consultar_adeudo(args: ConsultarAdeudoInput) -> dict:
-    """Consulta adeudo + estatus de una cuenta de agua municipal/estatal."""
-    return _client.consultar_adeudo(args.organismo, args.cuenta)
+    """Adeudo de una cuenta de agua. Real donde está validado (JMAS Juárez); handoff humano
+    si el portal exige CAPTCHA (SIAPA); error explícito si el organismo aún no está implementado."""
+    try:
+        return _client.consultar_adeudo(args.organismo, args.cuenta)
+    except McpError as exc:
+        return exc.to_dict()
 
 
 @mcp.tool(annotations={"title": "Listar organismos operadores de agua", "readOnlyHint": True, "idempotentHint": True})

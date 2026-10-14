@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Recorte real de https://publicacionexterna.azurewebsites.net/publicaciones/places (2026-10-14) -->
+<places>
+  <place place_id="2039">
+    <name>ESTACION HIPODROMO SA DE CV</name>
+    <cre_id>PL/658/EXP/ES/2015</cre_id>
+    <location>
+      <x>-116.9214</x>
+      <y>32.47641</y>
+    </location>
+  </place>
+  <place place_id="2040">
+    <name>LAS MEJORES ESTACIONES SA DE CV</name>
+    <cre_id>PL/902/EXP/ES/2015</cre_id>
+    <location>
+      <x>-99.74484</x>
+      <y>20.3037</y>
+    </location>
+  </place>
+  <place place_id="2041">
+    <name>DIAZ GAS SA DE CV</name>
+    <cre_id>PL/760/EXP/ES/2015</cre_id>
+    <location>
+      <x>-106.4514</x>
+      <y>31.71947</y>
+    </location>
+  </place>
+  <place place_id="30207">
+    <name>MEGA GASOLINERAS SA DE CV</name>
+    <cre_id>CNE/PL/2/EXP/ES/2025</cre_id>
+    <location>
+      <x>-100.8226</x>
+      <y>20.54985</y>
+    </location>
+  </place>
+  <place place_id="30225">
+    <name>ESTACION DE SERVICIOS ATENAS DEL SUR SA DE CV</name>
+    <cre_id>CNE/PL/14/EXP/ES/2025</cre_id>
+    <location>
+      <x>-99.15056</x>
+      <y>17.59307</y>
+    </location>
+  </place>
+  <place place_id="12282">
+    <name>FLETES MEXICO - CHIHUAHUA, S.A. DE C.V.</name>
+    <cre_id>PL/11525/EXP/ESA/2015</cre_id>
+    <location>
+      <x>-106.4453</x>
+      <y>31.61743</y>
+    </location>
+  </place>
+</places>

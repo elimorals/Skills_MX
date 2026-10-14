@@ -1,4 +1,9 @@
-"""Cliente mp_expediente_clinico_nom024."""
+"""Cliente mp_expediente_clinico_nom024 — receta y SIRES con reglas LGS/NOM verificadas.
+
+Ver fuentes y fechas en shared/ece_nom024_mx.py. La validación de cédula contra el Registro
+Nacional de Profesionistas no se hace aquí (handoff a mp_sep_profesional): antes se decidía
+"vigente" con el último dígito.
+"""
 from __future__ import annotations
 
 import hashlib
@@ -16,12 +21,14 @@ if str(_REPO_ROOT) not in sys.path:
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.ece_nom024_mx import (  # noqa: E402
     REQUISITOS_NOM024,
+    URL_LGS,
+    URL_NOM024,
     calcular_vigencia_minima,
     clasificar_medicamento,
     fecha_vencimiento_iso,
 )
 from shared.errors import ValidationError  # noqa: E402
-from shared.mock import mark_simulated  # noqa: E402
+from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
 
 NAMESPACE = "ece_nom024"
@@ -62,7 +69,7 @@ class ECEClient:
         paciente_curp: str | None = None,
         folio: str | None = None,
     ) -> dict[str, Any]:
-        """Genera receta electrónica con validación COFEPRIS."""
+        """Arma la receta y anota reglas de venta (LGS Art. 226 y listas 234/245) por medicamento."""
         medico_cedula = _validar_cedula(medico_cedula)
         if paciente_sexo not in ("M", "F", "ND"):
             raise ValidationError(f"paciente_sexo inválido: {paciente_sexo}")
@@ -77,23 +84,32 @@ class ECEClient:
         fecha_emision = ahora.strftime("%Y-%m-%d")
         folio = folio or f"RX-{ahora.strftime('%Y%m%d%H%M%S')}"
 
-        # Clasificación COFEPRIS por medicamento
+        # Clasificación por las listas de la LGS (Arts. 226, 234, 245)
         meds_anotados = []
-        requiere_especialidad = False
+        recetario_especial = False
         for m in medicamentos:
             clasif = clasificar_medicamento(m.get("nombre", ""))
             meds_anotados.append({
                 **m,
-                "fraccion_cofepris": clasif.fraccion,
+                "categoria_lgs": clasif.categoria,
+                "fraccion_venta_art226": clasif.fraccion,
                 "vigencia_dias": clasif.vigencia_receta_dias,
-                "requiere_especialidad": clasif.requiere_cedula_especialidad,
-                "notas_clasificacion": clasif.notas,
+                "vigencia_meses": clasif.vigencia_meses,
+                "surtidos_max": clasif.surtidos_max,
+                "regla": clasif.regla,
+                "fundamento": clasif.fundamento,
             })
-            if clasif.requiere_cedula_especialidad:
-                requiere_especialidad = True
+            if clasif.categoria == "estupefaciente_art234":
+                recetario_especial = True
 
         vigencia = calcular_vigencia_minima(medicamentos)
-        fecha_vence = fecha_vencimiento_iso(fecha_emision, vigencia)
+        meses = [x["vigencia_meses"] for x in meds_anotados if x["vigencia_meses"]]
+        if vigencia is not None:
+            fecha_vence = fecha_vencimiento_iso(fecha_emision, dias=vigencia)
+        elif meses:
+            fecha_vence = fecha_vencimiento_iso(fecha_emision, meses=min(meses))
+        else:
+            fecha_vence = None
 
         # Hash del payload firmable (lo que firma la e.firma del médico)
         payload_firmable = (
@@ -109,7 +125,7 @@ class ECEClient:
                                            "paciente_hash": self._bitacora.hash_sensitive(paciente_curp or paciente_nombre),
                                            "folio": folio, "n_medicamentos": len(medicamentos)})
 
-        return mark_simulated({
+        return {
             "folio": folio,
             "fecha_emision": fecha_emision,
             "fecha_vencimiento": fecha_vence,
@@ -127,37 +143,37 @@ class ECEClient:
             },
             "diagnostico": diagnostico,
             "medicamentos": meds_anotados,
-            "requiere_cedula_especialidad": requiere_especialidad,
+            "requiere_recetario_especial_codigo_barras": recetario_especial,
+            "advertencias": (["Contiene estupefacientes: debe expedirse en recetario especial con código "
+                              "de barras de la SSA (LGS Art. 241); esta receta electrónica no lo sustituye."]
+                             if recetario_especial else []),
+            "prescribir_denominacion_generica": "Obligatorio (LGS Art. 226, párrafo adicionado DOF 30-03-2022)",
             "hash_payload_firmable_sha256": hash_payload,
-            "valida_nom024": True,
-            "base_legal": "NOM-024-SSA3-2012, NOM-004-SSA3-2012, LGS Art. 28 Bis y 226, DOF 15-ene-2026",
+            "base_legal": "LGS Arts. 226, 234, 240-241, 245, 251-252; NOM-004-SSA3-2012; NOM-024-SSA3-2012",
+            "fuente": URL_LGS,
             "disclaimer": (
-                "Receta generada digitalmente. Para ser válida ante COFEPRIS y farmacias requiere "
-                "firma electrónica avanzada del médico emisor. Conservar 5 años."
+                "Borrador generado digitalmente: requiere firma del médico. No certifica cumplimiento "
+                "de la NOM-024 ni del Reglamento de Insumos para la Salud (no cotejado)."
             ),
-        })
+        }
 
     def verificar_medico_para_receta(self, cedula: str) -> dict[str, Any]:
-        """Reutiliza patrón mp_sep_profesional con stub local mock-first.
-
-        Path real: invocar mp_sep_profesional para validar cédula vigente.
-        Devuelve si la cédula es estructural+vigente.
-        """
+        """Valida el formato de la cédula; la vigencia se consulta con mp_sep_profesional."""
         cedula = _validar_cedula(cedula)
-        digit_ultimo = int(cedula[-1])
-        # Mock determinístico
-        vigente = digit_ultimo != 0  # 90% vigentes
-        result = mark_simulated({
-            "cedula": cedula,
-            "estructural_valida": True,
-            "vigente": vigente,
-            "puede_recetar": vigente,
-            "fuente_path_real": "mp_sep_profesional (delegado)",
-            "fecha_consulta": datetime.now(timezone.utc).isoformat(),
-        })
         self._bitacora.log("verificar_medico_para_receta", success=True,
                            params_summary={"cedula_hash": self._bitacora.hash_sensitive(cedula)})
-        return result
+        if is_mock_mode([], default_when_no_creds=False):
+            return mark_simulated({"cedula": cedula, "estructural_valida": True, "vigente": True})
+        return {
+            "cedula": cedula,
+            "estructural_valida": True,
+            "vigente": None,
+            "puede_recetar": None,
+            "verificar_con": "mp_sep_profesional (Registro Nacional de Profesionistas, SEP)",
+            "nota": "Estupefacientes: solo médicos cirujanos, cirujanos dentistas y veterinarios (LGS Art. 240).",
+            "fecha_consulta": datetime.now(timezone.utc).isoformat(),
+            "simulated": False,
+        }
 
     def validar_sistema_ece(self, sistema_id: str, capacidades: list[str]) -> dict[str, Any]:
         """Verifica que un sistema cumpla con requisitos NOM-024."""
@@ -174,6 +190,7 @@ class ECEClient:
                 "descripcion": req.descripcion,
                 "obligatorio": req.obligatorio,
                 "seccion": req.seccion,
+                "fundamento": req.fundamento,
                 "cumple": si_cumple,
             }
             if si_cumple:
@@ -185,14 +202,17 @@ class ECEClient:
         score = round(100 * len(cumplidos) / len(REQUISITOS_NOM024))
         cumple_nom024 = len(obligatorios_no_cumplidos) == 0
 
-        return mark_simulated({
+        return {
             "sistema_id": sistema_id,
             "score": score,
             "cumple_nom024": cumple_nom024,
             "obligatorios_faltantes": len(obligatorios_no_cumplidos),
             "checklist": cumplidos + faltantes,
-            "base_legal": "NOM-024-SSA3-2012 + DOF 15-ene-2026",
-        })
+            "base_legal": "NOM-024-SSA3-2012 (DOF 30-11-2012) y NOM-004-SSA3-2012 5.4",
+            "fuente": URL_NOM024,
+            "nota": ("Autoevaluación con las capacidades declaradas; la conformidad formal la certifica "
+                     "la DGIS (NOM-024 cap. 7)."),
+        }
 
     def consentimiento_paciente(self, curp: str, proposito: str) -> dict[str, Any]:
         """Genera token de consentimiento informado paciente (template)."""
@@ -206,7 +226,7 @@ class ECEClient:
         self._bitacora.log("consentimiento_paciente", success=True,
                            params_summary={"curp_hash": self._bitacora.hash_sensitive(curp),
                                            "proposito": proposito[:60]})
-        return mark_simulated({
+        return {
             "curp_hash": self._bitacora.hash_sensitive(curp),
             "proposito": proposito,
             "token_consentimiento": token,
@@ -218,4 +238,5 @@ class ECEClient:
                 f"están protegidos conforme a LFPDPPP. Puedo revocar este consentimiento en "
                 f"cualquier momento."
             ),
-        })
+            "nota": "Plantilla orientativa (NOM-024 6.6.6 pide controlar consentimientos).",
+        }

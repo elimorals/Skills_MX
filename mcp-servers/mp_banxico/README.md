@@ -195,3 +195,9 @@ cd mcp-servers
 ```
 
 Cobertura actual: **60 tests** cubriendo holidays, client (mock + cache + parseo), y tools (validación + flujos felices + errores).
+
+## Estado real (2026-10-14)
+
+- ✅ Cliente real de la SIE API v1 (`/SieAPIRest/service/v1/series/{id}/datos`).
+- ⚠️ Sin validar en vivo: requiere `BANXICO_TOKEN` (gratis en banxico.org.mx/SieAPIRest/service/v1/token).
+- Mock corregido a UMA 2026 = 117.31 (antes 108.57 de 2024).

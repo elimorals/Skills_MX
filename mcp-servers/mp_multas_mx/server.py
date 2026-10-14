@@ -4,10 +4,9 @@ Tools:
 - multas_consultar(estado, placa)
 - multas_estados_disponibles()
 
-Cobertura: 8 estados (cdmx, nl, jal, yuc, bc, pue, qro, edomex).
-CDMX requiere CAPTCHA (humano-en-loop).
-
-Modo mock por default. Activar real con MP_PLAYWRIGHT_PUBLIC=1.
+Cobertura (2026-10-14): cdmx, edomex, jal, nl, nl_sanpedro. Todos los portales
+vigentes exigen CAPTCHA o consulta manual → handoff humano verificado.
+Mock solo con PLUGINS_MX_MOCK=1.
 """
 
 from __future__ import annotations
@@ -24,6 +23,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from mp_multas_mx.client import MultasMxClient  # noqa: E402
+from shared.errors import McpError  # noqa: E402
 
 
 mcp = FastMCP("multas_mx_unificado")
@@ -45,27 +45,15 @@ class ConsultarMultasInput(BaseModel):
     "openWorldHint": True,
 })
 def multas_consultar(args: ConsultarMultasInput) -> dict:
-    """Consulta multas pendientes para una placa en un estado.
+    """Multas por placa: GET real al portal oficial + handoff humano (CAPTCHA).
 
-    Cobertura: CDMX, NL, JAL, YUC, BC, PUE, QRO, EdoMex.
-
-    ⚠ CDMX requiere CAPTCHA reCAPTCHA Enterprise — devuelve {status: "requiere_humano"}
-    con URL para que el usuario complete manualmente.
-
-    Otros estados: consulta automatizada via Playwright cuando MP_PLAYWRIGHT_PUBLIC=1.
-
-    Returns:
-        {
-          "estado": "jal",
-          "placa_hash": "ABC***",
-          "estatus": "al_corriente" | "con_multas" | "requiere_humano",
-          "total_multas_pendientes": N,
-          "adeudo_total_mxn": float,
-          "multas": [{folio, fecha, motivo, monto_mxn}],
-          ...
-        }
+    Returns: {"requiere_humano": true, "status": "requiere_humano", "url", "pasos", "portal_verificado", ...}
+    o {"error": true, "code": "upstream_error"} si el portal está caído o cambió.
     """
-    return _client.consultar_multas(estado=args.estado, placa=args.placa)
+    try:
+        return _client.consultar_multas(estado=args.estado, placa=args.placa)
+    except McpError as exc:
+        return exc.to_dict()
 
 
 @mcp.tool(annotations={
@@ -74,16 +62,7 @@ def multas_consultar(args: ConsultarMultasInput) -> dict:
     "idempotentHint": True,
 })
 def multas_estados_disponibles() -> dict:
-    """Lista estados con multas vehiculares consultables + cuáles requieren CAPTCHA.
-
-    Returns:
-        {
-          "soportados": ["cdmx", "nl", "jal", ...],
-          "total": 8,
-          "requieren_captcha": ["cdmx"],
-          "notas_por_estado": {...}
-        }
-    """
+    """Estados con portal de multas verificado, cuáles exigen CAPTCHA y los retirados."""
     return _client.estados_disponibles()
 
 

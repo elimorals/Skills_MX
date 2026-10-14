@@ -39,17 +39,27 @@ def lnetb_listar_indicadores() -> dict:
     return _client.listar_indicadores()
 
 
-@mcp.tool(annotations={"title": "Evaluar estado con score compuesto", "readOnlyHint": True})
+class PlazosInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    fecha_referencia: str | None = Field(None, description="YYYY-MM-DD; por defecto hoy")
+
+
+@mcp.tool(annotations={"title": "Plazos transitorios LNETB", "readOnlyHint": True, "idempotentHint": True})
+def lnetb_plazos_legales(args: PlazosInput) -> dict:
+    return _client.plazos_legales(fecha_referencia=args.fecha_referencia)
+
+
+@mcp.tool(annotations={"title": "Evaluar estado con score compuesto (solo mock)", "readOnlyHint": True})
 def lnetb_evaluar_estado(args: EstadoInput) -> dict:
     return _client.evaluar_estado(args.estado_clave)
 
 
-@mcp.tool(annotations={"title": "Ranking nacional 32 estados", "readOnlyHint": True, "idempotentHint": True})
+@mcp.tool(annotations={"title": "Ranking nacional (solo mock)", "readOnlyHint": True, "idempotentHint": True})
 def lnetb_ranking_nacional(args: RankingInput) -> dict:
     return _client.ranking_nacional(top=args.top)
 
 
-@mcp.tool(annotations={"title": "Comparar 2-10 estados side-by-side", "readOnlyHint": True})
+@mcp.tool(annotations={"title": "Comparar estados (solo mock)", "readOnlyHint": True})
 def lnetb_comparar_estados(args: CompararInput) -> dict:
     return _client.comparar_estados(args.estados_claves)
 

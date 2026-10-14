@@ -238,3 +238,14 @@ Cobertura actual: **88 tests** cubriendo:
 - 47 tests del validador (cada regla, RFC genéricos, fechas, totales, UsoCFDI×régimen, cancelación)
 - 26 tests del cliente (mock determinístico, bitácora con hashing, cache, modo real sin creds)
 - 15 tests end-to-end de los 8 tools del server
+
+## Estado real (2026-10-14)
+
+- ✅ Rutas verificadas contra el cliente Facturama de [satcfdi](https://satcfdi.readthedocs.io) (MIT, v26.8.0), que opera en producción:
+  `POST /api/3/cfdis`, `GET /api/Cfdi?type=issued&status=all&keyword=`, `GET /api/Cfdi/{xml|pdf}/issued/{Id}` y
+  `DELETE /api/Cfdi/{Id}?type=issued&motive=`.
+- 🐛 Corregido: descargas y cancelación mandaban el UUID del SAT donde Facturama espera su Id interno; ahora se
+  resuelve por UUID. La cancelación no mandaba `type=issued`. `/api/cfdi/status/{uuid}` no existe: el estatus sale
+  del listado (para el estatus ante el SAT usa `sat_verificar_cfdi_uuid` de `mp_sat_portal`).
+- `buscar_cfdis` solo envía parámetros verificados; fechas y límite se filtran localmente y `tipo` se ignora.
+- ⚠️ **Sin validar en vivo**: falta una cuenta sandbox (registro gratis en dev.facturama.mx).

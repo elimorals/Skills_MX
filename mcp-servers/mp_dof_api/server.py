@@ -41,7 +41,7 @@ class BuscarTextoInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
     texto: str = Field(..., min_length=3, max_length=200,
                        description="Término a buscar (full-text).")
-    desde: Optional[str] = Field(None, description="Fecha desde (DD/MM/YYYY). Default: hace 10 años.")
+    desde: Optional[str] = Field(None, description="Fecha desde (DD/MM/YYYY). Default: hace 30 días (rango máx 31 días).")
     hasta: Optional[str] = Field(None, description="Fecha hasta (DD/MM/YYYY). Default: hoy.")
     limite: int = Field(20, ge=1, le=100)
 
@@ -58,7 +58,7 @@ class MonitorearInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
     keywords: list[str] = Field(..., min_length=1, max_length=10,
                                  description="Lista de palabras clave a monitorear.")
-    dias_atras: int = Field(7, ge=1, le=365,
+    dias_atras: int = Field(7, ge=1, le=30,
                              description="Días hacia atrás desde hoy (default 7).")
 
 

@@ -1,4 +1,4 @@
-"""mp_edomex_municipal — 4 tools mock-first."""
+"""mp_edomex_municipal — 4 tools. Real: predial Toluca (httpx); tenencia/multas → handoff humano. Mock solo con PLUGINS_MX_MOCK=1."""
 
 from __future__ import annotations
 
@@ -21,7 +21,6 @@ from mp_edomex_municipal.catalogos import (  # noqa: E402
 )
 from mp_edomex_municipal.client import EdomexMunicipalClient  # noqa: E402
 from shared.errors import McpError  # noqa: E402
-from shared.playwright_stub import info_path_real  # noqa: E402
 
 
 mcp = FastMCP("edomex_municipal_mcp")
@@ -56,7 +55,7 @@ async def edomex_consultar_predial(args: PredialInput) -> dict:
 
 @mcp.tool(annotations={"title": "Consultar tenencia EdoMex", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": True})
 async def edomex_consultar_tenencia(args: TenenciaInput) -> dict:
-    """⚠ EdoMex sí cobra tenencia (CDMX subsidia). Verificar antes del 31-mar."""
+    """Tenencia EdoMex: handoff humano al portal de recaudación + reglas de subsidio 2026 (100% si factura <= $638,000)."""
     try:
         return _client.consultar_tenencia(args.placa, args.ejercicio)
     except McpError as exc:
@@ -65,7 +64,7 @@ async def edomex_consultar_tenencia(args: TenenciaInput) -> dict:
 
 @mcp.tool(annotations={"title": "Consultar multas EdoMex", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": True})
 async def edomex_consultar_multas(args: PlacaInput) -> dict:
-    """Multas de tránsito EdoMex (carreteras + zona conurbada)."""
+    """Infracciones EdoMex: el portal usa Cloudflare Turnstile → handoff humano."""
     try:
         return _client.consultar_multas(args.placa)
     except McpError as exc:
@@ -79,7 +78,7 @@ async def edomex_listar_catalogos() -> dict:
         "status_tenencia": STATUS_TENENCIA_EDOMEX,
         "municipios_predial_digital": MUNICIPIOS_PREDIAL_DIGITAL,
         "hoy_no_circula": HOY_NO_CIRCULA_EDOMEX,
-        "path_real_info": info_path_real(),
+        "estado_real": "Predial Toluca real (httpx); tenencia y multas EdoMex → handoff humano.",
     }
 
 

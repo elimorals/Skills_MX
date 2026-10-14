@@ -9,6 +9,9 @@ secrets/
 *.key
 *.p12
 *.cer
+*.pfx
+*password*.txt
+*contraseña*
 
 # Archivos de prueba generados
 cfdi/*.xml
@@ -48,3 +51,9 @@ build/
 .remember/
 webhooks/.venv/
 .vercel
+.claude/worktrees/
+
+# Capturas del navegador de agentes (pueden traer datos personales)
+.playwright-mcp/
+.cache/
+.pytest_cache/

@@ -1,22 +1,18 @@
 """Consulta REPSE (Registro Público de empresas de Subcontratación STPS).
 
-Validado Playwright MCP 2026-06-14: portal https://repse.stps.gob.mx/app/
-- reCAPTCHA v1beta1 marcado deprecated por Google → NO valida nada actualmente
-- Consulta totalmente automatizable sin humano-en-loop
-- Universo: TODA empresa MX que provee servicios especializados (Art. 15 LFT)
+Portal: https://repse.stps.gob.mx/ (Laravel). Endpoints JSON detrás del
+formulario "Consultar Padrón" (leídos de build/assets/sourceInicio-*.js,
+validados en vivo 2026-10-14):
 
-Selectores DOM reales validados:
-- input búsqueda: textbox[name="Razón social"]
-- botón Buscar: button:has-text("Buscar")
-- tabla resultados: table > tbody > tr con celdas (razon_social, num_registro, [Seleccionar])
-- detalle: heading "REGISTRO LOCALIZADO FOLIO: {n}", paragraphs con etiquetas:
-  - "Nombre o Razón Social"
-  - "Entidad / Municipio"
-  - "Aviso de registro N. / Fecha de aviso de registro"  → "AR{nnnn} / YYYY-MM-DD"
-  - "Vigencia del Registro" → YYYY-MM-DD
-  - "Ofreciendo los siguientes servicios" → list items
+- GET  /busca_razon_social?term=<folio | RFC | razón social>
+       → {"success": true, "results": [{"id": 2235, "text": "BIMBO SA DE CV"}]}
+- POST /buscar-padron  multipart razon_social=<id>, header X-CSRF-TOKEN
+       (meta csrf-token del HTML) + cookie de sesión
+       → {"registro": 1, "data": {folio, razon_social, rfc, entidad, municipio,
+          abreviatura, num_emi, fecha_registro, fecha_vencimiento_registro},
+          "actividades": [{"descripcion": ...}]}
 
-Sin auth. Sin pago. Gratis. Endpoint AJAX no documentado pero ruta /app/ y SPA.
+Sin CAPTCHA. Sin login.
 """
 
 from __future__ import annotations
@@ -26,21 +22,9 @@ from typing import Any, Optional
 
 
 URL_REPSE_PORTAL = "https://repse.stps.gob.mx/Publico"
-URL_REPSE_APP = "https://repse.stps.gob.mx/app/"
+URL_REPSE_BASE = "https://repse.stps.gob.mx"
+URL_REPSE_APP = "https://repse.stps.gob.mx/"  # /app/ ya no existe (404 desde 2026)
 
-SELECTORES_REPSE = {
-    "input_razon_social": "input[placeholder*='Razón social'], textbox[name='Razón social']",
-    "boton_buscar": "button:has-text('Buscar')",
-    "tabla_resultados": "table tbody tr",
-    "boton_seleccionar": "button:has-text('Seleccionar')",
-    "detalle_folio_heading": "h3:has-text('REGISTRO LOCALIZADO FOLIO')",
-    "detalle_razon_label": "p:has-text('Nombre o Razón Social')",
-    "detalle_entidad_label": "p:has-text('Entidad / Municipio')",
-    "detalle_aviso_label": "p:has-text('Aviso de registro N.')",
-    "detalle_vigencia_label": "p:has-text('Vigencia del Registro')",
-    "detalle_servicios_label": "p:has-text('Ofreciendo los siguientes servicios')",
-    "boton_regresar": "button:has-text('Regresar')",
-}
 
 
 def normalizar_razon_social(razon: str) -> str:
@@ -72,37 +56,23 @@ def parsear_entidad_municipio(texto: str) -> tuple[Optional[str], Optional[str]]
     return partes[0], partes[1] if len(partes) > 1 else None
 
 
-def consultar_repse(razon_social: str) -> dict[str, Any]:
-    """Consulta REPSE por razón social.
-
-    En este módulo shared SIN Playwright runtime: devuelve estructura mock para tests.
-    El path real está en mp_repse_stps/client.py con Playwright wrapper.
-
-    Returns:
-        {
-            "razon_social_buscada": str,
-            "encontrados": [
-                {
-                    "razon_social": str,
-                    "numero_registro": str,
-                    "folio": Optional[str],
-                    "aviso_registro": Optional[str],
-                    "fecha_aviso": Optional[str],
-                    "vigencia": Optional[str],
-                    "entidad": Optional[str],
-                    "municipio": Optional[str],
-                    "servicios": List[str],
-                    "vigente": bool,  # True si vigencia >= hoy
-                }
-            ],
-            "url_consultado": URL_REPSE_APP,
-            "simulated": bool,
-        }
-    """
+def mapear_detalle(resp: dict[str, Any]) -> dict[str, Any]:
+    """Respuesta de /buscar-padron → schema del MCP."""
+    d = resp.get("data") or {}
+    fecha_reg = (d.get("fecha_registro") or "")[:10] or None
+    vigencia = (d.get("fecha_vencimiento_registro") or "")[:10] or None
+    aviso = None
+    if d.get("abreviatura") and d.get("num_emi") is not None and fecha_reg:
+        aviso = f"{d['abreviatura']}-{d['num_emi']}/{fecha_reg[:4]}"
     return {
-        "razon_social_buscada": normalizar_razon_social(razon_social),
-        "encontrados": [],
-        "url_consultado": URL_REPSE_APP,
-        "simulated": True,
-        "nota": "Módulo shared sin Playwright. Usar mp_repse_stps.client para path real.",
+        "numero_registro": str(d.get("folio")) if d.get("folio") is not None else None,
+        "folio": d.get("folio"),
+        "razon_social": d.get("razon_social"),
+        "rfc": d.get("rfc"),
+        "entidad": d.get("entidad"),
+        "municipio": d.get("municipio"),
+        "aviso_registro": aviso,
+        "fecha_aviso": fecha_reg,
+        "vigencia": vigencia,
+        "servicios": [a.get("descripcion", "").strip() for a in resp.get("actividades") or []],
     }

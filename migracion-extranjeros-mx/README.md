@@ -15,7 +15,7 @@ Plugin para extranjeros viviendo en México con trámites migratorios.
 
 ## Skills
 
-1. `tramites-residencia-INM`
+1. `tramites-residencia-inm`
 2. `renovacion-vigencias-migra` (anual / trianual)
 3. `regularizacion-migratoria` (para irregulares)
 4. `dashboard-tramite-migratorio`

@@ -1,59 +1,46 @@
 # Plugins MX
 
-> Infraestructura de cumplimiento fiscal y municipal para México. 83 MCPs (Model Context Protocol) production-ready con 1,667 tests pasando · 28 workflows · cobertura SAT, IMSS, INFONAVIT, REPSE, ISN 32 estados, Compliance normativa 2026 (Ley Silla NOM-037, ECE NOM-024, RESICO con alerta SCJN 3 omisiones, Llave MX validado vivo en llave.gob.mx/oauthV2.xhtml, Desconexión Digital LFT Art. 132, Anexo 30 CRE), 5 productos B2G gobierno (Llave MX Tracker para ATDT/IMCO, RETyS catálogo CONAMER, auditor LNETB 32 estados, monitor 25 portales gob.mx, adapter IMSS Continuidad Operativa licitación 2026), preparación documental Nivel 2 (form filler 8 portales públicos sin login, monitor ético cupos SAT/IMSS/SRE con consent_token LFPDPPP), predial municipal 243 muns (71 validados Playwright), servicios públicos (CFE Mi Espacio real, Telmex pago sin login, 17 organismos agua) y fiscal vehicular (tenencia 20 estados, ISH 32 estados, SAF CDMX real, multas 5 sistemas). Construido para despachos contables, inmobiliarias, anfitriones Airbnb, talleres, áreas fiscales corporativas y dependencias gob.mx.
+> Monorepo de 83 servidores MCP (Model Context Protocol) en Python + FastMCP para trámites y cumplimiento en México: SAT, REPSE, ISN, predial municipal, padrones federales, normativa laboral y sanitaria, pagos y marketplaces. El estado de cada MCP sale de la sección "Estado real" de su README (oleada 1, 2026-10-14): algunos consultan la fuente oficial y están validados en vivo; otros tienen el cliente escrito pero falta una credencial para probarlo; otros entregan el trámite a una persona porque el portal tiene CAPTCHA o login; otros son cálculos normativos locales; otros no tienen API pública. Detalle por MCP en https://skills-mexico.vercel.app/data/mcp-estado.json.
 
 **Autor:** Elías Rashid Morales Mendoza · Ciudad de México · contacto: elimoralsmendox@gmail.com
 **Sitio:** https://skills-mexico.vercel.app
 **Repositorio:** https://github.com/elimorals/Skills_MX
-**Stack:** Python + FastMCP, Playwright para validación E2E, 1,380 tests con pytest
+**Stack:** Python + FastMCP, pytest
 
 ## Productos
 
-- [Cartera Predial Multi-municipio](https://skills-mexico.vercel.app/productos/predial): Consulta paralela del adeudo predial de N propiedades en 243 municipios mexicanos, con dashboard XLSX de vencimientos, descuentos por pronto pago y ranking. 163 municipios consultables end-to-end (68 directos + 95 vía SACPI Michoacán). Cobertura poblacional: 35.2M habitantes (26.7% nacional).
-- [Compliance REPSE Art. 15 LFT](https://skills-mexico.vercel.app/productos/repse): Verificación binaria (puede_contratar: bool) de proveedores de servicios especializados ante STPS. Evita responsabilidad solidaria laboral y fiscal del contratante. Universo afectado: ~4M empresas formales mexicanas. Sin captcha bloqueante.
-- [ISN-as-a-Service](https://skills-mexico.vercel.app/productos/isn): Una sola API para calcular Impuesto sobre Nómina, generar línea de captura y descargar declaración mensual en cualquiera de las 32 entidades federativas. Tasas 1.8% (Baja California) a 3.0% (CDMX, Jalisco, Nuevo León, EdoMex, Querétaro). 8 estados con portal validado Playwright.
+- [Cartera Predial Multi-municipio](https://skills-mexico.vercel.app/productos/predial): consulta de adeudo predial con auto-routing sobre un catálogo de 243 municipios. Revalidado el 2026-10-14: Toluca (consulta real) y CDMX (entrega a humano por ALTCHA). El resto del catálogo viene del discovery de junio 2026 y no se ha revalidado. SACPI Michoacán está caído (sin DNS).
+- [Compliance REPSE Art. 15 LFT](https://skills-mexico.vercel.app/productos/repse): búsqueda en el padrón REPSE de la STPS y decisión `puede_contratar_servicios_especializados`. Validado en vivo el 2026-10-14, sin CAPTCHA.
+- [ISN](https://skills-mexico.vercel.app/productos/isn): cálculo local del Impuesto sobre Nómina con la tasa 2026 de cada entidad (2.5% Aguascalientes a 4.25% Baja California; Sinaloa y Tabasco no calculables). Tasas de fuente secundaria (BHR 2026). No genera líneas de captura ni descarga declaraciones.
 
 ## Glosario
 
-- [REPSE — Registro de Prestadoras de Servicios Especializados](https://skills-mexico.vercel.app/glosario/repse): Definición, base legal (Art. 15 LFT reformado 2021), vigencia (3 años), responsabilidad solidaria del contratante.
-- [ISN — Impuesto sobre Nómina](https://skills-mexico.vercel.app/glosario/isn): Tasas por entidad federativa 2026, obligados, vencimientos, optimización fiscal multi-estado.
-- [Predial — Impuesto Predial Municipal](https://skills-mexico.vercel.app/glosario/predial): Cálculo, descuentos por pronto pago, vencimientos típicos, portales en línea por municipio.
+- [REPSE — Registro de Prestadoras de Servicios Especializados](https://skills-mexico.vercel.app/glosario/repse): definición, base legal (Art. 15 LFT reformado 2021), vigencia, responsabilidad solidaria del contratante.
+- [ISN — Impuesto sobre Nómina](https://skills-mexico.vercel.app/glosario/isn): tasas por entidad 2026, obligados, vencimientos.
+- [Predial — Impuesto Predial Municipal](https://skills-mexico.vercel.app/glosario/predial): cálculo, descuentos por pronto pago, vencimientos, portales por municipio.
 
-## MCPs públicos por categoría
+## MCPs por estado (2026-10-14)
 
-- **Gobierno federal (8):** mp_sat_portal, mp_curp_renapo, mp_sep_profesional, mp_repse_stps, mp_imss_patronal, mp_infonavit_patronal, mp_banxico, mp_banxico_cep
-- **Estatal, municipal y fiscal vehicular (21 ★):** mp_isn_mx (32 estados), mp_ish_mx (32 estados Hospedaje), mp_tenencia_mx (20 estados), mp_verificacion_vehicular_mx (7 estados + SAF CDMX real), mp_multas_vehiculares_mx (~22M vehículos CDMX/EdoMex/NL/JAL), mp_catastro_estatal_mx (10 sistemas), mp_predial_mx (243 muns · 71 validados Playwright), mp_sacpi_michoacan (95 municipios), mp_multas_mx (8 estados), mp_cdmx_municipal, mp_edomex_municipal, mp_monterrey_municipal, mp_guadalajara_municipal, mp_merida_municipal, mp_puebla_municipal, mp_queretaro_municipal, mp_tijuana_municipal (login-only), mp_clabe_validador_oficial
-- **Pagos y fintech (9):** mp_mercado_pago, mp_conekta, mp_paypal_mx, mp_klap, mp_clip_terminal, mp_kueski, mp_trustly_mx, mp_bitso, mp_facturama_extendido
-- **Servicios públicos y bancos (5 ★):** mp_cfe_facturacion (REAL · Playwright + human-in-loop CAPTCHA + cookies session 30 min), mp_telmex_facturacion (REAL · pago_sin_login con reCAPTCHA Enterprise v3 invisible sin credenciales), mp_agua_mx (17 organismos · SACMEX/SIAPA/SADM/JMAS Juárez/OOAPAS Morelia), mp_gas_natural_mx (Naturgy/ENGIE/5 distribuidores), mp_bancos_mx
-- **Compliance horizontal (6):** mp_dof_api, mp_cnbv_fintech, mp_donatarias_sat, mp_no_antecedentes_penales_mx, mp_sat_opinion_32d, mp_repuve, mp_condusef_sipres, mp_impi_marcanet, mp_sat_ws
-- **Marketplaces y e-commerce (6):** mp_mercado_libre, mp_amazon_mx_seller, mp_shopify_mx, mp_inmuebles24, mp_vivanuncios, mp_buro_credito_personal
-- **POS, ERP y movilidad (7):** mp_aspel_contpaqi, mp_softrestaurant, mp_cabify_business, mp_didi_partners, mp_didi_food_partners, mp_rappi_partners, mp_uber_eats_partners
-
-★ Nuevos/extendidos Sprint A/B/C/D 2026-06-15 con discovery Playwright en vivo. Calibración SAF CDMX en vivo (envío real de form con captcha resuelto) desbloquea 3 MCPs reusando 1 endpoint público: verificación + tenencia + multas vehiculares CDMX. Detalles en `docs/SPRINT-D-RESUMEN-2026-06-15.md` y `docs/discovery-portales-2026-06-15.md`.
+<!-- estado-mcps:inicio -->
+- **Real, validado en vivo (24):** mp_agua_mx, mp_banxico_cep, mp_bitso, mp_clabe_validador_oficial, mp_cnbv_fintech, mp_conagua_repda, mp_concilianet_profeco, mp_condusef_sipres, mp_cre_hidrocarburos, mp_dof_api, mp_donatarias_sat, mp_edomex_municipal, mp_gas_natural_mx, mp_impi_marcanet, mp_llave_mx_tracker, mp_monterrey_municipal, mp_portales_monitor, mp_predial_mx, mp_queretaro_municipal, mp_repse_stps, mp_retys_catalogo, mp_sat_opinion_32d, mp_sat_portal, mp_tijuana_municipal
+- **Real sin validar (requiere credenciales) (13):** mp_amazon_mx_seller, mp_banxico, mp_cabify_business, mp_clip_terminal, mp_conekta, mp_facturama_extendido, mp_llave_mx, mp_mercado_libre, mp_mercado_pago, mp_paypal_mx, mp_rappi_partners, mp_sat_ws, mp_shopify_mx
+- **Entrega a humano (CAPTCHA o login) (17):** mp_catastro_estatal_mx, mp_cdmx_municipal, mp_citas_monitor, mp_curp_renapo, mp_form_filler_public, mp_guadalajara_municipal, mp_ine_verificacion, mp_merida_municipal, mp_multas_mx, mp_multas_vehiculares_mx, mp_no_antecedentes_penales_mx, mp_puebla_municipal, mp_repep_profeco, mp_repuve, mp_sedatu_uso_suelo, mp_sep_profesional, mp_verificacion_vehicular_mx
+- **Sin API pública (6):** mp_didi_food_partners, mp_didi_partners, mp_klap, mp_kueski, mp_trustly_mx, mp_uber_eats_partners
+- **Cálculo normativo verificado (10):** mp_cfe_interconexion_solar, mp_cofepris_aviso_funcionamiento, mp_desconexion_digital, mp_expediente_clinico_nom024, mp_ish_mx, mp_isn_mx, mp_ley_silla_nom037, mp_lnetb_auditor, mp_resico_sat, mp_tenencia_mx
+- **Bloqueado (2):** mp_sacpi_michoacan, mp_simplifica_ciudadano
+- **Sin verificar (11):** mp_aspel_contpaqi, mp_bancos_mx, mp_buro_credito_personal, mp_cfe_facturacion, mp_imss_continuidad, mp_imss_patronal, mp_infonavit_patronal, mp_inmuebles24, mp_softrestaurant, mp_telmex_facturacion, mp_vivanuncios
+<!-- estado-mcps:fin -->
 
 ## Endpoints públicos para agentes
 
-- [/mcp-manifest.json](https://skills-mexico.vercel.app/mcp-manifest.json): Manifest descubrible vía MCP Registry
-- [/openapi.json](https://skills-mexico.vercel.app/openapi.json): Especificación OpenAPI 3.1
-- [/.well-known/agents.json](https://skills-mexico.vercel.app/.well-known/agents.json): Manifest agente A2A (Google A2A 2026)
-- [/.well-known/ai-plugin.json](https://skills-mexico.vercel.app/.well-known/ai-plugin.json): Manifest OpenAI plugin
-- [/api/municipios.json](https://skills-mexico.vercel.app/api/municipios.json): Catálogo de 243 municipios con cobertura predial
-- [/api/isn-tasas.json](https://skills-mexico.vercel.app/api/isn-tasas.json): Tabla canónica de tasas ISN por estado 2026
-- [/api/repse-stats.json](https://skills-mexico.vercel.app/api/repse-stats.json): Estadísticas agregadas REPSE
-
-## Métricas verificables
-
-- **83** MCPs production-ready · **1,667** tests pasando · **28** workflows ejecutables
-- **307** Skills empaquetados (con SKILL.md + evals)
-- **24** Workflows ejecutables (cobranza, cierre fiscal, due diligence)
-- **281** Evals para triggering (ratio 0.92 promedio)
-- **1,380** tests con pytest (suite full pasa en 6.9s)
-- **32** entidades federativas con ISN y ISH integrados
-- **243** municipios en catálogo predial (71 validados Playwright en vivo)
-- **20** estados con cálculo de tenencia vehicular
-- **5** sistemas de multas vehiculares (~22M vehículos cobertura combinada)
-- **17** organismos operadores de agua (~50% pob urbana MX)
-- **40** verticales soportados (de freelancer a constructora)
+- [/data/mcp-estado.json](https://skills-mexico.vercel.app/data/mcp-estado.json): estado, nota y tools de cada MCP
+- [/mcp-manifest.json](https://skills-mexico.vercel.app/mcp-manifest.json): manifest MCP
+- [/openapi.json](https://skills-mexico.vercel.app/openapi.json): especificación OpenAPI 3.1
+- [/.well-known/agents.json](https://skills-mexico.vercel.app/.well-known/agents.json): agent card A2A
+- [/.well-known/ai-plugin.json](https://skills-mexico.vercel.app/.well-known/ai-plugin.json): manifest de plugin
+- [/api/municipios.json](https://skills-mexico.vercel.app/api/municipios.json): catálogo de municipios con portal predial
+- [/api/isn-tasas.json](https://skills-mexico.vercel.app/api/isn-tasas.json): tasas ISN 2026 por estado, con fuente
+- [/api/repse-stats.json](https://skills-mexico.vercel.app/api/repse-stats.json): estadísticas agregadas REPSE
 
 ## Contacto y demo
 

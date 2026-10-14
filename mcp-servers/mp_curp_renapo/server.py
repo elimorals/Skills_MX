@@ -1,10 +1,12 @@
-"""mp_curp_renapo — validación CURP + consulta RENAPO (mock).
+"""mp_curp_renapo — validación CURP + consulta RENAPO (handoff humano).
 
-8 tools:
+10 tools:
 - Validación estructural pura (5 tools, sin red, instantáneos)
 - Generación reversa desde datos personales
 - Validación batch
-- Consulta RENAPO (mock por default; Playwright pendiente)
+- Consulta RENAPO por CURP o por datos: handoff humano (Akamai + reCAPTCHA Enterprise);
+  el solver opt-in solo consulta en real si el portal deja de mostrar el challenge de Akamai.
+  Mock solo con PLUGINS_MX_MOCK=1
 
 Caso de uso: colegios identifican alumnos por CURP, salud por paciente,
 migración para inscribir extranjeros al SAT. La capa estructural detecta
@@ -103,6 +105,20 @@ class GenerarCurpInput(BaseModel):
         ),
         min_length=1,
         max_length=1,
+    )
+
+
+class ConsultaDatosInput(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True, extra="forbid")
+
+    nombres: str = Field(..., description="Nombre(s).", min_length=1, max_length=80)
+    primer_apellido: str = Field(..., description="Primer apellido.", min_length=1, max_length=50)
+    segundo_apellido: str = Field(default="", description="Segundo apellido (vacío si no tiene).", max_length=50)
+    fecha_nacimiento: date = Field(..., description="Fecha de nacimiento ISO 8601 (YYYY-MM-DD).")
+    sexo: str = Field(..., description="H = Hombre, M = Mujer, X = No binario.", pattern="^[HMXhmx]$")
+    clave_entidad: str = Field(
+        ..., description="Clave RENAPO de la entidad de nacimiento (AS, BC, ..., NE extranjero).",
+        min_length=2, max_length=2,
     )
 
 
@@ -261,14 +277,40 @@ async def curp_consultar_renapo(params: CurpInput) -> dict:
 
     Devuelve estado (VIGENTE/DUPLICADO/etc.) y datos de la persona.
 
-    ⚠ En modo mock (default): devuelve datos plausibles derivados de la propia
-    CURP. En modo real: requiere Playwright integrado con bypass CAPTCHA
-    (todavía no implementado — devuelve `not_implemented_error`).
-
-    Cache 90 días — los datos del padrón cambian raramente.
+    RENAPO (gob.mx/curp) exige reCAPTCHA Enterprise + challenge Akamai: el
+    modo real devuelve un handoff humano (`requiere_humano: true`, URL, pasos,
+    CURP prellenada y su validación local). Con solver opt-in solo consulta en
+    real si Akamai no aparece; el challenge de Akamai nunca se evade.
+    Mock solo con PLUGINS_MX_MOCK=1.
     """
     try:
         return await _renapo.consultar(params.curp)
+    except McpError as err:
+        return err.to_dict()
+
+
+@mcp.tool(
+    name="curp_consultar_renapo_por_datos",
+    annotations={
+        "title": "Buscar CURP en RENAPO por datos personales",
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": True,
+    },
+)
+async def curp_consultar_renapo_por_datos(params: ConsultaDatosInput) -> dict:
+    """Busca la CURP de una persona por nombre, apellidos, fecha, sexo y entidad.
+
+    Devuelve datos personales de terceros: úsese solo con base legal (LFPDPPP).
+    Mismo backend que `curp_consultar_renapo` (handoff humano por Akamai +
+    reCAPTCHA Enterprise). Nunca se cachea. Mock solo con PLUGINS_MX_MOCK=1.
+    """
+    try:
+        return await _renapo.consultar_por_datos(
+            params.nombres, params.primer_apellido, params.segundo_apellido,
+            params.fecha_nacimiento, params.sexo, params.clave_entidad,
+        )
     except McpError as err:
         return err.to_dict()
 
@@ -286,8 +328,8 @@ async def curp_consultar_renapo(params: CurpInput) -> dict:
 async def curp_descargar_constancia_renapo(params: CurpInput) -> dict:
     """Descarga el PDF oficial de constancia de la CURP.
 
-    Mismo backend que `curp_consultar_renapo`: mock por default, Playwright
-    pendiente. En mock devuelve metadata con path simulado.
+    Mismo backend que `curp_consultar_renapo`: handoff humano en real
+    (CAPTCHA), metadata simulada solo con PLUGINS_MX_MOCK=1.
     """
     try:
         return await _renapo.descargar_constancia(params.curp)

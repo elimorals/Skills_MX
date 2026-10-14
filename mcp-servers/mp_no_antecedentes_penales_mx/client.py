@@ -10,15 +10,18 @@ NOTA importante:
     2. Empresa extrae folio + CURP del PDF.
     3. MCP verifica que la constancia es real y está vigente.
 
-3 modos:
-  - mock (default)
-  - playwright (PLUGINS_MX_NOANT_LIVE=1): browser headless contra el verificador
-  - 2captcha (futuro): si EdoMex agrega captcha (hoy 2026-06-15 no tiene)
+Modo real = **handoff humano** (verificado 2026-10-14):
+  - CDMX: noantecedentes.cdmx.gob.mx redirige a la ficha del trámite 872;
+    no hay verificador público por folio/CURP. La autenticidad se valida con
+    el QR / firma digital del PDF.
+  - EdoMex: carta-no-antecedentes.edomex.gob.mx no resuelve DNS.
+  Nunca se devuelve un estado inventado. Mock solo con PLUGINS_MX_MOCK=1.
 
 Cache 30 días (las constancias vigentes raramente cambian de status).
 """
 from __future__ import annotations
 
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -31,8 +34,8 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
-from shared.errors import UpstreamError, ValidationError  # noqa: E402
-from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.mock import mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 from shared.no_antecedentes import (  # noqa: E402
     CDMX_PORTAL_URL,
     EDOMEX_PORTAL_URL,
@@ -52,7 +55,6 @@ CACHE_TTL_HOURS = 24 * 30  # 30 días
 class NoAntecedentesClient:
     """Cliente unificado constancias no antecedentes — CDMX + EdoMex."""
 
-    LIVE_ENV_FLAG = "PLUGINS_MX_NOANT_LIVE"
 
     def __init__(
         self,
@@ -102,11 +104,9 @@ class NoAntecedentesClient:
         if cached is not None:
             return cached
 
-        if is_mock_mode(credential_env_vars=[], default_when_no_creds=True):
-            # Default mock para este MCP — el path real requiere Playwright + login Llave
-            result = self._mock(curp, folio, ent)
-        else:
-            result = self._real(curp, folio, ent)
+        if os.environ.get("PLUGINS_MX_MOCK") != "1":
+            return self._handoff(curp, folio, ent)  # sin dato real: no se cachea
+        result = self._mock(curp, folio, ent)
 
         self._cache.set(cache_key, result, ttl_hours=CACHE_TTL_HOURS)
         self._bitacora.log(
@@ -134,6 +134,14 @@ class NoAntecedentesClient:
             }
         """
         detalle = self.verificar_constancia(curp, folio, entidad)
+        if detalle.get("requiere_humano"):
+            return {
+                "curp": curp,
+                "apto_para_contratacion": None,  # desconocido: falta verificación humana
+                "razon": "No hay verificador público consultable; una persona debe validar la constancia.",
+                "advertencias": [],
+                "detalle": detalle,
+            }
         apto = detalle.get("es_apta_para_contratacion", False)
 
         if detalle["estado"] == "NO_ENCONTRADA":
@@ -156,18 +164,36 @@ class NoAntecedentesClient:
         }
 
     # ============================================================
-    # Real path (placeholder — requiere Playwright + Llave SSO o EdoMex pública)
+    # Real path: handoff humano
     # ============================================================
 
-    def _real(self, curp: str, folio: str, ent: Entidad) -> dict[str, Any]:
-        # EdoMex tiene endpoint público sin SSO; CDMX requiere Llave.
-        # En v1 dejamos el path real como UpstreamError + mensaje de cómo activarlo.
-        raise UpstreamError(
-            f"Path real para entidad={ent} no implementado en v1.\n"
-            "  CDMX: requiere Playwright + login con Llave CDMX SSO del titular.\n"
-            "  EdoMex: pendiente captura del endpoint público de verificación.\n"
-            "Usa PLUGINS_MX_MOCK=1 (default) o contribuye el implementación.",
-            {"entidad": ent},
+    @staticmethod
+    def _handoff(curp: str, folio: str, ent: Entidad) -> dict[str, Any]:
+        if ent == "cdmx":
+            url = CDMX_PORTAL_URL
+            pasos = [
+                "Pedir al candidato el PDF original de la constancia (no captura de pantalla).",
+                "Escanear el código QR del PDF y confirmar que abre un dominio *.cdmx.gob.mx.",
+                "Validar la firma digital del PDF y que CURP y folio coincidan con los prellenados.",
+                "Si hay duda, confirmar con la Fiscalía/SSC CDMX (trámite 872, Locatel 55 5658 1111).",
+            ]
+        else:
+            url = EDOMEX_PORTAL_URL
+            pasos = [
+                "El verificador carta-no-antecedentes.edomex.gob.mx no resuelve (2026-10-14).",
+                "Pedir el PDF original con folio y código de verificación.",
+                "Confirmar con la Fiscalía General de Justicia del Estado de México (FGJEM).",
+            ]
+        return armar_handoff(
+            motivo="sin_verificador_publico",
+            url=url,
+            pasos=pasos,
+            campos_prellenados={"curp": curp, "folio": folio, "entidad": ent},
+            curp=curp,
+            entidad=ent,
+            estado="DESCONOCIDO",
+            es_apta_para_contratacion=None,
+            fecha_consulta=datetime.now(timezone.utc).isoformat(),
         )
 
     # ============================================================

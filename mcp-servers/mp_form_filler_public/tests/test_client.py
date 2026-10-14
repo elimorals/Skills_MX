@@ -93,14 +93,14 @@ class TestLlenar:
         self.c = FormFillerPublicClient()
 
     def test_mock_marca_captcha_para_rfc(self, monkeypatch):
-        monkeypatch.delenv("MP_PLAYWRIGHT_PUBLIC", raising=False)
+        monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
         r = self.c.llenar("sat_rfc_consulta", {"rfc": "ABC010101AAA"})
         assert r["simulated"] is True
         assert r["requiere_intervencion_humana"] is True
         assert r["captcha_tipo_detectado"] == "imagen"
 
     def test_mock_repse_sin_captcha(self, monkeypatch):
-        monkeypatch.delenv("MP_PLAYWRIGHT_PUBLIC", raising=False)
+        monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
         r = self.c.llenar("repse_consulta", {"rfc": "ABC010101AAA"})
         assert r["simulated"] is True
         assert r["requiere_intervencion_humana"] is False
@@ -112,3 +112,32 @@ class TestLlenar:
     def test_clave_inexistente_falla(self):
         with pytest.raises(ValidationError):
             self.c.llenar("inexistente", {"rfc": "ABC010101AAA"})
+
+
+class TestLlenarReal:
+    def test_handoff_con_captcha(self, monkeypatch):
+        monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+        r = FormFillerPublicClient().llenar("curp_consulta", {"curp": "PERD850301HDFRZG02"})
+        assert r["requiere_humano"] is True
+        assert r["motivo"] == "captcha"
+        assert r["campos_prellenados"] == {"curp": "PERD850301HDFRZG02"}
+        assert r["mcp_real"] == "mp_curp_renapo"
+        assert r["simulated"] is False
+
+    def test_handoff_sin_captcha_apunta_a_mcp_real(self, monkeypatch):
+        monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+        r = FormFillerPublicClient().llenar("repse_consulta", {"rfc": "ABC010101AAA"})
+        assert r["motivo"] == "envio_manual"
+        assert r["mcp_real"] == "mp_repse_stps"
+
+
+@pytest.mark.live
+@pytest.mark.parametrize("clave", ["repse_consulta", "repep_consulta", "buro_comercial"])
+def test_live_urls_del_catalogo_responden(clave):
+    """Las URLs que se entregan en el handoff deben existir (sin enviar nada)."""
+    import httpx
+
+    from shared.http_helpers import build_ssl_verify
+
+    r = httpx.get(FORMULARIOS_PUBLICOS[clave]["url"], timeout=30, follow_redirects=True, verify=build_ssl_verify())
+    assert r.status_code < 500

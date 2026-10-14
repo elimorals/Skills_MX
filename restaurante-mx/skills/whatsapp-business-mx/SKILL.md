@@ -19,7 +19,7 @@ Mensajes transaccionales relacionados con una acción del usuario:
 - Notificaciones de pago recibido
 - Recordatorios de servicio agendado
 
-Costo: ~$0.03-0.05 USD por conversación México (revisar tarifa vigente).
+Costo: por mensaje entregado (modelo vigente desde 1-jul-2025). Los templates UTILITY enviados dentro de una ventana de servicio abierta son gratis. Tarifa México: consultar el rate card vigente en developers.facebook.com/docs/whatsapp/pricing.
 
 ### `MARKETING` — el más caro y más restringido
 Promociones, ofertas, newsletters, re-engagement:
@@ -27,7 +27,7 @@ Promociones, ofertas, newsletters, re-engagement:
 - "Nueva colección disponible"
 - "Te extrañamos, regresa con código X"
 
-Costo: ~$0.06-0.09 USD por conversación México. Requiere opt-in explícito y demostrable.
+Costo: por mensaje entregado, la tarifa más alta (México tuvo ajuste de tarifas marketing el 1-oct-2025; ver rate card). Requiere opt-in explícito y demostrable.
 
 ### `AUTHENTICATION` — específico para OTP
 Solo códigos de verificación de un solo uso. Plantilla pre-formateada por Meta, no editas la estructura. Costo muy bajo.
@@ -153,7 +153,7 @@ Cuando el usuario pida un template:
 
 ## ⚠ Datos que requieren verificación vigente
 
-1. **Tarifas Meta** ($0.03-0.09 USD por conversación): Meta actualiza precios por país y categoría. Validar en pricing.meta.com vigente para México.
+1. **Tarifas Meta**: desde 1-jul-2025 se cobra **por mensaje** (no por conversación de 24h), con tarifas por categoría, país y volumen. No citar montos fijos; validar el rate card vigente.
 
 2. **Categorías UTILITY vs MARKETING vs AUTHENTICATION**: Meta cambia reglas de categorización periódicamente. Lo que era UTILITY hace 6 meses puede ahora ser MARKETING.
 

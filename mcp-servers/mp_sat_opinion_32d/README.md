@@ -3,6 +3,13 @@
 MCP standalone para **Consulta Pública de Opinión 32-D del SAT** (Art. 32-D
 del Código Fiscal de la Federación).
 
+## Estado real (2026-10-14)
+
+| Tool | Estado | Validación en vivo |
+|---|---|---|
+| `sat_opinion_32d_consultar` / `_verificar_proveedor` | **Real** por default (pública, sin login ni CAPTCHA). Mock solo con `PLUGINS_MX_MOCK=1`. HTTP/red fallida → error explícito. Las respuestas `estado: "error"` ya no se cachean. | 2026-10-14 `POST https://ptsc32d.clouda.sat.gob.mx/ConsultaPublico/Index` (RFC `SAT970701NN3`) → 200, `estado: positiva`. |
+| `sat_opinion_32d_descargar_propia` (nuevo) | **Real con e.firma, sin validar con e.firma real.** Login FIEL httpx (`shared/sat_portal_fiel.py`, port de satcfdi) → `RespuestaCompleta/ObtenerRespuestaCompletaPdf`. Funciona aunque la opinión no sea pública. El sentido (positiva/negativa) queda dentro del PDF, sin extraer. | Entrada `ptsc32d.clouda.sat.gob.mx/?/reporteOpinion32DContribuyente` redirige al NIDP `loginda.siat` (id=ciec) — vivo 2026-10-14. Test live: `test_live_opinion_propia`. |
+
 ## Por qué importa
 
 "Sin Opinión 32-D vigente, no se contrata con nadie."
@@ -69,18 +76,19 @@ Decisión binaria para due-diligence B2B/B2G. Devuelve:
 
 | Env var | Default | Descripción |
 |---|---|---|
-| `PLUGINS_MX_MOCK` | `1` | `1` = respuestas simuladas determinísticas. `0` = llamadas reales al SAT. |
+| `PLUGINS_MX_MOCK` | (vacío = real) | `1` = respuestas simuladas determinísticas. |
+| `SAT_EFIRMA_CERT` / `_KEY` / `_PASSWORD` | — | Solo para `descargar_propia`. |
 | `PLUGINS_MX_CACHE_DIR` | `~/.cache/plugins-mx` | Cache local (TTL 7 días por consulta). |
 | `PLUGINS_MX_BITACORA_DIR` | `~/.local/state/plugins-mx/bita` | Logs JSONL con identificadores hasheados. |
 
 ## Quickstart
 
 ```bash
-# Mock mode (default)
+# Real (default, golpea el SAT directo)
 python -m mp_sat_opinion_32d.server
 
-# Real mode (golpea el SAT directo)
-PLUGINS_MX_MOCK=0 python -m mp_sat_opinion_32d.server
+# Mock
+PLUGINS_MX_MOCK=1 python -m mp_sat_opinion_32d.server
 ```
 
 ## Tests

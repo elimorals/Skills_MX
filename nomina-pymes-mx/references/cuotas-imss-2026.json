@@ -1,9 +1,12 @@
 {
   "_comentario": "Cuotas IMSS obrero-patronales — ejercicio 2026. % sobre SBC (Salario Base de Cotización). VALIDAR contra LSS vigente.",
   "factor_integracion_minimo": 1.0452,
-  "uma_diario_2026": 113.14,
-  "sbc_minimo_diario": 248.93,
-  "sbc_maximo_diario_25_umas": 2828.50,
+  "uma_diario_2026": 117.31,
+  "_uma_fuente": "INEGI/DOF 9-ene-2026, vigente 1-feb-2026 a 31-ene-2027 (enero 2026 usa UMA 2025 = 113.14)",
+  "sbc_minimo_diario": 315.04,
+  "sbc_minimo_diario_zlfn": 440.87,
+  "_sm_fuente": "Salario mínimo 2026 CONASAMI (DOF dic-2025): general 315.04, ZLFN 440.87",
+  "sbc_maximo_diario_25_umas": 2932.75,
   "ramos": {
     "enfermedades_y_maternidad_prestaciones_en_especie_obrero": {"pct_obrero": 0.0025, "pct_patron_fijo_sbc": 0.0204},
     "enfermedades_y_maternidad_prestaciones_dinero": {"pct_obrero": 0.0025, "pct_patron": 0.0070},

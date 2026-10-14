@@ -1,0 +1,77 @@
+{
+  "skill": "rfc-validacion",
+  "script": "scripts/validar_rfc.py",
+  "cases": [
+    {
+      "id": "pm-sat-dv-ok",
+      "args": ["SAT970701NN3"],
+      "expect": {"0.valido_estructura": true, "0.tipo": "PM", "0.fecha_embebida": "1997-07-01", "0.digito_verificador_ok": true},
+      "fuente": "RFC público del SAT; dígito verificador módulo 11"
+    },
+    {
+      "id": "pf-ejemplo-sat-dv-ok",
+      "args": ["GODE561231GR8"],
+      "expect": {"0.valido_estructura": true, "0.tipo": "PF", "0.fecha_embebida": "1956-12-31", "0.digito_verificador_ok": true},
+      "fuente": "Ejemplo de la documentación de cálculo de RFC"
+    },
+    {
+      "id": "dv-incorrecto-alerta",
+      "args": ["IBM970131DRA"],
+      "expect": {"0.valido_estructura": true, "0.digito_verificador_ok": false},
+      "expect_contains": {"0.alertas.0": "esperado '3'"},
+      "fuente": "Dígito verificador módulo 11 (alerta, no error)"
+    },
+    {
+      "id": "generico-nacional",
+      "args": ["XAXX010101000"],
+      "expect": {"0.valido_estructura": true, "0.es_generico": true, "0.subtipo_generico": "publico_general_nacional"},
+      "expect_contains": {"0.alertas.0": "S01"},
+      "fuente": "Anexo 20: RFC genérico con UsoCFDI S01"
+    },
+    {
+      "id": "generico-extranjero",
+      "args": ["XEXX010101000"],
+      "expect": {"0.es_generico": true, "0.subtipo_generico": "publico_general_extranjero"},
+      "fuente": "Anexo 20"
+    },
+    {
+      "id": "mes-13-invalido",
+      "args": ["MAJG891332ABC"],
+      "expect": {"0.valido_estructura": false},
+      "expect_contains": {"0.errores.0": "Mes inválido"},
+      "fuente": "Fecha embebida AAMMDD"
+    },
+    {
+      "id": "30-feb-invalido",
+      "args": ["ABC970230XX1"],
+      "expect": {"0.valido_estructura": false},
+      "fuente": "Fecha embebida AAMMDD"
+    },
+    {
+      "id": "normaliza-minusculas-guiones",
+      "args": ["sat-970701-nn3"],
+      "expect": {"0.rfc_normalizado": "SAT970701NN3", "0.valido_estructura": true},
+      "fuente": "Normalización"
+    },
+    {
+      "id": "longitud-incorrecta",
+      "args": ["ABC1234"],
+      "expect": {"0.valido_estructura": false, "0.tipo": null},
+      "expect_contains": {"0.errores.0": "Longitud incorrecta"},
+      "fuente": "PM 12, PF 13"
+    },
+    {
+      "id": "palabra-inconveniente",
+      "args": ["PUTO800101AB1"],
+      "expect": {"0.valido_estructura": true},
+      "expect_contains": {"0.alertas.0": "PUTO"},
+      "fuente": "Anexo de palabras inconvenientes SAT"
+    },
+    {
+      "id": "nacido-1928-no-es-2028",
+      "args": ["GODE281231GR8"],
+      "expect": {"0.valido_estructura": true, "0.fecha_embebida": "1928-12-31"},
+      "fuente": "Regresión: siglo de la fecha embebida"
+    }
+  ]
+}

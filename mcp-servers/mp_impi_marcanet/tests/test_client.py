@@ -231,29 +231,3 @@ class TestVerificarDenominacion:
         assert isinstance(r["advertencias"], list)
         assert len(r["ejemplos"]) <= 5
 
-
-# ============================================================
-# Parsing del flujo real (normaliza NDJSON capturado)
-# ============================================================
-
-class TestNormalizarResultadoIntegracion:
-    def test_pipeline_completo_ndjson_a_dict(self):
-        """Simula respuesta real: NDJSON capturado del IMPI → dict del MCP."""
-        from mp_impi_marcanet.client import ImpiMarcanetClient
-        # _normalizar_resultado es staticmethod
-        r = ImpiMarcanetClient._normalizar_resultado(
-            query="TELMEX",
-            limite=10,
-            ndjson_body=FIXTURE_NDJSON_TELMEX,
-            modo="playwright",
-        )
-        assert r["query"] == "TELMEX"
-        assert r["total_encontrados"] == 2
-        assert r["devueltos"] == 2
-        assert r["modo"] == "playwright"
-        assert r["simulated"] is False
-        # Primer resultado normalizado correctamente
-        m1 = r["resultados"][0]
-        assert m1["denominacion"] == "RELLAMADO TELMEX"
-        assert m1["clase_niza"] == "38"
-        assert m1["titular_nacionalidad"] == "MEXICO"

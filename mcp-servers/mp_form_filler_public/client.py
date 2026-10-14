@@ -4,17 +4,18 @@ Solo formularios PÚBLICOS sin login (cualquier ciudadano puede llenarlos). NO
 cubre operaciones autenticadas — para eso ver mp_sat_portal / mp_imss_patronal.
 
 Características:
-- Catálogo de formularios soportados con selectores validados vivo (Playwright)
+- Catálogo de formularios públicos con URL, campos y tipo de CAPTCHA
 - Validación pre-flight: tipos de datos, longitudes, regex MX (RFC, CURP, NSS, placa)
-- Path real Playwright (opt-in MP_PLAYWRIGHT_PUBLIC=1)
-- Captura de respuesta + screenshot opcional
-- Detección de CAPTCHA → marca como `requiere_intervencion_humana=True`
+- `llenar` en modo real devuelve un **handoff humano**: URL, pasos y los campos
+  ya validados para pegarlos en el portal. Si existe un MCP que consulta ese
+  portal de verdad (p. ej. REPSE), se indica en `mcp_real`.
 
-⚠ NO resuelve CAPTCHAs. NO bypassa controles anti-bot. Si el portal exige
-CAPTCHA, la respuesta marca `requiere_intervencion_humana` y el caller decide.
+⚠ NO resuelve CAPTCHAs ni envía formularios por su cuenta. Mock solo con
+PLUGINS_MX_MOCK=1.
 """
 from __future__ import annotations
 
+import os
 import re
 import sys
 from datetime import datetime, timezone
@@ -29,6 +30,7 @@ if str(_REPO_ROOT) not in sys.path:
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 
 NAMESPACE = "form_filler_public"
@@ -85,6 +87,7 @@ FORMULARIOS_PUBLICOS: dict[str, dict[str, Any]] = {
         },
         "tipo_resultado": "tabla_padron",
         "tiene_captcha": False,
+        "mcp_real": "mp_repse_stps",
     },
     "repuve_consulta": {
         "nombre": "REPUVE — Consulta vehículo",
@@ -97,7 +100,8 @@ FORMULARIOS_PUBLICOS: dict[str, dict[str, Any]] = {
         },
         "tipo_resultado": "ficha_vehiculo",
         "tiene_captcha": True,
-        "captcha_tipo": "imagen",
+        "captcha_tipo": "recaptcha_v3",  # verificado 2026-10-14
+        "mcp_real": "mp_repuve",
     },
     "repep_consulta": {
         "nombre": "PROFECO — Consulta REPEP",
@@ -122,7 +126,8 @@ FORMULARIOS_PUBLICOS: dict[str, dict[str, Any]] = {
         },
         "tipo_resultado": "datos_persona",
         "tiene_captcha": True,
-        "captcha_tipo": "recaptcha_v2",
+        "captcha_tipo": "recaptcha_enterprise",  # + challenge Akamai, verificado 2026-10-14
+        "mcp_real": "mp_curp_renapo",
     },
     "buro_comercial": {
         "nombre": "PROFECO — Buró Comercial",
@@ -241,11 +246,9 @@ class FormFillerPublicClient:
         datos: dict[str, str],
         screenshot: bool = False,
     ) -> dict[str, Any]:
-        """Llena el formulario en vivo (Playwright opt-in).
-
-        Sin Playwright opt-in: devuelve mock con shape de respuesta.
-        Con `MP_PLAYWRIGHT_PUBLIC=1`: visita URL, llena selectores, submit.
-        Si detecta CAPTCHA: marca `requiere_intervencion_humana=True`.
+        """Prepara el llenado: valida datos y devuelve handoff humano (URL, pasos,
+        campos prellenados). `screenshot` se ignora en modo real (no se abre navegador).
+        Mock solo con PLUGINS_MX_MOCK=1.
         """
         self._log("llenar", {"clave": clave, **datos, "screenshot": screenshot})
         if clave not in FORMULARIOS_PUBLICOS:
@@ -259,10 +262,7 @@ class FormFillerPublicClient:
             )
 
         f = FORMULARIOS_PUBLICOS[clave]
-        from shared.playwright_real import is_public_real_enabled
-
-        if not is_public_real_enabled():
-            # Mock con shape realista
+        if os.environ.get("PLUGINS_MX_MOCK") == "1":
             return mark_simulated(
                 {
                     "clave": clave,
@@ -277,68 +277,24 @@ class FormFillerPublicClient:
                     "screenshot_b64": None,
                     "timestamp": datetime.now(timezone.utc).isoformat(),
                 },
-                note=(
-                    "Mock — setear MP_PLAYWRIGHT_PUBLIC=1 + pip install playwright. "
-                    f"Este formulario {'requiere CAPTCHA humano' if f.get('tiene_captcha') else 'NO requiere CAPTCHA'}."
-                ),
             )
 
-        from shared.playwright_real import playwright_session, with_real_or_fallback
-
-        def _real() -> dict[str, Any]:
-            with playwright_session() as page:
-                page.goto(f["url"], wait_until="domcontentloaded")
-                # Detectar CAPTCHA antes de llenar
-                captcha_presente = False
-                if page.locator("[data-sitekey], iframe[src*='recaptcha'], #captcha").count() > 0:
-                    captcha_presente = True
-
-                # Llenar campos
-                for campo in f["campos_requeridos"]:
-                    sel = f["selectores"].get(campo)
-                    if sel and campo in datos:
-                        page.fill(sel, str(datos[campo]).strip())
-
-                resultado: dict[str, Any] = {
-                    "clave": clave,
-                    "url": f["url"],
-                    "datos_enviados": list(datos.keys()),
-                    "captcha_presente_real": captcha_presente,
-                    "requiere_intervencion_humana": captcha_presente,
-                    "timestamp": datetime.now(timezone.utc).isoformat(),
-                    "simulated": False,
-                }
-
-                if captcha_presente:
-                    resultado["exito"] = False
-                    resultado["mensaje"] = (
-                        "CAPTCHA detectado. Datos cargados en form. "
-                        "Pasar control a humano para resolver."
-                    )
-                else:
-                    # Submit
-                    sel_submit = f["selectores"].get("submit")
-                    if sel_submit:
-                        page.click(sel_submit)
-                        page.wait_for_load_state("networkidle", timeout=10000)
-                    body = page.content() or ""
-                    resultado["exito"] = True
-                    resultado["respuesta_html_preview"] = body[:500]
-
-                if screenshot:
-                    import base64
-                    img_bytes = page.screenshot(full_page=False)
-                    resultado["screenshot_b64"] = base64.b64encode(img_bytes).decode()
-
-                return resultado
-
-        def _fb() -> dict[str, Any]:
-            return {
-                "clave": clave,
-                "url": f["url"],
-                "exito": False,
-                "razon_fallback": "Playwright real falló. Reintentar o pasar a humano.",
-                "timestamp": datetime.now(timezone.utc).isoformat(),
-            }
-
-        return with_real_or_fallback(_real, _fb, portal=f"form_filler_{clave}")
+        pasos = [
+            f"Abrir {f['url']} en un navegador.",
+            "Pegar los campos prellenados (ya validados) en el formulario.",
+        ]
+        if f.get("tiene_captcha"):
+            pasos.append(f"Resolver la verificación de seguridad ({f.get('captcha_tipo')}).")
+        pasos.append("Enviar y guardar el comprobante/resultado.")
+        return armar_handoff(
+            motivo="captcha" if f.get("tiene_captcha") else "envio_manual",
+            url=f["url"],
+            pasos=pasos,
+            campos_prellenados={k: str(v).strip() for k, v in datos.items()},
+            captcha_tipo=f.get("captcha_tipo"),
+            clave=clave,
+            requiere_intervencion_humana=True,
+            mcp_real=f.get("mcp_real"),
+            exito=False,
+            timestamp=datetime.now(timezone.utc).isoformat(),
+        )

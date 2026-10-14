@@ -1,4 +1,4 @@
 """mp_queretaro_municipal — Trámites municipales Querétaro.
 
-Mock-first MCP. Credenciales necesarias para path real: ninguna.
+Consulta real, handoff humano si hay CAPTCHA/login; mock solo con PLUGINS_MX_MOCK=1. Ver README.
 """

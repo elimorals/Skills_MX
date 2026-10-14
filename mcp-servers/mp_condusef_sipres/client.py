@@ -4,7 +4,7 @@ Endpoint: POST https://webapps.condusef.gob.mx/SIPRES/jsp/pub/resulbusq.jsp
 Body: tipo=1&pnom=<nombre>&pedo=&psec=&psta=
 Response: text/html charset=ISO-8859-1
 
-Modo mock por default. PLUGINS_MX_MOCK=0 para producción.
+Real por default (httpx). Mock solo con PLUGINS_MX_MOCK=1.
 Cache 7 días — el padrón se actualiza diariamente.
 """
 from __future__ import annotations

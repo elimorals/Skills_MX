@@ -194,7 +194,7 @@ class PrimaRiesgoInput(BaseModel):
 
 @mcp.tool(annotations={"title": "Calcular SBC con factor integración + tope UMAs 2026", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": False})
 async def imss_sbc_calcular(args: SbcCalcularInput) -> dict:
-    """Auto-cálculo SBC (Art. 27 LSS) con UMA 2026 ($113.07).
+    """Auto-cálculo SBC (Art. 27 LSS) con UMA 2026 ($117.31).
 
     Tope: 25 UMAs diarias = $2,826.75. Local, sin red.
     """

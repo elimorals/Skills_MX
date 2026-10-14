@@ -35,11 +35,11 @@ CATALOGO_CATASTRO_ESTATAL: list[CatastroEstatal] = [
         organismo="Instituto de Información e Investigación Geográfica, Estadística y Catastral del Estado de México",
         cobertura_muns=125,
         url_portal="https://igecem.edomex.gob.mx",
-        url_consulta="https://igecem.edomex.gob.mx/consulta-cuenta-catastral",
+        url_consulta="",
         identificador_label="Cuenta Catastral Única",
         identificador_regex=r"^\d{16}$",  # 16 dígitos
-        metodo="publica_captcha",
-        notas="125 muns. CCU 16 dígitos = clave estado(2) + mun(3) + zona(3) + manzana(3) + predio(3) + condom(2)",
+        metodo="indirecto",
+        notas="2026-10-14: /consulta-cuenta-catastral da 404; sin consulta pública por clave. 125 muns. CCU 16 dígitos = clave estado(2) + mun(3) + zona(3) + manzana(3) + predio(3) + condom(2)",
     ),
     CatastroEstatal(
         clave="ircep",
@@ -51,7 +51,7 @@ CATALOGO_CATASTRO_ESTATAL: list[CatastroEstatal] = [
         identificador_label="Clave Catastral",
         identificador_regex=r"^\d{12,18}$",
         metodo="login",
-        notas="Requiere registro de usuario (gratuito).",
+        notas="Requiere registro de usuario. 2026-10-14: ircep.puebla.gob.mx no resuelve DNS.",
     ),
     CatastroEstatal(
         clave="catastro_ver",
@@ -61,8 +61,8 @@ CATALOGO_CATASTRO_ESTATAL: list[CatastroEstatal] = [
         url_portal="https://www.veracruz.gob.mx/finanzas/catastro/",
         identificador_label="Clave Catastral",
         identificador_regex=r"^\d{10,18}$",
-        metodo="publica",
-        notas="Portal estatal — cobertura completa de los 212 muns.",
+        metodo="no_implementado",
+        notas="Sin consulta pública por clave verificada (2026-10-14).",
     ),
     CatastroEstatal(
         clave="catastro_qroo",

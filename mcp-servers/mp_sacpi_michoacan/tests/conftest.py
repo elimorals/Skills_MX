@@ -11,4 +11,4 @@ import pytest
 def _isolate(monkeypatch, tmp_path: Path) -> None:
     monkeypatch.setenv("PLUGINS_MX_CACHE_DIR", str(tmp_path / "cache"))
     monkeypatch.setenv("PLUGINS_MX_AUDIT_DIR", str(tmp_path / "audit"))
-    monkeypatch.delenv("MP_PLAYWRIGHT_PUBLIC", raising=False)
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)

@@ -45,7 +45,7 @@ def llave_mx_estadisticas_nacionales() -> dict:
     return _client.estadisticas_nacionales()
 
 
-@mcp.tool(annotations={"title": "Verificar adopción en vivo (Playwright opt-in)", "readOnlyHint": True})
+@mcp.tool(annotations={"title": "Verificar adopción en vivo (portada)", "readOnlyHint": True})
 def llave_mx_verificar_en_vivo(args: ClaveInput) -> dict:
     return _client.verificar_en_vivo(args.clave)
 

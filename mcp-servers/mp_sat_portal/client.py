@@ -1,13 +1,13 @@
 """Cliente orquestador para el portal SAT.
 
 Estrategia:
-- Tools PÚBLICOS (sin auth): intenta HTTP real → fallback mock si falla
-  - consultar_padron, consultar_69b_efos, consultar_69_incumplidos,
-    verificar_cfdi_uuid
-- Tools con AUTH (CIEC o e.firma): siempre mock por default. Path real requiere
-  Playwright + credenciales del contribuyente — fuera del alcance default.
-  Para activar el path real, instalar `pip install plugins-mx-mcp-servers[playwright]`
-  y proveer SAT_RFC + SAT_CIEC (o SAT_EFIRMA_CERT/KEY/PASSWORD).
+- Listas públicas 69 / 69-B: HTTP real por default (Azure Blob del SAT). Si la
+  descarga falla se levanta UpstreamError — sin fallback a mock.
+- Tools con e.firma (CSF, padrón, vigencia e.firma): login FIEL por httpx
+  (`shared/sat_portal_fiel.py`, port de satcfdi). Mock solo con PLUGINS_MX_MOCK=1
+  o sin credenciales (SAT_RFC / SAT_CIEC / SAT_EFIRMA_CERT).
+- Buzón Tributario y acuses: sin implementación real → UpstreamError explícito
+  con handoff humano.
 
 ⚠ El portal SAT cambia con frecuencia. Selectores Playwright pueden romper.
 La estrategia mock-first protege a los skills downstream de fallar silenciosamente.
@@ -22,7 +22,7 @@ import httpx
 
 from shared.bitacora import Bitacora
 from shared.cache import FileCache
-from shared.errors import McpError, UpstreamError
+from shared.errors import AuthError, ConfigError, McpError, UpstreamError, ValidationError
 from shared.mock import is_mock_mode, mark_simulated
 
 from mp_sat_portal import mock_data, rfc69b, uuid_validator
@@ -90,6 +90,10 @@ VERIFICACFDI_SELECTORES = {
 # para humano-en-loop (cliente confirma autenticidad de CFDI recibido).
 
 
+URL_VALIDA_RFC = "https://agsc.siat.sat.gob.mx/PTSC/ValidaRFC/index.jsf"  # tiene CAPTCHA
+URL_BUZON_TRIBUTARIO = "https://www.sat.gob.mx (Trámites > Buzón Tributario, iniciar sesión con e.firma)"
+URL_REIMPRESION_ACUSES = "https://www.sat.gob.mx (Declaraciones > Reimpresión de acuses, con e.firma)"
+
 # Env vars que indican credenciales para path real
 CRED_ENV_VARS = ["SAT_RFC", "SAT_CIEC", "SAT_EFIRMA_CERT"]
 
@@ -117,6 +121,43 @@ class SatPortalClient:
 
     def _mock(self) -> bool:
         return is_mock_mode(CRED_ENV_VARS)
+
+    def _mock_publico(self) -> bool:
+        """Fuentes públicas: reales salvo PLUGINS_MX_MOCK=1."""
+        return is_mock_mode([], default_when_no_creds=False)
+
+    def _efirma(self, rfc: str):
+        """Carga la e.firma de SAT_EFIRMA_* y exige que sea del RFC pedido y esté vigente."""
+        from mp_sat_portal.efirma_loader import EfirmaLoader
+
+        loader = EfirmaLoader.from_env()
+        meta = loader.metadata()
+        rfc_norm = rfc.strip().upper()
+        if meta.rfc != rfc_norm:
+            raise ValidationError(
+                f"La e.firma cargada es de otro RFC; solo se puede consultar el RFC titular ({meta.rfc}).",
+                {"rfc_solicitado": rfc_norm},
+            )
+        if not meta.is_valid_now:
+            raise AuthError(
+                f"e.firma no vigente (vence {meta.not_after.date().isoformat()}).",
+                {"vigencia_hasta": meta.not_after.isoformat()},
+            )
+        return loader
+
+    @staticmethod
+    def _guardar_pdf(tipo: str, rfc: str, pdf: bytes) -> str:
+        """Guarda el PDF (permisos 600) bajo PLUGINS_MX_CACHE_DIR/sat_portal/docs."""
+        from datetime import datetime as _dt
+        from pathlib import Path
+
+        root = Path(os.environ.get("PLUGINS_MX_CACHE_DIR", "~/.cache/plugins-mx")).expanduser()
+        carpeta = root / "sat_portal" / "docs"
+        carpeta.mkdir(parents=True, exist_ok=True)
+        path = carpeta / f"{tipo}_{rfc}_{_dt.now().strftime('%Y%m%d%H%M%S')}.pdf"
+        path.write_bytes(pdf)
+        path.chmod(0o600)
+        return str(path)
 
     def _log(self, op: str, payload: dict[str, Any], *, success: bool = True) -> None:
         """Log una operación. Hashea identificadores sensibles (RFC, folio)."""
@@ -158,42 +199,57 @@ class SatPortalClient:
     def consultar_padron(self, rfc: str) -> dict[str, Any]:
         """Consulta status del RFC en padrón SAT (público)."""
         self._log("consultar_padron", {"rfc": rfc})
-        # El padrón web no tiene endpoint JSON estable. En path real con
-        # Playwright se haría scrape. Por ahora mock-first.
+        # Real: login FIEL al portal de Factura electrónica (ExisteLrfc + ValidaLco).
+        # Con la e.firma propia se puede consultar cualquier RFC. La consulta
+        # pública sin login (ValidaRFC) tiene CAPTCHA: handoff humano.
         if self._mock():
             return mark_simulated(
                 mock_data.mock_padron(rfc),
-                "Endpoint real requiere Playwright contra https://siat.sat.gob.mx",
+                f"Modo mock. Consulta pública con CAPTCHA (humano): {URL_VALIDA_RFC}",
             )
-        # Future: Playwright path
-        raise UpstreamError(
-            "Path real no implementado. Setea PLUGINS_MX_MOCK=1 para forzar mock."
-        )
+        from mp_sat_portal.efirma_loader import EfirmaLoader
+        from shared.sat_portal_fiel import URL_FACTURA, SatFielSession
+
+        try:
+            loader = EfirmaLoader.from_env()
+        except ConfigError as exc:
+            raise ConfigError(
+                f"{exc} Sin e.firma la validación de RFC es manual (CAPTCHA): {URL_VALIDA_RFC}",
+                {**exc.details, "handoff_url": URL_VALIDA_RFC},
+            ) from exc
+        if not loader.metadata().is_valid_now:
+            raise AuthError("e.firma no vigente; no se puede iniciar sesión en el portal SAT.")
+        with SatFielSession(loader) as sesion:
+            datos = sesion.consultar_rfc(rfc)
+        return {
+            "rfc": rfc.strip().upper(),
+            "encontrado": datos["existe_en_lco"],
+            "lco": datos["lco"],
+            "fuente": f"{URL_FACTURA} (Clientes/ExisteLrfc + Clientes/ValidaLco, login e.firma)",
+            "simulated": False,
+        }
 
     def consultar_69b_efos(self, rfc: str | None = None) -> dict[str, Any]:
         """Consulta lista 69-B (definitivos + presuntos).
 
-        Descarga ambos CSVs públicos del SAT. Si la red falla retorna mock.
+        Descarga ambos CSVs públicos del SAT. Si alguno no se puede descargar
+        levanta UpstreamError (una lista parcial daría falsos negativos).
         Si pasa un RFC busca específicamente; si no, retorna conteo total.
         """
         self._log("consultar_69b_efos", {"rfc": rfc or "(lista completa)"})
 
-        # En modo mock no toca red
-        if self._mock():
+        if self._mock_publico():
             return mark_simulated(
                 mock_data.mock_69b(rfc),
                 "Modo mock — listas oficiales no consultadas.",
             )
 
-        # Intentar HTTP real ambos archivos
         def_csv = self._http_get_text(URL_LISTA_69B_DEFINITIVOS)
         pre_csv = self._http_get_text(URL_LISTA_69B_PRESUNTOS)
-
-        if def_csv is None and pre_csv is None:
-            # Sin red → mock
-            return mark_simulated(
-                mock_data.mock_69b(rfc),
-                "Listas oficiales no descargables — usando datos demo.",
+        if def_csv is None or pre_csv is None:
+            raise UpstreamError(
+                "No se pudo descargar la lista 69-B del SAT (Definitivos/Presuntos).",
+                {"urls": [URL_LISTA_69B_DEFINITIVOS, URL_LISTA_69B_PRESUNTOS]},
             )
 
         registros: list[dict[str, Any]] = []
@@ -226,7 +282,7 @@ class SatPortalClient:
         """Consulta lista 69 (incumplidos del Art. 69 CFF)."""
         self._log("consultar_69_incumplidos", {"rfc": rfc or "(lista completa)"})
 
-        if self._mock():
+        if self._mock_publico():
             return mark_simulated(
                 mock_data.mock_69_incumplidos(rfc),
                 "Modo mock — lista oficial no consultada.",
@@ -234,9 +290,9 @@ class SatPortalClient:
 
         csv_body = self._http_get_text(URL_LISTA_69_INCUMPLIDOS)
         if csv_body is None:
-            return mark_simulated(
-                mock_data.mock_69_incumplidos(rfc),
-                "Lista oficial no descargable — usando datos demo.",
+            raise UpstreamError(
+                "No se pudo descargar la lista 69 (Firmes) del SAT.",
+                {"url": URL_LISTA_69_INCUMPLIDOS},
             )
 
         registros = rfc69b.parsear_csv_69_incumplidos(csv_body)
@@ -268,17 +324,11 @@ class SatPortalClient:
         rfc_receptor: str,
         total: str,
     ) -> dict[str, Any]:
-        """Verifica status de un CFDI contra el portal público SAT.
+        """Verifica el estado de un CFDI con el web service SOAP público del SAT.
 
-        Estrategia:
-        1. Valida UUID estructuralmente (siempre real, no requiere red)
-        2. Si UUID válido y NO mock: intenta GET al verificador SAT
-        3. El portal devuelve HTML; parseamos con regex sencillo
-        4. Si la red falla o el HTML cambió → mock
-
-        ⚠ La respuesta del verificador puede tener varias formas. Esta
-        implementación captura los casos comunes pero puede fallar si SAT
-        cambia su markup.
+        `ConsultaCFDIService` no requiere e.firma ni CAPTCHA; pide UUID, RFC
+        emisor, RFC receptor y total. Si el SAT no responde → UpstreamError
+        (sin fallback a mock).
         """
         validacion = uuid_validator.validar_uuid(uuid)
         if not validacion["valido"]:
@@ -300,56 +350,62 @@ class SatPortalClient:
             },
         )
 
-        if self._mock():
+        # Servicio público: mock solo si se pide explícitamente (PLUGINS_MX_MOCK=1).
+        if is_mock_mode([], default_when_no_creds=False):
             base = mock_data.mock_verificacion_uuid(
                 validacion["uuid_normalizado"], rfc_emisor, rfc_receptor, total
             )
             base["valido_estructuralmente"] = True
             return mark_simulated(
                 base,
-                "Validación estructural real; portal SAT no consultado (modo mock).",
+                "Validación estructural real; SAT no consultado (PLUGINS_MX_MOCK=1).",
             )
 
-        url = uuid_validator.construir_url_verificacion(
-            validacion["uuid_normalizado"], rfc_emisor, rfc_receptor, total
-        )
-        html = self._http_get_text(url, ttl_hours=0.0833)  # ~5 min
-        if html is None:
-            base = mock_data.mock_verificacion_uuid(
-                validacion["uuid_normalizado"], rfc_emisor, rfc_receptor, total
-            )
-            base["valido_estructuralmente"] = True
-            return mark_simulated(
-                base,
-                "Portal SAT no respondió. Devolviendo simulación.",
-            )
-
-        return _parsear_html_verificacfdi(
-            html,
+        return _consultar_cfdi_soap(
             validacion["uuid_normalizado"],
             rfc_emisor,
             rfc_receptor,
             total,
+            self.http_timeout,
         )
 
-    # ---------- tools con auth (siempre mock por ahora) ----------
+    # ---------- tools con auth (e.firma) ----------
 
     def descargar_csf(self, rfc: str) -> dict[str, Any]:
+        """Constancia de Situación Fiscal (PDF) del titular de la e.firma."""
         self._log("descargar_csf", {"rfc": rfc})
-        if not self._mock():
-            raise UpstreamError(
-                "Path real requiere Playwright + e.firma. No implementado todavía."
+        if self._mock():
+            return mark_simulated(
+                mock_data.mock_csf(rfc),
+                "CSF real requiere e.firma (SAT_EFIRMA_*) — no consultado.",
             )
-        return mark_simulated(
-            mock_data.mock_csf(rfc),
-            "CSF real requiere e.firma o RFC+Contraseña — no consultado.",
-        )
+        import hashlib
+        from datetime import datetime as _dt
+
+        from shared.sat_portal_fiel import URL_CONSTANCIA_PDF, SatFielSession
+
+        loader = self._efirma(rfc)
+        with SatFielSession(loader) as sesion:
+            pdf = sesion.descargar_constancia()
+        rfc_norm = rfc.strip().upper()
+        return {
+            "rfc": rfc_norm,
+            "pdf_path": self._guardar_pdf("csf", rfc_norm, pdf),
+            "pdf_bytes": len(pdf),
+            "pdf_sha256": hashlib.sha256(pdf).hexdigest(),
+            "fecha_descarga": _dt.now().isoformat(timespec="seconds"),
+            "fuente": URL_CONSTANCIA_PDF,
+            "nota": "Datos del PDF (régimen, domicilio, obligaciones) sin extraer todavía.",
+            "simulated": False,
+        }
 
     def descargar_buzon_tributario(self, rfc: str) -> dict[str, Any]:
         self._log("descargar_buzon_tributario", {"rfc": rfc})
         if not self._mock():
             raise UpstreamError(
-                "Path real requiere Playwright + e.firma. No implementado todavía."
+                "Buzón Tributario real no implementado (flujo no portado ni validado). "
+                f"Revísalo manualmente con e.firma: {URL_BUZON_TRIBUTARIO}",
+                {"handoff_url": URL_BUZON_TRIBUTARIO},
             )
         return mark_simulated(
             mock_data.mock_buzon_tributario(rfc),
@@ -363,18 +419,48 @@ class SatPortalClient:
         mes: int,
         tipo: str,
     ) -> dict[str, Any]:
+        """Solicita al WS Descarga Masiva del SAT (vía mp_sat_ws) los CFDI de un mes."""
         self._log(
             "descargar_cfdi_masivo",
             {"rfc": rfc, "ejercicio": ejercicio, "mes": mes, "tipo": tipo},
         )
-        if not self._mock():
-            raise UpstreamError(
-                "Path real requiere Playwright + e.firma. No implementado todavía."
+        if self._mock():
+            return mark_simulated(
+                mock_data.mock_cfdi_masivo(rfc, ejercicio, mes, tipo),
+                "Descarga masiva requiere e.firma — simulación de solicitud.",
             )
-        return mark_simulated(
-            mock_data.mock_cfdi_masivo(rfc, ejercicio, mes, tipo),
-            "Descarga masiva requiere e.firma — simulación de solicitud.",
+        from calendar import monthrange
+
+        from mp_sat_ws.client import Fiel, SatWsClient
+        from shared.sat_ws import URL_SOLICITAR_DESCARGA, SolicitudDescarga
+
+        ultimo_dia = monthrange(ejercicio, mes)[1]
+        sol = SolicitudDescarga(
+            rfc_emisor=rfc.strip().upper(),
+            fecha_inicial=f"{ejercicio:04d}-{mes:02d}-01T00:00:00",
+            fecha_final=f"{ejercicio:04d}-{mes:02d}-{ultimo_dia:02d}T23:59:59",
+            tipo_solicitud="CFDI",
+            tipo_descarga=tipo.lower(),  # type: ignore[arg-type]
         )
+        # Fiel.from_env() levanta ConfigError si faltan SAT_EFIRMA_*: nunca cae a mock.
+        r = SatWsClient(fiel=Fiel.from_env()).solicitar_descarga(sol)
+        return {
+            "rfc": r["rfc_emisor"],
+            "ejercicio": ejercicio,
+            "mes": mes,
+            "tipo": tipo.lower(),
+            "solicitud_id": r["id_solicitud"],
+            "estado_solicitud": "ACEPTADA",
+            "cod_estatus": r["cod_estatus"],
+            "mensaje": r["mensaje"],
+            "fecha_solicitud": r["fecha_solicitud"],
+            "instrucciones": (
+                "Consulta el avance con sat_ws_verificar_solicitud(id_solicitud, rfc_emisor) "
+                "cada >=30 s; cuando esté TERMINADA baja cada paquete con sat_ws_descargar_paquete."
+            ),
+            "fuente": URL_SOLICITAR_DESCARGA,
+            "simulated": False,
+        }
 
     def agendar_cita_sat(
         self,
@@ -395,22 +481,61 @@ class SatPortalClient:
             "Citas SAT requieren RFC+CIEC — simulación de disponibilidad.",
         )
 
-    def verificar_efirma_vigente(self, rfc: str) -> dict[str, Any]:
+    def verificar_efirma_vigente(self, rfc: str, *, verificar_en_portal: bool = True) -> dict[str, Any]:
+        """Vigencia real de la e.firma de SAT_EFIRMA_*.
+
+        1. Local (sin red): lee el .cer (RFC, número de certificado, vigencia),
+           abre el .key con la contraseña y comprueba que el par corresponde.
+        2. Portal (opcional): login FIEL a loginda.siat.sat.gob.mx. El SAT
+           responde "Certificado Revocado" / "Certificado Caduco" si no la
+           acepta. Es la forma pública de detectar revocación: el OCSP del SAT
+           para FIEL es solo para convenios.
+        """
         self._log("verificar_efirma_vigente", {"rfc": rfc})
-        if not self._mock():
-            raise UpstreamError(
-                "Path real requiere e.firma activa para auto-consulta."
+        if self._mock():
+            return mark_simulated(
+                mock_data.mock_efirma_status(rfc),
+                "Status e.firma requiere e.firma — simulación.",
             )
-        return mark_simulated(
-            mock_data.mock_efirma_status(rfc),
-            "Status e.firma requiere e.firma — simulación.",
+        from mp_sat_portal.efirma_loader import EfirmaLoader
+        from shared.sat_portal_fiel import URL_LOGIN_PORTAL, SatFielSession
+
+        loader = EfirmaLoader.from_env()
+        meta = loader.metadata()
+        rfc_norm = rfc.strip().upper()
+        par_ok = loader.validate_key_pair()
+        out: dict[str, Any] = {
+            **meta.to_dict(),
+            "rfc_solicitado": rfc_norm,
+            "rfc_coincide": meta.rfc == rfc_norm,
+            "llave_corresponde_al_certificado": par_ok,
+            "verificacion_portal": None,
+            "simulated": False,
+        }
+        if verificar_en_portal and par_ok and meta.is_valid_now:
+            try:
+                with SatFielSession(loader) as sesion:
+                    sesion.login_portal()
+                out["verificacion_portal"] = {"aceptada_por_sat": True, "url": URL_LOGIN_PORTAL}
+            except AuthError as exc:
+                out["verificacion_portal"] = {
+                    "aceptada_por_sat": False,
+                    "motivo_sat": exc.details.get("motivo"),
+                    "url": URL_LOGIN_PORTAL,
+                }
+        portal = out["verificacion_portal"]
+        out["vigente"] = bool(
+            meta.is_valid_now and par_ok and (portal is None or portal["aceptada_por_sat"])
         )
+        return out
 
     def descargar_acuse(self, folio: str) -> dict[str, Any]:
         self._log("descargar_acuse", {"folio": folio})
         if not self._mock():
             raise UpstreamError(
-                "Path real requiere e.firma + autenticación previa."
+                "Descarga de acuses real no implementada (flujo no portado ni validado). "
+                f"Reimprímelo manualmente con e.firma: {URL_REIMPRESION_ACUSES}",
+                {"handoff_url": URL_REIMPRESION_ACUSES},
             )
         return mark_simulated(
             mock_data.mock_acuse(folio),
@@ -536,7 +661,7 @@ class SatPortalClient:
             "anio": anio,
             "total_declaraciones": len(declaraciones),
             "declaraciones": declaraciones,
-            "nota_uma_2026": "UMA 2026 diaria: $113.07 — usar para topes IMSS/INFONAVIT relacionados.",
+            "nota_uma_2026": "UMA 2026 diaria: $117.31 (INEGI, DOF 09-01-2026) — usar para topes IMSS/INFONAVIT relacionados.",
             "fuente": "RMF 2026 + LISR Art. 14, 113-E, 113-J",
         }
 
@@ -806,58 +931,77 @@ class SatPortalClient:
         )
 
 
-# ---------- parseo HTML del verificador ----------
+# ---------- ConsultaCFDIService (SOAP público del SAT) ----------
 
-import re as _re
-
-_REGEX_ESTADO_CFDI = _re.compile(
-    r"Estado CFDI[^<]*<[^>]+>\s*([^<]+)", _re.IGNORECASE
-)
-_REGEX_ESTADO_CANCELACION = _re.compile(
-    r"Estatus de cancelaci[oó]n[^<]*<[^>]+>\s*([^<]+)", _re.IGNORECASE
-)
+URL_CONSULTA_CFDI = "https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc"
+_ACCION_CONSULTA_CFDI = "http://tempuri.org/IConsultaCFDIService/Consulta"
+_NS_CONSULTA = "http://schemas.datacontract.org/2004/07/Sat.Cfdi.Negocio.ConsultaCfdi.Servicio"
 
 
-def _parsear_html_verificacfdi(
-    html: str,
-    uuid: str,
-    rfc_emisor: str,
-    rfc_receptor: str,
-    total: str,
+def _consultar_cfdi_soap(
+    uuid: str, rfc_emisor: str, rfc_receptor: str, total: str, timeout: float = 30.0
 ) -> dict[str, Any]:
-    """Extrae estado del CFDI del HTML del verificador SAT.
+    """POST a ConsultaCFDIService y normaliza la respuesta."""
+    import xml.etree.ElementTree as ET
+    from decimal import Decimal, InvalidOperation
+    from xml.sax.saxutils import escape
 
-    El portal devuelve un ASPX con varias celdas. Buscamos los textos clave
-    con regex tolerante. Si no se encuentra estructura conocida, devolvemos
-    fallback con `parseo_fallido: true`.
-    """
-    m_estado = _REGEX_ESTADO_CFDI.search(html)
-    m_cancel = _REGEX_ESTADO_CANCELACION.search(html)
+    from shared.errors import ValidationError, handle_httpx_error
 
-    if not m_estado:
-        return {
-            "uuid": uuid,
-            "rfc_emisor": rfc_emisor.strip().upper(),
-            "rfc_receptor": rfc_receptor.strip().upper(),
-            "total_consultado": str(total),
-            "estado_cfdi": None,
-            "estado_cancelacion": None,
-            "parseo_fallido": True,
-            "razon": "El HTML del portal cambió o el CFDI no fue encontrado.",
-            "fuente": URL_VERIFICACFDI,
-            "valido_estructuralmente": True,
-            "simulated": False,
-        }
+    rfc_e, rfc_r = rfc_emisor.strip().upper(), rfc_receptor.strip().upper()
+    try:
+        tt = f"{Decimal(str(total).replace(',', '')):.6f}"
+    except InvalidOperation:
+        raise ValidationError(f"total no es numérico: {total!r}")
+    expresion = f"?re={rfc_e}&rr={rfc_r}&tt={tt}&id={uuid}"
+    cuerpo = (
+        '<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body>'
+        '<c:Consulta xmlns:c="http://tempuri.org/"><c:expresionImpresa>'
+        f"{escape(expresion)}</c:expresionImpresa></c:Consulta></s:Body></s:Envelope>"
+    )
+    try:
+        resp = httpx.post(
+            URL_CONSULTA_CFDI,
+            content=cuerpo.encode("utf-8"),
+            headers={
+                "Content-Type": "text/xml; charset=utf-8",
+                "SOAPAction": _ACCION_CONSULTA_CFDI,
+            },
+            timeout=timeout,
+        )
+        resp.raise_for_status()
+    except httpx.HTTPError as exc:
+        raise handle_httpx_error(exc)
+    try:
+        raiz = ET.fromstring(resp.content)
+    except ET.ParseError:
+        raise UpstreamError(
+            "ConsultaCFDIService respondió sin XML válido.",
+            {"body_preview": resp.text[:300]},
+        )
 
+    def campo(nombre: str) -> str | None:
+        valor = raiz.findtext(f".//{{{_NS_CONSULTA}}}{nombre}")
+        return (valor or "").strip() or None
+
+    codigo = campo("CodigoEstatus")
+    if codigo is None:
+        raise UpstreamError(
+            "Respuesta de ConsultaCFDIService sin CodigoEstatus.",
+            {"body_preview": resp.text[:300]},
+        )
     return {
         "uuid": uuid,
-        "rfc_emisor": rfc_emisor.strip().upper(),
-        "rfc_receptor": rfc_receptor.strip().upper(),
-        "total_consultado": str(total),
-        "estado_cfdi": m_estado.group(1).strip(),
-        "estado_cancelacion": m_cancel.group(1).strip() if m_cancel else None,
-        "parseo_fallido": False,
-        "fuente": URL_VERIFICACFDI,
+        "rfc_emisor": rfc_e,
+        "rfc_receptor": rfc_r,
+        "total_consultado": tt,
+        "encontrado": codigo.startswith("S"),  # "S - Comprobante obtenido…" | "N - 60x: …"
+        "codigo_estatus": codigo,
+        "estado_cfdi": campo("Estado"),  # Vigente | Cancelado | No Encontrado
+        "es_cancelable": campo("EsCancelable"),
+        "estado_cancelacion": campo("EstatusCancelacion"),
+        "validacion_efos": campo("ValidacionEFOS"),
+        "fuente": URL_CONSULTA_CFDI,
         "valido_estructuralmente": True,
         "simulated": False,
     }

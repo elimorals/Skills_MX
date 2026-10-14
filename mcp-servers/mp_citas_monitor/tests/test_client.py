@@ -8,9 +8,14 @@ _HERE = Path(__file__).resolve().parent.parent.parent
 if str(_HERE) not in sys.path:
     sys.path.insert(0, str(_HERE))
 
+import json
+
+import httpx
 import pytest
+import respx
 
 from mp_citas_monitor.client import (
+    URL_SAT_MENU,
     CitasMonitorClient,
     PORTALES_CITAS,
     TTL_CONSENT_DIAS_MAX,
@@ -19,6 +24,13 @@ from shared.errors import ValidationError
 
 
 CURP_DEMO = "MOMM900101HDFRRR05"
+MENU = json.loads((Path(__file__).resolve().parent / "fixtures" / "sat_tc_menu.json").read_text())
+
+
+@pytest.fixture(autouse=True)
+def _env(monkeypatch, tmp_path):
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "0")
+    monkeypatch.setenv("PLUGINS_MX_BITACORA_DIR", str(tmp_path / "bita"))
 
 
 class TestListar:
@@ -88,7 +100,9 @@ class TestAlerta:
 
     def test_crear_alerta_whatsapp(self):
         r = self.c.crear_alerta(self._token(), "whatsapp", "+5215512345678")
-        assert r["estado"] == "activa"
+        assert r["estado"] == "especificacion_no_persistida"
+        assert r["auto_reserva"] is False
+        assert r["polling_seconds_minimo"] >= 60
         assert r["canal"] == "whatsapp"
 
     def test_consent_token_invalido_falla(self):
@@ -117,10 +131,24 @@ class TestRevisar:
         self.c = CitasMonitorClient()
 
     def test_revisar_sat_csf_mock(self, monkeypatch):
-        monkeypatch.delenv("MP_PLAYWRIGHT_PUBLIC", raising=False)
+        monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
         r = self.c.revisar_cupos("sat_citas", "csf_descarga")
         assert r["simulated"] is True
         assert "tiene_cupos" in r
+
+    @respx.mock
+    def test_revisar_sat_real_es_handoff_con_alternativas(self):
+        respx.get(URL_SAT_MENU).mock(return_value=httpx.Response(200, json=MENU))
+        r = self.c.revisar_cupos("sat_citas", "csf_descarga")
+        assert r["tiene_cupos"] is None
+        assert r["requiere_humano"] is True
+        assert "401" in r["detalle"]
+        assert any("Constancia de Situación Fiscal" in a["nombre"] for a in r["alternativas_digitales"])
+
+    def test_revisar_sre_captcha_handoff(self):
+        r = self.c.revisar_cupos("sre_mexitel", "pasaporte_ordinario_nuevo")
+        assert "Radware" in r["detalle"]
+        assert r["tiene_cupos"] is None
 
     def test_portal_invalido_falla(self):
         with pytest.raises(ValidationError):
@@ -138,3 +166,9 @@ class TestEstadisticas:
     def test_compromiso_pfdc(self):
         r = self.c.estadisticas_eticas()
         assert "PFDC" in r["compromiso"]
+
+
+@pytest.mark.live
+def test_live_alternativas_sat():
+    r = CitasMonitorClient().revisar_cupos("sat_citas", "csf_descarga")
+    assert len(r["alternativas_digitales"]) > 0

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import pytest
+import respx
 
 from mp_amazon_mx_seller.client import AmazonMxSellerClient
 from mp_amazon_mx_seller.server import (
@@ -115,3 +116,20 @@ async def test_catalogos() -> None:
     r = await amazon_mx_listar_catalogos()
     assert r["marketplace_id_mx"] == "A1AM78C64UM0Y8"
     assert "comisiones_categoria" in r
+
+
+@respx.mock
+async def test_listing_usa_seller_id_real(monkeypatch) -> None:
+    from shared.errors import ConfigError
+
+    for k, v in {"AMAZON_SP_REFRESH_TOKEN": "r", "AMAZON_SP_CLIENT_ID": "c", "AMAZON_SP_CLIENT_SECRET": "s"}.items():
+        monkeypatch.setenv(k, v)
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+    respx.post("https://api.amazon.com/auth/o2/token").respond(200, json={"access_token": "A", "expires_in": 3600})
+    monkeypatch.delenv("AMAZON_SP_SELLER_ID", raising=False)
+    with pytest.raises(ConfigError):
+        await AmazonMxSellerClient().get_listing("SKU1")
+    monkeypatch.setenv("AMAZON_SP_SELLER_ID", "A3SELLER")
+    ruta = respx.get(url__regex=r".*/listings/2021-08-01/items/A3SELLER/SKU1.*").respond(200, json={"sku": "SKU1"})
+    await AmazonMxSellerClient().get_listing("SKU1")
+    assert ruta.called and ruta.calls.last.request.url.params["marketplaceIds"] == "A1AM78C64UM0Y8"

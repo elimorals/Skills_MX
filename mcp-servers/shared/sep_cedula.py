@@ -1,57 +1,45 @@
-"""Validación de cédula profesional vía SEP (Registro Nacional de Profesionistas).
+"""Cédula profesional SEP (Registro Nacional de Profesionistas).
 
-⚠ Validado Playwright MCP 2026-06-13: portal público cedulaprofesional.sep.gob.mx.
-SIN CAPTCHA — automatizable con Playwright.
+Portal: https://cedulaprofesional.sep.gob.mx/ (Angular). Verificado 2026-10-14
+leyendo `assets/config.json` y `main.*.js`:
 
-USO desde telemedicina-mx (verificar médico antes de consulta):
-    from shared.sep_cedula import consultar_cedula_sep
-    info = consultar_cedula_sep(cedula="12345678")
-    if not info["vigente"]:
-        raise ConsultaIlegal("Cédula no válida")
+- Token: GET  https://cedulaprofesional.sep.gob.mx/api/auth/token
+         (headers X-Client-Id / X-API-Key públicos del bundle)
+- Consulta: POST https://cedulaprofesional.sep.gob.mx/api/rnp/solr/profesionista/consultar/byDetalle
+         body {"numCedula": ...}, headers Authorization: Bearer + **X-Recaptcha-Token**
+         (reCAPTCHA v3, site key 6Leb1M4rAAAAAP_gRcAyMiOo99-j6eqQajKuMlB9).
 
-URL: https://cedulaprofesional.sep.gob.mx/
-Selectores:
-- input#cedula (8 chars) — modo búsqueda por cédula
-- input#nombre, input#primerApellido, input#segundoApellido (50 c/u) — modo por datos
-- input#curp (18 chars)
-- button:has-text("Buscar")
-- button:has-text("Descargar CSV") — permite extracción masiva
-
-Schema respuesta esperada (tabla resultados):
-- nombre completo
-- número de cédula
-- profesión
-- institución de origen
-- fecha de expedición
-- estado vigencia
+Cada consulta exige un token reCAPTCHA v3 (action "submit", api.js no Enterprise).
+- Con solver opt-in (`solver_activo("sep_profesional")`): se lee la sitekey de
+  `assets/config.json` (respaldo: constante), 2captcha emite el token y se consulta
+  la API real. 401/403 o 400 que mencione captcha = token rechazado → reintento.
+- Sin solver: **handoff humano**.
+Mock solo con PLUGINS_MX_MOCK=1.
 """
 
 from __future__ import annotations
 
+import os
 import re
-import sys
-from pathlib import Path
 from typing import Any, Optional
 
-_REPO_ROOT = Path(__file__).resolve().parent.parent
-if str(_REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(_REPO_ROOT))
+import httpx
 
+from shared.captcha_solver import CaptchaSolver, TokenRechazado, con_token, solver_activo
 from shared.errors import UpstreamError, ValidationError
-
+from shared.portal_handoff import USER_AGENT, armar_handoff
 
 URL_SEP_CEDULA = "https://cedulaprofesional.sep.gob.mx/"
-
-SELECTORES = {
-    "cedula": "input#cedula",
-    "nombre": "input#nombre",
-    "primer_apellido": "input#primerApellido",
-    "segundo_apellido": "input#segundoApellido",
-    "curp": "input#curp",
-    "submit": "button:has-text('Buscar')",
-    "descargar_csv": "button:has-text('Descargar CSV')",
-    "result_table": "table, .resultado, .tabla-resultados",
+API_CONSULTA = f"{URL_SEP_CEDULA}api/rnp/solr/profesionista/consultar/byDetalle"
+URL_CONFIG = f"{URL_SEP_CEDULA}assets/config.json"
+URL_TOKEN = f"{URL_SEP_CEDULA}api/auth/token"
+# Respaldo si config.json no responde (valores públicos del bundle, 2026-10-14).
+CONFIG_RESPALDO = {
+    "clientId": "rnp-angular-app-prod",
+    "apiKey": "65da8s675f8s75fda675s8d76as87d5as675da",
+    "recaptchaSiteKey": "6Leb1M4rAAAAAP_gRcAyMiOo99-j6eqQajKuMlB9",
 }
+RECAPTCHA_ACCION = "submit"
 
 
 def validar_formato_cedula(cedula: str) -> bool:
@@ -61,6 +49,21 @@ def validar_formato_cedula(cedula: str) -> bool:
     return bool(re.match(r"^\d{7,8}$", cedula.strip()))
 
 
+def handoff_sep(campos: dict[str, Any]) -> dict[str, Any]:
+    return armar_handoff(
+        motivo="captcha",
+        url=URL_SEP_CEDULA,
+        pasos=[
+            "Abrir la URL en un navegador.",
+            "En 'Búsqueda de Cédulas Profesionales' capturar los datos prellenados.",
+            "Pulsar 'Buscar' (reCAPTCHA v3 se valida en el navegador).",
+            "Verificar nombre, profesión, institución y año de expedición.",
+        ],
+        campos_prellenados={k: v for k, v in campos.items() if v},
+        fuente="SEP-RNP",
+    )
+
+
 def consultar_cedula_sep(
     cedula: Optional[str] = None,
     nombre: Optional[str] = None,
@@ -68,85 +71,85 @@ def consultar_cedula_sep(
     segundo_apellido: Optional[str] = None,
     curp: Optional[str] = None,
 ) -> dict[str, Any]:
-    """Consulta cédula profesional SEP via Playwright.
-
-    Args:
-        cedula: 7-8 dígitos. Si se provee, ignora el resto.
-        nombre/primer_apellido/segundo_apellido: búsqueda por datos.
-        curp: alternativa de búsqueda.
-
-    Requiere MP_PLAYWRIGHT_PUBLIC=1. Sin esa env var → modo mock.
-
-    Returns:
-        Dict con: cedula, nombre_completo, profesion, institucion,
-                  fecha_expedicion, vigente, fuente, simulated
-    """
-    from shared.playwright_real import (
-        playwright_session, is_public_real_enabled, safe_text,
-    )
-
+    """Consulta cédula SEP: handoff humano en real, mock con PLUGINS_MX_MOCK=1."""
     if cedula and not validar_formato_cedula(cedula):
         raise ValidationError(f"Cédula '{cedula}' no tiene formato válido (7-8 dígitos).")
-
     if not any([cedula, nombre, curp]):
         raise ValidationError(
             "Debe proveer al menos uno: cedula, nombre+apellido, o curp."
         )
-
-    if not is_public_real_enabled():
+    if os.environ.get("PLUGINS_MX_MOCK") == "1":
         return _mock_response(cedula, nombre, primer_apellido)
-
-    with playwright_session() as page:
-        try:
-            page.goto(URL_SEP_CEDULA, wait_until="domcontentloaded")
-            page.wait_for_timeout(2000)
-        except Exception as e:
-            raise UpstreamError(f"No se pudo cargar SEP cédula: {e}", {})
-
-        # Llenar campos
+    if solver_activo("sep_profesional"):
         if cedula:
-            page.locator(SELECTORES["cedula"]).fill(cedula)
+            body = {"numCedula": cedula.strip()}
         else:
-            if nombre:
-                page.locator(SELECTORES["nombre"]).fill(nombre)
-            if primer_apellido:
-                page.locator(SELECTORES["primer_apellido"]).fill(primer_apellido)
-            if segundo_apellido:
-                page.locator(SELECTORES["segundo_apellido"]).fill(segundo_apellido)
-            if curp:
-                page.locator(SELECTORES["curp"]).fill(curp)
+            body = {k: v.strip().upper() for k, v in {
+                "nombre": nombre, "primerApellido": primer_apellido,
+                "segundoApellido": segundo_apellido, "curp": curp,
+            }.items() if v}
+        return _consulta_con_solver(body, cedula.strip() if cedula else None)
+    return handoff_sep({
+        "cedula": cedula,
+        "nombre": nombre,
+        "primer_apellido": primer_apellido,
+        "segundo_apellido": segundo_apellido,
+        "curp": curp,
+    })
 
-        # Click buscar
-        page.locator(SELECTORES["submit"]).first.click()
 
+def _consulta_con_solver(body: dict[str, str], cedula: Optional[str]) -> dict[str, Any]:
+    with httpx.Client(timeout=30, headers={"User-Agent": USER_AGENT}) as http:
         try:
-            page.wait_for_selector(SELECTORES["result_table"], timeout=15000)
-        except Exception:
-            raise UpstreamError("Timeout esperando resultados SEP.", {})
+            cfg = {**CONFIG_RESPALDO, **http.get(URL_CONFIG).json()}
+        except (httpx.HTTPError, ValueError):
+            cfg = CONFIG_RESPALDO
+        solver = CaptchaSolver()
 
-        # Parsear primera fila de resultados
-        rows = page.locator(SELECTORES["result_table"] + " tr").all()
-        for row in rows:
-            celdas = row.locator("td").all()
-            if len(celdas) >= 4:
-                return {
-                    "cedula": safe_text(celdas[0]),
-                    "nombre_completo": safe_text(celdas[1]),
-                    "profesion": safe_text(celdas[2]) if len(celdas) > 2 else None,
-                    "institucion": safe_text(celdas[3]) if len(celdas) > 3 else None,
-                    "fecha_expedicion": safe_text(celdas[4]) if len(celdas) > 4 else None,
-                    "vigente": True,
-                    "fuente": "SEP-RNP",
-                    "url_consultada": URL_SEP_CEDULA,
-                    "simulated": False,
-                }
+        def obtener_token() -> str:
+            return solver.recaptcha(cfg["recaptchaSiteKey"], URL_SEP_CEDULA, version="v3", accion=RECAPTCHA_ACCION)
 
-        return {
-            "vigente": False,
-            "razon": "No se encontraron resultados",
-            "fuente": "SEP-RNP",
-            "simulated": False,
-        }
+        def enviar(token: str) -> Any:
+            try:
+                auth = http.get(URL_TOKEN, headers={"X-Client-Id": cfg["clientId"], "X-API-Key": cfg["apiKey"]})
+                auth.raise_for_status()
+                r = http.post(API_CONSULTA, json=body, headers={
+                    "Authorization": f"Bearer {auth.json()['access_token']}", "X-Recaptcha-Token": token,
+                })
+            except (httpx.HTTPError, KeyError, ValueError) as exc:
+                raise UpstreamError(f"SEP no respondió: {type(exc).__name__}") from exc
+            if r.status_code in (401, 403) or (r.status_code == 400 and "captcha" in r.text.lower()):
+                raise TokenRechazado()
+            if r.status_code != 200:
+                raise UpstreamError(f"SEP respondió HTTP {r.status_code}.", {"status_code": r.status_code})
+            return r.json() if r.content else []
+
+        datos = con_token(obtener_token, enviar, "SEP-RNP")
+    registros = datos if isinstance(datos, list) else [datos] if datos else []
+    if cedula:
+        registros = [x for x in registros if str(x.get("cedula")) == cedula]
+    base = {"fuente": "SEP-RNP", "url_consultada": URL_SEP_CEDULA, "simulated": False, "consultado": True}
+    if not registros:
+        return {**base, "encontrada": False, "cedula": cedula, "vigente": False}
+    salida = [_normalizar_registro(x) for x in registros]
+    if cedula:
+        return {**base, "encontrada": True, **salida[0]}
+    return {**base, "encontrada": True, "total": len(salida), "resultados": salida, **salida[0]}
+
+
+def _normalizar_registro(x: dict[str, Any]) -> dict[str, Any]:
+    nombre = " ".join(str(x.get(k) or "").strip() for k in ("nombre", "primerApellido", "segundoApellido")).strip()
+    return {
+        "cedula": str(x.get("cedula") or ""),
+        "nombre_completo": nombre,
+        "profesion": x.get("profesion"),
+        "institucion": x.get("institucion"),
+        "entidad_institucion": x.get("entidadInstitucion"),
+        "anio_registro": x.get("anioRegistro"),
+        "genero": {"1": "M", "2": "F"}.get(str(x.get("genero")), x.get("genero")),
+        # El RNP no publica bajas: la cédula listada es la registrada (no caduca).
+        "vigente": True,
+    }
 
 
 def _mock_response(

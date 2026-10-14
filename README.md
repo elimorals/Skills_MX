@@ -2,6 +2,24 @@
 
 Monorepo de **plugins de Claude Code**, **MCP servers** y **skills standalone** para operación diaria de PyMEs y profesionistas en México. Cubre fiscal (CFDI 4.0, SAT, IMSS, INFONAVIT), pagos (TDC, OXXO, SPEI, transferencia), marketplaces (ML, Shopify, Amazon MX), municipales (CDMX, EdoMex, MTY), inmobiliaria, salud veterinaria, eventos, restaurantes, salones, **servicios públicos (agua, gas, CFE, Telmex), tenencia/verificación/multas vehiculares** y más.
 
+<!-- estado-mcps:inicio -->
+## Estado a 2026-10-14 (oleada 1: mock → real)
+
+Generado por `scripts/generar-estado-mcps.py` desde la sección "Estado real" de cada README. 83 MCPs, 417 tools.
+
+| Categoría | MCPs |
+|---|---|
+| Real, validado en vivo | 24 |
+| Real sin validar (requiere credenciales) | 13 |
+| Entrega a humano (CAPTCHA o login) | 17 |
+| Sin API pública | 6 |
+| Cálculo normativo verificado | 10 |
+| Bloqueado | 2 |
+| Sin verificar | 11 |
+<!-- estado-mcps:fin -->
+
+> Las secciones "Estado a 2026-06-…" de abajo son históricas: describen el diseño mock-first previo a la oleada 1 y sus cifras no se revalidaron. El estado vigente es el bloque de arriba.
+
 ## Estado a 2026-06-15 (post-Sprint H — Nivel 2 preparación documental + workflow demo HITL)
 
 | Capa | Cantidad real | Notas |
@@ -34,7 +52,7 @@ Cubre 12 nuevos + 3 profundizados del plan `plugins-mx-gaps-integraciones-2026-0
 #### Sprint F — Profundización SAT + IMSS + INFONAVIT (14 tools)
 
 - `mp_sat_portal` +5: `sat_calendario_fiscal_por_regimen`, `sat_cfdi_prevalidar` (local CFDI 4.0), `sat_declaraciones_historico` (alerta SCJN 3 omisiones), `sat_devolucion_estatus`, `sat_buzon_tributario_resumen`
-- `mp_imss_patronal` +5: `imss_sbc_calcular` (UMA 2026 $113.07 + tope 25 UMAs), `imss_ema_vs_eba_diferencias`, `imss_calendario_obligaciones`, `imss_simulador_costo_patronal`, `imss_riesgo_trabajo_prima_cambio` (Art. 72 LSS)
+- `mp_imss_patronal` +5: `imss_sbc_calcular` (UMA 2026 $117.31 + tope 25 UMAs), `imss_ema_vs_eba_diferencias`, `imss_calendario_obligaciones`, `imss_simulador_costo_patronal`, `imss_riesgo_trabajo_prima_cambio` (Art. 72 LSS)
 - `mp_infonavit_patronal` +4: `infonavit_descuento_calcular` (5 tipos crédito + cap LFT Art. 110), `infonavit_creditos_sin_reporte`, `infonavit_emis_historico` (10 años), `infonavit_conciliacion_nomina` (5000 registros)
 
 **51 tests · commit `de7b660`**

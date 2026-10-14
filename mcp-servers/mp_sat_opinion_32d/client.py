@@ -9,7 +9,10 @@ Responses (descubierto con Playwright MCP el 2026-06-14):
   - 200 text/html          → <div class="alert-success">...</div> + PDF base64
                              O <div class="alert-danger">...</div> + PDF base64
 
-Modo mock por default. Real: setear PLUGINS_MX_MOCK=0.
+Consulta pública: real por default (sin login, sin CAPTCHA). Mock solo con
+PLUGINS_MX_MOCK=1. Las respuestas con estado "error" no se cachean.
+Opinión propia completa (con e.firma, aunque no esté autorizada para hacerse
+pública): `descargar_propia()` vía login FIEL httpx (`shared/sat_portal_fiel.py`).
 Cache 7 días — la opinión se recalcula diariamente pero rara vez cambia.
 """
 from __future__ import annotations
@@ -32,6 +35,7 @@ from shared.errors import (  # noqa: E402
     handle_httpx_error,
 )
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.sat_portal_fiel import URL_32D_PDF  # noqa: E402
 from shared.sat_opinion_32d import (  # noqa: E402
     CONSULTA_ENDPOINT,
     PORTAL_URL,
@@ -132,7 +136,8 @@ class SatOpinion32DClient:
         if not incluir_pdf:
             result = {**result, "pdf_base64": None}
 
-        self._cache.set(cache_key, result, ttl_hours=CACHE_TTL_HOURS)
+        if result.get("estado") != "error":
+            self._cache.set(cache_key, result, ttl_hours=CACHE_TTL_HOURS)
         self._bitacora.log(
             "consultar",
             success=True,
@@ -197,6 +202,50 @@ class SatOpinion32DClient:
             "estado": estado,
             "advertencias": advertencias,
             "detalle": detalle,
+        }
+
+    def descargar_propia(self, rfc: str) -> dict[str, Any]:
+        """Opinión 32-D completa del titular de la e.firma (SAT_EFIRMA_*).
+
+        No depende de que el contribuyente haya autorizado la publicación. El
+        PDF se devuelve en base64; el sentido (positiva/negativa) se lee del
+        PDF y queda pendiente de extracción (oleada 3).
+        """
+        import base64
+        import hashlib
+
+        rfc = (rfc or "").strip().upper()
+        if not validar_estructura_rfc(rfc):
+            raise ValidationError(f"RFC '{rfc}' tiene estructura inválida.", {"rfc": rfc})
+        self._bitacora.log(
+            "descargar_propia", success=True,
+            params_summary={"rfc_hash": self._bitacora.hash_sensitive(rfc)},
+        )
+        if is_mock_mode(["SAT_EFIRMA_CERT"]):
+            return mark_simulated(
+                {"rfc": rfc, "pdf_base64": "JVBERi0xLjQK<<MOCK_PDF>>", "fuente": URL_32D_PDF},
+                "Opinión propia requiere e.firma (SAT_EFIRMA_*) — no consultada.",
+            )
+        from mp_sat_portal.efirma_loader import EfirmaLoader
+        from shared.sat_portal_fiel import SatFielSession
+
+        loader = EfirmaLoader.from_env()
+        meta = loader.metadata()
+        if meta.rfc != rfc:
+            raise ValidationError(
+                f"La e.firma cargada es de otro RFC ({meta.rfc}); la opinión propia solo es del titular.",
+                {"rfc_solicitado": rfc},
+            )
+        with SatFielSession(loader) as sesion:
+            pdf = sesion.descargar_opinion_32d()
+        return {
+            "rfc": rfc,
+            "pdf_base64": base64.b64encode(pdf).decode(),
+            "pdf_sha256": hashlib.sha256(pdf).hexdigest(),
+            "fecha_consulta": datetime.now(timezone.utc).isoformat(),
+            "fuente": URL_32D_PDF,
+            "nota": "Sentido de la opinión (positiva/negativa) dentro del PDF; sin extraer todavía.",
+            "simulated": False,
         }
 
     # ============================================================

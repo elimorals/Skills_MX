@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sobre · Elías Rashid Morales Mendoza · Plugins MX</title>
-<meta name="description" content="Autor de Plugins MX. Construyo infraestructura de compliance fiscal y municipal para México: 46 MCPs, 32 estados, 243 municipios. Ciudad de México.">
+<meta name="description" content="Autor de Plugins MX. Construyo infraestructura de compliance fiscal y municipal para México: 83 MCPs con su estado real publicado. Ciudad de México.">
 <meta name="author" content="Elías Rashid Morales Mendoza">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
@@ -179,7 +179,7 @@
     <div class="como-step">
       <div class="step-no">iii.</div>
       <h3>El criterio de calidad</h3>
-      <p>Cada MCP pasa por: tests con pytest, validación Playwright contra el portal real, fixtures determinísticas, bitácora JSONL hasheada y mock-first para correr sin credenciales. <strong>Si no pasa los 5 filtros, no entra al monorepo.</strong></p>
+      <p>Cada MCP documenta en su README qué hace de verdad: si consulta la fuente oficial y cuándo se validó, si falta una credencial para probarlo, si el portal obliga a entregar el trámite a una persona o si no hay API pública. <strong>Nunca se resuelven ni evaden CAPTCHAs, y los datos simulados siempre van marcados <span class="mono">simulated: true</span>.</strong></p>
     </div>
     <div class="como-step">
       <div class="step-no">iv.</div>
@@ -198,11 +198,11 @@
   </div>
 
   <div class="big-stats">
-    <div class="bs"><span class="bs-n" data-target="46">0</span><span class="bs-l">MCP servers</span><span class="bs-d">Production-ready, todos validados con tests.</span></div>
-    <div class="bs bs-accent"><span class="bs-n" data-target="870">0</span><span class="bs-l">Tests con pytest</span><span class="bs-d">Discipline TDD desde el primer commit.</span></div>
-    <div class="bs"><span class="bs-n" data-target="307">0</span><span class="bs-l">Skills empaquetados</span><span class="bs-d">Con SKILL.md + evals + fixtures.</span></div>
-    <div class="bs"><span class="bs-n" data-target="32">0</span><span class="bs-l">Estados ISN</span><span class="bs-d">Catalogados con tasa, portal y vencimiento.</span></div>
-    <div class="bs"><span class="bs-n" data-target="243">0</span><span class="bs-l">Municipios predial</span><span class="bs-d">163 consultables end-to-end.</span></div>
+    <div class="bs"><span class="bs-n" data-target="83">0</span><span class="bs-l">MCP servers</span><span class="bs-d">Estado de cada uno en /data/mcp-estado.json.</span></div>
+    <div class="bs bs-accent"><span class="bs-n" data-target="23">0</span><span class="bs-l">Validados en vivo</span><span class="bs-d">Contra la fuente oficial, 14-oct-2026.</span></div>
+    <div class="bs"><span class="bs-n" data-target="17">0</span><span class="bs-l">Entregan a humano</span><span class="bs-d">El portal exige CAPTCHA o login.</span></div>
+    <div class="bs"><span class="bs-n" data-target="32">0</span><span class="bs-l">Estados ISN</span><span class="bs-d">Tasa 2026 de fuente secundaria, vencimiento y portal.</span></div>
+    <div class="bs"><span class="bs-n" data-target="243">0</span><span class="bs-l">Municipios predial</span><span class="bs-d">En catálogo; revalidados en oct-2026: Toluca y CDMX.</span></div>
     <div class="bs bs-dark"><span class="bs-n" data-target="40">0</span><span class="bs-l">Verticales soportados</span><span class="bs-d">De freelancer a constructora.</span></div>
   </div>
 </section>
@@ -226,7 +226,7 @@
     <span class="vert vert-orig">CFDI 4.0</span>
     <span class="vert vert-orig">SAT · IMSS · INFONAVIT</span>
     <span class="vert vert-top">Test-driven dev (pytest)</span>
-    <span class="vert vert-top">Mock-first design</span>
+    <span class="vert vert-top">Estado real documentado</span>
     <span class="vert vert-top">Schema.org · JSON-LD</span>
     <span class="vert vert-spec">A2A · Agent-to-Agent 2026</span>
     <span class="vert vert-spec">OpenAPI 3.1</span>

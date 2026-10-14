@@ -14,9 +14,14 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared.bitacora import Bitacora  # noqa: E402
-from shared.errors import McpError  # noqa: E402
+from shared.errors import ConfigError  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
+SIN_API_PUBLICA = (
+    "La Marketplace API de Uber Eats solo está documentada para socios aprobados; "
+    "developer.uber.com/docs/eats no es accesible sin sesión (verificado 2026-10-14)."
+)
+ALTERNATIVA = "Solicita acceso en developer.uber.com o usa un integrador POS con Uber Eats (p.ej. Deliverect)."
 NAMESPACE = "uber_eats_partners"
 CRED_VARS = ["UBER_EATS_CLIENT_ID", "UBER_EATS_CLIENT_SECRET", "UBER_EATS_STORE_ID"]
 
@@ -49,7 +54,7 @@ class UberEatsPartnersClient:
             if estado != "all":
                 ordenes = [o for o in ordenes if o["estado"].lower() == estado.lower()]
             return mark_simulated({"store_id_hash": Bitacora.hash_sensitive(self._store_id or "MOCK"), "total": len(ordenes), "ordenes": ordenes})
-        raise McpError("Path Uber Eats real no implementado — requiere Marketplace API access")
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})
 
     def consultar_orden(self, orden_id: str) -> dict[str, Any]:
         if self._is_mock():
@@ -66,7 +71,7 @@ class UberEatsPartnersClient:
                 "neto_mxn": "252.00",
                 "cliente_hash": Bitacora.hash_sensitive("MOCK_CLIENT"),
             })
-        raise McpError("Real path no implementado")
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})
 
     def listar_productos_menu(self) -> dict[str, Any]:
         if self._is_mock():
@@ -78,12 +83,12 @@ class UberEatsPartnersClient:
                 ],
                 "total": 2,
             })
-        raise McpError("Real path no implementado")
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})
 
     def actualizar_disponibilidad(self, sku: str, disponible: bool) -> dict[str, Any]:
         if self._is_mock():
             return mark_simulated({"sku": sku, "disponible": disponible, "actualizado_en": datetime.now(timezone.utc).isoformat()})
-        raise McpError("Real path no implementado")
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})
 
     def consultar_ranking_zona(self) -> dict[str, Any]:
         if self._is_mock():
@@ -94,7 +99,7 @@ class UberEatsPartnersClient:
                 "rating_promedio": 4.7,
                 "reviews_count": 412,
             })
-        raise McpError("Real path no implementado")
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})
 
     def estimar_comisiones_mes(self, mes: str | None = None) -> dict[str, Any]:
         if self._is_mock():
@@ -107,4 +112,4 @@ class UberEatsPartnersClient:
                 "comision_porcentaje": 30.0,
                 "neto_mxn": "38710.00",
             })
-        raise McpError("Real path no implementado")
+        raise ConfigError(SIN_API_PUBLICA, {"motivo": "sin_api_publica", "alternativa": ALTERNATIVA})

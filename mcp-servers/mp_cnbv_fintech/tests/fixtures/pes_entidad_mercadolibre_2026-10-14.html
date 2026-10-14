@@ -1,0 +1,527 @@
+<link href="/Content/css/site.css" rel="stylesheet">
+<link href="/Content/css/corev4.css" rel="stylesheet">
+<link href="/Content/css/PIestilo.css" rel="stylesheet">
+<link href="/Content/css/styles.css" rel="stylesheet">
+<link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+
+
+<script src="/Scripts/custom/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="/Scripts/custom/bootstrap.min.js" type="text/javascript"></script>
+
+<script src="/Scripts/html5-canvas.js" type="text/javascript"></script>
+
+<title>Consulta</title>
+<link rel="stylesheet" type="text/css" href="/DXR.axd?r=1_8,0_3281,0_3279,1_7,0_3144,1_4,0_3146-rNkuw" /><link rel="stylesheet" type="text/css" href="/DXR.axd?r=0_3156,4_2,0_3158,5_1,0_3236,0_3152,0_3154,0_3215,0_3217,7_1,7_0,1_1,0_3114,0_3298,0_3231,8_2,0_3233,8_0,0_3244,6_2,0_3246-rNkuw" />
+<script id="dxis_1001292417" src="/DXR.axd?r=1_145,1_81,1_137,1_91,1_114,14_25,14_11,1_99,1_106,1_130,1_135,1_121,1_129,1_80,14_2,1_126,1_84,14_6,1_88,14_7,1_78,1_128,1_90,1_89,14_8,1_143,1_144,1_109,14_9,1_136,14_24,1_131,1_85,1_110,1_140,1_118,1_120,14_15,1_123,14_16,14_18,1_127,1_134,1_138,14_21,14_23,1_87,5_5,5_4,4_11,4_10,4_6,4_7,4_9,14_12,4_5,1_98,1_101,4_12,4_13,1_97,1_139,1_115,1_133,7_51,1_83,7_53,14_17,1_92,1_95,1_102,14_0,1_105,1_93,14_1,1_94,14_3,1_96,1_107,14_5,1_119,1_104,14_13,14_14,1_103,1_108,10_2,10_1,10_3,10_4,14_4,9_1,9_5,14_19,9_4,8_10,8_17,8_24,8_26,8_9,8_12,8_13,8_18,14_20,8_21,8_23,8_22,8_16,8_19,8_20,8_14,8_15,8_25,8_11,6_12,14_22-xNkuw" type="text/javascript"></script><script id="dxss_1233158606" type="text/javascript">
+<!--
+ASPxHtmlEditorDialogSR={PasteFromWord:'Pegar desde Word',InsertImage:'Insertar imagen',ChangeImage:'Cambiar Imagen',InsertLink:'Insertar enlace',ChangeLink:'Cambiar Enlace',InsertTable:'Insertar una Tabla',ChangeTable:'Propiedades de Tablas...',ChangeTableCell:'Propiedades de Celdas...',ChangeTableColumn:'Propiedades de Columnas...',ChangeTableRow:'Propiedades de Filas...'}
+//-->
+</script><script id="dxss_1753561832" type="text/javascript">
+<!--
+(function(){var a = ({'currency':'€','shortDate':'dd/MM/yyyy','abbrMonthNames':['ene.','feb.','mar.','abr.','may.','jun.','jul.','ago.','sep.','oct.','nov.','dic.',''],'currDecimalPoint':',','currGroupSeparator':'.','am':'','currPosPattern':3,'longDate':'dddd, d\' de \'MMMM\' de \'yyyy','genMonthNames':['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre',''],'twoDigitYearMax':2049,'monthDay':'d \'de\' MMMM','abbrDayNames':['do.','lu.','ma.','mi.','ju.','vi.','sá.'],'numDecimalPoint':',','currNegPattern':8,'monthNames':['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre',''],'pm':'','numGroupSeparator':'.','longTime':'H:mm:ss','yearMonth':'MMMM\' de \'yyyy','shortTime':'H:mm','percentPattern':0,'dayNames':['domingo','lunes','martes','miércoles','jueves','viernes','sábado']});for(var b in a) __aspxCultureInfo[b] = a[b];})();
+//-->
+</script>
+<header class="header">
+    <div class="col-md-12">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default" style="visibility:hidden" onclick="location.href = '/'">BÚSQUEDAS</button>
+        <button type="button" class="btn btn-default" style="visibility:hidden" onclick="location.href = '/Clasificador'">ENTIDADES POR SECTOR</button>
+    </div>
+</div>
+
+
+
+</header>
+<div role="main">
+    <div class="container">
+        
+<script src="/Scripts/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+
+
+<style>
+    #loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 2600px;
+        width: 100%;
+        background-color: #000000;
+        -khtml-opacity: .50;
+        -moz-opacity: .50;
+        filter: alpha(opacity=50);
+        opacity: .50;
+        zoom: 1;
+        cursor: wait;
+        z-index: 100;
+        animation: spin 2s linear infinite;
+    }
+
+    
+     .customHeaderStyle {
+                background-color: #F0F1F7 !important;
+                font-size: 14px;
+            }
+
+     .customDetailStyle {
+                font-size: 12px;
+            }
+
+     .rounded-corners
+        {
+            border: 1px solid #DAD9D9;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .Grid td,.Grid th
+        {
+             border:1px solid #A1DCF2
+        }
+</style>
+<script type="text/javascript">
+    
+    function Mostrar() {
+        //var element = document.getElementById("ExportarExcel");
+        $('#ExportarExcel').show();
+        document.getElementById('Total').innerHTML = "TOTAL DE REGISTROS: " + GridViewEntidad.pageRowCount + "<br/>"
+    }
+    function EndCallback() {
+        document.getElementById('Total').innerHTML = "TOTAL DE REGISTROS: " + GridViewEntidad.pageRowCount + "<br/>";
+    }
+    function load() {
+        document.getElementById('loading').style.display = 'block';
+    }
+    function limpiar() {
+        document.getElementById('loading').style.display = 'block';
+        var url = '/';
+        window.location.href = url;
+    }
+
+    $(document).ready(function () {
+        
+        $("#resetvalues").click(function () {
+            limpiar();
+        });
+
+        $('#find_form').submit(function () {
+            $('#executed').val('true');
+            load();
+        });
+
+        $('#subsectorName').on('change', function () {
+            $('#ExportarExcel').hide();
+        });
+
+        $("#ExportarExcel").click(function () {
+            if (($("#entidad").val() == '' && $("#nombreCorto").val() == '' && $("#subsectorName").val() == 'NULL') && $('#executed').val() == '0' )
+            {
+                alert('Ejecuta la consulta, para poder descargar la información!');
+                return false;
+            }
+            $('#executed').val('false')
+            $('#ExportarExcel').hide();
+        });
+    });
+
+</script>
+<input type="hidden" id="executed" value="1" />
+<div class="col-md-11">
+    <div class="form-group">
+        <h3>
+            CONSULTA GENERAL
+            <a id="ExportarExcel"class="btn btn-default pull-right btn-sm glyphicon glyphicon-download-alt" style="text-decoration:none; font-weight:normal !important; color: #676767 !important; display:none;" name="Limpiar" href="/Consulta/ExportarExcel?Subsector=NULL&amp;Entidad=MERCADOLIBRE"> Exportar a PDF</a>
+        </h3>
+        <hr class="red">
+    </div>
+</div>
+
+
+<form id="find_form" action="/Consulta/ConsultaEntidad" method="get" role="form">
+    <div class="col-md-11">
+        <div class="form-group">
+            <label class="control-label" for="entidad">RAZÓN SOCIAL:</label>
+            <input class="form-control" id="entidad" name="entidad" placeholder="Razón social" type="text" data-toggle="tooltip" title="PARA EFECTUAR SU BÚSQUEDA PUEDE ESCRIBIR EL NOMBRE COMPLETO O COMPONENTES DEL MISMO" value="MERCADOLIBRE">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="nombreCorto">NOMBRE CORTO: </label>
+            <input class="form-control" id="nombreCorto" name="nombreCorto" placeholder="Nombre corto" type="text" value="">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="subsectorName">SECTOR:</label>
+            <select class="form-control" name="subsectorName" id="subsectorName">
+                <option value="NULL" >Seleccione un sector</option>
+                    <option >ALMACENES GENERALES DE DEP&#211;SITO</option>
+                    <option >ASESORES EN INVERSI&#211;N PERSONAS F&#205;SICAS</option>
+                    <option >ASESORES EN INVERSI&#211;N PERSONAS MORALES</option>
+                    <option >ASESORES EN INVERSI&#211;N PERSONAS MORALES NO INDEPENDIENTES</option>
+                    <option >BOLSA DE CONTRATOS DE DERIVADOS</option>
+                    <option >BOLSAS DE VALORES</option>
+                    <option >C&#193;MARAS DE COMPENSACI&#211;N DEL MERCADO DE CONTRATOS DE DERIVADOS</option>
+                    <option >CASAS DE BOLSA</option>
+                    <option >CASAS DE CAMBIO</option>
+                    <option >CENTROS CAMBIARIOS</option>
+                    <option >CONTRAPARTES CENTRALES DE VALORES</option>
+                    <option >EMISORAS</option>
+                    <option >EMPRESAS DE SERVICIOS COMPLEMENTARIOS O CONEXOS DE BANCA</option>
+                    <option >EMPRESAS DE SERVICIOS COMPLEMENTARIOS O CONEXOS DE GRUPOS FINANCIEROS</option>
+                    <option >EMPRESAS DE SERVICIOS COMPLEMENTARIOS O CONEXOS DE ORGANIZACIONES AUXILIARES</option>
+                    <option >ENTIDADES DISTRIBUIDORAS INTEGRALES</option>
+                    <option >FEDERACIONES DE ENTIDADES DE AHORRO Y CR&#201;DITO POPULAR</option>
+                    <option >FIDEICOMISOS P&#218;BLICOS DE FOMENTO ECON&#211;MICO FINANCIERO</option>
+                    <option >FONDO DE PROTECCI&#211;N DE SOCIEDADES FINANCIERAS POPULARES Y DE PROTECCI&#211;N A SUS AHORRADORES</option>
+                    <option >FONDO DE SUPERVISI&#211;N AUXILIAR DE SOCIEDADES COOPERATIVAS DE AHORRO Y PR&#201;STAMO</option>
+                    <option >FONDOS DE INVERSI&#211;N DE CAPITALES</option>
+                    <option >FONDOS DE INVERSI&#211;N DE RENTA VARIABLE</option>
+                    <option >FONDOS DE INVERSI&#211;N EN INSTRUMENTOS DE DEUDA</option>
+                    <option >INMOBILIARIAS BANCARIAS</option>
+                    <option >INSTITUCIONES CALIFICADORAS DE VALORES</option>
+                    <option >INSTITUCIONES DE BANCA DE DESARROLLO</option>
+                    <option >INSTITUCIONES DE BANCA M&#218;LTIPLE</option>
+                    <option >INSTITUCIONES DE FINANCIAMIENTO COLECTIVO</option>
+                    <option >INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</option>
+                    <option >INSTITUCIONES PARA EL DEP&#211;SITO DE VALORES</option>
+                    <option >MECANISMOS ELECTR&#211;NICOS DE DIVULGACI&#211;N DE INFORMACI&#211;N</option>
+                    <option >MECANISMOS ELECTR&#211;NICOS DE NEGOCIACI&#211;N DE ACCIONES DE FONDOS DE INVERSI&#211;N</option>
+                    <option >OFICINAS DE REPRESENTACI&#211;N DE CASAS DE BOLSA</option>
+                    <option >OFICINAS DE REPRESENTACI&#211;N Y AGENCIAS DE BANCOS EXTRANJEROS</option>
+                    <option >OPERADORES PARTICIPANTES DEL MERCADO DE CONTRATOS DE DERIVADOS</option>
+                    <option >ORGANISMOS AUTORREGULATORIOS DEL MERCADO DE VALORES</option>
+                    <option >ORGANISMOS DE FOMENTO</option>
+                    <option >PARTICIPANTES EN REDES DE MEDIOS DE DISPOSICI&#211;N RELEVANTES</option>
+                    <option >PROVEEDORES DE PRECIOS</option>
+                    <option >SOCIEDADES CONTROLADORAS DE GRUPOS FINANCIEROS</option>
+                    <option >SOCIEDADES COOPERATIVAS DE AHORRO Y PR&#201;STAMO</option>
+                    <option >SOCIEDADES DE INFORMACI&#211;N CREDITICIA</option>
+                    <option >SOCIEDADES DE INVERSI&#211;N EN INSTRUMENTOS DE DEUDA</option>
+                    <option >SOCIEDADES DISTRIBUIDORAS INTEGRALES</option>
+                    <option >SOCIEDADES FINANCIERAS DE OBJETO M&#218;LTIPLE</option>
+                    <option >SOCIEDADES FINANCIERAS DE OBJETO M&#218;LTIPLE, ENTIDADES NO REGULADAS</option>
+                    <option >SOCIEDADES FINANCIERAS POPULARES</option>
+                    <option >SOCIEDADES OPERADORAS DE FONDOS DE INVERSI&#211;N DE CAPITALES</option>
+                    <option >SOCIEDADES OPERADORAS DE FONDOS DE INVERSI&#211;N EN INSTRUMENTOS DE DEUDA Y DE RENTA VARIABLE</option>
+                    <option >SOCIEDADES OPERADORAS DE SOCIEDADES DE INVERSI&#211;N DE CAPITAL</option>
+                    <option >SOCIEDADES OPERADORAS DE SOCIEDADES DE INVERSI&#211;N DE RENTA VARIABLE E INSTRUMENTOS DE DEUDA</option>
+                    <option >SOCIEDADES OPERADORAS LIMITADAS DE FONDOS DE INVERSI&#211;N</option>
+                    <option >SOCIEDADES QUE ADMINISTREN SISTEMAS PARA FACILITAR OPERACIONES CON VALORES</option>
+                    <option >SOCIEDADES VALUADORAS DE ACCIONES DE FONDOS DE INVERSI&#211;N</option>
+                    <option >SOCIOS LIQUIDADORES PARTICIPANTES DEL MERCADO DE CONTRATOS DE DERIVADOS</option>
+                    <option >SUBCONTROLADORAS</option>
+                    <option >TRANSMISORES DE DINERO</option>
+                    <option >UNIONES DE CR&#201;DITO</option>
+            </select>
+        </div>
+        <div class="modal-footer pull-right">
+            <input type="button" class="btn btn-default" id="resetvalues" name="resetvalues" value="LIMPIAR" />
+            <button class="btn btn-primary" name="Buscar" id="EjecutaBuscar" type="submit" onclick="load"><span class="glyphicon glyphicon-search"></span> BUSCAR</button>
+        </div>
+
+    </div>
+</form>
+
+
+
+<div id="loading" style="display: none"></div>
+<br />
+
+<div class="col-md-11" id="content-sectores">
+    <div align="right" id="Total" title="NÚMERO TOTAL DE ENTIDADES FINANCIERAS QUE INTEGRAN LA CONSULTA REALIZADA"></div>
+    <div id="infoSector">
+<input type="hidden"/><table class="dxgvControl_Office2010Silver padding-left:35px; rounded-corners" cellspacing="0" cellpadding="0" id="GridViewEntidad" width="100%" style="border-collapse:separate;">
+	<tr>
+		<td><table id="GridViewEntidad_DXMainTable" class="dxgvTable_Office2010Silver" cellspacing="0" cellpadding="0" onclick="aspxGVTableClick(&#39;GridViewEntidad&#39;, event);" width="100%" style="empty-cells:show;">
+			<tr id="GridViewEntidad_DXHeadersRow0">
+				<td id="GridViewEntidad_col0" title="NÚMERO EN EL CATÁLOGO DEL SISTEMA FINANCIERO MEXICANO. REGISTRO NUMÉRICO ADMINISTRADO POR LA SHCP, QUE IDENTIFICA A LAS ENTIDADES FINANCIERAS, AGRUPÁNDOLAS POR SECTOR" class="dxgvHeader_Office2010Silver customHeaderStyle" onmousedown="aspxGVHeaderMouseDown(&#39;GridViewEntidad&#39;, this, event);" width="10%" style="text-align:Center;border-top-width:0px;border-left-width:0px;"><font size="3"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td style="text-align:Center;"><font size="3">CASFIM</font></td>
+					</tr>
+				</table></font></td><td id="GridViewEntidad_col1" title="NOMBRE LEGAL DE LA ENTIDAD" class="dxgvHeader_Office2010Silver customHeaderStyle" onmousedown="aspxGVHeaderMouseDown(&#39;GridViewEntidad&#39;, this, event);" width="40%" style="text-align:Center;border-top-width:0px;border-left-width:0px;"><font size="3"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td style="text-align:Center;"><font size="3">RAZÓN SOCIAL</font></td>
+					</tr>
+				</table></font></td><td id="GridViewEntidad_col2" title="NOMBRE ABREVIADO DE LA ENTIDAD O ACRÓNIMO DE DOMINIO PÚBLICO" class="dxgvHeader_Office2010Silver customHeaderStyle" onmousedown="aspxGVHeaderMouseDown(&#39;GridViewEntidad&#39;, this, event);" width="20%" style="text-align:Center;border-top-width:0px;border-left-width:0px;"><font size="3"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td style="text-align:Center;"><font size="3">NOMBRE CORTO</font></td>
+					</tr>
+				</table></font></td><td id="GridViewEntidad_col3" title="RAMA, ACTIVIDAD O SEGMENTO DEL SISTEMA FINANCIERO MEXICANO AL QUE PERTENECE LA ENTIDAD FINANCIERA" class="dxgvHeader_Office2010Silver customHeaderStyle" onmousedown="aspxGVHeaderMouseDown(&#39;GridViewEntidad&#39;, this, event);" width="30%" style="text-align:Center;border-top-width:0px;border-left-width:0px;"><font size="3"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td style="text-align:Center;"><font size="3">SECTOR</font></td>
+					</tr>
+				</table></font></td><td id="GridViewEntidad_col4" class="dxgvHeader_Office2010Silver customHeaderStyle" onmousedown="aspxGVHeaderMouseDown(&#39;GridViewEntidad&#39;, this, event);" width="70" style="text-align:Center;border-top-width:0px;border-left-width:0px;border-right-width:0px;cursor:default;"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td style="text-align:Center;">&nbsp;</td>
+					</tr>
+				</table></td>
+			</tr><tr class="dxgvFilterRow_Office2010Silver">
+				<td class="dxgv"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td width="100%" style="padding-right:2px;"><table class="dxeTextBoxSys dxeTextBox_Office2010Silver" cellspacing="0" cellpadding="0" id="GridViewEntidad_DXFREditorcol0" width="100%">
+							<tr>
+								<td class="dxic" width="100%"><input class="dxeEditArea_Office2010Silver dxeEditAreaSys" id="GridViewEntidad_DXFREditorcol0_I" name="GridViewEntidad$DXFREditorcol0" onfocus="aspxEGotFocus(&#39;GridViewEntidad_DXFREditorcol0&#39;)" onblur="aspxELostFocus(&#39;GridViewEntidad_DXFREditorcol0&#39;)" onchange="aspxEValueChanged(&#39;GridViewEntidad_DXFREditorcol0&#39;)" onkeydown="aspxEKeyDown(&#39;GridViewEntidad_DXFREditorcol0&#39;, event)" onkeyup="aspxEKeyUp(&#39;GridViewEntidad_DXFREditorcol0&#39;, event)" type="text" /></td>
+							</tr>
+						</table><script id="dxss_695571215" type="text/javascript">
+<!--
+aspxAddDisabledItems('GridViewEntidad_DXFREditorcol0',[[['dxeDisabled_Office2010Silver'],[''],['','I']]]);
+
+var dxo = new ASPxClientTextBox('GridViewEntidad_DXFREditorcol0');
+window['GridViewEntidad_DXFREditorcol0'] = dxo;
+dxo.uniqueID = 'GridViewEntidad$DXFREditorcol0';
+dxo.renderIFrameForPopupElements = true;
+dxo.ValueChanged.AddHandler(function(s, event) { aspxGVFilterChanged('GridViewEntidad',s);; });
+dxo.KeyDown.AddHandler(function(s, event) { aspxGVFilterKeyPress('GridViewEntidad',s,event);; });
+dxo.RequireStyleDecoration();
+dxo.styleDecoration.AddStyle('F','dxeFocused_Office2010Silver','');
+dxo.InlineInitialize();
+
+//-->
+</script></td><td><img class="dxGridView_gvFilterRowButton_Office2010Silver" onclick="aspxGVFilterRowMenu(&#39;GridViewEntidad&#39;,0,this)" src="/DXR.axd?r=1_10-rNkuw" alt="[Condición]" title="" style="cursor:pointer;" /></td>
+					</tr>
+				</table></td><td class="dxgv"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td width="100%" style="padding-right:2px;"><table class="dxeTextBoxSys dxeTextBox_Office2010Silver" cellspacing="0" cellpadding="0" id="GridViewEntidad_DXFREditorcol1" width="100%">
+							<tr>
+								<td class="dxic" width="100%"><input class="dxeEditArea_Office2010Silver dxeEditAreaSys" id="GridViewEntidad_DXFREditorcol1_I" name="GridViewEntidad$DXFREditorcol1" onfocus="aspxEGotFocus(&#39;GridViewEntidad_DXFREditorcol1&#39;)" onblur="aspxELostFocus(&#39;GridViewEntidad_DXFREditorcol1&#39;)" onchange="aspxEValueChanged(&#39;GridViewEntidad_DXFREditorcol1&#39;)" onkeydown="aspxEKeyDown(&#39;GridViewEntidad_DXFREditorcol1&#39;, event)" onkeyup="aspxEKeyUp(&#39;GridViewEntidad_DXFREditorcol1&#39;, event)" type="text" /></td>
+							</tr>
+						</table><script id="dxss_794605295" type="text/javascript">
+<!--
+aspxAddDisabledItems('GridViewEntidad_DXFREditorcol1',[[['dxeDisabled_Office2010Silver'],[''],['','I']]]);
+
+var dxo = new ASPxClientTextBox('GridViewEntidad_DXFREditorcol1');
+window['GridViewEntidad_DXFREditorcol1'] = dxo;
+dxo.uniqueID = 'GridViewEntidad$DXFREditorcol1';
+dxo.renderIFrameForPopupElements = true;
+dxo.ValueChanged.AddHandler(function(s, event) { aspxGVFilterChanged('GridViewEntidad',s);; });
+dxo.KeyDown.AddHandler(function(s, event) { aspxGVFilterKeyPress('GridViewEntidad',s,event);; });
+dxo.RequireStyleDecoration();
+dxo.styleDecoration.AddStyle('F','dxeFocused_Office2010Silver','');
+dxo.InlineInitialize();
+
+//-->
+</script></td><td><img class="dxGridView_gvFilterRowButton_Office2010Silver" onclick="aspxGVFilterRowMenu(&#39;GridViewEntidad&#39;,1,this)" src="/DXR.axd?r=1_10-rNkuw" alt="[Condición]" title="" style="cursor:pointer;" /></td>
+					</tr>
+				</table></td><td class="dxgv"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td width="100%" style="padding-right:2px;"><table class="dxeTextBoxSys dxeTextBox_Office2010Silver" cellspacing="0" cellpadding="0" id="GridViewEntidad_DXFREditorcol2" width="100%">
+							<tr>
+								<td class="dxic" width="100%"><input class="dxeEditArea_Office2010Silver dxeEditAreaSys" id="GridViewEntidad_DXFREditorcol2_I" name="GridViewEntidad$DXFREditorcol2" onfocus="aspxEGotFocus(&#39;GridViewEntidad_DXFREditorcol2&#39;)" onblur="aspxELostFocus(&#39;GridViewEntidad_DXFREditorcol2&#39;)" onchange="aspxEValueChanged(&#39;GridViewEntidad_DXFREditorcol2&#39;)" onkeydown="aspxEKeyDown(&#39;GridViewEntidad_DXFREditorcol2&#39;, event)" onkeyup="aspxEKeyUp(&#39;GridViewEntidad_DXFREditorcol2&#39;, event)" type="text" /></td>
+							</tr>
+						</table><script id="dxss_1129488387" type="text/javascript">
+<!--
+aspxAddDisabledItems('GridViewEntidad_DXFREditorcol2',[[['dxeDisabled_Office2010Silver'],[''],['','I']]]);
+
+var dxo = new ASPxClientTextBox('GridViewEntidad_DXFREditorcol2');
+window['GridViewEntidad_DXFREditorcol2'] = dxo;
+dxo.uniqueID = 'GridViewEntidad$DXFREditorcol2';
+dxo.renderIFrameForPopupElements = true;
+dxo.ValueChanged.AddHandler(function(s, event) { aspxGVFilterChanged('GridViewEntidad',s);; });
+dxo.KeyDown.AddHandler(function(s, event) { aspxGVFilterKeyPress('GridViewEntidad',s,event);; });
+dxo.RequireStyleDecoration();
+dxo.styleDecoration.AddStyle('F','dxeFocused_Office2010Silver','');
+dxo.InlineInitialize();
+
+//-->
+</script></td><td><img class="dxGridView_gvFilterRowButton_Office2010Silver" onclick="aspxGVFilterRowMenu(&#39;GridViewEntidad&#39;,2,this)" src="/DXR.axd?r=1_10-rNkuw" alt="[Condición]" title="" style="cursor:pointer;" /></td>
+					</tr>
+				</table></td><td class="dxgv"><table cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td width="100%" style="padding-right:2px;"><table class="dxeTextBoxSys dxeTextBox_Office2010Silver" cellspacing="0" cellpadding="0" id="GridViewEntidad_DXFREditorcol3" width="100%">
+							<tr>
+								<td class="dxic" width="100%"><input class="dxeEditArea_Office2010Silver dxeEditAreaSys" id="GridViewEntidad_DXFREditorcol3_I" name="GridViewEntidad$DXFREditorcol3" onfocus="aspxEGotFocus(&#39;GridViewEntidad_DXFREditorcol3&#39;)" onblur="aspxELostFocus(&#39;GridViewEntidad_DXFREditorcol3&#39;)" onchange="aspxEValueChanged(&#39;GridViewEntidad_DXFREditorcol3&#39;)" onkeydown="aspxEKeyDown(&#39;GridViewEntidad_DXFREditorcol3&#39;, event)" onkeyup="aspxEKeyUp(&#39;GridViewEntidad_DXFREditorcol3&#39;, event)" type="text" /></td>
+							</tr>
+						</table><script id="dxss_721967983" type="text/javascript">
+<!--
+aspxAddDisabledItems('GridViewEntidad_DXFREditorcol3',[[['dxeDisabled_Office2010Silver'],[''],['','I']]]);
+
+var dxo = new ASPxClientTextBox('GridViewEntidad_DXFREditorcol3');
+window['GridViewEntidad_DXFREditorcol3'] = dxo;
+dxo.uniqueID = 'GridViewEntidad$DXFREditorcol3';
+dxo.renderIFrameForPopupElements = true;
+dxo.ValueChanged.AddHandler(function(s, event) { aspxGVFilterChanged('GridViewEntidad',s);; });
+dxo.KeyDown.AddHandler(function(s, event) { aspxGVFilterKeyPress('GridViewEntidad',s,event);; });
+dxo.RequireStyleDecoration();
+dxo.styleDecoration.AddStyle('F','dxeFocused_Office2010Silver','');
+dxo.InlineInitialize();
+
+//-->
+</script></td><td><img class="dxGridView_gvFilterRowButton_Office2010Silver" onclick="aspxGVFilterRowMenu(&#39;GridViewEntidad&#39;,3,this)" src="/DXR.axd?r=1_10-rNkuw" alt="[Condición]" title="" style="cursor:pointer;" /></td>
+					</tr>
+				</table></td><td class="dxgv" style="border-right-width:0px;">&nbsp;</td>
+			</tr><tr id="GridViewEntidad_DXDataRow0" class="dxgvFocusedRow_Office2010Silver">
+				<td class="dxgv" align="center" style="border-bottom-width:0px;"><font size="2">65-033</font></td><td class="dxgv" align="left" style="border-bottom-width:0px;"><font size="2">MERCADOLIBRE, S.A. DE C.V., INSTITUCI&#211;N DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td class="dxgv" align="left" style="border-bottom-width:0px;"><font size="2">MERCADO PAGO W</font></td><td class="dxgv" style="border-bottom-width:0px;"><font size="2">INSTITUCIONES DE FONDOS DE PAGO ELECTR&#211;NICO</font></td><td id="GridViewEntidad_tccell0_4" class="dxgv" align="center" style="cursor:pointer;border-right-width:0px;border-bottom-width:0px;"><font size="1"><a href="/DetalleEntidad?q=PlwaYUDtrNcvoJhbvg9DSFj-h1eICGtp3DDOkwniYTanihfLDNU7ZvQMe_JGsaFGzCvWANmzSMQ9tVpeT2N5FA&amp;onclick=document.getElementById(&#39;loading&#39;).style.display%20%3D%20&#39;block&#39;%3B&amp;class=btn%20btn-link%20customDetailStyle%20glyphicon%20glyphicon-list&amp;style=text-decoration%3Anone%3B%20color%3A%20black%20!important%3B%20font-size%3A%2012px%20!important%3B">DETALLE</a></font></td>
+			</tr>
+		</table><img id="GridViewEntidad_IADD" class="dxGridView_gvDragAndDropArrowDown_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="|" title="" style="position:absolute;visibility:hidden;top:-100px;" /><img id="GridViewEntidad_IADU" class="dxGridView_gvDragAndDropArrowUp_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="|" title="" style="position:absolute;visibility:hidden;top:-100px;" /><img id="GridViewEntidad_IDHF" class="dxGridView_gvDragAndDropHideColumn_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="Ocultar" title="" style="position:absolute;visibility:hidden;top:-100px;" /><table id="GridViewEntidad_LP" class="dxgvLoadingPanel_Office2010Silver" cellspacing="0" cellpadding="0" style="left:0px;top:0px;z-index:30000;display:none;">
+			<tr>
+				<td class="dx" style="padding-right:5px;"><img src="/DXR.axd?r=0_3151-qNkuw" alt="" align="middle" /></td><td class="dx" style="padding-left:0px;"><span id="GridViewEntidad_TL">Cargando&hellip;</span></td>
+			</tr>
+		</table><div id="GridViewEntidad_LD" class="dxgvLoadingDiv_Office2010Silver" style="display:none;z-index:29999;position:absolute;">
+
+		</div><input type="hidden" name="GridViewEntidad$DXSelInput" id="GridViewEntidad_DXSelInput" /><input type="hidden" name="GridViewEntidad$DXKVInput" id="GridViewEntidad_DXKVInput" value="[&#39;PlwaYUDtrNcvoJhbvg9DSFj-h1eICGtp3DDOkwniYTanihfLDNU7ZvQMe_JGsaFGzCvWANmzSMQ9tVpeT2N5FA&#39;]" /><table id="GridViewEntidad_DXStyleTable" style="display:none;">
+			<tr>
+				<td></td>
+			</tr><tr class="dxgvEditingErrorRow_Office2010Silver">
+				<td class="dxgv" colspan="5" style="border-right-width:0px;"></td>
+			</tr><tr class="dxgvSelectedRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvFocusedRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvFocusedGroupRow_Office2010Silver">
+				<td></td>
+			</tr><tr class="dxgvDataRow_Office2010Silver">
+				<td></td>
+			</tr>
+		</table><input type="hidden" name="GridViewEntidad$CallbackState" id="GridViewEntidad_CallbackState" value="BwMHAQIFU3RhdGUHvAcFBwACAQcBAgEHAgIBBwMCAQcEAgEHAAcFBwAHAAcBBwAHAgcABwMHAAcEBwAHAAcAAgAHAAcCVlBsd2FZVUR0ck5jdm9KaGJ2ZzlEU0ZqLWgxZUlDR3RwM0RET2t3bmlZVGFuaWhmTEROVTdadlFNZV9KR3NhRkd6Q3ZXQU5telNNUTl0VnBlVDJONUZBAgdBcmJvbElkBwECB0FyYm9sSWQHCQIAAgADBwQCAAcAAgEHAQcAAgEHAAcAAhBGaWx0ZXJFeHByZXNzaW9uBwIAAghQYWdlU2l6ZQMHAQ==" /><input type="hidden" name="GridViewEntidad$DXFocusedRowInput" id="GridViewEntidad_DXFocusedRowInput" /><input type="hidden" id="GridViewEntidad_DXFilterRowMenuCI" name="GridViewEntidad_DXFilterRowMenuCI" value="" /><div id="GridViewEntidad_DXFilterRowMenu" style="position:absolute;left:0px;top:0px;z-index:19998;visibility:hidden;display:none;">
+			<table id="GridViewEntidad_DXFilterRowMenu_DXMST_" cellspacing="0" cellpadding="0" style="border-collapse:separate;position:relative;">
+				<tr>
+					<td class="dxmSubMenu_Office2010Silver"><table cellspacing="0" cellpadding="0" style="border-collapse:separate;">
+						<tr id="GridViewEntidad_DXFilterRowMenu_DXI0_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;0&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI0_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI0_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI0_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI0_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Comienza con</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI0_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI1_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;1&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI1_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI1_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI1_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI1_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Contiene</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI1_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI2_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;2&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI2_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI2_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI2_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI2_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">No contiene</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI2_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI3_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;3&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI3_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI3_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI3_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI3_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Acaba con</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI3_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI4_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;4&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI4_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI4_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI4_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI4_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Igual</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI4_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI5_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;5&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI5_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI5_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI5_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI5_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">No igual</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI5_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI6_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;6&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI6_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI6_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI6_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI6_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Es menor que</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI6_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI7_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;7&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI7_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI7_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI7_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI7_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Es menor o igual que</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI7_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI8_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;8&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI8_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI8_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI8_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI8_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Es mayor que</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI8_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI9_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;9&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI9_I" class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI9_Img" class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI9_N" class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI9_T" class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Es mayor o igual que</span></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI9_II" class="dxmSubMenuItemSpacing_Office2010Silver">
+							<td class="dxmSubMenuGutter_Office2010Silver" style="cursor:pointer;"></td><td></td><td colspan="1"></td>
+						</tr><tr id="GridViewEntidad_DXFilterRowMenu_DXI10_" onclick="aspxMIClick(event, &#39;GridViewEntidad_DXFilterRowMenu&#39;, &#39;10&#39;)">
+							<td id="GridViewEntidad_DXFilterRowMenu_DXI10_I" title="Hay dos símbolos comodines soportados:
+ &#39;%&#39; substituye cero o más caracteres;
+ &#39;_&#39; substituye un solo carácter." class="dxmSubMenuGutter_Office2010Silver dxmSubMenuItemWithImage_Office2010Silver" width="16" style="cursor:pointer;padding-right:3px!important;border-right:0px!important;"><img id="GridViewEntidad_DXFilterRowMenu_DXI10_Img" title="Hay dos símbolos comodines soportados:
+ &#39;%&#39; substituye cero o más caracteres;
+ &#39;_&#39; substituye un solo carácter." class="dxWeb_mSubMenuItem_Office2010Silver" src="/DXR.axd?r=1_10-rNkuw" alt="" /></td><td id="GridViewEntidad_DXFilterRowMenu_DXI10_N" title="Hay dos símbolos comodines soportados:
+ &#39;%&#39; substituye cero o más caracteres;
+ &#39;_&#39; substituye un solo carácter." class="dxmSubMenuItemWithImage_Office2010Silver dxmSubMenuItemImageSpacing_Office2010Silver" style="cursor:pointer;"><div style="overflow:hidden;font-size:1px;">
+
+							</div></td><td id="GridViewEntidad_DXFilterRowMenu_DXI10_T" title="Hay dos símbolos comodines soportados:
+ &#39;%&#39; substituye cero o más caracteres;
+ &#39;_&#39; substituye un solo carácter." class="dxmSubMenuItemWithImage_Office2010Silver" width="100%" style="cursor:pointer;border-left:0px!important;padding-left:0px!important;"><span style="cursor:pointer;">Como (&#39;%&#39;, &#39;_&#39;)</span></td>
+						</tr>
+					</table></td><td style="background:url('/DXR.axd?r=1_65-rNkuw') no-repeat left top;"></td>
+				</tr><tr>
+					<td style="background:url('/DXR.axd?r=1_64-rNkuw') no-repeat left top;"></td><td style="background:url('/DXR.axd?r=1_66-rNkuw') no-repeat left top;"><div>
+
+					</div></td>
+				</tr>
+			</table>
+		</div><iframe id="GridViewEntidad_DXFilterRowMenu_DXMIF0" src="javascript:false" scrolling="no" frameborder="0" style="position:absolute;display:none;z-index:19997;filter:progid:DXImageTransform.Microsoft.Alpha(Style=0, Opacity=0);">
+
+		</iframe><script id="dxss_1291449283" type="text/javascript">
+<!--
+aspxAddHoverItems('GridViewEntidad_DXFilterRowMenu',[[[''],[''],['DXM_']],[['dxmSubMenuItemHoverWithImage_Office2010Silver'],[''],['DXI0_','DXI1_','DXI2_','DXI3_','DXI4_','DXI5_','DXI6_','DXI7_','DXI8_','DXI9_','DXI10_'],['I','N','T','P'],[[''],[''],[''],[''],[''],[''],[''],[''],[''],[''],['']],['Img','PImg']]]);
+aspxAddSelectedItems('GridViewEntidad_DXFilterRowMenu',[[['dxmSubMenuItemCheckedWithImage_Office2010Silver'],[''],['DXI0_','DXI1_','DXI2_','DXI3_','DXI4_','DXI5_','DXI6_','DXI7_','DXI8_','DXI9_','DXI10_'],['I','N','T','P'],[[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}],[{'spriteCssClass':'dxWeb_mSubMenuItemChecked_Office2010Silver'}]],['Img','PImg']]]);
+aspxAddDisabledItems('GridViewEntidad_DXFilterRowMenu',[[['dxmDisabled_Office2010Silver'],[''],['DXI0_','DXI1_','DXI2_','DXI3_','DXI4_','DXI5_','DXI6_','DXI7_','DXI8_','DXI9_','DXI10_'],['I','N','T','P'],[[''],[''],[''],[''],[''],[''],[''],[''],[''],[''],['']],['Img','PImg']]]);
+
+var dxo = new ASPxClientPopupMenu('GridViewEntidad_DXFilterRowMenu');
+window['GridViewEntidad_DXFilterRowMenu'] = dxo;
+dxo.uniqueID = 'GridViewEntidad$DXFilterRowMenu';
+dxo.renderIFrameForPopupElements = true;
+dxo.ItemClick.AddHandler(function(s,e){aspxGVFilterRowMenuClick('GridViewEntidad',e)});
+dxo.allowCheckItems=true;
+dxo.itemCheckedGroups=[['0','1','2','3','4','5','6','7','8','9','10']];
+dxo.CreateItems([['1|S',,,,,[]],['3|S',,,,,[]],['4|S',,,,,[]],['2|S',,,,,[]],['5|SN',,,,,[]],['10|SN',,,,,[]],['6|N',,,,,[]],['7|N',,,,,[]],['8|N',,,,,[]],['9|N',,,,,[]],['11|L',,,,,[]]]);
+dxo.popupVerticalAlign='Below';
+dxo.InlineInitialize();
+
+//-->
+</script></td>
+	</tr>
+</table><script id="dxss_179467072" type="text/javascript">
+<!--
+
+var dxo = new MVCxClientGridView('GridViewEntidad');
+window['GridViewEntidad'] = dxo;
+dxo.callBack = function(arg) { ; };
+dxo.renderIFrameForPopupElements = true;
+dxo.Init.AddHandler(Mostrar);
+dxo.EndCallback.AddHandler(EndCallback);
+dxo.callBacksEnabled=true;
+dxo.pageRowCount=1;
+dxo.pageRowSize=1;
+dxo.pageIndex=0;
+dxo.pageCount=1;
+dxo.selectedWithoutPageRowCount=0;
+dxo.visibleStartIndex=0;
+dxo.focusedRowIndex=0;
+dxo.allowFocusedRow=true;
+dxo.allowSelectByRowClick=false;
+dxo.allowSelectSingleRowOnly=false;
+dxo.isDefaultLoadingPanelMode=true;
+dxo.indentColumnCount=0;
+dxo.callbackOnFocusedRowChanged=false;
+dxo.callbackOnSelectionChanged=false;
+dxo.autoFilterDelay='1200';
+dxo.columns = [new ASPxClientGridViewColumn('ClaveCasfim',0,-1,'ClaveCasfim',1,'S',0,1,1,1,0,0,0),
+new ASPxClientGridViewColumn('Nombre',1,-1,'Nombre',1,'S',0,1,1,1,0,0,0),
+new ASPxClientGridViewColumn('NombreCorto',2,-1,'NombreCorto',1,'S',0,1,1,1,0,0,0),
+new ASPxClientGridViewColumn('Subsector',3,-1,'Subsector',1,'S',0,1,1,1,0,0,0),
+new ASPxClientGridViewColumn('',4,-1,'',1,'S',0,0,0,0,0,0,0)];
+dxo.pendingEvents=['RaiseFocusedRowChanged'];
+dxo.filterRowConditions=({'4':1,'3':1,'2':1,'1':1,'0':1});
+dxo.editState=0;
+dxo.editMode=2;
+dxo.editingRowVisibleIndex=-1;
+dxo.callbackUrl="/Consulta/CallbackConsultaEntidad?Subsector=NULL&Entidad=MERCADOLIBRE";
+dxo.keyName="ArbolId";
+dxo.InlineInitialize();
+
+//-->
+</script>    </div>
+    <div style="visibility: collapse; display:none">
+    </div>
+</div>
+
+
+    </div>
+</div>
+

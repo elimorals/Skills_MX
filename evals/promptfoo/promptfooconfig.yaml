@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+# Evals de SALIDA de skills: carga el SKILL.md como system prompt y verifica la
+# respuesta con asserts deterministas (regex/javascript) + rúbrica LLM-judge.
+#
+# Requiere ANTHROPIC_API_KEY. Correr (desde la raíz del repo):
+#   npx promptfoo@latest eval -c evals/promptfoo/promptfooconfig.yaml
+#   npx promptfoo@latest eval -c evals/promptfoo/promptfooconfig.yaml --filter-first-n 3   # smoke barato
+# Asserts deterministas sin API key: python3 scripts/eval-golden.py
+description: plugins-mx — evals de salida de skills
+
+prompts:
+  - file://prompt.json
+
+providers:
+  - id: anthropic:messages:claude-sonnet-5-5
+    config:
+      temperature: 0
+      max_tokens: 2048
+
+defaultTest:
+  options:
+    # Juez de las rúbricas llm-rubric
+    provider: anthropic:messages:claude-sonnet-5-5
+
+tests:
+  - file://tests/*.yaml

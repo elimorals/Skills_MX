@@ -2,10 +2,14 @@
 
 from __future__ import annotations
 
-import pytest
+import os
 
+import pytest
+import respx
+
+from mp_multas_mx.catalogo_multas import PORTALES_MULTAS
 from mp_multas_mx.client import MultasMxClient
-from shared.errors import ValidationError
+from shared.errors import UpstreamError, ValidationError
 
 
 @pytest.fixture
@@ -13,20 +17,36 @@ def client() -> MultasMxClient:
     return MultasMxClient()
 
 
-def test_consultar_jal_mock(client: MultasMxClient):
-    r = client.consultar_multas("jal", "ABC-12-34")
-    assert r.get("simulated") is True
-    assert r["estado"] == "jal"
-    assert "placa_hash" in r
-    # No exponer placa completa
-    assert "ABC-12-34" not in str(r)
+@pytest.fixture
+def mock_on(monkeypatch):
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
 
 
-def test_consultar_cdmx_requiere_humano(client: MultasMxClient):
-    """CDMX usa CAPTCHA → debe devolver status requiere_humano."""
+@respx.mock
+def test_cdmx_handoff_real(client: MultasMxClient):
+    respx.get(PORTALES_MULTAS["cdmx"].url).respond(200, text='<input id="captcha_code">')
     r = client.consultar_multas("cdmx", "XYZ-98-76")
+    assert r["simulated"] is False
     assert r["status"] == "requiere_humano"
-    assert "url_consulta_manual" in r
+    assert r["placa"] == "XYZ9876"
+
+
+@respx.mock
+def test_portal_caido_no_cae_a_mock(client: MultasMxClient):
+    respx.get(PORTALES_MULTAS["jal"].url).respond(503)
+    with pytest.raises(UpstreamError):
+        client.consultar_multas("jal", "ABC-12-34")
+
+
+def test_estado_sin_portal_vigente(client: MultasMxClient):
+    with pytest.raises(ValidationError, match="sin portal vigente"):
+        client.consultar_multas("yuc", "ABC-12-34")
+
+
+def test_consultar_jal_mock(client: MultasMxClient, mock_on):
+    r = client.consultar_multas("jal", "ABC-12-34")
+    assert r["simulated"] is True
+    assert "ABC-12-34" not in str(r)
 
 
 def test_consultar_placa_invalida(client: MultasMxClient):
@@ -39,42 +59,23 @@ def test_consultar_estado_invalido(client: MultasMxClient):
         client.consultar_multas("yyy", "ABC-12-34")
 
 
-def test_consultar_normaliza_placa(client: MultasMxClient):
-    """Acepta placa con o sin guiones."""
-    r1 = client.consultar_multas("jal", "ABC1234")
-    r2 = client.consultar_multas("jal", "abc-12-34")
-    # Mismo hash (mismo placa normalizada)
-    assert r1["placa_hash"] == r2["placa_hash"]
-
-
 def test_estados_disponibles(client: MultasMxClient):
     r = client.estados_disponibles()
-    assert r["total"] >= 8
-    assert "cdmx" in r["soportados"]
+    assert set(r["soportados"]) == {"cdmx", "edomex", "jal", "nl", "nl_sanpedro"}
     assert "cdmx" in r["requieren_captcha"]
-    assert "jal" not in r["requieren_captcha"]
+    assert "nl" not in r["requieren_captcha"]
+    assert "yuc" in r["sin_portal_vigente"]
 
 
-def test_mock_genera_multas_si_seed_alto(client: MultasMxClient):
-    """Placa con seed alto debería tener multas en mock."""
-    # ZZZ-99-99 da seed alto
-    r = client.consultar_multas("nl", "ZZZ-99-99")
-    assert r.get("simulated") is True
-    # Estructura presente aunque vacía
-    assert "multas" in r
-    assert "total_multas_pendientes" in r
-
-
-def test_no_leak_placa_en_bitacora(client: MultasMxClient, tmp_path):
-    import os
-    placa = "PLACASECRETA"
-    try:
-        client.consultar_multas("jal", "ABC-12-34")
-    except ValidationError:
-        pass
+def test_no_leak_placa_en_bitacora(client: MultasMxClient, mock_on):
+    client.consultar_multas("jal", "ABC-12-34")
     audit_dir = os.environ.get("PLUGINS_MX_AUDIT_DIR")
     if audit_dir and os.path.exists(audit_dir):
         for root, _, files in os.walk(audit_dir):
             for f in files:
-                content = open(os.path.join(root, f)).read()
-                assert placa not in content
+                assert "ABC-12-34" not in open(os.path.join(root, f)).read()
+
+
+@pytest.mark.live
+def test_live_cdmx(client: MultasMxClient):
+    assert client.consultar_multas("cdmx", "ABC1234")["portal_verificado"]["status_code"] == 200

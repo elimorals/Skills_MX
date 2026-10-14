@@ -1,0 +1,75 @@
+name: Skills quality
+
+# Evals de SALIDA de skills (no solo triggering) + auditoría de seguridad.
+# El lint de frontmatter/seguridad (scripts/lint-skills.sh) corre en ci.yml.
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      llm_evals:
+        description: "Correr evals LLM con promptfoo (cuesta tokens de Anthropic)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  golden-evals:
+    name: Evals de salida deterministas (sin API key)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Casos golden (IVA/retenciones, RFC, MXN)
+        run: python3 scripts/eval-golden.py
+      - name: Fixtures de regresión de los scripts
+        run: |
+          bash scripts/run-fixtures.sh iva-retenciones-mx | tee /tmp/iva.txt
+          bash scripts/run-fixtures.sh rfc-validacion | tee /tmp/rfc.txt
+          ! grep -h "^Fail: *[1-9]" /tmp/iva.txt /tmp/rfc.txt
+
+  shared-sync:
+    name: Copias de _shared sincronizadas
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: sync-shared.sh no debe producir cambios
+        run: |
+          bash scripts/sync-shared.sh > /dev/null
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "❌ Copias de _shared desincronizadas. Corre ./scripts/sync-shared.sh y commitea:"
+            git status --porcelain | head -40
+            exit 1
+          fi
+
+  skillspector:
+    name: SkillSpector (estático, sin LLM)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Instalar SkillSpector (commit fijo)
+        run: uv tool install --python 3.12 "git+https://github.com/NVIDIA/skillspector.git@4c52fbb83bbca0dd13f2685453c9b661d8c95bf8"
+      - name: Escanear skills
+        run: bash scripts/scan-skills.sh
+
+  llm-evals:
+    name: Evals LLM (promptfoo, manual)
+    if: github.event_name == 'workflow_dispatch' && inputs.llm_evals
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - name: promptfoo eval
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PROMPTFOO_DISABLE_TELEMETRY: '1'
+        run: npx -y promptfoo@0.124.1 eval -c evals/promptfoo/promptfooconfig.yaml --no-cache -o promptfoo-results.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: promptfoo-results
+          path: promptfoo-results.json

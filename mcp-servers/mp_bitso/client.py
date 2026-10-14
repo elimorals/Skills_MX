@@ -95,6 +95,11 @@ class BitsoClient:
         return self._mock_mode
 
     @property
+    def _mock_publico(self) -> bool:
+        # Ticker, order book y pares no requieren llaves: real salvo mock forzado.
+        return os.environ.get("PLUGINS_MX_MOCK") == "1"
+
+    @property
     def environment(self) -> str:
         return self._environment
 
@@ -117,7 +122,7 @@ class BitsoClient:
             return dict(cached)
 
         self._log("get_ticker", {"book": book})
-        if self._mock_mode:
+        if self._mock_publico:
             r = mark_simulated(self._mock_ticker(book))
             self._cache.set(cache_key, r, ttl_minutes=0.5)
             return r
@@ -143,7 +148,7 @@ class BitsoClient:
             return dict(cached)
 
         self._log("get_order_book", {"book": book, "aggregate": aggregate})
-        if self._mock_mode:
+        if self._mock_publico:
             return mark_simulated(self._mock_order_book(book))
 
         url = f"{self._base_url}/v3/order_book/?book={book}&aggregate={str(aggregate).lower()}"
@@ -161,7 +166,7 @@ class BitsoClient:
     async def list_available_books(self) -> dict[str, Any]:
         """Lista todos los pares disponibles en Bitso."""
         self._log("list_available_books", {})
-        if self._mock_mode:
+        if self._mock_publico:
             return mark_simulated({
                 "books": [
                     {"book": "btc_mxn", "min_amount": "0.000001", "max_amount": "1000.0"},

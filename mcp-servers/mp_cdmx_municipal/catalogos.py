@@ -4,11 +4,10 @@ from __future__ import annotations
 
 
 PORTALES_CDMX: dict[str, str] = {
-    "finanzas_predial": "https://www.finanzas.cdmx.gob.mx/predial",
-    "finanzas_tenencia": "https://www.finanzas.cdmx.gob.mx/tenencia",
-    "semovi_multas": "https://www.semovi.cdmx.gob.mx/multas",
-    "sumate_ciudadano": "https://sumate.cdmx.gob.mx",
-    "verificacion_centro": "https://verificacionvehicular.cdmx.gob.mx",
+    "predial_ovica": "https://ovica.finanzas.cdmx.gob.mx/cuenta-predial-liquidacion",
+    "adeudos_vehiculares_saf": "https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana",
+    "hoy_no_circula_sedema": "https://www.sedema.cdmx.gob.mx/programas/programa/hoy-no-circula",
+    "calidad_aire": "http://www.aire.cdmx.gob.mx",
 }
 
 
@@ -43,14 +42,14 @@ HOY_NO_CIRCULA: dict[str, dict] = {
     "engomado_rojo": {"dia": "miercoles", "ultimo_digito_placa": "3,4"},
     "engomado_verde": {"dia": "jueves", "ultimo_digito_placa": "1,2"},
     "engomado_azul": {"dia": "viernes", "ultimo_digito_placa": "9,0"},
-    "todos_sabado_1y3": {"dia": "sabado 1er y 3er del mes", "nota": "depende holograma"},
+    "sabados": {"dia": "sabado", "nota": "Holograma 2: todos los sábados. Holograma 1: 1º y 3º si placa impar, 2º y 4º si par."},
 }
 
 
 # Holograma de verificación vehicular CDMX
 HOLOGRAMAS: dict[str, str] = {
     "00": "Cero (vehículos eléctricos/híbridos) — exento No Circula",
-    "0": "Cero — exento No Circula entre semana",
-    "1": "Uno — sujeto a Hoy No Circula sábado 2do y 4to",
-    "2": "Dos — sujeto a Hoy No Circula entre semana + sábados",
+    "0": "Cero — exento del Hoy No Circula (salvo contingencia)",
+    "1": "Uno — un día entre semana + 2 sábados al mes (1º/3º impar, 2º/4º par)",
+    "2": "Dos — un día entre semana + todos los sábados",
 }

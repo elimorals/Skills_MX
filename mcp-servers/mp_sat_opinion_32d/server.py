@@ -112,5 +112,33 @@ def sat_opinion_32d_verificar_proveedor(args: VerificarProveedorInput) -> dict:
     return _client.verificar_proveedor(args.rfc)
 
 
+class DescargarPropiaInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    rfc: str = Field(
+        ...,
+        min_length=12,
+        max_length=13,
+        description="RFC del titular de la e.firma configurada en SAT_EFIRMA_*.",
+    )
+
+
+@mcp.tool(annotations={
+    "title": "Descargar mi Opinión 32-D completa (e.firma)",
+    "readOnlyHint": True,
+    "idempotentHint": True,
+    "openWorldHint": True,
+})
+def sat_opinion_32d_descargar_propia(args: DescargarPropiaInput) -> dict:
+    """Descarga el PDF de la Opinión de cumplimiento 32-D del titular de la e.firma.
+
+    Hace login FIEL al portal SAT con SAT_EFIRMA_CERT / SAT_EFIRMA_KEY /
+    SAT_EFIRMA_PASSWORD. Funciona aunque la opinión no esté autorizada para
+    hacerse pública. Sin e.firma devuelve una respuesta `simulated: true`.
+
+    Returns: {"rfc", "pdf_base64", "pdf_sha256", "fecha_consulta", "fuente", "simulated"}
+    """
+    return _client.descargar_propia(args.rfc)
+
+
 if __name__ == "__main__":
     mcp.run()

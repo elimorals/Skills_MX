@@ -16,7 +16,7 @@ Esta matriz cubre los escenarios más frecuentes. **Las retenciones se calculan 
 |---|---|---|---|---|---|
 | PFAE (612) | PM (601) | 16% | 10% | 10.6667% (2/3) | El clásico freelancer→empresa |
 | PFAE (612) | PF | 16% | 0 | 0 | PF no retiene a PF |
-| RESICO PF (626) | PM (601) | 16% | 1.25% | 0 | Régimen especial, retención reducida ISR |
+| RESICO PF (626) | PM (601) | 16% | 1.25% | 10.6667% (2/3) | ISR reducido (Art. 113-J LISR); el IVA 2/3 se retiene igual (Art. 1-A LIVA) |
 | RESICO PF (626) | PF | 16% | 0 | 0 | |
 | RESICO PM (626) | PM (601) | 16% | 0 | 0 | RESICO PM no genera retención adicional |
 | PM (601) | PM (601) | 16% | 0 | 0 | PM no retiene a PM por servicios |
@@ -28,15 +28,16 @@ Esta matriz cubre los escenarios más frecuentes. **Las retenciones se calculan 
 | PF Régimen 606 | PM | 16% | 10% | 10.6667% | Igual que profesional, sobre la renta sin IVA |
 | PF Régimen 606 | PF (uso casa habitación) | Exento | 0 | 0 | Vivienda exenta IVA |
 | PF Régimen 606 | PF (uso comercial) | 16% | 0 | 0 | PF a PF sin retención |
-| RESICO PF | PM | 16% | 1.25% | 0 | |
+| RESICO PF | PM | 16% | 1.25% | 10.6667% | Art. 113-J LISR + Art. 1-A fr. II a) LIVA |
 | PM | PM | 16% | 0 | 0 | |
 
 ## 3. Servicios de autotransporte terrestre de carga
 
 | Emisor | Receptor | IVA | Retención ISR | Retención IVA | Notas |
 |---|---|---|---|---|---|
-| PF transportista | PM | 16% | 4% | 4% (4/16 partes) | Régimen 612 |
-| PM transportista (coordinado 624) | PM | 16% | 0 | 0 | Coordinados con régimen especial |
+| PF transportista (612) | PM | 16% | 0 | 4% del valor | Art. 1-A fr. II c) LIVA; la LISR no prevé retención ISR |
+| RESICO PF transportista | PM | 16% | 1.25% | 4% del valor | Art. 113-J LISR |
+| PM transportista (coordinado 624) | PM | 16% | 0 | 4% del valor | La retención IVA 4% aplica también si el prestador es PM |
 | PFAE | PF | 16% | 0 | 0 | |
 
 ## 4. Honorarios médicos profesionales (medicina, odontología, psicología, nutrición)
@@ -54,8 +55,8 @@ Esta matriz cubre los escenarios más frecuentes. **Las retenciones se calculan 
 
 | Emisor (comisionista) | Receptor | IVA | Retención ISR | Retención IVA | Notas |
 |---|---|---|---|---|---|
-| PF (PFAE 612) | PM | 16% | 10% | 10.6667% | Igual que servicios profesionales |
-| RESICO PF | PM | 16% | 1.25% | 0 | |
+| PF (PFAE 612) | PM | 16% | 0 | 10.6667% | IVA 2/3 (Art. 1-A fr. II a) LIVA); Art. 106 LISR solo obliga a retener ISR por servicios profesionales |
+| RESICO PF | PM | 16% | 1.25% | 10.6667% | |
 | PM | PM | 16% | 0 | 0 | |
 
 ## 6. Servicios de outsourcing especializado (REPSE)
@@ -74,7 +75,7 @@ Si el emisor NO tiene REPSE vigente: el receptor no puede acreditar el IVA ni de
 
 | Emisor (donatario, AC autorizada) | Receptor (donante) | IVA | Retención | Notas |
 |---|---|---|---|---|
-| AC autorizada SAT | PF o PM | 0% (sin IVA) | 0 | UsoCFDI D04. AC debe estar en listado de donatarias autorizadas |
+| AC autorizada SAT | PF o PM | No objeto (no es tasa 0%) | 0 | El donativo no es acto gravado: ObjetoImp `01`, sin nodo IVA. UsoCFDI del donante D04. AC en listado de donatarias autorizadas |
 
 ## 8. Operaciones a tasa 0% (exportación, alimentos básicos, medicinas patente, etc.)
 
@@ -96,20 +97,20 @@ No es CFDI tipo I sino tipo N (Nómina) con complemento Nómina 1.2. No causa IV
 
 ## Reglas de oro
 
-1. **Las retenciones reducen el cobro al emisor, no el Total del CFDI.** El CFDI muestra Subtotal, IVA, Retenciones desglosadas, Total. El cliente paga Total − Retenciones; entera las retenciones al SAT directamente.
+1. **Las retenciones SÍ reducen el Total del CFDI.** Anexo 20: Total = SubTotal − Descuento + Trasladados − Retenidos. El cliente paga el Total y entera las retenciones al SAT.
 
 2. **Solo retiene quien la ley obliga.** No es opcional. Una PM que omite retener a su proveedor PFAE puede ser multada.
 
-3. **RESICO PF es 1.25% (no 10%).** Error común aplicar la retención normal de 10% a un RESICO PF. Confirmar régimen antes de calcular.
+3. **RESICO PF es 1.25% de ISR (no 10%), pero el IVA 2/3 se retiene igual.** Confirmar régimen antes de calcular.
 
-4. **Verificar región fronteriza para IVA 8%.** Solo si el emisor tiene domicilio fiscal en municipios del decreto fronterizo vigente. No es por geografía del cliente.
+4. **Verificar región fronteriza para IVA 8%.** Solo si el emisor está en el padrón del decreto vigente (prórroga hasta 31-dic-2026). La retención 2/3 baja a 5.3333%.
 
 5. **Si la operación es a tasa 0%, el nodo IVA sí existe en el CFDI.** Con valor 0.00. No confundir con exento.
 
 ## Bibliografía
 
-- LISR Art. 106, 116, 142 (retenciones)
-- LIVA Art. 1-A (supuestos de retención)
-- Resolución Miscelánea Fiscal (tasas RESICO vigentes)
-- Decreto región fronteriza norte y sur (vigente)
+- LISR Art. 106 (servicios profesionales), 116 (arrendamiento), 113-J (RESICO PF 1.25%)
+- LIVA Art. 1-A; RLIVA Art. 3 (2/3 y 4%)
+- Anexo 20 CFDI 4.0 (atributo Total)
+- Decretos región fronteriza norte y sur (DOF 31-dic-2025, hasta 31-dic-2026)
 - Reforma subcontratación 2021 (REPSE)

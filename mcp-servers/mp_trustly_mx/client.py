@@ -76,8 +76,13 @@ class TrustlyMxClient:
         return self._environment
 
     def _require_key(self) -> None:
-        if not self._api_key:
-            raise ConfigError("TRUSTLY_API_KEY no configurado.")
+        # Todo path real pasa por aquí. Trustly no opera en México (2026-10-14: sus
+        # mercados documentados son Europa y Norteamérica); los endpoints /v1/... de este
+        # cliente nunca existieron. Para SPEI usar mp_banxico_cep o un PSP local.
+        raise ConfigError(
+            "Trustly no ofrece pagos en México; no hay API real que llamar.",
+            {"motivo": "sin_api_publica", "alternativa": "SPEI vía tu banco/PSP (Conekta, Mercado Pago) y CEP con mp_banxico_cep."},
+        )
 
     def _headers(self) -> dict[str, str]:
         if not self._api_key:

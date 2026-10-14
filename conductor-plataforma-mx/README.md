@@ -5,7 +5,7 @@ Plugin para conductores de plataformas digitales (Uber, DiDi, Cabify, InDriver) 
 ## Cobertura fiscal
 
 - **Régimen típico**: 626 RESICO PF (ingresos por servicio digital de transporte terrestre)
-- **Art. 113-A LISR**: retención automática plataforma 8% ISR + 8% IVA del valor del viaje
+- **Art. 113-A LISR**: retención automática de la plataforma: ISR 2.1% (transporte y entrega) + IVA 8% (50% del IVA, Art. 18-M LIVA)
 - **CFDI de retención**: las plataformas emiten CFDI tipo I (ingreso para conductor) automáticamente
 - **IMSS-PIA**: opción de afiliarse al Programa Incorporación Anticipada con tarifa fija
 

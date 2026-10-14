@@ -1,4 +1,15 @@
-"""Cliente mp_sedatu_uso_suelo."""
+"""Cliente mp_sedatu_uso_suelo — trámites urbanos municipales (orientación + handoff).
+
+El uso de suelo lo determina cada municipio en su Programa/Plan de Desarrollo Urbano (PDU);
+no existe consulta pública nacional (SEDATU no expone una API de zonificación por predio,
+revisado 2026-10-14). Antes `consultar_uso_suelo_permitido` respondía `permitido: True` para
+cualquier giro, y costos/plazos/derechos por m² eran inventados.
+
+Ahora, fuera de PLUGINS_MX_MOCK=1:
+- consultar_uso_suelo_permitido → handoff humano (PDU / ventanilla municipal).
+- buscar_tramite → requisitos genéricos marcados como orientativos, sin costos ni plazos.
+- estimar_construccion → ConfigError (derechos por m² sin fuente).
+"""
 from __future__ import annotations
 
 import sys
@@ -12,14 +23,15 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared.bitacora import Bitacora  # noqa: E402
-from shared.errors import ValidationError, NotFoundError  # noqa: E402
-from shared.mock import mark_simulated  # noqa: E402
+from shared.errors import ConfigError, NotFoundError, ValidationError  # noqa: E402
+from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 
 NAMESPACE = "sedatu_uso_suelo"
-URL_RETYS = "https://www.gob.mx/conamer/registro-nacional-de-tramites-y-servicios"
+URL_RETYS = "https://www.catalogonacional.gob.mx/"
 
-# Catálogo de trámites más comunes por categoría (mock simplificado)
+# Requisitos genéricos orientativos. duracion/costo: SOLO MOCK (sin fuente).
 TRAMITES_CATALOGO: dict[str, dict] = {
     "licencia_uso_suelo": {
         "nombre": "Licencia de uso de suelo",
@@ -109,6 +121,18 @@ class SEDATUUsoSueloClient:
         if clave_tramite not in TRAMITES_CATALOGO:
             raise NotFoundError(f"Trámite no en catálogo: {clave_tramite}")
         info = TRAMITES_CATALOGO[clave_tramite]
+        if not is_mock_mode([], default_when_no_creds=False):
+            return armar_handoff(
+                motivo="sin_consulta_publica",
+                pasos=[f"Confirmar requisitos, costo y plazo con la ventanilla de desarrollo urbano de {municipio}, {estado}."],
+                estado=estado,
+                municipio=municipio,
+                clave_tramite=clave_tramite,
+                nombre=info["nombre"],
+                requisitos_orientativos=info["requisitos_base"],
+                verificado=False,
+                fuente=URL_RETYS,
+            )
         return mark_simulated({
             "estado": estado,
             "municipio": municipio,
@@ -126,6 +150,19 @@ class SEDATUUsoSueloClient:
     ) -> dict[str, Any]:
         if not estado or not municipio:
             raise ValidationError("estado y municipio requeridos")
+        if not is_mock_mode([], default_when_no_creds=False):
+            return armar_handoff(
+                motivo="sin_consulta_publica",
+                detalle="La compatibilidad de uso de suelo depende del PDU municipal y del predio; no hay consulta pública nacional.",
+                pasos=[
+                    f"Consultar la zonificación del predio en el PDU vigente de {municipio}, {estado}.",
+                    "Solicitar constancia/certificado de zonificación o licencia de uso de suelo en la ventanilla municipal.",
+                ],
+                estado=estado,
+                municipio=municipio,
+                giro_propuesto=giro_propuesto,
+                permitido=None,
+            )
         g = (giro_propuesto or "").lower()
         # Mock heurístico: la mayoría de giros comerciales se permiten en comercio/mixto
         permitido = True
@@ -153,6 +190,11 @@ class SEDATUUsoSueloClient:
     ) -> dict[str, Any]:
         if m2_construir <= 0:
             raise ValidationError("m2 debe ser > 0")
+        if not is_mock_mode([], default_when_no_creds=False):
+            raise ConfigError(
+                "Los derechos de construcción los fija cada ley de ingresos municipal; este MCP no "
+                "tiene esas tarifas. Solo disponible con PLUGINS_MX_MOCK=1 (simulado)."
+            )
         if m2_construir > 10000:
             categoria = "gran_escala_requiere_MIA_EIU"
         elif m2_construir > 1000:
@@ -178,8 +220,7 @@ class SEDATUUsoSueloClient:
         return {
             "total": len(TRAMITES_CATALOGO),
             "tramites": [
-                {"clave": k, "nombre": v["nombre"],
-                 "duracion": v["duracion_dias_habiles"]}
+                {"clave": k, "nombre": v["nombre"]}
                 for k, v in TRAMITES_CATALOGO.items()
             ],
             "usos_suelo_catalogo": USOS_SUELO_PERMITIDOS,

@@ -15,7 +15,6 @@ from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
 from shared.errors import NotFoundError, ValidationError  # noqa: E402
 from shared.tenencia_mx import (  # noqa: E402
-    CATALOGO_TENENCIA,
     EstadoTenencia,
     buscar_estado,
     calcular_tenencia,
@@ -104,20 +103,23 @@ class TenenciaMxClient:
                     "subtotal_mxn": r["subtotal_mxn"],
                     "tenencia_mxn": r["tenencia_mxn"],
                     "refrendo_mxn": r["refrendo_mxn"],
-                    "exento_tenencia": r["exento_de_tenencia"],
+                    "subsidio_100_elegible": r["subsidio_100_elegible"],
+                    "requiere_calculo_oficial": r["requiere_calculo_oficial"],
                 })
             except NotFoundError:
                 resultados.append({"estado": clave, "error": "no_en_catalogo"})
 
-        # Ordenar de barato a caro
-        validos = [r for r in resultados if "error" not in r]
+        # Ordenar de barato a caro; sin monto verificado van aparte
+        validos = [r for r in resultados if "error" not in r and r["subtotal_mxn"] is not None]
         validos.sort(key=lambda r: r["subtotal_mxn"])
+        sin_monto = [r for r in resultados if "error" not in r and r["subtotal_mxn"] is None]
 
         return {
             "valor_factura": valor_factura,
             "anio_modelo": anio_modelo,
             "comparados": len(resultados),
             "barato_a_caro": validos,
+            "sin_monto_verificado": sin_monto,
             "errores": [r for r in resultados if "error" in r],
             "ahorro_max_mxn": round(
                 (validos[-1]["subtotal_mxn"] - validos[0]["subtotal_mxn"]) if len(validos) >= 2 else 0,
@@ -133,11 +135,13 @@ class TenenciaMxClient:
             "estado": e.nombre_estado,
             "cobra_tenencia": e.cobra_tenencia,
             "cobra_refrendo": e.cobra_refrendo,
-            "cobra_control_vehicular": e.cobra_control_vehicular,
-            "tasa_tenencia_pct": e.tasa_tenencia_pct,
-            "costo_refrendo_mxn": e.costo_refrendo_mxn,
-            "umbral_exencion_factura": e.umbral_exencion_factura,
+            "refrendo_mxn": e.refrendo_mxn,
+            "umbral_subsidio_100_mxn": e.umbral_subsidio_100_mxn,
+            "condiciones_subsidio": e.condiciones_subsidio,
             "portal_url": e.portal_url,
             "metodo": e.metodo,
+            "verificado_2026": e.verificado_2026,
+            "confianza": e.confianza,
+            "fuentes": list(e.fuentes),
             "notas": e.notas,
         }

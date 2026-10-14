@@ -24,9 +24,9 @@ class IshMxClient:
         self._cache = cache or FileCache(NAMESPACE)
         self._bitacora = bitacora or Bitacora(NAMESPACE)
 
-    def calcular(self, estado: str, monto_hospedaje: float) -> dict[str, Any]:
+    def calcular(self, estado: str, monto_hospedaje: float, plataforma_digital: bool = False) -> dict[str, Any]:
         try:
-            r = calcular_ish(estado, monto_hospedaje)
+            r = calcular_ish(estado, monto_hospedaje, plataforma_digital)
         except ValueError as e:
             if "no en catálogo" in str(e):
                 raise NotFoundError(str(e)) from e
@@ -42,7 +42,8 @@ class IshMxClient:
             raise NotFoundError(f"Estado '{estado}' no en catálogo.")
         return {
             "clave": e.clave, "estado": e.nombre_estado, "cobra_ish": e.cobra_ish,
-            "tasa_pct": e.tasa_pct, "portal_url": e.portal_url, "notas": e.notas,
+            "tasa_pct": e.tasa_pct, "tasa_plataformas_pct": e.tasa_plataformas_pct,
+            "confianza": e.confianza, "fuentes": list(e.fuentes), "notas": e.notas,
         }
 
     def listar_estados(self, solo_aplicables: bool = False) -> dict[str, Any]:
@@ -52,7 +53,8 @@ class IshMxClient:
             "solo_aplicables": solo_aplicables,
             "estados": [{
                 "clave": e.clave, "estado": e.nombre_estado, "tasa_pct": e.tasa_pct,
-                "cobra_ish": e.cobra_ish, "portal": e.portal_url,
+                "cobra_ish": e.cobra_ish, "tasa_plataformas_pct": e.tasa_plataformas_pct,
+                "confianza": e.confianza,
             } for e in estados],
         }
 

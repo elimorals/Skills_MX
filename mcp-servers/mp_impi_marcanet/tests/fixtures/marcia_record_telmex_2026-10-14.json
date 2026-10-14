@@ -1,0 +1,13 @@
+{
+  "id" : "b282996a-adac-48a6-a918-34f221b53044",
+  "contextId" : "d7940075-d918-439b-9362-df8868965e37",
+  "count" : 5305,
+  "source" : "QUICK",
+  "query" : {
+    "_type" : "Search$Quick",
+    "query" : "TELMEX",
+    "images" : [ ],
+    "_type" : "Search$Quick"
+  },
+  "position" : -1
+}

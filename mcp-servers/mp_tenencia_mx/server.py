@@ -21,8 +21,8 @@ _client = TenenciaMxClient()
 
 class CalcularInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    estado: str = Field(..., min_length=2, max_length=10, description="Clave estado (edomex, jal, nl, qro, etc.)")
-    valor_factura: float = Field(..., ge=0, description="Valor original del vehículo (MXN).")
+    estado: str = Field(..., min_length=2, max_length=10, description="Clave estado (cdmx, edomex, qro, jal, nl, pue, mor, hgo, oax, tlax).")
+    valor_factura: float = Field(..., ge=0, description="Valor factura con IVA (MXN); base del subsidio 2026.")
     anio_modelo: int = Field(..., ge=1970, le=2030, description="Año del modelo.")
     anio_actual: int = Field(2026, ge=2020, le=2030, description="Año del cálculo.")
 
@@ -46,7 +46,7 @@ class CompararInput(BaseModel):
 
 @mcp.tool(annotations={"title": "Calcular tenencia + refrendo vehicular", "readOnlyHint": True, "idempotentHint": True})
 def tenencia_calcular(args: CalcularInput) -> dict:
-    """Calcula tenencia + refrendo proyectado para un estado mexicano."""
+    """Tenencia + refrendo 2026 con fuente citada. Devuelve None (requiere_calculo_oficial) donde no hay dato verificado."""
     return _client.calcular(
         estado=args.estado,
         valor_factura=args.valor_factura,

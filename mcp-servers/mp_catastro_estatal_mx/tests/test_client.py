@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 
 import pytest
+import respx
 
 _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE.parent.parent))
@@ -14,7 +15,7 @@ sys.path.insert(0, str(_HERE.parent.parent))
 def _env(monkeypatch, tmp_path):
     monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
     monkeypatch.setenv("PLUGINS_MX_CACHE_DIR", str(tmp_path / "cache"))
-    monkeypatch.setenv("PLUGINS_MX_BITACORA_DIR", str(tmp_path / "bita"))
+    monkeypatch.setenv("PLUGINS_MX_AUDIT_DIR", str(tmp_path / "audit"))
     yield
 
 
@@ -61,3 +62,28 @@ class TestListar:
         r = c.listar_sistemas()
         assert r["total"] >= 5
         assert any(s["clave"] == "igecem" for s in r["sistemas"])
+
+
+class TestReal:
+    @respx.mock
+    def test_igecem_handoff(self, monkeypatch):
+        from mp_catastro_estatal_mx.client import CatastroEstatalClient
+        from shared.portal_handoff import IGECEM_EDOMEX
+        monkeypatch.delenv("PLUGINS_MX_MOCK")
+        respx.get(IGECEM_EDOMEX.url).respond(200, text="<title>IGECEM</title>")
+        r = CatastroEstatalClient().consultar_valor("igecem", "1501010010010000")
+        assert r["simulated"] is False
+        assert r["motivo"] == "flujo_no_automatizado"
+
+    def test_login_es_error_explicito(self, monkeypatch):
+        from mp_catastro_estatal_mx.server import ConsultarInput, catastro_consultar_valor
+        monkeypatch.delenv("PLUGINS_MX_MOCK")
+        r = catastro_consultar_valor(ConsultarInput(sistema="ircep", cuenta_catastral="123456789012"))
+        assert r["code"] == "upstream_error"
+
+    @pytest.mark.live
+    def test_live_igecem(self, monkeypatch):
+        from mp_catastro_estatal_mx.client import CatastroEstatalClient
+        monkeypatch.delenv("PLUGINS_MX_MOCK")
+        r = CatastroEstatalClient().consultar_valor("igecem", "1501010010010000")
+        assert r["portal_verificado"]["status_code"] == 200

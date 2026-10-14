@@ -16,7 +16,7 @@
 <meta property="og:locale" content="es_MX">
 <meta property="og:url" content="https://skills-mexico.vercel.app/productos/predial">
 <meta property="og:title" content="Cartera Predial Multi-municipio · 243 municipios · Plugins MX">
-<meta property="og:description" content="Consulta predial paralela en 243 municipios mexicanos. Excel con vencimientos, descuentos y ranking. 163 muns consultables hoy.">
+<meta property="og:description" content="Consulta predial paralela en 243 municipios mexicanos. Catálogo de 243 municipios; revalidados en oct-2026: Toluca (real) y CDMX (entrega a humano).">
 <meta property="og:image" content="https://skills-mexico.vercel.app/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -54,17 +54,16 @@
       "applicationSubCategory": "Tax Compliance",
       "operatingSystem": "Cross-platform (Python 3.11+, MCP, stdio/streamable-http)",
       "url": "https://skills-mexico.vercel.app/productos/predial",
-      "description": "Servidor MCP que consulta en paralelo el adeudo del impuesto predial municipal de N propiedades en 243 municipios mexicanos catalogados (163 consultables end-to-end). Devuelve dashboard Excel con vencimientos, descuentos por pronto pago y ranking de prioridad.",
+      "description": "Servidor MCP que consulta en paralelo el adeudo del impuesto predial municipal de N propiedades con un catálogo de 243 municipios mexicanos (revalidados el 2026-10-14: Toluca real, CDMX con entrega a humano). Devuelve dashboard Excel con vencimientos, descuentos por pronto pago y ranking de prioridad.",
       "softwareVersion": "3.59.0",
       "datePublished": "2026-06-13",
-      "dateModified": "2026-06-14",
+      "dateModified": "2026-10-14",
       "inLanguage": "es-MX",
       "featureList": [
         "Auto-routing entre 243 municipios catalogados",
-        "Integración SACPI Michoacán (95 municipios)",
+        "SACPI Michoacán: host caído (sin DNS) al 2026-10-14",
         "Excel XLSX con totales y semáforo de vencimientos",
-        "Cron mensual de health-check automático",
-        "Cobertura poblacional: 35.2M habitantes (26.7% nacional)"
+        "Catálogo de junio 2026 sin revalidar, salvo Toluca y CDMX"
       ],
       "offers": {
         "@type": "Offer",
@@ -98,7 +97,7 @@
         {
           "@type": "Question",
           "name": "¿En cuántos municipios mexicanos puedo consultar el predial con Plugins MX?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Plugins MX tiene 243 municipios catalogados. De ellos, 163 son consultables end-to-end (68 directos vía portal y 95 a través de SACPI Michoacán). La cobertura poblacional alcanza 35.2 millones de habitantes, equivalente al 26.7% de la población nacional mexicana." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Plugins MX tiene 243 municipios en catálogo. El 2026-10-14 se revalidaron Toluca (consulta real) y CDMX (entrega a humano por ALTCHA); el resto conserva los selectores del discovery de junio 2026 sin revalidar. SACPI Michoacán (95 municipios) está caído: el host no resuelve DNS." }
         },
         {
           "@type": "Question",
@@ -136,7 +135,7 @@
     <span class="strip-dot">·</span>
     <span class="strip-vol">PRODUCTO 01 · CARTERA PREDIAL</span>
     <span class="strip-dot strip-dot-end">·</span>
-    <span class="strip-live"><span class="pulse"></span> 243 municipios · 35.2M hab cobertura</span>
+    <span class="strip-live"><span class="pulse"></span> 243 municipios en catálogo · estado al 14-oct-2026</span>
   </div>
 </div>
 
@@ -172,14 +171,14 @@
     </h1>
 
     <p class="prod-hero-lede">
-      Consulta el adeudo predial de N propiedades en distintos municipios <strong>en paralelo</strong> y obtén un dashboard XLSX con vencimientos, descuentos por pronto pago y ranking de prioridad. 243 municipios catalogados, 163 consultables hoy.
+      Consulta el adeudo predial de N propiedades en distintos municipios <strong>en paralelo</strong> y obtén un dashboard XLSX con vencimientos, descuentos por pronto pago y ranking de prioridad. 243 municipios en catálogo; revalidados en octubre 2026: Toluca (real) y CDMX (entrega a humano).
     </p>
 
     <div class="prod-hero-meta">
-      <span><strong>Lanzamiento:</strong> 2026-06-13</span>
-      <span><strong>Estado:</strong> Producción</span>
-      <span><strong>Tests:</strong> 52 pasando</span>
-      <span><strong>Validado:</strong> Playwright MCP end-to-end</span>
+      <span><strong>Estado (2026-10-14):</strong> parcial</span>
+      <span><strong>Real:</strong> Toluca</span>
+      <span><strong>Entrega a humano:</strong> CDMX (ALTCHA)</span>
+      <span><strong>Resto:</strong> discovery jun-2026 sin revalidar</span>
     </div>
   </div>
 
@@ -223,7 +222,7 @@
       <span class="tool-no">→</span>
       <div>
         <h3><span class="mono mono-strong">predial_consultar</span></h3>
-        <p>Consulta adeudo de una propiedad. Auto-routing: catálogo directo · SACPI · Mérida-dirección · Puebla-captcha.</p>
+        <p>Consulta adeudo de una propiedad. Auto-routing por catálogo. Donde el portal tiene CAPTCHA devuelve entrega a humano.</p>
         <code class="tool-sig">predial_consultar(estado, municipio, cuenta_predial, [tipo, direccion])</code>
       </div>
     </article>
@@ -262,7 +261,7 @@
   <div class="section-head">
     <span class="section-no">03</span>
     <h2 class="section-h">Cobertura <em>real</em>.</h2>
-    <p class="section-desc">No "soportamos todo México" — soportamos lo que está validado. Discovery automatizado mes a mes amplía la lista.</p>
+    <p class="section-desc">El catálogo no es cobertura validada: la mayoría de las entradas viene del discovery de junio 2026 y no se ha vuelto a probar.</p>
   </div>
 
   <div class="cov-row">
@@ -272,30 +271,29 @@
       <span class="bs-d">32 entidades federativas representadas. 209 originales + 34 descubiertos en corrida nacional 2026-06-13.</span>
     </div>
     <div class="cov-big bs-accent">
-      <span class="bs-n" data-target="163">0</span>
-      <span class="bs-l">Consultables end-to-end</span>
-      <span class="bs-d">68 directos + 95 vía SACPI Michoacán. Auto-routing transparente al consumidor.</span>
+      <span class="bs-n" data-target="2">0</span>
+      <span class="bs-l">Revalidados oct-2026</span>
+      <span class="bs-d">Toluca: consulta real. CDMX: entrega a humano por ALTCHA.</span>
     </div>
     <div class="cov-big bs-dark">
-      <span class="bs-n" data-target="35" data-suffix=".2M">0</span>
-      <span class="bs-l">Habitantes en cobertura</span>
-      <span class="bs-d">26.7% de la población nacional mexicana cubierta con consulta automatizada.</span>
+      <span class="bs-n" data-target="95">0</span>
+      <span class="bs-l">Municipios SACPI caídos</span>
+      <span class="bs-d">sacpi.michoacan.gob.mx no resuelve DNS (2026-10-14).</span>
     </div>
   </div>
 
   <div class="cov-detail">
-    <h4>Top 10 ciudades validadas Playwright MCP</h4>
+    <h4>Municipales revalidados el 2026-10-14 (MCPs dedicados)</h4>
     <div class="mcp-list">
-      <span class="mcp-item">CDMX <small>9.2M</small></span>
-      <span class="mcp-item">Guadalajara <small>1.4M</small></span>
-      <span class="mcp-item">Monterrey <small>1.1M</small></span>
-      <span class="mcp-item">Puebla <small>1.7M</small></span>
-      <span class="mcp-item">Tijuana <small>1.9M</small></span>
-      <span class="mcp-item">Mérida <small>0.9M</small></span>
-      <span class="mcp-item">Querétaro <small>0.7M</small></span>
-      <span class="mcp-item">Zapopan <small>1.3M</small></span>
-      <span class="mcp-item">San Pedro Garza García <small>0.1M</small></span>
-      <span class="mcp-item">Ciudad Hidalgo (MICH vía SACPI) <small>0.1M</small></span>
+      <span class="mcp-item">Toluca · predial real</span>
+      <span class="mcp-item">Monterrey · predial real (sin caso con adeudo)</span>
+      <span class="mcp-item">Querétaro · predial real</span>
+      <span class="mcp-item">Tijuana · vivienda asegurada real</span>
+      <span class="mcp-item">CDMX · entrega a humano (ALTCHA)</span>
+      <span class="mcp-item">Guadalajara · entrega a humano (reCAPTCHA)</span>
+      <span class="mcp-item">Puebla · entrega a humano (CAPTCHA)</span>
+      <span class="mcp-item">Mérida · entrega a humano (hCaptcha)</span>
+      <span class="mcp-item">Michoacán (SACPI) · bloqueado, sin DNS</span>
     </div>
   </div>
 </section>
@@ -367,7 +365,7 @@ wb<span class="c-pn">.</span>save<span class="c-pn">(</span><span class="c-st">"
 
     <div class="faq-item">
       <dt>¿En cuántos municipios mexicanos puedo consultar predial con Plugins MX?</dt>
-      <dd>Plugins MX tiene <strong>243 municipios catalogados</strong>. De ellos, <strong>163 son consultables end-to-end</strong> (68 directos vía portal + 95 a través de SACPI Michoacán). Cobertura poblacional: <strong>35.2M habitantes (26.7% nacional)</strong>.</dd>
+      <dd>Plugins MX tiene 243 municipios en catálogo. El 2026-10-14 se revalidaron Toluca (consulta real) y CDMX (entrega a humano por ALTCHA); el resto conserva los selectores del discovery de junio 2026 sin revalidar. SACPI Michoacán (95 municipios) está caído: el host no resuelve DNS.</dd>
     </div>
 
     <div class="faq-item">

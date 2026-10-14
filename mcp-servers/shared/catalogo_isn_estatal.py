@@ -9,7 +9,7 @@ afectadas vs ~700k consultables en predial. Mayor universo de cualquier MCP de e
 
 Patrón replicado de catalogo_municipios_mx pero a nivel estatal:
 - Cada estado tiene su propio portal de declaración
-- Tasas varían (1.8% BC, 2% YUC/GTO, 2.5% NL, 3% CDMX/JAL/EdoMex/QRO/PUE)
+- Tasas 2026: 2.5% (AGS) a 4.25% (BC); CDMX 4%. Ver FUENTE_TASAS_2026.
 - Periodicidad: mensual (todos) + anual ajuste
 - Vencimiento: día 10-17 del mes siguiente
 
@@ -48,6 +48,10 @@ class IsnEstadoConfig:
     selectores: dict[str, str] = field(default_factory=dict)
     validado: bool = False
     notas: str = ""
+    # Verificación de tasa 2026 (2026-10-14)
+    fuente_tasa: str = ""
+    confianza_tasa: str = "media"  # alta | media | baja
+    tasa_no_calculable: str = ""  # si se llena, calcular_isn no inventa monto
 
 
 # ====================================================================
@@ -59,7 +63,7 @@ CATALOGO_ISN: dict[str, IsnEstadoConfig] = {
         estado_clave="CDMX",
         estado_nombre="Ciudad de México",
         portal_url="https://dgtc.finanzas.cdmx.gob.mx/",
-        tasa_pct=3.0,
+        tasa_pct=4.0,
         requiere_efirma=True,
         requiere_credenciales_estatales=False,  # usa e.firma SAT
         captcha_presente=True,
@@ -160,18 +164,18 @@ CATALOGO_ISN: dict[str, IsnEstadoConfig] = {
         estado_clave="GTO",
         estado_nombre="Guanajuato",
         portal_url="https://www.guanajuato.gob.mx/finanzas/",
-        tasa_pct=2.0,
+        tasa_pct=3.0,
         requiere_efirma=False,
         captcha_presente=False,
         periodicidad="mensual",
         dia_vencimiento=17,
-        notas="Tasa 2%, una de las más bajas del país.",
+        notas="Sin cambio de tasa 2025→2026.",
     ),
     "YUC": IsnEstadoConfig(
         estado_clave="YUC",
         estado_nombre="Yucatán",
         portal_url="https://www.sefinyucatan.gob.mx/",
-        tasa_pct=2.5,
+        tasa_pct=3.75,
         requiere_efirma=False,
         captcha_presente=False,
         periodicidad="mensual",
@@ -182,14 +186,13 @@ CATALOGO_ISN: dict[str, IsnEstadoConfig] = {
         estado_clave="BC",
         estado_nombre="Baja California",
         portal_url="https://www4.ebajacalifornia.gob.mx/Impuesto",
-        tasa_pct=1.8,
-        tasa_rango=(1.8, 3.0),
+        tasa_pct=4.25,
         requiere_efirma=False,
         captcha_presente=False,
         periodicidad="mensual",
         dia_vencimiento=17,
         validado=True,
-        notas="Portal Java legacy. Tasa progresiva 1.8-3% según erogaciones.",
+        notas="Portal Java legacy. 2026: tasa única 4.25% (antes 1.8% + sobretasas 1.20% y 1.25%).",
     ),
     # Estados con catálogo básico (no validados aún)
     "VER": IsnEstadoConfig(
@@ -197,31 +200,34 @@ CATALOGO_ISN: dict[str, IsnEstadoConfig] = {
         estado_nombre="Veracruz",
         portal_url="https://www.veracruz.gob.mx/finanzas/",
         tasa_pct=3.0,
-        notas="SEFIPLAN Veracruz.",
+        notas="SEFIPLAN Veracruz. BHR menciona un adicional de 15% sobre la tasa, no confirmado.",
     ),
     "CHIH": IsnEstadoConfig(
         estado_clave="CHIH",
         estado_nombre="Chihuahua",
         portal_url="https://www.chihuahua.gob.mx/hacienda/",
-        tasa_pct=3.0,
+        tasa_pct=4.0,
     ),
     "COAH": IsnEstadoConfig(
         estado_clave="COAH",
         estado_nombre="Coahuila",
         portal_url="https://www.sefin.gob.mx/",
-        tasa_pct=2.0,
+        tasa_pct=3.0,
     ),
     "SIN": IsnEstadoConfig(
         estado_clave="SIN",
         estado_nombre="Sinaloa",
         portal_url="https://www.sinaloa.gob.mx/finanzas/",
         tasa_pct=2.4,
+        tasa_rango=(2.4, 3.0),
+        tasa_no_calculable="Tarifa progresiva por tramos (2.4%–3.0%, Ley de Hacienda Sinaloa arts. 17-18); tramos 2026 no verificados.",
+        confianza_tasa="baja",
     ),
     "SON": IsnEstadoConfig(
         estado_clave="SON",
         estado_nombre="Sonora",
         portal_url="https://hacienda.sonora.gob.mx/",
-        tasa_pct=2.0,
+        tasa_pct=3.0,
     ),
     "TAM": IsnEstadoConfig(
         estado_clave="TAM",
@@ -245,44 +251,44 @@ CATALOGO_ISN: dict[str, IsnEstadoConfig] = {
         estado_clave="GRO",
         estado_nombre="Guerrero",
         portal_url="https://sefinaguerrero.gob.mx/",
-        tasa_pct=2.0,
+        tasa_pct=3.0,
     ),
     "QROO": IsnEstadoConfig(
         estado_clave="QROO",
         estado_nombre="Quintana Roo",
         portal_url="https://sefiplan.qroo.gob.mx/",
-        tasa_pct=3.0,
-        notas="También administra ISH 6%.",
+        tasa_pct=4.0,
+        notas="Sube de 3% a 4% (BHR 2026).",
     ),
     "AGS": IsnEstadoConfig(
         estado_clave="AGS",
         estado_nombre="Aguascalientes",
         portal_url="https://www.aguascalientes.gob.mx/sefi/",
-        tasa_pct=2.0,
+        tasa_pct=2.5,
     ),
     "SLP": IsnEstadoConfig(
         estado_clave="SLP",
         estado_nombre="San Luis Potosí",
         portal_url="https://www.slp.gob.mx/finanzas/",
-        tasa_pct=2.5,
+        tasa_pct=3.0,
     ),
     "ZAC": IsnEstadoConfig(
         estado_clave="ZAC",
         estado_nombre="Zacatecas",
         portal_url="https://www.finanzaszacatecas.gob.mx/",
-        tasa_pct=3.0,
+        tasa_pct=3.5,
     ),
     "DGO": IsnEstadoConfig(
         estado_clave="DGO",
         estado_nombre="Durango",
         portal_url="https://durango.gob.mx/sed/",
-        tasa_pct=2.0,
+        tasa_pct=3.0,
     ),
     "MOR": IsnEstadoConfig(
         estado_clave="MOR",
         estado_nombre="Morelos",
         portal_url="https://hacienda.morelos.gob.mx/",
-        tasa_pct=2.0,
+        tasa_pct=3.0,
     ),
     "TLAX": IsnEstadoConfig(
         estado_clave="TLAX",
@@ -300,39 +306,56 @@ CATALOGO_ISN: dict[str, IsnEstadoConfig] = {
         estado_clave="CHIS",
         estado_nombre="Chiapas",
         portal_url="https://ingresos.haciendachiapas.gob.mx/",
-        tasa_pct=2.0,
+        tasa_pct=3.0,
     ),
     "TAB": IsnEstadoConfig(
         estado_clave="TAB",
         estado_nombre="Tabasco",
         portal_url="https://tabasco.gob.mx/sefp/",
-        tasa_pct=2.5,
+        tasa_pct=3.0,
+        tasa_rango=(3.0, 3.5),
+        tasa_no_calculable="3% o 3.5% según tipo de contribuyente (Ley de Hacienda Tabasco art. 30); criterio no verificado.",
     ),
     "CAMP": IsnEstadoConfig(
         estado_clave="CAMP",
         estado_nombre="Campeche",
         portal_url="https://www.campeche.gob.mx/finanzas/",
-        tasa_pct=2.0,
+        tasa_pct=3.0,
     ),
     "NAY": IsnEstadoConfig(
         estado_clave="NAY",
         estado_nombre="Nayarit",
         portal_url="https://www.haciendanayarit.gob.mx/",
-        tasa_pct=2.0,
+        tasa_pct=3.0,
     ),
     "COL": IsnEstadoConfig(
         estado_clave="COL",
         estado_nombre="Colima",
         portal_url="https://www.col.gob.mx/finanzas/",
-        tasa_pct=2.0,
+        tasa_pct=3.0,
     ),
     "BCS": IsnEstadoConfig(
         estado_clave="BCS",
         estado_nombre="Baja California Sur",
         portal_url="https://finanzas.bcs.gob.mx/",
-        tasa_pct=2.5,
+        tasa_pct=3.0,
     ),
 }
+
+
+# Fuente de tasas 2026: tabla comparativa 2025 vs 2026 de BHR (despacho de
+# contribuciones locales, ene-2026). No se abrió el texto legal primario de
+# ningún estado, por eso confianza "media" como máximo.
+FUENTE_TASAS_2026 = "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+_FUENTES_ESPECIFICAS = {
+    "CDMX": "Código Fiscal CDMX art. 158 (reforma Gaceta 27-dic-2024); " + FUENTE_TASAS_2026,
+    "CHIH": "https://ipagos.chihuahua.gob.mx/ayuda/formatos/GUIA-NOMINAS-(2026)-(SH-001-26).pdf",
+    "QRO": "Ley de Hacienda Qro. art. 72: https://asistenciasf.queretaro.gob.mx/sites/default/files/impuestos/pdf/1.1%20FUNDAMENTO%20LEGAL%20ISN.pdf",
+    "BC": "Ley de Hacienda BC art. 151-16; " + FUENTE_TASAS_2026,
+    "EDOMEX": "Código Financiero EdoMex arts. 56-59; " + FUENTE_TASAS_2026,
+}
+for _clave, _cfg in CATALOGO_ISN.items():
+    _cfg.fuente_tasa = _cfg.fuente_tasa or _FUENTES_ESPECIFICAS.get(_clave, FUENTE_TASAS_2026)
 
 
 # ====================================================================
@@ -364,6 +387,7 @@ def listar_estados(solo_validados: bool = False) -> list[dict[str, Any]]:
             "nombre": cfg.estado_nombre,
             "tasa_pct": cfg.tasa_pct,
             "tasa_rango": cfg.tasa_rango,
+            "fuente_tasa": cfg.fuente_tasa,
             "validado": cfg.validado,
             "requiere_efirma": cfg.requiere_efirma,
             "captcha_presente": cfg.captcha_presente,
@@ -398,14 +422,18 @@ def calcular_isn(nomina_gravable: float, estado: str) -> dict[str, Any]:
     if cfg is None:
         raise ValueError(f"Estado '{estado}' no encontrado en catálogo ISN.")
 
-    isn = nomina_gravable * (cfg.tasa_pct / 100.0)
+    isn = None if cfg.tasa_no_calculable else round(nomina_gravable * cfg.tasa_pct / 100.0, 2)
     return {
         "nomina_gravable": round(nomina_gravable, 2),
         "estado": cfg.estado_nombre,
         "estado_clave": cfg.estado_clave,
         "tasa_pct": cfg.tasa_pct,
         "tasa_rango": cfg.tasa_rango,
-        "isn_a_pagar": round(isn, 2),
+        "isn_a_pagar": isn,
+        "advertencia": cfg.tasa_no_calculable or None,
+        "fuente_tasa": cfg.fuente_tasa,
+        "confianza_tasa": cfg.confianza_tasa,
+        "simulated": False,
         "vencimiento_dia": cfg.dia_vencimiento,
         "periodicidad": cfg.periodicidad,
         "portal_url": cfg.portal_url,

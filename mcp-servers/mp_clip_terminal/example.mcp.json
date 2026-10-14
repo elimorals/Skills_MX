@@ -1,5 +1,5 @@
 {
-  "_comment": "mp_clip_terminal (POS Clip MX). Sin CLIP_API_KEY corre mock.",
+  "_comment": "mp_clip_terminal (POS Clip MX). Sin CLIP_API_KEY y CLIP_SECRET_KEY corre mock.",
   "mcpServers": {
     "clip_terminal": {
       "command": ".venv/bin/python",
@@ -7,6 +7,7 @@
       "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
       "env": {
         "CLIP_API_KEY": "${CLIP_API_KEY:-}",
+        "CLIP_SECRET_KEY": "${CLIP_SECRET_KEY:-}",
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
       },
       "disabled": false

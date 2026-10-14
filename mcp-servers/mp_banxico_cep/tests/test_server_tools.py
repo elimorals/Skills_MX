@@ -11,6 +11,7 @@ from mp_banxico_cep.server import (
     ClaveRastreoInput,
     CodigoBancoInput,
     GenerarCepInput,
+    ValidarCepInput,
     banxico_cep_consultar_pago_por_clave,
     banxico_cep_decodificar_clabe,
     banxico_cep_descargar_pdf,
@@ -103,7 +104,7 @@ async def test_generar_cep_banco_invalido_devuelve_error() -> None:
 @pytest.mark.asyncio
 async def test_validar_cep_mock() -> None:
     r = await banxico_cep_validar_cep(
-        ClaveRastreoInput(clave_rastreo="MBAN0100VALIDARME")
+        ValidarCepInput(clave_rastreo="MBAN0100VALIDARME")
     )
     assert r["simulated"] is True
     assert "existe_en_banxico" in r

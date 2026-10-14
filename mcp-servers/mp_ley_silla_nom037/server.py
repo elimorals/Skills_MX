@@ -30,7 +30,7 @@ class VerificarInput(BaseModel):
 
 class MultaInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    severidad: str
+    fundamento: str = Field(..., description="lft_994_v | lft_1002 | lft_994_vi")
     reincidente: bool = False
 
 
@@ -59,8 +59,8 @@ def silla_verificar_compliance(args: VerificarInput) -> dict:
 
 @mcp.tool(annotations={"title": "Calcular multa STPS", "readOnlyHint": True, "idempotentHint": True})
 def silla_calcular_multa(args: MultaInput) -> dict:
-    """Rango multa MXN por severidad + reincidencia."""
-    return _client.calcular_multa(severidad=args.severidad, reincidente=args.reincidente)
+    """Rango multa MXN por fundamento LFT + reincidencia (UMA 2026)."""
+    return _client.calcular_multa(fundamento=args.fundamento, reincidente=args.reincidente)
 
 
 @mcp.tool(annotations={"title": "Generar política SST consolidada", "readOnlyHint": True})

@@ -1,10 +1,10 @@
-"""mp_cabify_business — MCP para Cabify Business (movilidad B2B)."""
+"""mp_cabify_business — MCP para Cabify Business (Ride-Hailing API v4)."""
 
 from __future__ import annotations
 
 import sys
 from pathlib import Path
-from typing import Literal, Optional
+from typing import Optional
 
 from mcp.server.fastmcp import FastMCP
 from pydantic import BaseModel, ConfigDict, Field
@@ -14,12 +14,7 @@ _REPO_ROOT = _HERE.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
-from mp_cabify_business.catalogos import (  # noqa: E402
-    CIUDADES_OPERATIVAS,
-    PAYMENT_METHOD,
-    RIDE_STATUS,
-    TIPO_VEHICULO,
-)
+from mp_cabify_business.catalogos import ESTADOS_VIAJE  # noqa: E402
 from mp_cabify_business.client import CabifyBusinessClient  # noqa: E402
 from shared.errors import McpError  # noqa: E402
 
@@ -27,105 +22,96 @@ from shared.errors import McpError  # noqa: E402
 mcp = FastMCP("cabify_business_mcp")
 _client = CabifyBusinessClient()
 
+Lat = Field(..., ge=-90, le=90)
+Lon = Field(..., ge=-180, le=180)
 
-VehicleType = Literal["lite", "premium", "executive", "group"]
 
-
-class ScheduleRideInput(BaseModel):
+class EstimarInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    passenger_email: str = Field(..., min_length=3, max_length=254)
-    pickup_address: str = Field(..., min_length=5, max_length=300)
-    destination_address: str = Field(..., min_length=5, max_length=300)
-    pickup_datetime: str = Field(..., description="ISO 8601 datetime")
-    vehicle_type: VehicleType = "lite"
-    cost_center: Optional[str] = Field(None, description="Centro de costos para reporting")
+    requester_id: str = Field(..., min_length=1, description="ID del usuario de Cabify Business que pide el viaje")
+    origen_lat: float = Lat
+    origen_lon: float = Lon
+    destino_lat: float = Lat
+    destino_lon: float = Lon
+    inicio: Optional[str] = Field(None, description="ISO 8601 para reservar; vacío = lo antes posible")
 
 
-class ListRidesInput(BaseModel):
+class PedirViajeInput(EstimarInput):
+    product_id: str = Field(..., min_length=1, description="product.id devuelto por cabify_estimar")
+    pasajero_nombre: str = Field(..., min_length=1, max_length=120)
+    pasajero_movil_cc: str = Field("52", pattern=r"^\d{1,4}$")
+    pasajero_movil_num: str = Field(..., pattern=r"^\d{6,15}$")
+    pasajero_email: Optional[str] = None
+    origen_direccion: Optional[str] = Field(None, max_length=300)
+    destino_direccion: Optional[str] = Field(None, max_length=300)
+    label_slug: Optional[str] = Field(None, description="Etiqueta/centro de costos configurado en Cabify")
+    mensaje: Optional[str] = Field(None, max_length=300, description="Mensaje para el conductor")
+
+
+class ViajeIdInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    fecha_desde: Optional[str] = None
-    status: Optional[Literal[
-        "scheduled", "searching_driver", "driver_assigned", "driver_arrived",
-        "in_progress", "completed", "cancelled_by_user", "cancelled_by_driver", "no_show"
-    ]] = None
-    limit: int = Field(50, ge=1, le=200)
+    journey_id: str = Field(..., min_length=1, max_length=80)
 
 
-class RideIdInput(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-    ride_id: str = Field(..., min_length=1, max_length=80)
-
-
-class CancelInput(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-    ride_id: str = Field(..., min_length=1, max_length=80)
-    reason: Literal[
-        "user_request", "driver_late", "wrong_pickup", "emergency", "other"
-    ] = "user_request"
-
-
-class InvoiceInput(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-    mes: int = Field(..., ge=1, le=12)
-    ejercicio: int = Field(..., ge=2018, le=2100)
-    rfc_empresa: str = Field(..., min_length=12, max_length=13)
-
-
-@mcp.tool(annotations={"title": "Agendar viaje Cabify Business", "readOnlyHint": False, "openWorldHint": True})
-async def cabify_schedule_ride(args: ScheduleRideInput) -> dict:
-    """Agenda viaje para empleado con centro de costos para reporting."""
+async def _seguro(coro) -> dict:
     try:
-        return await _client.schedule_ride(
-            args.passenger_email, args.pickup_address,
-            args.destination_address, args.pickup_datetime,
-            args.vehicle_type, args.cost_center,
-        )
+        return await coro
     except McpError as exc:
         return exc.to_dict()
 
 
-@mcp.tool(annotations={"title": "Listar viajes con filtros", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": True})
-async def cabify_list_rides(args: ListRidesInput) -> dict:
-    try:
-        return await _client.list_rides(args.fecha_desde, args.status, args.limit)
-    except McpError as exc:
-        return exc.to_dict()
+@mcp.tool(annotations={"title": "Estimar precio de viaje", "readOnlyHint": True, "openWorldHint": True})
+async def cabify_estimar(args: EstimarInput) -> dict:
+    """Productos y precios disponibles en el origen. Obligatorio antes de cabify_pedir_viaje."""
+    return await _seguro(_client.estimar(
+        args.requester_id, (args.origen_lat, args.origen_lon), (args.destino_lat, args.destino_lon), args.inicio
+    ))
+
+
+@mcp.tool(annotations={"title": "Pedir viaje Cabify (genera cargo)", "readOnlyHint": False, "openWorldHint": True})
+async def cabify_pedir_viaje(args: PedirViajeInput) -> dict:
+    """Crea un viaje real con cargo a la cuenta de empresa. Confirma con el usuario antes de llamarlo."""
+    rider = {
+        "name": args.pasajero_nombre,
+        "mobile": {"mobile_cc": args.pasajero_movil_cc, "mobile_num": args.pasajero_movil_num},
+    }
+    if args.pasajero_email:
+        rider["email"] = args.pasajero_email
+    return await _seguro(_client.pedir_viaje(
+        args.requester_id, args.product_id,
+        (args.origen_lat, args.origen_lon), (args.destino_lat, args.destino_lon), rider,
+        inicio=args.inicio, origen_direccion=args.origen_direccion, destino_direccion=args.destino_direccion,
+        label_slug=args.label_slug, mensaje=args.mensaje,
+    ))
 
 
 @mcp.tool(annotations={"title": "Detalle de viaje", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": True})
-async def cabify_get_ride(args: RideIdInput) -> dict:
-    try:
-        return await _client.get_ride(args.ride_id)
-    except McpError as exc:
-        return exc.to_dict()
+async def cabify_consultar_viaje(args: ViajeIdInput) -> dict:
+    """Paradas, totales, estado final y si terminó."""
+    return await _seguro(_client.consultar_viaje(args.journey_id))
 
 
-@mcp.tool(annotations={"title": "Cancelar viaje agendado", "readOnlyHint": False, "destructiveHint": True, "openWorldHint": True})
-async def cabify_cancel_ride(args: CancelInput) -> dict:
-    """Cancela viaje. Cancellation fee aplica según reason."""
-    try:
-        return await _client.cancel_ride(args.ride_id, args.reason)
-    except McpError as exc:
-        return exc.to_dict()
+@mcp.tool(annotations={"title": "Estado en vivo del viaje", "readOnlyHint": True, "openWorldHint": True})
+async def cabify_estado_viaje(args: ViajeIdInput) -> dict:
+    """Conductor, vehículo y ruta mientras el viaje está activo."""
+    return await _seguro(_client.estado_viaje(args.journey_id))
 
 
-@mcp.tool(annotations={"title": "Generar factura mensual consolidada", "readOnlyHint": False, "openWorldHint": True})
-async def cabify_generate_invoice(args: InvoiceInput) -> dict:
-    """Genera CFDI consolidado del mes para empresa."""
-    try:
-        return await _client.generate_invoice(args.mes, args.ejercicio, args.rfc_empresa)
-    except McpError as exc:
-        return exc.to_dict()
+@mcp.tool(annotations={"title": "Cancelar viaje", "readOnlyHint": False, "destructiveHint": True, "openWorldHint": True})
+async def cabify_cancelar_viaje(args: ViajeIdInput) -> dict:
+    """Cancela; gratis antes de asignar conductor, después puede cobrar."""
+    return await _seguro(_client.cancelar_viaje(args.journey_id))
 
 
-@mcp.tool(annotations={"title": "Catálogos: vehículos, status, ciudades", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": False})
+@mcp.tool(annotations={"title": "Recibos del viaje", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": True})
+async def cabify_ventas_viaje(args: ViajeIdInput) -> dict:
+    """Ventas (recibos con impuestos) del viaje; existen cuando el viaje pasa a `terminated`."""
+    return await _seguro(_client.ventas_viaje(args.journey_id))
+
+
+@mcp.tool(annotations={"title": "Catálogo de estados de viaje", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": False})
 async def cabify_listar_catalogos() -> dict:
-    return {
-        "tipo_vehiculo": TIPO_VEHICULO,
-        "ride_status": RIDE_STATUS,
-        "payment_method": PAYMENT_METHOD,
-        "ciudades_operativas": CIUDADES_OPERATIVAS,
-    }
+    return {"estados_viaje": ESTADOS_VIAJE}
 
 
 def main() -> None:

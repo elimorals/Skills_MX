@@ -9,6 +9,6 @@ nacional. Universo principal:
   - RRHH (autos de empleados con uso de empresa)
 
 Portal: https://www2.repuve.gob.mx:8443/ciudadania/
-Stack:  Angular SPA + reCAPTCHA v3 — requiere Playwright para path real.
+Stack:  Angular SPA + reCAPTCHA v3 — real con solver opt-in (httpx + RSA), si no handoff.
 """
 __all__: list[str] = []

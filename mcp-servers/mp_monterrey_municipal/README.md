@@ -1,19 +1,22 @@
 # mp_monterrey_municipal — AMM (Área Metropolitana de Monterrey)
 
-⚠ Mock-first. Cubre los 9 municipios del AMM Nuevo León.
+## Tools
 
-## Tools (4)
-
-| Tool | Propósito |
+| Tool | Estado |
 |---|---|
-| `nl_consultar_predial` | Predial por municipio del AMM |
-| `nl_consultar_multas` | Multas de tránsito NL |
-| `nl_consultar_calidad_aire` | IMECA + contingencia Aire Limpio |
-| `nl_listar_catalogos` | Municipios AMM, contingencias |
+| `nl_consultar_predial(municipio, cuenta_predial)` | Real para **Monterrey** (expediente catastral de 8 dígitos). Otros municipios del AMM → `UpstreamError` explícito (portal no verificado). |
+| `nl_listar_catalogos()` | Municipios AMM y cuáles tienen predial real. |
 
-## Tests
+Se retiraron `nl_consultar_multas` y `nl_consultar_calidad_aire`: devolvían datos
+inventados y no hay fuente real verificada (multas: ver `mp_multas_mx`).
 
-```bash
-cd /Users/elias/Documents/Trabajo/skills/mcp-servers
-.venv/bin/python -m pytest mp_monterrey_municipal/tests/ -q
-```
+## Estado real
+
+| Fecha | URL | Resultado |
+|---|---|---|
+| 2026-10-14 | `GET https://asp.monterrey.gob.mx/predial/` | 200, ASP.NET WebForms, sin CAPTCHA |
+| 2026-10-14 | `POST https://asp.monterrey.gob.mx/predial/` (`txt_buscar=00000001`) | 200, `lbl_warning`: "El expediente consultado no existe…" → `NotFoundError` |
+
+El adeudo se lee del GridView `grv_Adeudos` (`lbl_Totales_empty` / `lbl_Totales_bnf`,
+nombres tomados de `Scripts/funcionesPredial.js`). La tabla con adeudo no se ha visto
+con un expediente real: validar con `MTY_EXPEDIENTE=… PLUGINS_MX_LIVE=1 pytest -m live`.

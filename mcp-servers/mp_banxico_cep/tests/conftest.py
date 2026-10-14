@@ -9,11 +9,12 @@ import pytest
 
 @pytest.fixture(autouse=True)
 def _isolate_state(monkeypatch, tmp_path: Path) -> None:
-    """Isolate cache + audit + default to mock."""
+    """Isolate cache + audit. Mock explícito (PLUGINS_MX_MOCK=1): el default real
+    se prueba en test_real.py con respx."""
     monkeypatch.setenv("PLUGINS_MX_CACHE_DIR", str(tmp_path / "cache"))
     monkeypatch.setenv("PLUGINS_MX_AUDIT_DIR", str(tmp_path / "audit"))
     monkeypatch.delenv("BANXICO_CEP_PLAYWRIGHT", raising=False)
-    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
 
 
 def make_valid_clabe(base_17: str) -> str:

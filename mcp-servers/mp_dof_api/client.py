@@ -1,14 +1,20 @@
 """Cliente mp_dof_api — Diario Oficial de la Federación.
 
-3 endpoints validados Playwright MCP 2026-06-14:
+Path real: API JSON pública de SIDOF (Segob), la misma que consume el portal
+(verificada 2026-10-14):
 
-1. **sumario_dia(fecha)** — Notas publicadas un día concreto
-2. **buscar_texto(texto, [desde, hasta])** — Búsqueda full-text histórica
-3. **detalle_nota(codigo, fecha)** — Texto completo + metadatos de una nota
+- GET https://sidof.segob.gob.mx/dof/sidof/notas/{DD-MM-YYYY}
+      → {"NotasMatutinas": [...], "NotasVespertinas": [...], "NotasExtraordinarias": [...]}
+- GET https://sidof.segob.gob.mx/dof/sidof/notas/nota/{codNota}
+      → {"Nota": {codNota, titulo, fecha, cadenaContenido (HTML), ...}}
 
-Cache 90 días (publicaciones DOF son inmutables — una vez publicado, no se modifica).
+1. **sumario_dia(fecha)** — notas publicadas un día
+2. **buscar_texto(texto, [desde, hasta])** — busca en títulos recorriendo los
+   sumarios diarios del rango (máx 31 días; SIDOF no expone búsqueda full-text)
+3. **detalle_nota(codigo, fecha)** — texto completo + metadatos
 
-Modo mock por default. Real: setear MP_DOF_REAL=1 (sin credenciales — portal público).
+Cache 90 días (publicaciones DOF son inmutables). Mock solo con PLUGINS_MX_MOCK=1.
+Errores del upstream → UpstreamError.
 """
 
 from __future__ import annotations
@@ -27,13 +33,18 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
+import html as _html  # noqa: E402
+
+import httpx  # noqa: E402
+
 from shared.errors import (  # noqa: E402
-    McpError,
     NotFoundError,
     UpstreamError,
     ValidationError,
+    handle_httpx_error,
 )
-from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.http_helpers import build_ssl_verify, default_user_agent  # noqa: E402
+from shared.mock import mark_simulated  # noqa: E402
 
 
 NAMESPACE = "dof_api"
@@ -42,6 +53,13 @@ URL_BASE = "https://www.dof.gob.mx"
 URL_SUMARIO = URL_BASE + "/index_111.php?year={year}&month={month:02d}&day={day:02d}"
 URL_NOTA = URL_BASE + "/nota_detalle.php?codigo={codigo}&fecha={fecha}"
 URL_BUSQUEDA = URL_BASE + "/busqueda_detalle.php"
+SIDOF_API = "https://sidof.segob.gob.mx/dof/sidof/notas"
+MAX_DIAS_BUSQUEDA = 31
+EDICIONES = (
+    ("NotasMatutinas", "matutina"),
+    ("NotasVespertinas", "vespertina"),
+    ("NotasExtraordinarias", "extraordinaria"),
+)
 
 # Validación fecha DD/MM/YYYY (formato DOF)
 FECHA_DOF_REGEX = re.compile(r"^\d{2}/\d{2}/\d{4}$")
@@ -80,9 +98,7 @@ class DofApiClient:
         self._bitacora = bitacora or Bitacora(NAMESPACE)
 
     def _is_mock(self) -> bool:
-        if os.environ.get("MP_DOF_REAL") == "1":
-            return False
-        return is_mock_mode(credential_env_vars=[])
+        return os.environ.get("PLUGINS_MX_MOCK") == "1"
 
     def _log(self, op: str, params: dict[str, Any]) -> None:
         self._bitacora.log(op, success=True, params_summary=params)
@@ -146,7 +162,7 @@ class DofApiClient:
 
         Args:
             texto: término a buscar
-            desde: fecha DD/MM/YYYY (default: hace 10 años)
+            desde: fecha DD/MM/YYYY (default: hace 30 días; rango máx 31 días)
             hasta: fecha DD/MM/YYYY (default: hoy)
             limite: máx resultados (1-100)
 
@@ -164,18 +180,21 @@ class DofApiClient:
         if limite < 1 or limite > 100:
             raise ValidationError("limite entre 1 y 100.")
 
-        # Default: últimos 10 años
         if not hasta:
             hasta_dt = date.today()
         else:
             hasta_dt = self._parsear_fecha(hasta).date()
         if not desde:
-            desde_dt = hasta_dt - timedelta(days=365 * 10)
+            desde_dt = hasta_dt - timedelta(days=MAX_DIAS_BUSQUEDA - 1)
         else:
             desde_dt = self._parsear_fecha(desde).date()
 
         if desde_dt > hasta_dt:
             raise ValidationError("desde debe ser anterior a hasta.")
+        if (hasta_dt - desde_dt).days >= MAX_DIAS_BUSQUEDA and not self._is_mock():
+            raise ValidationError(
+                f"Rango máximo {MAX_DIAS_BUSQUEDA} días: la búsqueda recorre los sumarios diarios de SIDOF."
+            )
 
         cache_key = (
             f"busq_{texto[:30].replace(' ', '_')}_"
@@ -251,8 +270,8 @@ class DofApiClient:
         """
         if not keywords:
             raise ValidationError("Debe pasar al menos 1 keyword.")
-        if dias_atras < 1 or dias_atras > 365:
-            raise ValidationError("dias_atras entre 1 y 365.")
+        if dias_atras < 1 or dias_atras > MAX_DIAS_BUSQUEDA - 1:
+            raise ValidationError(f"dias_atras entre 1 y {MAX_DIAS_BUSQUEDA - 1}.")
 
         hasta_dt = date.today()
         desde_dt = hasta_dt - timedelta(days=dias_atras)
@@ -384,32 +403,122 @@ class DofApiClient:
             "seccion": "PODER EJECUTIVO",
             "texto_completo": (
                 "Este es el texto mock de la nota DOF. En el path real con "
-                "MP_DOF_REAL=1, aquí aparecería el contenido completo del HTML "
+                "modo real, aquí aparecería el contenido completo del HTML "
                 "de la nota, parseado de www.dof.gob.mx/nota_detalle.php."
             ),
             "url_pdf": f"{URL_BASE}/abrirPDF.php?codnota={codigo}",
         })
 
     # ============================================================
-    # Path real (con requests/httpx) — TODO en sesión real
+    # Path real: API SIDOF
     # ============================================================
 
+    @staticmethod
+    def _get_json(url: str) -> dict[str, Any]:
+        try:
+            with httpx.Client(
+                timeout=30.0, verify=build_ssl_verify(), follow_redirects=True,
+                headers={"User-Agent": default_user_agent("mp_dof_api")},
+            ) as c:
+                r = c.get(url)
+                r.raise_for_status()
+                data = r.json()
+        except httpx.HTTPError as exc:
+            raise handle_httpx_error(exc) from exc
+        except ValueError as exc:
+            raise UpstreamError("SIDOF devolvió algo que no es JSON.", {"url": url}) from exc
+        if data.get("messageCode") not in (200, None):
+            raise UpstreamError(
+                f"SIDOF respondió messageCode={data.get('messageCode')}.",
+                {"url": url, "response": data.get("response")},
+            )
+        return data
+
+    @staticmethod
+    def _mapear_nota(n: dict[str, Any], edicion: str) -> dict[str, Any]:
+        fecha_dof = (n.get("fecha") or "").replace("-", "/")
+        codigo = str(n.get("codNota"))
+        return {
+            "codigo": codigo,
+            "titulo": n.get("titulo"),
+            "dependencia": n.get("codOrgaDos"),
+            "seccion": n.get("nombreCodOrgaUno"),
+            "edicion": edicion,
+            "fecha": fecha_dof,
+            "pagina": n.get("pagina"),
+            "url_detalle": URL_NOTA.format(codigo=codigo, fecha=fecha_dof),
+        }
+
+    def _notas_dia(self, fecha_dt) -> list[dict[str, Any]]:
+        data = self._get_json(f"{SIDOF_API}/{fecha_dt.strftime('%d-%m-%Y')}")
+        return [
+            self._mapear_nota(n, edicion)
+            for clave, edicion in EDICIONES
+            for n in data.get(clave) or []
+        ]
+
     def _sumario_real(self, fecha_dt, url):
-        raise McpError(
-            "Path real DOF requiere requests + BeautifulSoup para parsear HTML. "
-            "Implementar: GET {url}, parse <table> con notas, extract codigo/titulo/dependencia.",
-            {"url": url, "hint": "ver selectores en mp_dof_api/scraper.py"},
-        )
+        notas = self._notas_dia(fecha_dt)
+        return {
+            "fecha": fecha_dt.strftime("%d/%m/%Y"),
+            "url_consultado": url,
+            "fuente": f"{SIDOF_API}/{fecha_dt.strftime('%d-%m-%Y')}",
+            "total_notas": len(notas),
+            "notas": notas,
+            "simulated": False,
+        }
 
     def _busqueda_real(self, texto, desde, hasta, limite):
-        raise McpError(
-            "Path real búsqueda DOF requiere POST a busqueda_detalle.php "
-            "con form data textobusqueda + choosePath=textoCompleto.",
-            {"url": URL_BUSQUEDA, "hint": "implementar parser HTML resultados"},
-        )
+        # ponytail: 1 GET por día del rango (tope 31); SIDOF no publica endpoint de búsqueda
+        aguja = _normalizar(texto)
+        resultados: list[dict[str, Any]] = []
+        dia = hasta
+        while dia >= desde and len(resultados) < limite:
+            for n in self._notas_dia(dia):
+                if n["titulo"] and aguja in _normalizar(n["titulo"]):
+                    resultados.append(n)
+            dia -= timedelta(days=1)
+        return {
+            "texto_buscado": texto,
+            "periodo": {"desde": desde.strftime("%d/%m/%Y"), "hasta": hasta.strftime("%d/%m/%Y")},
+            "alcance": "títulos de las notas",
+            "total_resultados": len(resultados[:limite]),
+            "resultados": resultados[:limite],
+            "url_consultado": SIDOF_API,
+            "simulated": False,
+        }
 
     def _detalle_real(self, codigo, fecha_dof, url):
-        raise McpError(
-            "Path real detalle DOF requiere requests + BeautifulSoup.",
-            {"url": url, "hint": "extract texto completo de div.Texto"},
-        )
+        data = self._get_json(f"{SIDOF_API}/nota/{codigo}")
+        nota = data.get("Nota")
+        if not nota:
+            raise NotFoundError(f"Nota DOF {codigo} no encontrada en SIDOF.", {"codigo": codigo})
+        texto = _html_a_texto(nota.get("cadenaContenido") or "")
+        return {
+            "codigo": str(nota.get("codNota", codigo)),
+            "fecha": (nota.get("fecha") or "").replace("-", "/") or fecha_dof,
+            "url_detalle": url,
+            "titulo": nota.get("titulo"),
+            "dependencia": nota.get("codOrgaDos"),
+            "seccion": nota.get("nombreCodOrgaUno"),
+            "texto_completo": texto,
+            "longitud_texto": len(texto),
+            "url_pdf": f"{URL_BASE}/abrirPDF.php?codnota={codigo}",
+            "fuente": f"{SIDOF_API}/nota/{codigo}",
+            "simulated": False,
+        }
+
+
+def _normalizar(t: str) -> str:
+    import unicodedata
+
+    t = unicodedata.normalize("NFKD", t.lower())
+    return "".join(c for c in t if not unicodedata.combining(c))
+
+
+def _html_a_texto(h: str) -> str:
+    h = re.sub(r"(?is)<(script|style|head).*?</\1>", " ", h)
+    h = re.sub(r"(?i)<br\s*/?>|</p>|</tr>|</div>", "\n", h)
+    t = _html.unescape(re.sub(r"<[^>]+>", " ", h))
+    t = re.sub(r"[ \t\xa0]+", " ", t)
+    return re.sub(r"\n\s*\n+", "\n\n", t).strip()

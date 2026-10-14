@@ -64,18 +64,32 @@ valores), CNSF (seguros) o CONSAR (AFORES) según el sector.
 
 | Env var | Default | Descripción |
 |---|---|---|
-| `PLUGINS_MX_MOCK` | `1` | `1` = mock determinístico. `0` = httpx real. |
+| `PLUGINS_MX_MOCK` | unset | `1` = mock determinístico (`simulated: true`). Sin la variable: httpx real. |
 | `PLUGINS_MX_CACHE_DIR` | `~/.cache/plugins-mx` | Cache local (7 días). |
 | `PLUGINS_MX_BITACORA_DIR` | `~/.local/state/plugins-mx/bita` | JSONL logs. |
+
+## Estado real
+
+| Fecha | URL | Resultado |
+|---|---|---|
+| 2026-10-14 | `POST https://webapps.condusef.gob.mx/SIPRES/jsp/pub/resulbusq.jsp` (`pnom=BBVA`) | 200 HTML ISO-8859-1, 312 en padrón, clave 40012 BBVA México "En operación" |
+
+- Estado: **real validado** (test `@pytest.mark.live`).
+- Sin CAPTCHA, sin sesión.
+- El servidor manda la cadena TLS incompleta: con solo `certifi` falla
+  (`CERTIFICATE_VERIFY_FAILED`). Instalar el extra `publicos-federales`
+  (`truststore`), que usa el almacén del sistema.
+- Errores → `UpstreamError`; sin fallback a mock.
 
 ## Quickstart
 
 ```bash
-# Mock mode
+# Real (default). Requiere el extra publicos-federales (truststore)
+pip install -e ".[publicos-federales]"
 python -m mp_condusef_sipres.server
 
-# Real mode (httpx directo)
-PLUGINS_MX_MOCK=0 python -m mp_condusef_sipres.server
+# Mock
+PLUGINS_MX_MOCK=1 python -m mp_condusef_sipres.server
 ```
 
 ## Tests

@@ -1,0 +1,43 @@
+- description: "lfpdppp: autoridad vigente"
+  vars:
+    skill: file://../../_shared/compliance-lfpdppp/SKILL.md
+    question: "¿Ante quién se queja un cliente si no respondo su solicitud ARCO, ante el INAI?"
+  assert:
+    - type: icontains
+      value: "Anticorrupción"
+    - type: llm-rubric
+      value: "Explica que el INAI se extinguió y que la autoridad bajo la LFPDPPP de 2025 es la Secretaría Anticorrupción y Buen Gobierno; menciona el plazo de 20 días hábiles para responder."
+
+- description: "lfpdppp: multas en UMA"
+  vars:
+    skill: file://../../_shared/compliance-lfpdppp/SKILL.md
+    question: "¿De cuánto puede ser la multa máxima por transferir datos de salud sin comunicar el aviso de privacidad?"
+  assert:
+    - type: regex
+      value: "320,?000"
+    - type: llm-rubric
+      value: "Da el rango en UMA (200 a 320,000 UMA) del Art. 59 de la LFPDPPP 2025, menciona que con datos sensibles puede incrementarse hasta dos veces, y convierte con UMA 2026 de $117.31 (o indica verificarla). Falla si cita un tope de $14 millones."
+
+- description: "lfpdppp: consentimiento datos sensibles"
+  vars:
+    skill: file://../../_shared/compliance-lfpdppp/SKILL.md
+    question: "En mi consultorio, ¿basta con poner el aviso de privacidad en la pared para tratar el expediente de salud?"
+  assert:
+    - type: llm-rubric
+      value: "Indica que los datos de salud son sensibles y requieren consentimiento expreso y por escrito (firma autógrafa, electrónica o mecanismo de autenticación); el consentimiento tácito no basta."
+
+- description: "whatsapp: cobro por mensaje"
+  vars:
+    skill: file://../../_shared/whatsapp-business-mx/SKILL.md
+    question: "¿Cuánto me cobra Meta por conversación de WhatsApp en México para recordatorios de cita?"
+  assert:
+    - type: llm-rubric
+      value: "Aclara que desde julio de 2025 Meta cobra por mensaje (no por conversación), que los recordatorios de cita son UTILITY y que los templates utility dentro de una ventana de servicio abierta son gratuitos; remite al rate card vigente en vez de inventar un precio fijo."
+
+- description: "whatsapp: promoción no es utility"
+  vars:
+    skill: file://../../_shared/whatsapp-business-mx/SKILL.md
+    question: "Quiero registrar como UTILITY: 'Hola [nombre], aprovecha 20% de descuento este fin de semana en tu próximo servicio'."
+  assert:
+    - type: icontains
+      value: "MARKETING"

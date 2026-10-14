@@ -101,3 +101,9 @@ tax = await shopify_calculate_tax_mx(
 cd /Users/elias/Documents/Trabajo/skills/mcp-servers
 .venv/bin/python -m pytest mp_shopify_mx/tests/ -q
 ```
+
+## Estado real (2026-10-14)
+
+- ✅ REST Admin API (orders, products, inventory_levels, fulfillments, customers, webhooks).
+- 🐛 Corregido: la versión por defecto era `2024-10`, ya sin soporte; ahora `2026-07` (`SHOPIFY_API_VERSION` la sobreescribe).
+- ⚠️ Sin validar en vivo: falta tienda de desarrollo con `SHOPIFY_SHOP` y `SHOPIFY_ACCESS_TOKEN`.

@@ -1,23 +1,24 @@
 """Cliente REPUVE — consulta NIV/placa robados.
 
-3 modos:
-  - mock (default): respuestas determinísticas por sufijo del NIV/placa.
-  - playwright (PLUGINS_MX_REPUVE_LIVE=1): browser real, reCAPTCHA v3 auto.
-  - 2captcha (TWOCAPTCHA_API_KEY): solver externo, batch grande (futuro).
+Portal: https://www2.repuve.gob.mx:8443/ciudadania/ (Angular + reCAPTCHA v3).
+POST /consulta/consulta/repuve (vehículo) y /pgj (estatus de robo) con body
+{criterio, llave} cifrado RSA PKCS#1 v1.5 con llaves públicas fijas del bundle
++ token reCAPTCHA v3 (acción "login"). Detalle en shared/repuve.py.
 
-NOTA del discovery 2026-06-15: el endpoint backend exacto de REPUVE no
-quedó capturado en sesión inicial (Angular timing race). El modo real
-queda preparado vía PortalSession; cuando el endpoint exacto se confirme,
-solo hay que ajustar `API_URL_PATTERN` en shared/repuve.py.
-
-Cache 7 días — el estatus de robo cambia mensualmente o menos.
+- Solver opt-in activo (`solver_activo("repuve")`): token vía 2captcha, cifrado
+  y consulta real; si REPUVE rechaza el token se reintenta 2 veces → UpstreamError.
+- Sin solver: **handoff humano** (URL, pasos, criterio prellenado).
+Mock solo con PLUGINS_MX_MOCK=1.
 """
 from __future__ import annotations
 
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+import httpx
 
 _HERE = Path(__file__).resolve().parent
 _REPO_ROOT = _HERE.parent
@@ -26,19 +27,13 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
+from shared import repuve as rp  # noqa: E402
+from shared.captcha_solver import CaptchaSolver, TokenRechazado, con_token, solver_activo  # noqa: E402
 from shared.errors import UpstreamError, ValidationError  # noqa: E402
-from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
-from shared.playwright_session import (  # noqa: E402
-    PlaywrightNotAvailable,
-    PortalSession,
-    should_use_real_browser,
-)
+from shared.mock import mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 from shared.repuve import (  # noqa: E402
-    API_URL_PATTERN,
     PORTAL_URL,
-    SEARCH_BUTTON,
-    SEARCH_INPUT_NIV,
-    SEARCH_INPUT_PLACA,
     VehiculoREPUVE,
     validar_niv,
     validar_placa,
@@ -48,12 +43,15 @@ from shared.repuve import (  # noqa: E402
 NAMESPACE = "repuve"
 CACHE_TTL_HOURS = 24 * 7  # 7 días
 TIMEOUT_SECONDS = 30.0
+USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+)
 
 
 class RepuveClient:
     """Cliente unificado REPUVE."""
 
-    LIVE_ENV_FLAG = "PLUGINS_MX_REPUVE_LIVE"
 
     def __init__(
         self,
@@ -105,10 +103,22 @@ class RepuveClient:
             detalle = self.consultar_placa(placa)
             identificador = validar_placa(placa)
 
-        veh = detalle.get("vehiculo") or {}
-        tiene_robo = bool(veh.get("tiene_reporte_robo"))
+        if detalle.get("requiere_humano"):
+            return {
+                "identificador_buscado": identificador,
+                "tipo": tipo,
+                "consultado": False,
+                "tiene_reporte_robo": None,  # desconocido: no se pudo consultar
+                "advertencias": ["REPUVE exige reCAPTCHA: una persona debe completar la consulta."],
+                "detalle": detalle,
+            }
 
-        advertencias: list[str] = []
+        veh = detalle.get("vehiculo") or {}
+        tiene_robo = veh.get("tiene_reporte_robo")
+        if tiene_robo is not None:
+            tiene_robo = bool(tiene_robo)
+
+        advertencias: list[str] = list(detalle.get("advertencias") or [])
         if tiene_robo:
             advertencias.append(
                 f"⛔ REPORTE DE ROBO ACTIVO en REPUVE — NO suscribir, NO contratar, "
@@ -146,12 +156,15 @@ class RepuveClient:
             )
             return cached
 
-        if not should_use_real_browser(self.LIVE_ENV_FLAG):
+        if os.environ.get("PLUGINS_MX_MOCK") == "1":
             result = self._mock(tipo, valor)
+        elif solver_activo("repuve"):
+            result = self._real(tipo, valor)
         else:
-            result = self._real_playwright(tipo, valor)
+            return self._handoff(tipo, valor)  # no se cachea: no hay dato
 
-        self._cache.set(cache_key, result, ttl_hours=CACHE_TTL_HOURS)
+        if not result.get("advertencias"):  # robo desconocido no se cachea
+            self._cache.set(cache_key, result, ttl_hours=CACHE_TTL_HOURS)
         self._bitacora.log(
             "consultar",
             success=True,
@@ -165,79 +178,57 @@ class RepuveClient:
         )
         return result
 
-    # ============================================================
-    # Playwright path
-    # ============================================================
+    def _real(self, tipo: str, valor: str) -> dict[str, Any]:
+        """Consulta real con token del solver. /pgj aparte: si falla, robo = None (desconocido)."""
+        with httpx.Client(timeout=TIMEOUT_SECONDS, verify=rp.ssl_legacy(),
+                          headers={"User-Agent": USER_AGENT}) as http:
+            cfg = rp.config_portal(http)
+            solver = CaptchaSolver()
 
-    def _real_playwright(self, tipo: str, valor: str) -> dict[str, Any]:
-        selector = SEARCH_INPUT_NIV if tipo == "niv" else SEARCH_INPUT_PLACA
-        try:
-            with PortalSession(
-                portal_url=PORTAL_URL,
-                api_url_pattern=API_URL_PATTERN,
-                ready_selector=selector,
-            ) as sess:
-                captured = sess.query(
-                    fill_action=lambda page: self._fill(page, selector, valor),
-                    submit_action=lambda page: self._click_buscar(page, tipo),
-                    wait_after_submit_ms=6000,
-                )
-        except PlaywrightNotAvailable as e:
-            raise UpstreamError(
-                "Playwright no disponible. Instala: pip install playwright && playwright install chromium",
-                {"raw": str(e)},
-            ) from e
-        except Exception as e:
-            raise UpstreamError(
-                f"Error sesión Playwright REPUVE: {type(e).__name__}: {e}",
-            ) from e
+            def token() -> str:
+                return solver.recaptcha(cfg["sitekey"], rp.PORTAL_URL, version="v3", accion=rp.RECAPTCHA_ACCION)
 
-        if not captured:
-            # NOTA: endpoint exacto pendiente discovery. Cuando se confirme,
-            # actualizar API_URL_PATTERN en shared/repuve.py.
-            raise UpstreamError(
-                "Ningún XHR matched API_URL_PATTERN. Probable que el patrón regex "
-                "necesite ajuste — capturar endpoint exacto con Playwright MCP y "
-                "actualizar shared/repuve.py::API_URL_PATTERN.",
-            )
+            # ponytail: un token por endpoint (el portal reusa uno); compartirlo si en vivo REPUVE lo acepta.
+            filas = con_token(token, lambda t: rp.enviar(http, rp.API_URL, cfg["rep"], tipo, valor, t), "REPUVE")
+            advertencias: list[str] = []
+            try:
+                estatus, robo = rp.estatus_robo(
+                    con_token(token, lambda t: rp.enviar(http, rp.API_PGJ, cfg["pgj"], tipo, valor, t), "REPUVE PGJ"))
+            except (UpstreamError, TokenRechazado):
+                estatus, robo = "", None
+                advertencias.append("No se pudo consultar el estatus de robo (PGJ vía REPUVE): resultado desconocido.")
 
-        # Heurística: la primera respuesta JSON suele ser la del consulta
-        resp = captured[0]
-        return {
-            "tipo": tipo,
-            "valor": valor,
-            "encontrado": resp.status == 200,
-            "vehiculo": {"raw_response": resp.body[:500]},  # placeholder hasta confirmar schema
-            "fecha_consulta": datetime.now(timezone.utc).isoformat(),
-            "fuente": PORTAL_URL,
-            "modo": "playwright",
-            "simulated": False,
-        }
+        base = {"tipo": tipo, "valor": valor, "fecha_consulta": datetime.now(timezone.utc).isoformat(),
+                "fuente": rp.PORTAL_URL, "modo": "real", "simulated": False, "advertencias": advertencias}
+        if not filas:
+            return {**base, "encontrado": False, "vehiculo": None}
+        f = filas[0]
+        veh = VehiculoREPUVE(
+            niv=f.get("VIN") or "", placa=f.get("PLACA") or "", marca=f.get("MARCA") or "",
+            submarca=f.get("MODELO") or "", modelo=str(f.get("ANIO_MODELO") or ""), tipo=f.get("TIPO") or "",
+            estado=f.get("ENTIDAD_EMPLACO") or "", estatus_robo=estatus, raw=f,
+        ).to_dict()
+        veh["tiene_reporte_robo"] = robo  # None = PGJ no respondió
+        veh["linea"], veh["clase"] = f.get("LINEA"), f.get("CLASE")
+        return {**base, "encontrado": True, "vehiculo": veh}
 
     @staticmethod
-    def _fill(page, selector: str, valor: str) -> None:
-        page.evaluate(
-            """({selector, value}) => {
-                const el = document.querySelector(selector);
-                if (!el) throw new Error('input not found: ' + selector);
-                el.focus();
-                const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-                setter.call(el, value);
-                el.dispatchEvent(new Event('input', { bubbles: true }));
-            }""",
-            {"selector": selector, "value": valor},
-        )
-
-    @staticmethod
-    def _click_buscar(page, tipo: str) -> None:
-        # 2do botón "Buscar" corresponde al NIV; 1ro corresponde a placa.
-        idx = 1 if tipo == "niv" else 0
-        page.evaluate(
-            f"""() => {{
-                const btns = Array.from(document.querySelectorAll('button')).filter(b => b.textContent?.trim() === 'Buscar');
-                if (btns[{idx}]) btns[{idx}].click();
-                else if (btns[0]) btns[0].click();
-            }}"""
+    def _handoff(tipo: str, valor: str) -> dict[str, Any]:
+        campo = "Número de Identificación Vehicular (NIV)" if tipo == "niv" else "Número de Placa"
+        return armar_handoff(
+            motivo="captcha",
+            url=PORTAL_URL,
+            pasos=[
+                "Abrir la URL en un navegador.",
+                f"Capturar solo el campo '{campo}' con el valor prellenado.",
+                "Pulsar 'Buscar' (el reCAPTCHA invisible se valida en el navegador).",
+                "Leer 'Estatus' / reporte de robo en el resultado.",
+            ],
+            campos_prellenados={tipo: valor},
+            tipo=tipo,
+            valor=valor,
+            encontrado=None,
+            fecha_consulta=datetime.now(timezone.utc).isoformat(),
         )
 
     # ============================================================

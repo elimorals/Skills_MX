@@ -18,14 +18,15 @@ from shared.ley_silla_nom_mx import (  # noqa: E402
     CATALOGO_LEY_SILLA,
     CATALOGO_NOM035,
     CATALOGO_NOM037,
+    TABLA_MULTAS_LFT,
     UMA_2026_DIARIA,
+    URL_LFT,
     calcular_multa_mxn,
     obligaciones_aplicables_ley_silla,
     obligaciones_aplicables_nom035,
     obligaciones_aplicables_nom037,
     obligaciones_desconexion_digital,
 )
-from shared.mock import mark_simulated  # noqa: E402
 
 
 NAMESPACE = "ley_silla_nom037"
@@ -66,6 +67,7 @@ class LeySillaNomClient:
                 "descripcion": o.descripcion,
                 "base_legal": o.base_legal,
                 "severidad": o.severidad_falta,
+                "fundamento_multa": o.fundamento_multa,
                 "cumplida": o.clave not in faltas_marcadas,
             })
 
@@ -76,6 +78,7 @@ class LeySillaNomClient:
                 "descripcion": o.descripcion,
                 "base_legal": o.base_legal,
                 "severidad": o.severidad_falta,
+                "fundamento_multa": o.fundamento_multa,
                 "cumplida": o.clave not in faltas_marcadas,
             })
 
@@ -86,16 +89,18 @@ class LeySillaNomClient:
                 "descripcion": o.descripcion,
                 "base_legal": o.base_legal,
                 "severidad": o.severidad_falta,
+                "fundamento_multa": o.fundamento_multa,
                 "cumplida": o.clave not in faltas_marcadas,
             })
 
-        for o in obligaciones_desconexion_digital(giro):
+        for o in obligaciones_desconexion_digital(giro, modalidad_remota):
             checklist.append({
                 "marco": "Desconexión digital",
                 "clave": o.clave,
                 "descripcion": o.descripcion,
                 "base_legal": o.base_legal,
                 "severidad": o.severidad_falta,
+                "fundamento_multa": o.fundamento_multa,
                 "cumplida": o.clave not in faltas_marcadas,
             })
 
@@ -104,7 +109,7 @@ class LeySillaNomClient:
         multa_total_min = 0.0
         multa_total_max = 0.0
         for c in no_cumplidas:
-            mn, mx = calcular_multa_mxn(c["severidad"])
+            mn, mx = calcular_multa_mxn(c["fundamento_multa"])
             multa_total_min += mn
             multa_total_max += mx
 
@@ -113,7 +118,7 @@ class LeySillaNomClient:
         self._bitacora.log("verificar_compliance", success=True,
                            params_summary={"rfc_hash": self._bitacora.hash_sensitive(rfc),
                                            "giro": giro, "num_empleados": num_empleados})
-        return mark_simulated({
+        return {
             "rfc": rfc,
             "giro": giro,
             "num_empleados": num_empleados,
@@ -127,24 +132,31 @@ class LeySillaNomClient:
             "multa_potencial_max_mxn": round(multa_total_max, 2),
             "riesgo_inspeccion_stps": _evaluar_riesgo(no_cumplidas),
             "fecha_consulta": datetime.now(timezone.utc).isoformat(),
+            "uma_diaria": UMA_2026_DIARIA,
+            "nota_multas": ("Suma de rangos por obligación incumplida (Arts. 994 fr. V y 1002 LFT, UMA 2026). "
+                            "La autoridad individualiza la multa (Art. 992); no es una cuantificación."),
             "disclaimer": (
                 "Auditoría asistida por IA. NO sustituye revisión por abogado laboral certificado. "
                 "Validar con consultor SST antes de inspección STPS."
             ),
-        })
+        }
 
-    def calcular_multa(self, severidad: str, reincidente: bool = False) -> dict[str, Any]:
-        """Calcula rango multa STPS para una severidad dada."""
-        if severidad not in {"leve", "media", "grave", "muy_grave"}:
-            raise ValidationError(f"severidad inválida: {severidad}")
-        mn, mx = calcular_multa_mxn(severidad, reincidente=reincidente)
+    def calcular_multa(self, fundamento: str, reincidente: bool = False) -> dict[str, Any]:
+        """Rango de multa LFT en MXN para un fundamento (lft_994_v, lft_1002, lft_994_vi)."""
+        if fundamento not in TABLA_MULTAS_LFT:
+            raise ValidationError(f"fundamento inválido: {fundamento}; válidos: {sorted(TABLA_MULTAS_LFT)}")
+        mn, mx = calcular_multa_mxn(fundamento, reincidente=reincidente)
+        rango = TABLA_MULTAS_LFT[fundamento]
         return {
-            "severidad": severidad,
+            "fundamento": fundamento,
+            "descripcion": rango.descripcion,
+            "rango_uma": [rango.rango_min_uma, rango.rango_max_uma],
             "reincidente": reincidente,
             "multa_min_mxn": round(mn, 2),
             "multa_max_mxn": round(mx, 2),
             "uma_diaria_2026": UMA_2026_DIARIA,
-            "fuente": "Tabla multas STPS LFT (UMA 2026)",
+            "fuente": URL_LFT,
+            "nota": "UMA vigente desde 2026-02-01 (DOF 09-01-2026). Reincidencia duplica (Art. 992 LFT).",
         }
 
     def generar_politica(
@@ -163,7 +175,7 @@ class LeySillaNomClient:
         self._bitacora.log("generar_politica", success=True,
                            params_summary={"rfc_hash": self._bitacora.hash_sensitive(rfc),
                                            "giro": giro})
-        return mark_simulated({
+        return {
             "rfc": rfc,
             "razon_social": razon_social,
             "fecha_emision": fecha_emision,
@@ -174,28 +186,29 @@ class LeySillaNomClient:
                 "Distribuir copias a todos los trabajadores con acuse",
                 "Publicar en tableros visibles del centro de trabajo",
             ],
-        })
+            "nota": "Plantilla orientativa; revisar con abogado laboral.",
+        }
 
     def listar_obligaciones(self, marco: str) -> dict[str, Any]:
         """Lista todas las obligaciones de un marco (catálogo público)."""
         if marco == "ley_silla":
             items = [{"clave": o.clave, "descripcion": o.descripcion,
                       "aplica_giros": list(o.aplica_giros),
-                      "severidad": o.severidad_falta, "base_legal": o.base_legal}
+                      "fundamento_multa": o.fundamento_multa, "base_legal": o.base_legal}
                      for o in CATALOGO_LEY_SILLA]
         elif marco == "nom035":
             items = [{"clave": o.clave, "descripcion": o.descripcion,
                       "aplica_si_empleados_min": o.aplica_si_empleados_min,
                       "aplica_si_empleados_max": o.aplica_si_empleados_max,
-                      "severidad": o.severidad_falta, "base_legal": o.base_legal}
+                      "fundamento_multa": o.fundamento_multa, "base_legal": o.base_legal}
                      for o in CATALOGO_NOM035]
         elif marco == "nom037":
             items = [{"clave": o.clave, "descripcion": o.descripcion,
-                      "severidad": o.severidad_falta, "base_legal": o.base_legal}
+                      "fundamento_multa": o.fundamento_multa, "base_legal": o.base_legal}
                      for o in CATALOGO_NOM037]
         elif marco == "desconexion_digital":
             items = [{"clave": o.clave, "descripcion": o.descripcion,
-                      "severidad": o.severidad_falta, "base_legal": o.base_legal}
+                      "fundamento_multa": o.fundamento_multa, "base_legal": o.base_legal}
                      for o in CATALOGO_DESCONEXION_DIGITAL]
         else:
             raise ValidationError(f"marco inválido: {marco}")
@@ -231,9 +244,10 @@ def _plantilla_politica(razon_social: str, rfc: str, giro: str, modalidad: str,
 
 {razon_social} reconoce que la salud, seguridad y bienestar integral de sus colaboradores
 constituyen un valor estratégico de la organización. La presente política da cumplimiento
-a las disposiciones de la Ley Federal del Trabajo (reforma DOF 17-jul-2025, Ley Silla;
-reforma marzo 2026, Art. 132 desconexión digital), la NOM-035-STPS-2018 sobre factores
-de riesgo psicosocial y la NOM-037-STPS-2023 sobre teletrabajo cuando aplique.
+a las disposiciones de la Ley Federal del Trabajo (Arts. 132 fr. V y 133 fr. XVII Bis,
+reforma DOF 19-12-2024, "Ley Silla"; Art. 330-E fr. VI, desconexión en teletrabajo), la
+NOM-035-STPS-2018 sobre factores de riesgo psicosocial y la NOM-037-STPS-2023 sobre
+teletrabajo cuando aplique.
 
 ## 2. Prohibición de violencia laboral
 
@@ -243,29 +257,29 @@ subordinados. Las denuncias se atenderán de forma confidencial por el responsab
 
 ## 3. Derecho a silla (Ley Silla)
 
-Todo trabajador cuya actividad lo permita tendrá acceso permanente a una silla
-ergonómica con respaldo. Para puestos con permanencia de pie prolongada se establecen
-descansos cada 4 horas como mínimo.
+La empresa provee asientos o sillas con respaldo suficientes para la ejecución de las
+funciones o para el descanso periódico durante la jornada, ubicadas en áreas designadas
+(LFT Art. 132 fr. V). Ninguna persona será obligada a permanecer de pie toda la jornada
+ni se le prohibirá tomar asiento periódicamente (LFT Art. 133 fr. XVII Bis).
 
 ## 4. Riesgos psicosociales (NOM-035)
 
-- Se aplicarán cuestionarios oficiales de identificación de factores de riesgo
-  conforme al número de trabajadores.
-- Se ejecutará programa anual de prevención.
-- Se brindará capacitación documentada al menos una vez al año.
+- Se identificarán y analizarán los factores de riesgo psicosocial conforme al número
+  de trabajadores (NOM-035 numerales 5.2/5.3).
+- Se adoptarán medidas de prevención y control (numeral 5.4 y Capítulo 8).
+- Se difundirá esta política y los mecanismos de queja (numeral 5.7).
 
-## 5. Desconexión digital (LFT Art. 132 reforma marzo 2026)
+## 5. Desconexión digital (teletrabajo, LFT Art. 330-E fr. VI)
 
-Se respeta el derecho del trabajador a no ser contactado por medios digitales fuera de
-su jornada laboral, salvo emergencia documentada. El personal con mando jerárquico
-recibirá capacitación específica. Se habilita el correo `denuncias-sst@{rfc.lower()}.mx`
+Se respeta el derecho de las personas en teletrabajo a la desconexión al término de la
+jornada, en horarios no laborables, vacaciones, permisos y licencias (NOM-037 5.2 e). Se habilita el correo `denuncias-sst@{rfc.lower()}.mx`
 como canal interno para reportar violaciones.
 
 ## 6. Teletrabajo (NOM-037, cuando aplique)
 
-Para colaboradores en modalidad remota, la empresa proveerá silla ergonómica, equipo
-de cómputo y reembolsará proporcionalmente internet y electricidad conforme a contrato
-individual escrito.
+Para colaboradores en teletrabajo, la empresa proveerá silla ergonómica, equipo de
+cómputo, y asumirá telecomunicaciones y la parte proporcional de electricidad (LFT Art.
+330-E fr. I y III), conforme a contrato escrito (Art. 330-B).
 
 ## 7. Capacitación
 

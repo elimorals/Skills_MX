@@ -194,7 +194,7 @@ class FacturamaClient:
         """Cancela un CFDI por UUID.
 
         En modo mock devuelve respuesta plausible. En real hace DELETE a
-        /api/cfdi/{uuid} con query params motivo + folio_sustituto.
+        DELETE /api/Cfdi/{Id}?type=issued&motive=&uuidReplacement= (Id resuelto por UUID).
         """
         if self._mock_mode:
             response = self._mock_cancelar(uuid, motivo, folio_sustituto)
@@ -213,8 +213,9 @@ class FacturamaClient:
         if not self._user or not self._password:
             raise ConfigError("Facturama: configura FACTURAMA_USER y FACTURAMA_PASSWORD.")
 
-        url = f"{self._base_url}/api/cfdi/{uuid}"
-        params: dict[str, str] = {"motive": motivo}
+        facturama_id = (await self._item_por_uuid(uuid))["Id"]
+        url = f"{self._base_url}/api/Cfdi/{facturama_id}"
+        params: dict[str, str] = {"type": "issued", "motive": motivo}
         if folio_sustituto:
             params["uuidReplacement"] = folio_sustituto
 
@@ -288,18 +289,7 @@ class FacturamaClient:
         if not self._user or not self._password:
             raise ConfigError("Facturama: configura FACTURAMA_USER y FACTURAMA_PASSWORD.")
 
-        url = f"{self._base_url}/api/cfdi/status/{uuid}"
-        try:
-            async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
-                resp = await client.get(url, auth=(self._user, self._password))
-                if resp.status_code == 404:
-                    raise NotFoundError(f"CFDI con UUID {uuid} no encontrado.")
-                resp.raise_for_status()
-                body = resp.json()
-        except McpError:
-            raise
-        except Exception as exc:
-            raise handle_httpx_error(exc) from exc
+        body = await self._item_por_uuid(uuid)
 
         response = {
             "uuid": uuid,
@@ -310,6 +300,28 @@ class FacturamaClient:
         }
         self._cache.set(cache_key, response, ttl_minutes=15)
         return response
+
+    async def _item_por_uuid(self, uuid: str) -> dict[str, Any]:
+        """Busca el CFDI emitido por UUID en GET /api/Cfdi?type=issued&status=all&keyword=<uuid>.
+
+        Las rutas de descarga y cancelación usan el Id interno de Facturama, no el UUID del SAT.
+        """
+        try:
+            async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
+                resp = await client.get(
+                    f"{self._base_url}/api/Cfdi",
+                    auth=(self._user, self._password),
+                    params={"type": "issued", "status": "all", "keyword": uuid},
+                )
+                resp.raise_for_status()
+                body = resp.json()
+        except Exception as exc:
+            raise handle_httpx_error(exc) from exc
+        objetivo = uuid.upper()
+        for item in body if isinstance(body, list) else body.get("Items", []):
+            if str(item.get("Uuid") or item.get("UUID") or "").upper() == objetivo or str(item.get("Id", "")).upper() == objetivo:
+                return item
+        raise NotFoundError(f"CFDI con UUID {uuid} no encontrado en Facturama.")
 
     async def buscar_cfdis(
         self,
@@ -323,7 +335,7 @@ class FacturamaClient:
     ) -> dict[str, Any]:
         """Busca CFDIs por filtros (RFC, fechas, tipo).
 
-        Real: GET /api/cfdi con query params.
+        Real: GET /api/Cfdi?type=issued&status=all&keyword=; fechas y límite se filtran local.
         Mock: devuelve lista vacía con flag simulated.
         """
         if self._mock_mode:
@@ -335,19 +347,10 @@ class FacturamaClient:
         if not self._user or not self._password:
             raise ConfigError("Facturama: configura FACTURAMA_USER y FACTURAMA_PASSWORD.")
 
-        url = f"{self._base_url}/api/cfdi"
-        params: dict[str, str] = {}
-        if rfc_receptor:
-            params["rfc"] = rfc_receptor
-        if folio:
-            params["folio"] = folio
-        if fecha_desde:
-            params["dateFrom"] = fecha_desde
-        if fecha_hasta:
-            params["dateTo"] = fecha_hasta
-        if tipo:
-            params["type"] = tipo
-        params["limit"] = str(limit)
+        url = f"{self._base_url}/api/Cfdi"
+        params: dict[str, str] = {"type": "issued", "status": "all"}
+        if rfc_receptor or folio:
+            params["keyword"] = rfc_receptor or folio
 
         try:
             async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
@@ -358,6 +361,15 @@ class FacturamaClient:
             raise handle_httpx_error(exc) from exc
 
         items = body if isinstance(body, list) else body.get("Items", [])
+        if rfc_receptor and folio:
+            items = [x for x in items if str(x.get("Folio", "")) == str(folio)]
+        if fecha_desde or fecha_hasta:
+            items = [
+                x for x in items
+                if (not fecha_desde or str(x.get("Date", ""))[:10] >= fecha_desde)
+                and (not fecha_hasta or str(x.get("Date", ""))[:10] <= fecha_hasta)
+            ]
+        items = items[:limit]
         return {
             "cfdis": items,
             "total": len(items),
@@ -370,7 +382,7 @@ class FacturamaClient:
     async def descargar_xml(self, uuid: str) -> dict[str, Any]:
         """Descarga el XML de un CFDI por UUID.
 
-        Real: GET /api/cfdi/xml/{uuid}.
+        Real: GET /api/Cfdi/xml/issued/{Id} (Id resuelto por UUID).
         Mock: XML sintético plausible.
         """
         if self._mock_mode:
@@ -380,7 +392,8 @@ class FacturamaClient:
         if not self._user or not self._password:
             raise ConfigError("Facturama: configura FACTURAMA_USER y FACTURAMA_PASSWORD.")
 
-        url = f"{self._base_url}/api/cfdi/xml/issued/{uuid}"
+        facturama_id = (await self._item_por_uuid(uuid))["Id"]
+        url = f"{self._base_url}/api/Cfdi/xml/issued/{facturama_id}"
         try:
             async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
                 resp = await client.get(url, auth=(self._user, self._password))
@@ -403,7 +416,7 @@ class FacturamaClient:
     async def descargar_pdf(self, uuid: str) -> dict[str, Any]:
         """Descarga el PDF de representación impresa.
 
-        Real: GET /api/cfdi/pdf/{uuid}. Devuelve base64 del PDF.
+        Real: GET /api/Cfdi/pdf/issued/{Id}. Devuelve base64 del PDF.
         Mock: devuelve placeholder.
         """
         if self._mock_mode:
@@ -418,7 +431,8 @@ class FacturamaClient:
         if not self._user or not self._password:
             raise ConfigError("Facturama: configura FACTURAMA_USER y FACTURAMA_PASSWORD.")
 
-        url = f"{self._base_url}/api/cfdi/pdf/issued/{uuid}"
+        facturama_id = (await self._item_por_uuid(uuid))["Id"]
+        url = f"{self._base_url}/api/Cfdi/pdf/issued/{facturama_id}"
         try:
             async with httpx.AsyncClient(timeout=REQUEST_TIMEOUT_S) as client:
                 resp = await client.get(url, auth=(self._user, self._password))

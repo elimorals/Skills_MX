@@ -24,7 +24,7 @@ allowed-tools: Read, Write, Edit
 - Cada gasto deducible tiene CFDI a tu RFC
 - RFC emisor NO en lista 69-B definitiva (si lo está, EXCLUIR de deducibles)
 - Método de pago consistente con forma real
-- Plazo de cancelación SAT cumplido (CFDI 4.0 requiere aceptación 72h)
+- Plazo de cancelación SAT cumplido (por regla general requiere aceptación del receptor; sin aceptación solo en supuestos de la regla 2.7.1.35 RMF 2026, p.ej. dentro de 24 h o total ≤ $1,000)
 
 **Riesgo si falla**: gastos no deducibles → mayor base gravable → mayor ISR
 

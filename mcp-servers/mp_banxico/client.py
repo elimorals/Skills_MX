@@ -63,7 +63,7 @@ _MOCK_REFERENCE_RATES: dict[str, float] = {
     "JPY/MXN": 0.123,
 }
 
-_MOCK_UMA_DIARIA = 108.57  # 2024 reference value
+_MOCK_UMA_DIARIA = 117.31  # UMA 2026 (INEGI, DOF 09-01-2026)
 _MOCK_INPC = 134.5  # rough mid-2026 reference
 _MOCK_TIIE_28 = 10.25  # rough mid-2026 reference
 

@@ -85,3 +85,9 @@ Copia `example.mcp.json` al `.mcp.json` del plugin que lo necesite. Hoy lo usa:
 ```
 
 63 tests cubren: catálogos (helpers), OAuth (rotation, cache, errores 400/401), client (mock determinístico, cache, bitácora), tools FastMCP (validación pydantic + comportamiento end-to-end).
+
+## Estado real (2026-10-14)
+
+- ✅ Rutas cotejadas con developers.mercadolibre.com.
+- 🐛 Corregido: `/users/{id}/reputation` no existe; la reputación sale de `GET /users/{id}` → `seller_reputation`.
+- ⚠️ Sin validar en vivo: falta app con `ML_APP_ID`, `ML_SECRET`, `ML_REFRESH_TOKEN`.

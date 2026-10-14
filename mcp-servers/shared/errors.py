@@ -79,6 +79,11 @@ def handle_httpx_error(exc: Exception) -> McpError:
     Used by every MCP to produce consistent error envelopes regardless of
     which upstream API failed.
     """
+    # Un McpError ya tipado (ConfigError, AuthError…) lanzado dentro del try del caller
+    # no se reenvuelve como UpstreamError.
+    if isinstance(exc, McpError):
+        return exc
+
     # Avoid hard dependency on httpx at import time for shared module
     try:
         import httpx

@@ -24,7 +24,7 @@ def calcular_aguinaldo(sueldo_diario: Decimal, dias_laborados_año: int,
 
 ### Exención fiscal
 
-Hasta 30 UMAs exentas del ISR (Art. 93 fr. XIV LISR). Excedente paga ISR.
+Hasta 30 UMAs exentas del ISR (Art. 93 fr. XIV LISR): 30 × $117.31 = $3,519.30 en 2026. Excedente paga ISR.
 
 ## PTU — Participación Trabajadores Utilidades (Art. 117 LFT)
 
@@ -40,7 +40,7 @@ Hasta 30 UMAs exentas del ISR (Art. 93 fr. XIV LISR). Excedente paga ISR.
 - Familiares directos del dueño (en PF)
 
 ### Exención fiscal
-Hasta 15 UMAs exentas del ISR.
+Hasta 15 UMAs exentas del ISR (Art. 93 fr. XIV LISR): 15 × $117.31 = $1,759.65 con UMA 2026.
 
 ## Output
 
@@ -52,11 +52,10 @@ Hasta 15 UMAs exentas del ISR.
   "dias_laborados_año": 320,
   "dias_aguinaldo_aplicables": 15,
   "sueldo_diario_mxn": "627.12",
-  "aguinaldo_bruto_mxn": "8246.32",
-  "exencion_uma": "3394.20",
-  "aguinaldo_gravable_mxn": "4852.12",
-  "isr_a_retener_mxn": "1138.50",
-  "aguinaldo_neto_pago_mxn": "7107.82",
+  "aguinaldo_bruto_mxn": "8247.06",
+  "exencion_uma": "3519.30",
+  "aguinaldo_gravable_mxn": "4727.76",
+  "isr_a_retener_mxn": "<tarifa Art. 96 LISR o procedimiento Art. 174 RLISR>",
   "deadline_pago": "2026-12-20",
   "cfdi_nomina_extraordinario_pendiente": true,
   "vigencia_validada": false

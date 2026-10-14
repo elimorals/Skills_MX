@@ -1,12 +1,13 @@
-"""Cliente mp_multas_vehiculares_mx — 4 sistemas estatales.
+"""Cliente mp_multas_vehiculares_mx — 5 sistemas.
 
-Mock-first. Path real opt-in vía PLUGINS_MX_MULTAS_LIVE=1 + portal-specific.
-CDMX reusa el endpoint público SAF descubierto en discovery 2026-06-15.
+Estado real (2026-10-14): los cinco portales oficiales exigen CAPTCHA
+(SAF imagen, Turnstile, reCAPTCHA v2) o no tienen flujo automatizable (ICVNL).
+Cada consulta hace un GET real que confirma el portal y devuelve un handoff
+humano. EdoMex y San Pedro consultan en real con solver opt-in
+(shared/multas_captcha.py). Datos simulados solo con PLUGINS_MX_MOCK=1.
 """
 from __future__ import annotations
 
-import os
-import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -19,8 +20,11 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
-from shared.errors import McpError, NotFoundError, UpstreamError, ValidationError  # noqa: E402
+from shared.errors import NotFoundError, ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
+from shared import portal_handoff as ph  # noqa: E402
+from shared.saf_cdmx import adeudos_o_handoff  # noqa: E402
+from shared.multas_captcha import con_solver, consultar_con_solver  # noqa: E402
 from shared.multas_vehiculares_mx import (  # noqa: E402
     CATALOGO_MULTAS,
     SistemaMultas,
@@ -29,8 +33,13 @@ from shared.multas_vehiculares_mx import (  # noqa: E402
 
 
 NAMESPACE = "multas_vehiculares_mx"
-LIVE_ENV_FLAG = "PLUGINS_MX_MULTAS_LIVE"
-CACHE_TTL_HOURS = 24  # multas pueden cambiar diario
+PORTALES = {
+    "cdmx": ph.SAF_CDMX_ADEUDOS,
+    "edomex": ph.EDOMEX_INFRACCIONES,
+    "nl": ph.ICVNL_ESTADO_CUENTA,
+    "nl_sanpedro": ph.SAN_PEDRO_MULTAS,
+    "jal": ph.JALISCO_ADEUDOS,
+}
 
 
 def _normalizar_placa(placa: str) -> str:
@@ -55,30 +64,34 @@ class MultasVehicularesMxClient:
         if sistema is None:
             raise NotFoundError(f"Estado '{estado}' no en catálogo multas.")
 
-        cache_key = f"{sistema.clave}:{placa}"
-        cached = self._cache.get(cache_key)
-        if cached is not None:
-            return cached
-
-        live = os.getenv(LIVE_ENV_FLAG, "").strip() == "1"
-        if live and sistema.clave == "cdmx":
-            result = self._real_cdmx(placa)
-        else:
-            result = self._mock(sistema, placa)
-
-        self._cache.set(cache_key, result, ttl_hours=CACHE_TTL_HOURS)
         self._bitacora.log("consultar_por_placa", success=True,
                            params_summary={"estado": sistema.clave,
-                                           "placa_hash": self._bitacora.hash_sensitive(placa),
-                                           "modo": "live" if live and sistema.clave == "cdmx" else "mock"})
-        return result
+                                           "placa_hash": self._bitacora.hash_sensitive(placa)})
+        if ph.mock_forzado():
+            return self._mock(sistema, placa)
+        if PORTALES[sistema.clave] is ph.SAF_CDMX_ADEUDOS:
+            return adeudos_o_handoff(placa, organismo=sistema.organismo)
+        if con_solver(sistema.clave):
+            return {**consultar_con_solver(sistema.clave, placa), "organismo": sistema.organismo}
+        return ph.handoff_humano(PORTALES[sistema.clave], placa=placa, organismo=sistema.organismo)
 
     def calcular_total(self, estado: str, placa: str) -> dict[str, Any]:
-        """Suma multas + descuentos vigentes."""
+        """Suma multas + descuentos. Solo hay montos con PLUGINS_MX_MOCK=1; en real
+        devuelve el handoff o, con solver de CAPTCHA, la consulta real (sin montos desglosados)."""
         consulta = self.consultar_por_placa(estado, placa)
+        if consulta.get("requiere_humano") or "multas" not in consulta:
+            return consulta
         multas = consulta.get("multas", [])
+        if any(m.get("monto_mxn") is None for m in multas):
+            # Real sin monto legible: no se suma como 0.
+            return {**consulta, "monto_bruto_mxn": None,
+                    "nota": "El portal no dio un monto legible para todas las multas."}
         total_bruto = sum(m.get("monto_mxn", 0) for m in multas)
-        # Descuento típico CDMX/JAL: 50% pago oportuno (15 días), 25% pago dentro 30 días.
+        if not consulta.get("simulated"):
+            # Real: la regla de descuentos de abajo no está verificada por estado.
+            return {**consulta, "monto_bruto_mxn": round(total_bruto, 2),
+                    "nota": "Descuentos por pronto pago: consulta el portal del estado."}
+        # ponytail: regla de descuento ilustrativa (solo mock); no verificada por estado.
         descuento_50 = sum(m.get("monto_mxn", 0) for m in multas if m.get("dias_desde_emision", 100) <= 15)
         descuento_25 = sum(m.get("monto_mxn", 0) for m in multas
                           if 15 < m.get("dias_desde_emision", 100) <= 30)
@@ -144,78 +157,3 @@ class MultasVehicularesMxClient:
             "fecha_consulta": datetime.now(timezone.utc).isoformat(),
         })
 
-    # ---- REAL paths ----
-    def _real_cdmx(self, placa: str) -> dict[str, Any]:
-        """Reusa SAF CDMX Consultaciudadana — mismo endpoint que verificación.
-
-        El endpoint público devuelve adeudos vehiculares (tenencia + verificación
-        + multas). Filtramos solo lo de multas/infracciones.
-        """
-        # Reusamos la lógica del MCP de verificación CDMX (mismo endpoint).
-        try:
-            from mp_verificacion_vehicular_mx.client import (  # type: ignore
-                VerificacionVehicularClient,
-            )
-        except ImportError as e:
-            raise McpError("mp_verificacion_vehicular_mx requerido para SAF CDMX.",
-                           {"raw": str(e)})
-
-        verif = VerificacionVehicularClient(cache=self._cache, bitacora=self._bitacora)
-        # Forzamos path real reutilizando _real_consultar_cdmx
-        try:
-            raw = verif._real_consultar_cdmx(placa)
-        except UpstreamError:
-            raise
-        except Exception as e:
-            raise UpstreamError(f"SAF CDMX falló para multas: {e}",
-                                {"placa_hash": self._bitacora.hash_sensitive(placa)})
-
-        # Shape REAL del SAF CDMX (calibrado 2026-06-15):
-        # raw tiene: infracciones_count, infracciones_label, tenencia_adeudo,
-        # tenencia_monto_mxn, sanciones_ambientales_count, fotocivicas_puntos,
-        # placa_localizada.
-        if raw.get("placa_localizada") is False:
-            return {
-                "estado": "cdmx",
-                "placa": placa,
-                "organismo": "SAF CDMX",
-                "multas_total": 0,
-                "multas": [],
-                "placa_localizada": False,
-                "mensaje": raw.get("mensaje", "Placa no encontrada en padrón"),
-                "fuente": raw.get("fuente", ""),
-                "fecha_consulta": datetime.now(timezone.utc).isoformat(),
-                "simulated": False,
-            }
-
-        # SAF CDMX expone count agregado de infracciones, no folios individuales.
-        # Para extraer folios se requiere navegar a sub-página por cada infracción
-        # (siguiente iteración cuando un usuario real ejecute).
-        infrac_count = raw.get("infracciones_count", 0)
-        multas = []
-        if infrac_count and infrac_count > 0:
-            multas.append({
-                "folio": f"SAF-CDMX-AGGR-{placa[-4:]}",
-                "fecha": "n/d",
-                "infraccion": raw.get("infracciones_label", f"{infrac_count} infracción/es no pagadas"),
-                "monto_mxn": 0,  # SAF no expone monto en el wizard inicial
-                "dias_desde_emision": 0,
-                "estatus": "PENDIENTE",
-                "nota": "SAF expone solo count en wizard; folios individuales requieren navegación adicional",
-            })
-
-        return {
-            "estado": "cdmx",
-            "placa": placa,
-            "organismo": "SAF CDMX",
-            "placa_localizada": True,
-            "multas_total": infrac_count,
-            "multas": multas,
-            "tenencia_adeudo": raw.get("tenencia_adeudo", False),
-            "tenencia_monto_mxn": raw.get("tenencia_monto_mxn"),
-            "sanciones_ambientales_count": raw.get("sanciones_ambientales_count", 0),
-            "fotocivicas_puntos": raw.get("fotocivicas_puntos"),
-            "fuente": raw.get("fuente", ""),
-            "fecha_consulta": datetime.now(timezone.utc).isoformat(),
-            "simulated": False,
-        }

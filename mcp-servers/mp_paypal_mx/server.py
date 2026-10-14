@@ -19,19 +19,30 @@ _client = PaypalMxClient()
 
 
 @mcp.tool()
-def paypal_mx_listar_transacciones(**kwargs) -> dict:
-    """listar_transacciones (mock-first)."""
-    return _client.listar_transacciones(**kwargs)
+def paypal_mx_listar_transacciones(
+    fecha_inicio: str | None = None,
+    fecha_fin: str | None = None,
+    pagina: int = 1,
+    tamano_pagina: int = 100,
+) -> dict:
+    """Lista transacciones de PayPal (máx. 31 días por consulta; por defecto los últimos 31)."""
+    return _client.listar_transacciones(fecha_inicio, fecha_fin, pagina, tamano_pagina)
+
 
 @mcp.tool()
-def paypal_mx_consultar_transaccion(**kwargs) -> dict:
-    """consultar_transaccion (mock-first)."""
-    return _client.consultar_transaccion(**kwargs)
+def paypal_mx_consultar_transaccion(
+    transaction_id: str,
+    fecha_inicio: str | None = None,
+    fecha_fin: str | None = None,
+) -> dict:
+    """Detalle de una transacción por ID dentro del rango dado (por defecto, últimos 31 días)."""
+    return _client.consultar_transaccion(transaction_id, fecha_inicio, fecha_fin)
+
 
 @mcp.tool()
-def paypal_mx_balance(**kwargs) -> dict:
-    """balance (mock-first)."""
-    return _client.balance(**kwargs)
+def paypal_mx_balance(moneda: str | None = None, al_momento: str | None = None) -> dict:
+    """Saldos de la cuenta PayPal por moneda (total, disponible y retenido)."""
+    return _client.balance(moneda, al_momento)
 
 
 if __name__ == "__main__":

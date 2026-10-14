@@ -7,8 +7,8 @@ Diseñado para integrarse en apps externas (web, móviles, CLIs) que NO
 usan Claude Code/MCP.
 
 Modos:
-- "mock": respuestas simuladas (default si MP_PLAYWRIGHT_PUBLIC != 1)
-- "real": consultas reales vía Playwright (requiere playwright instalado)
+- "real" (default): consultas reales (httpx/Playwright según portal), sin fallback
+- "mock": respuestas simuladas (exporta PLUGINS_MX_MOCK=1)
 """
 
 from __future__ import annotations
@@ -102,7 +102,7 @@ class PredialResponse:
             bimestres_pendientes=int(raw.get("bimestres_pendientes", 0) or 0),
             conceptos=raw.get("conceptos", []) or [],
             url_consultada=raw.get("url_consultada", ""),
-            simulated=bool(raw.get("simulated", True)),
+            simulated=bool(raw.get("simulated", False)),
             raw=raw,
         )
 
@@ -127,16 +127,17 @@ class PredialMxClient:
     """Cliente Python standalone para consulta predial MX.
 
     Args:
-        modo: "mock" (default) | "real". "real" requiere MP_PLAYWRIGHT_PUBLIC=1
-              env var + playwright instalado.
+        modo: "real" (default) | "mock". "mock" exporta PLUGINS_MX_MOCK=1 (datos
+              simulados, marcados `simulated`). En "real" no hay fallback a mock:
+              si el portal falla se levanta PortalCaidoError.
     """
 
-    def __init__(self, modo: str = "mock"):
+    def __init__(self, modo: str = "real"):
         if modo not in ("mock", "real"):
             raise ValueError(f"modo debe ser 'mock' o 'real', recibí '{modo}'")
         self.modo = modo
-        if modo == "real":
-            os.environ["MP_PLAYWRIGHT_PUBLIC"] = "1"
+        if modo == "mock":
+            os.environ["PLUGINS_MX_MOCK"] = "1"
         self._core = _CoreClient()
 
     # ============================================================
@@ -182,12 +183,15 @@ class PredialMxClient:
             msg = str(e)
             if "CAPTCHA" in msg or "captcha" in msg.lower():
                 # Extraer URL si está en el contexto
-                url = e.context.get("url_consulta_manual", "") if hasattr(e, "context") else ""
+                url = e.details.get("url_consulta_manual", "")
                 raise CaptchaRequeridoError(msg, url_consulta_manual=url) from e
             raise PortalCaidoError(msg) from e
         except McpError as e:
             raise PredialClientError(str(e)) from e
 
+        if raw.get("status") == "requiere_humano":
+            raise CaptchaRequeridoError(raw.get("detalle") or "Portal requiere CAPTCHA",
+                                        url_consulta_manual=raw.get("url") or "")
         return PredialResponse.from_raw(raw)
 
     # ============================================================

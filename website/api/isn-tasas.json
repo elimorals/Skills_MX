@@ -1,52 +1,344 @@
 {
   "$schema": "https://skills-mexico.vercel.app/openapi.json#/components/schemas/IsnRatesTable",
-  "version": "2026-06-14",
+  "version": "2026-10-14",
   "vigencia": "2026",
   "license": "CC-BY-4.0",
-  "source": "Leyes de Hacienda estatales y Códigos Financieros locales 2026. Tabla compilada y mantenida por Plugins MX.",
+  "source": "mcp-servers/shared/catalogo_isn_estatal.py. Fuente base: BHR 'Contribuciones locales, cambios relevantes 2026' (fuente secundaria, confianza media); algunas entidades citan su ley local.",
   "documentation": "https://skills-mexico.vercel.app/productos/isn",
   "glossary": "https://skills-mexico.vercel.app/glosario/isn",
   "totalEstados": 32,
-  "tasaMinima": 1.8,
-  "tasaMaxima": 3.0,
+  "tasaMinima": 2.4,
+  "tasaMaxima": 4.25,
   "estados": [
-    { "codigo": "CDMX",  "estado": "Ciudad de México",         "tasa_pct": 3.0, "vence_dia": 17, "portal": "https://innovacion.finanzas.cdmx.gob.mx",         "validado_playwright": true },
-    { "codigo": "JAL",   "estado": "Jalisco",                  "tasa_pct": 3.0, "vence_dia": 12, "portal": "https://sepaf.jalisco.gob.mx",                    "validado_playwright": true },
-    { "codigo": "NL",    "estado": "Nuevo León",               "tasa_pct": 3.0, "vence_dia": 17, "portal": "https://www.nl.gob.mx/finanzas",                   "validado_playwright": true },
-    { "codigo": "MEX",   "estado": "Estado de México",         "tasa_pct": 3.0, "vence_dia": 10, "portal": "https://sfpya.edomexico.gob.mx",                  "validado_playwright": true },
-    { "codigo": "QRO",   "estado": "Querétaro",                "tasa_pct": 3.0, "vence_dia": 17, "portal": "https://sfqro.gob.mx",                            "validado_playwright": true },
-    { "codigo": "GTO",   "estado": "Guanajuato",               "tasa_pct": 2.0, "vence_dia": 17, "portal": "https://sfinanzas.guanajuato.gob.mx",             "validado_playwright": true },
-    { "codigo": "YUC",   "estado": "Yucatán",                  "tasa_pct": 2.5, "vence_dia": 10, "portal": "https://sefin.yucatan.gob.mx",                    "validado_playwright": true },
-    { "codigo": "BC",    "estado": "Baja California",          "tasa_pct": 1.8, "vence_dia": 17, "portal": "https://sefin.bajacalifornia.gob.mx",             "validado_playwright": true },
-    { "codigo": "PUE",   "estado": "Puebla",                   "tasa_pct": 3.0, "vence_dia": 17, "portal": "https://www.puebla.gob.mx/finanzas",              "validado_playwright": false },
-    { "codigo": "VER",   "estado": "Veracruz",                 "tasa_pct": 3.0, "vence_dia": 17, "portal": "https://www.veracruz.gob.mx/finanzas",            "validado_playwright": false },
-    { "codigo": "CHIH",  "estado": "Chihuahua",                "tasa_pct": 3.0, "vence_dia": 17, "portal": "https://www.chihuahua.gob.mx/hacienda",           "validado_playwright": false },
-    { "codigo": "COAH",  "estado": "Coahuila",                 "tasa_pct": 2.0, "vence_dia": 17, "portal": "https://www.coahuila.gob.mx/finanzas",            "validado_playwright": false },
-    { "codigo": "SIN",   "estado": "Sinaloa",                  "tasa_pct": 2.4, "vence_dia": 15, "portal": "https://saf.sinaloa.gob.mx",                      "validado_playwright": false },
-    { "codigo": "SON",   "estado": "Sonora",                   "tasa_pct": 2.0, "vence_dia": 17, "portal": "https://hacienda.sonora.gob.mx",                  "validado_playwright": false },
-    { "codigo": "TAM",   "estado": "Tamaulipas",               "tasa_pct": 3.0, "vence_dia": 17, "portal": "https://finanzas.tamaulipas.gob.mx",              "validado_playwright": false },
-    { "codigo": "OAX",   "estado": "Oaxaca",                   "tasa_pct": 3.0, "vence_dia": 17, "portal": "https://www.finanzasoaxaca.gob.mx",               "validado_playwright": false },
-    { "codigo": "MICH",  "estado": "Michoacán",                "tasa_pct": 3.0, "vence_dia": 17, "portal": "https://secfinanzas.michoacan.gob.mx",            "validado_playwright": false },
-    { "codigo": "GRO",   "estado": "Guerrero",                 "tasa_pct": 2.0, "vence_dia": 17, "portal": "https://sfa.guerrero.gob.mx",                     "validado_playwright": false },
-    { "codigo": "QROO",  "estado": "Quintana Roo",             "tasa_pct": 3.0, "vence_dia": 17, "portal": "https://sefiplan.qroo.gob.mx",                    "validado_playwright": false },
-    { "codigo": "AGS",   "estado": "Aguascalientes",           "tasa_pct": 2.0, "vence_dia": 17, "portal": "https://www.aguascalientes.gob.mx/sfinanzas",     "validado_playwright": false },
-    { "codigo": "SLP",   "estado": "San Luis Potosí",          "tasa_pct": 2.5, "vence_dia": 17, "portal": "https://www.slp.gob.mx/sefin",                    "validado_playwright": false },
-    { "codigo": "ZAC",   "estado": "Zacatecas",                "tasa_pct": 3.0, "vence_dia": 17, "portal": "https://finanzas.zacatecas.gob.mx",               "validado_playwright": false },
-    { "codigo": "DGO",   "estado": "Durango",                  "tasa_pct": 2.0, "vence_dia": 17, "portal": "https://durango.gob.mx/sf",                       "validado_playwright": false },
-    { "codigo": "MOR",   "estado": "Morelos",                  "tasa_pct": 2.0, "vence_dia": 17, "portal": "https://hacienda.morelos.gob.mx",                 "validado_playwright": false },
-    { "codigo": "TLAX",  "estado": "Tlaxcala",                 "tasa_pct": 3.0, "vence_dia": 17, "portal": "https://finanzas.tlaxcala.gob.mx",                "validado_playwright": false },
-    { "codigo": "HGO",   "estado": "Hidalgo",                  "tasa_pct": 3.0, "vence_dia": 17, "portal": "https://sefinanzas.hidalgo.gob.mx",               "validado_playwright": false },
-    { "codigo": "CHIS",  "estado": "Chiapas",                  "tasa_pct": 2.0, "vence_dia": 17, "portal": "https://haciendachiapas.gob.mx",                  "validado_playwright": false },
-    { "codigo": "TAB",   "estado": "Tabasco",                  "tasa_pct": 2.5, "vence_dia": 17, "portal": "https://finanzas.tabasco.gob.mx",                 "validado_playwright": false },
-    { "codigo": "CAMP",  "estado": "Campeche",                 "tasa_pct": 2.0, "vence_dia": 17, "portal": "https://finanzas.campeche.gob.mx",                "validado_playwright": false },
-    { "codigo": "NAY",   "estado": "Nayarit",                  "tasa_pct": 2.0, "vence_dia": 17, "portal": "https://hacienda.nayarit.gob.mx",                 "validado_playwright": false },
-    { "codigo": "COL",   "estado": "Colima",                   "tasa_pct": 2.0, "vence_dia": 17, "portal": "https://finanzas.col.gob.mx",                     "validado_playwright": false },
-    { "codigo": "BCS",   "estado": "Baja California Sur",      "tasa_pct": 2.5, "vence_dia": 17, "portal": "https://finanzasbcs.gob.mx",                      "validado_playwright": false }
+    {
+      "codigo": "AGS",
+      "estado": "Aguascalientes",
+      "tasa_pct": 2.5,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://www.aguascalientes.gob.mx/sefi/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "BC",
+      "estado": "Baja California",
+      "tasa_pct": 4.25,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://www4.ebajacalifornia.gob.mx/Impuesto",
+      "fuente": "Ley de Hacienda BC art. 151-16; https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "BCS",
+      "estado": "Baja California Sur",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://finanzas.bcs.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "CAMP",
+      "estado": "Campeche",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://www.campeche.gob.mx/finanzas/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "CDMX",
+      "estado": "Ciudad de México",
+      "tasa_pct": 4.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://dgtc.finanzas.cdmx.gob.mx/",
+      "fuente": "Código Fiscal CDMX art. 158 (reforma Gaceta 27-dic-2024); https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "CHIH",
+      "estado": "Chihuahua",
+      "tasa_pct": 4.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://www.chihuahua.gob.mx/hacienda/",
+      "fuente": "https://ipagos.chihuahua.gob.mx/ayuda/formatos/GUIA-NOMINAS-(2026)-(SH-001-26).pdf"
+    },
+    {
+      "codigo": "CHIS",
+      "estado": "Chiapas",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://ingresos.haciendachiapas.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "COAH",
+      "estado": "Coahuila",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://www.sefin.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "COL",
+      "estado": "Colima",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://www.col.gob.mx/finanzas/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "DGO",
+      "estado": "Durango",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://durango.gob.mx/sed/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "EDOMEX",
+      "estado": "Estado de México",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 10,
+      "portal": "https://sfpya.edomexico.gob.mx/recaudacion/",
+      "fuente": "Código Financiero EdoMex arts. 56-59; https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "GRO",
+      "estado": "Guerrero",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://sefinaguerrero.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "GTO",
+      "estado": "Guanajuato",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://www.guanajuato.gob.mx/finanzas/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "HID",
+      "estado": "Hidalgo",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://hacienda.hidalgo.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "JAL",
+      "estado": "Jalisco",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 12,
+      "portal": "https://gobiernoenlinea1.jalisco.gob.mx/impuestos/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "MICH",
+      "estado": "Michoacán",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://secfinanzas.michoacan.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "MOR",
+      "estado": "Morelos",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://hacienda.morelos.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "NAY",
+      "estado": "Nayarit",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://www.haciendanayarit.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "NL",
+      "estado": "Nuevo León",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://egobierno.nl.gob.mx/egob/Nomina.php",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "OAX",
+      "estado": "Oaxaca",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://www.finanzasoaxaca.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "PUE",
+      "estado": "Puebla",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://www.haciendapuebla.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "QRO",
+      "estado": "Querétaro",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://asistenciaspf.queretaro.gob.mx/",
+      "fuente": "Ley de Hacienda Qro. art. 72: https://asistenciasf.queretaro.gob.mx/sites/default/files/impuestos/pdf/1.1%20FUNDAMENTO%20LEGAL%20ISN.pdf"
+    },
+    {
+      "codigo": "QROO",
+      "estado": "Quintana Roo",
+      "tasa_pct": 4.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://sefiplan.qroo.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "SIN",
+      "estado": "Sinaloa",
+      "tasa_pct": 2.4,
+      "tasa_rango": [
+        2.4,
+        3.0
+      ],
+      "calculable": false,
+      "vence_dia": 17,
+      "portal": "https://www.sinaloa.gob.mx/finanzas/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "SLP",
+      "estado": "San Luis Potosí",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://www.slp.gob.mx/finanzas/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "SON",
+      "estado": "Sonora",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://hacienda.sonora.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "TAB",
+      "estado": "Tabasco",
+      "tasa_pct": 3.0,
+      "tasa_rango": [
+        3.0,
+        3.5
+      ],
+      "calculable": false,
+      "vence_dia": 17,
+      "portal": "https://tabasco.gob.mx/sefp/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "TAM",
+      "estado": "Tamaulipas",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://www.tamaulipas.gob.mx/finanzas/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "TLAX",
+      "estado": "Tlaxcala",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://af-oficina-virtual.sefintlax.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "VER",
+      "estado": "Veracruz",
+      "tasa_pct": 3.0,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://www.veracruz.gob.mx/finanzas/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "YUC",
+      "estado": "Yucatán",
+      "tasa_pct": 3.75,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 10,
+      "portal": "https://www.sefinyucatan.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    },
+    {
+      "codigo": "ZAC",
+      "estado": "Zacatecas",
+      "tasa_pct": 3.5,
+      "tasa_rango": null,
+      "calculable": true,
+      "vence_dia": 17,
+      "portal": "https://www.finanzaszacatecas.gob.mx/",
+      "fuente": "https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf"
+    }
   ],
   "notas": [
-    "Tasa más baja: Baja California (1.8%). Tasa más alta: 3.0% (15 entidades).",
-    "Vencimiento típico: día 17 del mes siguiente. Excepciones: Jalisco (día 12), EdoMex y Yucatán (día 10).",
-    "8 estados con portal validado end-to-end usando Playwright MCP.",
-    "Las URLs de portales se actualizan trimestralmente. Si encuentras una URL caída, contacta a elimoralsmendox@gmail.com."
+    "Tasas con rango (Sinaloa, Tabasco): el MCP no calcula el monto porque los tramos o el criterio 2026 no están verificados.",
+    "El MCP solo calcula; no genera línea de captura ni descarga declaraciones (requieren la sesión del contribuyente)."
   ]
 }

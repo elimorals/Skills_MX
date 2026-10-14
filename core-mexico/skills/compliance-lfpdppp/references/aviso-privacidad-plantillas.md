@@ -94,7 +94,7 @@ El Responsable se reserva el derecho de modificar este aviso. Las modificaciones
 
 ## 9. Autoridad
 
-Si considera que su derecho de protección de datos personales ha sido vulnerado, puede acudir al INAI (Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales): www.inai.org.mx.
+Si considera que su derecho de protección de datos personales ha sido vulnerado, puede acudir a la Secretaría Anticorrupción y Buen Gobierno (autoridad de datos personales desde la LFPDPPP de 2025; sustituyó al INAI): www.gob.mx/buengobierno.
 
 ---
 
@@ -225,7 +225,7 @@ Para que el responsable cumpla LFPDPPP no basta el aviso. Lista mínima:
 - Empresa con > 50 empleados o > 10,000 titulares en BD
 - Tratamiento de datos sensibles a escala (clínica grande, hospital, escuela grande)
 - Reportes de incidentes / vulneraciones con potencial impacto significativo
-- Demandas o procedimientos del INAI activos
+- Demandas o procedimientos de la Secretaría Anticorrupción y Buen Gobierno activos
 - Operaciones internacionales con transferencias trans-fronterizas regulares
 
 Este skill genera plantillas y revisa cumplimiento estructural. No sustituye asesoría legal especializada para los casos anteriores.

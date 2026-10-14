@@ -21,15 +21,27 @@ México Evalúa documentó que el gobierno **NO publica ranking nominal** del av
 
 ## Tools
 
-- `lnetb_listar_indicadores()` — 10 indicadores con peso
-- `lnetb_evaluar_estado(estado_clave)` — score 0-100 + brecha vs meta 80%
-- `lnetb_ranking_nacional(top)` — top N estados
-- `lnetb_comparar_estados(estados)` — comparativa 2-10 estados
+- `lnetb_plazos_legales(fecha_referencia?)` — **real**: plazos de los artículos transitorios y si
+  vencieron (los de días naturales con fecha; los de días hábiles sin fecha inventada).
+- `lnetb_listar_indicadores()` — metodología propia de 10 indicadores (no es un indicador oficial).
+- `lnetb_evaluar_estado`, `lnetb_ranking_nacional`, `lnetb_comparar_estados` — **solo con
+  `PLUGINS_MX_MOCK=1`**; fuera de mock → `ConfigError`.
 
 ## Comprador objetivo
 
-ATDT, IMCO, México Evalúa, prensa especializada (Animal Político, Expansión Política).
+ATDT, IMCO, México Evalúa, prensa especializada.
 
-## Meta LNETB 2030
+## Estado real
 
-80% trámites digitales nacionales (sin estados rezagados publicados oficialmente).
+Tipo: cálculo normativo local. Constantes verificadas contra el texto vigente
+(https://www.diputados.gob.mx/LeyesBiblio/pdf/LNETB.pdf, "Nueva Ley DOF 16-07-2025", consultado
+2026-10-14): entrada en vigor al día siguiente de la publicación (Transitorio Primero) → 17-jul-2025;
+plazos de los transitorios Cuarto a Décimo Sexto. Cómputo: fecha de vigor + N días naturales
+(Décimo Tercero/Cuarto vencen 2026-01-13; Décimo Quinto/Sexto, 2026-02-12).
+
+Lo que se retiró del modo real:
+- Los scores por estado (CDMX 85, BC 90, …): números curados a mano sin fuente trazable.
+- La "meta 80 % de trámites digitales para 2030": no aparece en la Ley.
+
+Pendiente para volver reales los scores: definir fuentes por indicador (p. ej. detección de
+Llave MX en portales con `mp_llave_mx_tracker`, disponibilidad con `mp_portales_monitor`).

@@ -61,23 +61,3 @@ def mock_multas(placa: str) -> dict[str, Any]:
         ],
     }
 
-
-def mock_calendario_hoy_no_circula(fecha: str) -> dict[str, Any]:
-    return {
-        "fecha": fecha,
-        "contingencia_activa": False,
-        "fase_contingencia": None,
-        "restricciones_del_dia": [
-            {
-                "ultimo_digito_placa": "5,6",
-                "engomado": "amarillo",
-                "holograma_aplica": ["1", "2"],
-            }
-        ],
-        "exentos": [
-            "Holograma 00 (eléctricos/híbridos)",
-            "Holograma 0 (verificados recientemente)",
-            "Servicio público",
-            "Transporte de personas con discapacidad",
-        ],
-    }

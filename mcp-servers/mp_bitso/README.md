@@ -105,3 +105,9 @@ isr = await bitso_calcular_isr_cripto_mx(
 cd /Users/elias/Documents/Trabajo/skills/mcp-servers
 .venv/bin/python -m pytest mp_bitso/tests/ -q
 ```
+
+## Estado real (2026-10-14)
+
+- ✅ Endpoints públicos (`/v3/ticker`, `/v3/order_book`, `/v3/available_books`) **validados en vivo** sin llaves.
+  Antes caían a mock sin credenciales aunque no las necesitan.
+- ⚠️ Endpoints privados (balance, ledger, fondeos, retiros, órdenes) sin validar: requieren `BITSO_API_KEY` y `BITSO_API_SECRET`.

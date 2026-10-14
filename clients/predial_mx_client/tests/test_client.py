@@ -10,16 +10,39 @@ from predial_mx_client import (
     MunicipioInfo,
     NoSoportadoError,
 )
+from predial_mx_client.client import CaptchaRequeridoError, PortalCaidoError
+from shared.errors import UpstreamError
 
 
 @pytest.fixture
-def client() -> PredialMxClient:
+def client(monkeypatch) -> PredialMxClient:
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")  # monkeypatch restaura el env
     return PredialMxClient(modo="mock")
 
 
-def test_init_modo_mock():
-    c = PredialMxClient(modo="mock")
-    assert c.modo == "mock"
+def test_init_modo_mock(client: PredialMxClient):
+    assert client.modo == "mock"
+
+
+def test_real_handoff_es_captcha_error(monkeypatch):
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+    c = PredialMxClient()
+    monkeypatch.setattr(c._core, "consultar", lambda **k: {
+        "requiere_humano": True, "status": "requiere_humano", "detalle": "CAPTCHA", "url": "https://x"})
+    with pytest.raises(CaptchaRequeridoError) as e:
+        c.consultar("cdmx", "ciudad_de_mexico", "123456789012")
+    assert e.value.url_consulta_manual == "https://x"
+
+
+def test_real_portal_caido(monkeypatch):
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+    c = PredialMxClient()
+
+    def _falla(**k):
+        raise UpstreamError("caído", {})
+    monkeypatch.setattr(c._core, "consultar", _falla)
+    with pytest.raises(PortalCaidoError):
+        c.consultar("jal", "guadalajara", "U1")
 
 
 def test_init_modo_invalido():

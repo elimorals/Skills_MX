@@ -132,3 +132,8 @@ sub = await conekta_subscription_create(
 cd /Users/elias/Documents/Trabajo/skills/mcp-servers
 .venv/bin/python -m pytest mp_conekta/tests/ -q
 ```
+
+## Estado real (2026-10-14)
+
+- ✅ Rutas cotejadas con la doc oficial de Conekta API 2.1.0 (orders, charges, refunds, customers, subscription, checkouts).
+- ⚠️ Sin validar en vivo: falta `CONEKTA_API_KEY` de sandbox.

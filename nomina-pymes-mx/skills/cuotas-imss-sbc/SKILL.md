@@ -50,7 +50,7 @@ def calcular_cuotas_imss_mes(sbc_diario: Decimal, dias_cotizados: int, clase_rie
     }
 
     # Enfermedades especie es más complejo (excedente UMA)
-    uma_diario = Decimal("113.14")
+    uma_diario = Decimal("117.31")  # UMA 2026 (desde 1-feb-2026; enero usa 113.14)
     cuota_fija_especie = uma_diario * dias_cotizados * Decimal("0.2040")
     excedente = max(0, sbc_mensual - (3 * uma_diario * dias_cotizados))
     cuotas["enfermedades_especie_patron"] = cuota_fija_especie + (excedente * Decimal("0.0110"))
