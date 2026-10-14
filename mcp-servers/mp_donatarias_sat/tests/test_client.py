@@ -117,7 +117,7 @@ class TestEstadisticas:
 class TestRubros:
     def test_listar_rubros(self, tmp_client):
         r = tmp_client.listar_rubros()
-        assert r["total"] == 10
+        assert r["total"] == 12
         assert "asistencia_social" in r["rubros"]
         assert "educacion" in r["rubros"]
 
