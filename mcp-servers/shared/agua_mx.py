@@ -32,15 +32,8 @@ from dataclasses import dataclass, field
 from typing import Literal, Optional
 
 
-# Selectores reales descubiertos 2026-06-15 (Playwright) — SIAPA Guadalajara
+# SIAPA: formulario con reCAPTCHA v2 (verificado 2026-10-14) → solo handoff humano.
 URL_SIAPA_CONSULTA = "https://www.siapa.gob.mx/aplicaciones/pagoenlinea/"
-URL_SIAPA_FORM_ACTION = "https://www.siapa.gob.mx/aplicaciones/pagoenlinea/busca_cta-sntdr.php"
-SIAPA_FIELDS = {
-    "cuenta_contrato": "cuenta_contrato",
-    "clavesiapa": "clavesiapa",
-}
-# SIAPA usa reCAPTCHA v2 checkbox. site_key verificado en vivo:
-SIAPA_RECAPTCHA_SITE_KEY = "6LdsJiUUAAAAAIjV_N2F3sd58XYDYznuyNn9ROva"
 
 # SACMEX: portal con 503 dominical persistente (2026-06-15). Reintentar lunes.
 URL_SACMEX_PORTAL = "https://www.sacmex.cdmx.gob.mx"
@@ -70,7 +63,7 @@ class OrganismoAgua:
     metodo: MetodoConsulta = "publica"
     frecuencia_recibo: Literal["mensual", "bimestral"] = "bimestral"
     poblacion_aprox: int = 0  # usuarios cubiertos
-    consultable: bool = False  # ¿está implementado consultar real?
+    consultable: bool = False  # ¿consulta real implementada y validada en vivo?
     notas: str = ""
 
 
@@ -88,7 +81,7 @@ CATALOGO_AGUA: list[OrganismoAgua] = [
         metodo="publica",
         frecuencia_recibo="bimestral",
         poblacion_aprox=9200000,
-        consultable=True,
+        consultable=False,
         notas="ASP.NET WebForms. Permite consulta sin login con cuenta predial.",
     ),
     OrganismoAgua(
@@ -97,14 +90,14 @@ CATALOGO_AGUA: list[OrganismoAgua] = [
         estado="JAL",
         municipio="Guadalajara, Zapopan, Tlaquepaque, Tonalá, El Salto",
         url_portal="https://www.siapa.gob.mx",
-        url_consulta="https://www.siapa.gob.mx/serviciosenlinea/consultarecibos",
+        url_consulta=URL_SIAPA_CONSULTA,
         identificador_label="Cuenta",
         identificador_regex=r"^\d{6,10}$",
-        metodo="publica",
+        metodo="publica_captcha",
         frecuencia_recibo="bimestral",
         poblacion_aprox=5000000,
-        consultable=True,
-        notas="Servicios en línea — cuenta de 6-10 dígitos. Tarjeta de plaza.",
+        consultable=False,
+        notas="Pide cuenta + clave SIAPA del recibo y reCAPTCHA v2 → handoff humano.",
     ),
     OrganismoAgua(
         clave="sadm",
@@ -118,7 +111,7 @@ CATALOGO_AGUA: list[OrganismoAgua] = [
         metodo="publica_captcha",
         frecuencia_recibo="bimestral",
         poblacion_aprox=4500000,
-        consultable=True,
+        consultable=False,
         notas="Captcha sencillo. Múltiples métodos: contrato, dirección, RFC.",
     ),
     OrganismoAgua(
@@ -133,8 +126,8 @@ CATALOGO_AGUA: list[OrganismoAgua] = [
         metodo="publica",
         frecuencia_recibo="bimestral",
         poblacion_aprox=1900000,
-        consultable=True,
-        notas="ASP.NET WebForms — consulta pública por cuenta.",
+        consultable=False,
+        notas="⚠ 2026-10-14: EnLinea/Adeudo.aspx responde 404. Pendiente redescubrir.",
     ),
     OrganismoAgua(
         clave="sapal",
@@ -148,7 +141,7 @@ CATALOGO_AGUA: list[OrganismoAgua] = [
         metodo="publica",
         frecuencia_recibo="bimestral",
         poblacion_aprox=1800000,
-        consultable=True,
+        consultable=False,
     ),
     OrganismoAgua(
         clave="ceaq",
@@ -162,7 +155,7 @@ CATALOGO_AGUA: list[OrganismoAgua] = [
         metodo="publica",
         frecuencia_recibo="bimestral",
         poblacion_aprox=1500000,
-        consultable=True,
+        consultable=False,
     ),
     OrganismoAgua(
         clave="ceasg",
@@ -190,7 +183,7 @@ CATALOGO_AGUA: list[OrganismoAgua] = [
         metodo="publica",
         frecuencia_recibo="bimestral",
         poblacion_aprox=1200000,
-        consultable=True,
+        consultable=False,
     ),
     OrganismoAgua(
         clave="japay",
@@ -218,7 +211,7 @@ CATALOGO_AGUA: list[OrganismoAgua] = [
         metodo="publica",
         frecuencia_recibo="mensual",
         poblacion_aprox=1500000,
-        consultable=True,
+        consultable=False,
         notas="Concesionario privado — única integración tipo SaaS.",
     ),
     OrganismoAgua(
@@ -255,14 +248,14 @@ CATALOGO_AGUA: list[OrganismoAgua] = [
         estado="CHIH",
         municipio="Ciudad Juárez",
         url_portal="https://jmasjuarez.gob.mx",
-        url_consulta="https://jmasjuarez.gob.mx/v026/saldo.php",
+        url_consulta="https://jmasjuarez.gob.mx/v026/pago.php",
         identificador_label="Cuenta",
         identificador_regex=r"^\d{4,12}$",
         metodo="publica",
         frecuencia_recibo="mensual",
         poblacion_aprox=1500000,
         consultable=True,
-        notas="✅ Discovery 2026-06-15: saldo.php público, input `cuenta`, sin captcha.",
+        notas="✅ Validado en vivo 2026-10-14: GET pago.php?cuenta=… público, sin captcha.",
     ),
     OrganismoAgua(
         clave="ooapas",
@@ -276,8 +269,8 @@ CATALOGO_AGUA: list[OrganismoAgua] = [
         metodo="publica",
         frecuencia_recibo="mensual",
         poblacion_aprox=750000,
-        consultable=True,
-        notas="✅ Discovery 2026-06-15: PagoExpress sin login, input `reciboFolio`, sin captcha.",
+        consultable=False,
+        notas="PagoExpress sin login ni captcha (input `reciboFolio`); parser pendiente de un folio real.",
     ),
     OrganismoAgua(
         clave="cespm",

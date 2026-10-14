@@ -28,6 +28,9 @@ dev = [
 sat-portal = [
     "cryptography>=42,<46",
 ]
+estatal-resto = [
+    "pypdf>=4.0,<7.0",  # mp_gas_natural_mx: tarifas publicadas en PDF
+]
 sat-playwright = [
     "cryptography>=42,<46",
     "playwright>=1.42,<2.0",

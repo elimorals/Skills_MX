@@ -10,7 +10,8 @@ tools invocables desde Claude:
 Cobertura: 95 muns Michoacán (ACUITZIO, APATZINGAN, HIDALGO, ZACAPU, etc.).
 NO incluidos (tienen portal propio): Morelia, Uruapan, Zamora, Lázaro Cárdenas, Pátzcuaro.
 
-Modo mock por default. Activar real con MP_PLAYWRIGHT_PUBLIC=1.
+Real por default (Playwright). Mock solo con PLUGINS_MX_MOCK=1.
+Estado 2026-10-14: el host de SACPI no resuelve en DNS (NXDOMAIN) → UpstreamError.
 """
 
 from __future__ import annotations
@@ -28,9 +29,10 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared.bitacora import Bitacora  # noqa: E402
-from shared.errors import McpError, ValidationError  # noqa: E402
-from shared.mock import mark_simulated  # noqa: E402
-from shared.playwright_real import is_public_real_enabled  # noqa: E402
+import httpx  # noqa: E402
+
+from shared.errors import McpError, UpstreamError, ValidationError  # noqa: E402
+from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 from shared.plataformas_saas_mx import (  # noqa: E402
     SACPI_MICHOACAN,
     SACPI_MUNICIPIOS_MICH,
@@ -102,6 +104,13 @@ def sacpi_consultar(args: SacpiConsultarInput) -> dict:
           ...
         }
     """
+    try:
+        return _consultar(args)
+    except McpError as exc:
+        return exc.to_dict()
+
+
+def _consultar(args: SacpiConsultarInput) -> dict:
     # Resolver código
     if args.municipio.isdigit() and len(args.municipio) == 3:
         codigo = args.municipio
@@ -127,8 +136,7 @@ def sacpi_consultar(args: SacpiConsultarInput) -> dict:
         "cuenta_hash": Bitacora.hash_sensitive(args.cuenta_predial),
     })
 
-    # Mock si Playwright real no habilitado
-    if not is_public_real_enabled():
+    if is_mock_mode([], default_when_no_creds=False):
         seed = sum(ord(c) for c in args.cuenta_predial) % 100
         adeudo = (seed * 95.0) if seed > 35 else 0
         return mark_simulated({
@@ -143,8 +151,23 @@ def sacpi_consultar(args: SacpiConsultarInput) -> dict:
             "url_consultada": SACPI_MICHOACAN.url_consulta,
         })
 
-    # Real
+    verificar_portal()
     return consulta_sacpi(codigo, args.cuenta_predial, tipo=tipo_codigo)
+
+
+# Página oficial que embebe SACPI (iframe), para el handoff cuando el host cae.
+URL_SECFINANZAS = "https://secfinanzas.michoacan.gob.mx/impuesto-predial-consulta-tu-adeudo/"
+
+
+def verificar_portal() -> None:
+    """Falla rápido y explícito si SACPI no responde, antes de lanzar Chromium."""
+    try:
+        httpx.get(SACPI_MICHOACAN.url_consulta, timeout=15, follow_redirects=True).raise_for_status()
+    except httpx.HTTPError as exc:
+        raise UpstreamError(
+            f"SACPI Michoacán no responde: {type(exc).__name__}: {exc}",
+            {"url": SACPI_MICHOACAN.url_consulta, "pagina_oficial": URL_SECFINANZAS},
+        ) from exc
 
 
 @mcp.tool(annotations={

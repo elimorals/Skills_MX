@@ -1,49 +1,59 @@
-"""Cliente mp_guadalajara_municipal — mock-first."""
+"""Cliente mp_guadalajara_municipal.
+
+Predial: pagoenlinea.guadalajara.gob.mx/impuestopredial (Angular) exige reCAPTCHA
+v2 antes de `consulta_adeudo` (main.js, verificado 2026-10-14) → handoff humano.
+Adeudos vehiculares Jalisco (estatal): gobiernoenlinea1.jalisco.gob.mx también con
+reCAPTCHA → handoff humano.
+"""
 
 from __future__ import annotations
 
-import os
 import sys
 from pathlib import Path
-from typing import Any
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared.bitacora import Bitacora  # noqa: E402
-from shared.errors import McpError  # noqa: E402
+from shared.handoff_humano import handoff_humano  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
 NAMESPACE = "guadalajara_mun"
-CRED_VARS = []
+URL_PREDIAL = "https://pagoenlinea.guadalajara.gob.mx/impuestopredial/"
+URL_VEHICULAR_JAL = "https://gobiernoenlinea1.jalisco.gob.mx/serviciosVehiculares/adeudos"
 
 
 class GuadalajaraMunClient:
     def __init__(self, bitacora: Bitacora | None = None) -> None:
         self.bitacora = bitacora or Bitacora(NAMESPACE)
 
-    def _is_mock(self) -> bool:
-        if not CRED_VARS:
-            return True
-        return is_mock_mode(CRED_VARS)
+    def consultar_predial(self, cuenta_predial: str) -> dict:
+        self.bitacora.log("consultar_predial", success=True, params_summary={})
+        if is_mock_mode([], default_when_no_creds=False):
+            return mark_simulated({"cuenta_predial": cuenta_predial, "adeudo_total_mxn": 2100.0})
+        return handoff_humano(
+            portal=URL_PREDIAL,
+            motivo="captcha",
+            detalle="El portal exige reCAPTCHA v2 antes de mostrar el adeudo.",
+            pasos=[
+                f"Abrir {URL_PREDIAL}",
+                f"Elegir recaudadora y tipo, capturar la cuenta {cuenta_predial}",
+                "Resolver el reCAPTCHA y pulsar 'Consultar Adeudo Predial'",
+            ],
+        )
 
-    def consultar_multas(self, **kwargs) -> dict:
-        self.bitacora.log("consultar_multas", success=True, params_summary={k: str(v)[:20] for k, v in kwargs.items()})
-        if self._is_mock():
-            return mark_simulated({
-                "operation": "consultar_multas",
-                "data": {"placeholder": True, "ns": "guadalajara_mun", "kwargs_received": list(kwargs.keys())},
-                "real_implementation_pending": True,
-            })
-        raise McpError("consultar_multas path real no implementado — ver README", {"hint": "implementar HTTP/API real"})
-
-    def consultar_predial(self, **kwargs) -> dict:
-        self.bitacora.log("consultar_predial", success=True, params_summary={k: str(v)[:20] for k, v in kwargs.items()})
-        if self._is_mock():
-            return mark_simulated({
-                "operation": "consultar_predial",
-                "data": {"placeholder": True, "ns": "guadalajara_mun", "kwargs_received": list(kwargs.keys())},
-                "real_implementation_pending": True,
-            })
-        raise McpError("consultar_predial path real no implementado — ver README", {"hint": "implementar HTTP/API real"})
+    def consultar_adeudos_vehiculares(self, placa: str) -> dict:
+        self.bitacora.log("consultar_adeudos_vehiculares", success=True, params_summary={})
+        if is_mock_mode([], default_when_no_creds=False):
+            return mark_simulated({"placa": placa, "adeudo_total_mxn": 640.0})
+        return handoff_humano(
+            portal=URL_VEHICULAR_JAL,
+            motivo="captcha",
+            detalle="Adeudos vehiculares de Jalisco (refrendo/multas estatales); el portal exige reCAPTCHA.",
+            pasos=[
+                f"Abrir {URL_VEHICULAR_JAL}",
+                f"Capturar la placa {placa} (y número de serie si lo pide)",
+                "Resolver el reCAPTCHA y pulsar 'Consultar'",
+            ],
+        )

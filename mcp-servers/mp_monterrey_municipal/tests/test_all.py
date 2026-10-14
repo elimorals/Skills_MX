@@ -2,68 +2,95 @@
 
 from __future__ import annotations
 
+import os
+
+import httpx
 import pytest
+import respx
 
-from mp_monterrey_municipal.client import MonterreyMunicipalClient
-from mp_monterrey_municipal.server import (
-    FechaInput,
-    PlacaInput,
-    PredialInput,
-    nl_consultar_calidad_aire,
-    nl_consultar_multas,
-    nl_consultar_predial,
-    nl_listar_catalogos,
+from mp_monterrey_municipal.client import URL_PREDIAL, MonterreyMunicipalClient, parse_resultado
+from mp_monterrey_municipal.server import nl_listar_catalogos
+from shared.errors import NotFoundError, UpstreamError, ValidationError
+
+FORM = (
+    '<form><input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="abc" />'
+    '<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="def" /></form>'
 )
-from shared.errors import ValidationError
+NO_EXISTE = ('<span id="ctl00_ContentPlaceHolder1_lbl_warning" class="warning">El expediente '
+             'consultado no existe. Favor de internarlo con otro numero de expediente.</span>')
+GRID = """
+<table id="ctl00_ContentPlaceHolder1_grv_Adeudos">
+ <tr><th>Año</th><th>Total</th></tr>
+ <tr><td><input id="x_chk_AdeudoId" type="checkbox"/></td><td>2026</td><td>PREDIAL</td>
+   <td><span id="x_lbl_Totales_empty">$1,250.50</span><span id="x_lbl_Totales_bnf">$1,000.40</span></td></tr>
+ <tr><td>2025</td><td><span id="y_lbl_Totales_empty">$300.00</span></td></tr>
+ <tr><td>Total</td><td></td></tr>
+</table>"""
 
 
-@pytest.fixture
-def client() -> MonterreyMunicipalClient:
-    return MonterreyMunicipalClient()
+def test_parse_grid():
+    r = parse_resultado(GRID)
+    assert r["adeudo_total_mxn"] == 1550.5
+    assert r["conceptos"][0]["total_con_bonificacion_mxn"] == 1000.4
+    assert r["estatus"] == "con_adeudo"
 
 
-def test_predial_mock(client: MonterreyMunicipalClient) -> None:
-    r = client.consultar_predial("Monterrey", "123456")
-    assert r["municipio"] == "Monterrey"
+def test_parse_no_existe():
+    with pytest.raises(NotFoundError):
+        parse_resultado(NO_EXISTE)
 
 
-def test_predial_municipio_invalido(client: MonterreyMunicipalClient) -> None:
+def test_parse_estructura_desconocida():
+    with pytest.raises(UpstreamError):
+        parse_resultado("<html>otra cosa</html>")
+
+
+@respx.mock
+def test_predial_flujo_postback():
+    respx.get(URL_PREDIAL).mock(return_value=httpx.Response(200, text=FORM))
+    post = respx.post(URL_PREDIAL).mock(return_value=httpx.Response(200, text=GRID))
+    r = MonterreyMunicipalClient().consultar_predial("Monterrey", "09009009")
+    body = post.calls.last.request.content.decode()
+    assert "__VIEWSTATE=abc" in body and "txt_buscar=09009009" in body
+    assert r["adeudo_total_mxn"] == 1550.5 and r["simulated"] is False
+
+
+@respx.mock
+def test_predial_upstream_500():
+    respx.get(URL_PREDIAL).mock(return_value=httpx.Response(500))
+    with pytest.raises(UpstreamError):
+        MonterreyMunicipalClient().consultar_predial("Monterrey", "09009009")
+
+
+def test_otro_municipio_error_explicito():
+    with pytest.raises(UpstreamError):
+        MonterreyMunicipalClient().consultar_predial("Guadalupe", "09009009")
+
+
+def test_municipio_invalido():
     with pytest.raises(ValidationError):
-        client.consultar_predial("Mérida", "123")  # no es del AMM
+        MonterreyMunicipalClient().consultar_predial("Mérida", "123")
 
 
-def test_multas_mock(client: MonterreyMunicipalClient) -> None:
-    r = client.consultar_multas("ABC-123-D")
-    assert r["estado"] == "NL"
-
-
-def test_calidad_aire_mock(client: MonterreyMunicipalClient) -> None:
-    r = client.consultar_calidad_aire_nl("2026-03-15")
-    assert "calidad_aire_imeca" in r
+def test_mock_solo_con_flag(monkeypatch):
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
+    assert MonterreyMunicipalClient().consultar_predial("Monterrey", "1")["simulated"] is True
 
 
 @pytest.mark.asyncio
-async def test_predial_tool() -> None:
-    r = await nl_consultar_predial(
-        PredialInput(municipio="San Pedro Garza García", cuenta_predial="123456")
-    )
-    assert r["municipio"] == "San Pedro Garza García"
-
-
-@pytest.mark.asyncio
-async def test_multas_tool() -> None:
-    r = await nl_consultar_multas(PlacaInput(placa="ABC-123-D"))
-    assert "multas" in r
-
-
-@pytest.mark.asyncio
-async def test_calidad_aire_tool() -> None:
-    r = await nl_consultar_calidad_aire(FechaInput(fecha="2026-03-15"))
-    assert "calidad_aire_imeca" in r
-
-
-@pytest.mark.asyncio
-async def test_catalogos() -> None:
+async def test_catalogos():
     r = await nl_listar_catalogos()
-    assert "Monterrey" in r["municipios_amm"]
-    assert "San Pedro Garza García" in r["municipios_amm"]
+    assert "Monterrey" in r["predial_real"]
+
+
+@pytest.mark.live
+def test_live_expediente_inexistente():
+    with pytest.raises(NotFoundError):
+        MonterreyMunicipalClient().consultar_predial("Monterrey", "00000001")
+
+
+@pytest.mark.live
+@pytest.mark.skipif(not os.environ.get("MTY_EXPEDIENTE"), reason="exporta MTY_EXPEDIENTE")
+def test_live_expediente_real():
+    r = MonterreyMunicipalClient().consultar_predial("Monterrey", os.environ["MTY_EXPEDIENTE"])
+    assert r["simulated"] is False and "adeudo_total_mxn" in r

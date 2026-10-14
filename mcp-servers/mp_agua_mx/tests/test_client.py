@@ -1,23 +1,47 @@
 """Tests mp_agua_mx."""
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
+import httpx
 import pytest
+import respx
 
 _HERE = Path(__file__).resolve().parent
-_MCP_ROOT = _HERE.parent.parent
-sys.path.insert(0, str(_MCP_ROOT))
+sys.path.insert(0, str(_HERE.parent.parent))
+
+from mp_agua_mx.client import AguaMxClient, parse_jmas  # noqa: E402
+from shared.errors import NotFoundError, UpstreamError, ValidationError  # noqa: E402
+
+JMAS_URL = "https://jmasjuarez.gob.mx/v026/pago.php"
+# Estructura real de pago.php (2026-10-14) con datos ficticios.
+JMAS_OK = """
+<p><strong>Número de Cuenta:</strong> 123</p>
+<p><strong>Nombre:</strong> PERSONA FICTICIA</p>
+<p><strong>Tarifa:</strong> TARIFA RESIDENCIAL</p>
+<p><strong>Estado de Cuenta:</strong> ACTIVO</p>
+<p><strong>Período:</strong> Año: 2026 | Mes: 10</p>
+<h6>Consumo Anterior</h6>
+<h3 class="text-primary">20 m³</h3>
+<h6>Saldo Actual</h6>
+<h3 class="text-danger">$ 1,030.14</h3>
+<h6>Fecha de Vencimiento</h6>
+<h3 class="text-warning">29/10/2026</h3>
+<h5>Detalle del Cobro</h5>
+<table><tr><th>Concepto</th><th>Monto</th></tr>
+<tr><td>AGUA POTABLE DOMESTICO</td><td>$1,030.14</td></tr>
+<tr><td>TOTAL</td><td>$ 1,030.14</td></tr></table>
+"""
+JMAS_NF = '<div class="alert alert-danger"><p>No se encontró la cuenta o no existe información disponible.</p></div>'
 
 
 @pytest.fixture(autouse=True)
-def _mock_mode(monkeypatch, tmp_path):
-    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
-    monkeypatch.delenv("PLUGINS_MX_AGUA_LIVE", raising=False)
+def _env(monkeypatch, tmp_path):
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
     monkeypatch.setenv("PLUGINS_MX_CACHE_DIR", str(tmp_path / "cache"))
-    monkeypatch.setenv("PLUGINS_MX_BITACORA_DIR", str(tmp_path / "bita"))
-    yield
+    monkeypatch.setenv("PLUGINS_MX_AUDIT_DIR", str(tmp_path / "audit"))
 
 
 class TestCatalogo:
@@ -25,136 +49,106 @@ class TestCatalogo:
         from shared.agua_mx import CATALOGO_AGUA
         assert len(CATALOGO_AGUA) >= 10
 
-    def test_sacmex_existe(self):
-        from shared.agua_mx import buscar_organismo
-        org = buscar_organismo("sacmex")
-        assert org is not None
-        assert org.estado == "CDMX"
-        assert org.poblacion_aprox > 9_000_000
-
-    def test_buscar_no_existe(self):
-        from shared.agua_mx import buscar_organismo
-        assert buscar_organismo("inexistente") is None
-
-    def test_listar_solo_consultables(self):
+    def test_solo_validados_son_consultables(self):
         from shared.agua_mx import listar_organismos
-        todos = listar_organismos(solo_consultables=False)
-        consultables = listar_organismos(solo_consultables=True)
-        assert len(consultables) <= len(todos)
-        assert all(o.consultable for o in consultables)
+        assert [o.clave for o in listar_organismos(solo_consultables=True)] == ["jmas_juarez"]
 
-    def test_buscar_por_estado(self):
-        from shared.agua_mx import buscar_por_estado
-        cdmx = buscar_por_estado("CDMX")
-        assert any(o.clave == "sacmex" for o in cdmx)
-        nl = buscar_por_estado("NL")
-        assert any(o.clave == "sadm" for o in nl)
+    def test_siapa_es_captcha(self):
+        from shared.agua_mx import buscar_organismo
+        assert buscar_organismo("siapa").metodo == "publica_captcha"
 
     def test_estadisticas_consistencia(self):
         from shared.agua_mx import estadisticas
         stats = estadisticas()
-        assert stats["total_organismos"] >= 10
         assert 0 <= stats["consultables"] <= stats["total_organismos"]
-        assert stats["poblacion_consultable_aprox"] <= stats["poblacion_total_cubierta"]
+
+
+class TestParserJmas:
+    def test_extrae_saldo_sin_pii(self):
+        r = parse_jmas(JMAS_OK)
+        assert r["adeudo_mxn"] == 1030.14
+        assert r["vencimiento"] == "29/10/2026"
+        assert r["consumo_m3"] == 20.0
+        assert r["estado_cuenta"] == "ACTIVO"
+        assert r["conceptos"] == [{"concepto": "AGUA POTABLE DOMESTICO", "monto_mxn": 1030.14}]
+        assert "FICTICIA" not in str(r)
+
+    def test_no_encontrada(self):
+        with pytest.raises(NotFoundError):
+            parse_jmas(JMAS_NF)
+
+    def test_estructura_desconocida(self):
+        with pytest.raises(UpstreamError):
+            parse_jmas("<html>mantenimiento</html>")
 
 
 class TestConsultarAdeudo:
+    @respx.mock
+    def test_jmas_real(self):
+        route = respx.get(JMAS_URL).mock(return_value=httpx.Response(200, text=JMAS_OK))
+        r = AguaMxClient().consultar_adeudo("jmas_juarez", "123456")
+        assert route.calls.last.request.url.params["cuenta"] == "123456"
+        assert r["simulated"] is False and r["adeudo_mxn"] == 1030.14
+
+    @respx.mock
+    def test_jmas_caido(self):
+        respx.get(JMAS_URL).mock(return_value=httpx.Response(502))
+        with pytest.raises(UpstreamError):
+            AguaMxClient().consultar_adeudo("jmas_juarez", "123456")
+
+    def test_siapa_handoff_captcha(self):
+        r = AguaMxClient().consultar_adeudo("siapa", "1234567")
+        assert r["requiere_humano"] is True and r["motivo"] == "captcha"
+        assert r["simulated"] is False
+
+    def test_no_implementado_es_error_explicito(self):
+        with pytest.raises(UpstreamError) as exc:
+            AguaMxClient().consultar_adeudo("sacmex", "12345678901")
+        assert exc.value.details["implementado"] is False
+
     def test_organismo_inexistente(self):
-        from mp_agua_mx.client import AguaMxClient
-        from shared.errors import NotFoundError
-        c = AguaMxClient()
         with pytest.raises(NotFoundError):
-            c.consultar_adeudo("inexistente", "12345678")
+            AguaMxClient().consultar_adeudo("inexistente", "12345678")
 
     def test_cuenta_formato_invalido(self):
-        from mp_agua_mx.client import AguaMxClient
-        from shared.errors import ValidationError
-        c = AguaMxClient()
         with pytest.raises(ValidationError):
-            c.consultar_adeudo("sacmex", "X")
+            AguaMxClient().consultar_adeudo("sacmex", "X")
 
-    def test_consultar_sacmex_par_al_dia(self):
-        from mp_agua_mx.client import AguaMxClient
-        c = AguaMxClient()
-        r = c.consultar_adeudo("sacmex", "12345678902")
-        assert r["consultado"] is True
-        assert r["estatus"] == "AL DIA"
-        assert r["adeudo_mxn"] == 0.0
-        assert r["simulated"] is True
+    def test_mock_solo_con_flag(self, monkeypatch):
+        monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
+        r = AguaMxClient().consultar_adeudo("sacmex", "12345678902")
+        assert r["simulated"] is True and r["estatus"] == "AL DIA"
 
-    def test_consultar_siapa_impar_adeudo(self):
-        from mp_agua_mx.client import AguaMxClient
-        c = AguaMxClient()
-        r = c.consultar_adeudo("siapa", "1234567")  # ends in 7 (impar)
-        assert r["estatus"] in ("PENDIENTE", "VENCIDO")
-        assert r["adeudo_mxn"] > 0
-        assert any("recargos" in adv.lower() or "pendiente" in adv.lower() or "vencido" in adv.lower() for adv in r["advertencias"])
-
-    def test_organismo_no_consultable(self):
-        from mp_agua_mx.client import AguaMxClient
-        c = AguaMxClient()
-        r = c.consultar_adeudo("japay", "12345")
-        assert r["estatus"] == "NO_IMPLEMENTADO"
-        assert r["consultado"] is False
-        assert any("no está implementado" in adv.lower() or "scraper" in adv.lower() for adv in r["advertencias"])
+    def test_sin_token_recaptcha_por_env(self):
+        import mp_agua_mx.client as c
+        assert "RECAPTCHA_TOKEN" not in Path(c.__file__).read_text()
 
 
 class TestServerTools:
-    def test_listar_devuelve_estructura(self):
-        from mp_agua_mx.client import AguaMxClient
-        c = AguaMxClient()
-        r = c.listar_organismos()
-        assert r["total"] >= 10
-        assert len(r["organismos"]) == r["total"]
-        sacmex = next((o for o in r["organismos"] if o["clave"] == "sacmex"), None)
-        assert sacmex is not None
-        assert sacmex["estado"] == "CDMX"
+    def test_listar(self):
+        r = AguaMxClient().listar_organismos()
+        assert r["total"] == len(r["organismos"])
 
     def test_buscar_por_estado_jal(self):
-        from mp_agua_mx.client import AguaMxClient
-        c = AguaMxClient()
-        r = c.buscar_por_estado("JAL")
-        assert r["encontrados"] >= 1
+        r = AguaMxClient().buscar_por_estado("JAL")
         assert any(o["clave"] == "siapa" for o in r["organismos"])
 
-    def test_estadisticas(self):
-        from mp_agua_mx.client import AguaMxClient
-        c = AguaMxClient()
-        r = c.estadisticas_catalogo()
-        assert "total_organismos" in r
-        assert "porcentaje_pob_nacional_consultable" in r
-        assert 0 < r["porcentaje_pob_nacional_consultable"] < 100
+
+@pytest.mark.live
+def test_live_jmas_cuenta_inexistente():
+    with pytest.raises(NotFoundError):
+        AguaMxClient().consultar_adeudo("jmas_juarez", "999999999999")
 
 
-class TestSIAPAParser:
-    def test_parser_extrae_adeudo(self):
-        from mp_agua_mx.client import _parse_siapa_html
-        html = """
-        <html><body>
-          <h2>Consulta cuenta SIAPA</h2>
-          <p>Adeudo total: $ 1,234.50</p>
-          <p>Consumo: 25.40 m3</p>
-          <p>Estado: PENDIENTE</p>
-        </body></html>
-        """
-        r = _parse_siapa_html(html, "12345678")
-        assert r["adeudo_total_mxn"] == 1234.50
-        assert r["estatus"] == "PENDIENTE"
-        assert "parse_partial" not in r
-
-    def test_parser_html_vacio_marca_needs_calibration(self):
-        from mp_agua_mx.client import _parse_siapa_html
-        r = _parse_siapa_html("<html>sin datos</html>", "12345678")
-        assert r.get("parse_partial") is True
-        assert r.get("needs_calibration") is True
+@pytest.mark.live
+@pytest.mark.skipif(not os.environ.get("JMAS_CUENTA"), reason="exporta JMAS_CUENTA (cuenta propia)")
+def test_live_jmas_cuenta_real():
+    r = AguaMxClient().consultar_adeudo("jmas_juarez", os.environ["JMAS_CUENTA"])
+    assert r["simulated"] is False and r["adeudo_mxn"] >= 0
 
 
-class TestLiveFlag:
-    def test_live_flag_no_siapa_se_queda_en_mock(self, monkeypatch):
-        """LIVE flag activo pero organismo != siapa → mock."""
-        monkeypatch.setenv("PLUGINS_MX_AGUA_LIVE", "1")
-        from mp_agua_mx.client import AguaMxClient
-        c = AguaMxClient()
-        r = c.consultar_adeudo("sacmex", "12345678901")  # 11 dígitos válidos SACMEX
-        # SACMEX no es siapa → mock o not_implemented
-        assert r.get("simulated") is True or r.get("consultado") is False
+@pytest.mark.live
+def test_live_siapa_sigue_con_recaptcha():
+    from shared.agua_mx import URL_SIAPA_CONSULTA
+    # siapa.gob.mx sirve una cadena TLS incompleta (2026-10-14); solo leemos si hay captcha.
+    assert "recaptcha" in httpx.get(URL_SIAPA_CONSULTA, timeout=30, verify=False).text.lower()
