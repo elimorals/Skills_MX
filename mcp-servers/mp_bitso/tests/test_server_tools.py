@@ -41,7 +41,8 @@ async def test_order_book() -> None:
 
 
 @pytest.mark.asyncio
-async def test_available_books() -> None:
+async def test_available_books(monkeypatch) -> None:
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
     r = await bitso_list_available_books()
     assert "books" in r
 
