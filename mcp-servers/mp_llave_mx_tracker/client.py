@@ -5,8 +5,9 @@ estatales ya integraron Llave MX como SSO ciudadano? El portal no publica esta
 lista — la construimos por scraping de portales gob.mx y detección heurística
 del flow OAuth `llave.gob.mx/oauthV2.xhtml?client_id=...`.
 
-Path real: visita cada portal candidato con Playwright y busca redirección o
-botón "Iniciar sesión con Llave MX". Mock por default.
+Path real: `verificar_en_vivo` hace GET a la portada (httpx) y busca redirección OAuth,
+enlace a llave.gob.mx o mención de "Llave MX". Snapshot del 2026-10-14 en
+DETECCION_2026_10_14. Mock solo con PLUGINS_MX_MOCK=1; sin fallback a mock.
 """
 from __future__ import annotations
 
@@ -22,7 +23,13 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
-from shared.mock import mark_simulated  # noqa: E402
+from shared.errors import handle_httpx_error  # noqa: E402
+from shared.http_helpers import build_ssl_verify  # noqa: E402
+from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+
+import re  # noqa: E402
+
+import httpx  # noqa: E402
 
 
 NAMESPACE = "llave_mx_tracker"
@@ -109,7 +116,8 @@ DEPENDENCIAS_MONITOREADAS: list[dict[str, Any]] = [
      "nivel": "estatal", "sector": "transversal",
      "portal_url": "https://www.bajacalifornia.gob.mx/",
      "status_2026_06": "no_integrado",
-     "nota": "BC tiene su propio SSO estatal (URBEM)."},
+     "nota": ("BC tiene su propio SSO estatal (URBEM). 2026-10-14: la portada enlaza a "
+              "https://www.llave.gob.mx (logo Llave MX); no se vio flujo OAuth.")},
     {"clave": "cdmx", "nombre": "Llave CDMX",
      "nivel": "estatal", "sector": "transversal",
      "portal_url": "https://llave.cdmx.gob.mx/",
@@ -130,6 +138,45 @@ DEPENDENCIAS_MONITOREADAS: list[dict[str, Any]] = [
 ]
 
 STATUS_VALIDOS = {"integrado", "anunciado_no_visible", "no_integrado", "desconocido"}
+
+# Resultado de la detección en vivo (no prueba ausencia: solo mira la página de entrada).
+DETECCION_VALIDOS = {"oauth_llave_detectado", "enlace_llave_gob_mx", "mencion_llave_mx",
+                     "no_detectado_en_portada", "inaccesible"}
+
+# Snapshot de verificar_en_vivo sobre las 20 portadas, 2026-10-14 (GET httpx, 5 s entre hosts).
+DETECCION_2026_10_14: dict[str, str] = {
+    "sat": "no_detectado_en_portada", "imss": "inaccesible", "infonavit": "inaccesible",
+    "issste": "no_detectado_en_portada", "sep": "no_detectado_en_portada",
+    "sre_pasaporte": "inaccesible", "ine": "no_detectado_en_portada",
+    "renapo": "no_detectado_en_portada", "profeco": "no_detectado_en_portada",
+    "cofepris": "no_detectado_en_portada", "cre": "no_detectado_en_portada",
+    "conagua": "no_detectado_en_portada", "atdt": "no_detectado_en_portada",
+    "gobmx": "no_detectado_en_portada", "bienestar": "no_detectado_en_portada",
+    "bc": "enlace_llave_gob_mx", "cdmx": "no_detectado_en_portada",
+    "edomex": "no_detectado_en_portada", "jal": "no_detectado_en_portada",
+    "nl": "no_detectado_en_portada",
+}
+
+BROWSER_UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36")
+
+
+def detectar_llave(html: str, url_final: str) -> dict[str, Any]:
+    """Heurística sobre la página de entrada: OAuth, enlace o mención de Llave MX."""
+    low = (html or "").lower()
+    url = (url_final or "").lower()
+    oauth = "llave.gob.mx/oauth" in url or "llave.gob.mx/oauth" in low
+    enlace = bool(re.search(r"""href=["'][^"']*llave\.gob\.mx""", low))
+    mencion = bool(re.search(r"llave\s*mx", low))
+    if oauth:
+        deteccion = "oauth_llave_detectado"
+    elif enlace:
+        deteccion = "enlace_llave_gob_mx"
+    elif mencion:
+        deteccion = "mencion_llave_mx"
+    else:
+        deteccion = "no_detectado_en_portada"
+    return {"deteccion": deteccion, "oauth": oauth, "enlace_llave_gob_mx": enlace, "mencion_texto": mencion}
 
 
 class LlaveMxTrackerClient:
@@ -159,10 +206,13 @@ class LlaveMxTrackerClient:
         clave_norm = (clave or "").lower().strip()
         for d in DEPENDENCIAS_MONITOREADAS:
             if d["clave"] == clave_norm:
-                return mark_simulated(
-                    {**d, "fecha_corte": datetime.now(timezone.utc).strftime("%Y-%m-%d")},
-                    note="Status curado al 2026-06-15. Path real verifica login Llave MX en vivo.",
-                )
+                return {
+                    **d,
+                    "status_curado_verificado": False,
+                    "deteccion_2026_10_14": DETECCION_2026_10_14.get(d["clave"]),
+                    "nota_status": ("status_2026_06 es curado a mano y no verificado; la detección "
+                                    "es el snapshot en vivo de la portada. Usa verificar_en_vivo para hoy."),
+                }
         raise ValidationError(
             f"clave no reconocida: {clave!r}. Usar `listar_dependencias` para ver opciones."
         )
@@ -178,88 +228,44 @@ class LlaveMxTrackerClient:
             nivel = d["nivel"]
             counts_nivel.setdefault(nivel, {s: 0 for s in STATUS_VALIDOS})
             counts_nivel[nivel][d["status_2026_06"]] += 1
-        pct_integrado = round(counts_status["integrado"] / total * 100, 1)
+        por_deteccion: dict[str, int] = {k: 0 for k in sorted(DETECCION_VALIDOS)}
+        for d in DEPENDENCIAS_MONITOREADAS:
+            por_deteccion[DETECCION_2026_10_14[d["clave"]]] += 1
         return {
             "total_dependencias_monitoreadas": total,
-            "por_status": counts_status,
-            "por_nivel": counts_nivel,
-            "porcentaje_integrado": pct_integrado,
-            "porcentaje_no_integrado": round(counts_status["no_integrado"] / total * 100, 1),
-            "porcentaje_desconocido": round(counts_status["desconocido"] / total * 100, 1),
-            "meta_lnetb_2030_pct": 80.0,
-            "brecha_vs_meta_pct": round(80.0 - pct_integrado, 1),
-            "fuente_legal": "Lineamientos Llave MX SIDOF 2025 + LNETB DOF 16-jul-2025",
-            "fecha_corte": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+            "por_status_curado": counts_status,
+            "por_nivel_curado": counts_nivel,
+            "por_deteccion_vivo_2026_10_14": por_deteccion,
+            "nota": ("El status curado no está verificado. La detección en vivo solo revisa la portada: "
+                     "'no_detectado_en_portada' no prueba que no exista login con Llave MX."),
+            "fecha_snapshot": "2026-10-14",
         }
 
     def verificar_en_vivo(self, clave: str) -> dict[str, Any]:
-        """Path real Playwright — visita el portal candidato y detecta Llave MX.
-
-        Sin Playwright instalado retorna mock con shape de respuesta real.
-        Detección heurística:
-            1. Visita portal_url
-            2. Busca texto "Llave MX" o "Iniciar sesión con Llave"
-            3. Busca redirección a llave.gob.mx/oauthV2.xhtml
-            4. Marca integrado / no_integrado según hallazgo
-        """
+        """GET real a la página de entrada del portal y detección de Llave MX. Sin fallback."""
         self._log("verificar_en_vivo", {"clave": clave})
         clave_norm = (clave or "").lower().strip()
         target = next((d for d in DEPENDENCIAS_MONITOREADAS if d["clave"] == clave_norm), None)
         if not target:
             raise ValidationError(f"clave no reconocida: {clave!r}")
+        if is_mock_mode([], default_when_no_creds=False):
+            return mark_simulated({**target, "deteccion": "no_detectado_en_portada"})
 
-        from shared.playwright_real import is_public_real_enabled
-        if not is_public_real_enabled():
-            return mark_simulated(
-                {
-                    **target,
-                    "verificacion_metodo": "mock",
-                    "detecciones": {
-                        "texto_llave_encontrado": None,
-                        "redireccion_oauth_detectada": None,
-                    },
-                    "fecha_verificacion": datetime.now(timezone.utc).isoformat(),
-                },
-                note="Mock — para path real setear MP_PLAYWRIGHT_PUBLIC=1",
-            )
-
-        # Path real: importación lazy
-        from shared.playwright_real import playwright_session, with_real_or_fallback
-
-        def _real() -> dict[str, Any]:
-            with playwright_session() as page:
-                page.goto(target["portal_url"], wait_until="domcontentloaded")
-                body = (page.content() or "").lower()
-                texto_llave = "llave mx" in body or "iniciar sesión con llave" in body
-                # Detección de redirect oauth: inspeccionar URL final o links
-                current_url = page.url
-                oauth_detect = "llave.gob.mx/oauth" in current_url
-                if not oauth_detect:
-                    # Buscar enlaces a llave.gob.mx/oauth
-                    links = page.eval_on_selector_all(
-                        "a[href*='llave.gob.mx']",
-                        "els => els.map(e => e.getAttribute('href'))",
-                    )
-                    oauth_detect = any("oauth" in (l or "").lower() for l in links or [])
-                inferido = "integrado" if (texto_llave or oauth_detect) else "no_integrado"
-                return {
-                    **target,
-                    "status_inferido_vivo": inferido,
-                    "verificacion_metodo": "playwright_real",
-                    "detecciones": {
-                        "texto_llave_encontrado": texto_llave,
-                        "redireccion_oauth_detectada": oauth_detect,
-                        "url_final": current_url,
-                    },
-                    "fecha_verificacion": datetime.now(timezone.utc).isoformat(),
-                    "simulated": False,
-                }
-
-        def _fb() -> dict[str, Any]:
-            return {
-                **target,
-                "verificacion_metodo": "fallback_mock_tras_error",
-                "fecha_verificacion": datetime.now(timezone.utc).isoformat(),
-            }
-
-        return with_real_or_fallback(_real, _fb, portal="llave_mx_tracker")
+        base = {**target, "verificacion_metodo": "httpx_get_portada",
+                "fecha_verificacion": datetime.now(timezone.utc).isoformat(), "simulated": False}
+        try:
+            with httpx.Client(verify=build_ssl_verify(), timeout=30.0, follow_redirects=True,
+                              headers={"User-Agent": BROWSER_UA, "Accept-Language": "es-MX,es;q=0.9"}) as c:
+                r = c.get(target["portal_url"])
+        except httpx.TransportError as e:
+            # Portal caído o TLS roto: es el hallazgo, no un error del MCP.
+            return {**base, "deteccion": "inaccesible", "error": f"{type(e).__name__}: {str(e)[:160]}"}
+        except httpx.HTTPError as e:
+            raise handle_httpx_error(e) from e
+        if r.status_code >= 400 or "perfdrive.com" in str(r.url):
+            waf = "radware" if "perfdrive.com" in str(r.url) else None
+            return {**base, "deteccion": "inaccesible", "http_status": r.status_code,
+                    "bloqueado_por_waf": waf}
+        return {**base, "http_status": r.status_code, "url_final": str(r.url),
+                **detectar_llave(r.text, str(r.url)),
+                "nota": "Solo se revisa la portada; un login interno con Llave MX no se detecta así."}
