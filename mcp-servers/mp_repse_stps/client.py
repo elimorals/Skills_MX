@@ -7,7 +7,9 @@
 
 Cache 30 días — el padrón cambia raramente (altas/bajas/renovaciones).
 
-Modo mock por default. Real: setear MP_PLAYWRIGHT_PUBLIC=1.
+Real por default con httpx contra los endpoints JSON del portal
+(https://repse.stps.gob.mx/, ver `shared/repse_stps.py`). Mock solo con
+PLUGINS_MX_MOCK=1. Errores del portal → UpstreamError.
 """
 
 from __future__ import annotations
@@ -25,10 +27,23 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
-from shared.errors import McpError, NotFoundError, ValidationError  # noqa: E402
-from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+import os  # noqa: E402
+from contextlib import closing  # noqa: E402
+
+import httpx  # noqa: E402
+
+from shared.errors import (  # noqa: E402
+    NotFoundError,
+    UpstreamError,
+    ValidationError,
+    handle_httpx_error,
+)
+from shared.http_helpers import build_ssl_verify, default_user_agent  # noqa: E402
+from shared.mock import mark_simulated  # noqa: E402
 from shared.repse_stps import (  # noqa: E402
     URL_REPSE_APP,
+    URL_REPSE_BASE,
+    mapear_detalle,
     normalizar_razon_social,
     parsear_aviso_registro,
     parsear_entidad_municipio,
@@ -195,8 +210,11 @@ class RepseStpsClient:
             # Tomar primer match (más relevante)
             primer = busqueda["encontrados"][0]
             try:
-                detalle = self.consultar_por_numero_registro(primer["numero_registro"])
-            except Exception as e:
+                if primer.get("id_padron") is not None:
+                    detalle = self._detalle_por_id(primer["id_padron"])
+                else:
+                    detalle = self.consultar_por_numero_registro(primer["numero_registro"])
+            except (NotFoundError, UpstreamError) as e:
                 return {
                     "razon_social": razon_social,
                     "registrado": True,
@@ -229,7 +247,7 @@ class RepseStpsClient:
     # ============================================================
 
     def _is_mock(self) -> bool:
-        return is_mock_mode(credential_env_vars=[])
+        return os.environ.get("PLUGINS_MX_MOCK") == "1"
 
     @staticmethod
     def _es_vigente(vigencia_str: Optional[str]) -> bool:
@@ -285,15 +303,85 @@ class RepseStpsClient:
 
         return self._consultar_detalle_real(numero_registro)
 
-    def _consultar_busqueda_real(self, razon_norm: str, limite: int) -> dict[str, Any]:
-        raise McpError(
-            "Playwright real no instalado. Setear MP_PLAYWRIGHT_PUBLIC=1 + "
-            "instalar playwright. URL: " + URL_REPSE_APP,
-            {"hint": "ver shared/repse_stps.py para selectores DOM validados"},
+    # ------------------------------------------------------------
+    # Path real (httpx). Endpoints leídos de sourceInicio-*.js del portal:
+    #   GET  /busca_razon_social?term=<folio|RFC|razón social> → {results:[{id,text}]}
+    #   POST /buscar-padron (multipart razon_social=<id>, X-CSRF-TOKEN) → detalle
+    # ------------------------------------------------------------
+
+    def _http(self) -> httpx.Client:
+        c = httpx.Client(
+            base_url=URL_REPSE_BASE,
+            timeout=30.0,
+            verify=build_ssl_verify(),
+            follow_redirects=True,
+            headers={
+                "User-Agent": default_user_agent("mp_repse_stps"),
+                "X-Requested-With": "XMLHttpRequest",
+                "Accept": "application/json",
+            },
         )
+        try:
+            r = c.get("/")
+            r.raise_for_status()
+        except httpx.HTTPError as exc:
+            c.close()
+            raise handle_httpx_error(exc) from exc
+        m = re.search(r'name="csrf-token" content="([^"]+)"', r.text)
+        if not m:
+            c.close()
+            raise UpstreamError("REPSE no entregó csrf-token; el portal cambió.", {"url": URL_REPSE_BASE})
+        c.headers["X-CSRF-TOKEN"] = m.group(1)
+        return c
+
+    @staticmethod
+    def _json(r: httpx.Response) -> dict[str, Any]:
+        try:
+            r.raise_for_status()
+            return r.json()
+        except httpx.HTTPError as exc:
+            raise handle_httpx_error(exc) from exc
+        except ValueError as exc:
+            raise UpstreamError("REPSE devolvió algo que no es JSON.", {"body_preview": r.text[:300]}) from exc
+
+    def _buscar_ids(self, http: httpx.Client, term: str) -> list[dict[str, Any]]:
+        data = self._json(http.get("/busca_razon_social", params={"term": term}))
+        if not data.get("success", True):
+            raise UpstreamError("REPSE respondió success=false en la búsqueda.", {"respuesta": data})
+        return data.get("results", [])
+
+    def _detalle(self, http: httpx.Client, id_padron: int) -> dict[str, Any]:
+        data = self._json(http.post("/buscar-padron", files={"razon_social": (None, str(id_padron))}))
+        if int(data.get("registro", 0)) != 1:
+            raise NotFoundError(f"REPSE no tiene registro vigente para id {id_padron}.", {"respuesta": data})
+        out = mapear_detalle(data)
+        out.update(url_consultado=URL_REPSE_BASE, simulated=False)
+        return out
+
+    def _detalle_por_id(self, id_padron: int) -> dict[str, Any]:
+        with closing(self._http()) as http:
+            return self._detalle(http, id_padron)
+
+    def _consultar_busqueda_real(self, razon_norm: str, limite: int) -> dict[str, Any]:
+        with closing(self._http()) as http:
+            res = self._buscar_ids(http, razon_norm)
+        encontrados = [
+            {"razon_social": r.get("text"), "id_padron": r.get("id"), "numero_registro": None}
+            for r in res[:limite]
+        ]
+        return {
+            "razon_social_buscada": razon_norm,
+            "encontrados": encontrados,
+            "total": len(res),
+            "url_consultado": URL_REPSE_BASE,
+            "simulated": False,
+        }
 
     def _consultar_detalle_real(self, numero_registro: str) -> dict[str, Any]:
-        raise McpError(
-            "Playwright real no instalado. Setear MP_PLAYWRIGHT_PUBLIC=1.",
-            {"hint": "ver shared/repse_stps.py para selectores DOM validados"},
-        )
+        # ponytail: revisa hasta 5 coincidencias del folio; el portal no expone búsqueda exacta por folio
+        with closing(self._http()) as http:
+            for r in self._buscar_ids(http, numero_registro)[:5]:
+                det = self._detalle(http, r["id"])
+                if str(det.get("folio")) == numero_registro:
+                    return det
+        raise NotFoundError(f"Folio REPSE {numero_registro} no encontrado.", {"url": URL_REPSE_BASE})
