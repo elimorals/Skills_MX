@@ -21,10 +21,13 @@ _client = INEVerificacionClient()
 
 class VerifInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    cic: str = Field(..., min_length=13, max_length=13)
-    clave_elector: str = Field(..., min_length=18, max_length=18)
-    anio_emision: int = Field(..., ge=2008, le=2099)
-    autorizacion_token: str = Field(..., min_length=16, description="Token autorización titular LFPDPPP")
+    modelo: str = Field(..., min_length=1, max_length=1, description="Modelo de credencial A-J")
+    autorizacion_token: str = Field(..., min_length=16, description="Token de autorización del titular")
+    cic: str | None = Field(None, description="9 dígitos (modelos D-J)")
+    id_ciudadano: str | None = Field(None, description="9 dígitos (modelos E-J)")
+    ocr: str | None = Field(None, description="13 dígitos (modelos A-D)")
+    clave_elector: str | None = Field(None, description="18 caracteres (modelos A-C)")
+    numero_emision: str | None = Field(None, description="2 dígitos (modelos A-C)")
 
 
 class QRInput(BaseModel):
@@ -34,8 +37,8 @@ class QRInput(BaseModel):
 
 class VigenciaInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    cic: str = Field(..., min_length=13, max_length=13)
-    autorizacion_token: str = Field(..., min_length=16)
+    modelo: str = Field(..., min_length=1, max_length=1)
+    anio_emision: int = Field(..., ge=1990, le=2100)
 
 
 class AutorizacionInput(BaseModel):
@@ -45,11 +48,12 @@ class AutorizacionInput(BaseModel):
     vigencia_dias: int = Field(90, ge=1, le=365)
 
 
-@mcp.tool(annotations={"title": "Verificar datos INE", "readOnlyHint": True})
+@mcp.tool(annotations={"title": "Verificar credencial INE (handoff, reCAPTCHA)", "readOnlyHint": True})
 def ine_verificar_datos(args: VerifInput) -> dict:
     return _client.verificar_datos(
-        cic=args.cic, clave_elector=args.clave_elector,
-        anio_emision=args.anio_emision, autorizacion_token=args.autorizacion_token,
+        modelo=args.modelo, autorizacion_token=args.autorizacion_token,
+        cic=args.cic, id_ciudadano=args.id_ciudadano, ocr=args.ocr,
+        clave_elector=args.clave_elector, numero_emision=args.numero_emision,
     )
 
 
@@ -60,10 +64,10 @@ def ine_verificar_qr(args: QRInput) -> dict:
 
 @mcp.tool(annotations={"title": "Consultar vigencia INE", "readOnlyHint": True})
 def ine_consultar_vigencia(args: VigenciaInput) -> dict:
-    return _client.consultar_vigencia(cic=args.cic, autorizacion_token=args.autorizacion_token)
+    return _client.consultar_vigencia(modelo=args.modelo, anio_emision=args.anio_emision)
 
 
-@mcp.tool(annotations={"title": "Generar autorización LFPDPPP", "readOnlyHint": True})
+@mcp.tool(annotations={"title": "Plantilla de autorización del titular", "readOnlyHint": True})
 def ine_generar_autorizacion(args: AutorizacionInput) -> dict:
     return _client.generar_autorizacion(curp=args.curp, proposito=args.proposito,
                                           vigencia_dias=args.vigencia_dias)
