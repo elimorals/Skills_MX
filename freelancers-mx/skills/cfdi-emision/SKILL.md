@@ -16,7 +16,7 @@ Triggers menos obvios pero que también lo activan:
 - "Me pidieron CFDI por el servicio que vendí" → usa este skill
 - "El cliente quiere factura, no remisión" → usa este skill
 - "Necesito que el comprobante sea deducible" → usa este skill (probablemente requiere uso correcto del CFDI)
-- "Reembolso de viáticos" → usa este skill (CFDI tipo Egreso con uso CN01 o nota de crédito)
+- "Reembolso de viáticos" → usa este skill para aclarar el flujo: los viáticos de empleados se comprueban con CFDI de nómina (complemento) o con los CFDI de los gastos a nombre de la empresa; no es un CFDI de Egreso (CN01 es exclusivo de Nómina)
 
 ## Cuándo NO usar
 
@@ -55,7 +55,6 @@ Catálogo `c_UsoCFDI` del SAT. Los más comunes:
 - `G01` Adquisición de mercancías
 - `G02` Devoluciones, descuentos o bonificaciones (usar con CFDI de egreso)
 - `G03` Gastos en general — **el más usado por empresas**
-- `P01` Por definir — válido pero el SAT recomienda no usarlo (señal de pereza fiscal)
 - `S01` Sin efectos fiscales — para CFDI a público en general (factura global)
 - `D01` Honorarios médicos, dentales y gastos hospitalarios
 - `D02` Gastos médicos por incapacidad o discapacidad
@@ -63,11 +62,13 @@ Catálogo `c_UsoCFDI` del SAT. Los más comunes:
 - `CP01` Pagos — uso obligatorio para CFDI tipo P (complemento de pago)
 - `CN01` Nómina — uso obligatorio para CFDI tipo N
 
-Regla crítica: el **UsoCFDI debe ser compatible con el régimen fiscal del receptor**. El SAT publica una matriz de compatibilidad — un cliente RESICO no puede usar G03, por ejemplo. Si el sistema PAC rechaza por incompatibilidad, ofrecer alternativas válidas según el régimen del receptor.
+Nota: `P01` (Por definir) **ya no existe en CFDI 4.0**; si un cliente no sabe su uso, preguntar (G03 o S01 según el caso).
+
+Regla crítica: el **UsoCFDI debe ser compatible con el régimen fiscal del receptor** (columna `RegimenFiscalReceptor` del catálogo c_UsoCFDI). Ejemplo: una PM 601 no puede usar `D01`–`D10` (deducciones personales, solo PF); RESICO 626 sí puede usar `G03`. Si el sistema PAC rechaza por incompatibilidad, ofrecer alternativas válidas según el régimen del receptor.
 
 ### Forma de pago (campo `FormaPago`)
 Catálogo `c_FormaPago`. Los relevantes:
-- `01` Efectivo (con tope de $2,000 MXN por ley antilavado para deducibilidad)
+- `01` Efectivo (pagos > $2,000 MXN en efectivo no son deducibles: Art. 27 fr. III LISR)
 - `02` Cheque nominativo
 - `03` Transferencia electrónica de fondos (SPEI)
 - `04` Tarjeta de crédito
@@ -85,14 +86,18 @@ Campo obligatorio en 4.0 a nivel de cada concepto:
 - `01` No objeto del impuesto
 - `02` Sí objeto del impuesto (lo más común; obliga a desglosar IVA)
 - `03` Sí objeto del impuesto y no obligado al desglose
-- `04` Sí objeto del impuesto y no causa impuesto (tasa 0 distinta de exento)
+- `04` Sí objeto del impuesto y no causa impuesto
+- `05` Sí objeto del impuesto, IVA crédito PODEBI
+- `06`–`08` Supuestos especiales de no traslado de IVA / desglose de IEPS (catálogo actualizado dic-2024)
+
+Tasa 0% **no** es `04`: se usa `02` con TipoFactor `Tasa` y TasaOCuota `0.000000`. Exento también es `02` con TipoFactor `Exento`.
 
 ### Exportación (`Exportacion`)
 Campo obligatorio en 4.0:
 - `01` No aplica (lo más común para operaciones nacionales)
-- `02` Definitiva (clave A1 en Carta Porte de exportación)
+- `02` Definitiva con clave A1 (clave de pedimento)
 - `03` Temporal
-- `04` No objeto del impuesto
+- `04` Definitiva con clave distinta a A1 o cuando no existe enajenación en términos del CFF
 
 ## Datos mínimos que debes recopilar antes de timbrar
 
@@ -130,7 +135,7 @@ Ejecuta estas validaciones contra el payload. Si una falla, **no llames al PAC**
 
 3. **Subtotal y Total**: la suma de importes de los conceptos debe coincidir con Subtotal. Total = Subtotal + impuestos trasladados − impuestos retenidos. Sin diferencias de redondeo > $0.01.
 
-4. **Moneda**: si Moneda ≠ MXN, debe incluirse TipoCambio con valor positivo. Si Moneda = MXN, TipoCambio no debe existir (algunos sistemas lo mandan en 1 y el PAC los rechaza).
+4. **Moneda**: si Moneda ≠ MXN (y ≠ XXX), TipoCambio es obligatorio. Si Moneda = MXN, TipoCambio puede omitirse; si se registra debe ser `1` (Anexo 20). El TC es el publicado en el DOF el día anterior a la operación (Art. 20 CFF).
 
 5. **Impuestos**: si ObjetoImp = 02 en cualquier concepto, el nodo de Impuestos a nivel concepto y a nivel comprobante es obligatorio. Si ObjetoImp = 01 en todos, no debe haber nodo Impuestos.
 
@@ -161,7 +166,11 @@ Desde 2022 el SAT exige especificar **motivo de cancelación**:
 - `03` No se llevó a cabo la operación.
 - `04` Operación nominativa relacionada en una factura global.
 
-Si el CFDI tiene más de 72 horas o el monto supera $1,000 MXN, la cancelación **requiere aceptación del receptor** (proceso asíncrono vía buzón tributario del receptor). Plazo de respuesta: 3 días hábiles; si no responde, se considera aceptada.
+Por regla general la cancelación **requiere aceptación del receptor** (regla 2.7.1.34 RMF 2026): tiene 3 días hábiles; si no responde, se considera aceptada.
+
+No requiere aceptación (regla 2.7.1.35 RMF 2026), entre otros: total ≤ $1,000 MXN, cancelación **dentro de las 24 horas** siguientes a la emisión, Nómina, Egreso, Traslado, operaciones con público en general (XAXX), receptores residentes en el extranjero. Excepción: los CFDI con complemento de Recepción de Pagos siempre requieren aceptación, sin importar el monto.
+
+Plazo máximo: a más tardar en el mes en que se deba presentar la declaración anual del ejercicio en que se expidió (Art. 29-A CFF). RESICO PF: el CFDI global solo se cancela en el mes en que se generó (Art. 113-G fr. V LISR).
 
 ## Casos edge importantes
 
@@ -173,7 +182,7 @@ Si el CFDI tiene más de 72 horas o el monto supera $1,000 MXN, la cancelación 
 
 **Anticipos**: si el cliente paga un anticipo antes de definir el servicio final, hay un esquema específico del SAT (CFDI de Ingreso por el anticipo + CFDI de Egreso al finalizar el servicio + CFDI de Ingreso final por el total). No confundir con PPD. Si el usuario pregunta por anticipos, explicar el flujo antes de emitir cualquier cosa.
 
-**Servicios profesionales PFAE → Persona Moral**: retención obligatoria de ISR (10%) e IVA (10.6667%). Estas retenciones DEBEN venir en el nodo `Impuestos > Retenciones` del comprobante. El subtotal NO se reduce por las retenciones — se desglosan aparte y el cliente las entera al SAT.
+**Servicios profesionales PFAE → Persona Moral**: retención obligatoria de ISR (10%) e IVA (10.6667%). Estas retenciones DEBEN venir en el nodo `Impuestos > Retenciones`. El SubTotal no cambia, pero el **Total sí se reduce**: Total = SubTotal + trasladados − retenidos (ej. 10,000 + 1,600 − 1,000 − 1,066.67 = 9,533.33). El cliente entera las retenciones al SAT.
 
 ## Salida esperada
 
@@ -200,7 +209,7 @@ Este skill cita información del SAT que puede haber sido actualizada después d
    - https://www.sat.gob.mx (catálogos descargables del Anexo 20 vigente)
    - Validador del proveedor PAC que uses (Facturama, SW Sapien, etc. mantienen catálogos actualizados)
 
-2. **Reglas de cancelación**: los motivos 01-04 y plazos (72h sin aceptación / >$1,000 con aceptación) pueden haber cambiado en Resolución Miscelánea Fiscal vigente.
+2. **Reglas de cancelación**: verificadas contra el "Esquema de cancelación de CFDI 2026" del SAT (reglas 2.7.1.34 y 2.7.1.35 RMF 2026). Revisar cada RMF anual.
 
 3. **Versión del Anexo 20**: confirmar que la versión activa sigue siendo CFDI 4.0 (vigente desde abr 2023). Cambios a 4.1+ requieren actualizar este skill.
 

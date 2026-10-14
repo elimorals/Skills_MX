@@ -43,115 +43,108 @@ class ResultadoCalculo:
 
 
 def redondear(valor: float, decimales: int = 2) -> float:
-    """Redondeo bancario a N decimales."""
+    """Redondeo aritmético (ROUND_HALF_UP) a N decimales."""
     return float(Decimal(str(valor)).quantize(Decimal(f"0.{'0' * decimales}"), rounding=ROUND_HALF_UP))
 
 
-def calcular_pfae_a_pm(monto: float, frontera: bool = False) -> ResultadoCalculo:
-    """Servicios profesionales PFAE (612) → PM (601). Caso más común."""
-    tasa_iva = 0.08 if frontera else 0.16
-    iva = redondear(monto * tasa_iva)
-    ret_isr = redondear(monto * 0.10)
-    ret_iva = redondear(monto * 0.106667)
+def tasa_ret_iva_dos_tercios(tasa_iva: float) -> float:
+    """2/3 del IVA como TasaOCuota de 6 decimales (Art. 1-A LIVA, Art. 3 fr. I RLIVA).
 
+    16% -> 0.106667 · 8% (frontera) -> 0.053333.
+    """
+    return redondear(tasa_iva * 2 / 3, 6)
+
+
+_C = Decimal("0.01")
+
+
+def _importe(base: float, tasa: float, preferido: Decimal = None) -> float:
+    """Importe = Base × TasaOCuota a 2 decimales, en Decimal (sin error binario).
+
+    Anexo 20 acepta cualquier Importe entre
+      inferior = trunc((Base − 0.005) × Tasa) y superior = ceil((Base + 0.005) × Tasa).
+    Si `preferido` (p.ej. 2/3 exactos del IVA) cae en ese rango se usa; si no
+    (bases grandes: 1,000,000 → 106,666.67 queda fuera), se usa Base × Tasa.
+    """
+    b, t = Decimal(str(base)), Decimal(str(tasa))
+    if preferido is not None:
+        inferior = ((b - Decimal("0.005")) * t).quantize(_C, rounding="ROUND_DOWN")
+        superior = ((b + Decimal("0.005")) * t).quantize(_C, rounding="ROUND_UP")
+        if inferior <= preferido <= superior:
+            return float(preferido)
+    return float((b * t).quantize(_C, rounding=ROUND_HALF_UP))
+
+
+def _resultado(escenario: str, monto: float, tasa_iva: float, razon_iva: str,
+               retenciones: list, alertas: list) -> ResultadoCalculo:
+    """Total = SubTotal + Trasladados - Retenidos (Anexo 20 CFDI 4.0, atributo Total)."""
+    iva = _importe(monto, tasa_iva)
+    dos_tercios = (Decimal(str(iva)) * 2 / 3).quantize(_C, rounding=ROUND_HALF_UP)
+    retenidos = [Impuesto(tipo, "Tasa", tasa,
+                          _importe(monto, tasa, dos_tercios if tipo == "IVA" and tasa == tasa_ret_iva_dos_tercios(tasa_iva) else None),
+                          razon)
+                 for tipo, tasa, razon in retenciones]
+    total = redondear(monto + iva - sum(r.importe for r in retenidos))
     return ResultadoCalculo(
-        escenario="Servicios profesionales PFAE (612) → PM (601)",
+        escenario=escenario,
         subtotal=monto,
-        impuestos_trasladados=[
-            Impuesto("IVA", "Tasa", tasa_iva, iva,
-                     f"IVA {int(tasa_iva*100)}% {'frontera norte' if frontera else 'general'}")
-        ],
-        impuestos_retenidos=[
-            Impuesto("ISR", "Tasa", 0.10, ret_isr,
-                     "Retención ISR 10% servicios profesionales (Art. 106 LISR)"),
-            Impuesto("IVA", "Tasa", 0.106667, ret_iva,
-                     "Retención IVA 2/3 partes (10.6667%) Art. 1-A LIVA"),
-        ],
-        total_comprobante=redondear(monto + iva),
-        neto_a_pagar_emisor=redondear(monto + iva - ret_isr - ret_iva),
-        alertas=[],
+        impuestos_trasladados=[Impuesto("IVA", "Tasa", tasa_iva, iva, razon_iva)],
+        impuestos_retenidos=retenidos,
+        total_comprobante=total,
+        neto_a_pagar_emisor=total,
+        alertas=alertas,
+    )
+
+
+def _iva(frontera: bool) -> tuple:
+    tasa = 0.08 if frontera else 0.16
+    return tasa, f"IVA {int(tasa * 100)}% {'región fronteriza (decreto vigente)' if frontera else 'general'}"
+
+
+def calcular_pfae_a_pm(monto: float, frontera: bool = False) -> ResultadoCalculo:
+    """Servicios profesionales PFAE (612) -> PM (601). Caso más común."""
+    tasa_iva, razon = _iva(frontera)
+    ret_iva = tasa_ret_iva_dos_tercios(tasa_iva)
+    return _resultado(
+        "Servicios profesionales PFAE (612) → PM (601)", monto, tasa_iva, razon,
+        [("ISR", 0.10, "Retención ISR 10% servicios profesionales (Art. 106 LISR)"),
+         ("IVA", ret_iva, f"Retención IVA 2/3 partes ({ret_iva * 100:.4f}%) Art. 1-A fr. II a) LIVA")],
+        [],
     )
 
 
 def calcular_resico_pf_a_pm(monto: float, frontera: bool = False) -> ResultadoCalculo:
-    """Servicios profesionales RESICO PF (626) → PM (601). Retención reducida."""
-    tasa_iva = 0.08 if frontera else 0.16
-    iva = redondear(monto * tasa_iva)
-    ret_isr = redondear(monto * 0.0125)
-    # RESICO PF NO genera retención IVA
-
-    return ResultadoCalculo(
-        escenario="Servicios profesionales RESICO PF (626) → PM (601)",
-        subtotal=monto,
-        impuestos_trasladados=[
-            Impuesto("IVA", "Tasa", tasa_iva, iva,
-                     f"IVA {int(tasa_iva*100)}% {'frontera norte' if frontera else 'general'}")
-        ],
-        impuestos_retenidos=[
-            Impuesto("ISR", "Tasa", 0.0125, ret_isr,
-                     "Retención ISR 1.25% específica de RESICO PF"),
-        ],
-        total_comprobante=redondear(monto + iva),
-        neto_a_pagar_emisor=redondear(monto + iva - ret_isr),
-        alertas=[
-            "RESICO PF NO causa retención de IVA, solo ISR reducido."
-        ],
+    """Servicios profesionales RESICO PF (626) -> PM (601)."""
+    tasa_iva, razon = _iva(frontera)
+    ret_iva = tasa_ret_iva_dos_tercios(tasa_iva)
+    return _resultado(
+        "Servicios profesionales RESICO PF (626) → PM (601)", monto, tasa_iva, razon,
+        [("ISR", 0.0125, "Retención ISR 1.25% RESICO PF (Art. 113-J LISR)"),
+         ("IVA", ret_iva, f"Retención IVA 2/3 partes ({ret_iva * 100:.4f}%) Art. 1-A fr. II a) LIVA; RESICO no la elimina")],
+        ["RESICO PF: la PM retiene ISR 1.25% (no 10%) y también 2/3 del IVA."],
     )
 
 
 def calcular_pf_a_pf(monto: float, frontera: bool = False) -> ResultadoCalculo:
     """PF a PF sin retenciones."""
-    tasa_iva = 0.08 if frontera else 0.16
-    iva = redondear(monto * tasa_iva)
-
-    return ResultadoCalculo(
-        escenario="Servicios entre Personas Físicas",
-        subtotal=monto,
-        impuestos_trasladados=[
-            Impuesto("IVA", "Tasa", tasa_iva, iva,
-                     f"IVA {int(tasa_iva*100)}%"),
-        ],
-        impuestos_retenidos=[],
-        total_comprobante=redondear(monto + iva),
-        neto_a_pagar_emisor=redondear(monto + iva),
-        alertas=["Personas físicas no retienen entre sí."],
-    )
+    tasa_iva, razon = _iva(frontera)
+    return _resultado("Servicios entre Personas Físicas", monto, tasa_iva, razon, [],
+                      ["Personas físicas no retienen entre sí."])
 
 
 def calcular_pm_a_pm(monto: float, frontera: bool = False) -> ResultadoCalculo:
     """PM a PM sin retenciones por servicios estándar."""
-    tasa_iva = 0.08 if frontera else 0.16
-    iva = redondear(monto * tasa_iva)
-
-    return ResultadoCalculo(
-        escenario="Servicios entre Personas Morales",
-        subtotal=monto,
-        impuestos_trasladados=[
-            Impuesto("IVA", "Tasa", tasa_iva, iva,
-                     f"IVA {int(tasa_iva*100)}%"),
-        ],
-        impuestos_retenidos=[],
-        total_comprobante=redondear(monto + iva),
-        neto_a_pagar_emisor=redondear(monto + iva),
-        alertas=[],
-    )
+    tasa_iva, razon = _iva(frontera)
+    return _resultado("Servicios entre Personas Morales", monto, tasa_iva, razon, [], [])
 
 
 def calcular_exportacion(monto: float, moneda: str = "USD", tipo_cambio: float = 1.0) -> ResultadoCalculo:
-    """Exportación de servicios — tasa 0%."""
+    """Exportación de servicios: tasa 0%."""
     monto_mxn = redondear(monto * tipo_cambio) if moneda != "MXN" else monto
-
-    return ResultadoCalculo(
-        escenario=f"Exportación de servicios (Art. 29 LIVA), moneda {moneda}",
-        subtotal=monto,
-        impuestos_trasladados=[
-            Impuesto("IVA", "Tasa", 0.0, 0.00,
-                     "Tasa 0% por exportación. Nodo SÍ existe con importe 0.00 (no es exento)"),
-        ],
-        impuestos_retenidos=[],
-        total_comprobante=monto,
-        neto_a_pagar_emisor=monto,
-        alertas=[
+    return _resultado(
+        f"Exportación de servicios (Art. 29 LIVA), moneda {moneda}", monto, 0.0,
+        "Tasa 0% por exportación. Nodo SÍ existe con importe 0.00 (no es exento)", [],
+        [
             f"Moneda {moneda}. Equivalente: ${monto_mxn:,.2f} MXN al TC {tipo_cambio}.",
             "Diferencia con exento: tasa 0% SÍ acumula IVA acreditable de gastos.",
             "Verificar que el servicio realmente se aprovecha en el extranjero.",
@@ -160,50 +153,27 @@ def calcular_exportacion(monto: float, moneda: str = "USD", tipo_cambio: float =
 
 
 def calcular_autotransporte_pf_a_pm(monto: float) -> ResultadoCalculo:
-    """Autotransporte de carga PF → PM."""
-    iva = redondear(monto * 0.16)
-    ret_isr = redondear(monto * 0.04)
-    ret_iva = redondear(monto * 0.04)
+    """Autotransporte terrestre de bienes PF (612) -> PM.
 
-    return ResultadoCalculo(
-        escenario="Autotransporte terrestre de carga PF → PM",
-        subtotal=monto,
-        impuestos_trasladados=[
-            Impuesto("IVA", "Tasa", 0.16, iva, "IVA 16%"),
-        ],
-        impuestos_retenidos=[
-            Impuesto("ISR", "Tasa", 0.04, ret_isr,
-                     "Retención ISR 4% autotransporte"),
-            Impuesto("IVA", "Tasa", 0.04, ret_iva,
-                     "Retención IVA 4% (4/16 partes)"),
-        ],
-        total_comprobante=redondear(monto + iva),
-        neto_a_pagar_emisor=redondear(monto + iva - ret_isr - ret_iva),
-        alertas=[],
+    IVA: retención 4% del valor (Art. 1-A fr. II c) LIVA, Art. 3 fr. II RLIVA).
+    ISR: la LISR no prevé retención para este servicio con emisor 612
+    (si el transportista es RESICO PF, la PM retiene 1.25%, Art. 113-J LISR).
+    """
+    return _resultado(
+        "Autotransporte terrestre de bienes PF → PM", monto, 0.16, "IVA 16%",
+        [("IVA", 0.04, "Retención IVA 4% autotransporte de bienes (Art. 1-A fr. II c) LIVA)")],
+        ["La retención de IVA 4% aplica aunque el transportista sea PM.",
+         "Sin retención de ISR para PF 612; si es RESICO PF agregar ISR 1.25%."],
     )
 
 
 def calcular_arrendamiento_pf_a_pm(monto: float) -> ResultadoCalculo:
-    """Arrendamiento PF (régimen 606) → PM."""
-    iva = redondear(monto * 0.16)
-    ret_isr = redondear(monto * 0.10)
-    ret_iva = redondear(monto * 0.106667)
-
-    return ResultadoCalculo(
-        escenario="Arrendamiento PF (606) → PM",
-        subtotal=monto,
-        impuestos_trasladados=[
-            Impuesto("IVA", "Tasa", 0.16, iva, "IVA 16% arrendamiento comercial"),
-        ],
-        impuestos_retenidos=[
-            Impuesto("ISR", "Tasa", 0.10, ret_isr, "Retención ISR 10% arrendamiento"),
-            Impuesto("IVA", "Tasa", 0.106667, ret_iva, "Retención IVA 2/3 partes"),
-        ],
-        total_comprobante=redondear(monto + iva),
-        neto_a_pagar_emisor=redondear(monto + iva - ret_isr - ret_iva),
-        alertas=[
-            "Si el arrendamiento es casa habitación a PF, IVA exento (no se traslada).",
-        ],
+    """Arrendamiento PF (régimen 606) -> PM."""
+    return _resultado(
+        "Arrendamiento PF (606) → PM", monto, 0.16, "IVA 16% arrendamiento comercial",
+        [("ISR", 0.10, "Retención ISR 10% arrendamiento (Art. 116 LISR)"),
+         ("IVA", tasa_ret_iva_dos_tercios(0.16), "Retención IVA 2/3 partes Art. 1-A fr. II a) LIVA")],
+        ["Si el arrendamiento es casa habitación, IVA exento (Art. 20 fr. II LIVA)."],
     )
 
 

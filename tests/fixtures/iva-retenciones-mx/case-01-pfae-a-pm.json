@@ -11,23 +11,38 @@
     },
     "concepto": {
       "tipo": "servicio_profesional",
-      "monto_base": 10000.00,
+      "monto_base": 10000.0,
       "ubicacion_emisor": "CDMX"
     }
   },
   "expected_output": {
-    "subtotal": 10000.00,
+    "subtotal": 10000.0,
     "impuestos_trasladados": [
-      {"tipo": "IVA", "tasa_factor": "Tasa", "tasa": 0.16, "importe": 1600.00}
+      {
+        "tipo": "IVA",
+        "tasa_factor": "Tasa",
+        "tasa": 0.16,
+        "importe": 1600.0
+      }
     ],
     "impuestos_retenidos": [
-      {"tipo": "ISR", "tasa": 0.10, "importe": 1000.00, "razon": "Servicios profesionales PF → PM"},
-      {"tipo": "IVA", "tasa": 0.106667, "importe": 1066.67, "razon": "Retención IVA 2/3 partes"}
+      {
+        "tipo": "ISR",
+        "tasa": 0.1,
+        "importe": 1000.0,
+        "razon": "Servicios profesionales PF → PM"
+      },
+      {
+        "tipo": "IVA",
+        "tasa": 0.106667,
+        "importe": 1066.67,
+        "razon": "Retención IVA 2/3 partes"
+      }
     ],
-    "total_comprobante": 11600.00,
+    "total_comprobante": 9533.33,
     "neto_a_pagar_emisor": 9533.33
   },
   "vigencia_validada": null,
-  "fuente_verificacion": "LISR Art. 106, LIVA Art. 1-A — validar vigentes",
+  "fuente_verificacion": "Anexo 20 CFDI 4.0, atributo Total = SubTotal − Descuento + Trasladados − Retenidos; Art. 106 LISR; Art. 1-A fr. II a) LIVA",
   "notas": "El total del CFDI no resta retenciones; las retenciones las paga el cliente al SAT y el emisor recibe el neto."
 }

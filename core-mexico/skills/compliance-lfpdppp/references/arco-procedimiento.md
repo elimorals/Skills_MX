@@ -6,7 +6,7 @@ Conforme a LFPDPPP (Ley Federal de Protección de Datos Personales en Posesión 
 
 - **LFPDPPP** Art. 22-32 (ejercicio de derechos)
 - **Reglamento LFPDPPP** Art. 89-115 (procedimiento)
-- **Lineamientos INAI** (criterios complementarios)
+- **Lineamientos de la autoridad (antes INAI; desde la LFPDPPP de 2025, Secretaría Anticorrupción y Buen Gobierno)** (criterios complementarios)
 
 ## Derechos cubiertos
 
@@ -82,7 +82,7 @@ Posibles respuestas:
 #### Negada
 "Su solicitud no procede por las siguientes razones:
 - [Fundamento legal]
-- [Información sobre cómo impugnar ante INAI]"
+- [Información sobre cómo impugnar ante la Secretaría Anticorrupción y Buen Gobierno]"
 
 ### Paso 6: Ejecución
 
@@ -192,8 +192,8 @@ Le informamos que [se procedió / no procede]:
 - Motivo: [explicación con fundamento legal]
 - Documentos requeridos para reconsiderar: [lista]
 
-Si requiere mayor información o no está conforme con esta resolución, puede acudir al INAI:
-- Portal: www.inai.org.mx
+Si requiere mayor información o no está conforme con esta resolución, puede acudir a la Secretaría Anticorrupción y Buen Gobierno:
+- Portal: www.gob.mx/buengobierno
 - Procedimiento de inconformidad: 15 días hábiles desde la notificación de respuesta
 
 Atentamente,
@@ -236,7 +236,7 @@ Cancelamos [datos canceladas] pero conservamos [datos retenidos] por [fundamento
 [Si no procede]:
 La cancelación no procede por: [fundamento legal específico]
 
-Si está inconforme, puede acudir al INAI en 15 días hábiles.
+Si está inconforme, puede acudir a la Secretaría Anticorrupción y Buen Gobierno en 15 días hábiles.
 
 Atentamente,
 
@@ -308,16 +308,16 @@ Negar Cancelación pero indicar:
 |---|---|
 | Solicitudes ARCO respondidas en plazo (20 días hábiles) | 100% |
 | Solicitudes que requieren subsanación | < 20% |
-| Solicitudes impugnadas ante INAI | < 5% |
-| Resolución favorable al titular en INAI | 0 (idealmente) |
+| Solicitudes impugnadas ante la Secretaría Anticorrupción y Buen Gobierno | < 5% |
+| Resolución favorable al titular en la Secretaría Anticorrupción y Buen Gobierno | 0 (idealmente) |
 
 ---
 
-## Si el titular impugna ante INAI
+## Si el titular impugna ante la Secretaría Anticorrupción y Buen Gobierno
 
 Plazo para titular: 15 días hábiles desde respuesta del Responsable.
 
-Procedimiento INAI:
+Procedimiento ante la Secretaría Anticorrupción y Buen Gobierno:
 1. Citatorio al Responsable
 2. Audiencia de pruebas y alegatos
 3. Resolución (en plazo legal)
@@ -331,16 +331,17 @@ Documentación clave para defensa:
 
 ---
 
-## Multas potenciales (INAI)
+## Multas potenciales (Secretaría Anticorrupción y Buen Gobierno)
 
-Conforme a Art. 64-65 LFPDPPP:
-- Por incumplir solicitud ARCO sin causa: $1,000 a $320,000 UMAs
-- Por tratamiento de datos sin aviso de privacidad: $200 a $320,000 UMAs
-- Por vulneración + falta de notificación: $1,000 a $640,000 UMAs
+Conforme al Art. 59 de la LFPDPPP (DOF 20-mar-2025), según la infracción del Art. 58:
+- Fr. I (no atender solicitud ARCO): apercibimiento
+- Fr. II a VII: 100 a 160,000 UMA
+- Fr. VIII a XVIII (p.ej. omitir elementos del aviso, transferir sin comunicar el aviso, vulnerar seguridad): 200 a 320,000 UMA
+- Reincidencia: multa adicional de 100 a 320,000 UMA
 
-**Multas se DUPLICAN si involucran datos sensibles**.
+**Con datos sensibles las sanciones pueden incrementarse hasta dos veces.**
 
-(UMA 2026: ~$108 MXN diaria. Multa máxima teórica > $80M MXN.)
+(UMA 2026: $117.31 diaria → 320,000 UMA = $37,539,200 MXN; hasta ~$75 M con datos sensibles.)
 
 ---
 

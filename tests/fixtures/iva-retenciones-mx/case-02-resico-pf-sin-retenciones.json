@@ -1,5 +1,5 @@
 {
-  "name": "RESICO PF NO está sujeto a retenciones por sus servicios",
+  "name": "RESICO PF → PM SÍ está sujeto a retenciones (ISR 1.25% + IVA 2/3)",
   "input": {
     "emisor": {
       "tipo": "PF",
@@ -11,26 +11,25 @@
       "regimen_fiscal": "601 (General PM)",
       "rfc": "IBM970131DRA"
     },
-    "subtotal_mxn": 10000.00,
+    "subtotal_mxn": 10000.0,
     "tipo_servicio": "consultoria_profesional"
   },
   "expected_output": {
-    "iva_trasladado_mxn": 1600.00,
-    "iva_retenido_mxn": 0.00,
-    "isr_retenido_mxn": 0.00,
-    "total_cfdi_mxn": 11600.00,
-    "neto_al_emisor_mxn": 11600.00,
+    "iva_trasladado_mxn": 1600.0,
+    "iva_retenido_mxn": 1066.67,
+    "isr_retenido_mxn": 125.0,
+    "total_cfdi_mxn": 10408.33,
+    "neto_al_emisor_mxn": 10408.33,
     "validaciones_locales_pasadas": true,
     "fundamento_legal": [
-      "Art. 113-G LISR — RESICO PF NO sujeto a retenciones art. 106",
-      "RMF 2.7.5.4 — RESICO PF exento de retención IVA salvo casos específicos"
+      "Art. 113-J LISR — la PM retiene 1.25% del ISR al RESICO PF",
+      "Art. 1-A fr. II a) LIVA — la PM retiene 2/3 del IVA por servicios personales independientes"
     ],
     "alertas": [
-      "El RESICO PF declara ISR mensual con tasa propia (1-2.5%) directamente",
-      "No requiere retención por parte del cliente — opt-in"
+      "Error común: asumir que RESICO PF no tiene retenciones."
     ]
   },
   "vigencia_validada": null,
-  "fuente_verificacion": "LISR Art. 113-G + RMF 2.7.5.4",
-  "notas": "Diferencia clave vs PFAE Honorarios — RESICO PF ahorra cash flow al emisor."
+  "fuente_verificacion": "LISR Art. 113-J; LIVA Art. 1-A; Anexo 20 CFDI 4.0, atributo Total = SubTotal − Descuento + Trasladados − Retenidos",
+  "notas": "Corregido 2026-10: el fixture anterior afirmaba 0 retenciones (contrario a Art. 113-J LISR)."
 }

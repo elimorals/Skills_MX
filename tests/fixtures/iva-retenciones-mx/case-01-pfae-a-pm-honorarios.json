@@ -11,16 +11,16 @@
       "regimen_fiscal": "601 (General PM)",
       "rfc": "IBM970131DRA"
     },
-    "subtotal_mxn": 10000.00,
+    "subtotal_mxn": 10000.0,
     "tipo_servicio": "consultoria_profesional"
   },
   "expected_output": {
-    "iva_trasladado_mxn": 1600.00,
+    "iva_trasladado_mxn": 1600.0,
     "iva_retenido_mxn": 1066.67,
     "iva_retenido_porcentaje": 0.6667,
-    "isr_retenido_mxn": 1000.00,
-    "isr_retenido_porcentaje": 0.10,
-    "total_cfdi_mxn": 11600.00,
+    "isr_retenido_mxn": 1000.0,
+    "isr_retenido_porcentaje": 0.1,
+    "total_cfdi_mxn": 9533.33,
     "neto_al_emisor_mxn": 9533.33,
     "validaciones_locales_pasadas": true,
     "fundamento_legal": [

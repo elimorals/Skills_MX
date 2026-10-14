@@ -1,19 +1,19 @@
 ---
 name: compliance-lfpdppp
-description: Cumplimiento de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) de México. Genera y revisa avisos de privacidad (integral, simplificado, corto), gestiona derechos ARCO (Acceso, Rectificación, Cancelación, Oposición), valida transferencias nacionales/internacionales de datos, identifica datos personales sensibles (salud, biométricos, financieros, ideología, origen étnico) y sus protecciones reforzadas, mapea bases de datos a obligaciones legales, y revisa cumplimiento de notificación de vulneraciones al INAI. Usar cuando el usuario diga aviso de privacidad, LFPDPPP, INAI, datos personales, derechos ARCO, transferencia de datos, consentimiento, GDPR Mexico, privacy policy mx, data protection. NO usar para GDPR europeo (otra ley), CCPA california (otra ley), ni para datos en posesión de gobierno (esa es LGPDPPSO, otra ley distinta).
+description: Cumplimiento de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) de México. Genera y revisa avisos de privacidad (integral, simplificado, corto), gestiona derechos ARCO (Acceso, Rectificación, Cancelación, Oposición), valida transferencias nacionales/internacionales de datos, identifica datos personales sensibles (salud, biométricos, financieros, ideología, origen étnico) y sus protecciones reforzadas, mapea bases de datos a obligaciones legales, y revisa cumplimiento de notificación de vulneraciones a titulares. Usar cuando el usuario diga aviso de privacidad, LFPDPPP, INAI, Secretaría Anticorrupción, datos personales, derechos ARCO, transferencia de datos, consentimiento, GDPR Mexico, privacy policy mx, data protection. NO usar para GDPR europeo (otra ley), CCPA california (otra ley), ni para datos en posesión de gobierno (esa es LGPDPPSO, otra ley distinta).
 allowed-tools: Read, Write, Edit
 ---
 
 # Cumplimiento LFPDPPP
 
-Ley vigente desde 2010, reformada varias veces. Es la ley que regula cómo cualquier privado (empresa, profesionista, freelance) maneja datos personales en México. INAI es la autoridad reguladora.
+**Nueva LFPDPPP publicada en el DOF el 20-mar-2025** (vigente desde el 21-mar-2025; última reforma DOF 14-nov-2025). Abrogó la ley de 2010. Regula cómo cualquier particular (empresa, profesionista, freelance) trata datos personales en México. El INAI se extinguió: la autoridad es la **Secretaría Anticorrupción y Buen Gobierno (SABG)**. Ante dudas de vigencia, citar artículos de la ley de 2025, no de la de 2010.
 
 ## Conceptos base
 
 ### Tres tipos de datos personales
 1. **Datos personales** (default): nombre, RFC, CURP, teléfono, email, dirección, datos patrimoniales no sensibles.
-2. **Datos personales sensibles**: salud, biométricos, origen racial/étnico, creencias religiosas/filosóficas, opiniones políticas, preferencia sexual, datos genéticos. **Requieren consentimiento expreso por escrito**.
-3. **Datos personales financieros y patrimoniales**: ingresos, deudas, propiedades. **Requieren consentimiento expreso** (no por escrito necesariamente, pero sí inequívoco).
+2. **Datos personales sensibles**: salud, biométricos, origen racial/étnico, creencias religiosas/filosóficas, opiniones políticas, preferencia sexual, datos genéticos. **Requieren consentimiento expreso y por escrito** (firma autógrafa, firma electrónica o mecanismo de autenticación) — Art. 8.
+3. **Datos personales financieros y patrimoniales**: ingresos, deudas, propiedades. **Requieren consentimiento expreso** (verbal, escrito, electrónico o signo inequívoco) — Art. 7. Para el resto, el consentimiento tácito es la regla general.
 
 ### Sujetos
 - **Titular**: la persona dueña de los datos.
@@ -23,7 +23,7 @@ Ley vigente desde 2010, reformada varias veces. Es la ley que regula cómo cualq
 ### Principios del tratamiento
 Licitud, consentimiento, información, calidad, finalidad, lealtad, proporcionalidad, responsabilidad.
 
-## Aviso de privacidad — los tres formatos obligatorios
+## Aviso de privacidad — integral y simplificado (Arts. 15-16)
 
 ### Aviso integral
 Documento completo, debe estar **siempre disponible** (web, sucursal, etc.). Debe incluir:
@@ -37,15 +37,10 @@ Documento completo, debe estar **siempre disponible** (web, sucursal, etc.). Deb
 8. Cláusula de tratamiento de datos sensibles (si aplica)
 
 ### Aviso simplificado
-Versión corta para entornos donde el integral no cabe (apps móviles, formularios de contacto, llamadas telefónicas). Debe incluir:
-- Identidad del responsable
-- Finalidades
-- Cómo conocer el aviso integral (link, código QR)
+Obligatorio cuando los datos se obtienen por medios electrónicos, ópticos, sonoros o visuales (web, apps, llamadas) — Art. 16 fr. II. Debe contener al menos las fracciones I a IV del Art. 15 (identidad y domicilio del responsable, datos que se recaban, finalidades, etc.) y el sitio donde consultar el integral.
 
-### Aviso corto
-Para anuncios físicos, banners cortos:
-- Mención de que se recaban datos
-- Cómo conocer el aviso integral
+### Aviso "corto"
+La ley de 2025 solo regula integral y simplificado. Un banner o letrero que remita al aviso integral es buena práctica, pero no sustituye al simplificado.
 
 ## Derechos ARCO
 
@@ -55,9 +50,9 @@ El titular puede ejercer:
 - **C** Cancelación: que dejes de tratarlos. Período de bloqueo y luego supresión.
 - **O** Oposición: que cesen tratamientos específicos (no todos).
 
-Plazo legal de respuesta: **20 días hábiles** desde recepción.
+Plazo legal de respuesta: **20 días hábiles** desde recepción; si procede, se hace efectivo dentro de los **15 días hábiles** siguientes (Art. 31). Si el titular no está conforme, puede presentar solicitud de protección de derechos ante la SABG dentro de los 15 días siguientes a la respuesta.
 
-Formato de respuesta esperado por INAI:
+Formato de respuesta recomendado:
 - Recibo de la solicitud
 - Identificación del titular (copia INE o equivalente para evitar suplantación)
 - Resolución (concedida, parcialmente concedida, negada con motivo legal)
@@ -70,12 +65,12 @@ Si compartes datos con un tercero:
 
 Transferencias internacionales: misma regla, pero si el país destino tiene nivel de protección menor, agregar cláusulas contractuales tipo.
 
-## Vulneraciones de seguridad — notificación al INAI
+## Vulneraciones de seguridad — notificación a titulares
 
 Si hay un incidente que afecte la confidencialidad, integridad o disponibilidad de datos personales:
-- Notificar al **titular afectado** sin dilación cuando pueda afectar significativamente sus derechos.
+- Informar **de forma inmediata** al titular cuando afecte de forma significativa sus derechos patrimoniales o morales (Art. 19).
 - Documentar el incidente, su gravedad, medidas tomadas.
-- Si es masivo o sensible, evaluar notificación al INAI (no es siempre obligatoria, pero recomendable en casos graves).
+- La ley no impone notificar a la autoridad; la SABG puede verificar y sancionar (Arts. 54 y 58).
 
 ## Lo que este skill hace por ti
 
@@ -111,21 +106,21 @@ Para revisar un aviso existente:
 
 Este skill no sustituye asesoría legal especializada. Para empresas grandes, sectores muy regulados (salud hospitalaria, banca, telecomunicaciones), o demandas activas, derivar a un abogado de protección de datos certificado.
 
-Las multas del INAI van de ~$11k MXN (faltas menores) hasta $14M MXN (faltas graves repetidas). El daño reputacional suele ser mayor.
+Multas (Art. 59, impuestas por la SABG): 100 a 160,000 UMA o 200 a 320,000 UMA según la infracción, más 100 a 320,000 UMA si es reiterada; hasta el doble con datos sensibles. Con UMA 2026 = $117.31: de **$11,731** a **$37.5 M MXN** por infracción (hasta ~$75 M con datos sensibles).
 
 ## ⚠ Datos que requieren verificación vigente
 
-1. **Reformas LFPDPPP post-2017**: confirmar que el contenido refleja modificaciones de los últimos años.
+1. **Ley de 2025**: revisado contra el texto vigente (DOF 20-mar-2025, última reforma 14-nov-2025). El Reglamento de la ley de 2025 puede cambiar detalles operativos.
 
-2. **Multas INAI** ($11k a $14M MXN): rangos pueden haber actualizado.
+2. **Multas**: en UMA (Art. 59). UMA 2026 = $117.31 (vigente 1-feb-2026 a 31-ene-2027, INEGI/DOF 9-ene-2026).
 
-3. **Plazo de 20 días hábiles para ARCO**: estable pero confirmar.
+3. **Plazo ARCO**: 20 días hábiles + 15 para hacerlo efectivo (Art. 31).
 
-4. **Notificación de vulneraciones**: la obligación específica al INAI vs solo al titular puede tener actualizaciones.
+4. **Vulneraciones**: aviso inmediato al titular (Art. 19); sin obligación legal de notificar a la autoridad.
 
-5. **Tratamiento de datos transfronterizos**: las reglas sobre transferencia internacional con países de nivel de protección menor pueden tener cláusulas tipo actualizadas por INAI.
+5. **Transferencias internacionales**: revisar lineamientos que emita la SABG.
 
-6. **Plantillas de aviso por sector** (`references/aviso-privacidad-plantillas.md`): basadas en patrones comunes, no en plantilla oficial INAI. Validar con abogado.
+6. **Plantillas de aviso por sector** (`references/aviso-privacidad-plantillas.md`): basadas en patrones comunes, no en plantilla oficial. Validar con abogado.
 
 7. **Sectores específicos**:
    - **Salud**: la NOM-024 puede tener actualización; la PFPDPPP-Salud tiene guías específicas.

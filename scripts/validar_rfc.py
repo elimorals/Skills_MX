@@ -14,11 +14,12 @@ Valida:
 - Fecha embebida válida
 - RFCs genéricos
 - Palabras inconvenientes
+- Dígito verificador (último carácter, módulo 11 — algoritmo público SAT)
 
 NO valida:
 - Existencia en padrón SAT (requiere API SAT)
 - 69-B EFOS (requiere descarga de listado)
-- Homoclave matemáticamente (requiere algoritmo SAT)
+- Los 2 primeros caracteres de la homoclave (dependen del nombre completo)
 """
 
 import argparse
@@ -48,6 +49,22 @@ RFC_GENERICOS = {
     "XEXX010101000": "publico_general_extranjero",
 }
 
+# Diccionario del dígito verificador (valor = índice).
+_DV_DICC = "0123456789ABCDEFGHIJKLMN&OPQRSTUVWXYZ Ñ"
+
+
+def digito_verificador(rfc: str) -> str:
+    """Calcula el dígito verificador (último carácter) de un RFC de 12 o 13.
+
+    Módulo 11 sobre los primeros 12 caracteres (PM se rellena con un espacio
+    a la izquierda). Residuo 0 → '0'; 11 - residuo == 10 → 'A'.
+    """
+    base = rfc[:-1].rjust(12)
+    suma = sum(_DV_DICC.index(c) * (13 - i) for i, c in enumerate(base))
+    d = 11 - suma % 11
+    return "0" if d == 11 else "A" if d == 10 else str(d)
+
+
 # Regex
 RE_PM = re.compile(r"^[A-ZÑ&]{3}\d{6}[A-Z0-9]{3}$")
 RE_PF = re.compile(r"^[A-ZÑ&]{4}\d{6}[A-Z0-9]{3}$")
@@ -63,6 +80,7 @@ class ResultadoValidacion:
     fecha_embebida: Optional[str] = None  # ISO date string
     es_generico: bool = False
     subtipo_generico: Optional[str] = None
+    digito_verificador_ok: Optional[bool] = None
     alertas: list = field(default_factory=list)
     errores: list = field(default_factory=list)
 
@@ -87,7 +105,8 @@ def validar_fecha_embebida(seis_digitos: str) -> tuple[bool, Optional[str], Opti
 
     # Determinar siglo (1900s o 2000s)
     año_actual = date.today().year % 100
-    siglo = 2000 if año <= año_actual + 5 else 1900
+    # Un año > año actual solo puede ser 19xx (no hay RFC con fecha futura).
+    siglo = 2000 if año <= año_actual else 1900
     año_completo = siglo + año
 
     if mes < 1 or mes > 12:
@@ -173,6 +192,16 @@ def validar_rfc(rfc_input: str) -> ResultadoValidacion:
                 "forman una palabra que el SAT habría sustituido automáticamente. "
                 "Verificar que sea el RFC real del contribuyente."
             )
+
+    # Dígito verificador: alerta, no error — hay RFCs antiguos asignados por
+    # el SAT que no lo cumplen; el padrón SAT es la única fuente definitiva.
+    esperado = digito_verificador(rfc)
+    resultado.digito_verificador_ok = esperado == rfc[-1]
+    if not resultado.digito_verificador_ok:
+        resultado.alertas.append(
+            f"Dígito verificador no coincide (esperado '{esperado}', viene '{rfc[-1]}'). "
+            "Probable error de captura: confirmar contra la Constancia de Situación Fiscal."
+        )
 
     resultado.valido_estructura = True
     return resultado

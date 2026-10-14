@@ -13,16 +13,16 @@ Validador estructural de RFC mexicano. Esta primera línea de defensa atrapa el 
 ### Persona Moral (PM) — 12 caracteres
 - **3 letras** derivadas del nombre/razón social: `ABC` (puede contener `&` o `Ñ`)
 - **6 dígitos** de fecha de constitución `AAMMDD`
-- **3 caracteres** homoclave alfanumérica: `XX9` (típicamente letra-letra-dígito)
+- **3 caracteres** homoclave: 2 alfanuméricos derivados del nombre + **dígito verificador** (`0`-`9` o `A`)
 
-Ejemplo: `IBM970131DRA` (IBM de México SA constituida 31 ene 1997, homoclave DRA).
+Ejemplo: `SAT970701NN3` (Servicio de Administración Tributaria, 1 jul 1997, homoclave NN3).
 
 ### Persona Física (PF) — 13 caracteres
 - **4 letras** derivadas del nombre completo (apellido paterno + materno + nombre)
 - **6 dígitos** fecha de nacimiento `AAMMDD`
 - **3 caracteres** homoclave alfanumérica
 
-Ejemplo: `MAJG800101XYZ` (PF apellidos M-A, J de Jorge, nacido 1 ene 1980).
+Ejemplo: `GODE561231GR8` (ejemplo de la documentación SAT: Emma Gómez Díaz, nacida 31 dic 1956).
 
 ## Regex de validación
 
@@ -56,7 +56,7 @@ PF:  ^[A-ZÑ&]{4}\d{6}[A-Z0-9]{3}$
    - `XAXX010101000` — público en general nacional. Solo válido con UsoCFDI `S01` y como receptor.
    - `XEXX010101000` — público en general extranjero. Solo válido como receptor con ResidenciaFiscal y NumRegIdTrib.
 
-7. **No verifica homoclave matemáticamente** — el algoritmo del SAT para calcular la homoclave usa una tabla específica y módulo 11. Validar la homoclave requiere consultar la API de validación del SAT (gratuita, pero con rate limit). Este skill marca la homoclave como "estructura válida" pero NO confirma que sea la real del contribuyente.
+7. **Dígito verificador (último carácter)**: se calcula con módulo 11 sobre los 12 primeros caracteres (PM se rellena con un espacio a la izquierda), con el diccionario `0-9 → 0-9, A-N → 10-23, & → 24, O-Z → 25-36, espacio → 37, Ñ → 38` y pesos 13…2. Residuo 0 → `0`; 11 − residuo = 10 → `A`. Si no coincide es casi seguro un error de captura (alerta, no error: el padrón SAT es la fuente definitiva). Los RFC genéricos no lo cumplen y se exentan. Los 2 primeros caracteres de la homoclave dependen del nombre completo y no se pueden verificar sin el padrón. Implementado en `scripts/validar_rfc.py` (`digito_verificador_ok`).
 
 ## Verificación contra SAT (opcional)
 
@@ -67,18 +67,19 @@ Si está disponible la integración, este skill puede:
 - Verificar que está **activo** (no cancelado)
 - Detectar si está en el **listado 69-B** del SAT (Empresas que Facturan Operaciones Simuladas — EFOS). **Crítico**: si un cliente o proveedor está en 69-B, las facturas con él pueden ser desconocidas por el SAT.
 
-En modo mock (sin integración), este skill solo aplica las validaciones estructurales 1-6.
+En modo mock (sin integración), este skill solo aplica las validaciones estructurales 1-7.
 
 ## Salida esperada
 
 ```json
 {
-  "rfc_input": "majg800101xyz",
-  "rfc_normalizado": "MAJG800101XYZ",
+  "rfc_input": "gode561231gr8",
+  "rfc_normalizado": "GODE561231GR8",
   "tipo": "PF",
   "valido_estructura": true,
-  "fecha_embebida": "1980-01-01",
+  "fecha_embebida": "1956-12-31",
   "es_generico": false,
+  "digito_verificador_ok": true,
   "alertas": [],
   "verificacion_sat": {
     "consultada": false,
@@ -93,7 +94,7 @@ Si inválido:
   "rfc_input": "MAJG891332ABC",
   "valido_estructura": false,
   "errores": [
-    "Fecha embebida inválida: el día 32 no existe en el mes 13"
+    "Fecha embebida inválida: Mes inválido: 13"
   ]
 }
 ```
@@ -101,7 +102,7 @@ Si inválido:
 ## Casos edge
 
 - RFCs con prefijo `XX` que parezcan genéricos pero no lo son: solo los dos publicados arriba son genéricos válidos.
-- Sistemas legacy que separan PM en 3+6+3 con guiones (`IBM-970131-DRA`): normalizar quitando separadores antes de validar.
+- Sistemas legacy que separan PM en 3+6+3 con guiones (`SAT-970701-NN3`): normalizar quitando separadores antes de validar.
 - Personas físicas que cambiaron de nombre legalmente: el RFC NO cambia (las letras derivan del nombre al momento del registro).
 
 ## Integración con otros skills

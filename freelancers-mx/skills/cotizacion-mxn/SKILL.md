@@ -118,7 +118,7 @@ Subtotal: $10,000.00
 IVA 16%: $1,600.00
 Retención ISR 10%: −$1,000.00
 Retención IVA 10.6667%: −$1,066.67
-Total CFDI: $11,600.00
+Total CFDI: $9,533.33 (Anexo 20: Total = SubTotal + IVA − retenciones)
 Neto a recibir: $9,533.33
 ```
 
@@ -127,9 +127,9 @@ Neto a recibir: $9,533.33
 Subtotal: $10,000.00
 IVA 16%: $1,600.00
 Retención ISR 1.25%: −$125.00
-Retención IVA: 0 (RESICO PF no genera retención IVA)
-Total CFDI: $11,600.00
-Neto a recibir: $11,475.00
+Retención IVA 2/3:     −$1,066.67 (Art. 1-A LIVA; RESICO no la elimina)
+Total CFDI: $10,408.33 (Anexo 20: Total = SubTotal + IVA − retenciones)
+Neto a recibir: $10,408.33
 ```
 
 **Caso 3 — Freelancer facturando a PF (cliente persona física)**:

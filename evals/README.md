@@ -1,4 +1,20 @@
-# Calibration prompts — evals para triggering de skills
+# Evals de skills
+
+Dos tipos de eval viven aquí:
+
+1. **Triggering** (`<plugin>/*.eval.json`): ¿se activa el skill correcto? (abajo).
+2. **Salida** (`golden/`, `promptfoo/`): ¿la respuesta es correcta?
+   - `golden/*.golden.json` — casos deterministas (IVA/retenciones, RFC, MXN) contra
+     los scripts de `scripts/`. Sin API key: `python3 scripts/eval-golden.py`.
+   - `promptfoo/` — el `SKILL.md` como system prompt de `claude-sonnet-5-5`, con asserts
+     regex + rúbrica LLM-judge. Requiere `ANTHROPIC_API_KEY`:
+     `npx promptfoo@0.124.1 eval -c evals/promptfoo/promptfooconfig.yaml`
+     (en CI solo vía `workflow_dispatch` de `skills-quality.yml`).
+
+Cada caso cita su fuente (LISR, LIVA, Anexo 20, LFPDPPP 2025…). Si una ley cambia,
+actualiza primero el caso golden y después el `SKILL.md` en `_shared/` + `scripts/sync-shared.sh`.
+
+## Calibration prompts — evals para triggering de skills
 
 Aquí viven los prompts de evaluación para calibrar el `description:` de cada skill.
 

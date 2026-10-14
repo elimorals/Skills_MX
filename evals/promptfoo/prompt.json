@@ -1,0 +1,10 @@
+[
+  {
+    "role": "system",
+    "content": "{{ skill }}\n\n---\nResponde en español. No tienes herramientas ni acceso a scripts en esta evaluación: calcula y responde directamente."
+  },
+  {
+    "role": "user",
+    "content": "{{ question }}"
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "skill": "iva-retenciones-mx",
+  "script": "scripts/calcular_iva_retenciones.py",
+  "cases": [
+    {
+      "id": "pfae-612-a-pm-10k",
+      "args": ["--emisor", "612", "--receptor", "601", "--monto", "10000"],
+      "expect": {
+        "impuestos_trasladados.0.importe": 1600.00,
+        "impuestos_retenidos.0.tipo": "ISR",
+        "impuestos_retenidos.0.importe": 1000.00,
+        "impuestos_retenidos.1.tasa": 0.106667,
+        "impuestos_retenidos.1.importe": 1066.67,
+        "total_comprobante": 9533.33
+      },
+      "fuente": "Art. 106 LISR (ISR 10%); Art. 1-A fr. II a) LIVA (2/3 IVA); Anexo 20 atributo Total"
+    },
+    {
+      "id": "resico-pf-626-a-pm-10k",
+      "args": ["--emisor", "626", "--receptor", "601", "--monto", "10000"],
+      "expect": {
+        "impuestos_retenidos.0.tasa": 0.0125,
+        "impuestos_retenidos.0.importe": 125.00,
+        "impuestos_retenidos.1.tipo": "IVA",
+        "impuestos_retenidos.1.importe": 1066.67,
+        "total_comprobante": 10408.33
+      },
+      "fuente": "Art. 113-J LISR (1.25%); Art. 1-A fr. II a) LIVA (RESICO no elimina la retención de IVA)"
+    },
+    {
+      "id": "frontera-pfae-a-pm-10k",
+      "args": ["--emisor", "612", "--receptor", "601", "--monto", "10000", "--frontera"],
+      "expect": {
+        "impuestos_trasladados.0.tasa": 0.08,
+        "impuestos_trasladados.0.importe": 800.00,
+        "impuestos_retenidos.1.tasa": 0.053333,
+        "impuestos_retenidos.1.importe": 533.33,
+        "total_comprobante": 9266.67
+      },
+      "fuente": "Decreto estímulos región fronteriza (DOF 31-dic-2025, vigente a 31-dic-2026); 2/3 de 8%"
+    },
+    {
+      "id": "pf-a-pf-sin-retenciones",
+      "args": ["--emisor", "612", "--receptor", "605", "--tipo-persona-receptor", "PF", "--monto", "5000"],
+      "expect": {"impuestos_retenidos": [], "total_comprobante": 5800.00},
+      "fuente": "Art. 106 LISR y Art. 1-A LIVA: solo retienen PM"
+    },
+    {
+      "id": "pm-a-pm-sin-retenciones",
+      "args": ["--emisor", "601", "--receptor", "601", "--monto", "20000"],
+      "expect": {"impuestos_retenidos": [], "total_comprobante": 23200.00},
+      "fuente": "LIVA Art. 1 (16%); sin supuesto de retención entre PM por servicios"
+    },
+    {
+      "id": "arrendamiento-606-a-pm-15k-redondeo",
+      "args": ["--arrendamiento", "--monto", "15000"],
+      "expect": {
+        "impuestos_retenidos.0.importe": 1500.00,
+        "impuestos_retenidos.1.importe": 1600.00,
+        "total_comprobante": 14300.00
+      },
+      "fuente": "Art. 116 LISR; Art. 1-A LIVA; Anexo 20 límites de Importe (2/3 exactos = 1,600.00 dentro de [1600.00, 1600.01])"
+    },
+    {
+      "id": "base-grande-redondeo-anexo20",
+      "args": ["--emisor", "612", "--receptor", "601", "--monto", "1000000"],
+      "expect": {"impuestos_retenidos.1.importe": 106667.00, "total_comprobante": 953333.00},
+      "fuente": "Anexo 20: 2/3 exactos (106,666.67) quedan fuera del límite inferior de Base×0.106667; se usa 106,667.00"
+    },
+    {
+      "id": "autotransporte-pf-a-pm-10k",
+      "args": ["--autotransporte", "--monto", "10000"],
+      "expect": {
+        "impuestos_retenidos.0.tipo": "IVA",
+        "impuestos_retenidos.0.tasa": 0.04,
+        "impuestos_retenidos.0.importe": 400.00,
+        "total_comprobante": 11200.00
+      },
+      "expect_len": {"impuestos_retenidos": 1},
+      "fuente": "Art. 1-A fr. II c) LIVA y Art. 3 RLIVA (4%); la LISR no prevé retención de ISR al transportista PF 612"
+    },
+    {
+      "id": "exportacion-servicios-tasa-0",
+      "args": ["--exportacion", "--monto", "1000", "--moneda", "USD", "--tc", "18.5"],
+      "expect": {"impuestos_trasladados.0.tasa": 0.0, "impuestos_trasladados.0.importe": 0.0, "total_comprobante": 1000.00},
+      "expect_contains": {"alertas.0": "18,500.00"},
+      "fuente": "Art. 29 LIVA (exportación de servicios a tasa 0%)"
+    }
+  ]
+}

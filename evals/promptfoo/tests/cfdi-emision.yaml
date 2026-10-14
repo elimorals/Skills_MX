@@ -1,0 +1,43 @@
+- description: "cfdi: PPD obliga FormaPago 99"
+  vars:
+    skill: file://../../_shared/cfdi-emision/SKILL.md
+    question: "Voy a facturar a crédito a 30 días (PPD) y el cliente pagará por transferencia. ¿Pongo FormaPago 03?"
+  assert:
+    - type: icontains
+      value: "99"
+    - type: llm-rubric
+      value: "Explica que con MetodoPago PPD la FormaPago debe ser 99 (Por definir) y que la forma real (03) va en el complemento de pago (CFDI tipo P)."
+
+- description: "cfdi: cancelación dentro de 24 h no requiere aceptación"
+  vars:
+    skill: file://../../_shared/cfdi-emision/SKILL.md
+    question: "Emití hace 3 horas un CFDI de ingreso por $5,000 a una empresa y tiene un error. ¿Necesito que el receptor acepte la cancelación?"
+  assert:
+    - type: icontains
+      value: "24"
+    - type: llm-rubric
+      value: "Concluye que NO requiere aceptación porque se cancela dentro de las 24 horas siguientes a su emisión (regla 2.7.1.35 RMF). Falla si menciona una ventana de 72 horas."
+
+- description: "cfdi: PM no puede usar D01"
+  vars:
+    skill: file://../../_shared/cfdi-emision/SKILL.md
+    question: "Mi cliente es una SA de CV (régimen 601) y me pide la factura de la consulta médica con uso D01. ¿Se puede?"
+  assert:
+    - type: llm-rubric
+      value: "Responde que no: D01 (honorarios médicos) es deducción personal solo para personas físicas y es incompatible con el régimen 601; sugiere G03."
+
+- description: "cfdi: P01 ya no existe en 4.0"
+  vars:
+    skill: file://../../_shared/cfdi-emision/SKILL.md
+    question: "El cliente no sabe qué uso de CFDI quiere, ¿le pongo P01 Por definir?"
+  assert:
+    - type: llm-rubric
+      value: "Indica que P01 no existe en CFDI 4.0 y que hay que preguntar el uso o usar una clave válida (p.ej. G03 o S01 según el caso)."
+
+- description: "cfdi: Total con retenciones"
+  vars:
+    skill: file://../../_shared/cfdi-emision/SKILL.md
+    question: "Armo un CFDI de servicios profesionales PFAE a PM por $10,000 de subtotal. ¿Qué valor va en el atributo Total?"
+  assert:
+    - type: regex
+      value: "9,?533\\.33"
