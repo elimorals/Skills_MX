@@ -4,11 +4,11 @@ from __future__ import annotations
 
 
 PORTALES_EDOMEX: dict[str, str] = {
-    "secretaria_finanzas": "https://sfinanzas.edomex.gob.mx",
-    "tenencia": "https://sfinanzas.edomex.gob.mx/tenencia",
-    "verificentros": "https://verificacionvehicular.edomex.gob.mx",
-    "predial_municipal": "Variable por municipio (Toluca, Naucalpan, Ecatepec, etc.)",
-    "multas_transito": "https://multas.edomex.gob.mx",
+    "recaudacion": "https://pagosytramites.edomex.gob.mx/recaudacion/",
+    "citas_verificacion": "https://citaverificacion.edomex.gob.mx/RegistroCitas/",
+    "infracciones": "https://infracciones.ssedomex.gob.mx/Search",
+    "predial_toluca": "http://predial.toluca.gob.mx/Formas/ImpuestoPredial.aspx",
+    "predial_municipal": "Variable por municipio (ver shared.catalogo_municipios_mx)",
 }
 
 
