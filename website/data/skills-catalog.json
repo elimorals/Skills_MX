@@ -285,7 +285,7 @@
           "id": "mp_curp_renapo",
           "estado": "handoff",
           "estado_label": "Entrega a humano (CAPTCHA o login)",
-          "desc": "gob.mx/curp con challenge Akamai y reCAPTCHA Enterprise; validación local de la CURP.",
+          "desc": "gob.mx/curp con challenge Akamai y reCAPTCHA Enterprise; validación local de la CURP. Solver opt-in conectado, pero hoy bloquea un anti-bot de red antes del captcha (CURP: Akamai; INE: Cloudflare) y queda en handoff.",
           "tools": [
             "curp_validar_estructura",
             "curp_derivar_fecha_nacimiento",
@@ -318,7 +318,7 @@
           "id": "mp_ine_verificacion",
           "estado": "handoff",
           "estado_label": "Entrega a humano (CAPTCHA o login)",
-          "desc": "Lista nominal con Cloudflare y reCAPTCHA v2; no se evade.",
+          "desc": "Lista nominal con Cloudflare y reCAPTCHA v2; no se evade. Solver opt-in conectado, pero hoy bloquea un anti-bot de red antes del captcha (CURP: Akamai; INE: Cloudflare) y queda en handoff.",
           "tools": [
             "ine_verificar_datos",
             "ine_verificar_qr",
