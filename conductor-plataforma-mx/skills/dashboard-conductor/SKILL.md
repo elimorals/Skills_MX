@@ -19,15 +19,15 @@ allowed-tools: Read, Write
 
 💵 Total bruto:        $6,050
    Comisión plataforma: ─$1,210 (20%)
-   Retenciones SAT:    ─$  484 (8% ISR + 8% IVA del 50% gravable)
-🟢 Neto recibido:       $4,356
+   Retenciones SAT:    ─$  611 (ISR 2.1% Art. 113-A LISR + IVA 8% Art. 18-M LIVA)
+🟢 Neto recibido:       $4,229
 
 ⏰ Horas activas: 35
-   Promedio por hora:  $124.46 neto
+   Promedio por hora:  $120.83 neto
 
 🎯 Comparativa:
-   • Semana pasada: $4,180 (+$176, +4.2%)
-   • Promedio últimas 4: $4,290 (+$66, +1.5%)
+   • Semana pasada: $4,180 (+$49, +1.2%)
+   • Promedio últimas 4: $4,290 (−$61, −1.4%)
 ```
 
 ## Data sources

@@ -10,45 +10,34 @@ allowed-tools: Read, Write
 
 **Art. 113-A LISR**: aplica a personas físicas que prestan servicios de manera autónoma por internet a través de plataformas tecnológicas (transporte, entrega, hospedaje).
 
-**Retención automática**:
-- ISR: 8% del ingreso (variable según monto si en RESICO, ver tabla)
-- IVA: 8% del ingreso (la plataforma lo retiene y entera al SAT)
+**Retención automática** (sobre ingresos cobrados sin IVA):
+- ISR: tasa fija por tipo de servicio (Art. 113-A LISR, vigente desde 2021; ya no hay tabla progresiva)
+- IVA: 50% del IVA cobrado = 8% del ingreso (Art. 18-M LIVA)
+- Sin RFC proporcionado a la plataforma: ISR 20% e IVA 100% (Art. 113-C LISR / 18-M LIVA)
 
-## Tabla ISR retenida por plataforma (art. 113-A)
+## Tasas ISR retenidas por la plataforma (Art. 113-A)
 
-| Ingresos mensuales | Tasa ISR retenida por plataforma |
+| Servicio | Tasa ISR |
 |---|---|
-| Hasta $5,500 | 2% |
-| Hasta $15,000 | 3% |
-| Hasta $21,000 | 4% |
-| Más de $21,000 | 8% |
+| Transporte terrestre de pasajeros y entrega de bienes (Uber, DiDi, Rappi) | 2.1% |
+| Hospedaje | 4% |
+| Enajenación de bienes y prestación de servicios | 1% |
+
+**Pago definitivo (Art. 113-B LISR)**: si los ingresos del ejercicio anterior por plataformas no excedieron $300,000, el conductor puede optar porque la retención sea pago definitivo → no hay ISR adicional que pagar. Si no opta o excede, la retención es **pago provisional acreditable** contra el pago mensual de su régimen.
 
 ## Algoritmo
 
 ```python
-def calcular_isr_conductor_mes(ingresos_mes: Decimal, retencion_acumulada: Decimal) -> dict:
-    # 1. Aplicar tabla art. 113-A LISR
-    if ingresos_mes <= 5500:
-        tasa = 0.02
-    elif ingresos_mes <= 15000:
-        tasa = 0.03
-    elif ingresos_mes <= 21000:
-        tasa = 0.04
-    else:
-        tasa = 0.08
+TASA_113A = {"transporte": Decimal("0.021"), "hospedaje": Decimal("0.04"), "otros": Decimal("0.01")}
 
-    isr_causado = ingresos_mes * Decimal(str(tasa))
+def retencion_isr_plataforma(ingresos_mes_sin_iva: Decimal, servicio: str = "transporte") -> Decimal:
+    return (ingresos_mes_sin_iva * TASA_113A[servicio]).quantize(Decimal("0.01"))
 
-    # 2. Acreditar retenciones que YA hicieron las plataformas
-    isr_a_pagar = max(Decimal(0), isr_causado - retencion_acumulada)
-
-    return {
-        "tasa_aplicada": tasa,
-        "isr_causado_mxn": str(isr_causado),
-        "retencion_plataforma_mxn": str(retencion_acumulada),
-        "isr_a_pagar_adicional_mxn": str(isr_a_pagar),
-        "obligacion_declaracion": isr_a_pagar > 0 or ingresos_mes > 21000,
-    }
+def isr_a_pagar_mes(isr_causado_regimen: Decimal, retenciones_plataformas: Decimal, opcion_definitiva: bool) -> Decimal:
+    # isr_causado_regimen: pago provisional calculado según el régimen del conductor (no con la tasa 113-A)
+    if opcion_definitiva:
+        return Decimal("0")
+    return max(Decimal("0"), isr_causado_regimen - retenciones_plataformas)
 ```
 
 ## Output
@@ -57,17 +46,17 @@ def calcular_isr_conductor_mes(ingresos_mes: Decimal, retencion_acumulada: Decim
 {
   "rfc_hash": "...",
   "mes": "2026-06",
-  "regimen": "626_RESICO_PF",
-  "ingresos_mes_mxn": "26500.00",
-  "tasa_aplicable_art_113A": 0.08,
-  "isr_causado_mxn": "2120.00",
-  "retencion_plataformas_acumulada_mxn": "1060.00",
-  "isr_a_pagar_adicional_mxn": "1060.00",
+  "servicio": "transporte",
+  "ingresos_mes_sin_iva_mxn": "26500.00",
+  "tasa_isr_art_113A": 0.021,
+  "retencion_isr_plataforma_mxn": "556.50",
+  "retencion_iva_plataforma_mxn": "2120.00",
+  "opcion_pago_definitivo_113B": true,
+  "isr_a_pagar_adicional_mxn": "0.00",
   "deadline_pago": "2026-07-17",
-  "obligacion_declaracion": true,
   "advertencias": [
-    "Ingresos > $21,000 mes: aplica tasa 8% completa",
-    "Diferencia se paga vía declaración mensual estándar SAT"
+    "Opción 113-B solo si ingresos del ejercicio anterior <= $300,000",
+    "Sumar retenciones de TODAS las plataformas (CFDI de retenciones que emite cada una)"
   ],
   "vigencia_validada": false
 }
@@ -84,6 +73,6 @@ def calcular_isr_conductor_mes(ingresos_mes: Decimal, retencion_acumulada: Decim
 
 ## ⚠ Compliance
 
-- Validar tabla Art. 113-A vigente cada enero (puede cambiar en RMF)
+- Validar tasas del Art. 113-A LISR cada enero (cambian por reforma a la LISR, no por RMF)
 - `vigencia_validada: false` — contador valida en declaración anual
 - Las retenciones de la plataforma SÍ se declaran (acreditan) — no se omiten
