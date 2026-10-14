@@ -52,3 +52,8 @@ build/
 webhooks/.venv/
 .vercel
 .claude/worktrees/
+
+# Capturas del navegador de agentes (pueden traer datos personales)
+.playwright-mcp/
+.cache/
+.pytest_cache/
