@@ -24,6 +24,11 @@ dev = [
     "respx>=0.21,<1.0",
     "cryptography>=42,<46",
 ]
+# Grupo D (federales públicos 2): RETyS/CONAMER y check_form_render van detrás de Akamai
+# y solo responden a un navegador real.
+publicos-federales-2 = [
+    "playwright>=1.42,<2.0",
+]
 sat-playwright = [
     "cryptography>=42,<46",
     "playwright>=1.42,<2.0",
