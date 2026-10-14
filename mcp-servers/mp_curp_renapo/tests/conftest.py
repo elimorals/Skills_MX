@@ -13,7 +13,7 @@ def _isolate_state(monkeypatch, tmp_path: Path) -> None:
     monkeypatch.setenv("PLUGINS_MX_CACHE_DIR", str(tmp_path / "cache"))
     monkeypatch.setenv("PLUGINS_MX_AUDIT_DIR", str(tmp_path / "audit"))
     monkeypatch.delenv("CURP_RENAPO_PLAYWRIGHT", raising=False)
-    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
 
 
 def make_valid_curp(base_17: str) -> str:

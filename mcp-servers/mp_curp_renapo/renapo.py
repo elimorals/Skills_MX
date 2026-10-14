@@ -1,36 +1,15 @@
 """Consulta RENAPO — verificación de existencia en padrón oficial.
 
-⚠ Validado Playwright MCP 2026-06-13: RENAPO no expone API pública. La consulta oficial
-está en https://www.gob.mx/curp/ y requiere CAPTCHA.
+Portal oficial: https://www.gob.mx/curp/ (verificado 2026-10-14):
+- www.gob.mx está detrás de un challenge anti-bot de Akamai (`/_sec/verify`).
+- El formulario carga reCAPTCHA Enterprise
+  (site key 6Lfi0jcpAAAAAPfBiQkGzQR3gv8mDRkqPDHAy8hS).
 
-Selectores reales del portal gob.mx/curp/ (modo 2 — consulta por datos):
-- input[name='curp'] (18 chars, maxLength=18)
-- input[name='nombres'] (50 chars)
-- input[name='primerApellido'] (50 chars)
-- input[name='segundoApellido'] (50 chars)
-- input[name='selectedYear'] (4 chars, year)
-- button:has-text('Buscar')
+No se resuelve ni se evade ninguno de los dos. Por eso el modo real devuelve un
+**handoff humano**: URL, pasos y la CURP ya validada localmente (estructura +
+dígito verificador) para que una persona complete la consulta.
 
-Endpoint API REST descubierto (cuando captcha resuelto):
-POST https://www.gob.mx/curp/Search/SearchCurpByData
-con form data: curp/nombres/primerApellido/segundoApellido/selectedYear
-
-Estrategias implementadas:
-1. **Modo mock** (default): devuelve respuesta plausible "Vigente" con datos
-   derivados de la propia CURP (sexo, fecha, estado). Útil para desarrollo,
-   tests y flujos agénticos que solo necesitan "no crashee".
-
-2. **Modo Playwright** (TODO): pendiente de integrar. La estructura está
-   reservada para cuando se decida si:
-   - usar un servicio CAPTCHA externo (2captcha, anti-captcha)
-   - usar un endpoint privado RENAPO si la SRE de algún cliente lo expone
-   - asumir intervención humana en el flujo
-
-   Hasta entonces, llamar a `consultar_renapo_via_playwright` en modo real
-   devuelve `not_implemented_error` con guía de qué hace falta.
-
-Cache: las consultas RENAPO se cachean 90 días porque los datos del padrón
-cambian muy raramente (correcciones, defunciones registradas).
+Mock solo con PLUGINS_MX_MOCK=1 (respuestas `simulated: true`).
 """
 
 from __future__ import annotations
@@ -54,17 +33,33 @@ from mp_curp_renapo.validacion import (  # noqa: E402
 )
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
-from shared.errors import McpError, NotFoundError, ValidationError  # noqa: E402
-from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.errors import ValidationError  # noqa: E402
+from shared.mock import mark_simulated  # noqa: E402
 
 NAMESPACE = "curp_renapo_mcp"
 CACHE_DIAS = 90
 
 
-class _NotImplementedError(McpError):
-    """Funcionalidad pendiente de integración (Playwright + CAPTCHA)."""
+PORTAL_URL = "https://www.gob.mx/curp/"
 
-    code = "not_implemented_error"
+
+def handoff_renapo(curp: str, motivo: str = "consulta") -> dict[str, Any]:
+    """RENAPO exige reCAPTCHA Enterprise + challenge Akamai: lo completa una persona."""
+    pasos = [
+        "Abrir https://www.gob.mx/curp/ en un navegador.",
+        "Elegir la pestaña 'Clave Única de Registro de Población' y pegar la CURP.",
+        "Completar la verificación de seguridad (reCAPTCHA) y pulsar 'Buscar'.",
+    ]
+    if motivo == "constancia":
+        pasos.append("En el resultado, pulsar 'Descargar PDF' para obtener la constancia.")
+    return {
+        "requiere_humano": True,
+        "motivo": "captcha_requerido",
+        "url": PORTAL_URL,
+        "pasos": pasos,
+        "campos_prellenados": {"curp": curp},
+        "simulated": False,
+    }
 
 
 class RenapoClient:
@@ -78,21 +73,13 @@ class RenapoClient:
         self._cache = cache or FileCache(NAMESPACE)
         self._bitacora = bitacora or Bitacora(NAMESPACE)
 
-        # RENAPO no tiene "credenciales" — el discriminador de mock es:
-        # 1. PLUGINS_MX_MOCK=1 fuerza mock
-        # 2. PLAYWRIGHT_AVAILABLE no seteado → mock por default (no hay forma
-        #    de hacer consulta real sin Playwright)
-        if os.environ.get("PLUGINS_MX_MOCK") == "1":
-            self._mock_mode = True
-        elif os.environ.get("CURP_RENAPO_PLAYWRIGHT") == "1":
-            self._mock_mode = False
-        else:
-            # Default: mock (porque Playwright no está integrado todavía)
-            self._mock_mode = True
-
     @property
     def is_mock(self) -> bool:
-        return self._mock_mode
+        return os.environ.get("PLUGINS_MX_MOCK") == "1"
+
+    @property
+    def _mock_mode(self) -> bool:
+        return self.is_mock
 
     async def consultar(self, curp: str) -> dict[str, Any]:
         """Consulta una CURP en RENAPO. Cache 90 días."""
@@ -124,23 +111,18 @@ class RenapoClient:
             )
             return response
 
-        # Modo real — Playwright todavía no integrado
-        raise _NotImplementedError(
-            (
-                "Consulta RENAPO real (vía Playwright) no está implementada todavía. "
-                "Para activar: instalar playwright + integrar bypass de CAPTCHA "
-                "(servicio externo tipo 2captcha o intervención humana). "
-                "Mientras tanto, usar modo mock (PLUGINS_MX_MOCK=1 o sin "
-                "CURP_RENAPO_PLAYWRIGHT=1)."
-            ),
-            details={"curp_hash": Bitacora.hash_sensitive(curp_norm)},
+        self._bitacora.log(
+            "consultar_renapo",
+            success=True,
+            params_summary={"curp_hash": Bitacora.hash_sensitive(curp_norm), "mode": "handoff"},
         )
+        return {**handoff_renapo(curp_norm), "validacion_local": estructura}
 
     async def descargar_constancia(self, curp: str) -> dict[str, Any]:
         """Descarga el PDF de constancia CURP oficial.
 
-        En mock devuelve metadata simulada con path donde estaría el PDF.
-        En real, requiere Playwright (no implementado).
+        En mock devuelve metadata simulada. En real devuelve handoff humano
+        (el portal exige reCAPTCHA Enterprise).
         """
         estructura = validar_estructura(curp)
         if not estructura["valido_estructura"]:
@@ -164,12 +146,7 @@ class RenapoClient:
                 }
             )
 
-        raise _NotImplementedError(
-            (
-                "Descarga de constancia real requiere integración Playwright. "
-                "Ver consultar_renapo_via_playwright para guía."
-            ),
-        )
+        return handoff_renapo(estructura["curp_normalizado"], motivo="constancia")
 
     # ---------- mock helpers ----------
 

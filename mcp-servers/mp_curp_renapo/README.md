@@ -6,7 +6,7 @@ MCP server para validar Claves Únicas de Registro de Población (CURP) y opcion
 
 **La capa estructural (8 de 9 tools) es 100% local y siempre real** — no toca red, valida en microsegundos. Si tu agente puede resolver el problema sin pegarle a RENAPO, no hace falta Playwright ni CAPTCHA.
 
-La capa RENAPO (consulta + descarga de constancia) está en modo mock por default y requiere integración Playwright para modo real. Diseñado así porque RENAPO no expone API pública y meter Playwright + CAPTCHA es una decisión que cada usuario debe tomar.
+La capa RENAPO (consulta + descarga de constancia) devuelve un **handoff humano**: el portal exige reCAPTCHA Enterprise y un challenge anti-bot, y este MCP no los evade.
 
 ## Lo que cubre
 
@@ -17,8 +17,8 @@ La capa RENAPO (consulta + descarga de constancia) está en modo mock por defaul
 | Palabras inconvenientes | Alerta si la CURP no tuvo el reemplazo X de RENAPO | ✅ Real |
 | Generación reversa | Construye la CURP esperada desde datos personales | ✅ Real |
 | Batch | Validar lotes de hasta 500 CURPs (limpieza de bases) | ✅ Real |
-| Consulta padrón | Verifica existencia en RENAPO | 🚧 Mock (Playwright pendiente) |
-| Constancia oficial | Descarga PDF | 🚧 Mock (Playwright pendiente) |
+| Consulta padrón | Verifica existencia en RENAPO | Handoff humano (CAPTCHA) |
+| Constancia oficial | Descarga PDF | Handoff humano (CAPTCHA) |
 
 ## Tools expuestos
 
@@ -48,24 +48,19 @@ AABB CCDDEE F GGGGG HH I
 └── 4 letras: 1ra apellido paterno, 1ra vocal interior paterno, 1ra materno, 1ra nombre
 ```
 
-## Configuración
+## Estado real
 
-### Modo mock (default)
+| Fecha | URL | Resultado |
+|---|---|---|
+| 2026-10-14 | `GET https://www.gob.mx/curp/` | 200 "Challenge Validation" (Akamai `/_sec/verify`) + `recaptcha/enterprise.js` |
 
-Sin envs, todo lo estructural funciona real, y RENAPO devuelve respuestas plausibles derivadas de la propia CURP. La heurística determinística: CURPs cuyo dígito verificador es 4 simulan estado `DUPLICADO`; el resto, `VIGENTE`.
-
-### Modo "real" (estructural real, RENAPO no implementado todavía)
-
-```bash
-export CURP_RENAPO_PLAYWRIGHT=1
-```
-
-Esto activa el camino que llama a RENAPO. Pero como Playwright + CAPTCHA todavía no están integrados, `consultar_renapo` y `descargar_constancia_renapo` devuelven `not_implemented_error` con guía de qué hace falta.
-
-Para integrar Playwright real necesitas:
-1. `pip install playwright && playwright install chromium`
-2. Decidir bypass CAPTCHA: servicio externo (2captcha, anti-captcha) o intervención humana
-3. Implementar el flujo en `mp_curp_renapo/renapo.py` reemplazando el branch `not_implemented_error`
+- Estado: **handoff humano**. `curp_consultar_renapo` y
+  `curp_descargar_constancia_renapo` devuelven `requiere_humano: true`, la URL,
+  los pasos y la CURP prellenada junto con su validación local.
+- No hay CAPTCHA solver ni evasión del challenge, por diseño (regla del repo).
+- Mock solo con `PLUGINS_MX_MOCK=1` (`simulated: true`).
+- Test live (`-m live`) verifica que el portal siga exigiendo CAPTCHA; si deja
+  de hacerlo, revisar si hay endpoint consultable.
 
 ## Seguridad
 
@@ -85,4 +80,4 @@ Para integrar Playwright real necesitas:
 .venv/bin/pytest mp_curp_renapo/tests -v
 ```
 
-58 tests cubren: catálogos (estados, char→num), validación estructural (positivos, negativos, edge cases como 31-feb), derivaciones (fecha/sexo/estado), generación reversa, batch, cliente RENAPO mock + branch `not_implemented_error`, y tools FastMCP end-to-end.
+58 tests cubren: catálogos (estados, char→num), validación estructural (positivos, negativos, edge cases como 31-feb), derivaciones (fecha/sexo/estado), generación reversa, batch, cliente RENAPO mock + handoff humano, y tools FastMCP end-to-end.
