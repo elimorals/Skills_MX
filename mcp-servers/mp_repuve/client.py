@@ -1,19 +1,16 @@
 """Cliente REPUVE — consulta NIV/placa robados.
 
-3 modos:
-  - mock (default): respuestas determinísticas por sufijo del NIV/placa.
-  - playwright (PLUGINS_MX_REPUVE_LIVE=1): browser real, reCAPTCHA v3 auto.
-  - 2captcha (TWOCAPTCHA_API_KEY): solver externo, batch grande (futuro).
+Portal: https://www2.repuve.gob.mx:8443/ciudadania/ (Angular + reCAPTCHA v3).
+Endpoint observado 2026-10-14: POST https://www2.repuve.gob.mx:8443/consulta/consulta/repuve
+con body JSON {criterio, llave, ...} cifrado en el navegador y token reCAPTCHA;
+un navegador automatizado recibe 401 "El reCaptcha no fue superado".
 
-NOTA del discovery 2026-06-15: el endpoint backend exacto de REPUVE no
-quedó capturado en sesión inicial (Angular timing race). El modo real
-queda preparado vía PortalSession; cuando el endpoint exacto se confirme,
-solo hay que ajustar `API_URL_PATTERN` en shared/repuve.py.
-
-Cache 7 días — el estatus de robo cambia mensualmente o menos.
+No se evade el CAPTCHA: el modo real devuelve un **handoff humano** (URL,
+pasos, criterio prellenado). Mock solo con PLUGINS_MX_MOCK=1.
 """
 from __future__ import annotations
 
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -26,19 +23,10 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
-from shared.errors import UpstreamError, ValidationError  # noqa: E402
-from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
-from shared.playwright_session import (  # noqa: E402
-    PlaywrightNotAvailable,
-    PortalSession,
-    should_use_real_browser,
-)
+from shared.errors import ValidationError  # noqa: E402
+from shared.mock import mark_simulated  # noqa: E402
 from shared.repuve import (  # noqa: E402
-    API_URL_PATTERN,
     PORTAL_URL,
-    SEARCH_BUTTON,
-    SEARCH_INPUT_NIV,
-    SEARCH_INPUT_PLACA,
     VehiculoREPUVE,
     validar_niv,
     validar_placa,
@@ -53,7 +41,6 @@ TIMEOUT_SECONDS = 30.0
 class RepuveClient:
     """Cliente unificado REPUVE."""
 
-    LIVE_ENV_FLAG = "PLUGINS_MX_REPUVE_LIVE"
 
     def __init__(
         self,
@@ -105,6 +92,16 @@ class RepuveClient:
             detalle = self.consultar_placa(placa)
             identificador = validar_placa(placa)
 
+        if detalle.get("requiere_humano"):
+            return {
+                "identificador_buscado": identificador,
+                "tipo": tipo,
+                "consultado": False,
+                "tiene_reporte_robo": None,  # desconocido: no se pudo consultar
+                "advertencias": ["REPUVE exige reCAPTCHA: una persona debe completar la consulta."],
+                "detalle": detalle,
+            }
+
         veh = detalle.get("vehiculo") or {}
         tiene_robo = bool(veh.get("tiene_reporte_robo"))
 
@@ -146,10 +143,10 @@ class RepuveClient:
             )
             return cached
 
-        if not should_use_real_browser(self.LIVE_ENV_FLAG):
-            result = self._mock(tipo, valor)
-        else:
-            result = self._real_playwright(tipo, valor)
+        if os.environ.get("PLUGINS_MX_MOCK") != "1":
+            return self._handoff(tipo, valor)  # no se cachea: no hay dato
+
+        result = self._mock(tipo, valor)
 
         self._cache.set(cache_key, result, ttl_hours=CACHE_TTL_HOURS)
         self._bitacora.log(
@@ -165,80 +162,26 @@ class RepuveClient:
         )
         return result
 
-    # ============================================================
-    # Playwright path
-    # ============================================================
-
-    def _real_playwright(self, tipo: str, valor: str) -> dict[str, Any]:
-        selector = SEARCH_INPUT_NIV if tipo == "niv" else SEARCH_INPUT_PLACA
-        try:
-            with PortalSession(
-                portal_url=PORTAL_URL,
-                api_url_pattern=API_URL_PATTERN,
-                ready_selector=selector,
-            ) as sess:
-                captured = sess.query(
-                    fill_action=lambda page: self._fill(page, selector, valor),
-                    submit_action=lambda page: self._click_buscar(page, tipo),
-                    wait_after_submit_ms=6000,
-                )
-        except PlaywrightNotAvailable as e:
-            raise UpstreamError(
-                "Playwright no disponible. Instala: pip install playwright && playwright install chromium",
-                {"raw": str(e)},
-            ) from e
-        except Exception as e:
-            raise UpstreamError(
-                f"Error sesión Playwright REPUVE: {type(e).__name__}: {e}",
-            ) from e
-
-        if not captured:
-            # NOTA: endpoint exacto pendiente discovery. Cuando se confirme,
-            # actualizar API_URL_PATTERN en shared/repuve.py.
-            raise UpstreamError(
-                "Ningún XHR matched API_URL_PATTERN. Probable que el patrón regex "
-                "necesite ajuste — capturar endpoint exacto con Playwright MCP y "
-                "actualizar shared/repuve.py::API_URL_PATTERN.",
-            )
-
-        # Heurística: la primera respuesta JSON suele ser la del consulta
-        resp = captured[0]
+    @staticmethod
+    def _handoff(tipo: str, valor: str) -> dict[str, Any]:
+        campo = "Número de Identificación Vehicular (NIV)" if tipo == "niv" else "Número de Placa"
         return {
+            "requiere_humano": True,
+            "motivo": "captcha_requerido",
+            "url": PORTAL_URL,
+            "pasos": [
+                "Abrir la URL en un navegador.",
+                f"Capturar solo el campo '{campo}' con el valor prellenado.",
+                "Pulsar 'Buscar' (el reCAPTCHA invisible se valida en el navegador).",
+                "Leer 'Estatus' / reporte de robo en el resultado.",
+            ],
+            "campos_prellenados": {tipo: valor},
             "tipo": tipo,
             "valor": valor,
-            "encontrado": resp.status == 200,
-            "vehiculo": {"raw_response": resp.body[:500]},  # placeholder hasta confirmar schema
+            "encontrado": None,
             "fecha_consulta": datetime.now(timezone.utc).isoformat(),
-            "fuente": PORTAL_URL,
-            "modo": "playwright",
             "simulated": False,
         }
-
-    @staticmethod
-    def _fill(page, selector: str, valor: str) -> None:
-        page.evaluate(
-            """({selector, value}) => {
-                const el = document.querySelector(selector);
-                if (!el) throw new Error('input not found: ' + selector);
-                el.focus();
-                const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-                setter.call(el, value);
-                el.dispatchEvent(new Event('input', { bubbles: true }));
-            }""",
-            {"selector": selector, "value": valor},
-        )
-
-    @staticmethod
-    def _click_buscar(page, tipo: str) -> None:
-        # 2do botón "Buscar" corresponde al NIV; 1ro corresponde a placa.
-        idx = 1 if tipo == "niv" else 0
-        page.evaluate(
-            f"""() => {{
-                const btns = Array.from(document.querySelectorAll('button')).filter(b => b.textContent?.trim() === 'Buscar');
-                if (btns[{idx}]) btns[{idx}].click();
-                else if (btns[0]) btns[0].click();
-            }}"""
-        )
 
     # ============================================================
     # Mock path

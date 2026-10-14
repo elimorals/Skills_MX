@@ -145,3 +145,50 @@ class TestVerificarRobado:
         c = RepuveClient()
         with pytest.raises(ValidationError):
             c.verificar_robado()
+
+
+# ============================================================
+# Modo real: handoff humano (reCAPTCHA v3)
+# ============================================================
+
+
+@pytest.fixture
+def real_client(tmp_path, monkeypatch):
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+    monkeypatch.setenv("PLUGINS_MX_CACHE_DIR", str(tmp_path / "cache"))
+    monkeypatch.setenv("PLUGINS_MX_AUDIT_DIR", str(tmp_path / "audit"))
+    from mp_repuve.client import RepuveClient
+
+    return RepuveClient()
+
+
+def test_real_devuelve_handoff(real_client):
+    r = real_client.consultar_niv("3VWFE21C04M000001")
+    assert r["requiere_humano"] is True
+    assert r["campos_prellenados"] == {"niv": "3VWFE21C04M000001"}
+    assert r["simulated"] is False
+
+
+def test_verificar_robado_real_no_afirma_sin_robo(real_client):
+    r = real_client.verificar_robado(placa="ABC1234")
+    assert r["tiene_reporte_robo"] is None
+    assert r["consultado"] is False
+    assert r["detalle"]["requiere_humano"] is True
+
+
+@pytest.mark.live
+def test_live_api_sigue_exigiendo_recaptcha():
+    """Sin token, la API responde 401 reCaptcha: el handoff sigue siendo necesario."""
+    import httpx
+
+    from shared.repuve import API_URL
+
+    import ssl
+
+    import certifi
+
+    ctx = ssl.create_default_context(cafile=certifi.where())
+    ctx.set_ciphers("DEFAULT:@SECLEVEL=1")  # el servidor REPUVE solo negocia cifrados legacy
+    r = httpx.post(API_URL, json={}, timeout=30, verify=ctx)
+    assert r.status_code == 401
+    assert "recaptcha" in r.text.lower()

@@ -15,21 +15,22 @@ MCP para REPUVE (Registro Público Vehicular). Top 15 #5.
 - **Site key reCAPTCHA**: `6Lfy8AEoAAAAANclz0Doczn6y826fM0BjOPXEn9B`
 - 4 modos de búsqueda: placa, número de serie (NIV), folio, número de constancia
 
-## Estado del MCP
+## Estado real
 
-| Componente | Estado |
-|---|---|
-| Estructura (client + server + schemas) | ✅ Listo |
-| Mock determinístico | ✅ Funciona |
-| Validación NIV (ISO 3779) / placa MX | ✅ Funciona |
-| Modo Playwright real | ⚠️ Esqueleto listo, endpoint exacto pendiente captura |
-| Tests | ✅ |
+| Fecha | URL | Resultado |
+|---|---|---|
+| 2026-10-14 | `GET https://www2.repuve.gob.mx:8443/ciudadania/` | 200, Angular + reCAPTCHA v3 invisible |
+| 2026-10-14 | `POST https://www2.repuve.gob.mx:8443/consulta/consulta/repuve` desde Chromium headless | 401 "El reCaptcha no fue superado correctamente" |
+| 2026-10-14 | mismo endpoint sin token (test live) | 401 reCaptcha |
 
-**NOTA**: Durante el discovery (2026-06-15) Angular tuvo race conditions
-con Playwright que impidieron capturar el endpoint backend en una sola
-toma. La infraestructura del MCP (PortalSession + selectores + flow) está
-lista; cuando se confirme el endpoint, basta ajustar `API_URL_PATTERN`
-en `shared/repuve.py`.
+- Estado: **handoff humano**. El body se cifra en el navegador (`criterio`,
+  `llave`) y lleva token reCAPTCHA v3; un navegador automatizado es rechazado.
+  No se evade: las tools devuelven `requiere_humano: true`, URL, pasos y el
+  NIV/placa prellenado.
+- `repuve_verificar_robado` en modo real devuelve `tiene_reporte_robo: null`
+  (desconocido), nunca `false`.
+- El servidor solo negocia cifrados TLS legacy (`@SECLEVEL=1`).
+- Mock solo con `PLUGINS_MX_MOCK=1` (`simulated: true`).
 
 ## Tools
 
@@ -40,14 +41,13 @@ Consulta por NIV/VIN (17 caracteres, sin I/O/Q). Devuelve datos del vehículo + 
 Consulta por placa mexicana.
 
 ### `repuve_verificar_robado(niv=..., placa=...)`
-Decisión binaria — devuelve `tiene_reporte_robo: bool` + advertencias.
+Devuelve `tiene_reporte_robo` (bool en mock; `null` + handoff en real) + advertencias.
 
 ## Configuración
 
 | Env var | Default | Descripción |
 |---|---|---|
-| `PLUGINS_MX_MOCK` | `1` | Override mock. |
-| `PLUGINS_MX_REPUVE_LIVE` | unset | `1` activa Playwright real. |
+| `PLUGINS_MX_MOCK` | unset | `1` = datos simulados (`simulated: true`). |
 | `PLUGINS_MX_CACHE_DIR` | `~/.cache/plugins-mx` | Cache local (7 días). |
 
 ## Tests
