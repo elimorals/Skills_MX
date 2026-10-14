@@ -18,10 +18,12 @@ mcp = FastMCP("puebla_mun_mcp")
 _client = PueblaMunClient()
 
 
-@mcp.tool(annotations={"title": "Predial Puebla (handoff: CAPTCHA)", "readOnlyHint": True, "openWorldHint": True})
-def puebla_mun_consultar_predial(cuenta_predial: str) -> dict:
-    """Predial Puebla capital. El portal exige CAPTCHA: devuelve pasos para que una persona consulte."""
-    return _client.consultar_predial(cuenta_predial)
+@mcp.tool(annotations={"title": "Predial Puebla (CAPTCHA: handoff o solver opt-in)", "readOnlyHint": True, "openWorldHint": True})
+def puebla_mun_consultar_predial(cuenta_predial: str, delegacion: str = "", tipo: str = "PU") -> dict:
+    """Predial Puebla capital. `cuenta_predial`: cuenta de 7 dígitos (con `delegacion` de 2) o línea
+    de captura de 24 dígitos; `tipo` PU (urbano) o PR (rústico). El portal exige CAPTCHA: con
+    PLUGINS_MX_CAPTCHA_SOLVER=2captcha consulta de verdad; si no, devuelve pasos para una persona."""
+    return _client.consultar_predial(cuenta_predial, delegacion=delegacion, tipo=tipo)
 
 
 if __name__ == "__main__":
