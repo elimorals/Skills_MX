@@ -30,6 +30,7 @@ if str(_REPO_ROOT) not in sys.path:
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 
 NAMESPACE = "ine_verificacion"
@@ -102,34 +103,34 @@ class INEVerificacionClient:
         self._bitacora.log("verificar_datos_handoff", success=True,
                            params_summary={"modelo": m,
                                            "cic_hash": self._bitacora.hash_sensitive(limpios.get("cic", ""))})
-        return {
-            "modelo": m,
-            "formato_valido": True,
-            "en_lista_nominal": None,
-            "handoff_humano": True,
-            "motivo": "La consulta del INE exige reCAPTCHA; no se automatiza.",
-            "url": URL_LISTA_NOMINAL,
-            "pasos": [
+        return armar_handoff(
+            motivo="captcha",
+            detalle="La consulta del INE exige reCAPTCHA; no se automatiza.",
+            url=URL_LISTA_NOMINAL,
+            pasos=[
                 f"Abrir la URL y elegir el bloque del modelo {m}.",
                 "Capturar " + ", ".join(requeridos) + " tal como aparecen en la credencial (con ceros a la izquierda).",
                 "Resolver el reCAPTCHA y pulsar CONSULTAR; registrar el resultado y la fecha.",
             ],
-            "campos_a_capturar": requeridos,
-            "simulated": False,
-        }
+            modelo=m,
+            formato_valido=True,
+            en_lista_nominal=None,
+            campos_a_capturar=requeridos,
+        )
 
     def verificar_qr(self, qr_payload: str) -> dict[str, Any]:
         """Sin la llave pública del INE no se puede validar la firma del QR: no se afirma nada."""
         if not qr_payload or len(qr_payload) < 32:
             raise ValidationError("qr_payload muy corto (≥32 chars esperados)")
-        return {
-            "autentica": None,
-            "verificable_localmente": False,
-            "motivo": ("El INE no publica un mecanismo/llave para validar el QR fuera de sus servicios; "
-                       "la versión anterior 'validaba' por el prefijo del texto."),
-            "handoff_humano": True,
-            "url": URL_LISTA_NOMINAL,
-        }
+        return armar_handoff(
+            motivo="sin_verificador_publico",
+            detalle=("El INE no publica un mecanismo/llave para validar el QR fuera de sus servicios; "
+                     "la versión anterior 'validaba' por el prefijo del texto."),
+            url=URL_LISTA_NOMINAL,
+            pasos=[],
+            autentica=None,
+            verificable_localmente=False,
+        )
 
     def consultar_vigencia(self, modelo: str, anio_emision: int) -> dict[str, Any]:
         """Regla publicada por el INE: modelo en lista de vigentes y < 10 años desde la emisión."""

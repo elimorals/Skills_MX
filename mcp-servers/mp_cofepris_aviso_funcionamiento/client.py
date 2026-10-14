@@ -35,6 +35,7 @@ if str(_REPO_ROOT) not in sys.path:
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 
 NAMESPACE = "cofepris_aviso"
@@ -148,18 +149,17 @@ class COFEPRISAvisoClient:
             raise ValidationError(f"identificador inválido: {identificador!r}")
         if is_mock_mode([], default_when_no_creds=False):
             return mark_simulated({"identificador": identificador, "vigente": True})
-        return {
-            "identificador": identificador,
-            "vigente": None,
-            "handoff_humano": True,
-            "motivo": "COFEPRIS no publica una consulta de avisos de funcionamiento por RFC o folio.",
-            "url": URL_COFEPRIS,
-            "pasos": [
+        return armar_handoff(
+            motivo="sin_consulta_publica",
+            detalle="COFEPRIS no publica una consulta de avisos de funcionamiento por RFC o folio.",
+            url=URL_COFEPRIS,
+            pasos=[
                 "Pedir al establecimiento el acuse del aviso o la licencia sanitaria.",
                 "O consultar a COFEPRIS / la autoridad sanitaria estatal con el número de ingreso.",
             ],
-            "simulated": False,
-        }
+            identificador=identificador,
+            vigente=None,
+        )
 
     def listar_giros_catalogo(self) -> dict[str, Any]:
         por_tramite: dict[str, int] = {}

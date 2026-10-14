@@ -119,7 +119,7 @@ class TestLlenarReal:
         monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
         r = FormFillerPublicClient().llenar("curp_consulta", {"curp": "PERD850301HDFRZG02"})
         assert r["requiere_humano"] is True
-        assert r["motivo"] == "captcha_requerido"
+        assert r["motivo"] == "captcha"
         assert r["campos_prellenados"] == {"curp": "PERD850301HDFRZG02"}
         assert r["mcp_real"] == "mp_curp_renapo"
         assert r["simulated"] is False

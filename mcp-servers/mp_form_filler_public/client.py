@@ -30,6 +30,7 @@ if str(_REPO_ROOT) not in sys.path:
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 
 NAMESPACE = "form_filler_public"
@@ -285,17 +286,15 @@ class FormFillerPublicClient:
         if f.get("tiene_captcha"):
             pasos.append(f"Resolver la verificación de seguridad ({f.get('captcha_tipo')}).")
         pasos.append("Enviar y guardar el comprobante/resultado.")
-        return {
-            "clave": clave,
-            "requiere_humano": True,
-            "requiere_intervencion_humana": True,
-            "motivo": "captcha_requerido" if f.get("tiene_captcha") else "envio_manual",
-            "url": f["url"],
-            "pasos": pasos,
-            "campos_prellenados": {k: str(v).strip() for k, v in datos.items()},
-            "captcha_tipo": f.get("captcha_tipo"),
-            "mcp_real": f.get("mcp_real"),
-            "exito": False,
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "simulated": False,
-        }
+        return armar_handoff(
+            motivo="captcha" if f.get("tiene_captcha") else "envio_manual",
+            url=f["url"],
+            pasos=pasos,
+            campos_prellenados={k: str(v).strip() for k, v in datos.items()},
+            captcha_tipo=f.get("captcha_tipo"),
+            clave=clave,
+            requiere_intervencion_humana=True,
+            mcp_real=f.get("mcp_real"),
+            exito=False,
+            timestamp=datetime.now(timezone.utc).isoformat(),
+        )

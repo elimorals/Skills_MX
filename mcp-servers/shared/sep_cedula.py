@@ -21,6 +21,7 @@ import re
 from typing import Any, Optional
 
 from shared.errors import ValidationError
+from shared.portal_handoff import armar_handoff
 
 URL_SEP_CEDULA = "https://cedulaprofesional.sep.gob.mx/"
 API_CONSULTA = f"{URL_SEP_CEDULA}api/rnp/solr/profesionista/consultar/byDetalle"
@@ -34,20 +35,18 @@ def validar_formato_cedula(cedula: str) -> bool:
 
 
 def handoff_sep(campos: dict[str, Any]) -> dict[str, Any]:
-    return {
-        "requiere_humano": True,
-        "motivo": "captcha_requerido",
-        "url": URL_SEP_CEDULA,
-        "pasos": [
+    return armar_handoff(
+        motivo="captcha",
+        url=URL_SEP_CEDULA,
+        pasos=[
             "Abrir la URL en un navegador.",
             "En 'Búsqueda de Cédulas Profesionales' capturar los datos prellenados.",
             "Pulsar 'Buscar' (reCAPTCHA v3 se valida en el navegador).",
             "Verificar nombre, profesión, institución y año de expedición.",
         ],
-        "campos_prellenados": {k: v for k, v in campos.items() if v},
-        "fuente": "SEP-RNP",
-        "simulated": False,
-    }
+        campos_prellenados={k: v for k, v in campos.items() if v},
+        fuente="SEP-RNP",
+    )
 
 
 def consultar_cedula_sep(

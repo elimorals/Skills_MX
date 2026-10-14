@@ -78,7 +78,7 @@ def test_detalle_inexistente():
 
 def test_vincular_e_firma_handoff():
     r = LlaveMXClient().vincular_e_firma("GOMJ800101HDFRNN09")
-    assert r["handoff_humano"] is True
+    assert r["requiere_humano"] is True
     assert r["e_firma_vinculada"] is None
 
 

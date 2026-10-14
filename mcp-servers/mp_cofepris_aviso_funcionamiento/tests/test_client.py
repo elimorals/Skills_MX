@@ -64,7 +64,7 @@ def test_requisitos_licencia_no_es_aviso():
 
 def test_consultar_aviso_handoff():
     r = COFEPRISAvisoClient().consultar_aviso("XAXX010101000")
-    assert r["handoff_humano"] is True
+    assert r["requiere_humano"] is True
     assert r["vigente"] is None
     with pytest.raises(ValidationError):
         COFEPRISAvisoClient().consultar_aviso("x")

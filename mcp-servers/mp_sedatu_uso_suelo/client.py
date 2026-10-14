@@ -25,6 +25,7 @@ if str(_REPO_ROOT) not in sys.path:
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.errors import ConfigError, NotFoundError, ValidationError  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 
 NAMESPACE = "sedatu_uso_suelo"
@@ -121,17 +122,17 @@ class SEDATUUsoSueloClient:
             raise NotFoundError(f"Trámite no en catálogo: {clave_tramite}")
         info = TRAMITES_CATALOGO[clave_tramite]
         if not is_mock_mode([], default_when_no_creds=False):
-            return {
-                "estado": estado,
-                "municipio": municipio,
-                "clave_tramite": clave_tramite,
-                "nombre": info["nombre"],
-                "requisitos_orientativos": info["requisitos_base"],
-                "verificado": False,
-                "handoff_humano": True,
-                "pasos": [f"Confirmar requisitos, costo y plazo con la ventanilla de desarrollo urbano de {municipio}, {estado}."],
-                "fuente": URL_RETYS,
-            }
+            return armar_handoff(
+                motivo="sin_consulta_publica",
+                pasos=[f"Confirmar requisitos, costo y plazo con la ventanilla de desarrollo urbano de {municipio}, {estado}."],
+                estado=estado,
+                municipio=municipio,
+                clave_tramite=clave_tramite,
+                nombre=info["nombre"],
+                requisitos_orientativos=info["requisitos_base"],
+                verificado=False,
+                fuente=URL_RETYS,
+            )
         return mark_simulated({
             "estado": estado,
             "municipio": municipio,
@@ -150,19 +151,18 @@ class SEDATUUsoSueloClient:
         if not estado or not municipio:
             raise ValidationError("estado y municipio requeridos")
         if not is_mock_mode([], default_when_no_creds=False):
-            return {
-                "estado": estado,
-                "municipio": municipio,
-                "giro_propuesto": giro_propuesto,
-                "permitido": None,
-                "handoff_humano": True,
-                "motivo": "La compatibilidad de uso de suelo depende del PDU municipal y del predio; no hay consulta pública nacional.",
-                "pasos": [
+            return armar_handoff(
+                motivo="sin_consulta_publica",
+                detalle="La compatibilidad de uso de suelo depende del PDU municipal y del predio; no hay consulta pública nacional.",
+                pasos=[
                     f"Consultar la zonificación del predio en el PDU vigente de {municipio}, {estado}.",
                     "Solicitar constancia/certificado de zonificación o licencia de uso de suelo en la ventanilla municipal.",
                 ],
-                "simulated": False,
-            }
+                estado=estado,
+                municipio=municipio,
+                giro_propuesto=giro_propuesto,
+                permitido=None,
+            )
         g = (giro_propuesto or "").lower()
         # Mock heurístico: la mayoría de giros comerciales se permiten en comercio/mixto
         permitido = True

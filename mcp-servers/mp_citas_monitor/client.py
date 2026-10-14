@@ -29,6 +29,7 @@ if str(_REPO_ROOT) not in sys.path:
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.errors import ValidationError, handle_httpx_error  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 
 import httpx  # noqa: E402
 
@@ -263,20 +264,19 @@ class CitasMonitorClient:
                 note="PLUGINS_MX_MOCK=1 — cupos simulados.",
             )
 
-        out: dict[str, Any] = {
-            "portal": portal_clave,
-            "tramite": tramite,
-            "tiene_cupos": None,
-            "handoff_humano": True,
-            "motivo": portal["bloqueo_verificado"],
-            "url": portal["url"],
-            "pasos": [
+        out = armar_handoff(
+            motivo="bloqueo_portal",
+            detalle=portal["bloqueo_verificado"],
+            portal=portal_clave,
+            url=portal["url"],
+            pasos=[
                 "El titular entra al portal con sus propios datos y revisa la agenda.",
                 "Nunca se automatiza la reserva ni se resuelven CAPTCHAs por el titular.",
             ],
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "simulated": False,
-        }
+            tramite=tramite,
+            tiene_cupos=None,
+            timestamp=datetime.now(timezone.utc).isoformat(),
+        )
         if portal_clave == "sat_citas":
             # Dato real y público: lo que el SAT pide hacer en línea antes de buscar cita.
             out["alternativas_digitales"] = alternativas_digitales_sat()

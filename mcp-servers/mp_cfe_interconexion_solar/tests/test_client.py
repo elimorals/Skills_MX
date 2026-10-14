@@ -29,7 +29,7 @@ def test_umbral_generadora_exenta_0_7_mw():
 def test_solicitar_es_handoff_sin_folio():
     r = CFEInterconexionClient().solicitar_interconexion("123456789012", 5.5, "PDBT")
     assert r["enviada"] is False
-    assert r["handoff_humano"] is True
+    assert r["requiere_humano"] is True
     assert "folio" not in r
     assert r["categoria"] == "generacion_distribuida_exenta"
 
@@ -44,7 +44,7 @@ def test_solicitar_validaciones():
 
 def test_estatus_handoff():
     r = CFEInterconexionClient().consultar_estatus_solicitud("SOL-ABC123")
-    assert r["estatus"] is None and r["handoff_humano"] is True
+    assert r["estatus"] is None and r["requiere_humano"] is True
 
 
 def test_medicion_neta_compensa_hasta_consumo():

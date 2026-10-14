@@ -85,7 +85,7 @@ def test_buro_caido_es_error():
 
 def test_estatus_caso_handoff():
     r = ConcilianetClient().estatus_caso("PROF-123456")
-    assert r["handoff_humano"] is True
+    assert r["requiere_humano"] is True
     assert r["fase_actual"] is None
 
 
