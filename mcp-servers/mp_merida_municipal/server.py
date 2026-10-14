@@ -18,15 +18,10 @@ mcp = FastMCP("merida_mun_mcp")
 _client = MeridaMunClient()
 
 
-@mcp.tool()
-def merida_mun_consultar_multas(**kwargs) -> dict:
-    """consultar_multas (mock-first)."""
-    return _client.consultar_multas(**kwargs)
-
-@mcp.tool()
-def merida_mun_consultar_predial(**kwargs) -> dict:
-    """consultar_predial (mock-first)."""
-    return _client.consultar_predial(**kwargs)
+@mcp.tool(annotations={"title": "Predial Mérida (handoff: bot manager)", "readOnlyHint": True, "openWorldHint": True})
+def merida_mun_consultar_predial(calle: str, numero: str) -> dict:
+    """Predial Mérida por dirección. El portal exige verificación hCaptcha: devuelve pasos para una persona."""
+    return _client.consultar_predial(calle, numero)
 
 
 if __name__ == "__main__":

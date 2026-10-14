@@ -18,15 +18,10 @@ mcp = FastMCP("puebla_mun_mcp")
 _client = PueblaMunClient()
 
 
-@mcp.tool()
-def puebla_mun_consultar_multas(**kwargs) -> dict:
-    """consultar_multas (mock-first)."""
-    return _client.consultar_multas(**kwargs)
-
-@mcp.tool()
-def puebla_mun_consultar_predial(**kwargs) -> dict:
-    """consultar_predial (mock-first)."""
-    return _client.consultar_predial(**kwargs)
+@mcp.tool(annotations={"title": "Predial Puebla (handoff: CAPTCHA)", "readOnlyHint": True, "openWorldHint": True})
+def puebla_mun_consultar_predial(cuenta_predial: str) -> dict:
+    """Predial Puebla capital. El portal exige CAPTCHA: devuelve pasos para que una persona consulte."""
+    return _client.consultar_predial(cuenta_predial)
 
 
 if __name__ == "__main__":

@@ -18,15 +18,16 @@ mcp = FastMCP("guadalajara_mun_mcp")
 _client = GuadalajaraMunClient()
 
 
-@mcp.tool()
-def guadalajara_mun_consultar_multas(**kwargs) -> dict:
-    """consultar_multas (mock-first)."""
-    return _client.consultar_multas(**kwargs)
+@mcp.tool(annotations={"title": "Predial Guadalajara (handoff: reCAPTCHA)", "readOnlyHint": True, "openWorldHint": True})
+def guadalajara_mun_consultar_predial(cuenta_predial: str) -> dict:
+    """Predial Guadalajara. El portal exige reCAPTCHA: devuelve pasos para que una persona consulte."""
+    return _client.consultar_predial(cuenta_predial)
 
-@mcp.tool()
-def guadalajara_mun_consultar_predial(**kwargs) -> dict:
-    """consultar_predial (mock-first)."""
-    return _client.consultar_predial(**kwargs)
+
+@mcp.tool(annotations={"title": "Adeudos vehiculares Jalisco (handoff: reCAPTCHA)", "readOnlyHint": True, "openWorldHint": True})
+def guadalajara_mun_consultar_multas(placa: str) -> dict:
+    """Adeudos vehiculares estatales de Jalisco. El portal exige reCAPTCHA: devuelve pasos para una persona."""
+    return _client.consultar_adeudos_vehiculares(placa)
 
 
 if __name__ == "__main__":
