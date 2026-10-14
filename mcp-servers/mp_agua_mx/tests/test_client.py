@@ -101,6 +101,15 @@ class TestConsultarAdeudo:
         assert r["requiere_humano"] is True and r["motivo"] == "captcha"
         assert r["simulated"] is False
 
+    @respx.mock
+    def test_siapa_sigue_en_handoff_con_solver_activo(self, monkeypatch):
+        # El form de SIAPA es el inicio del pago (Santander), no una consulta: no se conecta.
+        monkeypatch.setenv("PLUGINS_MX_CAPTCHA_SOLVER", "2captcha")
+        monkeypatch.setenv("TWOCAPTCHA_API_KEY", "k")
+        r = AguaMxClient().consultar_adeudo("siapa", "12345678")
+        assert r["requiere_humano"] is True and r["motivo"] == "captcha"
+        assert not respx.calls  # ni 2captcha ni el portal
+
     def test_no_implementado_es_error_explicito(self):
         with pytest.raises(UpstreamError) as exc:
             AguaMxClient().consultar_adeudo("sacmex", "12345678901")

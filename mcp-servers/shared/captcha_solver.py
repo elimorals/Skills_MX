@@ -19,7 +19,7 @@ import html
 import os
 import re
 import time
-from typing import Any
+from typing import Any, Callable, TypeVar
 from urllib.parse import urljoin
 
 import httpx
@@ -135,6 +135,45 @@ def texto_html(fragmento: str) -> str:
     sin = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", fragmento)
     sin = re.sub(r"(?s)<[^>]+>", " ", sin)
     return re.sub(r"\s+", " ", html.unescape(sin)).strip()
+
+
+T = TypeVar("T")
+REINTENTOS_TOKEN = 2
+
+
+class TokenRechazado(Exception):
+    """El portal rechazó el token de captcha (expirado, score bajo, etc.)."""
+
+
+def con_token(
+    obtener_token: Callable[[], str], enviar: Callable[[str], T],
+    portal: str, reintentos: int = REINTENTOS_TOKEN,
+) -> T:
+    """Pide token y lo envía; si `enviar` levanta TokenRechazado, reintenta hasta `reintentos` veces."""
+    for _ in range(reintentos + 1):
+        try:
+            return enviar(obtener_token())
+        except TokenRechazado:
+            continue
+    raise UpstreamError(
+        f"{portal} rechazó el token de captcha {reintentos + 1} veces.",
+        {"portal": portal, "intentos": reintentos + 1},
+    )
+
+
+_SITEKEY_RES = (
+    r'data-sitekey=["\']([\w-]{20,})["\']',
+    r'[?&]render=([\w-]{20,})',
+    r'sitekey["\']?\s*[:=]\s*["\']([\w-]{20,})["\']',
+)
+
+
+def extraer_sitekey(html: str, respaldo: str) -> str:
+    """Sitekey del HTML/JS en vivo; si no aparece, la constante documentada."""
+    for patron in _SITEKEY_RES:
+        if m := re.search(patron, html or "", re.IGNORECASE):
+            return m.group(1)
+    return respaldo
 
 
 def _vision_respaldo(png: bytes) -> str:

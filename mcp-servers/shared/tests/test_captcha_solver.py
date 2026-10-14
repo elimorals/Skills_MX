@@ -96,3 +96,34 @@ def test_live_saldo():
         pytest.skip("requiere TWOCAPTCHA_API_KEY propia")
     r = httpx.post(f"{API}/getBalance", json={"clientKey": os.environ["TWOCAPTCHA_API_KEY"]}, timeout=30).json()
     assert r.get("errorId") == 0
+
+
+def test_con_token_reintenta_y_falla():
+    from shared.captcha_solver import TokenRechazado, con_token
+
+    tokens = iter(["a", "b", "c", "d"])
+    enviados = []
+
+    def enviar(t):
+        enviados.append(t)
+        if t != "b":
+            raise TokenRechazado()
+        return "ok"
+
+    assert con_token(lambda: next(tokens), enviar, "X") == "ok" and enviados == ["a", "b"]
+
+    def siempre_rechaza(t):
+        raise TokenRechazado()
+
+    with pytest.raises(UpstreamError):
+        con_token(lambda: "t", siempre_rechaza, "X")
+
+
+def test_extraer_sitekey():
+    from shared.captcha_solver import extraer_sitekey
+
+    sk = "6Leb1M4rAAAAAP_gRcAyMiOo99-j6eqQajKuMlB9"
+    assert extraer_sitekey(f'<div class="g-recaptcha" data-sitekey="{sk}">', "R") == sk
+    assert extraer_sitekey(f"api.js?render={sk}", "R") == sk
+    assert extraer_sitekey(f"siteKey:'{sk}'", "R") == sk
+    assert extraer_sitekey("<html></html>", "R") == "R"

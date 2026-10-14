@@ -1,12 +1,14 @@
 """Cliente REPUVE — consulta NIV/placa robados.
 
 Portal: https://www2.repuve.gob.mx:8443/ciudadania/ (Angular + reCAPTCHA v3).
-Endpoint observado 2026-10-14: POST https://www2.repuve.gob.mx:8443/consulta/consulta/repuve
-con body JSON {criterio, llave, ...} cifrado en el navegador y token reCAPTCHA;
-un navegador automatizado recibe 401 "El reCaptcha no fue superado".
+POST /consulta/consulta/repuve (vehículo) y /pgj (estatus de robo) con body
+{criterio, llave} cifrado RSA PKCS#1 v1.5 con llaves públicas fijas del bundle
++ token reCAPTCHA v3 (acción "login"). Detalle en shared/repuve.py.
 
-No se evade el CAPTCHA: el modo real devuelve un **handoff humano** (URL,
-pasos, criterio prellenado). Mock solo con PLUGINS_MX_MOCK=1.
+- Solver opt-in activo (`solver_activo("repuve")`): token vía 2captcha, cifrado
+  y consulta real; si REPUVE rechaza el token se reintenta 2 veces → UpstreamError.
+- Sin solver: **handoff humano** (URL, pasos, criterio prellenado).
+Mock solo con PLUGINS_MX_MOCK=1.
 """
 from __future__ import annotations
 
@@ -16,6 +18,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+import httpx
+
 _HERE = Path(__file__).resolve().parent
 _REPO_ROOT = _HERE.parent
 if str(_REPO_ROOT) not in sys.path:
@@ -23,7 +27,9 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
-from shared.errors import ValidationError  # noqa: E402
+from shared import repuve as rp  # noqa: E402
+from shared.captcha_solver import CaptchaSolver, TokenRechazado, con_token, solver_activo  # noqa: E402
+from shared.errors import UpstreamError, ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
 from shared.portal_handoff import armar_handoff  # noqa: E402
 from shared.repuve import (  # noqa: E402
@@ -37,6 +43,10 @@ from shared.repuve import (  # noqa: E402
 NAMESPACE = "repuve"
 CACHE_TTL_HOURS = 24 * 7  # 7 días
 TIMEOUT_SECONDS = 30.0
+USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+)
 
 
 class RepuveClient:
@@ -104,9 +114,11 @@ class RepuveClient:
             }
 
         veh = detalle.get("vehiculo") or {}
-        tiene_robo = bool(veh.get("tiene_reporte_robo"))
+        tiene_robo = veh.get("tiene_reporte_robo")
+        if tiene_robo is not None:
+            tiene_robo = bool(tiene_robo)
 
-        advertencias: list[str] = []
+        advertencias: list[str] = list(detalle.get("advertencias") or [])
         if tiene_robo:
             advertencias.append(
                 f"⛔ REPORTE DE ROBO ACTIVO en REPUVE — NO suscribir, NO contratar, "
@@ -144,12 +156,15 @@ class RepuveClient:
             )
             return cached
 
-        if os.environ.get("PLUGINS_MX_MOCK") != "1":
+        if os.environ.get("PLUGINS_MX_MOCK") == "1":
+            result = self._mock(tipo, valor)
+        elif solver_activo("repuve"):
+            result = self._real(tipo, valor)
+        else:
             return self._handoff(tipo, valor)  # no se cachea: no hay dato
 
-        result = self._mock(tipo, valor)
-
-        self._cache.set(cache_key, result, ttl_hours=CACHE_TTL_HOURS)
+        if not result.get("advertencias"):  # robo desconocido no se cachea
+            self._cache.set(cache_key, result, ttl_hours=CACHE_TTL_HOURS)
         self._bitacora.log(
             "consultar",
             success=True,
@@ -162,6 +177,40 @@ class RepuveClient:
             },
         )
         return result
+
+    def _real(self, tipo: str, valor: str) -> dict[str, Any]:
+        """Consulta real con token del solver. /pgj aparte: si falla, robo = None (desconocido)."""
+        with httpx.Client(timeout=TIMEOUT_SECONDS, verify=rp.ssl_legacy(),
+                          headers={"User-Agent": USER_AGENT}) as http:
+            cfg = rp.config_portal(http)
+            solver = CaptchaSolver()
+
+            def token() -> str:
+                return solver.recaptcha(cfg["sitekey"], rp.PORTAL_URL, version="v3", accion=rp.RECAPTCHA_ACCION)
+
+            # ponytail: un token por endpoint (el portal reusa uno); compartirlo si en vivo REPUVE lo acepta.
+            filas = con_token(token, lambda t: rp.enviar(http, rp.API_URL, cfg["rep"], tipo, valor, t), "REPUVE")
+            advertencias: list[str] = []
+            try:
+                estatus, robo = rp.estatus_robo(
+                    con_token(token, lambda t: rp.enviar(http, rp.API_PGJ, cfg["pgj"], tipo, valor, t), "REPUVE PGJ"))
+            except (UpstreamError, TokenRechazado):
+                estatus, robo = "", None
+                advertencias.append("No se pudo consultar el estatus de robo (PGJ vía REPUVE): resultado desconocido.")
+
+        base = {"tipo": tipo, "valor": valor, "fecha_consulta": datetime.now(timezone.utc).isoformat(),
+                "fuente": rp.PORTAL_URL, "modo": "real", "simulated": False, "advertencias": advertencias}
+        if not filas:
+            return {**base, "encontrado": False, "vehiculo": None}
+        f = filas[0]
+        veh = VehiculoREPUVE(
+            niv=f.get("VIN") or "", placa=f.get("PLACA") or "", marca=f.get("MARCA") or "",
+            submarca=f.get("MODELO") or "", modelo=str(f.get("ANIO_MODELO") or ""), tipo=f.get("TIPO") or "",
+            estado=f.get("ENTIDAD_EMPLACO") or "", estatus_robo=estatus, raw=f,
+        ).to_dict()
+        veh["tiene_reporte_robo"] = robo  # None = PGJ no respondió
+        veh["linea"], veh["clase"] = f.get("LINEA"), f.get("CLASE")
+        return {**base, "encontrado": True, "vehiculo": veh}
 
     @staticmethod
     def _handoff(tipo: str, valor: str) -> dict[str, Any]:

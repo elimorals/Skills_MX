@@ -1,8 +1,12 @@
 """Cliente mp_merida_municipal.
 
 Predial: isla.merida.gob.mx/serviciosinternet/predialmid está detrás de Radware
-Bot Manager, que redirige a un reto hCaptcha (verificado 2026-10-14) → handoff
-humano. La búsqueda es por dirección (calle + número), no por cuenta.
+Bot Manager, que redirige a un reto hCaptcha o responde 403 a httpx desde la
+segunda petición (verificado 2026-10-14) → handoff humano. El formulario en sí
+usa reCAPTCHA v3 (sitekey 6Lc3EjQmAAAAAEYFAUWTNk_k2wGN6rXoauSJ5jlS, acción
+"submit"), pero el solver opt-in NO se conecta: el bloqueo es del bot manager,
+no del captcha, y no se evade (sin stealth ni proxies).
+La búsqueda es por dirección (calle + número), no por cuenta.
 Multas estatales: sin portal público verificado (usar mp_multas_mx).
 """
 

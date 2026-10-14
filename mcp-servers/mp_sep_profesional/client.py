@@ -8,8 +8,9 @@ Auto-routing por modo de consulta:
 Caché de 30 días — los datos del RNP cambian raramente.
 
 Portal https://cedulaprofesional.sep.gob.mx/: cada consulta exige token
-reCAPTCHA v3 (verificado 2026-10-14) → el modo real devuelve handoff humano
-(ver shared/sep_cedula.py). Mock solo con PLUGINS_MX_MOCK=1.
+reCAPTCHA v3 (verificado 2026-10-14) → el modo real devuelve handoff humano,
+salvo con solver opt-in (PLUGINS_MX_CAPTCHA_SOLVER=2captcha + TWOCAPTCHA_API_KEY),
+que consulta la API real (ver shared/sep_cedula.py). Mock solo con PLUGINS_MX_MOCK=1.
 """
 
 from __future__ import annotations
@@ -147,8 +148,8 @@ class SepProfesionalClient:
         self._log("consultar_cedula", {"cedula": cedula})
 
         resultado = consultar_cedula_sep(cedula=cedula)
-        if resultado.get("requiere_humano"):
-            return resultado  # sin dato real: no se cachea
+        if resultado.get("requiere_humano") or resultado.get("encontrada") is False:
+            return resultado  # sin dato real (o no encontrada): no se cachea
 
         # Enriquecer con categoría regulada
         if validar_vigencia and resultado.get("profesion"):

@@ -3,7 +3,8 @@
 Estado real (2026-10-14): los cinco portales oficiales exigen CAPTCHA
 (SAF imagen, Turnstile, reCAPTCHA v2) o no tienen flujo automatizable (ICVNL).
 Cada consulta hace un GET real que confirma el portal y devuelve un handoff
-humano. Datos simulados solo con PLUGINS_MX_MOCK=1.
+humano. EdoMex y San Pedro consultan en real con solver opt-in
+(shared/multas_captcha.py). Datos simulados solo con PLUGINS_MX_MOCK=1.
 """
 from __future__ import annotations
 
@@ -23,6 +24,7 @@ from shared.errors import NotFoundError, ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
 from shared import portal_handoff as ph  # noqa: E402
 from shared.saf_cdmx import adeudos_o_handoff  # noqa: E402
+from shared.multas_captcha import con_solver, consultar_con_solver  # noqa: E402
 from shared.multas_vehiculares_mx import (  # noqa: E402
     CATALOGO_MULTAS,
     SistemaMultas,
@@ -69,16 +71,26 @@ class MultasVehicularesMxClient:
             return self._mock(sistema, placa)
         if PORTALES[sistema.clave] is ph.SAF_CDMX_ADEUDOS:
             return adeudos_o_handoff(placa, organismo=sistema.organismo)
+        if con_solver(sistema.clave):
+            return {**consultar_con_solver(sistema.clave, placa), "organismo": sistema.organismo}
         return ph.handoff_humano(PORTALES[sistema.clave], placa=placa, organismo=sistema.organismo)
 
     def calcular_total(self, estado: str, placa: str) -> dict[str, Any]:
         """Suma multas + descuentos. Solo hay montos con PLUGINS_MX_MOCK=1; en real
         devuelve el handoff o, con solver de CAPTCHA, la consulta real (sin montos desglosados)."""
         consulta = self.consultar_por_placa(estado, placa)
-        if not consulta.get("simulated"):
+        if consulta.get("requiere_humano") or "multas" not in consulta:
             return consulta
         multas = consulta.get("multas", [])
+        if any(m.get("monto_mxn") is None for m in multas):
+            # Real sin monto legible: no se suma como 0.
+            return {**consulta, "monto_bruto_mxn": None,
+                    "nota": "El portal no dio un monto legible para todas las multas."}
         total_bruto = sum(m.get("monto_mxn", 0) for m in multas)
+        if not consulta.get("simulated"):
+            # Real: la regla de descuentos de abajo no está verificada por estado.
+            return {**consulta, "monto_bruto_mxn": round(total_bruto, 2),
+                    "nota": "Descuentos por pronto pago: consulta el portal del estado."}
         # ponytail: regla de descuento ilustrativa (solo mock); no verificada por estado.
         descuento_50 = sum(m.get("monto_mxn", 0) for m in multas if m.get("dias_desde_emision", 100) <= 15)
         descuento_25 = sum(m.get("monto_mxn", 0) for m in multas

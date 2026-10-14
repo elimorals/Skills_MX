@@ -1,7 +1,8 @@
 """Cliente unificado para consulta multas tránsito MX (estatal).
 
 Estado real (2026-10-14): los portales vigentes exigen CAPTCHA → handoff humano
-tras un GET real. Portal caído o cambiado → UpstreamError. Mock solo con
+tras un GET real. EdoMex y San Pedro: consulta real con solver opt-in
+(shared/multas_captcha.py) si PLUGINS_MX_CAPTCHA_SOLVER=2captcha. Portal caído o cambiado → UpstreamError. Mock solo con
 PLUGINS_MX_MOCK=1.
 """
 
@@ -21,6 +22,7 @@ from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
 from shared.errors import ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
+from shared.multas_captcha import con_solver, consultar_con_solver  # noqa: E402
 from shared.portal_handoff import SAF_CDMX_ADEUDOS, handoff_humano, mock_forzado  # noqa: E402
 from shared.saf_cdmx import adeudos_o_handoff  # noqa: E402
 
@@ -77,6 +79,8 @@ class MultasMxClient:
             return self._mock_response(estado_norm, placa_norm)
         if PORTALES_MULTAS[estado_norm] is SAF_CDMX_ADEUDOS:
             return adeudos_o_handoff(placa_norm, estado=estado_norm, nota=NOTAS_ESTADO.get(estado_norm))
+        if con_solver(estado_norm):
+            return consultar_con_solver(estado_norm, placa_norm.replace("-", ""))
         return handoff_humano(
             PORTALES_MULTAS[estado_norm],
             estado=estado_norm,

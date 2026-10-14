@@ -170,3 +170,102 @@ def test_live_portal_exige_recaptcha():
 
     cfg = httpx.get("https://cedulaprofesional.sep.gob.mx/assets/config.json", timeout=30).json()
     assert cfg.get("recaptchaSiteKey"), "SEP ya no declara reCAPTCHA: revisar si se puede consultar directo"
+
+
+# ---------- solver opt-in (2captcha simulado con respx) ----------
+
+import json  # noqa: E402
+
+import httpx  # noqa: E402
+import respx  # noqa: E402
+
+from shared.captcha_solver import API as API_2CAPTCHA  # noqa: E402
+from shared.errors import UpstreamError  # noqa: E402
+from shared.sep_cedula import API_CONSULTA, URL_CONFIG, URL_TOKEN  # noqa: E402
+
+REGISTRO = {
+    "cedula": "1234567", "nombre": "ANA", "primerApellido": "LOPEZ", "segundoApellido": "RUIZ",
+    "genero": "2", "profesion": "MÉDICO CIRUJANO", "institucion": "UNAM",
+    "entidadInstitucion": "CIUDAD DE MÉXICO", "anioRegistro": "2015",
+}
+
+
+@pytest.fixture
+def con_solver(real_client, monkeypatch):
+    monkeypatch.setenv("PLUGINS_MX_CAPTCHA_SOLVER", "2captcha")
+    monkeypatch.setenv("TWOCAPTCHA_API_KEY", "k")
+    monkeypatch.setattr("shared.captcha_solver.time.sleep", lambda s: None)
+    return real_client
+
+
+def _mock_portal(respuestas):
+    respx.get(URL_CONFIG).respond(200, json={"recaptchaSiteKey": "SK-VIVO", "clientId": "c", "apiKey": "a"})
+    respx.get(URL_TOKEN).respond(200, json={"access_token": "JWT"})
+    tareas = respx.post(f"{API_2CAPTCHA}/createTask").respond(200, json={"errorId": 0, "taskId": 1})
+    respx.post(f"{API_2CAPTCHA}/getTaskResult").respond(
+        200, json={"errorId": 0, "status": "ready", "solution": {"gRecaptchaResponse": "TOK"}})
+    consulta = respx.post(API_CONSULTA).mock(side_effect=respuestas)
+    return tareas, consulta
+
+
+@respx.mock
+def test_solver_consulta_real(con_solver):
+    tareas, consulta = _mock_portal([httpx.Response(200, json=[REGISTRO])])
+    r = con_solver.consultar_cedula("1234567")
+    assert r["encontrada"] is True and r["simulated"] is False
+    assert r["nombre_completo"] == "ANA LOPEZ RUIZ" and r["categoria_regulada"] == "salud"
+    task = json.loads(tareas.calls.last.request.content)["task"]
+    assert task["websiteKey"] == "SK-VIVO" and task["pageAction"] == "submit"
+    req = consulta.calls.last.request
+    assert req.headers["X-Recaptcha-Token"] == "TOK" and req.headers["Authorization"] == "Bearer JWT"
+    assert json.loads(req.content) == {"numCedula": "1234567"}
+
+
+@respx.mock
+def test_solver_token_rechazado_reintenta(con_solver):
+    tareas, consulta = _mock_portal([httpx.Response(403), httpx.Response(200, json=[REGISTRO])])
+    assert con_solver.consultar_cedula("1234567")["encontrada"] is True
+    assert consulta.call_count == 2 and tareas.call_count == 2
+
+
+@respx.mock
+def test_solver_rechazo_persistente_es_upstream(con_solver):
+    _, consulta = _mock_portal([httpx.Response(403)] * 3)
+    with pytest.raises(UpstreamError):
+        con_solver.consultar_cedula("1234567")
+    assert consulta.call_count == 3
+
+
+@respx.mock
+def test_solver_no_encontrada(con_solver):
+    _mock_portal([httpx.Response(200, json=[])])
+    r = con_solver.consultar_cedula("7654321")
+    assert r["encontrada"] is False and r["vigente"] is False
+
+
+@respx.mock
+def test_solver_por_datos_body(con_solver):
+    _, consulta = _mock_portal([httpx.Response(200, json=[REGISTRO])])
+    r = con_solver.consultar_por_datos(nombre="ana", primer_apellido="lopez")
+    assert json.loads(consulta.calls.last.request.content) == {"nombre": "ANA", "primerApellido": "LOPEZ"}
+    assert r["total"] == 1
+
+
+def test_solver_apagado_es_handoff(real_client, monkeypatch):
+    monkeypatch.delenv("PLUGINS_MX_CAPTCHA_SOLVER", raising=False)
+    assert real_client.consultar_cedula("1234567")["requiere_humano"] is True
+
+
+@pytest.mark.live
+def test_live_solver_cedula(tmp_path, monkeypatch):
+    import os
+
+    cedula = os.environ.get("SEP_CEDULA_LIVE")
+    if not (os.environ.get("TWOCAPTCHA_API_KEY") and cedula):
+        pytest.skip("requiere TWOCAPTCHA_API_KEY y SEP_CEDULA_LIVE")
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+    monkeypatch.setenv("PLUGINS_MX_CAPTCHA_SOLVER", "2captcha")
+    monkeypatch.setenv("PLUGINS_MX_CACHE_DIR", str(tmp_path / "c"))
+    monkeypatch.setenv("PLUGINS_MX_AUDIT_DIR", str(tmp_path / "a"))
+    r = SepProfesionalClient().consultar_cedula(cedula)
+    assert r["consultado"] is True and "encontrada" in r
