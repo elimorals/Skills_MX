@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hub de portales gob.mx · Plugins MX</title>
-<meta name="description" content="Mapa interactivo de 62 portales gubernamentales mexicanos cubiertos: SAT, IMSS, INFONAVIT, predial municipal, catastros estatales, multas, verificación, servicios públicos. Categorizado por estado y dependencia.">
+<meta name="description" content="Mapa de portales gubernamentales mexicanos usados por los MCPs: SAT, IMSS, INFONAVIT, predial municipal, catastros estatales, multas, verificación, servicios públicos. Categorizado por estado y dependencia.">
 <link rel="canonical" href="https://skills-mexico.vercel.app/portales/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -410,14 +410,14 @@
 
   <header class="hub-head">
     <h1 class="hub-h1">Hub de portales <em>gob.mx</em></h1>
-    <p class="hub-sub">Mapa interactivo de 62 portales gubernamentales mexicanos: federales, estatales y municipales.</p>
+    <p class="hub-sub">Portales federales, estatales y municipales del discovery de junio 2026, con el estado real al 14-oct-2026 de los MCPs que los usan.</p>
 
     <div class="hub-stats">
       <div class="hub-stat"><strong>32</strong><span>estados</span></div>
-      <div class="hub-stat"><strong>62</strong><span>MCPs</span></div>
-      <div class="hub-stat"><strong>71</strong><span>muns validados Playwright</span></div>
+      <div class="hub-stat"><strong>83</strong><span>MCPs</span></div>
+      <div class="hub-stat"><strong>23</strong><span>MCPs validados en vivo</span></div>
       <div class="hub-stat"><strong>12</strong><span>dependencias federales</span></div>
-      <div class="hub-stat"><strong>6</strong><span>patrones CAPTCHA documentados</span></div>
+      <div class="hub-stat"><strong>0</strong><span>CAPTCHAs resueltos por el MCP</span></div>
     </div>
   </header>
 
@@ -433,7 +433,7 @@
   <section class="hub-section">
     <div class="hub-section-head">
       <h2 class="hub-section-h">Estados &amp; municipios</h2>
-      <span class="hub-section-count" id="estadoCount">16 estados con discovery validado</span>
+      <span class="hub-section-count" id="estadoCount">estados</span>
     </div>
     <div class="estados-grid" id="estadosGrid"></div>
     <div class="estado-detail" id="estadoDetail"></div>
@@ -452,7 +452,7 @@
   <section class="hub-section">
     <div class="hub-section-head">
       <h2 class="hub-section-h">Patrones CAPTCHA documentados</h2>
-      <span class="hub-section-count">6 patrones reusables</span>
+      <span class="hub-section-count">entrega a humano</span>
     </div>
     <div class="captcha-grid" id="captchaGrid"></div>
   </section>
@@ -475,7 +475,7 @@ function renderEstados() {
   const grid = document.getElementById('estadosGrid');
   let states = DATA.estados;
   if (CURRENT_FILTER !== 'all') states = states.filter(s => s.cobertura === CURRENT_FILTER);
-  document.getElementById('estadoCount').textContent = `${states.length} estados con discovery validado`;
+  document.getElementById('estadoCount').textContent = `${states.length} estados`;
   grid.innerHTML = states.map(e => `
     <div class="estado-card" data-code="${e.code}" onclick="openEstado('${e.code}')">
       <div class="estado-card-head">
@@ -526,7 +526,7 @@ function renderFederales() {
     <div class="federal-card">
       <h4 class="federal-name">${d.nombre}</h4>
       <div class="federal-endpoint">${d.endpoint}</div>
-      <div class="federal-mcps">${d.mcps.join(' · ')}</div>
+      <div class="federal-mcps">${d.validado || d.mcps.join(' · ')}</div>
     </div>
   `).join('');
 }
@@ -537,7 +537,7 @@ function renderCaptcha() {
     <div class="captcha-card">
       <h4 class="captcha-name">${p.nombre}</h4>
       <div class="captcha-count">${p.count_endpoints} endpoints</div>
-      ${p.patron_implementacion ? `<div class="captcha-patron">${p.patron_implementacion}</div>` : ''}
+      ${p.manejo ? `<div class="captcha-patron">${p.manejo}</div>` : ''}
     </div>
   `).join('');
 }

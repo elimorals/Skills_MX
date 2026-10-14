@@ -2,9 +2,9 @@
 
 Landing comercial estática para los 3 productos vendibles del monorepo `plugins-mx`:
 
-- **Cartera Predial** multi-municipio (243 municipios, 163 consultables)
-- **Compliance REPSE** Art. 15 LFT (sin captcha, 4M empresas afectadas)
-- **ISN-as-a-Service** 32 estados con tasas 1.8% — 3.0%
+- **Cartera Predial** multi-municipio (243 municipios en catálogo; revalidados oct-2026: Toluca real, CDMX entrega a humano)
+- **Compliance REPSE** Art. 15 LFT (sin CAPTCHA, validado en vivo 2026-10-14)
+- **ISN** 32 estados, cálculo local con tasas 2026 de 2.5% a 4.25% (fuente secundaria)
 
 Pensado para mandar por WhatsApp / LinkedIn a despachos contables, inmobiliarias y áreas fiscales corporativas en lugar de un repo de GitHub.
 
@@ -68,6 +68,9 @@ En `scripts.js`, función `handleDemo`, reemplazar `525500000000` por tu número
 
 ### Cambiar email
 Buscar y reemplazar `elimoralsmendox@gmail.com` en todos los archivos.
+
+### Actualizar el estado de los MCPs
+El estado sale de la sección "Estado real" de cada `mcp-servers/mp_*/README.md`. Tras cambiarla, clasifica el MCP en `scripts/generar-estado-mcps.py` (dict `ESTADO`) y corre `python3 scripts/generar-estado-mcps.py`; regenera los JSON de `data/` y `api/`, el manifest y los bloques entre marcadores `<!-- …:inicio -->`. `--check` falla si algo quedó desactualizado.
 
 ### Actualizar stats
 Los counters se generan automáticamente de los atributos `data-target="<n>"` y `data-suffix="<sufijo>"` en `index.html`. Solo cambia el atributo y la animación se ajusta.

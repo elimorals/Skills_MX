@@ -1,7 +1,7 @@
 {
   "$schema": "https://a2a.dev/schemas/agent-card/v1.json",
   "name": "Plugins MX — Compliance Infrastructure",
-  "description": "46 MCPs (Model Context Protocol) que automatizan SAT, IMSS, REPSE, ISN estatal en 32 entidades federativas y predial municipal en 243 ayuntamientos mexicanos.",
+  "description": "83 MCPs (Model Context Protocol) para trámites y cumplimiento en México. Estado real de cada uno en https://skills-mexico.vercel.app/data/mcp-estado.json.",
   "url": "https://skills-mexico.vercel.app",
   "version": "3.59.0",
   "documentationUrl": "https://skills-mexico.vercel.app/llms-full.txt",
@@ -25,7 +25,7 @@
     {
       "id": "predial.consultar",
       "name": "Consultar predial municipal",
-      "description": "Consulta el adeudo predial de una propiedad en cualquiera de los 243 municipios catalogados. Auto-routing entre catálogo directo, SACPI Michoacán, Mérida-por-dirección y Puebla-con-captcha.",
+      "description": "Consulta el adeudo predial con un catálogo de 243 municipios. Revalidado 2026-10-14: Toluca real, CDMX entrega a humano; el resto del catálogo sin revalidar.",
       "tags": ["predial", "municipal", "inmobiliaria", "mexico"],
       "examples": [
         "Consulta el predial de cuenta 123-456-789 en Coyoacán",
@@ -59,11 +59,11 @@
     {
       "id": "isn.calcular",
       "name": "Calcular ISN multi-estado",
-      "description": "Calcula el Impuesto sobre Nómina aplicando la tasa de cualquiera de las 32 entidades federativas. Offline-first: no requiere credenciales. Útil para asesoría fiscal multi-estado.",
+      "description": "Calcula el Impuesto sobre Nómina aplicando la tasa de cualquiera de las 32 entidades federativas. Cálculo local, sin credenciales; tasas 2026 de fuente secundaria. Sinaloa y Tabasco no calculables.",
       "tags": ["isn", "nomina", "estatal", "fiscal", "mexico"],
       "examples": [
         "Calcula ISN para nómina gravable de 500,000 MXN en CDMX",
-        "Compara ISN entre Jalisco, Guanajuato y Yucatán con nómina de 1M"
+        "Compara ISN entre Jalisco, CDMX y Yucatán con nómina de 1M"
       ],
       "inputModes": ["application/json"],
       "outputModes": ["application/json"]
@@ -71,7 +71,7 @@
     {
       "id": "isn.generar_linea_captura",
       "name": "Generar línea de captura ISN",
-      "description": "Genera la línea de captura para pago referenciado del ISN en cualquiera de las 32 entidades.",
+      "description": "No automatizado: devuelve error porque la línea de captura requiere la sesión del contribuyente en el portal estatal.",
       "tags": ["isn", "linea-captura", "pago-referenciado"],
       "inputModes": ["application/json"],
       "outputModes": ["application/json"]

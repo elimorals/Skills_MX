@@ -4,7 +4,7 @@
     "title": "Plugins MX — Compliance Infrastructure API",
     "version": "3.59.0",
     "summary": "API pública para automatización de trámites fiscales y municipales mexicanos.",
-    "description": "Endpoints para consultar predial multi-municipio, verificar REPSE (Art. 15 LFT) y calcular ISN en 32 entidades federativas. Construido sobre 46 servidores MCP (Model Context Protocol). Documentación canónica en https://skills-mexico.vercel.app/llms-full.txt",
+    "description": "Endpoints para consultar predial multi-municipio, verificar REPSE (Art. 15 LFT) y calcular ISN en 32 entidades federativas. Construido sobre servidores MCP (Model Context Protocol); estado real de cada uno en /data/mcp-estado.json. Documentación canónica en https://skills-mexico.vercel.app/llms-full.txt",
     "termsOfService": "https://skills-mexico.vercel.app/sobre",
     "contact": {
       "name": "Elías Rashid Morales Mendoza",
@@ -127,7 +127,7 @@
       "post": {
         "tags": ["isn"],
         "summary": "Calcula ISN para una nómina gravable en un estado",
-        "description": "Offline-first: no requiere credenciales. Útil para asesoría fiscal multi-estado.",
+        "description": "Cálculo local, sin credenciales. Tasas 2026 de fuente secundaria. Sinaloa y Tabasco devuelven isn_a_pagar null.",
         "operationId": "isnCalcular",
         "requestBody": {
           "required": true,
@@ -152,7 +152,8 @@
     "/isn/generar-linea-captura": {
       "post": {
         "tags": ["isn"],
-        "summary": "Genera línea de captura ISN para pago referenciado",
+        "summary": "Línea de captura ISN (no automatizada)",
+        "description": "Devuelve error: requiere la sesión del contribuyente en el portal estatal. Solo responde datos simulados con PLUGINS_MX_MOCK=1.",
         "operationId": "isnGenerarLineaCaptura",
         "security": [{ "BearerAuth": [] }],
         "requestBody": {

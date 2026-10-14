@@ -67,12 +67,12 @@
         {
           "@type": "Question",
           "name": "¿Qué pasa si un portal gob.mx cambia y rompe un MCP?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Es responsabilidad del proveedor (yo) recalibrar el parser dentro del SLA. Producción: 5 días hábiles. Empresarial: 48h. Mientras tanto el MCP entra en modo mock con flag claro `simulated: true` para que tu sistema no se rompa." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Es responsabilidad del proveedor (yo) recalibrar el parser dentro del SLA. Producción: 5 días hábiles. Empresarial: 48h. Mientras tanto el MCP devuelve un error explícito (nunca datos simulados) para que tu sistema no tome decisiones con datos falsos." }
         },
         {
           "@type": "Question",
           "name": "¿Mis credenciales SAT/IMSS/INFONAVIT salen de mi infraestructura?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. El path real Playwright corre en TU infraestructura (Docker container que te paso). Tus e.firma, CIEC, NPIE NUNCA tocan mis servidores. Yo nunca veo tus credenciales. El mock-first es lo que vive en mi infra para que la CI corra sin secretos." }
+          "acceptedAnswer": { "@type": "Answer", "text": "No. El path real corre en TU infraestructura (Docker container que te paso). Tus e.firma, CIEC, NPIE NUNCA tocan mis servidores. Yo nunca veo tus credenciales. Para CI uso datos simulados marcados `simulated: true`, que solo se activan con PLUGINS_MX_MOCK=1." }
         },
         {
           "@type": "Question",
@@ -589,7 +589,7 @@
           <td>Ilimitados</td>
         </tr>
         <tr>
-          <td>Path real Playwright (SAT/IMSS/INFONAVIT)</td>
+          <td>Path real con e.firma (SAT)</td>
           <td><span class="cross">No incluido</span></td>
           <td>Opt-in con tus credenciales</td>
           <td>Sí · on-prem dedicado</td>
@@ -651,12 +651,12 @@
 
   <div class="faq-item">
     <h3 class="faq-q">¿Mis credenciales SAT/IMSS/INFONAVIT salen de mi infraestructura?</h3>
-    <p class="faq-a">No. Cuando contratas el path real Playwright (Producción/Empresarial) recibes un contenedor Docker que corre en TU servidor. Tu e.firma, CIEC, NPIE o usuario+contraseña nunca tocan mis servidores. Mi infraestructura solo conoce las respuestas mock plausibles que uso para CI/CD y demos.</p>
+    <p class="faq-a">No. Cuando contratas el path real (Producción/Empresarial) recibes un contenedor Docker que corre en TU servidor. Tu e.firma, CIEC, NPIE o usuario+contraseña nunca tocan mis servidores. Mi infraestructura solo usa datos simulados marcados <span class="mono">simulated: true</span> para CI y demos.</p>
   </div>
 
   <div class="faq-item">
     <h3 class="faq-q">¿Qué pasa cuando un portal gob.mx cambia y rompe un MCP?</h3>
-    <p class="faq-a">Es mi responsabilidad recalibrarlo. En Producción el SLA es 5 días hábiles. En Empresarial son 48h. Mientras tanto el MCP entra automáticamente en modo <span style="font-family:'JetBrains Mono',monospace">simulated: true</span> con un flag visible para que tu workflow no se rompa silenciosamente, pero sí sepa que no son datos reales.</p>
+    <p class="faq-a">Es mi responsabilidad recalibrarlo. En Producción el SLA es 5 días hábiles. En Empresarial son 48h. Mientras tanto el MCP devuelve un error explícito; nunca cae a datos simulados.</p>
   </div>
 
   <div class="faq-item">
