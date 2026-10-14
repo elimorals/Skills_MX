@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 
 import pytest
+import respx
 
 _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE.parent.parent))
@@ -14,8 +15,7 @@ sys.path.insert(0, str(_HERE.parent.parent))
 def _env(monkeypatch, tmp_path):
     monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
     monkeypatch.setenv("PLUGINS_MX_CACHE_DIR", str(tmp_path / "cache"))
-    monkeypatch.setenv("PLUGINS_MX_BITACORA_DIR", str(tmp_path / "bita"))
-    monkeypatch.delenv("PLUGINS_MX_MULTAS_LIVE", raising=False)
+    monkeypatch.setenv("PLUGINS_MX_AUDIT_DIR", str(tmp_path / "audit"))
     yield
 
 
@@ -109,11 +109,39 @@ class TestListar:
         assert edomex["captcha_tipo"] == "turnstile"
 
 
-class TestLiveFlag:
-    def test_live_no_cdmx_se_queda_en_mock(self, monkeypatch):
-        monkeypatch.setenv("PLUGINS_MX_MULTAS_LIVE", "1")
+class TestReal:
+    """Sin PLUGINS_MX_MOCK: GET real (respx) + handoff humano, nunca mock."""
+
+    @pytest.mark.parametrize("estado", ["cdmx", "edomex", "nl", "nl_sanpedro", "jal"])
+    @respx.mock
+    def test_handoff_por_estado(self, monkeypatch, estado):
+        from mp_multas_vehiculares_mx.client import PORTALES, MultasVehicularesMxClient
+        monkeypatch.delenv("PLUGINS_MX_MOCK")
+        portal = PORTALES[estado]
+        html = {"imagen": 'id="captcha_code"', "turnstile": "challenges.cloudflare.com/turnstile",
+                "recaptcha_v2": "g-recaptcha"}.get(portal.captcha_tipo, "Instituto de Control Vehicular")
+        respx.get(portal.url).respond(200, text=html)
+        r = MultasVehicularesMxClient().consultar_por_placa(estado, "ABC-1234")
+        assert r["simulated"] is False
+        assert r["status"] == "requiere_humano"
+        assert r["url_consulta_manual"] == portal.url
+
+    @respx.mock
+    def test_portal_caido_es_error(self, monkeypatch):
+        from mp_multas_vehiculares_mx.server import ConsultaInput, multas_calcular_total
+        from shared.portal_handoff import JALISCO_ADEUDOS
+        monkeypatch.delenv("PLUGINS_MX_MOCK")
+        respx.get(JALISCO_ADEUDOS.url).respond(503)
+        r = multas_calcular_total(ConsultaInput(estado="jal", placa="ABC1234"))
+        assert r["code"] == "upstream_error"
+
+    @pytest.mark.live
+    def test_live_handoffs(self, monkeypatch):
+        import time
         from mp_multas_vehiculares_mx.client import MultasVehicularesMxClient
+        monkeypatch.delenv("PLUGINS_MX_MOCK")
         c = MultasVehicularesMxClient()
-        r = c.consultar_por_placa("edomex", "ABC1234")
-        # edomex no implementado real → mock
-        assert r["simulated"] is True
+        for i, estado in enumerate(["cdmx", "edomex", "nl", "nl_sanpedro", "jal"]):
+            if i:
+                time.sleep(5)
+            assert c.consultar_por_placa(estado, "ABC1234")["portal_verificado"]["status_code"] == 200

@@ -16,7 +16,7 @@ from dataclasses import dataclass
 from typing import Literal
 
 
-MetodoMultas = Literal["publica", "publica_captcha", "login", "hub_navegacion", "no_implementado"]
+MetodoMultas = Literal["publica", "publica_captcha", "login", "hub_navegacion", "indirecto", "no_implementado"]
 
 
 @dataclass

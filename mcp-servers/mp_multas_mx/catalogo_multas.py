@@ -1,127 +1,51 @@
-"""Catálogo central de portales de multas de tránsito en MX.
+"""Catálogo de portales de multas de tránsito MX (revisado en vivo 2026-10-14).
 
-Las multas son competencia ESTATAL (no municipal), aunque algunas ciudades
-grandes (CDMX, Monterrey, Guadalajara) tienen sus propios sistemas.
+Todos los portales oficiales que siguen vivos exigen CAPTCHA o no tienen flujo
+automatizable, así que el MCP devuelve un handoff humano verificado
+(`shared.portal_handoff`).
 
-Patrón típico: input placa → consulta → tabla de infracciones pendientes.
-
-⚠ Muchos portales usan reCAPTCHA — humano-en-loop obligatorio para esos.
+Retirados el 2026-10-14 (DNS inexistente o 404 en el GET de validación):
+semovi.cdmx.gob.mx/.../infracciones (404), nl.gob.mx/.../multas (404),
+multas.jalisco.gob.mx, transito.yucatan.gob.mx, transitobc.gob.mx,
+hacienda.puebla.gob.mx, control-vehicular.queretaro.gob.mx (DNS).
 """
 
 from __future__ import annotations
 
 import sys
 from pathlib import Path
-from typing import Optional
 
 _HERE = Path(__file__).resolve().parent
 _REPO_ROOT = _HERE.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
-from shared.playwright_municipal_generic import PortalConfig  # noqa: E402
+from shared import portal_handoff as ph  # noqa: E402
 
-
-# Portales estatales/municipales de multas con selectores conocidos
-PORTALES_MULTAS: dict[str, dict[str, PortalConfig]] = {
-    "cdmx": {
-        "default": PortalConfig(
-            url="https://www.semovi.cdmx.gob.mx/tramites-y-servicios/automovilistas/infracciones",
-            input_selectors=["input[name='placa']", "input#placa"],
-            submit_selectors=["button:has-text('Consultar')", "button[type='submit']"],
-            result_selector="table, .resultado",
-            identificador_etiqueta="placa",
-        ),
-    },
-    "nl": {
-        "default": PortalConfig(
-            url="https://www.nl.gob.mx/tramites-y-servicios/multas",
-            input_selectors=["input[name='placa']", "input#placa"],
-            submit_selectors=["button:has-text('Consultar')"],
-            result_selector="table",
-            identificador_etiqueta="placa",
-        ),
-    },
-    "jal": {
-        "default": PortalConfig(
-            url="https://multas.jalisco.gob.mx",
-            input_selectors=["input[name='placa']"],
-            submit_selectors=["button[type='submit']"],
-            result_selector="table",
-            identificador_etiqueta="placa",
-        ),
-    },
-    "yuc": {
-        "default": PortalConfig(
-            url="https://transito.yucatan.gob.mx/multas",
-            input_selectors=["input[name='placa']"],
-            submit_selectors=["button[type='submit']"],
-            result_selector="table",
-            identificador_etiqueta="placa",
-        ),
-    },
-    "bc": {
-        "default": PortalConfig(
-            url="https://transitobc.gob.mx/multas",
-            input_selectors=["input[name='placa']"],
-            submit_selectors=["button[type='submit']"],
-            result_selector="table",
-            identificador_etiqueta="placa",
-        ),
-    },
-    "pue": {
-        "default": PortalConfig(
-            url="https://hacienda.puebla.gob.mx/multas",
-            input_selectors=["input[name='placa']"],
-            submit_selectors=["button[type='submit']"],
-            result_selector="table",
-            identificador_etiqueta="placa",
-        ),
-    },
-    "qro": {
-        "default": PortalConfig(
-            url="https://control-vehicular.queretaro.gob.mx/multas",
-            input_selectors=["input[name='placa']"],
-            submit_selectors=["button[type='submit']"],
-            result_selector="table",
-            identificador_etiqueta="placa",
-        ),
-    },
-    "edomex": {
-        "default": PortalConfig(
-            url="https://sfpya.edomexico.gob.mx/multas/",
-            input_selectors=["input[name='placa']"],
-            submit_selectors=["button[type='submit']"],
-            result_selector="table",
-            identificador_etiqueta="placa",
-        ),
-    },
+PORTALES_MULTAS: dict[str, ph.PortalCaptcha] = {
+    "cdmx": ph.SAF_CDMX_ADEUDOS,
+    "edomex": ph.EDOMEX_INFRACCIONES,
+    "jal": ph.JALISCO_ADEUDOS,
+    "nl": ph.ICVNL_ESTADO_CUENTA,
+    "nl_sanpedro": ph.SAN_PEDRO_MULTAS,
 }
 
+ESTADOS_SIN_PORTAL: dict[str, str] = {
+    "yuc": "transito.yucatan.gob.mx no resuelve DNS (2026-10-14).",
+    "bc": "transitobc.gob.mx no resuelve DNS (2026-10-14).",
+    "pue": "hacienda.puebla.gob.mx no resuelve DNS (2026-10-14).",
+    "qro": "control-vehicular.queretaro.gob.mx no resuelve DNS (2026-10-14).",
+}
 
-# Estados que sabemos requieren reCAPTCHA / anti-bot — humano-en-loop obligatorio
-ESTADOS_CON_CAPTCHA: set[str] = {"cdmx"}  # SEMOVI reCAPTCHA Enterprise
-
-# Notas explicativas por estado (para errores informativos)
 NOTAS_ESTADO: dict[str, str] = {
-    "cdmx": "SEMOVI usa reCAPTCHA Enterprise — NO automatizable. Humano debe completar el CAPTCHA.",
-    "nl": "Portal NL gob.mx — verificar selectores experimentales.",
-    "jal": "multas.jalisco.gob.mx — funcional pero validar selectores.",
-    "yuc": "Yucatán transito — validar URL vigente.",
+    "cdmx": "SAF CDMX: CAPTCHA imagen.",
+    "edomex": "SS EdoMex: Cloudflare Turnstile.",
+    "jal": "Gobierno en Línea Jalisco: reCAPTCHA v2; pide placa, serie, nombre y motor.",
+    "nl": "ICVNL solo expone refrendo; las multas en NL son municipales.",
+    "nl_sanpedro": "San Pedro Garza García: reCAPTCHA v2.",
+    **ESTADOS_SIN_PORTAL,
 }
-
-
-def get_portal_multas(estado: str) -> Optional[PortalConfig]:
-    """Devuelve PortalConfig para multas del estado, o None si no soportado."""
-    portales_estado = PORTALES_MULTAS.get(estado.lower())
-    if not portales_estado:
-        return None
-    return portales_estado.get("default")
 
 
 def estados_soportados() -> list[str]:
-    return sorted(PORTALES_MULTAS.keys())
-
-
-def requiere_captcha(estado: str) -> bool:
-    return estado.lower() in ESTADOS_CON_CAPTCHA
+    return sorted(PORTALES_MULTAS)
