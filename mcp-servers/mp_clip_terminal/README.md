@@ -15,7 +15,8 @@
 
 | Variable | Propósito |
 |---|---|
-| `CLIP_API_KEY` | API key del dashboard Clip |
+| `CLIP_API_KEY` | API key del Panel de Desarrollador de Clip |
+| `CLIP_SECRET_KEY` | Clave secreta de la misma credencial (token `Basic base64(key:secret)`) |
 
 Mock-first sin credenciales.
 
@@ -24,3 +25,12 @@ Mock-first sin credenciales.
 ```bash
 .venv/bin/python -m pytest mp_clip_terminal/tests/ -q
 ```
+
+## Estado real (2026-10-14)
+
+- ✅ Reescrito contra la referencia oficial de [developer.clip.mx](https://developer.clip.mx/llms.txt):
+  `GET api-gw.payclip.com/payments` y `/payments/receipt-no/{receipt_no}`, `POST api.payclip.com/refunds`,
+  `GET api.payclip.io/f2f/pinpad/v1/devices/status` y `GET api-gw.payclip.com/settlements` (header `x-api-key`).
+  Los endpoints anteriores (`/v1/charges`, `/v1/terminals`, `/v1/settlements/{fecha}`, auth `Bearer`) no existían.
+- ⚠️ **Sin validar en vivo**: falta una credencial de pruebas de Clip.
+- `charge_id` es el número de recibo de Clip. Reembolso sin monto = total del recibo.
