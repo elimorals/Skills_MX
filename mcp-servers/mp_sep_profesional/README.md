@@ -48,9 +48,20 @@ input: cedula="1234567", cedula_especialidad="7654321"
 |---|---|---|
 | 2026-10-14 | `GET https://cedulaprofesional.sep.gob.mx/assets/config.json` | 200, declara `recaptchaSiteKey` |
 | 2026-10-14 | `main.*.js` del portal | `POST /api/rnp/solr/profesionista/consultar/byDetalle` exige `Authorization: Bearer` + `X-Recaptcha-Token` |
+| 2026-10-14 | `GET /api/auth/token` (headers públicos `X-Client-Id`/`X-API-Key` de `config.json`) | 200, `access_token` JWT |
 
-- Estado: **handoff humano**. Las tools devuelven `requiere_humano: true`,
-  URL, pasos y los datos prellenados. No se genera ni evade el token reCAPTCHA.
+- Estado sin solver: **handoff humano**. Las tools devuelven `requiere_humano: true`,
+  URL, pasos y los datos prellenados.
+- Estado con solver opt-in (`PLUGINS_MX_CAPTCHA_SOLVER=2captcha` + `TWOCAPTCHA_API_KEY`):
+  **real sin validar en vivo (falta llave)**. reCAPTCHA v3 (api.js, no Enterprise),
+  sitekey `6Leb1M4rAAAAAP_gRcAyMiOo99-j6eqQajKuMlB9` (se lee en vivo de `config.json`),
+  action `submit`. Flujo: token 2captcha → `GET /api/auth/token` → `POST byDetalle`
+  con `X-Recaptcha-Token`; body `{"numCedula"}` o `{"nombre","primerApellido","segundoApellido","curp"}`
+  en mayúsculas. 401/403 (o 400 que mencione captcha) = token rechazado → hasta 2
+  reintentos, luego `UpstreamError`. Campos del resultado tomados del bundle
+  (`cedula`, `nombre`, `primerApellido`, `segundoApellido`, `genero`, `profesion`,
+  `institucion`, `entidadInstitucion`, `anioRegistro`). Test live:
+  `PLUGINS_MX_LIVE=1 TWOCAPTCHA_API_KEY=… SEP_CEDULA_LIVE=… pytest -m live mp_sep_profesional`.
 - `sep_validar_medico_para_consulta` en real devuelve `puede_dar_consulta: null`
   (desconocido) con el handoff, nunca `true`/`false` sin dato.
 - Mock solo con `PLUGINS_MX_MOCK=1` (`simulated: true`).
