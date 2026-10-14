@@ -9,6 +9,7 @@
         "AMAZON_SP_REFRESH_TOKEN": "${AMAZON_SP_REFRESH_TOKEN:-}",
         "AMAZON_SP_CLIENT_ID": "${AMAZON_SP_CLIENT_ID:-}",
         "AMAZON_SP_CLIENT_SECRET": "${AMAZON_SP_CLIENT_SECRET:-}",
+        "AMAZON_SP_SELLER_ID": "${AMAZON_SP_SELLER_ID:-}",
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
       },
       "disabled": false

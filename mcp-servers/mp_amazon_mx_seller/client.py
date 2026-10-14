@@ -91,6 +91,13 @@ class AmazonMxSellerClient:
                 "Faltan AMAZON_SP_REFRESH_TOKEN + AMAZON_SP_CLIENT_ID + AMAZON_SP_CLIENT_SECRET"
             )
 
+    def _seller_id(self) -> str:
+        # Listings Items API va por seller ID (Seller Central → Configuración → Información de la cuenta → Merchant Token).
+        sid = os.environ.get("AMAZON_SP_SELLER_ID", "").strip()
+        if not sid:
+            raise ConfigError("Falta AMAZON_SP_SELLER_ID (Merchant Token de Seller Central) para Listings.")
+        return sid
+
     def _log(self, op: str, params: dict[str, Any]) -> None:
         self._bitacora.log(op, success=True, params_summary=params)
 
@@ -193,7 +200,7 @@ class AmazonMxSellerClient:
                 if status:
                     params["includedData"] = "summaries,attributes"
                 resp = await client.get(
-                    f"{SP_API_BASE}/listings/2021-08-01/items/A2EUQ1WTGCTBG2",  # seller_id placeholder
+                    f"{SP_API_BASE}/listings/2021-08-01/items/{self._seller_id()}",
                     headers=headers,
                     params=params,
                 )
@@ -240,7 +247,7 @@ class AmazonMxSellerClient:
                 params = {"marketplaceIds": MARKETPLACE_MX_ID, "includedData": "summaries,attributes,offers"}
                 # SKU encoding — Amazon usa SKU literal en path
                 resp = await client.get(
-                    f"{SP_API_BASE}/listings/2021-08-01/items/A2EUQ1WTGCTBG2/{sku}",
+                    f"{SP_API_BASE}/listings/2021-08-01/items/{self._seller_id()}/{sku}",
                     headers=headers,
                     params=params,
                 )
@@ -283,7 +290,7 @@ class AmazonMxSellerClient:
                     }],
                 }
                 resp = await client.patch(
-                    f"{SP_API_BASE}/listings/2021-08-01/items/A2EUQ1WTGCTBG2/{sku}",
+                    f"{SP_API_BASE}/listings/2021-08-01/items/{self._seller_id()}/{sku}",
                     headers=headers,
                     params={"marketplaceIds": MARKETPLACE_MX_ID},
                     json=patch_body,

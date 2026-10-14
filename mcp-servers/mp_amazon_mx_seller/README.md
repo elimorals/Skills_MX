@@ -26,3 +26,10 @@
 ```bash
 .venv/bin/python -m pytest mp_amazon_mx_seller/tests/ -q
 ```
+
+## Estado real (2026-10-14)
+
+- ✅ Rutas SP-API verificadas: Orders v0, Listings Items 2021-08-01, Product Fees v0; LWA token, marketplace MX `A1AM78C64UM0Y8`.
+- 🐛 Corregido: Listings usaba `A2EUQ1WTGCTBG2` (marketplace de **Canadá**) como si fuera el seller ID. Ahora exige
+  `AMAZON_SP_SELLER_ID` (Merchant Token de Seller Central).
+- ⚠️ **Sin validar en vivo**: falta una app SP-API autorizada.
