@@ -48,3 +48,4 @@ build/
 .remember/
 webhooks/.venv/
 .vercel
+.claude/worktrees/
