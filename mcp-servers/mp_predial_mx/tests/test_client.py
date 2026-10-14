@@ -3,9 +3,12 @@
 from __future__ import annotations
 
 import pytest
+import respx
 
+from mp_edomex_municipal import toluca
 from mp_predial_mx.client import PredialMxClient, _normalizar_clave
-from shared.errors import UpstreamError, ValidationError
+from shared.errors import NotFoundError, UpstreamError, ValidationError
+from shared.portal_handoff import OVICA_CDMX_PREDIAL
 
 
 @pytest.fixture
@@ -30,10 +33,45 @@ def test_normalizar_clave_parentesis():
 
 
 # ============================================================
-# consultar() - mock paths
+# consultar() - mock paths (solo con PLUGINS_MX_MOCK=1)
 # ============================================================
 
-def test_consultar_mock_cdmx(client: PredialMxClient):
+@pytest.fixture
+def mock_on(monkeypatch):
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
+
+
+@respx.mock
+def test_real_cdmx_es_handoff_ovica(client: PredialMxClient):
+    respx.get(OVICA_CDMX_PREDIAL.url).respond(200, text="altcha")
+    r = client.consultar("cdmx", "ciudad_de_mexico", "123456789012")
+    assert r["simulated"] is False
+    assert r["status"] == "requiere_humano"
+
+
+@respx.mock
+def test_real_toluca_httpx(client: PredialMxClient):
+    respx.get(toluca.URL).respond(200, text="")
+    respx.post(toluca.URL).respond(
+        200, text='<span id="LabelMsg">La Clave Catastral no está registrada</span>')
+    with pytest.raises(NotFoundError):
+        client.consultar("edomex", "Toluca", "0000000000000000")
+
+
+def test_real_sin_url_es_upstream(client: PredialMxClient):
+    with pytest.raises(UpstreamError):
+        client.consultar("jal", "tlaquepaque", "12345")
+
+
+def test_real_portal_falla_no_cae_a_mock(client: PredialMxClient, monkeypatch):
+    def _falla(*a, **k):
+        raise UpstreamError("portal caído", {})
+    monkeypatch.setattr("mp_predial_mx.client.consulta_portal", _falla)
+    with pytest.raises(UpstreamError):
+        client.consultar("jal", "guadalajara", "U12345678")
+
+
+def test_consultar_mock_cdmx(client: PredialMxClient, mock_on):
     """CDMX validado en catálogo → mock realista."""
     r = client.consultar("cdmx", "ciudad_de_mexico", "12345678")
     assert r.get("simulated") is True
@@ -41,14 +79,14 @@ def test_consultar_mock_cdmx(client: PredialMxClient):
     assert "adeudo_total_mxn" in r
 
 
-def test_consultar_mock_guadalajara(client: PredialMxClient):
+def test_consultar_mock_guadalajara(client: PredialMxClient, mock_on):
     """GDL validado → mock con URL real en respuesta."""
     r = client.consultar("jal", "guadalajara", "U12345678")
     assert r.get("simulated") is True
     assert "guadalajara" in r["url_consultada"].lower()
 
 
-def test_consultar_mock_sacpi_michoacan(client: PredialMxClient):
+def test_consultar_mock_sacpi_michoacan(client: PredialMxClient, mock_on):
     """Ciudad Hidalgo MICH → routing a SACPI."""
     r = client.consultar("mich", "hidalgo_mich", "001234", tipo="urbano")
     assert r.get("simulated") is True
@@ -56,7 +94,7 @@ def test_consultar_mock_sacpi_michoacan(client: PredialMxClient):
     assert "SACPI" in str(r.get("plataforma", "")) or "sacpi" in str(r.get("url_consultada", "")).lower()
 
 
-def test_consultar_caso_sin_url(client: PredialMxClient):
+def test_consultar_caso_sin_url(client: PredialMxClient, mock_on):
     """Tlaquepaque está en catálogo pero sin URL validada."""
     # Mock debería igual devolver algo (es mock universal)
     r = client.consultar("jal", "tlaquepaque", "12345")
@@ -79,7 +117,7 @@ def test_consultar_municipio_inexistente(client: PredialMxClient):
         client.consultar("jal", "municipio_imaginario", "12345")
 
 
-def test_consultar_normaliza_nombre(client: PredialMxClient):
+def test_consultar_normaliza_nombre(client: PredialMxClient, mock_on):
     """'Guadalajara' debería resolver igual que 'guadalajara'."""
     r1 = client.consultar("jal", "guadalajara", "U001")
     r2 = client.consultar("jal", "Guadalajara", "U001")
@@ -159,7 +197,7 @@ def test_buscar_municipio_limit(client: PredialMxClient):
 # Integración bitácora
 # ============================================================
 
-def test_consultar_loguea_a_bitacora(client: PredialMxClient, tmp_path):
+def test_consultar_loguea_a_bitacora(client: PredialMxClient, tmp_path, mock_on):
     """consultar() debe escribir en bitácora con hash de cuenta."""
     client.consultar("jal", "guadalajara", "MUYSECRETO123")
     # Bitácora debe existir pero no contener la cuenta en plain

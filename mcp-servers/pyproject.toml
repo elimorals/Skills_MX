@@ -31,6 +31,11 @@ sat-portal = [
 estatal-resto = [
     "pypdf>=4.0,<7.0",  # mp_gas_natural_mx: tarifas publicadas en PDF
 ]
+# Predial municipal vía Playwright genérico (mp_predial_mx, mp_edomex_municipal
+# fuera de Toluca). Lo demás del grupo E1 solo usa httpx.
+estatal-centro = [
+    "playwright>=1.42,<2.0",
+]
 sat-playwright = [
     "cryptography>=42,<46",
     "playwright>=1.42,<2.0",

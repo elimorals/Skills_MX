@@ -9,7 +9,8 @@ Tools expuestos:
 Cobertura: 209 municipios en catálogo + 95 via SACPI Michoacán = 304 municipios accesibles.
 Validados con URL real: 33. Cobertura poblacional validada: 31.4M (24% nacional).
 
-Modo mock por default. Activar consultas reales con env var MP_PLAYWRIGHT_PUBLIC=1.
+Real por default; mock solo con PLUGINS_MX_MOCK=1. CDMX (OVICA, ALTCHA) → handoff humano;
+Toluca → httpx validado en vivo 2026-10-14.
 """
 
 from __future__ import annotations
@@ -86,7 +87,7 @@ def predial_consultar(args: ConsultarInput) -> dict:
     3. Si solo tiene URL sin selectores → fallback con selectores universales
     4. Sin URL ni SaaS → error con instrucciones
 
-    Modo mock activo si MP_PLAYWRIGHT_PUBLIC != 1.
+    Mock solo con PLUGINS_MX_MOCK=1; portales con CAPTCHA devuelven handoff humano.
 
     Casos especiales:
     - Mérida (yuc/merida): busca por calle+numero, pasar `direccion`

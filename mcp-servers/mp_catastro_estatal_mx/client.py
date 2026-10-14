@@ -1,4 +1,10 @@
-"""Cliente mp_catastro_estatal_mx."""
+"""Cliente mp_catastro_estatal_mx.
+
+Estado real (2026-10-14): ningún catastro estatal del catálogo expone consulta
+pública de valor por clave. IGECEM → handoff humano tras GET real; el resto →
+UpstreamError explícito con el motivo (login, info-only, portal caído).
+Datos simulados solo con PLUGINS_MX_MOCK=1.
+"""
 from __future__ import annotations
 
 import re
@@ -19,8 +25,9 @@ from shared.catastro_estatal import (  # noqa: E402
     buscar_catastro,
     listar_catastros,
 )
-from shared.errors import NotFoundError, ValidationError  # noqa: E402
-from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
+from shared.errors import NotFoundError, UpstreamError, ValidationError  # noqa: E402
+from shared.mock import mark_simulated  # noqa: E402
+from shared.portal_handoff import IGECEM_EDOMEX, handoff_humano, mock_forzado  # noqa: E402
 
 NAMESPACE = "catastro_estatal_mx"
 
@@ -41,20 +48,16 @@ class CatastroEstatalClient:
                 f"Cuenta '{cuenta_catastral}' no matchea formato de {c.clave}: {c.identificador_regex}",
             )
 
-        cache_key = f"{c.clave}:{cuenta_catastral}"
-        cached = self._cache.get(cache_key)
-        if cached is not None:
-            return cached
-
-        if c.metodo == "no_implementado" or is_mock_mode([], default_when_no_creds=True):
-            result = self._mock(c, cuenta_catastral)
-        else:
-            result = self._mock(c, cuenta_catastral)  # path real placeholder
-
-        self._cache.set(cache_key, result, ttl_hours=24 * 30)
         self._bitacora.log("consultar_valor", success=True,
                            params_summary={"sistema": c.clave, "cuenta_hash": self._bitacora.hash_sensitive(cuenta_catastral)})
-        return result
+        if mock_forzado():
+            return self._mock(c, cuenta_catastral)
+        if c.clave == "igecem":
+            return handoff_humano(IGECEM_EDOMEX, sistema=c.clave)
+        raise UpstreamError(
+            f"{c.organismo} no expone consulta pública de valor catastral ({c.metodo}). {c.notas}",
+            {"sistema": c.clave, "metodo": c.metodo, "portal": c.url_portal},
+        )
 
     def listar_sistemas(self) -> dict[str, Any]:
         sistemas = listar_catastros()

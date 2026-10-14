@@ -1,4 +1,9 @@
-"""Cliente unificado para consulta multas tránsito MX (estatal)."""
+"""Cliente unificado para consulta multas tránsito MX (estatal).
+
+Estado real (2026-10-14): los portales vigentes exigen CAPTCHA → handoff humano
+tras un GET real. Portal caído o cambiado → UpstreamError. Mock solo con
+PLUGINS_MX_MOCK=1.
+"""
 
 from __future__ import annotations
 
@@ -14,18 +19,15 @@ if str(_REPO_ROOT) not in sys.path:
 
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
-from shared.errors import McpError, UpstreamError, ValidationError  # noqa: E402
+from shared.errors import ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
-from shared.playwright_municipal_generic import consulta_portal  # noqa: E402
-from shared.playwright_real import is_public_real_enabled, with_real_or_fallback  # noqa: E402
+from shared.portal_handoff import handoff_humano, mock_forzado  # noqa: E402
 
 from mp_multas_mx.catalogo_multas import (  # noqa: E402
-    ESTADOS_CON_CAPTCHA,
+    ESTADOS_SIN_PORTAL,
     NOTAS_ESTADO,
     PORTALES_MULTAS,
     estados_soportados,
-    get_portal_multas,
-    requiere_captcha,
 )
 
 
@@ -53,19 +55,7 @@ class MultasMxClient:
         self._bitacora.log(op, success=True, params_summary=safe)
 
     def consultar_multas(self, estado: str, placa: str) -> dict[str, Any]:
-        """Consulta multas pendientes por placa en un estado.
-
-        Args:
-            estado: clave estado (cdmx, nl, jal, etc.)
-            placa: placa vehicular formato MX
-
-        Returns:
-            Dict con: placa_hash, estatus, adeudo_total_mxn, multas: [...]
-
-        Raises:
-            ValidationError si placa o estado inválido
-            UpstreamError si estado requiere CAPTCHA (humano-en-loop) o portal falla
-        """
+        """Multas pendientes por placa: handoff humano al portal oficial."""
         estado_norm = estado.lower().strip()
         placa_norm = placa.upper().strip().replace(" ", "")
 
@@ -74,55 +64,37 @@ class MultasMxClient:
                 f"Placa '{placa}' no tiene formato válido MX. "
                 f"Ejemplo válido: ABC-12-34 o ABC1234."
             )
-
+        if estado_norm in ESTADOS_SIN_PORTAL:
+            raise ValidationError(f"Estado '{estado}' sin portal vigente: {ESTADOS_SIN_PORTAL[estado_norm]}")
         if estado_norm not in PORTALES_MULTAS:
             raise ValidationError(
-                f"Estado '{estado}' no soportado para multas. "
-                f"Soportados: {estados_soportados()}"
+                f"Estado '{estado}' no soportado para multas. Soportados: {estados_soportados()}"
             )
 
         self._log("consultar_multas", {"estado": estado_norm, "placa": placa_norm})
-
-        # CAPTCHA → humano-en-loop, NO automatizar
-        if requiere_captcha(estado_norm):
-            return mark_simulated({
-                "estado": estado_norm,
-                "placa_hash": placa_norm[:3] + "***",
-                "status": "requiere_humano",
-                "razon": NOTAS_ESTADO.get(estado_norm, "Estado con CAPTCHA"),
-                "url_consulta_manual": PORTALES_MULTAS[estado_norm]["default"].url,
-                "instrucciones": "Abrir URL en navegador real, completar CAPTCHA, ingresar placa.",
-            })
-
-        # Mock si Playwright real no habilitado
-        if not is_public_real_enabled():
+        if mock_forzado():
             return self._mock_response(estado_norm, placa_norm)
-
-        # Real
-        portal = get_portal_multas(estado_norm)
-        if portal is None:
-            raise UpstreamError(
-                f"Estado {estado_norm} no tiene PortalConfig.",
-                {"estado": estado_norm},
-            )
-
-        return with_real_or_fallback(
-            real_fn=lambda: consulta_portal(portal, placa_norm),
-            fallback_fn=lambda: self._mock_response(estado_norm, placa_norm),
-            portal=f"multas_{estado_norm}",
+        return handoff_humano(
+            PORTALES_MULTAS[estado_norm],
+            estado=estado_norm,
+            placa=placa_norm.replace("-", ""),
+            nota=NOTAS_ESTADO.get(estado_norm),
         )
 
     def estados_disponibles(self) -> dict[str, Any]:
-        """Lista estados con multas consultables + cuáles requieren CAPTCHA."""
+        """Estados con portal de multas verificado y los retirados."""
         return {
             "soportados": estados_soportados(),
             "total": len(PORTALES_MULTAS),
-            "requieren_captcha": sorted(ESTADOS_CON_CAPTCHA),
+            "requieren_captcha": sorted(
+                e for e, p in PORTALES_MULTAS.items() if p.motivo == "captcha"
+            ),
+            "sin_portal_vigente": ESTADOS_SIN_PORTAL,
             "notas_por_estado": NOTAS_ESTADO,
         }
 
     def _mock_response(self, estado: str, placa: str) -> dict[str, Any]:
-        """Mock realista de respuesta de multas."""
+        """Mock (solo PLUGINS_MX_MOCK=1)."""
         seed = sum(ord(c) for c in placa) % 100
         n_multas = max(0, (seed - 50) // 15) if seed > 50 else 0
         adeudo = sum(450 + i * 150 for i in range(n_multas))
@@ -141,5 +113,5 @@ class MultasMxClient:
                 }
                 for i in range(n_multas)
             ],
-            "url_consultada": PORTALES_MULTAS[estado]["default"].url,
+            "url_consultada": PORTALES_MULTAS[estado].url,
         })

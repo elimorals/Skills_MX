@@ -13,6 +13,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from mp_multas_vehiculares_mx.client import MultasVehicularesMxClient  # noqa: E402
+from shared.errors import McpError  # noqa: E402
 
 
 mcp = FastMCP("multas_vehiculares_mx")
@@ -21,20 +22,26 @@ _client = MultasVehicularesMxClient()
 
 class ConsultaInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    estado: str = Field(..., min_length=2, max_length=10, description="cdmx|edomex|nl|jal")
+    estado: str = Field(..., min_length=2, max_length=10, description="cdmx|edomex|nl|nl_sanpedro|jal")
     placa: str = Field(..., min_length=5, max_length=12)
 
 
 @mcp.tool(annotations={"title": "Consultar multas por placa", "readOnlyHint": True, "openWorldHint": True})
 def multas_consultar_por_placa(args: ConsultaInput) -> dict:
     """Lista multas activas para un vehículo según placa."""
-    return _client.consultar_por_placa(args.estado, args.placa)
+    try:
+        return _client.consultar_por_placa(args.estado, args.placa)
+    except McpError as exc:
+        return exc.to_dict()
 
 
 @mcp.tool(annotations={"title": "Calcular total + descuentos", "readOnlyHint": True})
 def multas_calcular_total(args: ConsultaInput) -> dict:
     """Total con descuentos por pago oportuno (50% ≤15d, 25% ≤30d)."""
-    return _client.calcular_total(args.estado, args.placa)
+    try:
+        return _client.calcular_total(args.estado, args.placa)
+    except McpError as exc:
+        return exc.to_dict()
 
 
 @mcp.tool(annotations={"title": "Listar sistemas estatales", "readOnlyHint": True, "idempotentHint": True})

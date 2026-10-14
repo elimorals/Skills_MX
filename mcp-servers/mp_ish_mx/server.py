@@ -23,6 +23,7 @@ class CalcularInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
     estado: str = Field(..., min_length=2, max_length=10)
     monto_hospedaje: float = Field(..., ge=0)
+    plataforma_digital: bool = Field(False, description="Casa/depto vía Airbnb u otra plataforma (tasa especial en algunos estados).")
 
 
 class InfoInput(BaseModel):
@@ -44,7 +45,7 @@ class CompararInput(BaseModel):
 @mcp.tool(annotations={"title": "Calcular ISH (Impuesto Hospedaje)", "readOnlyHint": True, "idempotentHint": True})
 def ish_calcular(args: CalcularInput) -> dict:
     """Calcula ISH dado el estado + monto de hospedaje."""
-    return _client.calcular(args.estado, args.monto_hospedaje)
+    return _client.calcular(args.estado, args.monto_hospedaje, args.plataforma_digital)
 
 
 @mcp.tool(annotations={"title": "Info ISH por estado", "readOnlyHint": True, "idempotentHint": True})

@@ -1,6 +1,6 @@
 """mp_cdmx_municipal — MCP para portales CDMX (finanzas + semovi).
 
-5 tools (mock-first):
+5 tools (real: handoff humano en portales con CAPTCHA; mock solo con PLUGINS_MX_MOCK=1):
 - cdmx_consultar_predial
 - cdmx_consultar_tenencia
 - cdmx_consultar_multas
@@ -32,7 +32,6 @@ from mp_cdmx_municipal.catalogos import (  # noqa: E402
 )
 from mp_cdmx_municipal.client import CdmxMunicipalClient  # noqa: E402
 from shared.errors import McpError  # noqa: E402
-from shared.playwright_stub import info_path_real  # noqa: E402
 
 
 mcp = FastMCP("cdmx_municipal_mcp")
@@ -58,7 +57,7 @@ class FechaInput(BaseModel):
 
 @mcp.tool(annotations={"title": "Consultar predial CDMX", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": True})
 async def cdmx_consultar_predial(args: PredialInput) -> dict:
-    """Status del impuesto predial por cuenta. Mock por default."""
+    """Predial por cuenta: OVICA exige ALTCHA → devuelve handoff humano verificado."""
     try:
         return _client.consultar_predial(args.cuenta_predial)
     except McpError as exc:
@@ -67,7 +66,7 @@ async def cdmx_consultar_predial(args: PredialInput) -> dict:
 
 @mcp.tool(annotations={"title": "Consultar tenencia vehicular CDMX", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": True})
 async def cdmx_consultar_tenencia(args: PlacaInput) -> dict:
-    """Status tenencia por placa. CDMX subsidia 100% para vehículos < umbral."""
+    """Tenencia por placa: SAF exige CAPTCHA → handoff humano verificado. Subsidio 2026: 100% si factura <= $638,000 con IVA."""
     try:
         return _client.consultar_tenencia(args.placa)
     except McpError as exc:
@@ -76,7 +75,7 @@ async def cdmx_consultar_tenencia(args: PlacaInput) -> dict:
 
 @mcp.tool(annotations={"title": "Consultar multas vehiculares CDMX (foto-infracciones + manuales)", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": True})
 async def cdmx_consultar_multas(args: PlacaInput) -> dict:
-    """Lista todas las multas pendientes por placa."""
+    """Infracciones por placa: SAF exige CAPTCHA → handoff humano verificado."""
     try:
         return _client.consultar_multas(args.placa)
     except McpError as exc:
@@ -85,7 +84,7 @@ async def cdmx_consultar_multas(args: PlacaInput) -> dict:
 
 @mcp.tool(annotations={"title": "Calendario Hoy No Circula CDMX", "readOnlyHint": True, "idempotentHint": True, "openWorldHint": False})
 async def cdmx_consultar_hoy_no_circula(args: FechaInput) -> dict:
-    """Reglas del programa Hoy No Circula para una fecha + contingencias."""
+    """Restricción ordinaria Hoy No Circula para una fecha (no consulta contingencias)."""
     try:
         return _client.consultar_calendario_hoy_no_circula(args.fecha)
     except McpError as exc:
@@ -102,7 +101,7 @@ async def cdmx_listar_catalogos() -> dict:
         "tipo_multa": TIPO_MULTA,
         "hoy_no_circula": HOY_NO_CIRCULA,
         "hologramas": HOLOGRAMAS,
-        "path_real_info": info_path_real(),
+        "estado_real": "Predial y adeudos vehiculares CDMX exigen CAPTCHA: los tools devuelven handoff humano.",
     }
 
 

@@ -1,53 +1,43 @@
 # mp_tenencia_mx
 
-MCP unificado para tenencia + refrendo vehicular en 20 estados MX.
-
-## Por qué importa
-
-- **Universo**: 46M vehículos × cálculo anual.
-- **Casos de uso**: leasing/flotillas, comparación re-emplaque, asesoría fiscal vehicular.
-- **Tipo**: offline-first (cálculo no requiere red). Útil donde otros MCPs requieren CAPTCHA.
+Tenencia + refrendo vehicular 2026 por estado. Cálculo local con montos
+citados; no hay tasas planas ni factores de depreciación inventados.
 
 ## Tools
 
-### `tenencia_calcular(estado, valor_factura, anio_modelo)`
-Calcula tenencia + refrendo proyectado.
+- `tenencia_calcular(estado, valor_factura, anio_modelo)` — subsidio, tenencia y refrendo.
+- `tenencia_info_estado(estado)` — reglas, fuentes y confianza del estado.
+- `tenencia_listar_estados(solo_con_tenencia)`
+- `tenencia_comparar_estados(estados, valor_factura, anio_modelo)` — los estados sin monto verificado van en `sin_monto_verificado`.
 
-### `tenencia_info_estado(estado)`
-Configuración completa: tasa, refrendo, exenciones, portal.
+## Reglas de cálculo
 
-### `tenencia_listar_estados(solo_con_tenencia)`
-Lista 20 estados del catálogo.
+- Bajo el umbral de subsidio (valor factura con IVA): `tenencia_mxn = 0` y
+  `subsidio_100_elegible = true` (sujeto a `condiciones_subsidio`).
+- Arriba del umbral: `tenencia_mxn = null` y `requiere_calculo_oficial = true`.
+  La tarifa progresiva de cada código fiscal no se verificó contra el texto 2026.
+- Refrendo sin fuente 2026: `refrendo_mxn = null`.
 
-### `tenencia_comparar_estados(estados, valor_factura, anio_modelo)`
-Compara N estados — ranking barato a caro + ahorro máximo.
+## Estado real (2026-10-14)
 
-## Cobertura
+Es un cálculo local: no consulta portales. Montos verificados contra notas de
+prensa 2026 que citan a las secretarías de finanzas (no se localizó el acuerdo
+de subsidio en gaceta, por eso confianza "media" como máximo).
 
-| Estado | Tenencia | Refrendo | Notas |
-|---|---|---|---|
-| EdoMex | ✅ 3.0% | ✅ $940 | Exento < $400K |
-| Jalisco | ✅ 2.6% | ✅ $720 | Exento < $250K |
-| Oaxaca | ✅ 2.5% | ✅ $650 | Exento < $150K |
-| NL, QRO, SON, VER, CHIH, SIN, TAM | ❌ | ✅ | Solo refrendo |
-| AGS, HGO, BC, BCS, CAM, YUC, MICH, MOR, SLP, GTO | ❌ | ✅ | Solo refrendo |
+| Estado | Tenencia 2026 | Refrendo 2026 | Confianza | Fuente |
+|---|---|---|---|---|
+| CDMX | subsidio 100% si factura ≤ $638,000 | $760 | media | Infobae 31-mar-2026, Récord |
+| EdoMex | subsidio 100% si factura ≤ $638,000 (placas 2021+) | $990 | media | N+, UnoTV |
+| Querétaro | "Cero Tenencia" < $800,000 | variable ($760–$1,300) → null | media | El Congresista, Infobae |
+| Jalisco | no cobra | $1,000 | baja (UnoTV dice $1,100) | ADN40 3-mar-2026 |
+| NL, PUE, MOR, HGO, OAX, TLAX | no confirmado | ver catálogo / null | baja | UnoTV 2026 |
 
-## Cálculo
-
-```
-factor_depreciacion = tabla(antiguedad)  # 1.00 → 0.10
-valor_depreciado    = valor_factura × factor
-tenencia            = valor_depreciado × tasa_estado / 100  (si aplica)
-refrendo            = costo_fijo_estado
-subtotal            = tenencia + refrendo
-```
-
-Factor depreciación: 100% (0 años) → 85% (1 año) → ... → 10% (≥9 años).
-
-Subsidio: si valor_factura < umbral_exencion del estado → tenencia = 0.
+Se retiraron del catálogo los estados sin ninguna fuente 2026 (BC, BCS, CAM,
+CHIH, SIN, TAM, AGS, YUC, MICH, SLP, GTO, SON, VER): sus montos anteriores no
+tenían respaldo.
 
 ## Tests
 
 ```bash
-PYTHONPATH=mcp-servers pytest mcp-servers/mp_tenencia_mx/tests -v
+cd mcp-servers && .venv/bin/pytest -q mp_tenencia_mx
 ```

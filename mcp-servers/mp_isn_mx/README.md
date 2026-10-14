@@ -6,25 +6,26 @@ MCP multi-estado para **Impuesto sobre Nómina (ISN)** mexicano.
 
 - ISN es obligación estatal para **TODA empresa formal MX con al menos 1 trabajador**.
 - Universo: **~4 millones de empresas** (vs ~700k municipios consultables con `mp_predial_mx`). Mayor universo de cualquier MCP del monorepo.
-- 32 entidades federativas, cada una con su propio portal y tasa (1.8% BC → 3% CDMX/JAL/EdoMex).
+- 32 entidades federativas, cada una con su propio portal y tasa (2.5% AGS → 4.25% BC; CDMX 4%).
 - Vencimiento: día 10-17 del mes siguiente, según estado.
 
-## Cobertura
+## Cobertura (tasas 2026)
 
-| Estado | Tasa | Portal | Validado |
-|--------|------|--------|----------|
-| CDMX | 3.0% | dgtc.finanzas.cdmx.gob.mx | ✅ |
-| Jalisco | 3.0% | gobiernoenlinea1.jalisco.gob.mx | ✅ |
-| Nuevo León | 3.0% | egobierno.nl.gob.mx | ✅ |
-| EdoMex | 3.0% | sfpya.edomexico.gob.mx | ✅ |
-| Querétaro | 3.0% | asistenciaspf.queretaro.gob.mx | ✅ |
-| Puebla | 3.0% | haciendapuebla.gob.mx | ⚠ captcha |
-| Guanajuato | 2.0% | guanajuato.gob.mx/finanzas | ✅ |
-| Yucatán | 2.5% | sefinyucatan.gob.mx | ✅ |
-| Baja California | 1.8-3.0% | www4.ebajacalifornia.gob.mx | ✅ |
-| ...(24 estados más con catálogo básico) | | | — |
+| Estado | Tasa 2026 | Fuente |
+|--------|-----------|--------|
+| CDMX | 4.0% | Código Fiscal CDMX art. 158 (reforma 27-dic-2024) |
+| Chihuahua | 4.0% | Guía oficial de pago ISN 2026 |
+| Quintana Roo | 4.0% | BHR 2026 |
+| Baja California | 4.25% única | Ley de Hacienda BC art. 151-16 |
+| Yucatán | 3.75% | BHR 2026 |
+| Zacatecas | 3.5% | BHR 2026 |
+| Aguascalientes | 2.5% | BHR 2026 |
+| Sinaloa | 2.4%–3.0% progresiva | no calculable: tramos 2026 no verificados |
+| Tabasco | 3% o 3.5% | no calculable: criterio no verificado |
+| Resto (23) | 3.0% | BHR 2026 |
 
-Total: **32 estados en catálogo**, **8 validados** Playwright MCP.
+Fuente base: https://www.bhrmx.com/wp-content/uploads/2026/01/CONTRIBUCIONES-LOCALES-CAMBIOS-RELEVANTES-2026-2.pdf
+(confianza media; no se abrió el texto legal primario de cada estado).
 
 ## Tools expuestas
 
@@ -41,22 +42,25 @@ Total: **32 estados en catálogo**, **8 validados** Playwright MCP.
 ```python
 # Calcular cuánto debe pagar empresa CDMX con $100k de nómina
 calc = isn_calcular(nomina_gravable=100_000, estado="CDMX")
-# → {"isn_a_pagar": 3000, "tasa_pct": 3.0, "vencimiento_dia": 17}
+# → {"isn_a_pagar": 4000, "tasa_pct": 4.0, "fuente_tasa": "Código Fiscal CDMX art. 158; ..."}
 
-# Línea de captura para mayo 2026
-linea = isn_generar_linea_captura(
-    estado="CDMX", periodo="2026-05",
-    rfc="ABC120101AB1", nomina_gravable=100_000,
-)
-# → {"linea_captura": "...", "monto_a_pagar": 3000, "portal_pago": "..."}
+# Línea de captura: requiere sesión del contribuyente → config_error
+# (con PLUGINS_MX_MOCK=1 devuelve una línea simulada).
 ```
 
 ## Modos
 
-| Variable | Default | Efecto |
-|----------|---------|--------|
-| `PLUGINS_MX_MOCK=1` | ✅ | Datos simulados |
-| `MP_PLAYWRIGHT_PUBLIC=1` | — | Playwright real (requiere credenciales por estado) |
+| Variable | Efecto |
+|----------|--------|
+| (ninguna) | `isn_calcular` real; línea de captura y declaración → `config_error` (requieren login, grupo G) |
+| `PLUGINS_MX_MOCK=1` | Línea de captura y declaración simuladas (`simulated: true`) |
+
+## Estado real (2026-10-14)
+
+Cálculo local; no consulta portales. Tasas 2026 verificadas contra fuente
+secundaria (tabla anterior). Cambios frente al catálogo previo: CDMX 3→4%,
+BC 1.8%+sobretasas→4.25%, CHIH 3→4%, QROO 3→4%, YUC 2.5→3.75%, ZAC 3→3.5%,
+y AGS, BCS, CAMP, CHIS, COAH, COL, DGO, GTO, GRO, MOR, NAY, SLP, SON a 3%.
 
 ## Tests
 
