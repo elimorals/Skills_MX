@@ -19,10 +19,15 @@ mcp = FastMCP("llave_mx")
 _client = LlaveMXClient()
 
 
-class AutInput(BaseModel):
+class OAuthInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    curp: str = Field(..., min_length=18, max_length=18)
-    password: str = Field(..., min_length=6)
+    redirect_url: str = Field(..., description="URL https registrada con la ATDT")
+    state: str | None = None
+
+
+class AdopcionInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    entidad: str | None = Field(None, description="Nombre o cve_ent; vacío = nacional")
 
 
 class TokenInput(BaseModel):
@@ -46,9 +51,20 @@ class CurpOnlyInput(BaseModel):
     curp: str = Field(..., min_length=18, max_length=18)
 
 
-@mcp.tool(annotations={"title": "Autenticar Llave MX", "readOnlyHint": True, "openWorldHint": True})
-def llave_autenticar(args: AutInput) -> dict:
-    return _client.autenticar(curp=args.curp, password=args.password)
+@mcp.tool(annotations={"title": "URL de autorización OAuth Llave MX", "readOnlyHint": True})
+def llave_iniciar_oauth(args: OAuthInput) -> dict:
+    return _client.iniciar_oauth(redirect_url=args.redirect_url, state=args.state)
+
+
+@mcp.tool(annotations={"title": "Estado de llave.gob.mx", "readOnlyHint": True, "openWorldHint": True})
+def llave_estado_endpoints() -> dict:
+    return _client.estado_endpoints()
+
+
+@mcp.tool(annotations={"title": "Altas de usuarios Llave MX (datos abiertos)", "readOnlyHint": True,
+                       "openWorldHint": True})
+def llave_estadisticas_adopcion(args: AdopcionInput) -> dict:
+    return _client.estadisticas_adopcion(entidad=args.entidad)
 
 
 @mcp.tool(annotations={"title": "Validar token Llave MX", "readOnlyHint": True})
@@ -66,7 +82,7 @@ def llave_detalle_tramite(args: ClaveInput) -> dict:
     return _client.detalle_tramite(clave=args.clave)
 
 
-@mcp.tool(annotations={"title": "Vincular e.firma a Llave MX", "readOnlyHint": True})
+@mcp.tool(annotations={"title": "Vincular e.firma (handoff)", "readOnlyHint": True})
 def llave_vincular_e_firma(args: CurpOnlyInput) -> dict:
     return _client.vincular_e_firma(curp=args.curp)
 
