@@ -1,0 +1,98 @@
+
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no" />
+<meta charset="utf-8" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=edge" />
+<link rel="apple-touch-icon" href="images/icon.png"/>
+<link rel="shortcut icon" href="images/icon.png">
+<!--Bootstrap-->
+<!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+<link rel=stylesheet href="css/bootstrap/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/bootstrap/dataTables.bootstrap.min.css" type="text/css" >-->
+<link rel=stylesheet href="css/fuentes.css" type="text/css">
+
+    <link rel=stylesheet href="css/cep-min.css" type="text/css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/datepicker-es.js"></script>
+
+<!-- Validations -->
+<script type="text/javascript" src="js/validations/validateInput.js"></script>
+<script type="text/javascript" src="js/validations/validateEvents.js"></script>
+<script type="text/javascript" src="js/validations/validateWriting.js"></script>
+<script type="text/javascript" src="js/validations/validationBussines.js"></script>
+
+<!--Bootstrap-->
+<!--<script src="js/bootstrap/bootstrap.min.js"></script>-->
+<!--Bootbox Alert-->
+<!--<script type="text/javascript" src="js/bootstrap/bootbox.min.js"></script>-->
+<!--Bootstrap Tables-->
+<!--<script type="text/javascript" src="js/bootstrap/dataTables.bootstrap.min.js"></script>-->
+
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" /> 
+<style type="text/css">
+    /* 20230216_AJRG_GSC_Se cambia versión de la dependencia cep-generador-comprobante (remover dependencia itext) */
+    @media screen and (min-width: 481px) and (min-height: 551px) { /* no es movil */
+        .contenido-wide {
+            width: 1100px !important;
+            max-width: 1100px !important;
+            /*
+            width: 1050px !important;
+            max-width: 1050px !important;
+            */
+        }
+        .contenido-wide table {
+             width: fit-content !important;
+        }
+    }
+    
+    #consultaMISPEI {
+        padding: 0 !important;
+        margin: 15px !important;
+    }
+    
+    #htmlCEP tr {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+</style>
+<div class="bg-banxico title-bar">
+    <i class="icono-header icon-list"></i>
+    Informaci&oacute;n del estado del pago
+</div>
+<div class="cuerpo-msg">
+    <div id="consultaMISPEI" style="padding: 15px;box-sizing: border-box;overflow-x: auto;">
+        <!-- <div class="info" style="margin-bottom: 10px;"><center><strong>Operación no encontrada. El SPEI no ha recibido una orden de pago que cumpla con el criterio de búsqueda especificado. Se recomienda verificar la información o consulte con su institución financiera.</strong></center></div> -->
+            <div class="info" style="margin-bottom: 10px;"><center><strong>Operación no encontrada. El SPEI no ha recibido una orden de pago que cumpla con el criterio de búsqueda especificado. Se recomienda verificar la información o consulte con su institución financiera.</strong></center></div>
+                    
+        <br><br>
+        
+    </div>               
+           
+</div>
+
+<script>
+    $(document).ready(function () {
+        if ($(".operacionesLiquidados").length || $(".operacionesDevueltas").length) {
+            $(".cuerpo-msg").addClass('contenido-wide');
+        }
+    });
+    
+//    $(function () {
+//        $("#htmlCEP").val($("#consultaMISPEI").html());
+//    });
+
+    function start_download() {
+//        if ($(".operacionesLiquidados").length || $(".operacionesDevueltas").length) {
+//            $(".cuerpo-msg").removeClass('contenido-wide');
+//            $("#htmlCEP").val($("#desc_Liquidado").html());
+//        }
+        // evt.preventDefault();
+        var $htmlToSend = $('#consultaMISPEI').clone();
+        $("#htmlCEP").val($htmlToSend.html());
+        return true;
+    }
+
+</script>

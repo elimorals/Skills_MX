@@ -1,33 +1,26 @@
 """Cliente CEP (Constancia de Pago Electrónico) — Banxico.
 
-⚠ Banxico NO expone API REST oficial. La consulta CEP está en
-https://www.banxico.org.mx/cep/ y requiere POST de form-data + parseo HTML.
+Banxico no tiene API REST documentada; el portal https://www.banxico.org.mx/cep/
+usa endpoints form/JSON que replicamos con httpx (ver `spei.py`).
 
-Validado Playwright MCP 2026-06-13: selectores reales del form:
-- input#input_fecha (10 chars, formato DD/MM/YYYY)
-- input#input_criterio (40 chars, "Clave de rastreo SPEI")
-- input#input_cuenta (18 chars, "Cuenta beneficiaria" — CLABE)
-- input#input_monto (15 chars, "Monto del pago")
-- input#input_captcha (sin maxLength — CAPTCHA visual)
-⚠ TIENE CAPTCHA — path real requiere humano-en-loop o servicio externo.
+Modos:
+- **Real (default)**: httpx contra valida.do / instituciones.do / descarga.do.
+  Si el portal falla → `UpstreamError`; si activa el CAPTCHA visible → handoff
+  humano estructurado (nunca se resuelve el CAPTCHA).
+- **Mock** solo con `PLUGINS_MX_MOCK=1`: respuestas determinísticas marcadas
+  `simulated: true`.
 
-Este cliente implementa:
-1. **Modo mock determinístico** (default): genera CEPs plausibles cuya respuesta
-   se deriva del hash SHA-256 de la clave de rastreo. La misma clave siempre
-   produce el mismo CEP en mock — ideal para tests y desarrollo.
-
-2. **Modo real**: TODO — requiere Playwright + parseo HTML. Por ahora devuelve
-   `not_implemented_error` con guía de qué hace falta.
-
-Cache: CEP por clave_rastreo se cachea 90 días (los datos del padrón histórico
-SPEI no cambian). Consultas por clave (sin generar PDF) se cachean 30 días.
+Cache: CEP por clave se cachea 90 días; consultas de estado "no encontrado" no
+se cachean (el SPEI puede liquidarse después).
 """
 
 from __future__ import annotations
 
+import asyncio
 import hashlib
 import os
 import sys
+import tempfile
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -36,11 +29,12 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
+from mp_banxico_cep import spei  # noqa: E402
 from mp_banxico_cep.catalogos import BANCOS_CLABE, ESTADO_CEP, lookup_banco  # noqa: E402
 from mp_banxico_cep.clabe import parsear_clave_rastreo  # noqa: E402
 from shared.bitacora import Bitacora  # noqa: E402
 from shared.cache import FileCache  # noqa: E402
-from shared.errors import McpError, ValidationError  # noqa: E402
+from shared.errors import ValidationError  # noqa: E402
 from shared.mock import mark_simulated  # noqa: E402
 
 NAMESPACE = "banxico_cep_mcp"
@@ -48,10 +42,20 @@ CACHE_CEP_DIAS = 90
 CACHE_CONSULTA_DIAS = 30
 
 
-class _NotImplementedError(McpError):
-    """Integración Playwright al portal CEP de Banxico está pendiente."""
-
-    code = "not_implemented_error"
+def handoff_captcha(campos: dict[str, Any]) -> dict[str, Any]:
+    """Respuesta para cuando Banxico exige CAPTCHA: lo completa una persona."""
+    return {
+        "requiere_humano": True,
+        "motivo": "captcha_requerido",
+        "url": spei.BASE_URL,
+        "pasos": [
+            "Abrir la URL en un navegador.",
+            "Capturar fecha, clave de rastreo, instituciones emisora/receptora, cuenta y monto (abajo).",
+            "Escribir el código de la imagen de seguridad y pulsar 'Descargar CEP' o 'Consultar Pago'.",
+        ],
+        "campos_prellenados": campos,
+        "simulated": False,
+    }
 
 
 class BanxicoCepClient:
@@ -65,17 +69,76 @@ class BanxicoCepClient:
         self._cache = cache or FileCache(NAMESPACE)
         self._bitacora = bitacora or Bitacora(NAMESPACE)
 
-        if os.environ.get("PLUGINS_MX_MOCK") == "1":
-            self._mock_mode = True
-        elif os.environ.get("BANXICO_CEP_PLAYWRIGHT") == "1":
-            self._mock_mode = False
-        else:
-            # Default: mock (Banxico no tiene API y Playwright todavía no integrado)
-            self._mock_mode = True
-
     @property
     def is_mock(self) -> bool:
-        return self._mock_mode
+        return os.environ.get("PLUGINS_MX_MOCK") == "1"
+
+    @property
+    def _mock_mode(self) -> bool:
+        return self.is_mock
+
+    # ---------- camino real ----------
+
+    def _consulta_real(
+        self,
+        *,
+        clave_rastreo: str,
+        fecha_operacion: date,
+        banco_emisor: str,
+        banco_receptor: str,
+        cuenta: str = "",
+        monto: float | None = None,
+        tipo_consulta: int = 0,
+        formato_descarga: str | None = None,
+    ) -> dict[str, Any]:
+        campos = {
+            "fecha": spei.fecha_portal(fecha_operacion),
+            "clave_rastreo": clave_rastreo,
+            "banco_emisor": banco_emisor,
+            "banco_receptor": banco_receptor,
+            "cuenta_beneficiaria": cuenta or None,
+            "monto": monto,
+        }
+        try:
+            with spei.nuevo_cliente() as http:
+                spei.abrir_sesion(http)
+                catalogo = spei.instituciones(http, fecha_operacion)
+                emisor = spei.clave_participante(catalogo, banco_emisor)
+                receptor = spei.clave_participante(catalogo, banco_receptor)
+                if not emisor or not receptor:
+                    raise ValidationError(
+                        "Banco emisor/receptor no es participante SPEI en esa fecha según Banxico.",
+                        {"emisor": banco_emisor, "receptor": banco_receptor,
+                         "fecha": campos["fecha"]},
+                    )
+                res = spei.consultar(
+                    http,
+                    fecha=fecha_operacion,
+                    clave_rastreo=clave_rastreo,
+                    emisor=emisor["clave"],
+                    receptor=receptor["clave"],
+                    cuenta=cuenta,
+                    monto=monto,
+                    tipo_consulta=tipo_consulta,
+                )
+                out: dict[str, Any] = {
+                    "clave_rastreo": clave_rastreo,
+                    "fecha_operacion": fecha_operacion.isoformat(),
+                    "banco_emisor": {"clave": banco_emisor, "participante": emisor},
+                    "banco_receptor": {"clave": banco_receptor, "participante": receptor},
+                    "estado": res["estado"],
+                    "mensaje_portal": res["mensaje"],
+                    "fuente": spei.BASE_URL,
+                    "consultado_en": datetime.now(timezone.utc).isoformat(),
+                    "simulated": False,
+                }
+                encontrado = res["estado"] in ("cep_disponible", "liquidado", "devuelto")
+                if formato_descarga and encontrado:
+                    contenido = spei.descargar(http, formato_descarga)
+                    out["_descarga"] = contenido
+                return out
+        except spei.CaptchaRequerido:
+            return handoff_captcha(campos)
 
     # ---------- generar_cep ----------
 
@@ -86,19 +149,9 @@ class BanxicoCepClient:
         banco_emisor: str,
         banco_receptor: str,
         monto: float,
+        cuenta_beneficiaria: str | None = None,
     ) -> dict[str, Any]:
-        """Solicita CEP a Banxico con los datos del SPEI.
-
-        Args:
-            clave_rastreo: cadena alfanumérica del banco emisor.
-            fecha_operacion: fecha en que se ejecutó el SPEI.
-            banco_emisor: código 3 dígitos.
-            banco_receptor: código 3 dígitos.
-            monto: monto exacto del pago.
-
-        Returns:
-            Dict con datos del CEP + URL del PDF + estado.
-        """
+        """Solicita el CEP a Banxico (requiere cuenta beneficiaria y monto exacto)."""
         self._validar_datos_basicos(banco_emisor, banco_receptor, monto, clave_rastreo)
 
         cache_key = self._cache_key_cep(
@@ -113,43 +166,57 @@ class BanxicoCepClient:
                 clave_rastreo, fecha_operacion, banco_emisor, banco_receptor, monto
             )
             self._cache.set(cache_key, response, ttl_hours=24 * CACHE_CEP_DIAS)
-            self._bitacora.log(
-                "generar_cep",
-                success=True,
-                params_summary={
-                    "clave_hash": Bitacora.hash_sensitive(clave_rastreo),
-                    "fecha": fecha_operacion.isoformat(),
-                    "banco_emisor": banco_emisor,
-                    "banco_receptor": banco_receptor,
-                    "monto": monto,
-                    "mode": "mock",
-                },
-            )
+            self._log("generar_cep", clave_rastreo, fecha_operacion, "mock", banco_emisor,
+                      banco_receptor, monto)
             return response
 
-        raise _NotImplementedError(
-            "Generación CEP real (POST a banxico.org.mx/cep/) requiere "
-            "integración Playwright + parseo HTML. Pendiente. Mientras tanto, "
-            "usar modo mock (sin BANXICO_CEP_PLAYWRIGHT=1)."
+        if not cuenta_beneficiaria:
+            raise ValidationError(
+                "Banxico exige la cuenta beneficiaria (CLABE, tarjeta o celular) para emitir el CEP."
+            )
+        res = await asyncio.to_thread(
+            self._consulta_real,
+            clave_rastreo=clave_rastreo,
+            fecha_operacion=fecha_operacion,
+            banco_emisor=banco_emisor,
+            banco_receptor=banco_receptor,
+            cuenta=cuenta_beneficiaria,
+            monto=monto,
+            tipo_consulta=1,
+            formato_descarga="XML",
         )
+        if res.get("requiere_humano"):
+            return res
+        xml = res.pop("_descarga", None)
+        res["cep_disponible"] = xml is not None
+        res["estado_descripcion"] = ESTADO_CEP.get(res["estado"], res["mensaje_portal"])
+        if xml is not None:
+            res["cep"] = spei.parsear_xml_cep(xml)
+            self._cache.set(cache_key, res, ttl_hours=24 * CACHE_CEP_DIAS)
+        self._log("generar_cep", clave_rastreo, fecha_operacion, "real", banco_emisor,
+                  banco_receptor, monto)
+        return res
 
     # ---------- validar_cep ----------
 
-    async def validar_cep(self, clave_rastreo: str) -> dict[str, Any]:
-        """Verifica si un CEP existe (sin volver a generarlo).
-
-        Más liviano que generar_cep — solo confirma existencia.
-        """
-        cache_key = f"validar_{clave_rastreo.upper()}"
-        cached = self._cache.get(cache_key)
-        if cached is not None:
-            return dict(cached)
-
+    async def validar_cep(
+        self,
+        clave_rastreo: str,
+        fecha_operacion: date | None = None,
+        banco_emisor: str | None = None,
+        banco_receptor: str | None = None,
+    ) -> dict[str, Any]:
+        """Consulta el estado del pago (sin cuenta ni monto)."""
         parseo = parsear_clave_rastreo(clave_rastreo)
         if not parseo["formato_valido"]:
             raise ValidationError(
                 f"Clave de rastreo con formato inválido. Alertas: {parseo['alertas']}"
             )
+
+        cache_key = f"validar_{clave_rastreo.upper()}_{fecha_operacion}_{banco_emisor}_{banco_receptor}"
+        cached = self._cache.get(cache_key)
+        if cached is not None:
+            return dict(cached)
 
         if self._mock_mode:
             # Heurística determinística: claves cuyo hash[0] es par → existe, impar → no
@@ -170,9 +237,28 @@ class BanxicoCepClient:
             self._cache.set(cache_key, response, ttl_hours=24 * CACHE_CONSULTA_DIAS)
             return response
 
-        raise _NotImplementedError(
-            "Validación CEP real requiere Playwright. Pendiente."
+        if not (fecha_operacion and banco_emisor and banco_receptor):
+            raise ValidationError(
+                "Banxico exige fecha_operacion, banco_emisor y banco_receptor para consultar el pago."
+            )
+        for b in (banco_emisor, banco_receptor):
+            if not lookup_banco(b):
+                raise ValidationError(f"Banco '{b}' no está en el catálogo de códigos CLABE.")
+        res = await asyncio.to_thread(
+            self._consulta_real,
+            clave_rastreo=clave_rastreo,
+            fecha_operacion=fecha_operacion,
+            banco_emisor=banco_emisor,
+            banco_receptor=banco_receptor,
         )
+        if res.get("requiere_humano"):
+            return res
+        res["existe_en_banxico"] = res["estado"] in ("cep_disponible", "liquidado", "devuelto")
+        if res["existe_en_banxico"]:
+            self._cache.set(cache_key, res, ttl_hours=24 * CACHE_CONSULTA_DIAS)
+        self._log("validar_cep", clave_rastreo, fecha_operacion, "real", banco_emisor,
+                  banco_receptor, None)
+        return res
 
     # ---------- descargar_pdf ----------
 
@@ -183,8 +269,9 @@ class BanxicoCepClient:
         banco_emisor: str,
         banco_receptor: str,
         monto: float,
+        cuenta_beneficiaria: str | None = None,
     ) -> dict[str, Any]:
-        """Descarga el PDF oficial del CEP. En mock devuelve metadata simulada."""
+        """Descarga el PDF oficial del CEP a un archivo local."""
         self._validar_datos_basicos(banco_emisor, banco_receptor, monto, clave_rastreo)
 
         if self._mock_mode:
@@ -197,27 +284,42 @@ class BanxicoCepClient:
                     "pdf_path": f"/mock/cep/{clave_rastreo.upper()}.pdf",
                     "pdf_bytes": 0,
                     "cep_disponible": cep["cep_disponible"],
-                    "nota": (
-                        "Modo mock — no se generó PDF real. En modo Playwright "
-                        "habría descargado el PDF y lo habría persistido en cache."
-                    ),
+                    "nota": "Modo mock — no se generó PDF real.",
                 }
             )
 
-        raise _NotImplementedError(
-            "Descarga PDF CEP real requiere Playwright. Pendiente."
+        if not cuenta_beneficiaria:
+            raise ValidationError(
+                "Banxico exige la cuenta beneficiaria para descargar el CEP."
+            )
+        res = await asyncio.to_thread(
+            self._consulta_real,
+            clave_rastreo=clave_rastreo,
+            fecha_operacion=fecha_operacion,
+            banco_emisor=banco_emisor,
+            banco_receptor=banco_receptor,
+            cuenta=cuenta_beneficiaria,
+            monto=monto,
+            tipo_consulta=1,
+            formato_descarga="PDF",
         )
+        if res.get("requiere_humano"):
+            return res
+        pdf = res.pop("_descarga", None)
+        res["cep_disponible"] = pdf is not None
+        if pdf is not None:
+            destino = Path(tempfile.gettempdir()) / "plugins-mx-cep"
+            destino.mkdir(parents=True, exist_ok=True)
+            path = destino / f"{clave_rastreo.upper()}_{fecha_operacion.isoformat()}.pdf"
+            path.write_bytes(pdf)
+            res["pdf_path"] = str(path)
+            res["pdf_bytes"] = len(pdf)
+        return res
 
     # ---------- consultar_pago_por_clave ----------
 
     async def consultar_pago_por_clave(self, clave_rastreo: str) -> dict[str, Any]:
-        """Variante simplificada: dado solo una clave de rastreo, intenta consultar.
-
-        Útil cuando el cliente solo manda la clave por WhatsApp y el agente
-        todavía no sabe banco/fecha/monto exactos. En mock infiere lo que puede.
-        En real (Playwright), Banxico exige todos los campos — esta función
-        devolverá `validation_error` indicando qué falta.
-        """
+        """Con solo la clave no se puede consultar Banxico: indica qué falta."""
         parseo = parsear_clave_rastreo(clave_rastreo)
         if not parseo["formato_valido"]:
             raise ValidationError(
@@ -225,7 +327,6 @@ class BanxicoCepClient:
             )
 
         if self._mock_mode:
-            # En mock infiere todo desde el hash de la clave para tener algo plausible
             seed_hex = hashlib.sha256(clave_rastreo.encode()).hexdigest()
             monto_mock = round(100.0 + int(seed_hex[:6], 16) % 50000 / 100.0, 2)
             return mark_simulated(
@@ -233,11 +334,7 @@ class BanxicoCepClient:
                     "clave_rastreo": clave_rastreo,
                     "emisor_probable": parseo["emisor_probable"],
                     "monto_estimado_mock": monto_mock,
-                    "nota": (
-                        "Modo mock — datos derivados algorítmicamente de la clave. "
-                        "Para CEP real necesitas fecha + bancos + monto. Llama a "
-                        "generar_cep con esos datos."
-                    ),
+                    "nota": "Modo mock — datos derivados algorítmicamente de la clave.",
                 }
             )
 
@@ -245,6 +342,20 @@ class BanxicoCepClient:
             "Banxico CEP exige fecha_operacion, banco_emisor, banco_receptor y monto "
             "para emitir un CEP. La clave de rastreo sola no es suficiente. "
             "Recopila esos datos del cliente y llama a generar_cep."
+        )
+
+    def _log(self, op, clave, fecha, mode, emisor, receptor, monto) -> None:
+        self._bitacora.log(
+            op,
+            success=True,
+            params_summary={
+                "clave_hash": Bitacora.hash_sensitive(clave),
+                "fecha": fecha.isoformat(),
+                "banco_emisor": emisor,
+                "banco_receptor": receptor,
+                "monto": monto,
+                "mode": mode,
+            },
         )
 
     # ---------- helpers ----------

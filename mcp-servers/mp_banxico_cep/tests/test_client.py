@@ -16,11 +16,10 @@ from shared.errors import McpError, ValidationError
 # ---------- modo mock detección ----------
 
 
-def test_default_es_mock(monkeypatch) -> None:
+def test_default_es_real(monkeypatch) -> None:
     monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
-    monkeypatch.delenv("BANXICO_CEP_PLAYWRIGHT", raising=False)
     c = BanxicoCepClient()
-    assert c.is_mock is True
+    assert c.is_mock is False
 
 
 def test_plugins_mx_mock_gana(monkeypatch) -> None:
@@ -28,12 +27,6 @@ def test_plugins_mx_mock_gana(monkeypatch) -> None:
     monkeypatch.setenv("BANXICO_CEP_PLAYWRIGHT", "1")
     c = BanxicoCepClient()
     assert c.is_mock is True
-
-
-def test_modo_real_con_playwright_env(monkeypatch) -> None:
-    monkeypatch.setenv("BANXICO_CEP_PLAYWRIGHT", "1")
-    c = BanxicoCepClient()
-    assert c.is_mock is False
 
 
 # ---------- generar_cep mock ----------
@@ -198,20 +191,20 @@ async def test_consultar_pago_por_clave_real_devuelve_validation_error(
     monkeypatch,
 ) -> None:
     """En modo real, sin fecha+bancos+monto Banxico no puede emitir CEP."""
-    monkeypatch.setenv("BANXICO_CEP_PLAYWRIGHT", "1")
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
     c = BanxicoCepClient()
     with pytest.raises(ValidationError):
         await c.consultar_pago_por_clave("MBAN0100SAMPLE")
 
 
-# ---------- modo real sin Playwright ----------
+# ---------- modo real: validaciones previas a la red ----------
 
 
 @pytest.mark.asyncio
-async def test_generar_cep_modo_real_devuelve_not_implemented(monkeypatch) -> None:
-    monkeypatch.setenv("BANXICO_CEP_PLAYWRIGHT", "1")
+async def test_generar_cep_real_exige_cuenta(monkeypatch) -> None:
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
     c = BanxicoCepClient()
-    with pytest.raises(McpError) as exc:
+    with pytest.raises(ValidationError):
         await c.generar_cep(
             clave_rastreo="MBAN0100ZZZ",
             fecha_operacion=date(2026, 3, 15),
@@ -219,4 +212,3 @@ async def test_generar_cep_modo_real_devuelve_not_implemented(monkeypatch) -> No
             banco_receptor="002",
             monto=100.00,
         )
-    assert exc.value.code == "not_implemented_error"
