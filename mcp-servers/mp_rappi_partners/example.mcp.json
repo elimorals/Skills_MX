@@ -4,8 +4,10 @@
       "command": "python",
       "args": ["-m", "mp_rappi_partners.server"],
       "env": {
-        "RAPPI_PARTNERS_TOKEN": "${RAPPI_PARTNERS_TOKEN:-}",
-        "RAPPI_STORE_ID": "${RAPPI_STORE_ID:-}"
+        "RAPPI_CLIENT_ID": "${RAPPI_CLIENT_ID:-}",
+        "RAPPI_CLIENT_SECRET": "${RAPPI_CLIENT_SECRET:-}",
+        "RAPPI_STORE_ID": "${RAPPI_STORE_ID:-}",
+        "RAPPI_ENV": "${RAPPI_ENV:-mx}"
       }
     }
   }
