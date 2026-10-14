@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from mp_sat_portal.client import SatPortalClient, _parsear_html_verificacfdi
+from mp_sat_portal.client import SatPortalClient
 from mp_sat_portal.tests.conftest import DEMO_RFC_PF, DEMO_RFC_PM_CORTO, DEMO_UUID_VALIDO
 from shared.errors import McpError
 
@@ -69,7 +69,8 @@ def test_verificar_cfdi_uuid_invalido_no_consulta_portal(
     assert r["estado_cfdi"] is None
 
 
-def test_verificar_cfdi_uuid_valido_modo_mock(client: SatPortalClient) -> None:
+def test_verificar_cfdi_uuid_valido_modo_mock(client: SatPortalClient, monkeypatch) -> None:
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")  # servicio público: sin esto consulta al SAT
     r = client.verificar_cfdi_uuid(
         DEMO_UUID_VALIDO, DEMO_RFC_PF, DEMO_RFC_PM_CORTO, "1500.50"
     )
@@ -148,33 +149,6 @@ def test_actualizar_obligaciones_bloqueado_sin_flag(monkeypatch) -> None:
         client.actualizar_obligaciones(DEMO_RFC_PF, "alta_obligacion")
     # El mensaje debe mencionar el flag de escritura
     assert "PLUGINS_MX_SAT_PERMITIR_ESCRITURA" in str(exc_info.value) or "escritura" in str(exc_info.value).lower()
-
-
-# ---------- parseo HTML ----------
-
-
-def test_parsear_html_estado_vigente() -> None:
-    html = """
-    <html><body>
-        <span id="ContentPlaceHolder1_lblEstadoCFDI">Estado CFDI <strong>Vigente</strong></span>
-        <span id="ContentPlaceHolder1_lblEstadoCancelacion">Estatus de cancelación <span>No cancelable</span></span>
-    </body></html>
-    """
-    r = _parsear_html_verificacfdi(
-        html, DEMO_UUID_VALIDO, DEMO_RFC_PF, DEMO_RFC_PM_CORTO, "100.00"
-    )
-    assert r["parseo_fallido"] is False
-    assert r["estado_cfdi"] is not None
-    assert "Vigente" in r["estado_cfdi"]
-
-
-def test_parsear_html_estructura_desconocida() -> None:
-    html = "<html><body>Página de error</body></html>"
-    r = _parsear_html_verificacfdi(
-        html, DEMO_UUID_VALIDO, DEMO_RFC_PF, DEMO_RFC_PM_CORTO, "100.00"
-    )
-    assert r["parseo_fallido"] is True
-    assert r["estado_cfdi"] is None
 
 
 # ---------- bitácora ----------

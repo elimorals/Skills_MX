@@ -29,6 +29,10 @@ sat-playwright = [
     "playwright>=1.42,<2.0",
     "playwright-stealth>=2.0,<3.0",
 ]
+# WS Descarga Masiva SAT (firma XMLDSig con e.firma): solo cryptography.
+sat-ws = [
+    "cryptography>=42,<46",
+]
 
 [tool.setuptools.packages.find]
 where = ["."]
