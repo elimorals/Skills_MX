@@ -1,77 +1,76 @@
-"""Tests mp_cofepris_aviso_funcionamiento."""
+"""Tests mp_cofepris_aviso_funcionamiento — reglas LGS (Arts. 197, 198, 200 Bis, 260)."""
 from __future__ import annotations
+
 import sys
 from pathlib import Path
+
 import pytest
 
 _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE.parent.parent))
 
+from mp_cofepris_aviso_funcionamiento.client import COFEPRISAvisoClient  # noqa: E402
+from shared.errors import ValidationError  # noqa: E402
+
 
 @pytest.fixture(autouse=True)
 def _env(monkeypatch, tmp_path):
-    monkeypatch.setenv("PLUGINS_MX_MOCK", "1")
-    monkeypatch.setenv("PLUGINS_MX_CACHE_DIR", str(tmp_path / "cache"))
+    monkeypatch.setenv("PLUGINS_MX_MOCK", "0")
     monkeypatch.setenv("PLUGINS_MX_BITACORA_DIR", str(tmp_path / "bita"))
 
 
-def test_clasificar_restaurante_giro_b():
-    from mp_cofepris_aviso_funcionamiento.client import COFEPRISAvisoClient
-    c = COFEPRISAvisoClient()
-    r = c.clasificar_giro(actividad="restaurante")
-    assert r["giro_cofepris"] == "B"
+def test_restaurante_aviso():
+    r = COFEPRISAvisoClient().clasificar_giro("restaurante")
+    assert r["tramite"] == "aviso_funcionamiento"
     assert r["requiere_aviso"] is True
+    assert "200 Bis" in r["fundamento"]
 
 
-def test_clasificar_farmacia_giro_c():
-    from mp_cofepris_aviso_funcionamiento.client import COFEPRISAvisoClient
+def test_quirofano_y_rayos_x_licencia():
     c = COFEPRISAvisoClient()
-    r = c.clasificar_giro(actividad="farmacia")
-    assert r["giro_cofepris"] == "C"
-    assert r["requiere_responsable_sanitario"] is True
+    assert c.clasificar_giro("hospital_quirurgico")["requiere_licencia"] is True
+    assert "fr. IV" in c.clasificar_giro("consultorio dental con rayos x")["fundamento"]
 
 
-def test_clasificar_tienda_giro_a():
-    from mp_cofepris_aviso_funcionamiento.client import COFEPRISAvisoClient
+def test_farmacia_depende_de_controlados():
     c = COFEPRISAvisoClient()
-    r = c.clasificar_giro(actividad="tienda_abarrotes")
-    assert r["giro_cofepris"] == "A"
+    con = c.clasificar_giro("farmacia_con_controlados")
+    sin = c.clasificar_giro("farmacia_sin_controlados")
+    assert con["tramite"] == "licencia_sanitaria" and con["responsable_sanitario"] is True
+    assert sin["tramite"] == "aviso_funcionamiento" and sin["responsable_sanitario"] is False
+
+
+def test_tienda_requiere_verificar():
+    r = COFEPRISAvisoClient().clasificar_giro("tienda_abarrotes")
+    assert r["tramite"] == "verificar_acuerdo_ssa"
+    assert r["requiere_aviso"] is None
+
+
+def test_no_catalogado():
+    assert COFEPRISAvisoClient().clasificar_giro("actividad_extrania")["tramite"] is None
+
+
+def test_requisitos_art_200_bis():
+    r = COFEPRISAvisoClient().requisitos_aviso("consultorio_medico", "cdmx")
+    assert len(r["requisitos"]) == 6
+    assert "30 días" in r["plazo"]
+
+
+def test_requisitos_licencia_no_es_aviso():
+    r = COFEPRISAvisoClient().requisitos_aviso("hemodialisis", "cdmx")
     assert r["requiere_aviso"] is False
+    assert r["tramite"] == "licencia_sanitaria"
 
 
-def test_clasificar_no_catalogado():
-    from mp_cofepris_aviso_funcionamiento.client import COFEPRISAvisoClient
-    c = COFEPRISAvisoClient()
-    r = c.clasificar_giro(actividad="actividad_extrania")
-    assert r["giro_cofepris"] == "no_clasificado"
-
-
-def test_requisitos_giro_c_incluye_responsable():
-    from mp_cofepris_aviso_funcionamiento.client import COFEPRISAvisoClient
-    c = COFEPRISAvisoClient()
-    r = c.requisitos_aviso(actividad="consultorio_medico", estado="cdmx")
-    assert any("responsable" in req.lower() for req in r["requisitos"])
-
-
-def test_requisitos_giro_a_no_aviso():
-    from mp_cofepris_aviso_funcionamiento.client import COFEPRISAvisoClient
-    c = COFEPRISAvisoClient()
-    r = c.requisitos_aviso(actividad="papeleria", estado="cdmx")
-    assert r["requiere_aviso"] is False
-
-
-def test_consultar_aviso_corto():
-    from mp_cofepris_aviso_funcionamiento.client import COFEPRISAvisoClient
-    from shared.errors import ValidationError
-    c = COFEPRISAvisoClient()
+def test_consultar_aviso_handoff():
+    r = COFEPRISAvisoClient().consultar_aviso("XAXX010101000")
+    assert r["handoff_humano"] is True
+    assert r["vigente"] is None
     with pytest.raises(ValidationError):
-        c.consultar_aviso(identificador="x")
+        COFEPRISAvisoClient().consultar_aviso("x")
 
 
-def test_listar_giros_clasificacion():
-    from mp_cofepris_aviso_funcionamiento.client import COFEPRISAvisoClient
-    c = COFEPRISAvisoClient()
-    r = c.listar_giros_catalogo()
-    assert r["por_clasificacion"]["A"] >= 1
-    assert r["por_clasificacion"]["B"] >= 5
-    assert r["por_clasificacion"]["C"] >= 5
+def test_listar_giros():
+    r = COFEPRISAvisoClient().listar_giros_catalogo()
+    assert r["por_tramite"]["licencia_sanitaria"] == 7
+    assert r["total"] == sum(r["por_tramite"].values())
