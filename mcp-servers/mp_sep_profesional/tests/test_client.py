@@ -138,3 +138,35 @@ class TestListarProfesionesReguladas:
         assert r["total"] >= 1
         assert set(r["categorias"]) == set(PROFESIONES_REGULADAS.keys())
         assert "url_consulta" in r
+
+
+# ---------- modo real: handoff humano (reCAPTCHA v3) ----------
+
+
+@pytest.fixture
+def real_client(tmp_path, monkeypatch):
+    monkeypatch.delenv("PLUGINS_MX_MOCK", raising=False)
+    monkeypatch.setenv("PLUGINS_MX_CACHE_DIR", str(tmp_path / "c"))
+    monkeypatch.setenv("PLUGINS_MX_AUDIT_DIR", str(tmp_path / "a"))
+    return SepProfesionalClient()
+
+
+def test_real_cedula_devuelve_handoff(real_client):
+    r = real_client.consultar_cedula("1234567")
+    assert r["requiere_humano"] is True
+    assert r["campos_prellenados"] == {"cedula": "1234567"}
+    assert r["simulated"] is False
+
+
+def test_real_medico_no_afirma(real_client):
+    r = real_client.validar_medico_para_consulta("1234567")
+    assert r["puede_dar_consulta"] is None
+    assert r["requiere_humano"] is True
+
+
+@pytest.mark.live
+def test_live_portal_exige_recaptcha():
+    import httpx
+
+    cfg = httpx.get("https://cedulaprofesional.sep.gob.mx/assets/config.json", timeout=30).json()
+    assert cfg.get("recaptchaSiteKey"), "SEP ya no declara reCAPTCHA: revisar si se puede consultar directo"
