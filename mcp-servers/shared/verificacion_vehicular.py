@@ -1,33 +1,31 @@
-"""Verificación vehicular estatal — CDMX, EdoMex y 5 más.
+"""Verificación vehicular — Megalópolis (CDMX, EdoMex y estados de la CAMe).
 
-CDMX/EdoMex/Hidalgo/Morelos/Puebla operan el programa Hoy No Circula
-y verificación obligatoria cada 6 meses según engomado.
+Calendario 2026 (SEDEMA CDMX, Gaceta Oficial 2-ene-2026, reportado por Crónica,
+ADN40, N+, Chilango; revisado 2026-10-14). Dos meses por semestre según el
+color del engomado / último dígito de la placa:
 
-Engomados y semáforos:
-  - Amarillo (terminación 5,6): Marzo, Julio, Noviembre
-  - Rosa (terminación 7,8):     Abril, Agosto, Diciembre
-  - Roja (terminación 3,4):     Mayo, Septiembre, Enero
-  - Verde (terminación 1,2):    Junio, Octubre, Febrero
-  - Azul (terminación 9,0):     Enero, Mayo, Septiembre
+  Amarillo (5, 6): ene–feb y jul–ago
+  Rosa     (7, 8): feb–mar y ago–sep
+  Rojo     (3, 4): mar–abr y sep–oct
+  Verde    (1, 2): abr–may y oct–nov
+  Azul     (9, 0): may–jun y nov–dic
 """
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Literal
+from dataclasses import dataclass, field
+from typing import Literal, Optional
 
 
 Holograma = Literal["00", "0", "1", "2", "Exento", "Rechazo"]
 ColorEngomado = Literal["amarillo", "rosa", "rojo", "verde", "azul"]
 
+FUENTES_CALENDARIO_2026 = (
+    "https://www.cronica.com.mx/metropoli/2026/01/02/anuncian-calendario-de-verificacion-vehicular-en-la-cdmx-para-enero-junio-de-2026/",
+    "https://www.nmas.com.mx/ciudad-de-mexico/movilidad/calendario-verificacion-segundo-semestre-2026-cdmx-placas-engomados-fechas-limite/",
+)
 
-# Selectores reales descubiertos 2026-06-15 (Playwright) — SAF CDMX consulta adeudos
-# Endpoint público, sin Llave CDMX. Útil para verificación + tenencia.
+# Endpoint público SAF CDMX (CAPTCHA imagen → handoff humano, ver shared.portal_handoff)
 URL_SAF_CDMX_CONSULTA = "https://data.finanzas.cdmx.gob.mx/sma/Consultaciudadana"
-SAF_CDMX_FIELDS = {"placa": "inputPlaca", "captcha": "captcha_code"}
-
-# Path con Llave CDMX (OAuth2) — opcional, requiere identidad digital del usuario
-URL_TRAMITES_CDMX_VERIFICACION = "https://tramites.cdmx.gob.mx/fotocivicas/public/consulta-verificacion"
-URL_LLAVE_CDMX_OAUTH = "https://llave.cdmx.gob.mx/oauth.xhtml"
 
 
 @dataclass
@@ -38,74 +36,49 @@ class ProgramaVerificacion:
     portal_url: str
     portal_consulta: str = ""
     frecuencia_meses: int = 6
-    costo_mxn: float = 0.0
-    permite_holograma_00: bool = True
+    costo_mxn: Optional[float] = None  # None = sin fuente 2026
+    verificado_2026: bool = False
+    fuentes: tuple[str, ...] = field(default_factory=tuple)
     notas: str = ""
 
 
 CATALOGO_VERIFICACION: list[ProgramaVerificacion] = [
     ProgramaVerificacion(
-        clave="cdmx",
-        nombre_estado="Ciudad de México",
-        activo=True,
-        portal_url="https://www.semovi.cdmx.gob.mx",
-        portal_consulta="https://verificentros.cdmx.gob.mx",
-        frecuencia_meses=6,
-        costo_mxn=621.0,
-        notas="SEMOVI — citas vía app/portal. Hoy No Circula activo.",
+        clave="cdmx", nombre_estado="Ciudad de México", activo=True,
+        portal_url="https://www.sedema.cdmx.gob.mx/programas/programa/verificacion-vehicular",
+        portal_consulta=URL_SAF_CDMX_CONSULTA,
+        costo_mxn=765.45, verificado_2026=True,
+        fuentes=("https://www.eluniversal.com.mx/consultas/verificacion-vehicular/",),
+        notas="5.625 UMA + IVA, igual para todos los hologramas. Multa por extemporánea: 20 UMA.",
     ),
     ProgramaVerificacion(
-        clave="edomex",
-        nombre_estado="Estado de México",
-        activo=True,
-        portal_url="https://verificacion.edomex.gob.mx",
-        portal_consulta="https://verificacion.edomex.gob.mx/citas",
-        frecuencia_meses=6,
-        costo_mxn=549.0,
-        notas="Verificarte EdoMex. Compatible con Hoy No Circula ZMVM.",
+        clave="edomex", nombre_estado="Estado de México", activo=True,
+        portal_url="https://citaverificacion.edomex.gob.mx/RegistroCitas/",
+        costo_mxn=469.24, verificado_2026=True,
+        fuentes=("https://www.unotv.com/estados/estado-de-mexico/verificacion-vehicular-en-edomex-precio-actualizado-en-2026-tras-el-aumento-de-la-uma/",),
+        notas="Costo hologramas 1 y 2. Holograma 0: ~$610; 00: ~$1,196. Multa: 30 UMA.",
     ),
-    ProgramaVerificacion(
-        clave="hgo",
-        nombre_estado="Hidalgo",
-        activo=True,
-        portal_url="https://www.hidalgo.gob.mx/verificacion",
-        frecuencia_meses=6,
-        costo_mxn=470.0,
-    ),
-    ProgramaVerificacion(
-        clave="mor",
-        nombre_estado="Morelos",
-        activo=True,
-        portal_url="https://www.morelos.gob.mx/verificacion",
-        frecuencia_meses=6,
-        costo_mxn=485.0,
-    ),
-    ProgramaVerificacion(
-        clave="pue",
-        nombre_estado="Puebla",
-        activo=True,
-        portal_url="https://www.puebla.gob.mx/verificacion",
-        frecuencia_meses=6,
-        costo_mxn=505.0,
-    ),
-    ProgramaVerificacion(
-        clave="tlax",
-        nombre_estado="Tlaxcala",
-        activo=True,
-        portal_url="https://www.tlaxcala.gob.mx/verificacion",
-        frecuencia_meses=6,
-        costo_mxn=445.0,
-    ),
-    ProgramaVerificacion(
-        clave="jal",
-        nombre_estado="Jalisco",
-        activo=True,
-        portal_url="https://semadet.jalisco.gob.mx/verificacion",
-        frecuencia_meses=6,
-        costo_mxn=520.0,
-        notas="Programa estatal Jalisco GDL.",
-    ),
+    ProgramaVerificacion(clave="hgo", nombre_estado="Hidalgo", activo=True,
+                         portal_url="https://www.hidalgo.gob.mx", notas="Costo 2026 sin fuente."),
+    ProgramaVerificacion(clave="mor", nombre_estado="Morelos", activo=True,
+                         portal_url="https://www.morelos.gob.mx", notas="Costo 2026 sin fuente."),
+    ProgramaVerificacion(clave="pue", nombre_estado="Puebla", activo=True,
+                         portal_url="https://www.puebla.gob.mx", notas="Costo 2026 sin fuente."),
+    ProgramaVerificacion(clave="tlax", nombre_estado="Tlaxcala", activo=True,
+                         portal_url="https://www.tlaxcala.gob.mx", notas="Costo 2026 sin fuente."),
+    ProgramaVerificacion(clave="jal", nombre_estado="Jalisco", activo=True,
+                         portal_url="https://semadet.jalisco.gob.mx",
+                         notas="Programa propio (no Megalópolis): el calendario de engomados no aplica."),
 ]
+
+# terminación → (color, meses de verificación del año)
+_CALENDARIO: dict[int, tuple[str, list[int]]] = {
+    5: ("amarillo", [1, 2, 7, 8]), 6: ("amarillo", [1, 2, 7, 8]),
+    7: ("rosa", [2, 3, 8, 9]), 8: ("rosa", [2, 3, 8, 9]),
+    3: ("rojo", [3, 4, 9, 10]), 4: ("rojo", [3, 4, 9, 10]),
+    1: ("verde", [4, 5, 10, 11]), 2: ("verde", [4, 5, 10, 11]),
+    9: ("azul", [5, 6, 11, 12]), 0: ("azul", [5, 6, 11, 12]),
+}
 
 
 def buscar_programa(clave: str) -> ProgramaVerificacion | None:
@@ -117,36 +90,19 @@ def buscar_programa(clave: str) -> ProgramaVerificacion | None:
 
 
 def calcular_proximo_periodo(terminacion_placa: int, mes_actual: int) -> tuple[str, list[int]]:
-    """Calcula color de engomado + meses de verificación.
-
-    Args:
-        terminacion_placa: último dígito de la placa (0-9).
-        mes_actual: 1-12.
-
-    Returns:
-        (color, [meses_obligatorios])
-    """
+    """(color de engomado, meses en que toca verificar) según la terminación."""
     if not (0 <= terminacion_placa <= 9):
         raise ValueError("terminacion debe ser 0-9")
-    # Mapeo terminación → color
-    if terminacion_placa in (5, 6):
-        return ("amarillo", [3, 7, 11])
-    if terminacion_placa in (7, 8):
-        return ("rosa", [4, 8, 12])
-    if terminacion_placa in (3, 4):
-        return ("rojo", [5, 9, 1])
-    if terminacion_placa in (1, 2):
-        return ("verde", [6, 10, 2])
-    return ("azul", [1, 5, 9])  # 9 y 0
+    return _CALENDARIO[terminacion_placa]
 
 
 def mes_proxima_verificacion(terminacion: int, mes_actual: int) -> int:
-    """Devuelve el siguiente mes en que toca verificar."""
+    """Siguiente mes del calendario >= mes_actual; >12 significa el año siguiente."""
     _, meses = calcular_proximo_periodo(terminacion, mes_actual)
-    # Buscar el siguiente mes >= mes_actual
     futuros = [m for m in meses if m >= mes_actual]
-    return min(futuros) if futuros else min(meses) + 12  # próximo año
+    return min(futuros) if futuros else min(meses) + 12
 
 
 __all__ = ["ProgramaVerificacion", "Holograma", "ColorEngomado", "CATALOGO_VERIFICACION",
+           "FUENTES_CALENDARIO_2026", "URL_SAF_CDMX_CONSULTA",
            "buscar_programa", "calcular_proximo_periodo", "mes_proxima_verificacion"]

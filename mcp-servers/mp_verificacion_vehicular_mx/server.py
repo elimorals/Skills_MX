@@ -13,6 +13,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from mp_verificacion_vehicular_mx.client import VerificacionVehicularClient  # noqa: E402
+from shared.errors import McpError  # noqa: E402
 
 
 mcp = FastMCP("verificacion_vehicular_mx")
@@ -33,13 +34,16 @@ class ProximoPeriodoInput(BaseModel):
 
 @mcp.tool(annotations={"title": "Consultar verificación vehicular", "readOnlyHint": True, "openWorldHint": True})
 def verificacion_consultar_estatus(args: ConsultarInput) -> dict:
-    """Consulta estatus del holograma + vigencia."""
-    return _client.consultar_estatus(args.placa, args.estado)
+    """CDMX: SAF exige CAPTCHA → handoff humano verificado. Otros estados: error explícito."""
+    try:
+        return _client.consultar_estatus(args.placa, args.estado)
+    except McpError as exc:
+        return exc.to_dict()
 
 
 @mcp.tool(annotations={"title": "Próximo periodo de verificación", "readOnlyHint": True, "idempotentHint": True})
 def verificacion_proximo_periodo(args: ProximoPeriodoInput) -> dict:
-    """Calcula color de engomado + próximo mes de verificación obligatoria."""
+    """Color de engomado + próximo mes de verificación (calendario Megalópolis 2026)."""
     return _client.proximo_periodo(args.placa, args.estado)
 
 
