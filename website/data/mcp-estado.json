@@ -171,7 +171,7 @@
       "id": "mp_cdmx_municipal",
       "estado": "handoff",
       "estado_label": "Entrega a humano (CAPTCHA o login)",
-      "nota": "Predial (ALTCHA) y tenencia/multas (CAPTCHA de imagen): handoff. Hoy No Circula: cálculo local.",
+      "nota": "Predial (ALTCHA) y tenencia/multas (CAPTCHA de imagen): handoff. Hoy No Circula: cálculo local. Con solver opt-in (2captcha): consulta real, sin validar en vivo (falta llave).",
       "tools": [
         "cdmx_consultar_predial",
         "cdmx_consultar_tenencia",
@@ -481,7 +481,7 @@
       "id": "mp_guadalajara_municipal",
       "estado": "handoff",
       "estado_label": "Entrega a humano (CAPTCHA o login)",
-      "nota": "Predial y adeudos vehiculares con reCAPTCHA.",
+      "nota": "Predial y adeudos vehiculares con reCAPTCHA. Con solver opt-in (2captcha): consulta real, sin validar en vivo (falta llave).",
       "tools": [
         "guadalajara_mun_consultar_predial",
         "guadalajara_mun_consultar_multas"
@@ -732,7 +732,7 @@
       "id": "mp_multas_mx",
       "estado": "handoff",
       "estado_label": "Entrega a humano (CAPTCHA o login)",
-      "nota": "CDMX, EdoMex, Jalisco y San Pedro con CAPTCHA; NL solo refrendo.",
+      "nota": "CDMX, EdoMex, Jalisco y San Pedro con CAPTCHA; NL solo refrendo. Con solver opt-in (2captcha): consulta real, sin validar en vivo (falta llave).",
       "tools": [
         "multas_consultar",
         "multas_estados_disponibles"
@@ -742,7 +742,7 @@
       "id": "mp_multas_vehiculares_mx",
       "estado": "handoff",
       "estado_label": "Entrega a humano (CAPTCHA o login)",
-      "nota": "CDMX, EdoMex, Jalisco y San Pedro con CAPTCHA; NL consulta manual.",
+      "nota": "CDMX, EdoMex, Jalisco y San Pedro con CAPTCHA; NL consulta manual. Con solver opt-in (2captcha): consulta real, sin validar en vivo (falta llave).",
       "tools": [
         "multas_consultar_por_placa",
         "multas_calcular_total",
@@ -799,7 +799,7 @@
       "id": "mp_puebla_municipal",
       "estado": "handoff",
       "estado_label": "Entrega a humano (CAPTCHA o login)",
-      "nota": "Predial con CAPTCHA.",
+      "nota": "Predial con CAPTCHA. Con solver opt-in (2captcha): consulta real, sin validar en vivo (falta llave).",
       "tools": [
         "puebla_mun_consultar_predial"
       ]
@@ -854,7 +854,7 @@
       "id": "mp_repuve",
       "estado": "handoff",
       "estado_label": "Entrega a humano (CAPTCHA o login)",
-      "nota": "reCAPTCHA v3 y body cifrado en el navegador; robo devuelve null (desconocido), nunca false.",
+      "nota": "reCAPTCHA v3 y body cifrado en el navegador; robo devuelve null (desconocido), nunca false. Con solver opt-in (2captcha): consulta real, sin validar en vivo (falta llave).",
       "tools": [
         "repuve_consultar_niv",
         "repuve_consultar_placa",
@@ -964,7 +964,7 @@
       "id": "mp_sep_profesional",
       "estado": "handoff",
       "estado_label": "Entrega a humano (CAPTCHA o login)",
-      "nota": "Cédula profesional exige token reCAPTCHA; resultado null (desconocido) con handoff.",
+      "nota": "Cédula profesional exige token reCAPTCHA; resultado null (desconocido) con handoff. Con solver opt-in (2captcha): consulta real, sin validar en vivo (falta llave).",
       "tools": [
         "sep_consultar_cedula",
         "sep_consultar_por_datos",
@@ -1082,7 +1082,7 @@
       "id": "mp_verificacion_vehicular_mx",
       "estado": "handoff",
       "estado_label": "Entrega a humano (CAPTCHA o login)",
-      "nota": "Estatus CDMX con CAPTCHA; calendario y costos 2026 de notas de prensa.",
+      "nota": "Estatus CDMX con CAPTCHA; calendario y costos 2026 de notas de prensa. Con solver opt-in (2captcha): consulta real, sin validar en vivo (falta llave).",
       "tools": [
         "verificacion_consultar_estatus",
         "verificacion_proximo_periodo",
