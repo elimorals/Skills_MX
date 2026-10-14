@@ -23,6 +23,7 @@ dev = [
     "pytest-asyncio>=0.23,<1.0",
     "respx>=0.21,<1.0",
     "cryptography>=42,<46",
+    "pypdf>=4.0,<7.0",
 ]
 # Login e.firma por httpx a los portales SAT (CSF, padrón, opinión 32-D propia)
 sat-portal = [
