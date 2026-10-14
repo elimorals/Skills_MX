@@ -48,7 +48,7 @@ class AutorizacionInput(BaseModel):
     vigencia_dias: int = Field(90, ge=1, le=365)
 
 
-@mcp.tool(annotations={"title": "Verificar credencial INE (handoff, reCAPTCHA)", "readOnlyHint": True})
+@mcp.tool(annotations={"title": "Verificar credencial INE (reCAPTCHA; solver opt-in)", "readOnlyHint": True})
 def ine_verificar_datos(args: VerifInput) -> dict:
     return _client.verificar_datos(
         modelo=args.modelo, autorizacion_token=args.autorizacion_token,
