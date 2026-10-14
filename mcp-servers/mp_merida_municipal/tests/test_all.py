@@ -13,7 +13,7 @@ def _env(tmp_path, monkeypatch):
 def test_predial_handoff_bot_manager():
     r = MeridaMunClient().consultar_predial("60", "500")
     assert r["requiere_humano"] is True and r["motivo"] == "bot_manager"
-    assert r["portal"] == URL_PREDIAL and r["simulated"] is False
+    assert r["url"] == URL_PREDIAL and r["simulated"] is False
 
 
 def test_mock_solo_con_flag(monkeypatch):

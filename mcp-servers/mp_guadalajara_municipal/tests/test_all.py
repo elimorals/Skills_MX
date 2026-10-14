@@ -13,12 +13,12 @@ def _env(tmp_path, monkeypatch):
 def test_predial_handoff_captcha():
     r = GuadalajaraMunClient().consultar_predial("123456")
     assert r["requiere_humano"] is True and r["motivo"] == "captcha"
-    assert r["portal"] == URL_PREDIAL and r["simulated"] is False
+    assert r["url"] == URL_PREDIAL and r["simulated"] is False
 
 
 def test_multas_handoff_captcha():
     r = GuadalajaraMunClient().consultar_adeudos_vehiculares("JAL1234")
-    assert r["requiere_humano"] is True and r["portal"] == URL_VEHICULAR_JAL
+    assert r["requiere_humano"] is True and r["url"] == URL_VEHICULAR_JAL
 
 
 def test_mock_solo_con_flag(monkeypatch):

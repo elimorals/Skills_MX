@@ -13,7 +13,7 @@ def _env(tmp_path, monkeypatch):
 def test_predial_handoff_captcha():
     r = PueblaMunClient().consultar_predial("1234567")
     assert r["requiere_humano"] is True and r["motivo"] == "captcha"
-    assert r["portal"] == URL_PREDIAL and r["simulated"] is False
+    assert r["url"] == URL_PREDIAL and r["simulated"] is False
 
 
 def test_mock_solo_con_flag(monkeypatch):

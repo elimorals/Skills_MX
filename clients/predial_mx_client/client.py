@@ -190,8 +190,8 @@ class PredialMxClient:
             raise PredialClientError(str(e)) from e
 
         if raw.get("status") == "requiere_humano":
-            raise CaptchaRequeridoError(raw.get("razon", "Portal requiere CAPTCHA"),
-                                        url_consulta_manual=raw.get("url_consulta_manual", ""))
+            raise CaptchaRequeridoError(raw.get("detalle") or "Portal requiere CAPTCHA",
+                                        url_consulta_manual=raw.get("url") or "")
         return PredialResponse.from_raw(raw)
 
     # ============================================================

@@ -43,7 +43,7 @@ def test_tenencia_handoff_saf(client: CdmxMunicipalClient) -> None:
     r = client.consultar_tenencia("ABC-123-D")
     assert r["placa"] == "ABC123D"
     assert r["seccion"] == "Tenencia"
-    assert r["url_consulta_manual"] == SAF_CDMX_ADEUDOS.url
+    assert r["url"] == SAF_CDMX_ADEUDOS.url
 
 
 @respx.mock

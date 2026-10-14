@@ -16,7 +16,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared.bitacora import Bitacora  # noqa: E402
-from shared.handoff_humano import handoff_humano  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
 NAMESPACE = "guadalajara_mun"
@@ -32,8 +32,8 @@ class GuadalajaraMunClient:
         self.bitacora.log("consultar_predial", success=True, params_summary={})
         if is_mock_mode([], default_when_no_creds=False):
             return mark_simulated({"cuenta_predial": cuenta_predial, "adeudo_total_mxn": 2100.0})
-        return handoff_humano(
-            portal=URL_PREDIAL,
+        return armar_handoff(
+            url=URL_PREDIAL,
             motivo="captcha",
             detalle="El portal exige reCAPTCHA v2 antes de mostrar el adeudo.",
             pasos=[
@@ -47,8 +47,8 @@ class GuadalajaraMunClient:
         self.bitacora.log("consultar_adeudos_vehiculares", success=True, params_summary={})
         if is_mock_mode([], default_when_no_creds=False):
             return mark_simulated({"placa": placa, "adeudo_total_mxn": 640.0})
-        return handoff_humano(
-            portal=URL_VEHICULAR_JAL,
+        return armar_handoff(
+            url=URL_VEHICULAR_JAL,
             motivo="captcha",
             detalle="Adeudos vehiculares de Jalisco (refrendo/multas estatales); el portal exige reCAPTCHA.",
             pasos=[

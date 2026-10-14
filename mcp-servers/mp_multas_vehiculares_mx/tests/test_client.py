@@ -124,7 +124,7 @@ class TestReal:
         r = MultasVehicularesMxClient().consultar_por_placa(estado, "ABC-1234")
         assert r["simulated"] is False
         assert r["status"] == "requiere_humano"
-        assert r["url_consulta_manual"] == portal.url
+        assert r["url"] == portal.url
 
     @respx.mock
     def test_portal_caido_es_error(self, monkeypatch):

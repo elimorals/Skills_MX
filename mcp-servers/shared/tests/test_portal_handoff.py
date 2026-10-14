@@ -27,6 +27,19 @@ def test_handoff_portal_ok() -> None:
     assert r["captcha_tipo"] == "imagen"
     assert r["placa"] == "ABC123"
     assert r["portal_verificado"]["status_code"] == 200
+    assert r["url"] == ph.SAF_CDMX_ADEUDOS.url and r["requiere_humano"] is True
+
+
+def test_armar_handoff_forma_unica() -> None:
+    r = ph.armar_handoff(motivo="login", url="https://x", pasos=("a",), folio="F1")
+    assert set(r) == {
+        "requiere_humano", "status", "consultado", "simulated", "motivo", "detalle",
+        "portal", "url", "pasos", "captcha_tipo", "campos_prellenados",
+        "portal_verificado", "folio",
+    }
+    assert r["requiere_humano"] is True and r["status"] == "requiere_humano"
+    assert r["consultado"] is False and r["simulated"] is False
+    assert r["pasos"] == ["a"] and r["campos_prellenados"] == {}
 
 
 @respx.mock

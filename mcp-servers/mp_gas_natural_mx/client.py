@@ -31,7 +31,7 @@ from shared.errors import (  # noqa: E402
     handle_httpx_error,
 )
 from shared.gas_natural_mx import CATALOGO_GAS_NATURAL, DistribuidorGas, buscar_distribuidor  # noqa: E402
-from shared.handoff_humano import handoff_humano  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
 NAMESPACE = "gas_natural_mx"
@@ -108,8 +108,8 @@ class GasNaturalMxClient:
             "distribuidor": d.clave, "contrato_hash": self._bitacora.hash_sensitive(contrato)})
         if is_mock_mode([], default_when_no_creds=False):
             return mark_simulated({"distribuidor": d.clave, "contrato": contrato, "monto_mxn": 450.0})
-        return handoff_humano(
-            portal=d.url_portal,
+        return armar_handoff(
+            url=d.url_portal,
             motivo="login",
             detalle=f"{d.nombre} solo muestra recibos al titular con sesión iniciada. {d.notas}".strip(),
             pasos=[f"Entrar a {d.url_portal} con la cuenta del titular",

@@ -16,7 +16,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from shared.bitacora import Bitacora  # noqa: E402
-from shared.handoff_humano import handoff_humano  # noqa: E402
+from shared.portal_handoff import armar_handoff  # noqa: E402
 from shared.mock import is_mock_mode, mark_simulated  # noqa: E402
 
 NAMESPACE = "merida_mun"
@@ -31,8 +31,8 @@ class MeridaMunClient:
         self.bitacora.log("consultar_predial", success=True, params_summary={})
         if is_mock_mode([], default_when_no_creds=False):
             return mark_simulated({"calle": calle, "numero": numero, "adeudo_total_mxn": 890.0})
-        return handoff_humano(
-            portal=URL_PREDIAL,
+        return armar_handoff(
+            url=URL_PREDIAL,
             motivo="bot_manager",
             detalle="Radware Bot Manager presenta un reto hCaptcha antes del formulario.",
             pasos=[
