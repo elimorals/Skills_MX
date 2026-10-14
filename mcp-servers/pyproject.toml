@@ -24,6 +24,11 @@ dev = [
     "respx>=0.21,<1.0",
     "cryptography>=42,<46",
 ]
+# Portales federales públicos con cadena TLS incompleta (CONDUSEF, gov.mx):
+# truststore usa el almacén del sistema, que completa intermedios.
+publicos-federales = [
+    "truststore>=0.9,<1.0",
+]
 sat-playwright = [
     "cryptography>=42,<46",
     "playwright>=1.42,<2.0",
