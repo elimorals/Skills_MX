@@ -29,7 +29,7 @@ Preguntas abiertas:
 **Pregunta clave**: "¿Cuál es el rango cómodo y cuál es el techo absoluto?"
 
 Sin esto no se puede planear. Si los novios no saben:
-- "Boda con 200 invitados promedio MX costa $800k-$1.3M. ¿Eso está en su rango?"
+- "Una boda de 200 invitados en CDMX va de unos $630k a $1.3M antes de IVA en gama baja-media (referencia orientativa, ver `cotizacion-boda-mxn`). ¿Eso está en su rango?"
 - Identificar si requieren financiamiento del banco / familia
 
 ### Fase 4: Invitados (15 min)
@@ -63,8 +63,11 @@ Los top 3 reciben 60-70% del presupuesto. Los bottom 3 son donde se pueden hacer
 
 ### Fase 7: Logística + datos fiscales (5 min)
 - Tutor de presupuesto (¿quién aprueba gastos?)
-- RFC del que va a recibir CFDIs (novios o familia)
+- Datos para CFDI 4.0 de quien va a recibir las facturas (novios o familia): RFC, nombre exacto como aparece en la Constancia de Situación Fiscal, régimen fiscal y CP del domicilio fiscal. Si no quieren factura con RFC, se usa público en general.
 - Email para envío de invitaciones digitales
+
+### Datos personales (LFPDPPP)
+Entrega el aviso de privacidad antes de capturar datos (LFPDPPP vigente, DOF 20-03-2025; autoridad: Secretaría Anticorrupción y Buen Gobierno). Religión, salud (alergias, embarazo) y datos de menores son **datos sensibles**: captúralos solo si se necesitan para el evento y con consentimiento expreso. La lista de invitados también son datos personales de terceros: úsala solo para el evento. Ver `compliance-lfpdppp`.
 
 ## Output: Brief de boda
 
@@ -109,7 +112,8 @@ Los top 3 reciben 60-70% del presupuesto. Los bottom 3 son donde se pueden hacer
 - **RFC para CFDI**: {{rfc}}
 - **Nombre / razón social**: {{nombre}}
 - **CP domicilio fiscal**: {{cp}}
-- **UsoCFDI sugerido**: G03 (gastos generales) o D04 si aplica
+- **Régimen fiscal**: {{regimen}}
+- **UsoCFDI sugerido**: S01 (sin efectos fiscales) o G03; una boda no es deducción personal
 
 ## Identificadores
 - **WA principal**: {{tel_principal}}
@@ -131,7 +135,7 @@ Los top 3 reciben 60-70% del presupuesto. Los bottom 3 son donde se pueden hacer
 4. **Detectar red flags**:
    - Familia muy involucrada (puede generar conflictos)
    - Novios con presupuestos opuestos entre sí
-   - Embarazo no declarado (puede cambiar timeline)
+   - Cambios de fecha probables por razones personales (no indagues datos de salud; si los novios los comparten, trátalos como sensibles)
    - Presión por fecha específica (a veces religiosa o cultural muy importante, a veces capricho que puede ajustarse)
 
 ## Output estructurado
