@@ -8,8 +8,8 @@ Plugins de Claude Code, skills y MCP servers para operar una PyME o profesión e
 | **Skills** | 342 (6 base en `_shared/` sincronizadas a cada plugin) |
 | **MCP servers** | 83 en Python + FastMCP, 417 tools |
 | **Workflows ejecutables** | 26 (`*.workflow.js`) |
-| **Hooks de Claude Code** | 19 (validación de timbrado, bitácora, alertas) |
-| **Webhook receiver** | FastAPI con 13 handlers (Stripe, Mercado Pago, Conekta, Facturama, WhatsApp…) |
+| **Hooks de Claude Code** | 17 scripts, 12 registrados en `.claude/settings.json` (validación de timbrado, bitácora, alertas) |
+| **Webhook receiver** | FastAPI con 12 handlers (Stripe, Mercado Pago, Conekta, Facturama, WhatsApp…) |
 | **Calidad** | 1,900 tests, 285 evals de triggering, casos golden de cálculo fiscal, CI en cada PR |
 
 ---

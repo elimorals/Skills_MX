@@ -13,8 +13,10 @@ evalúen por la **corrección** de su respuesta, no solo por si se activan.
 2. **Validación en vivo obligatoria** para declarar un MCP "real": al menos una
    llamada real exitosa, registrada en el README del MCP (fecha, URL, status), y
    un test `@pytest.mark.live` (se salta salvo `PLUGINS_MX_LIVE=1`).
-3. **Nunca saltar CAPTCHAs.** Si el portal lo exige, el tool devuelve un handoff
-   humano (URL + pasos), no un bypass.
+3. **CAPTCHA: entrega a humano por defecto.** Si el portal lo exige, el tool devuelve
+   un handoff (URL + pasos). Con el solver opt-in (`PLUGINS_MX_CAPTCHA_SOLVER=2captcha`)
+   se resuelve el CAPTCHA del formulario; nunca se evaden anti-bots de red (Akamai,
+   Cloudflare, Radware) ni se usa en citas o REPEP.
 4. **Solo lectura en vivo.** Nada que presente declaraciones, agende citas,
    modifique obligaciones o mueva dinero contra un upstream real durante pruebas.
 5. **Secretos fuera del repo.** Los tests generan una e.firma autofirmada al vuelo;
