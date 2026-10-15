@@ -28,14 +28,16 @@ class CitaPersonal(BaseModel):
 🩺 MIS CITAS
 
 Próximas:
-  • 2026-06-18 10:00 — Dr. Ramírez (Cardiólogo)
+  • 2026-10-22 10:00 — Dr. Ramírez (Cardiólogo)
     Motivo: control HTA
     Llevar: ECG último, lista medicamentos actuales
 
-  • 2026-06-25 16:00 — Dra. López (Endocrinóloga)
+  • 2026-11-05 16:00 — Dra. López (Endocrinóloga)
     Motivo: control DM2
     Llevar: glucemia capilar últimas 2 semanas, HbA1c
 
 📋 Pendientes:
-  • Agendar oftalmólogo (anual, requiere fundo de ojo)
+  • Agendar oftalmólogo (revisión anual de fondo de ojo, recomendada en DM2)
 ```
+
+> Los recordatorios se generan como lista/archivo para tu calendario o alarma; esta skill no envía mensajes por sí sola.
