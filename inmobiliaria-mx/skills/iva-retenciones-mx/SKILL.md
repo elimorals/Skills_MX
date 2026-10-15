@@ -15,7 +15,7 @@ Este skill aplica las reglas vigentes de IVA y retenciones del ISR/IVA en Méxic
 | **16%** | General — la mayoría de bienes y servicios en territorio nacional |
 | **8%** | Región Fronteriza Norte y Sur: estímulo (crédito del 50% del IVA), no tasa de ley. Decreto DOF 31-dic-2025 lo prorroga **solo hasta el 31-dic-2026**; requiere aviso/padrón de beneficiarios del SAT y domicilio del emisor en la región |
 | **0%** | Art. 2-A LIVA: exportación de bienes/servicios (Art. 29), animales y vegetales no industrializados, alimentos (salvo excepciones), medicinas de patente, agua para uso doméstico, libros/periódicos/revistas, etc. |
-| **Exento** | Servicios médicos profesionales (NO incluye hospitales), enseñanza pública, intereses bancarios a PF, etc. |
+| **Exento** | Servicios médicos profesionales (NO incluye hospitales), enseñanza pública y de particulares con RVOE (Art. 15 fr. IV LIVA), intereses bancarios a PF, etc. |
 
 Diferencia crítica entre 0% y exento:
 - **Tasa 0%** sí genera IVA acreditable para quien lo paga (aunque sea cero). El emisor sí desglosa el impuesto en el CFDI con valor 0.00.

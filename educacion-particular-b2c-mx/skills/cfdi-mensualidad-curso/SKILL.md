@@ -29,7 +29,7 @@ Elige la más cercana al curso; si dudas, confirma en el buscador del SAT.
 ## 3. Venta por plataforma digital
 
 Si el curso se vende a través de una plataforma de intermediación (marketplace de cursos) y el instructor es persona física:
-- La plataforma retiene ISR (Art. 113-A fr. III LISR: 1% en el texto vigente de diputados.gob.mx, última reforma DOF 01-04-2024; verificar si hubo cambio para 2026) y 50% del IVA cobrado (Art. 18-J fr. II inciso b) LIVA); 100% si no das tu RFC.
+- La plataforma retiene ISR (2.5% en 2026: la LIF 2026 Art. 25 fr. VI, DOF 07-11-2025, sustituye el 1% del Art. 113-A fr. III LISR; 20% si no das tu RFC) y 50% del IVA cobrado (Art. 18-J fr. II inciso b) LIVA); 100% si no das tu RFC.
 - La plataforma emite el CFDI de retenciones; tú facturas según sus reglas. Ver `iva-retenciones-mx`.
 - Si una plataforma extranjera vende directamente al alumno, ella cobra el IVA de servicios digitales (Art. 18-B fr. IV LIVA, enseñanza a distancia); no es tu CFDI.
 
