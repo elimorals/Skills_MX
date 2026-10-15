@@ -578,31 +578,31 @@
       "id": "imagen",
       "nombre": "Imagen alfanumérica (ASP.NET o GET)",
       "count_endpoints": 6,
-      "manejo": "Entrega a humano: los MCPs no resuelven ni evaden CAPTCHAs."
+      "manejo": "Entrega a humano por defecto. Con el solver opt-in (PLUGINS_MX_CAPTCHA_SOLVER=2captcha, apagado por defecto) los portales conectados consultan en vivo; los anti-bots de red no se evaden."
     },
     {
       "id": "recaptcha_v2",
       "nombre": "reCAPTCHA v2 checkbox",
       "count_endpoints": 5,
-      "manejo": "Entrega a humano: los MCPs no resuelven ni evaden CAPTCHAs."
+      "manejo": "Entrega a humano por defecto. Con el solver opt-in (PLUGINS_MX_CAPTCHA_SOLVER=2captcha, apagado por defecto) los portales conectados consultan en vivo; los anti-bots de red no se evaden."
     },
     {
       "id": "recaptcha_v3",
       "nombre": "reCAPTCHA Enterprise v3 invisible",
       "count_endpoints": 2,
-      "manejo": "Entrega a humano: los MCPs no resuelven ni evaden CAPTCHAs."
+      "manejo": "Entrega a humano por defecto. Con el solver opt-in (PLUGINS_MX_CAPTCHA_SOLVER=2captcha, apagado por defecto) los portales conectados consultan en vivo; los anti-bots de red no se evaden."
     },
     {
       "id": "turnstile",
       "nombre": "Cloudflare Turnstile",
       "count_endpoints": 1,
-      "manejo": "Entrega a humano: los MCPs no resuelven ni evaden CAPTCHAs."
+      "manejo": "Entrega a humano por defecto. Con el solver opt-in (PLUGINS_MX_CAPTCHA_SOLVER=2captcha, apagado por defecto) los portales conectados consultan en vivo; los anti-bots de red no se evaden."
     },
     {
       "id": "login",
       "nombre": "Login obligatorio",
       "count_endpoints": 4,
-      "manejo": "Entrega a humano: los MCPs no resuelven ni evaden CAPTCHAs."
+      "manejo": "Entrega a humano: requiere la sesión del usuario."
     }
   ],
   "nota": "Endpoints y cobertura vienen del discovery de junio 2026. 'validado' ahora muestra el estado real al 2026-10-14 de los MCPs que usan cada dependencia (ver /data/mcp-estado.json)."
