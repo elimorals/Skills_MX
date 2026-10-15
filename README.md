@@ -70,28 +70,33 @@ El detalle por MCP (estado, nota y tools) está en [`mcp-servers/CATALOGO.md`](m
 
 ## Inicio rápido
 
-### Usar los plugins
+### Instalar plugins en Claude Code
 
-Por ahora se usan desde un clon local del repo: los `.mcp.json` de los plugins apuntan a `mcp-servers/` dentro del clon. Un marketplace instalable con `/plugin install` está en [Pendientes](#pendientes).
+```bash
+/plugin marketplace add elimorals/Skills_MX
+/plugin install core-mexico --marketplace elimorals/Skills_MX      # base de todos los verticales
+/plugin install freelancers-mx --marketplace elimorals/Skills_MX   # o cualquier vertical de la lista
+```
 
-`core-mexico` (CFDI, IVA y retenciones, RFC, MXN, LFPDPPP, WhatsApp) es la base de todos los verticales.
+`core-mexico` (CFDI, IVA y retenciones, RFC, MXN, LFPDPPP, WhatsApp) es la dependencia de todos los verticales. Los MCPs que trae cada plugin se descargan solos la primera vez con [`uv`](https://docs.astral.sh/uv/), que es el único requisito además de Claude Code.
 
 ### Usar un MCP suelto
 
-Cada MCP trae un `example.mcp.json`; ajusta `cwd` a la ruta de tu clon. Por ejemplo, para el portal del SAT:
+Cada MCP trae un `example.mcp.json` listo para copiar; no depende de dónde esté el repo. Por ejemplo, para el portal del SAT:
 
 ```json
 {
   "mcpServers": {
     "sat_portal": {
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_sat_portal.server"],
-      "cwd": "/ruta/a/Skills_MX/mcp-servers",
+      "command": "uv",
+      "args": ["run", "--no-project", "--quiet", "--with",
+               "plugins-mx-mcp-servers[sat-ws,sat-portal] @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+               "python", "-m", "mp_sat_portal.server"],
       "env": {
-        "SAT_RFC": "${SAT_RFC}",
-        "SAT_EFIRMA_CERT": "${SAT_EFIRMA_CERT}",
-        "SAT_EFIRMA_KEY": "${SAT_EFIRMA_KEY}",
-        "SAT_EFIRMA_PASSWORD": "${SAT_EFIRMA_PASSWORD}"
+        "SAT_RFC": "${SAT_RFC:-}",
+        "SAT_EFIRMA_CERT": "${SAT_EFIRMA_CERT:-}",
+        "SAT_EFIRMA_KEY": "${SAT_EFIRMA_KEY:-}",
+        "SAT_EFIRMA_PASSWORD": "${SAT_EFIRMA_PASSWORD:-}"
       }
     }
   }
@@ -120,6 +125,7 @@ uv pip install -e ".[dev]"            # agrega extras según lo que toques (ver 
 
 ```
 Skills_MX/
+├── .claude-plugin/           marketplace.json con los 40 plugins (scripts/generar-marketplace.py)
 ├── _shared/                  6 skills base (fuente de verdad), se copian a cada plugin
 ├── core-mexico/              Plugin base: CFDI, IVA, RFC, MXN, LFPDPPP, WhatsApp + 8 workflows
 ├── <vertical>-mx/            39 plugins por industria
@@ -235,6 +241,9 @@ PLUGINS_MX_LIVE=1 .venv/bin/pytest -q -m live <ruta>       # contra el portal re
 python3 scripts/eval-golden.py                              # cálculos fiscales deterministas
 bash scripts/lint-skills.sh                                 # frontmatter y reglas de SKILL.md
 python3 scripts/generar-estado-mcps.py --check              # el sitio y este README están al día
+python3 scripts/generar-marketplace.py --check              # marketplace al día con los plugin.json
+python3 scripts/mcp-config-portable.py --check              # configs MCP sin rutas locales ni mock forzado
+claude plugin validate .                                    # valida marketplace y plugins
 npx promptfoo@0.124.1 eval -c evals/promptfoo/promptfooconfig.yaml   # evals LLM (requiere API key)
 ```
 
@@ -263,8 +272,6 @@ Los tests que necesitan e.firma generan una autofirmada al vuelo. Las comparacio
 | **Validación en vivo** | Las APIs privadas y los portales con solver necesitan credenciales o llave para su primera prueba real |
 | **11 MCPs sin "Estado real"** | Los del grupo de login más `aspel_contpaqi` y `softrestaurant` (software local) |
 | **Verticales con lógica profunda** | Varios verticales tienen skills de estructura sin cálculo propio |
-| **Marketplace instalable** | Falta `.claude-plugin/marketplace.json` con los 40 plugins, y que cada plugin encuentre sus MCPs sin rutas absolutas (hoy 4 `.mcp.json` de plugins, 28 `example.mcp.json` y varios scripts de `scripts/` traen rutas de la máquina del autor) |
-
 El plan por grupos está en [`docs/plan-mock-a-real.md`](docs/plan-mock-a-real.md).
 
 ---
