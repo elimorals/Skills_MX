@@ -1,6 +1,6 @@
 ---
 name: nft-enajenacion-bienes
-description: Trata compra-venta de NFTs como enajenación de bienes muebles (Art. 119 LISR). Calcula ganancia, royalties retenidos al creador, gas fees deducibles, marketplaces (OpenSea, Magic Eden, MetaPlex). Usar cuando el usuario diga "NFT", "JPEG", "OpenSea", "venta NFT", "minteé un NFT", "royalty NFT", "ERC-721", "Bored Ape", "Solana NFT".
+description: Trata compra-venta de NFTs como enajenación de bienes (Cap. IV LISR, criterio usual de confianza media). Calcula ganancia, royalties retenidos al creador, gas fees deducibles, marketplaces (OpenSea, Magic Eden, MetaPlex). Usar cuando el usuario diga "NFT", "JPEG", "OpenSea", "venta NFT", "minteé un NFT", "royalty NFT", "ERC-721", "Bored Ape", "Solana NFT".
 allowed-tools: Read, Write
 ---
 
@@ -8,11 +8,13 @@ allowed-tools: Read, Write
 
 ## Marco aplicable
 
+> Criterio usual, no regulado expresamente en LISR (confianza media). Validar con contador.
+
 | Rol | Régimen | Observación |
 |---|---|---|
-| Coleccionista PF (compra-venta esporádica) | Art. 119 LISR — enajenación de bienes | Ganancia = precio venta − costo (precio compra + gas + comisión marketplace) |
+| Coleccionista PF (compra-venta esporádica) | Cap. IV LISR — enajenación de bienes (Arts. 119-124) | Ganancia = precio venta − costo (precio compra + gas + comisión marketplace) |
 | Creador PF que mintea para vender | Cap II — actividad empresarial | Ingreso por arte, ISR según régimen (RESICO si ≤$3.5M, 612 si más) |
-| Holder con NFT como inversión | Art. 119 (al vender) | Tenencia ≠ tributable |
+| Holder con NFT como inversión | Cap. IV (al vender) | Tenencia ≠ tributable |
 | Receptor de royalties por NFT propio | Cap IX — demás ingresos | El smart contract paga al creador en cada reventa |
 
 ## Algoritmo
@@ -27,7 +29,7 @@ def calcular_nft_ops(operaciones_nft: list[OperacionNFT]) -> dict:
       - coleccion, token_id
       - precio_eth + precio_mxn_dia
       - gas_eth + gas_mxn
-      - comision_marketplace_pct (OpenSea 2.5%, Magic Eden 2%)
+      - comision_marketplace_pct (la real cobrada en la operación)
       - royalty_pct (configurado por colección, típico 5-10%)
     """
     inventario = {}  # token_id → {costo_total_mxn, fecha_compra}
@@ -87,7 +89,7 @@ def calcular_nft_ops(operaciones_nft: list[OperacionNFT]) -> dict:
     return {
         "ganancia_total_mxn": str(ganancia_total),
         "perdida_total_mxn": str(perdida_total),
-        "neto_gravable_enajenacion_mxn": str(ganancia_total - perdida_total),
+        "ganancia_gravable_conservadora_mxn": str(ganancia_total),  # pérdidas no restadas (Arts. 121-122)
         "royalties_acumulables_mxn": str(royalties_recibidos),
         "nfts_en_inventario": len(inventario),
         "valor_libros_inventario_mxn": str(sum(Decimal(str(v["costo_total_mxn"])) for v in inventario.values())),
@@ -97,12 +99,13 @@ def calcular_nft_ops(operaciones_nft: list[OperacionNFT]) -> dict:
 
 ## Marketplaces relevantes MX
 
-| Marketplace | Comisión | Royalty enforcement | Cripto base |
-|---|---|---|---|
-| OpenSea | 2.5% | Opcional desde 2023 | ETH, MATIC, SOL |
-| Magic Eden | 2% | Sí | SOL, ETH |
-| Blur | 0% (a veces) | Configurable | ETH |
-| MercadoNFT MX | 5% | Sí | MXN/USDC via Bitso |
+Las comisiones y la política de royalties cambian con frecuencia: tomar la comisión **real cobrada** de cada operación (on-chain o del recibo del marketplace), no un porcentaje de tabla.
+
+| Marketplace | Cadenas |
+|---|---|
+| OpenSea | Ethereum, Polygon, Base y otras EVM |
+| Magic Eden | Solana, Bitcoin Ordinals, EVM |
+| Blur | Ethereum |
 
 ## Casos edge
 
@@ -110,7 +113,7 @@ def calcular_nft_ops(operaciones_nft: list[OperacionNFT]) -> dict:
 |---|---|
 | Mint de colección propia que NO vende | No hay ingreso hasta primera venta |
 | NFT recibido como pago de servicios | Ingreso por servicios al valor de mercado |
-| NFT rugpull / colección abandonada | Pérdida deducible si se documenta valor cero |
+| NFT rugpull / colección abandonada | Documentar valor cero; la pérdida en bienes muebles no es disminuible (Arts. 121-122), criterio conservador |
 | Wash trading entre wallets propias | NO genera ganancia ni pérdida (SAT podría desconocer) |
 | NFT con utilidad (PFP + acceso DAO) | Solo el componente "bien mueble" es enajenación |
 
@@ -122,7 +125,8 @@ def calcular_nft_ops(operaciones_nft: list[OperacionNFT]) -> dict:
   "nfts_vendidos": 12,
   "ganancia_total_mxn": "85000.00",
   "perdida_total_mxn": "8000.00",
-  "neto_gravable_mxn": "77000.00",
+  "ganancia_gravable_conservadora_mxn": "85000.00",
+  "neto_si_contador_acepta_compensar_mxn": "77000.00",
   "royalties_acumulables_mxn": "15000.00",
   "nfts_en_inventario": 4,
   "valor_libros_inventario_mxn": "240000.00",

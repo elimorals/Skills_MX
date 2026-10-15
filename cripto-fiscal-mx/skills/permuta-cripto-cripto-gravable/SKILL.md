@@ -1,6 +1,6 @@
 ---
 name: permuta-cripto-cripto-gravable
-description: Detecta y valúa permutas cripto-cripto que son gravables ante el SAT (Art. 119 LISR + criterio CRIPTO 2024). Cualquier intercambio de un cripto por otro (ej. BTC → USDC, ETH → SOL) realiza la ganancia/pérdida del activo entregado. Usar cuando el usuario diga "swap", "intercambio cripto", "permuta cripto-cripto", "convertir BTC a USDC", "DEX swap", "Uniswap operación".
+description: Detecta y valúa permutas cripto-cripto como enajenación del activo entregado (Art. 14 CFF y Art. 119 LISR, criterio usual de confianza media). Cualquier intercambio de un cripto por otro (ej. BTC → USDC, ETH → SOL) realiza la ganancia o pérdida del activo entregado aunque no toques pesos. Usar cuando el usuario diga "swap", "intercambio cripto", "permuta cripto-cripto", "convertir BTC a USDC", "DEX swap", "Uniswap operación".
 allowed-tools: Read, Write
 ---
 
@@ -8,7 +8,7 @@ allowed-tools: Read, Write
 
 ## Por qué importa
 
-El SAT considera la permuta cripto-cripto como **enajenación** del activo entregado (Art. 119 LISR — "se entiende por enajenación toda transmisión de propiedad"). Esto significa:
+El criterio usual trata la permuta cripto-cripto como **enajenación** del activo entregado: el Art. 14 fr. I CFF considera enajenación "toda transmisión de propiedad" y el Art. 119 LISR remite a ese concepto. No hay criterio normativo del SAT específico para cripto (confianza media; validar con contador). Esto significa:
 
 - Cambiar 1 BTC (comprado a $1.2M MXN) por 50,000 USDC cuando 1 BTC vale $1.5M MXN = **realiza ganancia de $300k MXN gravable**, aunque no convirtieras a fiat.
 - DEX swaps (Uniswap, PancakeSwap, Curve, 1inch) son también permutas.
@@ -74,7 +74,8 @@ def detectar_permutas(operaciones: list[OperacionCripto]) -> list[PermutaGravabl
   "valor_mxn_total_realizado": "2450000.00",
   "ganancia_acumulada_permutas_mxn": "385000.00",
   "perdida_acumulada_permutas_mxn": "42000.00",
-  "neto_gravable_permutas_mxn": "343000.00",
+  "ganancia_gravable_conservadora_mxn": "385000.00",
+  "neto_si_contador_acepta_compensar_mxn": "343000.00",
   "permutas": [
     {
       "fecha": "2026-03-15T14:22:00Z",
@@ -83,10 +84,10 @@ def detectar_permutas(operaciones: list[OperacionCripto]) -> list[PermutaGravabl
       "recibido": {"activo": "USDC", "cantidad": "13750"},
       "costo_base_mxn": "200000.00",
       "ganancia_mxn": "75000.00",
-      "tratamiento_fiscal": "Art. 119 LISR — enajenación de bienes"
+      "tratamiento_fiscal": "Cap. IV LISR — enajenación de bienes (Art. 14 CFF)"
     }
   ],
-  "notas_papel_trabajo": "Permutas calculadas con TC DOF del día. FIFO aplicado para costo base."
+  "notas_papel_trabajo": "Permutas calculadas con TC Banxico publicado en DOF (Art. 20 CFF). FIFO aplicado para costo base."
 }
 ```
 
