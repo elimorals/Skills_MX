@@ -1,6 +1,6 @@
 ---
 name: validador-auditorias-sat-pendientes
-description: Detecta si un freelancer / PyME tiene auditorías, requerimientos, o procedimientos del SAT pendientes consultando el Buzón Tributario. Categoriza tipo (revisión electrónica, visita domiciliaria, requerimiento de información, multa, embargo precautorio) y deadline de respuesta. Genera plan de acción priorizando los más urgentes. Usar cuando el usuario diga auditoria SAT, requerimiento SAT, sat me esta investigando, buzón tributario alertas. NO usar para presentar la declaración (es solo lectura).
+description: Detecta si un freelancer / PyME tiene auditorías, requerimientos, o procedimientos del SAT pendientes consultando el Buzón Tributario. Categoriza tipo (revisión electrónica, visita domiciliaria, requerimiento de información, multa, embargo precautorio) y deadline de respuesta. Genera plan de acción priorizando los más urgentes. Usar cuando el usuario diga auditoría SAT, requerimiento SAT, el SAT me está investigando, carta invitación, me restringieron el sello, buzón tributario alertas. NO usar para presentar la declaración (es solo lectura).
 allowed-tools: Read, Write
 ---
 
@@ -20,19 +20,19 @@ Una auditoría SAT no respondida en plazo se convierte en presunción de incumpl
 
 ### 1. Consultar Buzón
 
-`mp_sat_portal.sat_descargar_buzon_tributario(rfc)` (mock si sin e.firma, real con e.firma vigente).
+`mp_sat_portal.sat_descargar_buzon_tributario` **no está implementado**: con credenciales devuelve `UpstreamError` con `handoff_url`; sin credenciales, datos mock. Entrega al usuario la URL, pídele entrar con e.firma o contraseña y copiar/descargar las notificaciones; categoriza lo que comparta. Nunca presentes datos mock como reales.
 
 ### 2. Categorizar notificaciones
 
 | Tipo | Severidad | Deadline típico |
 |---|---|---|
-| Revisión electrónica | 🟠 Alta | 15 días hábiles |
-| Visita domiciliaria | 🔴 Crítica | Inmediato (acudir a domicilio) |
-| Requerimiento de información | 🟠 Alta | 10-15 días hábiles |
-| Multa firme | 🟡 Media | 30 días para pago |
+| Revisión electrónica (Art. 53-B CFF) | 🟠 Alta | 15 días hábiles para desvirtuar la resolución provisional |
+| Visita domiciliaria (Art. 46 CFF) | 🔴 Crítica | Inmediato; plazos por acta |
+| Requerimiento de información (Art. 53 CFF) | 🟠 Alta | 6 o 15 días hábiles según el tipo; leer el oficio |
+| Crédito fiscal / multa | 🟡 Media | 30 días hábiles para pagar o impugnar (Arts. 65 y 121 CFF) |
 | Embargo precautorio | 🔴 Crítica | Inmediato |
-| Cancelación de CSD | 🔴 Crítica | NO se pueden timbrar CFDIs |
-| Carta invitación | 🟡 Media | 60 días para regularizar |
+| Restricción temporal de CSD (Art. 17-H Bis CFF) | 🔴 Crítica | No puedes facturar; solicitar aclaración (hasta 40 días hábiles) para restablecerlo |
+| Carta invitación | 🟡 Media | Sin plazo legal; atenderla pronto evita una revisión |
 
 ### 3. Output
 
@@ -46,13 +46,13 @@ Una auditoría SAT no respondida en plazo se convierte en presunción de incumpl
   "medias": 1,
   "items": [
     {
-      "tipo": "cancelacion_csd",
+      "tipo": "restriccion_temporal_csd",
       "severidad": "critica",
       "fecha_notificacion": "2026-06-10",
-      "fecha_efecto": "2026-06-15",
-      "dias_para_actuar": 3,
+      "fecha_efecto": "2026-06-10",
+      "plazo_aclaracion_dias_habiles": 40,
       "motivo": "Discrepancia ingresos vs depósitos detectada",
-      "accion_requerida": "Aclarar discrepancia o re-emitir CSD",
+      "accion_requerida": "Presentar caso de aclaración (Art. 17-H Bis) con pruebas para restablecer el CSD",
       "alerta_critica": true
     }
   ],
@@ -72,11 +72,11 @@ Una auditoría SAT no respondida en plazo se convierte en presunción de incumpl
 |---|---|
 | Notificación en idioma confuso | Pedir asesoría legal antes de actuar |
 | Embargo precautorio | NO operar cuentas sin abogado fiscalista |
-| CSD cancelado | Re-tramitar CSD o usar firma alternativa |
+| CSD restringido | Aclaración vía caso en el portal SAT; mientras tanto no se puede timbrar |
 | Carta invitación (no obligatoria) | Atender — el SAT te avisa antes de auditoría |
 
 ## ⚠ Compliance
 
-- Mock-mode no detecta nada real — pedir e.firma para path real
+- El MCP no lee el Buzón real (no implementado): la fuente es lo que el usuario copie del portal
 - `vigencia_validada: false`
 - Respuestas mal manejadas tienen consecuencias graves — asesorarse con abogado

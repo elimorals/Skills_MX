@@ -1,6 +1,6 @@
 ---
 name: cruzar-bancos-vs-cfdis
-description: Cruza extractos bancarios con CFDIs emitidos del año para detectar depósitos que NO tienen factura emitida. El SAT marca como ingreso fiscal todo depósito > $15,000 MXN/mes acumulado sin justificación documental, lo que puede generar discrepancia fiscal y multa. Este skill genera un reporte de depósitos sin facturar, su monto acumulado por mes, y recomendación de acción (facturar retroactivamente, registrar como préstamo, etc.). Requiere extractos bancarios del año (via mp_bancos_mx o subidos manualmente). Usar cuando el usuario pregunte por discrepancia, depósitos sin facturar, ingresos no declarados, cruce bancos. NO usar para conciliar pagos puntuales (mp_banxico_cep es para eso).
+description: Cruza extractos bancarios con CFDIs emitidos del año para detectar depósitos que NO tienen factura emitida. El SAT puede presumir como ingreso los depósitos no registrados ni respaldados (Art. 59 fr. III CFF) y determinar discrepancia fiscal (Art. 91 LISR); los bancos le informan los depósitos en efectivo que excedan $15,000 al mes (Art. 55 fr. IV LISR). Este skill genera un reporte de depósitos sin facturar, su monto acumulado por mes, y recomendación de acción (facturar retroactivamente, registrar como préstamo, etc.). Requiere extractos bancarios del año (via mp_bancos_mx o subidos manualmente). Usar cuando el usuario pregunte por discrepancia, depósitos sin facturar, ingresos no declarados, cruce bancos. NO usar para conciliar pagos puntuales (mp_banxico_cep es para eso).
 allowed-tools: Read, Write
 ---
 
@@ -8,9 +8,11 @@ allowed-tools: Read, Write
 
 ## Por qué importa
 
-El SAT puede determinar **discrepancia fiscal** si tus depósitos bancarios exceden tus ingresos declarados. Penalización: ISR + actualización + recargos + multa hasta 100% del omitido.
+- **Discrepancia fiscal (Art. 91 LISR)**: si tus erogaciones (gastos, compras, depósitos) superan tus ingresos declarados, el SAT puede gravar la diferencia.
+- **Presunción de ingresos (Art. 59 fr. III CFF)**: depósitos en tus cuentas que no correspondan a registros contables o CFDI pueden presumirse ingresos.
+- Consecuencia: ISR omitido + actualización + recargos + multa de 55% a 75% del omitido (Art. 76 CFF).
 
-Umbral común: $15,000 MXN/mes en depósitos sin justificar. Por debajo se considera tolerancia.
+No hay "tolerancia" legal. Los $15,000 mensuales son solo el umbral a partir del cual el banco reporta **depósitos en efectivo** al SAT (Art. 55 fr. IV LISR); úsalo como umbral de alerta, no como exención.
 
 ## Trigger
 
@@ -22,7 +24,7 @@ Umbral común: $15,000 MXN/mes en depósitos sin justificar. Por debajo se consi
 
 - Extractos bancarios del año (12 meses, por cuenta)
 - CFDIs emitidos del año (output de `recopilar-cfdis-anuales`)
-- Tolerancia configurable (default $15,000 MXN/mes)
+- Umbral de alerta configurable (default $15,000 MXN/mes)
 
 ## Algoritmo
 
@@ -72,8 +74,8 @@ Si `acumulado_sin_facturar > 15,000 * meses_acumulados`: alerta crítica.
     {"fecha": "2025-03-15", "monto": "25000.00", "concepto_hash": "...", "banco_origen": "BBVA"}
   ],
   "recomendaciones": [
-    "Facturar retroactivamente los depósitos de marzo si corresponden a servicios reales",
-    "Documentar préstamos personales con contrato + transferencia origen",
+    "Emitir CFDI de los depósitos de marzo si corresponden a servicios reales (la emisión tardía puede tener multa — consultar contador)",
+    "Documentar préstamos con contrato + transferencia origen; préstamos, donativos o premios que sumen más de $600,000 se informan en la anual (Art. 90 LISR)",
     "Considerar abrir cuenta separada para movimientos no fiscales"
   ],
   "riesgo_discrepancia_fiscal": "MEDIO",
@@ -87,15 +89,15 @@ Si `acumulado_sin_facturar > 15,000 * meses_acumulados`: alerta crítica.
 |---|---|
 | Cliente paga con depósito + factura por monto distinto (anticipo + finiquito) | Buscar suma de CFDIs en ventana |
 | Cliente paga vía OXXO/PayPal/Stripe | Buscar comisión de procesador antes del depósito limpio |
-| Familiar deposita para gasto compartido | Tratar como préstamo familiar (no ingreso) si hay claridad |
+| Familiar deposita para gasto compartido | No es ingreso si se documenta; donativos entre familiares en línea recta están exentos (Art. 93 fr. XXIII) |
 | Banco etiqueta múltiples depósitos del mismo cliente como "varios" | Sumar agregado del mes |
 | Sueldo (régimen 605) en cuenta del freelancer | NO contar como ingreso por honorarios |
 
 ## Dependencias
 
-- `mp_bancos_mx` (extracto del año por cuenta — vía Playwright si disponible, o CSV subido)
+- `mp_bancos_mx` (estado "sin verificar" en el catálogo): si falla, pedir al usuario CSV/PDF de sus estados de cuenta
 - Output de `recopilar-cfdis-anuales`
-- `mp_banxico_cep` (opcional) — para confirmar claves rastreo
+- `mp_banxico_cep.banxico_cep_consultar_pago_por_clave` (opcional) — confirmar un SPEI por clave de rastreo
 
 ## ⚠ Limitaciones
 

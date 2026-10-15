@@ -61,9 +61,9 @@ Deadline: 30 abril <ejercicio+1>
 ```
 Ingresos acumulables:          $XXX,XXX
 - Deducciones acumulables:     -$XXX,XXX
-- Deducciones personales:      -$XXX,XXX (tope aplicado: 5 UMAs)
-= Utilidad fiscal:              $XXX,XXX
-× Tarifa Art. 96 LISR:          XX%
+- Deducciones personales:      -$XXX,XXX (tope: menor de 5 UMA anuales o 15% de ingresos)
+= Base gravable:                $XXX,XXX
+× Tarifa anual Art. 152 LISR del ejercicio (Anexo 8 RMF)
 = ISR anual:                    $XXX,XXX
 - Pagos provisionales:          -$XXX,XXX
 - ISR retenido:                 -$XXX,XXX
@@ -73,7 +73,7 @@ Ingresos acumulables:          $XXX,XXX
 ### 6. Semáforo de riesgos
 
 - ✅ Tarjeta verde: ingresos, deducciones, retenciones documentadas y cuadran
-- 🟡 Amarillo: depósitos sin facturar > $15k/mes (riesgo discrepancia)
+- 🟡 Amarillo: depósitos bancarios sin CFDI que los respalde (el SAT puede presumirlos ingreso, Art. 59 fr. III CFF)
 - 🔴 Rojo: CFDIs con RFC en lista 69-B definitivo → re-clasificar como NO deducibles
 
 ### 7. Acciones recomendadas
@@ -81,14 +81,15 @@ Ingresos acumulables:          $XXX,XXX
 1. Si saldo a favor > $50,000: prepararse para revisión SAT
 2. Si faltan CFDIs deducibles del año: invocar `identificar-deducciones-personales`
 3. Si hay depósitos sin facturar: invocar `cruzar-bancos-vs-cfdis`
-4. Si tarifa Art. 96 vigente del año = última conocida del año anterior: confirmar con contador antes de calcular
+4. Usar la tarifa anual del ejercicio correcto: 2025 y 2026 son distintas (Anexo 8 RMF 2026 la actualizó) — ver `calculadora-isr-anual`
+5. RESICO PF: no aplica tarifa Art. 152 ni deducciones; usar tabla Art. 113-F
 
 ## Data sources
 
-- `mp_sat_portal.sat_descargar_cfdi_masivo` — CFDIs emitidos+recibidos del año
-- `mp_banxico` — INPC/UMA del año (acumular UMA × 5 para tope deducciones personales)
+- `mp_sat_ws` (`sat_ws_solicitar_descarga` → `sat_ws_verificar_solicitud` → `sat_ws_descargar_paquete`) — CFDIs emitidos+recibidos; requiere e.firma, real sin validar. Sin e.firma: ZIP descargado por el usuario del portal SAT
+- `mp_banxico.banxico_get_uma` — UMA del ejercicio (5 × UMA × 365 para tope de deducciones personales)
 - Pagos provisionales del tracker local del `core-mexico` (cierre-fiscal-mensual)
-- `mp_bancos_mx` — extractos para detectar depósitos sin facturar (opcional)
+- `mp_bancos_mx` — extractos (estado "sin verificar" en el catálogo; si falla, pedir CSV/PDF al usuario)
 
 ## Output esperado
 
@@ -98,15 +99,16 @@ JSON estructurado + tabla markdown legible:
 {
   "rfc_hash": "...",
   "ejercicio": 2025,
-  "regimen": "RESICO_PF_626",
+  "regimen": "PFAE_612",
   "ingresos_acumulables_mxn": "1234567.89",
   "deducciones_acumulables_mxn": "234567.00",
   "deducciones_personales_aplicables_mxn": "50000.00",
-  "tope_aplicado": "5_UMAs_anuales",
+  "tope_aplicado": "no_alcanzado",
   "utilidad_fiscal_mxn": "950000.89",
-  "isr_anual_calculado_mxn": "180500.00",
+  "tarifa_aplicada": "Art_152_LISR_2025",
+  "isr_anual_calculado_mxn": "218604.21",
   "pagos_provisionales_acumulados_mxn": "175000.00",
-  "diferencia_mxn": "5500.00",
+  "diferencia_mxn": "43604.21",
   "resultado": "SALDO_A_PAGAR",
   "fecha_limite_presentacion": "2026-04-30",
   "vigencia_validada": false,

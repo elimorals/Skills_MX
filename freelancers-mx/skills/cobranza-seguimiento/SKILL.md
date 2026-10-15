@@ -161,7 +161,7 @@ Sigo abierto a una conversación para encontrar una solución que funcione para 
 [Tu nombre]
 ```
 
-**Cobranza extrajudicial**: implica contratar abogado para enviar requerimientos legales, demanda mercantil (para PMs, juicio mercantil ejecutivo si tienes CFDI o pagaré), o juicio civil. **Solo justifica si**:
+**Cobranza extrajudicial**: implica contratar abogado para enviar requerimientos legales, demanda mercantil (juicio ejecutivo mercantil solo con título ejecutivo, p. ej. pagaré; con CFDI + contrato o correos, juicio oral u ordinario mercantil), o juicio civil. **Solo justifica si**:
 - Monto > $10,000 MXN (debajo, los costos legales superan la recuperación)
 - Cliente tiene patrimonio embargable o ingresos reportados
 - No hay riesgo de represalia reputacional desproporcionado
@@ -183,7 +183,7 @@ Total: $10,300
 
 ## Reglas legales a respetar
 
-1. **No acoso**: no llamar fuera de horario hábil (8am-9pm). No insultos, no amenazas físicas. La LFPC y LFPDPPP aplican.
+1. **No acoso**: horario razonable (las disposiciones de CONDUSEF para despachos de cobranza usan 7:00–22:00 como referencia). Sin insultos ni amenazas: la cobranza con violencia o intimidación es delito (Art. 284 Bis Código Penal Federal). Los datos del deudor se tratan conforme a la LFPDPPP (DOF 20-03-2025).
 2. **No contactar a terceros** sin autorización: no escribirle al jefe del cliente, a sus contactos personales, ni a tu red por chisme. Excepción: representante legal o director con cargo formal de la empresa cliente.
 3. **No publicar deudas** en redes sociales ni "exponer" al cliente. Eso es difamación y daño moral.
 4. **No usar términos legales falsos**: no decir "te demandaré" si no lo vas a hacer ni "vamos a embargar" si no hay proceso.
@@ -239,7 +239,7 @@ Nunca: enojado, sarcástico, victimista. Eso baja tu profesionalismo y debilita 
 
 3. **Tasa convencional usurera**: los tribunales han fijado umbrales (Tesis 1a./J. 47/2014). Confirmar si hubo tesis posteriores que cambien el criterio.
 
-4. **Procedimiento juicio mercantil ejecutivo**: requiere documento específico (pagaré, CFDI con ciertas características). Verificar con despacho qué documentos son ejecutivos.
+4. **Procedimiento juicio ejecutivo mercantil**: requiere título ejecutivo (Art. 1391 Código de Comercio: pagaré, cheque, convenio ratificado, etc.). Un CFDI por sí solo no es título ejecutivo. Verificar con despacho.
 
 5. **Cobranza con WhatsApp y LFPDPPP**: el uso intensivo de WhatsApp para cobranza puede tener implicaciones de protección de datos. Verificar.
 

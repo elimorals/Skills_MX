@@ -1,22 +1,22 @@
 ---
 name: deducciones-conductor
-description: Identifica gastos deducibles para el conductor de plataforma bajo régimen RESICO PF (limitado) o PFAE (completo). Cubre gasolina (con CFDI), mantenimiento del auto (con CFDI), seguro vehicular, lavados, comisiones de la plataforma (ya descontadas pero a documentar), y app subscriptions (Waze Premium, etc.). Aplica reglas específicas: gasto en efectivo > $2k NO deducible. Usar cuando el usuario diga deducciones chofer, gastos deducibles conductor, qué puedo deducir uber.
+description: Identifica gastos deducibles del conductor de plataforma cuando tributa con deducciones (régimen de plataformas 625 sin la opción de pago definitivo, o actividad empresarial 612): gasolina, mantenimiento, seguro, comisiones de la plataforma, apps y depreciación del auto (25% anual, tope $175,000). Aplica requisitos: CFDI, pago no efectivo (combustible siempre; demás gastos > $2,000). En RESICO PF o con retención como pago definitivo no hay deducciones. Usar cuando el usuario diga deducciones chofer, gastos deducibles conductor, qué puedo deducir de Uber, deducir gasolina, deducir mi carro.
 allowed-tools: Read, Write
 ---
 
 # Deducciones conductor de plataforma
 
-## Aplica si régimen 612 PFAE
+## Cuándo aplica
 
-En 626 RESICO PF: las deducciones NO aplican (régimen simplificado). Solo se permiten deducciones personales Art. 151 (médicos, etc.) y las retenciones acreditables.
-
-En 612 PFAE: SÍ aplican las siguientes deducciones.
+- **RESICO PF (626)**: NO hay deducciones (ni de la actividad ni personales del Art. 151). Solo se acreditan las retenciones.
+- **Plataformas (625) con opción 113-B** (retención como pago definitivo): NO hay deducciones.
+- **Plataformas (625) sin la opción, o actividad empresarial (612)**: SÍ aplican las deducciones siguientes.
 
 ## Categorías deducibles
 
 ### 1. Gasolina
 - **CRÍTICO**: requiere CFDI tipo I a tu RFC con uso G03
-- Pago debe ser con tarjeta / transferencia (NO efectivo si > $2,000)
+- Combustible: pago **siempre** con tarjeta, transferencia o monedero electrónico autorizado, aunque sea menor a $2,000 (Art. 27 fr. III LISR)
 - Estaciones que dan CFDI: la mayoría — pedir antes de pagar
 - 100% deducible
 
@@ -46,9 +46,9 @@ En 612 PFAE: SÍ aplican las siguientes deducciones.
 - CFDI del proveedor
 
 ### 7. Depreciación del auto
-- 25% anual (5% × 5 años) sobre valor de factura
-- Solo si auto está a tu nombre
-- Documentado con factura original
+- 25% anual (Art. 34 fr. VI LISR) sobre el monto original de la inversión
+- Tope del monto deducible: $175,000 por automóvil (Art. 36 fr. II LISR); con valor mayor, depreciar solo sobre $175,000 (híbridos/eléctricos: $250,000)
+- Solo si el auto está a tu nombre y se usa en la actividad; CFDI de compra
 
 ## Output
 
@@ -64,14 +64,15 @@ En 612 PFAE: SÍ aplican las siguientes deducciones.
     "lavados": {"con_cfdi_mxn": "200.00", "sin_cfdi_excluidos_mxn": "300.00"},
     "comisiones_plataforma": {"monto_mxn": "5300.00"},
     "apps": {"monto_mxn": "199.00"},
-    "depreciacion": {"prorrata_mensual_mxn": "5208.00"}
+    "depreciacion": {"moi_tope_mxn": "175000.00", "prorrata_mensual_mxn": "3645.83"}
   },
-  "total_deducible_mxn": "18057.00",
+  "total_deducible_mxn": "16494.83",
   "ingresos_mes_mxn": "26500.00",
-  "utilidad_fiscal_estimada_mxn": "8443.00",
+  "utilidad_fiscal_estimada_mxn": "10005.17",
   "advertencias": [
     "$300 en lavados pagados en efectivo NO deducibles",
-    "Verificar que todos los CFDIs tengan tu RFC + forma de pago no efectivo"
+    "Verificar que todos los CFDIs tengan tu RFC + forma de pago no efectivo",
+    "Auto de $250,000: depreciación limitada a $175,000 × 25% / 12 = $3,645.83 al mes"
   ],
   "vigencia_validada": false
 }
@@ -83,11 +84,11 @@ En 612 PFAE: SÍ aplican las siguientes deducciones.
 |---|---|
 | Auto rentado | Renta sí deducible (con CFDI) — no depreciación |
 | Auto a nombre del cónyuge | NO deducible (debe estar a tu nombre) |
-| Gasolina en estación sin facturador | Solicitar CFDI por correo después (vence 30 días) |
-| Conductor en RESICO PF | NO aplica este skill — RESICO no permite deducciones acumulables |
+| Gasolina sin CFDI al momento | Pedir el CFDI en el portal de la gasolinera dentro del plazo que fije (suele ser el mismo mes) |
+| Conductor en RESICO PF o con opción 113-B | NO aplica este skill — no hay deducciones |
 
 ## ⚠ Compliance
 
-- Forma de pago NO efectivo para > $2,000 = regla SAT
+- Pago no efectivo: gastos > $2,000 (Art. 27 fr. III LISR) y combustible siempre
 - `vigencia_validada: false` — contador valida
-- Si auto > 9 años: depreciación 0 (ya completó vida útil fiscal)
+- Al 25% anual el auto se deprecia por completo en 4 años; después ya no hay depreciación

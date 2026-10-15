@@ -1,6 +1,6 @@
 ---
 name: reporte-retenciones-no-acreditadas
-description: Detecta retenciones de ISR que clientes PM le hicieron al freelancer (PF 612 PFAE) y que NO se acreditaron en pagos provisionales ni en la declaración anual previa. Estas retenciones son DINERO del freelancer que se quedó con SAT — recuperable como saldo a favor. Usar cuando el usuario diga retenciones no acreditadas, dinero perdido sat, saldo favor por retenciones.
+description: Detecta retenciones de ISR (10% en 612, 1.25% en RESICO PF) e IVA (2/3) que clientes personas morales le hicieron al freelancer y que NO se acreditaron en pagos mensuales ni en la declaración anual. Son pagos a cuenta del freelancer recuperables vía complementaria (dentro de 5 años). Usar cuando el usuario diga retenciones no acreditadas, me retuvieron y no lo declaré, dinero perdido SAT, saldo a favor por retenciones, acreditar retenciones.
 allowed-tools: Read, Write
 ---
 
@@ -8,7 +8,7 @@ allowed-tools: Read, Write
 
 ## El problema
 
-Cuando un cliente PM le paga al freelancer, retiene 10% ISR (Art. 116 LISR) y lo entera al SAT. El freelancer debe **acreditar** estas retenciones en su declaración anual. Si no:
+Cuando un cliente PM le paga al freelancer, retiene ISR — 10% en actividad profesional 612 (Art. 106 último párrafo LISR) o 1.25% en RESICO PF (Art. 113-J) — y 2/3 del IVA, y los entera al SAT. La retención consta en el propio CFDI de ingreso que emitió el freelancer. El freelancer debe **acreditar** estas retenciones en sus pagos y en la anual. Si no:
 - Pagó más impuesto del que debió
 - Tiene saldo a favor recuperable
 
@@ -31,6 +31,7 @@ Cuando un cliente PM le paga al freelancer, retiene 10% ISR (Art. 116 LISR) y lo
   "retenciones_NO_acreditadas_mxn": "16500.00",
   "recuperable_via_complementaria": true,
   "ahorro_si_se_corrige_mxn": "16500.00",
-  "siguiente_paso": "Presentar declaración complementaria con acreditación correcta"
+  "siguiente_paso": "Presentar declaración complementaria con acreditación correcta (dentro de 5 años; revisar con contador)",
+  "vigencia_validada": false
 }
 ```

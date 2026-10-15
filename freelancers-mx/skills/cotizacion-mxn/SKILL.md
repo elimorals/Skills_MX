@@ -69,7 +69,7 @@ Uso CFDI propuesto: [G03 lo más común]
 **Subtotal**: $X,XXX.XX MXN
 **IVA 16%**: $X,XXX.XX MXN
 [Si aplica:] **Retención ISR (10% PFAE / 1.25% RESICO)**: −$X,XXX.XX MXN
-[Si aplica:] **Retención IVA (10.6667% PFAE)**: −$X,XXX.XX MXN
+[Si aplica:] **Retención IVA (2/3 del IVA = 10.6667%; PFAE y RESICO PF que facturan a PM)**: −$X,XXX.XX MXN
 
 **Total del CFDI**: $X,XXX.XX MXN
 **Neto a transferir al emisor**: $X,XXX.XX MXN
