@@ -35,7 +35,7 @@ class ValorEstudio(BaseModel):
 
 Último (2026-06-08, Salud Digna):
   Glucosa:        118 mg/dL  [70-100]  ⚠ ligeramente alto
-  HbA1c:          7.2%        [<6.5]   ⚠ alto
+  HbA1c:          7.2%        [<5.7]   ⚠ alto
   Colesterol T:   210 mg/dL   [<200]   ⚠ ligeramente alto
   Triglicéridos:  165 mg/dL   [<150]   ⚠ alto
   Creatinina:     0.9 mg/dL   [0.7-1.3] ✓
@@ -48,6 +48,9 @@ class ValorEstudio(BaseModel):
   • Mencionar tendencia al alza HbA1c
 ```
 
-## Alertas automáticas
+## Alertas
 
-Si parámetro crítico fuera de rango: alerta + sugerir consulta médica.
+Si un parámetro sale del rango de referencia **del propio laboratorio** (cada laboratorio publica el suyo): marcarlo y sugerir consulta médica.
+Si es un valor crítico (p. ej. glucosa > 300 mg/dL, potasio > 6 mEq/L): indicar contactar al médico o urgencias el mismo día.
+
+> Esta skill organiza resultados; no interpreta ni diagnostica. La lectura clínica es del médico tratante.

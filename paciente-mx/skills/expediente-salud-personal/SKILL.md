@@ -1,6 +1,6 @@
 ---
 name: expediente-salud-personal
-description: Expediente de salud que el PACIENTE mantiene (no el médico) — su copia personal con diagnósticos activos, alergias, medicamentos crónicos, estudios pasados, antecedentes familiares. Útil para llevar a primera consulta con nuevo médico o emergencia. Cifrado en reposo. Usar cuando el usuario diga mi expediente, historia clinica personal, mis antecedentes.
+description: Expediente de salud que el PACIENTE mantiene (no el médico) — su copia personal con diagnósticos activos, alergias, medicamentos crónicos, estudios pasados, antecedentes familiares. Útil para llevar a primera consulta con nuevo médico o emergencia. Recomienda guardarlo cifrado (son datos sensibles). Usar cuando el usuario diga mi expediente, historia clinica personal, mis antecedentes.
 allowed-tools: Read, Write
 ---
 
@@ -52,3 +52,8 @@ Antecedentes familiares:
 
 Última actualización: 2026-06-12
 ```
+
+## Privacidad
+
+Son datos personales sensibles (LFPDPPP 2025). La skill solo escribe archivos locales: guárdalos en carpeta cifrada (FileVault/BitLocker o un gestor con cifrado) y comparte solo el resumen necesario.
+Puedes pedir por escrito a tu médico u hospital un resumen clínico de tu expediente (NOM-004-SSA3-2012; el expediente original es del prestador).

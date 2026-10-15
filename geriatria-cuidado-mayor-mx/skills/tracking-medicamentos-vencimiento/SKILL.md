@@ -1,6 +1,6 @@
 ---
 name: tracking-medicamentos-vencimiento
-description: Gestiona el blister/pastillero del adulto mayor con tracking detallado de medicamentos crónicos múltiples (típico polifarmacia 5-12 fármacos en mayores 75+), alerta cuando un medicamento se acerca a su fecha de vencimiento de caducidad (30 días antes para reabastecer), recordatorio diario de tomas distribuido en horarios (mañana/comida/tarde/noche) con confirmación del cuidador para tracking de adherencia, detección automática de interacciones medicamentosas (warfarina + AINEs, IECA + diuréticos K+, etc.) usando base de datos COFEPRIS, control de reabastecimiento con recetario crónico (cuando aplica receta resurtible IMSS o particular), y reporte mensual al médico tratante con tasa de adherencia + efectos adversos observados por cuidadores. Crítico para diabetes (insulina), hipertensión (varios fármacos), alzheimer (memantina/donepezilo), parkinson (levodopa). Usar cuando el usuario diga "medicamentos abuelita", "blister", "pastillero", "vencimiento medicamento", "interacciones medicamentos mayor". NO usar para reembolsos de medicamentos (usar gestor-reembolso de gmm) ni para alta de enfermedad.
+description: Gestiona el pastillero del adulto mayor con polifarmacia (5-12 fármacos crónicos): existencias y días para agotarse, alerta de caducidad 30 días antes, horarios de tomas (mañana/comida/tarde/noche) con confirmación del cuidador para medir adherencia, lista básica de interacciones a revisar con el médico (warfarina + AINE, IECA + ahorrador de potasio, etc.), resurtido de receta crónica (IMSS, ISSSTE o particular) y reporte mensual al médico con adherencia y efectos adversos observados. Útil en diabetes (insulina), hipertensión, Alzheimer (donepezilo/memantina), Parkinson (levodopa). Usar cuando el usuario diga "medicamentos abuelita", "blister", "pastillero", "caducidad medicamento", "se le acaban las pastillas", "interacciones medicamentos mayor". NO usar para reembolsos de medicamentos con la aseguradora ni para alta hospitalaria.
 allowed-tools: Read, Write, Edit
 ---
 
@@ -39,7 +39,7 @@ ajustado_por: Dr. Ramírez Cardiología
 
 ## Detección de interacciones
 
-Lista base de interacciones críticas (no exhaustiva — requiere actualización periódica):
+Lista base de interacciones críticas (no exhaustiva; no proviene de COFEPRIS, que no publica una base de interacciones). Siempre confirmar con médico o farmacéutico:
 
 | Combinación | Riesgo |
 |---|---|
@@ -48,7 +48,7 @@ Lista base de interacciones críticas (no exhaustiva — requiere actualización
 | Digoxina + Diurético tiazídico | Toxicidad digital |
 | Antidepresivos triciclicos + Anticolinérgicos | Síndrome anticolinérgico |
 | Benzodiacepinas + Opioides | Depresión respiratoria |
-| Levodopa + Vit B6 | Reducción eficacia |
+| Levodopa sola + Vit B6 | Reducción eficacia (con carbidopa casi no aplica) |
 
 ## Output
 

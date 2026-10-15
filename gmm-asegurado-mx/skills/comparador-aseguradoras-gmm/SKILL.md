@@ -1,6 +1,6 @@
 ---
 name: comparador-aseguradoras-gmm
-description: Compara cotizaciones GMM entre las 5 principales aseguradoras (GNP, AXA, MetLife, MAPFRE, Banorte). Ranquea por relación costo/cobertura considerando suma asegurada, deducible, coaseguro, red hospitales, exclusiones, beneficios extra (cobertura internacional, maternidad, dental). Usar cuando el usuario diga comparar gmm, mejor seguro medico, cotizar gmm.
+description: Compara cotizaciones GMM de las aseguradoras que el usuario cotice (p. ej. GNP, AXA, MetLife, Seguros Monterrey New York Life, MAPFRE, Banorte, Allianz, BUPA). Ranquea por relación costo/cobertura considerando suma asegurada, deducible, coaseguro, red hospitales, exclusiones, beneficios extra (cobertura internacional, maternidad, dental). Usar cuando el usuario diga comparar gmm, mejor seguro medico, cotizar gmm.
 allowed-tools: Read, Write
 ---
 
@@ -18,7 +18,13 @@ allowed-tools: Read, Write
 | Beneficios extra | Variable |
 | Antigüedad respetada | Alta si cambias |
 
-## Output ejemplo
+## Fuentes para comparar
+
+- Cotizaciones y **condiciones generales** de cada aseguradora (no solo el folleto).
+- Registro de la aseguradora y de sus productos ante la **CNSF**.
+- Índice de reclamaciones y sanciones en el **Buró de Entidades Financieras (CONDUSEF)**.
+
+## Output ejemplo (cifras ficticias)
 
 ```json
 {
@@ -49,7 +55,9 @@ allowed-tools: Read, Write
 
 ## ⚠ Cambio aseguradora
 
-Si cambias: pierdes antigüedad (excluyentes pueden volver a aplicar). Solo conviene si:
+Si cambias, por regla general pierdes antigüedad: periodos de espera y preexistencias vuelven a correr. Algunas aseguradoras ofrecen **reconocimiento de antigüedad** si no hay hueco de cobertura; pídelo por escrito (no es obligación legal). Solo conviene si:
 - No tienes preexistentes
 - Ahorro > $5,000/año
 - Cobertura significativamente mejor
+
+> La prima de GMM es deducible en la anual (Art. 151 fr. VI LISR, uso CFDI D07) para ti, cónyuge/concubino, ascendientes y descendientes en línea recta; sujeta al tope global de deducciones personales. Comparación orientativa: la decisión final requiere leer condiciones generales.

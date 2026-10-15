@@ -27,13 +27,14 @@ allowed-tools: Read, Write, Edit
     "Procedimientos en cita"
   ],
   "costo_insumos_directo_mxn": 30,
-  "margen_estimado": 0.93
+  "margen_estimado": 0.93,
+  "nota_margen": "(450 - 30) / 450 = 0.933; solo descuenta insumos, no sueldos ni renta"
 }
 ```
 
-## Categorías y precios típicos (referencia CDMX 2026)
+## Categorías y precios típicos (orientativos, CDMX)
 
-⚠ Rangos variables. Clínicas barrio cobran ~30-50% menos, premium 50-100% más.
+⚠ Rangos ilustrativos **sin fuente verificada**: sustitúyelos con tus costos y precios de mercado locales. Clínicas de barrio suelen cobrar menos y las premium más. Indica siempre si el precio incluye IVA.
 
 ### Consultas
 | Servicio | Precio |
@@ -140,6 +141,20 @@ Incluye: alimentación + medicación administrada + monitoreo. NO incluye exáme
 
 ⚠ Eutanasia debe ofrecerse como SERVICIO COMPLETO (con sedación previa, ambiente tranquilo, sin prisa). Tutores en duelo necesitan tiempo, no proceso comercial frío.
 
+## IVA
+
+| Concepto | IVA | Fundamento |
+|---|---|---|
+| Consulta y servicios médicos veterinarios prestados por **persona física** o **sociedad civil** con título de MVZ | Exento | LIVA Art. 15 fr. XIV + RLIVA Art. 41 (incluye expresamente al médico veterinario) |
+| Mismos servicios prestados por S.A., S. de R.L. o S.A.S. | 16% | La exención solo cubre PF o sociedades civiles |
+| Estética, baño, hospedaje, cremación, urnas, accesorios | 16% | No son servicios de medicina |
+| Alimento para mascotas | 16% | LIVA Art. 2-A fr. I inciso b): excepción expresa a la tasa 0% |
+| Medicamentos veterinarios | Verificar | La tasa 0% de medicinas de patente se interpreta para uso humano; confianza baja, confirmar con contador |
+
+- Región fronteriza norte/sur con estímulo: 8% en lugar de 16% (vigente a 31-12-2026).
+- Exento ≠ tasa 0%: el IVA de tus compras ligado a servicios exentos no es acreditable.
+- PF que factura honorarios a una persona moral: retención ISR 10%; sin retención de IVA si el servicio es exento. Ver skill `iva-retenciones-mx`.
+
 ## Reglas de tarificación
 
 ### Recargo nocturno/festivo
@@ -173,8 +188,8 @@ Descuentos 20-40% para casos sociales con documentación.
       {
         "servicio": "Esterilización ovariohisterectomía",
         "precio_base_mxn": 3500,
-        "ajuste_peso": "+20% (10-25 kg)",
-        "precio_ajustado_mxn": 4200,
+        "ajuste_peso": "+40% (25-40 kg)",
+        "precio_ajustado_mxn": 4900,
         "incluye": ["Cirugía", "Anestesia", "Hospitalización 1 día", "Antibiótico post"],
         "no_incluye": ["Collar isabelino ($150)", "Visita retiro puntos ($300)"]
       }
@@ -183,7 +198,7 @@ Descuentos 20-40% para casos sociales con documentación.
       {"examen": "Hemograma completo", "precio_mxn": 350},
       {"examen": "Química sanguínea básica", "precio_mxn": 550}
     ],
-    "total_estimado_mxn": 5100,
+    "total_estimado_mxn": 5800,
     "recargo_aplicable": "ninguno",
     "fecha_recomendada": "antes del primer celo (8-10 meses)",
     "advertencias": [
@@ -200,3 +215,5 @@ Descuentos 20-40% para casos sociales con documentación.
 - Costos reales de medicamentos veterinarios actuales
 - Tarifas hospitalarias por especialidad
 - Lista de equipamiento por nivel de clínica (general / especialidad / hospital)
+
+Cálculo del ejemplo: 3,500 × 1.40 = 4,900; total = 4,900 + 350 + 550 = 5,800 MXN (servicio médico exento si la clínica es PF o S.C.; si es S.A., sumar IVA 16%).

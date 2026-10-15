@@ -1,6 +1,6 @@
 ---
 name: comunicacion-familiar-distribuida
-description: Mantiene a la red familiar sincronizada sobre el estado del adulto mayor cuando los hijos viven en distintas ciudades o países (caso típico mexicano: 1 cuidador principal local + hermanos a distancia que aportan económicamente y emocionalmente) usando WhatsApp Business con templates aprobables Meta para tipos de mensaje (resumen diario corto, evento importante puntual, decisión pendiente que requiere consenso familiar, requerimiento urgente que necesita respuesta < 2 horas). Detecta y previene conflictos comunes: cuidador principal en burnout (sobrecarga emocional cuando solo 1 hijo soporta todo), hijo lejano que critica sin contribuir, decisiones unilaterales sin consultar (vender casa para pagar residencia, autorizar procedimiento médico riesgoso). Mantiene log de acuerdos familiares con timestamp + quién aceptó qué. Útil para herencia futura: la bitácora documenta quién contribuyó cuidado y cuánto. Usar cuando el usuario diga "comunicar familia", "grupo familiar WA", "decisión familiar", "consenso hermanos abuelita", "sincronizar familia". NO usar para comunicación con cuidadores (usar agenda-cuidadores) ni para grupos comerciales.
+description: Mantiene a la red familiar sincronizada sobre el estado del adulto mayor cuando los hijos viven en distintas ciudades o países (caso típico: un cuidador principal local + hermanos a distancia que aportan dinero o visitas). Redacta mensajes para WhatsApp (resumen diario, evento médico, decisión que requiere consenso, aviso urgente) y, si la familia usa WhatsApp Business API, los prepara como templates aprobables por Meta. Detecta señales de conflicto: cuidador principal en burnout, críticas sin aporte, decisiones unilaterales (vender la casa, autorizar un procedimiento riesgoso). Lleva bitácora de acuerdos con fecha y quién aceptó qué, útil como registro de aportaciones. Usar cuando el usuario diga "comunicar familia", "grupo familiar WA", "decisión familiar", "consenso hermanos abuelita", "sincronizar familia", "quién paga la residencia". NO usar para comunicación con cuidadores (agenda-cuidadores) ni para grupos comerciales.
 allowed-tools: Read, Write, Edit
 ---
 
@@ -29,7 +29,9 @@ medico_familiar:
   contacto: +52...
 ```
 
-## Templates de mensajes (aprobables Meta)
+## Mensajes
+
+En un grupo familiar de WhatsApp normal se envían como texto libre. Solo si la familia usa WhatsApp Business API se registran como templates (categoría UTILITY); Meta cobra por mensaje entregado desde el 01-07-2025 (ver skill `whatsapp-business-mx`).
 
 ### "utility_estado_diario"
 > "Resumen del día de Mamá ($DIA): se levantó bien, comió 80% de las comidas, tomó todos los medicamentos. Sin incidencias."
@@ -62,3 +64,5 @@ medico_familiar:
   - Patricia: aceptado (aporta 40%)
   Costo mensual: $28,500 MXN
 ```
+
+> La bitácora es un registro de acuerdos, no un documento legal: no sustituye testamento, convenio ante notario ni designación de apoyos. Contiene datos de salud (sensibles, LFPDPPP): compártela solo con la familia involucrada.
