@@ -8,6 +8,8 @@ allowed-tools: Read, Write
 
 ## Parámetros 2026
 
+Datos para cálculo: `nomina-pymes-mx/references/cuotas-imss-2026.json` (ramos, prima media RT por clase y `cesantia_y_vejez.tabla_patron_2026`).
+
 - UMA diaria: **$117.31** desde 01-02-2026 (enero 2026 usa $113.14).
 - SBC mínimo: salario mínimo 2026 ($315.04 general / $440.87 ZLFN). SBC máximo: **25 UMA = $2,932.75** diarios (Art. 28 LSS).
 - Fuente de porcentajes: LSS (Arts. 25, 71-74, 106, 107, 147, 168, 211) y transitorio del decreto DOF 16-12-2020; tabla CEAV 2026 cotejada en IDC (09-02-2026) y El Contribuyente (confianza media-alta: fuente secundaria coincidente).

@@ -6,8 +6,7 @@ allowed-tools: Read, Write
 
 # Cálculo ISR salarios Art. 96 LISR (2026)
 
-Tablas vigentes y fuentes: `references/tarifa-subsidio-2026.md` (este skill).
-⚠ El archivo del plugin `nomina-pymes-mx/references/tarifa-art96-anual-2026.json` y `subsidio-empleo-2026.json` tienen la tarifa 2023-2025 y la tabla de subsidio anterior a mayo 2024: **no los uses**.
+Datos para cálculo: `nomina-pymes-mx/references/tarifa-art96-anual-2026.json` (tarifa mensual en `limites_inferior_superior_cuota_tasa`, anual en `tarifa_anual_art152`) y `subsidio-empleo-2026.json` (actualizados a 2026). Tablas legibles y fuentes: `references/tarifa-subsidio-2026.md` (este skill).
 
 ## Paso 1: base mensual
 
