@@ -1,6 +1,6 @@
 ---
 name: recepcion-muestra
-description: Recepción de muestras biológicas (sangre, orina, heces, esputo, citologías, biopsias) en laboratorio clínico con etiquetado robusto de tubos y contenedores siguiendo NOM-007-SSA3 (laboratorios clínicos) y NOM-087-ECOL-SSA1 (residuos biológico-infecciosos). Cada muestra recibe identificador único (código de barras) vinculado al paciente, médico solicitante, examen requerido (con clave SAT del procedimiento), fecha y hora exacta de recepción crítica para muestras con caducidad corta (hemograma 4-8 hrs, gasometría 30 min, cultivos inmediato), tipo de tubo y aditivo correcto (rojo sin anticoagulante para química, morado EDTA para hematología, gris fluoruro para glucosa), validación pre-analítica de calidad (hemólisis, lipemia, coágulos visibles que invalidan resultado), y cadena de custodia documentada cuando aplica (toxicológicos legales). Detecta automáticamente etiquetas duplicadas o pacientes confundidos. Usar cuando el usuario diga "recepcionar muestra", "registrar tubo lab", "etiquetar muestra", "ingresar paciente lab". NO usar para entrega de resultados (usar entrega-resultados) ni para procesamiento del análisis.
+description: Recepción de muestras biológicas (sangre, orina, heces, esputo, citologías, biopsias) en laboratorio clínico conforme NOM-007-SSA3-2011 y manejo de residuos NOM-087-SEMARNAT-SSA1-2002. Asigna código de barras único ligado a paciente, médico solicitante y estudios; registra hora de toma y recepción (ventanas de estabilidad), tubo y aditivo correcto (rojo/amarillo química, morado EDTA hematología, gris fluoruro glucosa), validación preanalítica (hemólisis, lipemia, coágulos, volumen, ayuno) y cadena de custodia cuando aplica. Detecta etiquetas duplicadas o pacientes confundidos. Usar cuando el usuario diga recepcionar muestra, registrar tubo, etiquetar muestra, ingresar paciente al lab, toma de muestra. NO usar para entrega de resultados (usar entrega-resultados) ni para el procesamiento analítico.
 allowed-tools: Read, Write, Edit
 ---
 
@@ -42,15 +42,21 @@ fecha_estimada_resultados: 2026-06-12T14:00:00-06:00
 
 1. **Tubo correcto vs estudio solicitado** (error frecuente)
 2. **Volumen mínimo** para procesar
-3. **Sin hemólisis visible** (invalida química clínica)
+3. **Sin hemólisis visible** (altera potasio, LDH, AST, entre otros; rechazar o reportar con nota según el procedimiento del lab)
 4. **Sin coágulos en tubo con anticoagulante** (invalida hematología)
 5. **Identificación legible** del tubo
 6. **Ayuno cumplido** si requiere (glucosa, perfil lípidos)
-7. **Tiempo desde toma** dentro de ventana de procesamiento
+7. **Tiempo desde toma** dentro de la ventana de estabilidad definida por el lab para cada estudio
 
-## Cadena de custodia (toxicológicos legales)
+## Información y consentimiento (NOM-007-SSA3-2011)
 
-Para análisis con valor legal (laborales, divorcio, paternidad):
+- Informar al paciente en términos comprensibles el procedimiento, requisitos y riesgos (4.4.2); carta de consentimiento en procedimientos de alto riesgo
+- Si la muestra se usará en investigación o docencia: consentimiento por escrito ante dos testigos (4.5)
+- Confidencialidad de toda la información del paciente (4.4.3); son datos sensibles (LFPDPPP 2025)
+
+## Cadena de custodia (estudios con valor legal)
+
+Para toxicológicos laborales, pruebas periciales o de paternidad:
 - Firma del paciente
 - Firma del recolector
 - Foto del envase sellado

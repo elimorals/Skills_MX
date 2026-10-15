@@ -1,89 +1,85 @@
 ---
 name: receta-electronica-tele-cofepris
-description: Emite receta electrónica para consulta remota con cumplimiento COFEPRIS y NOM-024-SSA3-2010. Incluye e.firma del médico, datos del paciente, diagnóstico CIE-10, medicamentos con genérico+dosis+duración, indicaciones. BLOQUEO AUTOMÁTICO si receta incluye sustancia controlada Grupos I-II (estos siguen requiriendo recetario físico con código de barras hasta piloto 2027 COFEPRIS). Usar cuando el usuario diga receta tele, prescripcion remota, prescribir online.
+description: Arma la receta electrónica de una consulta remota con datos del médico (cédula), paciente, diagnóstico, medicamentos en denominación genérica con dosis, vía, intervalo y duración, firma electrónica y QR de verificación. Clasifica cada medicamento por las reglas de venta de la LGS (Art. 226 y listas de los Arts. 234 y 245) y bloquea la vía electrónica para estupefacientes (recetario especial con código de barras) y avisa en psicotrópicos (receta que la farmacia retiene). Usar cuando el usuario diga receta tele, receta electrónica, prescripción remota, prescribir online, receta por videoconsulta, medicamento controlado en telemedicina.
 allowed-tools: Read, Write
 ---
 
-# Receta electrónica telemedicina + COFEPRIS
+# Receta electrónica — telemedicina
 
-## Validaciones obligatorias
+> Herramienta de apoyo. La decisión de prescribir y la firma son del médico. No hay en la LGS ni en un decreto localizado (revisado 2026-10-15) un esquema federal de "receta electrónica COFEPRIS" para medicamentos controlados; no prometer que la farmacia la aceptará.
 
-1. **Cédula profesional médico vigente** (validar contra SEP)
-2. **e.firma del médico vigente** (no vencida)
-3. **Paciente identificable** (RFC, CURP o ID gobierno)
-4. **Sin medicamentos Grupos I-II** (bloqueo hard)
-5. **Diagnóstico CIE-10 presente** (sin diagnóstico → no receta)
+## Validaciones antes de emitir
 
-## Catálogo bloqueante por grupo
+1. **Cédula profesional** del médico: `mp_sep_profesional` → `sep_validar_medico_para_consulta`. El portal de la SEP exige CAPTCHA: si el tool devuelve `requiere_humano: true`, entregar al usuario la URL y pasos que regresa y pedir que confirme él.
+2. **Firma electrónica** del médico vigente (NOM-024-SSA3-2012 6.6.2 pide que el sistema permita la firma electrónica avanzada).
+3. **Paciente identificado** (nombre; CURP si el sistema es SIRES, NOM-024 6.5.1).
+4. **Diagnóstico** registrado en la nota de evolución (NOM-004 6.2).
+5. **Denominación genérica obligatoria**; la marca es opcional (LGS Art. 226, último párrafo, DOF 30-03-2022).
+6. **Clasificación de venta** de cada medicamento (tabla siguiente).
 
-```python
-GRUPOS_BLOQUEADOS_TELE = {1, 2}  # opioides + estupefacientes
-GRUPOS_PERMITIDOS_TELE = {3, 4, 5}  # psicotrópicos III + antibióticos + otros
+## Reglas de venta (LGS vigente, últimas reformas DOF 15-01-2026)
 
-# Algunos medicamentos comunes Grupo III (alprazolam, diazepam, clonazepam):
-# Permitidos en receta digital DESDE el piloto 2026 COFEPRIS.
-# Antes de 2026 también requerían receta física.
-```
+| Categoría | Ejemplos | Regla | ¿Receta electrónica? |
+|---|---|---|---|
+| Estupefacientes (Art. 234) → Art. 226 fr. I | morfina, fentanilo, oxicodona, metadona, buprenorfina, metilfenidato | Recetario especial con código de barras asignado por la SSA; tratamientos ≤ 30 días (Arts. 240-241) | ❌ **Bloquear**: usar recetario especial físico |
+| Psicotrópicos Art. 245 fr. III → Art. 226 fr. II | alprazolam, clonazepam, diazepam, lorazepam, tramadol | Receta con número de cédula; se surte una vez y la farmacia la retiene; vigencia 30 días; máx. 2 presentaciones (Arts. 226 fr. II, 251) | ⚠ Avisar: la farmacia debe retener la receta; aceptación de receta electrónica **verificar** con la farmacia/autoridad estatal |
+| Psicotrópicos Art. 245 fr. IV → Art. 226 fr. III | fenobarbital | Hasta 3 surtidos en 6 meses; se retiene en el tercero (Art. 252) | ⚠ Igual que arriba |
+| Art. 226 fr. IV (resurtible) | antihipertensivos, antibióticos y la mayoría de medicamentos con receta | Se resurte las veces que indique el médico | ✅ |
+| Art. 226 fr. V-VI | venta sin receta | — | ✅ (opcional) |
+
+La fracción exacta de cada producto está en su registro sanitario; si no está en el catálogo, marcar "verificar".
+MCP: `mp_expediente_clinico_nom024` → `ece_generar_receta` anota categoría, fracción, vigencia y surtidos por medicamento (cálculo local; los requisitos de forma del Reglamento de Insumos para la Salud no están cotejados).
 
 ## Algoritmo
 
 ```python
-def emitir_receta_tele(medicamentos: list[Medicamento]) -> RecetaResult:
-    # 1. Validar cédula médico vigente
-    if not validar_cedula_sep_vigente(medico.cedula):
-        return error("Cédula no vigente — actualizar antes")
+def emitir_receta_tele(medico, paciente, diagnostico, medicamentos) -> dict:
+    cedula = sep_validar_medico_para_consulta(medico.cedula)
+    if cedula.get("requiere_humano"):
+        return {"estado": "requiere_humano", "pasos": cedula.get("handoff")}  # URL + pasos para el usuario
+    if not cedula.get("vigente"):
+        return {"error": "CEDULA_NO_VIGENTE"}
+    if not medico.firma_electronica_vigente():
+        return {"error": "FIRMA_ELECTRONICA_NO_VIGENTE"}
 
-    # 2. Validar e.firma
-    if not medico.efirma_vigente():
-        return error("e.firma vencida o sin cargar")
+    clasif = [clasificar(m) for m in medicamentos]          # Art. 226 / 234 / 245
+    if any(c.categoria == "estupefaciente_art234" for c in clasif):
+        return {"error": "RECETARIO_ESPECIAL_REQUERIDO",
+                "razon": "Estupefaciente: recetario especial con código de barras (LGS Arts. 240-241)"}
 
-    # 3. Validar grupos
-    grupos_en_receta = {m.grupo_cofepris for m in medicamentos}
-    if GRUPOS_BLOQUEADOS_TELE & grupos_en_receta:
-        return error(
-            "RECETA_FISICA_REQUERIDA",
-            "Contiene Grupo I/II — usar recetario físico con código de barras"
-        )
-
-    # 4. Firmar electrónicamente
-    pdf = generar_pdf_receta(medicamentos, paciente, diagnostico)
-    pdf_firmado = firmar_con_efirma(pdf, medico.efirma)
-
-    # 5. Generar QR de verificación
-    qr_url = registrar_y_obtener_qr(receta_id)
-
-    return RecetaResult(
-        receta_id=receta_id,
-        pdf_path=pdf_firmado,
-        qr_url=qr_url,
-        contiene_controlado=any(m.grupo_cofepris == 3 for m in medicamentos),
-        valido_por_dias=90  # estándar
-    )
+    receta = generar_pdf(medico, paciente, diagnostico, medicamentos)  # genérico obligatorio
+    return {
+        "receta_id": receta.id,
+        "pdf_firmado": firmar(receta, medico.firma),
+        "qr_url": registrar_qr(receta.id),
+        "contiene_psicotropico": any(c.categoria.startswith("psicotropico") for c in clasif),
+        "vigencia_dias": min((c.vigencia_receta_dias for c in clasif if c.vigencia_receta_dias), default=None),
+    }
 ```
+
+`vigencia_dias = None` significa que la ley no fija vigencia (fr. IV); no inventar "90 días estándar".
 
 ## QR de verificación
 
-Cada receta tiene un QR que permite a la farmacia validar:
-- Receta auténtica (firma médico)
-- No alterada
-- No expirada
-- No usada (la primera farmacia que dispensa la marca como usada)
+Permite a la farmacia confirmar autenticidad, integridad y si ya se surtió. Es un mecanismo del sistema del médico, no un registro oficial de COFEPRIS.
 
 ## Output
 
 ```json
 {
   "receta_id": "REC-TEL-001",
-  "fecha_emision": "2026-06-12T16:30:00",
+  "fecha_emision": "2026-10-15T16:30:00-06:00",
   "modalidad": "telemedicina",
   "medico_cedula": "1234567",
-  "paciente_rfc_hash": "...",
+  "cedula_vigente": true,
+  "paciente_curp_hash": "...",
   "diagnostico_cie10": "I10",
   "medicamentos": [
-    {"generico": "Losartán", "presentacion": "50mg tab", "dosis": "1 cada 24h", "duracion_dias": 30}
+    {"generico": "Losartán", "presentacion": "50 mg tab", "dosis": "1 cada 24 h", "via": "oral",
+     "duracion_dias": 30, "fraccion_art226": "IV"}
   ],
-  "contiene_controlado_grupo3": false,
-  "valido_hasta": "2026-09-12",
+  "contiene_psicotropico": false,
+  "vigencia_dias": null,
   "qr_verificacion_url": "https://verificar.consultorio.mx/REC-TEL-001",
   "pdf_path": "~/.local/share/plugins-mx/recetas/REC-TEL-001.pdf",
   "firma_medico_aplicada": true
@@ -92,6 +88,6 @@ Cada receta tiene un QR que permite a la farmacia validar:
 
 ## Casos edge
 
-- Paciente fuera de MX (USA) → puede que farmacia local no acepte receta MX
-- Paciente menor de edad → datos del padre/tutor en la receta
-- Refill (renovación de medicamento crónico) → permitido si < 30 días desde última consulta documentada
+- Paciente fuera de México: la farmacia extranjera puede no aceptar receta mexicana y la práctica médica a distancia puede estar regulada por el país del paciente (**verificar**).
+- Paciente menor de edad: datos del padre/madre/tutor.
+- Renovación de crónicos: requiere nota de evolución de la consulta; el intervalo máximo entre consultas es política clínica del médico, no regla legal.

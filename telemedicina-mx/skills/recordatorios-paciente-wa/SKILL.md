@@ -1,6 +1,6 @@
 ---
 name: recordatorios-paciente-wa
-description: Recordatorios automáticos WhatsApp a pacientes de telemedicina: 24h antes (confirmación + link reset), 2h antes (link + tips técnicos), post-consulta (resumen + receta + próxima sugerida), recordatorios medicamentos (si crónicos). Reduce no-show del 15-20% típico al 5-8%. Usar cuando el usuario diga recordatorios paciente, whatsapp paciente, no-show telemedicina.
+description: Recordatorios automáticos por WhatsApp Business a pacientes de telemedicina con plantillas aprobadas por Meta - 24h antes (confirmación), 2h antes (link + tips técnicos), post-consulta (resumen + receta + próxima cita sugerida) y recordatorios de medicamento (crónicos con opt-in). Ayuda a bajar el no-show; mide tu tasa antes y después. Sin diagnósticos en los mensajes (datos sensibles). Usar cuando el usuario diga recordatorios paciente, whatsapp paciente, no-show telemedicina, confirmar cita por WhatsApp, recordatorio de medicamento.
 allowed-tools: Read, Write
 ---
 
@@ -75,7 +75,10 @@ Tómalo ahora con un vaso de agua.
 
 ## Compliance WA
 
-- Plantillas aprobadas Meta (UTILITY category)
-- Opt-in registrado (paciente firmó en consentimiento)
-- Cliente puede opt-out en cualquier momento
-- Hash del número en logs (LFPDPPP)
+- Plantillas aprobadas por Meta (categoría UTILITY); detalle en la skill compartida `whatsapp-business-mx`
+- Costo: desde el 01-07-2025 Meta cobra por mensaje de plantilla entregado; presupuestar 3-4 plantillas por consulta
+- Opt-in registrado (paciente lo aceptó en el consentimiento) y opt-out en cualquier momento
+- Sin diagnóstico, medicamento psiquiátrico ni motivo de consulta en texto libre: son datos sensibles (LFPDPPP 2025 Art. 8); el resumen clínico va en link autenticado, no en el chat
+- Hash del número en logs
+
+Métrica: compara la tasa de no-show 4 semanas antes y después de activar recordatorios; no hay una cifra de reducción garantizada.

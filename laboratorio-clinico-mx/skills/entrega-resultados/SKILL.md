@@ -1,6 +1,6 @@
 ---
 name: entrega-resultados
-description: Entrega de resultados al paciente y/o al médico solicitante con firma del químico responsable (QFB con cédula profesional vigente — requisito legal) y validación previa de que valores fuera de rango llevan asterisco de alerta + comentario explicativo + rangos de referencia por edad y sexo (los rangos cambian: hemoglobina mujer ≠ hombre, creatinina niño ≠ adulto, hormonas embarazada ≠ no embarazada). Genera reporte PDF presentable con logo del lab + datos del paciente + cuadro de resultados con valores y rangos + interpretación cuando aplica (perfil tiroideo necesita interpretación combinada TSH+T3+T4). Diferencia entre entrega a paciente (con explicación amigable) y a médico (con detalle técnico). Soporta entrega vía WhatsApp Business con PDF adjunto + email + impresión + portal del paciente. Cumple NOM-007-SSA3 sobre informe de resultados. Notifica al médico cuando un valor de pánico requiere intervención inmediata. Usar cuando el usuario diga "entregar resultados", "reporte lab", "PDF resultados paciente", "enviar lab a médico", "interpretación resultados". NO usar para tracking previo (usar tracking-procesamiento) ni para resultados patológicos críticos sin firma.
+description: Entrega de resultados de laboratorio al paciente y/o al médico solicitante conforme NOM-007-SSA3-2011 - hoja membretada con razón social, domicilio, nombre y cédula del responsable sanitario; valores o intervalos de referencia según método, sexo y grupo de edad; marcador de fuera de rango; firma autógrafa, digitalizada o electrónica. Genera PDF para paciente (lenguaje claro) y para médico (detalle técnico), con interpretación combinada cuando aplica (perfil tiroideo, anemia). Entrega por portal, email, WhatsApp Business o impreso, cuidando confidencialidad de datos sensibles. Usar cuando el usuario diga entregar resultados, reporte lab, PDF de resultados, enviar resultados al médico, interpretación de resultados. NO usar para tracking previo (usar tracking-procesamiento) ni para liberar resultados sin firma.
 allowed-tools: Read, Write, Edit
 ---
 
@@ -8,15 +8,16 @@ allowed-tools: Read, Write, Edit
 
 ## Estructura del informe
 
-### Cabecera (obligatoria NOM-007)
+### Cabecera
 
-- Nombre completo del laboratorio
-- Dirección y teléfono
-- Cédula del director técnico (QFB)
-- Registro COFEPRIS
-- Datos del paciente
-- Médico solicitante
-- Fecha de toma y de informe
+Obligatorio en informes impresos (NOM-007-SSA3-2011, hoja membretada):
+- Nombre o razón social del laboratorio
+- Domicilio del establecimiento
+- Nombre y cédula profesional del **responsable sanitario**
+
+Recomendado:
+- Teléfono, datos del paciente, médico solicitante, fecha de toma y de informe
+- No existe un "registro COFEPRIS" del laboratorio: el establecimiento opera con aviso de funcionamiento (o licencia si usa rayos X)
 
 ### Cuerpo
 
@@ -24,19 +25,22 @@ Por cada analito:
 - Nombre del analito
 - Resultado obtenido
 - Unidades
-- Rango de referencia (¡por edad y sexo!)
+- Valores o intervalos de referencia **impresos**, conforme al método usado, indicando sexo y grupo de edad a que corresponden (NOM-007 4.8)
 - Marcador si fuera de rango (* o ↑↓)
 - Método/equipo usado
 
 ### Pie
 
-- Firma electrónica del QFB responsable
-- Sello digital del lab
+- Firma del responsable sanitario o personal autorizado: autógrafa, digitalizada o electrónica (NOM-007 5.1.8)
 - Disclaimer: "Los resultados deben ser interpretados por su médico tratante"
+
+## Confidencialidad del envío
+
+Los resultados son datos sensibles: confidencialidad obligatoria (NOM-007 4.4.3) y consentimiento expreso del paciente para el canal de entrega (Art. 8 LFPDPPP 2025). Por WhatsApp/email preferir link con autenticación o PDF protegido; enviar al médico solo con autorización del paciente. Plantillas de WhatsApp: skill compartida `whatsapp-business-mx`.
 
 ## Rangos de referencia por demografía
 
-Crítico: los rangos cambian. Ejemplos:
+Crítico: los rangos cambian y dependen del método. Valores **ilustrativos**; imprimir siempre los validados por el propio laboratorio:
 
 | Analito | Hombre adulto | Mujer adulta | Niño 1-5 años |
 |---|---|---|---|

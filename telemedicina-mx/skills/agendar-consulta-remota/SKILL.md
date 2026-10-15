@@ -1,6 +1,6 @@
 ---
 name: agendar-consulta-remota
-description: Agenda consulta remota con paciente y genera link de videollamada (Zoom / Google Meet / Teams). Pre-requisitos digitales (consentimiento firmado, pago si aplica). Envía link al paciente 30 min antes via email y WhatsApp con instrucciones técnicas. Usar cuando el usuario diga agendar consulta online, programar videollamada paciente, agendar telemedicina.
+description: Agenda consulta remota con paciente y genera link de videollamada (Zoom / Google Meet / Teams / Doxy). Verifica pre-requisitos (consentimiento informado de telesalud firmado conforme LGS Art. 71 Septies, pago si aplica). Envía el link al paciente por email y WhatsApp con instrucciones técnicas y recordatorios. Usar cuando el usuario diga agendar consulta online, programar videollamada con paciente, agendar telemedicina, cita virtual, teleconsulta.
 allowed-tools: Read, Write
 ---
 
@@ -64,7 +64,16 @@ def validar_pre_requisitos(cita: ConsultaRemota) -> dict:
 
 ## Casos edge
 
-- Paciente fuera de MX (otra timezone): mostrar siempre hora local del paciente
-- Conexión lenta: ofrecer audio-only fallback
+- Paciente fuera de MX (otra timezone): mostrar siempre hora local del paciente; atender a alguien en otro país puede requerir licencia de ese país (**verificar** antes de aceptar)
+- Conexión lenta: ofrecer audio-only fallback y anotarlo en la nota de evolución
 - Paciente menor de edad: padre/tutor debe estar presente
-- Plataforma cae: tener backup (ej. WhatsApp video)
+- Plataforma cae: tener backup (ej. WhatsApp video) ya aceptado en el consentimiento
+
+## Requisitos de telesalud (LGS Art. 71 Septies, DOF 15-01-2026)
+
+- Personal designado y capacitado (fr. I)
+- Plataforma segura: confidencialidad, integridad y disponibilidad; no grabar sin autorización expresa; links únicos con sala de espera/contraseña (fr. II)
+- Consentimiento informado de la modalidad a distancia → skill `consentimiento-informado-tele` (fr. III)
+- Registro de la atención en el expediente → skill `expediente-clinico-tele` (fr. IV)
+
+No hay NOM específica de telemedicina vigente: el PROY-NOM-036-SSA3-2015 (atención médica a distancia) se canceló en 2018 (fuente secundaria, confianza media).

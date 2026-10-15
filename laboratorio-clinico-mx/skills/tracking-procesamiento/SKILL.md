@@ -1,6 +1,6 @@
 ---
 name: tracking-procesamiento
-description: Tracking del estado de cada muestra a través de las etapas del proceso analítico (recepción → distribución a área correspondiente → procesamiento analítico → control de calidad interno con materiales certificados → revisión del químico responsable → liberación) con alertas cuando una muestra está estancada > tiempo esperado por tipo de estudio (química clínica 2-4 hrs, hematología 1-2 hrs, microbiología 24-72 hrs cultivos, hormonas 4-8 hrs). Diferencia entre estudios automatizados (analizador procesa con código de barras) y manuales (procesa el químico paso a paso). Detecta valores de pánico (valores críticos que requieren notificación inmediata al médico: K+ > 6.5, glucosa < 50, hemoglobina < 7, troponina elevada) y los marca para revisión urgente del médico responsable antes de liberar. Tracking del control de calidad diario con materiales QC y registro de resultados fuera de rango aceptable. Usar cuando el usuario diga "status muestra", "tracking lab", "valores de pánico", "QC lab", "control calidad". NO usar para procesamiento técnico del análisis ni para resultados finales (usar entrega-resultados).
+description: Tracking del estado de cada muestra por etapa (recepción → distribución → procesamiento → control de calidad interno → revisión del químico responsable → liberación) con alertas cuando una muestra excede el tiempo objetivo de su tipo de estudio. Distingue estudios automatizados y manuales. Detecta valores críticos o de pánico (según la lista del propio laboratorio) y fuerza aviso inmediato al médico antes de liberar. Registra el control interno de calidad diario (NOM-007-SSA3-2011 7.1). Usar cuando el usuario diga status muestra, tracking lab, dónde va mi muestra, valores de pánico, valores críticos, QC lab, control de calidad. NO usar para procesamiento técnico del análisis ni para resultados finales (usar entrega-resultados).
 allowed-tools: Read, Write, Edit
 ---
 
@@ -46,6 +46,8 @@ historial:
 
 ## Valores de pánico (notificación inmediata al médico)
 
+> Lista ilustrativa: ninguna NOM fija estos umbrales. Cada laboratorio define y aprueba su propia lista de valores críticos con su responsable sanitario y los médicos que atiende; cargar esa lista antes de usar la skill.
+
 | Analito | Valor pánico | Mecanismo |
 |---|---|---|
 | Glucosa | < 50 o > 500 mg/dL | Llamada en < 30 min |
@@ -74,4 +76,11 @@ Cualquier valor de pánico:
 | Citología | 48-72 hrs |
 | Biopsia | 5-7 días |
 
-Si una muestra excede 2x el tiempo objetivo: alerta para revisión.
+Si una muestra excede 2x el tiempo objetivo: alerta para revisión. Tiempos orientativos; usar los comprometidos por el laboratorio con sus clientes.
+
+## Control interno de calidad (NOM-007-SSA3-2011 7.1)
+
+- El programa cubre etapas preanalítica, analítica y postanalítica
+- Si el control del día está fuera de criterio: no liberar resultados de esa corrida, corregir, repetir controles y reprocesar
+- Registrar en la bitácora la corrida, el lote de control, el resultado y quién aprobó
+- Liberación firmada por el responsable sanitario o personal autorizado (NOM-007 5.1.8)
