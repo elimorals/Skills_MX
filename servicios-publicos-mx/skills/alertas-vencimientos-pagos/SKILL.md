@@ -18,12 +18,14 @@ allowed-tools: Read, Write
 
 ## Impacto por servicio
 
-| Servicio | Consecuencia atraso |
+| Servicio | Consecuencia del atraso (confirmar en el recibo o reglamento local) |
 |---|---|
-| CFE | Corte a los 30-90d + reconexión $$ |
-| Agua | Corte ~60d después + reconexión |
-| Predial | Intereses moratorios mensuales 1-3% |
-| Gas natural | Corte a los 30d + reconexión |
+| CFE | Puede suspender el suministro después de la fecha límite; el recibo trae la fecha de corte. Reconexión con cargo |
+| Agua | Según la ley local: restricción o suspensión del servicio + recargos. En uso doméstico varias entidades solo permiten restringir, no cortar |
+| Predial | Actualización + recargos mensuales según el código fiscal local; se pierde el descuento por pago anticipado |
+| Gas natural | Suspensión según el contrato del distribuidor + cargo de reconexión |
+
+No inventes plazos de corte ni tasas de recargo: toma la fecha límite y la de corte del recibo. Si el recibo no la trae, di "verificar con el proveedor".
 
 ## Output
 

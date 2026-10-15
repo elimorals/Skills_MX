@@ -106,6 +106,8 @@ Acciones:
 
 **Día 0 (mismo día de cotización)**: enviar mensaje inicial.
 
+Si el cliente no ha escrito en las últimas 24 horas, la ventana de servicio de WhatsApp está cerrada: los recordatorios siguientes solo salen como plantilla UTILITY aprobada por Meta (con costo por mensaje). Ver `whatsapp-business-mx`.
+
 **Día +1 (24 horas sin respuesta)**:
 ```
 Hola [Nombre], te recordamos la cotización del [auto] que mandamos ayer.
@@ -130,7 +132,7 @@ Llámanos al [teléfono] si prefieres.
 
 **Día +5 (políticas de almacenamiento)**: empieza cargo por almacenamiento si está declarado en política inicial.
 
-**Día +15+**: enviar carta formal de aviso de retención según Ley Federal de Protección al Consumidor. En casos extremos, después de 60-90 días sin respuesta, el auto puede pasar a depósito vehicular y eventualmente subastarse según procedimiento legal (requiere asesoría legal específica).
+**Día +15+**: aviso formal por escrito. La LFPC no regula la retención ni el abandono del vehículo; dependen del código civil y reglamentos locales. No retengas, mandes a depósito ni dispongas del auto sin asesoría legal.
 
 ### Paso 3: Cambios durante el trabajo
 
@@ -215,7 +217,7 @@ Cada autorización se registra:
 }
 ```
 
-Si llega a tribunal del consumidor (PROFECO) o civil, esta bitácora es prueba.
+Si el caso llega a conciliación en PROFECO o a juicio, esta bitácora es prueba.
 
 ## Reglas de oro
 

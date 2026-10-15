@@ -1,74 +1,77 @@
 ---
 name: multas-deteccion-pago
-description: Detecta multas vehiculares pendientes consultando portales municipales (CDMX, EdoMex, Monterrey y otros disponibles) por placa, calcula el descuento por pronto pago (típico 50% en primeros 30 días), y prepara los datos para pago (línea de captura, monto, deadline). NO ejecuta el pago en sí (ese paso es manual o vía banca digital del usuario). Usar cuando el usuario diga buscar multas, multas pendientes, cuánto debo de multas, multas auto. NO usar para infracciones de Hacienda federal o de PROFEPA.
+description: Guía la consulta de multas vehiculares pendientes por placa (CDMX, EdoMex, Jalisco, Nuevo León y San Pedro), estima el descuento por pronto pago según la regla de cada entidad y prepara los datos para pagar (portal, folio, monto, fecha límite del descuento). Los portales oficiales tienen CAPTCHA, así que la consulta normalmente se entrega al usuario con URL y pasos. NO ejecuta el pago. Usar cuando el usuario diga buscar multas, multas pendientes, infracciones, fotomultas, cuánto debo de multas, multas del auto, descuento en multas. NO usar para infracciones fiscales federales ni de PROFEPA.
 allowed-tools: Read, Write
 ---
 
 # Multas vehiculares — detección y preparación de pago
 
-## Trigger
-
-- "¿tengo multas?"
-- "buscar multas placa ABC-1234"
-- Cron diario `check-multas-vehiculares.sh` detecta y alerta
-
 ## Flujo
 
-### 1. Consultar por entidad
+### 1. Consultar
 
-Por cada placa registrada con su entidad:
-- CDMX → `mp_cdmx_municipal.consultar_multas(placa)`
-- EdoMex → `mp_edomex_municipal.consultar_multas(placa)`
-- MTY/NL → `mp_monterrey_municipal.consultar_multas(placa)`
-- Otros estados → mock (pendiente MCPs específicos)
+`multas_consultar_por_placa(estado, placa)` (`mp_multas_vehiculares_mx`), con `estado` = `cdmx | edomex | jal | nl | nl_sanpedro`. `multas_listar_sistemas` muestra cuáles hay.
 
-### 2. Calcular descuentos
+Estado real del MCP: **entrega a humano**. Los portales de CDMX, EdoMex, Jalisco y San Pedro tienen CAPTCHA; NL es consulta manual. Si la respuesta trae `requiere_humano: true`:
+- Entrega al usuario `url` y `pasos` del handoff, tal cual.
+- Pídele que pegue (o capture en foto) el resultado: folio, fecha, motivo y monto.
+- No digas "no tienes multas": `consultado: false` significa que no se consultó.
 
-Típico en MX: pago dentro de 30 días → descuento 50%.
+Solo si el operador configuró el solver opt-in y la respuesta trae `multas`, úsalas directo. `multas_calcular_total` suma lo capturado.
 
-```python
-def calcular_monto_pago(multa):
-    if (today - multa.fecha_infraccion).days <= 30:
-        return multa.monto * 0.50  # 50% descuento
-    return multa.monto
-```
+Otros estados: no hay MCP. Da el portal de la secretaría de finanzas o tránsito del estado/municipio.
 
-### 3. Generar línea de captura
+### 2. Descuento por pronto pago (verificar en cada caso)
 
-CDMX: vía https://www.finanzas.cdmx.gob.mx
-EdoMex: vía https://sfpya.edomexico.gob.mx
-NL: vía portales municipales por municipio
+No hay una regla nacional de "50% en 30 días". Cada entidad fija la suya:
 
-Output: URL + folio para que usuario pague en banca digital.
+| Entidad | Regla reportada 2026 | Confianza |
+|---|---|---|
+| EdoMex | 50% si se paga al momento o dentro de 15 días hábiles desde la emisión o notificación (Reglamento de Tránsito vigente desde 25-nov-2025). Monto mínimo/medio/máximo según infracciones acumuladas | media (El Financiero, N+) |
+| CDMX | Descuentos en multa principal por Ley de Ingresos/Código Fiscal 2026; las fuentes no coinciden en porcentaje ni plazo; no aplica en carril confinado, ciclovía o con lesiones | baja: confirmar en finanzas.cdmx.gob.mx |
+| Otras | Sin dato | confirmar en el portal |
 
-### 4. Persistir en tracker
+Si no hay regla verificada, muestra el monto completo y marca `descuento: "verificar"`.
+
+### 3. Preparar el pago
+
+- CDMX: línea de captura en `finanzas.cdmx.gob.mx` (Secretaría de Administración y Finanzas).
+- EdoMex: portal de pagos de la Secretaría de Finanzas o establecimientos autorizados.
+- El usuario paga desde su banca. La skill no guarda datos de tarjeta.
+
+### 4. Registrar
 
 ```json
 {
-  "placa": "ABC-1234",
+  "placa_hash": "...",
   "multa_id": "M-12345",
   "entidad": "edomex",
-  "fecha_infraccion": "2026-04-12",
-  "tipo": "estacionar_zona_prohibida",
+  "fecha_notificacion": "2026-10-01",
+  "motivo": "estacionar en lugar prohibido",
   "monto_original_mxn": "1500.00",
+  "descuento_regla": "50% dentro de 15 días hábiles",
   "monto_con_descuento_mxn": "750.00",
-  "deadline_descuento": "2026-05-12",
-  "linea_captura": "...",
+  "fecha_limite_descuento": "2026-10-22",
+  "fuente_dato": "captura del usuario desde portal oficial",
   "estado": "pendiente"
 }
 ```
+
+Fecha límite del ejemplo: 15 días hábiles desde el jueves 1-oct-2026, sin inhábiles oficiales intermedios = 22-oct-2026. Si hay días inhábiles oficiales en medio, recórrela.
 
 ## Casos edge
 
 | Caso | Acción |
 |---|---|
-| Portal banco down | Reintentar; si persiste, alertar |
-| Multa duplicada (mismo folio en distintas consultas) | Deduplicate por `multa_id` |
-| Multa > 1 año sin pagar | Riesgo embargo placa → 🔴 prioridad alta |
-| Foto multa no clara | Pedir al usuario validar antes de pagar |
+| Portal caído o CAPTCHA | Handoff: URL + pasos; reintentar más tarde |
+| Mismo folio en dos consultas | Deduplicar por `multa_id` |
+| Multa con más de un año | Puede haber recargos y bloquear trámites (refrendo, verificación); prioridad alta |
+| Fotomulta no clara | Pedir al usuario revisarla antes de pagar; puede impugnarse en el plazo del reglamento |
+| Fotocívica CDMX | Sanción por puntos/trabajo comunitario, no siempre monetaria; revisar en el portal |
 
-## ⚠ Compliance
+## Compliance
 
-- Hashear placa en logs (`placa_hash`)
-- NO almacenar datos de tarjeta del usuario para pago
-- El pago se hace fuera del sistema (banca digital del usuario)
+- Hashear la placa en logs (`placa_hash`).
+- No guardar datos de tarjeta.
+- El pago se hace fuera del sistema.
+- Montos y descuentos cambian por reglamento local: confirmar antes de pagar.
