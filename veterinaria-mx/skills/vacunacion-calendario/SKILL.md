@@ -12,7 +12,7 @@ allowed-tools: Read, Write, Edit
 |---|---|---|
 | 6-8 semanas | Multivalente 1ra dosis (DAPP) | No salir todavía |
 | 8-10 semanas | Multivalente 2da dosis + Leptospirosis | Aún en aislamiento |
-| 12-14 semanas | Multivalente 3ra dosis + Antirrábica + Lepto 2da | Casi listo para salir |
+| 12-14 semanas | Multivalente 3ra dosis + Antirrábica + Lepto 2da | Antirrábica: la NOM-011 permite iniciar desde el primer mes, con refuerzo a los 3 meses |
 | 16 semanas | Refuerzos finales | Salida segura calle |
 | 6-12 meses | Bordetella (opcional) + Influenza canina | Si va a guardería |
 
@@ -31,7 +31,7 @@ allowed-tools: Read, Write, Edit
 ## Esquema perro/gato adulto
 
 - 1 vez al año: multivalente + antirrábica
-- 1 vez cada 3 años: antirrábica (algunas marcas tienen efectividad triple)
+- Antirrábica: **cada año** (NOM-011-SSA2-2011, num. 8.3.2.1), aunque la etiqueta del biológico indique 3 años
 - Bordetella: cada 6-12 meses si va a guardería/exposiciones
 - Leptospirosis: anual si zona endémica (CDMX, Veracruz, regiones tropicales)
 
@@ -71,10 +71,10 @@ para cada vacuna_aplicada:
 ### Templates WhatsApp
 
 **30 días antes**:
-> "Hola Ana 🐶 Luna tiene su próxima vacuna multivalente en 30 días (15-jul-2026). ¿Te agendamos? Llámanos o responde a este mensaje."
+> "Hola Ana 🐶 Luna tiene su próxima vacuna multivalente en 30 días (17-nov-2026). ¿Te agendamos? Llámanos o responde a este mensaje."
 
 **7 días antes**:
-> "Hola Ana 🐶 Recordatorio: Luna necesita su vacuna multivalente el martes 15-jul. Slot disponible 11am o 5pm — ¿cuál te conviene?"
+> "Hola Ana 🐶 Recordatorio: Luna necesita su vacuna multivalente el martes 17-nov. Slot disponible 11am o 5pm — ¿cuál te conviene?"
 
 **1 día antes**:
 > "Mañana Luna tiene su vacuna 🐶 Te esperamos a las 11am. Si no puedes, avísanos para no perder el lote."
@@ -85,7 +85,7 @@ para cada vacuna_aplicada:
 ## Registro post-aplicación
 
 Cada vacuna debe registrar:
-- Marca y lote (trazabilidad obligatoria por SAGARPA)
+- Marca y lote (trazabilidad ante alertas del fabricante o SENASICA)
 - Vencimiento del frasco (si vencido = revacunar)
 - Vía de aplicación
 - MVZ responsable + cédula profesional
@@ -93,13 +93,12 @@ Cada vacuna debe registrar:
 
 ⚠ Si reacción anafiláctica: **registrar permanentemente** en expediente. Próxima vacuna con premedicación + obs 4h.
 
-## Trazabilidad SAGARPA
+## Trazabilidad y autoridades
 
-México exige trazabilidad de vacunas para campañas oficiales (rabia, brucelosis):
-- Marca, lote, fecha aplicación
-- Datos del aplicante (cédula MVZ)
-- Datos del paciente y tutor
-- Conservar 5 años (NOM-052)
+- Rabia en perros y gatos: Secretaría de Salud (NOM-011-SSA2-2011); entregar al tutor comprobante de vacunación antirrábica.
+- Biológicos veterinarios (registro y calidad): SADER a través de SENASICA (antes SAGARPA).
+- Registrar: marca, lote, fecha, aplicante (cédula MVZ), paciente y tutor.
+- Conservar el registro al menos 5 años como buena práctica (no hay plazo en NOM veterinaria específica; verificar normativa local).
 
 ## Output estructurado
 
@@ -108,18 +107,18 @@ México exige trazabilidad de vacunas para campañas oficiales (rabia, brucelosi
   "calendario_vacunacion": {
     "mascota": "Luna",
     "especie": "perro",
-    "edad": "5 años 7 meses",
+    "edad": "6 años 5 meses",
     "vacunas_vigentes": [
       {
         "vacuna": "Multivalente DAPP-L",
-        "vence": "2026-06-15",
-        "dias_para_vencer": 4,
+        "vence": "2026-11-17",
+        "dias_para_vencer": 33,
         "estado": "VIGENTE_POR_RENOVAR"
       },
       {
         "vacuna": "Antirrábica",
-        "vence": "2028-06-15",
-        "dias_para_vencer": 730,
+        "vence": "2027-03-10",
+        "dias_para_vencer": 146,
         "estado": "VIGENTE"
       }
     ],
@@ -127,12 +126,12 @@ México exige trazabilidad de vacunas para campañas oficiales (rabia, brucelosi
     "proximas_aplicaciones": [
       {
         "vacuna": "Multivalente refuerzo anual",
-        "fecha_sugerida": "2026-06-15",
-        "recordatorios_programados": ["2026-05-16", "2026-06-08", "2026-06-14"]
+        "fecha_sugerida": "2026-11-17",
+        "recordatorios_programados": ["2026-10-18", "2026-11-10", "2026-11-16"]
       }
     ],
     "alertas": [
-      "Vacuna multivalente vence en 4 días — agendar antes"
+      "Vacuna multivalente vence en 33 días (2026-11-17) — agendar"
     ]
   }
 }
@@ -142,5 +141,7 @@ México exige trazabilidad de vacunas para campañas oficiales (rabia, brucelosi
 
 - Esquemas vigentes CDMX vs estados (puede variar)
 - Lista de marcas/lotes con vigencia 2026
-- Reglas SAGARPA actualizadas trazabilidad
+- Reglas SENASICA vigentes de trazabilidad de biológicos
 - Protocolo en caso de cachorro callejero adoptado (sin historial)
+
+> Fechas del ejemplo calculadas al 2026-10-15. Los recordatorios por WhatsApp se envían con templates UTILITY aprobados (ver `whatsapp-business-mx`).

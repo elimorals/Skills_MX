@@ -20,7 +20,7 @@ Documento médico-legal de la mascota. Debe mantenerse actualizado para continui
     "sexo": "hembra",
     "esterilizado": true,
     "fecha_nacimiento_aprox": "2020-05-15",
-    "edad_calculada": "5 años 7 meses",
+    "edad_calculada": "6 años 5 meses",
     "color_pelaje": "dorado",
     "peso_kg_actual": 28.5,
     "microchip": "9854321076543210",
@@ -65,18 +65,18 @@ Documento médico-legal de la mascota. Debe mantenerse actualizado para continui
       "vacuna": "Multivalente (DAPP-L)",
       "marca": "Nobivac DHPPi-L4",
       "lote": "ABC-2025-1234",
-      "fecha_aplicacion": "2025-06-15",
-      "vencimiento_proteccion": "2026-06-15",
+      "fecha_aplicacion": "2025-11-17",
+      "vencimiento_proteccion": "2026-11-17",
       "via_aplicacion": "subcutánea",
       "mvz_aplicante": "MVZ Cert. 12345"
     },
     {
       "vacuna": "Antirrábica",
       "marca": "Defensor 3",
-      "lote": "RAB-2025-5678",
-      "fecha_aplicacion": "2025-06-15",
-      "vencimiento_proteccion": "2028-06-15",
-      "obligatoria_cdmx": true
+      "lote": "RAB-2026-5678",
+      "fecha_aplicacion": "2026-03-10",
+      "vencimiento_proteccion": "2027-03-10",
+      "obligatoria_nom_011_ssa2": true
     }
   ],
   "consultas_historicas": [
@@ -115,19 +115,21 @@ Documento médico-legal de la mascota. Debe mantenerse actualizado para continui
   "vacunas_pendientes": [
     {
       "vacuna": "Multivalente refuerzo anual",
-      "fecha_sugerida": "2026-06-15",
+      "fecha_sugerida": "2026-11-17",
       "alerta_30d": true
     }
   ]
 }
 ```
 
-## Vacunas obligatorias por especie
+## Vacunas por especie
+
+Solo la antirrábica (perro y gato) es obligatoria por norma; el resto depende del riesgo y del criterio del MVZ.
 
 ### Perro
 - DAPP (multivalente: Distemper, Adenovirus, Parvovirus, Parainfluenza)
 - Leptospirosis (en zonas húmedas)
-- Antirrábica (obligatoria por ley CDMX, EdoMex, etc.)
+- Antirrábica: obligatoria en todo el país (NOM-011-SSA2-2011, num. 8.3.2.1: desde el primer mes de edad, refuerzo a los 3 meses y después cada año)
 - Bordetella (kennel cough — opcional según riesgo)
 - Influenza canina (zonas alto contacto)
 - Lyme (opcional según geografía)
@@ -150,8 +152,14 @@ Documento médico-legal de la mascota. Debe mantenerse actualizado para continui
 - ⚠ **Edad y peso**: dosis siempre por kg de peso real. Cachorros < 6 meses y geriátricos > 8 años requieren ajuste.
 - ⚠ **Razas con sensibilidades específicas**:
   - Collies, Border Collies, Australian Shepherd: gen MDR1 (sensibilidad a ivermectina, loperamida)
-  - Bulldogs, Boxers, Doberman: sensibilidad a anestesia (premedicación distinta)
+  - Braquicéfalos (Bulldog, Pug, Boxer): riesgo de vía aérea en anestesia; Boxer: sensibilidad a acepromazina
+  - Doberman: enfermedad de von Willebrand (riesgo de sangrado en cirugía)
   - Greyhounds: respuesta atípica a barbitúricos
+
+## Medicamentos controlados
+
+- Productos farmacéuticos veterinarios: clasificación y tipo de receta según nivel de riesgo (NOM-064-ZOO-2000, SADER/SENASICA). Registrar en el expediente la receta emitida.
+- Estupefacientes y psicotrópicos (p. ej. opioides, ketamina, benzodiacepinas): regulados por COFEPRIS conforme a la Ley General de Salud; requieren recetario especial o receta según el grupo y libro de control. Verificar el grupo vigente de cada sustancia antes de prescribir.
 
 ## Output estructurado
 
@@ -160,7 +168,7 @@ Documento médico-legal de la mascota. Debe mantenerse actualizado para continui
   "expediente_resumen": {
     "id_paciente": "PET-2026-001234",
     "nombre": "Luna",
-    "edad": "5 años 7 meses",
+    "edad": "6 años 5 meses",
     "alertas_criticas": [
       "Alergia documentada: Penicilina (anafilaxia 2023)",
       "Medicación crónica: Carprofen 75mg"
@@ -181,4 +189,4 @@ Documento médico-legal de la mascota. Debe mantenerse actualizado para continui
 - Calendario vacunación específico por geografía (CDMX, Mérida, Tijuana)
 - Catálogo medicamentos veterinarios MX vigente
 - Razas sensibles (genética actualizada 2026)
-- Marco legal expediente clínico veterinario (NOM-051-ZOO-1995 y posteriores)
+- Marco legal: no hay NOM federal específica de expediente clínico veterinario (la NOM-051-ZOO-1995 es de trato humanitario en la movilización, no de expedientes). Conservar al menos 5 años como buena práctica
