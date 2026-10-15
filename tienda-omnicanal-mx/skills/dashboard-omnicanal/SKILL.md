@@ -43,7 +43,7 @@ allowed-tools: Read, Write
 
 - Ingreso total + por canal (aclarar si es bruto con IVA o neto)
 - Ingreso neto por canal = venta sin IVA − cargos del canal − envío absorbido
-- Retenciones de plataformas (ML, Amazon) como anticipo, aparte del margen: ISR 2.5% PF/PM con RFC en 2026 (LIF 2026 Art. 25 fr. VI) y 50% del IVA a PF (Art. 18-J LIVA). Cuadra contra el CFDI de retenciones de cada plataforma
+- Retenciones de plataformas (ML, Amazon) como anticipo, aparte del margen: ISR 2.5% PF/PM con RFC en 2026 (LIF 2026 Art. 25 fr. VI) y 50% del IVA a PF y PM (Art. 18-J LIVA; LIF 2026 Art. 25 fr. IX). Cuadra contra el CFDI de retenciones de cada plataforma
 - Conversión (visitantes → orden)
 - ROAS por canal (si hay ads)
 - Stock sincronizado vs desincronizado

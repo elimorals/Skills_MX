@@ -31,10 +31,11 @@ Mercado Libre, Amazon y cualquier plataforma que cobre por cuenta del vendedor r
 |---|---|---|---|
 | PF con RFC (Art. 113-A fr. III) | **2.5%** (sustituye al 1% de la LISR durante 2026) | 50% del IVA cobrado | LIF 2026 Art. 25 fr. VI (DOF 07-11-2025); Art. 18-J fr. II a) LIVA |
 | PF sin RFC | 20% | 100% del IVA | Art. 113-C fr. IV LISR; Art. 18-J fr. II a) LIVA |
-| PM con RFC | **2.5%** sin deducción, acreditable en pagos provisionales/anual | No hay retención de IVA en 18-J para PM | LIF 2026 Art. 25 fr. VI |
-| PM sin RFC | 20% | — | LIF 2026 Art. 25 fr. VI |
+| PM con RFC | **2.5%** sin deducción, acreditable en pagos provisionales/anual | 50% del IVA cobrado (18-J fr. II a) LIVA, extendido a PM) | LIF 2026 Art. 25 fr. VI (ISR) y fr. IX a) (IVA) |
+| PM sin RFC | 20% | verificar (la LIF no fija 100% para PM sin RFC) | LIF 2026 Art. 25 fr. VI |
 
 - La PF con ingresos ≤ $300,000 el año anterior (solo por plataformas) puede optar por que la retención de ISR sea **pago definitivo** (Art. 113-B LISR); IVA definitivo en el supuesto del Art. 18-M LIVA.
+- Retención de IVA del 100% si el vendedor cobra en cuentas bancarias en el extranjero o es residente en el extranjero sin establecimiento (LIF 2026 Art. 25 fr. IX b-c).
 - Las retenciones no son costo si se acreditan; sí afectan **flujo de efectivo**. Mostrarlas aparte del margen.
 - Validar con contador antes de declarar: las tasas de la LIF son anuales y pueden cambiar en 2027.
 
