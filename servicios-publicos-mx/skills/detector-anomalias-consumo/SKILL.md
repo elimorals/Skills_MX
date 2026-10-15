@@ -15,9 +15,9 @@ allowed-tools: Read, Write
 
 ### CFE
 - Consumo > 1.5x histórico → revisar electrodomésticos
-- Factor de potencia < 0.9 → penalización en factura
+- Factor de potencia < 90% → cargo en la factura (solo tarifas comerciales/industriales como GDMTO y GDMTH; no aplica a doméstica)
 - Cobro de subsidio mal aplicado
-- Tarifa cambiada sin aviso (DAC trigger)
+- Reclasificación a DAC: ocurre cuando el promedio mensual de los últimos 12 meses supera el límite de la tarifa (1: 250 kWh; 1A: 300; 1B: 400; 1C: 850; 1D: 1,000; 1E: 2,000; 1F: 2,500), no por un solo recibo alto
 
 ### Gas
 - Salto súbito → fuga
@@ -36,7 +36,7 @@ allowed-tools: Read, Write
       "tipo": "fuga_probable",
       "consumo_actual_m3": 45,
       "baseline_mismo_mes_m3": 14,
-      "incremento_pct": 220,
+      "incremento_pct": 221,
       "recomendacion": "Cerrar llaves, observar medidor 1h. Si avanza → llamar plomero."
     },
     {
@@ -44,8 +44,8 @@ allowed-tools: Read, Write
       "tipo": "factor_potencia_bajo",
       "fp_actual": 0.82,
       "fp_umbral": 0.9,
-      "penalizacion_mensual_estimada_mxn": "300",
-      "recomendacion": "Instalar banco de capacitores"
+      "penalizacion_mensual_mxn": "tomar del renglón de cargo por factor de potencia del recibo",
+      "recomendacion": "Cotizar banco de capacitores con un electricista; comparar costo contra el cargo mensual del recibo"
     }
   ]
 }
