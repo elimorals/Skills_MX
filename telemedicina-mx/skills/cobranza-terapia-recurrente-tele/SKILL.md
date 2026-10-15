@@ -53,7 +53,7 @@ Hola [Nombre], aún no he visto el pago del ciclo de este mes.
 aquí estoy.
 ```
 
-### Nivel 3 (D+3 con pausa)
+### Nivel 4 (D+7 pausa)
 ```
 [Nombre], como no ha sido posible regularizar el pago de este 
 mes, vamos a pausar las sesiones hasta que estés listo/a para
@@ -79,4 +79,11 @@ Te mando un abrazo.
 
 ## ⚠ Tono empático crítico
 
-Pacientes de salud mental son extra-sensibles. Cobranza agresiva = ruptura terapéutica + queja CONDUSEF/PROFECO + reseñas negativas.
+Pacientes de salud mental son extra-sensibles. Cobranza agresiva = ruptura terapéutica + queja ante PROFECO (servicio al consumidor) o CONAMED (si es médico) + reseñas negativas. Los mensajes no deben mencionar diagnóstico ni motivo de consulta (dato sensible, LFPDPPP 2025).
+
+## Impuestos y factura
+
+- Médico persona física (p. ej. psiquiatra): IVA exento (Art. 15 fr. XIV LIVA).
+- Psicólogo: la exención exige título de médico → IVA 16% (confianza media; ver `psicoterapia-mx/cobranza-recurrente-terapia`).
+- El paciente puede deducir con CFDI D01 si paga por medio no efectivo (Art. 151 fr. I LISR incluye psicología) → skill `cfdi-honorario-medico-d01`.
+- Política de cancelación y reembolso del paquete: informarla por escrito antes del pago (LFPC).
