@@ -42,7 +42,6 @@ website/
 ├── guias/                Guía de CFDI 4.0 y recetas que enlazan al MCP o workflow en el repo
 ├── productos/            Predial, REPSE, ISN
 ├── glosario/             REPSE, ISN, predial
-├── onboarding/           Cómo es un piloto de 30 días
 ├── sobre/                Autor
 ├── llms.txt, llms-full.txt, openapi.json, mcp-manifest.json, .well-known/
 └── data/, api/           JSON estáticos (no hay API REST de consulta)
