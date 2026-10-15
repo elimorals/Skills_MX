@@ -1,122 +1,90 @@
 ---
 name: mercado-libre-pricing
-description: Cálculo de precio óptimo para listings en Mercado Libre México considerando comisión por modalidad (13% clásica, 17% premium, +5% Mercado Envíos Full), costo IVA trasladado, costo logístico, margen mínimo deseado y precio competidores actuales. Detecta si subir/bajar precio según ratio precio-vs-competidores y reputación. Usar cuando el usuario diga precio mercado libre, pricing ML, qué precio pongo, comisión mercado libre, margen ML, competidores ML, optimizar precios. NO usar para crear listings (otro skill mercado-libre-listings).
+description: Cálculo de precio para publicaciones en Mercado Libre México considerando cargo por venta según tipo de publicación (Clásica / Premium) y categoría, cargo fijo por unidad en productos de bajo precio, IVA incluido en el precio publicado, costo logístico, retenciones de ISR e IVA que hace la plataforma (Art. 113-A LISR, LIF 2026 y 18-J LIVA), margen deseado y precio de competidores. Usar cuando el usuario diga precio mercado libre, pricing ML, qué precio pongo, comisión mercado libre, cuánto me cobra ML, margen ML, retención ML, competidores ML, optimizar precios. NO usar para crear publicaciones (skill mercado-libre-listings).
 allowed-tools: Read, Write, Edit, Bash
 ---
 
-# Mercado Libre — Pricing dinámico
+# Mercado Libre — Pricing
 
-Calcular el precio en ML requiere ingeniería inversa de costo + comisión + márgen + posición competitiva.
+El precio en ML se obtiene a la inversa: costo + cargos de ML + margen, todo sobre un precio publicado que **ya incluye IVA** (Art. 7 Bis LFPC: el proveedor debe mostrar el monto total con impuestos).
 
-## Fórmula base
+## Cargos de Mercado Libre — no uses tablas memorizadas
+
+ML cobra, por cada venta:
+
+1. **Cargo por venta**: porcentaje según **categoría** y **tipo de publicación**. Premium cuesta más que Clásica porque ofrece meses sin intereses al comprador.
+2. **Cargo fijo por unidad** en productos por debajo de un umbral de precio (escalonado).
+3. **Envío**: arriba de cierto precio el envío es gratis para el comprador y el vendedor absorbe parte del costo; Mercado Envíos Full cobra además almacenamiento y otros cargos propios. No es un "+5%" fijo.
+
+Los porcentajes, umbrales y montos cambian varias veces al año. **Verificar siempre** antes de calcular:
+- Página oficial: `https://www.mercadolibre.com.mx/ayuda/costos-de-vender-un-producto_870` (no se pudo consultar automáticamente el 2026-10-15; pide al usuario el dato o captura).
+- Panel del vendedor: la simulación de "Cuánto recibes" al publicar.
+- API pública de ML (fuera del MCP del repo): `GET /sites/MLM/listing_prices?price=<p>&category_id=<id>&listing_type_id=gold_special|gold_pro` devuelve el cargo exacto.
+
+El MCP `mp_mercado_libre` **no** tiene tool de comisiones ni de búsqueda de competidores. Sus tools útiles aquí: `mercadolibre_get_item` (precio, tipo de publicación, categoría), `mercadolibre_update_price` y `mercadolibre_get_seller_reputation`. Su estado es "real sin validar (requiere credenciales OAuth)"; sin credenciales trabaja con datos que el usuario pegue.
+
+## Retenciones que hace la plataforma (2026)
+
+Mercado Libre, Amazon y cualquier plataforma que cobre por cuenta del vendedor retienen sobre el ingreso cobrado **sin IVA**:
+
+| Vendedor | ISR | IVA | Fuente |
+|---|---|---|---|
+| PF con RFC (Art. 113-A fr. III) | **2.5%** (sustituye al 1% de la LISR durante 2026) | 50% del IVA cobrado | LIF 2026 Art. 25 fr. VI (DOF 07-11-2025); Art. 18-J fr. II a) LIVA |
+| PF sin RFC | 20% | 100% del IVA | Art. 113-C fr. IV LISR; Art. 18-J fr. II a) LIVA |
+| PM con RFC | **2.5%** sin deducción, acreditable en pagos provisionales/anual | No hay retención de IVA en 18-J para PM | LIF 2026 Art. 25 fr. VI |
+| PM sin RFC | 20% | — | LIF 2026 Art. 25 fr. VI |
+
+- La PF con ingresos ≤ $300,000 el año anterior (solo por plataformas) puede optar por que la retención de ISR sea **pago definitivo** (Art. 113-B LISR); IVA definitivo en el supuesto del Art. 18-M LIVA.
+- Las retenciones no son costo si se acreditan; sí afectan **flujo de efectivo**. Mostrarlas aparte del margen.
+- Validar con contador antes de declarar: las tasas de la LIF son anuales y pueden cambiar en 2027.
+
+## Fórmula
+
+Con `P` = precio publicado con IVA, `c` = cargo por venta (decimal), `f` = cargo fijo por unidad, `m` = margen objetivo sobre ingreso sin IVA, costos sin IVA:
 
 ```
-precio_lista = (costo_articulo + costo_logistico) / (1 - comision_ml - margen_objetivo)
+P = (costo_articulo + costo_logistico + f) / ((1 - m) / 1.16 - c)
 ```
 
-Para un producto con:
-- Costo: $250 MXN
-- Logística: $80 MXN (Mercado Envíos Full)
-- Comisión: 17% (premium)
-- Margen objetivo: 20%
+Ejemplo ilustrativo (cargo por venta **hipotético** 17%, sin cargo fijo porque el precio queda arriba del umbral):
 
 ```
-precio_lista = ($250 + $80) / (1 - 0.17 - 0.20)
-             = $330 / 0.63
-             = $524 MXN
+costo 250 + logística 80 = 330
+denominador = (1 - 0.20) / 1.16 - 0.17 = 0.68966 - 0.17 = 0.51966
+P = 330 / 0.51966 = $635.04  → publicar $635
+
+Comprobación:
+  ingreso sin IVA = 635.04 / 1.16 = 547.45
+  cargo ML        = 0.17 × 635.04 = 107.96
+  utilidad        = 547.45 - 107.96 - 330 = 109.49 → 20.0% de 547.45 ✓
+  retención ISR PF 2.5% = 13.69 (anticipo) · retención IVA 50% = 43.80 (anticipo)
 ```
 
-## Comisiones por categoría (referencia 2025 — verificar 2026)
-
-| Categoría | Clásica | Premium |
-|---|---|---|
-| Celulares y telefonía | 13% | 16% |
-| Computación | 13% | 16% |
-| Electrónicos, Audio y Video | 13% | 17% |
-| Hogar, Muebles y Jardín | 14% | 17% |
-| Ropa, Bolsas y Calzado | 14% | 17% |
-| Belleza y Cuidado Personal | 15% | 18% |
-| Deportes y Fitness | 13% | 17% |
-| Libros, Revistas y Comics | 8% | 11% |
-| Juegos y Juguetes | 13% | 17% |
-| Salud y Equipamiento Médico | 14% | 17% |
-| **Mercado Envíos Full** (adicional) | +5% | +5% |
-
-⚠ ML actualiza comisiones periódicamente. Validar con `mp_mercado_libre.get_category_fees(category_id)`.
+La IVA que ML traslada sobre su cargo es acreditable; por eso el cargo entra sin IVA.
 
 ## Análisis competitivo
 
-Antes de fijar precio:
+Sin tool de búsqueda en el MCP, pide al usuario 5-20 precios de competidores (o la exportación de una herramienta de inteligencia de mercado) y:
 
-```
-1. Buscar listings competidores: mp_mercado_libre.search_competitors(query)
-2. Filtrar por:
-   - Modalidad similar (premium vs clásica)
-   - Reputación similar (MercadoLíder, Estándar)
-   - Envío Full vs sin Full
-3. Calcular percentiles: P25, mediana, P75
-4. Decidir posición:
-   - P25-P50: ranking alto, margen bajo (volumen)
-   - P50-P75: equilibrio ranking/margen
-   - >P75: margen alto, solo si tu reputación o calidad lo justifica
-```
+1. Filtra por tipo de publicación, envío Full o no y reputación similar.
+2. Calcula P25, mediana, P75.
+3. Posición: P25-P50 = volumen; P50-P75 = equilibrio; >P75 solo con diferenciador (Full, garantía, marca).
+4. Si tu `P` de equilibrio queda arriba de P75, el problema es costo o canal, no precio.
 
-## IVA y CFDI implicaciones
+La reputación (`mercadolibre_get_seller_reputation`) influye en exposición, pero ML no publica un "boost" numérico: no lo inventes.
 
-ML maneja IVA dependiendo del tipo de venta:
+## Estrategias
 
-| Tipo venta | Quien emite CFDI | Quien paga IVA |
-|---|---|---|
-| **B2C global** (sin RFC) | El seller (CFDI público general) | Seller traslada en su precio |
-| **B2C con factura** | El seller a RFC del comprador | Seller traslada |
-| **Cross-border** (Brasil/Argentina) | ML actúa como intermediario | Reglas IEPS/IVA específicas |
+- **Clásica vs Premium del mismo producto**: compara el ingreso neto de ambas con los cargos reales.
+- **Kits / multipack**: subir el ticket por encima del umbral del cargo fijo puede bajar el costo por unidad. Ej.: 3 piezas a $450 en vez de 1 a $150.
+- **Precio psicológico**: $1-5 bajo el competidor mejor posicionado, solo si tu margen lo soporta.
+- **Meses sin intereses**: en Premium el costo ya está en el cargo; fuera de eso, el costo de MSI de Mercado Pago es variable — **verificar** en el panel antes de prometer MSI.
 
-⚠ El precio publicado en ML **debe incluir IVA**. Si subes $500 y eliges "IVA incluido", el ingreso real para ti es $500 / 1.16 = $431.
+## IVA y CFDI
 
-## Ajuste por reputación
-
-ML premia ranking si tienes mejor reputación:
-
-| Reputación | Ranking boost | Precio máximo competitivo |
-|---|---|---|
-| MercadoLíder Platinum | +30% | P25-P50 |
-| MercadoLíder Gold | +20% | P25-P50 |
-| MercadoLíder | +10% | Mediana |
-| Estándar | 0% | <P25 (única forma de competir) |
-| Bajo desempeño | -50% | No competitivo |
-
-## Estrategias de pricing
-
-### 1. Anchor pricing
-Listing premium con precio alto + listing clásica del mismo producto con precio bajo. El comprador percibe el clásico como "ganga".
-
-### 2. Pricing por escala
-Múltiples cantidades del mismo producto con descuento por volumen:
-- 1 unidad: $500
-- 3 unidades: $1,350 (-10%)
-- 10 unidades: $4,000 (-20%)
-
-### 3. Pricing competitivo agresivo
-$1-5 MXN bajo el precio del competidor con mejor ranking. Útil cuando tu reputación es similar o mejor.
-
-### 4. Pricing premium
-$50-100 MXN sobre la mediana, justificado con:
-- Envío Mercado Envíos Full (entrega 24h)
-- Garantía extendida
-- MercadoLíder Platinum badge
-
-## Recargo o descuento por método de pago
-
-| Método | Costo MercadoPago |
-|---|---|
-| TDC/TDD MX en una pago | 4.39% + IVA + $4 MXN/operación |
-| 3 MSI (tarjeta Visa/Master) | +6.55% |
-| 6 MSI | +9.55% |
-| 9 MSI | +12.85% |
-| 12 MSI | +15.85% |
-| 18 MSI | +18.85% |
-
-Si activas MSI, sube el precio para mantener margen — o ML lo descuenta de tus ganancias.
+- El vendedor emite el CFDI de la venta: a RFC del comprador si lo pide, o en CFDI global a público en general (ver `cfdi-emision`).
+- ML emite al vendedor CFDI por sus cargos y el **CFDI de retenciones** (ISR/IVA) que se usa para acreditar.
+- Si vendes en región fronteriza con estímulo autorizado, la tasa puede ser 8% (ver `iva-retenciones-mx`).
 
 ## Output estructurado
 
@@ -124,49 +92,17 @@ Si activas MSI, sube el precio para mantener margen — o ML lo descuenta de tus
 {
   "analisis_precio": {
     "listing_id": "MLM1234567890",
-    "costos": {
-      "articulo": 250.00,
-      "logistico": 80.00,
-      "iva_acreditable": 40.00,
-      "total_costo": 330.00
-    },
-    "comisiones": {
-      "modalidad": "premium",
-      "comision_categoria": 0.17,
-      "envios_full": 0.05,
-      "msi_si_activa": 0.0655,
-      "total_comisiones": 0.2855
-    },
-    "competidores": {
-      "p25": 459.00,
-      "mediana": 549.00,
-      "p75": 649.00,
-      "mejor_ranking_precio": 519.00
-    },
-    "tu_reputacion": "MercadoLider Gold",
-    "precios_sugeridos": {
-      "agresivo_volumen": 515.00,
-      "equilibrado": 549.00,
-      "premium_margen": 619.00
-    },
-    "recomendacion": "equilibrado",
-    "margen_real_estimado": "18-22%",
-    "alertas": [
-      "Tu costo está $20 sobre el mediano del mercado — revisa proveedor"
-    ]
+    "costos_sin_iva": {"articulo": 250.00, "logistico": 80.00, "cargo_fijo": 0.00},
+    "cargos_ml": {"tipo_publicacion": "premium", "cargo_por_venta": 0.17, "fuente": "panel vendedor 2026-10-15"},
+    "precio_equilibrio_margen_20": 635.04,
+    "competidores": {"p25": 589.00, "mediana": 629.00, "p75": 679.00},
+    "retenciones_estimadas": {"isr_2_5": 13.69, "iva_50": 43.80},
+    "recomendacion": "publicar $635 (mediana)",
+    "alertas": ["Cargo por venta tomado del panel; recalcular si cambia la categoría"]
   }
 }
 ```
 
-## Validación pendiente
-
-- Comisiones 2026 actualizadas
-- Cargo MSI MercadoPago 2026
-- Mercado Envíos Full pricing 2026
-- Testimonios sellers MX con volumen ≥ $50k MXN/mes
-
 ## Ver también
 
-- `mercado-libre-listings`
-- `mxn-formato` para formato pesos
-- `iva-retenciones-mx`
+- `mercado-libre-listings` · `mxn-formato` · `iva-retenciones-mx` · `cfdi-emision`
