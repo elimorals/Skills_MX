@@ -101,7 +101,7 @@
           "id": "mp_resico_sat",
           "estado": "calculo_normativo",
           "estado_label": "Cálculo normativo verificado",
-          "desc": "Cálculo local sobre tablas LISR; la tasa de retención de plataformas y el criterio 'SCJN 2026' están sin verificar.",
+          "desc": "Cálculo local sobre tablas LISR; retención de plataformas por tipo de servicio verificada con LIF 2026 Art. 25 fr. VI. El criterio 'SCJN 2026' sigue sin verificar.",
           "tools": [
             "resico_calcular_isr",
             "resico_evaluar_estatus",

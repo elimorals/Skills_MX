@@ -25,6 +25,7 @@ from shared.resico_sat_mx import (  # noqa: E402
     RESICO_TOPE_ANUAL_MXN,
     TRAMOS_RESICO_MENSUAL_2026,
     calcular_isr_resico,
+    TASAS_RETENCION_ISR_2026,
     calcular_retencion_plataforma,
 )
 
@@ -154,11 +155,10 @@ class RESICOClient:
             r = calcular_retencion_plataforma(plataforma, ingreso_bruto_mxn)
         except ValueError as e:
             raise ValidationError(str(e))
-        r["nota"] = "Tasa estandarizada 2.5% ISR 2026 (RMF 2026 plataformas digitales)."
-        r["advertencias"] = [
-            "Tasa única 2.5% sin verificar contra fuente primaria (LIF 2026 / DOF). El Art. 113-A "
-            "LISR fija 1% bienes, 2.1% transporte/entrega, 4% hospedaje; confirmar antes de declarar."
-        ]
+        r["nota"] = (
+            "Art. 113-A LISR: 2.1% transporte y entrega (fr. I), 4% hospedaje (fr. II); bienes y "
+            "servicios 2.5% en 2026 por LIF 2026 Art. 25 fr. VI, en sustitución del 1% de la fr. III."
+        )
         r["simulated"] = False
         return r
 
@@ -204,7 +204,7 @@ class RESICOClient:
         } for t in TRAMOS_RESICO_MENSUAL_2026]
         return {
             "tope_anual_mxn": RESICO_TOPE_ANUAL_MXN,
-            "tasa_retencion_plataformas": 0.025,
+            "tasas_retencion_plataformas": TASAS_RETENCION_ISR_2026,
             "tramos_mensuales": tramos,
             "vigencia": "2026",
             "base_legal": "RESICO Art. 113-E LISR + RMF 2026",
@@ -213,9 +213,10 @@ class RESICOClient:
     def listar_plataformas(self) -> dict[str, Any]:
         return {
             "total": len(CATALOGO_PLATAFORMAS),
-            "tasa_unica": 0.025,
+            "tasas_por_categoria": TASAS_RETENCION_ISR_2026,
             "plataformas": [{
                 "clave": p.clave, "nombre": p.nombre, "categoria": p.categoria,
                 "aplica_retencion": p.aplica_retencion,
+                "tasa_retencion": TASAS_RETENCION_ISR_2026[p.categoria],
             } for p in CATALOGO_PLATAFORMAS],
         }

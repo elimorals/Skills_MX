@@ -21,7 +21,7 @@ allowed-tools: Read, Write
 |---|---|
 | Transporte terrestre de pasajeros y entrega de bienes (Uber, DiDi, Rappi) | 2.1% |
 | Hospedaje | 4% |
-| Enajenación de bienes y prestación de servicios | 1% |
+| Enajenación de bienes y prestación de servicios | 2.5% en 2026 (LIF 2026 Art. 25 fr. VI sustituye el 1% de la fr. III) |
 
 **Pago definitivo (Art. 113-B LISR)**: si solo obtiene ingresos por plataformas (o además sueldos e intereses) y en el ejercicio anterior no excedieron $300,000, puede optar porque la retención sea pago definitivo → no hay ISR adicional ni anual por esos ingresos. Requiere aviso al SAT dentro de los 30 días siguientes al primer ingreso, no permite deducciones y la opción dura 5 años. Si no opta o excede, la retención es **pago provisional acreditable** contra el pago mensual de su régimen (y en la anual).
 
@@ -72,10 +72,10 @@ def isr_a_pagar_mes(isr_causado_regimen: Decimal, retenciones_plataformas: Decim
 | Conductor también cobra servicios directos (fuera de la app) | Si el total ≤ $300,000 puede pagar esos ingresos con la misma tasa como pago definitivo (Art. 113-A, último párrafo); si no, régimen normal |
 | Cambio de régimen mid-año | Recalcular por periodo |
 | Conductor en RESICO PF con ingresos > $3.5M | Sale de RESICO (Art. 113-I) |
-| Plataforma retuvo con tasa distinta a 2.1% | Revisar el CFDI de retenciones; `mp_resico_sat.resico_retencion_plataforma` usa 2.5% sin verificar: no usarlo para conductores |
+| Plataforma retuvo con tasa distinta a 2.1% | Revisar el CFDI de retenciones. `mp_resico_sat.resico_retencion_plataforma` con plataforma `uber`/`didi` calcula 2.1% (fr. I) |
 
 ## ⚠ Compliance
 
-- Validar tasas del Art. 113-A LISR cada enero (cambian por reforma a la LISR, no por RMF)
+- Validar tasas del Art. 113-A LISR cada enero: cambian por reforma a la LISR o por la Ley de Ingresos del año (en 2026 la LIF subió bienes y servicios a 2.5%; transporte sigue en 2.1%)
 - `vigencia_validada: false` — contador valida en declaración anual
 - Las retenciones de la plataforma SÍ se declaran (acreditan) — no se omiten

@@ -89,8 +89,17 @@ def test_retencion_uber():
     from mp_resico_sat.client import RESICOClient
     c = RESICOClient()
     r = c.retencion_plataforma(plataforma="uber", ingreso_bruto_mxn=10_000)
-    assert r["tasa_retencion"] == 0.025
-    assert r["retencion_isr_mxn"] == 250.0
+    assert r["tasa_retencion"] == 0.021  # Art. 113-A fr. I: transporte
+    assert r["retencion_isr_mxn"] == 210.0
+
+
+def test_retencion_por_tipo_de_servicio_2026():
+    from mp_resico_sat.client import RESICOClient
+    c = RESICOClient()
+    # LIF 2026 Art. 25 fr. VI sustituye el 1% de la fr. III por 2.5%
+    assert c.retencion_plataforma(plataforma="mercado_libre", ingreso_bruto_mxn=1_000)["retencion_isr_mxn"] == 25.0
+    # Art. 113-A fr. II: hospedaje 4%
+    assert c.retencion_plataforma(plataforma="airbnb", ingreso_bruto_mxn=1_000)["retencion_isr_mxn"] == 40.0
 
 
 def test_retencion_plataforma_invalida():
@@ -132,4 +141,4 @@ def test_listar_plataformas_12_categorias():
     c = RESICOClient()
     r = c.listar_plataformas()
     assert r["total"] == 12
-    assert r["tasa_unica"] == 0.025
+    assert r["tasas_por_categoria"]["movilidad"] == 0.021 and r["tasas_por_categoria"]["ecommerce"] == 0.025

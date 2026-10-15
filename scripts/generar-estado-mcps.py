@@ -105,7 +105,7 @@ ESTADO: dict[str, tuple[str, str]] = {
     "mp_repep_profeco": ("handoff", "El portal tiene controles anti-automatización deliberados; no se emulan."),
     "mp_repse_stps": ("real_validado", "Búsqueda y padrón REPSE validados en vivo."),
     "mp_repuve": ("handoff", 'reCAPTCHA v3 y body cifrado en el navegador; robo devuelve null (desconocido), nunca false. Con solver opt-in (2captcha): consulta real, sin validar en vivo (falta llave).'),
-    "mp_resico_sat": ("calculo_normativo", "Cálculo local sobre tablas LISR; la tasa de retención de plataformas y el criterio 'SCJN 2026' están sin verificar."),
+    "mp_resico_sat": ("calculo_normativo", "Cálculo local sobre tablas LISR; retención de plataformas por tipo de servicio verificada con LIF 2026 Art. 25 fr. VI. El criterio 'SCJN 2026' sigue sin verificar."),
     "mp_retys_catalogo": ("real_validado", "Validado solo con Chromium con ventana (Akamai bloquea headless y httpx)."),
     "mp_sacpi_michoacan": ("bloqueado", "Host sacpi.michoacan.gob.mx sin DNS (NXDOMAIN); selectores de 2026-06 sin revalidar."),
     "mp_sat_opinion_32d": ("real_validado", "Consulta pública 32-D validada; descarga propia con e.firma sin validar."),
