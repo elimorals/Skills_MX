@@ -1,6 +1,6 @@
 ---
 name: seguimiento-devolucion-sat
-description: Da seguimiento semanal al status de una devolución de saldo a favor solicitada al SAT, vía consultas al Buzón Tributario (mp_sat_portal). Reporta el avance por etapas (recibida → en revisión → autorizada / rechazada / pendiente información) y alerta cuando el SAT solicita información adicional (deadline corto, 10 días hábiles típicos). Útil entre mayo-julio cuando hay devolución activa. Usar cuando el usuario pregunte estado devolución SAT, donde está mi saldo a favor, status devolución, mi devolución no ha llegado. NO usar para tramitar devolución (eso es manual vía DeclaraSAT).
+description: Da seguimiento semanal al status de una devolución de saldo a favor solicitada al SAT, con apoyo del Buzón Tributario (consulta manual del usuario; la tool del MCP aún no está implementada). Reporta el avance por etapas (recibida → en revisión → autorizada / rechazada / pendiente información) y alerta cuando el SAT emite requerimiento de información (20 días hábiles para el primero, 10 para el segundo — Art. 22 CFF). Útil entre mayo-julio cuando hay devolución activa. Usar cuando el usuario pregunte estado devolución SAT, donde está mi saldo a favor, status devolución, mi devolución no ha llegado. NO usar para tramitar devolución (eso es manual vía DeclaraSAT).
 allowed-tools: Read, Write
 ---
 
@@ -22,17 +22,17 @@ Después de presentar declaración anual con saldo a favor y haber solicitado la
 | Etapa | Plazo típico | Status |
 |---|---|---|
 | Recibida | Inmediato | Recibido por SAT, esperando turno |
-| En proceso | 10-40 días | SAT revisa cumplimiento de requisitos |
-| Pendiente información | Variable | SAT pide info adicional (10 días hábiles) |
-| Autorizada | 40-90 días | Aprobada, depósito en proceso |
+| En proceso | Hasta 40 días hábiles (Art. 22 CFF) | SAT revisa cumplimiento de requisitos |
+| Pendiente información | Variable | Requerimiento: 20 días hábiles para responder (10 en el segundo); el plazo de 40 días se suspende |
+| Autorizada | Dentro de los 40 días hábiles | Aprobada, depósito en proceso |
 | Depositada | 1-3 días tras autorización | Saldo cobrado en cuenta CLABE |
 | Rechazada | Variable | Negada — analizar motivo |
 
 ## Flujo
 
 ### Paso 1 — Consultar Buzón Tributario
-- Invocar `mp_sat_portal.sat_descargar_buzon_tributario(rfc)`
-- Filtrar notificaciones relacionadas con "devolución" / "solicitud" / `ejercicio` del año fiscal
+- `mp_sat_portal.sat_descargar_buzon_tributario` **no está implementado**: con credenciales devuelve `UpstreamError` con `handoff_url`. Entrega al usuario esa URL y pídele copiar o descargar las notificaciones y el estatus de "Consulta del trámite de devolución" (sat.gob.mx).
+- Con el texto que te comparta, filtrar notificaciones de "devolución" / "requerimiento" / `ejercicio`
 
 ### Paso 2 — Identificar estado
 - Buscar palabras clave: "autorizada", "rechazada", "pendiente información", "depositada"
@@ -55,10 +55,10 @@ Después de presentar declaración anual con saldo a favor y haber solicitado la
   "fecha_ultima_actualizacion_sat": "2026-06-05",
   "dias_transcurridos": 33,
   "documentos_solicitados": ["estado de cuenta del banco con CLABE confirmada"],
-  "deadline_respuesta_sat": "2026-06-20",
-  "dias_para_deadline": 8,
+  "deadline_respuesta_sat": "2026-07-03",
+  "dias_para_deadline": 21,
   "recomendaciones": [
-    "Subir estado de cuenta antes del 20 de junio",
+    "Responder el requerimiento antes del 3 de julio (20 días hábiles aprox. desde el 5 de junio; confirmar la fecha exacta en la notificación)",
     "Acceder a la opción 'Saldos a favor y devoluciones' en DeclaraSAT"
   ],
   "vigencia_validada": false
@@ -83,7 +83,7 @@ Después de presentar declaración anual con saldo a favor y haber solicitado la
 
 ## Dependencias
 
-- `mp_sat_portal.sat_descargar_buzon_tributario` (mock o real)
+- Consulta manual del usuario en el portal SAT (`sat_descargar_buzon_tributario` no implementado; solo da `handoff_url`)
 
 ## ⚠ Compliance
 

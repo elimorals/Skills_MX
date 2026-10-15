@@ -1,6 +1,6 @@
 ---
 name: recopilar-cfdis-anuales
-description: Orquesta la descarga masiva de CFDIs emitidos y recibidos por una persona física durante un ejercicio fiscal completo (12 meses). Invoca mp_sat_portal con descarga masiva (vía e.firma si disponible, o solicita al usuario el ZIP del portal SAT). Parsea XMLs, clasifica por tipo (I=ingreso, E=egreso, T=traslado, P=pago, N=nómina), valida UUIDs contra el SAT, excluye CFDIs cuyo RFC emisor o receptor esté en lista 69-B definitivo, y entrega un dataset normalizado listo para calcular ISR anual. Usar cuando el usuario diga descargar CFDIs del año, recopilar facturas 2025, descarga masiva, bajar CFDIs del SAT, obtener todos los CFDIs. NO usar para descarga mensual (usar mp_sat_portal directamente).
+description: Orquesta la descarga masiva de CFDIs emitidos y recibidos por una persona física durante un ejercicio fiscal completo (12 meses). Usa el web service de descarga masiva (mp_sat_ws, requiere e.firma) o, si no hay e.firma o falla, pide al usuario el ZIP del portal SAT. Parsea XMLs, clasifica por tipo (I=ingreso, E=egreso, T=traslado, P=pago, N=nómina), valida UUIDs contra el SAT, excluye CFDIs cuyo RFC emisor o receptor esté en lista 69-B definitivo, y entrega un dataset normalizado listo para calcular ISR anual. Usar cuando el usuario diga descargar CFDIs del año, recopilar facturas 2025, descarga masiva, bajar CFDIs del SAT, obtener todos los CFDIs. NO usar para descarga mensual (usar mp_sat_ws directamente).
 allowed-tools: Read, Write
 ---
 
@@ -23,11 +23,11 @@ allowed-tools: Read, Write
 
 ### Phase 2 — Descarga emitidos (12 meses)
 
-Por cada mes 1-12:
-- Invocar `mp_sat_portal.sat_descargar_cfdi_masivo(rfc, ejercicio, mes, tipo="emitidos")`
-- Loggear `solicitud_id` y `estado`
-- En modo real: polling cada 30 min hasta `estado="lista"`, luego descargar ZIP
-- En modo mock: continuar inmediato
+`mp_sat_ws` está en estado "real sin validar" (firma y autenticación probadas con e.firma de prueba; solicitud/descarga con e.firma real sin validar). Por cada mes 1-12:
+- `mp_sat_ws.sat_ws_solicitar_descarga(...)` con tipo emitidos → guardar `id_solicitud`
+- `sat_ws_verificar_solicitud(id_solicitud)` cada 30 min hasta que haya paquetes
+- `sat_ws_descargar_paquete(id_paquete)` → ZIP con XML
+- Si cualquier paso falla: pedir al usuario el ZIP desde el portal SAT (Factura electrónica → Consultar facturas emitidas/recibidas) y continuar con Phase 4
 
 ### Phase 3 — Descarga recibidos (12 meses)
 
@@ -37,9 +37,9 @@ Idéntico pero `tipo="recibidos"`.
 
 Por cada XML:
 - Extraer: UUID, fecha, RFC emisor/receptor, total, subtotal, IVA, retenciones, tipo, uso CFDI, forma pago, método pago
-- Validar UUID contra `mp_sat_portal.verificar_cfdi_uuid` (público HTTP)
+- Validar estatus contra `mp_sat_portal.sat_verificar_cfdi_uuid`
 - Si UUID cancelado: marcar `estado_cancelacion`
-- Si RFC del emisor/receptor en lista 69-B definitivo (`mp_sat_portal.consultar_69b_efos`): marcar `excluir_deducciones=true` + alerta
+- Si RFC del emisor/receptor en lista 69-B definitivo (`mp_sat_portal.sat_consultar_69b_efos`, real validado en vivo): marcar `excluir_deducciones=true` + alerta
 
 ### Phase 5 — Dataset normalizado
 
@@ -81,7 +81,7 @@ Sugerir al usuario el siguiente skill según contexto:
 | Caso | Acción |
 |---|---|
 | Usuario sin e.firma | Pedir que suba ZIPs del portal SAT manualmente |
-| Más de 100,000 CFDIs/mes | Paginar la descarga (SAT lo hace automático) |
+| Muchos CFDIs en un mes | El SAT divide la respuesta en varios paquetes: descargar todos |
 | SAT down durante descarga | Reintentar polling con backoff exponencial |
 | RFC emisor en 69-B presunto (no definitivo) | Incluir + warning, no excluir |
 | CFDI tipo "T" (traslado) | Excluir del cálculo de ingresos/egresos |
