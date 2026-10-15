@@ -50,3 +50,5 @@ allowed-tools: Read, Write
 - Margen por especialidad
 - Días promedio cobro aseguradoras
 - Rotación inventario
+
+Ingresos siempre **sin IVA**: si la clínica es persona moral, sus servicios causan IVA 16% (la exención del Art. 15 fr. XIV LIVA es solo para médicos PF o sociedades civiles); el IVA trasladado no es ingreso. Las comisiones a médicos son un costo, no se restan del ingreso bruto.
