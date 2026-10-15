@@ -13,8 +13,9 @@ allowed-tools: Read, Write
   "saldo_actual_mxn": "1250000.00",
   "plazo_restante_meses": 240,
   "tasa_anual_nominal": 10.5,
-  "pago_mensual_actual_mxn": "13500.00",
+  "pago_mensual_actual_mxn": "12479.75",
   "comision_prepago_pct": 0.02,
+  "tasa_alternativa_inversion_pct": null,
   "escenarios": [
     {"tipo": "prepago_unico", "monto_mxn": "100000"},
     {"tipo": "aporte_mensual_extra", "monto_mensual_mxn": "1500"},
@@ -23,6 +24,8 @@ allowed-tools: Read, Write
 }
 ```
 
+`comision_prepago_pct` sale del contrato (muchos créditos no cobran); `tasa_alternativa_inversion_pct` la da el usuario (p. ej. rendimiento actual de CETES que consulte), no se asume.
+
 ## Cálculo
 
 Fórmula pago francés:
@@ -30,48 +33,43 @@ Fórmula pago francés:
 pago_mensual = capital × (tasa / (1 - (1 + tasa)^(-n)))
 ```
 
-Donde `tasa = tasa_anual / 12` y `n = plazo_meses`.
+Donde `tasa = tasa_anual / 12` y `n = plazo_meses`. $1,250,000 a 10.5% y 240 meses → **$12,479.75**.
 
-Para pre-pago único: recalcular plazo o pago mensual sobre nuevo capital reducido.
-Para aporte mensual extra: amortizar capital adicional cada mes.
+- Pre-pago único: se resta del capital y se mantiene el pago (reduce plazo).
+- Aporte mensual extra: se suma al pago de cada mes como abono a capital.
+- Simula mes a mes hasta saldo cero (ver `simulador-prepagos-hipotecarios`).
 
-## Output
+## Output (recalculado)
 
 ```json
 {
   "escenarios_comparados": [
     {
       "tipo": "sin_prepago",
-      "intereses_totales_mxn": "2010000.00",
+      "intereses_totales_mxn": "1745139.66",
       "plazo_final_meses": 240,
-      "fecha_final": "2046-06-12",
-      "pago_mensual_final_mxn": "13500.00"
+      "pago_mensual_mxn": "12479.75"
     },
     {
       "tipo": "prepago_unico_100k",
       "comision_prepago_mxn": "2000.00",
-      "intereses_totales_mxn": "1500000.00",
-      "ahorro_intereses_mxn": "510000.00",
-      "plazo_final_meses": 180,
-      "ahorro_meses": 60,
-      "pago_mensual_final_mxn": "13500.00",
-      "ROI_pct": 25.5,
-      "recomendado": true
+      "intereses_totales_mxn": "1201409.38",
+      "ahorro_intereses_mxn": "543730.28",
+      "ahorro_neto_de_comision_mxn": "541730.28",
+      "plazo_final_meses": 189,
+      "ahorro_meses": 51
     },
     {
       "tipo": "aporte_mensual_1500",
-      "intereses_totales_mxn": "1750000.00",
-      "ahorro_intereses_mxn": "260000.00",
-      "plazo_final_meses": 215,
-      "ahorro_meses": 25
+      "total_aportado_extra_mxn": "264000.00",
+      "intereses_totales_mxn": "1197137.98",
+      "ahorro_intereses_mxn": "548001.68",
+      "plazo_final_meses": 176,
+      "ahorro_meses": 64
     }
   ],
-  "mejor_escenario": "prepago_unico_100k",
-  "comparativa_invertir": {
-    "ROI_alternativo_cetes_anual": 9.5,
-    "ROI_alternativo_renta_fija": 11.0,
-    "vs_prepago_hipoteca": "Prepago tiene ROI 10.5% efectivo — mejor que CETES, comparable a renta fija"
-  },
+  "lectura": "El aporte mensual ahorra un poco más de intereses pero exige $264,000 a lo largo de 176 meses; el prepago único ahorra casi lo mismo con $100,000 hoy. Elegir según liquidez.",
+  "comparativa_invertir": "Pre-pagar rinde la tasa del crédito (10.5% nominal). Compárala con la tasa alternativa que dé el usuario, después de impuestos.",
   "vigencia_validada": false
 }
 ```

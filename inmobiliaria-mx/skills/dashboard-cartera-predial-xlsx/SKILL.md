@@ -30,7 +30,7 @@ El usuario debe proveer una lista de propiedades en formato JSON o CSV. Formato 
 
 Campos:
 - `id` (req): identificador interno
-- `estado` (req): clave 2-5 letras (ver `shared/catalogo_municipios_mx.py`)
+- `estado` (req): clave 2-5 letras (ver `mcp-servers/shared/catalogo_municipios_mx.py`)
 - `municipio` (req): clave del catálogo
 - `cuenta_predial` (req): clave catastral municipal
 - `tipo` (opcional): "urbano" | "rustico" (requerido solo para SACPI Michoacán)
@@ -48,7 +48,7 @@ Campos:
    - `Resumen` — totales + KPIs
    - `Cartera completa` — una fila por propiedad
    - `Acción urgente` — top 10 a pagar primero
-   - `Pendientes humano` — Puebla CAPTCHA con URLs pre-llenadas
+   - `Pendientes humano` — municipios con CAPTCHA o login (hoy: CDMX, Puebla, Guadalajara, Mérida, entre otros; ver estado en `mcp-servers/CATALOGO.md`) con URL y pasos
    - `No soportados` — propiedades que requieren consulta manual
 
 ## Estructura del XLSX generado
@@ -62,7 +62,7 @@ Campos:
 | **Adeudo total cartera** | **$XXX,XXX MXN** |
 | Descuento pronto pago disponible | $X,XXX MXN |
 | Ahorro neto si pagas en enero | $X,XXX MXN |
-| Propiedades pendientes humano (Puebla) | K |
+| Propiedades pendientes humano (CAPTCHA/login) | K |
 
 ### Hoja "Cartera completa"
 Columnas:
@@ -132,7 +132,7 @@ def generar_dashboard_xlsx(propiedades: list[dict], cliente_rfc: str | None = No
     metricas = [
         ("Propiedades totales", resultado_workflow["propiedades_total"]),
         ("Consultadas OK", resultado_workflow["propiedades_consultadas_ok"]),
-        ("Pendientes humano (Puebla)", resultado_workflow["propiedades_pendientes_humano"]),
+        ("Pendientes humano (CAPTCHA/login)", resultado_workflow["propiedades_pendientes_humano"]),
         ("No soportadas", resultado_workflow["propiedades_no_soportadas"]),
         ("Adeudo total cartera (MXN)", resultado_workflow["adeudo_total_cartera_mxn"]),
         ("Ahorro potencial pronto pago (MXN)", resultado_workflow["ahorro_potencial_pronto_pago_mxn"]),
@@ -201,7 +201,7 @@ def generar_dashboard_xlsx(propiedades: list[dict], cliente_rfc: str | None = No
 |---|---|
 | Propiedad sin URL en catálogo | Aparece en hoja "No soportados" con instrucciones de consulta manual |
 | Propiedad con Mérida + sin dirección | Pide al usuario completar campo `direccion` antes de procesar |
-| Propiedad con Puebla (CAPTCHA) | Aparece en hoja "Pendientes humano" con URL pre-llenada |
+| Municipio con CAPTCHA o login (CDMX, Puebla, Guadalajara, Mérida…) | Si el MCP devuelve `requiere_humano`, va a la hoja "Pendientes humano" con la URL y los pasos para que el usuario consulte |
 | Cuenta predial inválida (< 5 chars) | Pre-validación rechaza con mensaje claro |
 | Workflow timeout (> 5 min consulta) | Reintenta 1 vez, luego marca como "consulta_timeout" |
 | Adeudo > $1M | Flag adicional "auditoría_recomendada" — montos altos requieren validación contador |
@@ -210,19 +210,9 @@ def generar_dashboard_xlsx(propiedades: list[dict], cliente_rfc: str | None = No
 
 Tras invocar:
 - `cartera-predial/{cliente}/{fecha}.xlsx` (típicamente 50-500KB)
-- Si `enviar_alerta_whatsapp=true`: notificación al cliente con resumen ejecutivo
-
-## Producto vendible
-
-Este skill cierra un caso de negocio claro para PYMEs:
-- **Arrendador con 5 propiedades**: paga $0 — usa el plugin como cliente individual
-- **Despacho contable con 50 clientes × 3 propiedades**: $500-1,500 MXN/mes por automatizar lo que toma 8h/bimestre manual
-- **Inmobiliaria con cartera de 100 inmuebles**: $5,000+ MXN/mes — ROI evidente
-
-Mercado MX: ~50,000 inmobiliarias + ~10,000 despachos contables + ~3M arrendadores residenciales.
 
 ## Cuándo NO usar este skill
 
-- **1 sola propiedad**: usar directamente el MCP municipal o `/inmobiliaria:predial-individual`.
-- **Sin cuentas catastrales del cliente**: este skill asume input estructurado. Si solo tienes direcciones, primero corre skill `identificar-cuenta-predial-por-direccion`.
-- **Cobranza activa de inquilinos morosos**: usar `cobranza-renta-mensual.workflow.js` que es complementario pero distinto.
+- **1 sola propiedad**: usar directamente `predial_consultar` (MCP `mp_predial_mx`) o el MCP municipal.
+- **Sin cuentas catastrales del cliente**: este skill asume input estructurado. Si solo tienes direcciones, pide al cliente la boleta predial (trae la cuenta).
+- **Cobranza activa de inquilinos morosos**: usar `inmobiliaria-mx/workflows/cobranza-renta-mensual.workflow.js`.
