@@ -1,6 +1,6 @@
 ---
 name: staking-y-airdrops-ingreso
-description: Trata staking rewards, lending interest y airdrops como ingreso acumulable al valor de mercado del día de recepción (Art. 90 LISR, ingresos diversos). Determina si tributa como intereses (Cap VI) o "demás ingresos" (Cap IX). Usar cuando el usuario diga "staking", "rewards", "airdrop", "lending crypto", "yield farming", "rendimiento DeFi", "stETH", "validador Ethereum", "delegación cripto".
+description: Trata staking rewards, lending interest y airdrops como ingreso acumulable al valor de mercado del día de recepción. Determina si tributa como intereses (Cap. VI LISR) o "demás ingresos" (Cap. IX, Arts. 141-142); criterio usual de confianza media. Usar cuando el usuario diga "staking", "rewards", "airdrop", "lending crypto", "yield farming", "rendimiento DeFi", "stETH", "validador Ethereum", "delegación cripto".
 allowed-tools: Read, Write
 ---
 
@@ -8,10 +8,12 @@ allowed-tools: Read, Write
 
 ## Marco fiscal MX
 
+> La LISR no regula expresamente staking ni airdrops. La tabla refleja el criterio usual (confianza media). Validar con contador.
+
 | Concepto | Régimen aplicable | Momento de causación |
 |---|---|---|
 | Staking nativo (ETH 2.0, SOL, ADA) | Demás ingresos (Cap IX LISR) o intereses si exchange custodia | Al recibir el reward, valuado a MXN del día |
-| Lending centralizado (BlockFi-like, Bitso Lending) | Intereses (Cap VI LISR) — Bitso emite CFDI tipo Interés | Al devengar (CFDI mensual) |
+| Lending centralizado con constancia de intereses | Intereses (Cap VI LISR) si el exchange emite constancia; si no, demás ingresos | Al devengar según constancia (verificar qué documento emite cada exchange) |
 | DeFi lending (Aave, Compound) | Demás ingresos | Al claim o devengado a discreción contribuyente |
 | Liquidity pool fees | Demás ingresos | Al claim |
 | Airdrop con liquidez inmediata | Demás ingresos | Día de recepción a precio de mercado |
@@ -78,7 +80,7 @@ def calcular_ingreso_rendimientos(operaciones: list[OperacionCripto]) -> dict:
 
 ## Errores comunes (NO hacer)
 
-- ❌ Esperar a vender el reward para tributar (genera intereses moratorios y multa)
+- ❌ Esperar a vender el reward para tributar (genera actualización, recargos y multa)
 - ❌ Usar el valor en USD sin convertir a MXN con TC DOF del día
 - ❌ Sumar el reward al costo base original (genera doble tributación al vender)
 - ❌ Ignorar airdrops "porque no los pedí" (sí son ingreso)
@@ -89,7 +91,7 @@ def calcular_ingreso_rendimientos(operaciones: list[OperacionCripto]) -> dict:
 |---|---|
 | Validador ETH 2.0 con consensus reward diario | Sumar diario o promediar semanal. Documentar criterio. |
 | Liquid staking (stETH, rETH) | El rebase (aumento de saldo) es reward al día. |
-| Slashing penalty | Pérdida deducible si se documenta. Cap IX. |
+| Slashing penalty | Documentar; deducibilidad sin base clara (criterio conservador: no deducir) |
 | Airdrop a wallet abandonada | No tributable hasta que se reclame. |
 | Hard fork no reclamado | No tributable hasta primera disposición. |
 

@@ -211,11 +211,17 @@ El catálogo tiene ~52,000 claves de 8 dígitos. Estas son patrones de uso comú
 Varía mucho por SKU. Patrón: buscar la categoría más específica del producto en el portal SAT.
 
 ### Educación
-- `86111600` Servicios de educación preescolar
-- `86111700` Servicios de educación primaria
-- `86111800` Servicios de educación secundaria
-- `86121500` Servicios de educación profesional
-- `86131500` Capacitación y entrenamiento
+Colegiaturas con RVOE (grupo 8612 "Escuelas"):
+- `86121501` Escuelas de educación preescolar
+- `86121502` Escuelas religiosas
+- `86121503` Escuelas primarias y secundarias
+- `86121601` / `86121602` Educación superior (técnica / universitaria)
+
+Cursos sin validez oficial (grupo 8611 "Educación alternativa", no son preescolar/primaria/secundaria):
+- `86111502` Enseñanza a distancia (cursos en línea)
+- `86111601` Cursos nocturnos · `86111604` Educación para empleados
+- `86111700` Enseñanza de idiomas
+- `86131500` Capacitación y entrenamiento (verificar en el catálogo vigente)
 
 ### Salud
 - `85121500` Servicios de medicina

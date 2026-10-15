@@ -13,17 +13,13 @@ A diferencia de Bitso/Binance (que emiten CSV oficial), las wallets self-custody
 - Salidas (envíos)
 - Swaps (DEX: Uniswap, PancakeSwap, Jupiter)
 - Approvals (no tributables pero generan gas fees deducibles si la operación posterior sí lo es)
-- Failed transactions (gas perdido — pérdida documentable)
+- Failed transactions (gas perdido — documentar; deducibilidad dudosa)
 
 ## Explorers por cadena
 
 | Cadena | Explorer | API |
 |---|---|---|
-| Ethereum | etherscan.io | api.etherscan.io (key gratis 5 req/s) |
-| Polygon | polygonscan.com | api.polygonscan.com |
-| BSC | bscscan.com | api.bscscan.com |
-| Arbitrum | arbiscan.io | api.arbiscan.io |
-| Optimism | optimistic.etherscan.io | api-optimistic.etherscan.io |
+| Ethereum, Polygon, BSC, Arbitrum, Optimism, Base | etherscan.io y sus sitios por cadena | API unificada Etherscan V2 (`api.etherscan.io/v2/api?chainid=…`, una sola key). Límites y cadenas incluidas en el plan gratuito: **verificar** en la documentación vigente |
 | Solana | solscan.io | api.solscan.io (público limitado) |
 | Bitcoin | blockchain.com / mempool.space | mempool.space/api |
 
@@ -133,10 +129,10 @@ ROUTERS_CONOCIDOS = {
 
 ## Gas fees como gasto
 
-Los gas fees pagados son **gasto deducible** asociado a la operación que se realizó:
+Los gas fees se tratan como **comisión** de la operación (Art. 121 fr. IV LISR, criterio usual):
 - Swap con gas $40 MXN → suma a costo base del activo recibido
 - Approval previo a swap → suma al gasto de ese swap
-- Tx fallida → pérdida deducible (Cap IX si no es actividad empresarial)
+- Tx fallida → sin base clara para deducir; criterio conservador: no deducir (salvo actividad empresarial)
 - Send a otra wallet propia → NO deducible (es traslado, no enajenación)
 
 ## Output
@@ -164,4 +160,4 @@ Los gas fees pagados son **gasto deducible** asociado a la operación que se rea
 - **Privacy chains** (Monero, Zcash shielded): no rastreables públicamente.
 - **L2s nuevas** (Base, Linea, zkSync): explorers en desarrollo.
 - **Wallets con uso de mixers** (Tornado Cash, etc.): comprometen demostración del costo base.
-- **Rate limits**: explorers gratis limitan a 5 req/s — wallets con >5,000 txs requieren múltiples ejecuciones.
+- **Rate limits**: los planes gratuitos limitan llamadas por segundo y por día; wallets con miles de txs requieren varias ejecuciones.

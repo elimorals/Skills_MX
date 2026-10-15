@@ -29,11 +29,11 @@ Signos:
 - Caída de altura > 1m con signos de dolor
 - Quemadura > 10% superficie corporal
 - Intoxicación confirmada (chocolate, xilitol, anticoagulante, etilenglicol)
-- Distrocia (parto bloqueado) > 30 min sin progreso
+- Distocia (parto bloqueado) > 30 min sin progreso
 - Shock evidente (encías pálidas, extremidades frías, taquipnea)
 - Pinchamiento ojo / pérdida de visión aguda
 - Quiebre de hueso visible
-- Bote (gato) con uretra obstruida
+- Gato macho que no puede orinar (obstrucción uretral)
 - Vólvulo / torsión gástrica (perros grandes, abdomen distendido)
 
 **Acción**: indicar al tutor venir AHORA. Si la clínica no abre, dirigir a hospital 24h más cercano. Llamar al teléfono mientras viene.
@@ -49,7 +49,7 @@ Signos:
 - Sangrado interno sospechado (encías pálidas)
 - Heridas pequeñas pero infectadas
 - Picadura de insecto con inflamación masiva
-- Mordedura de serpiente / perro
+- Mordedura de serpiente / perro (si un perro o gato mordió a una persona: observación del animal agresor y aviso a la autoridad sanitaria, NOM-011-SSA2-2011)
 - Estreñimiento extremo > 48h
 - Dificultad orinar/defecar
 - Fiebre alta > 40°C
@@ -83,7 +83,7 @@ Signos:
 > "Trae el empaque del producto. Si hace menos de 2h: NO induzcas vómito hasta que un MVZ te indique. NO le des leche. NO le des nada por boca. Ven AHORA."
 
 ### Convulsión
-> "NO le metas la mano en la boca (te muerde sin querer). Aleja objetos. Cronometrea tiempo. Si dura > 3 min, ven URGENTE. Filma si puedes para mostrar al MVZ."
+> "NO le metas la mano en la boca (te muerde sin querer). Aleja objetos. Cronometra el tiempo. Si dura > 5 min o se repite, ven AHORA. Filma si puedes para mostrar al MVZ."
 
 ### Vólvulo gástrico (perro grande, abdomen distendido como tambor)
 > "Esta es EMERGENCIA CRÍTICA. Cada minuto cuenta. Ven AHORA. No le des agua. No la fuerces a moverse."
@@ -168,7 +168,7 @@ Fecha: {{timestamp}}
 
 ## Validación pendiente
 
-- Protocolo NOM aplicable (NOM-007-SAG/SCFI-2014)
+- No hay NOM de triaje veterinario. Aplicables: NOM-011-SSA2-2011 (rabia, agresiones) y NOM-033-SAG/ZOO-2014 (métodos para dar muerte a animales domésticos y silvestres, para eutanasia)
 - Lista hospitales 24h MX por ciudad (CDMX, GDL, MTY, Querétaro)
 - Convenios entre clínicas para referencia
 - Capacitación del staff en triaje (curso recomendado AMMVEPE)

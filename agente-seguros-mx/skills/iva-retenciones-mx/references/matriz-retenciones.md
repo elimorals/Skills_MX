@@ -40,16 +40,20 @@ Esta matriz cubre los escenarios más frecuentes. **Las retenciones se calculan 
 | PM transportista (coordinado 624) | PM | 16% | 0 | 4% del valor | La retención IVA 4% aplica también si el prestador es PM |
 | PFAE | PF | 16% | 0 | 0 | |
 
-## 4. Honorarios médicos profesionales (medicina, odontología, psicología, nutrición)
+## 4. Honorarios de salud (medicina, odontología, veterinaria, psicología, nutrición)
+
+Art. 15 fr. XIV LIVA: exentos los servicios profesionales de medicina que requieran **título de médico** y los preste una **persona física**. El Art. 41 RLIVA incluye médicos, cirujanos dentistas y médicos veterinarios.
 
 | Emisor | Receptor | IVA | Retención ISR | Retención IVA | Notas |
 |---|---|---|---|---|---|
-| PF médico profesional | PF (uso D01) | Exento | 0 | 0 | Servicios médicos PF son exentos de IVA |
-| PF médico profesional | PM | Exento | 10% | 0 | ISR sí se retiene, IVA exento no se retiene |
+| PF médico, cirujano dentista o MVZ | PF (uso D01) | Exento | 0 | 0 | Exención Art. 15 fr. XIV LIVA |
+| PF médico, cirujano dentista o MVZ | PM | Exento | 10% | 0 | ISR sí se retiene; IVA exento no se retiene |
+| PF psicólogo o nutriólogo | PF | 16% | 0 | 0 | No requiere título de médico: no aplica la exención (confianza media; confirmar con contador) |
+| PF psicólogo o nutriólogo | PM | 16% | 10% | 10.6667% | Honorarios: retención ISR 10% e IVA 2/3 |
 | PM clínica/hospital | PF | 16% | 0 | 0 | Servicios hospitalarios sí causan IVA |
 | PM clínica/hospital | PM | 16% | 0 | 0 | |
 
-**Nota crítica**: solo el servicio del médico individual está exento. Si es a través de hospital/clínica como PM, causa IVA al 16%.
+**Nota crítica**: la exención es para el profesional persona física con título de médico. Si el servicio lo presta una PM (clínica, hospital, S.A.), causa IVA al 16%.
 
 ## 5. Comisiones mercantiles
 

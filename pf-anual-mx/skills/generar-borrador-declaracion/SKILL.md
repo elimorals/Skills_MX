@@ -37,7 +37,8 @@ Este skill **genera un PDF presentable**. El usuario debe:
    - ISR causado: $Z
    - Saldo (a pagar / favor): $W
 
-4. Capítulo II - Actividad empresarial y profesional (PFAE/RESICO PF)
+4. Capítulo II - Actividad empresarial y profesional (PFAE 612)
+   (RESICO PF: sección aparte con tabla Art. 113-F, sin deducciones)
    4.1 Ingresos cobrados del año (tabla por mes)
    4.2 Deducciones acumulables (tabla por categoría)
        - Honorarios pagados
@@ -48,25 +49,24 @@ Este skill **genera un PDF presentable**. El usuario debe:
 5. Capítulo I - Salarios (solo si aplica)
    - Sueldos brutos
    - Prestaciones exentas
-   - Subsidio al empleo
+   - Subsidio para el empleo aplicado por el patrón (informativo)
    - Total ingresos por salarios
 
 6. Deducciones personales (Art. 151)
-   - Tabla con 8 categorías
-   - Topes aplicados (5 UMAs anuales)
+   - Tabla por uso CFDI (D01–D10)
+   - Tope aplicado: menor entre 5 UMA anuales y 15% de ingresos (retiro y colegiaturas con tope propio)
    - Deducción personal total aplicable
 
 7. Memoria de cálculo ISR
    - Ingresos acumulables totales
    - Menos deducciones (acumulables + personales)
    - Igual base gravable
-   - Aplicar tarifa Art. 96 LISR del año (anualizada)
+   - Aplicar tarifa anual Art. 152 LISR del ejercicio (Anexo 8 RMF)
    - ISR causado anual
 
 8. Pagos a cuenta
    - Pagos provisionales acumulados
    - Retenciones de ISR (banco, clientes)
-   - Subsidio acreditable (asalariados)
    - Total a cuenta
 
 9. Saldo
@@ -75,8 +75,8 @@ Este skill **genera un PDF presentable**. El usuario debe:
 
 10. Advertencias (caja amarilla)
     - "Borrador NO validado por contador certificado"
-    - "Tarifa Art. 96 puede haber cambiado — verificar"
-    - "5 UMAs anuales usadas para tope — confirmar UMA vigente"
+    - "Tarifa Art. 152 del ejercicio usada: <2025|2026> (Anexo 8 RMF 2026, DOF 28-12-2025)"
+    - "UMA usada para tope: <113.14 (2025) | 117.31 (2026)>"
 
 11. Anexos
     - Lista de CFDIs aplicados como deducción personal (UUIDs)
@@ -85,7 +85,7 @@ Este skill **genera un PDF presentable**. El usuario debe:
 
 12. Footer
     - "Generado por plugins-mx pf-anual-mx v0.1.0"
-    - "Este documento es un borrador. NO sustituye la opinión de un contador certificado."
+    - "Este documento es un borrador. NO sustituye la opinión de un contador público."
     - Fecha de generación
 ```
 
@@ -115,8 +115,7 @@ def generar_pdf(calculo: dict, output_path: Path) -> Path:
   "paginas": 11,
   "tamanio_kb": 250,
   "advertencias_criticas": [
-    "Tarifa Art. 96 LISR ejercicio 2025 debe validarse contra RMF",
-    "Tope UMA anual usado: placeholder"
+    "Borrador: tarifa Art. 152 2025 y UMA 2025 ($113.14) aplicadas; revisar con contador"
   ],
   "siguiente_paso": "Llevar PDF a contador certificado para revisión antes de presentar",
   "vigencia_validada": false

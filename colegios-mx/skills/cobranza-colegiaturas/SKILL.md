@@ -1,6 +1,6 @@
 ---
 name: cobranza-colegiaturas
-description: Flujo escalado de cobranza de colegiaturas para colegios privados mexicanos. Cinco etapas progresivas con templates específicos para padres de familia (tono empático pero firme), considera la dinámica relacional única (el colegio no puede ofender al padre que va al colegio mañana a llevar al hijo), políticas reales de suspensión académica (cuándo es legal retener calificaciones vs cuándo NO según SEP), penalizaciones aplicables (recargo por mora típico 2-5% mensual), opciones de regularización (convenio de pago, descuentos por pronto pago para regularizar), y derivación a cobranza extrajudicial sin perder al alumno. Usar cuando el usuario diga cobranza colegiatura, padres morosos, mensualidad atrasada, cartera vencida colegio, recordatorio pago padres, recargo escolar. NO usar para alumnos becados (otra lógica) ni para baja del alumno (otra decisión administrativa).
+description: Flujo escalado de cobranza de colegiaturas para colegios privados mexicanos. Cinco etapas con templates para padres (tono empático pero firme), considerando que el colegio no puede ofender al padre que mañana lleva al hijo. Respeta el Acuerdo de bases mínimas de servicios educativos particulares (DOF 10-03-1992): sin recargo en los primeros 10 días naturales del mes, baja solo con 3+ colegiaturas vencidas y aviso de 15 días, documentación oficial entregada en 15 días sin costo; recargos solo si se informaron por escrito al inscribir. Incluye convenios de pago y cobranza extrajudicial sin perder al alumno. Usar cuando el usuario diga cobranza colegiatura, padres morosos, mensualidad atrasada, cartera vencida colegio, recordatorio pago padres, recargo escolar. NO usar para alumnos becados ni para la decisión de baja del alumno.
 allowed-tools: Read, Write, Edit
 ---
 
@@ -44,7 +44,7 @@ Hola [Padre/Madre],
 
 Damos seguimiento a la colegiatura de [Mes] del alumno [Nombre], con monto vencido de $[monto] MXN.
 
-Conforme al reglamento, a partir del día 10 se aplica recargo del [%]% mensual:
+Conforme al reglamento entregado al inscribir, a partir del día 11 natural del mes se aplica recargo del [%]% mensual:
 - Colegiatura: $[monto] MXN
 - Recargo acumulado: $[recargo] MXN
 - Total al día de hoy: $[total] MXN
@@ -165,29 +165,35 @@ Fecha: ____________
 
 Si no hay diálogo después de 60-90 días:
 - Pasar a despacho de cobranza (típicamente comisión 30-40% del recovery).
-- Considerar baja del alumno conforme al reglamento (con notificación formal previa).
+- Considerar baja del alumno solo si hay 3 o más colegiaturas vencidas, con aviso por escrito 15 días antes y entregando la documentación oficial (Art. 7 del Acuerdo DOF 10-03-1992).
+
+## Marco legal
+
+Acuerdo que establece las bases mínimas de información para la comercialización de los servicios educativos que prestan los particulares (DOF 10-03-1992), vigilado por PROFECO, más la Ley Federal de Protección al Consumidor:
+
+- **Art. 4**: el colegio debe aceptar sin recargo los pagos hechos dentro de los primeros 10 días naturales de cada mes. El recargo solo puede correr después. Las cuotas no pueden pactarse en moneda extranjera.
+- **Art. 2 y 5**: el recargo por mora y los descuentos deben informarse por escrito antes de la inscripción. La colegiatura no puede subir a mitad del ciclo salvo acuerdo de la mayoría de los padres.
+- **Art. 7**: con **3 o más colegiaturas vencidas** (al menos 3 meses), el colegio puede dejar de prestar el servicio, avisando con **15 días de anticipación**. Aun así debe entregar la documentación oficial a más tardar 15 días después de que se la pidan, sin costo, y el alumno puede presentar exámenes extraordinarios en igualdad de condiciones pagando los derechos.
+- **Art. 8**: si el alumno deja el colegio por otra causa, la documentación oficial se entrega en 15 días naturales, sin costo.
 
 ## Lo que el colegio NO PUEDE hacer
 
-Importante saber los límites legales:
-
-1. **No retener calificaciones por adeudo** según la SEP en el ciclo en curso si el alumno está vigente. La retención es una sanción no permitida si el alumno está inscrito y asistiendo.
-
-2. **No expulsar al alumno a media clase** ni "negarle la entrada" sin notificación formal previa y sin agotar el proceso administrativo del reglamento.
-
-3. **No publicar listas de morosos** ni exponer al padre frente a otros padres. Daño moral y violación LFPDPPP.
-
-4. **No cobrar montos no establecidos en el contrato**. Recargos, intereses, comisiones administrativas: SOLO si están en el reglamento firmado al inicio del ciclo.
-
-5. **No retener documentos académicos de ciclos pasados** (boletas, certificados, constancias). La SEP ha emitido pronunciamientos: el adeudo no faculta a retener documentos oficiales. El colegio puede solicitar el pago como condición para CFDI, pero no para documentos académicos terminados.
+1. **Retener documentación oficial** (boletas, certificados, constancias) por adeudo: debe entregarla en 15 días naturales sin costo (Arts. 7 y 8 del Acuerdo de 1992).
+2. **Dar de baja antes de 3 colegiaturas vencidas** ni sin aviso previo de 15 días. Tampoco sacar al alumno del aula o "negarle la entrada" sin ese procedimiento.
+3. **Retener calificaciones o impedir exámenes** a un alumno inscrito como forma de presión.
+4. **Publicar listas de morosos** ni exponer al padre frente a otros padres (daño moral y LFPDPPP).
+5. **Cobrar montos no informados** antes de la inscripción: recargos, intereses y comisiones solo si están en el reglamento o contrato entregado por escrito.
+6. **Cobrar recargo por pagos hechos en los primeros 10 días naturales del mes.**
 
 ## Lo que el colegio SÍ PUEDE hacer
 
-1. **Aplicar recargo por mora** establecido en el reglamento.
-2. **Suspender CFDI** de colegiaturas no pagadas (no se factura lo no cobrado).
-3. **Negar re-inscripción al ciclo siguiente** si hay adeudo vigente.
-4. **Solicitar pago total** para acceso a graduación/ceremonia.
-5. **Aplicar cláusula de baja** si está en el reglamento y se sigue el procedimiento.
+1. **Aplicar el recargo por mora** informado por escrito, después del día 10 natural del mes.
+2. **No emitir CFDI** de colegiaturas no cobradas (se factura al cobrar).
+3. **Negar la reinscripción al ciclo siguiente** si hay adeudo (práctica común; confirma que esté en el reglamento).
+4. **Dar de baja** con 3 o más colegiaturas vencidas, avisando con 15 días, y entregando la documentación.
+5. **Cobrar judicialmente** el adeudo (vía civil) o con despacho de cobranza que no use amenazas, horarios abusivos ni contacte a terceros (lo vigila PROFECO).
+
+> Orientación general: confirma el reglamento y los contratos con el abogado del colegio. PROFECO es la autoridad ante quejas de padres.
 
 ## Insights operativos
 

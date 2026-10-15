@@ -1,12 +1,23 @@
 ---
 name: contrato-boda-pf-pm
-description: Contrato de servicios de wedding planning para personas físicas o morales mexicanas. Cláusulas que protegen al planner (cancelación, fuerza mayor, propiedad intelectual de propuestas, exclusividad), al cliente (entregables, calidad, plazos, devolución parcial) y a ambos (compromiso de pagos, jurisdicción). Vigencia, escrow para proveedores cuando aplica, IVA y retenciones. Usar cuando el usuario diga contrato boda, contrato wedding planner, cláusulas evento, formalizar planner. NO usar para cotizaciones (cotizacion-boda-mxn) ni timeline (otro skill).
+description: Contrato de servicios de wedding planning para personas físicas o morales mexicanas. Cláusulas que protegen al planner (cancelación, fuerza mayor, propiedad intelectual de propuestas, exclusividad), al cliente (entregables, calidad, plazos, devolución parcial) y a ambos (compromiso de pagos, jurisdicción). Vigencia, escrow para proveedores cuando aplica, IVA, retenciones y CFDI por hitos de pago; revisa LFPC/PROFECO (cláusulas abusivas, registro de contratos de eventos sociales). Usar cuando el usuario diga contrato boda, contrato wedding planner, cláusulas evento, formalizar planner, cláusula de cancelación, contrato PROFECO. NO usar para cotizaciones (cotizacion-boda-mxn) ni timeline (otro skill).
 allowed-tools: Read, Write, Edit
 ---
 
 # Contrato de servicios wedding planning
 
-⚠ **Validar con abogado mercantilista** antes de uso real con cliente.
+⚠ **Validar con abogado (civil y de protección al consumidor)** antes de uso real con cliente. Este modelo es orientativo.
+
+## Antes de redactar: ¿aplica la LFPC?
+
+Si el cliente son los novios (personas físicas que contratan para sí), el planner es **proveedor** y el contrato es de consumo: aplica la Ley Federal de Protección al Consumidor (última reforma DOF 12-12-2025) y PROFECO es competente aunque el contrato diga otra cosa.
+
+- **Registro ante PROFECO**: los contratos de adhesión de **eventos sociales** (salón, banquete, música, decoración) requieren registro previo conforme a la NOM-174-SCFI-2007 (confianza media, fuente secundaria: IDC Online y notas de PROFECO; verificar si un servicio solo de coordinación entra en el supuesto consultando a PROFECO o el RPCA en rpca.profeco.gob.mx). Un contrato que debía registrarse y no se registró **no produce efectos contra el consumidor** (Art. 87 LFPC). Si el contrato se negocia cláusula por cláusula con los novios ya no es de adhesión, pero conviene conservar evidencia de esa negociación.
+- **Cláusulas que se tienen por no puestas** (Art. 90 LFPC): las que permitan al planner modificar el contrato o incumplir unilateralmente, lo liberen de su responsabilidad civil, la trasladen al cliente o a terceros, acorten plazos de prescripción, exijan formalidades para reclamar o hagan renunciar a la LFPC.
+- **Precio**: al consumidor se le informa el **monto total con IVA** (Art. 7 BIS LFPC).
+- **Pena convencional**: no puede exceder el valor de la obligación principal (Art. 1843 Código Civil Federal y equivalentes estatales), y conviene que sea **recíproca** (si el planner cancela, paga una pena equivalente).
+
+Si el cliente es una empresa (evento corporativo), es un contrato mercantil/civil entre pares y la LFPC normalmente no aplica.
 
 ## Estructura del contrato
 
@@ -44,7 +55,7 @@ Modalidades aplicables (marcar):
 
 TERCERA — HONORARIOS
 Por los servicios descritos, EL CLIENTE pagará a EL PLANNER la cantidad
-de ${{monto_total}} MXN (más IVA correspondiente), distribuida en:
+de ${{monto_total_con_iva}} MXN, IVA incluido (${{subtotal}} más ${{iva}} de IVA), distribuida en:
 
 | Pago | Monto | Fecha |
 |---|---|---|
@@ -78,12 +89,16 @@ SEXTA — CANCELACIÓN
 - D-180 a D-90: reembolso del 25% del anticipo
 - D-90 a D-30: SIN reembolso del anticipo, pero EL PLANNER cancelará
   contratos con proveedores si aún es posible
-- D-30 en adelante: pago completo de honorarios + costos no recuperables
+- D-30 en adelante: honorarios devengados al momento de la cancelación
+  + costos no recuperables comprobados (nunca más del monto total pactado)
 
 6.2. Cancelación por EL PLANNER:
 - Si EL CLIENTE incumple obligaciones materialmente, EL PLANNER puede
   rescindir notificando con 30 días.
 - EL PLANNER reembolsará la parte proporcional de servicios no prestados.
+- Si EL PLANNER cancela sin causa imputable al CLIENTE, devolverá todo lo
+  pagado y pagará una pena equivalente a la que se aplicaría al CLIENTE
+  en la misma fecha (pena recíproca).
 
 SÉPTIMA — FUERZA MAYOR
 Eventos de fuerza mayor (pandemia, terremoto, guerra, fallecimiento
@@ -105,11 +120,14 @@ EL CLIENTE no podrá contratar otro coordinador para el mismo evento.
 EL PLANNER puede atender otros eventos en paralelo.
 
 DÉCIMA — RESPONSABILIDAD
-La responsabilidad de EL PLANNER se limita al monto pagado por sus
-servicios. EL PLANNER no responde por incumplimientos de proveedores
-contratados (cuyo contrato es directo entre proveedor y CLIENTE),
-excepto por culpa o negligencia del PLANNER en su selección o
-supervisión.
+EL PLANNER responde por el cumplimiento de los servicios de coordinación
+que presta. Los proveedores contratados directamente por EL CLIENTE
+responden ante éste por sus propios servicios; EL PLANNER responde
+cuando haya culpa o negligencia en su selección o supervisión.
+[Si el CLIENTE es consumidor: no incluir topes ni exclusiones de la
+responsabilidad civil del PLANNER; el Art. 90 fr. II LFPC los tiene por
+no puestos. Un tope al monto de honorarios solo es pactable con
+clientes empresa.]
 
 DÉCIMA PRIMERA — CONFIDENCIALIDAD Y DATOS PERSONALES
 Ambas partes se obligan a mantener confidencialidad de toda información
@@ -118,7 +136,9 @@ de datos personales del CLIENTE e invitados.
 
 DÉCIMA SEGUNDA — JURISDICCIÓN
 LAS PARTES se someten a la jurisdicción de los tribunales competentes
-de {{ciudad}}, renunciando a cualquier otra que pudiera corresponderles.
+de {{ciudad}}, renunciando a cualquier otra que pudiera corresponderles,
+sin perjuicio de la competencia de la Procuraduría Federal del
+Consumidor en la vía administrativa.
 
 DÉCIMA TERCERA — VIGENCIA
 El presente contrato entra en vigor a la firma y termina con la
@@ -150,20 +170,26 @@ Lugar y fecha: {{ciudad}}, {{fecha_firma}}
 
 ## Implicaciones fiscales (CFDI + retenciones)
 
+### Cómo facturar un contrato con pagos por hitos
+El precio total se conoce desde la firma, así que hay dos esquemas válidos (elegir uno con el contador y usarlo de forma consistente; ver `cfdi-emision`):
+- **PPD + complemento de pagos**: un CFDI de ingreso por el total a la firma con MétodoPago PPD y FormaPago 99, y un CFDI de pago (tipo P) por cada hito cobrado.
+- **Anticipos**: CFDI de anticipo por cada cobro previo al servicio; al prestarse el servicio, CFDI por el total relacionado (tipo de relación 07) y CFDI de egreso por los anticipos aplicados.
+- Emitir un CFDI PUE "suelto" por cada hito solo es correcto si cada hito se factura como una parte del servicio ya prestada; no lo uses por defecto.
+
 ### Si el cliente es persona física (típico)
-- CFDI tipo I cada pago
-- Sin retenciones (Art. 1-A LIVA)
-- MetodoPago: PUE (Pago en Una Sola Exhibición) por cada pago individual
+- Sin retenciones: solo las personas morales retienen (Art. 1-A LIVA; Arts. 106 y 113-J LISR).
+- UsoCFDI: G03 o S01. Una boda no es gasto deducible para la persona física.
 
 ### Si el cliente es persona moral (boda corporativa, evento empresarial)
-- CFDI tipo I cada pago
-- Si planner es PFAE: retención 10% ISR + 2/3 IVA (Art. 1-A LIVA)
-- Si planner es PM SA: sin retención
+- Planner persona física con honorarios (612): la PM retiene ISR 10% (Art. 106 LISR) + IVA 2/3 = 10.6667% (Art. 1-A fr. II a) LIVA).
+- Planner persona física en RESICO (626): la PM retiene ISR 1.25% (Art. 113-J LISR) + IVA 2/3 = 10.6667%.
+- Planner persona moral: sin retención.
+- Recordatorio: en CFDI 4.0 el Total resta las retenciones. Ejemplo con $100,000 de honorarios a PFAE: IVA 16,000; ret. ISR 10,000; ret. IVA 10,666.67; Total = 100,000 + 16,000 − 10,000 − 10,666.67 = **$95,333.33**.
 
 ### IVA
-- Servicios sujetos al 16% IVA general
-- Si frontera norte: 8% IVA
-- Bodas en zona turística: 16% normal
+- Servicios gravados al 16%.
+- 8% solo si el planner tiene domicilio en la región fronteriza norte o sur, está inscrito en el padrón del estímulo (decreto vigente al 31-12-2026) y presta el servicio ahí. No depende del domicilio del cliente; con 8% la retención de IVA es 5.3333%.
+- Bodas en zona turística: 16% normal. El hospedaje de invitados además causa el impuesto estatal sobre hospedaje (ISH).
 
 ## Output estructurado
 
@@ -171,17 +197,22 @@ Lugar y fecha: {{ciudad}}, {{fecha_firma}}
 {
   "contrato_generado": {
     "tipo": "wedding_planning_full",
-    "monto_total_mxn": 250000,
-    "anticipo_mxn": 75000,
+    "subtotal_mxn": 250000,
+    "iva_mxn": 40000,
+    "monto_total_con_iva_mxn": 290000,
+    "anticipo_mxn": 87000,
+    "_nota": "anticipo = 30% de 290,000 (total con IVA, cliente PF sin retenciones)",
     "fecha_evento": "2027-04-18",
     "modalidad": "full_planning",
     "clausulas_incluidas": [
-      "cancelacion_prorrateada",
+      "cancelacion_prorrateada_pena_reciproca",
       "fuerza_mayor_pandemia",
       "propiedad_intelectual",
       "confidencialidad_lfpdppp",
-      "responsabilidad_limitada"
+      "responsabilidad_por_seleccion_proveedores"
     ],
+    "cliente_es_consumidor_lfpc": true,
+    "registro_profeco_verificado": false,
     "anexos": ["brief_boda", "cotizacion_detallada"],
     "requiere_revisar_abogado_antes_firma": true,
     "estructura_pago": {
@@ -195,7 +226,8 @@ Lugar y fecha: {{ciudad}}, {{fecha_firma}}
 
 ## Validación pendiente
 
-- Revisión por abogado mercantilista (CRÍTICO)
+- Revisión por abogado (CRÍTICO)
+- Verificar con PROFECO si el servicio de coordinación encuadra en "eventos sociales" de la NOM-174-SCFI-2007 (registro obligatorio)
 - Casos de jurisprudencia en CDMX por cancelación de bodas
 - Casos con proveedores específicos (banquete, locación) y sus T&Cs
 - Reglas particulares de Cancún/Tulum/San Miguel (zonas turísticas)

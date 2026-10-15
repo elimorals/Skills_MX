@@ -25,3 +25,12 @@ allowed-tools: Read, Write
   • Gas — 3 días — pagar hoy
   • CFE — 6 días
 ```
+
+## Fuentes de datos
+
+- Recibos que el usuario comparte (PDF, foto o XML): fuente principal.
+- `mp_cfe_facturacion` (`cfe_descargar_factura_mes`, `cfe_consumo_historico`): sin verificar; el portal de CFE pide CAPTCHA y sesión, así que puede requerir al usuario.
+- `mp_agua_mx.agua_consultar_adeudo`: real solo para algunos organismos (JMAS Juárez); el resto devuelve `requiere_humano` → entrega URL y pasos.
+- `mp_gas_natural_mx.gas_consultar_recibo`: confirmar disponibilidad por distribuidor.
+
+Si un monto no viene de un recibo o de una consulta real, márcalo "pendiente", no lo estimes.

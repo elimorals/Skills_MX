@@ -1,6 +1,6 @@
 ---
 name: comisiones-corredor
-description: Cálculo de comisiones de corredor inmobiliario en México. Venta: típico 3-7% del precio venta (50/50 entre corredor cliente y corredor dueño). Renta: 1 mes de renta como honorario one-time. Comisión de administración (5-10% mensual si el corredor administra la propiedad). Considera implicaciones fiscales (PFAE) y retenciones si el cliente es PM. Usar cuando el usuario diga comisión corredor, honorarios broker, cuánto cobro venta, cuánto cobro renta, comisión inmobiliaria. NO usar para screening (otro skill) ni contratos (otro skill).
+description: Cálculo de comisiones de corredor inmobiliario en México. Venta: típico 3-7% del precio venta (50/50 entre corredor cliente y corredor dueño). Renta: 1 mes de renta como honorario one-time. Comisión de administración (5-10% mensual si el corredor administra la propiedad). Considera implicaciones fiscales (PF actividad empresarial o RESICO, PM), retenciones si el cliente es PM y obligaciones antilavado (LFPIORPI) en intermediación inmobiliaria. Usar cuando el usuario diga comisión corredor, honorarios broker, cuánto cobro venta, cuánto cobro renta, comisión inmobiliaria. NO usar para screening (otro skill) ni contratos (otro skill).
 allowed-tools: Read, Write, Edit
 ---
 
@@ -20,9 +20,9 @@ allowed-tools: Read, Write, Edit
 - 50% corredor del vendedor (representa al dueño)
 - 50% corredor del comprador (representa al interesado)
 
-Si solo hay 1 corredor (representa a ambos): cobra el total pero debe declararlo.
+Si solo hay 1 corredor (representa a ambos): cobra el total.
 
-⚠ Es ilegal cobrar a ambos sin declararlo (dual agency).
+⚠ Conflicto de interés: si cobras a ambas partes, transpárentalo por escrito con las dos.
 
 ### Renta de inmueble
 
@@ -42,11 +42,10 @@ Si solo hay 1 corredor (representa a ambos): cobra el total pero debe declararlo
 
 ## Implicaciones fiscales
 
-### Si corredor es Persona Física (PFAE)
-- CFDI tipo I por servicios profesionales
-- IVA 16%
-- Retención del 10% ISR + 2/3 IVA si cliente es PM (Art. 1-A LIVA)
-- Régimen: 626 (RESICO PF) o 612 (Honorarios)
+### Si corredor es Persona Física
+- CFDI tipo I; IVA 16%
+- La comisión mercantil es actividad empresarial (régimen 612 o RESICO 626)
+- Si el cliente es PM: retiene 2/3 del IVA (Art. 1-A fr. II a) LIVA, comisiones). ISR: sin retención en 612 (el Art. 106 LISR solo aplica a servicios profesionales); 1.25% si el corredor es RESICO (Art. 113-J). Consistente con `iva-retenciones-mx`
 
 ### Si corredor es Persona Moral
 - CFDI tipo I por servicios profesionales
@@ -64,27 +63,27 @@ Si solo hay 1 corredor (representa a ambos): cobra el total pero debe declararlo
 ```
 Comisión total: 6% = $324,000 MXN
 Distribución:
-  - Corredor vendedor: 3% = $162,000 + IVA = $187,920 (más retenciones si PM)
+  - Corredor vendedor: 3% = $162,000 + IVA = $187,920 (menos retenciones si PM)
   - Corredor comprador: 3% = $162,000 + IVA = $187,920
 
 CFDI del corredor del vendedor:
   Subtotal: $162,000
   IVA 16%: $25,920
   Total: $187,920
-  Si cliente es PM:
-    Retención ISR 10%: $16,200
+  Si cliente es PM (corredor PF régimen 612):
     Retención IVA 2/3: $17,280
-    Pago neto al corredor: $154,440
+    Pago neto al corredor: $170,640
+  Si el corredor es RESICO PF: además ISR 1.25% = $2,025 → neto $168,615
 ```
 
 ### Caso 2: Renta departamento $18,500 MXN/mes
 
 ```
-Honorario one-time: $18,500 + IVA = $21,460
-Si cliente es PM:
-  Retención ISR 10%: $1,850
-  Retención IVA 2/3: $1,966.67
-  Pago neto: $17,643.33
+Honorario one-time: $18,500 + IVA $2,960 = $21,460
+Si cliente es PM (corredor PF 612):
+  Retención IVA 2/3: $1,973.33
+  Pago neto: $19,486.67
+Si el corredor es RESICO PF: además ISR 1.25% = $231.25 → neto $19,255.42
 ```
 
 ### Caso 3: Administración propiedad $20,000 MXN/mes
@@ -106,9 +105,9 @@ Por año: $1,600 × 12 = $19,200 + IVA = $22,272
 - Transferencia SPEI (preferido)
 - Cheque certificado
 - Tarjeta de crédito (con comisión adicional 3-5%)
-- Efectivo (limitado por Ley Antilavado a $200,000 MXN — Art. 32 LFPLF)
+- Efectivo: evitarlo. La LFPIORPI (Art. 32 fr. I) prohíbe pagar en efectivo la transmisión de inmuebles por 8,025 UMA o más (UMA 2026 $117.31 → $941,412.75)
 
-⚠ Reportar a SAT operaciones > $645,000 MXN (Art. 17 LFPL)
+⚠ Antilavado (LFPIORPI Art. 17 fr. V, intermediación en transmisión de inmuebles): identificar siempre al cliente; aviso a la UIF vía portal SAT cuando la operación alcance 8,025 UMA ($941,412.75). La reforma DOF 16-07-2025 modificó esta ley: **verificar** umbral y fracción vigentes antes de asesorar
 
 ## Comisiones inusuales
 
@@ -151,15 +150,15 @@ Por año: $1,600 × 12 = $19,200 + IVA = $22,272
       }
     },
     "retenciones_si_cliente_pm": {
-      "isr_10_porcentaje": 16_200,
+      "isr_retenido_612": 0,
       "iva_2_tercios": 17_280,
-      "pago_neto_a_corredor_mxn": 154_440
+      "pago_neto_a_corredor_mxn": 170_640
     },
     "cfdi_requerido": true,
     "metodo_pago_recomendado": "transferencia_spei",
     "fecha_pago_estimada": "a la escritura notarial",
     "alertas": [
-      "Si pago en efectivo > $200k MXN debe reportarse SAT (Ley Antilavado)"
+      "Operación de $5.4M supera 8,025 UMA: identificar cliente y presentar aviso LFPIORPI (verificar umbral tras reforma 2025)"
     ]
   }
 }

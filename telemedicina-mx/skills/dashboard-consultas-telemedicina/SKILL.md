@@ -46,5 +46,7 @@ allowed-tools: Read, Write
 
 ## Dependencias
 
-- `mp_facturama_extendido` (CFDIs)
+- `mp_facturama_extendido` → `facturama_buscar_cfdis` (CFDIs emitidos; requiere credenciales del PAC — sin ellas, pedir al usuario el reporte de su portal de facturación)
 - Tracker local de consultas
+
+Ingresos: reportar sin IVA. Consulta de médico PF = exenta (Art. 15 fr. XIV LIVA); si factura una persona moral o un psicólogo, separar el IVA 16% trasladado.

@@ -5,7 +5,7 @@ Cambios 2026:
   o no presentar declaración anual.
 - e.firma obligatoria para todos los contribuyentes RESICO.
 - Límite ingresos anuales: $3.5M MXN (rebasar = salida automática).
-- Retenciones plataformas digitales estandarizadas a 2.5% ISR.
+- Retenciones ISR de plataformas digitales por tipo de servicio (Art. 113-A LISR; LIF 2026 Art. 25 fr. VI).
 - Devolución mes-a-mes disponible si te retienen de más.
 
 Tasas mensuales RESICO (sin cambio vs 2025):
@@ -75,9 +75,19 @@ def calcular_isr_resico(ingreso_mes_mxn: float) -> dict:
 
 
 # ============================================================
-# Plataformas digitales — retención ISR 2.5%
+# Plataformas digitales — retención ISR 2026 por tipo de servicio
 # ============================================================
-TASA_RETENCION_PLATAFORMAS_2026 = 0.025
+# Art. 113-A párrafo tercero LISR: fr. I transporte de pasajeros y entrega de bienes 2.1%;
+# fr. II hospedaje 4%; fr. III enajenación de bienes y prestación de servicios 1%.
+# LIF 2026 Art. 25 fr. VI (DOF 07-11-2025, texto en diputados.gob.mx/LeyesBiblio/pdf/LIF_2026.pdf):
+# en sustitución de la fr. III, las plataformas aplican 2.5% durante 2026 (PF y PM; 20% si la PM no da RFC).
+TASAS_RETENCION_ISR_2026 = {
+    "movilidad": 0.021,  # fr. I
+    "delivery": 0.021,   # fr. I (repartidor: entrega de bienes)
+    "hospedaje": 0.04,   # fr. II
+    "ecommerce": 0.025,  # fr. III sustituida por LIF 2026 Art. 25 fr. VI
+    "freelance": 0.025,  # fr. III sustituida por LIF 2026 Art. 25 fr. VI
+}
 
 
 @dataclass
@@ -119,13 +129,14 @@ def calcular_retencion_plataforma(plataforma_clave: str, ingreso_bruto_mxn: floa
         raise ValueError(f"Plataforma no en catálogo: {plataforma_clave}")
     if ingreso_bruto_mxn < 0:
         raise ValueError("ingreso negativo")
-    retencion = ingreso_bruto_mxn * TASA_RETENCION_PLATAFORMAS_2026
+    tasa = TASAS_RETENCION_ISR_2026[p.categoria]
+    retencion = ingreso_bruto_mxn * tasa
     return {
         "plataforma": p.clave,
         "nombre": p.nombre,
         "categoria": p.categoria,
         "ingreso_bruto_mxn": round(ingreso_bruto_mxn, 2),
-        "tasa_retencion": TASA_RETENCION_PLATAFORMAS_2026,
+        "tasa_retencion": tasa,
         "retencion_isr_mxn": round(retencion, 2),
         "neto_recibido_mxn": round(ingreso_bruto_mxn - retencion, 2),
     }
@@ -133,6 +144,6 @@ def calcular_retencion_plataforma(plataforma_clave: str, ingreso_bruto_mxn: floa
 
 __all__ = [
     "RESICO_TOPE_ANUAL_MXN", "TRAMOS_RESICO_MENSUAL_2026", "calcular_isr_resico",
-    "TASA_RETENCION_PLATAFORMAS_2026", "CATALOGO_PLATAFORMAS",
+    "TASAS_RETENCION_ISR_2026", "CATALOGO_PLATAFORMAS",
     "PlataformaDigital", "buscar_plataforma", "calcular_retencion_plataforma",
 ]

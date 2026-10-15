@@ -11,7 +11,7 @@ Régimen Simplificado de Confianza (RESICO) SAT 2026 + retenciones plataformas d
 - `resico_calcular_isr(ingreso_mes_mxn)` — tasa + monto ISR según tramo.
 - `resico_evaluar_estatus(rfc, periodos_omitidos, declaracion_anual_presentada, ingresos_anuales_mxn, e_firma_vigente)` — estatus respecto a expulsión + acción recomendada.
 - `resico_calendario(anio, mes_actual)` — próximas 12 declaraciones con vencimiento día 17.
-- `resico_retencion_plataforma(plataforma, ingreso_bruto_mxn)` — 2.5% estandarizado 2026.
+- `resico_retencion_plataforma(plataforma, ingreso_bruto_mxn)` — retención ISR 2026 por tipo de servicio: 2.1% transporte y entrega, 4% hospedaje, 2.5% bienes y servicios.
 - `resico_solicitar_devolucion(rfc, periodo, monto_solicitado_mxn, plataforma?)` — devolución mes-a-mes 2026.
 - `resico_listar_tasas()` — 5 tramos vigentes.
 - `resico_listar_plataformas()` — 12 plataformas con retención.
@@ -25,7 +25,7 @@ No hay upstream: todo es **cálculo local** sobre tablas embebidas en
 | Tool | Estado | Nota |
 |---|---|---|
 | `resico_calcular_isr`, `resico_listar_tasas` | Cálculo local | Tramos 1.00–2.50% y tope $3.5M (Art. 113-E LISR). |
-| `resico_retencion_plataforma`, `resico_listar_plataformas` | Cálculo local, **tasa sin verificar** | La "tasa única 2.5% 2026" no está contrastada con fuente primaria (LIF 2026 / DOF); fuentes secundarias se contradicen con el Art. 113-A (1% bienes, 2.1% transporte, 4% hospedaje). La respuesta lo advierte. |
+| `resico_retencion_plataforma`, `resico_listar_plataformas` | Cálculo local, verificado con texto oficial (2026-10-15) | Art. 113-A LISR: 2.1% transporte y entrega (fr. I), 4% hospedaje (fr. II). Bienes y servicios: 2.5% en 2026 por LIF 2026 Art. 25 fr. VI (DOF 07-11-2025), en sustitución del 1% de la fr. III. Antes aplicaba 2.5% a todas las plataformas, incluidas las de transporte y hospedaje. |
 | `resico_evaluar_estatus` | Regla local sobre datos que da el usuario | El criterio "SCJN 2026" no tiene fuente primaria verificada; el Art. 113-I LISR habla de tres o más pagos mensuales omitidos "consecutivos o no", el código solo cuenta un número de omisiones. |
 | `resico_calendario` | Cálculo local | Día 17 del mes siguiente. |
 | `resico_solicitar_devolucion` | **No se automatiza** (escritura) | Devuelve una referencia `simulated: true`; el folio y la URL no son del SAT. |

@@ -54,23 +54,31 @@ Estructura el catálogo completo con variantes, add-ons y tiempos reales.
   "categoria": "color",
   "variantes": {
     "cabello_corto": {"duracion_min": 90, "precio_mxn": 850},
-    "cabello_mediano": {"duracion_min": 120, "precio_mxn": 1100},
-    "cabello_largo": {"duracion_min": 150, "precio_mxn": 1450},
-    "cabello_extra_largo": {"duracion_min": 180, "precio_mxn": 1800}
+    "cabello_mediano": {"duracion_min": 120, "precio_mxn": 1020},
+    "cabello_largo": {"duracion_min": 150, "precio_mxn": 1190},
+    "cabello_extra_largo": {"duracion_min": 180, "precio_mxn": 1360}
   },
+  "_nota_precios": "precio al público con IVA incluido; variantes = base +20/+40/+60% (regla 1)",
   "add_ons_compatibles": [
     {"nombre": "tratamiento_hidratacion", "precio_mxn": 250, "duracion_extra_min": 20},
     {"nombre": "peinado_premium", "precio_mxn": 200, "duracion_extra_min": 25}
   ],
   "costo_producto_estimado_mxn": 180,
-  "margen_estimado": 0.79,
+  "margen_estimado": 0.75,
+  "_nota_margen": "variante corta: precio sin IVA 850/1.16 = 732.76; (732.76 - 180) / 732.76 = 0.75",
   "estilista_requerido_nivel": "intermedio | senior"
 }
 ```
 
+## Precio al público: reglas LFPC
+
+- Exhibe a la vista el tarifario con el **precio total, IVA incluido** (Arts. 7 BIS y 57 LFPC). No anuncies "más IVA" al consumidor final.
+- Recargos (domingo, festivo, express) y variantes por largo de cabello deben estar en el tarifario visible antes de dar el servicio; no se pueden sumar al cobrar sin haberlos informado (Art. 10 LFPC).
+- Calcula márgenes sobre el precio **sin IVA** (precio / 1.16; en región fronteriza con estímulo, / 1.08).
+
 ## Benchmark de precios (referencia 2026)
 
-⚠ Variabilidad enorme — son rangos típicos en CDMX, GDL, MTY. Salones de barrio cobran 30-50% menos, premium 50-100% más.
+⚠ Confianza baja: rangos orientativos sin fuente verificada (no hay estadística pública de precios por servicio de salón). Verifica con 3-5 competidores de la zona (Google Maps, Instagram, apps de reserva). Variabilidad enorme — salones de barrio cobran 30-50% menos, premium 50-100% más.
 
 | Servicio | Barrio | Estándar | Premium |
 |---|---|---|---|
@@ -94,7 +102,7 @@ Estructura el catálogo completo con variantes, add-ons y tiempos reales.
 ### 2. Color sobre cabello previamente teñido
 Cobrar tinte completo (no raíz), incluso si visualmente parece raíz.
 
-### 3. Servicios premium (madrugada / domingo / festivos)
+### 3. Servicios premium (domingo / festivos / express)
 - Domingo: +25%
 - Día festivo: +30%
 - Servicio express (< 30 min de espera): +20%

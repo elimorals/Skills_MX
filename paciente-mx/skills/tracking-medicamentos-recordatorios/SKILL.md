@@ -1,6 +1,6 @@
 ---
 name: tracking-medicamentos-recordatorios
-description: Tracking de medicamentos crónicos del paciente con recordatorios automáticos (alarmas WhatsApp/notificación móvil), adherencia (% tomados vs prescritos), alertas reabastecimiento (cuando quedan < 5 días), interacciones básicas. Útil para pacientes crónicos + adultos mayores. Usar cuando el usuario diga mis medicamentos, recordatorios medicina, tomar pastilla.
+description: Tracking de medicamentos crónicos del paciente con plan de recordatorios (horarios listos para cargar en alarma, calendario o WhatsApp), adherencia (% tomados vs prescritos), alertas reabastecimiento (cuando quedan < 5 días), interacciones básicas. Útil para pacientes crónicos + adultos mayores. Usar cuando el usuario diga mis medicamentos, recordatorios medicina, tomar pastilla.
 allowed-tools: Read, Write
 ---
 
@@ -46,3 +46,9 @@ Por cada medicamento:
   • Atorvastatina: quedan 3 días — comprar AHORA
   • Losartán: quedan 12 días — comprar en 1 semana
 ```
+
+## Límites
+
+- La skill no envía notificaciones por sí sola: genera los horarios y el registro de tomas.
+- Interacciones: solo una lista básica de alerta; confírmalas con tu médico o farmacéutico.
+- Medicamentos controlados (`medicamento_controlado: true`, fracciones I–III Art. 226 Ley General de Salud): requieren receta nueva o retenida en farmacia; anticipa el resurtido.

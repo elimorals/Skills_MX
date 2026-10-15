@@ -34,7 +34,7 @@ allowed-tools: Read, Write
   3. K21.9 ERGE (19)
 
 📋 Recetas emitidas:        198 (1.27 por consulta)
-   • con controlado Grupo III: 12
+   • con psicotrópico (LGS Art. 245 fr. III, receta retenida): 12
 
 📈 vs mes pasado:
   Ingresos: +8%
@@ -52,5 +52,7 @@ allowed-tools: Read, Write
 ## Dependencias
 
 - Tracker local consultas + expedientes
-- `mp_facturama_extendido` (CFDIs emitidos)
-- `mp_bancos_mx` (cruce pagos)
+- `mp_facturama_extendido` → `facturama_buscar_cfdis` (CFDIs emitidos; requiere credenciales del PAC)
+- `mp_bancos_mx` → `bancos_listar_movimientos` (cruce de pagos). Estado "sin verificar" y los bancos bloquean scraping: si falla o pide login, pedir al usuario su estado de cuenta en CSV/PDF
+
+Ingresos en el dashboard sin IVA (consulta de médico PF = exenta, Art. 15 fr. XIV LIVA).

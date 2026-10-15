@@ -1,6 +1,6 @@
 ---
 name: seguimiento-siniestro
-description: Gestiona seguimiento end-to-end de siniestros reportados por el cliente al agente con bitácora cronológica (reporte inicial, asignación de ajustador por aseguradora, inspección, dictamen, aprobación o rechazo, indemnización o reposición, cierre), tracking de plazos legales (CNSF establece 30 días naturales para resolver tras documentos completos, 90 días para complejos), recordatorios al ajustador cuando excede plazos, gestión de documentación requerida por ramo (auto: parte de policía, fotos, INE, factura; GMM: receta, CFDI, estudios, etiquetas medicamento, hoja de evolución; daños: parte ministerial, fotos, presupuesto reparación; vida: acta defunción, certificado médico de defunción, identificación beneficiarios), y escalación a CONDUSEF cuando aseguradora rechaza sin razón válida o se excede el plazo legal. Documenta historial de siniestralidad del cliente para impacto en renovaciones. Usar cuando el usuario diga "siniestro cliente", "seguir reporte AXA", "ajustador GNP", "tracking siniestro", "reclamación aseguradora". NO usar para reporte inicial del siniestro (eso es directo a la aseguradora) ni para reembolso GMM individual del asegurado.
+description: Gestiona el seguimiento de siniestros reportados por el cliente al agente con bitácora cronológica (reporte inicial, asignación de ajustador, inspección, dictamen, aprobación o rechazo, indemnización o reposición, cierre), control del plazo legal de pago (la indemnización vence 30 días después de que la aseguradora recibe los documentos e información completos, Art. 71 LSCS; si se atrasa, intereses por mora del Art. 276 LISF), prescripción (2 años, 5 en fallecimiento de vida, Art. 81 LSCS), documentación por ramo (auto, GMM, daños, vida) y escalación a CONDUSEF cuando la aseguradora rechaza sin razón válida o se excede el plazo. Documenta el historial de siniestralidad del cliente para renovaciones. Usar cuando el usuario diga "siniestro cliente", "seguir reclamación", "ajustador no llega", "tracking siniestro", "reclamación aseguradora", "aseguradora no paga". NO usar para el reporte inicial del siniestro (eso es directo a la aseguradora) ni para reembolso GMM individual del asegurado.
 allowed-tools: Read, Write, Edit
 ---
 
@@ -8,50 +8,57 @@ allowed-tools: Read, Write, Edit
 
 ## Etapas del proceso
 
-| Etapa | Plazo CNSF | Acción del agente |
+Solo el plazo de pago es legal; los demás son tiempos típicos de mercado.
+
+| Etapa | Plazo | Acción del agente |
 |---|---|---|
-| Reporte inicial | Inmediato | Acompañar al cliente con la aseguradora |
-| Asignación de ajustador | 24-48h | Validar que sea asignado |
-| Inspección | 5-10 días | Coordinar acceso del ajustador |
-| Documentación | Variable | Reunir según ramo |
-| Dictamen | 15-30 días | Recibir y revisar |
-| Aprobación/rechazo | 30 días | Si rechazo: analizar causa |
-| Indemnización | 5-15 días post-aprobación | Confirmar transferencia |
+| Reporte inicial | Inmediato (y dentro del plazo de aviso de la póliza) | Acompañar al cliente con la aseguradora |
+| Asignación de ajustador | Típico 24-48 h | Validar que sea asignado |
+| Inspección | Típico 5-10 días | Coordinar acceso del ajustador |
+| Documentación | Variable | Reunir según ramo; pedir acuse de recibo con fecha |
+| Dictamen | Típico 15-30 días | Recibir y revisar |
+| Pago | **Legal: 30 días desde la entrega completa de documentos (Art. 71 LSCS)** | Confirmar transferencia |
 | Cierre | — | Documentar para historial |
+
+Si la aseguradora no paga en plazo, debe una indemnización por mora calculada en UDIS más intereses (Art. 276 LISF). Registra la fecha del acuse de la documentación completa: de ahí corre el plazo.
+
+## Prescripción
+
+Las acciones del contrato de seguro prescriben en 2 años, y en 5 años la cobertura de fallecimiento en vida, contados desde el hecho que les dio origen (Art. 81 LSCS). Alerta 90 días antes.
 
 ## Documentación por ramo
 
 ### Auto
-- Parte de policía o ministerio público
+- Parte de policía o del ministerio público (si aplica)
 - Fotos del siniestro
-- INE del conductor + tarjeta de circulación
-- Factura del vehículo (si robo total)
+- INE del conductor, licencia y tarjeta de circulación
+- Factura del vehículo (si robo total o pérdida total)
 
 ### GMM
-- Receta médica
-- CFDI de honorarios + medicamentos
-- Estudios + interpretación
-- Etiquetas de medicamentos
-- Hoja de evolución
-- Carta autorización si requiere reembolso
+- Informe médico y receta
+- CFDI de honorarios médicos, hospital y medicamentos
+- Estudios con interpretación
+- Formato de reclamación de la aseguradora
 
 ### Daños
-- Parte ministerial
+- Denuncia ante el ministerio público (si robo)
 - Fotos
 - Presupuesto de reparación con desglose
-- Comprobante propiedad
+- Comprobante de propiedad
 
 ### Vida
 - Acta de defunción
-- Certificado médico de defunción
-- INE de beneficiarios
-- Acta de nacimiento (relación con asegurado)
+- Certificado de defunción
+- Identificación oficial de los beneficiarios
+- Documento que acredite el parentesco si la póliza lo exige
 
 ## Escalación a CONDUSEF
 
-Cuando:
-1. Aseguradora rechaza sin base legal
-2. Excede plazo de 30 días naturales
-3. Solicita documentación adicional improcedente
+Cuándo:
+1. La aseguradora rechaza sin fundamento en las condiciones generales.
+2. Pasan más de 30 días desde la entrega completa de documentos sin pago.
+3. Pide documentación adicional improcedente.
 
-Output: queja formal en plataforma CONDUSEF + seguimiento.
+Primero la reclamación ante la Unidad Especializada (UNE) de la aseguradora; después, reclamación ante CONDUSEF (portal o asesoría presencial). El agente prepara el expediente; la queja la presenta el asegurado o beneficiario. Verifica los datos de la institución con `sipres_buscar_institucion` (MCP `mp_condusef_sipres`).
+
+> No es asesoría legal: en rechazos de montos altos, recomienda abogado especializado en seguros.

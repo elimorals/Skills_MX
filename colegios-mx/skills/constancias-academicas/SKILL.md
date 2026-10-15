@@ -132,7 +132,7 @@ El colegio puede entregar:
 ## Manejo de adeudos
 
 **Lo que el colegio NO puede hacer**:
-- Retener documentos de ciclos pasados ya concluidos. La SEP ha emitido pronunciamientos: el adeudo no faculta a retener documentos académicos terminados. Boletas, certificados, constancias de ciclos cerrados se entregan.
+- Retener documentación oficial por adeudo. El Acuerdo de bases mínimas de servicios educativos particulares (DOF 10-03-1992, Arts. 7 y 8) obliga a entregarla en un plazo no mayor a 15 días naturales desde la solicitud, sin costo, incluso si el alumno fue dado de baja por falta de pago.
 - Negar constancia de inscripción del ciclo en curso si el alumno está vigente.
 
 **Lo que el colegio SÍ puede hacer**:

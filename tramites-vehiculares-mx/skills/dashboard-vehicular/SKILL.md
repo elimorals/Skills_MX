@@ -20,7 +20,7 @@ allowed-tools: Read, Write
 
 📋 Verificación vehicular:
    Última: 2026-03-15 ✓ HOLOGRAMA 1
-   Próxima: 2026-09-01 al 2026-10-31 (en 90 días)
+   Próxima: 2026-09-01 al 2026-10-31 (engomado rojo, terminación 4)
 
 💰 Refrendo + Tenencia 2026:
    ✓ Pagado 2026-01-12
@@ -32,15 +32,19 @@ allowed-tools: Read, Write
    → /vehiculos:multas para pagar
 
 📅 Próximos vencimientos:
-   • Refrendo 2027: 31 enero 2027
-   • Verificación: 2026-09-30
+   • Verificación: 2026-10-31
+   • Refrendo/subsidio tenencia 2027: primer trimestre (fecha exacta por confirmar)
 ```
 
 ## Data sources
 
 - Tracker local placas: `~/.local/share/plugins-mx/placas-vehiculos.jsonl`
-- MCPs: `mp_cdmx_municipal`, `mp_edomex_municipal`, `mp_monterrey_municipal`
-- Calendarios verificación por estado (catálogo local)
+- Multas: `mp_multas_vehiculares_mx.multas_consultar_por_placa` (CDMX, EdoMex, Jalisco, NL, San Pedro). Entrega a humano: si devuelve `requiere_humano: true`, muestra "sin consultar" con la URL, nunca "sin multas".
+- Verificación: `mp_verificacion_vehicular_mx.verificacion_proximo_periodo` (cálculo local) y `verificacion_consultar_estatus` (CAPTCHA en CDMX → handoff).
+- Refrendo/tenencia: `mp_tenencia_mx.tenencia_calcular` (montos 2026 de prensa, confianza media/baja).
+- Robo/registro: `mp_repuve` (entrega a humano).
+
+Cada bloque del dashboard indica su fuente: `consultado`, `capturado por el usuario` o `pendiente (handoff)`. El semáforo rojo (≤ 7 días) solo se calcula con fechas confirmadas.
 
 ## Schema tracker
 

@@ -1,6 +1,6 @@
 ---
 name: agenda-citas-salon
-description: Gestión de agenda para salones de belleza, estéticas, spas y barberías mexicanos. Crear, modificar, cancelar citas con estilista específico considerando duración real del servicio, buffer entre citas, recordatorios WhatsApp 24h y 2h antes, manejo de no-shows (segunda cita → depósito), walk-ins en huecos, optimización de hueco para maximizar ingresos. Usar cuando el usuario diga agendar cita, mover cita, cancelar cita, recordatorio cliente, no-show, walk-in, hueco agenda, dispnibilidad estilista. NO usar para cobrar (eso es cierre-dia) ni comisiones (otro skill).
+description: Gestión de agenda para salones de belleza, estéticas, spas y barberías mexicanos. Crear, modificar, cancelar citas con estilista específico considerando duración real del servicio, buffer entre citas, recordatorios WhatsApp 24h y 2h antes, manejo de no-shows (segunda cita → depósito), walk-ins en huecos, optimización de hueco para maximizar ingresos. Usar cuando el usuario diga agendar cita, mover cita, cancelar cita, recordatorio cliente, no-show, walk-in, hueco agenda, disponibilidad estilista. NO usar para cobrar (eso es el comando /salon:cierre-dia-salon) ni comisiones (otro skill).
 allowed-tools: Read, Write, Edit
 ---
 
@@ -35,6 +35,8 @@ Schedule automático:
 | 2 horas | `recordatorio_2h` con link mapas | Recordar status `tentativa` |
 | 30 min | `llegando_pronto` | Si no responde, mantener slot 15 min, luego liberar |
 
+Costo: fuera de la ventana de 24 h de servicio, cada recordatorio es una plantilla UTILITY que Meta cobra por mensaje entregado (modelo vigente desde 01-07-2025); dentro de una ventana abierta por el cliente, las UTILITY no se cobran. Tres recordatorios por cita pueden ser caros: considera solo 24 h + 2 h. Si el recordatorio incluye promociones, Meta lo recategoriza como MARKETING (más caro y requiere opt-in). Ver `whatsapp-business-mx`.
+
 ## Política anti no-show
 
 | Histórico cliente | Política |
@@ -58,7 +60,7 @@ Cuando llega un cliente sin cita:
 
 Cuando un hueco aparece (cancelación, no-show):
 
-1. **Trigger automático**: WhatsApp blast a clientes en lista de espera (servicios compatibles)
+1. **Trigger automático**: WhatsApp a clientes en lista de espera que pidieron ser avisados (servicios compatibles); si el mensaje lleva descuento es plantilla MARKETING
 2. **Si nadie toma en 30 min**: descuento 15% para llenar el hueco
 3. **Si nadie toma en 1 hora**: marcar estilista disponible para walk-in
 4. **Documentar el hueco**: causa (no-show / cancelación / cliente movió) — para análisis
@@ -71,6 +73,10 @@ Cuando un hueco aparece (cancelación, no-show):
 | 24-48h | Depósito retenido (puede usarse en próxima cita 30 días) |
 | < 24h | Cargo 50% del servicio (excepto emergencia documentada) |
 | < 2h | Cargo 100% (cuenta como no-show) |
+
+⚠ **LFPC**: depósitos, cargos por cancelación y el recargo de walk-in solo se pueden cobrar si se informaron **antes** de reservar (al agendar y en el mensaje de confirmación) y el cliente los aceptó; no se pueden hacer cargos sin consentimiento (Art. 10 LFPC). Los precios exhibidos deben ser totales, con IVA (Art. 7 BIS). Mantén las penas proporcionales y recíprocas: si el salón cancela o llega tarde, ofrece algo equivalente (reembolso del depósito + descuento).
+
+Datos del cliente (nombre, teléfono, notas de alergias o tratamientos): tratarlos conforme a la LFPDPPP vigente (DOF 20-03-2025), con aviso de privacidad. Las notas de salud (alergias a tintes) son datos sensibles: pide consentimiento expreso. Ver `compliance-lfpdppp`.
 
 ## Buffer entre citas
 

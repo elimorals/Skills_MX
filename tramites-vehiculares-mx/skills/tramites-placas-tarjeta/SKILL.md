@@ -13,7 +13,7 @@ allowed-tools: Read, Write
 - Factura original del vehículo
 - ID oficial del propietario
 - Comprobante de domicilio (no mayor a 3 meses)
-- Pago de derechos (varía por estado, $500-$1,500)
+- Pago de derechos (monto por estado; no hay catálogo 2026 verificado: confirmar en el portal de finanzas)
 - Comprobante de pago tenencia (si aplica)
 
 ### 2. Reposición tarjeta circulación
@@ -21,14 +21,14 @@ allowed-tools: Read, Write
 - Acta MP (denuncia) si fue robo
 - ID oficial
 - Comprobante de domicilio
-- Pago derechos $300-$500
+- Pago de derechos (confirmar monto 2026 en el portal)
 
 ### 3. Reposición de placas perdidas
 **Requisitos:**
 - Acta MP
 - Factura original o copia certificada
 - ID + comprobante domicilio
-- Pago $1,000-$2,000
+- Pago de derechos (confirmar monto 2026 en el portal)
 
 ### 4. Baja por venta / destrucción
 **Requisitos:**
@@ -39,7 +39,8 @@ allowed-tools: Read, Write
 
 ### 5. Cambio de propietario
 **Requisitos:**
-- Endoso factura
+- Endoso factura (cadena completa de facturas/endosos)
+- Constancia de no adeudo de tenencia/refrendo y multas del vehículo (los adeudos siguen al auto)
 - ID nuevo propietario + comprobante domicilio
 - Pago de derechos por la transferencia
 
@@ -53,10 +54,10 @@ allowed-tools: Read, Write
     {"documento": "factura_original", "obtenido": false, "notas": "..."},
     {"documento": "id_oficial", "obtenido": true},
     {"documento": "comprobante_domicilio", "obtenido": true},
-    {"documento": "pago_derechos", "obtenido": false, "monto_estimado_mxn": "1200"}
+    {"documento": "pago_derechos", "obtenido": false, "monto_mxn": null, "nota": "confirmar en portal SEMOVI/SAF"}
   ],
   "completitud_pct": 50,
-  "costo_total_estimado_mxn": "1200.00",
+  "costo_total_estimado_mxn": null,
   "donde_acudir": "Oficinas SEMOVI (CDMX) — cita previa",
   "tiempo_estimado": "1-2 visitas, 2-4 horas total",
   "siguiente_paso": "Agendar cita en portal SEMOVI"
@@ -72,10 +73,24 @@ allowed-tools: Read, Write
 | Vehículo familiar heredado | Carta poder o sucesión hereditaria |
 | Cambio entidad federativa | Baja en estado anterior + alta en nuevo |
 
+## Revisión REPUVE (compra, alta o cambio de propietario)
+
+Antes de comprar un usado o dar de alta, revisa el vehículo en el REPUVE (Registro Público Vehicular, SESNSP):
+
+1. `repuve_consultar_niv(niv)` o `repuve_consultar_placa(placa)`; `repuve_verificar_robado(niv|placa)` para reporte de robo (`mp_repuve`).
+2. Estado real del MCP: **entrega a humano** (reCAPTCHA v3). Si la respuesta trae `requiere_humano: true`, entrega `url` y `pasos` al usuario y pídele el resultado.
+3. Un reporte de robo `null` significa **desconocido**, nunca "sin reporte". No digas que el auto está limpio sin la consulta oficial.
+4. Coteja el NIV (17 caracteres) de la factura contra el de la tarjeta de circulación y el grabado en el vehículo.
+
+## Licencia de conducir (referencia)
+
+CDMX: licencia permanente tipo A por $1,500 durante el periodo de extensión que vence el 31-dic-2026 (prensa citando a la SAF, confianza media; se tramita con Llave CDMX). Otros estados: confirmar en su portal de movilidad.
+
 ## Dependencias
 
-- Catálogo local de trámites por estado
-- `mp_cdmx_municipal` (futuro: status de citas)
+- Catálogo local de trámites por estado (sin montos 2026 verificados)
+- `mp_repuve` (entrega a humano)
+- `mp_tenencia_mx.tenencia_info_estado` para el refrendo del estado
 
 ## ⚠ Compliance
 

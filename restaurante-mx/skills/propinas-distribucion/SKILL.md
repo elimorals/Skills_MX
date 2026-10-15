@@ -1,32 +1,34 @@
 ---
 name: propinas-distribucion
-description: Distribución de propinas en restaurantes mexicanos siguiendo Art. 346 LFT (propinas son del trabajador, no patrón) y leyes estatales. Modelos: 100% al mesero (default LFT), pool con cocina y bar (Tip Pool), proporción por horas trabajadas. Implicaciones fiscales (ingreso del trabajador, no acumulable al restaurante). Cálculo justo por turno con bitácora trazable. Usar cuando el usuario diga propinas, distribución meseros, tip pool, propinas cocina, fiscalmente propinas. NO usar para inventario (otro skill) ni menú (otro skill).
+description: Distribución de propinas en restaurantes mexicanos siguiendo Arts. 346-347 LFT (las propinas son salario del trabajador; el patrón no puede participar en ellas). Modelos: 100% al mesero (default LFT), pool con cocina y bar (Tip Pool), proporción por horas trabajadas. Implicaciones fiscales y de IMSS (ingreso por salarios del trabajador, CFDI de nómina). Cálculo justo por turno con bitácora trazable. Usar cuando el usuario diga propinas, distribución meseros, tip pool, propinas cocina, fiscalmente propinas, propina con tarjeta, reparto de propinas, propinas nómina. NO usar para inventario (otro skill) ni menú (otro skill).
 allowed-tools: Read, Write, Edit
 ---
 
 # Propinas — distribución en MX
 
-## Marco legal MX
+## Marco legal MX (verificado contra LFT, última reforma DOF 14-05-2026)
 
-### Art. 346 LFT (Ley Federal del Trabajo)
-> "Las propinas son parte del salario de los trabajadores a quienes corresponden... No podrán ser objeto de compensación, descuento o reducción."
+### Arts. 346 y 347 LFT (capítulo de trabajadores en hoteles, restaurantes, bares)
+> Art. 346: "Las propinas son parte del salario de los trabajadores a que se refiere este capítulo en los términos del artículo 347. Los patrones no podrán reservarse ni tener participación alguna en ellas."
+
+> Art. 347: si no se fija la propina como porcentaje sobre consumos, las partes fijan el aumento al salario base para el pago de indemnizaciones y prestaciones.
 
 **Implicaciones**:
-- Propinas son del **trabajador**, NO del restaurante
-- El restaurante NO puede retenerlas para "gastos generales"
-- Cada trabajador debe recibir su parte completa
-- NO se descuentan errores del trabajador (rotura, falta caja) — eso va aparte
+- Las propinas son del **trabajador**: el restaurante NO puede quedarse con ninguna parte (ni para "gastos generales" ni para cubrir la comisión bancaria)
+- NO se descuentan errores del trabajador (rotura, faltante de caja) — eso va aparte y con los límites del Art. 110 LFT
+- Las propinas cuentan como salario para indemnizaciones y prestaciones (Art. 347)
 
-### CFDI y propinas
-- Las propinas NO son ingreso del restaurante (Art. 8 LISR — no es ingreso para PM)
-- El cliente puede ver "propina sugerida" pero NO se debe forzar
-- El restaurante puede actuar como intermediario/dispersador (sin retener nada)
-- El trabajador declara sus propinas como ingreso por sueldos (Art. 110 LISR)
+**Reforma en trámite (no vigente)**: la Cámara de Diputados aprobó en 2025 una reforma a los Arts. 90, 346, 347 y otros (salario base no menor al mínimo que no se sustituye con propinas; reparto equitativo). Al 2026-10-15 el texto vigente del Art. 346 sigue siendo el citado arriba; **verificar** en el DOF si ya se publicó antes de aplicarla (confianza media, fuente: Gaceta Parlamentaria y prensa 2025).
+
+### Propinas y facturación del restaurante
+- Si el restaurante entrega la propina íntegra al trabajador, es un cobro **por cuenta de terceros**: no se trata como ingreso propio del restaurante (criterio usual; documentar la dispersión). Si se la queda, además de violar el Art. 346 LFT, se vuelve ingreso acumulable
+- La propina es voluntaria: puede sugerirse en la cuenta pero no cobrarse sin consentimiento del cliente (criterio PROFECO)
+- Para el trabajador es ingreso por salarios (Art. 94 LISR); si se paga vía nómina, el patrón retiene ISR conforme al Art. 96 LISR
 
 ### Restricciones
 - NO se puede obligar a propina mínima (PROFECO)
-- Propinas voluntarias se pueden sugerir en cuenta (8-15% típico MX)
-- NO se permite "tip pool" SIN consentimiento de todos los trabajadores
+- Propinas voluntarias se pueden sugerir en cuenta (10-15% es lo usual en MX)
+- Tip pool: la LFT no lo regula expresamente; como el patrón "no puede tener participación", el reparto debe pactarse con los trabajadores (por escrito, idealmente en contrato colectivo o reglamento interior) y el patrón no decide unilateralmente quién recibe qué. Recomendación práctica: consentimiento firmado de todo el personal que aporta
 
 ## Modelos de distribución
 
@@ -56,10 +58,10 @@ Distribución por horas trabajadas, no por mesa.
 **Pros**:
 - Más justo entre equipos
 - Reduce rotación de cocina
-- Coloboración meseros-cocina mejora
+- Colaboración meseros-cocina mejora
 
 **Contras**:
-- Requiere consentimiento del 100% del staff (LFT)
+- Requiere pacto documentado con el personal (ver Restricciones)
 - Más complejo administrativamente
 - Algunos meseros pierden incentivo
 
@@ -68,7 +70,7 @@ Distribución por horas trabajadas, no por mesa.
 - Mesero conserva 70-80% de SU propina
 - 20-30% va a pool para repartir entre cocina/bar/lavaloza
 
-Es el más común en MX 2024+.
+Es un esquema frecuente (no hay estadística oficial de prevalencia).
 
 ### Modelo 4: Por turno y posición
 
@@ -122,11 +124,15 @@ Cuando cliente paga con TDC/TDD:
 - Buena práctica: **dispersión semanal** (no esperar al fin de mes)
 
 ⚠ Algunos restaurantes "filtran" 8-15% de propinas TDC alegando "comisión bancaria del 5% sobre el cargo total". Esto es:
-- Legalmente cuestionable (la comisión bancaria es del restaurante, no del trabajador)
-- Frecuentemente denunciado en PROFECO
+- Contrario al Art. 346 LFT (el patrón no puede tener participación en la propina; la comisión bancaria es gasto del restaurante)
+- Reclamable ante la autoridad laboral (Centro de Conciliación / Inspección del Trabajo)
 - Mejor práctica: **transferir 100% íntegro**
 
-## Bitácora obligatoria
+## Fuente de datos
+
+Si el restaurante usa Soft Restaurant y está configurado el MCP `mp_softrestaurant`, `softrest_meseros_ventas` y `softrest_corte_z` devuelven propinas por mesero y por método de pago. Ese MCP lee **exports CSV** (`SOFT_RESTAURANT_EXPORTS_DIR`) o los parsea con `softrest_parsear_export`; no es una API en vivo. Sin exports configurados devuelve datos simulados (marcados `simulated`): no los uses para pagar; pide al usuario el CSV del corte.
+
+## Bitácora (recomendada)
 
 Cada distribución debe registrarse con:
 ```
@@ -135,20 +141,21 @@ Cada distribución debe registrarse con:
 - Modelo aplicado (1-4)
 - Distribución por trabajador con monto + horas
 - Firma o acuse digital del trabajador
-- Conservar por 5 años (Art. 27 CFF)
+- Conservar al menos 5 años (Art. 30 CFF, como parte de la contabilidad)
 ```
 
-## Implicaciones fiscales para el trabajador
+## Implicaciones fiscales y de seguridad social
 
-Las propinas SÍ son ingreso:
-- Acumulan al salario para ISR Art. 96 LISR
-- Para IMSS, propinas se acumulan al SBC para cálculo de cuotas
-- El restaurante DEBE reportar propinas en CFDI nómina (concepto 049 "Propinas")
+- **ISR**: las propinas son ingreso por salarios del trabajador (Art. 94 LISR). Si se dispersan vía nómina, el patrón las suma a la base de retención (Art. 96 LISR)
+- **CFDI de nómina**: el catálogo `c_TipoPercepcion` no tiene clave específica de propinas; en la práctica se usa `038` "Otros ingresos por salarios". Desde el complemento de nómina 1.2 rev. 2026 la clave 038 debe ir **totalmente gravada** (importe exento = 0). Confianza media (fuentes: KPMG Flash SAT dic-2025, IDC 08-12-2025); **verificar** el catálogo vigente del SAT antes de timbrar
+- **IMSS (SBC)**: el Art. 27 LSS integra al SBC "cualquier otra cantidad o prestación que se entregue al trabajador por su trabajo". Que las propinas pagadas por clientes integren o no el SBC es un **criterio discutido** (más defendible que integren cuando el patrón las recibe y dispersa, p. ej. propina con tarjeta). **Verificar con el contador/abogado laboral** antes de definir la política; no lo resuelvas por tu cuenta
+- Para indemnizaciones y prestaciones laborales, la propina sí cuenta como salario (Arts. 346-347 LFT)
 
-⚠ Si el restaurante NO reporta propinas en nómina, eso es:
-- Evasión por parte del trabajador (en teoría debería declararlas)
-- Riesgo del restaurante en auditoria SAT
-- Beneficio "informal" pero arriesgado
+⚠ Si el restaurante NO registra las propinas que dispersa:
+- Riesgo de diferencias en auditoría SAT/IMSS (depósitos con tarjeta mayores a ventas facturadas)
+- Riesgo laboral (indemnizaciones calculadas sin propinas)
+
+> Validación profesional: la integración de propinas a nómina/IMSS tiene consecuencias fiscales y laborales. Confirma la política con un contador y un abogado laboral.
 
 ## Output estructurado
 
@@ -158,7 +165,7 @@ Las propinas SÍ son ingreso:
     "fecha": "2026-03-15",
     "turno": "noche",
     "total_propinas_mxn": 8500.00,
-    "modelo_aplicado": "hibrido_mesero_70_pool_30",
+    "modelo_aplicado": "hibrido_mesero_80_pool_20",
     "consentimiento_documentado": true,
     "distribucion_meseros": [
       {
@@ -192,4 +199,5 @@ Las propinas SÍ son ingreso:
 - Casos PROFECO sobre tip pool sin consentimiento
 - Jurisprudencia LFT sobre propinas en CDMX 2024-2026
 - Mejores prácticas de software para tracking propinas
-- Reportes fiscales obligatorios en CFDI nómina (versión vigente)
+- Clave `c_TipoPercepcion` vigente para propinas (038 vs claves nuevas 054/055)
+- Estatus en Senado/DOF de la reforma LFT de propinas aprobada por Diputados en 2025

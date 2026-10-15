@@ -1,6 +1,6 @@
 ---
 name: pricing-dinamico-por-canal
-description: Calcula precio óptimo por canal considerando margen objetivo, comisión del canal (ML ~13%, Amazon ~15%, Shopify ~3%, tienda física 0%), IVA 16%, costo de envío al cliente (cuando aplique), y precio del competidor. Genera lista de precios por SKU × canal para que el operador apruebe o ajuste. Útil al hacer cambios de costos o entrar a nuevos canales. Usar cuando el usuario diga ajustar precios, pricing canal, comisión ML afecta precio, margen objetivo.
+description: Calcula precio óptimo por canal considerando margen objetivo, cargos de cada canal (Mercado Libre, Amazon, pasarela de Shopify, terminal en tienda física; siempre con la tarifa vigente que dé el usuario), IVA 16% incluido en el precio, costo de envío al cliente (cuando aplique), y precio del competidor. Genera lista de precios por SKU × canal para que el operador apruebe o ajuste. Útil al hacer cambios de costos o entrar a nuevos canales. Usar cuando el usuario diga ajustar precios, pricing canal, comisión ML afecta precio, margen objetivo.
 allowed-tools: Read, Write
 ---
 
@@ -20,14 +20,13 @@ allowed-tools: Read, Write
 ## Cálculo por canal
 
 ```python
-def calcular_precio_canal(costo, margen_obj, comision_canal, envio_canal, iva_pct=0.16):
-    # Precio base con margen
-    precio_sin_canal = costo / (1 - margen_obj)
-    # Ajustar por comisión del canal
-    precio_pre_iva = (precio_sin_canal + envio_canal) / (1 - comision_canal)
-    # Aplicar IVA
-    return precio_pre_iva * (1 + iva_pct)
+def calcular_precio_canal(costo, margen_obj, comision_canal, envio_canal=0, cargo_fijo=0, iva=0.16):
+    # P = precio publicado con IVA (Art. 7 Bis LFPC). La comisión se cobra sobre P;
+    # su IVA es acreditable, así que entra sin IVA. Margen sobre ingreso sin IVA.
+    return (costo + envio_canal + cargo_fijo) / ((1 - margen_obj) / (1 + iva) - comision_canal)
 ```
+
+Las retenciones de ISR/IVA de ML y Amazon (ver `mercado-libre-pricing`) son anticipo de impuestos, no costo: van al flujo, no a esta fórmula.
 
 ## Output
 
@@ -36,21 +35,27 @@ def calcular_precio_canal(costo, margen_obj, comision_canal, envio_canal, iva_pc
   "sku": "SKU-001",
   "costo_mxn": "120.00",
   "precios_sugeridos": {
-    "mercadolibre": {"precio_publico": "289.00", "margen_neto_pct": 32.0, "vs_competidor_pct": -3.3},
-    "amazon": {"precio_publico": "295.00", "margen_neto_pct": 31.5},
-    "shopify": {"precio_publico": "245.00", "margen_neto_pct": 38.0, "ahorra_envio_dueño": true},
-    "tienda_fisica": {"precio_publico": "225.00", "margen_neto_pct": 46.6}
+    "mercadolibre": {"comision_supuesta": 0.15, "precio_publico": "292.44", "vs_competidor_pct": -2.2},
+    "amazon": {"comision_supuesta": 0.15, "precio_publico": "292.44", "vs_competidor_pct": 1.2},
+    "shopify": {"comision_supuesta": 0.036, "precio_publico": "228.86", "vs_competidor_pct": -18.0},
+    "tienda_fisica": {"comision_supuesta": 0.025, "precio_publico": "224.15"}
   },
-  "advertencias": ["Shopify margen 38% — más alto que canales con comisión"]
+  "advertencias": [
+    "Comisiones del ejemplo son supuestas; sustituir por las vigentes de cada canal",
+    "ML: precio < umbral de cargo fijo; sumar cargo fijo por unidad vigente"
+  ]
 }
 ```
 
-## Comisiones aproximadas (validar vigentes)
+Comprobación ML: 292.44 / 1.16 = 252.10 sin IVA; comisión 0.15 × 292.44 = 43.87; utilidad 252.10 − 43.87 − 120 = 88.23 = 35.0% ✓ (envío 0 en todos para simplificar).
 
-| Canal | Comisión |
+## De dónde sacar los cargos vigentes
+
+No hay tabla confiable memorizada: los cargos cambian y dependen de categoría, tipo de publicación y plan.
+
+| Canal | Fuente |
 |---|---|
-| Mercado Libre clásico | 11-16% |
-| Mercado Libre premium | 14-18% |
-| Amazon MX | 8-15% según categoría |
-| Shopify | 2.9% + $3 USD (Stripe MX) |
-| Tienda física | 0% (sólo TPV ~2%) |
+| Mercado Libre | Ayuda oficial "costos de vender" o simulador del panel (cargo % + cargo fijo en bajo precio) |
+| Amazon MX | `amazon_mx_get_fees_estimate` (MCP `mp_amazon_mx_seller`, requiere credenciales SP-API) o la calculadora de Seller Central |
+| Shopify | Tarifa de tu pasarela + comisión de transacción de tu plan si usas pasarela externa |
+| Tienda física | Tarifa de tu terminal (Clip, Mercado Pago Point, banco), sobre ventas con tarjeta |

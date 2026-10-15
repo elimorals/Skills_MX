@@ -1,10 +1,19 @@
 ---
 name: calcular-costo-base-fifo
-description: Calcula costo base FIFO (First In First Out) por activo. SAT permite FIFO o promedio ponderado. Importante porque determina la ganancia/pérdida gravable de cada venta. Usar cuando el usuario diga costo base, FIFO cripto, calcular ganancia.
+description: Calcula el costo base FIFO (primeras entradas, primeras salidas) por criptoactivo para determinar la ganancia o pérdida de cada venta o permuta en MXN. La LISR no fija método para activos fungibles; FIFO es un criterio común que debe documentarse y aplicarse de forma consistente. Usar cuando el usuario diga costo base, FIFO cripto, costo de adquisición cripto, calcular ganancia por venta de bitcoin, ganancia realizada.
 allowed-tools: Read, Write
 ---
 
 # Costo base FIFO
+
+> La LISR exige "costo comprobado de adquisición" (Art. 121 fr. I) actualizado por INPC (Art. 124), pero no dice cómo identificar unidades fungibles. FIFO es defendible si se documenta y se usa siempre igual. Confianza media: validar con contador.
+
+Reglas:
+- Costo del lote = (valor MXN pagado + comisión) / cantidad recibida. TC del día de la operación (`mp_banxico.banxico_get_tc_dof`).
+- Permutas y rewards crean lotes nuevos al valor de mercado en MXN del día de recepción.
+- Transferencias entre wallets propias no crean ni consumen lotes.
+- Actualizar el costo por INPC (Art. 124) al calcular la ganancia de cada enajenación (`banxico_get_inpc`).
+- Las pérdidas se reportan por separado: criterio conservador, no se restan de las ganancias (ver `calculadora-isr-cripto-detallada`).
 
 ## Algoritmo
 
@@ -18,7 +27,7 @@ def calcular_fifo(operaciones: list[OperacionCripto]) -> dict:
         if op.tipo == "compra":
             inventario.setdefault(op.activo_recibido, []).append({
                 "cantidad": op.cantidad_recibida,
-                "costo_unitario_mxn": op.valor_mxn_dia / op.cantidad_recibida + op.fee_mxn
+                "costo_unitario_mxn": (op.valor_mxn_dia + op.fee_mxn) / op.cantidad_recibida
             })
         elif op.tipo == "venta":
             cantidad_a_vender = op.cantidad_dada
@@ -45,7 +54,7 @@ def calcular_fifo(operaciones: list[OperacionCripto]) -> dict:
     return {
         "ganancia_realizada_mxn": str(ganancia_realizada),
         "perdida_realizada_mxn": str(pérdida_realizada),
-        "neto_gravable_mxn": str(ganancia_realizada - pérdida_realizada),
+        "ganancia_gravable_conservadora_mxn": str(ganancia_realizada),  # pérdidas no restadas
         "inventario_final": inventario
     }
 ```
@@ -59,7 +68,8 @@ def calcular_fifo(operaciones: list[OperacionCripto]) -> dict:
   "operaciones_procesadas": 245,
   "ganancia_realizada_mxn": "45000.00",
   "perdida_realizada_mxn": "12000.00",
-  "neto_gravable_mxn": "33000.00",
+  "ganancia_gravable_conservadora_mxn": "45000.00",
+  "neto_si_contador_acepta_compensar_mxn": "33000.00",
   "holdings_finales_valor_mxn": "517800.00",
   "ganancia_latente_mxn": "85000.00"
 }

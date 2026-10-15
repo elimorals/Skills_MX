@@ -127,14 +127,14 @@ Fecha: [DD de mes de AAAA]
 
 ## Lo que hace este skill
 
-1. **Pide al usuario las métricas brutas** o lee de archivos (CSV exportado de plataformas, JSON de API).
+1. **Pide al usuario las métricas brutas** o lee de archivos (CSV/XLSX exportado de cada plataforma). No hay conexión en vivo a Meta, Google Ads ni TikTok Ads desde este plugin.
 2. **Estructura el reporte** según el formato anterior, adaptándolo al cliente (eliminando secciones N/A).
-3. **Calcula variaciones** vs mes anterior automáticamente.
+3. **Calcula variaciones** vs mes anterior con los datos que se le dieron (usa Bash/Python para no sumar a mano).
 4. **Genera insights** marcando hallazgos importantes (anomalías estadísticas, fatiga creativa, etc.).
 5. **Sugiere próximos pasos** basados en patrones de datos.
 6. **Output en markdown** convertible a Google Slides, PDF, o documento ejecutivo.
 
-## Reglas de detección automática
+## Reglas de detección (heurísticas de agencia, no umbrales oficiales de las plataformas)
 
 ### Fatiga creativa Meta
 - Frequency > 3.5 sostenida 7+ días → marcar candidato a refresco
@@ -177,6 +177,7 @@ Fecha: [DD de mes de AAAA]
 
 ## Integración
 
-- Puede consumir export de Meta Ads Manager (CSV), Google Ads Editor (CSV), TikTok Ads (XLSX).
-- Cuando exista MCP de Meta/Google/TikTok activo, jala datos en vivo.
+- Fuentes de datos: export de Meta Ads Manager (CSV/XLSX), reporte de Google Ads (CSV desde la interfaz o Google Ads Editor), TikTok Ads Manager (CSV/XLSX). El plugin **no** incluye MCP de Meta, Google Ads ni TikTok Ads; si el usuario pide "jálalo de la cuenta", pídele el export.
+- GA4: el plugin declara el MCP `ga4` (`analytics-mcp`) **deshabilitado por default**; solo úsalo si el usuario lo habilitó con `GOOGLE_APPLICATION_CREDENTIALS` y `GOOGLE_PROJECT_ID`. Si no responde, pide export de GA4.
+- Inversión en USD: convierte con `banxico_get_tc_dof` / `banxico_convertir_monto` (MCP `banxico`) y anota la fecha del tipo de cambio. Sin `BANXICO_TOKEN` el MCP devuelve datos de ejemplo (`simulated: true`): no los uses en un reporte real.
 - `mxn-formato` para todos los importes.

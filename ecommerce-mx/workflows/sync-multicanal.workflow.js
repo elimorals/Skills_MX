@@ -167,7 +167,7 @@ await parallel([
     { label: 'csv-dashboard', phase: 'Output' }
   ),
   () => agent(
-    `Si hay SKUs criticos (>=3), envía alerta WhatsApp via mp_meta_whatsapp al seller ${seller_id}: "Detectadas N discrepancias críticas en sync multicanal. Revisar ${ruta}-report.md".`,
+    `Si hay SKUs criticos (>=3), redacta en \`${ruta}-alerta.txt\` un mensaje de WhatsApp para el seller ${seller_id} con la plantilla de la skill whatsapp-business-mx: "Detectadas N discrepancias críticas en sync multicanal. Revisar ${ruta}-report.md". No lo envíes: el repo no tiene MCP de WhatsApp; el usuario lo manda desde su cuenta.`,
     { label: 'alerta-wa', phase: 'Output' }
   ),
 ])

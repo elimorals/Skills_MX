@@ -1,6 +1,6 @@
 ---
 name: importar-operaciones-exchange
-description: Importa CSV oficial de cada exchange (Bitso, Binance, Coinbase, Kraken) y normaliza a schema común OperacionCripto. Detecta tipo (compra/venta/permuta/stake/airdrop/transferencia). Valoriza en MXN con TC histórico del día. Usar cuando el usuario diga importar bitso, csv binance, cargar operaciones, sincronizar exchange.
+description: Importa CSV oficial de cada exchange (Bitso, Binance, Coinbase, Kraken) y normaliza a schema común OperacionCripto. Detecta tipo (compra/venta/permuta/stake/airdrop/transferencia). Valoriza en MXN con TC histórico del día. Usar cuando el usuario diga importar bitso, csv binance, cargar operaciones, subir mi historial de exchange, sincronizar exchange.
 allowed-tools: Read, Write
 ---
 
@@ -10,7 +10,7 @@ allowed-tools: Read, Write
 
 | Exchange | Formato | Cómo obtener |
 |---|---|---|
-| Bitso | CSV oficial | Cuenta → Reportes → Exportar |
+| Bitso | CSV oficial, o API | Cuenta → Reportes → Exportar; o `mp_bitso.bitso_get_ledger` (requiere BITSO_API_KEY/SECRET del usuario) |
 | Binance | CSV oficial | Wallet → Transaction History → Export |
 | Coinbase | CSV oficial | Profile → Reports → Generate |
 | Kraken | CSV/Excel | History → Export |
@@ -26,7 +26,7 @@ class OperacionCripto(BaseModel):
     cantidad_dada: Decimal
     activo_recibido: str
     cantidad_recibida: Decimal
-    valor_mxn_dia: Decimal  # TC Banxico USD/MXN del día × precio en USD
+    valor_mxn_dia: Decimal  # precio USD × TC publicado por Banxico en el DOF el día anterior (Art. 20 CFF; mp_banxico.banxico_get_tc_dia_habil_anterior); pares MXN sin conversión
     fee_mxn: Decimal
     txid: str | None
 ```

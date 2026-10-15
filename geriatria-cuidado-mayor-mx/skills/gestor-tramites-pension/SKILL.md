@@ -1,6 +1,6 @@
 ---
 name: gestor-tramites-pension
-description: Gestiona trámites de pensión y prestaciones del adulto mayor en México: pensión IMSS Ley 73 vs Ley 97 según fecha de cotización (Ley 73 más generosa, requiere mínimo 500 semanas cotizadas), pensión ISSSTE para servidores públicos, pensión bienestar federal (programa adultos mayores 65+ no contributiva $6,000 MXN bimestrales), tracking de cobro mensual o bimestral con alerta si no llega depósito, renovación periódica de constancias requeridas, sobrevivencia del pensionado para evitar suspensión por inactividad bancaria, cambio de domicilio en padrón pensionado, modificación de beneficiarios para la pensión de viudez al fallecer el titular, y conversión de pensión retroactiva (caso típico: persona se pensionó tarde y le deben varios meses). Cubre AFORE para retiro de fondos al cumplir 65 o por desempleo previo. Usar cuando el usuario diga "pensión IMSS abuelita", "tramite pensión bienestar", "AFORE retiro", "viudez pensión", "renovar pensionado", "no llegó pago pensión". NO usar para cálculo de pensión de empresa privada (puede ser plan paralelo) ni para seguro de gastos médicos del jubilado.
+description: Gestiona trámites de pensión y prestaciones del adulto mayor en México: pensión IMSS Ley 73 (cotizó antes del 1-jul-1997, 500 semanas) vs Ley 97 (875 semanas en 2026, sube 25 por año), pensión ISSSTE (décimo transitorio vs cuentas individuales), Pensión para el Bienestar de las Personas Adultas Mayores (65+, no contributiva, $6,400 bimestrales en 2026), retiro de AFORE, seguimiento de depósitos con alerta si no llega, comprobación de supervivencia, cambio de domicilio o cuenta, beneficiarios y pensión de viudez, y cobro de retroactivos. Usar cuando el usuario diga "pensión IMSS abuelita", "trámite pensión bienestar", "pensión 65 y más", "AFORE retiro", "viudez pensión", "no llegó pago pensión", "semanas cotizadas". NO usar para planes privados de pensión de empresa ni para seguro de gastos médicos del jubilado.
 allowed-tools: Read, Write, Edit
 ---
 
@@ -10,28 +10,32 @@ allowed-tools: Read, Write, Edit
 
 ### IMSS Ley 73 (más generosa)
 
-- Aplica si cotizó antes del 1-julio-1997
-- Requiere mínimo **500 semanas cotizadas** (10 años aprox)
-- Beneficio: % del salario promedio últimos 5 años (escalado por edad)
-- Modalidades: vejez (65+), cesantía (60-64), invalidez
+- Aplica si empezó a cotizar antes del 1-julio-1997 (puede elegir Ley 73 o Ley 97 al pensionarse)
+- Requiere mínimo **500 semanas cotizadas** (≈ 9.6 años)
+- Beneficio: % del salario promedio de las últimas 250 semanas; cesantía a los 60 = 75%, sube 5% por año hasta 100% a los 65
+- Modalidades: vejez (65+), cesantía en edad avanzada (60-64), invalidez
+- Requiere estar dado de baja del régimen obligatorio (o conservar derechos)
 
 ### IMSS Ley 97
 
-- Aplica si cotizó desde 1-julio-1997
-- Requiere **1,250 semanas cotizadas** (~24 años)
-- Beneficio: AFORE acumulado + cuenta individual
-- Generalmente menor pensión que Ley 73
+- Obligatoria si empezó a cotizar a partir del 1-julio-1997
+- Semanas mínimas (reforma LSS DOF 16-12-2020): **875 en 2026**, 900 en 2027, +25 por año hasta 1,000 en 2031 (fuente: decreto y prensa 2026; confianza media-alta)
+- Edad: cesantía 60, vejez 65
+- Beneficio: saldo de la cuenta individual AFORE (renta vitalicia o retiros programados), con pensión garantizada si el saldo no alcanza
+- Fondo de Pensiones para el Bienestar (2024) complementa a ciertos pensionados Ley 97 de salario bajo; verificar elegibilidad con IMSS
+- Sin semanas suficientes: negativa de pensión y retiro del saldo en una exhibición
 
 ### ISSSTE
 
 - Servidores públicos federales
-- Sistema similar Ley 73/Ley 97 ISSSTE-Décimo
+- Dos regímenes desde la Ley del ISSSTE 2007: **décimo transitorio** (pensión de reparto con requisitos de edad y años de servicio que suben por año) y **cuentas individuales** (PENSIONISSSTE/AFORE). Verificar requisitos del año con el ISSSTE
 
 ### Pensión Bienestar Federal
 
-- No contributiva — todos los mexicanos 65+
-- $6,000 MXN bimestrales (2026, validar vigencia)
-- Trámite en módulos del programa
+- No contributiva: personas mexicanas de 65+ residentes en el país
+- **$6,400 MXN bimestrales en 2026** (2025: $6,200). Fuente: declaraciones de la Secretaría de Bienestar citadas en prensa (enero 2026); confianza media, confirmar en gob.mx/bienestar
+- Mujeres de 60-64: programa aparte "Pensión Mujeres Bienestar" ($3,100 bimestrales 2026, misma fuente)
+- Registro en Módulos del Bienestar con INE, CURP, acta de nacimiento y comprobante de domicilio; se paga en Tarjeta del Bienestar
 
 ## Tracking mensual de cobro
 
@@ -52,7 +56,7 @@ alertas:
 
 | Trámite | Frecuencia | Documentación |
 |---|---|---|
-| Sobrevivencia | Anual / bianual | INE + acta nacimiento |
+| Comprobación de supervivencia | Según institución/banco (verificar: IMSS, ISSSTE y bancos tienen reglas distintas; obligatoria si vive en el extranjero) | INE + CURP |
 | Cambio domicilio | Una vez | Comprobante domicilio |
 | Modificación beneficiarios | Una vez (vida) | INE beneficiarios + parentesco |
 | Renovación CLABE | Si cambia cuenta | Estado cuenta nuevo |
@@ -68,5 +72,6 @@ alertas:
 
 ## Validación pendiente
 
-⚠ Montos bienestar federal pueden cambiar. Validar contra portal oficial vigente.
+⚠ Monto Bienestar 2026 tomado de fuente secundaria: validar en gob.mx/bienestar.
+⚠ La skill no consulta IMSS/ISSSTE/AFORE: trabaja con los documentos que da el usuario. Semanas cotizadas: constancia en IMSS Digital.
 ⚠ Reglas Ley 73 vs Ley 97 son complejas — consultar con asesor IMSS.

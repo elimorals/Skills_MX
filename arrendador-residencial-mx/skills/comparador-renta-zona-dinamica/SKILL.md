@@ -1,6 +1,6 @@
 ---
 name: comparador-renta-zona-dinamica
-description: Compara el precio de renta actual de un inmueble contra inmuebles equivalentes (mismas habitaciones, baños, m², cajones de auto, amenidades, antigüedad) en un radio de 1-3 km usando mp_inmuebles24 + mp_vivanuncios y portales adicionales scrapeables, para sugerir ajuste anual al arrendador con datos objetivos en lugar de subir solo por INPC inflación. Detecta el percentil de tu renta en la zona (estás en P25 → puedes subir agresivo, P75 → ya estás caro), proyecta tasa de ocupación post-ajuste (si subes 10% probablemente queda 1 mes vacío = pierdes lo que ganas), genera mensaje persuasivo al inquilino con datos comparativos (3-5 propiedades similares más caras) para justificar el ajuste sin sonar abusivo, y considera el costo emocional de cambiar inquilino bueno vs marginal de mantener (un mes vacío + tiempo búsqueda nuevo + riesgo malo cliente vs $X mensual extra). Usar cuando el usuario diga "ajustar renta", "comparador renta zona", "subir precio departamento", "renta vs mercado", "comparables renta", "precio mi depa". NO usar para tasación de venta (eso es distinto, valuador certificado).
+description: Compara la renta actual de un inmueble contra comparables equivalentes (habitaciones, baños, m², cajones, amenidades, antigüedad) en un radio de 1-3 km para sugerir el ajuste anual con datos en lugar de solo INPC. Calcula el percentil de tu renta en la zona, proyecta el riesgo de vacancia de cada ajuste, compara el costo de perder a un buen inquilino contra el ingreso extra, aplica el tope legal (en CDMX el incremento de vivienda no puede exceder la inflación del año anterior, Art. 2448-D CCDF) y redacta un mensaje al inquilino con los comparables. Usar cuando el usuario diga "ajustar renta", "comparador renta zona", "subir precio departamento", "renta vs mercado", "comparables renta", "precio mi depa". NO usar para valor de venta (eso requiere valuador).
 allowed-tools: Read, Write, Edit
 ---
 
@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit
 ## Flujo
 
 1. **Características del inmueble**: m², habitaciones, baños, cajones, planta, amenidades (alberca, gym, seguridad), antigüedad
-2. **Búsqueda comparables**: mp_inmuebles24 + mp_vivanuncios en radio 1-3km
+2. **Búsqueda comparables**: `inm24_buscar_comparables_zona` (mp_inmuebles24, sin verificar) en radio 1-3 km. `mp_vivanuncios` es mock: si es la única fuente, pide comparables al usuario
 3. **Filtrado**: solo los con características ≥80% similares
 4. **Análisis percentil**: tu precio actual está en qué percentil del mercado
 5. **Proyección de impacto**: si subes X%, ¿probabilidad de quedar vacío?
@@ -24,7 +24,7 @@ PRECIO ACTUAL: $14,500 MXN/mes
 ZONA (1km radio):
   - Mínimo: $12,000 (P0)
   - P25: $13,800
-  - Mediana: $15,400 ← tu inmueble está -6% bajo
+  - Mediana: $15,400 ← tu inmueble está 5.8% abajo
   - P75: $17,200
   - Máximo: $24,500 (P100)
 
@@ -38,7 +38,9 @@ PERCENTIL ACTUAL: 35 → puedes subir 5-8% sin estar caro
   5. Polanco Tennyson — 2/2/1 68m² — $17,200
 
 SUGERENCIA AJUSTE: $15,400 (+6.2%) — quedas en mediana
-INPC últimos 12m: +4.8% → tu ajuste sí supera inflación
+INPC últimos 12m: +4.8% → tu ajuste SUPERA la inflación
+⚠ CDMX casa habitación: con el mismo inquilino el incremento anual no puede exceder la
+  inflación del año anterior (Art. 2448-D CCDF) → tope legal ≈ +4.8% = $15,196
 
 PROYECCIÓN OCUPACIÓN si subes:
   - +6.2%: 95% probabilidad inquilino acepta (renta razonable mercado)
@@ -50,10 +52,11 @@ GANANCIA por subir +6.2%: $900/mes × 12 = $10,800/año
 GANANCIA por subir +10%: $1,450/mes × 12 = $17,400/año
 RIESGO de subir +10%: 30% × $14,500 × 1.5 mes = $6,525 esperado
 
-RECOMENDACIÓN ÓPTIMA: subir $900 (+6.2%) si tu inquilino es bueno
+RECOMENDACIÓN: fuera de CDMX, subir $900 (+6.2%) si tu inquilino es bueno.
+En CDMX con el mismo inquilino: máximo $696 (+4.8%); la mediana de mercado solo sirve para un contrato nuevo
 ```
 
-## Mensaje propuesto al inquilino
+## Mensaje propuesto al inquilino (fuera de CDMX; en CDMX ajusta el monto al tope legal)
 
 ```
 Hola [Nombre],
@@ -74,6 +77,10 @@ Para que te quedes tranquilo de que es justo, te paso las 5 propiedades comparab
 
 Saludos
 ```
+
+## Tope legal
+
+Antes de proponer un ajuste, verifica el código civil del estado. En CDMX (Art. 2448-D CCDF, reforma 2024 validada por la SCJN en feb-2026) el incremento anual de vivienda no puede exceder la inflación del año anterior, aunque el mercado esté más arriba. El mensaje al inquilino nunca debe proponer más que el tope.
 
 ## Validación pendiente
 

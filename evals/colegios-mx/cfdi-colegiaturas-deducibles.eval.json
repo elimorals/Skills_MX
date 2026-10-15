@@ -7,7 +7,7 @@
   {
     "query": "el papá me pide CFDI para deducir las colegiaturas",
     "should_trigger": true,
-    "rationale": "Deducibilidad Art. 151 D10"
+    "rationale": "Estímulo por colegiaturas: Decreto DOF 26-12-2013 arts. 1.8-1.10, uso D10"
   },
   {
     "query": "voy a emitir el CFDI con uso D10",
@@ -22,7 +22,7 @@
   {
     "query": "cuál es el tope de deducción de primaria",
     "should_trigger": true,
-    "rationale": "Tope Art. 151 por nivel"
+    "rationale": "Tope por nivel del Decreto DOF 26-12-2013 art. 1.8"
   },
   {
     "query": "el papá pagó en efectivo, ¿le puedo dar CFDI deducible?",
@@ -62,7 +62,7 @@
   {
     "query": "factura por curso de natación extra escolar",
     "should_trigger": false,
-    "rationale": "Servicio no deducible por Art. 151 — facturar pero NO con D10"
+    "rationale": "Servicio fuera del estímulo del Decreto DOF 26-12-2013 — facturar pero NO con D10"
   },
   {
     "query": "deducción de transporte escolar de mi hijo",

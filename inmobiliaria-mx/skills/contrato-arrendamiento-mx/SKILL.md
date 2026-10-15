@@ -1,6 +1,6 @@
 ---
 name: contrato-arrendamiento-mx
-description: Contrato de arrendamiento residencial o comercial conforme Código Civil Federal (Art. 2398-2496) y Código Civil CDMX (Art. 2398-2496) actualizado 2024 — fiador solidario o depósito mensual, vigencia mínima 1 año (residencial), aumentos anuales por inflación INPC, cláusulas anti-uso comercial en residencial, registro ante el RPP o no, gastos de mantenimiento, derecho de tanto. Personas físicas o morales (con o sin IVA). Usar cuando el usuario diga contrato renta, contrato arrendamiento, vamos a rentar, fiador, depósito, vigencia, aumento renta. NO usar para venta (otro skill comisiones-corredor) ni screening (otro skill).
+description: Contrato de arrendamiento residencial o comercial conforme Código Civil Federal (Art. 2398-2496) y Código Civil CDMX (Art. 2398-2496, reforma 2024) — fiador solidario o depósito, vigencia mínima 1 año forzosa para el arrendador (residencial CDMX, Art. 2448-C), aumentos anuales topados a la inflación del año anterior en vivienda CDMX (Art. 2448-D), cláusulas anti-uso comercial en residencial, registro de contratos (Art. 2448-F, pendiente en SCJN), gastos de mantenimiento, derecho de tanto. Personas físicas o morales (con o sin IVA). Usar cuando el usuario diga contrato renta, contrato arrendamiento, vamos a rentar, fiador, depósito, vigencia, aumento renta. NO usar para venta (otro skill comisiones-corredor) ni screening (otro skill).
 allowed-tools: Read, Write, Edit
 ---
 
@@ -13,7 +13,7 @@ allowed-tools: Read, Write, Edit
 | Caso | Ley aplicable | Donde se rige |
 |---|---|---|
 | Residencial CDMX | Código Civil CDMX (Art. 2398-2496) | CDMX |
-| Comercial CDMX | Código Civil CDMX + LGSC | CDMX |
+| Comercial CDMX | Código Civil CDMX (el arrendamiento es civil aunque el destino sea comercial) | CDMX |
 | Residencial otros estados | Código Civil del Estado | Estado correspondiente |
 | Comercial otros estados | Código Civil + Código de Comercio | Estado correspondiente |
 
@@ -21,12 +21,12 @@ allowed-tools: Read, Write, Edit
 
 ### Modalidades
 - **Residencial**: para vivienda (CCF/CCDF Art. 2398)
-- **Comercial**: para giro mercantil (LGSC + Código Comercio)
+- **Comercial**: para giro mercantil (Código Civil local; IVA 16%)
 - **Industrial**: para nave o fábrica
 - **Mixto**: residencial + comercial (más complejo)
 
 ### Vigencia
-- Mínimo residencial: **1 año** (CCDF Art. 2398). No se puede menos.
+- Mínimo residencial CDMX: **1 año**, forzoso para el arrendador y voluntario para el arrendatario (Art. 2448-C CCDF). Otros estados: revisar código local.
 - Comercial: libre, típico 3-5 años.
 - Renovaciones automáticas a menos que se notifique 30 días antes.
 
@@ -45,7 +45,7 @@ allowed-tools: Read, Write, Edit
 
 ### Aumento anual
 - Indexado al INPC del año anterior (típico)
-- Aumento máximo legal: limitado por entidad (CDMX permite hasta 10% si no se vincula a INPC)
+- Tope legal CDMX vivienda: el incremento anual no puede exceder la inflación del año anterior (Art. 2448-D CCDF, reforma Gaceta 28-08-2024; SCJN la validó en feb-2026, AR 546/2025). Otros estados: revisar código local
 - Renta sube en aniversario del contrato
 
 ## Estructura del contrato
@@ -94,8 +94,9 @@ por escrito su intención de no renovar con 30 días de anticipación al
 vencimiento.
 
 QUINTA — AUMENTO ANUAL
-La renta se incrementará anualmente conforme al INPC del año anterior
-o {{porcentaje_fijo}}% (lo que sea mayor o lo que se pacte).
+La renta se incrementará anualmente conforme a la variación del INPC del año
+anterior{{si no es vivienda en CDMX: o {{porcentaje_fijo}}%, según se pacte}}.
+{{si vivienda CDMX: el incremento nunca excederá la inflación del año anterior (Art. 2448-D CCDF).}}
 
 SEXTA — USO DEL INMUEBLE
 El inmueble se destinará exclusivamente para {{uso_residencial/comercial}}.
@@ -124,18 +125,19 @@ EL ARRENDATARIO se compromete a:
 
 NOVENA — INCUMPLIMIENTO POR ARRENDATARIO
 Si el ARRENDATARIO incumple en el pago por más de 1 mes:
-- Mora del 6% mensual (Art. 362 CCom adapted)
+- Interés moratorio de {{tasa}}% mensual (pactar una tasa moderada; un juez puede reducir intereses usurarios)
 - EL ARRENDADOR puede rescindir con previo requerimiento por escrito (30 días)
 - Si rescinde, el ARRENDATARIO debe devolver el inmueble en 30 días naturales
 
 DÉCIMA — DERECHO DE TANTO
 Si el ARRENDADOR decide vender el inmueble, debe ofrecerlo primero al
-ARRENDATARIO en igualdad de condiciones (Art. 2447 CCF).
+ARRENDATARIO en igualdad de condiciones (derecho de preferencia: Art. 2448-J CCDF
+en vivienda CDMX; Art. 2447 CCF; verificar el código local).
 
 DÉCIMA PRIMERA — REGISTRO
-{{si CDMX y vigencia >= 1 año:}}
-El presente contrato se inscribirá en el RPP de la CDMX dentro de los
-30 días siguientes a su firma para que sea oponible a terceros.
+{{si vivienda CDMX:}}
+Las partes registrarán el contrato conforme al Art. 2448-F CCDF si el registro
+resulta exigible (su constitucionalidad está pendiente en la SCJN: verificar).
 
 {{si solo para protocolización:}}
 El contrato deberá ser ratificado ante notario público.
@@ -167,18 +169,18 @@ FIRMAS:
 ## CFDI por arrendamiento
 
 ### Si arrendador es Persona Física
-- Régimen: 612 (Arrendamiento) o 626 (RESICO PF)
+- Régimen: 606 (Arrendamiento) o 626 (RESICO PF)
 - CFDI tipo I por cada pago mensual
-- Retención del 10% ISR + 2/3 IVA (Art. 1-A LIVA) si arrendatario es PM
+- Si el arrendatario es PM: retención ISR 10% (Art. 116 LISR; 1.25% si RESICO, Art. 113-J) + 2/3 del IVA solo cuando se causa IVA (comercial o amueblado; Art. 1-A fr. II a) LIVA)
 
 ### Si arrendador es Persona Moral
 - CFDI tipo I por cada pago mensual
-- No hay retenciones (Art. 1-A LIVA)
+- Sin retenciones de ISR ni IVA cuando el arrendador es PM
 
 ### IVA arrendamiento
-- Residencial: **exento** (Art. 9-XII LIVA)
+- Residencial: **exento** (Art. 20 fr. II LIVA), salvo que se rente amueblado: entonces todo causa 16%
 - Comercial: **16% IVA**
-- Frontera norte comercial: **8% IVA**
+- Frontera norte/sur comercial: **8% IVA** solo si el arrendador está en el padrón del estímulo (vigente a 31-12-2026)
 
 ## Output estructurado
 
@@ -195,8 +197,8 @@ FIRMAS:
       "datos_capturados": true
     },
     "iva_aplicable": false,
-    "iva_razon": "Residencial exento Art. 9-XII LIVA",
-    "registro_rpp_requerido": true,
+    "iva_razon": "Residencial exento Art. 20 fr. II LIVA",
+    "registro_contrato_2448F": "verificar (pendiente SCJN)",
     "fecha_inicio": "2026-04-01",
     "fecha_fin": "2027-03-31",
     "aumento_anual_referencia": "INPC marzo 2026 publicado por INEGI",

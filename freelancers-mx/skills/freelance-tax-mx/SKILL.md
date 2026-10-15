@@ -1,6 +1,6 @@
 ---
 name: freelance-tax-mx
-description: Calcula obligaciones fiscales mensuales y anuales para freelancers en México bajo regímenes 612 (PFAE — Personas Físicas con Actividades Empresariales y Profesionales) y 626 (RESICO PF — Régimen Simplificado de Confianza). Genera cálculo del pago provisional mensual de ISR considerando ingresos cobrados, gastos deducibles, retenciones a cuenta, y coeficiente o tasa según régimen. Estima declaración anual con deducciones personales (médicos, intereses hipotecarios, colegiaturas, transporte escolar, primas de seguros) aplicando topes vigentes del Art. 151 LISR. Identifica omisiones comunes (retenciones no acreditadas, gastos sin CFDI, depósitos en efectivo > $15,000 MXN/mes). Usar cuando el usuario diga pago provisional, declaración mensual, declaración anual, ISR mensual, RESICO calculo, PFAE calculo, deducciones personales, ahorro fiscal, tax planning México, optimización fiscal freelancer. NO usar para PMs (sus declaraciones son distintas), salarios (régimen 605 con tarifa mensual), ni para impuestos no federales (predial, ISN).
+description: Calcula obligaciones fiscales mensuales y anuales para freelancers en México bajo regímenes 612 (PFAE — Personas Físicas con Actividades Empresariales y Profesionales) y 626 (RESICO PF — Régimen Simplificado de Confianza). Genera cálculo del pago provisional mensual de ISR considerando ingresos cobrados, gastos deducibles, retenciones a cuenta, y coeficiente o tasa según régimen. Estima la declaración anual (en 612, con deducciones personales del Art. 151 LISR y su tope; en RESICO PF sin deducciones). Identifica omisiones comunes (retenciones no acreditadas, gastos sin CFDI, depósitos en efectivo > $15,000 MXN/mes que el banco informa). Usar cuando el usuario diga pago provisional, declaración mensual, declaración anual, ISR mensual, RESICO calculo, PFAE calculo, deducciones personales, ahorro fiscal, tax planning México, optimización fiscal freelancer. NO usar para PMs (sus declaraciones son distintas), salarios (régimen 605 con tarifa mensual), ni para impuestos no federales (predial, ISN).
 allowed-tools: Read, Write, Edit
 ---
 
@@ -29,31 +29,33 @@ Este skill resuelve los tres.
 | Hasta $3,500,000 (anual) | 2.50% |
 
 - **Sin gastos deducibles**: el régimen es simplificado, paga sobre el ingreso bruto cobrado.
-- IVA: se traslada al 16%, no hay tratamiento especial.
-- Retenciones recibidas (1.25% que les retienen las PMs) son **a cuenta del pago provisional**, se acreditan.
+- IVA: se traslada al 16% y se declara mensual. Si el cliente es PM, retiene 2/3 del IVA (10.6667% del valor) además del ISR.
+- Retenciones recibidas (1.25% de ISR que retienen las PM, Art. 113-J) se acreditan contra el pago mensual.
+- **No aplica deducciones personales** del Art. 151 en la anual.
 
 ### PFAE (Régimen 612)
 - El régimen "tradicional" antes de RESICO.
 - Permite deducir gastos relacionados con la actividad.
-- Pago provisional: aplicación de la tarifa progresiva del Art. 96 LISR sobre **utilidad fiscal acumulada del ejercicio**.
+- Pago provisional (Art. 106): tarifa del Art. 96 **acumulada al mes** sobre la utilidad fiscal acumulada del ejercicio. El Anexo 8 RMF publica una tabla por mes (equivale a la mensual × número de meses).
+- Si el cliente es PM: retiene 10% de ISR y 2/3 del IVA.
 
-Tarifa mensual del Art. 96 (vigente, se actualiza por inflación):
+Tarifa mensual Art. 96 LISR **2026** (Anexo 8 RMF 2026, DOF 28-12-2025; actualizada por inflación > 10%):
 
 | Límite inferior | Límite superior | Cuota fija | % sobre excedente |
 |---|---|---|---|
-| 0.01 | 8,952.49 | 0.00 | 1.92% |
-| 8,952.50 | 75,984.55 | 171.88 | 6.40% |
-| 75,984.56 | 133,536.07 | 4,461.94 | 10.88% |
-| 133,536.08 | 155,229.80 | 10,723.55 | 16.00% |
-| 155,229.81 | 185,852.57 | 14,194.54 | 17.92% |
-| 185,852.58 | 374,837.88 | 19,682.13 | 21.36% |
-| 374,837.89 | 590,795.99 | 60,049.40 | 23.52% |
-| 590,796.00 | 1,127,926.84 | 110,842.74 | 30.00% |
-| 1,127,926.85 | 1,503,902.46 | 271,981.99 | 32.00% |
-| 1,503,902.47 | 4,511,707.37 | 392,294.17 | 34.00% |
-| 4,511,707.38 | en adelante | 1,414,947.85 | 35.00% |
+| 0.01 | 844.59 | 0.00 | 1.92% |
+| 844.60 | 7,168.51 | 16.22 | 6.40% |
+| 7,168.52 | 12,598.02 | 420.95 | 10.88% |
+| 12,598.03 | 14,644.64 | 1,011.68 | 16.00% |
+| 14,644.65 | 17,533.64 | 1,339.14 | 17.92% |
+| 17,533.65 | 35,362.83 | 1,856.84 | 21.36% |
+| 35,362.84 | 55,736.68 | 5,665.16 | 23.52% |
+| 55,736.69 | 106,410.50 | 10,457.09 | 30.00% |
+| 106,410.51 | 141,880.66 | 25,659.23 | 32.00% |
+| 141,880.67 | 425,641.99 | 37,009.69 | 34.00% |
+| 425,642.00 | en adelante | 133,488.54 | 35.00% |
 
-(Verificar tarifa vigente del año fiscal en curso — se actualiza anualmente por inflación.)
+Pagos de 2025 (y su complementaria) usan la tarifa 2025 (primer renglón 0.01–746.04). La tarifa **anual** para la declaración está en `pf-anual-mx/skills/calculadora-isr-anual`.
 
 ## Pago provisional RESICO PF — flujo
 
@@ -70,7 +72,7 @@ Retenciones acreditables:           −$1,000
 ISR a pagar al SAT:                  $200
 ```
 
-Cuando las retenciones superan el ISR causado: queda saldo a favor acreditable contra futuros pagos.
+Cuando las retenciones superan el ISR causado del mes: el pago del mes queda en cero; el excedente se refleja en la declaración anual RESICO (Art. 113-F), donde se acreditan pagos y retenciones del año (confirmar con contador si procede compensarlo antes).
 
 ## Pago provisional PFAE — flujo
 
@@ -82,19 +84,19 @@ Cuando las retenciones superan el ISR causado: queda saldo a favor acreditable c
 
 **Cálculo**:
 ```
-Ingresos acumulados ene-mar:               $300,000
+Ingresos acumulados ene-mar 2026:          $300,000
 (-) Gastos deducibles ene-mar:             $80,000
 (=) Utilidad fiscal acumulada:             $220,000
 
-ISR según tarifa Art. 96 (rango 185,852-374,837):
-  Cuota fija:                              $19,682.13
-  Excedente: $220,000 - $185,852.57 = $34,147.43
-  21.36% del excedente:                    $7,293.89
-(=) ISR del ejercicio acumulado:           $26,976.02
+Tarifa de marzo 2026 (Anexo 8; renglón 167,210.05 – 319,231.50):
+  Cuota fija:                              $31,371.27
+  Excedente: $220,000 - $167,210.05 = $52,789.95
+  30% del excedente:                       $15,836.99
+(=) ISR del ejercicio acumulado:           $47,208.26
 
-(-) Pagos provisionales ya enterados:      $18,000
-(-) Retenciones acumuladas del ejercicio:  $6,000
-(=) ISR a pagar este mes:                  $2,976.02
+(-) Pagos provisionales ya enterados:      $25,000.00
+(-) Retenciones acumuladas del ejercicio:  $6,000.00
+(=) ISR a pagar este mes:                  $16,208.26
 ```
 
 ## Gastos deducibles típicos para PFAE
@@ -108,33 +110,34 @@ ISR según tarifa Art. 96 (rango 185,852-374,837):
 - Honorarios de contador, abogado, asesor
 - Servicios de diseño/marketing/freelancers contratados
 - Suministros de oficina
-- Cuotas IMSS si se aporta voluntariamente
+- Cuotas IMSS propias como trabajador independiente: deducibilidad **verificar con contador**
 
 **Reglas críticas**:
-- Pago en efectivo > $2,000 MXN: NO deducible. SIEMPRE transferencia, cheque, o tarjeta.
+- Pago en efectivo > $2,000 MXN: NO deducible (Art. 27 fr. III LISR); combustible nunca en efectivo. SIEMPRE transferencia, cheque o tarjeta.
 - CFDI a tu RFC con dirección fiscal correcta. CFDI a "público en general" no deduce.
 - Concepto del CFDI debe corresponder a actividad real. "Servicios profesionales" genérico es señal de alerta SAT.
 - Gastos personales mezclados con negocio: solo deduce la parte de negocio. Mantener separación clara.
 
 ## Deducciones personales (anual, Art. 151 LISR)
 
-Aplican a **ambos regímenes** (RESICO y PFAE) en la declaración anual:
+Aplican en la anual de **PFAE 612** (y sueldos). **RESICO PF no aplica deducciones personales.**
 
 | Concepto | Tope |
 |---|---|
-| Honorarios médicos, dentales, hospitalarios (uso D01) | Sin tope individual, pero sí tope global |
-| Intereses reales pagados por crédito hipotecario casa habitación | Sin tope específico (sí global) |
-| Aportaciones voluntarias SAR | Sin tope específico (sí global) |
-| Primas seguros gastos médicos | Sin tope específico (sí global) |
-| Transportación escolar obligatoria | Sin tope específico (sí global) |
-| Donativos a donatarias autorizadas | Máx 7% de ingresos acumulados año previo |
-| Colegiaturas (preescolar a media superior, no universidad) | Varios topes por nivel: preescolar $14,200, primaria $12,900, secundaria $19,900, prep tec $17,100, prep general $24,500 (verificar vigente) |
+| Honorarios médicos, dentales, psicología, nutrición, hospitalarios (D01) | Dentro del tope global |
+| Gastos funerales (D03) | 1 UMA anual, dentro del tope global |
+| Intereses reales hipotecarios casa habitación (D05) | Dentro del tope global (crédito ≤ 750,000 UDIS) |
+| Primas de seguros de gastos médicos (D07) | Dentro del tope global |
+| Transportación escolar obligatoria (D08) | Dentro del tope global |
+| Donativos a donatarias autorizadas (D04) | Máx. 7% de ingresos acumulables del año previo, y dentro del tope global |
+| Aportaciones voluntarias/complementarias al retiro (D06) | **Fuera** del tope global: 10% de ingresos acumulables, máx. 5 UMA anuales |
+| Colegiaturas (D10, preescolar a bachillerato) | **Fuera** del tope global (Decreto DOF 26-12-2013): preescolar $14,200, primaria $12,900, secundaria $19,900, profesional técnico $17,100, bachillerato $24,500 por alumno |
 
-**TOPE GLOBAL** (Art. 151 último párrafo): el total de deducciones personales no puede exceder **el menor entre**:
-- 5 UMAs anuales (~$200,000-250,000 MXN según UMA vigente)
-- 15% del ingreso del contribuyente
+**TOPE GLOBAL** (Art. 151 último párrafo): el menor entre:
+- 5 UMA anuales: $206,480.50 (ejercicio 2025, UMA $113.14) / $214,090.75 (ejercicio 2026, UMA $117.31)
+- 15% del total de ingresos del contribuyente (incluidos exentos)
 
-**Forma de pago de deducción personal**: efectivo NO califica. Solo transferencia, cheque nominativo, tarjeta de crédito/débito/servicio (excepto honorarios médicos veterinarios que sí aceptan otras formas).
+**Forma de pago**: efectivo NO califica. Transferencia, cheque nominativo, tarjeta de crédito/débito/servicios. Detalle completo: `pf-anual-mx/skills/identificar-deducciones-personales`.
 
 ## Salida esperada — Pago provisional mensual
 
@@ -187,7 +190,7 @@ Saldo a favor proyectado en anual: $XX,XXX
 
 ## Alertas que el skill debe detectar automáticamente
 
-1. **Depósitos en efectivo > $15,000 MXN/mes en cuentas bancarias del contribuyente**: el banco reporta al SAT (Art. 32 Ley del IVA + circular). Genera discrepancia con ingresos facturados.
+1. **Depósitos en efectivo > $15,000 MXN/mes en cuentas bancarias del contribuyente**: el banco los informa al SAT (Art. 55 fr. IV LISR). Pueden generar discrepancia con ingresos facturados.
 2. **Retenciones no acreditadas**: hay CFDIs recibidos con retenciones que no se están aplicando en pagos provisionales (dinero perdido).
 3. **Gastos deducidos sin CFDI**: ningún gasto sin CFDI a tu RFC.
 4. **Forma de pago efectivo en deducciones**: no procede.
@@ -217,25 +220,25 @@ Derivar a contador. El skill da una base sólida; el contador valida y firma.
 ## ⚠ Riesgo regulatorio CRÍTICO — verificación vigente obligatoria
 
 Este es el skill con **mayor riesgo regulatorio del monorepo**. Un cálculo incorrecto puede generar:
-- Multa SAT por pago insuficiente (8% del omitido más recargos)
+- Actualización, recargos y multa de 55% a 75% del impuesto omitido (Art. 76 CFF)
 - Discrepancia fiscal con consecuencias mayores
 - Sanción profesional al contador firmante (si aplica)
 
 **Datos que DEBES verificar antes de cualquier uso real**:
 
-1. **Tarifa Art. 96 LISR** (los 11 rangos con cuota fija y % sobre excedente): se actualiza **anualmente** por inflación. Los valores citados en este skill ($8,952.49, $75,984.55, etc.) **probablemente están desactualizados**. Descargar la tarifa vigente del portal SAT del ejercicio fiscal en curso.
+1. **Tarifa Art. 96 LISR**: verificada contra Anexo 8 RMF 2026 (DOF 28-12-2025). Se actualiza solo cuando la inflación acumulada supera 10% (Art. 152); confirmar el Anexo 8 de cada año.
 
-2. **Tasas RESICO PF** (1.0, 1.1, 1.5, 2.0, 2.5%): validar contra RMF vigente.
+2. **Tasas RESICO PF** (1.0, 1.1, 1.5, 2.0, 2.5%): están en el Art. 113-E LISR (no en la RMF); texto vigente verificado (última reforma LISR DOF 01-04-2024).
 
 3. **Topes de deducción personal Art. 151 LISR**:
    - Tope global: el menor entre 5 UMAs anuales y 15% del ingreso. La UMA se actualiza anualmente.
-   - Topes específicos de colegiaturas (preescolar $14,200, primaria $12,900, secundaria $19,900, prepa técnica $17,100, prepa general $24,500): **valores históricos**. Verificar vigentes.
+   - Topes de colegiaturas: Decreto DOF 26-12-2013, montos sin cambio desde entonces.
 
-4. **Forma de pago para deducción**: efectivo NO califica para deducciones personales (excepto algunos casos). Verificar excepciones vigentes.
+4. **Forma de pago para deducción**: efectivo NO califica.
 
-5. **Coeficiente de utilidad PFAE**: el cálculo del pago provisional PFAE usa el coeficiente del ejercicio anterior. El skill no calcula automáticamente este coeficiente — debe proveerse.
+5. **Coeficiente de utilidad**: NO aplica a personas físicas 612 (es de personas morales). El pago provisional PFAE es utilidad acumulada × tarifa acumulada (Art. 106).
 
-6. **Tope para depósitos en efectivo reportables** ($15,000 MXN/mes): verificar circular vigente.
+6. **Depósitos en efectivo informados por bancos** ($15,000 MXN/mes): Art. 55 fr. IV LISR.
 
 7. **Plazo del pago provisional** (día 17 del mes siguiente): estable pero confirmar que no cambió en el ejercicio.
 

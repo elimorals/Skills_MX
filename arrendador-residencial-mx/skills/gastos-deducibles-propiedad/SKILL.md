@@ -1,6 +1,6 @@
 ---
 name: gastos-deducibles-propiedad
-description: Tracking de gastos deducibles para el arrendador residencial PF, agrupados por propiedad y mes. Cubre las categorías típicas: impuesto predial (deducible en arrendamiento), mantenimiento estructural, reparaciones autorizadas, agua y servicios pagados por el dueño, intereses de hipoteca de la propiedad rentada (si aplica), depreciación del 5% anual sobre valor de construcción, primas de seguro del inmueble. Aplica reglas específicas del régimen (PFAE 612 o RESICO PF 626 — RESICO no permite deducciones acumulables). Genera reporte deducible para integrar en la declaración anual. Usar cuando el usuario diga gastos deducibles propiedad, deducciones arrendamiento, qué puedo deducir, declaración arrendador. NO usar para deducciones personales (Art. 151).
+description: Tracking de gastos deducibles para el arrendador residencial PF en régimen 606 (Arrendamiento), agrupados por propiedad y mes, y comparación contra la deducción ciega del 35% más predial (Art. 115 LISR). Cubre predial, mantenimiento sin mejoras, agua pagada por el dueño, intereses reales de créditos del inmueble, salarios y honorarios, primas de seguro y depreciación del 5% anual de la construcción, más el cálculo de pagos provisionales (mensuales o trimestrales, Art. 116). RESICO PF (626) no permite deducciones. Usar cuando el usuario diga gastos deducibles propiedad, deducciones arrendamiento, deducción ciega, qué puedo deducir, pago provisional renta, declaración arrendador. NO usar para deducciones personales (Art. 151).
 allowed-tools: Read, Write
 ---
 
@@ -8,77 +8,39 @@ allowed-tools: Read, Write
 
 ## Aplicabilidad por régimen
 
-| Régimen | Aplica deducciones acumulables | Nota |
+| Régimen | ¿Deducciones? | Nota |
 |---|---|---|
-| 612 (PFAE arrendamiento) | ✅ SÍ | Deducciones bajo Art. 142 LISR |
-| 626 (RESICO PF) | ❌ NO | Régimen simplificado — solo tasa sobre ingresos cobrados |
-| 605 (asalariado + arrendamiento) | Sólo arrendamiento parte 612 | Mixto |
+| 606 (Arrendamiento) | ✅ Sí | Comprobadas (Art. 115 LISR) o ciega 35% + predial |
+| 626 (RESICO PF) | ❌ No | Tasa de 1% a 2.5% sobre ingresos cobrados (Art. 113-E) |
+| Asalariado que además renta | Sí, en la parte de arrendamiento (606) | Acumula ambos en la anual |
 
-Este skill aplica **solo a régimen 612**. Para RESICO PF emitir reporte indicando "no aplica deducciones".
+## Deducciones comprobadas (Art. 115 LISR)
 
-## Categorías deducibles (Art. 142 LISR)
+1. **Predial** y contribuciones locales de mejoras/derechos del inmueble (fr. I).
+2. **Mantenimiento** que no implique adiciones o mejoras, y **agua** si la paga el dueño (fr. II). Incluye pintura interior o exterior y reparaciones; ampliaciones y mejoras se capitalizan (ver inversiones).
+3. **Intereses reales** de créditos usados para comprar, construir o mejorar el inmueble (fr. III). No aplica el tope de 750,000 UDIs; ese tope es de la deducción personal de casa habitación propia (Art. 151 fr. IV).
+4. **Salarios, comisiones y honorarios** (p. ej. administración inmobiliaria), con sus impuestos y cuotas de seguridad social (fr. IV).
+5. **Primas de seguros** del inmueble (fr. V).
+6. **Inversiones en construcciones**, adiciones y mejoras: 5% anual (fr. VI y Art. 34 fr. I). No se deprecia el terreno.
 
-### 1. Impuesto predial
-- 100% deducible
-- Por cada propiedad
-- CFDI o recibo oficial del municipio
-- Mensual o anual
+Ejemplo de depreciación: casa de $2,000,000 (construcción $1,400,000 + terreno $600,000) → $1,400,000 × 5% = **$70,000** al año.
 
-### 2. Mantenimiento estructural
-- Reparaciones mayores (techo, plomería estructural, instalación eléctrica)
-- Pintura externa (no interior — eso es ornamental)
-- CFDI con uso G03
+Requisitos (Art. 147 LISR): CFDI a tu RFC; pagos > $2,000 con transferencia, cheque o tarjeta; proveedor fuera de la lista 69-B definitiva.
 
-### 3. Servicios pagados por el dueño
-- Agua, mantenimiento de áreas comunes del condominio (cuota)
-- NO incluye luz, gas, internet (eso paga el inquilino)
+## Deducción ciega
 
-### 4. Intereses de hipoteca
-- Solo del año del crédito sobre la propiedad rentada
-- Banco emite constancia anual de intereses reales
-- Hasta 750k UDIs
-
-### 5. Depreciación
-- 5% anual sobre valor de construcción (no terreno)
-- Ejemplo: casa con valor $2,000,000 (construcción $1,400,000 + terreno $600,000)
-  - Depreciación anual deducible: $1,400,000 * 5% = $70,000
-
-### 6. Prima de seguro del inmueble
-- Solo de daños / contenidos
-- 100% deducible
-- CFDI del seguro
-
-### 7. Salarios de personal de la propiedad (si aplica)
-- Conserje, jardinero, etc. — solo si están dados de alta
-- Cuotas IMSS patronales
-
-### 8. Honorarios de gestión inmobiliaria (si los hay)
-- Comisión cobrada por inmobiliaria administradora
-- CFDI con uso G03
-
-## Cálculo
-
-### Por mes
+En lugar de las comprobadas, puedes deducir **35% de los ingresos + el predial pagado** (Art. 115, último párrafo). Se elige en el primer pago provisional del año y se mantiene en el ejercicio (confianza media: RLISR; confirmar con contador).
 
 ```python
-total_deducciones_mes = (
-    predial_mes
-    + mantenimiento_mes
-    + servicios_pagados_dueño_mes
-    + intereses_hipoteca_mes
-    + (depreciacion_anual / 12)
-    + (prima_seguro_anual / 12)
-    + salarios_mes
-    + honorarios_administracion_mes
-)
+def deduccion(ingresos, gastos_comprobados, predial, usa_ciega):
+    return ingresos * 0.35 + predial if usa_ciega else gastos_comprobados
 ```
 
-### Validaciones
+## Pagos provisionales (Art. 116 LISR)
 
-- CFDI debe estar a nombre del arrendador (su RFC)
-- Forma de pago **no efectivo** para montos > $2,000 (recomendable validar todos)
-- Si CFDI cancelado → excluir
-- Si proveedor en lista 69-B definitivo → excluir + warning
+- Base = ingresos del periodo − deducciones del periodo; se aplica la tarifa del Art. 96 (Anexo 8 RMF 2026) y se acredita la retención de 10% que hayan hecho personas morales.
+- **Mensual**, a más tardar el día 17 del mes siguiente.
+- **Trimestral** si solo tienes ingresos por arrendamiento y no exceden 10 UMA mensuales (UMA 2026: $117.31 × 30.4 × 10 = $35,662.24 al mes).
 
 ## Output
 
@@ -86,64 +48,56 @@ total_deducciones_mes = (
 {
   "operation": "gastos_deducibles_propiedad",
   "rfc_hash": "...",
-  "regimen": "612",
+  "regimen": "606",
   "ejercicio": 2025,
   "propiedades": {
     "RN-1A": {
       "predial_anual": "5000.00",
       "mantenimiento": "12000.00",
-      "servicios": "3000.00",
-      "intereses_hipoteca": "0.00",
+      "agua_y_servicios": "3000.00",
+      "intereses_reales_credito": "0.00",
       "depreciacion_anual": "70000.00",
       "primas_seguro": "8000.00",
-      "salarios": "0.00",
-      "honorarios_administracion": "0.00",
+      "salarios_honorarios": "0.00",
       "total_anual_mxn": "98000.00"
     }
   },
-  "total_deducciones_acumulables_mxn": "98000.00",
   "ingresos_arrendamiento_anuales_mxn": "144000.00",
-  "utilidad_fiscal_estimada_arrendamiento_mxn": "46000.00",
+  "comparativo": {
+    "comprobadas_mxn": "98000.00",
+    "ciega_35_mas_predial_mxn": "55400.00",
+    "conviene": "comprobadas"
+  },
+  "base_gravable_estimada_mxn": "46000.00",
   "advertencias": [
-    "Depreciación es estimada — validar con avalúo o documentos catastrales",
-    "Intereses hipoteca = 0 — confirmar que no hay crédito vigente"
+    "Depreciación estimada: validar valor de construcción con escritura o avalúo",
+    "Intereses = 0: confirmar que no hay crédito vigente"
   ],
   "vigencia_validada": false
 }
 ```
 
-## Opción simplificada: deducción ciega 35%
-
-Alternativa al rastreo de gastos: deducir el **35% de los ingresos** (sin comprobar).
-
-```python
-if usuario.elige_deduccion_ciega:
-    deduccion = ingresos_arrendamiento * 0.35
-else:
-    deduccion = sum_gastos_comprobados
-```
-
-Conviene si gastos comprobados < 35% de ingresos. Conviene comparar ambos escenarios antes de elegir.
+Cálculos: 5,000 + 12,000 + 3,000 + 70,000 + 8,000 = 98,000; ciega = 144,000 × 35% + 5,000 = 55,400; base = 144,000 − 98,000 = 46,000.
 
 ## Casos edge
 
 | Caso | Acción |
 |---|---|
-| Propiedad sin hipoteca | Saltar categoría 4 |
-| Propiedad heredada (sin valor de construcción claro) | Pedir avalúo o usar % del catastral (60% típico) |
-| Reparaciones cosméticas (pintura interior, decoración) | NO deducibles — uso ornamental |
-| Mejoras estructurales (ampliación) | Capitalizar (suman al valor del inmueble, depreciable) |
-| Multas por trámites tardíos | NO deducibles |
-| Pagos en efectivo > $2,000 | NO deducibles para impuestos (regla SAT) |
+| Propiedad sin crédito | Omitir intereses |
+| Propiedad heredada sin valor de construcción claro | Avalúo que separe terreno y construcción |
+| Decoración o mobiliario | No es mantenimiento; mobiliario es inversión al 10% (Art. 34 fr. III) si se renta amueblado |
+| Ampliación o mejora | Se capitaliza y deprecia al 5% |
+| Multas y recargos | No deducibles |
+| Pagos en efectivo > $2,000 | No deducibles |
 
 ## Dependencias
 
-- `mp_facturama_extendido` (validar CFDIs recibidos)
-- `mp_sat_portal` (consultar 69-B de proveedores)
-- Tracker de propiedades + tracker de gastos
+- `mp_sat_portal` (`sat_consultar_69b_efos` para proveedores)
+- `mp_facturama_extendido` (`facturama_buscar_cfdis`, requiere credenciales)
+- Tracker de propiedades y de gastos
 
 ## ⚠ Compliance
 
-- Deducción ciega 35% vs comprobada: declarar UNA en la anual, no ambas
-- Si régimen RESICO PF: emitir reporte pero indicar que NO se aplican estas deducciones (régimen simplificado)
-- `vigencia_validada: false` — contador valida en declaración anual
+- Comprobadas o ciega: una sola opción por ejercicio.
+- RESICO PF: emitir reporte indicando que no hay deducciones.
+- `vigencia_validada: false`: el contador valida antes de la declaración.

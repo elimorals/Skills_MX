@@ -1,6 +1,6 @@
 ---
 name: paquetes-membresia
-description: Diseño de paquetes y membresías para salones, estéticas y spas mexicanos (3-faciales, 6-cortes-niño, mensualidad spa ilimitado, anual VIP). Calcula descuento óptimo según churn, vigencia, días de uso, recargo por servicio no usado, condiciones de cancelación PROFECO-friendly, y emisión de CFDI por suscripción mensual o cobro completo upfront. Usar cuando el usuario diga paquete servicios, membresía, suscripción salón, mensualidad spa, bono prepago, anualidad VIP. NO usar para servicios sueltos (servicios-tarifario) ni loyalty puntos (retencion-clientes-loyalty).
+description: Diseño de paquetes y membresías para salones, estéticas y spas mexicanos (3-faciales, 6-cortes-niño, mensualidad spa ilimitado, anual VIP). Calcula descuento óptimo según churn, vigencia, días de uso, recargo por servicio no usado, condiciones de cancelación conforme a la LFPC (incluye la reforma de cobros recurrentes DOF 12-12-2025), y emisión de CFDI por suscripción mensual o cobro completo upfront. Usar cuando el usuario diga paquete servicios, membresía, suscripción salón, mensualidad spa, bono prepago, anualidad VIP. NO usar para servicios sueltos (servicios-tarifario) ni loyalty puntos (retencion-clientes-loyalty).
 allowed-tools: Read, Write, Edit
 ---
 
@@ -12,7 +12,7 @@ Aumentan ingresos predecibles + cierran al cliente por adelantado.
 
 ### A. Bono de servicios (prepago + descuento)
 
-Cliente paga upfront 5 servicios al precio de 4:
+Cliente paga upfront 6 servicios con 25% de descuento (6 × $400 = $2,400 → $1,800):
 
 ```
 {
@@ -77,6 +77,8 @@ Cliente paga anualmente y obtiene mejores precios + extras:
 }
 ```
 
+La parte no reembolsable debe ser proporcional al costo real (agenda bloqueada, prueba ya hecha); retener el 100% sin servicio prestado puede considerarse cláusula abusiva (Art. 10 LFPC).
+
 ### E. Paquete corporativo (servicio para grupo)
 
 Para empresas que reservan para varios empleados:
@@ -125,32 +127,41 @@ Paga pero no usa. Bueno para flujo pero malo para reputación:
 - Si no usa en 60 días, ofrecer credit transferible
 
 ### 3. Cancelación prematura
-PROFECO permite reclamo. Política clara:
-- Hasta 7 días: reembolso 100% (Art. 56 LFPC)
+PROFECO atiende quejas por cancelación y cobros. Política clara, por escrito y entregada **antes** de cobrar:
+- Hasta 7 días sin uso: reembolso 100% (política comercial sugerida)
 - 8-30 días: prorrateo (servicios usados a precio carta)
-- 30+ días: no reembolsable, pero credit usable 90 días
+- 30+ días: no reembolsable, pero crédito usable 90 días
 
-### 4. Membresía sin renovar
-Auto-renueva por default con consentimiento previo (Art. 76 bis LFPC):
-- Pre-aviso 30 días antes
-- Email + WhatsApp
-- Opt-out fácil (no fricción intencional)
+Marco legal (LFPC, última reforma DOF 12-12-2025):
+- **Art. 56 LFPC** (5 días hábiles para revocar sin responsabilidad) aplica solo a ventas **fuera del establecimiento** o a distancia (Art. 51), p. ej. un paquete vendido por teléfono o en un evento externo; no aplica si el servicio se presta dentro de 10 días hábiles. No es un derecho general para ventas en mostrador.
+- **Art. 10 LFPC**: no se pueden hacer cargos sin consentimiento ni cláusulas abusivas; **Art. 90** invalida cláusulas que permitan al salón modificar el contrato o sustraerse de sus obligaciones unilateralmente.
+- **Art. 7 BIS**: el precio exhibido debe ser el total (IVA incluido).
+- Salones de belleza y spas **no** están en la lista de contratos de adhesión con registro obligatorio ante PROFECO (NOM-174-SCFI-2007 cubre, entre otros, eventos sociales y tintorerías; confianza media, fuente: IDC Online). El registro voluntario es posible.
+
+### 4. Membresía sin renovar / cobro recurrente
+Desde la reforma a la LFPC del **DOF 12-12-2025 (Art. 76 BIS fr. VIII y IX)**, cuando la membresía se contrata o cobra por medios electrónicos:
+- Informar de forma clara y destacada que hay cobro automático recurrente, su periodicidad, monto y fecha.
+- Obtener **consentimiento expreso e informado** para el cargo recurrente.
+- Si hay renovación automática: avisar **al menos 5 días naturales antes** y permitir cancelar sin penalización (sugerido: aviso a 30 y a 5 días, por email + WhatsApp).
+- Ofrecer un mecanismo para cancelar **de manera inmediata** (sin fricción intencional).
 
 ## Implicaciones fiscales (CFDI)
 
+El IVA se causa y el ingreso se acumula cuando se **cobra** (Art. 17 LIVA), así que el CFDI se emite al cobro, no al consumo.
+
 ### Bonos prepago
-- CFDI emitido al cobrar (anticipo)
-- UsoCFDI: G03 (gastos generales) si cliente quiere deducir
-- Al usar el servicio: emitir CFDI relacionado o nota interna
+- Si al cobrar ya están definidos los servicios y el precio (bono de 6 cortes por $1,800): CFDI de ingreso por la venta del paquete, PUE con la forma de pago real. No es "anticipo".
+- El esquema de anticipo (CFDI de anticipo + CFDI de la operación con relación 07 + CFDI de egreso) solo aplica cuando al cobrar **no** se sabe qué servicio o precio se dará (p. ej. "saldo a favor" libre). Ver `cfdi-emision`.
+- Al usar cada servicio: bitácora interna, no otro CFDI.
+- UsoCFDI: G03 si el cliente lo pide; S01 si no tiene efectos fiscales. Ojo: los servicios de estética no son deducción personal de la PF y rara vez son deducibles para una empresa; no prometas deducibilidad.
 
 ### Membresía mensual
-- CFDI mensual recurrente
-- Forma de pago: 28 (Tarjeta de débito) o 03 (Transferencia)
-- Si pago anual upfront: emitir CFDI completo con leyenda "Membresía anual 12 meses"
+- Un CFDI por cada cobro mensual.
+- Forma de pago: 04 (tarjeta de crédito), 28 (tarjeta de débito) o 03 (transferencia), según el medio real.
 
-### Anualidad VIP
-- Opción A: CFDI total al cobrar (más simple, cliente lo deduce 100% en el año)
-- Opción B: 12 CFDIs mensuales (mejor flujo contable pero más operativo)
+### Anualidad VIP pagada por adelantado
+- Un CFDI por el total al cobrar (con leyenda "Membresía anual 12 meses"). No se puede "partir" en 12 CFDIs mensuales si el dinero ya se cobró completo.
+- 12 CFDIs mensuales solo si el cobro también es mensual.
 
 ## Output estructurado
 
@@ -168,14 +179,14 @@ Auto-renueva por default con consentimiento previo (Art. 76 bis LFPC):
     "auto_renueva": false
   },
   "analisis_riesgo": {
-    "max_sobreuso_proyectado": "12 servicios/cliente",
+    "max_sobreuso_proyectado": "3 servicios/cliente (todo el paquete)",
     "valor_real_proyectado_mxn": 1200,
     "rentable_si_clientes_usan": "< 2.5 servicios promedio",
     "tasa_uso_target": 0.83
   },
   "implicaciones_cfdi": [
-    "Emitir CFDI al cobrar (anticipo) si pago upfront",
-    "UsoCFDI G03 para deducibilidad cliente",
+    "Emitir CFDI de ingreso PUE por el paquete completo al cobrar (servicios y precio definidos)",
+    "UsoCFDI G03 o S01 según lo pida el cliente; no prometer deducibilidad",
     "Bitácora interna de servicios consumidos"
   ]
 }
@@ -184,5 +195,6 @@ Auto-renueva por default con consentimiento previo (Art. 76 bis LFPC):
 ## Validación pendiente
 
 - Tasas de uso real de paquetes en salones MX
-- Cláusulas legales válidas según Art. 56-76 LFPC
-- Mejores prácticas de auto-renovación post-reforma Art. 76 bis
+- Si PROFECO emite lineamientos o NOM para aplicar el Art. 76 BIS fr. VIII-IX (reforma DOF 12-12-2025)
+
+⚠ Validar los términos y condiciones con abogado y el tratamiento CFDI con contador antes de vender paquetes.

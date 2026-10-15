@@ -1,56 +1,41 @@
 ---
 name: sua-idse-export
-description: Genera archivo .SUA del IMSS (Sistema Único de Autodeterminación) para envío vía IDSE (Internet Delegacional). Cubre altas/bajas/modificaciones del mes + cálculo de cuotas mensuales / bimestrales. Formato propietario IMSS — debe coincidir 100% con sistema oficial para evitar capital constitutivo. Usar cuando el usuario diga SUA, IDSE, archivo IMSS, movimientos IMSS mes.
+description: Prepara los movimientos afiliatorios del mes (altas, bajas, modificaciones de salario, ausentismos, incapacidades) para cargarlos en el SUA (Sistema Único de Autodeterminación) e IDSE (IMSS Desde Su Empresa), y concilia la liquidación mensual (IMSS) y bimestral (RCV + INFONAVIT) con pago a más tardar el día 17. No sustituye al SUA oficial. Usar cuando el usuario diga SUA, IDSE, archivo IMSS, movimientos IMSS del mes, pago IMSS bimestral, liquidación SUA, cédula de determinación.
 allowed-tools: Read, Write
 ---
 
-# SUA / IDSE export
+# SUA / IDSE — preparación de movimientos
 
-## SUA = Sistema Único de Autodeterminación
+## Qué es cada cosa
 
-Software DESKTOP obligatorio del IMSS para generar la declaración mensual / bimestral de cuotas obrero-patronales.
+- **IDSE** (IMSS Desde Su Empresa): portal donde el patrón presenta, con su e.firma, los **avisos afiliatorios** (alta, baja, modificación de salario) dentro de 5 días hábiles (Art. 15 fr. I LSS).
+- **SUA**: programa de escritorio del IMSS que calcula la **liquidación de cuotas**. Genera el archivo de pago que se entera en banco o por SIPARE.
+  - **Mensual**: enfermedades y maternidad, invalidez y vida, riesgos de trabajo, guarderías.
+  - **Bimestral**: retiro, cesantía y vejez (RCV) + INFONAVIT (aportación y amortización).
+  - Pago: a más tardar el **día 17** del mes siguiente (Art. 39 LSS).
 
-- **Mensual**: cuotas IMSS
-- **Bimestral**: cuotas IMSS + INFONAVIT (al mismo tiempo)
+## Qué genera este skill
 
-## IDSE = Internet Delegacional
+Un archivo de trabajo por mes con cada movimiento, listo para capturar o importar al SUA con su layout oficial de importación. **El layout exacto (posiciones y longitudes) lo define el manual del SUA vigente**; este skill no lo inventa: si el usuario necesita el archivo de importación, pídele la versión del SUA y usa el layout de su manual.
 
-Portal IMSS para subir el archivo .SUA generado y pagar las cuotas.
-
-## Formato archivo .SUA
-
-Formato propietario texto plano (extensión `.AFI` para afiliación, `.LIQ` para liquidación). Cada línea representa un movimiento:
-- ALTA: incluir NSS, RFC, CURP, nombre, fecha alta, SBC, registro patronal
-- BAJA: NSS + fecha baja + causa
-- MODIFICACIÓN: NSS + nuevo SBC + fecha
-- AUSENTISMOS: NSS + fechas + razón
-- INCAPACIDADES: NSS + período + tipo
+Campos por movimiento:
+- ALTA / REINGRESO: NSS, RFC, CURP, nombre, fecha, SBC, tipo de trabajador, tipo de jornada, registro patronal.
+- BAJA: NSS, fecha, causa.
+- MODIFICACIÓN de salario: NSS, nuevo SBC, fecha (incluye la de aniversario por más días de vacaciones).
+- AUSENTISMOS: NSS, fechas (su efecto en cuotas sigue el Art. 31 LSS; el SUA lo aplica).
+- INCAPACIDADES: NSS, folio, periodo, rama.
 
 ## Algoritmo
 
 ```python
-def generar_archivo_sua(mes: str, empleados: list[Empleado], registro_patronal: str) -> Path:
-    output_path = Path(f"~/.local/share/plugins-mx/sua/{mes}.AFI").expanduser()
-    lines = []
-
-    # Header
-    lines.append(f"# IMSS-IDSE archivo SUA generado {datetime.now().isoformat()}")
-    lines.append(f"# Registro patronal: {registro_patronal}")
-    lines.append(f"# Mes: {mes}")
-
-    for emp in empleados:
-        # Cada movimiento del mes
-        for mov in emp.movimientos_mes(mes):
-            line = format_movimiento_sua(mov, emp)
-            lines.append(line)
-
-    output_path.write_text("\n".join(lines), encoding="utf-8")
-    return output_path
+def preparar_movimientos(mes: str, empleados: list, registro_patronal: str) -> Path:
+    out = Path(f"~/.local/share/plugins-mx/sua/{mes}-movimientos.csv").expanduser()
+    filas = [m.as_row(registro_patronal) for e in empleados for m in e.movimientos_mes(mes)]
+    escribir_csv(out, filas)
+    return out
 ```
 
-## Validación
-
-⚠ **CRÍTICO**: Antes de subir a IDSE, verificar manualmente que coincide con lo que muestra el SUA oficial del IMSS. Diferencias = capital constitutivo.
+Conciliación: compara la cédula del SUA contra la **EMA/EBA** (emisión mensual/bimestral del IMSS). Si existe `mp_imss_patronal` (`imss_ema_vs_eba_diferencias`, `imss_descargar_cedula_autodeterminacion`; estado "sin verificar"), úsalo como apoyo y confirma en el portal.
 
 ## Output
 
@@ -58,22 +43,22 @@ def generar_archivo_sua(mes: str, empleados: list[Empleado], registro_patronal: 
 {
   "mes_periodo": "2026-06",
   "registro_patronal": "...",
-  "movimientos_totales": 45,
+  "movimientos_totales": 13,
   "altas": 2,
   "bajas": 1,
   "modificaciones": 5,
   "ausentismos": 3,
   "incapacidades": 2,
-  "archivo_path": "~/.local/share/plugins-mx/sua/2026-06.AFI",
-  "tamaño_bytes": 18450,
-  "siguiente_paso": "Validar contra SUA oficial IMSS antes de IDSE",
-  "deadline_idse": "2026-07-17",
+  "archivo_path": "~/.local/share/plugins-mx/sua/2026-06-movimientos.csv",
+  "pago_mensual_imss_deadline": "2026-07-17",
+  "pago_bimestral_rcv_infonavit": "bimestre may-jun, mismo día 17-jul-2026",
+  "siguiente_paso": "Capturar/importar en SUA, cotejar contra EMA/EBA y pagar",
   "vigencia_validada": false
 }
 ```
 
-## ⚠ Errar = capital constitutivo
+## ⚠ Si hay errores
 
-Diferencia entre lo enterado y lo correcto → IMSS calcula capital constitutivo (3-5x el monto + recargos + multa). Puede quebrar PyME pequeña.
-
-**Siempre validar manualmente con contador antes de enviar IDSE.**
+- Diferencias entre lo pagado y lo debido: el IMSS emite **cédula de liquidación de diferencias** con actualización, recargos y multa (Art. 304 LSS: 40% a 100% de las cuotas omitidas).
+- **Capital constitutivo** (Arts. 77-79 LSS) aplica cuando un trabajador no inscrito o con salario mal registrado sufre un riesgo: el patrón reembolsa al IMSS las prestaciones otorgadas. Es otro riesgo, no la multa por diferencias.
+- Revisa con tu contador antes de presentar.

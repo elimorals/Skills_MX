@@ -24,7 +24,7 @@ INTERACCIONES_CONOCIDAS = {
     ("metformina", "yodo_contraste"): {
         "severidad": "mayor",
         "descripcion": "Riesgo acidosis láctica si insuficiencia renal",
-        "accion": "Suspender metformina 48h antes/después de contraste",
+        "accion": "Revisar función renal; suspender al momento del estudio y 48 h después si TFG < 30 o lesión renal aguda (criterio ACR; confianza media)",
     },
     ("ssri", "tramadol"): {
         "severidad": "mayor",
@@ -36,19 +36,32 @@ INTERACCIONES_CONOCIDAS = {
         "descripcion": "Depresión respiratoria, riesgo muerte",
         "accion": "EVITAR combinación. FDA black box warning.",
     },
-    # ... ~200 interacciones más
+    # ... ampliar con una fuente profesional; esta lista es solo ilustrativa
 }
+
+# Las claves pueden ser fármaco o clase: mapear cada fármaco a sus clases.
+CLASES = {
+    "sertralina": {"ssri"}, "fluoxetina": {"ssri"}, "escitalopram": {"ssri"},
+    "alprazolam": {"benzodiacepina"}, "clonazepam": {"benzodiacepina"}, "diazepam": {"benzodiacepina"},
+    "tramadol": {"opioide"}, "morfina": {"opioide"}, "oxicodona": {"opioide"},
+}
+# Índice sin orden: (A, B) y (B, A) son la misma interacción.
+INDICE = {frozenset(k): v for k, v in INTERACCIONES_CONOCIDAS.items()}
 ```
 
 ## Algoritmo
 
 ```python
+def _nombres(med: str) -> set[str]:
+    m = med.strip().lower()
+    return {m} | CLASES.get(m, set())
+
 def validar_interacciones(nuevo_med: str, medicamentos_actuales: list[str]) -> dict:
     alertas = []
     for med in medicamentos_actuales:
-        key = tuple(sorted([nuevo_med.lower(), med.lower()]))
-        if key in INTERACCIONES_CONOCIDAS:
-            interaccion = INTERACCIONES_CONOCIDAS[key]
+        pares = {frozenset((a, b)) for a in _nombres(nuevo_med) for b in _nombres(med) if a != b}
+        for key in pares & INDICE.keys():
+            interaccion = INDICE[key]
             alertas.append({
                 "medicamentos": [nuevo_med, med],
                 "severidad": interaccion["severidad"],

@@ -1,6 +1,6 @@
 ---
 name: optimizador-rutas-conductores
-description: Sugiere zonas y horarios óptimos para que conductor de plataforma maximice ingreso por hora. Considera demanda histórica por zona/hora, surge pricing predictions, eventos especiales (concertos, partidos), y tipo de servicio (UberX vs Uber Premium vs DiDi Vip). Usar cuando el usuario diga donde conducir, mejor zona, horas pico, optimizar viajes.
+description: Sugiere zonas y horarios óptimos para que conductor de plataforma maximice ingreso por hora. Considera demanda histórica por zona/hora, surge pricing predictions, eventos especiales (concertos, partidos), y tipo de servicio (UberX vs Uber Premium vs DiDi Vip). Usar cuando el usuario diga dónde conducir, mejor zona, horas pico, a qué hora salgo, optimizar viajes, dónde hay más viajes. Las cifras de demanda y tarifa son estimaciones basadas en el historial del propio conductor, no datos de las plataformas.
 allowed-tools: Read, Write
 ---
 
@@ -34,7 +34,7 @@ allowed-tools: Read, Write
   Razón: Fin de semana + concierto Foro Sol
 
 ⛔ EVITAR:
-  Periférico zonas sin demanda baja (Tlalpan, Cuajimalpa interior)
+  Zonas periféricas con demanda baja en tu historial (p. ej. Tlalpan, Cuajimalpa interior)
   Aeropuerto antes de 12pm (esperas > 1h)
 ```
 

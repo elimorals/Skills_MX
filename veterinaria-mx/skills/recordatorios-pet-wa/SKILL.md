@@ -17,6 +17,13 @@ Las mascotas son familia. El tono debe ser cálido pero profesional.
 5. **Confirmación de lectura** — saber si el mensaje llegó
 6. **No spam** — máximo 1 mensaje cada 3 días por cliente
 
+## Categoría Meta y costo
+
+- Recordatorios de cita, vacuna, medicamento, resultados y post-cirugía: **UTILITY**.
+- Cumpleaños con promoción, baño gratis, reactivación de clientes: **MARKETING** (requiere opt-in explícito y cuesta más).
+- Meta cobra por mensaje entregado desde el 01-07-2025; los UTILITY dentro de una ventana de servicio abierta (24 h) no se cobran. Detalle: skill `whatsapp-business-mx`.
+- Ningún template se envía solo: la clínica los registra en su proveedor de WhatsApp Business y los dispara desde su sistema.
+
 ## Templates por categoría
 
 ### Vacunación
@@ -79,7 +86,7 @@ Ver skill `vacunacion-calendario`. Templates listos para 30d/7d/24h.
 
 > "Querida {{tutor}}, lamentamos profundamente la partida de Luna 🌈 Fue un honor cuidarla en su camino. Si necesitas apoyo (tanatología, cremación, urna), aquí estamos. Te acompañamos en este momento."
 
-### Cumpleaños mascota
+### Cumpleaños mascota (MARKETING)
 
 > "🎂 Hoy Luna cumple {{años}} años! Felicidades {{tutor}}. Te invitamos a una visita de cortesía esta semana con baño gratis para festejar 🐶"
 
@@ -109,4 +116,4 @@ Ver skill `vacunacion-calendario`. Templates listos para 30d/7d/24h.
 - Templates aprobados Meta WhatsApp Business para sector veterinario
 - Tonos por región (CDMX más formal vs costas más casual)
 - Casos de mascotas con tutores no responsables — protocolo legal
-- Compliance LFPDPPP con datos de mascota (hay grises legales)
+- LFPDPPP (DOF 20-03-2025; autoridad: Secretaría Anticorrupción y Buen Gobierno): los datos del tutor son datos personales; los de la mascota lo son cuando se ligan al tutor. Aviso de privacidad con skill `compliance-lfpdppp`

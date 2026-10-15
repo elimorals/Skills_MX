@@ -1,6 +1,6 @@
 ---
 name: cotizacion-boda-mxn
-description: Cotización detallada de boda en MXN con desglose por capítulos (banquete, locación, decoración, música, fotografía, video, vestido, transporte, hospedaje, papelería, novios, otros). Considera invitados (típico 150-500 MX), tipo de evento (civil, religioso, ambos), día (sábado premium, jueves descuento), temporada (Nov-Feb alta, May-Ago baja), región (CDMX/GDL premium, ciudad interior media). Genera presupuesto realista con rangos low/mid/high. Usar cuando el usuario diga cotizar boda, presupuesto evento, cuánto cuesta una boda, paquete invitados, evento privado MX. NO usar para timeline (otro skill) ni contratos (contrato-boda-pf-pm).
+description: Cotización detallada de boda en MXN con desglose por capítulos (banquete, locación, decoración, música, fotografía, video, vestido, transporte, hospedaje, papelería, novios, otros). Considera invitados (típico 150-500 MX), tipo de evento (civil, religioso, ambos), día (sábado premium, jueves descuento), temporada (Nov-Abr alta, Jun-Ago baja), región (CDMX/GDL premium, ciudad interior media). Genera presupuesto realista con rangos low/mid/high. Usar cuando el usuario diga cotizar boda, presupuesto evento, cuánto cuesta una boda, paquete invitados, evento privado MX. NO usar para timeline (otro skill) ni contratos (contrato-boda-pf-pm).
 allowed-tools: Read, Write, Edit
 ---
 
@@ -100,9 +100,16 @@ allowed-tools: Read, Write, Edit
 - Buffer obligatorio para imprevistos
 - Propinas a equipo (10-15% propinable)
 
+## IVA y precio total
+
+- Al cliente persona física se le cotiza el **monto total con IVA** (Art. 7 BIS LFPC). Muestra subtotal, IVA y total.
+- No todo lleva IVA del planner: derechos del Registro Civil (no objeto), honorarios de juez o donativo a la parroquia (según el caso), propinas (no son contraprestación del proveedor). El hospedaje causa además el impuesto estatal sobre hospedaje (ISH, tasa según el estado).
+- Si cada proveedor factura directo a los novios, el IVA lo traslada cada proveedor; la cotización del planner solo suma sus importes con IVA.
+- 8% de IVA solo aplica a proveedores inscritos en el estímulo de región fronteriza norte/sur (vigente al 31-12-2026), no por la ubicación de la boda.
+
 ## Benchmark de costos en MX (2026 referencia)
 
-⚠ Rangos amplios por región y tipo de evento. CDMX/GDL/MTY/destino-Cancún son premium.
+⚠ Confianza baja: rangos orientativos sin fuente verificada; actualiza con cotizaciones reales de 3 proveedores por capítulo. Rangos amplios por región y tipo de evento. CDMX/GDL/MTY/destino-Cancún son premium.
 
 ### Boda 200 invitados — CDMX
 
@@ -120,7 +127,7 @@ allowed-tools: Read, Write, Edit
 | Papelería | $10k | $25k | $60k |
 | Coordinación | $40k | $100k | $250k |
 | Otros / imprevistos | $30k | $70k | $200k |
-| **TOTAL** | **$628k** | **$1.25M** | **$2.9M+** |
+| **TOTAL** | **$628k** | **$1.255M** | **$2.9M+** |
 
 Per cápita: $3,140 - $14,500 MXN por invitado (rango común).
 
@@ -165,10 +172,11 @@ Premium +30-60% sobre CDMX equivalente. Logística internacional puede sumar $20
         "capitulo": "banquete",
         "concepto": "Menú 3 tiempos + open bar + mesa dulces",
         "presupuesto_mxn": 480000,
-        "porcentaje_del_total": 0.38
+        "porcentaje_del_subtotal": 0.44
       },
       "..."
     ],
+    "_nota": "subtotal sin el capítulo Otros/imprevistos y con todos los conceptos gravados al 16% (simplificación)",
     "subtotal_mxn": 1100000,
     "iva_aplicable_mxn": 176000,
     "total_mxn": 1276000,

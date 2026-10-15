@@ -1,6 +1,6 @@
 ---
 name: dashboard-conductor
-description: Dashboard semanal/mensual del conductor de plataforma. Muestra ingresos brutos por plataforma (Uber, DiDi, Cabify, InDriver), comisiones cobradas, retenciones aplicadas (8% ISR + 8% IVA art. 113-A LISR), neto recibido, viajes realizados, horas activas, y rating actual. Útil al cierre de cada semana para reconciliar. Usar cuando el usuario diga cómo me fue esta semana, dashboard chofer, ingresos plataforma, ganancia semana. NO usar para fines fiscales formales (eso es calculo-fiscal-conductor).
+description: Dashboard semanal/mensual del conductor de plataforma. Muestra ingresos brutos por plataforma (Uber, DiDi, Cabify, InDriver), comisiones cobradas, retenciones aplicadas (2.1% ISR Art. 113-A LISR + 8% IVA Art. 18-J LIVA), neto recibido, viajes realizados, horas activas, y rating actual. Útil al cierre de cada semana para reconciliar. Usar cuando el usuario diga cómo me fue esta semana, dashboard chofer, cuánto gané en Uber, ingresos plataforma, ganancia semana, resumen semanal. NO usar para fines fiscales formales (eso es calculo-fiscal-conductor).
 allowed-tools: Read, Write
 ---
 
@@ -19,7 +19,7 @@ allowed-tools: Read, Write
 
 💵 Total bruto:        $6,050
    Comisión plataforma: ─$1,210 (20%)
-   Retenciones SAT:    ─$  611 (ISR 2.1% Art. 113-A LISR + IVA 8% Art. 18-M LIVA)
+   Retenciones SAT:    ─$  611 (ISR 2.1% = $127.05 Art. 113-A LISR + IVA 8% = $484.00 Art. 18-J LIVA)
 🟢 Neto recibido:       $4,229
 
 ⏰ Horas activas: 35
@@ -32,9 +32,10 @@ allowed-tools: Read, Write
 
 ## Data sources
 
-- Tracker manual o CSV exportado de cada plataforma
-- `mp_cabify_business` (parcial, solo empresas)
-- Plataformas mayores (Uber, DiDi) requieren login manual al panel conductor
+- Tracker manual o CSV/resumen exportado de cada plataforma (fuente principal)
+- `mp_didi_partners`: DiDi no publica API para conductores; con credenciales devuelve `ConfigError` → pedir el resumen de la app al usuario
+- `mp_cabify_business` es para **empresas que piden viajes** (estimar, pedir, consultar), no para ingresos del conductor: no usarlo aquí
+- Uber, inDrive: sin MCP; login manual del conductor a su panel
 
 ## Schema tracker
 
@@ -44,9 +45,9 @@ allowed-tools: Read, Write
   "plataforma": "uber",
   "ingresos_brutos_mxn": "4200.00",
   "comision_plataforma_mxn": "840.00",
-  "retencion_isr_mxn": "168.00",
-  "retencion_iva_mxn": "168.00",
-  "neto_mxn": "3024.00",
+  "retencion_isr_mxn": "88.20",
+  "retencion_iva_mxn": "336.00",
+  "neto_mxn": "2935.80",
   "viajes": 38,
   "horas_activas": 22,
   "rating": 4.8

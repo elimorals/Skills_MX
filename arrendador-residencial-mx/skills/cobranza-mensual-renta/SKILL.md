@@ -8,7 +8,7 @@ allowed-tools: Read, Write
 
 ## Filosofía
 
-El inquilino **sigue viviendo** en tu propiedad. Cobranza agresiva = inquilino se va o se queja con CONDUSEF / inmobiliaria pública. Mantener la relación es valioso a largo plazo si el inquilino es bueno (rotación = vacancia + costos de screening).
+El inquilino **sigue viviendo** en tu propiedad. Cobranza agresiva = inquilino se va o escala a conflicto legal. Mantener la relación es valioso a largo plazo si el inquilino es bueno (rotación = vacancia + costos de screening).
 
 ## 5 niveles de escalamiento
 
@@ -71,7 +71,7 @@ Estimado/a [Nombre]:
 
 Por este medio le notifico que la renta correspondiente al mes de [mes] del inmueble ubicado en [dirección] no ha sido pagada al día de hoy [fecha].
 
-Conforme a la cláusula 9 del contrato firmado el [fecha contrato], la falta de pago de dos mensualidades consecutivas constituye causal de rescisión del contrato (Art. 2489 fr. I CCDF).
+Conforme a la cláusula 9 del contrato firmado el [fecha contrato], la falta de pago de dos mensualidades consecutivas constituye causal de rescisión del contrato (cláusula 9 y Art. 2489 fr. I CCDF).
 
 Le solicito regularizar el pago a más tardar el [fecha límite +5 días], incluyendo el recargo del 5% por mora.
 
@@ -81,12 +81,12 @@ Atentamente,
 [Nombre del arrendador]
 ```
 
-### Nivel 5 — D+30 (protocolo desalojo)
+### Nivel 5 — D+30 (protocolo judicial)
 
 **Cuándo**: 30 días después + sin respuesta o sin pago.
 
 **Acción**:
-1. Burofax o notificación notarial (deja constancia para juicio)
+1. Requerimiento de pago por notario o corredor público, o interpelación judicial (deja constancia para juicio)
 2. Iniciar consulta con abogado especializado en arrendamiento
 3. Documentar TODO (capturas, mensajes, llamadas)
 4. NO ejecutar desalojo por cuenta propia (es ilegal y delito) — requiere orden judicial
@@ -111,25 +111,28 @@ De no atender, se procederá a entablar la acción judicial correspondiente.
 
 ```python
 def determinar_nivel(dias_mora: int, historial_puntualidad: str) -> int:
-    """
-    historial_puntualidad: "puntual_siempre" | "mixto" | "reincidente"
-    """
-    if dias_mora <= -3:
-        return 0  # no action
-    if dias_mora == -3:
-        return 1  # recordatorio cordial
-    if 0 < dias_mora <= 6:
-        return 2  # amable
-    if 7 <= dias_mora <= 14:
-        return 3  # firme
-    if 15 <= dias_mora <= 29:
-        return 4  # formal
-    if dias_mora >= 30:
-        return 5  # protocolo desalojo
-
-    # ajuste si reincidente: subir un nivel desde D+0
+    """dias_mora: negativo = días antes del vencimiento.
+    historial_puntualidad: "puntual_siempre" | "mixto" | "reincidente"."""
+    if dias_mora < -3:
+        return 0  # sin acción
+    if dias_mora <= 0:
+        base = 1  # D-3 a D0: recordatorio cordial
+    elif dias_mora <= 6:
+        base = 2  # amable
+    elif dias_mora <= 14:
+        base = 3  # firme
+    elif dias_mora <= 29:
+        base = 4  # formal
+    else:
+        base = 5  # protocolo judicial
     if historial_puntualidad == "reincidente" and dias_mora > 0:
-        return min(5, base_nivel + 1)
+        return min(5, base + 1)
+    return base
+
+assert determinar_nivel(-5, "mixto") == 0
+assert determinar_nivel(-3, "mixto") == 1
+assert determinar_nivel(15, "mixto") == 4
+assert determinar_nivel(7, "reincidente") == 4
 ```
 
 ## Output
@@ -164,7 +167,7 @@ def determinar_nivel(dias_mora: int, historial_puntualidad: str) -> int:
 
 ## Dependencias
 
-- `mp_meta_whatsapp` (envío WA)
+- WhatsApp: no hay MCP en el repo; el usuario envía la plantilla manualmente (o con su cuenta de WhatsApp Business)
 - `mp_facturama_extendido` (verificar si CFDI ya emitido)
 - Tracker de pagos
 - Tracker de historial inquilino
@@ -173,5 +176,6 @@ def determinar_nivel(dias_mora: int, historial_puntualidad: str) -> int:
 
 - NUNCA amenazas falsas (decir "te denuncio penalmente" sin base)
 - NO compartir deuda con vecinos / familiares (LFPDPPP)
-- Burofax o notarial requiere costos — pasar al usuario después de aprobación
-- En CDMX, desalojo judicial puede tardar 6-12 meses — preparar al arrendador
+- La notificación notarial tiene costo: pedir aprobación del usuario antes
+- En CDMX, el juicio de desocupación puede tardar meses (estimación, no plazo legal) — preparar al arrendador
+- Recargo 5% mensual solo si está pactado; intereses excesivos pueden reducirse por usura

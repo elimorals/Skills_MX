@@ -8,12 +8,12 @@ allowed-tools: Read, Write, Bash
 
 ## Para qué sirve
 
-Si el SAT te audita por operaciones cripto (probable con CARF 2026 en vigor), necesitas demostrar:
+Si el SAT te requiere información o te audita por operaciones cripto (los exchanges mexicanos ya son visibles; los extranjeros lo serán con CARF, intercambio previsto 2027), necesitas demostrar:
 1. **Origen de los recursos**: cómo llegaron las criptos a tu wallet/cuenta
 2. **Costo base verificable**: precio en MXN al momento de adquisición
 3. **Cálculo de ganancia**: FIFO documentado
 4. **Tratamiento aplicado**: enajenación, permuta, intereses, demás ingresos
-5. **Conservación de comprobantes**: 5 años (Art. 30 CFF)
+5. **Conservación de la documentación**: 5 años desde la presentación de la declaración (Art. 30 CFF)
 
 Este skill produce el **expediente completo** para responder a un requerimiento.
 
@@ -125,13 +125,14 @@ def generar_justificacion(contexto: dict) -> str:
     return f"""# Justificación de criterios aplicados
 
 ## Método de costo base
-Se aplicó **FIFO** (Primeras Entradas, Primeras Salidas) por permitirlo el SAT
-y ser el método de mayor aceptación internacional. Documentado en hoja
+Se aplicó **FIFO** (Primeras Entradas, Primeras Salidas) de forma consistente.
+La LISR exige costo comprobado de adquisición (Art. 121) actualizado (Art. 124)
+pero no fija método para unidades fungibles; FIFO es el criterio elegido. Documentado en hoja
 `05-calculos-fifo/`.
 
 ## Tratamiento de permutas cripto-cripto
 Cada intercambio activo-activo se reconoció como **enajenación** del activo
-entregado (Art. 119 LISR — transmisión de propiedad), valuado al TC DOF y precio
+entregado (Art. 14 CFF — toda transmisión de propiedad; Art. 119 LISR), valuado al TC DOF y precio
 de mercado del día. Detalle en `06-permutas/`.
 
 ## Tratamiento de staking y airdrops
@@ -140,12 +141,12 @@ mercado del día de recepción. El valor reconocido se vuelve costo base para la
 posterior venta. Detalle en `07-rendimientos/`.
 
 ## NFTs
-Operaciones de coleccionista esporádico — enajenación de bienes (Art. 119).
+Operaciones de coleccionista esporádico — enajenación de bienes (Cap. IV LISR).
 Royalties recibidos como Cap IX.
 
 ## Conservación
-Este expediente se conservará en formato digital con firma electrónica (e.firma)
-por **5 años** desde la fecha de presentación de la declaración (Art. 30 CFF).
+Este expediente se conservará en formato digital por **5 años** desde la fecha
+de presentación de la declaración (Art. 30 CFF).
 
 ## Fuentes de precio
 - TC DOF: publicación oficial Banco de México
@@ -160,7 +161,7 @@ en RMF anual — revisar antes de aplicar a años posteriores.
 ## Buenas prácticas
 
 1. **Inmutabilidad**: el expediente se genera 1 vez y se archiva. NO modificar después.
-2. **Firma electrónica**: firmar el ZIP con e.firma al presentar declaración.
+2. **Fecha cierta (opcional)**: constancia de conservación NOM-151-SCFI-2016 de un prestador acreditado, si se quiere probar que el archivo no cambió.
 3. **Backup off-site**: copia en almacenamiento independiente (Google Drive cifrado, Mega, etc.).
 4. **Versionado**: si se corrige declaración posterior (complementaria), generar expediente v2 sin tocar v1.
 5. **Hash de integridad**: incluir `sha256sums.txt` de cada archivo para demostrar no-alteración.
@@ -174,9 +175,8 @@ en RMF anual — revisar antes de aplicar a años posteriores.
   "tamanio_mb": 12.5,
   "hash_zip": "sha256:abc...",
   "fecha_generacion": "2026-04-15T10:30:00Z",
-  "vigencia_criterios": "RMF 2026 — anexo cripto pendiente",
+  "vigencia_criterios": "Criterio propio documentado — la LISR no tiene capítulo específico para activos virtuales",
   "checklist_pre_envio": [
-    "[ ] Firmar ZIP con e.firma",
     "[ ] Subir backup off-site",
     "[ ] Anotar hash en contrato de servicios contables",
     "[ ] Conservar 5 años mínimo"

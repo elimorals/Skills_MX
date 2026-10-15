@@ -30,13 +30,13 @@ Si `riesgo_suicida_evaluado` ∈ `["alto", "inminente"]`:
 1. Activar protocolo prevención (no dejar solo al paciente)
 2. Contactar familiar/persona de confianza con permiso
 3. Derivar a urgencias psiquiátricas
-4. Línea de la Vida 800-290-0024
+4. Línea de la Vida (CONASAMA) **800 911 2000**, 24 h; emergencia 911
 5. Documentar exhaustivamente
 
 ## Compliance estricto
 
-- **Cifrado AES-256-GCM** con clave del terapeuta (no en servidor)
+- **Cifrado** en reposo (p. ej. AES-256-GCM) con clave del terapeuta (no en servidor) — buena práctica de seguridad, no cifra legal
 - Notas NO mencionan diagnósticos literales sin razón clínica
-- Audit log cada acceso
-- Retención: 5 años post última sesión (NOM-035 + LGPDPPSO)
-- Si paciente cancela tratamiento + pide eliminación: anonimizar pero conservar (obligación legal)
+- Bitácora de cada acceso (NOM-024-SSA3-2012 6.6.1 si es expediente electrónico)
+- Conservación: mínimo 5 años desde la última sesión (NOM-004-SSA3-2012 5.4, que aplica también a psicólogos)
+- Si el paciente pide eliminar sus datos: la cancelación ARCO se limita mientras corra la obligación de conservar; bloquear y suprimir al vencer (LFPDPPP 2025)

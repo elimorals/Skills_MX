@@ -37,8 +37,9 @@ sync_to_plugin() {
     local skill_name
     skill_name="$(basename "$skill_dir")"
 
-    # Solo sync si el plugin declara este skill en su plugin.json
-    if grep -q "\"skills/$skill_name\"" "$plugin_dir/.claude-plugin/plugin.json" 2>/dev/null; then
+    # Solo sync si el plugin ya trae esta skill (Claude Code descubre skills/ por carpeta;
+    # plugin.json ya no lista las skills).
+    if [ -d "$plugin_dir/skills/$skill_name" ]; then
       rsync -a --delete "$skill_dir" "$plugin_dir/skills/$skill_name/"
       echo "  ✓ $skill_name"
     fi

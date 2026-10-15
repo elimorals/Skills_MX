@@ -1,6 +1,6 @@
 ---
 name: alertas-deadline-anual
-description: Calendario de fechas críticas del ciclo de declaración anual ISR para personas físicas en México y alertas asociadas. Cubre fechas SAT fijas (30 abril deadline general, 15 enero plazo retenciones del año anterior por parte de patrones, 31 marzo plazo para declaraciones de PM que afectan a PF socias) y permite configurar recordatorios personalizados (cita con contador, fecha objetivo personal, etc.). Genera alertas tipo "faltan X días para Y". Usar cuando el usuario pregunte fechas declaración, cuándo es deadline, calendario fiscal, recordatorios anual. NO usar para deadlines mensuales (eso es del core).
+description: Calendario de fechas críticas del ciclo de declaración anual ISR para personas físicas en México y alertas asociadas. Cubre fechas SAT fijas (1 febrero–30 abril plazo de la anual PF, 31 marzo anual de PM que afecta a socios, constancias de retenciones e intereses a inicio de año) y permite configurar recordatorios personalizados (cita con contador, fecha objetivo personal, etc.). Genera alertas tipo "faltan X días para Y". Usar cuando el usuario pregunte fechas declaración, cuándo es deadline, calendario fiscal, recordatorios anual. NO usar para deadlines mensuales (eso es del core).
 allowed-tools: Read, Write
 ---
 
@@ -10,12 +10,10 @@ allowed-tools: Read, Write
 
 | Fecha | Evento |
 |---|---|
-| 15 enero | Plazo para que patrones emitan CFDI nómina con resumen anual del ejercicio anterior |
-| 31 enero | Plazo para retenciones a cuenta del año anterior por terceros (clientes que retuvieron) |
-| 31 marzo | Plazo declaraciones anuales PM (afecta a PF socias / accionistas) |
-| **30 abril** | **Deadline declaración anual PF (Cap. II y deducciones personales)** |
-| 30 junio | Plazo para presentar complementarias sin recargo |
-| Después | Complementarias con recargos progresivos |
+| Enero–febrero | Recibir constancias: intereses bancarios, retenciones de plataformas y CFDI de nómina del año (fechas exactas por retenedor: verificar) |
+| 31 marzo | Declaración anual de PM (Art. 76 fr. V LISR) — afecta a socios (dividendos) |
+| 1 febrero – **30 abril** | **Plazo de la declaración anual PF (Art. 150 LISR)**. Ejercicio 2025 → 30-abr-2026 (jueves); ejercicio 2026 → 30-abr-2027 (viernes) |
+| Después del 30 abril | Saldo a pagar genera actualización y recargos (Art. 17-A y 21 CFF); la opción de pagar en hasta 6 parcialidades (Art. 150) exige presentar en plazo |
 
 ## Hitos sugeridos para el contribuyente
 
@@ -28,7 +26,7 @@ allowed-tools: Read, Write
 | 15 abril | Revisar con contador certificado |
 | 25 abril | Presentar en DeclaraSAT (margen) |
 | 30 abril | Deadline |
-| 1 mayo - 30 junio | Seguir devolución (`seguimiento-devolucion-sat`) |
+| Mayo en adelante | Seguir devolución (`seguimiento-devolucion-sat`); plazo legal del SAT: 40 días hábiles (Art. 22 CFF) |
 
 ## Alertas a generar
 
@@ -81,10 +79,9 @@ Permite scheduling vía `cron` o trackeo de fecha objetivo:
   ],
   "proximos_hitos": [
     {"fecha": "2026-04-15", "evento": "Cita contador (configurado)"},
-    {"fecha": "2026-04-30", "evento": "Deadline declaración"},
-    {"fecha": "2026-06-30", "evento": "Plazo complementaria sin recargo"}
+    {"fecha": "2026-04-30", "evento": "Deadline declaración"}
   ],
-  "vigencia_validada": true
+  "vigencia_validada": false
 }
 ```
 
@@ -93,7 +90,7 @@ Permite scheduling vía `cron` o trackeo de fecha objetivo:
 | Caso | Acción |
 |---|---|
 | Año bisiesto | 29 febrero existe (consideración manual) |
-| Deadline cae en fin de semana | SAT permite hasta lunes siguiente |
+| Deadline cae en día inhábil | Se recorre al siguiente día hábil (Art. 12 CFF) |
 | Usuario fuera del país | Mantener fechas SAT, agregar nota |
 | Persona fallecida | Suspender alertas, marcar caso especial |
 

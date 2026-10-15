@@ -1,41 +1,48 @@
 ---
 name: cfdi-publico-global
-description: Emisión de CFDI público global consolidado para ventas B2C de restaurantes mexicanos donde el cliente NO proporciona RFC (mayoría de casos en restaurante). El SAT obliga a emitir un CFDI consolidado mensual a "Público en general" con RFC genérico XAXX010101000. Calcula cómo distribuir las ventas del mes, qué método pago usar (efectivo, TDC, mixto), formato del CFDI con leyenda obligatoria. Usar cuando el usuario diga CFDI público general, factura sin RFC, cliente no pidió factura, cierre mensual ventas. NO usar para CFDI individual al cliente (cfdi-emision) ni para B2B.
+description: Emisión de CFDI público global consolidado para ventas B2C de restaurantes mexicanos donde el cliente NO proporciona RFC (mayoría de casos en restaurante). Se emite una factura global (diaria, semanal, quincenal o mensual) a "PUBLICO EN GENERAL" con RFC genérico XAXX010101000 y nodo InformacionGlobal. Calcula el monto del periodo, qué forma de pago usar (efectivo, tarjeta, mixto), el llenado CFDI 4.0 y cómo tratar ventas por Rappi/Uber Eats/DiDi Food y sus retenciones. Usar cuando el usuario diga CFDI público general, factura sin RFC, cliente no pidió factura, cierre mensual ventas, factura global, XAXX010101000, tickets sin factura. NO usar para CFDI individual al cliente (cfdi-emision) ni para B2B.
 allowed-tools: Read, Write, Edit
 ---
 
-# CFDI Público Global — restaurantes
+# CFDI Público Global (factura global) — restaurantes
 
 ## ¿Qué es y por qué emitirlo?
 
-México requiere CFDI por **TODA** venta (Art. 29 CFF). Cuando el cliente no pide factura individual:
-- El restaurante debe emitir un **CFDI consolidado mensual** "a público en general"
+Toda venta debe ampararse con CFDI (Art. 29 CFF). Cuando el cliente no pide factura individual, el restaurante emite una **factura global** por las operaciones con público en general (regla 2.7.1.21 RMF; **verificar** numeración en la RMF 2026 vigente):
 - RFC del receptor: `XAXX010101000` (genérico)
-- Razón social: "PUBLICO EN GENERAL"
-- Importe: suma de ventas del periodo sin factura individual
+- Nombre: `PUBLICO EN GENERAL`
+- Régimen fiscal receptor: `616`; UsoCFDI: `S01`; CP del receptor = CP del lugar de expedición del emisor
+- Importe: ventas del periodo que no se facturaron de forma individual
 
-## Cuándo emitir
+## Periodicidad y plazo
 
-- **1 CFDI mensual** consolidado (el más común)
-- Algunos optan por **CFDI diario** (más operativo pero más trabajo)
-- **NO se puede acumular más de 1 mes** (regla SAT)
+El periodo va en el nodo `InformacionGlobal` (CFDI 4.0):
+- `Periodicidad`: `01` diaria, `02` semanal, `03` quincenal, `04` mensual, `05` bimestral (bimestral solo para contribuyentes que la regla permite, p. ej. RESICO PF; **verificar**)
+- `Meses`: `01`-`12` (para bimestral, `13`-`18`)
+- `Año`: año del periodo
+- Plazo: dentro de las **24 horas** siguientes al cierre del periodo elegido (regla 2.7.1.21 RMF; confianza media, verificar texto 2026)
+- Mantén la misma periodicidad de forma consistente; los tickets/notas de venta se emiten primero y la global los ampara después
 
-## Estructura del CFDI consolidado
+## Estructura del CFDI global (Guía de llenado SAT)
 
 ```json
 {
   "tipo_comprobante": "I",
-  "fecha": "2026-03-31T23:59:59",
-  "subtotal": 145000.00,
+  "fecha": "2026-04-01T10:00:00",
   "moneda": "MXN",
   "metodo_pago": "PUE",
-  "forma_pago": "01",  // efectivo (el más común para restaurantes)
-  "uso_cfdi": "S01",  // Sin efectos fiscales (XAXX no acumula)
-  "exportacion": "01",  // No es operación de exportación
+  "forma_pago": "01",
+  "exportacion": "01",
+
+  "informacion_global": {
+    "periodicidad": "04",
+    "meses": "03",
+    "año": 2026
+  },
 
   "emisor": {
-    "rfc": "MAJG800101XYZ",
-    "nombre": "Restaurante Demo SA de CV",
+    "rfc": "RDE200101AB1",
+    "nombre": "RESTAURANTE DEMO",
     "regimen_fiscal": "601",
     "cp_lugar_expedicion": "06700"
   },
@@ -43,106 +50,87 @@ México requiere CFDI por **TODA** venta (Art. 29 CFF). Cuando el cliente no pid
   "receptor": {
     "rfc": "XAXX010101000",
     "nombre": "PUBLICO EN GENERAL",
-    "regimen_fiscal": "616",  // Sin obligaciones fiscales
+    "regimen_fiscal": "616",
     "cp_domicilio_fiscal": "06700",
     "uso_cfdi": "S01"
   },
 
   "conceptos": [
     {
-      "clave_prod_serv": "90101501",
+      "clave_prod_serv": "01010101",
+      "no_identificacion": "T-000123",
       "cantidad": 1,
       "clave_unidad": "ACT",
-      "descripcion": "VENTAS EN GENERAL CORRESPONDIENTES A MARZO 2026 — ALIMENTOS Y BEBIDAS PREPARADOS",
-      "valor_unitario": 145000.00,
-      "importe": 145000.00,
-      "objeto_imp": "02"
+      "descripcion": "Venta",
+      "valor_unitario": 862.07,
+      "importe": 862.07,
+      "objeto_imp": "02",
+      "traslados": [{"impuesto": "002", "tipo_factor": "Tasa", "tasa_o_cuota": "0.160000", "base": 862.07, "importe": 137.93}]
     }
   ],
 
-  "impuestos_trasladados": [
-    {
-      "tipo": "IVA",
-      "tasa": 0.16,
-      "importe": 23200.00
-    }
-  ],
-
-  "total": 168200.00,
-
-  "leyenda_publico_general": "FACTURA GLOBAL CORRESPONDIENTE A VENTAS DE PÚBLICO EN GENERAL DEL 01 DE MARZO AL 31 DE MARZO DE 2026",
-
-  "periodicidad": "30",  // Mensual
-  "meses_aplicables": "03",
-  "año": "2026"
+  "subtotal": 145000.00,
+  "iva_trasladado": 23200.00,
+  "total": 168200.00
 }
 ```
 
-## Mezcla de formas de pago
+Notas de llenado:
+- `ClaveProdServ 01010101`, `ClaveUnidad ACT`, `Descripción "Venta"` y en `NoIdentificacion` el **folio del ticket/nota de venta**. La Guía de llenado pide identificar cada comprobante de operación (un concepto por ticket); algunos PAC aceptan agrupar — sigue lo que diga tu PAC y la guía vigente (ver `cfdi-emision` de `_shared`)
+- La sección `conceptos` arriba muestra **un** ticket; el subtotal/total corresponden a la suma de todos los tickets del mes (145,000 + 16% = 168,200)
+- No existe una "leyenda" obligatoria de factura global: el periodo se acredita con `InformacionGlobal`
+- El RFC y nombre del emisor son de ejemplo
 
-Si el mes hubo ventas en efectivo + tarjeta + transferencia:
-- Si > 80% efectivo: usar `forma_pago: "01"` (efectivo)
-- Si > 80% tarjeta: usar `forma_pago: "04"` (tarjeta de crédito) o `"28"` (débito)
-- Si mixto: 1 CFDI por cada forma de pago o usar `"99"` (por definir, raro)
+## Forma de pago cuando hubo varias
 
-⚠ Mejor práctica: **1 CFDI por forma de pago** para auditoria limpia.
+Con método `PUE`, en `FormaPago` se registra la forma con la que se recibió el **mayor importe** del periodo (Guía de llenado). Alternativa válida y más limpia para conciliar: emitir una global por cada forma de pago (`01` efectivo, `04` tarjeta de crédito, `28` tarjeta de débito, `03` transferencia). No uses `99` con PUE.
 
-## Cómo calcular cuánto ir al CFDI consolidado
+## Cómo calcular el monto de la global
 
 ```
-ventas_totales_mes = ventas_directas + ventas_aggregators_b2c + ventas_efectivo
+ventas_totales_periodo   = ventas_salon + ventas_para_llevar + ventas_via_plataformas   (precio al cliente, con IVA)
 ventas_con_cfdi_individual = ventas_b2b + ventas_con_rfc_solicitado
-
-ventas_publico_global = ventas_totales_mes - ventas_con_cfdi_individual
+ventas_publico_global    = ventas_totales_periodo - ventas_con_cfdi_individual
 ```
 
-Ejemplo restaurante medio (200 mesas/mes):
-- Ventas totales mes: $480,000 MXN
-- Clientes que pidieron factura: 24 (12% — restaurante MX típico)
-- Ventas con CFDI individual: $48,000
-- **Ventas a Público en General**: $432,000 → 1 CFDI consolidado
+Las ventas por Rappi / Uber Eats / DiDi Food son ventas **del restaurante al consumidor final**: van en la global (o en CFDI individual si el cliente lo pide), por el precio cobrado al cliente, **no** por el neto que deposita la plataforma. Verifica el contrato: si una plataforma opera como revendedora (te compra y revende), entonces sí se factura a la plataforma.
+
+Ejemplo (mes de marzo):
+- Ventas totales con IVA: $480,000 (incluye $65,000 vendidos vía plataformas)
+- Clientes que pidieron factura: $48,000 (10% del monto)
+- **Ventas a público en general**: $480,000 − $48,000 = **$432,000** con IVA
+- Subtotal: $432,000 / 1.16 = $372,413.79; IVA 16%: $59,586.21
 
 ## Implicaciones para el restaurante
 
-### Acumulable para ISR
-- SÍ, ingreso del restaurante incluye TODAS las ventas (con o sin factura individual)
-- El CFDI consolidado certifica el monto ante SAT
+### ISR
+- Todas las ventas son ingreso acumulable (con o sin factura individual). La global las documenta ante el SAT
+- Comisiones de plataformas: gasto deducible con el CFDI que emite la plataforma al restaurante
 
 ### IVA trasladado
-- Sí, IVA 16% sobre ventas (excepto frontera 8%)
-- Reportado en CFDI consolidado
+- 16% sobre alimentos preparados. 8% solo si el restaurante aplica el estímulo de región fronteriza (decreto vigente a 31-12-2026, con aviso al SAT)
 
-### IVA acreditable
-- Sí, IVA pagado en gastos
-- Documentado con CFDIs recibidos (proveedores)
+### Retenciones de plataformas (si vendes por Rappi / Uber Eats / DiDi Food)
+La plataforma te entrega un **CFDI de Retenciones e información de pagos**; las retenciones no reducen el monto de la global, se acreditan en tu declaración:
+- **ISR**: 2.5% sobre ingresos sin IVA para enajenación de bienes/servicios, tanto persona física (sustituye el 1% del Art. 113-A fr. III LISR; 20% si no da RFC, Art. 113-C fr. IV) como persona moral (acreditable; 20% si la PM no da su RFC). Fuente: Art. 25 fr. VI Ley de Ingresos de la Federación 2026 (DOF 07-11-2025)
+- **IVA**: 50% del IVA cobrado (Art. 18-J fr. II inciso a) LIVA para PF; Art. 25 fr. IX LIF 2026 lo extiende a PM). 100% si la PF no proporciona RFC
+- PF con ingresos solo por plataformas ≤ $300,000 anuales pueden optar por que las retenciones sean pago definitivo (Art. 113-B LISR; IVA Art. 18-M LIVA)
 
-### Estado financiero
-- El CFDI consolidado entra como "Ingreso por ventas" del mes
-- Conciliable con depósitos bancarios + efectivo en caja
+### Conciliación
+- Global + facturas individuales ≈ depósitos bancarios + efectivo en caja (+ retenciones y comisiones de plataformas)
 
 ## Casos edge
 
-### Cliente pide factura el siguiente mes
-- Si fue cancelada y emite individual: descontar del consolidado
-- Si NO fue cancelada: emisión individual + el monto ya está en consolidado del mes anterior (riesgo de doble facturación)
-
-**Mejor práctica**: si cliente pide factura post-evento, hacer cancelación del consolidado + emisión individual.
-
-### Aggregators (Rappi, UberEats, etc.)
-- Aggregator factura al cliente final
-- Restaurante factura al aggregator (NO al cliente final)
-- En el CFDI consolidado del restaurante NO incluir ventas via aggregator
-- Estas se facturan al aggregator con su RFC específico
+### Cliente pide factura después de emitida la global
+- Emitir el CFDI individual y **no** dejar la misma venta en la global: o se cancela y re-emite la global sin ese ticket, o se ajusta conforme a la regla vigente de la RMF. No dupliques ingreso ni IVA
+- Fija una política de "solicitud de factura dentro del mismo mes" en tus tickets
 
 ### Empleados que comen en el restaurante
-- Costo del comedor = costo, no venta
-- No emite CFDI a empleado
-- No entra en consolidado
+- Si es prestación sin cobro: no es venta, no va a la global (registrar como costo)
+- Si se les cobra: es venta y entra en la global
 
-### Ventas a cuenta de gastos (corporate)
-- Cliente paga con TDC corporativa pero NO pide factura
-- En MX, esto es ilegal porque la empresa debería pedir factura para deducir
-- Si igualmente no la pidió, entra en consolidado
+### Cliente con tarjeta corporativa que no pidió factura
+- Entra en la global. Es problema del cliente no poder deducir; para el restaurante no hay ilegalidad
 
 ## Output estructurado
 
@@ -150,35 +138,34 @@ Ejemplo restaurante medio (200 mesas/mes):
 {
   "cfdi_publico_global": {
     "periodo": "2026-03",
+    "periodicidad": "04",
     "ventas_totales_mxn": 480000.00,
     "ventas_con_cfdi_individual_mxn": 48000.00,
-    "ventas_via_aggregators_mxn": 65000.00,
-    "ventas_consolidado_mxn": 367000.00,
+    "de_las_cuales_via_plataformas_mxn": 65000.00,
     "cfdi_emitido": {
       "uuid": "ABCD-1234-...",
-      "fecha_emision": "2026-03-31T23:59:59",
-      "subtotal_mxn": 316379.31,
-      "iva_mxn": 50620.69,
-      "total_mxn": 367000.00,
-      "forma_pago_predominante": "01_efectivo",
-      "leyenda": "FACTURA GLOBAL CORRESPONDIENTE A VENTAS DE PÚBLICO EN GENERAL DEL 01 DE MARZO AL 31 DE MARZO DE 2026"
+      "fecha_emision": "2026-04-01T10:00:00",
+      "subtotal_mxn": 372413.79,
+      "iva_mxn": 59586.21,
+      "total_mxn": 432000.00,
+      "forma_pago": "01",
+      "criterio_forma_pago": "forma con mayor importe del periodo"
     },
-    "cfdis_aggregators_pendientes": [
-      {"aggregator": "rappi", "ingreso_neto_mxn": 28000, "cfdi_pendiente": true},
-      {"aggregator": "ubereats", "ingreso_neto_mxn": 14500, "cfdi_pendiente": true}
+    "retenciones_plataformas_a_conciliar": [
+      {"plataforma": "rappi", "cfdi_retenciones_recibido": false}
     ],
     "siguientes_pasos": [
-      "Emitir CFDI a Rappi (RFC REP170913U41) por $28,000",
-      "Emitir CFDI a UberEats por $14,500",
-      "Conciliar con depósitos bancarios + efectivo en caja"
+      "Descargar CFDI de retenciones y de comisiones de cada plataforma",
+      "Conciliar global + individuales contra depósitos y caja"
     ]
   }
 }
 ```
 
+> Validación profesional: confirma periodicidad, tratamiento de plataformas y retenciones con tu contador antes de timbrar.
+
 ## Validación pendiente
 
-- Leyenda obligatoria CFDI Público en General 2026 (formato exacto SAT)
-- Reglas específicas RMF 2026 sobre periodicidad
-- Casos en que SAT pide aclaración (alta diferencia entre consolidado y depósitos)
-- Diferencias por régimen (PM general, PFAE, RESICO PM)
+- Numeración y texto de la regla de factura global en la RMF 2026 (plazo de 24 h, periodicidad bimestral)
+- Guía de llenado vigente: un concepto por ticket vs agrupado
+- Modelo contractual de cada plataforma (intermediaria vs revendedora)

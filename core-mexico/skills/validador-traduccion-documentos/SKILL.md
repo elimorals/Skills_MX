@@ -25,8 +25,8 @@ Documentos extranjeros que deben surtir efecto legal en México:
 
 ## Requisitos del documento original
 
-- **Apostilla de La Haya** si país emisor es parte del Convenio (122 países)
-- **Legalización consular** si país NO es parte (ej. China, EAU)
+- **Apostilla de La Haya** si el país emisor es parte de la Convención de 1961 (más de 120 partes; la lista cambia: China se adhirió con efectos desde 07-11-2023 y Canadá desde 11-01-2024). Consulta el estado actual en hcch.net antes de decidir.
+- **Legalización consular** (consulado mexicano en el país emisor) si el país NO es parte, p. ej. Emiratos Árabes Unidos (verificar en la lista HCCH)
 
 ## Algoritmo de validación
 

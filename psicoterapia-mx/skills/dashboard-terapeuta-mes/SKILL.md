@@ -22,8 +22,9 @@ allowed-tools: Read, Write
   Bajas mes:               2 (alta clínica), 1 (abandono)
 
 💰 Ingresos:
-  Bruto:                $73,500
+  Bruto (sin IVA):      $73,500
   Cobrado:              $69,200 (94%)
+  IVA trasladado 16%:   $11,760   (psicólogo; $0 si eres médico psiquiatra PF)
 
 🎯 Adherencia:
   Tasa global:          86%
