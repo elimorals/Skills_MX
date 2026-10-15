@@ -201,7 +201,7 @@ class WebhookEvent(BaseModel):
 
 ## 13. Links
 
-- Plan original: `/Users/elias/Downloads/plugins-mx-planeacion-mcps-agentica.md` sección 10.3
+- Plan original: documento de planeación original (no versionado en el repo) sección 10.3
 - MCPs validación firma existentes: `mp_mercado_pago/webhooks.py`, `mp_conekta/webhooks.py`
 - Stripe webhook docs: https://stripe.com/docs/webhooks
 - Mercado Pago webhook docs: https://www.mercadopago.com.mx/developers/es/docs/notifications/webhooks

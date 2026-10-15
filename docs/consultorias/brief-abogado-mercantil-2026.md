@@ -106,5 +106,5 @@ Idealmente:
 
 ## 6. Datos del proyecto
 
-- **Repositorio**: `/Users/elias/Documents/Trabajo/skills/`
+- **Repositorio**: `https://github.com/elimorals/Skills_MX`
 - **Contacto**: Elías Rashid Morales Mendoza — elimoralsmendox@gmail.com

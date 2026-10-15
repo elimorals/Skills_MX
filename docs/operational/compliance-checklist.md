@@ -244,4 +244,4 @@ Si llega auditoría/queja/demanda, estos documentos te protegen:
 
 - `_shared/compliance-lfpdppp/SKILL.md` — plantillas y procedimientos
 - [seguridad.md](../architecture/seguridad.md) — manejo técnico de credenciales y datos
-- [estado-real.md](../historial/estado-real-2026-06.md) — score honesto por skill
+- [estado-real-2026-06.md](../historial/estado-real-2026-06.md) — auditoría histórica de scores por skill

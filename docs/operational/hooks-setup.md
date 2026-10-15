@@ -2,7 +2,7 @@
 
 > Spec: `docs/specs/04-hooks-runtime-claude-code.md`
 
-Este documento describe los **13 hooks de Claude Code** (no git hooks) configurados en este repo.
+Este documento describe los hooks de Claude Code (no git hooks) de este repo: los scripts viven en `scripts/hooks/` y se registran en `.claude/settings.json`.
 
 Los hooks viven en `.claude/settings.json` y se ejecutan **automáticamente** durante una sesión cuando Claude Code llama a tools que coinciden con un `matcher`.
 
@@ -14,7 +14,7 @@ bash scripts/install-hooks.sh
 
 Esto:
 1. Instala git pre-commit (lo que ya hacía)
-2. Marca los 13 hooks runtime como ejecutables
+2. Marca los hooks runtime de `scripts/hooks/` como ejecutables
 3. Verifica con smoke test (18 invocaciones)
 
 Para verificar:

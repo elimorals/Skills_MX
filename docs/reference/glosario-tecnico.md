@@ -38,7 +38,7 @@ Archivo dentro del directorio de un skill (`references/`, `scripts/`, `assets/`)
 Directorio que identifica un directorio como plugin de Claude Code. Contiene `plugin.json` con el manifest.
 
 ### CLAUDE.md
-Archivo en root del proyecto donde el usuario define instrucciones persistentes para Claude Code. En este monorepo: el del usuario en `/Users/elias/CLAUDE.md`.
+Archivo en root del proyecto donde el usuario define instrucciones persistentes para Claude Code. Puede vivir en la raíz del proyecto o en `~/.claude/CLAUDE.md` (instrucciones globales del usuario).
 
 ### Claude Code
 CLI oficial de Anthropic para desarrollo asistido por Claude. Lee plugins, skills, commands, hooks.
@@ -127,13 +127,13 @@ Protocolo de Anthropic para que LLMs interactúen con servicios externos. Cada M
 Archivo `plugin.json` que declara qué contiene el plugin (skills, commands, agents, MCP, etc.). Es el "package.json" del plugin.
 
 ### Marketplace
-Mecanismo de Claude Code para distribuir plugins. En este monorepo: `marketplace.json` define un marketplace privado.
+Mecanismo de Claude Code para distribuir plugins. En este monorepo: `.claude-plugin/marketplace.json` (generado por `scripts/generar-marketplace.py`) publica los 40 plugins; se agrega con `/plugin marketplace add elimorals/Skills_MX`.
 
 ### Mock
-Implementación falsa de un servicio externo. Devuelve respuestas plausibles sin llamar al servicio real. Usado para iteración sin credenciales.
+Datos de ejemplo de un servicio externo. En este monorepo un MCP solo los devuelve sin credenciales o con `PLUGINS_MX_MOCK=1`, siempre marcados `simulated: true`; con credenciales, nunca sustituyen a un error del proveedor (ADR 008).
 
 ### Monorepo
-Repositorio único que contiene múltiples paquetes/plugins. En este monorepo: 5 plugins + `_shared/` + tooling.
+Repositorio único que contiene múltiples paquetes/plugins. En este monorepo: 40 plugins + `_shared/` + 83 MCPs + webhooks + tooling.
 
 ---
 
@@ -252,7 +252,7 @@ allowed-tools: Read, Write
 ## Z
 
 ### Zero-config
-Plugin que funciona sin credenciales adicionales. En este monorepo: todos por default (uso de mocks).
+Plugin que funciona sin credenciales adicionales. En este monorepo: todos cargan sin credenciales, pero sus MCPs responden datos de ejemplo marcados `simulated: true` hasta que configures las credenciales.
 
 ---
 

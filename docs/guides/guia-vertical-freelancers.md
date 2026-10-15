@@ -202,12 +202,15 @@ Cuando Claude pregunte datos del emisor, podrá leer este config (si lo apuntas)
 
 ```bash
 cd ~/freelancer-ops
-claude --plugin-dir ~/plugins-mx/freelancers-mx
+claude
+# dentro de la sesión, si aún no lo instalaste:
+# /plugin marketplace add elimorals/Skills_MX
+# /plugin install freelancers-mx --marketplace elimorals/Skills_MX
 ```
 
 Y le dices a Claude:
 ```
-"Acabo de instalar el plugin freelancers-mx. Léeme docs/guia-vertical-freelancers.md
+"Acabo de instalar el plugin freelancers-mx. Léeme docs/guides/guia-vertical-freelancers.md
 para tener contexto, luego empezamos."
 ```
 
@@ -248,7 +251,7 @@ para tener contexto, luego empezamos."
 
 ## Riesgos y limitaciones
 
-Ver [estado-real.md](../historial/estado-real-2026-06.md) para detalle. Resumen:
+Detalle en la auditoría de junio de 2026 ([estado-real-2026-06.md](../historial/estado-real-2026-06.md), histórica). Lo que sigue vigente:
 
 - **`freelance-tax-mx` tiene RIESGO REGULATORIO ALTO**: las tarifas Art. 96 pueden estar desactualizadas. **No usar para declaraciones reales sin validar con contador**.
 - **Contratos marco**: NO revisados por abogado mercantilista. Aceptables como punto de partida; valida con abogado antes de firmar contratos sustanciales.
@@ -283,6 +286,6 @@ Sí. Cuando emites un CFDI con MétodoPago = PPD y luego recibes el cobro, `cfdi
 ## Ver también
 
 - [flujos-operativos.md](../operational/flujos-operativos.md) — workflows cross-vertical
-- [estado-real.md](../historial/estado-real-2026-06.md) — score honesto por skill
-- [plan-afinacion.md](../plan-afinacion.md) — roadmap para llevar a producción
+- [estado-real-2026-06.md](../historial/estado-real-2026-06.md) — auditoría histórica de scores por skill
+- [plan-afinacion.md](../plan-afinacion.md) — plan de afinación de junio de 2026 (histórico)
 - [glosario-fiscal-mx.md](../reference/glosario-fiscal-mx.md) — términos fiscales

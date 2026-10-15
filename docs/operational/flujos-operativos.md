@@ -356,9 +356,9 @@ Antes de cualquier operación con efecto externo (timbrar CFDI, enviar WhatsApp 
 
 Cada operación se registra con timestamp en una bitácora. Es lo que te defiende ante auditorías y disputas.
 
-### Pattern: Mock primero
+### Pattern: Datos de ejemplo primero
 
-Probar el flujo entero en mock antes de activar integración real. Reduces riesgo a cero durante prueba.
+Prueba el flujo completo sin credenciales (respuestas marcadas `simulated: true`) o con `PLUGINS_MX_MOCK=1` antes de activar la integración real. Con credenciales, los errores del proveedor se propagan: no hay fallback silencioso a datos de ejemplo. Los workflows que mueven dinero o datos corren con `dry_run=true` por defecto.
 
 ### Pattern: Reversibilidad
 

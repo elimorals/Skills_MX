@@ -10,17 +10,17 @@
 
 ### ¿Qué es plugins-mx exactamente?
 
-Un monorepo de plugins de Claude Code y skills standalone para automatizar operación diaria de PyMEs y profesionistas en México: CFDI, cobranza, WhatsApp Business, compliance, etc.
+Un monorepo ([github.com/elimorals/Skills_MX](https://github.com/elimorals/Skills_MX)) con 40 plugins de Claude Code, 342 skills y 83 MCP servers (417 tools) para operar una PyME o profesión en México: CFDI 4.0, SAT, nómina e IMSS, pagos, marketplaces y trámites estatales y municipales. Cifras vigentes en el [README raíz](../../README.md).
 
 ### ¿Necesito ser desarrollador para usarlo?
 
-Para **operar**: no. Solo necesitas Claude Code instalado y seguir [guia-instalacion.md](../guides/guia-instalacion.md).
+Para **operar**: no. Necesitas Claude Code y [`uv`](https://docs.astral.sh/uv/), y seguir [guia-instalacion.md](../guides/guia-instalacion.md).
 
 Para **extender** (crear nuevos skills): sí, conocimiento básico de Markdown + YAML + opcional Python.
 
 ### ¿Cuánto cuesta?
 
-El monorepo en sí: gratis (open source / privado según se decida).
+El monorepo en sí: gratis, con licencia Apache-2.0.
 
 Costos asociados:
 - Claude Code: según tu plan Anthropic
@@ -28,7 +28,7 @@ Costos asociados:
 
 ### ¿Funciona offline?
 
-Parcial. Los skills se cargan localmente y Claude opera contra su API (necesita internet para LLM). Los MCP servers desactivados no requieren internet adicional.
+No. Claude necesita internet, y los MCPs se descargan con `uv` la primera vez y consultan portales y APIs en línea. Los cálculos normativos locales (p. ej. ISN, ISH, NOM-037) no dependen de un servicio externo.
 
 ### ¿Mis datos se mandan a Anthropic?
 
@@ -49,15 +49,15 @@ Política sujeta a cambios. Revisa términos. Para datos altamente sensibles (cl
 
 ### ¿Puedo usar solo un skill sin todo el plugin?
 
-Sí. Skills son standalone vía `skillkit install` o subida directa a Claude.ai. Ver [guia-instalacion.md](../guides/guia-instalacion.md) opción 2.
+Sí. Las skills se pueden subir sueltas a Claude.ai (pierden la parte que depende de un MCP). Ver [guia-instalacion.md](../guides/guia-instalacion.md), sección 5.
 
-### ¿Por qué hay 5 plugins y no uno solo?
+### ¿Por qué hay 40 plugins y no uno solo?
 
 Modularidad. Un freelancer no necesita las constancias académicas SEP de un colegio. Cargar solo el vertical que usas reduce contexto y mejora rendimiento.
 
 ### ¿Puedo cargar varios plugins simultáneamente?
 
-Sí. `claude --plugin-dir A --plugin-dir B`. Si tienes operaciones en varios verticales (eres consultor que también tiene escuela), tiene sentido.
+Sí. Instala cada uno con `/plugin install <plugin> --marketplace elimorals/Skills_MX`. Si tienes operaciones en varios verticales (eres consultor que también tiene escuela), tiene sentido.
 
 ---
 
@@ -67,7 +67,7 @@ Sí. `claude --plugin-dir A --plugin-dir B`. Si tienes operaciones en varios ver
 
 **NO necesariamente**. Mucho contenido viene de mi training data. Cada skill que cita datos sensibles tiene una sección `⚠ Datos que requieren verificación vigente` listando lo que hay que validar.
 
-Ver [estado-real.md](../historial/estado-real-2026-06.md) para detalle.
+El estado de cada MCP (qué consulta en real y qué se validó en vivo) está en [`mcp-servers/CATALOGO.md`](../../mcp-servers/CATALOGO.md).
 
 ### ¿Puedo confiar en los cálculos fiscales del plugin?
 
@@ -93,7 +93,7 @@ Probable pero no garantizado. Meta cambia políticas. Validar en sandbox antes d
 
 ### ¿Puedo automatizar el envío de CFDIs por WhatsApp?
 
-Sí, si activas tanto PAC como WhatsApp Business reales. El flujo: cliente paga → webhook → CFDI → WA al cliente con link de descarga.
+Sí, con credenciales reales del PAC y un MCP de envío de WhatsApp propio (el repo no trae uno; ver [integracion-whatsapp.md](../integrations/integracion-whatsapp.md)). El flujo: cliente paga → webhook (`webhooks/`) → CFDI → WhatsApp al cliente con el enlace de descarga.
 
 ### ¿Cómo manejo cliente que se atrasa en pagos?
 
@@ -133,11 +133,11 @@ Ver [guia-desarrollo.md](../guides/guia-desarrollo.md) sección "Agregar un vert
 
 ### ¿Puedo contribuir al monorepo?
 
-Depende de cómo lo distribuyas. Si es público: PRs bienvenidos. Si es privado: solo el dueño/equipo.
+Sí, el repo es público: PRs bienvenidos. El CI corre tests, evals golden, lint de skills y validación del marketplace en cada PR.
 
 ### ¿Hay tests automatizados?
 
-Sí en formato fixtures (regression tests) + evals (triggering tests). Ver `tests/` y `evals/`. Ejecución todavía manual.
+Sí: 1,900 tests de los MCPs (sin red), 285 evals de triggering, casos golden de cálculo fiscal y fixtures de regresión. Corren en CI en cada PR. Los tests `@pytest.mark.live` contra portales reales corren con `PLUGINS_MX_LIVE=1`.
 
 ---
 
@@ -145,13 +145,7 @@ Sí en formato fixtures (regression tests) + evals (triggering tests). Ver `test
 
 ### ¿Puedo vender implementación con este monorepo?
 
-Una vez que un vertical alcance score 7-8/9 según [estado-real.md](../historial/estado-real-2026-06.md). Antes: riesgo regulatorio + reputacional.
-
-### ¿Cuánto cobro por implementación?
-
-Sugerido (ver [plan-afinacion.md](../plan-afinacion.md)):
-- Cliente piloto early adopter: $30k-60k MXN one-time + $8k-15k MXN/mes retainer
-- Cliente con 2-3 casos de éxito previos: $60k-150k MXN + $15k-35k MXN/mes
+La licencia Apache-2.0 lo permite. Antes de exponerlo a clientes, las skills fiscales y legales necesitan validación de un contador o abogado, y los MCPs que uses deben estar en estado real validado ([`CATALOGO.md`](../../mcp-servers/CATALOGO.md)). Sin eso hay riesgo regulatorio y reputacional.
 
 ### ¿Necesito permiso de Anthropic para distribuir?
 
@@ -165,15 +159,13 @@ Sí, los plugins son replicables. Tu moat real:
 3. Caso de éxito documentado
 4. Velocidad de iteración
 
-Ver [estado-real.md](../historial/estado-real-2026-06.md).
-
 ---
 
 ## Sobre roadmap
 
 ### ¿Cuándo habrá más verticales?
 
-Ver [roadmap.md](../roadmap.md). Próximos candidatos por demanda: salon-mx, veterinaria-mx, wedding-mx, ecommerce-mx, restaurante-mx.
+Ya hay 40 verticales (lista en el [README raíz](../../README.md#plugins-verticales)). Lo que sigue está en [roadmap.md](../roadmap.md).
 
 ### ¿Habrá versión SaaS?
 
@@ -189,11 +181,11 @@ LATAM primero (Colombia, Argentina, Chile, Perú). Cada país tiene su propio CF
 
 ### ¿Hay comunidad/chat?
 
-A definir. Por ahora: GitHub Issues (si es público) o contacto directo con el maintainer.
+GitHub Issues en [elimorals/Skills_MX](https://github.com/elimorals/Skills_MX/issues).
 
 ### ¿Quién mantiene esto?
 
-Elías Rashid Morales Mendoza (`elimoralsmendox@gmail.com`). Más detalles en `marketplace.json` o `plugin.json` de cada plugin.
+Elías Rashid Morales Mendoza (`elimoralsmendox@gmail.com`). Más detalles en `.claude-plugin/marketplace.json` o en el `plugin.json` de cada plugin.
 
 ---
 

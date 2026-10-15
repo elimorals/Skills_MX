@@ -14,14 +14,15 @@
 
 **Diagnóstico**:
 ```bash
-# Verificar estructura
-ls -la ~/plugins-mx/freelancers-mx/.claude-plugin/
-# Debe haber: plugin.json
+# Desde Claude Code
+/plugin            # lista marketplaces y plugins instalados
+# Desde un clon del repo
+claude plugin validate .
 ```
 
 **Solución**:
-- Si falta `.claude-plugin/`: revisar que estás apuntando al directorio correcto del plugin (no a la raíz del monorepo)
-- Si falta `plugin.json`: el plugin está incompleto
+- Si el marketplace no aparece: `/plugin marketplace add elimorals/Skills_MX`
+- Si el plugin no aparece: `/plugin install <plugin> --marketplace elimorals/Skills_MX`
 - Si hay typo en `plugin.json`: validar con `jq . freelancers-mx/.claude-plugin/plugin.json`
 
 ### "Skills no aparecen"
@@ -46,7 +47,7 @@ ls -la ~/plugins-mx/freelancers-mx/.claude-plugin/
 - Verifica que `plugin.json` los liste en `"commands":`
 
 **Solución**:
-- Recargar la sesión: salir y volver a entrar a `claude --plugin-dir ...`
+- Recargar la sesión: salir y volver a entrar a `claude`
 - En sesión activa: `/reload-plugins` si tu versión lo soporta
 
 ---
@@ -389,4 +390,4 @@ Si dices "necesito sacar factura de Bimbo" y `cfdi-emision` no triggea:
 
 - [seguridad.md](../architecture/seguridad.md) — para temas de credenciales
 - [faq.md](../reference/faq.md) — preguntas frecuentes
-- [estado-real.md](../historial/estado-real-2026-06.md) — qué está sin validar y por qué puede fallar
+- [`mcp-servers/CATALOGO.md`](../../mcp-servers/CATALOGO.md) — qué MCP está validado en vivo y cuál no

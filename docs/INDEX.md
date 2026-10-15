@@ -68,7 +68,7 @@ Estos documentos registran cómo se llegó al estado actual. Cada uno empieza co
 
 | Carpeta | Contenido |
 |---|---|
-| [historial/](historial/) | Bitácora de sprints de junio 2026, `STATUS-2026-06.md`, `estado-real-2026-06.md` (auditoría de scores por skill) |
+| [historial/](historial/) | Bitácora de sprints de junio 2026, `STATUS-2026-06.md`, `estado-real-2026-06.md` (auditoría de scores por skill), `roadmap-2026-06.md` |
 | [sprints/](sprints/) | Resúmenes de sprints A-H |
 | [audits/](audits/) | Auditorías y validaciones de portales de junio 2026 |
 | [discoveries/](discoveries/) | Discovery de portales, cobertura nacional, trámites no implementados |
