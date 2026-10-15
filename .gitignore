@@ -57,3 +57,4 @@ webhooks/.venv/
 .playwright-mcp/
 .cache/
 .pytest_cache/
+.impeccable/
