@@ -95,7 +95,7 @@ check_skill() {
 # Buscar todos los SKILL.md
 while IFS= read -r -d '' skill_md; do
   check_skill "$skill_md"
-done < <(find "$ROOT" -name "SKILL.md" -not -path "*/node_modules/*" -not -path "*/.git/*" -not -path "$ROOT/.claude/*" -print0)
+done < <(find "$ROOT" -name "SKILL.md" -not -path "*/node_modules/*" -not -path "*/.venv/*" -not -path "*/.git/*" -not -path "$ROOT/.claude/*" -print0)
 
 echo
 echo "─────────────────────────────"
