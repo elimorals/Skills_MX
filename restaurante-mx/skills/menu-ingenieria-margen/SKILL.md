@@ -1,6 +1,6 @@
 ---
 name: menu-ingenieria-margen
-description: Ingeniería de menú para restaurantes mexicanos usando matriz BCG (estrellas, vacas, perros, dilemas) basada en popularidad (ventas) y margen (precio - food cost). Identifica platos a promover, reposicionar, rediseñar o eliminar. Calcula food cost ideal (28-32%), precio sugerido para alcanzar margen objetivo, alternativas para reducir costo de ingredientes. Usar cuando el usuario diga ingeniería menú, qué platos quitar, plato más rentable, food cost, margen restaurante, optimizar menú. NO usar para inventario (otro skill) ni delivery aggregators.
+description: Ingeniería de menú para restaurantes mexicanos usando matriz BCG (estrellas, vacas, perros, dilemas) basada en popularidad (ventas) y margen (precio - food cost). Identifica platos a promover, reposicionar, rediseñar o eliminar. Calcula food cost objetivo (25-35%), precio sugerido para alcanzar margen objetivo, alternativas para reducir costo de ingredientes. Usar cuando el usuario diga ingeniería menú, qué platos quitar, plato más rentable, food cost, margen restaurante, optimizar menú. NO usar para inventario (otro skill) ni delivery aggregators.
 allowed-tools: Read, Write, Edit
 ---
 
@@ -25,7 +25,7 @@ Cada plato en el menú compite por espacio en la cocina, en el menú impreso y e
 food_cost_porcentaje = costo_ingredientes / precio_venta
 ```
 
-Objetivo MX típico:
+Rangos de referencia de la industria (sin fuente oficial; varían por tipo de cocina):
 - **Excelente**: 25-30%
 - **Bueno**: 30-35%
 - **Aceptable**: 35-38%
@@ -44,7 +44,16 @@ contribucion_total = margen_unitario × unidades_vendidas
 popularidad_porcentaje = unidades_vendidas / total_platos_vendidos
 ```
 
-Umbral de "popular": ≥ 70% del promedio.
+Umbral de "popular" (método Kasavana-Smith): `popularidad ≥ 70% × (1 / número_de_platos)`.
+
+### 4. Margen alto vs bajo
+
+```
+margen_promedio_ponderado = sum(contribucion_total) / sum(unidades_vendidas)
+margen alto  ⇔ margen_unitario ≥ margen_promedio_ponderado
+```
+
+La clasificación usa el **margen en pesos**, no el food cost %. El food cost % se revisa aparte como alerta (un plato puede tener margen alto en pesos y FC% malo).
 
 ## Ejemplo: 5 platos de un menú
 
@@ -58,11 +67,22 @@ Umbral de "popular": ≥ 70% del promedio.
 
 ### Análisis BCG
 
-- **Tacos al pastor**: ⭐ ESTRELLA (alto volumen + buen margen)
-- **Mole poblano**: 🐄 VACA (alto volumen + margen estándar) → subir precio $20-30 sin perder demanda
-- **Ensalada César**: ❓ DILEMA (margen excelente pero bajo volumen) → mejorar fotos, sugerir como acompañamiento
-- **Pozole**: 🐶 PERRO (food cost alto + bajo volumen) → o redesigna o elimina
-- **Aguachile**: 🐶 PERRO crítico (FC 47% es muy malo) → ELIMINAR o cambiar ingredientes
+Umbrales del ejemplo:
+- Unidades totales: 320 + 850 + 90 + 65 + 180 = 1,505 → umbral de popularidad = 70% × 1,505 / 5 = **210.7 unidades**
+- Contribución total: 62,400 + 93,500 + 10,800 + 10,725 + 22,140 = $199,565 → margen promedio ponderado = 199,565 / 1,505 = **$132.60**
+
+| Plato | Popular (≥ 210.7) | Margen alto (≥ $132.60) | Categoría |
+|---|---|---|---|
+| Mole poblano | Sí (320) | Sí ($195) | ⭐ Estrella |
+| Tacos al pastor | Sí (850) | No ($110) | 🐄 Vaca |
+| Aguachile | No (65) | Sí ($165) | ❓ Dilema |
+| Pozole | No (90) | No ($120) | 🐶 Perro |
+| Ensalada César | No (180) | No ($123) | 🐶 Perro |
+
+- **Mole poblano** ⭐: mantener receta y precio, darle la mejor posición en la carta
+- **Tacos al pastor** 🐄: el plato que más vende pero deja menos por unidad → subir precio poco a poco (p. ej. +$10) o bajar costo de porción sin tocar calidad percibida
+- **Aguachile** ❓: deja buen margen en pesos pero vende poco → reposicionar (foto, descripción, sugerencia del mesero). Ojo: FC 47% → revisar costo de ingredientes
+- **Pozole** 🐶 y **Ensalada César** 🐶: rediseñar (receta, precio, presentación) o retirar; César tiene buen FC% (25%) pero bajo margen en pesos y poca venta
 
 ## Cómo reducir food cost
 
@@ -86,14 +106,14 @@ Umbral de "popular": ≥ 70% del promedio.
 
 ### Reglas de oro
 - **Lo más rentable arriba o esquinas** (zonas de mayor atención)
-- **NO usar $** ni precios obvios (estudios muestran menos pedido)
+- **Evitar el signo $** en la carta (estudio de Cornell, Yang/Kimes/Sessarego 2009: mayor gasto sin el signo); el precio total con IVA debe seguir siendo visible (LFPC)
 - **Descripciones evocativas** ("pollo asado al carbón" > "pollo asado")
 - **No más de 7 platos por categoría** (sobrecarga)
 - **Cuadros / sombras** para destacar 1-2 platos por categoría
 
 ### Trampas comunes
 - ❌ Menú con 80 platos (cocina no puede ser excelente en todo)
-- ❌ Foto solo de algunos platos (los sin foto venden 25% menos)
+- ❌ Fotos de baja calidad o de solo algunos platos sin criterio (destaca con foto los que quieres vender)
 - ❌ Precios alineados verticalmente (cliente compara precio en vez de plato)
 
 ## Output estructurado
@@ -107,25 +127,28 @@ Umbral de "popular": ≥ 70% del promedio.
     "food_cost_promedio_porcentaje": 0.34,
     "matriz_bcg": {
       "estrellas": [
-        {"plato": "Tacos al pastor", "vendidos": 850, "contribucion_mxn": 93500}
+        {"plato": "Mole poblano", "vendidos": 320, "contribucion_mxn": 62400}
       ],
       "vacas_lecheras": [
-        {"plato": "Mole poblano", "accion_sugerida": "Subir precio $25"}
+        {"plato": "Tacos al pastor", "accion_sugerida": "Subir precio $10 o reducir costo de porción"}
       ],
       "dilemas": [
-        {"plato": "Ensalada César", "accion_sugerida": "Foto + descripción + sugerir como acompañamiento"}
+        {"plato": "Aguachile", "fc": 0.47, "accion_sugerida": "Reposicionar + bajar costo de ingredientes"}
       ],
       "perros": [
-        {"plato": "Aguachile", "fc": 0.47, "accion_sugerida": "ELIMINAR o reformular"}
+        {"plato": "Pozole", "accion_sugerida": "Rediseñar o retirar"},
+        {"plato": "Ensalada César", "accion_sugerida": "Rediseñar o retirar"}
       ]
     },
-    "platos_a_eliminar": ["Aguachile"],
-    "platos_a_subir_precio": ["Mole poblano: +$25", "Pozole: +$15"],
-    "impacto_estimado_mensual_mxn": 18500,
+    "umbral_popularidad_unidades": 210.7,
+    "margen_promedio_ponderado_mxn": 132.60,
+    "platos_a_subir_precio": ["Tacos al pastor: +$10"],
+    "impacto_maximo_mensual_mxn": 8500,
+    "nota_impacto": "850 u × $10, suponiendo que la demanda no cae; es cota superior",
     "recomendaciones_diseño_menu": [
-      "Mover Tacos al pastor a esquina superior derecha",
-      "Foto profesional de Ensalada César",
-      "Quitar Aguachile del menú próximo update"
+      "Mole poblano en la zona de mayor atención de la carta",
+      "Foto y descripción para Aguachile",
+      "Revisar receta de Pozole y Ensalada César"
     ]
   }
 }
