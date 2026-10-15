@@ -69,7 +69,7 @@
       "name": "Tabla canónica de tasas ISN 2026 por entidad federativa",
       "description": "Tasas vigentes del Impuesto sobre Nómina en las 32 entidades federativas mexicanas para 2026.",
       "url": "https://skills-mexico.vercel.app/api/isn-tasas.json",
-      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
       "creator": { "@id": "https://skills-mexico.vercel.app/#organization" },
       "temporalCoverage": "2026",
       "spatialCoverage": { "@type": "Country", "name": "México" }
@@ -154,7 +154,7 @@
   <div class="section-head">
     <span class="section-no">02</span>
     <h2 class="section-h">Tabla <em>canónica</em> de tasas 2026.</h2>
-    <p class="section-desc">32 entidades federativas. Fuente JSON descargable en <a href="/api/isn-tasas.json"><span class="mono">/api/isn-tasas.json</span></a> (CC-BY-4.0). Fuente base secundaria (BHR 2026), confianza media.</p>
+    <p class="section-desc">32 entidades federativas. Fuente JSON descargable en <a href="/api/isn-tasas.json"><span class="mono">/api/isn-tasas.json</span></a> (Apache-2.0). Fuente base secundaria (BHR 2026), confianza media.</p>
   </div>
 
   <table class="tasas-table" style="width:100%;max-width:none;">
@@ -244,7 +244,7 @@
       <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
       <span class="code-file">comparativo_isn.py</span>
     </div>
-    <pre class="code"><span class="c-kw">from</span> mp_isn_mx <span class="c-kw">import</span> IsnMxClient
+    <pre class="code"><span class="c-kw">from</span> mp_isn_mx.client <span class="c-kw">import</span> IsnMxClient
 
 cliente <span class="c-op">=</span> IsnMxClient<span class="c-pn">()</span>
 nomina <span class="c-op">=</span> <span class="c-fn">500_000</span>  <span class="c-cm"># MXN gravables mensuales</span>
@@ -301,7 +301,7 @@ nomina <span class="c-op">=</span> <span class="c-fn">500_000</span>  <span clas
   </div>
   <div class="footer-bottom">
     <span>© 2026 Plugins MX · CDMX</span>
-    <span class="footer-version">Glosario · ISN · v3.59</span>
+    <span class="footer-version">Glosario · ISN · estado al 14-oct-2026</span>
   </div>
 </footer>
 

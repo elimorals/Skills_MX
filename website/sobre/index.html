@@ -139,7 +139,7 @@
     </p>
 
     <div class="prod-hero-meta">
-      <span><strong>Última actualización:</strong> <time datetime="2026-06-14">14 de junio de 2026</time></span>
+      <span><strong>Última actualización:</strong> <time datetime="2026-10-14">14 de octubre de 2026</time></span>
       <span><strong>Ubicación:</strong> Ciudad de México, México</span>
       <span><strong>Contacto:</strong> elimoralsmendox@gmail.com</span>
     </div>
@@ -169,7 +169,7 @@
     <div class="como-step">
       <div class="step-no">i.</div>
       <h3>El gap del compliance MX</h3>
-      <p>Las herramientas SaaS estadounidenses (Stripe Tax, Lever, Gusto) no cubren ni 20% del compliance fiscal mexicano. Los SaaS locales son cajas negras caras. El gobierno tiene 32 portales estatales distintos y 2,469 municipios. Nadie lo había modelado como infraestructura abierta.</p>
+      <p>Las herramientas SaaS estadounidenses no están hechas para el compliance fiscal mexicano y los SaaS locales son cajas negras. El país tiene 32 entidades con portales distintos y cerca de 2,500 municipios. Nadie lo había modelado como infraestructura abierta.</p>
     </div>
     <div class="como-step">
       <div class="step-no">ii.</div>
@@ -179,12 +179,12 @@
     <div class="como-step">
       <div class="step-no">iii.</div>
       <h3>El criterio de calidad</h3>
-      <p>Cada MCP documenta en su README qué hace de verdad: si consulta la fuente oficial y cuándo se validó, si falta una credencial para probarlo, si el portal obliga a entregar el trámite a una persona o si no hay API pública. <strong>Nunca se resuelven ni evaden CAPTCHAs, y los datos simulados siempre van marcados <span class="mono">simulated: true</span>.</strong></p>
+      <p>Cada MCP documenta en su README qué hace de verdad: si consulta la fuente oficial y cuándo se validó, si falta una credencial para probarlo, si el portal obliga a entregar el trámite a una persona o si no hay API pública. <strong>Por defecto no se resuelven CAPTCHAs: el portal se entrega a humano. El solver (2captcha) es opt-in y está apagado por defecto; los anti-bots de red nunca se evaden. Los datos simulados siempre van marcados <span class="mono">simulated: true</span>.</strong></p>
     </div>
     <div class="como-step">
       <div class="step-no">iv.</div>
       <h3>El modelo de negocio</h3>
-      <p>Productos enfocados a 3 segmentos: despachos contables (B2B), inmobiliarias y áreas fiscales corporativas. Licencias anuales, no SaaS por usuario. El monorepo es abierto al revisar, comercial al desplegar.</p>
+      <p>Productos enfocados a 3 segmentos: despachos contables (B2B), inmobiliarias y áreas fiscales corporativas. El código del monorepo es abierto bajo licencia Apache-2.0; lo comercial es la implementación y el soporte.</p>
     </div>
   </div>
 </section>
@@ -194,16 +194,16 @@
   <div class="section-head">
     <span class="section-no">03</span>
     <h2 class="section-h">Lo que <em>he construido</em>.</h2>
-    <p class="section-desc">Métricas verificables del monorepo plugins-mx al 14 de junio de 2026.</p>
+    <p class="section-desc">Métricas verificables del monorepo al 14 de octubre de 2026 (las genera el propio repo).</p>
   </div>
 
   <div class="big-stats">
     <div class="bs"><span class="bs-n" data-target="83">0</span><span class="bs-l">MCP servers</span><span class="bs-d">Estado de cada uno en /data/mcp-estado.json.</span></div>
-    <div class="bs bs-accent"><span class="bs-n" data-target="23">0</span><span class="bs-l">Validados en vivo</span><span class="bs-d">Contra la fuente oficial, 14-oct-2026.</span></div>
+    <div class="bs bs-accent"><span class="bs-n" data-target="24">0</span><span class="bs-l">Validados en vivo</span><span class="bs-d">Contra la fuente oficial, 14-oct-2026.</span></div>
     <div class="bs"><span class="bs-n" data-target="17">0</span><span class="bs-l">Entregan a humano</span><span class="bs-d">El portal exige CAPTCHA o login.</span></div>
     <div class="bs"><span class="bs-n" data-target="32">0</span><span class="bs-l">Estados ISN</span><span class="bs-d">Tasa 2026 de fuente secundaria, vencimiento y portal.</span></div>
     <div class="bs"><span class="bs-n" data-target="243">0</span><span class="bs-l">Municipios predial</span><span class="bs-d">En catálogo; revalidados en oct-2026: Toluca y CDMX.</span></div>
-    <div class="bs bs-dark"><span class="bs-n" data-target="40">0</span><span class="bs-l">Verticales soportados</span><span class="bs-d">De freelancer a constructora.</span></div>
+    <div class="bs bs-dark"><span class="bs-n" data-target="40">0</span><span class="bs-l">Plugins verticales</span><span class="bs-d">342 skills, 26 workflows, 17 hooks.</span></div>
   </div>
 </section>
 
@@ -217,7 +217,7 @@
 
   <div class="vert-grid">
     <span class="vert vert-orig">Model Context Protocol (MCP)</span>
-    <span class="vert vert-orig">FastMCP · Python 3.11+</span>
+    <span class="vert vert-orig">FastMCP · Python 3.10+</span>
     <span class="vert vert-orig">Playwright automation</span>
     <span class="vert vert-orig">Compliance fiscal México</span>
     <span class="vert vert-orig">REPSE · Art. 15 LFT</span>
@@ -228,7 +228,7 @@
     <span class="vert vert-top">Test-driven dev (pytest)</span>
     <span class="vert vert-top">Estado real documentado</span>
     <span class="vert vert-top">Schema.org · JSON-LD</span>
-    <span class="vert vert-spec">A2A · Agent-to-Agent 2026</span>
+    <span class="vert vert-spec">Claude Code plugins</span>
     <span class="vert vert-spec">OpenAPI 3.1</span>
     <span class="vert vert-extra">CDMX · México</span>
   </div>
@@ -252,7 +252,7 @@
     </article>
     <article class="legal-item">
       <h4>Compliance LFPDPPP</h4>
-      <p>El sitio cumple con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares. Aviso de privacidad simplificado en el formulario de demo: tus datos solo se usan para coordinar la sesión.</p>
+      <p>Aviso de privacidad simplificado en el formulario de demo: tus datos solo se usan para coordinar la sesión. En los MCPs, la bitácora guarda solo hashes de RFC, CURP y correo, y CURP e INE no cachean resultados.</p>
     </article>
     <article class="legal-item">
       <h4>No es asesoría legal</h4>
@@ -306,7 +306,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 Plugins MX · CDMX</span>
-    <span class="footer-version">Sobre · v3.59</span>
+    <span class="footer-version">Sobre · estado al 14-oct-2026</span>
   </div>
 </footer>
 

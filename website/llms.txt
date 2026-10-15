@@ -1,23 +1,44 @@
 # Plugins MX
 
-> Monorepo de 83 servidores MCP (Model Context Protocol) en Python + FastMCP para trámites y cumplimiento en México: SAT, REPSE, ISN, predial municipal, padrones federales, normativa laboral y sanitaria, pagos y marketplaces. El estado de cada MCP sale de la sección "Estado real" de su README (oleada 1, 2026-10-14): algunos consultan la fuente oficial y están validados en vivo; otros tienen el cliente escrito pero falta una credencial para probarlo; otros entregan el trámite a una persona porque el portal tiene CAPTCHA o login; otros son cálculos normativos locales; otros no tienen API pública. Detalle por MCP en https://skills-mexico.vercel.app/data/mcp-estado.json.
+> Plugins de Claude Code, skills y MCP servers para operar una PyME o profesión en México: CFDI 4.0, SAT, nómina e IMSS, pagos, marketplaces, trámites estatales y municipales, y 40 verticales por industria. 40 plugins, 342 skills (6 base en `_shared/`), 83 MCP servers en Python + FastMCP con 417 tools, 26 workflows ejecutables, 17 scripts de hooks (12 registrados en `.claude/settings.json`), un receptor de webhooks FastAPI con 12 handlers y 1,900 tests. Licencia Apache-2.0. El estado de cada MCP sale de la sección "Estado real" de su README (oleada 1, 2026-10-14).
 
 **Autor:** Elías Rashid Morales Mendoza · Ciudad de México · contacto: elimoralsmendox@gmail.com
 **Sitio:** https://skills-mexico.vercel.app
-**Repositorio:** https://github.com/elimorals/Skills_MX
-**Stack:** Python + FastMCP, pytest
+**Repositorio:** https://github.com/elimorals/Skills_MX (README = fuente de verdad)
+
+## Instalación
+
+- Claude Code: `/plugin marketplace add elimorals/Skills_MX` y luego `/plugin install core-mexico --marketplace elimorals/Skills_MX` (base de todos los verticales) más el vertical que quieras (`/plugin install <plugin> --marketplace elimorals/Skills_MX`).
+- Requisito único además de Claude Code: [uv](https://docs.astral.sh/uv/). Los MCPs de cada plugin se descargan solos la primera vez.
+- MCP suelto: copia el `example.mcp.json` del MCP. Forma: `uv run --no-project --quiet --with "plugins-mx-mcp-servers[<extras>] @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers" python -m mp_<x>.server`.
+- Regla común: ningún MCP hace pasar datos simulados por reales. Sin credenciales responde datos de ejemplo marcados `simulated: true`; con credenciales, los errores del proveedor se propagan como errores tipados. `PLUGINS_MX_MOCK=1` fuerza el modo de ejemplo.
+
+## Plugins (40, por sector)
+
+- Base: core-mexico (CFDI, IVA y retenciones, RFC, MXN, LFPDPPP, WhatsApp)
+- Fiscal y contable: pf-anual-mx, despacho-contable-mx, nomina-pymes-mx, cripto-fiscal-mx, donatarias-ongs-mx, sucesion-empresa-familiar-mx, crowdfunding-itf-mx
+- Comercio: ecommerce-mx, tienda-omnicanal-mx, restaurante-mx, importadores-mx, agencia-marketing-mx
+- Servicios profesionales: freelancers-mx, despacho-legal-mx, notarias-mx, agente-seguros-mx
+- Salud: clinica-salud-mx, consultorio-especialista-mx, telemedicina-mx, psicoterapia-mx, laboratorio-clinico-mx, geriatria-cuidado-mayor-mx, veterinaria-mx, paciente-mx, gmm-asegurado-mx
+- Inmobiliario y construcción: inmobiliaria-mx, arrendador-residencial-mx, airbnb-host-mx, constructora-mx
+- Educación: colegios-mx, educacion-particular-b2c-mx
+- Servicios personales y eventos: salon-mx, wedding-mx, talleres-mx
+- Vehículos y movilidad: tramites-vehiculares-mx, conductor-plataforma-mx
+- Hogar, energía y trámites: servicios-publicos-mx, energia-solar-pyme-mx, migracion-extranjeros-mx
+
+Workflows (26): 8 en core-mexico (cfdi-emision-completa, emitir-cfdi-tras-pago, pago-conciliacion, cierre-fiscal-mensual, auditoria-fiscal-mensual, declaracion-resico-mensual, due-diligence-cliente, validacion-cfdis-historico) y el resto en freelancers-mx, inmobiliaria-mx, cripto-fiscal-mx, agencia-marketing-mx y otros verticales.
 
 ## Productos
 
-- [Cartera Predial Multi-municipio](https://skills-mexico.vercel.app/productos/predial): consulta de adeudo predial con auto-routing sobre un catálogo de 243 municipios. Revalidado el 2026-10-14: Toluca (consulta real) y CDMX (entrega a humano por ALTCHA). El resto del catálogo viene del discovery de junio 2026 y no se ha revalidado. SACPI Michoacán está caído (sin DNS).
+- [Cartera Predial Multi-municipio](https://skills-mexico.vercel.app/productos/predial): consulta de adeudo predial con un catálogo de 243 municipios. Revalidado el 2026-10-14: Toluca (consulta real) y CDMX (entrega a humano por ALTCHA). El resto del catálogo viene del discovery de junio 2026 y no se ha revalidado. SACPI Michoacán está caído (sin DNS).
 - [Compliance REPSE Art. 15 LFT](https://skills-mexico.vercel.app/productos/repse): búsqueda en el padrón REPSE de la STPS y decisión `puede_contratar_servicios_especializados`. Validado en vivo el 2026-10-14, sin CAPTCHA.
 - [ISN](https://skills-mexico.vercel.app/productos/isn): cálculo local del Impuesto sobre Nómina con la tasa 2026 de cada entidad (2.5% Aguascalientes a 4.25% Baja California; Sinaloa y Tabasco no calculables). Tasas de fuente secundaria (BHR 2026). No genera líneas de captura ni descarga declaraciones.
 
 ## Glosario
 
-- [REPSE — Registro de Prestadoras de Servicios Especializados](https://skills-mexico.vercel.app/glosario/repse): definición, base legal (Art. 15 LFT reformado 2021), vigencia, responsabilidad solidaria del contratante.
-- [ISN — Impuesto sobre Nómina](https://skills-mexico.vercel.app/glosario/isn): tasas por entidad 2026, obligados, vencimientos.
-- [Predial — Impuesto Predial Municipal](https://skills-mexico.vercel.app/glosario/predial): cálculo, descuentos por pronto pago, vencimientos, portales por municipio.
+- [REPSE](https://skills-mexico.vercel.app/glosario/repse): definición, base legal (Art. 15 LFT reformado 2021), vigencia, responsabilidad solidaria del contratante.
+- [ISN](https://skills-mexico.vercel.app/glosario/isn): tasas por entidad 2026, obligados, vencimientos.
+- [Predial](https://skills-mexico.vercel.app/glosario/predial): cálculo, descuentos por pronto pago, portales por municipio.
 
 ## MCPs por estado (2026-10-14)
 
@@ -31,16 +52,31 @@
 - **Sin verificar (11):** mp_aspel_contpaqi, mp_bancos_mx, mp_buro_credito_personal, mp_cfe_facturacion, mp_imss_continuidad, mp_imss_patronal, mp_infonavit_patronal, mp_inmuebles24, mp_softrestaurant, mp_telmex_facturacion, mp_vivanuncios
 <!-- estado-mcps:fin -->
 
-## Endpoints públicos para agentes
+## Solver de CAPTCHA (opt-in)
+
+Apagado por defecto: sin configurarlo, cada portal con CAPTCHA entrega la consulta a humano (URL, pasos y campos prellenados). Con `PLUGINS_MX_CAPTCHA_SOLVER=2captcha` y `TWOCAPTCHA_API_KEY` resuelve imagen (SAF CDMX, predial Puebla), reCAPTCHA v2/v3/Enterprise (cédula SEP, REPUVE, predial Guadalajara, adeudos Jalisco, multas San Pedro, CURP) y Turnstile (multas EdoMex); con `ANTHROPIC_API_KEY` usa visión como respaldo en captchas de imagen. No evade anti-bots de red: CURP (Akamai), INE (Cloudflare) y Mérida (Radware) bloquean antes del CAPTCHA y se entregan a humano. Excluidos por diseño: citas_monitor y REPEP. Los portales con solver aún no se validan en vivo.
+
+## Seguridad y cumplimiento
+
+- Las skills fiscales las debe revisar un contador; los contratos, un abogado; las plantillas de WhatsApp, Meta.
+- Varias tasas estatales (ISN, ISH, tenencia) vienen de fuentes secundarias de 2026, con su nivel de confianza en cada README.
+- La bitácora guarda solo hashes de RFC, CURP y correo; CURP e INE no cachean resultados.
+- Buró de crédito exige el token de autorización del titular. Las escrituras ante el SAT no se automatizan.
+
+## Pendientes
+
+- IMSS, INFONAVIT, bancos, Buró, CFE y Telmex necesitan credenciales de prueba y una captura del flujo para pasar a real.
+- Las APIs privadas y los portales con solver necesitan credenciales o llave para su primera prueba real.
+- 11 MCPs sin "Estado real". Varios verticales tienen skills de estructura sin cálculo propio.
+
+## Datos públicos (JSON estáticos; no hay API REST de consulta)
 
 - [/data/mcp-estado.json](https://skills-mexico.vercel.app/data/mcp-estado.json): estado, nota y tools de cada MCP
 - [/mcp-manifest.json](https://skills-mexico.vercel.app/mcp-manifest.json): manifest MCP
-- [/openapi.json](https://skills-mexico.vercel.app/openapi.json): especificación OpenAPI 3.1
-- [/.well-known/agents.json](https://skills-mexico.vercel.app/.well-known/agents.json): agent card A2A
-- [/.well-known/ai-plugin.json](https://skills-mexico.vercel.app/.well-known/ai-plugin.json): manifest de plugin
+- [/openapi.json](https://skills-mexico.vercel.app/openapi.json): describe los JSON estáticos de esta lista
 - [/api/municipios.json](https://skills-mexico.vercel.app/api/municipios.json): catálogo de municipios con portal predial
 - [/api/isn-tasas.json](https://skills-mexico.vercel.app/api/isn-tasas.json): tasas ISN 2026 por estado, con fuente
-- [/api/repse-stats.json](https://skills-mexico.vercel.app/api/repse-stats.json): estadísticas agregadas REPSE
+- [/api/repse-stats.json](https://skills-mexico.vercel.app/api/repse-stats.json): base legal y verificación REPSE
 
 ## Contacto y demo
 

@@ -262,7 +262,6 @@
       <li><a href="/marketplace/">Marketplace</a></li>
       <li><a href="/portales/">Portales</a></li>
       <li><a href="/guias/">Guías</a></li>
-      <li><a href="/precios/">Precios</a></li>
       <li><a href="/onboarding/" aria-current="page">Onboarding</a></li>
       <li><a href="/#demo" class="nav-cta">Agendar demo →</a></li>
     </ul>
@@ -308,17 +307,17 @@
     </div>
     <div class="week-content">
       <h4>Instalo Plugins MX en tu infraestructura.</h4>
-      <p>Te entrego un contenedor Docker y la configuración para Claude Code o tu cliente MCP. Si el plan incluye path real con tus credenciales, ese contenedor corre en TU servidor — tus credenciales nunca tocan mi infra.</p>
+      <p>Instalamos los plugins desde el marketplace (<span class="mono">/plugin marketplace add elimorals/Skills_MX</span>) y configuramos los MCPs elegidos en Claude Code o tu cliente MCP. Todo corre en TU equipo o servidor con <span class="mono">uv</span>: tus credenciales nunca tocan mi infra.</p>
       <ul>
-        <li>Docker container <span class="mono">plugins-mx:3.59</span> en tu VPS, on-prem o cloud</li>
+        <li>Plugins y MCPs instalados en tu equipo, VPS u on-prem (único requisito: <span class="mono">uv</span>)</li>
         <li>Configuración de variables de entorno con tus credenciales (las pones tú)</li>
         <li>Conexión MCP probada desde Claude Code o tu cliente</li>
-        <li>Primer health-check que confirma que los 76 portales responden</li>
+        <li>Prueba en vivo de los portales que usa tu caso (el estado real de cada MCP está publicado)</li>
         <li>Bitácora hasheada habilitada (compatible LFPDPPP)</li>
       </ul>
       <div class="week-deliverable">
         <strong>Entregable viernes</strong>
-        Container corriendo en tu infra · Conexión MCP probada · 1 consulta real ejecutada exitosamente · Documento de runbook básico
+        MCPs corriendo en tu infra · Conexión MCP probada · 1 consulta real ejecutada exitosamente · Documento de runbook básico
       </div>
     </div>
   </div>
@@ -330,7 +329,7 @@
     </div>
     <div class="week-content">
       <h4>Conectamos los MCPs a tu proceso real.</h4>
-      <p>Construimos el primer workflow Claude Agent SDK que combina los MCPs elegidos con tu sistema (ERP, CRM, hoja de cálculo, lo que sea). Sesión técnica de 2-3 horas con tu equipo IT o el contador titular.</p>
+      <p>Construimos el primer workflow (<span class="mono">.workflow.js</span>) que combina los MCPs elegidos con tu sistema (ERP, CRM, hoja de cálculo, lo que sea). Sesión técnica de 2-3 horas con tu equipo IT o el contador titular.</p>
       <ul>
         <li>1 workflow productivo conectado a tu stack actual</li>
         <li>Output configurado (Excel, PDF firmable, payload JSON a tu API, lo que necesites)</li>
@@ -351,18 +350,18 @@
       <h3 class="week-h">Producción + decisión.</h3>
     </div>
     <div class="week-content">
-      <h4>El sistema corre solo. Tú decides si firmas anual.</h4>
+      <h4>El sistema corre solo. Tú decides si continuamos.</h4>
       <p>Una semana de operación real con tu volumen completo. Yo monitoreo de cerca pero no intervengo salvo que algo se rompa. Al día 28 nos sentamos a revisar: ¿se cumplieron las métricas del SOW? ¿el equipo lo está usando? ¿vale la pena renovar?</p>
       <ul>
         <li>Operación real sin mi intervención directa</li>
         <li>Métricas de uso reales (cuántas consultas, cuánto tiempo ahorrado, errores detectados)</li>
         <li>Sesión de revisión día 28: lecciones aprendidas + comparativa contra SOW inicial</li>
-        <li>Propuesta de contrato Producción anual (si tiene sentido para ambos)</li>
+        <li>Propuesta de continuidad (si tiene sentido para ambos)</li>
         <li>Opción de cerrar limpiamente sin renovar — sin presión, sin penalización</li>
       </ul>
       <div class="week-deliverable">
         <strong>Entregable día 30</strong>
-        Reporte ejecutivo del piloto · Métricas reales vs SOW · Decisión clara: firmar Producción, ajustar alcance, o cerrar sin renovar
+        Reporte ejecutivo del piloto · Métricas reales vs SOW · Decisión clara: continuar, ajustar alcance, o cerrar sin renovar
       </div>
     </div>
   </div>
@@ -372,7 +371,7 @@
   <div class="creds-inner">
     <h2>Credenciales que vas a generar.</h2>
     <p class="creds-sub">
-      Estas las tramitas tú directamente con cada autoridad. Yo nunca veo los archivos ni las contraseñas — solo te indico exactamente qué generar y dónde ponerlo dentro del contenedor Docker.
+      Estas las tramitas tú directamente con cada autoridad. Yo nunca veo los archivos ni las contraseñas — solo te indico exactamente qué generar y en qué variable de entorno ponerlo.
     </p>
 
     <div class="creds-grid">
@@ -389,17 +388,17 @@
       <div class="cred-card">
         <h4>NPIE IMSS</h4>
         <div class="cred-where">IMSS Desde Su Empresa (IDSE)</div>
-        <p>Número Patronal de Identificación Electrónica con tarjeta física + PIN. Permite SUA, movimientos afiliatorios, EMCR, cédulas.</p>
+        <p>Número Patronal de Identificación Electrónica con tarjeta física + PIN. Hoy <span class="mono">mp_imss_patronal</span> está pendiente: necesita credenciales de prueba y una captura del flujo para pasar a real.</p>
       </div>
       <div class="cred-card">
         <h4>Usuario INFONAVIT Empresarial</h4>
         <div class="cred-where">Portal Empresarial INFONAVIT</div>
-        <p>Usuario + contraseña del responsable patronal. Permite EMIS, descuentos por trabajador, créditos vigentes, avisos.</p>
+        <p>Usuario + contraseña del responsable patronal. Hoy <span class="mono">mp_infonavit_patronal</span> está pendiente: necesita credenciales de prueba y una captura del flujo para pasar a real.</p>
       </div>
       <div class="cred-card">
         <h4>API keys de tus pasarelas de pago</h4>
-        <div class="cred-where">Mercado Pago / Conekta / Stripe / etc.</div>
-        <p>Tokens production o sandbox según el alcance del piloto. Lectura de transacciones, no movimientos de fondos.</p>
+        <div class="cred-where">Mercado Pago / Conekta / PayPal / Clip / etc.</div>
+        <p>Tokens production o sandbox según el alcance del piloto. Estos clientes están escritos contra la documentación oficial pero aún sin validar en vivo: el piloto sería su primera prueba real.</p>
       </div>
       <div class="cred-card">
         <h4>Llave MX (opcional)</h4>
@@ -431,7 +430,6 @@
     </div>
     <div class="footer-col">
       <h4>Comercial</h4>
-      <a href="/precios/">Precios</a>
       <a href="/onboarding/">Onboarding</a>
       <a href="/#demo">Agendar demo</a>
     </div>
@@ -443,7 +441,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 Plugins MX · CDMX · Hecho con ☕ y pytest</span>
-    <span class="footer-version">v3.60 · Junio 2026</span>
+    <span class="footer-version">Octubre 2026 · estado real al 14-oct-2026</span>
   </div>
 </footer>
 

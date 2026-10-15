@@ -1,90 +1,105 @@
-# Plugins MX — Infraestructura de compliance fiscal y municipal para México
+# Plugins MX — Plugins de Claude Code, skills y MCPs para México
 
 **Versión completa para LLM ingest. Última actualización: 2026-10-14.**
 **Autor:** Elías Rashid Morales Mendoza — Ciudad de México.
-**Sitio:** https://skills-mexico.vercel.app · **Repo:** https://github.com/elimorals/Skills_MX
-**Contacto:** elimoralsmendox@gmail.com
+**Sitio:** https://skills-mexico.vercel.app · **Repo:** https://github.com/elimorals/Skills_MX (el README raíz es la fuente de verdad)
+**Licencia:** Apache-2.0 · **Contacto:** elimoralsmendox@gmail.com
 
 ---
 
 ## Qué es Plugins MX
 
-Plugins MX es una colección de 83 servidores MCP (Model Context Protocol), escritos en Python con FastMCP, que automatizan trámites fiscales y municipales del gobierno mexicano. Está diseñado para ser consumido por agentes de IA (Claude Code, Cursor, Windsurf) y por aplicaciones Python tradicionales (vía clientes como `predial_mx_client`).
+Plugins de Claude Code, skills y MCP servers para operar una PyME o profesión en México: CFDI 4.0, SAT, nómina e IMSS, pagos, marketplaces, trámites estatales y municipales, y 40 verticales por industria.
 
-El monorepo cubre 40 verticales (freelancer, agencia, colegio, taller, e-commerce, salón, veterinaria, wedding planner, restaurante, inmobiliaria, despacho contable, despacho legal, constructora, telemedicina, donataria, importador, etc.), todos heredando un core común que valida CFDI 4.0, integra WhatsApp Business, valida RFC y calcula IVA/retenciones.
+| | |
+|---|---|
+| Plugins verticales | 40, cada uno con sus skills, comandos, agentes y MCPs |
+| Skills | 342 (6 base en `_shared/` sincronizadas a cada plugin) |
+| MCP servers | 83 en Python + FastMCP, 417 tools |
+| Workflows ejecutables | 26 (`*.workflow.js`) |
+| Hooks de Claude Code | 17 scripts, 12 registrados en `.claude/settings.json` (validación de timbrado, bitácora, alertas) |
+| Webhook receiver | FastAPI con 12 handlers (Stripe, Mercado Pago, Conekta, Facturama, WhatsApp…) |
+| Calidad | 1,900 tests, 285 evals de triggering, casos golden de cálculo fiscal, CI en cada PR |
 
----
+Cómo se conectan las piezas: una skill sabe qué hacer (reglas fiscales, plantillas, flujos); un MCP hace la consulta real (SAT, Banxico, municipios, pasarelas); un workflow orquesta varias skills y MCPs para un proceso completo; los hooks validan antes de acciones sensibles, como timbrar o enviar WhatsApp masivo.
 
-## Producto 01 — Cartera Predial Multi-municipio
-
-**URL:** https://skills-mexico.vercel.app/productos/predial
-**Estado (2026-10-14):** parcial. Toluca: consulta real validada. CDMX: entrega a humano (ALTCHA). Resto del catálogo: selectores del discovery de junio 2026, sin revalidar.
-
-### Qué hace, en una frase
-"Pasa un Excel con 60 propiedades. Recibe un Excel con 60 adeudos prediales, vencimientos, descuentos y total."
-
-### Tools MCP expuestas
-- `predial_consultar(estado, municipio, cuenta_predial, [tipo, direccion])` — Consulta adeudo de una propiedad. Auto-routing entre catálogo directo, SACPI Michoacán, Mérida-por-dirección, Puebla-con-captcha.
-- `predial_listar_municipios([estado], [solo_validados])` — Lista municipios del catálogo, filtrable.
-- `predial_buscar_municipio(query)` — Búsqueda fuzzy por nombre.
-- `predial_estadisticas_catalogo()` — Stats del catálogo (totales, validados, plataformas SaaS detectadas).
-
-### Cobertura
-- **243 municipios** catalogados (209 originales + 34 descubiertos en corrida nacional 2026-06-13).
-- SACPI Michoacán (95 municipios) está caído: el host no resuelve DNS (2026-10-14).
-- Municipales revalidados el 2026-10-14: Monterrey, Querétaro y Toluca consultan predial en vivo (Tijuana, solo vivienda asegurada); CDMX, Guadalajara, Mérida y Puebla tienen CAPTCHA y entregan a humano.
-
-### Caso de uso típico
-Inmobiliaria con cartera de 60 propiedades en CDMX, Jalisco y Querétaro. Auditar predial trimestralmente manualmente toma 3 días-persona. Con `cartera-predial-multi-municipio.workflow.js` se consultan los 60 inmuebles en paralelo y se obtiene un Excel con totales y ranking en menos de 5 minutos.
+**Regla común:** ningún MCP devuelve datos simulados haciéndolos pasar por reales. Sin credenciales responde datos de ejemplo marcados `simulated: true`; con credenciales, cualquier error del proveedor se propaga como error tipado (`AuthError`, `UpstreamError`, `NotFoundError`…). `PLUGINS_MX_MOCK=1` fuerza el modo de ejemplo.
 
 ---
 
-## Producto 02 — Compliance REPSE (Art. 15 LFT)
+## Instalación
 
-**URL:** https://skills-mexico.vercel.app/productos/repse
-**Estado (2026-10-14):** real, validado en vivo contra repse.stps.gob.mx (búsqueda por razón social y padrón), sin CAPTCHA.
+### Plugins en Claude Code
+```bash
+/plugin marketplace add elimorals/Skills_MX
+/plugin install core-mexico --marketplace elimorals/Skills_MX      # base de todos los verticales
+/plugin install freelancers-mx --marketplace elimorals/Skills_MX   # o cualquier vertical
+```
+`core-mexico` (CFDI, IVA y retenciones, RFC, MXN, LFPDPPP, WhatsApp) es la dependencia de todos los verticales. Los MCPs de cada plugin se descargan solos la primera vez con uv (https://docs.astral.sh/uv/), el único requisito además de Claude Code.
 
-### El riesgo en una línea
-"Sin REPSE vigente del proveedor, el contratante paga finiquitos, IMSS, INFONAVIT y créditos fiscales de los trabajadores ajenos."
+### MCP suelto
+Cada MCP trae un `example.mcp.json` listo para copiar; no depende de dónde esté el repo. Ejemplo, portal del SAT:
+```json
+{
+  "mcpServers": {
+    "sat_portal": {
+      "command": "uv",
+      "args": ["run", "--no-project", "--quiet", "--with",
+               "plugins-mx-mcp-servers[sat-ws,sat-portal] @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+               "python", "-m", "mp_sat_portal.server"],
+      "env": {
+        "SAT_RFC": "${SAT_RFC:-}",
+        "SAT_EFIRMA_CERT": "${SAT_EFIRMA_CERT:-}",
+        "SAT_EFIRMA_KEY": "${SAT_EFIRMA_KEY:-}",
+        "SAT_EFIRMA_PASSWORD": "${SAT_EFIRMA_PASSWORD:-}"
+      }
+    }
+  }
+}
+```
+Las credenciales van en variables de entorno, nunca en el repo (`.env.example` las lista todas).
 
-### Tools MCP expuestas
-- `repse_consultar_por_razon_social(razon_social, [limite])` — Búsqueda fuzzy por nombre o razón social.
-- `repse_consultar_por_numero_registro(numero_registro)` — Detalle completo: razón social, entidad, AR, fecha aviso, vigencia, servicios autorizados.
-- `repse_verificar_proveedor(razon_social, [numero_registro])` — Tool de alto nivel. Devuelve `puede_contratar_servicios_especializados: bool` + advertencias legales. Compliance binario antes de firmar PO.
+---
 
-### Contexto legal
-- **Reforma 2021 al Art. 15 LFT:** Toda persona física o moral que provea servicios especializados u obras especializadas mediante subcontratación debe contar con registro ante STPS (REPSE).
-- **Responsabilidad solidaria:** El contratante responde solidariamente por las obligaciones laborales, fiscales y de seguridad social del proveedor cuyo REPSE no esté vigente.
-- **Vigencia:** 3 años desde la fecha del aviso de registro (AR). Después debe renovarse.
+## Plugins verticales (40, por sector)
 
-### Caso de uso típico
-Área fiscal corporativa con 40 proveedores especializados. Llamada a `repse_verificar_proveedor()` antes de cada PO. Cron mensual revalida la base completa. Alertas si algún proveedor vence el registro.
+- **Base:** core-mexico
+- **Fiscal y contable:** pf-anual-mx (declaración anual PF) · despacho-contable-mx (contabilidad multi-cliente) · nomina-pymes-mx (nómina, IMSS-IDSE, INFONAVIT) · cripto-fiscal-mx (ISR de cripto) · donatarias-ongs-mx (CFDI de donativos, transparencia) · sucesion-empresa-familiar-mx (patrimonio y sucesión) · crowdfunding-itf-mx (inversionistas en IFC)
+- **Comercio:** ecommerce-mx (Mercado Libre, Shopify, Amazon) · tienda-omnicanal-mx (inventario multicanal) · restaurante-mx (restaurantes, dark kitchens, delivery) · importadores-mx (IGI, DTA, pedimentos) · agencia-marketing-mx (reportes y copy para clientes)
+- **Servicios profesionales:** freelancers-mx (cotizaciones, honorarios, RESICO) · despacho-legal-mx (honorarios y contratos) · notarias-mx (citas, escrituras) · agente-seguros-mx (cartera de pólizas, CNSF)
+- **Salud:** clinica-salud-mx · consultorio-especialista-mx · telemedicina-mx · psicoterapia-mx · laboratorio-clinico-mx · geriatria-cuidado-mayor-mx · veterinaria-mx · paciente-mx · gmm-asegurado-mx
+- **Inmobiliario y construcción:** inmobiliaria-mx (corredores) · arrendador-residencial-mx (rentas PF) · airbnb-host-mx (renta corta, ISH) · constructora-mx (obra, REPSE)
+- **Educación:** colegios-mx (K-12, colegiaturas deducibles) · educacion-particular-b2c-mx (cursos en línea)
+- **Servicios personales y eventos:** salon-mx (salones, spas, barberías) · wedding-mx (wedding planners) · talleres-mx (talleres mecánicos)
+- **Vehículos y movilidad:** tramites-vehiculares-mx (tenencia, verificación, multas) · conductor-plataforma-mx (Uber, DiDi, Cabify)
+- **Hogar, energía y trámites:** servicios-publicos-mx (CFE, agua, predial, gas) · energia-solar-pyme-mx (interconexión CFE) · migracion-extranjeros-mx (trámites INM)
+
+### Workflows ejecutables (26)
+
+| Plugin | Workflows |
+|---|---|
+| core-mexico | cfdi-emision-completa · emitir-cfdi-tras-pago · pago-conciliacion · cierre-fiscal-mensual · auditoria-fiscal-mensual · declaracion-resico-mensual · due-diligence-cliente · validacion-cfdis-historico |
+| freelancers-mx | cobranza-multinivel · migracion-rfc-a-otro-regimen |
+| inmobiliaria-mx | cobranza-renta-mensual · cartera-predial-multi-municipio |
+| cripto-fiscal-mx | declaracion-anual-cripto · cripto-cierre-anual |
+| agencia-marketing-mx | reporte-cliente-agencia · respuesta-crisis-cm |
+| Otros | pf-anual-completa · dispersion-nomina · sync-multicanal · comunicacion-padres-masiva · garantia-vehicular · monitoreo-diario-vehicular · telemedicina-consulta · donativo-anual · pedimento-importacion · energia-bidireccional-mensual |
 
 ---
 
-## Producto 03 — ISN (32 estados, cálculo local)
+## MCP servers por fuente
 
-**URL:** https://skills-mexico.vercel.app/productos/isn
-**Estado (2026-10-14):** cálculo normativo local; no consulta portales. Tasas 2026 de fuente secundaria (BHR 2026), confianza media.
+| Grupo | MCPs | Cómo obtienen el dato |
+|---|---|---|
+| SAT | sat_ws, sat_portal, sat_opinion_32d, resico_sat, donatarias_sat | Web service de Descarga Masiva (XMLDSig), ConsultaCFDIService, login con e.firma por HTTP, listas 69/69-B y padrón de donatarias oficiales |
+| Federales | banxico, banxico_cep, clabe_validador_oficial, repse_stps, condusef_sipres, dof_api, cnbv_fintech, impi_marcanet, conagua_repda, cre_hidrocarburos, concilianet_profeco, llave_mx, retys_catalogo y más | API o endpoint público detrás de cada portal |
+| Con CAPTCHA | curp_renapo, repuve, sep_profesional, ine_verificacion | Entrega a humano o solver opt-in |
+| Estatal y municipal | cdmx_municipal, edomex_municipal, queretaro_municipal, monterrey_municipal, guadalajara_municipal, puebla_municipal, predial_mx, agua_mx, gas_natural_mx, multas_mx, tenencia_mx, isn_mx, ish_mx… | Consulta pública por cuenta o placa; tasas citadas a la ley estatal 2026 |
+| APIs privadas | mercado_pago, conekta, mercado_libre, shopify_mx, amazon_mx_seller, paypal_mx, clip_terminal, cabify_business, rappi_partners, facturama_extendido, bitso | Cliente contra la documentación oficial de cada proveedor |
+| Cumplimiento normativo | ley_silla_nom037, desconexion_digital, expediente_clinico_nom024, cfe_interconexion_solar, lnetb_auditor | Cálculo local con fundamento legal citado |
+| Pendientes (login de usuario) | imss_patronal, infonavit_patronal, bancos_mx, buro_credito_personal, cfe_facturacion, telmex_facturacion | Requieren credenciales de prueba y captura del flujo |
 
-### La idea
-"El ISN depende de dónde se presta el trabajo. Compara la tasa de cada entidad antes de decidir."
-
-### Tools MCP expuestas
-- `isn_calcular(nomina_gravable, estado)` — Calcula ISN del periodo aplicando la tasa del estado. Local, sin credenciales. En Sinaloa y Tabasco no devuelve monto (tasa con rango).
-- `isn_listar_estados([solo_validados])` — Lista los 32 estados con tasa, fuente, portal y vencimiento.
-- `isn_info_estado(estado)` — Detalle completo de un estado: URL portal, selectores DOM documentados, requiere e.firma sí/no.
-- `isn_generar_linea_captura(estado, periodo, rfc, nomina_gravable)` — No automatizada: devuelve error (requiere la sesión del contribuyente).
-- `isn_descargar_declaracion(estado, periodo, rfc)` — No automatizada: devuelve error (requiere la sesión del contribuyente).
-
-### Tasas ISN 2026
-
-Tabla completa con fuente por estado en https://skills-mexico.vercel.app/api/isn-tasas.json (generada desde `shared/catalogo_isn_estatal.py`). Rango: 2.5% (Aguascalientes) a 4.25% (Baja California); CDMX, Chihuahua y Quintana Roo 4%; Yucatán 3.75%; Zacatecas 3.5%; la mayoría 3%. Sinaloa (2.4%–3.0% por tramos) y Tabasco (3%–3.5%) no se calculan.
-
-### Caso de uso típico
-Despacho contable con 200 clientes en 32 estados. Bulk de `isn_calcular()` con semáforo de vencimientos. Cron diario que avisa al cliente por WhatsApp.
-
----
+Significado de cada estado: "Real, validado en vivo" = consulta el portal o API oficial y se probó en vivo; "Real sin validar" = cliente escrito contra la documentación oficial, falta una credencial; "Entrega a humano" = el portal exige CAPTCHA o login y el tool devuelve URL, pasos y campos prellenados; "Sin API pública" = el proveedor no ofrece API y el tool responde un error explícito; "Cálculo normativo" = cálculo local con tasas y reglas citadas a su fuente; "Bloqueado / sin verificar" = portal caído o sin fuente pública / aún sin la revisión de la oleada 1.
 
 <!-- estado-mcps:inicio -->
 ### Estado a 2026-10-14 (oleada 1: mock → real)
@@ -190,101 +205,93 @@ Generado por `scripts/generar-estado-mcps.py` desde la sección "Estado real" de
 
 ---
 
-## Verticales soportados (40 paquetes)
+## Solver de CAPTCHA (opt-in)
 
-### Originales 11
-freelancers-mx, agencia-marketing-mx, colegios-mx, talleres-mx, ecommerce-mx, salon-mx, veterinaria-mx, wedding-mx, restaurante-mx, inmobiliaria-mx, core-mexico
+`mcp-servers/shared/captcha_solver.py` resuelve el CAPTCHA del formulario con 2captcha; si falla un captcha de imagen y hay `ANTHROPIC_API_KEY`, usa visión como respaldo. **Está apagado por defecto**: sin la configuración, cada portal devuelve la entrega a humano.
 
-### Top research (15) — con score de prioridad
-pf-anual-mx (9.5), arrendador-residencial-mx (9.3), tramites-vehiculares-mx (9.0), conductor-plataforma-mx (8.8), tienda-omnicanal-mx (8.5), consultorio-especialista-mx (8.3), clinica-salud-mx (8.3), airbnb-host-mx (8.2), notarias-mx (8.0), despacho-contable-mx (7.9), psicoterapia-mx (7.8), servicios-publicos-mx (7.8), migracion-extranjeros-mx (7.5), gmm-asegurado-mx (7.5), paciente-mx (7.5)
+```bash
+export PLUGINS_MX_CAPTCHA_SOLVER=2captcha
+export TWOCAPTCHA_API_KEY=...
+```
 
-### Áreas especializadas 9
-telemedicina-mx, nomina-pymes-mx, cripto-fiscal-mx, educacion-particular-b2c-mx, donatarias-ongs-mx, importadores-mx, sucesion-empresa-familiar-mx, crowdfunding-itf-mx, energia-solar-pyme-mx
+| Tipo | Portales conectados |
+|---|---|
+| Imagen | SAF CDMX (tenencia, verificación, multas), predial Puebla |
+| reCAPTCHA v2 / v3 / Enterprise | Cédula SEP, REPUVE, predial Guadalajara, adeudos Jalisco, multas San Pedro, CURP |
+| Turnstile | Multas EdoMex |
 
-### Extras 5
-agente-seguros-mx, constructora-mx, despacho-legal-mx, geriatria-cuidado-mayor-mx, laboratorio-clinico-mx
+- Nunca evade anti-bots de red: CURP (Akamai), INE (Cloudflare) y Mérida (Radware) bloquean antes del CAPTCHA; el tool detecta el bloqueo y entrega a humano sin gastar CAPTCHA.
+- Excluidos por diseño: citas_monitor (apartar citas automáticamente le quita lugar a otras personas) y REPEP (anti-bot deliberado).
+- Sin validar en vivo todavía: los portales con solver necesitan una llave para la primera prueba real.
 
 ---
 
-## Cómo se integra
+## Productos destacados
 
-### Setup
-1. Clonar repo, correr `install-hooks.sh`, declarar credenciales en `.env`. Los datos simulados solo salen con `PLUGINS_MX_MOCK=1` o, en clientes de APIs privadas, sin credenciales; siempre marcados `simulated: true`.
-2. Cada MCP es invocable desde Claude Code, Cursor, Windsurf, o consumible como librería Python pura.
-3. Combinar MCPs en archivos `.workflow.js` con `phase()`, `parallel()`, `pipeline()`. 26 archivos `.workflow.js` en el repo.
-4. Los tests live (`PLUGINS_MX_LIVE=1`) avisan cuando un portal cambia. Bitácora JSONL audita cada llamada.
+### Cartera Predial Multi-municipio — https://skills-mexico.vercel.app/productos/predial
+Estado (2026-10-14): parcial. Catálogo de 243 municipios (discovery de junio 2026). Revalidados: Toluca, Querétaro y Monterrey consultan predial en vivo (Tijuana, vivienda asegurada); CDMX, Guadalajara, Mérida y Puebla tienen CAPTCHA y entregan a humano (Guadalajara y Puebla, con solver opt-in). SACPI Michoacán está caído (sin DNS). Tools: `predial_consultar`, `predial_listar_municipios`, `predial_buscar_municipio`, `predial_estadisticas_catalogo`. El workflow `cartera-predial-multi-municipio` (inmobiliaria-mx) consolida la cartera en un CSV. Librería Python sin LLM: `clients/predial_mx_client`.
 
-### Ejemplo: cartera predial multi-municipio (Python)
+### Compliance REPSE (Art. 15 LFT) — https://skills-mexico.vercel.app/productos/repse
+Estado (2026-10-14): real, validado en vivo contra repse.stps.gob.mx, sin CAPTCHA. Tools: `repse_consultar_por_razon_social`, `repse_consultar_por_numero_registro`, `repse_verificar_proveedor` (devuelve `puede_contratar_servicios_especializados: bool` y advertencias). Cache de 30 días. Sin REPSE vigente del proveedor, el contratante responde solidariamente por sus obligaciones laborales, fiscales y de seguridad social.
+
+### ISN (32 estados, cálculo local) — https://skills-mexico.vercel.app/productos/isn
+Estado (2026-10-14): cálculo normativo local; no consulta portales. Tasas 2026 de fuente secundaria (BHR 2026), confianza media: 2.5% (Aguascalientes) a 4.25% (Baja California); CDMX, Chihuahua y Quintana Roo 4%; Yucatán 3.75%; Zacatecas 3.5%; la mayoría 3%. Sinaloa (2.4%–3.0%) y Tabasco (3%–3.5%) no se calculan. `isn_generar_linea_captura` e `isn_descargar_declaracion` no están automatizadas: requieren la sesión del contribuyente.
+
 ```python
-from predial_mx_client import PredialClient
-import openpyxl
-
-cliente = PredialClient()
-propiedades = [
-    {"alias": "Casa Coyoacán", "estado": "CDMX", "municipio": "Coyoacán", "cuenta": "123-456-789"},
-    {"alias": "Depa Zapopan", "estado": "JAL", "municipio": "Zapopan", "cuenta": "GDL-0001-22"},
-    {"alias": "Rancho SACPI", "estado": "MICH", "municipio": "Ciudad Hidalgo", "cuenta": "MICH-7788"},
-]
-resultados = cliente.consultar_lote(propiedades)
-# Auto-routing: CDMX directo · Zapopan directo · Michoacán vía SACPI
-print(f"Total cartera: ${sum(r.adeudo for r in resultados):,.2f} MXN")
-# Total cartera: $27,912.50 MXN
-```
-
-### Ejemplo: validar proveedor REPSE
-```python
-from mp_repse_stps import RepseStpsClient
-
-cliente = RepseStpsClient()
-resultado = cliente.verificar_proveedor(razon_social="PROVEEDOR EJEMPLO SA DE CV")
-
-if resultado["puede_contratar_servicios_especializados"]:
-    print(f"✓ Vigente hasta {resultado['detalle']['vigencia']}")
-    firmar_po(proveedor)
-else:
-    for advertencia in resultado["advertencias"]:
-        print(f"⚠ {advertencia}")
-    bloquear_contratacion()
-```
-
-### Ejemplo: comparativo ISN multi-estado
-```python
-from mp_isn_mx import IsnMxClient
+from mp_isn_mx.client import IsnMxClient
 
 cliente = IsnMxClient()
-nomina = 500_000  # MXN gravables mensuales
-
-for estado in ["CDMX", "JAL", "BC", "SIN"]:
-    r = cliente.calcular(nomina, estado)
-    print(f"{r['estado']:<20} {r['tasa_pct']}% → ${r['isn_a_pagar']:,.2f}")
-
-# Ciudad de México        4.0% → $ 20,000.00
-# Jalisco                 3.0% → $ 15,000.00
-# Baja California        4.25% → $ 21,250.00
-# Sinaloa                 2.4% → isn_a_pagar: None (tramos 2026 sin verificar)
+for estado in ["CDMX", "JAL", "BC"]:
+    r = cliente.calcular(500_000, estado)   # nómina gravable mensual
+    print(r["estado"], r["tasa_pct"], r["isn_a_pagar"])
 ```
 
 ---
 
-## Métricas del monorepo
+## Calidad y pruebas
 
-- **83** MCP servers; conteo por estado en la tabla de arriba y en `/data/mcp-estado.json`
-- **26** archivos `.workflow.js`
-- **32** entidades con tasa ISN en catálogo (fuente secundaria)
-- **243** municipios en catálogo predial (no revalidados en la oleada 1, salvo Toluca y CDMX)
+```bash
+cd mcp-servers && .venv/bin/pytest -q                       # unitarios, sin red
+PLUGINS_MX_LIVE=1 .venv/bin/pytest -q -m live <ruta>       # contra el portal real
+python3 scripts/eval-golden.py                              # cálculos fiscales deterministas
+python3 scripts/generar-estado-mcps.py --check              # el sitio y el README están al día
+```
+En cada PR, el CI corre los tests de los MCPs, las evals golden, el lint de skills, la verificación de copias de `_shared`, SkillSpector, la validación de JSON y el escaneo de secretos.
 
 ---
 
-## Endpoints públicos para agentes de IA
+## Seguridad y cumplimiento
 
-- `/mcp-manifest.json` — Manifest MCP descubrible
-- `/openapi.json` — Especificación OpenAPI 3.1
-- `/.well-known/agents.json` — Manifest A2A (Google Agent-to-Agent 2026)
-- `/.well-known/ai-plugin.json` — Manifest OpenAI plugin
-- `/.well-known/security.txt` — Política de divulgación responsable
-- `/api/municipios.json` — Catálogo de 243 municipios
-- `/api/isn-tasas.json` — Tabla canónica de tasas ISN
-- `/api/repse-stats.json` — Estadísticas agregadas REPSE
+- Validación experta antes de producción: las skills fiscales las debe revisar un contador; los contratos, un abogado; las plantillas de WhatsApp, Meta.
+- Varias tasas estatales (ISN, ISH, tenencia) vienen de fuentes secundarias de 2026 y están marcadas con su nivel de confianza en cada README.
+- Datos personales: la bitácora guarda solo hashes de RFC, CURP y correo. CURP e INE no cachean resultados e incluyen un aviso LFPDPPP.
+- Buró de crédito: `mp_buro_credito_personal` exige el token de autorización del titular.
+- Escrituras ante el SAT (actualizar obligaciones, citas): no se automatizan.
+- Repo público: no se commitean credenciales ni capturas de navegador.
+
+---
+
+## Pendientes
+
+| Tema | Qué falta |
+|---|---|
+| Login de usuario final | IMSS, INFONAVIT, bancos, Buró, CFE y Telmex necesitan credenciales de prueba y una captura (HAR) de cada flujo |
+| Validación en vivo | Las APIs privadas y los portales con solver necesitan credenciales o llave para su primera prueba real |
+| 11 MCPs sin "Estado real" | Los del grupo de login más aspel_contpaqi y softrestaurant (software local) |
+| Verticales con lógica profunda | Varios verticales tienen skills de estructura sin cálculo propio |
+
+---
+
+## Datos públicos de este sitio (JSON estáticos; no hay API REST de consulta)
+
+- `/data/mcp-estado.json` — estado, nota y tools de cada MCP
+- `/mcp-manifest.json` — manifest MCP
+- `/openapi.json` — describe los JSON estáticos de esta lista
+- `/.well-known/ai-plugin.json` — manifest de plugin (solo datos estáticos)
+- `/.well-known/security.txt` — política de divulgación responsable
+- `/api/municipios.json` — catálogo de 243 municipios
+- `/api/isn-tasas.json` — tasas ISN 2026 por estado, con fuente
+- `/api/repse-stats.json` — base legal y verificación REPSE
 
 ---
 
@@ -293,6 +300,4 @@ for estado in ["CDMX", "JAL", "BC", "SIN"]:
 - **Email:** elimoralsmendox@gmail.com
 - **Demo de 20 minutos:** https://skills-mexico.vercel.app/#demo
 - **GitHub:** https://github.com/elimorals/Skills_MX
-- **Ubicación:** Ciudad de México, México
-
-Hecho en México, para despachos serios.
+- **Licencia:** Apache-2.0
