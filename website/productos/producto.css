@@ -409,6 +409,10 @@
 }
 
 .tool:hover::before { opacity: 1; }
+/* En pantallas angostas el fondo de hover no sobresale del contenedor. */
+@media (max-width: 640px) {
+  .tool::before { left: 0; right: 0; }
+}
 
 .tool-no {
   font-family: var(--f-display);

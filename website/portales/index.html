@@ -340,7 +340,7 @@
 /* Patrones CAPTCHA */
 .captcha-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 0.9rem;
 }
 .captcha-card {
@@ -349,6 +349,7 @@
   border-left: 3px solid var(--c-terra);
   border-radius: 6px;
   padding: 0.9rem 1.1rem;
+  overflow-wrap: anywhere;
 }
 .captcha-name {
   font-family: var(--f-display);
