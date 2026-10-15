@@ -18,11 +18,11 @@ El roadmap de junio de 2026 (verticales por trimestre, métricas de negocio) que
 
 | Tema | Qué falta | Depende de |
 |---|---|---|
-| **Oleada 2: login de usuario final** | IMSS, INFONAVIT, bancos, Buró, CFE y Telmex | Credenciales de prueba y una captura HAR de cada flujo. Para bancos, evaluar un agregador (Belvo, Finerio) en vez de scraping |
-| **Validación en vivo** | Las 13 APIs privadas "real sin validar" y los portales con solver | Una credencial o llave por proveedor para la primera prueba real |
+| **Login de usuario final (grupo G del plan)** | IMSS, INFONAVIT, bancos, Buró, CFE y Telmex | Credenciales de prueba y una captura HAR de cada flujo. Para bancos, evaluar un agregador (Belvo, Finerio) en vez de scraping |
+| **Validación en vivo** | Los 13 MCPs "real sin validar" y los portales con solver | Una credencial o llave por proveedor para la primera prueba real |
 | **MCPs sin "Estado real"** | Los 11 marcados "sin verificar" (grupo de login más `aspel_contpaqi` y `softrestaurant`) | Exports de muestra del software local |
 | **Oleada 3: documentos** | Extracción de PDFs (CSF, opinión 32-D, recibos CFE/Telmex) donde las skills reciben documentos | — |
-| **Calidad de skills** | Evals de salida (corrección de la respuesta, no solo triggering) y lógica propia en verticales que hoy solo tienen estructura | Validación de contador o abogado por vertical |
+| **Calidad de skills** | Ampliar los evals de salida (corrección de la respuesta, no solo triggering) y dar lógica propia a los verticales que hoy solo tienen estructura | Validación de contador o abogado por vertical |
 
 ## Criterio para llamar "producción" a un vertical
 

@@ -37,7 +37,7 @@ La oleada 1 (plan en [`docs/plan-mock-a-real.md`](../plan-mock-a-real.md)) fija 
 
 **Negativas**:
 - Sin credenciales, una consulta que antes "funcionaba" con mock ahora devuelve `simulated: true`, o un handoff que pide intervención humana.
-- 13 MCPs quedan "real sin validar" hasta tener credenciales, y el grupo de login de usuario final (IMSS, INFONAVIT, bancos, Buró, CFE, Telmex) sigue pendiente de capturas HAR (oleada 2).
+- 13 MCPs quedan "real sin validar" hasta tener credenciales, y el grupo de login de usuario final (IMSS, INFONAVIT, bancos, Buró, CFE, Telmex) sigue pendiente de capturas HAR (grupo G del plan).
 
 ## Ver también
 
