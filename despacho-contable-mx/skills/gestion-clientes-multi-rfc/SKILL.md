@@ -48,6 +48,9 @@ class ClienteDespacho(BaseModel):
 
 ## ⚠ Compliance
 
-- Contraseñas CIEC cifradas en reposo
-- E.firma path NO en logs
-- Notificar cliente cuando se accede a su cuenta SAT
+- Contraseñas (antes CIEC) cifradas en reposo; nunca guardes la contraseña de la llave privada (.key) de la e.firma en el mismo lugar que el archivo
+- Rutas de e.firma y contraseñas NO en logs
+- Guardar e.firma y contraseña de un cliente requiere su autorización expresa y por escrito; la e.firma equivale a su firma autógrafa (Art. 17-D CFF)
+- Datos personales de clientes PF: aviso de privacidad conforme a la LFPDPPP vigente (DOF 20-03-2025; autoridad: Secretaría Anticorrupción y Buen Gobierno). Ver skill `compliance-lfpdppp`
+- Notificar al cliente cuando se accede a su cuenta SAT
+- Vencimientos de e.firma: usa el skill `gestor-efirma-vencimientos` de `core-mexico`

@@ -9,8 +9,9 @@ allowed-tools: Read, Write
 ## Modelo
 
 Cada cliente paga mensualidad fija. Día 1 del mes:
-1. Emitir CFDI G03 al cliente
-2. Enviar a su email/WA
+1. Emitir CFDI de ingreso al cliente (uso CFDI que indique el cliente; normalmente G03). Como aún no está cobrado: **método PPD, forma 99** y complemento de pago (REP) al cobrar, a más tardar el día 5 del mes siguiente. Usa PUE solo si se cobra en el mismo mes (ver skill `cfdi-emision` de `core-mexico`).
+   - Retenciones si el cliente es persona moral: despacho PF en régimen 612 → 10% ISR + 2/3 del IVA; despacho PF en RESICO → 1.25% ISR + 2/3 del IVA; despacho PM → sin retención. El Total del CFDI resta las retenciones.
+2. Enviar a su email/WA (WhatsApp solo con opt-in; ver `comunicacion-clientes-batch`)
 3. Si no paga en 5 días: nivel 1 cobranza
 4. D+15: nivel 2
 5. D+30: pausar servicio + alerta crítica

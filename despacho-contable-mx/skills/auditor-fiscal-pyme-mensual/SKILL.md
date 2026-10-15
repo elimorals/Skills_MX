@@ -1,6 +1,6 @@
 ---
 name: auditor-fiscal-pyme-mensual
-description: Auditoría fiscal mensual automatizada para clientes PyME del despacho contable detectando errores comunes que el SAT puede observar (CFDI tipo I con método PUE pero sin REP cuando fue PPD, retenciones REPSE no acreditadas correctamente, gastos sin CFDI a nombre del cliente, depósitos en efectivo mayores a $15k sin justificación, ingresos cobrados no reportados completos, CFDIs de proveedores en lista 69-B definitiva que NO son deducibles, validación de complemento de pago en tiempo dentro del plazo de 5 días post pago, deducciones improcedentes como gasolina sin desplazamiento documentado o restaurantes excesivos). Genera reporte ejecutivo con riesgo bajo/medio/alto + acciones específicas + estimación de impacto fiscal si SAT lo observa. Diferencia entre errores subsanables (refacturar) y errores que ya causaron contingencia (multas). Cubre PFAE 612, RESICO PF 626, PM 601, RESICO PM. Usar cuando el usuario diga "auditoría fiscal mensual", "revisión SAT preventiva", "auditor contable", "análisis fiscal PyME", "validar declaración". NO usar para declaración anual (usar pf-anual-completa) ni para defensa SAT ya iniciada (eso es auditoría correctiva).
+description: Revisión fiscal preventiva mensual de clientes PyME del despacho - CFDI PPD sin complemento de pago (REP) a más tardar el día 5 del mes siguiente, retenciones (REPSE 6%, honorarios, RESICO, arrendamiento), gastos sin CFDI o de proveedores en lista 69-B definitiva, depósitos en efectivo mayores a $15,000 informados por bancos, discrepancia fiscal y pagos provisionales tardíos. Genera reporte con riesgo bajo/medio/alto, acciones y estimación de impacto. Cubre PFAE 612, RESICO 626 (PF y PM) y PM 601. Usar cuando el usuario diga auditoría fiscal mensual, revisión SAT preventiva, auditor contable, análisis fiscal PyME, validar declaración mensual, revisar cliente antes del 17. NO usar para la declaración anual de PF (usar el plugin pf-anual-mx) ni para defensa en una auditoría del SAT ya iniciada.
 allowed-tools: Read, Write, Edit
 ---
 
@@ -12,7 +12,7 @@ allowed-tools: Read, Write, Edit
 
 **Verificaciones**:
 - Total emitido = Total reportado
-- CFDIs PPD tienen REP correspondiente en plazo (5 días post-pago)
+- CFDIs PPD tienen REP (complemento de pago) emitido a más tardar el **día 5 natural del mes siguiente** al cobro (regla de CFDI de pagos de la RMF 2026; verificar número de regla)
 - CFDIs cancelados con motivo correcto (01-04) + sustituto si aplica
 - Sin duplicados
 
@@ -22,7 +22,7 @@ allowed-tools: Read, Write, Edit
 
 **Verificaciones**:
 - Cada gasto deducible tiene CFDI a tu RFC
-- RFC emisor NO en lista 69-B definitiva (si lo está, EXCLUIR de deducibles)
+- RFC emisor NO en lista 69-B definitiva (si lo está, EXCLUIR de deducibles e IVA acreditable). Consulta con `sat_consultar_69b_efos` (MCP `mp_sat_portal`, validado en vivo)
 - Método de pago consistente con forma real
 - Plazo de cancelación SAT cumplido (por regla general requiere aceptación del receptor; sin aceptación solo en supuestos de la regla 2.7.1.35 RMF 2026, p.ej. dentro de 24 h o total ≤ $1,000)
 
@@ -31,18 +31,19 @@ allowed-tools: Read, Write, Edit
 ### 3. Retenciones
 
 **Verificaciones**:
-- REPSE 6% IVA bien aplicado a subcontratistas REPSE
-- Honorarios PFAE 10% ISR + 10.67% IVA retenidos
-- RESICO PF 1.25% ISR
-- Arrendamiento 10% ISR
-- CFDI tipo R emitido si tú retuviste
+- REPSE: retención de IVA del 6% del valor de la contraprestación (Art. 1-A fr. IV LIVA)
+- Honorarios de PF pagados por PM: 10% ISR + 2/3 del IVA (10.6667%)
+- RESICO PF que factura a PM: 1.25% ISR + 2/3 del IVA
+- Arrendamiento de PF pagado por PM: 10% ISR + 2/3 del IVA
+- CFDI de Retenciones e información de pagos emitido por cada retención (ver skill `iva-retenciones-mx` de `core-mexico`)
 
 **Riesgo si falla**: SAT puede negar deducibilidad y aplicar multa
 
 ### 4. Cruce bancario
 
 **Verificaciones**:
-- Depósitos en efectivo > $15,000 MXN/mes (Art. 91 LISR — instituciones reportan)
+- Depósitos en efectivo > $15,000 MXN en el mes: los bancos los informan al SAT (Art. 55 fr. IV LISR)
+- Erogaciones mayores a ingresos declarados (PF): riesgo de discrepancia fiscal (Art. 91 LISR)
 - Depósitos bancarios totales coherentes con ingresos facturados
 - Sin movimientos sospechosos
 
@@ -53,8 +54,8 @@ allowed-tools: Read, Write, Edit
 **Verificaciones**:
 - Cálculo correcto según régimen
 - Retenciones acreditadas correctamente
-- Pagado en plazo (día 17)
-- Si extemporáneo: recargos + actualización aplicados
+- Pagado en plazo (día 17 del mes siguiente; las PF pueden tener 1 a 5 días hábiles adicionales según el sexto dígito numérico de su RFC, por decreto de beneficios fiscales; verificar vigencia)
+- Si extemporáneo: actualización + recargos por **mes o fracción** (Art. 21 CFF): un día de atraso ya causa un mes de recargos
 
 **Riesgo si falla**: SAT cobra diferencias + recargos
 
@@ -68,9 +69,9 @@ RIESGO GLOBAL: 🟡 MEDIO
 
 Hallazgos:
 1. ⚠ ALTO: 3 CFDIs de Proveedor X que está en 69-B DEFINITIVO
-   - Monto a EXCLUIR de deducibles: $87,500
-   - Impacto: +$14,000 en ISR estimado
-   - Acción: refacturar con proveedor alternativo si posible
+   - Monto a EXCLUIR de deducibles: $87,500 (subtotal)
+   - Impacto estimado: +$26,250 ISR (30% PM) y $14,000 de IVA no acreditable (16%)
+   - Acción: excluir de la deducción y del IVA acreditable; documentar materialidad si el cliente quiere desvirtuar (Art. 69-B CFF)
    
 2. ⚠ MEDIO: 8 CFDIs tipo I PPD sin REP correspondiente
    - Plazo cumplido en 6, retraso en 2 (15+ días)
@@ -81,11 +82,12 @@ Hallazgos:
 4. ✅ BAJO: Sin depósitos en efectivo > $15k
 
 5. ⚠ MEDIO: Pago provisional febrero pagado el día 18 (1 día tarde)
-   - Recargo aplicable: $245
-   - Acción: pagar diferencia para evitar acumulación
+   - Recargo aplicable: 1 mes de recargos sobre el impuesto actualizado (tasa mensual de la LIF 2026)
+   - Acción: pagar actualización y recargos con declaración complementaria
 ```
 
 ## Validación pendiente
 
 ⚠ Reglas pueden cambiar con RMF anual. Validar contra portal SAT vigente.
-⚠ Lista 69-B se actualiza semanal — usar fuente fresca.
+⚠ La lista 69-B se actualiza periódicamente — consulta la versión del día.
+⚠ Es una revisión preventiva, no un dictamen: el contador responsable valida cada hallazgo.

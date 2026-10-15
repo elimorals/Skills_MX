@@ -1,6 +1,8 @@
 {
-  "_comentario": "Cuotas IMSS obrero-patronales — ejercicio 2026. % sobre SBC (Salario Base de Cotización). VALIDAR contra LSS vigente.",
-  "factor_integracion_minimo": 1.0452,
+  "_comentario": "Cuotas IMSS obrero-patronales e INFONAVIT — ejercicio 2026. Porcentajes sobre SBC salvo la cuota fija de EyM (sobre UMA) y el excedente de 3 UMA.",
+  "_fuente": "LSS Arts. 25, 28, 73, 106, 107, 147, 168, 211; transitorio decreto DOF 16-12-2020 (CEAV); tabla CEAV 2026 cotejada en IDC 09-02-2026 y El Contribuyente (fuente secundaria coincidente).",
+  "factor_integracion_minimo": 1.0493,
+  "_factor_nota": "1 + 15/365 + 12*0.25/365 (año 1, vacaciones reforma 2023). Año 2: 1.0507; año 3: 1.0521.",
   "uma_diario_2026": 117.31,
   "_uma_fuente": "INEGI/DOF 9-ene-2026, vigente 1-feb-2026 a 31-ene-2027 (enero 2026 usa UMA 2025 = 113.14)",
   "sbc_minimo_diario": 315.04,
@@ -8,14 +10,39 @@
   "_sm_fuente": "Salario mínimo 2026 CONASAMI (DOF dic-2025): general 315.04, ZLFN 440.87",
   "sbc_maximo_diario_25_umas": 2932.75,
   "ramos": {
-    "enfermedades_y_maternidad_prestaciones_en_especie_obrero": {"pct_obrero": 0.0025, "pct_patron_fijo_sbc": 0.0204},
+    "enfermedades_y_maternidad_prestaciones_en_especie_obrero": {
+      "pct_patron_cuota_fija_sobre_uma": 0.2040,
+      "pct_patron_excedente_3_uma": 0.0110,
+      "pct_obrero_excedente_3_uma": 0.0040,
+      "base": "cuota fija: UMA x dias; excedente: (SBC - 3 UMA) x dias"
+    },
     "enfermedades_y_maternidad_prestaciones_dinero": {"pct_obrero": 0.0025, "pct_patron": 0.0070},
+    "enfermedades_y_maternidad_gastos_medicos_pensionados": {"pct_obrero": 0.00375, "pct_patron": 0.0105},
     "invalidez_y_vida": {"pct_obrero": 0.00625, "pct_patron": 0.01750},
-    "riesgos_de_trabajo": {"pct_obrero": 0.0000, "pct_patron_variable_clase": "0.50% a 7.58% según clase"},
+    "riesgos_de_trabajo": {
+      "pct_obrero": 0.0000,
+      "pct_patron_variable_clase": "prima de la empresa (min 0.5%, max 15%, Art. 74 LSS); de nuevo ingreso, prima media de clase",
+      "prima_media_clase": {"I": 0.0054355, "II": 0.0113065, "III": 0.0259840, "IV": 0.0465325, "V": 0.0758875}
+    },
     "guarderias_y_prestaciones_sociales": {"pct_obrero": 0.0000, "pct_patron": 0.0100},
-    "retiro": {"pct_obrero": 0.0000, "pct_patron": 0.0200},
-    "cesantia_y_vejez": {"pct_obrero": 0.01125, "pct_patron": 0.03150}
+    "retiro": {"pct_obrero": 0.0000, "pct_patron": 0.0200, "periodicidad": "bimestral"},
+    "cesantia_y_vejez": {
+      "pct_obrero": 0.01125,
+      "pct_patron": 0.03150,
+      "_pct_patron_nota": "0.0315 solo aplica a SBC de 1 salario mínimo; para el resto usar tabla_patron_2026 (SBC/UMA)",
+      "tabla_patron_2026": [
+        {"rango": "1.00 SM", "hasta_veces_uma": null, "pct_patron": 0.03150},
+        {"rango": "1.01 SM a 1.50 UMA", "hasta_veces_uma": 1.50, "pct_patron": 0.03676},
+        {"rango": "1.51 a 2.00 UMA", "hasta_veces_uma": 2.00, "pct_patron": 0.04851},
+        {"rango": "2.01 a 2.50 UMA", "hasta_veces_uma": 2.50, "pct_patron": 0.05556},
+        {"rango": "2.51 a 3.00 UMA", "hasta_veces_uma": 3.00, "pct_patron": 0.06026},
+        {"rango": "3.01 a 3.50 UMA", "hasta_veces_uma": 3.50, "pct_patron": 0.06361},
+        {"rango": "3.51 a 4.00 UMA", "hasta_veces_uma": 4.00, "pct_patron": 0.06613},
+        {"rango": "4.01 UMA en adelante", "hasta_veces_uma": null, "pct_patron": 0.07513}
+      ],
+      "periodicidad": "bimestral"
+    }
   },
-  "infonavit": {"pct_obrero": 0.0000, "pct_patron": 0.0500},
-  "advertencia": "Cuotas cambian anualmente. Validar enero de cada año contra LSS vigente."
+  "infonavit": {"pct_obrero": 0.0000, "pct_patron": 0.0500, "tope_sbc_umas": 25, "periodicidad": "bimestral"},
+  "advertencia": "La cuota patronal de CEAV sube cada 1 de enero hasta 2030; UMA cambia cada febrero. Validar cada año contra LSS y SUA vigentes."
 }
