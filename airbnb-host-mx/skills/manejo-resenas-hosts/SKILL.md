@@ -54,7 +54,7 @@ Si en últimas 10 reseñas aparece N+ veces el mismo problema:
 
 ## Solicitud activa de reseñas
 
-Día post-checkout (a través de mensaje WhatsApp template):
+Día post-checkout, preferentemente por la mensajería de la plataforma. Por WhatsApp solo si el huésped aceptó recibir mensajes (plantilla aprobada; ver `whatsapp-business-mx` si está instalado):
 
 > "Hola [Nombre], esperamos hayas tenido un excelente regreso a casa. Si te sentiste como en familia con nosotros, nos ayudaría mucho que dejes una breve reseña en Airbnb. Es lo que mantiene nuestro pequeño negocio en pie 🏡 [link directo]. ¡Gracias!"
 
@@ -64,8 +64,8 @@ Si huésped escribe falsedades demostrables (ej. "la cama estaba sucia" cuando h
 
 1. Recolectar evidencia: fotos timestamp, conversaciones WhatsApp
 2. Reportar vía panel de Airbnb: Help Center → Disputar reseña
-3. Plazo: 14 días tras publicación
-4. Airbnb evalúa y puede remover si claramente falso
+3. Plazo: verificar en el Centro de ayuda de Airbnb (la política de reseñas cambia)
+4. Airbnb solo retira reseñas que violan su Política de reseñas (p. ej. contenido falso demostrable, represalias, extorsión); una opinión negativa no basta
 
 ## Métricas del host
 
