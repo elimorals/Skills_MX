@@ -103,7 +103,7 @@ El colegio típico de 300 alumnos manda 200-500 mensajes/semana a padres. Mal ge
   "category": "UTILITY",
   "components": [{
     "type": "BODY",
-    "text": "Hola {{1}}, tu factura por la colegiatura de {{2}} del alumno {{3}} ya está disponible.\n\nDescarga XML y PDF aquí: {{4}}\nFolio fiscal: {{5}}\n\nRecuerda que las colegiaturas de educación básica son deducibles conforme al Art. 151 LISR con topes específicos por nivel.",
+    "text": "Hola {{1}}, tu factura por la colegiatura de {{2}} del alumno {{3}} ya está disponible.\n\nDescarga XML y PDF aquí: {{4}}\nFolio fiscal: {{5}}\n\nRecuerda que las colegiaturas de preescolar a bachillerato son deducibles con topes por nivel (decreto de estímulo fiscal).",
     "example": {
       "body_text": [["María", "marzo", "Diego (5to A)", "https://facturas.colegioaurora.mx/F-1234", "abc12345-6789-..."]]
     }

@@ -1,99 +1,105 @@
 ---
 name: complemento-inseduc-cfdi-d10
-description: Construye complemento InsEduc (Instituciones Educativas) requerido en CFDI con UsoCFDI D10 para que el padre de familia pueda deducir colegiaturas conforme al Decreto de Facilidades Administrativas en Materia Educativa (DOF). Incluye datos obligatorios: nombre completo del alumno, CURP del alumno validada, nivel educativo (preescolar, primaria, secundaria, profesional técnico, bachillerato), clave del centro de trabajo CCT (SEP federal) o autorización estatal según el caso, periodo del pago (mensual/bimestral/anual), tope vigente del decreto por nivel educativo aplicado, y RFC del padre/tutor responsable receptor del CFDI. Detecta errores comunes que rechazan deducción: pago en efectivo (debe ser electrónico), CFDI a nombre del alumno en vez del padre, CFDI sin complemento, alumno mayor de edad sin probar dependencia económica, escuela sin RVOE federal ni autorización estatal. Genera payload listo para mp_facturama_extendido.timbrar_con_inseduc. Usar cuando el usuario diga "CFDI colegiatura", "factura colegio deducible", "InsEduc D10", "complemento educativo", "factura escuela padre deduce". NO usar para inscripción (no deducible típicamente) ni para universidad (excluida del decreto).
+description: Construye el complemento concepto IEDU de Instituciones Educativas Privadas (nodo iedu:instEducativas, versión 1.0) requerido en el CFDI con UsoCFDI D10 para que el padre aplique el estímulo por colegiaturas del Decreto DOF 26-12-2013 (arts. 1.8 a 1.10). Incluye los atributos del XSD del SAT: nombreAlumno, CURP del alumno, nivelEducativo (Preescolar, Primaria, Secundaria, Profesional técnico, Bachillerato o su equivalente), autRVOE (CCT o RVOE) y rfcPago opcional. Detecta errores que impiden deducir: pago en efectivo, CFDI a nombre del alumno, complemento ausente o a nivel comprobante, inscripción facturada con complemento, beneficiario con ingresos ≥ 1 UMA anual, escuela sin RVOE. Genera payload para facturama_timbrar_cfdi. Usar cuando el usuario diga "CFDI colegiatura", "factura colegio deducible", "complemento IEDU", "InsEduc", "complemento educativo", "factura escuela padre deduce". NO usar para inscripción ni para universidad.
 allowed-tools: Read, Write, Edit
 ---
 
-# Complemento InsEduc para CFDI D10
+# Complemento IEDU para CFDI D10
 
-## Estructura del complemento
+Esquema oficial: namespace `http://www.sat.gob.mx/iedu`, XSD `http://www.sat.gob.mx/sitio_internet/cfd/iedu/iedu.xsd`. Es **complemento concepto**: va en `Concepto/ComplementoConcepto` del concepto de colegiatura.
+
+## Estructura
 
 ```xml
-<inseduc:InsEduc Version="1.0"
-    NombreAlumno="Sofía Pérez Hernández"
-    CURP="PEHS150301HDFRZG02"
-    NivelEducativo="Primaria"
-    AutRVOE="RVOE-2018-0234"
-    RFCPago="PERA850115ABC">
-</inseduc:InsEduc>
+<cfdi:Concepto ClaveProdServ="86121503" Cantidad="1" ClaveUnidad="E48"
+    Descripcion="Colegiatura primaria — febrero 2026 — Sofía Pérez Hernández 3o A"
+    ValorUnitario="1075.00" Importe="1075.00" ObjetoImp="02">
+  <cfdi:Impuestos><cfdi:Traslados>
+    <cfdi:Traslado Base="1075.00" Impuesto="002" TipoFactor="Exento"/>
+  </cfdi:Traslados></cfdi:Impuestos>
+  <cfdi:ComplementoConcepto>
+    <iedu:instEducativas xmlns:iedu="http://www.sat.gob.mx/iedu"
+        version="1.0"
+        nombreAlumno="Sofía Pérez Hernández"
+        CURP="PEHS150301MDFRRFA2"
+        nivelEducativo="Primaria"
+        autRVOE="09PPR1234A"/>
+  </cfdi:ComplementoConcepto>
+</cfdi:Concepto>
 ```
 
-## Niveles educativos válidos del decreto
-
-| Nivel SAT InsEduc | Tope anual MXN | Notas |
+| Atributo | Uso | Regla |
 |---|---|---|
-| Preescolar | $14,200 | Incluye maternal en escuelas con RVOE |
-| Primaria | $12,900 | |
-| Secundaria | $19,900 | Incluye técnica |
-| Profesional Técnico | $17,100 | Bachillerato técnico |
-| Bachillerato | $24,500 | General |
-| Bachillerato Técnico | $24,500 | Mismo tope |
-| Universidad/Posgrado | NO incluido | Excluido del decreto |
+| `version` | requerido | fijo "1.0" |
+| `nombreAlumno` | requerido | como en el acta |
+| `CURP` | requerido | del alumno |
+| `nivelEducativo` | requerido | enumeración exacta (ver abajo) |
+| `autRVOE` | requerido | CCT o número de RVOE de la escuela |
+| `rfcPago` | opcional | RFC de quien paga, solo si es distinto de quien recibe el servicio |
 
-## Validaciones críticas pre-timbrado
+## Niveles y topes anuales por alumno (Decreto DOF 26-12-2013)
 
-1. **Nombre alumno**: completo (paterno, materno, nombres)
-2. **CURP alumno**: 18 caracteres + validación con mp_curp_renapo
-3. **NivelEducativo**: dentro del catálogo SAT InsEduc
-4. **CCT o RVOE**: obligatorio uno de los dos
-5. **RFCPago**: RFC del padre/tutor (NO del alumno)
-6. **UsoCFDI** debe ser D10
-7. **FormaPago** debe ser electrónica (03 SPEI / 04 TDC / 05 Monedero / 28 TDD), NO 01 Efectivo
-8. **Importe** del concepto ≤ tope del nivel del año
+| nivelEducativo (valor exacto) | Tope anual | ClaveProdServ |
+|---|---|---|
+| Preescolar | $14,200 | 86121501 |
+| Primaria | $12,900 | 86121503 (86121502 religiosa) |
+| Secundaria | $19,900 | 86121503 (86121502 religiosa) |
+| Profesional técnico | $17,100 | 86121602 |
+| Bachillerato o su equivalente | $24,500 | 86121601 |
+| Universidad / posgrado | No aplica | — |
 
-## Casos edge típicos
+El bachillerato tecnológico entra como "Bachillerato o su equivalente". Topes sin cambio desde 2011 (fuente secundaria: Expansión 12-03-2026; verificar si se publica un nuevo decreto).
 
-### Múltiples hijos en mismo colegio
-- 1 CFDI por hijo (cada uno con su complemento InsEduc)
-- Permite deducir cada uno independientemente al tope
+## Validaciones antes de timbrar
 
-### Padres divorciados — quién deduce
-- Solo el padre/tutor que efectivamente PAGUE puede deducir
-- Si ambos pagan parcialmente: cada uno por su parte (2 CFDIs con cada RFC)
+1. `nombreAlumno` completo (apellidos y nombres).
+2. `CURP` de 18 caracteres: `curp_validar_estructura` (MCP `mp_curp_renapo`). La consulta a RENAPO queda en entrega a humano por captcha; si el tool devuelve `requiere_humano`, pide la constancia CURP al padre.
+3. `nivelEducativo` con el texto exacto del XSD (acentos y mayúsculas incluidos).
+4. `autRVOE` no vacío.
+5. Receptor: RFC del padre/tutor (NO del alumno).
+6. UsoCFDI D10.
+7. FormaPago 02, 03, 04, 28 o 29. NO 01 efectivo. Evita 05 monedero: el decreto solo menciona cheque nominativo, transferencia y tarjetas.
+8. El importe puede exceder el tope: el tope limita la deducción anual del padre, no el CFDI. Avisa si el acumulado anual lo rebasa.
 
-### Pago en parcialidades
-- Opción A: 1 CFDI por parcialidad (más limpio)
-- Opción B: 1 CFDI anual al cierre del ciclo (más simple administrativamente)
+## Casos edge
 
-### Alumno mayor de edad (>18)
-- Padre puede deducir si demuestra dependencia económica (sin ingresos propios)
-- Skill marca advertencia pero permite emitir
+- **Varios hijos**: un concepto (o CFDI) por alumno, cada uno con su complemento; cada alumno tiene su propio tope.
+- **Padres divorciados**: deduce quien paga; si ambos pagan, un CFDI a cada uno por su parte.
+- **Pago en parcialidades o adelantado**: se emite CFDI al cobrar (PUE). No acumules un CFDI anual al cierre del ciclo: el CFDI debe emitirse cuando se recibe el pago.
+- **Alumno mayor de edad**: el padre deduce si el alumno no tiene ingresos iguales o mayores a 1 UMA anual ($42,818.15 en 2026). Advierte, pero permite emitir.
+- **Inscripción y reinscripción**: no deducibles; facturar en concepto aparte sin complemento.
 
-### Inscripción
-- Generalmente NO deducible (no está en decreto)
-- Algunos tribunales han dado fallos favorables — caso a caso
-
-## Output del skill
+## Output
 
 ```yaml
 payload_facturama:
-  TipoComprobante: I
+  TipoDeComprobante: I
   UsoCFDI: D10
   FormaPago: "03"
   MetodoPago: PUE
   Receptor:
     Rfc: PERA850115ABC
-    Nombre: PEREZ ALBERTO
+    Nombre: ALBERTO PEREZ RAMIREZ
     DomicilioFiscalReceptor: "06700"
-    RegimenFiscalReceptor: "616"
+    RegimenFiscalReceptor: "605"
   Conceptos:
-    - ClaveProdServ: "86121601"  # servicios educativos primaria
+    - ClaveProdServ: "86121503"
       Cantidad: 1
-      ClaveUnidad: ACT
-      Descripcion: "Colegiatura primaria — periodo febrero 2026"
-      ValorUnitario: 1075
-      Importe: 1075
-  Complemento:
-    InsEduc:
-      Version: "1.0"
-      NombreAlumno: "Sofía Pérez Hernández"
-      CURP: "PEHS150301HDFRZG02"
-      NivelEducativo: "Primaria"
-      AutRVOE: "RVOE-2018-0234"
-      RFCPago: "PERA850115ABC"
+      ClaveUnidad: E48
+      Descripcion: "Colegiatura primaria — febrero 2026 — Sofía Pérez Hernández 3o A"
+      ValorUnitario: 1075.00
+      Importe: 1075.00
+      ObjetoImp: "02"
+      Traslado: {Impuesto: "002", TipoFactor: "Exento"}
+      ComplementoConcepto:
+        iedu:
+          version: "1.0"
+          nombreAlumno: "Sofía Pérez Hernández"
+          CURP: "PEHS150301MDFRRFA2"
+          nivelEducativo: "Primaria"
+          autRVOE: "09PPR1234A"
 ```
 
-## Validación pendiente
+Valida con `facturama_validar_payload_local` y timbra con `facturama_timbrar_cfdi` (MCP `mp_facturama_extendido`, requiere credenciales; sin ellas, modo mock). Confirma con el PAC cómo recibe el complemento concepto IEDU en su API.
 
-⚠ Versión del complemento InsEduc puede actualizarse — confirmar contra anexo 20 SAT.
-⚠ Topes del decreto se publican periódicamente — actualizar al detectar nuevo DOF.
+> Si el SAT publica una versión nueva del XSD, actualiza esta skill.
