@@ -1,12 +1,19 @@
 ---
 name: retencion-clientes-loyalty
-description: Programa de retención de clientes para salones mexicanos con sistema de puntos por consumo (1 punto = $1 MXN gastado, 100 puntos = $50 descuento), niveles (bronce/plata/oro/platino) con beneficios escalonados, descuentos por visita N (5ta visita 20%, 10ma free service), recordatorios automáticos al cliente que no regresa en N días, programa de referidos (refiero amigo → ambos ganan), análisis de churn. Usar cuando el usuario diga loyalty, puntos cliente, programa referidos, churn, retención, no me visitan, clientes inactivos. NO usar para paquetes prepago (paquetes-membresia) ni cita individual (agenda-citas-salon).
+description: Programa de retención de clientes para salones mexicanos con sistema de puntos por consumo (1 punto por cada $10 MXN gastado, 100 puntos = $50 descuento), niveles (bronce/plata/oro/platino) con beneficios escalonados, descuentos por visita N (5ta visita 20%, 10ma free service), recordatorios automáticos al cliente que no regresa en N días, programa de referidos (refiero amigo → ambos ganan), análisis de churn. Usar cuando el usuario diga loyalty, puntos cliente, programa referidos, churn, retención, no me visitan, clientes inactivos. NO usar para paquetes prepago (paquetes-membresia) ni cita individual (agenda-citas-salon).
 allowed-tools: Read, Write, Edit
 ---
 
 # Retención y loyalty — salones MX
 
-Adquirir clientes nuevos cuesta 5x más que retener. La retención es el mejor multiplicador.
+Adquirir clientes nuevos suele costar varias veces más que retenerlos (regla general de marketing, no un dato medido en salones MX). La retención es el mejor multiplicador.
+
+## Reglas legales antes de lanzar el programa
+
+- **Términos por escrito** (LFPC Arts. 46-48, promociones): vigencia de puntos, cómo se ganan, cómo se canjean y cómo caducan. Una regla de caducidad que no se informó antes no se puede aplicar.
+- **Datos personales** (LFPDPPP nueva, DOF 20-03-2025; autoridad: Secretaría Anticorrupción y Buen Gobierno, ya no INAI): aviso de privacidad que liste la mercadotecnia como finalidad secundaria y un medio para oponerse. Ver `compliance-lfpdppp`.
+- **WhatsApp de marketing**: requiere opt-in explícito; las plantillas MARKETING se cobran por mensaje desde 01-07-2025 (tarifa por país en el rate card de Meta). Ver `whatsapp-business-mx`.
+- **Llamadas o SMS promocionales**: no enviar publicidad a quien pidió no recibirla ni a números inscritos en el REPEP de PROFECO (Art. 18 BIS LFPC). Consulta el REPEP antes de campañas telefónicas.
 
 ## Sistema de puntos
 
@@ -26,6 +33,8 @@ Adquirir clientes nuevos cuesta 5x más que retener. La retención es el mejor m
 - Puntos NO expiran si el cliente visita cada 90 días
 - Si pasa > 90 días sin visitar: puntos se reducen 10% mensualmente
 - Si pasa > 180 días: puntos se cancelan
+
+Al canjear puntos, el descuento va en el CFDI del servicio (atributo `Descuento`), así que el IVA se calcula sobre el precio ya descontado.
 
 ## Niveles (tiers)
 
@@ -111,7 +120,7 @@ Semanal: lista de clientes que:
 - Total gastado YTD > $X (vale la pena recuperar)
 - NO han recibido recordatorio en últimas 2 semanas
 
-Acción: WhatsApp personalizado, oferta retención, llamada del dueño.
+Acción: WhatsApp personalizado (solo con opt-in), oferta retención, llamada del dueño (si el cliente no se opuso a recibir publicidad).
 
 ## Costo del programa loyalty
 
@@ -122,7 +131,7 @@ Acción: WhatsApp personalizado, oferta retención, llamada del dueño.
 | Referidos pagados | 5-10% revenue de clientes nuevos |
 | Software de tracking | $300-800 MXN/mes (Loyverse, Vagaro, etc.) |
 
-**ROI esperado**: tasa de retención sube 15-25% → LTV sube 30-50%.
+**ROI**: no hay benchmark verificado para salones MX; mide tu línea base (retención 90 días, LTV) antes de lanzar y compara a los 3 y 6 meses. Los costos de software son referencia, verificar precio vigente con cada proveedor.
 
 ## Output estructurado
 
