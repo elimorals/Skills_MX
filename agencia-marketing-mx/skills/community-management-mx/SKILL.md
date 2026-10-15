@@ -202,6 +202,13 @@ Si una queja se vuelve viral (>500 reacciones o compartido por cuenta >50k):
 - Respuestas legalistas ("según nuestros términos...") en público.
 - Pelear públicamente.
 
+## Datos personales y quejas formales
+
+- **Nunca pidas datos personales en público** (teléfono, dirección, número de tarjeta, INE). En DM pide solo lo necesario para resolver (número de pedido, fecha) y comparte el aviso de privacidad si vas a guardar datos (LFPDPPP 2025; autoridad: Secretaría Anticorrupción y Buen Gobierno). Ver `compliance-lfpdppp`.
+- **Datos de tarjeta jamás por DM ni WhatsApp**: manda link de pago.
+- **Si el cliente menciona PROFECO**: no lo disuadas ni amenaces; ofrece resolver por DM y, si ya presentó queja, que el área legal del cliente la atienda (Concilianet es el canal en línea de PROFECO).
+- **Reseñas**: no ofrezcas descuentos a cambio de cambiar o borrar una reseña negativa ni compres reseñas positivas; viola políticas de Google/Meta y puede ser publicidad engañosa (Art. 32 LFPC).
+
 ## Salida esperada
 
 Cuando el usuario comparte un mensaje recibido:

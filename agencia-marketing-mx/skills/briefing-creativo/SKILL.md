@@ -115,8 +115,8 @@ Ejemplo: "Confiado, cálido, directo, no acartonado, mexicano."
 
 ### Requerimientos técnicos
 - Resolución mínima: 1080p para video, 2000px lado mayor para static
-- Peso máximo: 10MB IG video, 4GB FB video
-- Subtítulos: SÍ obligatorios en video (85% lo ve sin sonido)
+- Peso máximo: hasta 4 GB por video en anuncios de Meta (feed y Reels); confirmar límites por colocación en la Guía de anuncios de Meta antes de exportar
+- Subtítulos: SÍ obligatorios en video (gran parte del consumo móvil es sin sonido)
 - Marca visible en primer cuadro de video (Meta lo prioriza)
 
 ## 7. Referencias visuales
@@ -147,7 +147,7 @@ Ejemplo: "Confiado, cálido, directo, no acartonado, mexicano."
 **No**:
 - Lifestyle no-mexicano (atardeceres de California, etc.)
 - Stock photos genéricos
-- Texto sobre 30% del área del frame
+- Texto cubriendo gran parte del frame (Meta ya no rechaza por la regla del 20%, pero penaliza entrega en la práctica) y texto dentro de las zonas seguras de Reels/Stories
 
 ## 8. Workflow y fechas
 
@@ -177,6 +177,8 @@ $[monto] MXN total para este brief.
 - Modelos: $[monto]
 - Locación: $[monto]
 - Postproducción: $[monto]
+
+Nota fiscal: si la agencia es persona moral y paga a fotógrafos, modelos o editores personas físicas, retiene ISR e IVA según su régimen (honorarios: 10% ISR y 2/3 del IVA; RESICO PF: 1.25% ISR y 2/3 del IVA). Calcular con `iva-retenciones-mx` y facturar con `cfdi-emision`; validar con el contador.
 
 ### Términos de pago
 [Anticipo + saldo, hitos, etc.]
@@ -208,7 +210,7 @@ Una vez firmado, **cambios al brief impactan plazo y presupuesto**.
 
 | Mal brief | Buen brief |
 |---|---|
-| "Necesitamos creativos para Día de las Madres" | "Necesitamos campaña para Día de las Madres, lanzamiento 1 mayo, objetivo: +20% ventas vs 2024, target: hijos millennials regalando a sus mamás boomers, big idea: 'Lo que mamá merece, no lo que ella siempre dice que necesita', 3 Reels + 1 carrusel + 5 stories" |
+| "Necesitamos creativos para Día de las Madres" | "Necesitamos campaña para Día de las Madres, lanzamiento 1 mayo, objetivo: +20% ventas vs 2025, target: hijos millennials regalando a sus mamás boomers, big idea: 'Lo que mamá merece, no lo que ella siempre dice que necesita', 3 Reels + 1 carrusel + 5 stories" |
 | "Algo creativo pero serio" | "Tono confiado, cálido, mexicano, no acartonado. Como Casa Lumbre o Sandos pero más urbano." |
 | "Para redes sociales" | "Para IG (Reels 9:16 + Carrusel 4:5), FB (Static 4:5), TikTok (9:16 con subtítulos), 3 sizes Display Google" |
 

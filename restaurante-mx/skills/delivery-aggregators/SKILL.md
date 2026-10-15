@@ -1,25 +1,35 @@
 ---
 name: delivery-aggregators
-description: Integración con plataformas de delivery en México (Rappi, DiDi Food, UberEats, Mercado Libre Envíos) considerando comisiones distintas (25-35% según aggregator y categoría), promesa de tiempo (express vs estándar), gestión de pedidos pendientes, conciliación de pagos semanales, devoluciones (cliente equivocado, calidad pobre, no entregado), y emisión de CFDI consolidado a nombre del aggregator. Usar cuando el usuario diga Rappi, DiDi Food, UberEats, aggregator, comisión delivery, conciliar pagos, devoluciones delivery. NO usar para ingeniería menú (otro skill) ni inventario.
+description: Operación con plataformas de delivery en México (Rappi, DiDi Food, Uber Eats): margen real con la comisión de tu contrato, gestión de pedidos, conciliación de pagos contra estados de cuenta, devoluciones (pedido equivocado, calidad, no entregado), retenciones ISR/IVA de plataformas 2026 (Art. 113-A LISR, 18-J LIVA, LIF 2026) y cómo facturar esas ventas. Usar cuando el usuario diga Rappi, DiDi Food, UberEats, Uber Eats, aggregator, plataforma de delivery, retención Rappi, comisión delivery, conciliar pagos, devoluciones delivery. NO usar para ingeniería menú (otro skill) ni inventario.
 allowed-tools: Read, Write, Edit
 ---
 
 # Delivery aggregators — México
 
-## Las 4 plataformas principales 2026
+## Las 3 plataformas principales
 
-| Aggregator | Comisión típica | Sucursales | Pago semanal |
-|---|---|---|---|
-| **Rappi** | 28-32% | Variable por categoría | Cada miércoles |
-| **DiDi Food** | 25-30% | Más competitivo en suscripción | Cada lunes |
-| **UberEats** | 30-35% | Premium en CDMX | Cada lunes |
-| **Mercado Libre Envíos** | 5-15% (logística solo) | Restaurantes selectos | Diario |
+| Plataforma | Comisión de referencia | Pago al restaurante |
+|---|---|---|
+| **Rappi** | 25-35% (verificar en tu contrato) | según contrato |
+| **DiDi Food** | 25-35% (verificar en tu contrato) | según contrato |
+| **Uber Eats** | 25-35% (verificar en tu contrato) | según contrato |
 
-⚠ Comisiones varían por:
-- Tipo de cocina (italiana, mexicana, sushi distintas)
-- Volumen del restaurante (descuentos por escala)
-- Promociones activas (a veces +5% por exposure)
-- Programa Rappi/DiDi/UberEats Plus (a veces +3%)
+⚠ **Confianza baja**: ninguna de las tres publica una tabla oficial de comisiones para México; cada restaurante negocia la suya y cambia por plan (con o sin entrega propia), promociones y zona. Los rangos son referencia de mercado. **Siempre toma la comisión del contrato o del estado de cuenta del restaurante**, nunca de esta tabla.
+
+Mercado Libre no opera delivery de comida preparada; no lo uses como canal de restaurante.
+
+## Datos desde los MCP (qué sí existe)
+
+| MCP | Estado | Qué puedes pedir |
+|---|---|---|
+| `mp_rappi_partners` | Real sin validar; credenciales solo para aliados aprobados por Rappi | `rappi_listar_ordenes` (solo órdenes nuevas, sin histórico), `rappi_consultar_orden`, `rappi_listar_productos_menu`, `rappi_actualizar_disponibilidad`. `rappi_consultar_ranking_zona` y `rappi_estimar_comisiones_mes` devuelven `ConfigError` (`sin_endpoint`) con credenciales |
+| `mp_didi_food_partners` | Sin API pública | Con credenciales devuelve `ConfigError`; sin ellas, datos simulados |
+| `mp_uber_eats_partners` | Sin API pública | Con credenciales devuelve `ConfigError`; sin ellas, datos simulados |
+
+Reglas:
+- Si una respuesta trae `simulated: true`, no la uses para conciliar ni para decidir: dilo al usuario
+- Si recibes `ConfigError`, pide al usuario el **estado de cuenta / reporte de liquidación** exportado del portal de la plataforma (CSV o PDF) y concilia sobre ese archivo
+- Las comisiones reales salen del estado de cuenta, no de un endpoint
 
 ## Estructura del pedido
 
@@ -34,9 +44,9 @@ allowed-tools: Read, Write, Edit
     {"plato": "Quesadilla", "cantidad": 1, "precio_carta_mxn": 75}
   ],
   "subtotal_mxn": 365.00,
-  "comision_aggregator_porcentaje": 0.30,
+  "comision_contrato_porcentaje": 0.30,
   "comision_mxn": 109.50,
-  "ingreso_neto_restaurante_mxn": 255.50,
+  "ingreso_antes_iva_comision_y_retenciones_mxn": 255.50,
   "tarifa_cliente_envio_mxn": 45.00,
   "propina_cliente_mxn": 35.00,
   "total_cliente_pago_mxn": 445.00,
@@ -47,31 +57,14 @@ allowed-tools: Read, Write, Edit
 }
 ```
 
-## Diferencias clave por aggregator
+## Diferencias a revisar por plataforma
 
-### Rappi
-- Comisión más alta (28-32% típica)
-- Restaurante absorbe costo de envío (cliente solo paga "service fee")
-- Mejor para alto volumen + precios premium
-- App Rappi Prime: -5% comisión por restaurante
-
-### DiDi Food
-- Comisión más competitiva (25-30%)
-- Suelen ofrecer mejores promociones
-- Más fuerte en MTY, GDL, Querétaro
-- Tiempos a veces más largos
-
-### UberEats
-- Comisión más alta (30-35%)
-- Mejor exposure en CDMX premium
-- App pulida + UX cliente
-- Servicio al cliente más responsive
-
-### Mercado Libre Envíos
-- Solo logística (5-15%)
-- Restaurante mantiene relación con cliente final
-- Útil para pedidos B2B grandes
-- Menos común en restaurantes pequeños
+No hay datos públicos confiables que permitan afirmar cuál cobra más o paga más rápido. Compara con tus propios contratos:
+- Comisión por pedido y si cambia con entrega propia vs repartidor de la plataforma
+- Costo de promociones (quién absorbe el descuento)
+- Calendario de pagos y retenciones aplicadas
+- Política de contracargos y pedidos no entregados
+- Exclusividad y penalizaciones
 
 ## Cálculo de margen real
 
@@ -82,7 +75,7 @@ diferencia = margen_carta_directo - margen_via_aggregator
 ```
 
 Ejemplo:
-- Taco $145 con food cost $35
+- Orden de tacos $145 con food cost $35 (comisiones ilustrativas, usa las de tu contrato)
 - Margen directo: $110 (76%)
 - Margen Rappi 30%: $145 × 0.70 - $35 = $101.5 - $35 = $66.5 (46%)
 - Margen UberEats 35%: $145 × 0.65 - $35 = $94.25 - $35 = $59.25 (41%)
@@ -99,7 +92,7 @@ Ejemplo:
 ### B. Precio diferente en aggregator
 - Subir 10-15% el precio en aggregators para compensar comisión
 - Riesgo: cliente puede comparar precios en menú físico vs aggregator
-- Más común que se piense
+- Si lo haces, que el precio publicado en la app sea el que se cobra (LFPC: precio total visible)
 
 ### C. Aggregator-only (dark kitchen)
 - Operar sin sucursal física
@@ -114,10 +107,10 @@ Ejemplo:
 
 ## Conciliación de pagos
 
-Cada aggregator paga semanalmente con reporte detallado:
+Cada plataforma liquida en el calendario de tu contrato con un reporte detallado:
 
 ```
-reporte_aggregator = sum(pedidos_semana × (subtotal - comision - chargebacks - devoluciones))
+deposito_esperado = sum(pedidos_periodo × (subtotal - comision_con_IVA - chargebacks - devoluciones)) - retenciones_ISR - retenciones_IVA
 ```
 
 ⚠ Verificar:
@@ -130,29 +123,36 @@ reporte_aggregator = sum(pedidos_semana × (subtotal - comision - chargebacks - 
 
 | Tipo | Responsable | Acción |
 |---|---|---|
-| Plato no entregado / desaparecido | Aggregator | Reembolso 100% al cliente, restaurante NO pierde |
+| Plato no entregado / desaparecido | Según contrato (usualmente la plataforma) | Revisar el estado de cuenta: que no te lo descuenten |
 | Plato frío / mal estado / equivocado | Restaurante | Restaurante absorbe costo |
 | Cliente cancela post-preparado | Cliente | Pierde el pedido (cobro completo) |
-| Driver no encontró cliente | Aggregator | Restaurante a veces conserva pago |
+| Repartidor no encontró al cliente | Según contrato | Documentar con el ID del pedido |
 
 Bitácora trazable por pedido devuelto.
 
-## CFDI con aggregators
+## CFDI y retenciones con plataformas
 
-### Modelo más común
-- Aggregator factura al cliente final
-- Restaurante factura al **aggregator** consolidado mensual
-- CFDI: RFC del aggregator, UsoCFDI G03
+### Quién factura a quién (modelo intermediario, el usual)
+- La venta es **del restaurante al consumidor**: se ampara con CFDI individual si el cliente lo pide o dentro de la **factura global** (skill `cfdi-publico-global`) por el precio cobrado al cliente
+- La plataforma emite al restaurante un CFDI por su **comisión** (gasto deducible) y un **CFDI de Retenciones e información de pagos**
+- Si tu contrato dice que la plataforma te **compra** y revende, entonces sí facturas a la plataforma. Revisa el contrato; no asumas
+- No uses RFC de plataformas "de memoria": tómalos del CFDI que te emiten
 
-Ejemplo:
-- Rappi RFC: REP170913U41
-- DiDi RFC: DDI170915AA1
-- UberEats RFC: UBE150313QA1 (verificar 2026)
+### Retenciones 2026 (las aplica la plataforma sobre el precio sin IVA)
+| Concepto | Persona física | Persona moral | Fuente |
+|---|---|---|---|
+| ISR | 2.5% (sustituye el 1% del Art. 113-A fr. III LISR); 20% sin RFC (Art. 113-C fr. IV) | 2.5%, acreditable; 20% si no da RFC | Art. 25 fr. VI LIF 2026 (DOF 07-11-2025) |
+| IVA | 50% del IVA cobrado; 100% sin RFC | 50% del IVA cobrado | Art. 18-J fr. II a) LIVA; Art. 25 fr. IX LIF 2026 |
 
-### Detalle del CFDI mensual
-- Una factura mensual por aggregator
-- Concepto: "Servicios de alimentos y bebidas vía plataforma {{aggregator}}"
-- Total: suma de ingresos netos (ya descontada comisión)
+- PF con ingresos solo por plataformas ≤ $300,000 en el año anterior pueden optar por retención como pago definitivo (Art. 113-B LISR; IVA Art. 18-M LIVA)
+- La venta de comida es "enajenación de bienes" (fr. III), no "entrega de bienes" (fr. I, 2.1%, que aplica al repartidor)
+
+Ejemplo de un pedido de $365 con IVA a persona física:
+- Base sin IVA: 365 / 1.16 = $314.66; IVA: $50.34
+- ISR retenido: 314.66 × 2.5% = $7.87
+- IVA retenido: 50.34 × 50% = $25.17
+
+> Validación profesional: las retenciones se acreditan en tus declaraciones; confirma con tu contador el régimen (PF actividad empresarial, RESICO, PM) antes de presentar.
 
 ## Output estructurado
 
@@ -171,8 +171,8 @@ Ejemplo:
     "comisiones_pagadas_mxn": 23300,
     "comision_efectiva_porcentaje": 0.11,
     "alertas": [
-      "UberEats subió comisión 2% en últimos 7 días — revisar contrato",
-      "DiDi tiempo promesa 38 min vs 32 real — bueno para SLA"
+      "Comisión efectiva Uber Eats 35% vs 30% del contrato — reclamar",
+      "Falta CFDI de retenciones de DiDi Food de marzo"
     ],
     "recomendaciones": [
       "Negociar con UberEats por volumen creciente",
@@ -184,7 +184,6 @@ Ejemplo:
 
 ## Validación pendiente
 
-- Comisiones reales 2026 por contrato (varían enormemente)
-- Cláusulas de devolución específicas por aggregator
-- Casos en que aggregator no paga el reporte (resolución legal)
-- Impacto fiscal de "cliente final" vs "cliente intermediario" (aggregator)
+- Comisiones reales por contrato (no hay fuente oficial pública)
+- Cláusulas de devolución y contracargos por plataforma
+- Modelo contractual (intermediaria vs revendedora) de cada plataforma

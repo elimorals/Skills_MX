@@ -131,7 +131,7 @@ Por capítulo de la boda:
       "presupuestado_mxn": 100000,
       "comprometido_mxn": 0,
       "pagado_mxn": 0,
-      "alerta": "Sin proveedor cerrado aún (D-180 = 6 meses)"
+      "alerta": "Sin proveedor cerrado y el evento está a menos de 90 días (D-77) — urgente"
     }
   ]
 }
@@ -158,12 +158,14 @@ Score promedio:
 
 ## CFDI de proveedores
 
-Cada pago a proveedor debe estar respaldado con CFDI:
-- Pago anticipo: CFDI tipo I con MetodoPago PUE
-- Pago intermedio: CFDI tipo I PUE
-- Pago final: CFDI tipo I PUE
+Cada pago a proveedor debe estar respaldado con CFDI. Con contrato de precio total conocido y pagos por hitos, pide al proveedor uno de estos esquemas (ver `cfdi-emision`):
+- **PPD**: CFDI de ingreso por el total con MétodoPago PPD + un complemento de pagos (CFDI tipo P) por cada pago.
+- **Anticipos**: CFDI de anticipo por cada pago previo; al prestarse el servicio, CFDI total con relación 07 y CFDI de egreso por los anticipos aplicados.
+- Un CFDI PUE por cada pago solo si el proveedor factura cada hito como parte del servicio ya prestada.
 
-Si el novio (cliente final) pide deducción del evento (no aplica en boda residencial pero sí si la empresa lo paga como evento corporativo): RFC, UsoCFDI G03 + retención si proveedor es PFAE.
+Deducibilidad: una boda no es deducible para personas físicas. Si una empresa paga un evento corporativo y el proveedor es persona física, la empresa retiene: honorarios/servicios profesionales → ISR 10% + IVA 10.6667%; proveedor en RESICO → ISR 1.25% (+ IVA 10.6667% si es servicio profesional, arrendamiento o comisión); persona física con actividad empresarial fuera de RESICO (p. ej. un banquetero 612) → sin retención. Ver `iva-retenciones-mx`.
+
+Contratos con banquete, salón, música o decoración: los proveedores de **eventos sociales** deben tener su contrato de adhesión registrado ante PROFECO (NOM-174-SCFI-2007; confianza media, fuente secundaria). Pide el número de registro y verifícalo en rpca.profeco.gob.mx; un contrato no registrado no produce efectos contra el consumidor (Art. 87 LFPC).
 
 ## Output estructurado
 
@@ -173,9 +175,9 @@ Si el novio (cliente final) pide deducción del evento (no aplica en boda reside
     "fecha_evento": "2027-04-18",
     "total_proveedores_cerrados": 8,
     "total_proveedores_pendientes_cerrar": 4,
-    "presupuesto_comprometido_mxn": 580000,
+    "presupuesto_comprometido_total_mxn": 865000,
     "presupuesto_pagado_mxn": 285000,
-    "presupuesto_pendiente_pagar_mxn": 295000,
+    "presupuesto_pendiente_pagar_mxn": 580000,
     "alertas_proximos_pagos_30d": [
       {
         "proveedor": "Banquetes Demo",
@@ -185,8 +187,8 @@ Si el novio (cliente final) pide deducción del evento (no aplica en boda reside
     ],
     "capitulos_sin_proveedor_cerrado": ["decoracion", "transporte"],
     "advertencias": [
-      "Capítulo decoración sin proveedor cerrado y faltan 6 meses",
-      "Capítulo transporte sin proveedor (puede esperar pero no más de D-90)"
+      "Capítulo decoración sin proveedor cerrado y faltan menos de 3 meses",
+      "Capítulo transporte sin proveedor y ya pasó D-90: cerrar esta semana"
     ]
   }
 }

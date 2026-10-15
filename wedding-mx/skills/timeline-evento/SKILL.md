@@ -19,7 +19,7 @@ D-7   → Ensayo + briefing equipo
 D-1   → Setup locación + día previo
 D-0   → DÍA DEL EVENTO
 D+1   → Post-evento + agradecimientos
-D+30  → Cierre administrativo + álbum
+D+30  → Cierre administrativo (álbum y video suelen llegar ~D+60)
 ```
 
 ## Hitos críticos por etapa
@@ -63,6 +63,7 @@ D+30  → Cierre administrativo + álbum
 | Prueba traje novio | Novio | |
 | Lista de canciones DJ | Novios | |
 | Confirmar honorarios juez/sacerdote | Novios | |
+| Trámite matrimonio civil (solicitud, actas, identificaciones, CURP; requisitos y derechos varían por estado) | Novios | Verificar con el Registro Civil local |
 | Comprar/recoger anillos | Novios | |
 | Definir orden ceremonia | Planner | |
 | Definir layout mesa | Planner | |
@@ -124,7 +125,7 @@ D+30  → Cierre administrativo + álbum
 
 ## Recordatorios automatizados
 
-WhatsApp templates por etapa:
+WhatsApp templates por etapa. Si la última conversación con los novios tiene más de 24 h, solo se pueden mandar como plantillas aprobadas por Meta (categoría UTILITY), que se cobran por mensaje entregado desde 01-07-2025; dentro de una ventana abierta, texto libre sin costo de plantilla. Ver `whatsapp-business-mx`. El envío lo hace tu plataforma de WhatsApp (Cloud API, Twilio, etc.); este skill solo redacta y calendariza.
 
 **D-90 al novio/novia**:
 > "Hola {{novios}} 💍 Estamos a 90 días! Esta semana hay que: ✅ lanzar RSVP a invitados, ✅ confirmar prueba de menú próxima semana, ✅ resto pago locación si aplica. Llamada esta tarde 5pm para revisar?"
@@ -144,20 +145,21 @@ WhatsApp templates por etapa:
 {
   "timeline_boda": {
     "fecha_evento": "2027-04-18",
+    "fecha_corte": "2026-04-18",
     "dias_para_evento": 365,
     "etapa_actual": "D-365_a_D-180",
     "hitos_proximos_30d": [
       {
         "hito": "Set presupuesto total",
         "responsable": "Novios + planner",
-        "deadline": "2026-06-18",
+        "deadline": "2026-04-25",
         "estado": "pendiente",
         "criticidad": "alta"
       },
       {
         "hito": "Definir invitados preliminar",
         "responsable": "Novios",
-        "deadline": "2026-06-25",
+        "deadline": "2026-05-02",
         "estado": "pendiente",
         "criticidad": "alta"
       }

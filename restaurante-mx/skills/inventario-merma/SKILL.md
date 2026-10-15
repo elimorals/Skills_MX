@@ -1,6 +1,6 @@
 ---
 name: inventario-merma
-description: Control de inventario para restaurantes con tracking de costo unitario, stock disponible, punto de reorden, merma esperada por ingrediente (5-12% típico restaurante, café 3-5%, frutas/verduras 8-15%), reposición automática y alertas. Detecta mermas anómalas que indican robo o desperdicio. Usar cuando el usuario diga inventario restaurante, merma, costo ingredientes, reposición, alertar bajo stock, robo cocina. NO usar para ingeniería de menú (otro skill) ni propinas.
+description: Control de inventario para restaurantes con tracking de costo unitario, stock disponible, punto de reorden, merma esperada por ingrediente (5-12% típico restaurante, café 3-5%, frutas/verduras 8-15%), sugerencias de reposición y alertas. Detecta mermas anómalas que indican robo o desperdicio. Usar cuando el usuario diga inventario restaurante, merma, costo ingredientes, reposición, alertar bajo stock, robo cocina. NO usar para ingeniería de menú (otro skill) ni propinas.
 allowed-tools: Read, Write, Edit
 ---
 
@@ -16,8 +16,8 @@ allowed-tools: Read, Write, Edit
   "unidad": "kg",
   "costo_unitario_mxn": 95.00,
   "valor_inventario_mxn": 1187.50,
-  "punto_reorden_kg": 8.0,
-  "lote_compra_estandar_kg": 25.0,
+  "punto_reorden_kg": 10.5,
+  "lote_compra_estandar_kg": 17.5,
   "merma_esperada_porcentaje": 0.12,
   "vida_util_dias": 5,
   "proveedor_principal": "Central de Abastos Demo",
@@ -69,7 +69,8 @@ allowed-tools: Read, Write, Edit
 
 ```
 punto_reorden = (uso_promedio_diario × días_lead_time) + safety_stock
-lote_compra = uso_mensual_promedio × 1.2  # buffer 20%
+lote_compra = uso_promedio_diario × min(días_entre_pedidos, vida_util_dias)
+# perecederos: nunca compres más de lo que usas antes de que caduque
 ```
 
 Ejemplo aguacate:
@@ -78,7 +79,9 @@ Ejemplo aguacate:
 - Safety stock: 2 días
 - Punto reorden: (3.5 × 1) + (3.5 × 2) = 10.5 kg
 
-Cuando stock baja a 10.5 kg, sistema **alerta para reorden**.
+- Lote: 3.5 kg/día × min(7 días entre pedidos, 5 días de vida útil) = 17.5 kg
+
+Cuando el stock baja a 10.5 kg, se **genera la alerta de reorden** (la compra la confirma una persona).
 
 ## Recepción de mercancía
 
@@ -99,9 +102,11 @@ diferencia = consumo_real - consumo_teorico
 merma_observada = diferencia / consumo_real
 ```
 
-Si `merma_observada > benchmark × 1.3`: **investigar**.
+Si `merma_observada > benchmark × 1.3`: **investigar**. Si supera `benchmark × 1.5` (o se sostiene > 3 días): tratar como **merma anómala**.
 
-## Alertas automáticas
+Los rangos de merma y vida útil de las tablas son referencias operativas de la industria (sin fuente oficial); calíbralos con tus propios cierres de 2-3 meses.
+
+## Alertas
 
 | Alerta | Trigger |
 |---|---|
@@ -150,8 +155,8 @@ Si `merma_observada > benchmark × 1.3`: **investigar**.
     "ordenes_compra_sugeridas": [
       {
         "ingrediente": "Aguacate Hass",
-        "cantidad_kg": 25,
-        "costo_estimado_mxn": 2375
+        "cantidad_kg": 17.5,
+        "costo_estimado_mxn": 1662.50
       }
     ]
   }
@@ -162,4 +167,4 @@ Si `merma_observada > benchmark × 1.3`: **investigar**.
 
 - Benchmarks de merma actualizados 2026 por tipo restaurante
 - Casos típicos de merma anómala (robos, desperdicio)
-- Integración con software POS para data real
+- Integración con POS: si usa Soft Restaurant, `mp_softrestaurant` (`softrest_inventario_actual`, `softrest_parsear_export`) lee exports CSV, no una API en vivo; respuestas con `simulated: true` no sirven para cierres

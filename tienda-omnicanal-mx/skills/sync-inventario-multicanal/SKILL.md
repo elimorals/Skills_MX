@@ -13,12 +13,12 @@ Stock_real = max(0, Stock_inicial - ventas_acumuladas_todos_canales)
 
 Por cada canal:
   if stock_publicado_canal != stock_real:
-      actualizar_canal(sku, stock_real)
+      actualizar_canal(sku, stock_real - safety_stock_otros_canales)   # ver inventario-multicanal
 ```
 
 ## Frecuencia
 
-- **Tiempo real** vía webhook si los canales lo permiten (ML sí, Amazon parcial, Shopify sí)
+- **Tiempo real** vía webhooks/notificaciones de cada canal (ML y Shopify los ofrecen; Amazon vía SP-API Notifications). Los MCPs del repo no reciben webhooks: hace falta un endpoint propio
 - **Batch** cada 15-30 min via cron como fallback
 
 ## Output del sync run
@@ -49,5 +49,5 @@ Por cada canal:
 
 ## Dependencias
 
-- MCPs: `mp_mercado_libre.actualizar_stock`, `mp_amazon_mx_seller.update_inventory`, `mp_shopify_mx.update_stock`
+- Tools: `mercadolibre_update_stock`, `amazon_mx_update_inventory`, `shopify_update_inventory_level` (lectura: `mercadolibre_get_item`, `amazon_mx_get_listing`, `shopify_get_inventory_level`). Los tres MCPs están "real sin validar (requieren credenciales)"; sin ellas, genera el archivo de carga masiva de cada canal para que el usuario lo suba
 - Tracker maestro de SKUs en local

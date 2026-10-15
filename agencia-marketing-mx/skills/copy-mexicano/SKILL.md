@@ -205,9 +205,21 @@ Regla de oro: el H1 debe responder en 3 segundos: "¿Qué obtengo aquí y por qu
 Cuando el usuario pide copy:
 
 1. Especifica el canal y formato (Meta primary text, Google headlines, TikTok hook, email subject, etc.).
-2. Genera 3-5 variaciones por componente (Meta da mejor performance con múltiples opciones para A/B test automático).
+2. Genera 3-5 variaciones por componente (Meta y Google rotan múltiples variantes; para un A/B real usa la herramienta de pruebas de la plataforma).
 3. Marca cuál es "safe" (alta probabilidad de funcionar) y cuál es "experimental" (más arriesgado pero potencialmente alto upside).
 4. Nota de revisión por humano si hay claim que requiera verificación legal (médico, financiero, comparativo competitivo).
+
+## Cumplimiento legal del copy (México)
+
+Revisión mínima antes de entregar; no sustituye la revisión del área legal del cliente.
+
+- **Publicidad veraz y comprobable (Art. 32 LFPC)**: todo claim ("el más rápido", "3x", "#1") necesita sustento que el cliente pueda mostrar a PROFECO. Si no hay dato, reescribe sin el claim o márcalo para review.
+- **Precio total (Art. 7 Bis LFPC)**: si el anuncio muestra precio, debe ser el monto total con IVA, comisiones y cargos. "Desde $499 + IVA" en publicidad B2C es riesgo; en B2B dirigido a empresas se acostumbra, pero indícalo.
+- **Promociones y ofertas (cap. IV LFPC, Arts. 46-50)**: vigencia, condiciones y restricciones visibles ("válido del 1 al 15 de mayo de 2026, hasta agotar 200 piezas"). "Gratis" solo si no hay costo oculto.
+- **Email y SMS**: incluir forma de darse de baja y respetar a quien se inscribió en el REPEP de PROFECO (Arts. 17 y 18 LFPC). La consulta al REPEP es manual en el portal de PROFECO (el MCP `mp_repep_profeco` del monorepo es de entrega a humano y no está en este plugin).
+- **Salud, suplementos y alcohol (Ley General de Salud y su Reglamento en materia de Publicidad, COFEPRIS)**: sin propiedades terapéuticas para alimentos o suplementos; suplementos llevan la leyenda que fije la autorización/permiso de publicidad; alcohol y tabaco tienen restricciones de horario y leyendas obligatorias. Texto exacto de cada leyenda: verificar en el Reglamento vigente o el permiso del cliente.
+- **Servicios financieros**: tasas y CAT deben coincidir con lo que publica la institución (CONDUSEF); no prometer aprobación garantizada.
+- **Datos personales en landings y formularios**: liga al aviso de privacidad del cliente (LFPDPPP 2025; autoridad: Secretaría Anticorrupción y Buen Gobierno). Ver `compliance-lfpdppp`.
 
 ## Validación
 
@@ -215,7 +227,8 @@ Antes de entregar, autocheck:
 - ¿Hay modismos de España o ARG/UY? Corregir.
 - ¿Hay mayúsculas sostenidas? Corregir.
 - ¿Pasa de 2 emojis en una línea? Reducir.
-- ¿Hay claims sin sustento (medical, financial)? Marcar para review.
+- ¿Hay claims sin sustento (médico, financiero, comparativo)? Marcar para review.
+- ¿El precio mostrado es el total con IVA? ¿La promo tiene vigencia y condiciones?
 - ¿El CTA es específico o vago? Especificar.
 
 ## Integración

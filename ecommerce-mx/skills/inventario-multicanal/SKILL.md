@@ -1,6 +1,6 @@
 ---
 name: inventario-multicanal
-description: Sincronización de inventario entre múltiples canales de venta (Mercado Libre, Shopify, Amazon MX, tienda física) para evitar overselling, detección de discrepancias entre canales, regla de safety stock por canal según velocidad de venta, y reposición automática. Útil para sellers operando en 2+ marketplaces. Usar cuando el usuario diga sincronizar inventario, stock multicanal, overselling, inventario ML Shopify, vendí lo mismo en dos lados, stock desincronizado, safety stock. NO usar para pricing (otro skill) ni para fulfillment individual (otro skill paqueteria-mx).
+description: Sincronización de inventario entre múltiples canales de venta (Mercado Libre, Shopify, Amazon MX, tienda física) para evitar overselling, detección de discrepancias entre canales, regla de safety stock por canal según velocidad de venta, y alertas de reposición. Útil para sellers operando en 2+ marketplaces. Usar cuando el usuario diga sincronizar inventario, stock multicanal, overselling, inventario ML Shopify, vendí lo mismo en dos lados, stock desincronizado, safety stock. NO usar para pricing (otro skill) ni para fulfillment individual (otro skill paqueteria-mx).
 allowed-tools: Read, Write, Edit, Bash
 ---
 
@@ -53,10 +53,11 @@ Cuando se vende 1 unidad en ML:
 
 ```
 nuevo_stock_real = stock_anterior - 1
-publicado_ml = nuevo_stock_real - safety_stock_otros
-publicado_shopify = max(0, nuevo_stock_real - safety_stock_ml)
-publicado_amazon = max(0, nuevo_stock_real - safety_stock_ml - safety_stock_shopify)
+para cada canal:
+    publicado[canal] = max(0, nuevo_stock_real - suma(safety_stock de los OTROS canales))
 ```
+
+Ejemplo: stock real 10; safety ML=1, Shopify=1, tienda=8 → ML publica 10-9=1, Shopify 10-9=1, tienda 10-2=8.
 
 Si `nuevo_stock_real <= sum(safety_stocks)`: **PAUSAR** todos los canales menos el principal.
 
@@ -67,8 +68,9 @@ Periódicamente (diario o cada 6h):
 ```
 para cada SKU:
   stock_real = leer_base_de_datos(sku)
-  stock_ml = mp_mercado_libre.get_stock(sku)
-  stock_shopify = mp_shopify_mx.get_stock(sku)
+  stock_ml = mercadolibre_get_item(item_id).available_quantity
+  stock_shopify = shopify_get_inventory_level(inventory_item_id, location_id)
+  stock_amazon = amazon_mx_get_listing(sku)
 
   discrepancia_ml = abs(stock_real - stock_ml) > 1
   discrepancia_shopify = abs(stock_real - stock_shopify) > 1
@@ -156,6 +158,17 @@ si dias_stock_disponible < (dias_lead_time + safety_days):
   ]
 }
 ```
+
+## Tools reales (MCPs del repo)
+
+| Acción | Mercado Libre | Shopify | Amazon MX |
+|---|---|---|---|
+| Leer stock | `mercadolibre_get_item` | `shopify_get_inventory_level` | `amazon_mx_get_listing` |
+| Actualizar stock | `mercadolibre_update_stock` | `shopify_update_inventory_level` | `amazon_mx_update_inventory` |
+| Pausar | `mercadolibre_pause_item` | — | — |
+| Órdenes | `mercadolibre_list_orders` | `shopify_list_orders` | `amazon_mx_list_orders` |
+
+Los tres MCPs están "real sin validar (requieren credenciales)". Sin credenciales, pide al usuario exportaciones CSV de cada canal y trabaja sobre ellas. Ningún MCP del repo recibe webhooks: el tiempo real requiere un endpoint propio.
 
 ## Comando relacionado
 
