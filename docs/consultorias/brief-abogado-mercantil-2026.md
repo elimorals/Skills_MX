@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Brief para abogado mercantilista — validación de contratos comerciales
 
 **Fecha**: 2026-06-12

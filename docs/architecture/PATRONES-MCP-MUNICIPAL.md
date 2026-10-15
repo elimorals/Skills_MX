@@ -1,3 +1,5 @@
+> **Nota 2026-10-14**: patrones levantados en junio de 2026. El estado vigente de cada MCP municipal está en [`mcp-servers/CATALOGO.md`](../../mcp-servers/CATALOGO.md); los portales con CAPTCHA usan la entrega a humano de `shared/portal_handoff.py`.
+
 # Patrones de construcción MCP municipal MX
 
 > **Propósito**: documentar los 5 stacks identificados al validar 80+ portales

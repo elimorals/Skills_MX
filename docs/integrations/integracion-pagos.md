@@ -4,7 +4,7 @@
 
 **Audiencia**: desarrolladores activando cobranza.
 
-**Pre-lectura**: [seguridad.md](seguridad.md).
+**Pre-lectura**: [seguridad.md](../architecture/seguridad.md).
 
 ---
 
@@ -28,12 +28,12 @@ https://dashboard.stripe.com/register
 
 ### 2. Modo test vs live
 
-Stripe tiene API keys separadas para test (sk_test_) y producción (sk_live_).
+Stripe se conecta con su MCP oficial `@stripe/mcp` (vía `npx`), que `freelancers-mx`, `colegios-mx` y `talleres-mx` declaran deshabilitado por defecto. Stripe tiene API keys separadas para test (sk_test_) y producción (sk_live_).
 
 ### 3. `.env`
 
 ```bash
-STRIPE_API_KEY=sk_test_...
+STRIPE_SECRET_KEY=sk_test_...
 STRIPE_WEBHOOK_SECRET=whsec_...
 STRIPE_ACCOUNT_COUNTRY=MX
 ```
@@ -44,9 +44,9 @@ STRIPE_ACCOUNT_COUNTRY=MX
 {
   "stripe": {
     "command": "npx",
-    "args": ["-y", "@stripe/mcp-server"],
+    "args": ["-y", "@stripe/mcp", "--tools=all"],
     "env": {
-      "STRIPE_API_KEY": "${STRIPE_API_KEY}"
+      "STRIPE_SECRET_KEY": "${STRIPE_SECRET_KEY:-}"
     },
     "disabled": false
   }
@@ -93,61 +93,22 @@ MERCADOPAGO_PUBLIC_KEY=TEST-...
 MERCADOPAGO_WEBHOOK_SECRET=...
 ```
 
-### 5. MCP custom (no hay oficial al cierre del entrenamiento)
+### 5. MCP
 
-```python
-# mcp-servers/mercado-pago.py
-import os
-import httpx
-from fastmcp import FastMCP
+El repo incluye **`mp_mercado_pago`** (links de pago, validación HMAC de webhooks, reembolsos y cancelaciones), ya declarado en `core-mexico/.mcp.json`. Lee `MERCADOPAGO_ACCESS_TOKEN`. Sin token responde datos de ejemplo marcados `simulated: true`; con token, los errores de la API se propagan. Configuración en `mcp-servers/mp_mercado_pago/example.mcp.json`; estado en [`mcp-servers/CATALOGO.md`](../../mcp-servers/CATALOGO.md).
 
-mcp = FastMCP("mercado-pago")
-TOKEN = os.getenv("MERCADOPAGO_ACCESS_TOKEN")
-BASE_URL = "https://api.mercadopago.com"
+---
 
-@mcp.tool()
-async def create_preference(
-    items: list,
-    payer_email: str = None,
-    external_reference: str = None,
-) -> dict:
-    """Crea preferencia de pago (Checkout Pro).
-    
-    Args:
-        items: lista de dicts {title, quantity, unit_price, currency_id}
-        payer_email: email del pagador (opcional)
-        external_reference: tu ID interno para tracking
-    """
-    body = {
-        "items": items,
-        "external_reference": external_reference,
-    }
-    if payer_email:
-        body["payer"] = {"email": payer_email}
-    
-    async with httpx.AsyncClient() as client:
-        resp = await client.post(
-            f"{BASE_URL}/checkout/preferences",
-            headers={"Authorization": f"Bearer {TOKEN}"},
-            json=body,
-        )
-        data = resp.json()
-        return {
-            "preference_id": data["id"],
-            "init_point": data["init_point"],  # URL para pago producción
-            "sandbox_init_point": data["sandbox_init_point"],
-        }
+## Setup con Conekta
 
-@mcp.tool()
-async def get_payment(payment_id: str) -> dict:
-    """Consulta estado de un pago específico."""
-    async with httpx.AsyncClient() as client:
-        resp = await client.get(
-            f"{BASE_URL}/v1/payments/{payment_id}",
-            headers={"Authorization": f"Bearer {TOKEN}"},
-        )
-        return resp.json()
+El repo incluye **`mp_conekta`** (órdenes, cargos con tarjeta, OXXO y SPEI, reembolsos, clientes, links de pago, suscripciones y validación HMAC de webhooks), declarado en `core-mexico/.mcp.json`.
+
+```bash
+CONEKTA_API_KEY=key_test_xxxxxxxx
+CONEKTA_WEBHOOK_SECRET=tu_webhook_secret
 ```
+
+Mismo comportamiento: sin llave, datos de ejemplo `simulated: true`; con llave, consulta real sin fallback silencioso. Ver `mcp-servers/mp_conekta/README.md`.
 
 ---
 
@@ -168,9 +129,14 @@ Toda pasarela usa webhooks para notificar eventos (pago recibido, refund, disput
 3. Responder 200 OK a la pasarela
 ```
 
+### Receptor incluido
+
+`webhooks/` es un receptor FastAPI con handlers para Stripe, Mercado Pago, Conekta, Facturama, Mercado Libre, WhatsApp (Meta) y otros: validación HMAC o Bearer, allowlist, idempotencia y bitácora JSONL. Ver [`webhooks/README.md`](../../webhooks/README.md).
+
 ### URL pública necesaria
 
 Para recibir webhooks necesitas URL pública. Opciones:
+- El receptor de `webhooks/` desplegado (ver `webhooks/DEPLOY.md`)
 - Webhook receiver propio (cloud function, lambda, server)
 - Servicio tipo Pipedream / Make / Zapier
 - Tunneling para desarrollo: ngrok, Cloudflare Tunnel
@@ -273,5 +239,5 @@ El skill `cfdi-emision` mapea correctamente con base en lo que la pasarela repor
 
 - `_shared/cfdi-emision/SKILL.md` — emisión de CFDI al cobrar
 - [integracion-pac.md](integracion-pac.md) — timbrado del CFDI
-- [seguridad.md](seguridad.md) — manejo de credenciales pasarela
-- [glosario-fiscal-mx.md](glosario-fiscal-mx.md) — términos forma/método de pago
+- [seguridad.md](../architecture/seguridad.md) — manejo de credenciales pasarela
+- [glosario-fiscal-mx.md](../reference/glosario-fiscal-mx.md) — términos forma/método de pago

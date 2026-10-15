@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Brief para contador certificado — validación `freelance-tax-mx` + `pf-anual-mx`
 
 **Fecha**: 2026-06-12

@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06-13)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Smoke test descubrir-portal-municipal.py — 2026-06-13
 
 > **Verifica que el script funciona end-to-end antes de invertir 5+ horas corriéndolo sobre 144+ municipios.**

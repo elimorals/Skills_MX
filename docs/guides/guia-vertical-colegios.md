@@ -4,7 +4,7 @@
 
 **Audiencia**: directores administrativos, dueños de colegio, equipo administrativo.
 
-**Pre-lectura**: [guia-instalacion.md](guia-instalacion.md), advertencia de [estado-real.md](estado-real.md).
+**Pre-lectura**: [guia-instalacion.md](guia-instalacion.md), advertencia de [estado-real.md](../historial/estado-real-2026-06.md).
 
 ---
 
@@ -269,6 +269,6 @@ Publicar listas de morosos, exponer al padre frente a otros padres, daño moral.
 
 ## Ver también
 
-- [estado-real.md](estado-real.md) — colegios-mx tiene score 4.2/9 (más bajo)
-- [plan-afinacion.md](plan-afinacion.md) — semanas 25-36 para llevar a producción
-- [compliance-checklist.md](compliance-checklist.md) — checklist educativo
+- [estado-real.md](../historial/estado-real-2026-06.md) — colegios-mx tiene score 4.2/9 (más bajo)
+- [plan-afinacion.md](../plan-afinacion.md) — semanas 25-36 para llevar a producción
+- [compliance-checklist.md](../operational/compliance-checklist.md) — checklist educativo

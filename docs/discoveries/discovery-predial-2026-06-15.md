@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06-15)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Discovery predial municipal — 2026-06-15
 
 **Probados**: 10 municipios

@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Sprint D — Roadmap (2026-06-15 → 2026-07-XX)
 
 Objetivo: cerrar los 4 huecos críticos identificados en el audit nacional,

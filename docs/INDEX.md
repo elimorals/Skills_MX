@@ -1,91 +1,92 @@
-# Índice de documentación — plugins-mx
+# Índice de documentación — Skills_MX (plugins-mx)
 
-Mapa completo de la documentación del monorepo. Si llegas nuevo, empieza por **INDEX → README raíz → arquitectura.md → guía del vertical que te interesa**.
+La fuente de verdad es el [README raíz](../README.md). El estado de cada MCP está en [`mcp-servers/CATALOGO.md`](../mcp-servers/CATALOGO.md), que se genera desde la sección "Estado real" de cada `mcp-servers/mp_*/README.md`. Si un documento de esta carpeta contradice a esos dos, mandan ellos.
 
-## Documentos de arquitectura y diseño
+Ruta sugerida si llegas nuevo: README raíz → [arquitectura](architecture/arquitectura.md) → [guía de instalación](guides/guia-instalacion.md) → guía del vertical que te interese.
 
-| Documento | Propósito |
-|---|---|
-| [arquitectura.md](arquitectura.md) | Modelo `_shared/` + verticales, convenciones, criterios producción-grade |
-| [versionado.md](versionado.md) | Política de versiones semver + git tags por plugin |
-| [seguridad.md](seguridad.md) | Manejo de credenciales, secrets, datos personales en tránsito |
-
-## Documentos de estado y planeación
+## Estado y planeación (vigente)
 
 | Documento | Propósito |
 |---|---|
-| [estado-real.md](estado-real.md) | Auditoría honesta: score 4.7/9 promedio, riesgo por skill |
-| [gap-analysis-2026-06.md](gap-analysis-2026-06.md) | Gap vs planeación original: 6 MCPs, 15 verticales, 13 hooks, 28 crons, 12 webhooks faltantes (~7,780-10,740h) |
-| [STATUS.md](STATUS.md) | **Checklist vivo del proyecto** — actualizar cada sesión al cerrar un módulo |
-| [specs/README.md](specs/README.md) | Specs detallados de items novedosos (webhook receiver, Playwright real, verticales TOP) |
-| [plan-afinacion.md](plan-afinacion.md) | Roadmap 36 semanas para llevar a producción-grade |
-| [roadmap.md](roadmap.md) | Visión a 12 meses: nuevos verticales, integraciones, ecosistema |
-| [sprint-d-roadmap.md](sprint-d-roadmap.md) | Plan ejecutivo Sprint D (predial+agua+catastro+multas) |
-| [**SPRINT-D-RESUMEN-2026-06-15.md**](SPRINT-D-RESUMEN-2026-06-15.md) | 🆕 **Pull-out completo Sprint A/B/C/D** — 9 MCPs, 114 tests, calibración SAF, hallazgos negativos |
-| [discovery-portales-2026-06-15.md](discovery-portales-2026-06-15.md) | 🆕 Selectores Playwright validados en vivo (SIAPA, SAF, Telmex, CFE, JAL, SPGG) |
-| [discovery-predial-2026-06-15.md](discovery-predial-2026-06-15.md) | Output script discovery predial mensual |
+| [`../mcp-servers/CATALOGO.md`](../mcp-servers/CATALOGO.md) | Estado y tools de los 83 MCPs (generado) |
+| [plan-mock-a-real.md](plan-mock-a-real.md) | Plan y grupos de la migración de mock a datos reales (oleadas 1-3) |
+| [roadmap.md](roadmap.md) | Visión a 12 meses |
 
-## Guías de uso e instalación
+## Arquitectura y decisiones
 
 | Documento | Propósito |
 |---|---|
-| [guia-instalacion.md](guia-instalacion.md) | Cómo instalar plugins en Claude Code y skills standalone |
-| [guia-desarrollo.md](guia-desarrollo.md) | Cómo contribuir, crear skills nuevos, agregar verticales |
-| [troubleshooting.md](troubleshooting.md) | Problemas comunes y soluciones |
-| [faq.md](faq.md) | Preguntas frecuentes |
+| [architecture/arquitectura.md](architecture/arquitectura.md) | Modelo `_shared/` + verticales, MCPs, workflows y hooks |
+| [architecture/seguridad.md](architecture/seguridad.md) | Credenciales, e.firma, datos personales, repo público |
+| [architecture/versionado.md](architecture/versionado.md) | Semver y tags por plugin |
+| [architecture/apis-oficiales-mx.md](architecture/apis-oficiales-mx.md) | Inventario de APIs y portales oficiales de México |
+| [architecture/PATRONES-MCP-MUNICIPAL.md](architecture/PATRONES-MCP-MUNICIPAL.md) | Stacks de portales municipales y cómo agregar un municipio |
+| [adrs/](adrs/README.md) | Decisiones de arquitectura (ADR 001-008) |
 
-## Guías por vertical
+## Guías
 
 | Documento | Propósito |
 |---|---|
-| [guia-vertical-freelancers.md](guia-vertical-freelancers.md) | Casos de uso, flujos, métricas para freelancers-mx |
-| [guia-vertical-agencia.md](guia-vertical-agencia.md) | Casos de uso, flujos, métricas para agencia-marketing-mx |
-| [guia-vertical-colegios.md](guia-vertical-colegios.md) | Casos de uso, flujos, métricas para colegios-mx |
-| [guia-vertical-talleres.md](guia-vertical-talleres.md) | Casos de uso, flujos, métricas para talleres-mx |
-| [flujos-operativos.md](flujos-operativos.md) | Workflows típicos cross-vertical |
+| [guides/guia-instalacion.md](guides/guia-instalacion.md) | Instalar plugins desde el marketplace y MCPs sueltos |
+| [guides/guia-desarrollo.md](guides/guia-desarrollo.md) | Contribuir: skills, verticales, MCPs, pruebas |
+| [guides/guia-vertical-freelancers.md](guides/guia-vertical-freelancers.md) | Casos de uso de `freelancers-mx` |
+| [guides/guia-vertical-agencia.md](guides/guia-vertical-agencia.md) | Casos de uso de `agencia-marketing-mx` |
+| [guides/guia-vertical-colegios.md](guides/guia-vertical-colegios.md) | Casos de uso de `colegios-mx` |
+| [guides/guia-vertical-talleres.md](guides/guia-vertical-talleres.md) | Casos de uso de `talleres-mx` |
 
 ## Integraciones
 
 | Documento | Propósito |
 |---|---|
-| [integracion-pac.md](integracion-pac.md) | Facturama, SW Sapien, Solución Factible — cómo conectar |
-| [integracion-whatsapp.md](integracion-whatsapp.md) | Gupshup, Twilio, Meta Cloud — cómo conectar |
-| [integracion-pagos.md](integracion-pagos.md) | Stripe, Mercado Pago, Conekta — cómo conectar |
+| [integrations/integracion-pac.md](integrations/integracion-pac.md) | PAC para CFDI (Facturama vía `mp_facturama_extendido`) |
+| [integrations/integracion-pagos.md](integrations/integracion-pagos.md) | Mercado Pago, Conekta, Stripe y otras pasarelas |
+| [integrations/integracion-whatsapp.md](integrations/integracion-whatsapp.md) | WhatsApp Business (Meta Cloud API y BSPs) |
 
-## Compliance y métricas
-
-| Documento | Propósito |
-|---|---|
-| [compliance-checklist.md](compliance-checklist.md) | Checklist por sector: salud, educación, ecommerce, servicios |
-| [metricas.md](metricas.md) | KPIs por vertical, valor entregado al cliente |
-
-## Glosarios
+## Operación
 
 | Documento | Propósito |
 |---|---|
-| [glosario-fiscal-mx.md](glosario-fiscal-mx.md) | Términos SAT, CFDI, regímenes, retenciones, etc. |
-| [glosario-tecnico.md](glosario-tecnico.md) | Plugin, skill, agent, MCP, frontmatter, etc. |
+| [operational/flujos-operativos.md](operational/flujos-operativos.md) | Workflows típicos entre verticales |
+| [operational/hooks-setup.md](operational/hooks-setup.md) | Instalar los hooks de Claude Code |
+| [operational/compliance-checklist.md](operational/compliance-checklist.md) | Checklist de cumplimiento por sector |
+| [operational/metricas.md](operational/metricas.md) | KPIs por vertical |
+| [operational/troubleshooting.md](operational/troubleshooting.md) | Problemas comunes |
+| [`../scripts/crons/README.md`](../scripts/crons/README.md) | Crons y launchd |
+| [`../webhooks/README.md`](../webhooks/README.md) | Receptor de webhooks (FastAPI) |
 
-## Recursos técnicos adicionales (fuera de `docs/`)
+## Referencia
+
+| Documento | Propósito |
+|---|---|
+| [reference/faq.md](reference/faq.md) | Preguntas frecuentes |
+| [reference/glosario-fiscal-mx.md](reference/glosario-fiscal-mx.md) | Términos SAT, CFDI, regímenes, retenciones |
+| [reference/glosario-tecnico.md](reference/glosario-tecnico.md) | Plugin, skill, agente, MCP, hook, workflow |
+
+## Histórico (no vigente)
+
+Estos documentos registran cómo se llegó al estado actual. Cada uno empieza con un aviso: sus cifras y el diseño mock-first no son vigentes.
+
+| Carpeta | Contenido |
+|---|---|
+| [historial/](historial/) | Bitácora de sprints de junio 2026, `STATUS-2026-06.md`, `estado-real-2026-06.md` (auditoría de scores por skill) |
+| [sprints/](sprints/) | Resúmenes de sprints A-H |
+| [audits/](audits/) | Auditorías y validaciones de portales de junio 2026 |
+| [discoveries/](discoveries/) | Discovery de portales, cobertura nacional, trámites no implementados |
+| [specs/](specs/README.md) | Specs de diseño de junio 2026 (webhooks, Playwright, verticales) |
+| [consultorias/](consultorias/) | Briefs para consultas con contador y abogado |
+| [dogfooding/](dogfooding/) | Prueba de `pf-anual-mx` con un caso real |
+| [plan-afinacion.md](plan-afinacion.md) | Plan de 36 semanas de junio 2026 |
+
+## Recursos fuera de `docs/`
 
 | Directorio | Contenido |
 |---|---|
-| `../scripts/` | Scripts ejecutables Python (`validar_rfc.py`, `format_mxn.py`, `calcular_iva_retenciones.py`, `mock_pac.py`) + shell tooling (`sync-shared.sh`, `lint-skills.sh`, `new-skill.sh`, `version-bump.sh`, `run-fixtures.sh`) |
-| `../schemas/` | JSON Schemas para validación de outputs estructurados |
-| `../tests/fixtures/` | Fixtures de regresión por skill (input + expected output) |
-| `../evals/` | Calibration prompts por skill (should-trigger + should-not-trigger) |
-| `../_shared/*/references/` | References detalladas: catálogos SAT, complementos CFDI, matriz retenciones, palabras inconvenientes, templates WA aprobables, tono MX, Banxico, ARCO, regímenes |
-| `../<plugin>/agents/` | Subagents en core-mexico (`validador-cfdi-batch`), freelancers-mx (`auditor-fiscal-mensual`, `revisor-cobranza-cartera`), talleres-mx (`defensor-profeco`) |
-
-## Convención de navegación
-
-Cada documento empieza con:
-- **Propósito**: para qué sirve
-- **Audiencia**: quién debe leerlo
-- **Pre-lectura**: documentos que conviene leer antes
-
-Documentos relacionados aparecen al final como "Ver también".
+| `../scripts/` | Sync de `_shared/`, lint, generadores (`generar-estado-mcps.py`, `generar-marketplace.py`, `mcp-config-portable.py`), evals golden, crons, hooks |
+| `../schemas/` | JSON Schemas de salida |
+| `../tests/fixtures/` | Casos de regresión por skill |
+| `../evals/` | Triggering por skill, golden deterministas y promptfoo |
+| `../_shared/` | 6 skills base (fuente de verdad) |
 
 ---
 
-**Última actualización del índice**: 2026-06-11.
+**Última actualización del índice**: 2026-10-14.

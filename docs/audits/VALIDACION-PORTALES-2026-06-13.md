@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06-13)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Validación de portales — 2026-06-13 (suite completa + DOM Playwright)
 
 ## 📊 RESUMEN EJECUTIVO ACTUALIZADO POST-FASE 13

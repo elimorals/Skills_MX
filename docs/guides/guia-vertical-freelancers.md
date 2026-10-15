@@ -248,7 +248,7 @@ para tener contexto, luego empezamos."
 
 ## Riesgos y limitaciones
 
-Ver [estado-real.md](estado-real.md) para detalle. Resumen:
+Ver [estado-real.md](../historial/estado-real-2026-06.md) para detalle. Resumen:
 
 - **`freelance-tax-mx` tiene RIESGO REGULATORIO ALTO**: las tarifas Art. 96 pueden estar desactualizadas. **No usar para declaraciones reales sin validar con contador**.
 - **Contratos marco**: NO revisados por abogado mercantilista. Aceptables como punto de partida; valida con abogado antes de firmar contratos sustanciales.
@@ -282,7 +282,7 @@ Sí. Cuando emites un CFDI con MétodoPago = PPD y luego recibes el cobro, `cfdi
 
 ## Ver también
 
-- [flujos-operativos.md](flujos-operativos.md) — workflows cross-vertical
-- [estado-real.md](estado-real.md) — score honesto por skill
-- [plan-afinacion.md](plan-afinacion.md) — roadmap para llevar a producción
-- [glosario-fiscal-mx.md](glosario-fiscal-mx.md) — términos fiscales
+- [flujos-operativos.md](../operational/flujos-operativos.md) — workflows cross-vertical
+- [estado-real.md](../historial/estado-real-2026-06.md) — score honesto por skill
+- [plan-afinacion.md](../plan-afinacion.md) — roadmap para llevar a producción
+- [glosario-fiscal-mx.md](../reference/glosario-fiscal-mx.md) — términos fiscales

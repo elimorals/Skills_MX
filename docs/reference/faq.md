@@ -14,7 +14,7 @@ Un monorepo de plugins de Claude Code y skills standalone para automatizar opera
 
 ### ¿Necesito ser desarrollador para usarlo?
 
-Para **operar**: no. Solo necesitas Claude Code instalado y seguir [guia-instalacion.md](guia-instalacion.md).
+Para **operar**: no. Solo necesitas Claude Code instalado y seguir [guia-instalacion.md](../guides/guia-instalacion.md).
 
 Para **extender** (crear nuevos skills): sí, conocimiento básico de Markdown + YAML + opcional Python.
 
@@ -24,7 +24,7 @@ El monorepo en sí: gratis (open source / privado según se decida).
 
 Costos asociados:
 - Claude Code: según tu plan Anthropic
-- Servicios externos cuando los actives: ver [integracion-pac.md](integracion-pac.md), [integracion-whatsapp.md](integracion-whatsapp.md), [integracion-pagos.md](integracion-pagos.md)
+- Servicios externos cuando los actives: ver [integracion-pac.md](../integrations/integracion-pac.md), [integracion-whatsapp.md](../integrations/integracion-whatsapp.md), [integracion-pagos.md](../integrations/integracion-pagos.md)
 
 ### ¿Funciona offline?
 
@@ -49,7 +49,7 @@ Política sujeta a cambios. Revisa términos. Para datos altamente sensibles (cl
 
 ### ¿Puedo usar solo un skill sin todo el plugin?
 
-Sí. Skills son standalone vía `skillkit install` o subida directa a Claude.ai. Ver [guia-instalacion.md](guia-instalacion.md) opción 2.
+Sí. Skills son standalone vía `skillkit install` o subida directa a Claude.ai. Ver [guia-instalacion.md](../guides/guia-instalacion.md) opción 2.
 
 ### ¿Por qué hay 5 plugins y no uno solo?
 
@@ -67,7 +67,7 @@ Sí. `claude --plugin-dir A --plugin-dir B`. Si tienes operaciones en varios ver
 
 **NO necesariamente**. Mucho contenido viene de mi training data. Cada skill que cita datos sensibles tiene una sección `⚠ Datos que requieren verificación vigente` listando lo que hay que validar.
 
-Ver [estado-real.md](estado-real.md) para detalle.
+Ver [estado-real.md](../historial/estado-real-2026-06.md) para detalle.
 
 ### ¿Puedo confiar en los cálculos fiscales del plugin?
 
@@ -125,11 +125,11 @@ No tienen por qué. Ellos solo reciben los outputs (CFDI, mensaje, contrato). Pe
 
 ### ¿Cómo agrego un skill nuevo?
 
-Ver [guia-desarrollo.md](guia-desarrollo.md).
+Ver [guia-desarrollo.md](../guides/guia-desarrollo.md).
 
 ### ¿Cómo agrego un vertical nuevo?
 
-Ver [guia-desarrollo.md](guia-desarrollo.md) sección "Agregar un vertical nuevo".
+Ver [guia-desarrollo.md](../guides/guia-desarrollo.md) sección "Agregar un vertical nuevo".
 
 ### ¿Puedo contribuir al monorepo?
 
@@ -145,11 +145,11 @@ Sí en formato fixtures (regression tests) + evals (triggering tests). Ver `test
 
 ### ¿Puedo vender implementación con este monorepo?
 
-Una vez que un vertical alcance score 7-8/9 según [estado-real.md](estado-real.md). Antes: riesgo regulatorio + reputacional.
+Una vez que un vertical alcance score 7-8/9 según [estado-real.md](../historial/estado-real-2026-06.md). Antes: riesgo regulatorio + reputacional.
 
 ### ¿Cuánto cobro por implementación?
 
-Sugerido (ver [plan-afinacion.md](plan-afinacion.md)):
+Sugerido (ver [plan-afinacion.md](../plan-afinacion.md)):
 - Cliente piloto early adopter: $30k-60k MXN one-time + $8k-15k MXN/mes retainer
 - Cliente con 2-3 casos de éxito previos: $60k-150k MXN + $15k-35k MXN/mes
 
@@ -165,7 +165,7 @@ Sí, los plugins son replicables. Tu moat real:
 3. Caso de éxito documentado
 4. Velocidad de iteración
 
-Ver [estado-real.md](estado-real.md).
+Ver [estado-real.md](../historial/estado-real-2026-06.md).
 
 ---
 
@@ -173,7 +173,7 @@ Ver [estado-real.md](estado-real.md).
 
 ### ¿Cuándo habrá más verticales?
 
-Ver [roadmap.md](roadmap.md). Próximos candidatos por demanda: salon-mx, veterinaria-mx, wedding-mx, ecommerce-mx, restaurante-mx.
+Ver [roadmap.md](../roadmap.md). Próximos candidatos por demanda: salon-mx, veterinaria-mx, wedding-mx, ecommerce-mx, restaurante-mx.
 
 ### ¿Habrá versión SaaS?
 
@@ -199,6 +199,6 @@ Elías Rashid Morales Mendoza (`elimoralsmendox@gmail.com`). Más detalles en `m
 
 ## Ver también
 
-- [INDEX.md](INDEX.md) — índice general
-- [troubleshooting.md](troubleshooting.md) — problemas técnicos comunes
-- [roadmap.md](roadmap.md) — qué viene a futuro
+- [INDEX.md](../INDEX.md) — índice general
+- [troubleshooting.md](../operational/troubleshooting.md) — problemas técnicos comunes
+- [roadmap.md](../roadmap.md) — qué viene a futuro

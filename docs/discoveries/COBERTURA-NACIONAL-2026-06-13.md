@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06-13)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Cobertura nacional del catálogo predial MX — 2026-06-13
 
 > **Hito**: discovery completo sobre 2,330 municipios mexicanos (todos los que NO estaban

@@ -457,5 +457,5 @@ XML Schema Definition. Define la estructura de un XML. SAT publica XSD del CFDI 
 ## Ver también
 
 - [glosario-tecnico.md](glosario-tecnico.md) — términos técnicos del monorepo
-- [integracion-pac.md](integracion-pac.md) — detalle de PACs
+- [integracion-pac.md](../integrations/integracion-pac.md) — detalle de PACs
 - `_shared/cfdi-emision/references/catalogos-sat.md` — catálogos detallados

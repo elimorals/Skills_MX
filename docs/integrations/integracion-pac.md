@@ -2,9 +2,9 @@
 
 **Propósito**: cómo conectar el monorepo a un PAC real para timbrado de CFDI.
 
-**Audiencia**: desarrolladores que pasan de mock a producción.
+**Audiencia**: quien pasa de datos de ejemplo (`simulated: true`) a timbrado real.
 
-**Pre-lectura**: [glosario-fiscal-mx.md](glosario-fiscal-mx.md), `_shared/cfdi-emision/SKILL.md`.
+**Pre-lectura**: [glosario-fiscal-mx.md](../reference/glosario-fiscal-mx.md), `_shared/cfdi-emision/SKILL.md`.
 
 ---
 
@@ -34,10 +34,9 @@ Este monorepo asume **Facturama** por default en `.mcp.json` placeholders, pero 
 
 Este monorepo incluye **`mp_facturama_extendido`** (en `mcp-servers/mp_facturama_extendido/`), un MCP propio que envuelve la API REST de Facturama con:
 - Validación local de CFDI 4.0 pre-PAC
-- Mock mode automático cuando no hay credenciales
+- Datos de ejemplo marcados `simulated: true` cuando no hay credenciales; con credenciales, los errores del PAC se propagan (sin fallback silencioso)
 - Soporte sandbox y producción con detección por env var
 - Bitácora de cada timbrado y cancelación
-- 88 tests verde
 
 Ya viene preconfigurado en `core-mexico/.mcp.json` — solo necesitas inyectar credenciales.
 
@@ -56,8 +55,8 @@ Facturama acepta dos formas de auth:
 ### 3. Configurar `.env` local
 
 ```bash
-cd /Users/elias/Documents/Trabajo/skills
-cp .env.example .env  # si no existe, créalo
+cd /ruta/a/Skills_MX     # raíz de tu clon
+cp .env.example .env
 nano .env
 ```
 
@@ -103,9 +102,10 @@ Output exitoso:
 ```json
 {
   "facturama": {
-    "command": ".venv/bin/python",
-    "args": ["-m", "mp_facturama_extendido.server"],
-    "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+    "command": "uv",
+    "args": ["run", "--no-project", "--quiet", "--with",
+             "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+             "python", "-m", "mp_facturama_extendido.server"],
     "env": {
       "FACTURAMA_USER": "${FACTURAMA_USER:-}",
       "FACTURAMA_PASSWORD": "${FACTURAMA_PASSWORD:-}",
@@ -116,7 +116,7 @@ Output exitoso:
 }
 ```
 
-Sin credenciales corre en mock. Con credenciales válidas se conecta automáticamente al endpoint correcto (sandbox o producción).
+Sin credenciales responde datos de ejemplo marcados `simulated: true`. Con credenciales se conecta al endpoint que indique `FACTURAMA_ENV` (sandbox o producción), y cualquier error del PAC se propaga como error tipado.
 
 ### 6. Reiniciar Claude Code
 
@@ -340,5 +340,5 @@ Antes de usar PAC real con cliente:
 - `_shared/cfdi-emision/SKILL.md` — el skill que orquesta el timbrado
 - `_shared/cfdi-emision/references/catalogos-sat.md` — catálogos a validar
 - `_shared/cfdi-emision/references/casos-edge-cfdi.md` — patrones complejos
-- [seguridad.md](seguridad.md) — manejo de credenciales
-- [troubleshooting.md](troubleshooting.md) — más problemas comunes
+- [seguridad.md](../architecture/seguridad.md) — manejo de credenciales
+- [troubleshooting.md](../operational/troubleshooting.md) — más problemas comunes

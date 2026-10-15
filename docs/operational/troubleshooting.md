@@ -4,7 +4,7 @@
 
 **Audiencia**: cualquiera operando plugins-mx.
 
-**Pre-lectura**: [guia-instalacion.md](guia-instalacion.md).
+**Pre-lectura**: [guia-instalacion.md](../guides/guia-instalacion.md).
 
 ---
 
@@ -387,6 +387,6 @@ Si dices "necesito sacar factura de Bimbo" y `cfdi-emision` no triggea:
 
 ## Ver también
 
-- [seguridad.md](seguridad.md) — para temas de credenciales
-- [faq.md](faq.md) — preguntas frecuentes
-- [estado-real.md](estado-real.md) — qué está sin validar y por qué puede fallar
+- [seguridad.md](../architecture/seguridad.md) — para temas de credenciales
+- [faq.md](../reference/faq.md) — preguntas frecuentes
+- [estado-real.md](../historial/estado-real-2026-06.md) — qué está sin validar y por qué puede fallar

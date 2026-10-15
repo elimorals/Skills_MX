@@ -282,6 +282,6 @@ Cliente deja el auto y nunca lo recoge. Espacio ocupado, almacenamiento.
 
 ## Ver también
 
-- [estado-real.md](estado-real.md) — talleres-mx score 4.4/9
-- [plan-afinacion.md](plan-afinacion.md) — semanas 17-24 para producción
-- [integracion-whatsapp.md](integracion-whatsapp.md) — para autorizaciones
+- [estado-real.md](../historial/estado-real-2026-06.md) — talleres-mx score 4.4/9
+- [plan-afinacion.md](../plan-afinacion.md) — semanas 17-24 para producción
+- [integracion-whatsapp.md](../integrations/integracion-whatsapp.md) — para autorizaciones

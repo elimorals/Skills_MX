@@ -370,4 +370,4 @@ Cuando sea posible, hacer cambios reversibles (CFDI cancelable, mensaje editable
 
 - Guías por vertical (freelancers, agencia, colegios, talleres)
 - [troubleshooting.md](troubleshooting.md) — cuando algo falla en estos flujos
-- [seguridad.md](seguridad.md) — proteger los flujos
+- [seguridad.md](../architecture/seguridad.md) — proteger los flujos

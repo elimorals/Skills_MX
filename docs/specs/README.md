@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # `docs/specs/` — Specs detallados
 
 Specs detallados para items **novedosos** del proyecto (sin patrón previo en el repo).

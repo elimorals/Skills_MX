@@ -259,5 +259,5 @@ Plugin que funciona sin credenciales adicionales. En este monorepo: todos por de
 ## Ver también
 
 - [glosario-fiscal-mx.md](glosario-fiscal-mx.md) — términos fiscales mexicanos
-- [arquitectura.md](arquitectura.md) — diseño del monorepo
-- [guia-desarrollo.md](guia-desarrollo.md) — cómo contribuir
+- [arquitectura.md](../architecture/arquitectura.md) — diseño del monorepo
+- [guia-desarrollo.md](../guides/guia-desarrollo.md) — cómo contribuir

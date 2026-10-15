@@ -4,7 +4,7 @@
 
 **Audiencia**: usuarios finales y stakeholders.
 
-**Pre-lectura**: [estado-real.md](estado-real.md).
+**Pre-lectura**: [estado-real.md](../historial/estado-real-2026-06.md).
 
 ---
 
@@ -17,7 +17,7 @@
 | Lint passing | 100% | `./scripts/lint-skills.sh` |
 | Cobertura de fixtures | > 60% de skills con fixture | Contar archivos en `tests/fixtures/` |
 | Cobertura de evals | > 80% de skills con eval | Contar archivos en `evals/` |
-| Score promedio honesto | > 7.0/9 | Auditar [estado-real.md](estado-real.md) |
+| Score promedio honesto | > 7.0/9 | Auditar [estado-real.md](../historial/estado-real-2026-06.md) |
 
 ### Salud del producto
 
@@ -257,6 +257,6 @@ Por implementar (no hoy):
 
 ## Ver también
 
-- [estado-real.md](estado-real.md) — score honesto actual
-- [plan-afinacion.md](plan-afinacion.md) — milestones para mejorar
+- [estado-real.md](../historial/estado-real-2026-06.md) — score honesto actual
+- [plan-afinacion.md](../plan-afinacion.md) — milestones para mejorar
 - [compliance-checklist.md](compliance-checklist.md) — qué documentar

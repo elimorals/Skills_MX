@@ -4,7 +4,7 @@
 
 **Audiencia**: stakeholders, contribuyentes potenciales, partners.
 
-**Pre-lectura**: [estado-real.md](estado-real.md), [plan-afinacion.md](plan-afinacion.md).
+**Pre-lectura**: [estado-real.md](historial/estado-real-2026-06.md), [plan-afinacion.md](plan-afinacion.md).
 
 ---
 
@@ -211,6 +211,6 @@ Si 4 de 5: estás bien. Si 2-3: ajustar. Si 0-1: re-evaluar tesis.
 
 ## Ver también
 
-- [estado-real.md](estado-real.md) — estado actual honesto
+- [estado-real.md](historial/estado-real-2026-06.md) — estado actual honesto
 - [plan-afinacion.md](plan-afinacion.md) — plan táctico semana a semana
 - [INDEX.md](INDEX.md) — índice general

@@ -1,4 +1,18 @@
-# Arquitectura del monorepo `plugins-mx`
+# Arquitectura del monorepo `plugins-mx` (Skills_MX)
+
+> Cifras vigentes y estado de los MCPs: [README raíz](../../README.md) y [`mcp-servers/CATALOGO.md`](../../mcp-servers/CATALOGO.md).
+
+## Componentes
+
+| Pieza | Dónde | Qué hace |
+|---|---|---|
+| Skills (342) | `_shared/` (6 base) y `<vertical>/skills/` | Saben *qué* hacer: reglas fiscales, plantillas, flujos |
+| MCP servers (83, 417 tools) | `mcp-servers/mp_*` + `shared/` | *Hacen* la consulta real: SAT, Banxico, municipios, pasarelas |
+| Workflows (26) | `<plugin>/workflows/*.workflow.js` | Orquestan skills y MCPs para un proceso completo |
+| Hooks (19) | `scripts/hooks/`, registrados en `.claude/settings.json` | Validan antes de acciones sensibles (timbrar, WhatsApp masivo) y llevan bitácora |
+| Webhooks (13 handlers) | `webhooks/` | Receptor FastAPI de Stripe, Mercado Pago, Conekta, Facturama, WhatsApp… |
+| Marketplace (40 plugins) | `.claude-plugin/marketplace.json` | Generado por `scripts/generar-marketplace.py` desde cada `plugin.json` |
+
 
 ## Modelo: `_shared/` + verticales
 
@@ -28,7 +42,7 @@ Con `_shared/`, editamos una vez en la fuente de verdad y `sync-shared.sh` propa
 
 ### Trade-off: distribución vs mantenibilidad
 
-Claude Code no tiene "plugin dependencies" nativas — cada plugin se instala autocontenido. La sincronización física resuelve esto: cuando el usuario instala `colegios-mx`, recibe una copia completa de los `_shared/` skills más los específicos del vertical. No depende de tener `core-mexico` instalado.
+La sincronización física hace que cada vertical traiga una copia completa de las skills de `_shared/` más las suyas. Aun así, `core-mexico` se instala como base (`compatibility.requires`) porque aporta los MCPs comunes (Banxico, Facturama, SAT, Mercado Pago, Conekta…) que los verticales heredan.
 
 **Consecuencia operativa**: nunca editar `core-mexico/skills/<x>/SKILL.md` ni `freelancers-mx/skills/<x>/SKILL.md` directamente para skills que vinieron de `_shared/`. Editar en `_shared/` y re-sincronizar.
 
@@ -61,21 +75,19 @@ description: [Descripción funcional en español MX, 1-2 oraciones]. Usar cuando
 
 La cláusula explícita `NO usar para...` previene over-triggering en casos adyacentes.
 
-## Integraciones mockeables
+## MCPs: estado real, sin fallback silencioso
 
-Filosofía: **ningún skill asume credenciales reales en su comportamiento default**.
+Regla vigente desde la oleada 1 ([ADR 008](../adrs/008-estado-real-sin-fallback-silencioso.md), reemplaza al ADR 002 "mock-first"):
 
-Cada skill que normalmente llamaría a un servicio externo (PAC para CFDI, WhatsApp Business API, Banxico para tipo de cambio) debe:
+1. **Sin credenciales**: el MCP responde datos de ejemplo marcados `simulated: true`. `PLUGINS_MX_MOCK=1` fuerza ese modo.
+2. **Con credenciales**: consulta real. Cualquier error del proveedor se propaga como error tipado (`AuthError`, `UpstreamError`, `NotFoundError`, `ConfigError`…). Nunca se sustituye por datos de ejemplo.
+3. **CAPTCHA o login**: entrega a humano con formato único (`shared/portal_handoff.py`). El solver de CAPTCHA (`shared/captcha_solver.py`) es opt-in con `PLUGINS_MX_CAPTCHA_SOLVER=2captcha` + `TWOCAPTCHA_API_KEY`.
+4. **Sin API pública**: `ConfigError` con `motivo: sin_api_publica` y la alternativa manual.
+5. **Estado documentado**: cada `mp_*/README.md` tiene la sección "Estado real", y `scripts/generar-estado-mcps.py` arma con ellas `mcp-servers/CATALOGO.md` y la tabla del README.
 
-1. Tener una interfaz abstracta documentada.
-2. Implementar un **mock** que devuelva datos plausibles marcados con `simulated: true`.
-3. Permitir override por variables de entorno (`FACTURAMA_API_KEY`, `GUPSHUP_API_KEY`, etc.).
-4. Si la variable existe, intentar la llamada real; si no, devolver mock con advertencia clara al usuario.
+**Distribución**: los MCPs se lanzan con `uv run --no-project --with "plugins-mx-mcp-servers[extras] @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers" python -m mp_x.server`. No hay `cwd` ni rutas locales; `scripts/mcp-config-portable.py --check` lo verifica en CI.
 
-Esto permite:
-- Iterar sobre el skill sin credenciales.
-- Hacer demos sin riesgo de timbrar/enviar de verdad.
-- Probar el patrón completo y solo "encender" producción cuando el cliente quiere.
+Para acciones que mueven dinero o datos, los workflows usan `dry_run=true` por defecto ([ADR 007](../adrs/007-dry-run-default-en-acciones-criticas.md)).
 
 ## Criterios de "producción-grade" para un skill
 
@@ -87,7 +99,7 @@ Un skill se considera producción cuando:
 4. **Validaciones críticas**: chequeos que evitan errores fiscales/legales silenciosos. Lista explícita en el skill.
 5. **Salida estructurada**: formato consistente (JSON intermedio + presentación legible al usuario).
 6. **Tono apropiado**: matiz para usuario técnico vs no técnico.
-7. **Integración mockeable**: funciona sin credenciales, marca claramente cuando es mock.
+7. **Integración honesta**: sin credenciales devuelve `simulated: true`; con credenciales, los errores se propagan.
 8. **Lint passing**: `lint-skills.sh` lo aprueba.
 9. **Validación con experto del dominio**: al menos un revisor del sector confirmó outputs reales (contador, abogado, dentista, etc.).
 
@@ -104,25 +116,9 @@ Hasta que se cumpla el #9, el skill está en estado **beta** y debe marcarse as�
 - ¿Es una tarea costosa o ruidosa que merece contexto separado? → Agent.
 - ¿Es un workflow disparado por el usuario con sintaxis específica? → Command (en `commands/`).
 
-En `core-mexico` por ahora solo hay skills + commands. Agentes específicos por vertical (ej. `validador-cfdi-batch` para revisar lotes grandes de CFDIs) vendrán en cada plugin vertical cuando se justifiquen.
+Varios plugins traen agentes en `agents/` (p. ej. `validador-cfdi-batch` en `core-mexico`).
 
-## Roadmap inmediato
-
-1. Confirmar primer vertical con usuario (de los 16 sectores mapeados).
-2. Scaffoldear `<vertical>/` con `.claude-plugin/plugin.json`, skills propios, commands, `.mcp.json`.
-3. Implementar 2-3 skills core del vertical en calidad de producción.
-4. Dogfooding interno antes de buscar partner.
-5. Conseguir partner del sector para validación experta.
-6. Iterar a producción-grade.
-7. Lanzar a marketplace.
-
-## Convenciones de Git (cuando se inicialice)
-
-```bash
-git init
-git checkout -b main
-# .gitignore: secrets, .mcp.json local con credenciales, node_modules, *.xml de pruebas
-```
+## Convenciones de Git
 
 Commits convencionales:
 - `feat(<plugin>): ...`

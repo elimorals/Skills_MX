@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Análisis profundo del proyecto `plugins-mx` — 2026-06-12
 
 **Propósito**: documentar a profundidad la arquitectura del monorepo, cómo se comunican sus módulos, la realidad del filesystem vs lo reportado, los gaps reales contra la planeación original (`plugins-mx-research-problemas-no-resueltos.md` + `plugins-mx-planeacion-mcps-agentica.md`) y la recomendación de continuación.

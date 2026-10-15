@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06-15)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Sprint A + B + C + D — Resumen ejecutivo (2026-06-14 → 2026-06-15)
 
 Ciclo completo de servicios públicos + fiscal vehicular para PyMEs/profesionistas MX.

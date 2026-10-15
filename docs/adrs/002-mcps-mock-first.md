@@ -1,6 +1,8 @@
 # ADR 002 — MCPs mock-first por default
 
-**Status**: ACEPTADO  (2026-04)
+**Status**: REEMPLAZADA por [ADR 008](008-estado-real-sin-fallback-silencioso.md) (2026-10-14) · originalmente ACEPTADO (2026-04)
+
+> Se conserva como registro. La regla vigente es la del ADR 008: sin fallback silencioso a datos de ejemplo y estado real por MCP.
 
 ## Context
 

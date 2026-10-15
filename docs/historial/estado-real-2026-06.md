@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Estado real vs producción — auditoría honesta
 
 **Fecha de auditoría**: 2026-06-11

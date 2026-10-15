@@ -4,7 +4,9 @@
 
 **Audiencia**: desarrolladores que activan WhatsApp en producción.
 
-**Pre-lectura**: `_shared/whatsapp-business-mx/SKILL.md`, [glosario-tecnico.md](glosario-tecnico.md).
+**Pre-lectura**: `_shared/whatsapp-business-mx/SKILL.md`, [glosario-tecnico.md](../reference/glosario-tecnico.md).
+
+> **Qué trae el repo**: la skill `whatsapp-business-mx` (plantillas aprobables, ventana de 24 h, tono MX), el hook `confirmar-envio-masivo-wa.sh` que avisa antes de un envío masivo y el handler `meta_whatsapp` del receptor de webhooks (variables `WHATSAPP_*` en `.env.example`). No trae un MCP de envío: los ejemplos de esta guía muestran cómo armar uno.
 
 ---
 
@@ -45,25 +47,9 @@ GUPSHUP_APP_NAME=tu_app_name
 GUPSHUP_BUSINESS_NUMBER=521555...
 ```
 
-### 5. Activar MCP en plugin
+### 5. Conectar el envío
 
-```json
-{
-  "mcpServers": {
-    "whatsapp-business": {
-      "command": "npx",
-      "args": ["-y", "@gupshup/mcp-whatsapp"],
-      "env": {
-        "GUPSHUP_API_KEY": "${GUPSHUP_API_KEY}",
-        "GUPSHUP_APP_NAME": "${GUPSHUP_APP_NAME}"
-      },
-      "disabled": false
-    }
-  }
-}
-```
-
-> **Nota**: si `@gupshup/mcp-whatsapp` no existe en npm, construir MCP propio (ver sección final).
+El repo **no incluye un MCP de WhatsApp** y no se usa ningún paquete `@gupshup/mcp-whatsapp` (no hay uno verificado). Para enviar desde Claude Code, envuelve la API del BSP en un MCP propio (mismo patrón que el ejemplo de Meta Cloud API más abajo). Para recibir, el receptor de `webhooks/` ya tiene el handler `meta_whatsapp`.
 
 ### 6. Subir templates a Meta Business Manager
 
@@ -83,7 +69,7 @@ Usuario: "Manda recordatorio de cita a Juan Pérez al +52 55 1234 5678 para
 Claude → invoca whatsapp-business-mx
         Identifica template: utility_confirmacion_cita_general_mx
         Llena variables: {{1}} Juan, {{2}} Clínica Aurora, {{3}} viernes 15
-        Llama a Gupshup MCP
+        Llama a tu MCP de envío (Gupshup o Meta Cloud API)
         Devuelve confirmación de envío con message_id
 ```
 
@@ -324,4 +310,4 @@ Estos templates **NO han sido sometidos al flujo real de aprobación Meta**. Pue
 
 - `_shared/whatsapp-business-mx/SKILL.md` — capacidad central
 - `_shared/whatsapp-business-mx/references/templates-aprobados.md` — biblioteca
-- [seguridad.md](seguridad.md) — manejo de tokens y consentimientos
+- [seguridad.md](../architecture/seguridad.md) — manejo de tokens y consentimientos
