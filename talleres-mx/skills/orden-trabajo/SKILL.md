@@ -72,7 +72,7 @@ Teléfono: [...]
 ### Resumen económico
 
 - Subtotal: $X,XXX
-- IVA 16%: $X,XXX
+- IVA 16%: $X,XXX (8% si aplica estímulo de región fronteriza)
 - **Total**: $X,XXX MXN
 
 ## Plazo comprometido
@@ -83,13 +83,14 @@ Teléfono: [...]
 
 ## Política de garantía
 
-- Mano de obra: 30 días
-- Refacciones: 90 días (o garantía del fabricante, lo que sea mayor)
+- Mano de obra: 90 días naturales desde la entrega (mínimo LFPC, Arts. 77 y 81)
+- Refacciones: 90 días naturales o la garantía del fabricante, la que sea mayor
+- Refacciones usadas o reconstruidas solo con autorización expresa del cliente, anotada aquí (Art. 60 LFPC)
 - Términos detallados: ver certificado de garantía al cierre.
 
 ## Política de devolución de refacciones reemplazadas
 
-Conforme al derecho del consumidor, el cliente puede solicitar las refacciones reemplazadas para revisarlas. **Marcar al inicio**:
+Ofrece siempre las refacciones reemplazadas (PROFECO lo recomienda y evita sospechas de cobro por piezas no cambiadas). **Marcar al inicio**:
 
 - [ ] El cliente solicita las refacciones reemplazadas (se entregan al cierre).
 - [ ] El cliente NO requiere las refacciones (el taller las desecha o vende).
@@ -97,9 +98,9 @@ Conforme al derecho del consumidor, el cliente puede solicitar las refacciones r
 ## Política de auto detenido
 
 Si el cliente no recoge el auto en los 5 días posteriores a la fecha de entrega:
-- A partir del día 6: cargo de almacenamiento de $XXX/día.
-- A partir del día 30: notificación formal con base en Ley Federal del Consumidor.
-- A partir del día 60+: procedimiento de auto en abandono.
+- A partir del día 6: cargo de almacenamiento de $XXX/día, solo si esta cláusula se firmó al abrir la OT.
+- Avisos por escrito (WhatsApp y correo) con fecha.
+- Retención o abandono: no lo regula la LFPC; depende del código civil y reglamentos locales. Antes de retener o disponer del vehículo, consulta a un abogado.
 
 ## Forma de pago
 
@@ -108,7 +109,7 @@ Si el cliente no recoge el auto en los 5 días posteriores a la fecha de entrega
 - Tarjeta (con terminal en taller)
 - Mercado Pago / Stripe link al teléfono
 
-CFDI se emite al recibir el pago efectivo.
+CFDI se emite al recibir el pago (PUE). El IVA se cobra aunque el cliente no pida CFDI.
 
 ---
 
@@ -190,7 +191,7 @@ Fecha: DD/MM/AAAA HH:MM
 - **Foto del auto al ingreso desde 4 ángulos** + interior, especialmente con autos premium. Documenta el estado.
 - **Inventario de objetos personales** evita el "se me perdió el reloj que dejé en la guantera".
 - **Nivel de gasolina marcado** evita el "me lo entregaron en reservas".
-- **Refacciones reemplazadas a disposición del cliente** es derecho del consumidor según PROFECO. Honrarlo.
+- **Refacciones reemplazadas a disposición del cliente**: recomendación de PROFECO y la mejor prueba de que el cambio se hizo.
 
 ## Validaciones
 

@@ -86,10 +86,10 @@ Subtotal opcionales: $XXX
 - Mano de obra total: $X,XXX
 - Refacciones e insumos: $X,XXX
 - **Subtotal**: $X,XXX MXN
-- **IVA 16%**: $X,XXX MXN
+- **IVA 16%**: $X,XXX MXN (8% si el taller aplica el estímulo de región fronteriza; ver `iva-retenciones-mx`)
 - **Total con IVA**: $X,XXX MXN
 
-Sin IVA (si cliente no requiere CFDI): $X,XXX MXN
+El IVA se causa aunque el cliente no pida CFDI (Art. 1 LIVA). Sin datos fiscales, la venta va en la factura global a público en general; no ofrezcas "precio sin IVA".
 
 ## Plazos
 - Tiempo estimado de mano de obra: [horas]
@@ -99,7 +99,8 @@ Sin IVA (si cliente no requiere CFDI): $X,XXX MXN
 ## Condiciones
 - Vigencia de cotización: 7 días calendario
 - Cambios al diagnóstico tras desarme pueden generar costos adicionales que se notificarán al cliente para autorización adicional
-- Garantía: 30 días mano de obra, 90 días refacciones nuevas (PROFECO mínimo)
+- Garantía: 90 días naturales en mano de obra y refacciones (mínimo de la LFPC, Arts. 77 y 81), o la del fabricante si es mayor
+- Refacciones nuevas salvo autorización expresa del cliente para usadas o reconstruidas (Art. 60 LFPC)
 - Forma de pago: efectivo, transferencia, tarjeta. CFDI emitido contra pago.
 
 ## Autorización
@@ -146,7 +147,9 @@ Si para cambiar la balata hay que quitar la rueda y el cliente también necesita
 ### 6. Costo del diagnóstico
 Si el cliente no aprueba ningún trabajo, debe cubrir el costo del diagnóstico (típico $200-500 según el tiempo invertido). Esto se declara desde el inicio para evitar conflicto.
 
-## Catálogo común de servicios + precios referencia (CDMX, ajustar región)
+## Catálogo común de servicios + precios de referencia
+
+Rangos de mercado CDMX sin fuente verificada: úsalos solo como punto de partida y reemplázalos con la lista de precios del taller (que debe estar a la vista del cliente, NOM-174-SCFI-2007).
 
 | Servicio | Tiempo MO | Tarifa MO típica | Refacciones |
 |---|---|---|---|
