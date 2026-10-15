@@ -34,12 +34,16 @@ allowed-tools: Read, Write
 
 ## Data sources
 
-- `mp_mercado_libre`, `mp_amazon_mx_seller`, `mp_shopify_mx`
-- POS/tracker tienda física (CSV manual o API si existe)
+- Órdenes: `mercadolibre_list_orders`, `amazon_mx_list_orders`, `shopify_list_orders`; stock: `mercadolibre_get_item`, `amazon_mx_get_listing`, `shopify_get_inventory_level`
+- Los tres MCPs están "real sin validar (requieren credenciales)": sin credenciales, pide exportaciones CSV de cada panel
+- Tienda física: CSV del POS (si usa Soft Restaurant u otro POS, su exportación)
+- Conversión (visitas → orden) no la entregan estos MCPs: tómala del panel de cada canal o de GA4 si el usuario la tiene
 
 ## Métricas clave
 
-- Ingreso total + por canal
+- Ingreso total + por canal (aclarar si es bruto con IVA o neto)
+- Ingreso neto por canal = venta sin IVA − cargos del canal − envío absorbido
+- Retenciones de plataformas (ML, Amazon) como anticipo, aparte del margen: ISR 2.5% PF/PM con RFC en 2026 (LIF 2026 Art. 25 fr. VI) y 50% del IVA a PF (Art. 18-J LIVA). Cuadra contra el CFDI de retenciones de cada plataforma
 - Conversión (visitantes → orden)
 - ROAS por canal (si hay ads)
 - Stock sincronizado vs desincronizado
