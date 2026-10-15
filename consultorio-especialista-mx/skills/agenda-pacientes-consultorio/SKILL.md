@@ -1,6 +1,6 @@
 ---
 name: agenda-pacientes-consultorio
-description: Gestión de agenda de pacientes para consultorio médico especialista en México (presencial). Cubre citas programadas, recordatorios automáticos WhatsApp 24h y 2h antes, manejo de cancelaciones, lista de espera para huecos, integración con calendar (Google/iCal), y prevención de overbooking. Cobra horario laborable real (vs telemedicina que es 24/7). Usar cuando el usuario diga agenda consultorio, citas pacientes, programar cita, calendario consultas.
+description: Gestión de agenda de pacientes para consultorio médico especialista en México (presencial). Cubre citas programadas, recordatorios automáticos WhatsApp 24h y 2h antes, manejo de cancelaciones, lista de espera para huecos, integración con calendar (Google/iCal), y prevención de overbooking. Considera horario laborable real del consultorio (a diferencia de telemedicina, que puede ser 24/7). Usar cuando el usuario diga agenda consultorio, citas pacientes, programar cita, calendario de consultas, reagendar paciente, lista de espera.
 allowed-tools: Read, Write
 ---
 
@@ -53,6 +53,7 @@ Si paciente quiere cita pronto pero no hay espacio:
 
 ## Casos edge
 
-- Paciente no llega: dejar 15 min, después marcar no_asistio + cobrar penalización si aplica
+- Paciente no llega: dejar 15 min, después marcar no_asistio + cobrar penalización solo si la política se informó por escrito al agendar (LFPC)
 - Urgencia mid-day: reagendar cita programada
 - Cancelación última hora: enviar a lista de espera
+- Recordatorios por WhatsApp: plantillas aprobadas por Meta, opt-in del paciente y sin motivo de consulta ni diagnóstico en el texto (dato sensible, LFPDPPP 2025) → skill compartida `whatsapp-business-mx`
