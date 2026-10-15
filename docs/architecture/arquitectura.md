@@ -10,7 +10,7 @@
 | MCP servers (83, 417 tools) | `mcp-servers/mp_*` + `shared/` | *Hacen* la consulta real: SAT, Banxico, municipios, pasarelas |
 | Workflows (26) | `<plugin>/workflows/*.workflow.js` | Orquestan skills y MCPs para un proceso completo |
 | Hooks (19) | `scripts/hooks/`, registrados en `.claude/settings.json` | Validan antes de acciones sensibles (timbrar, WhatsApp masivo) y llevan bitácora |
-| Webhooks (13 handlers) | `webhooks/` | Receptor FastAPI de Stripe, Mercado Pago, Conekta, Facturama, WhatsApp… |
+| Webhooks (12 handlers) | `webhooks/` | Receptor FastAPI de Stripe, Mercado Pago, Conekta, Facturama, WhatsApp… |
 | Marketplace (40 plugins) | `.claude-plugin/marketplace.json` | Generado por `scripts/generar-marketplace.py` desde cada `plugin.json` |
 
 

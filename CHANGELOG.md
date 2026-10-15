@@ -17,7 +17,7 @@ Formato: [Keep a Changelog](https://keepachangelog.com).
 
 ## [0.3.0] — 2026-10-14
 
-Cifras a esta versión: 40 plugins, 342 skills, 83 MCPs con 417 tools, 26 workflows, 19 hooks, 13 handlers de webhook, 1,900 tests. Licencia Apache-2.0.
+Cifras a esta versión: 40 plugins, 342 skills, 83 MCPs con 417 tools, 26 workflows, 17 scripts de hook (12 registrados), 12 handlers de webhook, 1,900 tests. Licencia Apache-2.0.
 
 ### Changed — oleadas 1 y 2 (PR #1)
 - **MCPs de mock a real** por grupos (SAT web services y portal con e.firma, federales públicos, estatales y municipales, APIs privadas): sin fallback silencioso a datos de ejemplo. Sin credenciales responden `simulated: true`; con credenciales los errores se propagan como error tipado; `PLUGINS_MX_MOCK=1` fuerza el modo de ejemplo. Decisión en `docs/adrs/008-estado-real-sin-fallback-silencioso.md`, que reemplaza al ADR 002 (mock-first).
