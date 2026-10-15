@@ -1,6 +1,6 @@
 ---
 name: gestion-pacientes-confidencial
-description: Directorio pacientes con acceso restringido al terapeuta titular y a un suplente designado en caso de emergencia. Cifrado, audit log obligatorio LGPDPPSO. Pacientes pueden ser referidos a otro terapeuta sin compartir notas (solo derivación formal). Usar cuando el usuario diga pacientes terapia, directorio psicologia.
+description: Directorio pacientes con acceso restringido al terapeuta titular y a un suplente designado en caso de emergencia. Cifrado y bitácora de accesos como medidas de seguridad para datos sensibles (LFPDPPP 2025; la LGPDPPSO solo aplica a instituciones públicas) y NOM-024-SSA3-2012 si usa expediente electrónico. Pacientes pueden ser referidos a otro terapeuta sin compartir notas (solo derivación formal). Usar cuando el usuario diga pacientes terapia, directorio psicología, lista de pacientes, quién puede ver mis notas.
 allowed-tools: Read, Write
 ---
 
