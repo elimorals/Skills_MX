@@ -27,4 +27,7 @@ allowed-tools: Read, Write
 }
 ```
 
-⚠ Hook `confirmar-envio-masivo-wa` se dispara si > 50 destinatarios.
+⚠ El hook `confirmar-envio-masivo-wa` emite una advertencia (no bloquea) si hay más de 50 destinatarios (umbral configurable con `PLUGINS_MX_WA_BATCH_UMBRAL`). Confirma con el usuario antes de enviar.
+
+- WhatsApp fuera de la ventana de 24 h solo con plantillas aprobadas por Meta; Meta cobra por mensaje entregado (desde 01-07-2025) según la categoría (marketing/utility). Ver skill `whatsapp-business-mx`.
+- Avisos de reformas: cita la fuente (DOF/RMF) y fecha; no anuncies cambios no publicados como vigentes.
