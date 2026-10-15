@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plugins MX · Infraestructura de cumplimiento fiscal y municipal para México</title>
-<meta name="description" content="83 servidores MCP para trámites y cumplimiento en México (SAT, REPSE, ISN, predial, padrones federales). Estado real de cada uno, validado el 14-oct-2026.">
+<meta name="description" content="40 plugins de Claude Code, 342 skills y 83 servidores MCP para trámites y cumplimiento en México (SAT, REPSE, ISN, predial, padrones federales). Estado real de cada uno, validado el 14-oct-2026.">
 <meta name="author" content="Elías Rashid Morales Mendoza">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="keywords" content="compliance fiscal México, predial multi-municipio, REPSE Art. 15 LFT, ISN 32 estados, MCP México, automatización SAT IMSS, infraestructura agentes IA México">
@@ -19,7 +19,7 @@
 <meta property="og:locale" content="es_MX">
 <meta property="og:url" content="https://skills-mexico.vercel.app/">
 <meta property="og:title" content="Plugins MX — Infraestructura de compliance fiscal y municipal MX">
-<meta property="og:description" content="83 MCPs · estado real al 14-oct-2026: 23 validados en vivo, 8 sin validar por credenciales, 17 con entrega a humano, 10 cálculos normativos.">
+<meta property="og:description" content="83 MCPs · estado real al 14-oct-2026: 24 validados en vivo, 13 sin validar por credenciales, 17 con entrega a humano, 10 cálculos normativos.">
 <meta property="og:image" content="https://skills-mexico.vercel.app/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -28,7 +28,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Plugins MX — Infraestructura de compliance MX">
-<meta name="twitter:description" content="83 MCPs · estado real al 14-oct-2026: 23 validados en vivo, 8 sin validar por credenciales, 17 con entrega a humano, 10 cálculos normativos.">
+<meta name="twitter:description" content="83 MCPs · estado real al 14-oct-2026: 24 validados en vivo, 13 sin validar por credenciales, 17 con entrega a humano, 10 cálculos normativos.">
 <meta name="twitter:image" content="https://skills-mexico.vercel.app/og-image.png">
 <meta name="twitter:image:alt" content="Plugins MX — Compliance Infrastructure México 2026">
 
@@ -86,10 +86,9 @@
             "@id": "https://skills-mexico.vercel.app/productos/predial#app",
             "name": "Cartera Predial Multi-municipio",
             "applicationCategory": "BusinessApplication",
-            "operatingSystem": "Cross-platform (Python 3.11+)",
+            "operatingSystem": "Cross-platform (Python 3.10+)",
             "url": "https://skills-mexico.vercel.app/productos/predial",
-            "description": "Consulta paralela del adeudo predial de N propiedades en 243 municipios mexicanos. Dashboard XLSX con vencimientos, descuentos y ranking.",
-            "offers": { "@type": "Offer", "priceCurrency": "MXN", "price": "0", "availability": "https://schema.org/InStock", "url": "https://skills-mexico.vercel.app/#demo" },
+            "description": "Consulta del adeudo predial con un catálogo de 243 municipios (revalidados el 2026-10-14: Toluca real, CDMX con entrega a humano). El workflow cartera-predial-multi-municipio consolida la cartera en un CSV.",
             "provider": { "@id": "https://skills-mexico.vercel.app/#organization" }
           }
         },
@@ -100,10 +99,9 @@
             "@id": "https://skills-mexico.vercel.app/productos/repse#app",
             "name": "Compliance REPSE Art. 15 LFT",
             "applicationCategory": "BusinessApplication",
-            "operatingSystem": "Cross-platform (Python 3.11+)",
+            "operatingSystem": "Cross-platform (Python 3.10+)",
             "url": "https://skills-mexico.vercel.app/productos/repse",
             "description": "Verificación binaria del registro REPSE de proveedores ante STPS. Evita responsabilidad solidaria laboral y fiscal del Art. 15 LFT.",
-            "offers": { "@type": "Offer", "priceCurrency": "MXN", "price": "0", "availability": "https://schema.org/InStock" },
             "provider": { "@id": "https://skills-mexico.vercel.app/#organization" }
           }
         },
@@ -114,10 +112,9 @@
             "@id": "https://skills-mexico.vercel.app/productos/isn#app",
             "name": "ISN-as-a-Service (32 estados)",
             "applicationCategory": "BusinessApplication",
-            "operatingSystem": "Cross-platform (Python 3.11+)",
+            "operatingSystem": "Cross-platform (Python 3.10+)",
             "url": "https://skills-mexico.vercel.app/productos/isn",
             "description": "Cálculo local del Impuesto sobre Nómina con la tasa 2026 de las 32 entidades (2.5% a 4.25%, fuente secundaria). No genera líneas de captura ni descarga declaraciones.",
-            "offers": { "@type": "Offer", "priceCurrency": "MXN", "price": "0", "availability": "https://schema.org/InStock" },
             "provider": { "@id": "https://skills-mexico.vercel.app/#organization" }
           }
         }
@@ -145,7 +142,7 @@
     <span class="strip-dot strip-dot-mid">·</span>
     <span class="strip-cdmx">Ciudad de México, México</span>
     <span class="strip-dot strip-dot-end">·</span>
-    <span class="strip-live"><span class="pulse"></span> 83 MCPs · 23 validados en vivo · estado al 14-oct-2026</span>
+    <span class="strip-live"><span class="pulse"></span> 40 plugins · 342 skills · 83 MCPs · 24 validados en vivo · estado al 14-oct-2026</span>
   </div>
 </div>
 
@@ -161,8 +158,8 @@
     <ul class="nav-links">
       <li><a href="/marketplace/">Marketplace</a></li>
       <li><a href="/portales/">Portales</a></li>
-      <li><a href="/precios/">Precios</a></li>
       <li><a href="/guias/">Guías</a></li>
+      <li><a href="#verticales">Plugins</a></li>
       <li><a href="#productos">Productos</a></li>
       <li><a href="#demo" class="nav-cta">Agendar demo →</a></li>
     </ul>
@@ -188,7 +185,7 @@
     </h1>
 
     <p class="hero-lede">
-      83 servidores MCP para SAT, REPSE, ISN estatal, predial municipal, padrones federales, normativa laboral y sanitaria. Cada uno dice qué hace de verdad: consulta en vivo, cliente sin validar, entrega a humano o cálculo local.
+      40 plugins de Claude Code con 342 skills y 83 servidores MCP (417 tools) para SAT, REPSE, ISN estatal, predial municipal, padrones federales, normativa laboral y sanitaria. Cada uno dice qué hace de verdad: consulta en vivo, cliente sin validar, entrega a humano o cálculo local.
       Construido para despachos contables, inmobiliarias y áreas fiscales corporativas que cobran por hora — no por hoja.
     </p>
 
@@ -207,7 +204,7 @@
         <span class="stat-label">MCP servers</span>
       </div>
       <div class="stat">
-        <span class="stat-n" data-target="23">0</span>
+        <span class="stat-n" data-target="24">0</span>
         <span class="stat-label">Validados en vivo (14-oct-2026)</span>
       </div>
       <div class="stat">
@@ -224,8 +221,8 @@
   <!-- Marquee de portales integrados -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>SAT</span><span>·</span><span>IMSS</span><span>·</span><span>INFONAVIT</span><span>·</span><span>BANXICO</span><span>·</span><span>REPSE</span><span>·</span><span>CONDUSEF</span><span>·</span><span>SEP RNP</span><span>·</span><span>CDMX Finanzas</span><span>·</span><span>Jalisco SAT</span><span>·</span><span>NL eGobierno</span><span>·</span><span>EdoMex SFPyA</span><span>·</span><span>Querétaro</span><span>·</span><span>Mercado Pago</span><span>·</span><span>Conekta</span><span>·</span><span>Facturama</span><span>·</span><span>Bitso</span><span>·</span><span>Mercado Libre</span><span>·</span><span>Inmuebles24</span><span>·</span><span>Amazon MX SP-API</span><span>·</span><span>Shopify MX</span><span>·</span><span>SACPI Michoacán</span><span>·</span><span>Mérida</span><span>·</span><span>Tijuana</span><span>·</span><span>Puebla</span><span>·</span>
-      <span>SAT</span><span>·</span><span>IMSS</span><span>·</span><span>INFONAVIT</span><span>·</span><span>BANXICO</span><span>·</span><span>REPSE</span><span>·</span><span>CONDUSEF</span><span>·</span><span>SEP RNP</span><span>·</span><span>CDMX Finanzas</span><span>·</span><span>Jalisco SAT</span><span>·</span><span>NL eGobierno</span><span>·</span><span>EdoMex SFPyA</span><span>·</span><span>Querétaro</span><span>·</span><span>Mercado Pago</span><span>·</span><span>Conekta</span><span>·</span><span>Facturama</span><span>·</span>
+      <span>SAT</span><span>·</span><span>BANXICO</span><span>·</span><span>REPSE</span><span>·</span><span>CONDUSEF</span><span>·</span><span>SEP RNP</span><span>·</span><span>CDMX Finanzas</span><span>·</span><span>Jalisco SAT</span><span>·</span><span>NL eGobierno</span><span>·</span><span>EdoMex SFPyA</span><span>·</span><span>Querétaro</span><span>·</span><span>Mercado Pago</span><span>·</span><span>Conekta</span><span>·</span><span>Facturama</span><span>·</span><span>Bitso</span><span>·</span><span>Mercado Libre</span><span>·</span><span>Amazon MX SP-API</span><span>·</span><span>Shopify MX</span><span>·</span><span>Mérida</span><span>·</span><span>Tijuana</span><span>·</span><span>Puebla</span><span>·</span>
+      <span>SAT</span><span>·</span><span>BANXICO</span><span>·</span><span>REPSE</span><span>·</span><span>CONDUSEF</span><span>·</span><span>SEP RNP</span><span>·</span><span>CDMX Finanzas</span><span>·</span><span>Jalisco SAT</span><span>·</span><span>NL eGobierno</span><span>·</span><span>EdoMex SFPyA</span><span>·</span><span>Querétaro</span><span>·</span><span>Mercado Pago</span><span>·</span><span>Conekta</span><span>·</span><span>Facturama</span><span>·</span>
     </div>
   </div>
 </header>
@@ -252,12 +249,12 @@
       </header>
       <h3 class="prod-h">Cartera Predial<br><em>Multi-municipio</em></h3>
       <p class="prod-desc">
-        Consulta el adeudo predial de N propiedades en distintos municipios en paralelo y entrega un dashboard XLSX con vencimientos, descuentos y ranking de prioridad.
+        Consulta el adeudo predial de una cartera de propiedades en distintos municipios; el workflow <span class="mono">cartera-predial-multi-municipio</span> la consolida en un CSV listo para Excel.
       </p>
       <ul class="prod-feats">
         <li><span class="bullet"></span> Auto-routing entre 243 municipios catalogados</li>
         <li><span class="bullet"></span> Validado 14-oct-2026: Toluca real; CDMX entrega a humano (ALTCHA)</li>
-        <li><span class="bullet"></span> Excel con totales, semáforo de vencimientos</li>
+        <li><span class="bullet"></span> Donde hay CAPTCHA: entrega a humano con URL y pasos</li>
         <li><span class="bullet"></span> Resto del catálogo: discovery de junio 2026, sin revalidar</li>
       </ul>
       <div class="prod-metrics">
@@ -649,63 +646,156 @@
 <section id="verticales" class="section section-verticales">
   <div class="section-head">
     <span class="section-no">05</span>
-    <h2 class="section-h">40 verticales. <em>Una sola filosofía.</em></h2>
+    <h2 class="section-h">40 plugins verticales. <em>Por sector.</em></h2>
     <p class="section-desc">
-      Cada vertical hereda <span class="mono">core-mexico</span> (CFDI 4.0, WhatsApp Business, validación RFC, IVA/retenciones) y agrega lo específico de su sector.
+      Cada plugin trae sus skills, comandos, agentes y MCPs, y depende de <span class="mono">core-mexico</span>. En total: 342 skills (6 base en <span class="mono">_shared/</span> sincronizadas a cada plugin), 26 workflows ejecutables y 17 scripts de hooks (12 registrados en <span class="mono">.claude/settings.json</span>).
     </p>
   </div>
 
-  <div class="vert-grid">
-    <span class="vert vert-orig">freelancers-mx</span>
-    <span class="vert vert-orig">agencia-marketing-mx</span>
-    <span class="vert vert-orig">colegios-mx</span>
-    <span class="vert vert-orig">talleres-mx</span>
-    <span class="vert vert-orig">ecommerce-mx</span>
-    <span class="vert vert-orig">salon-mx</span>
-    <span class="vert vert-orig">veterinaria-mx</span>
-    <span class="vert vert-orig">wedding-mx</span>
-    <span class="vert vert-orig">restaurante-mx</span>
-    <span class="vert vert-orig">inmobiliaria-mx</span>
-    <span class="vert vert-orig">core-mexico</span>
-
-    <span class="vert vert-top">pf-anual-mx <small>9.5</small></span>
-    <span class="vert vert-top">arrendador-residencial-mx <small>9.3</small></span>
-    <span class="vert vert-top">tramites-vehiculares-mx <small>9.0</small></span>
-    <span class="vert vert-top">conductor-plataforma-mx <small>8.8</small></span>
-    <span class="vert vert-top">tienda-omnicanal-mx <small>8.5</small></span>
-    <span class="vert vert-top">consultorio-especialista-mx <small>8.3</small></span>
-    <span class="vert vert-top">clinica-salud-mx <small>8.3</small></span>
-    <span class="vert vert-top">airbnb-host-mx <small>8.2</small></span>
-    <span class="vert vert-top">notarias-mx <small>8.0</small></span>
-    <span class="vert vert-top">despacho-contable-mx <small>7.9</small></span>
-    <span class="vert vert-top">psicoterapia-mx <small>7.8</small></span>
-    <span class="vert vert-top">servicios-publicos-mx <small>7.8</small></span>
-    <span class="vert vert-top">migracion-extranjeros-mx <small>7.5</small></span>
-    <span class="vert vert-top">gmm-asegurado-mx <small>7.5</small></span>
-    <span class="vert vert-top">paciente-mx <small>7.5</small></span>
-
-    <span class="vert vert-spec">telemedicina-mx</span>
-    <span class="vert vert-spec">nomina-pymes-mx</span>
-    <span class="vert vert-spec">cripto-fiscal-mx</span>
-    <span class="vert vert-spec">educacion-particular-b2c-mx</span>
-    <span class="vert vert-spec">donatarias-ongs-mx</span>
-    <span class="vert vert-spec">importadores-mx</span>
-    <span class="vert vert-spec">sucesion-empresa-familiar-mx</span>
-    <span class="vert vert-spec">crowdfunding-itf-mx</span>
-    <span class="vert vert-spec">energia-solar-pyme-mx</span>
-
-    <span class="vert vert-extra">agente-seguros-mx</span>
-    <span class="vert vert-extra">constructora-mx</span>
-    <span class="vert vert-extra">despacho-legal-mx</span>
-    <span class="vert vert-extra">geriatria-cuidado-mayor-mx</span>
-    <span class="vert vert-extra">laboratorio-clinico-mx</span>
+  <div class="mcp-cat">
+    <div class="mcp-cat-head">
+      <span class="cat-no">A.</span>
+      <h3>Base</h3>
+      <span class="cat-count">1</span>
+    </div>
+    <div class="mcp-list">
+      <span class="mcp-item">core-mexico · CFDI, IVA y retenciones, RFC, MXN, LFPDPPP, WhatsApp; dependencia de todos</span>
+    </div>
   </div>
-
-  <div class="vert-legend">
-    <span><span class="dot dot-orig"></span> Originales 11</span>
-    <span><span class="dot dot-top"></span> TOP research 15</span>
-    <span><span class="dot dot-spec"></span> Áreas no cubiertas 9</span>
-    <span><span class="dot dot-extra"></span> Extras 5</span>
+  <div class="mcp-cat">
+    <div class="mcp-cat-head">
+      <span class="cat-no">B.</span>
+      <h3>Fiscal y contable</h3>
+      <span class="cat-count">7</span>
+    </div>
+    <div class="mcp-list">
+      <span class="mcp-item">pf-anual-mx · declaración anual PF</span>
+      <span class="mcp-item">despacho-contable-mx · contabilidad multi-cliente</span>
+      <span class="mcp-item">nomina-pymes-mx · nómina, IMSS-IDSE, INFONAVIT</span>
+      <span class="mcp-item">cripto-fiscal-mx · ISR de cripto</span>
+      <span class="mcp-item">donatarias-ongs-mx · CFDI de donativos, transparencia</span>
+      <span class="mcp-item">sucesion-empresa-familiar-mx · patrimonio y sucesión</span>
+      <span class="mcp-item">crowdfunding-itf-mx · inversionistas en IFC</span>
+    </div>
+  </div>
+  <div class="mcp-cat">
+    <div class="mcp-cat-head">
+      <span class="cat-no">C.</span>
+      <h3>Comercio</h3>
+      <span class="cat-count">5</span>
+    </div>
+    <div class="mcp-list">
+      <span class="mcp-item">ecommerce-mx · Mercado Libre, Shopify, Amazon</span>
+      <span class="mcp-item">tienda-omnicanal-mx · inventario multicanal</span>
+      <span class="mcp-item">restaurante-mx · restaurantes, dark kitchens, delivery</span>
+      <span class="mcp-item">importadores-mx · IGI, DTA, pedimentos</span>
+      <span class="mcp-item">agencia-marketing-mx · reportes y copy para clientes</span>
+    </div>
+  </div>
+  <div class="mcp-cat">
+    <div class="mcp-cat-head">
+      <span class="cat-no">D.</span>
+      <h3>Servicios profesionales</h3>
+      <span class="cat-count">4</span>
+    </div>
+    <div class="mcp-list">
+      <span class="mcp-item">freelancers-mx · cotizaciones, honorarios, RESICO</span>
+      <span class="mcp-item">despacho-legal-mx · honorarios y contratos</span>
+      <span class="mcp-item">notarias-mx · citas, escrituras</span>
+      <span class="mcp-item">agente-seguros-mx · cartera de pólizas, CNSF</span>
+    </div>
+  </div>
+  <div class="mcp-cat">
+    <div class="mcp-cat-head">
+      <span class="cat-no">E.</span>
+      <h3>Salud</h3>
+      <span class="cat-count">9</span>
+    </div>
+    <div class="mcp-list">
+      <span class="mcp-item">clinica-salud-mx · clínicas multiconsultorio</span>
+      <span class="mcp-item">consultorio-especialista-mx · especialistas con consultorio privado</span>
+      <span class="mcp-item">telemedicina-mx · consulta remota y receta electrónica</span>
+      <span class="mcp-item">psicoterapia-mx · práctica privada de psicología</span>
+      <span class="mcp-item">laboratorio-clinico-mx · laboratorios clínicos PyME</span>
+      <span class="mcp-item">geriatria-cuidado-mayor-mx · cuidado de adultos mayores</span>
+      <span class="mcp-item">veterinaria-mx · clínicas veterinarias</span>
+      <span class="mcp-item">paciente-mx · citas y expediente del paciente</span>
+      <span class="mcp-item">gmm-asegurado-mx · asegurado de Gastos Médicos Mayores</span>
+    </div>
+  </div>
+  <div class="mcp-cat">
+    <div class="mcp-cat-head">
+      <span class="cat-no">F.</span>
+      <h3>Inmobiliario y construcción</h3>
+      <span class="cat-count">4</span>
+    </div>
+    <div class="mcp-list">
+      <span class="mcp-item">inmobiliaria-mx · corredores</span>
+      <span class="mcp-item">arrendador-residencial-mx · rentas PF</span>
+      <span class="mcp-item">airbnb-host-mx · renta corta, ISH</span>
+      <span class="mcp-item">constructora-mx · obra, REPSE</span>
+    </div>
+  </div>
+  <div class="mcp-cat">
+    <div class="mcp-cat-head">
+      <span class="cat-no">G.</span>
+      <h3>Educación</h3>
+      <span class="cat-count">2</span>
+    </div>
+    <div class="mcp-list">
+      <span class="mcp-item">colegios-mx · K-12, colegiaturas deducibles</span>
+      <span class="mcp-item">educacion-particular-b2c-mx · cursos en línea</span>
+    </div>
+  </div>
+  <div class="mcp-cat">
+    <div class="mcp-cat-head">
+      <span class="cat-no">H.</span>
+      <h3>Servicios personales y eventos</h3>
+      <span class="cat-count">3</span>
+    </div>
+    <div class="mcp-list">
+      <span class="mcp-item">salon-mx · salones, spas, barberías</span>
+      <span class="mcp-item">wedding-mx · wedding planners</span>
+      <span class="mcp-item">talleres-mx · talleres mecánicos</span>
+    </div>
+  </div>
+  <div class="mcp-cat">
+    <div class="mcp-cat-head">
+      <span class="cat-no">I.</span>
+      <h3>Vehículos y movilidad</h3>
+      <span class="cat-count">2</span>
+    </div>
+    <div class="mcp-list">
+      <span class="mcp-item">tramites-vehiculares-mx · tenencia, verificación, multas</span>
+      <span class="mcp-item">conductor-plataforma-mx · Uber, DiDi, Cabify</span>
+    </div>
+  </div>
+  <div class="mcp-cat">
+    <div class="mcp-cat-head">
+      <span class="cat-no">J.</span>
+      <h3>Hogar, energía y trámites</h3>
+      <span class="cat-count">3</span>
+    </div>
+    <div class="mcp-list">
+      <span class="mcp-item">servicios-publicos-mx · CFE, agua, predial, gas</span>
+      <span class="mcp-item">energia-solar-pyme-mx · interconexión CFE</span>
+      <span class="mcp-item">migracion-extranjeros-mx · trámites INM</span>
+    </div>
+  </div>
+  <div class="mcp-cat">
+    <div class="mcp-cat-head">
+      <span class="cat-no">↻</span>
+      <h3>Workflows ejecutables</h3>
+      <span class="cat-count">26</span>
+    </div>
+    <div class="mcp-list">
+      <span class="mcp-item"><strong>core-mexico</strong> · cfdi-emision-completa · emitir-cfdi-tras-pago · pago-conciliacion · cierre-fiscal-mensual · auditoria-fiscal-mensual · declaracion-resico-mensual · due-diligence-cliente · validacion-cfdis-historico</span>
+      <span class="mcp-item"><strong>freelancers-mx</strong> · cobranza-multinivel · migracion-rfc-a-otro-regimen</span>
+      <span class="mcp-item"><strong>inmobiliaria-mx</strong> · cobranza-renta-mensual · cartera-predial-multi-municipio</span>
+      <span class="mcp-item"><strong>cripto-fiscal-mx</strong> · declaracion-anual-cripto · cripto-cierre-anual</span>
+      <span class="mcp-item"><strong>agencia-marketing-mx</strong> · reporte-cliente-agencia · respuesta-crisis-cm</span>
+      <span class="mcp-item"><strong>Otros</strong> · pf-anual-completa · dispersion-nomina · sync-multicanal · comunicacion-padres-masiva · garantia-vehicular · monitoreo-diario-vehicular · telemedicina-consulta · donativo-anual · pedimento-importacion · energia-bidireccional-mensual</span>
+    </div>
   </div>
 </section>
 
@@ -725,7 +815,7 @@
       <div class="caso-num">↗ 01</div>
       <h3 class="caso-h">Despacho contable</h3>
       <p class="caso-pain"><strong>Dolor:</strong> 200 clientes × 32 estados × declaración mensual ISN = caos de portales, contraseñas y vencimientos día 17.</p>
-      <p class="caso-sol"><strong>Solución:</strong> <span class="mono">isn_calcular()</span> + <span class="mono">isn_generar_linea_captura()</span> en bulk. Dashboard con semáforo de vencimientos. Cron diario que avisa al cliente por WhatsApp.</p>
+      <p class="caso-sol"><strong>Solución:</strong> <span class="mono">isn_calcular()</span> por cliente y estado con el catálogo de tasas 2026. La línea de captura y la declaración siguen en el portal estatal: requieren la sesión del contribuyente.</p>
       <div class="caso-tags">
         <span>ISN-as-a-Service</span>
         <span>Compliance REPSE</span>
@@ -737,7 +827,7 @@
       <div class="caso-num">↗ 02</div>
       <h3 class="caso-h">Inmobiliaria / Arrendador</h3>
       <p class="caso-pain"><strong>Dolor:</strong> Cartera de 60 propiedades en CDMX, Jalisco y Querétaro. Auditar predial trimestralmente toma 3 días-persona.</p>
-      <p class="caso-sol"><strong>Solución:</strong> <span class="mono">cartera-predial-multi-municipio.workflow.js</span> consulta los 60 inmuebles en paralelo. Excel con totales, vencimientos y ranking listo en &lt; 5 minutos.</p>
+      <p class="caso-sol"><strong>Solución:</strong> <span class="mono">cartera-predial-multi-municipio.workflow.js</span> consulta los municipios con portal en línea y entrega a humano los que tienen CAPTCHA. Consolida la cartera en un CSV.</p>
       <div class="caso-tags">
         <span>Cartera Predial</span>
         <span>arrendador-residencial-mx</span>
@@ -749,7 +839,7 @@
       <div class="caso-num">↗ 03</div>
       <h3 class="caso-h">Área fiscal corporativa</h3>
       <p class="caso-pain"><strong>Dolor:</strong> Contratan 40 proveedores especializados. Sin REPSE vigente = responsabilidad solidaria masiva (Art. 15 LFT) en sueldos caídos.</p>
-      <p class="caso-sol"><strong>Solución:</strong> <span class="mono">repse_verificar_proveedor()</span> antes de cada PO. Cron mensual revalida la base completa. Alertas si algún proveedor vence el registro.</p>
+      <p class="caso-sol"><strong>Solución:</strong> <span class="mono">repse_verificar_proveedor()</span> antes de cada PO (portal STPS sin CAPTCHA, validado en vivo). La revalidación periódica de la base la programas tú.</p>
       <div class="caso-tags">
         <span>Compliance REPSE</span>
         <span>workflow: due-diligence-cliente</span>
@@ -771,18 +861,18 @@
   <div class="como-grid">
     <div class="como-step">
       <div class="step-no">i.</div>
-      <h3>Setup en una tarde</h3>
-      <p>Clonas el repo, corres <span class="mono">install-hooks.sh</span>, declaras tus credenciales en <span class="mono">.env</span>. Sin credenciales, los MCPs de portales públicos consultan en vivo y los de APIs privadas responden datos marcados <span class="mono">simulated: true</span>.</p>
+      <h3>Instalas desde el marketplace</h3>
+      <p><span class="mono">/plugin marketplace add elimorals/Skills_MX</span> y <span class="mono">/plugin install core-mexico --marketplace elimorals/Skills_MX</span> (más el vertical que quieras). Los MCPs se descargan solos con <span class="mono">uv</span>, el único requisito además de Claude Code. Las credenciales van en variables de entorno. Sin credenciales, los MCPs de portales públicos consultan en vivo y los de APIs privadas responden datos marcados <span class="mono">simulated: true</span>.</p>
     </div>
     <div class="como-step">
       <div class="step-no">ii.</div>
       <h3>Conectas a Claude o a tu stack</h3>
-      <p>Cada MCP es invocable desde Claude Code, Cursor, Windsurf, o consumible como librería Python pura (<span class="mono">clients/predial_mx_client</span>).</p>
+      <p>Un MCP suelto se agrega copiando su <span class="mono">example.mcp.json</span> (<span class="mono">uv run --no-project … python -m mp_x.server</span>); no depende de dónde esté el repo. Predial también existe como librería Python (<span class="mono">clients/predial_mx_client</span>).</p>
     </div>
     <div class="como-step">
       <div class="step-no">iii.</div>
       <h3>Construyes workflows</h3>
-      <p>Combinas MCPs en archivos <span class="mono">.workflow.js</span> con <span class="mono">phase()</span> / <span class="mono">parallel()</span> / <span class="mono">pipeline()</span>. <strong>26 archivos <span class="mono">.workflow.js</span></strong> — incluido <span class="mono">declaracion-resico-mensual</span> con human-in-loop WhatsApp.</p>
+      <p>Combinas MCPs en archivos <span class="mono">.workflow.js</span> con <span class="mono">phase()</span> / <span class="mono">parallel()</span> / <span class="mono">pipeline()</span>. <strong>26 archivos <span class="mono">.workflow.js</span></strong>; los hooks validan antes de acciones sensibles, como timbrar o enviar WhatsApp masivo.</p>
     </div>
     <div class="como-step">
       <div class="step-no">iv.</div>
@@ -796,36 +886,72 @@
       <span class="code-dot"></span>
       <span class="code-dot"></span>
       <span class="code-dot"></span>
-      <span class="code-file">ejemplo: cartera predial multi-municipio</span>
+      <span class="code-file">.mcp.json · MCP suelto (portal SAT)</span>
     </div>
-    <pre class="code"><span class="c-kw">from</span> mp_predial_mx <span class="c-kw">import</span> PredialClient
-
-cliente <span class="c-op">=</span> PredialClient<span class="c-pn">()</span>
-propiedades <span class="c-op">=</span> <span class="c-pn">[</span>
-    <span class="c-pn">{</span><span class="c-st">"municipio"</span><span class="c-op">:</span> <span class="c-st">"Coyoacán"</span>, <span class="c-st">"cuenta"</span><span class="c-op">:</span> <span class="c-st">"123-456-789"</span><span class="c-pn">}</span>,
-    <span class="c-pn">{</span><span class="c-st">"municipio"</span><span class="c-op">:</span> <span class="c-st">"Zapopan"</span>,  <span class="c-st">"cuenta"</span><span class="c-op">:</span> <span class="c-st">"GDL-0001-22"</span><span class="c-pn">}</span>,
-    <span class="c-pn">{</span><span class="c-st">"municipio"</span><span class="c-op">:</span> <span class="c-st">"Ciudad Hidalgo"</span>, <span class="c-st">"cuenta"</span><span class="c-op">:</span> <span class="c-st">"MICH-7788"</span><span class="c-pn">}</span>,
-<span class="c-pn">]</span>
-
-resultados <span class="c-op">=</span> <span class="c-pn">[</span>cliente<span class="c-pn">.</span>consultar<span class="c-pn">(</span><span class="c-op">**</span>p<span class="c-pn">)</span> <span class="c-kw">for</span> p <span class="c-kw">in</span> propiedades<span class="c-pn">]</span>
-<span class="c-cm"># ↳ Auto-routing: CDMX directo · Zapopan directo · Michoacán vía SACPI</span>
-
-total <span class="c-op">=</span> <span class="c-fn">sum</span><span class="c-pn">(</span>r<span class="c-pn">.</span>adeudo <span class="c-kw">for</span> r <span class="c-kw">in</span> resultados<span class="c-pn">)</span>
-<span class="c-fn">print</span><span class="c-pn">(</span><span class="c-st">f"Cartera total: $</span><span class="c-pn">{</span>total<span class="c-op">:,.2f</span><span class="c-pn">}</span><span class="c-st"> MXN"</span><span class="c-pn">)</span>
-<span class="c-cm"># Cartera total: $27,912.50 MXN</span></pre>
+    <pre class="code"><span class="c-pn">{</span>
+  <span class="c-st">"mcpServers"</span><span class="c-op">:</span> <span class="c-pn">{</span>
+    <span class="c-st">"sat_portal"</span><span class="c-op">:</span> <span class="c-pn">{</span>
+      <span class="c-st">"command"</span><span class="c-op">:</span> <span class="c-st">"uv"</span>,
+      <span class="c-st">"args"</span><span class="c-op">:</span> <span class="c-pn">[</span><span class="c-st">"run"</span>, <span class="c-st">"--no-project"</span>, <span class="c-st">"--quiet"</span>, <span class="c-st">"--with"</span>,
+               <span class="c-st">"plugins-mx-mcp-servers[sat-ws,sat-portal] @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers"</span>,
+               <span class="c-st">"python"</span>, <span class="c-st">"-m"</span>, <span class="c-st">"mp_sat_portal.server"</span><span class="c-pn">]</span>,
+      <span class="c-st">"env"</span><span class="c-op">:</span> <span class="c-pn">{</span>
+        <span class="c-st">"SAT_RFC"</span><span class="c-op">:</span> <span class="c-st">"${SAT_RFC:-}"</span>,
+        <span class="c-st">"SAT_EFIRMA_CERT"</span><span class="c-op">:</span> <span class="c-st">"${SAT_EFIRMA_CERT:-}"</span>,
+        <span class="c-st">"SAT_EFIRMA_KEY"</span><span class="c-op">:</span> <span class="c-st">"${SAT_EFIRMA_KEY:-}"</span>,
+        <span class="c-st">"SAT_EFIRMA_PASSWORD"</span><span class="c-op">:</span> <span class="c-st">"${SAT_EFIRMA_PASSWORD:-}"</span>
+      <span class="c-pn">}</span>
+    <span class="c-pn">}</span>
+  <span class="c-pn">}</span>
+<span class="c-pn">}</span></pre>
   </div>
 </section>
 
 <!-- ============================================================ -->
-<!-- SECCIÓN 08: AGENDAR DEMO -->
+<!-- SECCIÓN 08: LÍMITES -->
+<!-- ============================================================ -->
+<section id="limites" class="section section-como">
+  <div class="section-head">
+    <span class="section-no">08</span>
+    <h2 class="section-h">Lo que <em>no</em> hace, y lo que falta.</h2>
+    <p class="section-desc">
+      Sin credenciales, los MCPs de APIs privadas responden datos de ejemplo marcados <span class="mono">simulated: true</span>; con credenciales, cualquier error del proveedor se propaga como error tipado. <span class="mono">PLUGINS_MX_MOCK=1</span> fuerza el modo de ejemplo.
+    </p>
+  </div>
+  <div class="como-grid">
+    <div class="como-step">
+      <div class="step-no">a.</div>
+      <h3>Solver de CAPTCHA opt-in</h3>
+      <p><strong>Apagado por defecto</strong>: sin configurarlo, cada portal con CAPTCHA entrega la consulta a humano. Con <span class="mono">PLUGINS_MX_CAPTCHA_SOLVER=2captcha</span> y <span class="mono">TWOCAPTCHA_API_KEY</span> resuelve imagen (SAF CDMX, predial Puebla), reCAPTCHA (cédula SEP, REPUVE, predial Guadalajara, adeudos Jalisco, multas San Pedro, CURP) y Turnstile (multas EdoMex). Aún sin validar en vivo.</p>
+    </div>
+    <div class="como-step">
+      <div class="step-no">b.</div>
+      <h3>Anti-bots que no se evaden</h3>
+      <p>CURP (Akamai), INE (Cloudflare) y Mérida (Radware) bloquean antes del CAPTCHA: el tool detecta el bloqueo y entrega a humano sin gastar CAPTCHA. Excluidos por diseño: <span class="mono">citas_monitor</span> (apartar citas le quita lugar a otras personas) y REPEP.</p>
+    </div>
+    <div class="como-step">
+      <div class="step-no">c.</div>
+      <h3>Seguridad y cumplimiento</h3>
+      <p>Las skills fiscales las debe revisar un contador; los contratos, un abogado. La bitácora guarda solo hashes de RFC, CURP y correo. Buró de crédito exige la autorización del titular. Las escrituras ante el SAT no se automatizan. Varias tasas estatales vienen de fuentes secundarias 2026.</p>
+    </div>
+    <div class="como-step">
+      <div class="step-no">d.</div>
+      <h3>Pendientes</h3>
+      <p>IMSS, INFONAVIT, bancos, Buró, CFE y Telmex necesitan credenciales de prueba y una captura del flujo. Las APIs privadas y los portales con solver esperan su primera prueba real. 11 MCPs aún sin "Estado real". Varios verticales tienen skills de estructura sin cálculo propio.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECCIÓN 09: AGENDAR DEMO -->
 <!-- ============================================================ -->
 <section id="demo" class="section section-demo">
   <div class="demo-card">
     <div class="demo-left">
-      <span class="section-no demo-no">08</span>
+      <span class="section-no demo-no">09</span>
       <h2 class="demo-h">Agendemos<br>una demo de <em>20 minutos</em>.</h2>
       <p class="demo-desc">
-        Te muestro la consulta predial en vivo de 5 municipios distintos, la validación REPSE de un proveedor real y el cálculo ISN de 4 estados. Después decides si te sirve.
+        Te muestro la consulta predial en vivo en los municipios validados, la validación REPSE de un proveedor real y el cálculo ISN de los estados donde tienes personal. Después decides si te sirve.
       </p>
       <ul class="demo-list">
         <li>→ Sesión 1:1 por Google Meet o WhatsApp Video</li>
@@ -909,7 +1035,6 @@ total <span class="c-op">=</span> <span class="c-fn">sum</span><span class="c-pn
 
     <div class="footer-col">
       <h4>Comercial</h4>
-      <a href="/precios/">Precios</a>
       <a href="/onboarding/">Onboarding</a>
       <a href="#demo">Agendar demo</a>
     </div>
@@ -919,12 +1044,13 @@ total <span class="c-op">=</span> <span class="c-fn">sum</span><span class="c-pn
       <a href="mailto:elimoralsmendox@gmail.com">elimoralsmendox@gmail.com</a>
       <a href="https://wa.me/522711428381" target="_blank" rel="noopener">WhatsApp +52 271 142 8381</a>
       <a href="https://github.com/elimorals/Skills_MX" target="_blank" rel="noopener">GitHub →</a>
+      <a href="https://github.com/elimorals/Skills_MX/blob/main/LICENSE" target="_blank" rel="noopener">Licencia Apache-2.0</a>
     </div>
   </div>
 
   <div class="footer-bottom">
     <span>© 2026 Plugins MX · CDMX · Hecho con ☕ y pytest</span>
-    <span class="footer-version">Octubre 2026 · 83 MCPs · estado real al 14-oct-2026</span>
+    <span class="footer-version">40 plugins · 342 skills · 83 MCPs / 417 tools · 1,900 tests · Apache-2.0</span>
   </div>
 </footer>
 

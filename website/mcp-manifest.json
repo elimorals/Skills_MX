@@ -3,11 +3,11 @@
   "name": "plugins-mx",
   "displayName": "Plugins MX — Compliance Infrastructure",
   "description": "83 MCP servers para trámites y cumplimiento en México. Estado al 2026-10-14: 24 reales validados en vivo, 13 reales sin validar (requieren credenciales), 17 entregan a humano por CAPTCHA o login, 10 cálculos normativos, 6 sin API pública, 2 bloqueados y 11 sin verificar. Detalle por MCP en /data/mcp-estado.json.",
-  "version": "3.62.0",
-  "license": "MIT",
+  "version": "2026-10-14",
+  "license": "Apache-2.0",
   "homepage": "https://skills-mexico.vercel.app",
   "repository": "https://github.com/elimorals/Skills_MX",
-  "documentation": "https://skills-mexico.vercel.app/llms-full.txt",
+  "documentation": "https://github.com/elimorals/Skills_MX#readme",
   "author": {
     "name": "Elías Rashid Morales Mendoza",
     "email": "elimoralsmendox@gmail.com",
@@ -24,14 +24,12 @@
     "isn",
     "predial",
     "municipal",
-    "playwright",
     "fastmcp"
   ],
   "language": "es-MX",
-  "runtime": "python>=3.11",
+  "runtime": "python>=3.10 (uv)",
   "transport": [
-    "stdio",
-    "streamable-http"
+    "stdio"
   ],
   "servers": [
     {
@@ -966,10 +964,17 @@
   },
   "endpoints": {
     "demo": "https://skills-mexico.vercel.app/#demo",
-    "agentsManifest": "https://skills-mexico.vercel.app/.well-known/agents.json",
     "aiPluginManifest": "https://skills-mexico.vercel.app/.well-known/ai-plugin.json",
     "openapi": "https://skills-mexico.vercel.app/openapi.json",
     "llms": "https://skills-mexico.vercel.app/llms.txt",
     "llmsFull": "https://skills-mexico.vercel.app/llms-full.txt"
+  },
+  "install": {
+    "claudeCode": [
+      "/plugin marketplace add elimorals/Skills_MX",
+      "/plugin install core-mexico --marketplace elimorals/Skills_MX"
+    ],
+    "mcpSuelto": "Copiar mcp-servers/<mp_x>/example.mcp.json: uv run --no-project --quiet --with 'plugins-mx-mcp-servers[<extras>] @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers' python -m <mp_x>.server",
+    "requisito": "uv"
   }
 }

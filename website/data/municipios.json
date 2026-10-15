@@ -1,7 +1,7 @@
 {
   "$schema": "https://skills-mexico.vercel.app/openapi.json#/components/schemas/MunicipiosCatalog",
   "version": "2026-10-14",
-  "license": "CC-BY-4.0",
+  "license": "Apache-2.0",
   "source": "mcp-servers/shared/catalogo_municipios_mx.py (discovery 2026-06)",
   "documentation": "https://skills-mexico.vercel.app/productos/predial",
   "total": 243,

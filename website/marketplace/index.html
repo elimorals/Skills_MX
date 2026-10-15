@@ -308,22 +308,6 @@
   background: #2A2218;
   border-color: rgba(232, 184, 60, 0.25);
 }
-.mp-skill-tier {
-  width: 24px; height: 24px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--f-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-.mp-skill-tier.t-s { background: var(--c-jade);   color: #fff; }
-.mp-skill-tier.t-a { background: var(--c-cobalt); color: #fff; }
-.mp-skill-tier.t-b { background: var(--c-maize);  color: #161313; }
-.mp-skill-tier.t-c { background: #5A4F44;         color: var(--c-cream); }
 
 .mp-skill-body { flex: 1; min-width: 0; }
 .mp-skill-id {
@@ -477,19 +461,6 @@
   font-size: 0.88rem;
 }
 
-/* Tier badge in detail */
-.mp-detail-tier {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--f-mono);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  padding: 0.25rem 0.6rem;
-  border-radius: 6px;
-  margin-left: auto;
-}
 
 /* Footer-actions */
 .mp-actions {
@@ -556,16 +527,15 @@
       </li>
     </ul>
 
-    <div class="mp-section-label">Subagentes</div>
-    <ul class="mp-cat-list" id="agentList">
-      <!-- populated by JS -->
-    </ul>
-
     <div class="mp-section-label">Recursos</div>
     <ul class="mp-cat-list">
       <li onclick="window.location.href='/'">
         <span class="mp-cat-icon c-ink">←</span>
         <span>Inicio</span>
+      </li>
+      <li onclick="window.location.href='/#verticales'">
+        <span class="mp-cat-icon c-terra">40</span>
+        <span>Los 40 plugins</span>
       </li>
       <li onclick="window.location.href='/portales/'">
         <span class="mp-cat-icon c-cobalt">P</span>
@@ -588,18 +558,18 @@
     <!-- LISTA SKILLS -->
     <div class="mp-list">
       <div class="mp-list-head">
-        <h1 class="mp-list-title" id="listTitle">Todas las skills</h1>
+        <h1 class="mp-list-title" id="listTitle">Todos los MCPs</h1>
         <p class="mp-list-desc" id="listDesc">83 MCPs por categoría, cada uno con su estado real al 14-oct-2026.</p>
         <input class="mp-search" id="searchBox" placeholder="Buscar mp_predial, REPSE, agua, multas..." autocomplete="off">
         <div class="mp-filters">
-          <button class="mp-filter is-on" data-tier="all">todas</button>
-          <button class="mp-filter" data-tier="real_validado">validado en vivo</button>
-          <button class="mp-filter" data-tier="real_sin_validar">sin validar</button>
-          <button class="mp-filter" data-tier="handoff">entrega a humano</button>
-          <button class="mp-filter" data-tier="calculo_normativo">cálculo normativo</button>
-          <button class="mp-filter" data-tier="sin_api">sin API</button>
-          <button class="mp-filter" data-tier="bloqueado">bloqueado</button>
-          <button class="mp-filter" data-tier="sin_verificar">sin verificar</button>
+          <button class="mp-filter is-on" data-estado="all">todas</button>
+          <button class="mp-filter" data-estado="real_validado">validado en vivo</button>
+          <button class="mp-filter" data-estado="real_sin_validar">sin validar</button>
+          <button class="mp-filter" data-estado="handoff">entrega a humano</button>
+          <button class="mp-filter" data-estado="calculo_normativo">cálculo normativo</button>
+          <button class="mp-filter" data-estado="sin_api">sin API</button>
+          <button class="mp-filter" data-estado="bloqueado">bloqueado</button>
+          <button class="mp-filter" data-estado="sin_verificar">sin verificar</button>
         </div>
       </div>
       <div class="mp-skill-list" id="skillList"></div>
@@ -609,7 +579,7 @@
     <div class="mp-detail" id="detailPanel">
       <div class="mp-detail-empty">
         <span style="font-size: 2rem;">→</span>
-        <span>Selecciona una skill para ver detalles</span>
+        <span>Selecciona un MCP para ver detalles</span>
       </div>
     </div>
   </main>
@@ -618,7 +588,7 @@
 <script>
 let CATALOG = null;
 let CURRENT_CAT = 'all';
-let CURRENT_TIER = 'all';
+let CURRENT_ESTADO = 'all';
 let CURRENT_QUERY = '';
 let SELECTED_ID = null;
 
@@ -626,7 +596,6 @@ async function loadCatalog() {
   const r = await fetch('/api/skills-catalog.json');
   CATALOG = await r.json();
   renderCategories();
-  renderAgents();
   renderSkills();
 }
 
@@ -651,20 +620,6 @@ function renderCategories() {
   ul.querySelector('[data-cat="all"]').addEventListener('click', () => selectCategory('all'));
 }
 
-function renderAgents() {
-  const ul = document.getElementById('agentList');
-  CATALOG.agents.forEach(a => {
-    const li = document.createElement('li');
-    li.innerHTML = `
-      <span class="mp-cat-icon c-jade">A</span>
-      <span style="font-size:0.82rem;">${a.id}</span>
-    `;
-    li.title = a.desc;
-    li.addEventListener('click', () => window.open('/agents/' + a.id, '_blank'));
-    ul.appendChild(li);
-  });
-}
-
 function selectCategory(catId) {
   CURRENT_CAT = catId;
   document.querySelectorAll('#categoryList li').forEach(li => {
@@ -675,7 +630,7 @@ function selectCategory(catId) {
     document.getElementById('listTitle').textContent = cat.label;
     document.getElementById('listDesc').textContent = cat.descripcion;
   } else {
-    document.getElementById('listTitle').textContent = 'Todas las skills';
+    document.getElementById('listTitle').textContent = 'Todos los MCPs';
     document.getElementById('listDesc').textContent = '83 MCPs por categoría, cada uno con su estado real al 14-oct-2026.';
   }
   renderSkills();
@@ -691,7 +646,7 @@ function getFilteredSkills() {
     const cat = CATALOG.categorias.find(c => c.id === CURRENT_CAT);
     if (cat) skills = cat.skills.map(s => ({...s, _cat: cat.label, _color: cat.color}));
   }
-  if (CURRENT_TIER !== 'all') skills = skills.filter(s => s.estado === CURRENT_TIER);
+  if (CURRENT_ESTADO !== 'all') skills = skills.filter(s => s.estado === CURRENT_ESTADO);
   if (CURRENT_QUERY) {
     const q = CURRENT_QUERY.toLowerCase();
     skills = skills.filter(s =>
@@ -780,20 +735,22 @@ function selectSkill(id) {
 
       <div class="mp-detail-section">
         <h3>Instalar en Claude Code</h3>
-        <pre class="mp-detail-code"># Clonar el monorepo
-git clone https://github.com/elimorals/Skills_MX
-cd Skills_MX
-
-# Instalar dependencias
-cd mcp-servers && pip install -e ".[dev]"
-
-# Conectar el MCP a Claude Code
-# (ver mcp-servers/${skill.id}/example.mcp.json)</pre>
+        <pre class="mp-detail-code"># Requisito: uv (https://docs.astral.sh/uv/)
+# Copia el bloque de mcp-servers/${skill.id}/example.mcp.json
+# a tu .mcp.json. Tiene esta forma (los extras y el env cambian por MCP):
+"command": "uv",
+"args": ["run", "--no-project", "--quiet", "--with",
+  "plugins-mx-mcp-servers[...] @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+  "python", "-m", "${skill.id}.server"]</pre>
+        <p style="color:#8A7E6F; font-size:0.82rem;">Si el MCP viene en un plugin: <span class="mono">/plugin marketplace add elimorals/Skills_MX</span> y <span class="mono">/plugin install &lt;plugin&gt; --marketplace elimorals/Skills_MX</span>.</p>
       </div>
 
       <div class="mp-actions">
         <a class="mp-action mp-action-primary" href="https://github.com/elimorals/Skills_MX/tree/main/mcp-servers/${skill.id}" target="_blank" rel="noopener">
           Código →
+        </a>
+        <a class="mp-action mp-action-ghost" href="https://github.com/elimorals/Skills_MX/blob/main/mcp-servers/${skill.id}/example.mcp.json" target="_blank" rel="noopener">
+          example.mcp.json
         </a>
         <a class="mp-action mp-action-ghost" href="/portales/" >
           Cobertura
@@ -831,7 +788,7 @@ document.querySelectorAll('#categoryList li').forEach(li => {
 });
 document.querySelectorAll('.mp-filter').forEach(btn => {
   btn.addEventListener('click', () => {
-    CURRENT_TIER = btn.dataset.tier;
+    CURRENT_ESTADO = btn.dataset.estado;
     document.querySelectorAll('.mp-filter').forEach(b => b.classList.toggle('is-on', b === btn));
     renderSkills();
   });

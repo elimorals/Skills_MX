@@ -1276,37 +1276,5 @@
       "bloqueado",
       "sin_verificar"
     ]
-  },
-  "agents": [
-    {
-      "id": "auditor-fiscal-mx",
-      "categoria": "fiscal",
-      "desc": "Auditoría preventiva CFDI + RFC + 32-D mensual"
-    },
-    {
-      "id": "validador-cfdi",
-      "categoria": "fiscal",
-      "desc": "Validación CFDI 4.0 vs padrón SAT tiempo real"
-    },
-    {
-      "id": "recolector-evidencia-sat",
-      "categoria": "fiscal",
-      "desc": "Bundle archivable de evidencia SAT"
-    },
-    {
-      "id": "discovery-portales-mx",
-      "categoria": "operativo",
-      "desc": "Discovery semi-automático nuevos portales gob.mx"
-    },
-    {
-      "id": "compliance-repse",
-      "categoria": "laboral",
-      "desc": "Verificación binaria REPSE Art. 15 LFT"
-    },
-    {
-      "id": "codebase-auditor-mx",
-      "categoria": "operativo",
-      "desc": "Auditor estructural de MCPs nuevos"
-    }
-  ]
+  }
 }

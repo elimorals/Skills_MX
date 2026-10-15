@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Compliance REPSE · Art. 15 LFT · Plugins MX</title>
-<meta name="description" content="Verifica REPSE de proveedores en segundos. Sin captcha. Evita responsabilidad solidaria laboral y fiscal del Art. 15 LFT. Universo: 4M empresas formales MX.">
+<meta name="description" content="Verifica REPSE de proveedores en segundos. Sin captcha. Evita responsabilidad solidaria laboral y fiscal del Art. 15 LFT. Validado en vivo contra repse.stps.gob.mx el 2026-10-14.">
 <meta name="author" content="Elías Rashid Morales Mendoza">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="es_MX">
 <meta property="og:url" content="https://skills-mexico.vercel.app/productos/repse">
 <meta property="og:title" content="Compliance REPSE Art. 15 LFT · Plugins MX">
-<meta property="og:description" content="Verificación binaria del registro REPSE en segundos. Sin captcha. Evita responsabilidad solidaria del Art. 15 LFT. 4M empresas afectadas.">
+<meta property="og:description" content="Verificación binaria del registro REPSE en segundos. Sin captcha. Evita responsabilidad solidaria del Art. 15 LFT. Validado en vivo el 2026-10-14.">
 <meta property="og:image" content="https://skills-mexico.vercel.app/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -55,18 +55,16 @@
       "operatingSystem": "Cross-platform (Python 3.11+, MCP)",
       "url": "https://skills-mexico.vercel.app/productos/repse",
       "description": "Servidor MCP que verifica el registro REPSE (Registro de Prestadoras de Servicios Especializados) de cualquier proveedor mexicano ante STPS. Devuelve decisión binaria puede_contratar_servicios_especializados: bool. Evita responsabilidad solidaria laboral, fiscal y de seguridad social del contratante bajo el Art. 15 LFT.",
-      "softwareVersion": "3.59.0",
+      "softwareVersion": "2026-10-14",
       "datePublished": "2026-06-14",
-      "dateModified": "2026-06-14",
+      "dateModified": "2026-10-14",
       "inLanguage": "es-MX",
       "featureList": [
         "Búsqueda por razón social o número de registro",
         "Decisión binaria puede_contratar: bool",
         "Cache 30 días con revalidación",
-        "Sin CAPTCHA bloqueante",
-        "Universo: 4M empresas formales mexicanas"
+        "Sin CAPTCHA bloqueante"
       ],
-      "offers": { "@type": "Offer", "priceCurrency": "MXN", "price": "0", "availability": "https://schema.org/InStock", "url": "https://skills-mexico.vercel.app/#demo" },
       "provider": { "@type": "Organization", "name": "Plugins MX", "url": "https://skills-mexico.vercel.app/" }
     },
     {
@@ -89,7 +87,7 @@
         {
           "@type": "Question",
           "name": "¿Qué consecuencias tiene contratar a un proveedor sin REPSE vigente?",
-          "acceptedAnswer": { "@type": "Answer", "text": "El contratante se convierte en responsable solidario por todas las obligaciones laborales, fiscales y de seguridad social del proveedor: salarios caídos, finiquitos, retenciones de ISR, IVA, cuotas IMSS e INFONAVIT y créditos fiscales. Además, hay multas de 173 a 173,000 UMA conforme al Art. 1004-C LFT, y no se pueden deducir el gasto ni acreditar el IVA pagado." }
+          "acceptedAnswer": { "@type": "Answer", "text": "El contratante se convierte en responsable solidario por todas las obligaciones laborales, fiscales y de seguridad social del proveedor: salarios caídos, finiquitos, retenciones de ISR, IVA, cuotas IMSS e INFONAVIT y créditos fiscales. Además, hay multas conforme al Art. 1004-C LFT, y no se pueden deducir el gasto ni acreditar el IVA pagado." }
         },
         {
           "@type": "Question",
@@ -104,12 +102,7 @@
         {
           "@type": "Question",
           "name": "¿Cómo verifico el REPSE de un proveedor con Plugins MX?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Llamas a la tool MCP repse_verificar_proveedor(razon_social) o al endpoint POST /repse/verificar con la razón social del proveedor. La respuesta es una decisión binaria puede_contratar_servicios_especializados: bool más detalle completo (vigencia, servicios autorizados, advertencias). El backend no usa CAPTCHA bloqueante." }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cuántas empresas mexicanas están potencialmente afectadas por el Art. 15 LFT?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Aproximadamente 4 millones de empresas formales mexicanas que contratan IT, limpieza, seguridad, contabilidad, marketing, nómina, mantenimiento o cualquier otro servicio especializado. Si tu empresa contrata más de 10 proveedores de servicios, la verificación periódica deja de ser opcional." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Llamas a la tool MCP repse_verificar_proveedor(razon_social) con la razón social del proveedor (servidor MCP mp_repse_stps, se agrega con su example.mcp.json). La respuesta es una decisión binaria puede_contratar_servicios_especializados: bool más detalle completo (vigencia, servicios autorizados, advertencias). El portal de la STPS no tiene CAPTCHA; se validó en vivo el 2026-10-14." }
         }
       ]
     }
@@ -127,7 +120,7 @@
     <span class="strip-dot">·</span>
     <span class="strip-vol">PRODUCTO 02 · COMPLIANCE REPSE</span>
     <span class="strip-dot strip-dot-end">·</span>
-    <span class="strip-live"><span class="pulse"></span> 4M empresas afectadas · Sin captcha</span>
+    <span class="strip-live"><span class="pulse"></span> Validado en vivo 14-oct-2026 · Sin captcha</span>
   </div>
 </div>
 
@@ -168,8 +161,8 @@
 
     <div class="prod-hero-meta">
       <span><strong>Lanzamiento:</strong> 2026-06-14</span>
-      <span><strong>Estado:</strong> Producción</span>
-      <span><strong>Tests:</strong> 21 pasando</span>
+      <span><strong>Estado:</strong> Real, validado en vivo</span>
+      <span><strong>Tests:</strong> 21 unitarios + 6 live</span>
       <span><strong>Validado:</strong> en vivo contra repse.stps.gob.mx el 2026-10-14</span>
     </div>
   </div>
@@ -264,10 +257,6 @@
       <h4>Vigencia del registro</h4>
       <p>3 años desde la fecha del aviso de registro (AR). Después debe renovarse. Es responsabilidad del contratante verificar antes de cada contrato.</p>
     </article>
-    <article class="legal-item">
-      <h4>Universo afectado</h4>
-      <p><strong>~4 millones de empresas formales</strong> mexicanas que contratan IT, limpieza, seguridad, contabilidad, marketing, nómina, etc.</p>
-    </article>
   </div>
 </section>
 
@@ -283,7 +272,7 @@
       <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
       <span class="code-file">validar_proveedor.py</span>
     </div>
-    <pre class="code"><span class="c-kw">from</span> mp_repse_stps <span class="c-kw">import</span> RepseStpsClient
+    <pre class="code"><span class="c-kw">from</span> mp_repse_stps.client <span class="c-kw">import</span> RepseStpsClient
 
 cliente <span class="c-op">=</span> RepseStpsClient<span class="c-pn">()</span>
 
@@ -294,13 +283,13 @@ resultado <span class="c-op">=</span> cliente<span class="c-pn">.</span>verifica
 
 <span class="c-kw">if</span> resultado<span class="c-pn">[</span><span class="c-st">"puede_contratar_servicios_especializados"</span><span class="c-pn">]</span><span class="c-op">:</span>
     <span class="c-fn">print</span><span class="c-pn">(</span><span class="c-st">f"✓ Vigente hasta </span><span class="c-pn">{</span>resultado<span class="c-pn">[</span><span class="c-st">'detalle'</span><span class="c-pn">][</span><span class="c-st">'vigencia'</span><span class="c-pn">]</span><span class="c-pn">}</span><span class="c-st">"</span><span class="c-pn">)</span>
-    <span class="c-cm"># ✓ Vigente hasta 2027-06-12</span>
+    <span class="c-cm"># ✓ Vigente hasta YYYY-MM-DD</span>
     firmar_po<span class="c-pn">(</span>proveedor<span class="c-pn">)</span>
 <span class="c-kw">else</span><span class="c-op">:</span>
     <span class="c-kw">for</span> advertencia <span class="c-kw">in</span> resultado<span class="c-pn">[</span><span class="c-st">"advertencias"</span><span class="c-pn">]</span><span class="c-op">:</span>
         <span class="c-fn">print</span><span class="c-pn">(</span><span class="c-st">f"⚠ </span><span class="c-pn">{</span>advertencia<span class="c-pn">}</span><span class="c-st">"</span><span class="c-pn">)</span>
     bloquear_contratacion<span class="c-pn">()</span>
-    <span class="c-cm"># ⚠ Registro REPSE NO vigente (venció 2024-03-15).</span>
+    <span class="c-cm"># ⚠ Registro REPSE NO vigente.</span>
     <span class="c-cm">#   El proveedor debe renovar antes de prestar servicios.</span></pre>
   </div>
 </section>
@@ -321,7 +310,7 @@ resultado <span class="c-op">=</span> cliente<span class="c-pn">.</span>verifica
 
     <div class="faq-item">
       <dt>¿Qué consecuencias tiene contratar a un proveedor sin REPSE vigente?</dt>
-      <dd>El contratante se convierte en <strong>responsable solidario</strong> por todas las obligaciones laborales, fiscales y de seguridad social del proveedor: salarios caídos, finiquitos, retenciones ISR, IVA, cuotas IMSS e INFONAVIT y créditos fiscales. <strong>Multas de 173 a 173,000 UMA</strong> conforme al Art. 1004-C LFT, además de no poder deducir el gasto ni acreditar IVA.</dd>
+      <dd>El contratante se convierte en <strong>responsable solidario</strong> por todas las obligaciones laborales, fiscales y de seguridad social del proveedor: salarios caídos, finiquitos, retenciones ISR, IVA, cuotas IMSS e INFONAVIT y créditos fiscales. <strong>Multas</strong> conforme al Art. 1004-C LFT, además de no poder deducir el gasto ni acreditar IVA.</dd>
     </div>
 
     <div class="faq-item">
@@ -336,12 +325,7 @@ resultado <span class="c-op">=</span> cliente<span class="c-pn">.</span>verifica
 
     <div class="faq-item">
       <dt>¿Cómo verifico el REPSE de un proveedor con Plugins MX?</dt>
-      <dd>Llamas a la tool MCP <span class="mono">repse_verificar_proveedor(razon_social)</span> o al endpoint <span class="mono">POST /repse/verificar</span>. La respuesta es una decisión binaria <span class="mono">puede_contratar_servicios_especializados: bool</span> más detalle (vigencia, servicios autorizados, advertencias). <strong>Sin CAPTCHA bloqueante</strong>.</dd>
-    </div>
-
-    <div class="faq-item">
-      <dt>¿Cuántas empresas mexicanas están afectadas por el Art. 15 LFT?</dt>
-      <dd>Aproximadamente <strong>4 millones de empresas formales</strong> mexicanas que contratan IT, limpieza, seguridad, contabilidad, marketing, nómina, mantenimiento o cualquier otro servicio especializado. Si tu empresa contrata más de 10 proveedores, la verificación periódica deja de ser opcional.</dd>
+      <dd>Llamas a la tool MCP <span class="mono">repse_verificar_proveedor(razon_social)</span> (servidor MCP <span class="mono">mp_repse_stps</span>, se agrega con su <span class="mono">example.mcp.json</span>). La respuesta es una decisión binaria <span class="mono">puede_contratar_servicios_especializados: bool</span> más detalle (vigencia, servicios autorizados, advertencias). <strong>Sin CAPTCHA bloqueante</strong>.</dd>
     </div>
   </dl>
 </section>
@@ -350,7 +334,7 @@ resultado <span class="c-op">=</span> cliente<span class="c-pn">.</span>verifica
 <section class="section">
   <div class="cta-final cta-repse">
     <h2 class="cta-h">¿Tu empresa contrata <em>más de 10 proveedores</em> especializados?</h2>
-    <p>Demo de 20 minutos. Te muestro la validación en vivo de proveedores reales de tu cartera + cron mensual de revalidación automática.</p>
+    <p>Demo de 20 minutos. Te muestro la validación en vivo de proveedores reales de tu cartera y cómo revalidarla periódicamente.</p>
     <a href="../index.html#demo" class="btn btn-primary">
       <span>Agendar mi demo</span>
       <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 7h12m0 0L7 1m6 6L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -383,7 +367,7 @@ resultado <span class="c-op">=</span> cliente<span class="c-pn">.</span>verifica
   </div>
   <div class="footer-bottom">
     <span>© 2026 Plugins MX · CDMX</span>
-    <span class="footer-version">Producto 02 · v3.59</span>
+    <span class="footer-version">Producto 02 · estado al 14-oct-2026</span>
   </div>
 </footer>
 

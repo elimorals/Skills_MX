@@ -1,7 +1,7 @@
 {
   "$schema": "https://skills-mexico.vercel.app/openapi.json#/components/schemas/RepseStats",
-  "version": "2026-06-14",
-  "license": "CC-BY-4.0",
+  "version": "2026-10-14",
+  "license": "Apache-2.0",
   "source": "Plugins MX — agregación pública del registro STPS (Padrón Público de Contratistas REPSE).",
   "documentation": "https://skills-mexico.vercel.app/productos/repse",
   "glossary": "https://skills-mexico.vercel.app/glosario/repse",
@@ -12,7 +12,6 @@
     "autoridad": "Secretaría del Trabajo y Previsión Social (STPS)"
   },
   "padron": {
-    "empresas_universo_potencialmente_afectadas": 4000000,
     "vigencia_registro_dias": 1095,
     "vigencia_registro_anios": 3,
     "renovacion_requerida": true
@@ -27,7 +26,7 @@
     ],
     "consecuencias": [
       "El contratante puede ser demandado laboralmente por trabajadores ajenos",
-      "Multas de 173 a 173,000 UMA (Art. 1004-C LFT)",
+      "Multas conforme al Art. 1004-C LFT",
       "Imposibilidad de deducir el gasto / acreditar IVA"
     ]
   },
@@ -49,13 +48,13 @@
   ],
   "como_verificar": {
     "portal_oficial": "https://repse.stps.gob.mx",
-    "via_api_plugins_mx": "https://skills-mexico.vercel.app/openapi.json#/paths/~1repse~1verificar/post",
     "tool_mcp": "repse_verificar_proveedor(razon_social, [numero_registro])",
-    "respuesta_binaria": "puede_contratar_servicios_especializados: bool"
+    "respuesta_binaria": "puede_contratar_servicios_especializados: bool",
+    "mcp": "mp_repse_stps (Real, validado en vivo el 2026-10-14; se agrega con su example.mcp.json)"
   },
   "notas": [
     "Esta es una agregación informativa. La autoridad última es el portal STPS.",
-    "El padrón se actualiza diariamente. Plugins MX cachea por 30 días con revalidación.",
-    "Se recomienda revalidar antes de cada PO y mensualmente para la base de proveedores activos."
+    "mp_repse_stps cachea las consultas 30 días.",
+    "Se recomienda revalidar antes de cada PO y periódicamente la base de proveedores activos."
   ]
 }

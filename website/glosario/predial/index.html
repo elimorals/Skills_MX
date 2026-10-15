@@ -49,7 +49,7 @@
       "@id": "https://skills-mexico.vercel.app/glosario/predial#term",
       "name": "Impuesto Predial",
       "alternateName": "Predial Municipal",
-      "description": "Contribución municipal anual mexicana que grava la propiedad inmobiliaria (terrenos y construcciones). Lo recauda cada uno de los 2,469 municipios del país aplicando una tasa, factor o tarifa al valor catastral del inmueble. La gran mayoría de los municipios ofrece descuentos por pronto pago entre 5% y 15% si se paga en enero, febrero o marzo.",
+      "description": "Contribución municipal anual mexicana que grava la propiedad inmobiliaria (terrenos y construcciones). Lo recauda cada uno de los cerca de 2,500 municipios del país aplicando una tasa, factor o tarifa al valor catastral del inmueble. La gran mayoría de los municipios ofrece descuentos por pronto pago entre 5% y 15% si se paga en enero, febrero o marzo.",
       "url": "https://skills-mexico.vercel.app/glosario/predial",
       "termCode": "PREDIAL"
     },
@@ -69,7 +69,7 @@
       "name": "Catálogo de municipios mexicanos con cobertura predial",
       "description": "Catálogo de 243 municipios mexicanos con metadatos de consultabilidad (directo, SACPI, captcha) y URL del portal en línea.",
       "url": "https://skills-mexico.vercel.app/api/municipios.json",
-      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
       "creator": { "@id": "https://skills-mexico.vercel.app/#organization" },
       "spatialCoverage": { "@type": "Country", "name": "México" }
     }
@@ -124,14 +124,14 @@
     </h1>
 
     <p class="prod-hero-lede">
-      El <strong>impuesto predial</strong> es una contribución municipal anual que grava la propiedad inmobiliaria en México. Lo recauda cada uno de los <strong>2,469 municipios y alcaldías</strong> del país aplicando una tasa o tarifa al <strong>valor catastral</strong> del inmueble. Es la principal fuente de ingresos propios de los gobiernos municipales.
+      El <strong>impuesto predial</strong> es una contribución municipal anual que grava la propiedad inmobiliaria en México. Lo recauda cada uno de los <strong>cerca de 2,500 municipios y alcaldías</strong> del país aplicando una tasa o tarifa al <strong>valor catastral</strong> del inmueble. Es la principal fuente de ingresos propios de los gobiernos municipales.
     </p>
 
     <div class="prod-hero-meta">
       <span><strong>Autoridad:</strong> Tesorería municipal</span>
       <span><strong>Periodicidad:</strong> Anual</span>
       <span><strong>Base:</strong> Valor catastral</span>
-      <span><strong>Actualizado:</strong> <time datetime="2026-06-14">14 jun 2026</time></span>
+      <span><strong>Actualizado:</strong> <time datetime="2026-10-14">14 oct 2026</time></span>
     </div>
   </div>
 </header>
@@ -213,7 +213,7 @@
   <div class="section-head">
     <span class="section-no">04</span>
     <h2 class="section-h">Cobertura <em>consultable</em> con Plugins MX.</h2>
-    <p class="section-desc">Catálogo descargable en <a href="/api/municipios.json"><span class="mono">/api/municipios.json</span></a> (CC-BY-4.0).</p>
+    <p class="section-desc">Catálogo descargable en <a href="/api/municipios.json"><span class="mono">/api/municipios.json</span></a> (Apache-2.0).</p>
   </div>
 
   <div class="cov-row">
@@ -260,15 +260,15 @@
     <article class="tool">
       <span class="tool-no">→</span>
       <div>
-        <h3>Vía API REST</h3>
-        <p><span class="mono">POST /predial/consultar</span> documentado en <a href="/openapi.json"><span class="mono">/openapi.json</span></a>.</p>
+        <h3>Catálogo en JSON</h3>
+        <p><a href="/api/municipios.json"><span class="mono">/api/municipios.json</span></a> lista los municipios del catálogo con su portal (archivo estático; no hay API REST de consulta).</p>
       </div>
     </article>
     <article class="tool">
       <span class="tool-no">→</span>
       <div>
         <h3>Bulk (cartera)</h3>
-        <p><span class="mono">predial_mx_client.consultar_lote([propiedades])</span> consulta N inmuebles en paralelo y devuelve un Excel listo con totales y ranking.</p>
+        <p>El workflow <span class="mono">cartera-predial-multi-municipio</span> (plugin <span class="mono">inmobiliaria-mx</span>) consulta la cartera y la consolida en un CSV; <span class="mono">clients/predial_mx_client</span> permite hacerlo desde Python.</p>
       </div>
     </article>
   </div>
@@ -313,7 +313,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 Plugins MX · CDMX</span>
-    <span class="footer-version">Glosario · Predial · v3.59</span>
+    <span class="footer-version">Glosario · Predial · estado al 14-oct-2026</span>
   </div>
 </footer>
 
