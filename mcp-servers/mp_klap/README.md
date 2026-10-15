@@ -4,7 +4,7 @@ Klap (BNPL alternativo).
 
 ## Estado
 
-- ✅ Mock-first
+- Sin credenciales: datos de ejemplo marcados `simulated: true`
 - ⏳ Path real pendiente — requiere implementar HTTP/API
 
 ## Credenciales (para path real)
@@ -13,8 +13,8 @@ Klap (BNPL alternativo).
 
 ## Tools
 
-- `klap_listar_pagos` — mock-first
-- `klap_consultar_pago` — mock-first
+- `klap_listar_pagos`
+- `klap_consultar_pago`
 
 ## Setup mock
 

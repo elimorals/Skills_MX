@@ -48,6 +48,6 @@ Sin este token, las tools fallan automáticamente con `BuroAutorizacionError`.
 ## Tests
 
 ```bash
-cd /Users/elias/Documents/Trabajo/skills/mcp-servers
+cd mcp-servers   # desde la raíz del clon
 .venv/bin/python -m pytest mp_buro_credito_personal/tests/ -q
 ```

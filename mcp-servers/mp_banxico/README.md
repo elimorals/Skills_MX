@@ -46,9 +46,10 @@ El servidor habla stdio (default FastMCP). Para integrarlo a Claude Code, agrega
 {
   "mcpServers": {
     "banxico": {
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_banxico.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": ["run", "--no-project", "--quiet", "--with",
+               "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+               "python", "-m", "mp_banxico.server"],
       "env": {
         "BANXICO_TOKEN": "${BANXICO_TOKEN:-}"
       },

@@ -129,7 +129,7 @@ sub = await conekta_subscription_create(
 ## Tests
 
 ```bash
-cd /Users/elias/Documents/Trabajo/skills/mcp-servers
+cd mcp-servers   # desde la raíz del clon
 .venv/bin/python -m pytest mp_conekta/tests/ -q
 ```
 

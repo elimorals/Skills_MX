@@ -22,7 +22,7 @@ POS más usado en restaurantes MX. Local en SQL Server, **sin API REST**.
 | `SOFT_RESTAURANT_EXPORTS_DIR` | Directorio con CSVs (corte_z_YYYYMMDD.csv, etc.) |
 | `SOFT_RESTAURANT_DB_URL` | (Futuro) ODBC string al SQL Server local |
 
-Mock-first sin variables.
+Sin variables responde datos de ejemplo (`simulated: true`).
 
 ## Configurar exports en Soft Restaurant
 

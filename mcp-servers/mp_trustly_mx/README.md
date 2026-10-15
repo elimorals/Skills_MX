@@ -19,7 +19,7 @@ Open banking en MX: pagos por transferencia bancaria directa autorizada por el c
 | `TRUSTLY_API_KEY` | API key (sandbox `key_test_*`, producción `key_live_*`) |
 | `TRUSTLY_ENV` | `sandbox` (default) o `production` |
 
-Mock-first sin credenciales.
+Sin credenciales responde datos de ejemplo (`simulated: true`).
 
 ## Casos de uso
 
@@ -31,7 +31,7 @@ Mock-first sin credenciales.
 ## Tests
 
 ```bash
-cd /Users/elias/Documents/Trabajo/skills/mcp-servers
+cd mcp-servers   # desde la raíz del clon
 .venv/bin/python -m pytest mp_trustly_mx/tests/ -q
 ```
 

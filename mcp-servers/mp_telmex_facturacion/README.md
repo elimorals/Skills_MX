@@ -4,7 +4,7 @@ Telmex/Telcel para descargar facturas CFDI.
 
 ## Estado
 
-- ✅ Mock-first
+- Sin credenciales: datos de ejemplo marcados `simulated: true`
 - ⏳ Path real pendiente — requiere implementar HTTP/API
 
 ## Credenciales (para path real)
@@ -14,8 +14,8 @@ Telmex/Telcel para descargar facturas CFDI.
 
 ## Tools
 
-- `telmex_fact_descargar_factura_mes` — mock-first
-- `telmex_fact_listar_facturas` — mock-first
+- `telmex_fact_descargar_factura_mes`
+- `telmex_fact_listar_facturas`
 
 ## Setup mock
 

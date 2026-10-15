@@ -1,6 +1,6 @@
 # mp_uber_eats_partners
 
-MCP para restaurantes en Uber Eats MX. Mock-first.
+MCP para restaurantes en Uber Eats MX. Sin API pública verificable: ver "Estado real".
 
 ## Setup real (humano)
 

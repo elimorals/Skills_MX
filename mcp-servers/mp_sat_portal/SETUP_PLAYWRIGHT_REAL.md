@@ -75,8 +75,8 @@ Si ya la tienes, solo necesitas los 3 archivos/datos.
 
 ```bash
 export SAT_RFC=ABC010101AA1                       # tu RFC
-export SAT_EFIRMA_CERT=/Users/tu/.efirma/cer.cer
-export SAT_EFIRMA_KEY=/Users/tu/.efirma/key.key
+export SAT_EFIRMA_CERT=~/.efirma/cer.cer
+export SAT_EFIRMA_KEY=~/.efirma/key.key
 export SAT_EFIRMA_PASSWORD='tu-password-efirma'   # ⚠ usa quotes simples si contiene $
 export PLUGINS_MX_PLAYWRIGHT_REAL=1               # opt-in explícito
 ```
