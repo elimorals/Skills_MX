@@ -1,4 +1,4 @@
-# Plugins MX
+# Skills MX
 
 Plugins de Claude Code, skills y MCP servers para operar una PyME o profesión en México: CFDI 4.0, SAT, nómina e IMSS, pagos, marketplaces, trámites estatales y municipales, y 40 verticales por industria.
 
