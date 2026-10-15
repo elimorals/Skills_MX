@@ -174,7 +174,7 @@ def conteos(filas):
 
 def bloque_md(filas, con_tabla: bool) -> str:
     c = conteos(filas)
-    lineas = [MARK_INI, f"## Estado a {FECHA} (oleada 1: mock → real)", "",
+    lineas = [MARK_INI, f"### Estado a {FECHA} (oleada 1: mock → real)", "",
               f"Generado por `scripts/generar-estado-mcps.py` desde la sección \"Estado real\" de cada README. "
               f"{len(filas)} MCPs, {sum(len(f['tools']) for f in filas)} tools.", "",
               "| Categoría | MCPs |", "|---|---|"]

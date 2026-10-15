@@ -87,7 +87,7 @@ Despacho contable con 200 clientes en 32 estados. Bulk de `isn_calcular()` con s
 ---
 
 <!-- estado-mcps:inicio -->
-## Estado a 2026-10-14 (oleada 1: mock → real)
+### Estado a 2026-10-14 (oleada 1: mock → real)
 
 Generado por `scripts/generar-estado-mcps.py` desde la sección "Estado real" de cada README. 83 MCPs, 417 tools.
 
