@@ -4,7 +4,7 @@ CFE para descargar facturas CFDI bidireccional.
 
 ## Estado
 
-- ✅ Mock-first
+- Sin credenciales: datos de ejemplo marcados `simulated: true`
 - ⏳ Path real pendiente — requiere implementar HTTP/API
 
 ## Credenciales (para path real)
@@ -14,8 +14,8 @@ CFE para descargar facturas CFDI bidireccional.
 
 ## Tools
 
-- `cfe_fact_descargar_factura_mes` — mock-first
-- `cfe_fact_consumo_historico` — mock-first
+- `cfe_fact_descargar_factura_mes`
+- `cfe_fact_consumo_historico`
 
 ## Setup mock
 

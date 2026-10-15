@@ -6,6 +6,16 @@ Plugin dedicado al ciclo completo de declaración anual ISR para personas físic
 > Score original del research: **9.5/10** (mayor del proyecto)
 > Mercado: ~5M declarantes anuales obligados
 
+## Instalación
+
+```bash
+/plugin marketplace add elimorals/Skills_MX
+/plugin install core-mexico --marketplace elimorals/Skills_MX   # base de todos los verticales
+/plugin install pf-anual-mx --marketplace elimorals/Skills_MX
+```
+
+Los MCPs del plugin se descargan solos con [`uv`](https://docs.astral.sh/uv/) la primera vez. Sin credenciales responden datos de ejemplo marcados `simulated: true`; con credenciales, los errores del proveedor se propagan. Estado por MCP: [`mcp-servers/CATALOGO.md`](../mcp-servers/CATALOGO.md).
+
 ## Cobertura
 
 **Regímenes soportados:**

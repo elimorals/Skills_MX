@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 ---
 spec: "sat-portal-playwright-real"
 estado: "DRAFT"
@@ -197,7 +199,7 @@ class DescargaMasivaResult(BaseModel):
 
 ## 13. Links
 
-- Plan original: `/Users/elias/Downloads/plugins-mx-planeacion-mcps-agentica.md` sección 6.1
+- Plan original: documento de planeación original (no versionado en el repo) sección 6.1
 - mp_sat_portal actual: `mcp-servers/mp_sat_portal/`
 - Portal SAT: https://www.sat.gob.mx
 - Playwright Python docs: https://playwright.dev/python/

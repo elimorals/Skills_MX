@@ -4,11 +4,15 @@
 
 **Audiencia**: cualquiera que opere plugins-mx con integraciones reales.
 
-**Pre-lectura**: [glosario-fiscal-mx.md](glosario-fiscal-mx.md) (LFPDPPP).
+**Pre-lectura**: [glosario-fiscal-mx.md](../reference/glosario-fiscal-mx.md) (LFPDPPP).
 
 ---
 
 ## Principios
+
+> **Datos de ejemplo vs reales.** Sin credenciales, los MCPs responden datos de ejemplo marcados `simulated: true`. Con credenciales, un error del proveedor se propaga y nunca se sustituye por datos de ejemplo ([ADR 008](../adrs/008-estado-real-sin-fallback-silencioso.md)). Una respuesta sin `simulated: true` viene del proveedor real.
+>
+> **e.firma en pruebas.** Los tests generan una e.firma autofirmada al vuelo. La e.firma de prueba del SAT para comparar contra phpcfdi se lee de `SAT_EFIRMA_PRUEBA_DIR`, fuera del repo. Nunca se commitean `.cer`, `.key`, `.pem`, `.p12` ni `.pfx` (el `.gitignore` los bloquea).
 
 1. **Defensa en profundidad**: múltiples capas, no una sola
 2. **Least privilege**: cada componente solo lo mínimo necesario
@@ -27,38 +31,45 @@ Todas las credenciales viven en `.env` LOCAL (nunca commiteado):
 ```bash
 # .env (NO commitear)
 
+# SAT (rutas a la e.firma, fuera del repo)
+SAT_RFC=XAXX010101000
+SAT_EFIRMA_CERT=~/.efirma/cer.cer
+SAT_EFIRMA_KEY=~/.efirma/key.key
+SAT_EFIRMA_PASSWORD=xxx
+
 # PAC
-FACTURAMA_API_KEY=fk_live_xxx
+FACTURAMA_USER=xxx
+FACTURAMA_PASSWORD=xxx
 FACTURAMA_ENV=production
 
-# WhatsApp Business
-GUPSHUP_API_KEY=xxx
-GUPSHUP_APP_NAME=xxx
+# WhatsApp Business (Meta Cloud API)
+WHATSAPP_PHONE_ID=xxx
+WHATSAPP_TOKEN=xxx
 
 # Pagos
-STRIPE_API_KEY=sk_live_xxx
-STRIPE_WEBHOOK_SECRET=whsec_xxx
 MERCADOPAGO_ACCESS_TOKEN=APP_USR-xxx
+CONEKTA_API_KEY=key_xxx
 
-# CRM (opcional)
-NOTION_TOKEN=secret_xxx
+# Solver de CAPTCHA (opt-in)
+PLUGINS_MX_CAPTCHA_SOLVER=2captcha
+TWOCAPTCHA_API_KEY=xxx
 ```
 
 ### `.env.example` (sí commiteado)
 
 ```bash
 # .env.example (template público, sin valores reales)
-FACTURAMA_API_KEY=tu_api_key_aqui
-FACTURAMA_ENV=sandbox
-GUPSHUP_API_KEY=tu_api_key
-# ... etc
+# FACTURAMA_USER=tu_usuario
+# FACTURAMA_ENV=sandbox
+# WHATSAPP_TOKEN=token_permanente_meta
+# ... la lista completa está en .env.example de la raíz del repo
 ```
 
 ### Verificar que `.env` está en `.gitignore`
 
 Ya está incluido pero verifica:
 ```bash
-grep "^.env$" ~/plugins-mx/.gitignore
+grep "^.env" .gitignore     # desde la raíz del clon
 # Debe devolver: .env
 ```
 
@@ -270,7 +281,7 @@ Atentamente,
 
 ```bash
 # Backup diario a S3 (con encriptación)
-0 23 * * * cd ~/plugins-mx && tar -czf - clientes/ cfdi/ | age -r $PUBKEY | aws s3 cp - s3://my-bucket/plugins-mx/$(date +%Y%m%d).tar.gz.age
+0 23 * * * cd /ruta/a/Skills_MX && tar -czf - clientes/ cfdi/ | age -r $PUBKEY | aws s3 cp - s3://my-bucket/plugins-mx/$(date +%Y%m%d).tar.gz.age
 ```
 
 ### Restauración periódica
@@ -312,7 +323,7 @@ aws s3 cp s3://my-bucket/plugins-mx/YYYYMMDD.tar.gz.age - | age -d -i $PRIVKEY |
 
 ## Ver también
 
-- [compliance-checklist.md](compliance-checklist.md) — cumplimiento sectorial
+- [compliance-checklist.md](../operational/compliance-checklist.md) — cumplimiento sectorial
 - `_shared/compliance-lfpdppp/SKILL.md` — skill de protección de datos
-- [integracion-pac.md](integracion-pac.md) — credenciales PAC
-- [integracion-pagos.md](integracion-pagos.md) — credenciales pasarelas
+- [integracion-pac.md](../integrations/integracion-pac.md) — credenciales PAC
+- [integracion-pagos.md](../integrations/integracion-pagos.md) — credenciales pasarelas

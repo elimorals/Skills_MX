@@ -4,7 +4,7 @@
 
 **Audiencia**: desarrolladores que quieren agregar skills, verticales, o corregir contenido.
 
-**Pre-lectura**: [arquitectura.md](arquitectura.md), [glosario-tecnico.md](glosario-tecnico.md).
+**Pre-lectura**: [arquitectura.md](../architecture/arquitectura.md), [glosario-tecnico.md](../reference/glosario-tecnico.md).
 
 ---
 
@@ -81,7 +81,7 @@
 ### 2. Crear directorio en `_shared/`
 
 ```bash
-cd ~/plugins-mx
+cd Skills_MX   # raíz de tu clon
 mkdir -p _shared/mi-skill-nuevo
 ```
 
@@ -142,7 +142,7 @@ touch tests/fixtures/mi-skill-nuevo/case-01-feliz.json
 ### 1. Crear directorio en `<vertical>/skills/`
 
 ```bash
-cd ~/plugins-mx
+cd Skills_MX   # raíz de tu clon
 mkdir -p freelancers-mx/skills/mi-skill-propio
 ```
 
@@ -182,7 +182,7 @@ Convención: `<dominio>-mx` o `<dominio>-latam`. Ej. `salon-mx`, `veterinaria-mx
 ### 2. Crear estructura base
 
 ```bash
-cd ~/plugins-mx
+cd Skills_MX   # raíz de tu clon
 mkdir -p salon-mx/.claude-plugin salon-mx/skills salon-mx/commands
 ```
 
@@ -246,7 +246,9 @@ Archivos `.md` en `commands/`.
 ...
 ```
 
-### 7. Crear `.mcp.json` con servidores mockeables
+### 7. Crear `.mcp.json`
+
+Copia los bloques de los `mcp-servers/mp_*/example.mcp.json` que use el vertical (lanzador `uv run --no-project --with "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers"`). No uses `cwd` ni rutas locales, ni fuerces `PLUGINS_MX_MOCK=1`; `python3 scripts/mcp-config-portable.py --check` lo verifica.
 
 ### 8. Sincronizar `_shared/`
 
@@ -260,9 +262,14 @@ Archivos `.md` en `commands/`.
 ./scripts/lint-skills.sh
 ```
 
-### 10. Actualizar `marketplace.json`
+### 10. Regenerar el marketplace
 
-Mover el nuevo plugin de `comingSoon` a `plugins`.
+```bash
+python3 scripts/generar-marketplace.py          # reescribe .claude-plugin/marketplace.json
+claude plugin validate .                        # valida marketplace y plugins
+```
+
+El README del plugin debe tener una sección `## Instalación` con `/plugin install <nombre> --marketplace elimorals/Skills_MX`; el validador la pide.
 
 ### 11. Crear CHANGELOG.md propio del vertical
 
@@ -348,16 +355,34 @@ Esto cumple el principio de "honestidad antes de profesionalismo": el usuario qu
 ### Workflow automatizado (con skill-creator)
 
 ```bash
-cd ~/plugins-mx/<path-al-skill-creator>
+cd <ruta-al-skill-creator>
 python -m scripts.run_loop \
-  --eval-set ../plugins-mx/evals/freelancers-mx/cotizacion-mxn.eval.json \
-  --skill-path ../plugins-mx/freelancers-mx/skills/cotizacion-mxn \
+  --eval-set /ruta/a/Skills_MX/evals/freelancers-mx/cotizacion-mxn.eval.json \
+  --skill-path /ruta/a/Skills_MX/freelancers-mx/skills/cotizacion-mxn \
   --model claude-opus-4-7 \
   --max-iterations 5 \
   --verbose
 ```
 
 Esto itera automáticamente proponiendo descriptions mejoradas y midiendo accuracy contra el eval.
+
+---
+
+## Agregar o modificar un MCP
+
+1. Sigue "Cómo agregar un MCP nuevo" en [`mcp-servers/README.md`](../../mcp-servers/README.md).
+2. Respeta el [ADR 008](../adrs/008-estado-real-sin-fallback-silencioso.md): sin credenciales, datos de ejemplo marcados `simulated: true`; con credenciales, los errores se propagan como error tipado (nunca fallback silencioso). Si el portal exige CAPTCHA o login, usa `shared/portal_handoff.py`.
+3. Documenta la sección `## Estado real` del README del MCP (qué se validó en vivo, fecha, URL) y agrega un test `@pytest.mark.live`.
+4. Regenera el estado: `python3 scripts/generar-estado-mcps.py` (el CI corre `--check`).
+
+```bash
+cd mcp-servers
+uv venv .venv --python 3.12 && uv pip install -e ".[dev]"
+.venv/bin/pytest -q                                    # unitarios, sin red
+PLUGINS_MX_LIVE=1 .venv/bin/pytest -q -m live <ruta>   # contra el portal real
+```
+
+Los tests que necesitan e.firma generan una autofirmada al vuelo. Las comparaciones byte a byte contra phpcfdi usan la e.firma de prueba del SAT desde `SAT_EFIRMA_PRUEBA_DIR`, que vive fuera del repo.
 
 ---
 
@@ -411,15 +436,24 @@ Convención: `<plugin-name>-v<version>`.
 
 ---
 
-## Validación pre-commit (recomendado configurar)
+## Validación pre-commit
 
-`.git/hooks/pre-commit`:
 ```bash
-#!/usr/bin/env bash
-./scripts/lint-skills.sh || exit 1
+bash scripts/install-hooks.sh     # enlaza scripts/pre-commit.sh y prepara los hooks de Claude Code
 ```
 
-Bloquea commits con skills mal formateados.
+Antes de abrir un PR conviene correr lo mismo que el CI:
+
+```bash
+bash scripts/lint-skills.sh
+python3 scripts/eval-golden.py
+python3 scripts/generar-estado-mcps.py --check
+python3 scripts/generar-marketplace.py --check
+python3 scripts/mcp-config-portable.py --check
+claude plugin validate .
+```
+
+El CI además falla si aparece una ruta de máquina local (de tu directorio de usuario) fuera de `docs/historial`, `docs/sprints`, `docs/audits` y `website/`.
 
 ---
 
@@ -437,6 +471,7 @@ Por ahora: out of scope (foco en México).
 
 ## Ver también
 
-- [arquitectura.md](arquitectura.md) — diseño del monorepo
-- [versionado.md](versionado.md) — política de versiones
-- [estado-real.md](estado-real.md) — qué se considera producción-grade
+- [arquitectura.md](../architecture/arquitectura.md) — diseño del monorepo
+- [versionado.md](../architecture/versionado.md) — política de versiones
+- [ADR 008](../adrs/008-estado-real-sin-fallback-silencioso.md) — reglas de estado real para MCPs
+- [estado-real-2026-06.md](../historial/estado-real-2026-06.md) — auditoría histórica de scores por skill

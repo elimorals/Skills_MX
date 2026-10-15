@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06-14)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # FASE 61 — Sprint Sprint 1 del roadmap Top 15 (3 MCPs en paralelo)
 
 > 2026-06-14 · Continuación del plan post-FASE 57 (research) y FASE 58-59 (REPSE+ISN).

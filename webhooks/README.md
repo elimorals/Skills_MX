@@ -10,14 +10,14 @@ maneja idempotencia y dispara handlers que invocan workflows del repo.
 | Componente | Estado |
 |---|---|
 | FastAPI app + routes | ✅ |
-| 12 handlers (Stripe, MP, Conekta, Facturama, Meta WA, GitHub, Calendly, Typeform, ML, Banxico CEP, IMSS, CONDUSEF) | ✅ |
+| 12 handlers de servicio (Stripe, MP, Conekta, Facturama, Meta WA, GitHub, Calendly, Typeform, ML, Banxico CEP, IMSS, CONDUSEF) + `dispatch.py` | ✅ |
 | Validadores HMAC (Stripe, MP, Conekta, GitHub, Meta WA) | ✅ |
 | Validadores genéricos (Bearer + IP allowlist) | ✅ |
 | Idempotencia (memory + SQLite) | ✅ |
 | Audit log append-only | ✅ |
 | Endpoint admin `/webhooks/recent` | ✅ |
-| Tests (~25 casos) | ✅ |
-| Retry queue async | ⏳ V2 (los handlers actuales son síncronos best-effort) |
+| Tests (42 casos en `tests/`) | ✅ |
+| Retry queue SQLite con dead-letter (`app/retry_queue.py`, [ADR 004](../docs/adrs/004-retry-queue-sqlite-no-redis.md)) | ✅ módulo y tests; ⏳ aún no conectado a las rutas |
 | Deployment Cloudflare Workers | ⏳ V2 |
 | Integración real con workflows del monorepo (cola/MCP/CLI) | ⏳ V2 |
 
@@ -168,12 +168,12 @@ webhooks/
     │   └── admin.py      # /webhooks/recent
     ├── validators/       # 1 por servicio
     └── handlers/         # 1 por servicio + dispatch.py
-└── tests/                # ~25 tests
+└── tests/                # 42 tests
 ```
 
 ## Limitaciones conocidas
 
-- **Sin retry queue**: si el handler tarda mucho, el cliente puede timeout-ear y reintentar. La idempotencia evita procesar dos veces, pero un servicio que reintenta agresivamente sí puede generar carga.
+- **Retry queue sin conectar**: `app/retry_queue.py` existe con tests, pero las rutas aún procesan los handlers de forma síncrona. Si el handler tarda mucho, el cliente puede timeout-ear y reintentar. La idempotencia evita procesar dos veces, pero un servicio que reintenta agresivamente sí puede generar carga.
 - **Sin rate limiting**: trivial agregar con `slowapi` cuando sea necesario.
 - **Calendly/Typeform**: usamos Bearer simple; sus firmas HMAC oficiales se pueden agregar fácil después (similar a Stripe).
 - **Mercado Libre**: solo IP allowlist; sin firma HMAC oficial.

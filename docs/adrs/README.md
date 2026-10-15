@@ -5,7 +5,7 @@ Decisiones arquitecturales clave del proyecto `plugins-mx`, documentadas con su 
 ## Formato
 
 Cada ADR sigue el patrón:
-- **Status**: PROPUESTO / ACEPTADO / SUPERSEDED por ADR-N / DEPRECATED
+- **Status**: PROPUESTO / ACEPTADO / REEMPLAZADA por ADR-N / DEPRECATED
 - **Context**: qué problema veníamos enfrentando
 - **Decision**: qué decidimos hacer
 - **Alternatives considered**: qué descartamos y por qué
@@ -16,9 +16,10 @@ Cada ADR sigue el patrón:
 | ADR | Decisión | Status |
 |---|---|---|
 | [001](001-shared-skills-source-of-truth.md) | `_shared/` como fuente de verdad sincronizada | ACEPTADO |
-| [002](002-mcps-mock-first.md) | MCPs mock-first por default | ACEPTADO |
+| [002](002-mcps-mock-first.md) | MCPs mock-first por default | REEMPLAZADA por 008 |
 | [003](003-workflows-como-codigo.md) | Workflows como código ejecutable (no solo markdown) | ACEPTADO |
 | [004](004-retry-queue-sqlite-no-redis.md) | Retry queue SQLite local (no Redis) | ACEPTADO |
 | [005](005-playwright-selectors-versionados.md) | Selectores Playwright versionados en módulo separado | ACEPTADO |
 | [006](006-evals-dual-trigger-no-trigger.md) | Evals con casos should-trigger + should-NOT-trigger | ACEPTADO |
 | [007](007-dry-run-default-en-acciones-criticas.md) | dry_run=true default en workflows que mueven dinero/datos | ACEPTADO |
+| [008](008-estado-real-sin-fallback-silencioso.md) | Estado real por MCP, sin fallback silencioso a datos de ejemplo | ACEPTADO |

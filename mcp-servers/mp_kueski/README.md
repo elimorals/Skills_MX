@@ -4,7 +4,7 @@ Kueski Pay (BNPL Buy Now Pay Later).
 
 ## Estado
 
-- ✅ Mock-first
+- Sin credenciales: datos de ejemplo marcados `simulated: true`
 - ⏳ Path real pendiente — requiere implementar HTTP/API
 
 ## Credenciales (para path real)
@@ -13,9 +13,9 @@ Kueski Pay (BNPL Buy Now Pay Later).
 
 ## Tools
 
-- `kueski_listar_pagos` — mock-first
-- `kueski_consultar_pago` — mock-first
-- `kueski_cancelar_pago` — mock-first
+- `kueski_listar_pagos`
+- `kueski_consultar_pago`
+- `kueski_cancelar_pago`
 
 ## Setup mock
 

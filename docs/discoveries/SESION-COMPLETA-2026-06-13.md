@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06-13)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Sesión completa 2026-06-13 — Resumen ejecutivo
 
 > Documento maestro de las 24 fases ejecutadas en una sesión de trabajo continuo.

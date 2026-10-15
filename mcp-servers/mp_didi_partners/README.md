@@ -4,7 +4,7 @@ DiDi (movilidad pasajeros) para conductores.
 
 ## Estado
 
-- ✅ Mock-first
+- Sin credenciales: datos de ejemplo marcados `simulated: true`
 - ⏳ Path real pendiente — requiere implementar HTTP/API
 
 ## Credenciales (para path real)
@@ -13,9 +13,9 @@ DiDi (movilidad pasajeros) para conductores.
 
 ## Tools
 
-- `didi_partners_listar_viajes` — mock-first
-- `didi_partners_consultar_viaje` — mock-first
-- `didi_partners_comisiones_mes` — mock-first
+- `didi_partners_listar_viajes`
+- `didi_partners_consultar_viaje`
+- `didi_partners_comisiones_mes`
 
 ## Setup mock
 

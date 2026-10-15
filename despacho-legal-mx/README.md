@@ -2,6 +2,16 @@
 
 Plugin para despachos jurídicos en México: abogados litigantes, fiscalistas, mercantilistas, laboralistas. Construido sobre `core-mexico`.
 
+## Instalación
+
+```bash
+/plugin marketplace add elimorals/Skills_MX
+/plugin install core-mexico --marketplace elimorals/Skills_MX   # base de todos los verticales
+/plugin install despacho-legal-mx --marketplace elimorals/Skills_MX
+```
+
+Los MCPs del plugin se descargan solos con [`uv`](https://docs.astral.sh/uv/) la primera vez. Sin credenciales responden datos de ejemplo marcados `simulated: true`; con credenciales, los errores del proveedor se propagan. Estado por MCP: [`mcp-servers/CATALOGO.md`](../mcp-servers/CATALOGO.md).
+
 ## Skills propios (5)
 
 | Skill | Propósito |
@@ -38,4 +48,4 @@ Hereda 6 skills `_shared/` (cfdi-emision, iva-retenciones-mx, rfc-validacion, wh
 ## Ver también
 
 - `docs/specs/` (pendiente spec específico para despacho-legal)
-- `docs/analisis-profundo-2026-06.md` — gap general
+- `docs/audits/analisis-profundo-2026-06.md` — gap general (histórico)

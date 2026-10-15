@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Brief para contador certificado — validación `freelance-tax-mx` + `pf-anual-mx`
 
 **Fecha**: 2026-06-12
@@ -185,7 +187,7 @@ Idealmente:
 
 ## 7. Datos del proyecto
 
-- **Repositorio**: `/Users/elias/Documents/Trabajo/skills/`
+- **Repositorio**: `https://github.com/elimorals/Skills_MX`
 - **Documentos de contexto** (te puedo enviar PDF):
   - `docs/analisis-profundo-2026-06.md` — visión general
   - `docs/estado-real.md` — auditoría honesta de riesgo

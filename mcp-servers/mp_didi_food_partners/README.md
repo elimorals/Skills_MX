@@ -1,6 +1,6 @@
 # mp_didi_food_partners
 
-MCP para restaurantes en DiDi Food MX. Mock-first hasta tener credenciales Partner.
+MCP para restaurantes en DiDi Food MX. Sin API pública verificable: ver "Estado real".
 
 ## Setup real (humano)
 

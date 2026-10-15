@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../README.md).
+
 # Plan de afinación productiva — de scaffolding a producción
 
 Roadmap concreto semana a semana para llevar cada vertical de **4.5/9 puntos** (estado actual) a **7-8/9 puntos** (producción-grade).

@@ -11,7 +11,7 @@ Ninguno de los dos ERPs ofrece API REST pública. La integración requiere uno d
 2. Conexión ODBC al SQL Server de Aspel (requiere agente local)
 3. API ADD .NET COM de ContPAQi (solo Windows + ContPAQi instalado)
 
-Este MCP soporta el **camino 1** (parser de CSV) y mock-first cuando no hay exports disponibles.
+Este MCP soporta el **camino 1** (parser de CSV) y responde datos de ejemplo (`simulated: true`) cuando no hay exports disponibles.
 
 ## Tools (9)
 
@@ -109,6 +109,6 @@ assert balance["ecuacion_contable_cuadra"] is True
 ## Tests
 
 ```bash
-cd /Users/elias/Documents/Trabajo/skills/mcp-servers
+cd mcp-servers   # desde la raíz del clon
 .venv/bin/python -m pytest mp_aspel_contpaqi/tests/ -q
 ```

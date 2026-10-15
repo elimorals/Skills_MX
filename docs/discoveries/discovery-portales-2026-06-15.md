@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06-15)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Discovery de portales reales — 2026-06-15
 
 Sesión de debug con Playwright MCP sobre los portales que aún están en mock-only

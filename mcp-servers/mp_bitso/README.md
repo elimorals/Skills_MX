@@ -102,7 +102,7 @@ isr = await bitso_calcular_isr_cripto_mx(
 ## Tests
 
 ```bash
-cd /Users/elias/Documents/Trabajo/skills/mcp-servers
+cd mcp-servers   # desde la raíz del clon
 .venv/bin/python -m pytest mp_bitso/tests/ -q
 ```
 

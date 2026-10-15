@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Brief para abogado defensa del consumidor — validación PROFECO talleres + ventas
 
 **Fecha**: 2026-06-12

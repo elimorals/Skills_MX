@@ -58,6 +58,6 @@ export PLUGINS_MX_PLAYWRIGHT_REAL=1
 ## Tests
 
 ```bash
-cd /Users/elias/Documents/Trabajo/skills/mcp-servers
+cd mcp-servers   # desde la raíz del clon
 .venv/bin/python -m pytest mp_bancos_mx/tests/ -q
 ```

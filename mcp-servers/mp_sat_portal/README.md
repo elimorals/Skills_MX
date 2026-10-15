@@ -131,6 +131,6 @@ PLUGINS_MX_MOCK=1        → mock siempre (override)
 ## Tests
 
 ```bash
-cd /Users/elias/Documents/Trabajo/skills/mcp-servers
+cd mcp-servers   # desde la raíz del clon
 .venv/bin/python -m pytest mp_sat_portal/tests/ -q
 ```

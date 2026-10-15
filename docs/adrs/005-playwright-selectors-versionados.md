@@ -2,6 +2,8 @@
 
 **Status**: ACEPTADO  (2026-06-12)
 
+> **Nota 2026-10-14**: el portal SAT ya se consulta con login de e.firma por HTTP (`shared/sat_portal_fiel.py`). Este patrón aplica a la ruta Playwright heredada (extra `sat-playwright`) y a los portales que siguen en Playwright.
+
 ## Context
 
 `mp_sat_portal` y `mp_bancos_mx` requieren Playwright para portales sin API. El portal SAT cambia su HTML cada 3-6 meses (botones renombrados, IDs nuevos, flujo reordenado). Cuando esto pasa, el scraper rompe en producción.

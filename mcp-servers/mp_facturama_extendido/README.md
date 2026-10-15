@@ -61,9 +61,10 @@ cd mcp-servers
 {
   "mcpServers": {
     "facturama": {
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_facturama_extendido.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": ["run", "--no-project", "--quiet", "--with",
+               "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+               "python", "-m", "mp_facturama_extendido.server"],
       "env": {
         "FACTURAMA_USER": "${FACTURAMA_USER:-}",
         "FACTURAMA_PASSWORD": "${FACTURAMA_PASSWORD:-}",
