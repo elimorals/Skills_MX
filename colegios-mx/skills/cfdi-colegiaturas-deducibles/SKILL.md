@@ -1,32 +1,27 @@
 ---
 name: cfdi-colegiaturas-deducibles
-description: Emite CFDI de colegiaturas con los requisitos específicos para que el padre pueda deducir conforme al Art. 151 LISR fracción VIII (deducciones personales por pagos de servicios educativos en preescolar, primaria, secundaria y media superior; NO universidad). Aplica catálogo ClaveProdServ 86111600-86111900 según nivel, UsoCFDI D10 obligatorio, valida que la forma de pago sea electrónica (efectivo NO califica para deducción), respeta topes de deducción por nivel (preescolar $14,200, primaria $12,900, secundaria $19,900, prepa técnica $17,100, prepa general $24,500 — verificar vigentes), y emite la "constancia de servicios educativos" obligatoria para que la deducción proceda. Usar siempre que el usuario diga facturar colegiatura, CFDI colegio, factura escuela, deducible D10, comprobante deducible educación, school tuition CFDI. NO usar para servicios extracurriculares de paga (deportes, talleres después del horario — distinta clave) ni para universidad (no es deducible en LISR personal).
+description: Emite CFDI de colegiaturas con los requisitos para que el padre o tutor aplique el estímulo fiscal por servicios educativos del Decreto DOF 26-12-2013 (arts. 1.8 a 1.10) en preescolar, primaria, secundaria, profesional técnico y bachillerato (NO universidad). Usa ClaveProdServ 86121501/86121503/86121601/86121602 según nivel, UsoCFDI D10, complemento concepto IEDU (iedu:instEducativas), IVA exento (Art. 15 fr. IV LIVA), forma de pago no efectivo (cheque nominativo, transferencia, tarjeta) y advierte los topes anuales por alumno (preescolar $14,200, primaria $12,900, secundaria $19,900, profesional técnico $17,100, bachillerato $24,500). Separa conceptos no deducibles (inscripción, reinscripción, cuotas, materiales). Usar cuando el usuario diga facturar colegiatura, CFDI colegio, factura escuela, deducible D10, comprobante deducible educación, complemento IEDU, school tuition CFDI. NO usar para extracurriculares de paga ni para universidad (no deducible).
 allowed-tools: Read, Write, Edit
 ---
 
 # CFDI de colegiaturas — deducibilidad correcta
 
-Si el CFDI sale mal, el padre no puede deducir. Si no puede deducir, el colegio queda mal frente al padre y baja la satisfacción.
+Si el CFDI sale mal, el padre no puede deducir y el colegio queda mal con la familia.
 
-## Requisitos Art. 151 LISR fracción VIII
+## Fundamento
 
-La deducción por colegiaturas aplica para:
-- Educación preescolar
-- Educación primaria
-- Educación secundaria
-- Profesional técnico (bachillerato técnico)
-- Bachillerato general (prepa)
+- **Decreto que compila diversos beneficios fiscales**, DOF 26-12-2013, arts. 1.8 a 1.10 (retoma el estímulo del decreto de 15-02-2011). No es una fracción del Art. 151 LISR.
+- **Transporte escolar** es otra deducción: Art. 151 fr. VII LISR, solo si es obligatorio. Va en concepto separado.
+- **IVA**: enseñanza de particulares con autorización o RVOE está exenta (Art. 15 fr. IV LIVA).
 
-**NO aplica para**:
-- Universidad / posgrado (no es deducible vía Art. 151)
-- Cursos no curriculares (idiomas extras, deportes, música) salvo que sean parte del programa académico oficial
-- Inscripciones (la inscripción no es deducible, solo colegiaturas mensuales)
-- Materiales educativos
-- Transporte escolar (eso es otra fracción del Art. 151 distinta — IX)
+## Qué es deducible
 
-## Topes de deducción por nivel (verificar vigentes)
+- Colegiaturas de preescolar, primaria, secundaria, profesional técnico y bachillerato o equivalente, en escuelas privadas con autorización o RVOE.
+- Beneficiarios: el propio contribuyente, cónyuge o concubino(a), y ascendientes o descendientes en línea recta, siempre que el beneficiario no tenga ingresos iguales o mayores a 1 UMA anual (2026: $117.31 × 365 = $42,818.15).
 
-Topes anuales por alumno:
+**No deducible**: universidad y posgrado; inscripción y reinscripción; cuotas distintas a la enseñanza (materiales, uniformes, exámenes, cursos extra) aunque se cobren junto con la colegiatura. Si van en el mismo CFDI, deben ir en conceptos separados y sin complemento IEDU.
+
+## Topes anuales por alumno
 
 | Nivel | Tope anual |
 |---|---|
@@ -34,195 +29,112 @@ Topes anuales por alumno:
 | Primaria | $12,900 |
 | Secundaria | $19,900 |
 | Profesional técnico | $17,100 |
-| Bachillerato general | $24,500 |
+| Bachillerato o su equivalente | $24,500 |
 
-**Importante**: estos topes se actualizan periódicamente. Verificar el ejercicio fiscal vigente. El padre solo deduce hasta el tope; el colegio puede emitir CFDI por cualquier monto, pero advierte al padre sobre el tope si el monto anual lo excede.
+Sin cambios desde 2011 (confirmado como vigentes para la declaración de 2026 por Expansión, 12-03-2026; fuente secundaria, confianza media). Según fuentes secundarias, este estímulo no cuenta dentro del límite global de deducciones personales del Art. 151 LISR (verificar). El colegio puede facturar cualquier monto; el padre solo deduce hasta el tope.
 
 ## Estructura del CFDI
 
 ```
 TipoDeComprobante: I
 Emisor:
-  RFC: del colegio
-  Razón Social
-  Régimen Fiscal: 603 si es AC, 601 si es SC/SA, 626 si RESICO PM
-  Lugar de Expedición: CP del colegio
+  Rfc, Nombre: del colegio
+  RegimenFiscal: 603 si es AC/SC de enseñanza con RVOE (Título III, Art. 79 fr. X LISR); 601 si es SA/SC lucrativa; 626 si es RESICO
+  LugarExpedicion: CP del colegio
 Receptor:
-  RFC: del padre/madre/tutor (el que va a deducir)
-  Nombre completo del receptor
-  Régimen Fiscal del receptor
-  CP del domicilio fiscal del receptor (obligatorio en 4.0)
-  Uso CFDI: D10 (Pagos por servicios educativos - colegiaturas)
+  Rfc, Nombre, DomicilioFiscalReceptor, RegimenFiscalReceptor: del padre/madre/tutor que deduce, tal como en su constancia
+  UsoCFDI: D10 (Pagos por servicios educativos (colegiaturas))
 Moneda: MXN
-MétodoPago: PUE
-FormaPago: 03 (SPEI) | 04 (TDC) | 28 (TDD) | 02 (Cheque nominativo)
-  - NO USAR: 01 Efectivo (efectivo NO califica para deducción Art. 151)
-Conceptos:
-  - ClaveProdServ:
-    - 86111600 Servicios de educación preescolar
-    - 86111700 Servicios de educación primaria
-    - 86111800 Servicios de educación secundaria
-    - 86111900 Servicios de educación profesional técnico
-    - 86121500 Servicios de educación profesional (preparatoria general)
-  - Descripción: ej. "Colegiatura del mes de Marzo 2026 — alumno [Nombre] — [grado] [grupo]"
-  - ClaveUnidad: E48 (unidad de servicio) o ACT (actividad)
-  - Cantidad: 1
-  - ValorUnitario: monto de la colegiatura
-  - Importe: igual a ValorUnitario × Cantidad
-  - ObjetoImp: 02 (sí objeto del impuesto) — Servicios educativos están exentos de IVA, pero el campo va.
-  - Impuestos: no aplica IVA en educación de planes oficiales SEP (exento por LIVA Art. 15 fracción IV)
-
-Complemento "InsEduc" (obligatorio para deducibilidad):
-  - nombreAlumno
-  - CURP del alumno
-  - nivelEducativo
-  - autoRVOE (número de RVOE del colegio)
-  - rfcPago (RFC del padre que paga, mismo que receptor)
+MetodoPago: PUE (se emite al cobrar)
+FormaPago: 02 cheque nominativo | 03 transferencia | 04 tarjeta de crédito | 28 tarjeta de débito | 29 tarjeta de servicios
+  NO: 01 efectivo (no deducible)
+Concepto colegiatura:
+  ClaveProdServ:
+    86121501 Servicios educativos preescolares
+    86121503 Escuelas privadas de educación primaria o secundaria (86121502 si es escuela religiosa)
+    86121601 Bachillerato o equivalente
+    86121602 Profesional técnico
+  Descripcion: "Colegiatura marzo 2026 — [alumno] — [grado] [grupo]"
+  ClaveUnidad: E48
+  Cantidad: 1
+  ObjetoImp: 02, con traslado IVA TipoFactor Exento
+  ComplementoConcepto: iedu:instEducativas (abajo)
 ```
 
-## El complemento InsEduc
+Claves verificadas contra el catálogo c_ClaveProdServ (copia pública del catálogo SAT) y Expansión 12-03-2026. Ojo: la tabla de `cfdi-emision/references/catalogos-sat.md` lista 86111600-86111800 para educación básica; en el catálogo esas claves son educación de adultos, idiomas e intercambios. Usa las de aquí.
 
-**Sin este complemento, el CFDI NO sirve para deducir**. Es lo que el SAT usa para validar la deducción del padre al cierre del ejercicio.
+## Complemento IEDU (complemento concepto)
 
-Estructura:
+Sin él, el CFDI no sustenta el estímulo. Va dentro del concepto de la colegiatura, no a nivel comprobante. Esquema oficial: `http://www.sat.gob.mx/sitio_internet/cfd/iedu/iedu.xsd`, versión 1.0.
+
 ```xml
-<iedu:instEducativas
-  Version="1.0"
-  nombreAlumno="Diego Pérez Rodríguez"
-  CURP="PERD150301HDFRZG02"
-  nivelEducativo="Primaria"
-  autoRVOE="20060123"
-  rfcPago="PERA800101ABC"
-/>
+<cfdi:ComplementoConcepto>
+  <iedu:instEducativas xmlns:iedu="http://www.sat.gob.mx/iedu"
+    version="1.0"
+    nombreAlumno="Diego Pérez Rodríguez"
+    CURP="PERD150301HDFRDGA1"
+    nivelEducativo="Primaria"
+    autRVOE="09PPR1234A"
+    rfcPago="PERA800101ABC"/>
+</cfdi:ComplementoConcepto>
 ```
 
-Donde:
-- `nombreAlumno`: exactamente como aparece en acta de nacimiento.
+- `nombreAlumno`: como aparece en el acta de nacimiento.
 - `CURP`: del alumno (no del padre).
-- `nivelEducativo`: "Preescolar" | "Primaria" | "Secundaria" | "Profesional técnico" | "Bachillerato o su equivalente".
-- `autoRVOE`: número de RVOE del colegio (validar que esté vigente).
-- `rfcPago`: RFC del receptor del CFDI (típicamente padre, madre o tutor que paga).
+- `nivelEducativo`: exactamente uno de "Preescolar", "Primaria", "Secundaria", "Profesional técnico", "Bachillerato o su equivalente".
+- `autRVOE`: clave del centro de trabajo (CCT) o número de RVOE de la escuela.
+- `rfcPago`: opcional; RFC de quien paga cuando es distinto de quien recibe el servicio.
 
-## Validaciones críticas
+## Validaciones antes de timbrar
 
-Antes de timbrar:
+1. **Forma de pago**: si el padre pagó en efectivo, avísale que esa colegiatura no será deducible y ofrécele transferencia para las siguientes.
+2. **Receptor = quien paga y deduce**. Si pagan ambos padres, un CFDI a cada uno por lo que pagó.
+3. **Nombre y CURP del alumno**: `curp_validar_estructura` (MCP `mp_curp_renapo`) valida el formato localmente. La consulta a RENAPO (`curp_consultar_renapo`) suele quedar en entrega a humano por captcha: si devuelve `requiere_humano`, pide al padre la constancia CURP de gob.mx/curp.
+4. **RVOE vigente** para el nivel facturado.
+5. **Concepto descriptivo**: mes, alumno y grado. Un CFDI por alumno.
+6. **Conceptos no deducibles** separados del de colegiatura.
 
-1. **Forma de pago electrónica**: si el padre pagó en efectivo, advertirle que NO podrá deducir. Ofrecer recibirle por transferencia para futuras colegiaturas.
+## Constancia anual de pagos (opcional)
 
-2. **RFC del padre coincide con quien paga**: importante porque solo el padre que efectivamente pagó (y a cuyo RFC se emite el CFDI) puede deducir. Si pagan ambos padres, hay que dividir y emitir CFDIs por separado a cada uno (o todo a uno solo, según acuerdo familiar y conveniencia fiscal).
+No es requisito legal para deducir: el CFDI con complemento basta. Muchos colegios la entregan como resumen para el padre:
 
-3. **Nombre del alumno consistente**: debe coincidir entre CFDI y constancia de servicios educativos. SAT puede cruzar datos.
-
-4. **CURP del alumno válido**: estructural y registrado en RENAPO. Si captura mal el CURP, deducción rechazada.
-
-5. **RVOE vigente del colegio**: si el RVOE está vencido o no autorizado para el nivel, el CFDI no sustenta deducción aunque tenga el complemento.
-
-6. **Concepto descriptivo**: incluir mes, alumno, grado. Vago "Colegiatura" no es suficiente para auditoría.
-
-## Constancia de servicios educativos (anual)
-
-Adicional al CFDI mensual, el colegio debe emitir al cierre del ciclo escolar (o ejercicio fiscal) una **constancia anual de servicios educativos** que confirma los montos pagados durante el año por cada padre, por cada alumno. Esta constancia el padre la conserva como respaldo.
-
-Estructura:
 ```markdown
-# CONSTANCIA DE SERVICIOS EDUCATIVOS
-# Ejercicio fiscal [Año]
+# CONSTANCIA DE PAGOS DE COLEGIATURAS — Ejercicio [Año]
+[Membrete del colegio]
+Se hace constar que el C. [Nombre], RFC [RFC], pagó colegiaturas del alumno [Nombre], CURP [CURP], inscrito en [grado] de [nivel]:
 
-[Membretado del colegio]
+| Mes | Folio fiscal (UUID) | Monto |
+|---|---|---|
+| Enero | abc-1234-... | $X,XXX |
 
-Por este medio se hace constar que el C. **[Nombre del padre]**, con RFC [RFC], realizó pagos por servicios educativos durante el ejercicio fiscal [año] por concepto de colegiaturas del alumno **[Nombre del alumno]**, con CURP [CURP], inscrito en el [grado] de [nivel] en este plantel.
-
-## Resumen de pagos
-
-| Mes | Concepto | Folio fiscal CFDI | Monto |
-|---|---|---|---|
-| Enero | Colegiatura | abc-1234-... | $X,XXX |
-| Febrero | Colegiatura | def-5678-... | $X,XXX |
-| ... | | | |
-
-**Total pagado en el ejercicio**: $XX,XXX MXN
-
-Esta constancia se emite para los fines fiscales del receptor conforme a la Ley del Impuesto sobre la Renta, Artículo 151 fracción VIII.
-
-ATENTAMENTE
-
-________________________
-[Nombre del Director]
-[Razón social del colegio]
-RVOE: [número y fecha]
-CCT: [CCT]
-
-[Fecha de emisión]
-[Sello]
+Total pagado en el ejercicio: $XX,XXX MXN
+Documento informativo; el comprobante fiscal es cada CFDI.
+[Director] · [Razón social] · RVOE [número y fecha] · CCT [CCT] · [Fecha] · [Sello]
 ```
 
 ## Casos edge
 
-### Padres divorciados que comparten gastos escolares
-- Cada padre puede recibir CFDI parcial proporcional al pago efectivo (50/50 o el % acordado).
-- O todo el CFDI a uno solo y ese lo deduce (el otro padre no deduce).
-- El convenio familiar determina; el colegio acomoda.
-
-### Alumno con beca parcial
-- Solo el monto efectivamente cobrado se CFDI'a.
-- La beca no se factura.
-
-### Pago de colegiatura por la abuela/abuelo
-- Solo deduce quien efectivamente pagó y a cuyo nombre se emitió el CFDI.
-- Abuelos pueden recibir CFDI a su RFC si pagan, pero solo deducen si tienen ingreso fiscal (típicamente jubilados con ingresos bajos no se benefician mucho de la deducción).
-
-### Pago atrasado (varios meses pagados juntos)
-- Emitir CFDI individuales por cada mes (no uno solo agrupado), para que la constancia anual tenga el detalle correcto.
-
-### Cambio de colegio a mitad de ciclo
-- Cada colegio emite CFDIs de los meses que cobró.
-- El padre suma deducción de ambos (hasta tope por nivel).
+- **Padres divorciados**: CFDI a cada uno por lo que efectivamente pagó, o todo a uno según su acuerdo.
+- **Beca parcial**: se factura solo lo cobrado.
+- **Pagan los abuelos**: pueden deducir como ascendientes si pagan y el CFDI va a su RFC (el alumno es su descendiente en línea recta).
+- **Pago atrasado de varios meses**: un CFDI al cobrar, con un concepto por mes (o un CFDI por mes) para que el detalle cuadre.
+- **Cambio de colegio**: cada colegio factura lo que cobró; el padre deduce hasta un solo tope por alumno y nivel.
 
 ## Salida esperada
 
-Cuando el usuario pide "facturar colegiatura de [familia] de [mes]":
-
 1. Lee datos del alumno y padre desde `clientes/[familia]/ficha.json`.
-2. Valida RFCs (padre receptor + colegio emisor) con `rfc-validacion`.
-3. Aplica `iva-retenciones-mx` para confirmar exención de IVA en educación oficial.
-4. Aplica `cfdi-emision` con datos específicos + complemento InsEduc.
-5. Emite CFDI (mock por default) y guarda XML + PDF.
-6. Alerta:
-   - Si forma de pago = efectivo: el padre no podrá deducir.
-   - Si está cerca del tope anual: estimación de cuánto le falta para topar.
-7. Si es el último mes del ciclo o fin de ejercicio: ofrecer generar la constancia anual.
+2. Valida RFC del receptor con `rfc-validacion`.
+3. Confirma exención de IVA con `iva-retenciones-mx`.
+4. Arma el payload con `cfdi-emision` + complemento IEDU y valida con `facturama_validar_payload_local`.
+5. Timbra con `facturama_timbrar_cfdi` (MCP `mp_facturama_extendido`; requiere credenciales, sin ellas queda en mock) y guarda XML + PDF.
+6. Alerta si la forma de pago es efectivo o si el acumulado anual ya pasó el tope.
+7. Al cierre del ejercicio, ofrece la constancia anual opcional.
 
 ## Integración
 
-- `cfdi-emision`: base del timbrado.
-- `iva-retenciones-mx`: confirmar exención de IVA.
-- `rfc-validacion`: validar receptor.
+- `complemento-inseduc-cfdi-d10`: detalle del complemento.
+- `validador-requisitos-deducibilidad-colegiaturas`: revisión de CFDI emitidos.
 - `cobranza-colegiaturas`: el CFDI se emite contra cobro efectivo.
-- `comunicacion-padres-wa`: notificar al padre que su CFDI ya está listo.
+- `comunicacion-padres-wa`: aviso de CFDI listo.
 
-## ⚠ Datos que requieren verificación vigente antes de producción
-
-Este skill tiene **alto riesgo regulatorio** (fiscal + educativo). Sin estos datos verificados, los padres no podrán deducir y el colegio queda mal:
-
-1. **Topes de deducción por nivel** (preescolar $14,200, primaria $12,900, secundaria $19,900, prepa técnica $17,100, prepa general $24,500): **valores históricos de mi training**. **Verificar vigentes** en RMF y portal SAT. Si los topes vigentes son distintos, la deducción del padre se calcula mal.
-
-2. **Complemento InsEduc**: verificar versión vigente (1.0 o posterior). El XSD del complemento puede tener actualizaciones.
-
-3. **autoRVOE**: verificar formato del número de RVOE actual. Algunos estados usan formato distinto.
-
-4. **CURP del alumno**: validar contra RENAPO. Si el CURP no está bien registrado, la deducción no procede.
-
-5. **ClaveProdServ educación** (86111600 preescolar, 86111700 primaria, 86111800 secundaria, 86111900 profesional técnico, 86121500 educación profesional/prepa): verificar contra catálogo c_ClaveProdServ vigente del SAT.
-
-6. **Pago en efectivo NO deducible** para servicios educativos: regla estable pero confirmar excepciones.
-
-7. **Exclusiones**:
-   - Universidad NO deducible vía Art. 151: verificar si hubo reforma.
-   - Inscripción NO deducible: verificar.
-   - Cursos extracurriculares NO deducibles salvo programa oficial: verificar.
-
-**Antes de exponer a cliente**:
-- Validar con contador especializado en educación que el flujo es correcto.
-- Hacer timbrado de prueba contra PAC sandbox con un CFDI de colegiatura real.
-- Verificar que el complemento InsEduc valida correctamente.
-- Validar que la constancia anual de servicios educativos cumple requisitos para deducción del padre.
+> Revisión profesional: valida el flujo con el contador del colegio y prueba un timbrado en sandbox del PAC antes de producción.
