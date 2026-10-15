@@ -1,6 +1,6 @@
 ---
 name: cfdi-arrendamiento-mensual
-description: Emite el CFDI mensual de arrendamiento residencial para personas físicas. Tipo I (Ingreso), uso D04 (casa habitación) si el inquilino es PF que renta para vivir, o G03 (gastos en general) si es PM que renta habitación de oficina (caso raro residencial). Régimen del emisor: 612 (PFAE arrendamiento) o 626 (RESICO PF). Incluye retenciones de ISR aplicables (10% si pagador es PM, 0% si PF). Genera CFDI en Facturama con timbrado real o mock según credenciales. Usar cuando el usuario diga emite CFDI renta, facturar mes, CFDI arrendamiento, factura inquilino. NO usar para CFDI de comisión inmobiliaria (eso es inmobiliaria-mx).
+description: Emite el CFDI 4.0 mensual de arrendamiento residencial para arrendador persona física. Tipo I (Ingreso); régimen del emisor 606 (Arrendamiento) o 626 (RESICO PF); uso CFDI S01 (sin efectos fiscales) si el inquilino es PF que renta para vivir, G03 si es PM o PF con actividad que lo deduce. IVA exento en casa habitación (Art. 20 fr. II LIVA) salvo inmueble amueblado. Retenciones si el inquilino es PM: ISR 10% (606, Art. 116 LISR) o 1.25% (RESICO, Art. 113-J). Prepara el payload para Facturama (timbrado real solo con credenciales). Usar cuando el usuario diga emite CFDI renta, facturar mes, CFDI arrendamiento, factura inquilino, factura renta. NO usar para CFDI de comisión inmobiliaria (eso es inmobiliaria-mx).
 allowed-tools: Read, Write
 ---
 
@@ -16,109 +16,60 @@ allowed-tools: Read, Write
   "inquilino": {
     "rfc": "PEGJ900101ABC",
     "razon_social": "JUAN PEREZ GARCIA",
-    "regimen_fiscal_receptor": "612",  // o "601" si PM
-    "uso_cfdi": "D04",  // o "G03" en raros casos
-    "tipo_persona": "PF"  // o "PM"
+    "regimen_fiscal_receptor": "605",
+    "uso_cfdi": "S01",
+    "tipo_persona": "PF",
+    "cp_fiscal": "06700"
   },
   "arrendador": {
     "rfc": "...",
-    "regimen_fiscal": "612",  // o "626"
+    "regimen_fiscal": "606",
     "lugar_expedicion_cp": "06700"
   },
   "monto_renta_mxn": "12000.00",
-  "incluir_iva": false  // casa habitación residencial = EXENTO IVA
+  "amueblado": false
 }
 ```
 
-## Casos por régimen
+`regimen_fiscal_receptor` y `cp_fiscal` deben coincidir con la constancia de situación fiscal del inquilino (CFDI 4.0).
 
-### Caso A — Arrendador PF en 612 (PFAE arrendamiento) renta a PF (612 o sin RFC)
+## Casos por régimen (casa habitación sin amueblar → IVA exento, Art. 20 fr. II LIVA)
 
-- **IVA**: 0% (exento — casa habitación)
-- **ISR retenido por inquilino**: 0% (PF no retiene a PF)
-- **CFDI**:
-  ```
-  Tipo: I (Ingreso)
-  Uso CFDI: D04 (casa habitación)
-  Subtotal: $12,000.00
-  IVA: $0 (exento)
-  Total: $12,000.00
-  Régimen emisor: 612
-  ```
+| Caso | Emisor | Receptor | Uso CFDI | Retención ISR | Total |
+|---|---|---|---|---|---|
+| A | 606 | PF que vive ahí | S01 | 0 | $12,000.00 |
+| B | 606 | PM (renta para un empleado) | G03 | 10% = $1,200.00 (Art. 116 LISR) | $10,800.00 |
+| C | 626 RESICO | PF | S01 | 0 | $12,000.00 |
+| D | 626 RESICO | PM | G03 | 1.25% = $150.00 (Art. 113-J LISR) | $11,850.00 |
 
-### Caso B — Arrendador PF en 612 renta a PM (601, 603, 626 PM)
+En CFDI 4.0 el Total ya resta las retenciones. El IVA exento se reporta con `ObjetoImp = 02` y `TipoFactor = Exento` en el traslado.
 
-- **IVA**: 0% (exento — casa habitación)
-- **ISR retenido por PM**: **10% del subtotal** (Art. 145 LISR)
-- **CFDI**:
-  ```
-  Tipo: I (Ingreso)
-  Uso CFDI: G03 si para uso oficina (raro residencial), D04 si casa habitación
-  Subtotal: $12,000.00
-  IVA: $0
-  Retención ISR: $1,200.00 (10%)
-  Total a recibir: $10,800.00
-  Régimen emisor: 612
-  ```
+### Inmueble amueblado
 
-### Caso C — Arrendador en RESICO PF (626) renta a PF
+Si se renta amueblado, **todo** el arrendamiento causa IVA 16% (Art. 20 fr. II LIVA excluye los inmuebles amueblados de la exención). Si además el inquilino es PM, retiene 2/3 del IVA (10.6667% del subtotal, Art. 1-A fr. II a) LIVA) y el ISR que corresponda. Ejemplo 606 → PM, $12,000: IVA $1,920; ret. ISR $1,200; ret. IVA $1,280; Total $11,440.
 
-- **IVA**: 0% (exento)
-- **ISR retenido**: 0% (RESICO no retiene en CFDI)
-- **CFDI**:
-  ```
-  Tipo: I (Ingreso)
-  Uso CFDI: D04
-  Subtotal: $12,000.00
-  IVA: $0
-  Total: $12,000.00
-  Régimen emisor: 626
-  ```
+## Forma y método de pago
 
-### Caso D — Arrendador en RESICO PF (626) renta a PM
-
-- **IVA**: 0% (exento)
-- **ISR retenido por PM**: **1.25% del subtotal** (RESICO retiene menos)
-- **CFDI**:
-  ```
-  Tipo: I (Ingreso)
-  Uso CFDI: G03 / D04
-  Subtotal: $12,000.00
-  IVA: $0
-  Retención ISR: $150.00 (1.25%)
-  Total a recibir: $11,850.00
-  Régimen emisor: 626
-  ```
-
-## Forma + método de pago
-
-- **Forma pago**: 03 (Transferencia electrónica) si SPEI, 01 (efectivo) si efectivo en domicilio, etc.
-- **Método pago**: PUE (Pago en una sola exhibición) — para arrendamiento típico mes a mes
-
-⚠ NO usar PPD (Pago en parcialidades o diferido) salvo casos especiales. Si PPD, hay que emitir REP (Recibo Electrónico de Pago) al cobrar.
+- **Método PUE** si el CFDI se emite cuando el pago ya se recibió (o se recibirá en el mismo mes). **PPD** si se emite antes de cobrar o el pago llega en otro mes; en PPD hay que emitir complemento de pagos (REP) al cobrar, y el complemento siempre requiere aceptación para cancelarse.
+- **Forma de pago**: 03 transferencia, 01 efectivo, etc. Con PPD la forma es 99 (por definir).
 
 ## Flujo
 
 ### Paso 1 — Validar inquilino
-- Si `RFC == "XAXX010101000"` (público en general): permitido pero el inquilino no podrá deducir
-- Validar RFC en padrón (`mp_sat_portal.consultar_padron`)
-- Validar 69-B (excluir si en lista definitiva)
+- Pedir su constancia de situación fiscal (nombre, régimen y CP exactos).
+- `sat_consultar_padron` y `sat_consultar_69b_efos` (MCP `mp_sat_portal`): la consulta 69-B está validada; la de padrón requiere e.firma y no está validada. Si devuelve error o pide credenciales, usa la constancia.
+- Sin RFC: `XAXX010101000`, régimen receptor 616, uso S01, CP = lugar de expedición.
 
 ### Paso 2 — Calcular montos
-- Aplicar tabla por régimen (caso A/B/C/D arriba)
+Aplica la tabla de casos. Detalle de retenciones: skill `iva-retenciones-mx` (si está instalado).
 
-### Paso 3 — Construir payload Facturama
-- Use `mp_facturama_extendido.construir_payload_cfdi`
-- Validar con `mp_facturama_extendido.validar_payload`
+### Paso 3 — Validar y timbrar (MCP `mp_facturama_extendido`)
+- `facturama_validar_payload_local` — valida el payload sin timbrar.
+- `facturama_timbrar_cfdi` — solo con credenciales de Facturama del usuario (estado del MCP: real, sin validar con cuenta sandbox). Sin credenciales: entrega el payload validado y pide al usuario timbrarlo en su PAC.
 
-### Paso 4 — Timbrar
-- `mp_facturama_extendido.timbrar_cfdi`
-- Si exitoso: obtener UUID, XML, PDF
-
-### Paso 5 — Persistir + notificar inquilino
-- Guardar UUID en tracker de pagos
-- Enviar XML+PDF al inquilino vía email
-- Opcional: WhatsApp con "Tu CFDI del mes [mes] está listo"
+### Paso 4 — Persistir y notificar
+- Guardar UUID en el tracker de pagos.
+- Enviar XML + PDF al inquilino por correo (no hay MCP de WhatsApp en el repo; el envío por WhatsApp es manual).
 
 ## Output
 
@@ -126,18 +77,18 @@ allowed-tools: Read, Write
 {
   "operation": "cfdi_arrendamiento_mensual",
   "uuid": "...",
-  "xml_path": "...",
-  "pdf_path": "...",
   "monto_facturado_mxn": "12000.00",
   "iva_mxn": "0.00",
   "retencion_isr_mxn": "0.00",
-  "monto_a_recibir_mxn": "12000.00",
+  "total_cfdi_mxn": "12000.00",
   "caso_aplicado": "A",
-  "regimen_emisor": "612",
-  "uso_cfdi": "D04",
+  "regimen_emisor": "606",
+  "uso_cfdi": "S01",
+  "metodo_pago": "PUE",
   "fecha_emision": "2026-06-06",
   "inquilino_rfc_hash": "...",
   "propiedad_id": "RN-1A",
+  "timbrado_real": false,
   "vigencia_validada": false
 }
 ```
@@ -146,21 +97,22 @@ allowed-tools: Read, Write
 
 | Caso | Acción |
 |---|---|
-| Inquilino sin RFC | Usar XAXX010101000 (público en general) + uso `S01` |
-| Cobro tardío (mes Y facturado en mes Y+1) | Mantener fecha del mes Y como `Fecha CFDI` |
-| Renta en USD | Convertir a MXN con TC Banxico del día + cláusula |
-| Múltiples inquilinos misma propiedad | Un CFDI por persona, prorrateado |
-| Pago parcial | Si PPD: emitir REP en cada pago. Si PUE pero parcial: emitir CFDI por monto real cobrado |
-| Cancelación inquilino mid-mes | CFDI por días pro-rata + cláusula de penalización |
+| Inquilino sin RFC | `XAXX010101000`, régimen 616, uso `S01` |
+| Cobro tardío (renta de junio pagada en julio) | La Fecha del CFDI es la de emisión; no se retrofecha. Indica el periodo en la descripción. Si emitiste en junio sin cobrar, debió ser PPD + REP al cobrar |
+| Renta en USD | Moneda USD con TipoCambio DOF del día, o convertir a MXN según contrato |
+| Varios inquilinos en el mismo contrato | Un CFDI al titular del contrato (o uno por persona si pagan por separado) |
+| Pago parcial | PPD + REP por cada abono |
+| Arrendamiento comercial (local, oficina) | IVA 16% y, si paga una PM, retención ISR 10% + IVA 2/3; fuera del alcance residencial de este skill |
 
 ## Dependencias
 
-- `mp_facturama_extendido` (timbrado real o mock)
-- `mp_sat_portal` (validación RFC inquilino)
-- Tracker de propiedades + pagos
+- `mp_facturama_extendido` (timbrado con credenciales del usuario)
+- `mp_sat_portal` (69-B; padrón con e.firma)
+- Tracker de propiedades y pagos
 
 ## ⚠ Compliance
 
-- Hashear RFC del inquilino en logs
-- XML+PDF guardados en `~/.local/share/plugins-mx/cfdis/<rfc_emisor_hash>/<año>/<mes>/`
-- Backup automático vía hook `backup-cfdi-automatico.sh`
+- Hashear el RFC del inquilino en logs.
+- XML+PDF en `~/.local/share/plugins-mx/cfdis/<rfc_emisor_hash>/<año>/<mes>/` (respaldo con el hook `scripts/hooks/backup-cfdi-automatico.sh` si está activado).
+- Pagos provisionales de ISR (606: mensual o trimestral; RESICO: mensual): ver `gastos-deducibles-propiedad`.
+- Valida con tu contador; `vigencia_validada: false`.

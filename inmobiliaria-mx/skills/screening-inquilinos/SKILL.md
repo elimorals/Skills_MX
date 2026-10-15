@@ -6,12 +6,12 @@ allowed-tools: Read, Write, Edit
 
 # Screening de inquilinos
 
-Un mal inquilino = pesadilla de meses con desalojo difícil. Screening profundo previene 90% de problemas.
+Un mal inquilino = pesadilla de meses con desalojo difícil. Un screening completo reduce mucho ese riesgo.
 
 ## Documentos a solicitar
 
 ### Indispensables
-1. **Identificación oficial** (INE/IFE, pasaporte, FM2/FM3 si extranjero)
+1. **Identificación oficial** (INE, pasaporte; extranjeros: tarjeta de residente temporal o permanente del INM)
 2. **Comprobante de ingresos** (3 últimos):
    - Empleado: recibos de nómina o CFDIs nómina
    - PFAE: CFDIs honorarios + declaración SAT del año anterior
@@ -62,7 +62,7 @@ Antigüedad menor = mayor riesgo de cambio + impago.
 
 Solicitar **con autorización formal por escrito** del candidato:
 
-⚠ Consultar Buró sin autorización es DELITO (Art. 32 LFPDPPP). Ver `mp_buro_credito_personal`.
+⚠ Consultar Buró requiere autorización expresa del titular (Art. 28 LRSIC); sin ella está prohibido. `mp_buro_credito_personal` es mock: si no hay credenciales reales, pide al candidato su Reporte de Crédito Especial (gratuito una vez al año).
 
 ### Criterios de aceptación
 - Score > 650 (bueno o excelente)
@@ -173,7 +173,7 @@ Score 1-10 con pesos:
       "estabilidad_domicilio_anios": 4,
       "estabilidad_score": 8
     },
-    "score_total": 8.6,
+    "score_total": 9.0,
     "decision_recomendada": "APROBAR",
     "condiciones_sugeridas": [],
     "alertas": [],
@@ -184,6 +184,8 @@ Score 1-10 con pesos:
   }
 }
 ```
+
+`score_total` = Σ score_factor × peso = 9×0.25 + 8×0.20 + 9×0.15 + 10×0.15 + 9×0.10 + 10×0.10 + 8×0.05 = **9.0**.
 
 ## Validación pendiente
 

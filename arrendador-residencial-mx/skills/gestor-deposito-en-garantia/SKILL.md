@@ -1,6 +1,6 @@
 ---
 name: gestor-deposito-en-garantia
-description: Gestiona depósitos en garantía recibidos del inquilino al firmar contrato. Mantiene registro del monto, fecha recepción, daños descontados durante el contrato, monto a devolver al cierre. Notifica al inquilino al cierre el detalle del descuento si lo hay. Útil para disputas (sin tracking → SAT/jueces favorecen al inquilino). Usar cuando el usuario diga deposito garantia, devolver deposito, daños inquilino.
+description: Gestiona depósitos en garantía recibidos del inquilino al firmar contrato. Mantiene registro del monto, fecha recepción, daños descontados durante el contrato, monto a devolver al cierre. Notifica al inquilino al cierre el detalle del descuento si lo hay. Útil para disputas (sin registro y fotos, el juez no tiene base para validar descuentos). Usar cuando el usuario diga deposito garantia, devolver deposito, daños inquilino.
 allowed-tools: Read, Write
 ---
 
@@ -47,3 +47,4 @@ Deducciones por daños:
 - Fotos comparativas inicio vs cierre (sin esto, inquilino puede reclamar)
 - Recibos/presupuestos de reparaciones
 - Carta firmada por inquilino aceptando descuentos (recomendado)
+- Validar descuentos altos con abogado; `vigencia_validada: false`

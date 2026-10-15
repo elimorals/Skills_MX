@@ -19,12 +19,12 @@ Para un inmueble dado:
 
 ## Fuentes de datos
 
-### Inmuebles24 (`mp_inmuebles24`)
+### Inmuebles24 (`mp_inmuebles24` → `inm24_buscar_comparables_zona`; estado: sin verificar)
 - Cobertura: nacional MX
 - Audiencia: profesional/premium
 - Datos: precio listado (no necesariamente cerrado)
 
-### Vivanuncios (`mp_vivanuncios`)
+### Vivanuncios (`mp_vivanuncios`; estado: **mock**, no usar sus cifras como reales)
 - Cobertura: nacional MX
 - Audiencia: masiva
 - Datos: precio listado
@@ -140,7 +140,7 @@ Comparables exactos son raros. Ajustar:
     "tiempo_promedio_mercado_dias": 47,
     "recomendacion": "Listar en $5,400,000 — precio justo de mercado",
     "alertas": [
-      "Solo 22 comparables relevantes — mercado relativamente líquido",
+      "22 comparables relevantes: muestra suficiente; son precios de lista, no de cierre",
       "Tiempo promedio en mercado 47 días — esperar respuesta a 30-60 días"
     ]
   }

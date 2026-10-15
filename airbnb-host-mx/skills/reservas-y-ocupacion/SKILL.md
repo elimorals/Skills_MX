@@ -24,7 +24,7 @@ allowed-tools: Read, Write
     {"check_in": "2026-06-10", "check_out": "2026-06-14", "noches": 4, "monto_mxn": "7400.00", "estado": "completada"}
   ],
   "gaps_sin_reserva": [
-    {"desde": "2026-06-07", "hasta": "2026-06-09", "noches": 3, "sugerencia": "Reducir tarifa 15% para llenar gap"}
+    {"desde": "2026-06-06", "hasta": "2026-06-09", "noches": 4, "sugerencia": "Reducir tarifa 15% para llenar gap"}
   ],
   "comparativa": {
     "mes_anterior_ocupacion_pct": 65.0,
@@ -36,8 +36,12 @@ allowed-tools: Read, Write
 
 ## Estrategias para optimizar ocupación
 
-1. **Pricing dinámico**: bajar tarifa en gaps de < 4 noches
+1. **Pricing dinámico**: bajar tarifa en gaps de 4 noches o menos
 2. **Descuentos por estancia larga** (>7 días)
-3. **Photos profesionales** (incrementa CTR 20-30%)
-4. **Respuesta rápida** (Airbnb premia hosts < 1h respuesta)
+3. **Fotos profesionales** (mejoran la tasa de clics; mide antes/después en tus estadísticas)
+4. **Respuesta rápida** (la tasa y el tiempo de respuesta cuentan para Superhost y el ranking)
 5. **Política flexible cancelación** (atrae más reservas pero más cancelaciones)
+
+## ⚠ Límites regulatorios
+
+En CDMX la reforma a la Ley de Turismo prevé un tope de ocupación anual por unidad (50%, vigencia por verificar) y reporte semestral: ver `cumplimiento-rab-cdmx` antes de recomendar llenar todos los gaps.

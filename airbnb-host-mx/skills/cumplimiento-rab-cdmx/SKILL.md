@@ -1,85 +1,74 @@
 ---
 name: cumplimiento-rab-cdmx
-description: Cumplimiento del RAB (Registro de Anfitriones) en CDMX, obligatorio desde 2025 para hosts de alquiler temporal (< 30 días). Sin RAB activo, las plataformas no permiten publicar la propiedad y aplican multas $5,000-$40,000 MXN. Cubre proceso de registro inicial, renovación anual, número RAB obligatorio en publicaciones, y reportes periódicos a SEDUVI. Aplica solo a CDMX hasta que otros estados repliquen. Usar cuando el usuario diga RAB CDMX, registro anfitriones, regulación airbnb cdmx, cumplimiento.
+description: Cumplimiento del registro de anfitriones de hospedaje temporal en CDMX (Padrón de Personas Anfitrionas de la Ley de Turismo de la CDMX, reforma 2024; el usuario suele llamarlo "RAB"). Cubre inscripción del anfitrión y de cada inmueble en el padrón (portal estanciaeventual.cdmx.gob.mx), constancia y folio que deben aparecer en cada anuncio de Airbnb/Vrbo/Booking, límite de inmuebles por anfitrión, reporte semestral de ocupación y tope de ocupación anual. Aplica solo a CDMX. Usar cuando el usuario diga RAB CDMX, registro anfitriones, padrón anfitriones, regulación airbnb cdmx, cumplimiento, folio airbnb cdmx.
 allowed-tools: Read, Write
 ---
 
-# Cumplimiento RAB CDMX
+# Cumplimiento del registro de anfitriones — CDMX
+
+Confianza media: el marco está en la reforma a la Ley de Turismo de la CDMX (publicada en abril de 2024) y en notas de prensa de 2026; no se revisó el texto vigente de los lineamientos en la Gaceta Oficial. Fuentes: Expansión 2024-03-25 y 2026-05-21; Holland & Knight; GT Law (abril 2024).
 
 ## Qué es
 
-Registro de Anfitriones (RAB) — obligatorio en CDMX desde 2025 para hosts de alquiler temporal (estancias < 30 días).
+Las personas anfitrionas que ofrecen hospedaje temporal en CDMX a través de plataformas deben inscribirse e inscribir cada inmueble en el Padrón del Gobierno de la CDMX. Las plataformas también deben registrarse en su propio padrón. En mayo de 2026 el gobierno abrió el registro en **estanciaeventual.cdmx.gob.mx** con un plazo de 30 días (la nota da como fecha límite el 20 o el 30 de junio de 2026; verificar si hubo prórroga).
 
-## Requisitos para registro
+## Requisitos de inscripción (según la reforma)
 
-- **Propietario o inquilino con autorización del propietario**
-- Propiedad en CDMX
-- Pago de derechos anuales (~$1,500-$5,000 MXN según unidades)
-- Comprobante de cumplimiento de uso de suelo (en algunas alcaldías)
-- Pólizas de seguro civil (recomendado, requerido en algunos casos)
-- Reglamento de propiedad en condominio que permita Airbnb
+- Datos del anfitrión, RFC y constancia de situación fiscal
+- Documento que acredite la propiedad o posesión del inmueble (si eres inquilino: autorización del propietario)
+- Alta de cada inmueble en el padrón
+- La constancia y el folio se registran en cada plataforma donde anuncias
 
-## Restricciones
+## Reglas operativas
 
-- Máximo **180 noches al año** por unidad (estancias < 30 días)
-- Habitación / cuarto: máximo 50% de la unidad
-- NO se puede operar en zonas turísticas prioritarias (Chapultepec, Coyoacán, etc.) sin permiso especial
-
-## Multas
-
-| Infracción | Multa |
-|---|---|
-| Operar sin RAB | $5,000-$40,000 MXN |
-| Falsedad en declaración | hasta $50,000 MXN |
-| Exceder 180 noches/año | suspensión RAB |
-| No mostrar RAB en publicación | $3,000-$10,000 MXN |
+| Regla | Detalle | Confianza |
+|---|---|---|
+| Inmuebles por anfitrión | Hasta 3 inscritos como persona anfitriona; con 4 o más debes registrarte como establecimiento mercantil donde el uso de suelo lo permita | media |
+| Reporte de ocupación | Semestral | media |
+| Tope de ocupación | Coeficiente máximo de ocupación de 50% anual por unidad (reforma aprobada por el Congreso CDMX en 2024) | **verificar** vigencia y forma de cómputo |
+| Multas | El monto no aparece en las fuentes consultadas | **verificar** |
 
 ## Output
 
 ```json
 {
-  "rab_status": "registrado",
-  "rab_numero": "RAB-XXX-12345",
+  "padron_status": "inscrito",
+  "folio_padron": "<folio de la constancia>",
   "propiedad": "Roma Norte 1A",
-  "fecha_registro": "2025-03-15",
-  "vigencia_hasta": "2026-03-15",
-  "dias_para_renovacion": 280,
-  "noches_consumidas_anio": 90,
-  "noches_restantes_anio": 90,
-  "porcentaje_consumido": 50.0,
+  "fecha_inscripcion": "2026-06-10",
+  "inmuebles_inscritos_del_anfitrion": 1,
+  "proximo_reporte_semestral": "verificar fecha en el portal",
+  "noches_ocupadas_anio": 90,
+  "ocupacion_pct_anio": 24.7,
   "alertas": [
-    "Si superas 180 noches/año, RAB se suspende"
+    "Tope de ocupación 50% anual pendiente de verificar en Gaceta Oficial"
   ],
-  "publicacion_airbnb_muestra_rab": true,
-  "siguiente_renovacion": "2026-03-15",
+  "folio_visible_en_anuncios": true,
   "vigencia_validada": false
 }
 ```
 
-## Cómo registrarse (HUMANO)
+`ocupacion_pct_anio` = noches ocupadas / 365 (90 / 365 = 24.7%).
 
-1. Acudir o gestionar en línea con SEDUVI CDMX (https://www.seduvi.cdmx.gob.mx)
-2. Presentar:
-   - Comprobante de propiedad o contrato + autorización propietario
-   - ID oficial
-   - Comprobante de domicilio
-   - Folio fiscal de la propiedad (predial al corriente)
-   - Comprobante uso de suelo si lo requiere alcaldía
-3. Pagar derechos
-4. Recibir número RAB
-5. **Actualizar el número RAB en TODAS las publicaciones de Airbnb/Vrbo/Booking**
+## Cómo registrarse (lo hace el humano)
+
+1. Entrar a https://estanciaeventual.cdmx.gob.mx (la Secretaría de Turismo CDMX anunció módulos de apoyo).
+2. Capturar datos del anfitrión y del inmueble; subir RFC, constancia de situación fiscal y acreditación de propiedad/posesión.
+3. Descargar la constancia con folio.
+4. **Registrar el folio en TODAS las publicaciones** (Airbnb, Vrbo, Booking).
+5. Agendar el reporte semestral de ocupación.
 
 ## Casos edge
 
 | Caso | Acción |
 |---|---|
-| Propietario fuera de CDMX | Designar representante legal con poder notarial |
-| Habitación rentada (no unidad completa) | Aplica con restricciones de área |
-| Más de 1 propiedad | Cada propiedad requiere su propio RAB |
-| Renovación olvidada | RAB se suspende, plataformas remueven publicación |
+| Propietario fuera de CDMX | Puede gestionarlo un representante con poder |
+| Rentas un cuarto de tu casa | Revisa en el portal si aplica el mismo registro |
+| 4 o más inmuebles | Registro como establecimiento mercantil; revisar uso de suelo |
+| Condominio | Revisa que el reglamento del condominio no prohíba hospedaje temporal |
 
 ## ⚠ Compliance
 
-- RAB es obligatorio CDMX desde 2025 — validar vigencia normativa
-- Otros estados (QRoo, Jalisco) tienen regulaciones similares pero distintas — extender este skill a sus equivalentes
-- Multas SI son cobrables a través de plataformas (Airbnb retiene)
+- Verifica en la Gaceta Oficial de la CDMX los lineamientos vigentes, el tope de ocupación y las sanciones antes de asesorar.
+- Otros estados (Quintana Roo, Jalisco) tienen reglas distintas: no extrapolar.
+- Valida con abogado o gestor local.

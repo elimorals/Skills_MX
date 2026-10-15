@@ -1,6 +1,6 @@
 ---
 name: manejo-resenas-hosts
-description: Gestiona reseñas de huéspedes Airbnb/Booking/Vrbo del anfitrión generando respuestas a reseñas positivas y negativas según playbook validado (la respuesta a una mala reseña la VEN futuros huéspedes — vale más que la propia reseña), borradores que el host puede aprobar antes de publicar, detección de patrones críticos (varias reseñas mencionan ruido del aire acondicionado → comprar nuevo, varias reseñas mencionan internet lento → cambiar plan), estrategia para mejorar score promedio (próximo huésped feliz puede ser el que rompe inercia), y manejo de reseñas tóxicas con peso desproporcionado (un huésped enojado que escribe novela vs varios contentos en 1 línea — la matemática del review average castiga). Cubre solicitud activa de reseñas a huéspedes contentos (D+1 post checkout WhatsApp) y respuesta a reseñas del anfitrión hacia huésped (Airbnb permite responder y el huésped lo ve). Detecta reseñas con mentiras objetivas que ameriten reporte formal a Airbnb para revisión. Usar cuando el usuario diga "responder reseña", "mala calificación huésped", "manejo reviews", "mejorar puntuación airbnb", "reseña negativa". NO usar para reportes del huésped al anfitrión (eso es bidireccional pero requiere otra perspectiva).
+description: Gestiona reseñas de huéspedes de Airbnb/Booking/Vrbo: borradores de respuesta a reseñas positivas y negativas que el host aprueba antes de publicar (la respuesta a una mala reseña la leen los futuros huéspedes), detección de patrones repetidos (aire acondicionado, internet, limpieza, check-in) con acción correctiva, solicitud de reseñas a huéspedes contentos después del checkout, y reporte a la plataforma de reseñas que violan su política. Usar cuando el usuario diga "responder reseña", "mala calificación huésped", "manejo reviews", "mejorar puntuación airbnb", "reseña negativa". NO usar para reseñas que el anfitrión escribe sobre el huésped.
 allowed-tools: Read, Write, Edit
 ---
 
@@ -54,7 +54,7 @@ Si en últimas 10 reseñas aparece N+ veces el mismo problema:
 
 ## Solicitud activa de reseñas
 
-Día post-checkout (a través de mensaje WhatsApp template):
+Día post-checkout, preferentemente por la mensajería de la plataforma. Por WhatsApp solo si el huésped aceptó recibir mensajes (plantilla aprobada; ver `whatsapp-business-mx` si está instalado):
 
 > "Hola [Nombre], esperamos hayas tenido un excelente regreso a casa. Si te sentiste como en familia con nosotros, nos ayudaría mucho que dejes una breve reseña en Airbnb. Es lo que mantiene nuestro pequeño negocio en pie 🏡 [link directo]. ¡Gracias!"
 
@@ -64,8 +64,8 @@ Si huésped escribe falsedades demostrables (ej. "la cama estaba sucia" cuando h
 
 1. Recolectar evidencia: fotos timestamp, conversaciones WhatsApp
 2. Reportar vía panel de Airbnb: Help Center → Disputar reseña
-3. Plazo: 14 días tras publicación
-4. Airbnb evalúa y puede remover si claramente falso
+3. Plazo: verificar en el Centro de ayuda de Airbnb (la política de reseñas cambia)
+4. Airbnb solo retira reseñas que violan su Política de reseñas (p. ej. contenido falso demostrable, represalias, extorsión); una opinión negativa no basta
 
 ## Métricas del host
 

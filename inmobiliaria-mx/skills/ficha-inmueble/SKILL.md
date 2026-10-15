@@ -80,7 +80,7 @@ allowed-tools: Read, Write, Edit
    - Amenidades del edificio
 5. **Tour virtual** (recomendado):
    - Matterport, 3D Vista
-   - +50% más interesados que listing sin tour
+   - Mide su efecto en las estadísticas del portal (no hay cifra verificada)
 
 ## Honestidad en estado de conservación
 
@@ -186,4 +186,5 @@ allowed-tools: Read, Write, Edit
 ## Ver también
 
 - `comparables-zona` para precio sugerido
-- `mp_inmuebles24` para publicación
+- `inm24_publicar_listing` (MCP `mp_inmuebles24`, estado sin verificar: si falla, publicar manualmente)
+- Datos catastrales: `predial_consultar` (MCP `mp_predial_mx`; CDMX es entrega a humano por CAPTCHA)

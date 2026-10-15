@@ -1,6 +1,6 @@
 ---
 name: simulador-prepagos-hipotecarios
-description: Simula impacto de pre-pagos a crédito hipotecario (INFONAVIT, FOVISSSTE, bancarios) mostrando ahorro real en intereses futuros (un pre-pago de $100k MXN puede ahorrar $400k-1.5M MXN en intereses según plazo y tasa), reducción de plazo vs reducción de pago mensual (la primera ahorra más intereses, la segunda da liquidez mensual), tabla de amortización original vs simulada con visualización clara del antes/después, comparativa de momento óptimo del pre-pago (más rentable en primeros años cuando el interés sobre saldo insoluto es mayor), y advertencia sobre comisiones por pre-pago anticipado que algunos bancos cobran (típicamente 1-3% del monto pre-pagado los primeros 3 años — INFONAVIT y FOVISSSTE generalmente sin comisión). Cubre fórmula UDIs para créditos hipotecarios denominados en UDIs (factor de actualización por INPC). Usar cuando el usuario diga "prepagar hipoteca", "abonar a capital", "ahorro intereses hipoteca", "amortización crédito", "INFONAVIT prepago", "reducir plazo hipoteca". NO usar para refinanciamiento total (usar comparador-subrogaciones-bancarias) ni para liquidación a fin de plazo.
+description: Simula el impacto de pre-pagos a un crédito hipotecario (INFONAVIT, FOVISSSTE, bancario): ahorro de intereses futuros, reducción de plazo vs reducción de pago mensual (la primera ahorra más intereses, la segunda da liquidez), tabla original vs simulada, momento óptimo del pre-pago (rinde más en los primeros años, cuando el interés sobre saldo insoluto pesa más) y revisión de comisiones por pago anticipado en el contrato. Cubre créditos en UDIs o en veces salario mínimo. Usar cuando el usuario diga "prepagar hipoteca", "abonar a capital", "ahorro intereses hipoteca", "amortización crédito", "INFONAVIT prepago", "reducir plazo hipoteca". NO usar para refinanciamiento total (usar comparador-subrogaciones-bancarias) ni para liquidación a fin de plazo.
 allowed-tools: Read, Write, Edit
 ---
 
@@ -11,88 +11,76 @@ allowed-tools: Read, Write, Edit
 ```yaml
 credito:
   tipo: bancario|INFONAVIT|FOVISSSTE
-  banco: ...
   monto_original: 1500000
   fecha_inicio: 2020-03-01
   plazo_meses: 240
   tasa_anual_pct: 10.5
   pagos_realizados: 56
-  saldo_actual: 1380000  # aprox 92% si tasa alta y pocos años
-  pago_mensual: 14580
-  esquema: tradicional|UDIs|fija_inflacion
+  saldo_actual: 1366994.88   # tómalo del estado de cuenta, no lo estimes
+  pago_mensual: 14975.70
+  esquema: tradicional|UDIs|veces_salario_minimo
 prepago_propuesto:
   monto: 100000
   modalidad: reduccion_plazo|reduccion_pago_mensual
-fecha_prepago: 2026-07-15
 ```
 
-## Cálculo del ahorro
+Pago mensual = P × i / (1 − (1 + i)^−n), con i = tasa/12. Para $1,500,000 a 10.5% y 240 meses: **$14,975.70**. Saldo tras 56 pagos: **$1,366,994.88**; quedan 184 pagos.
 
-### Modalidad A: Reducción de plazo (recomendada para ahorrar)
+## Cálculo del ahorro (amortización francesa, mes a mes)
 
-```
-saldo_nuevo = saldo_actual - prepago = 1,380,000 - 100,000 = 1,280,000
-pago_mensual: igual ($14,580)
-plazo_nuevo: se calcula con fórmula amortización francesa hasta agotar saldo
-ahorro_intereses_futuros: (pagos_originales_restantes - pagos_nuevos) * pago_mensual - (saldo_nuevo)
-```
+```python
+def amortizar(saldo, tasa_anual_pct, pago):
+    i, meses, intereses = tasa_anual_pct / 1200, 0, 0.0
+    while saldo > 0.005:
+        interes = saldo * i
+        intereses += interes
+        saldo -= min(saldo, pago - interes)
+        meses += 1
+    return meses, intereses
 
-### Modalidad B: Reducción de pago mensual (más liquidez)
-
-```
-saldo_nuevo: 1,280,000
-plazo_restante_original: 184 meses
-pago_mensual_nuevo: amortización de 1,280,000 en 184 meses a 10.5%
-ahorro_mensual: pago_original - pago_nuevo
-ahorro_total_intereses_futuros: menor que modalidad A
+# Original:  amortizar(1_366_994.88, 10.5, 14_975.70) -> 184 meses, $1,388,533.17 de intereses
+# Modalidad A: amortizar(1_266_994.88, 10.5, 14_975.70) -> 155 meses, $1,050,467.13
 ```
 
-## Comparativa visual
+## Comparativa (ejemplo, prepago de $100,000 en el mes 57)
 
 ```
-ORIGINAL                       CON PRE-PAGO MODALIDAD A
-Saldo:        $1,380,000       Saldo:        $1,280,000
-Plazo:        184 meses        Plazo:        163 meses (-21)
-Pago mensual: $14,580          Pago mensual: $14,580 (igual)
-Total a pagar: $2,682,720      Total a pagar: $2,376,540
-Intereses:    $1,302,720       Intereses:    $1,096,540 (-$206k)
-                                AHORRO NETO:  $206,180
+ORIGINAL                         MODALIDAD A (reduce plazo)
+Saldo:        $1,366,994.88      Saldo:        $1,266,994.88
+Plazo:        184 meses          Plazo:        155 meses (−29)
+Pago mensual: $14,975.70         Pago mensual: $14,975.70 (igual)
+Intereses:    $1,388,533.17      Intereses:    $1,050,467.13
+                                 AHORRO:       $338,066.05
 
-vs MODALIDAD B
-Saldo:        $1,280,000
+MODALIDAD B (reduce pago)
 Plazo:        184 meses (igual)
-Pago mensual: $13,524 (-$1,056)
-Total a pagar: $2,488,416
-Intereses:    $1,208,416 (-$94k)
-AHORRO NETO:  $94,304
+Pago mensual: $13,880.18 (−$1,095.52)
+Intereses:    $1,286,957.62
+AHORRO:       $101,575.55
 ```
 
 ## Mejor momento del pre-pago
 
-Para amortización francesa: **más rentable al inicio del crédito** porque el interés sobre saldo insoluto es mayor.
+En amortización francesa la parte de capital crece con el tiempo. Ejemplo $1.5M, 10.5%, 20 años:
 
-| Año | Capital amortizado por pago | Interés |
+| Año | Capital en el primer pago del año | Interés |
 |---|---|---|
-| Año 1 | ~10% del pago | 90% |
-| Año 5 | ~25% | 75% |
-| Año 10 | ~50% | 50% |
-| Año 15 | ~75% | 25% |
+| 1 | 12% | 88% |
+| 5 | 19% | 81% |
+| 10 | 32% | 68% |
+| 15 | 53% | 47% |
 
-Conclusión: si tienes el dinero, pre-pagar en años 1-7 maximiza ahorro.
+Conclusión: pre-pagar en los primeros años maximiza el ahorro.
 
-## Comisiones por pre-pago (validar con tu banco)
+## Comisiones por pago anticipado
 
-| Banco | Comisión típica | Plazo |
-|---|---|---|
-| INFONAVIT | $0 | Sin comisión |
-| FOVISSSTE | $0 | Sin comisión |
-| BBVA | 1% del monto | Primeros 3 años |
-| Banamex | Variable | Revisar contrato |
-| Santander | 1-2% | Primeros 5 años |
+No asumas una cifra por banco. Revisa la carátula y el contrato del crédito, y el Registro de Comisiones (RECO) de CONDUSEF. INFONAVIT y FOVISSSTE permiten pagos anticipados sin penalización (confianza media; confirmar en el portal del instituto). **Si hay comisión**, réstala del ahorro.
 
-**SI hay comisión**: ajustar cálculo restándola del ahorro.
+## Créditos en UDIs o en veces salario mínimo
+
+El saldo se actualiza con el valor de la UDI (Banxico) o del salario mínimo; simula en esa unidad y convierte a pesos con el valor vigente. El ahorro en pesos depende de la inflación futura: preséntalo como estimación.
 
 ## Validación pendiente
 
-⚠ Fórmulas verificadas — confirmar tasas vigentes con tu banco.
+⚠ Ejemplo recalculado 2026-10-15 con la fórmula de arriba; usa siempre el saldo y la tasa de tu estado de cuenta.
 ⚠ Para créditos en UDIs: aplicar factor INPC actualizado.

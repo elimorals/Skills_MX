@@ -1,14 +1,16 @@
 ---
 name: gastos-deducibles-host
-description: Identifica gastos deducibles para el host de Airbnb si está en régimen 612 PFAE (no aplica para 626 RESICO PF). Incluye limpieza profesional con CFDI, mantenimiento, internet/cable/streaming, amenidades para huéspedes (jabón, papel, etc.), reparaciones, electricidad/agua/gas de la unidad rentada (prorrateadas si vives parte del tiempo), seguro de la propiedad, depreciación de la construcción. Usar cuando el usuario diga deducciones airbnb, qué puedo deducir host, gastos deducibles hospedaje.
+description: Identifica gastos deducibles para el host de Airbnb que acumula sus ingresos (régimen 625 sin opción de pago definitivo, o 612 PFAE). No aplica si optó por retención como pago definitivo (Art. 113-B LISR) ni en RESICO PF 626. Incluye limpieza profesional con CFDI, mantenimiento, internet/cable/streaming, amenidades para huéspedes (jabón, papel, etc.), reparaciones, electricidad/agua/gas de la unidad rentada (prorrateadas si vives parte del tiempo), seguro de la propiedad, depreciación de la construcción. Usar cuando el usuario diga deducciones airbnb, qué puedo deducir host, gastos deducibles hospedaje.
 allowed-tools: Read, Write
 ---
 
 # Gastos deducibles Airbnb host
 
-## Aplica solo si régimen 612 PFAE
+## Cuándo aplica
 
-En 626 RESICO PF: NO aplica deducciones acumulables (solo Art. 151 personales).
+- Régimen 625 (plataformas) **sin** la opción de pago definitivo, o 612 PFAE: los ingresos se acumulan y las deducciones autorizadas reducen la base (Art. 113-A LISR remite a la Sección I).
+- Opción de pago definitivo (ingresos ≤ $300,000, Art. 113-B): la retención es el impuesto final; no hay deducciones.
+- RESICO PF (626): se paga sobre ingresos cobrados; no hay deducciones de gastos ni deducciones personales.
 
 ## Categorías
 
@@ -29,8 +31,9 @@ En 626 RESICO PF: NO aplica deducciones acumulables (solo Art. 151 personales).
 
 ### 4. Amenidades para huéspedes
 - Jabón, shampoo, papel, café, café en cápsulas
-- Almohadas, toallas, sábanas (depreciables si > $1k MXN)
-- CFDI requerido si gasto > $2,000
+- Blancos y consumibles: gasto del ejercicio
+- Muebles y electrodomésticos: inversión, 10% anual (Art. 34 fr. III LISR)
+- CFDI a tu RFC siempre; si el pago es > $2,000, con transferencia, cheque o tarjeta (Art. 27 fr. III LISR)
 
 ### 5. Seguro
 - Daños a la propiedad
@@ -38,7 +41,7 @@ En 626 RESICO PF: NO aplica deducciones acumulables (solo Art. 151 personales).
 - 100% deducible si exclusivo a Airbnb
 
 ### 6. Depreciación
-- 5% anual sobre valor de construcción (no terreno)
+- 5% anual sobre valor de construcción, no terreno (Art. 34 fr. I LISR)
 - Solo si tu nombre figura en escritura
 
 ### 7. Renta de la propiedad (si tú la rentas y la sub-rentas en Airbnb)
@@ -78,10 +81,11 @@ En 626 RESICO PF: NO aplica deducciones acumulables (solo Art. 151 personales).
 | Propiedad rentada por ti + sub-rent en Airbnb | Verificar contrato — algunos lo prohíben (riesgo legal) |
 | Host con uso mixto (vives 6 meses, rentas 6 meses) | Prorratear todos los gastos al 50% |
 | Co-host (otro lo administra y cobra %) | Comisión co-host es gasto deducible (con CFDI) |
-| Propiedad heredada sin valor de construcción claro | Pedir avalúo o usar 60% del catastral |
+| Propiedad heredada sin valor de construcción claro | Pedir avalúo que separe terreno y construcción; solo la construcción se deprecia |
 
 ## ⚠ Compliance
 
 - Mismas reglas que arrendador-residencial (forma de pago, 69-B, etc.)
 - `vigencia_validada: false`
-- Si régimen RESICO PF: no aplica este skill — solo deducciones personales Art. 151
+- Si régimen RESICO PF o pago definitivo 113-B: no aplica este skill
+- Valida con contador antes de declarar

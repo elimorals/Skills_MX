@@ -1,6 +1,6 @@
 ---
 name: screening-inquilino-completo
-description: Pipeline completo de evaluación de un inquilino candidato para arrendamiento residencial en México. Cubre captura de datos básicos, validación RFC en padrón SAT, consulta a Buró de Crédito Personal (CON AUTORIZACIÓN FORMAL del candidato — Art. 32 LFPDPPP + LRSIC), verificación de ingresos vs renta solicitada (idealmente 3x), validación de referencias (2-3 personales o laborales), y generación de recomendación de decisión (Aprobado / Aprobado con depósito mayor / Rechazado). Usar cuando el usuario diga evalúa este inquilino, screening, validar candidato renta, buro inquilino. NO usar sin autorización formal firmada del candidato (consultar buró sin autorización es DELITO).
+description: Pipeline completo de evaluación de un inquilino candidato para arrendamiento residencial en México. Cubre captura de datos básicos, validación RFC en padrón SAT, consulta a Buró de Crédito Personal (CON AUTORIZACIÓN EXPRESA del candidato — Art. 28 LRSIC), verificación de ingresos vs renta solicitada (idealmente 3x), validación de referencias (2-3 personales o laborales), y generación de recomendación de decisión (Aprobado / Aprobado con depósito mayor / Rechazado). Usar cuando el usuario diga evalúa este inquilino, screening, validar candidato renta, buro inquilino. NO usar sin autorización formal firmada del candidato (consultar buró sin autorización viola la LRSIC y la LFPDPPP).
 allowed-tools: Read, Write
 ---
 
@@ -8,7 +8,7 @@ allowed-tools: Read, Write
 
 ## ⚠ COMPLIANCE CRÍTICO
 
-**Consultar Buró de Crédito sin autorización formal del titular es DELITO** (Art. 28 LRSIC + Art. 32 LFPDPPP, hasta 6 años prisión y multa millonaria).
+**Consultar Buró de Crédito sin autorización expresa del titular está prohibido** (Art. 28 LRSIC exige autorización expresa y por escrito o medio electrónico; el uso indebido de datos se sanciona además por la LFPDPPP 2025). No afirmes penas concretas sin revisar la ley vigente.
 
 Este skill **NO ejecuta** consulta de Buró sin un `autorizacion_token` válido. El token se obtiene cuando el candidato firma físicamente o electrónicamente una autorización con:
 - Nombre completo + CURP
@@ -42,14 +42,14 @@ Pedir al usuario (operador, no candidato directo):
 
 ### Paso 2 — Validación RFC en padrón SAT
 
-Invocar `mp_sat_portal.consultar_padron(rfc)`:
+Invocar `sat_consultar_padron` (MCP `mp_sat_portal`; requiere e.firma y no está validado — si falla, pide la constancia de situación fiscal del candidato):
 - Si RFC no existe en padrón: 🔴 alerta crítica
 - Si estado "Suspendido": 🟡 alerta
 - Si estado "Activo": ✅ continuar
 
 ### Paso 3 — Validación 69-B
 
-Invocar `mp_sat_portal.consultar_69b_efos(rfc)`:
+Invocar `sat_consultar_69b_efos` (validado en vivo):
 - Si en lista definitiva: 🔴 RECHAZAR de inmediato
 - Si en presuntos: 🟡 alertar, evaluar contexto
 
@@ -60,7 +60,7 @@ Invocar `mp_sat_portal.consultar_69b_efos(rfc)`:
 2. Pedir `autorizacion_token` (string >= 16 chars que representa el hash de la autorización física/electrónica)
 3. Si falta token: ABORTAR con mensaje claro de compliance
 
-Invocar `mp_buro_credito_personal.consultar_score_completo(rfc, curp, autorizacion_token)`:
+Invocar `buro_consultar_score` / `buro_descargar_reporte_completo` (MCP `mp_buro_credito_personal`, estado: sin verificar / mock). Si devuelve datos mock, NO los uses para decidir: pide al candidato su Reporte de Crédito Especial (gratuito una vez al año en burodecredito.com.mx). Criterios:
 - Score > 650: ✅ apto
 - Score 550-650: 🟡 apto con depósito mayor
 - Score < 550: 🟡 evaluar con cuidado
@@ -94,15 +94,19 @@ Llamar (operador) y validar:
 
 ```python
 def decidir(score: int, ingreso_ratio: float, hay_alertas_sat: bool, ref_ok: int) -> str:
-    if hay_alertas_sat:
+    if hay_alertas_sat or ref_ok < 2:
         return "RECHAZADO"
-    if score >= 650 and ingreso_ratio >= 3.0 and ref_ok >= 2:
+    if score >= 650 and ingreso_ratio >= 3.0:
         return "APROBADO"
-    if score >= 550 and ingreso_ratio >= 2.5 and ref_ok >= 2:
+    if score >= 550 and ingreso_ratio >= 3.0:
+        return "APROBADO_CON_AVAL"            # buen ingreso, buró regular
+    if score >= 550 and ingreso_ratio >= 2.5:
         return "APROBADO_CON_DEPOSITO_MAYOR"  # ej. 2 meses de depósito
-    if score >= 550 and ingreso_ratio >= 3.0 and ref_ok >= 2:
-        return "APROBADO_CON_AVAL"
     return "RECHAZADO"
+
+assert decidir(720, 3.0, False, 2) == "APROBADO"
+assert decidir(600, 3.2, False, 2) == "APROBADO_CON_AVAL"
+assert decidir(600, 2.5, False, 2) == "APROBADO_CON_DEPOSITO_MAYOR"
 ```
 
 ## Output
@@ -152,4 +156,4 @@ def decidir(score: int, ingreso_ratio: float, hay_alertas_sat: bool, ref_ok: int
 
 - RFC, CURP, score Buró: **NUNCA loguear en claro**
 - Resultados se guardan cifrados o hasheados
-- Datos del candidato rechazado se borran a los 6 meses (compliance)
+- Datos del candidato rechazado: borrar cuando ya no sean necesarios para la finalidad (política sugerida: 6 meses), conforme al aviso de privacidad
