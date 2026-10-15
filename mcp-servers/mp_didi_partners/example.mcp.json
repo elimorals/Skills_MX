@@ -1,8 +1,17 @@
 {
   "mcpServers": {
     "didi_partners": {
-      "command": "python",
-      "args": ["-m", "mp_didi_partners.server"],
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_didi_partners.server"
+      ],
       "env": {
         "DIDI_DRIVER_TOKEN": "${{ DIDI_DRIVER_TOKEN:- }}"
       }

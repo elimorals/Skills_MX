@@ -1,8 +1,17 @@
 {
   "mcpServers": {
     "didi_food_partners": {
-      "command": "python",
-      "args": ["-m", "mp_didi_food_partners.server"],
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_didi_food_partners.server"
+      ],
       "env": {
         "DIDI_FOOD_TOKEN": "${DIDI_FOOD_TOKEN:-}",
         "DIDI_FOOD_RESTAURANT_ID": "${DIDI_FOOD_RESTAURANT_ID:-}"

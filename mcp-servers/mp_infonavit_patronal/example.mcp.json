@@ -1,10 +1,18 @@
 {
-  "_comment": "mp_infonavit_patronal (Portal Empresarial INFONAVIT). Mock-first. Path real no implementado.",
+  "_comment": "mp_infonavit_patronal (Portal Empresarial INFONAVIT). Path real no implementado.",
   "mcpServers": {
     "infonavit_patronal": {
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_infonavit_patronal.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_infonavit_patronal.server"
+      ],
       "env": {
         "INFONAVIT_RFC_PATRONAL": "${INFONAVIT_RFC_PATRONAL:-}",
         "INFONAVIT_USUARIO": "${INFONAVIT_USUARIO:-}",

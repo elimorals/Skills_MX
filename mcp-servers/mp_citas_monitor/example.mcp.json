@@ -1,1 +1,20 @@
-{"mcpServers": {"citas_monitor": {"command": "python", "args": ["-m", "mp_citas_monitor.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
+{
+  "mcpServers": {
+    "citas_monitor": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_citas_monitor.server"
+      ],
+      "env": {
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      }
+    }
+  }
+}

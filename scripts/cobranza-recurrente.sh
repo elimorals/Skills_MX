@@ -3,7 +3,7 @@
 # Cron mensual día 1 que arranca la corrida de cobranza recurrente del mes.
 #
 # Programar (Linux):
-#    0 9 1 * * cd /Users/elias/Documents/Trabajo/skills && bash scripts/cobranza-recurrente.sh >> /tmp/plugins-mx-cobranza.log 2>&1
+#    0 9 1 * * cd /ruta/a/Skills_MX && bash scripts/cobranza-recurrente.sh >> /tmp/plugins-mx-cobranza.log 2>&1
 #
 # Lee tracker local de clientes recurrentes y genera lista de pagos esperados.
 # El envío real lo hace el workflow desde Claude Code — este cron solo prepara.

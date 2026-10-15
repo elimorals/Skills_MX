@@ -1,8 +1,17 @@
 {
   "mcpServers": {
     "rappi_partners": {
-      "command": "python",
-      "args": ["-m", "mp_rappi_partners.server"],
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_rappi_partners.server"
+      ],
       "env": {
         "RAPPI_CLIENT_ID": "${RAPPI_CLIENT_ID:-}",
         "RAPPI_CLIENT_SECRET": "${RAPPI_CLIENT_SECRET:-}",

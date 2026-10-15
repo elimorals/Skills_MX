@@ -4,7 +4,7 @@
 # Comprime y guarda en ~/backups/plugins-mx/<fecha>.tar.gz
 #
 # Programar:
-#    0 18 * * 5 cd /Users/elias/Documents/Trabajo/skills && bash scripts/backup-semanal.sh >> /tmp/plugins-mx-backup.log 2>&1
+#    0 18 * * 5 cd /ruta/a/Skills_MX && bash scripts/backup-semanal.sh >> /tmp/plugins-mx-backup.log 2>&1
 
 set -euo pipefail
 

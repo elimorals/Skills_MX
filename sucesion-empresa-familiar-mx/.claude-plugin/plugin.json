@@ -16,22 +16,7 @@
     "Art-93-LISR",
     "patrimonio"
   ],
-  "skills": [
-    "skills/diagnostico-patrimonial-familiar",
-    "skills/simulador-donacion-vs-herencia",
-    "skills/calculo-isr-donaciones",
-    "skills/plan-testamentario-distribucion",
-    "skills/protocolo-familiar-template"
-  ],
-  "commands": [
-    "commands/diagnostico.md",
-    "commands/simulador.md",
-    "commands/calculo.md",
-    "commands/plan.md"
-  ],
-  "dependencies": {
-    "plugins": [
-      "core-mexico"
-    ]
-  }
+  "dependencies": [
+    "core-mexico"
+  ]
 }

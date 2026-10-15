@@ -16,31 +16,5 @@
     "subcontratistas",
     "autotransporte",
     "mexico"
-  ],
-  "skills": [
-    "skills/cfdi-carta-porte",
-    "skills/cfdi-estimacion-obra",
-    "skills/retenciones-repse",
-    "skills/contrato-obra-precio-alzado",
-    "skills/dispersion-cuadrilla",
-    "skills/cfdi-emision",
-    "skills/iva-retenciones-mx",
-    "skills/rfc-validacion",
-    "skills/whatsapp-business-mx",
-    "skills/compliance-lfpdppp",
-    "skills/mxn-formato"
-  ],
-  "commands": [
-    "commands/emitir-carta-porte.md",
-    "commands/emitir-estimacion.md",
-    "commands/calcular-retenciones-repse.md",
-    "commands/dispersar-cuadrilla.md"
-  ],
-  "agents": [
-    "agents/validador-cartaporte.md"
-  ],
-  "compatibility": {
-    "claudeCode": ">=1.0.0",
-    "requires": ["core-mexico", "nomina-pymes-mx"]
-  }
+  ]
 }

@@ -17,22 +17,7 @@
     "RGCE",
     "agente-aduanal"
   ],
-  "skills": [
-    "skills/cotizador-pre-importacion",
-    "skills/catalogo-tigie-busqueda",
-    "skills/comparador-incoterms",
-    "skills/pedimento-tracker",
-    "skills/acreditacion-iva-importacion"
-  ],
-  "commands": [
-    "commands/cotizador.md",
-    "commands/catalogo.md",
-    "commands/comparador.md",
-    "commands/pedimento.md"
-  ],
-  "dependencies": {
-    "plugins": [
-      "core-mexico"
-    ]
-  }
+  "dependencies": [
+    "core-mexico"
+  ]
 }

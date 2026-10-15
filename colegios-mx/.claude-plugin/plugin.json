@@ -19,27 +19,5 @@
     "SEP",
     "colegiaturas",
     "padres-familia"
-  ],
-  "skills": [
-    "skills/cobranza-colegiaturas",
-    "skills/comunicacion-padres-wa",
-    "skills/constancias-academicas",
-    "skills/cfdi-colegiaturas-deducibles",
-    "skills/cfdi-emision",
-    "skills/iva-retenciones-mx",
-    "skills/rfc-validacion",
-    "skills/whatsapp-business-mx",
-    "skills/compliance-lfpdppp",
-    "skills/mxn-formato"
-  ],
-  "commands": [
-    "commands/cobranza.md",
-    "commands/aviso-padres.md",
-    "commands/constancia.md",
-    "commands/facturar-colegiatura.md"
-  ],
-  "compatibility": {
-    "claudeCode": ">=1.0.0",
-    "requires": ["core-mexico"]
-  }
+  ]
 }

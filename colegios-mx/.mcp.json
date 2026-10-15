@@ -3,9 +3,17 @@
   "mcpServers": {
     "banxico": {
       "_comment": "Tipos de cambio DOF para becarios/intercambios con pagos en USD (colegios internacionales).",
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_banxico.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_banxico.server"
+      ],
       "env": {
         "BANXICO_TOKEN": "${BANXICO_TOKEN:-}",
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
@@ -14,9 +22,17 @@
     },
     "facturama": {
       "_comment": "MCP propio mp_facturama_extendido: validación local + timbrado CFDI 4.0. Complemento InsEduc pendiente de implementar.",
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_facturama_extendido.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_facturama_extendido.server"
+      ],
       "env": {
         "FACTURAMA_USER": "${FACTURAMA_USER:-}",
         "FACTURAMA_PASSWORD": "${FACTURAMA_PASSWORD:-}",
@@ -27,9 +43,17 @@
     },
     "mercadopago": {
       "_comment": "MCP propio mp_mercado_pago: payment links recurrentes (colegiaturas mensuales), webhook validation, refunds. Crítico para automatizar cobranza mensual.",
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_mercado_pago.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_mercado_pago.server"
+      ],
       "env": {
         "MERCADOPAGO_ACCESS_TOKEN": "${MERCADOPAGO_ACCESS_TOKEN:-}",
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
@@ -37,34 +61,36 @@
       "disabled": false
     },
     "curp_renapo": {
-      "_comment": "MCP propio mp_curp_renapo: validación estructural CURP (alumnos), generación reversa desde datos, batch para limpieza de bases, consulta RENAPO mock. 8 de 9 tools son 100% reales (local, sin red).",
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_curp_renapo.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "_comment": "8 de 9 tools son 100% reales (local, sin red).",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_curp_renapo.server"
+      ],
       "env": {
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}",
         "CURP_RENAPO_PLAYWRIGHT": "${CURP_RENAPO_PLAYWRIGHT:-}"
       },
       "disabled": false
     },
-    "whatsapp-business": {
-      "_comment": "Provider para envío masivo de templates (Gupshup, Twilio, Meta Cloud).",
-      "command": "npx",
-      "args": ["-y", "@gupshup/mcp-whatsapp"],
-      "env": {
-        "GUPSHUP_API_KEY": "${GUPSHUP_API_KEY:-mock}",
-        "GUPSHUP_APP_NAME": "${GUPSHUP_APP_NAME:-mock}"
-      },
-      "disabled": true
-    },
     "stripe": {
       "_comment": "Cobro de colegiaturas con tarjeta. Mercado Pago alternativa para MX.",
       "command": "npx",
-      "args": ["-y", "@stripe/mcp-server"],
+      "args": [
+        "-y",
+        "@stripe/mcp",
+        "--tools=all"
+      ],
+      "disabled": true,
       "env": {
-        "STRIPE_API_KEY": "${STRIPE_API_KEY:-mock}"
-      },
-      "disabled": true
+        "STRIPE_SECRET_KEY": "${STRIPE_SECRET_KEY:-}"
+      }
     }
   }
 }

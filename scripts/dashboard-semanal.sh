@@ -4,7 +4,7 @@
 # Cuenta CFDIs emitidos, pagos recibidos, cancelaciones, alertas pendientes.
 #
 # Programar:
-#    0 9 * * 1 cd /Users/elias/Documents/Trabajo/skills && bash scripts/dashboard-semanal.sh >> /tmp/plugins-mx-dashboard.log 2>&1
+#    0 9 * * 1 cd /ruta/a/Skills_MX && bash scripts/dashboard-semanal.sh >> /tmp/plugins-mx-dashboard.log 2>&1
 
 set -euo pipefail
 

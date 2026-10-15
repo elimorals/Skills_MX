@@ -1,10 +1,18 @@
 {
-  "_comment": "mp_vivanuncios. Multi-categoría (autos, inmuebles, empleos, electrónica, etc.). Mock-first.",
+  "_comment": "mp_vivanuncios. Multi-categoría (autos, inmuebles, empleos, electrónica, etc.).",
   "mcpServers": {
     "vivanuncios": {
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_vivanuncios.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_vivanuncios.server"
+      ],
       "env": {
         "VIVANUNCIOS_USUARIO": "${VIVANUNCIOS_USUARIO:-}",
         "VIVANUNCIOS_PASSWORD": "${VIVANUNCIOS_PASSWORD:-}",

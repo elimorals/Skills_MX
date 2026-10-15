@@ -15,11 +15,11 @@ Tareas recurrentes que mantienen frescos los datos del monorepo sin intervenció
 
 ```bash
 # Instalar refresh Banxico
-cp scripts/crons/com.plugins-mx.banxico-tcs.plist ~/Library/LaunchAgents/
+sed "s|__REPO__|$PWD|g" scripts/crons/com.plugins-mx.banxico-tcs.plist > ~/Library/LaunchAgents/com.plugins-mx.banxico-tcs.plist
 launchctl load ~/Library/LaunchAgents/com.plugins-mx.banxico-tcs.plist
 
 # Instalar refresh SAT
-cp scripts/crons/com.plugins-mx.sat-listas.plist ~/Library/LaunchAgents/
+sed "s|__REPO__|$PWD|g" scripts/crons/com.plugins-mx.sat-listas.plist > ~/Library/LaunchAgents/com.plugins-mx.sat-listas.plist
 launchctl load ~/Library/LaunchAgents/com.plugins-mx.sat-listas.plist
 
 # Verificar

@@ -1,8 +1,17 @@
 {
   "mcpServers": {
     "kueski": {
-      "command": "python",
-      "args": ["-m", "mp_kueski.server"],
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_kueski.server"
+      ],
       "env": {
         "KUESKI_API_KEY": "${{ KUESKI_API_KEY:- }}"
       }

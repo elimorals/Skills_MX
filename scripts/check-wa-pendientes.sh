@@ -3,7 +3,7 @@
 # Cron cada 30min L-V 9-18 — revisa si hay WhatsApp pendientes de responder.
 #
 # Programar:
-#    */30 9-18 * * 1-5 cd /Users/elias/Documents/Trabajo/skills && bash scripts/check-wa-pendientes.sh >> /tmp/plugins-mx-wa.log 2>&1
+#    */30 9-18 * * 1-5 cd /ruta/a/Skills_MX && bash scripts/check-wa-pendientes.sh >> /tmp/plugins-mx-wa.log 2>&1
 
 set -euo pipefail
 

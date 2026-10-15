@@ -69,6 +69,15 @@ jobs:
                       fail = True
           sys.exit(1 if fail else 0)
           PYEOF
+      - name: Marketplace al día con los plugin.json
+        run: python3 scripts/generar-marketplace.py --check
+      - name: Configs MCP portables (sin rutas locales ni mock forzado)
+        run: python3 scripts/mcp-config-portable.py --check
+      - name: Sin rutas de la máquina del autor
+        run: |
+          if git grep -nIE "/Users/[a-z]" -- ':!docs/historial' ':!docs/sprints' ':!docs/audits' ':!website' ; then
+            echo "❌ hay rutas absolutas de una máquina local"; exit 1
+          fi
 
   test-mcp-servers:
     name: Tests Python MCP servers

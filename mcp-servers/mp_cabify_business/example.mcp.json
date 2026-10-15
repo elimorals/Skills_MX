@@ -1,10 +1,18 @@
 {
-  "_comment": "mp_cabify_business (movilidad B2B MX). Sin CABIFY_API_KEY corre mock.",
+  "_comment": "mp_cabify_business (movilidad B2B MX).",
   "mcpServers": {
     "cabify_business": {
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_cabify_business.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_cabify_business.server"
+      ],
       "env": {
         "CABIFY_API_KEY": "${CABIFY_API_KEY:-}",
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"

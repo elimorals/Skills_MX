@@ -1,10 +1,18 @@
 {
-  "_comment": "mp_cdmx_municipal (Finanzas CDMX + SEMOVI). Mock-first. Predial y tenencia son consultas, multas requieren scraping de portal con captcha.",
+  "_comment": "mp_cdmx_municipal (Finanzas CDMX + SEMOVI). Predial y tenencia son consultas, multas requieren scraping de portal con captcha.",
   "mcpServers": {
     "cdmx_municipal": {
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_cdmx_municipal.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_cdmx_municipal.server"
+      ],
       "env": {
         "CDMX_USUARIO": "${CDMX_USUARIO:-}",
         "CDMX_PASSWORD": "${CDMX_PASSWORD:-}",

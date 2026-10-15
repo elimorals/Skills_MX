@@ -16,22 +16,7 @@
     "ITF",
     "tope-100k"
   ],
-  "skills": [
-    "skills/dashboard-portfolio-p2p",
-    "skills/simulador-costo-financiamiento-cf",
-    "skills/catalogo-ifc-autorizadas",
-    "skills/fiscal-rendimientos-p2p",
-    "skills/compliance-tope-100k-pf"
-  ],
-  "commands": [
-    "commands/dashboard.md",
-    "commands/simulador.md",
-    "commands/catalogo.md",
-    "commands/fiscal.md"
-  ],
-  "dependencies": {
-    "plugins": [
-      "core-mexico"
-    ]
-  }
+  "dependencies": [
+    "core-mexico"
+  ]
 }

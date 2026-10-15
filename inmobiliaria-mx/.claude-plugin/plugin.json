@@ -18,28 +18,5 @@
     "screening-inquilinos",
     "comparables-zona",
     "comisiones-corredor"
-  ],
-  "skills": [
-    "skills/contrato-arrendamiento-mx",
-    "skills/screening-inquilinos",
-    "skills/comparables-zona",
-    "skills/ficha-inmueble",
-    "skills/comisiones-corredor",
-    "skills/cfdi-emision",
-    "skills/iva-retenciones-mx",
-    "skills/rfc-validacion",
-    "skills/whatsapp-business-mx",
-    "skills/compliance-lfpdppp",
-    "skills/mxn-formato"
-  ],
-  "commands": [
-    "commands/contrato-renta.md",
-    "commands/screen-inquilino.md",
-    "commands/comparables-zona.md",
-    "commands/comisiones-mes.md"
-  ],
-  "compatibility": {
-    "claudeCode": ">=1.0.0",
-    "requires": ["core-mexico"]
-  }
+  ]
 }

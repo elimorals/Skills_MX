@@ -17,31 +17,5 @@
     "honorarios",
     "cuota-litis",
     "mexico"
-  ],
-  "skills": [
-    "skills/expediente-cliente-legal",
-    "skills/contrato-prestacion-servicios-legales",
-    "skills/cfdi-honorarios-d01",
-    "skills/cobranza-litigio",
-    "skills/bitacora-actuaciones",
-    "skills/cfdi-emision",
-    "skills/iva-retenciones-mx",
-    "skills/rfc-validacion",
-    "skills/whatsapp-business-mx",
-    "skills/compliance-lfpdppp",
-    "skills/mxn-formato"
-  ],
-  "commands": [
-    "commands/expediente-nuevo.md",
-    "commands/registrar-actuacion.md",
-    "commands/facturar-honorarios.md",
-    "commands/cobranza-litigio.md"
-  ],
-  "agents": [
-    "agents/redactor-promociones.md"
-  ],
-  "compatibility": {
-    "claudeCode": ">=1.0.0",
-    "requires": ["core-mexico"]
-  }
+  ]
 }

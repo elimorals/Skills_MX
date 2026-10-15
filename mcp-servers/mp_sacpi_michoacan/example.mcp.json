@@ -1,18 +1,22 @@
 {
-  "name": "mp_sacpi_michoacan",
-  "displayName": "SACPI Michoacán",
-  "description": "MCP dedicado para Sistema SACPI del Gobierno de Michoacán. Cubre 95 municipios MICH (excepto Morelia, Uruapan, Zamora, Lázaro Cárdenas, Pátzcuaro que tienen portal propio). Hallazgo de mayor ROI del catálogo: 1 plataforma → 95 municipios.",
-  "version": "0.1.0",
-  "command": "python3",
-  "args": ["-m", "mp_sacpi_michoacan.server"],
-  "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
-  "env": {
-    "PLUGINS_MX_MOCK": "1",
-    "MP_PLAYWRIGHT_PUBLIC": "0"
-  },
-  "tools": [
-    "sacpi_consultar",
-    "sacpi_listar_municipios",
-    "sacpi_codigo_municipio"
-  ]
+  "mcpServers": {
+    "sacpi_michoacan": {
+      "_comment": "SACPI Michoacán. Estado y cobertura: README del MCP, sección 'Estado real'.",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_sacpi_michoacan.server"
+      ],
+      "env": {
+        "MP_PLAYWRIGHT_PUBLIC": "0",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      }
+    }
+  }
 }

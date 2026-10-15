@@ -19,29 +19,7 @@
     "buro-credito",
     "uso-D04"
   ],
-  "skills": [
-    "skills/dashboard-propiedades",
-    "skills/screening-inquilino-completo",
-    "skills/contrato-arrendamiento-residencial",
-    "skills/cobranza-mensual-renta",
-    "skills/cfdi-arrendamiento-mensual",
-    "skills/actualizacion-renta-anual",
-    "skills/gastos-deducibles-propiedad",
-    "skills/cierre-contrato-checklist"
-  ],
-  "commands": [
-    "commands/dashboard.md",
-    "commands/screening.md",
-    "commands/contrato.md",
-    "commands/facturar-mes.md",
-    "commands/cobranza.md"
-  ],
-  "agents": [
-    "agents/workflow-cobranza-renta-mensual.md"
-  ],
-  "dependencies": {
-    "plugins": [
-      "core-mexico"
-    ]
-  }
+  "dependencies": [
+    "core-mexico"
+  ]
 }

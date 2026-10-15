@@ -1,8 +1,17 @@
 {
   "mcpServers": {
     "cfe_fact": {
-      "command": "python",
-      "args": ["-m", "mp_cfe_facturacion.server"],
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_cfe_facturacion.server"
+      ],
       "env": {
         "CFE_RPU": "${{ CFE_RPU:- }}",
         "CFE_PASSWORD": "${{ CFE_PASSWORD:- }}"

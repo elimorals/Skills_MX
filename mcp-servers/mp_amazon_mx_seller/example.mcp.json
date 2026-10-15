@@ -1,10 +1,18 @@
 {
-  "_comment": "mp_amazon_mx_seller (Amazon MX Selling Partner API). Mock-first. Path real requiere LWA + AWS Sig V4 (~80-120h dev). Marketplace ID MX: A1AM78C64UM0Y8.",
+  "_comment": "mp_amazon_mx_seller (Amazon MX Selling Partner API). Path real requiere LWA + AWS Sig V4 (~80-120h dev). Marketplace ID MX: A1AM78C64UM0Y8.",
   "mcpServers": {
     "amazon_mx_seller": {
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_amazon_mx_seller.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_amazon_mx_seller.server"
+      ],
       "env": {
         "AMAZON_SP_REFRESH_TOKEN": "${AMAZON_SP_REFRESH_TOKEN:-}",
         "AMAZON_SP_CLIENT_ID": "${AMAZON_SP_CLIENT_ID:-}",

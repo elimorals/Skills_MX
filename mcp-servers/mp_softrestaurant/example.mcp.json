@@ -1,10 +1,18 @@
 {
-  "_comment": "mp_softrestaurant (POS Soft Restaurant local sin API REST). Mock-first. Path real: configurar SOFT_RESTAURANT_EXPORTS_DIR apuntando a directorio donde Soft Restaurant exporta CSVs (corte_z_YYYYMMDD.csv, ventas_YYYYMMDD_YYYYMMDD.csv, platillos_YYYYMM.csv).",
+  "_comment": "mp_softrestaurant (POS Soft Restaurant local sin API REST). Path real: configurar SOFT_RESTAURANT_EXPORTS_DIR apuntando a directorio donde Soft Restaurant exporta CSVs (corte_z_YYYYMMDD.csv, ventas_YYYYMMDD_YYYYMMDD.csv, platillos_YYYYMM.csv).",
   "mcpServers": {
     "softrestaurant": {
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_softrestaurant.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_softrestaurant.server"
+      ],
       "env": {
         "SOFT_RESTAURANT_EXPORTS_DIR": "${SOFT_RESTAURANT_EXPORTS_DIR:-}",
         "SOFT_RESTAURANT_DB_URL": "${SOFT_RESTAURANT_DB_URL:-}",

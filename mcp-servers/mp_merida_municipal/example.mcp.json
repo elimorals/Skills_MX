@@ -1,8 +1,17 @@
 {
   "mcpServers": {
     "merida_mun": {
-      "command": "python",
-      "args": ["-m", "mp_merida_municipal.server"]
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_merida_municipal.server"
+      ]
     }
   }
 }

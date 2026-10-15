@@ -2,10 +2,18 @@
   "_comment": "MCPs base para core-mexico. Como este plugin lo heredan todos los verticales, aquí van solo los MCPs realmente universales: TC de Banxico (CFDI multimoneda), WhatsApp Business (canal universal), PAC (CFDI). Cada vertical agrega los suyos.",
   "mcpServers": {
     "banxico": {
-      "_comment": "Tipos de cambio DOF (USD/EUR/GBP/CAD/JPY) + UMA + INPC + TIIE28. Sin BANXICO_TOKEN corre en modo mock con valores plausibles. Token gratis en https://www.banxico.org.mx/SieAPIRest/service/v1/token",
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_banxico.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "_comment": "Tipos de cambio DOF (USD/EUR/GBP/CAD/JPY) + UMA + INPC + TIIE28. Token gratis en https://www.banxico.org.mx/SieAPIRest/service/v1/token",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_banxico.server"
+      ],
       "env": {
         "BANXICO_TOKEN": "${BANXICO_TOKEN:-}",
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
@@ -13,10 +21,18 @@
       "disabled": false
     },
     "facturama": {
-      "_comment": "MCP propio mp_facturama_extendido: validación local + timbrado + cancelación CFDI 4.0. Mock-friendly. Activo por default.",
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_facturama_extendido.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "_comment": "MCP propio mp_facturama_extendido: validación local + timbrado + cancelación CFDI 4.0. Activo por default.",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_facturama_extendido.server"
+      ],
       "env": {
         "FACTURAMA_USER": "${FACTURAMA_USER:-}",
         "FACTURAMA_PASSWORD": "${FACTURAMA_PASSWORD:-}",
@@ -26,10 +42,18 @@
       "disabled": false
     },
     "mercadopago": {
-      "_comment": "MCP propio mp_mercado_pago: payment links + webhook signature validation HMAC + refunds. Pasarela dominante en LATAM. Mock-friendly.",
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_mercado_pago.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "_comment": "MCP propio mp_mercado_pago: payment links + webhook signature validation HMAC + refunds. Pasarela dominante en LATAM.",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_mercado_pago.server"
+      ],
       "env": {
         "MERCADOPAGO_ACCESS_TOKEN": "${MERCADOPAGO_ACCESS_TOKEN:-}",
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
@@ -37,10 +61,18 @@
       "disabled": false
     },
     "mercadolibre": {
-      "_comment": "MCP propio mp_mercado_libre: gestión de listings, precios, stock, órdenes, mensajes y preguntas ML. Marketplace dominante en LATAM, sin MCP oficial. Mock-friendly.",
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_mercado_libre.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "_comment": "MCP propio mp_mercado_libre: gestión de listings, precios, stock, órdenes, mensajes y preguntas ML. Marketplace dominante en LATAM, sin MCP oficial.",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_mercado_libre.server"
+      ],
       "env": {
         "ML_APP_ID": "${ML_APP_ID:-}",
         "ML_SECRET": "${ML_SECRET:-}",
@@ -51,9 +83,17 @@
     },
     "curp_renapo": {
       "_comment": "MCP propio mp_curp_renapo: validación estructural CURP + consulta RENAPO. 8 de 9 tools son 100% locales (sin red). Útil universal porque colegios, salud, RH, migración usan CURP.",
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_curp_renapo.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_curp_renapo.server"
+      ],
       "env": {
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}",
         "CURP_RENAPO_PLAYWRIGHT": "${CURP_RENAPO_PLAYWRIGHT:-}"
@@ -61,10 +101,18 @@
       "disabled": false
     },
     "banxico_cep": {
-      "_comment": "MCP propio mp_banxico_cep: validación CLABE + CEP SPEI. 4 de 8 tools son 100% locales (CLABE/parseo). Las remotas arrancan en mock (Banxico no tiene API). Cierra el ciclo CFDI→pago→conciliación.",
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_banxico_cep.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "_comment": "MCP propio mp_banxico_cep: validación CLABE + CEP SPEI. 4 de 8 tools son 100% locales (CLABE/parseo). Cierra el ciclo CFDI→pago→conciliación.",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_banxico_cep.server"
+      ],
       "env": {
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}",
         "BANXICO_CEP_PLAYWRIGHT": "${BANXICO_CEP_PLAYWRIGHT:-}"
@@ -72,10 +120,18 @@
       "disabled": false
     },
     "sat_portal": {
-      "_comment": "MCP propio mp_sat_portal: 4 tools públicos (padrón, 69-B, 69, verifica CFDI) intentan HTTP real + fallback mock; 1 tool local (validar UUID); 6 tools con auth en modo mock (path Playwright + e.firma no implementado); 1 tool de escritura siempre simulada por seguridad. Sin SAT_RFC/SAT_CIEC/SAT_EFIRMA_CERT corre 100% mock.",
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_sat_portal.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "_comment": "firma no implementado); 1 tool de escritura siempre simulada por seguridad.",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers[sat-ws,sat-portal] @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_sat_portal.server"
+      ],
       "env": {
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}",
         "SAT_RFC": "${SAT_RFC:-}",
@@ -87,10 +143,18 @@
       "disabled": false
     },
     "conekta": {
-      "_comment": "MCP propio mp_conekta: pasarela alternativa a Mercado Pago. 13 tools (órdenes, charges TDC/OXXO/SPEI, refunds, customers, payment links, suscripciones, webhook HMAC). Sin CONEKTA_API_KEY corre mock. Key sandbox 'key_test_*', producción 'key_live_*' — detectado automáticamente.",
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_conekta.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "_comment": "MCP propio mp_conekta: pasarela alternativa a Mercado Pago. 13 tools (órdenes, charges TDC/OXXO/SPEI, refunds, customers, payment links, suscripciones, webhook HMAC). Key sandbox 'key_test_*', producción 'key_live_*' — detectado automáticamente.",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_conekta.server"
+      ],
       "env": {
         "CONEKTA_API_KEY": "${CONEKTA_API_KEY:-}",
         "CONEKTA_WEBHOOK_SECRET": "${CONEKTA_WEBHOOK_SECRET:-}",
@@ -99,10 +163,18 @@
       "disabled": false
     },
     "aspel_contpaqi": {
-      "_comment": "MCP propio mp_aspel_contpaqi: integración contable Aspel COI / ContPAQi. ERPs locales sin API REST — este MCP parsea CSV exports. Sin ASPEL_EXPORTS_DIR corre mock con datos demo. 9 tools (pólizas, balanza, catálogo cuentas, P&L, Balance General, parser inline, instrucciones de configuración).",
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_aspel_contpaqi.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "_comment": "MCP propio mp_aspel_contpaqi: integración contable Aspel COI / ContPAQi. ERPs locales sin API REST — este MCP parsea CSV exports.9 tools (pólizas, balanza, catálogo cuentas, P&L, Balance General, parser inline, instrucciones de configuración).",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_aspel_contpaqi.server"
+      ],
       "env": {
         "ASPEL_EXPORTS_DIR": "${ASPEL_EXPORTS_DIR:-}",
         "CONTPAQI_AGENT_URL": "${CONTPAQI_AGENT_URL:-}",

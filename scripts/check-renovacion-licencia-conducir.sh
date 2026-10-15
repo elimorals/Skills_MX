@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # check-renovacion-licencia-conducir.sh
 # Cron mensual día 1 — alerta si licencia vence < 90 días.
-# Programar: 0 9 1 * * cd /Users/elias/Documents/Trabajo/skills && bash scripts/check-renovacion-licencia-conducir.sh
+# Programar: 0 9 1 * * cd /ruta/a/Skills_MX && bash scripts/check-renovacion-licencia-conducir.sh
 set -euo pipefail
 SHARE_DIR="${PLUGINS_MX_SHARE_DIR:-$HOME/.local/share/plugins-mx}"
 TRACKER="$SHARE_DIR/licencias-conducir.jsonl"
