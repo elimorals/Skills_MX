@@ -1,6 +1,6 @@
 ---
 name: comparador-seguros-automotrices
-description: Compara cotizaciones de seguro vehicular entre las 5 principales aseguradoras de México (GNP, Qualitas, AXA, HDI, MAPFRE) considerando cobertura amplia vs limitada, deducible, suma asegurada, asistencias, y precio. Sugiere mejor relación cobertura/precio según perfil del usuario. Usar cuando el usuario diga comparar seguros auto, cuál seguro comprar, mejor seguro vehicular, cotizar seguro carro.
+description: Compara cotizaciones de seguro vehicular que el usuario ya obtuvo de aseguradoras autorizadas en México (GNP, Quálitas, AXA, HDI, MAPFRE, Chubb u otras) considerando cobertura amplia vs limitada, deducible, suma asegurada, asistencias, y precio. Verifica que la aseguradora esté autorizada (CONDUSEF SIPRES) y sugiere la mejor relación cobertura/precio según el perfil. No cotiza por sí sola. Usar cuando el usuario diga comparar seguros auto, cuál seguro comprar, mejor seguro vehicular, cotizar seguro carro.
 allowed-tools: Read, Write
 ---
 
@@ -10,20 +10,19 @@ allowed-tools: Read, Write
 
 | Tipo | Qué cubre | Costo relativo |
 |---|---|---|
-| Responsabilidad Civil (RC) | Solo daños a terceros (obligatorio) | $$ |
+| Responsabilidad Civil (RC) | Solo daños a terceros (obligatoria para circular en caminos federales y en varias entidades) | $$ |
 | Limitado | RC + Robo total | $$$ |
 | Amplio | RC + Robo + Daños materiales propios | $$$$ |
 | Plus / Premium | Amplio + Asistencias adicionales | $$$$$ |
 
 ## Aseguradoras principales MX
 
-| Aseguradora | Pros | Cons |
-|---|---|---|
-| GNP | Servicio rápido, buena reputación | Cara |
-| Qualitas | Líder mercado, talleres extensa red | Trámite siniestros lento |
-| AXA | Tarifas competitivas, app moderna | Asistencia variable |
-| HDI | Buen costo, talleres oficiales | Cobertura limitada en ciertos modelos |
-| MAPFRE | Multinacional, descuentos por antigüedad | Pago siniestro lento |
+No uses opiniones genéricas de "pros/contras" por marca: no tienen fuente. Compara con datos verificables:
+
+1. **Autorización**: `sipres_verificar_autorizada(nombre)` (`mp_condusef_sipres`, consulta real). Si no está autorizada, descártala.
+2. **Quejas y sanciones**: Buró de Entidades Financieras de CONDUSEF (consulta manual en buro.gob.mx).
+3. **Póliza**: suma asegurada (valor comercial vs valor factura), deducibles de daños y robo, límite de RC, gastos médicos a ocupantes, asistencias, red de talleres o agencia.
+4. **Prima**: anual de contado; si es en mensualidades, incluir el recargo por pago fraccionado.
 
 ## Inputs
 
@@ -64,8 +63,8 @@ allowed-tools: Read, Write
       "deducible_robo_total_mxn": "22500",
       "asistencias_incluidas": ["grúa", "vehículo sustituto 24h"],
       "score": 8.2,
-      "pros": ["Más barato", "App moderna"],
-      "cons": ["Asistencia variable"],
+      "pros": ["Prima más baja"],
+      "cons": ["Deducible de robo 5% vs 3% de GNP"],
       "ranking": 1
     },
     {
@@ -79,8 +78,8 @@ allowed-tools: Read, Write
       "prima_anual_mxn": "13200",
       "score": 7.5,
       "ranking": 3,
-      "pros": ["Servicio premium"],
-      "cons": ["Más cara $2.4k vs mejor opción"]
+      "pros": ["Deducible de robo 3% ($13,500)"],
+      "cons": ["$2,400 más cara que la más barata"]
     }
   ],
   "recomendacion": "AXA",
@@ -108,4 +107,6 @@ allowed-tools: Read, Write
 
 - Primas cambian frecuentemente
 - `vigencia_validada: false`
-- Confirmar póliza incluye RC obligatoria mínima legal por estado
+- Confirmar que la póliza cubre la RC obligatoria (caminos federales y reglamento de tránsito local)
+- `prima_mensual_mxn` es prima anual / 12; un pago fraccionado real cuesta más (recargo)
+- La recomendación es orientativa; no sustituye la asesoría de un agente con cédula CNSF
