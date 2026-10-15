@@ -4,7 +4,7 @@
 # Cruza tracker de cobranza con tracker de pagos (alimentado por webhooks / banco / manual).
 #
 # Programar:
-#    0 10 5 * * cd /Users/elias/Documents/Trabajo/skills && bash scripts/verificar-cobros.sh >> /tmp/plugins-mx-verificar.log 2>&1
+#    0 10 5 * * cd /ruta/a/Skills_MX && bash scripts/verificar-cobros.sh >> /tmp/plugins-mx-verificar.log 2>&1
 
 set -euo pipefail
 

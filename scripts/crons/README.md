@@ -15,11 +15,11 @@ Tareas recurrentes que mantienen frescos los datos del monorepo sin intervenció
 
 ```bash
 # Instalar refresh Banxico
-cp scripts/crons/com.plugins-mx.banxico-tcs.plist ~/Library/LaunchAgents/
+sed "s|__REPO__|$PWD|g" scripts/crons/com.plugins-mx.banxico-tcs.plist > ~/Library/LaunchAgents/com.plugins-mx.banxico-tcs.plist
 launchctl load ~/Library/LaunchAgents/com.plugins-mx.banxico-tcs.plist
 
 # Instalar refresh SAT
-cp scripts/crons/com.plugins-mx.sat-listas.plist ~/Library/LaunchAgents/
+sed "s|__REPO__|$PWD|g" scripts/crons/com.plugins-mx.sat-listas.plist > ~/Library/LaunchAgents/com.plugins-mx.sat-listas.plist
 launchctl load ~/Library/LaunchAgents/com.plugins-mx.sat-listas.plist
 
 # Verificar
@@ -64,11 +64,16 @@ tail -50 /tmp/plugins-mx-banxico-tcs.log
 tail -50 /tmp/plugins-mx-sat-listas.log
 ```
 
-## Modo mock
+## Credenciales y datos de ejemplo
 
-Si los MCPs no tienen credenciales (no hay BANXICO_TOKEN ni SAT_*), los crons corren en mock y **no hacen red**. Útil para entornos de desarrollo sin afectar nada.
+Los crons llaman a los MCPs, que siguen la regla del [ADR 008](../../docs/adrs/008-estado-real-sin-fallback-silencioso.md):
 
-Para deshabilitar mock y forzar uso real: definir las env vars en el shell del cron (o en el plist macOS):
+- Sin credenciales (p. ej. sin `BANXICO_TOKEN`), el MCP devuelve datos de ejemplo marcados `simulated: true`. No los uses para decisiones.
+- Las fuentes públicas sin credencial (listas 69 y 69-B del SAT) se consultan en real por defecto y sí hacen red.
+- Con credenciales, los errores del proveedor se propagan; el cron falla en vez de guardar datos inventados.
+- `PLUGINS_MX_MOCK=1` fuerza datos de ejemplo en todo (útil para desarrollo sin red).
+
+Para usar credenciales reales, define las variables en el shell del cron (o en el plist macOS):
 
 ```xml
 <!-- En el plist -->

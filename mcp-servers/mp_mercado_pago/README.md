@@ -50,9 +50,10 @@ cd mcp-servers
 {
   "mcpServers": {
     "mercadopago": {
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_mercado_pago.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": ["run", "--no-project", "--quiet", "--with",
+               "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+               "python", "-m", "mp_mercado_pago.server"],
       "env": {
         "MERCADOPAGO_ACCESS_TOKEN": "${MERCADOPAGO_ACCESS_TOKEN:-}",
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"

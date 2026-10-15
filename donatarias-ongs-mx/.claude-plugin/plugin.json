@@ -16,22 +16,7 @@
     "Art-79",
     "Anexo-14"
   ],
-  "skills": [
-    "skills/dashboard-donataria-mes",
-    "skills/cfdi-donativo-d04",
-    "skills/reporte-mensual-efectivo-100k",
-    "skills/declaracion-anual-transparencia",
-    "skills/renovacion-autorizacion-anual"
-  ],
-  "commands": [
-    "commands/dashboard.md",
-    "commands/cfdi.md",
-    "commands/reporte.md",
-    "commands/declaracion.md"
-  ],
-  "dependencies": {
-    "plugins": [
-      "core-mexico"
-    ]
-  }
+  "dependencies": [
+    "core-mexico"
+  ]
 }

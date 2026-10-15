@@ -3,7 +3,7 @@
 # Cron mensual día 17 — última alerta (deadline pago provisional HOY).
 #
 # Programar:
-#    0 8 17 * * cd /Users/elias/Documents/Trabajo/skills && bash scripts/ultima-alerta-deadline.sh >> /tmp/plugins-mx-deadline.log 2>&1
+#    0 8 17 * * cd /ruta/a/Skills_MX && bash scripts/ultima-alerta-deadline.sh >> /tmp/plugins-mx-deadline.log 2>&1
 
 set -euo pipefail
 

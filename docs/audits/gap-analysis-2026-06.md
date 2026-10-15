@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Gap analysis — junio 2026 (reconciliado 2026-06-12)
 
 **Propósito**: identificar exactamente qué falta por construir comparando el estado actual del monorepo contra los documentos de planeación original (`plugins-mx-research-problemas-no-resueltos.md` y `plugins-mx-planeacion-mcps-agentica.md`).

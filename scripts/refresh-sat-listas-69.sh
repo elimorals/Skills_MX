@@ -10,7 +10,7 @@
 #
 # Programar:
 #    # Linux: lunes a las 9am
-#    0 9 * * 1 cd /Users/elias/Documents/Trabajo/skills && bash scripts/refresh-sat-listas-69.sh >> /tmp/sat-listas.log 2>&1
+#    0 9 * * 1 cd /ruta/a/Skills_MX && bash scripts/refresh-sat-listas-69.sh >> /tmp/sat-listas.log 2>&1
 #
 #    # macOS: ver scripts/crons/com.plugins-mx.sat-listas.plist
 

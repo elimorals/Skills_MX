@@ -3,52 +3,34 @@
   "mcpServers": {
     "banxico": {
       "_comment": "Tipos de cambio DOF para cotizaciones a clientes con facturación en USD (campañas internacionales).",
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_banxico.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_banxico.server"
+      ],
       "env": {
         "BANXICO_TOKEN": "${BANXICO_TOKEN:-}",
         "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
       },
       "disabled": false
     },
-    "meta-ads": {
-      "_comment": "Meta Marketing API. Requiere access token con permisos ads_read y ads_management.",
-      "command": "node",
-      "args": ["./mcp-servers/meta-ads.js"],
-      "env": {
-        "META_ACCESS_TOKEN": "${META_ACCESS_TOKEN:-mock}",
-        "META_AD_ACCOUNT_ID": "${META_AD_ACCOUNT_ID:-mock}"
-      },
-      "disabled": true
-    },
-    "google-ads": {
-      "_comment": "Google Ads API. Requiere credentials.json + customer ID.",
-      "command": "node",
-      "args": ["./mcp-servers/google-ads.js"],
-      "env": {
-        "GOOGLE_ADS_CUSTOMER_ID": "${GOOGLE_ADS_CUSTOMER_ID:-mock}",
-        "GOOGLE_ADS_CREDENTIALS_PATH": "${GOOGLE_ADS_CREDENTIALS_PATH:-mock}"
-      },
-      "disabled": true
-    },
-    "tiktok-ads": {
-      "_comment": "TikTok Marketing API.",
-      "command": "node",
-      "args": ["./mcp-servers/tiktok-ads.js"],
-      "env": {
-        "TIKTOK_ACCESS_TOKEN": "${TIKTOK_ACCESS_TOKEN:-mock}"
-      },
-      "disabled": true
-    },
     "ga4": {
       "_comment": "Google Analytics 4 Data API.",
-      "command": "npx",
-      "args": ["-y", "@google-analytics/mcp-server"],
+      "command": "uvx",
+      "args": [
+        "analytics-mcp"
+      ],
+      "disabled": true,
       "env": {
-        "GA4_PROPERTY_ID": "${GA4_PROPERTY_ID:-mock}"
-      },
-      "disabled": true
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS:-}",
+        "GOOGLE_PROJECT_ID": "${GOOGLE_PROJECT_ID:-}"
+      }
     }
   }
 }

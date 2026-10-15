@@ -14,7 +14,7 @@ DESACTIVAR:
   launchctl unload ~/Library/LaunchAgents/com.plugins-mx.mantenimiento-portales.plist
 
 Equivalente en crontab:
-  0 3 5 * * /Users/elias/Documents/Trabajo/skills/scripts/crons/mantenimiento-mensual-portales.sh
+  0 3 5 * * __REPO__/scripts/crons/mantenimiento-mensual-portales.sh
 -->
 <plist version="1.0">
 <dict>
@@ -23,7 +23,7 @@ Equivalente en crontab:
 
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/elias/Documents/Trabajo/skills/scripts/crons/mantenimiento-mensual-portales.sh</string>
+        <string>__REPO__/scripts/crons/mantenimiento-mensual-portales.sh</string>
     </array>
 
     <!-- Cuando ejecutar: día 5 de cada mes a las 03:00 AM -->
@@ -46,7 +46,7 @@ Equivalente en crontab:
 
     <!-- Working directory -->
     <key>WorkingDirectory</key>
-    <string>/Users/elias/Documents/Trabajo/skills</string>
+    <string>__REPO__</string>
 
     <!-- Environment variables opcionales -->
     <key>EnvironmentVariables</key>

@@ -2,61 +2,15 @@
 
 Servidores MCP (Model Context Protocol) construidos a medida para servicios mexicanos.
 
-## 🆕 Actualización 2026-06-13: arquitectura unificada
-
-Los 8 MCPs municipales individuales ahora son complementados por **MCPs unificados** que delegan al `shared/catalogo_municipios_mx.py` y `shared/plataformas_saas_mx.py`:
-
-- **`mp_predial_mx`** (NUEVO): consulta predial de cualquier municipio del catálogo via 1 MCP. Reemplaza funcionalmente los 8 MCPs individuales (mantenidos por backward compat).
-- **`mp_sacpi_michoacan`** (NUEVO): expone los 95 municipios MICH via SACPI como tools MCP.
-- **`mp_multas_mx`** (NUEVO): unifica multas estatales de 8 estados (CDMX requiere CAPTCHA).
-- **`shared/catalogo_municipios_mx.py`**: 209 municipios catalogados (33 validados con URL real, 17 con selectores DOM verificados).
-- **`shared/plataformas_saas_mx.py`**: SACPI Michoacán (+95 muns extra) — hallazgo de mayor ROI.
-- **`scripts/descubrir-portal-municipal.py`**: auto-discovery de URLs municipales con Playwright.
-
-**Cobertura efectiva**: 33 directos + 95 via SACPI = **128 municipios consultables** + 209 catalogados con metadatos.
-
-Ver `../docs/SESION-COMPLETA-2026-06-13.md` para el reporte completo.
-
 ## Estado
 
-| MCP | Estado | Tests | Uso |
-|---|---|---|---|
-| **`mp_predial_mx`** 🆕 unificado | ✅ mock + real | 19 ✓ | Consulta predial de cualquier municipio del catálogo (4 tools) |
-| **`mp_sacpi_michoacan`** 🆕 | ✅ mock + real | 13 ✓ | 95 muns MICH via SACPI (3 tools) |
-| **`mp_multas_mx`** 🆕 unificado | ✅ mock + real | 8 ✓ | Multas estatales 8 estados (2 tools, CDMX con CAPTCHA) |
-| `shared/` (utilidades) | ✅ producción | 51 ✓ | Cache + bitácora + mock + errores + **catálogo municipios + plataformas SaaS** |
-| `mp_banxico` | ✅ producción (mock + real) | 60 ✓ | Tipos de cambio DOF, UMA, INPC, TIIE |
-| `mp_facturama_extendido` | ✅ producción (mock + real) | 88 ✓ | CFDI 4.0: validación local + timbrado + cancelación + búsqueda + descargas |
-| `mp_mercado_pago` | ✅ producción (mock + real) | 75 ✓ | Payment links + webhook HMAC validation + refunds + cancel |
-| `mp_mercado_libre` | ✅ producción (mock + real) | 63 ✓ | Listings, precios, stock, órdenes, mensajes, preguntas, reputación |
-| `mp_curp_renapo` | ✅ producción (estructural real, RENAPO mock) | 58 ✓ | Validación CURP estructural + dígito verificador + generación reversa + consulta RENAPO (mock) |
-| `mp_banxico_cep` | ✅ producción (CLABE real, CEP mock) | 53 ✓ | Validación CLABE 18 dígitos + decodificación banco/plaza + parseo claves rastreo SPEI + CEP (mock) |
-| `mp_sat_portal` | ✅ producción (públicos HTTP real + UUID estructural, auth mock) | — | Padrón SAT, 69-B EFOS, 69 incumplidos, verifica CFDI, CSF, Buzón, descarga masiva, citas, e.firma, acuse |
-| `mp_conekta` | ✅ producción (mock + sandbox/prod por env var) | — | Pasarela MX: órdenes, charges TDC/OXXO/SPEI, refunds, customers, payment links, suscripciones, webhook HMAC |
-| `mp_aspel_contpaqi` | ✅ producción (mock + parser CSV exports) | — | Pólizas, balanza, catálogo cuentas, P&L, Balance General — Aspel COI/ContPAQi sin API REST |
-| `mp_shopify_mx` | ✅ producción (mock + Shopify Admin API real) | — | Wrapper específico MX: products, inventory, orders, fulfillment, customers + calculadora IVA región |
-| `mp_bitso` | ✅ producción (mock + sandbox/prod real con HMAC auth) | — | Exchange cripto-fiat MX: ticker, order book, balance, ledger, fundings, retiros + calculadora ISR Art. 142 LISR |
-| `mp_bancos_mx` | ✅ scaffolding mock (Playwright stub) | — | Portales bancarios MX: BBVA, Banamex, Santander, Banorte, HSBC (estado cuenta, movimientos, verificar pago) |
-| `mp_imss_patronal` | ✅ scaffolding mock (Playwright stub) | — | IDSE: avisos, alta/baja, cédula autodeterminación, EMCR, SBC, padrón |
-| `mp_infonavit_patronal` | ✅ scaffolding mock (Playwright stub) | — | Créditos trabajadores, EMIS, descuentos mensuales, avisos |
-| `mp_cdmx_municipal` | ✅ refactor catálogo central (2026-06-13) — OVICA validado | — | Predial CDMX via OVICA (validado MCP), tenencia, hoy no circula. Recomendado usar `mp_predial_mx` para flujos nuevos. |
-| `mp_edomex_municipal` | ✅ refactor catálogo central (2026-06-13) | — | 23 muns EdoMex (Toluca validado). Recomendado: `mp_predial_mx`. |
-| `mp_monterrey_municipal` | ✅ refactor catálogo central | — | 6 muns NL (San Pedro GG y Apodaca validados). Multas NL estatal. |
-| `mp_guadalajara_municipal` | ✅ refactor catálogo central | — | 6 muns JAL (GDL, Zapopan, Pto Vallarta validados). Multas JAL estatal. |
-| `mp_merida_municipal` | ✅ refactor catálogo central | — | Mérida YUC (validado, busca por dirección). Multas YUC estatal. |
-| `mp_puebla_municipal` | ✅ refactor catálogo central | — | Puebla (validado con CAPTCHA — humano-en-loop). |
-| `mp_queretaro_municipal` | ✅ refactor catálogo central (2026-06-13) | — | Querétaro (URL validada). Multas QRO estatal. |
-| `mp_tijuana_municipal` | ✅ refactor catálogo central | — | Tijuana BC (pendiente verificar URL real). Multas BC estatal. |
-| `mp_inmuebles24` | ✅ scaffolding mock (Playwright stub) | — | Búsqueda inmuebles, detalle, comparables zona, publicar listing |
-| `mp_vivanuncios` | ✅ scaffolding mock (Playwright stub) | — | Búsqueda multi-categoría, detalle, publicar anuncio |
-| `mp_buro_credito_personal` | ⚠ scaffolding mock + compliance | — | Score, reporte completo, alertas — REQUIERE autorización formal del titular |
-| `mp_trustly_mx` | ✅ producción (mock + API REST) | — | Open banking MX: pagos por transferencia directa con autorización del banco del cliente |
-| `mp_clip_terminal` | ✅ producción (mock + API REST) | — | POS Clip MX: charges, refunds, status terminal, settlement T+1 |
-| `mp_cabify_business` | ✅ producción (mock + API REST) | — | Movilidad B2B: agendar viajes, listar, cancelar, factura mensual |
-| `mp_amazon_mx_seller` | ✅ scaffolding mock (LWA+AWSSigV4 no implementado) | — | Amazon MX SP-API: listings, inventory, orders, fees |
-| `mp_softrestaurant` | ✅ scaffolding mock + parser CSV | — | POS Soft Restaurant: corte Z, ventas, platillos, meseros, inventario |
+83 MCPs (`mp_*`) con 417 tools, en Python + FastMCP. El estado de cada uno (real validado en vivo, real sin validar, entrega a humano, sin API pública, cálculo normativo, bloqueado, sin verificar) está en [`CATALOGO.md`](CATALOGO.md), que se genera desde la sección "Estado real" del README de cada MCP con `scripts/generar-estado-mcps.py`. No se mantiene una tabla de estado a mano aquí.
 
-Roadmap completo: `../Downloads/plugins-mx-planeacion-mcps-agentica.md`.
+**Regla común:** sin credenciales, un MCP responde datos de ejemplo marcados `simulated: true`; con credenciales, cualquier error del proveedor se propaga como error tipado (`AuthError`, `UpstreamError`, `NotFoundError`…), nunca hay fallback silencioso a datos de ejemplo. `PLUGINS_MX_MOCK=1` fuerza el modo de ejemplo. Decisión en [ADR 008](../docs/adrs/008-estado-real-sin-fallback-silencioso.md).
+
+Utilidades en `shared/`: `portal_handoff.py` (entrega a humano cuando el portal exige CAPTCHA o login), `captcha_solver.py` (solver opt-in con `PLUGINS_MX_CAPTCHA_SOLVER=2captcha` + `TWOCAPTCHA_API_KEY`), `errors.py`, `bitacora.py`, `cache.py`, `mock.py`, `catalogo_municipios_mx.py`, `plataformas_saas_mx.py` y helpers por portal.
+
+Los MCPs municipales delegan al catálogo central (`shared/catalogo_municipios_mx.py`) y a las plataformas SaaS estatales (`shared/plataformas_saas_mx.py`, p. ej. SACPI Michoacán); `mp_predial_mx` y `mp_multas_mx` son los puntos de entrada unificados.
 
 ## 🆕 Cómo agregar un municipio nuevo
 
@@ -95,7 +49,7 @@ Editar `shared/catalogo_municipios_mx.py` agregando entry al dict `MUNICIPIOS[<e
 ),
 ```
 
-Ver `../docs/PATRONES-MCP-MUNICIPAL.md` para los 5 stacks identificados (ASP.NET, Angular, PHP, ASP clásico, IP+puerto).
+Ver [`docs/architecture/PATRONES-MCP-MUNICIPAL.md`](../docs/architecture/PATRONES-MCP-MUNICIPAL.md) para los 5 stacks identificados (ASP.NET, Angular, PHP, ASP clásico, IP+puerto).
 
 ### Opción 3: plataforma SaaS estatal
 Si descubres un SACPI-like (1 URL cubre múltiples municipios), agregar a `shared/plataformas_saas_mx.py`:
@@ -117,16 +71,16 @@ NUEVA_PLATAFORMA = PlataformaSaaS(
 
 ```bash
 cd mcp-servers
-python3 -m venv .venv
-.venv/bin/pip install -e ".[dev]"
+uv venv .venv --python 3.12
+uv pip install -e ".[dev]"            # más extras según el MCP: sat-ws, sat-portal, publicos-federales, estatal-centro…
 ```
 
 ## Correr tests
 
 ```bash
-.venv/bin/python -m pytest          # todos
-.venv/bin/python -m pytest mp_banxico/tests/  # solo banxico
-.venv/bin/python -m pytest -k holiday  # filtro por nombre
+.venv/bin/pytest -q                                    # unitarios, sin red
+.venv/bin/pytest -q mp_banxico/tests/                  # solo banxico
+PLUGINS_MX_LIVE=1 .venv/bin/pytest -q -m live <ruta>   # contra el portal real
 ```
 
 ## Estructura
@@ -146,7 +100,7 @@ mcp-servers/
 │   ├── series.py              # Códigos SIE de series
 │   ├── holidays.py            # Días hábiles mexicanos
 │   └── tests/
-└── (próximos MCPs)
+└── mp_*/                     # 83 MCPs, cada uno con README (sección "Estado real") y example.mcp.json
 ```
 
 ## Convenciones
@@ -160,14 +114,13 @@ mcp-servers/
 Todos los MCPs importan de `shared.*`:
 - `shared.cache.FileCache` para cache persistente con TTL
 - `shared.bitacora.Bitacora` para audit log
-- `shared.mock.is_mock_mode` y `mark_simulated` para fallback sin credenciales
+- `shared.mock.is_mock_mode` y `mark_simulated` para datos de ejemplo cuando no hay credenciales
 - `shared.errors.handle_httpx_error` para errores estandarizados
 
-### Modo mock
-Cada MCP soporta modo mock que produce respuestas plausibles sin red:
-- Se activa cuando NO hay credenciales (env var de auth ausente)
-- Forzable con `PLUGINS_MX_MOCK=1`
-- Las respuestas llevan `simulated: true` para que skills downstream no confíen ciegamente
+### Datos de ejemplo (sin credenciales)
+- Solo cuando NO hay credenciales (env var de auth ausente) o con `PLUGINS_MX_MOCK=1`
+- Las respuestas llevan `simulated: true` para que las skills no confíen ciegamente
+- Con credenciales configuradas, un error del proveedor se propaga; nunca se cae a datos de ejemplo
 
 ### Cache
 - Storage en `~/.cache/plugins-mx/<mcp_name>/`
@@ -190,25 +143,26 @@ Códigos: `validation_error`, `auth_error`, `rate_limit_error`, `upstream_error`
 
 ## Cómo usar un MCP en Claude Code
 
-Agrega al `.mcp.json` de un plugin (ej. `core-mexico/.mcp.json`):
+Cada `mp_*/example.mcp.json` trae la configuración lista para copiar. No depende de dónde esté el repo: `uv` descarga el paquete desde GitHub la primera vez.
 
 ```json
 {
   "mcpServers": {
     "banxico": {
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_banxico.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": ["run", "--no-project", "--quiet", "--with",
+               "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+               "python", "-m", "mp_banxico.server"],
       "env": {
-        "BANXICO_TOKEN": "${BANXICO_TOKEN:-}"
-      },
-      "disabled": false
+        "BANXICO_TOKEN": "${BANXICO_TOKEN:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      }
     }
   }
 }
 ```
 
-Sin `BANXICO_TOKEN` el MCP corre en modo mock — útil para desarrollo.
+Para MCPs con dependencias opcionales, el paquete lleva extras: `plugins-mx-mcp-servers[sat-ws,sat-portal] @ git+…`. Sin `BANXICO_TOKEN` el MCP responde datos de ejemplo marcados `simulated: true`. `scripts/mcp-config-portable.py --check` verifica que ninguna config tenga rutas locales ni mock forzado.
 
 ## Cómo agregar un MCP nuevo
 
@@ -219,7 +173,7 @@ Sin `BANXICO_TOKEN` el MCP corre en modo mock — útil para desarrollo.
 5. Escribir tests en `mp_nuevo/tests/test_*.py`
 6. Agregar `mp_nuevo/tests` a `testpaths` en `pyproject.toml`
 7. Correr `pytest -q` y verificar todo verde
-8. Documentar en este README
+8. Escribir `mp_nuevo/README.md` con su sección "Estado real" y un `example.mcp.json`, y correr `python3 scripts/generar-estado-mcps.py`
 
 ## Verificación vigencia
 

@@ -1,8 +1,17 @@
 {
   "mcpServers": {
     "paypal_mx": {
-      "command": "python",
-      "args": ["-m", "mp_paypal_mx.server"],
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_paypal_mx.server"
+      ],
       "env": {
         "PAYPAL_CLIENT_ID": "${{ PAYPAL_CLIENT_ID:- }}",
         "PAYPAL_CLIENT_SECRET": "${{ PAYPAL_CLIENT_SECRET:- }}"

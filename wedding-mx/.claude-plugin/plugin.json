@@ -18,28 +18,5 @@
     "proveedores-evento",
     "timeline-boda",
     "contrato-servicios"
-  ],
-  "skills": [
-    "skills/cotizacion-boda-mxn",
-    "skills/timeline-evento",
-    "skills/proveedores-bda",
-    "skills/novios-onboarding",
-    "skills/contrato-boda-pf-pm",
-    "skills/cfdi-emision",
-    "skills/iva-retenciones-mx",
-    "skills/rfc-validacion",
-    "skills/whatsapp-business-mx",
-    "skills/compliance-lfpdppp",
-    "skills/mxn-formato"
-  ],
-  "commands": [
-    "commands/cotizar-boda.md",
-    "commands/timeline-boda.md",
-    "commands/onboarding-novios.md",
-    "commands/contrato-evento.md"
-  ],
-  "compatibility": {
-    "claudeCode": ">=1.0.0",
-    "requires": ["core-mexico"]
-  }
+  ]
 }

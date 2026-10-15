@@ -18,37 +18,5 @@
     "cobranza",
     "RESICO",
     "PFAE"
-  ],
-  "skills": [
-    "skills/cotizacion-mxn",
-    "skills/propuesta-comercial",
-    "skills/cobranza-seguimiento",
-    "skills/cliente-onboarding",
-    "skills/freelance-tax-mx",
-    "skills/cfdi-emision",
-    "skills/iva-retenciones-mx",
-    "skills/rfc-validacion",
-    "skills/whatsapp-business-mx",
-    "skills/compliance-lfpdppp",
-    "skills/mxn-formato"
-  ],
-  "commands": [
-    "commands/cotizar.md",
-    "commands/propuesta.md",
-    "commands/cobranza.md",
-    "commands/onboarding.md",
-    "commands/pago-provisional.md",
-    "commands/cobranza-mensual.md",
-    "commands/cierre-fiscal.md",
-    "commands/declaracion-anual.md"
-  ],
-  "agents": [
-    "agents/auditor-fiscal-mensual.md",
-    "agents/revisor-cobranza-cartera.md",
-    "agents/workflow-cobranza-multinivel.md"
-  ],
-  "compatibility": {
-    "claudeCode": ">=1.0.0",
-    "requires": ["core-mexico"]
-  }
+  ]
 }

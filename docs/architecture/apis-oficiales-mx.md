@@ -1,3 +1,5 @@
+> **Nota 2026-10-14**: investigación de junio de 2026. El estado vigente de cada MCP (incluido si ya consulta en real) está en [`mcp-servers/CATALOGO.md`](../../mcp-servers/CATALOGO.md); donde aquí dice "mock-mode", rige el [ADR 008](../adrs/008-estado-real-sin-fallback-silencioso.md).
+
 # APIs oficiales mexicanas (alternativas al scraping con CAPTCHA bypass)
 
 > **Propósito**: documentar las APIs autorizadas y legales que evitan

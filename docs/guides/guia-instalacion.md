@@ -1,266 +1,142 @@
 # Guía de instalación
 
-**Propósito**: Cómo instalar y usar los plugins/skills de plugins-mx.
+**Propósito**: instalar los plugins de Skills_MX en Claude Code y usar sus MCPs.
 
-**Audiencia**: usuarios finales (no desarrolladores).
+**Audiencia**: usuarios finales. Si vas a modificar el repo, ve a [guia-desarrollo.md](guia-desarrollo.md).
 
-**Pre-lectura**: [INDEX.md](INDEX.md) para entender qué hay disponible.
+**Pre-lectura**: [README raíz](../../README.md) (lista de plugins y estado de los MCPs).
 
 ---
 
 ## Requisitos
 
-- **Claude Code instalado** (CLI, desktop, o IDE extension). Si no lo tienes: https://claude.com/code.
-- **Cuenta Anthropic activa** con plan que incluya Claude Code.
-- **Git** instalado.
-- (Opcional) **Cuenta en plataformas externas**: Facturama (CFDI), Gupshup/Twilio (WA Business), Stripe/Mercado Pago (cobros). Solo necesarias si vas a activar integraciones reales.
+- **Claude Code** (CLI, desktop o extensión de IDE).
+- **[`uv`](https://docs.astral.sh/uv/)**: es el único requisito adicional. Los MCPs se descargan y ejecutan con él la primera vez que se usan. No hace falta clonar el repo ni instalar Python a mano.
+- (Opcional) Credenciales de los servicios que quieras usar en real: SAT (e.firma), Banxico (token SIE), Facturama, Mercado Pago, Conekta, etc. Sin ellas, los MCPs responden datos de ejemplo marcados `simulated: true`.
 
 ---
 
-## Opción 1: Instalación como plugins de Claude Code (recomendado)
+## 1. Instalar plugins desde el marketplace
 
-### 1.1 Clonar el monorepo
-
-```bash
-git clone <url-del-repo-plugins-mx> ~/plugins-mx
-cd ~/plugins-mx
-```
-
-### 1.2 Verificar estructura
+Dentro de Claude Code:
 
 ```bash
-ls -la
-# Debes ver: README.md, marketplace.json, core-mexico/, freelancers-mx/, agencia-marketing-mx/, colegios-mx/, talleres-mx/, _shared/, docs/, scripts/, evals/, tests/
+/plugin marketplace add elimorals/Skills_MX
+/plugin install core-mexico --marketplace elimorals/Skills_MX      # base de todos los verticales
+/plugin install freelancers-mx --marketplace elimorals/Skills_MX   # o cualquier vertical
 ```
 
-### 1.3 Cargar un plugin específico
+`core-mexico` (CFDI, IVA y retenciones, RFC, MXN, LFPDPPP, WhatsApp) es la dependencia de todos los verticales. La lista completa de los 40 plugins está en el [README raíz](../../README.md#plugins-verticales) y en `.claude-plugin/marketplace.json`.
 
-Arranca Claude Code apuntando al directorio del plugin que quieras usar:
+Para comprobar que cargó, escribe `/help` y busca los comandos del plugin (p. ej. `/freelancers:cotizar`), o pregunta a Claude qué skills tiene cargadas.
 
-```bash
-# Solo core-mexico (base mexicana)
-claude --plugin-dir ~/plugins-mx/core-mexico
+### Actualizar y desinstalar
 
-# Vertical específico
-claude --plugin-dir ~/plugins-mx/freelancers-mx
-claude --plugin-dir ~/plugins-mx/agencia-marketing-mx
-claude --plugin-dir ~/plugins-mx/colegios-mx
-claude --plugin-dir ~/plugins-mx/talleres-mx
-```
-
-Cada plugin incluye los skills de `_shared/` ya sincronizados, así que NO necesitas instalar `core-mexico` aparte cuando cargas un vertical.
-
-### 1.4 Verificar que los skills se cargaron
-
-Dentro de la sesión, escribe:
-```
-/help
-```
-
-Y deberías ver los commands del plugin (ej. `/freelancers:cotizar`).
-
-Puedes también pedir a Claude que liste:
-```
-¿Qué skills tienes cargados para operación mexicana?
-```
-
-### 1.5 Múltiples plugins simultáneos
-
-Para tener varios verticales activos al mismo tiempo, usa `--plugin-dir` múltiple:
-
-```bash
-claude --plugin-dir ~/plugins-mx/freelancers-mx --plugin-dir ~/plugins-mx/colegios-mx
-```
+Usa `/plugin` para actualizar el marketplace o desinstalar un plugin. Los MCPs apuntan a la rama `main` del repo. `uv` guarda el paquete en su caché y lo vuelve a resolver cuando cambia.
 
 ---
 
-## Opción 2: Instalación como skills standalone
+## 2. Usar un MCP suelto
 
-Útil si no usas Claude Code o quieres skills individuales en Claude.ai.
+Cada MCP trae un `mcp-servers/mp_*/example.mcp.json` listo para copiar a tu `.mcp.json`. No depende de dónde esté el repo:
 
-### 2.1 Vía skillkit (CLI)
-
-```bash
-npm install -g skillkit
-
-# Instalar un skill compartido
-skillkit install file://~/plugins-mx/_shared/cfdi-emision
-skillkit install file://~/plugins-mx/_shared/rfc-validacion
-
-# Listar skills instalados
-skillkit list
-```
-
-### 2.2 Subida manual a Claude.ai
-
-1. Comprime el directorio del skill: `tar -czf cfdi-emision.skill.tar.gz _shared/cfdi-emision/`
-2. En Claude.ai → Settings → Skills → Upload Skill.
-3. Selecciona el archivo `.tar.gz`.
-
----
-
-## Configuración de integraciones (opcional)
-
-Por default todos los plugins funcionan con **mocks** — no necesitas credenciales. Si quieres conectar servicios reales:
-
-### Crear archivo `.env`
-
-```bash
-cd ~/plugins-mx
-cp .env.example .env
-nano .env
-```
-
-### Variables disponibles
-
-```bash
-# PAC para CFDI
-FACTURAMA_API_KEY=tu_api_key_aqui
-FACTURAMA_ENV=sandbox    # o "production"
-
-# WhatsApp Business
-GUPSHUP_API_KEY=tu_api_key
-GUPSHUP_APP_NAME=tu_app
-
-# Pagos
-STRIPE_API_KEY=sk_test_...
-MERCADOPAGO_ACCESS_TOKEN=APP_USR-...
-
-# Notion (opcional, para CRM)
-NOTION_TOKEN=secret_...
-```
-
-### Activar MCP servers
-
-Edita `<plugin>/.mcp.json` y cambia `"disabled": true` a `"disabled": false` en los servicios que quieres activar.
-
-Ejemplo para activar Facturama en freelancers-mx:
 ```json
 {
   "mcpServers": {
-    "facturama": {
-      "command": "npx",
-      "args": ["-y", "@facturama/mcp-server"],
+    "banxico": {
+      "command": "uv",
+      "args": ["run", "--no-project", "--quiet", "--with",
+               "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+               "python", "-m", "mp_banxico.server"],
       "env": {
-        "FACTURAMA_API_KEY": "${FACTURAMA_API_KEY}",
-        "FACTURAMA_ENV": "${FACTURAMA_ENV}"
-      },
-      "disabled": false
+        "BANXICO_TOKEN": "${BANXICO_TOKEN:-}",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      }
     }
   }
 }
 ```
 
-Recarga Claude Code con `/reload-plugins`.
+Los MCPs con dependencias opcionales llevan extras en el paquete, por ejemplo `plugins-mx-mcp-servers[sat-ws,sat-portal] @ git+…` para el SAT. Copia el `example.mcp.json` de cada MCP en vez de armarlo a mano.
 
 ---
 
-## Verificación post-instalación
+## 3. Credenciales
 
-### Test rápido (sin integraciones reales)
+Van en variables de entorno, nunca en el repo. `.env.example` (en la raíz del repo) lista todas. Cada `example.mcp.json` dice cuáles usa su MCP.
 
-En la sesión:
+| Variable | Uso |
+|---|---|
+| `SAT_RFC`, `SAT_EFIRMA_CERT`, `SAT_EFIRMA_KEY`, `SAT_EFIRMA_PASSWORD` | e.firma para el SAT (rutas a `.cer` y `.key` fuera del repo) |
+| `BANXICO_TOKEN` | SIE de Banxico (token gratuito) |
+| `FACTURAMA_USER`, `FACTURAMA_PASSWORD`, `FACTURAMA_ENV` | Timbrado con Facturama (`sandbox` o `production`) |
+| `MERCADOPAGO_ACCESS_TOKEN`, `CONEKTA_API_KEY`… | Una por proveedor |
+| `PLUGINS_MX_MOCK=1` | Fuerza datos de ejemplo en todos los MCPs |
+| `PLUGINS_MX_CAPTCHA_SOLVER=2captcha`, `TWOCAPTCHA_API_KEY` | Solver de CAPTCHA opt-in |
 
-```
-Tengo un cliente nuevo: Bimbo SA, RFC IBM970131DRA, régimen 601. Hazme su ficha de onboarding.
-```
+**Cómo se comportan los MCPs:**
 
-Si el plugin `freelancers-mx` está bien cargado, Claude debería invocar `cliente-onboarding` y guiarte por el flujo.
+- **Sin credenciales**: datos de ejemplo marcados `simulated: true`.
+- **Con credenciales**: consulta real. Si el proveedor falla, el error se propaga (`AuthError`, `UpstreamError`…). Nunca hay fallback silencioso a datos de ejemplo.
+- **Portales con CAPTCHA o login**: el tool devuelve una entrega a humano (URL, pasos y campos prellenados). Si activas el solver opt-in, intenta resolver el CAPTCHA primero.
+- **Sin API pública**: error explícito con la alternativa manual.
+
+El estado de cada MCP está en [`mcp-servers/CATALOGO.md`](../../mcp-servers/CATALOGO.md).
+
+---
+
+## 4. Verificación rápida
+
+En una sesión con `freelancers-mx`:
 
 ```
 Valida el RFC IBM970131DRA
 ```
-
-Debería invocar `rfc-validacion` y devolver estructura.
+Debe invocar `rfc-validacion`.
 
 ```
 Calcula el IVA y retenciones para servicios profesionales de 15,000 MXN de PFAE a una persona moral.
 ```
+Debe invocar `iva-retenciones-mx`.
 
-Debería invocar `iva-retenciones-mx`.
-
-### Test de regresión con fixtures
-
-```bash
-# (Cuando exista el runner)
-~/plugins-mx/scripts/run-fixtures.sh
-
-# Por ahora ejecución manual:
-cat ~/plugins-mx/tests/fixtures/iva-retenciones-mx/case-01-pfae-a-pm.json
-# Y verifica que el skill produce el output esperado.
 ```
+¿Cuál es el tipo de cambio DOF de hoy?
+```
+Usa `mp_banxico`. Sin `BANXICO_TOKEN`, la respuesta viene marcada `simulated: true`.
 
 ---
 
-## Updates
+## 5. Skills sueltas en Claude.ai
 
-### Pull de actualizaciones del monorepo
-
-```bash
-cd ~/plugins-mx
-git pull
-```
-
-### Re-sync de `_shared/` a verticales (después de actualizar)
-
-```bash
-./scripts/sync-shared.sh
-```
-
-### Validar lint después de cambios
-
-```bash
-./scripts/lint-skills.sh
-```
+Las skills son carpetas con `SKILL.md` y `references/`. Para subir una a Claude.ai, comprime su carpeta (p. ej. `_shared/cfdi-emision/`) en `.zip` y súbela desde la configuración de Skills. Las skills que dependen de un MCP pierden esa parte fuera de Claude Code.
 
 ---
 
-## Desinstalación
+## Solución de problemas
 
-### Plugins de Claude Code
+Ver [troubleshooting.md](../operational/troubleshooting.md).
 
-Simplemente borra el directorio:
-```bash
-rm -rf ~/plugins-mx
-```
-
-### Skills standalone
-
-```bash
-skillkit uninstall cfdi-emision
-skillkit uninstall rfc-validacion
-# etc.
-```
-
----
-
-## Solución de problemas comunes
-
-Ver [troubleshooting.md](troubleshooting.md) para más detalle.
-
-| Problema | Solución |
+| Problema | Qué revisar |
 |---|---|
-| "Plugin no carga" | Verifica `.claude-plugin/plugin.json` existe; corre `./scripts/lint-skills.sh` |
-| "Skill no triggea" | El `description:` puede no captar tu fraseo; ver [guia-desarrollo.md](guia-desarrollo.md) para calibrar |
-| "MCP server falla" | Revisa que las variables de entorno estén en `.env` y que esté `disabled: false` |
-| "Sync.sh no copia algo" | Verifica que el `plugin.json` del vertical liste el skill en `"skills":` |
+| El MCP no arranca | Que `uv` esté en el `PATH` (`uv --version`) y que haya red la primera vez para descargar el paquete |
+| Todas las respuestas traen `simulated: true` | Faltan las variables de entorno del MCP, o está puesto `PLUGINS_MX_MOCK=1` |
+| Error `AuthError` / `UpstreamError` | Credencial inválida o el proveedor falló. Es intencional: no se oculta con datos de ejemplo |
+| La skill no se activa | El `description:` puede no cubrir tu fraseo. Ver [guia-desarrollo.md](guia-desarrollo.md) |
 
 ---
 
 ## Privacidad y seguridad
 
-Ver [seguridad.md](seguridad.md) para detalles. Resumen:
+Ver [seguridad.md](../architecture/seguridad.md). En resumen:
 
-- Todos los skills tratan datos de manera local — no hay envío automático a servicios externos.
-- Si activas MCP servers reales (Facturama, etc.), esos servicios SÍ reciben datos. Revisa los términos.
-- Los plugins NO retienen datos entre sesiones. Lo que se guarda está en archivos locales tuyos.
-- Cumplimiento LFPDPPP es responsabilidad del usuario final (tú o tu cliente).
+- Las skills procesan en tu sesión. Los MCPs con credenciales sí envían datos al proveedor correspondiente (SAT, Banxico, PAC, pasarela).
+- La bitácora local guarda solo hashes de RFC, CURP y correo.
+- Cumplir la LFPDPPP con los datos de tus clientes te corresponde a ti.
 
 ---
 
 ## Ver también
 
-- [guia-desarrollo.md](guia-desarrollo.md) — para extender o modificar
-- [troubleshooting.md](troubleshooting.md) — problemas comunes
-- [integracion-pac.md](integracion-pac.md) — detalle de PACs
-- [integracion-whatsapp.md](integracion-whatsapp.md) — detalle de WA Business
+- [guia-desarrollo.md](guia-desarrollo.md): para extender o modificar
+- [integracion-pac.md](../integrations/integracion-pac.md): timbrado de CFDI
+- [integracion-whatsapp.md](../integrations/integracion-whatsapp.md): WhatsApp Business

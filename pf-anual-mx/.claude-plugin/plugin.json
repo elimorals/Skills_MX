@@ -18,29 +18,7 @@
     "Art.151",
     "Art.96-LISR"
   ],
-  "skills": [
-    "skills/dashboard-anual-fiscal",
-    "skills/recopilar-cfdis-anuales",
-    "skills/cruzar-bancos-vs-cfdis",
-    "skills/identificar-deducciones-personales",
-    "skills/calculadora-isr-anual",
-    "skills/generar-borrador-declaracion",
-    "skills/seguimiento-devolucion-sat",
-    "skills/alertas-deadline-anual"
-  ],
-  "commands": [
-    "commands/dashboard.md",
-    "commands/recopilar.md",
-    "commands/calcular.md",
-    "commands/borrador.md",
-    "commands/status-devolucion.md"
-  ],
-  "agents": [
-    "agents/workflow-pf-anual-completa.md"
-  ],
-  "dependencies": {
-    "plugins": [
-      "core-mexico"
-    ]
-  }
+  "dependencies": [
+    "core-mexico"
+  ]
 }

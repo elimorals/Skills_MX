@@ -4,7 +4,7 @@
 # de placas registradas en el tracker.
 #
 # Programar:
-#    0 8 * * * cd /Users/elias/Documents/Trabajo/skills && bash scripts/check-multas-vehiculares.sh >> /tmp/plugins-mx-multas.log 2>&1
+#    0 8 * * * cd /ruta/a/Skills_MX && bash scripts/check-multas-vehiculares.sh >> /tmp/plugins-mx-multas.log 2>&1
 #
 # Si no hay placas en tracker o credenciales, corre mock.
 

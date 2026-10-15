@@ -4,7 +4,7 @@
 # Verifica que estén todos los CFDIs emitidos, REPs de PPDs cobrados, retenciones registradas.
 #
 # Programar:
-#    0 9 14 * * cd /Users/elias/Documents/Trabajo/skills && bash scripts/pre-cierre-fiscal.sh >> /tmp/plugins-mx-pre-cierre.log 2>&1
+#    0 9 14 * * cd /ruta/a/Skills_MX && bash scripts/pre-cierre-fiscal.sh >> /tmp/plugins-mx-pre-cierre.log 2>&1
 
 set -euo pipefail
 

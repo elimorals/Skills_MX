@@ -16,31 +16,5 @@
     "medico-referente",
     "QFB",
     "mexico"
-  ],
-  "skills": [
-    "skills/recepcion-muestra",
-    "skills/tracking-procesamiento",
-    "skills/entrega-resultados",
-    "skills/integracion-medico-referente",
-    "skills/compliance-cofepris-lab",
-    "skills/cfdi-emision",
-    "skills/iva-retenciones-mx",
-    "skills/rfc-validacion",
-    "skills/whatsapp-business-mx",
-    "skills/compliance-lfpdppp",
-    "skills/mxn-formato"
-  ],
-  "commands": [
-    "commands/registrar-muestra.md",
-    "commands/liberar-resultados.md",
-    "commands/comisiones-medico.md",
-    "commands/dashboard-lab.md"
-  ],
-  "agents": [
-    "agents/validador-resultados-criticos.md"
-  ],
-  "compatibility": {
-    "claudeCode": ">=1.0.0",
-    "requires": ["core-mexico", "clinica-salud-mx"]
-  }
+  ]
 }

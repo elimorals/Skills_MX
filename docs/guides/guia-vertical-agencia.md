@@ -190,5 +190,5 @@ Claude → (community-management-mx)
 
 ## Ver también
 
-- [estado-real.md](estado-real.md) — score honesto agencia-marketing-mx (4.6/9)
-- [integracion-whatsapp.md](integracion-whatsapp.md) — para CM y avisos
+- [estado-real-2026-06.md](../historial/estado-real-2026-06.md) — auditoría histórica (junio 2026: agencia-marketing-mx 4.6/9)
+- [integracion-whatsapp.md](../integrations/integracion-whatsapp.md) — para CM y avisos

@@ -106,5 +106,5 @@ Un párrafo: qué problema resuelve, para qué usuario, qué cambio mensurable p
 ## 13. Links
 
 - Issue / commit relacionado: (al implementar)
-- Doc de planeación original: `/Users/elias/Downloads/plugins-mx-*.md` sección X
+- Doc de planeación original: documento de planeación (enlace o ruta relativa al repo) sección X
 - Referencia externa: (docs API, libro, etc.)

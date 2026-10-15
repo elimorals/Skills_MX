@@ -16,22 +16,7 @@
     "kWh-credito",
     "fotovoltaico"
   ],
-  "skills": [
-    "skills/lectura-factura-cfe-pdf",
-    "skills/validacion-factura-cfe",
-    "skills/credito-kwh-tracking",
-    "skills/roi-solar-payback",
-    "skills/optimizacion-tarifa-gdmth"
-  ],
-  "commands": [
-    "commands/lectura.md",
-    "commands/validacion.md",
-    "commands/credito.md",
-    "commands/roi.md"
-  ],
-  "dependencies": {
-    "plugins": [
-      "core-mexico"
-    ]
-  }
+  "dependencies": [
+    "core-mexico"
+  ]
 }

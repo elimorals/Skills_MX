@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06-13)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Investigación de plataformas SaaS estatales para predial — 2026-06-13
 
 > **Hipótesis original**: si SACPI Michoacán cubre 95 municipios con 1 URL,

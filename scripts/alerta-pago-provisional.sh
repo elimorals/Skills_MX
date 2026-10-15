@@ -3,7 +3,7 @@
 # Cron mensual día 15 — alerta de pago provisional ISR/IVA (vence día 17).
 #
 # Programar:
-#    0 10 15 * * cd /Users/elias/Documents/Trabajo/skills && bash scripts/alerta-pago-provisional.sh >> /tmp/plugins-mx-alerta-prov.log 2>&1
+#    0 10 15 * * cd /ruta/a/Skills_MX && bash scripts/alerta-pago-provisional.sh >> /tmp/plugins-mx-alerta-prov.log 2>&1
 
 set -euo pipefail
 

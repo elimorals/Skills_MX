@@ -4,7 +4,7 @@
 
 **Audiencia**: desarrolladores y mantenedores.
 
-**Pre-lectura**: [guia-desarrollo.md](guia-desarrollo.md).
+**Pre-lectura**: [guia-desarrollo.md](../guides/guia-desarrollo.md).
 
 ---
 
@@ -49,7 +49,7 @@ Política para pre-1.0:
 - Documentar en CHANGELOG.md
 
 ### Cuando llegar a 1.0.0
-Cuando un plugin alcanza score ≥ 7.5/9 en [estado-real.md](estado-real.md) y ha tenido al menos 3 meses de uso real con clientes externos sin issues graves.
+Cuando las skills del plugin tienen validación experta (contador, abogado u otro revisor del sector), sus MCPs están en estado real validado en [`mcp-servers/CATALOGO.md`](../../mcp-servers/CATALOGO.md) y lleva al menos 3 meses de uso real con clientes externos sin issues graves. (El criterio de junio de 2026, score ≥ 7.5/9, está en la [auditoría histórica](../historial/estado-real-2026-06.md).)
 
 ### Versiones alpha/beta/rc
 Para releases experimentales:
@@ -242,6 +242,6 @@ Si todo el monorepo cambia coordinado (ej. nueva versión de Claude Code):
 
 ## Ver también
 
-- [guia-desarrollo.md](guia-desarrollo.md) — cómo agregar features
-- [roadmap.md](roadmap.md) — qué viene en próximas versiones
-- [CHANGELOG.md](../CHANGELOG.md) — cambios del monorepo
+- [guia-desarrollo.md](../guides/guia-desarrollo.md) — cómo agregar features
+- [roadmap.md](../roadmap.md) — qué viene en próximas versiones
+- [CHANGELOG.md](../../CHANGELOG.md) — cambios del monorepo

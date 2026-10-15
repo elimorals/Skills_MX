@@ -1,6 +1,6 @@
 # mp_amazon_mx_seller — MCP para Amazon MX SP-API
 
-⚠ Mock-first. Path real (LWA + AWS Sig V4) requiere ~80-120h dev — NO implementado.
+Sin credenciales responde datos de ejemplo (`simulated: true`). Con credenciales usa SP-API con LWA; ver la sección "Estado real" para lo verificado.
 
 ## Tools (7)
 

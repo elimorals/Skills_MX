@@ -7,7 +7,7 @@
  * Requiere variable de entorno en Vercel:
  *   RESEND_API_KEY=re_xxx...   (https://resend.com/api-keys)
  *
- * Resend tier gratuito: 100 emails/día. Usando `onboarding@resend.dev` como
+ * Plan gratuito de Resend: 100 emails/día. Usando `onboarding@resend.dev` como
  * remitente, los emails solo pueden enviarse al email verificado de la cuenta
  * Resend — en este caso, el mismo elimoralsmendox@gmail.com (perfecto).
  *

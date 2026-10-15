@@ -18,28 +18,5 @@
     "comisiones-estilistas",
     "loyalty",
     "no-shows"
-  ],
-  "skills": [
-    "skills/agenda-citas-salon",
-    "skills/servicios-tarifario",
-    "skills/comisiones-estilistas",
-    "skills/paquetes-membresia",
-    "skills/retencion-clientes-loyalty",
-    "skills/cfdi-emision",
-    "skills/iva-retenciones-mx",
-    "skills/rfc-validacion",
-    "skills/whatsapp-business-mx",
-    "skills/compliance-lfpdppp",
-    "skills/mxn-formato"
-  ],
-  "commands": [
-    "commands/agendar-cita.md",
-    "commands/cierre-dia-salon.md",
-    "commands/recordatorio-no-show.md",
-    "commands/calcular-comisiones.md"
-  ],
-  "compatibility": {
-    "claudeCode": ">=1.0.0",
-    "requires": ["core-mexico"]
-  }
+  ]
 }

@@ -18,31 +18,5 @@
     "GMM",
     "vida",
     "mexico"
-  ],
-  "skills": [
-    "skills/cartera-polizas",
-    "skills/calculador-comisiones-aseguradoras",
-    "skills/comparador-polizas-cliente",
-    "skills/seguimiento-siniestro",
-    "skills/recordatorios-renovacion",
-    "skills/cfdi-emision",
-    "skills/iva-retenciones-mx",
-    "skills/rfc-validacion",
-    "skills/whatsapp-business-mx",
-    "skills/compliance-lfpdppp",
-    "skills/mxn-formato"
-  ],
-  "commands": [
-    "commands/registrar-poliza.md",
-    "commands/cotizar-comparativa.md",
-    "commands/seguimiento-siniestro.md",
-    "commands/cobrar-comisiones.md"
-  ],
-  "agents": [
-    "agents/cazador-renovaciones.md"
-  ],
-  "compatibility": {
-    "claudeCode": ">=1.0.0",
-    "requires": ["core-mexico", "gmm-asegurado-mx"]
-  }
+  ]
 }

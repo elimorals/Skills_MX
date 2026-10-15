@@ -1,8 +1,17 @@
 {
   "mcpServers": {
     "klap": {
-      "command": "python",
-      "args": ["-m", "mp_klap.server"],
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_klap.server"
+      ],
       "env": {
         "KLAP_API_KEY": "${{ KLAP_API_KEY:- }}"
       }

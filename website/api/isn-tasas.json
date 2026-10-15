@@ -2,7 +2,7 @@
   "$schema": "https://skills-mexico.vercel.app/openapi.json#/components/schemas/IsnRatesTable",
   "version": "2026-10-14",
   "vigencia": "2026",
-  "license": "CC-BY-4.0",
+  "license": "Apache-2.0",
   "source": "mcp-servers/shared/catalogo_isn_estatal.py. Fuente base: BHR 'Contribuciones locales, cambios relevantes 2026' (fuente secundaria, confianza media); algunas entidades citan su ley local.",
   "documentation": "https://skills-mexico.vercel.app/productos/isn",
   "glossary": "https://skills-mexico.vercel.app/glosario/isn",

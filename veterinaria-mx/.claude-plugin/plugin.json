@@ -17,28 +17,5 @@
     "vacunacion",
     "urgencias-vet",
     "expediente-clinico"
-  ],
-  "skills": [
-    "skills/expediente-clinico-mascota",
-    "skills/vacunacion-calendario",
-    "skills/recordatorios-pet-wa",
-    "skills/tarifario-servicios-vet",
-    "skills/urgencias-protocolo",
-    "skills/cfdi-emision",
-    "skills/iva-retenciones-mx",
-    "skills/rfc-validacion",
-    "skills/whatsapp-business-mx",
-    "skills/compliance-lfpdppp",
-    "skills/mxn-formato"
-  ],
-  "commands": [
-    "commands/registrar-mascota.md",
-    "commands/agendar-vacuna.md",
-    "commands/cotizar-servicio-vet.md",
-    "commands/urgencia.md"
-  ],
-  "compatibility": {
-    "claudeCode": ">=1.0.0",
-    "requires": ["core-mexico"]
-  }
+  ]
 }

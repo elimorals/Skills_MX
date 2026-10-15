@@ -1,6 +1,6 @@
 # mp_inmuebles24 — MCP para inmuebles24.com
 
-⚠ Mock-first. Búsqueda y detalle pueden hacerse vía HTTP simple, publicación requiere Playwright + cuenta vendedor.
+⚠ Por ahora solo datos de ejemplo (`simulated: true`). Búsqueda y detalle pueden hacerse vía HTTP simple, publicación requiere Playwright + cuenta vendedor.
 
 ## Tools (5)
 
@@ -22,6 +22,6 @@
 ## Tests
 
 ```bash
-cd /Users/elias/Documents/Trabajo/skills/mcp-servers
+cd mcp-servers   # desde la raíz del clon
 .venv/bin/python -m pytest mp_inmuebles24/tests/ -q
 ```

@@ -1,10 +1,19 @@
 {
   "mcpServers": {
     "isn_mx": {
-      "command": "python",
-      "args": ["-m", "mp_isn_mx.server"],
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_isn_mx.server"
+      ],
       "env": {
-        "PLUGINS_MX_MOCK": "1",
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}",
         "PLUGINS_MX_CACHE_DIR": "/tmp/plugins-mx-cache",
         "PLUGINS_MX_BITACORA_DIR": "/tmp/plugins-mx-bita"
       },

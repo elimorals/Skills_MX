@@ -17,31 +17,5 @@
     "cuidadores",
     "NOM-167",
     "mexico"
-  ],
-  "skills": [
-    "skills/expediente-geriatrico",
-    "skills/tracking-medicamentos-vencimiento",
-    "skills/agenda-cuidadores",
-    "skills/comunicacion-familiar-distribuida",
-    "skills/gestor-tramites-pension",
-    "skills/cfdi-emision",
-    "skills/iva-retenciones-mx",
-    "skills/rfc-validacion",
-    "skills/whatsapp-business-mx",
-    "skills/compliance-lfpdppp",
-    "skills/mxn-formato"
-  ],
-  "commands": [
-    "commands/alta-residente.md",
-    "commands/medicamentos-hoy.md",
-    "commands/comunicar-familia.md",
-    "commands/turno-cuidador.md"
-  ],
-  "agents": [
-    "agents/coordinador-familiar.md"
-  ],
-  "compatibility": {
-    "claudeCode": ">=1.0.0",
-    "requires": ["core-mexico", "paciente-mx"]
-  }
+  ]
 }

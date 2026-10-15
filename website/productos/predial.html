@@ -54,36 +54,22 @@
       "applicationSubCategory": "Tax Compliance",
       "operatingSystem": "Cross-platform (Python 3.11+, MCP, stdio/streamable-http)",
       "url": "https://skills-mexico.vercel.app/productos/predial",
-      "description": "Servidor MCP que consulta en paralelo el adeudo del impuesto predial municipal de N propiedades con un catálogo de 243 municipios mexicanos (revalidados el 2026-10-14: Toluca real, CDMX con entrega a humano). Devuelve dashboard Excel con vencimientos, descuentos por pronto pago y ranking de prioridad.",
-      "softwareVersion": "3.59.0",
+      "description": "Servidor MCP que consulta en paralelo el adeudo del impuesto predial municipal de N propiedades con un catálogo de 243 municipios mexicanos (revalidados el 2026-10-14: Toluca real, CDMX con entrega a humano). El workflow cartera-predial-multi-municipio consolida los resultados en un CSV listo para Excel.",
+      "softwareVersion": "2026-10-14",
       "datePublished": "2026-06-13",
       "dateModified": "2026-10-14",
       "inLanguage": "es-MX",
       "featureList": [
         "Auto-routing entre 243 municipios catalogados",
         "SACPI Michoacán: host caído (sin DNS) al 2026-10-14",
-        "Excel XLSX con totales y semáforo de vencimientos",
+        "CSV consolidado (listo para Excel) desde el workflow cartera-predial-multi-municipio",
         "Catálogo de junio 2026 sin revalidar, salvo Toluca y CDMX"
       ],
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "MXN",
-        "price": "0",
-        "availability": "https://schema.org/InStock",
-        "url": "https://skills-mexico.vercel.app/#demo",
-        "description": "Demo gratuita de 20 minutos. Pricing por contrato anual."
-      },
       "provider": {
         "@type": "Organization",
         "name": "Plugins MX",
         "url": "https://skills-mexico.vercel.app/",
         "email": "elimoralsmendox@gmail.com"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "1",
-        "bestRating": "5"
       }
     },
     {
@@ -101,23 +87,18 @@
         },
         {
           "@type": "Question",
-          "name": "¿Cómo se factura el servicio de consulta predial multi-municipio?",
-          "acceptedAnswer": { "@type": "Answer", "text": "El servicio está pensado para arrendadores con más de 10 propiedades, despachos contables que manejan cartera de clientes propietarios e inmobiliarias institucionales. El pricing se acuerda en demo (modelo anual). Demo de 20 minutos sin compromiso en https://skills-mexico.vercel.app/#demo" }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Funciona con Claude Code, Cursor o Windsurf?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Sí. El producto se distribuye como servidor MCP (Model Context Protocol) en Python con FastMCP. Es invocable directamente desde cualquier cliente MCP compatible: Claude Code, Cursor, Windsurf. También está disponible como librería Python pura (predial_mx_client) para integrar en pipelines existentes sin un LLM." }
+          "name": "¿Cómo se instala?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Es un servidor MCP en Python con FastMCP (mp_predial_mx). Todavía no viene en el .mcp.json de ningún plugin: se agrega a Claude Code con su example.mcp.json (uv run --no-project ... python -m mp_predial_mx.server); el único requisito es uv. También existe clients/predial_mx_client, una librería Python para usarlo sin LLM." }
         },
         {
           "@type": "Question",
           "name": "¿Qué pasa cuando un municipio no tiene portal en línea?",
-          "acceptedAnswer": { "@type": "Answer", "text": "El catálogo incluye municipios catalogados pero todavía no consultables. Para ellos, el sistema devuelve un resultado tipado con metodo: 'no-disponible' y enlaza al portal manual. El discovery automatizado mensual amplía la cobertura — el objetivo es llegar a 300 municipios consultables para Q4 2026." }
+          "acceptedAnswer": { "@type": "Answer", "text": "El catálogo incluye municipios catalogados pero no consultables en línea. Donde el portal exige CAPTCHA o login (por ejemplo CDMX), el MCP entrega la consulta a humano: devuelve la URL, los pasos y los campos prellenados." }
         },
         {
           "@type": "Question",
           "name": "¿Los datos están protegidos? ¿Quién los puede ver?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas prediales son números no sensibles por sí mismos (no exponen titularidad). Aún así, Plugins MX hashea los identificadores en la bitácora JSONL de auditoría y nunca persiste el resultado de la consulta. El sitio cumple con avisos de privacidad simplificados conforme a LFPDPPP." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas prediales no exponen titularidad por sí mismas. Aun así, la bitácora JSONL guarda solo hashes de los datos sensibles y la consulta corre en tu equipo con tus credenciales." }
         }
       ]
     }
@@ -171,7 +152,7 @@
     </h1>
 
     <p class="prod-hero-lede">
-      Consulta el adeudo predial de N propiedades en distintos municipios <strong>en paralelo</strong> y obtén un dashboard XLSX con vencimientos, descuentos por pronto pago y ranking de prioridad. 243 municipios en catálogo; revalidados en octubre 2026: Toluca (real) y CDMX (entrega a humano).
+      Consulta el adeudo predial de N propiedades en distintos municipios <strong>en paralelo</strong> y consolida los resultados en un CSV listo para Excel (workflow <span class="mono">cartera-predial-multi-municipio</span>). 243 municipios en catálogo; revalidados en octubre 2026: Toluca (real) y CDMX (entrega a humano).
     </p>
 
     <div class="prod-hero-meta">
@@ -185,13 +166,13 @@
   <!-- Visual decorativo: grid de municipios -->
   <div class="prod-hero-visual">
     <div class="muni-grid">
-      <span>CDMX</span><span>Guadalajara</span><span>Monterrey</span><span>Puebla</span><span>Tijuana</span>
-      <span>Mérida</span><span>Querétaro</span><span>Toluca</span><span>León</span><span>Aguascalientes</span>
+      <span class="muni-on">CDMX <small>a humano</small></span><span>Guadalajara</span><span class="muni-on">Monterrey <small>real</small></span><span>Puebla</span><span class="muni-on">Tijuana <small>real</small></span>
+      <span>Mérida</span><span class="muni-on">Querétaro <small>real</small></span><span class="muni-on">Toluca <small>real</small></span><span>León</span><span>Aguascalientes</span>
       <span>Cancún</span><span>Saltillo</span><span>Culiacán</span><span>Hermosillo</span><span>Chihuahua</span>
-      <span>Morelia</span><span class="muni-on">Coyoacán <small>✓ $0.00</small></span><span>San Luis Potosí</span>
-      <span class="muni-on">Zapopan <small>✓ $6,875</small></span><span>Tlalnepantla</span><span>Naucalpan</span>
-      <span>Acapulco</span><span class="muni-on">Ciudad Hidalgo <small>✓ $13,475</small></span><span>Veracruz</span>
-      <span>Reynosa</span><span class="muni-on">San Pedro NL <small>✓ $7,562</small></span><span>Mexicali</span>
+      <span>Morelia</span><span>Coyoacán</span><span>San Luis Potosí</span>
+      <span>Zapopan</span><span>Tlalnepantla</span><span>Naucalpan</span>
+      <span>Acapulco</span><span>Ciudad Hidalgo</span><span>Veracruz</span>
+      <span>Reynosa</span><span>San Pedro NL</span><span>Mexicali</span>
       <span>Pachuca</span><span>Tepic</span><span>Durango</span><span>Cuernavaca</span><span>Oaxaca</span>
     </div>
   </div>
@@ -205,7 +186,7 @@
   </div>
 
   <div class="frase-grande">
-    "Pasa un Excel con 60 propiedades. <em>Recibe</em> un Excel con 60 adeudos prediales, vencimientos, descuentos y total."
+    "Pasa tu cartera de propiedades. <em>Recibe</em> el adeudo de las que se pueden consultar en línea y la ruta manual de las demás, en un CSV."
   </div>
 </section>
 
@@ -214,7 +195,7 @@
   <div class="section-head">
     <span class="section-no">02</span>
     <h2 class="section-h">Tools <em>expuestas</em>.</h2>
-    <p class="section-desc">4 tools MCP invocables desde Claude Code, Cursor, o como librería Python pura (<span class="mono">predial_mx_client</span>).</p>
+    <p class="section-desc">4 tools MCP invocables desde Claude Code (o cualquier cliente MCP), o como librería Python (<span class="mono">predial_mx_client</span>).</p>
   </div>
 
   <div class="tools-list">
@@ -308,44 +289,26 @@
   <div class="code-frame">
     <div class="code-head">
       <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-      <span class="code-file">cartera_predial.py</span>
+      <span class="code-file">cartera_predial.py · clients/predial_mx_client</span>
     </div>
-    <pre class="code"><span class="c-kw">from</span> predial_mx_client <span class="c-kw">import</span> PredialClient
-<span class="c-kw">import</span> openpyxl
+    <pre class="code"><span class="c-kw">from</span> predial_mx_client <span class="c-kw">import</span> PredialMxClient, CaptchaRequeridoError
 
-cliente <span class="c-op">=</span> PredialClient<span class="c-pn">()</span>
+cliente <span class="c-op">=</span> PredialMxClient<span class="c-pn">()</span>
 
 <span class="c-cm"># Tu cartera: cualquier formato → diccionarios Python</span>
 propiedades <span class="c-op">=</span> <span class="c-pn">[</span>
-    <span class="c-pn">{</span><span class="c-st">"alias"</span><span class="c-op">:</span> <span class="c-st">"Casa Coyoacán"</span>,
-     <span class="c-st">"estado"</span><span class="c-op">:</span> <span class="c-st">"CDMX"</span>,
-     <span class="c-st">"municipio"</span><span class="c-op">:</span> <span class="c-st">"Coyoacán"</span>,
-     <span class="c-st">"cuenta"</span><span class="c-op">:</span> <span class="c-st">"123-456-789"</span><span class="c-pn">}</span>,
-
-    <span class="c-pn">{</span><span class="c-st">"alias"</span><span class="c-op">:</span> <span class="c-st">"Depa Zapopan"</span>,
-     <span class="c-st">"estado"</span><span class="c-op">:</span> <span class="c-st">"JAL"</span>,
-     <span class="c-st">"municipio"</span><span class="c-op">:</span> <span class="c-st">"Zapopan"</span>,
-     <span class="c-st">"cuenta"</span><span class="c-op">:</span> <span class="c-st">"GDL-0001-22"</span><span class="c-pn">}</span>,
-
-    <span class="c-pn">{</span><span class="c-st">"alias"</span><span class="c-op">:</span> <span class="c-st">"Rancho SACPI"</span>,
-     <span class="c-st">"estado"</span><span class="c-op">:</span> <span class="c-st">"MICH"</span>,
-     <span class="c-st">"municipio"</span><span class="c-op">:</span> <span class="c-st">"Ciudad Hidalgo"</span>,
-     <span class="c-st">"cuenta"</span><span class="c-op">:</span> <span class="c-st">"MICH-7788"</span><span class="c-pn">}</span>,
+    <span class="c-pn">{</span><span class="c-st">"estado"</span><span class="c-op">:</span> <span class="c-st">"edomex"</span>, <span class="c-st">"municipio"</span><span class="c-op">:</span> <span class="c-st">"toluca"</span>,    <span class="c-st">"cuenta"</span><span class="c-op">:</span> <span class="c-st">"..."</span><span class="c-pn">}</span>,
+    <span class="c-pn">{</span><span class="c-st">"estado"</span><span class="c-op">:</span> <span class="c-st">"qro"</span>,    <span class="c-st">"municipio"</span><span class="c-op">:</span> <span class="c-st">"queretaro"</span>, <span class="c-st">"cuenta"</span><span class="c-op">:</span> <span class="c-st">"..."</span><span class="c-pn">}</span>,
+    <span class="c-pn">{</span><span class="c-st">"estado"</span><span class="c-op">:</span> <span class="c-st">"cdmx"</span>,   <span class="c-st">"municipio"</span><span class="c-op">:</span> <span class="c-st">"coyoacan"</span>,  <span class="c-st">"cuenta"</span><span class="c-op">:</span> <span class="c-st">"..."</span><span class="c-pn">}</span>,
 <span class="c-pn">]</span>
 
-<span class="c-cm"># Consulta en paralelo — auto-routing transparente</span>
-resultados <span class="c-op">=</span> cliente<span class="c-pn">.</span>consultar_lote<span class="c-pn">(</span>propiedades<span class="c-pn">)</span>
-
-<span class="c-cm"># Exporta a Excel listo para mandar</span>
-wb <span class="c-op">=</span> openpyxl<span class="c-pn">.</span>Workbook<span class="c-pn">()</span>
-ws <span class="c-op">=</span> wb<span class="c-pn">.</span>active
-ws<span class="c-pn">.</span>append<span class="c-pn">([</span><span class="c-st">"Propiedad"</span>, <span class="c-st">"Adeudo"</span>, <span class="c-st">"Vence"</span>, <span class="c-st">"Estado"</span><span class="c-pn">])</span>
-<span class="c-kw">for</span> r <span class="c-kw">in</span> resultados<span class="c-op">:</span>
-    ws<span class="c-pn">.</span>append<span class="c-pn">([</span>r<span class="c-pn">.</span>alias, r<span class="c-pn">.</span>adeudo, r<span class="c-pn">.</span>vencimiento, r<span class="c-pn">.</span>estatus<span class="c-pn">])</span>
-wb<span class="c-pn">.</span>save<span class="c-pn">(</span><span class="c-st">"cartera-predial-2026-06.xlsx"</span><span class="c-pn">)</span>
-
-<span class="c-fn">print</span><span class="c-pn">(</span><span class="c-st">f"Total cartera: $</span><span class="c-pn">{</span><span class="c-fn">sum</span><span class="c-pn">(</span>r<span class="c-pn">.</span>adeudo <span class="c-kw">for</span> r <span class="c-kw">in</span> resultados<span class="c-pn">)</span><span class="c-op">:,.2f</span><span class="c-pn">}</span><span class="c-st"> MXN"</span><span class="c-pn">)</span>
-<span class="c-cm"># Total cartera: $27,912.50 MXN</span></pre>
+<span class="c-kw">for</span> p <span class="c-kw">in</span> propiedades<span class="c-op">:</span>
+    <span class="c-kw">try</span><span class="c-op">:</span>
+        r <span class="c-op">=</span> cliente<span class="c-pn">.</span>consultar<span class="c-pn">(</span><span class="c-op">**</span>p<span class="c-pn">)</span>
+        <span class="c-fn">print</span><span class="c-pn">(</span>r<span class="c-pn">.</span>municipio_nombre, r<span class="c-pn">.</span>estatus, r<span class="c-pn">.</span>adeudo_total_mxn<span class="c-pn">)</span>
+    <span class="c-kw">except</span> CaptchaRequeridoError <span class="c-kw">as</span> e<span class="c-op">:</span>
+        <span class="c-cm"># CDMX (ALTCHA): entrega a humano con la URL de consulta manual</span>
+        <span class="c-fn">print</span><span class="c-pn">(</span><span class="c-st">"Consulta manual:"</span>, e<span class="c-pn">.</span>url_consulta_manual<span class="c-pn">)</span></pre>
   </div>
 </section>
 
@@ -369,23 +332,18 @@ wb<span class="c-pn">.</span>save<span class="c-pn">(</span><span class="c-st">"
     </div>
 
     <div class="faq-item">
-      <dt>¿Cómo se factura?</dt>
-      <dd>Pensado para <strong>arrendadores con &gt;10 propiedades</strong>, <strong>despachos contables</strong> que manejan cartera y <strong>inmobiliarias institucionales</strong>. Pricing por contrato anual, acordado en la demo. Demo de 20 minutos sin compromiso.</dd>
-    </div>
-
-    <div class="faq-item">
-      <dt>¿Funciona con Claude Code, Cursor o Windsurf?</dt>
-      <dd>Sí. Se distribuye como <strong>servidor MCP</strong> en Python con FastMCP. Invocable directo desde cualquier cliente MCP compatible. También disponible como <span class="mono">predial_mx_client</span> (librería Python pura) para integrar en pipelines sin LLM.</dd>
+      <dt>¿Cómo se instala?</dt>
+      <dd>Es un <strong>servidor MCP</strong> en Python con FastMCP (<span class="mono">mp_predial_mx</span>). Todavía no viene en el <span class="mono">.mcp.json</span> de ningún plugin: se agrega a Claude Code con su <span class="mono">example.mcp.json</span> (<span class="mono">uv run --no-project … python -m mp_predial_mx.server</span>). El único requisito es <span class="mono">uv</span>. También existe <span class="mono">clients/predial_mx_client</span> (librería Python) para usarlo sin LLM.</dd>
     </div>
 
     <div class="faq-item">
       <dt>¿Qué pasa cuando un municipio no tiene portal en línea?</dt>
-      <dd>El catálogo distingue municipios catalogados de los consultables. Para los no consultables, el sistema devuelve <span class="mono">metodo: "no-disponible"</span> y enlaza al portal manual. Discovery mensual amplía cobertura — objetivo Q4 2026: <strong>300 muns</strong>.</dd>
+      <dd>El catálogo distingue municipios catalogados de los consultables. Donde el portal exige CAPTCHA o login (por ejemplo CDMX), el MCP entrega la consulta a humano: devuelve la URL, los pasos y los campos prellenados.</dd>
     </div>
 
     <div class="faq-item">
       <dt>¿Los datos están protegidos?</dt>
-      <dd>Las cuentas prediales no son sensibles por sí mismas (no exponen titularidad). Aun así, hasheamos los identificadores en la bitácora JSONL y <strong>nunca persistimos el resultado</strong> de la consulta. Cumplimos con LFPDPPP.</dd>
+      <dd>Las cuentas prediales no exponen titularidad por sí mismas. Aun así, la bitácora JSONL guarda solo hashes de los datos sensibles y la consulta corre en tu equipo con tus credenciales.</dd>
     </div>
   </dl>
 </section>
@@ -394,7 +352,7 @@ wb<span class="c-pn">.</span>save<span class="c-pn">(</span><span class="c-st">"
 <section class="section">
   <div class="cta-final">
     <h2 class="cta-h">¿Tienes <em>más de 10</em> propiedades en cartera?</h2>
-    <p>Demo de 20 minutos. Te muestro la consulta en vivo de 5 propiedades en tus municipios reales y el Excel resultante.</p>
+    <p>Demo de 20 minutos. Te muestro la consulta en vivo en los municipios validados (Toluca, Querétaro, Monterrey) y cómo se ve la entrega a humano donde hay CAPTCHA.</p>
     <a href="../index.html#demo" class="btn btn-primary">
       <span>Agendar mi demo</span>
       <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 7h12m0 0L7 1m6 6L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -427,7 +385,7 @@ wb<span class="c-pn">.</span>save<span class="c-pn">(</span><span class="c-st">"
   </div>
   <div class="footer-bottom">
     <span>© 2026 Plugins MX · CDMX</span>
-    <span class="footer-version">Producto 01 · v3.59</span>
+    <span class="footer-version">Producto 01 · estado al 14-oct-2026</span>
   </div>
 </footer>
 

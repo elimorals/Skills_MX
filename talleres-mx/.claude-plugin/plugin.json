@@ -16,30 +16,5 @@
     "diagnostico",
     "mexico",
     "PROFECO"
-  ],
-  "skills": [
-    "skills/diagnostico-cotizacion",
-    "skills/autorizacion-cliente-wa",
-    "skills/garantia-servicio",
-    "skills/orden-trabajo",
-    "skills/cfdi-emision",
-    "skills/iva-retenciones-mx",
-    "skills/rfc-validacion",
-    "skills/whatsapp-business-mx",
-    "skills/compliance-lfpdppp",
-    "skills/mxn-formato"
-  ],
-  "commands": [
-    "commands/nuevo-diagnostico.md",
-    "commands/autorizacion.md",
-    "commands/orden-trabajo.md",
-    "commands/garantia.md"
-  ],
-  "agents": [
-    "agents/defensor-profeco.md"
-  ],
-  "compatibility": {
-    "claudeCode": ">=1.0.0",
-    "requires": ["core-mexico"]
-  }
+  ]
 }

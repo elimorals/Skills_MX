@@ -1,109 +1,48 @@
-# Website comercial — Plugins MX
+# website/ — sitio público de Plugins MX
 
-Landing comercial estática para los 3 productos vendibles del monorepo `plugins-mx`:
+Sitio estático en Vercel (https://skills-mexico.vercel.app). Resume el [README raíz](../README.md), que es la fuente de verdad: 40 plugins de Claude Code, 342 skills, 83 MCPs / 417 tools, 26 workflows, 17 scripts de hooks (12 registrados), 12 handlers de webhook y 1,900 tests. Licencia Apache-2.0.
 
-- **Cartera Predial** multi-municipio (243 municipios en catálogo; revalidados oct-2026: Toluca real, CDMX entrega a humano)
-- **Compliance REPSE** Art. 15 LFT (sin CAPTCHA, validado en vivo 2026-10-14)
-- **ISN** 32 estados, cálculo local con tasas 2026 de 2.5% a 4.25% (fuente secundaria)
+Destaca tres casos de uso con su estado real al 2026-10-14:
 
-Pensado para mandar por WhatsApp / LinkedIn a despachos contables, inmobiliarias y áreas fiscales corporativas en lugar de un repo de GitHub.
+- **Cartera Predial**: catálogo de 243 municipios; Toluca, Querétaro y Monterrey consultan en vivo, CDMX entrega a humano (ALTCHA), el resto sin revalidar.
+- **Compliance REPSE** (Art. 15 LFT): validado en vivo, sin CAPTCHA.
+- **ISN**: cálculo local con tasas 2026 de 2.5% a 4.25% (fuente secundaria).
 
 ## Stack
 
-- HTML estático, CSS puro, JS vanilla — sin build step
-- **Fraunces** (display serif), **Geist** (body sans), **JetBrains Mono** (datos) — Google Fonts
-- IntersectionObserver para scroll reveals y count-up animations
-- Magnetic buttons + tilt 3D en cards
-- Sin dependencias, sin tracking, ~70 KB total
+HTML estático, CSS y JS sin build. Fuentes de Google Fonts. `api/lead-demo.js` es la única función de Vercel (reenvía el formulario de demo por correo con Resend; requiere `RESEND_API_KEY`).
 
-## Estética
+## Qué se genera y qué se edita a mano
 
-Editorial fiscal mexicano. Cream + tinta + acentos terracotta / maíz / nopal. Sin purple-gradient AI slop. Tipografía gigante con cursivas variables (Fraunces SOFT + WONK axes).
+`scripts/generar-estado-mcps.py` genera, desde la sección "Estado real" de cada `mcp-servers/mp_*/README.md` y los catálogos de `mcp-servers/shared/`:
+
+- `data/*.json` y sus copias en `api/` (`mcp-estado`, `skills-catalog`, `portales-coverage`, `municipios`, `isn-tasas`)
+- `mcp-manifest.json` (`description`, `servers`, `stats`)
+- los bloques entre `<!-- …:inicio -->` / `<!-- …:fin -->` de `index.html`, `llms.txt`, `llms-full.txt`, `productos/isn.html` y `glosario/isn/index.html`
+
+No edites eso a mano: cambia el script o el README del MCP y corre `python3 scripts/generar-estado-mcps.py`; `--check` falla si algo quedó desactualizado. Lo demás (páginas, `data/repse-stats.json`, `openapi.json`, `.well-known/`) se edita a mano.
+
+## Local
+
+```bash
+cd website && python3 -m http.server 8080
+```
 
 ## Deploy
 
-### Opción 1: GitHub Pages (gratis, instant)
-```bash
-# Desde el repo raíz
-git subtree push --prefix website origin gh-pages
-# O configurar Pages → /website folder
-```
-URL final: `https://<usuario>.github.io/Skills_MX/`
-
-### Opción 2: Vercel / Netlify (free tier, dominio custom)
-```bash
-cd website
-vercel deploy --prod
-# o
-netlify deploy --prod --dir=.
-```
-Conecta dominio: `plugins-mx.com` o `compliance.cipreholding.com`.
-
-### Opción 3: Cloudflare Pages
-Importa el repo, root: `website/`, build command vacío, output: `.`
-
-### Local
-```bash
-cd website
-python3 -m http.server 8080
-# o
-npx serve
-```
-Abrir `http://localhost:8080`.
-
-## Personalización
-
-| Archivo | Para qué |
-|---|---|
-| `index.html` | Landing principal + 8 secciones |
-| `productos/predial.html` | Detalle producto 01 |
-| `productos/repse.html` | Detalle producto 02 |
-| `productos/isn.html` | Detalle producto 03 |
-| `styles.css` | Sistema de diseño completo |
-| `productos/producto.css` | Estilos exclusivos de páginas detalle |
-| `scripts.js` | Animaciones + form handler |
-
-### Cambiar número de WhatsApp
-En `scripts.js`, función `handleDemo`, reemplazar `525500000000` por tu número real (formato internacional sin `+` ni espacios).
-
-### Cambiar email
-Buscar y reemplazar `elimoralsmendox@gmail.com` en todos los archivos.
-
-### Actualizar el estado de los MCPs
-El estado sale de la sección "Estado real" de cada `mcp-servers/mp_*/README.md`. Tras cambiarla, clasifica el MCP en `scripts/generar-estado-mcps.py` (dict `ESTADO`) y corre `python3 scripts/generar-estado-mcps.py`; regenera los JSON de `data/` y `api/`, el manifest y los bloques entre marcadores `<!-- …:inicio -->`. `--check` falla si algo quedó desactualizado.
-
-### Actualizar stats
-Los counters se generan automáticamente de los atributos `data-target="<n>"` y `data-suffix="<sufijo>"` en `index.html`. Solo cambia el atributo y la animación se ajusta.
+Vercel con raíz `website/`, sin build command. `vercel.json` define `cleanUrls`, las reescrituras de `/api/*.json` a `/data/` y los headers.
 
 ## Estructura
 
 ```
 website/
-├── index.html                 # Landing principal
-├── styles.css                 # Sistema de diseño
-├── scripts.js                 # IntersectionObserver + count-up + tilt + form
-├── README.md                  # Este archivo
-└── productos/
-    ├── predial.html
-    ├── repse.html
-    ├── isn.html
-    └── producto.css           # Estilos específicos de producto
+├── index.html            Landing: estado de MCPs, 40 plugins por sector, workflows, instalación, límites
+├── marketplace/          Explorador de los 83 MCPs (lee /api/skills-catalog.json)
+├── portales/             Portales por estado y dependencia (lee /api/portales-coverage.json)
+├── guias/                Guía de CFDI 4.0 y recetas que enlazan al MCP o workflow en el repo
+├── productos/            Predial, REPSE, ISN
+├── glosario/             REPSE, ISN, predial
+├── sobre/                Autor
+├── llms.txt, llms-full.txt, openapi.json, mcp-manifest.json, .well-known/
+└── data/, api/           JSON estáticos (no hay API REST de consulta)
 ```
-
-## Performance
-
-- 0 frameworks · 0 bundlers · 0 build step
-- Fonts vía CDN con `preconnect`
-- SVG inline para íconos (sin requests adicionales)
-- `prefers-reduced-motion` respetado
-- Mobile-first, breakpoints en 600px / 768px / 900px
-
-## Próximos pasos sugeridos
-
-1. **Capturar leads de verdad**: cambiar form `mailto` por integración con Formspree, ConvertKit, o webhook al MCP `mp_mercado_pago` para auto-cobrar el setup.
-2. **Embeber demo en vivo**: video screencap de 60s consultando 5 muns de cartera predial.
-3. **Página de pricing**: tres tiers — POC ($X), Implementación ($Y), Suscripción mensual ($Z).
-4. **Blog técnico**: traducir hallazgos del repo (cobertura nacional, descubrimientos del discovery automatizado) a posts SEO en `plugins-mx.com/blog/`.
-5. **OG image**: generar tarjeta social 1200×630 PNG con stats principales para LinkedIn/WhatsApp preview.
-
-— Construido junio 2026, durante FASE 60 del monorepo `plugins-mx`.

@@ -17,28 +17,5 @@
     "tiktok-ads",
     "community-management",
     "copy"
-  ],
-  "skills": [
-    "skills/reporte-mensual-cliente",
-    "skills/meta-ads-optimization",
-    "skills/copy-mexicano",
-    "skills/community-management-mx",
-    "skills/briefing-creativo",
-    "skills/cfdi-emision",
-    "skills/iva-retenciones-mx",
-    "skills/rfc-validacion",
-    "skills/whatsapp-business-mx",
-    "skills/compliance-lfpdppp",
-    "skills/mxn-formato"
-  ],
-  "commands": [
-    "commands/reporte.md",
-    "commands/auditoria-cuenta.md",
-    "commands/copy.md",
-    "commands/brief.md"
-  ],
-  "compatibility": {
-    "claudeCode": ">=1.0.0",
-    "requires": ["core-mexico"]
-  }
+  ]
 }

@@ -6,7 +6,7 @@
 #
 # Programar (macOS launchd o linux crontab):
 #    # Linux: editar crontab con `crontab -e`
-#    0 10 * * 1-5 cd /Users/elias/Documents/Trabajo/skills && bash scripts/refresh-banxico-tcs.sh >> /tmp/banxico-tcs.log 2>&1
+#    0 10 * * 1-5 cd /ruta/a/Skills_MX && bash scripts/refresh-banxico-tcs.sh >> /tmp/banxico-tcs.log 2>&1
 #
 #    # macOS: ver scripts/crons/com.plugins-mx.banxico-tcs.plist
 #

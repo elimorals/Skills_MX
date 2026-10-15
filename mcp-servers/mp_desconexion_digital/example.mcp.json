@@ -1,1 +1,20 @@
-{"mcpServers": {"desconexion_digital": {"command": "python", "args": ["-m", "mp_desconexion_digital.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
+{
+  "mcpServers": {
+    "desconexion_digital": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_desconexion_digital.server"
+      ],
+      "env": {
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      }
+    }
+  }
+}

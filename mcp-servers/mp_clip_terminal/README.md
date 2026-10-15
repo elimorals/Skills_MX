@@ -18,7 +18,7 @@
 | `CLIP_API_KEY` | API key del Panel de Desarrollador de Clip |
 | `CLIP_SECRET_KEY` | Clave secreta de la misma credencial (token `Basic base64(key:secret)`) |
 
-Mock-first sin credenciales.
+Sin credenciales responde datos de ejemplo (`simulated: true`).
 
 ## Tests
 

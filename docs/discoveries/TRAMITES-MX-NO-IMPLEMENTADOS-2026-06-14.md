@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06-14)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Trámites/APIs mexicanas NO implementadas — Reporte ejecutivo 2026-06-14
 
 > Investigación deep research con 4 agentes paralelos (federal, estatal, sectorial, B2B SaaS) sobre qué pueden automatizar otros MCPs **que no existan ya** en `mcp-servers/`. Resultado: **80+ trámites/APIs identificadas, 18 priorizadas como Tier 1 + Tier 2**.

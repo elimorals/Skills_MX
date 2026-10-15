@@ -1,9 +1,20 @@
 {
   "mcpServers": {
     "catastro_estatal_mx": {
-      "command": "python",
-      "args": ["-m", "mp_catastro_estatal_mx.server"],
-      "env": {"PLUGINS_MX_MOCK": "1"}
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_catastro_estatal_mx.server"
+      ],
+      "env": {
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      }
     }
   }
 }

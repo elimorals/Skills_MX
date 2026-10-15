@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06-15)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Discovery con Playwright MCP — Sprint Top 15 (2026-06-15)
 
 > Documenta selectores DOM, endpoints REST y schemas de respuesta para los próximos MCPs del roadmap Top 15. Validado con Playwright MCP en vivo contra los portales reales.

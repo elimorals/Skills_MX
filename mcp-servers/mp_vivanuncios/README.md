@@ -1,6 +1,6 @@
 # mp_vivanuncios — MCP para vivanuncios.com.mx
 
-⚠ Mock-first. Vivanuncios es multi-categoría (autos, inmuebles, empleos, electrónica, etc.).
+⚠ Por ahora solo datos de ejemplo (`simulated: true`). Vivanuncios es multi-categoría (autos, inmuebles, empleos, electrónica, etc.).
 
 ## Tools (4)
 
@@ -19,6 +19,6 @@
 ## Tests
 
 ```bash
-cd /Users/elias/Documents/Trabajo/skills/mcp-servers
+cd mcp-servers   # desde la raíz del clon
 .venv/bin/python -m pytest mp_vivanuncios/tests/ -q
 ```

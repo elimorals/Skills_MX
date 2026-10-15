@@ -2,9 +2,17 @@
   "_comment": "mp_inmuebles24. Búsqueda y detalle son públicos (HTTP scraping sin auth). Publicación requiere cuenta vendedor.",
   "mcpServers": {
     "inmuebles24": {
-      "command": ".venv/bin/python",
-      "args": ["-m", "mp_inmuebles24.server"],
-      "cwd": "/Users/elias/Documents/Trabajo/skills/mcp-servers",
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_inmuebles24.server"
+      ],
       "env": {
         "INMUEBLES24_USUARIO": "${INMUEBLES24_USUARIO:-}",
         "INMUEBLES24_PASSWORD": "${INMUEBLES24_PASSWORD:-}",

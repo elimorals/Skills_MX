@@ -1,6 +1,6 @@
 # mp_infonavit_patronal — MCP para Portal Empresarial INFONAVIT
 
-⚠ Path Playwright real NO implementado todavía. Mock-first.
+⚠ Path Playwright real NO implementado todavía: por ahora solo datos de ejemplo (`simulated: true`).
 
 ## Tools (5)
 
@@ -22,6 +22,6 @@
 ## Tests
 
 ```bash
-cd /Users/elias/Documents/Trabajo/skills/mcp-servers
+cd mcp-servers   # desde la raíz del clon
 .venv/bin/python -m pytest mp_infonavit_patronal/tests/ -q
 ```

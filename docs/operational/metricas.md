@@ -4,7 +4,7 @@
 
 **Audiencia**: usuarios finales y stakeholders.
 
-**Pre-lectura**: [estado-real.md](estado-real.md).
+**Pre-lectura**: [`mcp-servers/CATALOGO.md`](../../mcp-servers/CATALOGO.md) (estado de los MCPs).
 
 ---
 
@@ -17,7 +17,7 @@
 | Lint passing | 100% | `./scripts/lint-skills.sh` |
 | Cobertura de fixtures | > 60% de skills con fixture | Contar archivos en `tests/fixtures/` |
 | Cobertura de evals | > 80% de skills con eval | Contar archivos en `evals/` |
-| Score promedio honesto | > 7.0/9 | Auditar [estado-real.md](estado-real.md) |
+| MCPs en estado real validado | creciente | [`mcp-servers/CATALOGO.md`](../../mcp-servers/CATALOGO.md) |
 
 ### Salud del producto
 
@@ -187,16 +187,6 @@ Por AM (3 meses):
 
 ## Métricas de negocio (para ti)
 
-### Si vendes implementación
-
-| Métrica | Q3 2026 | Q1 2027 | Q4 2027 |
-|---|---|---|---|
-| Clientes externos pagados | 1 | 3-5 | 8-15 |
-| MRR ($MXN) | 10k | 50k-150k | 200k-500k |
-| LTV promedio cliente | $50k-150k | $100k-200k | $150k-300k |
-| Churn anual | < 20% | < 15% | < 10% |
-| CAC | mucho (referidos manuales) | $5k-15k | $15k-30k |
-
 ### Adopción del monorepo (si publicas)
 
 | Métrica | Año 1 | Año 2 |
@@ -257,6 +247,6 @@ Por implementar (no hoy):
 
 ## Ver también
 
-- [estado-real.md](estado-real.md) — score honesto actual
-- [plan-afinacion.md](plan-afinacion.md) — milestones para mejorar
+- [`mcp-servers/CATALOGO.md`](../../mcp-servers/CATALOGO.md) — estado actual de los MCPs
+- [roadmap.md](../roadmap.md) — qué sigue
 - [compliance-checklist.md](compliance-checklist.md) — qué documentar

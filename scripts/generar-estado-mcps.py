@@ -174,7 +174,7 @@ def conteos(filas):
 
 def bloque_md(filas, con_tabla: bool) -> str:
     c = conteos(filas)
-    lineas = [MARK_INI, f"## Estado a {FECHA} (oleada 1: mock → real)", "",
+    lineas = [MARK_INI, f"### Estado a {FECHA} (oleada 1: mock → real)", "",
               f"Generado por `scripts/generar-estado-mcps.py` desde la sección \"Estado real\" de cada README. "
               f"{len(filas)} MCPs, {sum(len(f['tools']) for f in filas)} tools.", "",
               "| Categoría | MCPs |", "|---|---|"]
@@ -283,7 +283,7 @@ def bloques_isn(estados):
 def isn_json(estados, previo) -> dict:
     tasas = [e["tasa_pct"] for e in estados] + [x for e in estados if e.get("tasa_rango") for x in e["tasa_rango"]]
     return {
-        "$schema": previo.get("$schema"), "version": FECHA, "vigencia": "2026", "license": previo.get("license"),
+        "$schema": previo.get("$schema"), "version": FECHA, "vigencia": "2026", "license": "Apache-2.0",
         "source": "mcp-servers/shared/catalogo_isn_estatal.py. Fuente base: BHR 'Contribuciones locales, cambios "
                   "relevantes 2026' (fuente secundaria, confianza media); algunas entidades citan su ley local.",
         "documentation": previo.get("documentation"), "glossary": previo.get("glossary"),
@@ -313,7 +313,7 @@ def main():
     catalogo = json.loads(cat_path.read_text())
     nuevo_cat = {"version": "2.0.0", "generated_at": FECHA, "total_skills": len(filas),
                  "fuente_estado": estado["fuente"], "conteos_estado": c,
-                 "categorias": [], "filtros": {"estado": list(CATEGORIAS)}, "agents": catalogo["agents"]}
+                 "categorias": [], "filtros": {"estado": list(CATEGORIAS)}}
     for cat in catalogo["categorias"]:
         cc = {k: cat[k] for k in ("id", "label", "icon", "color", "descripcion")}
         cc["skills"] = [{"id": s["id"], "estado": por_id[s["id"]]["estado"],
@@ -359,8 +359,11 @@ def main():
             f"{m}: {por_id[m]['estado_label']}" for m in dep["mcps"] if m in por_id)
     for p in portales["patrones_captcha"]:
         p.pop("patron_implementacion", None)
-        if p["id"] != "ninguno":
-            p["manejo"] = "Entrega a humano: los MCPs no resuelven ni evaden CAPTCHAs."
+        if p["id"] == "login":
+            p["manejo"] = "Entrega a humano: requiere la sesión del usuario."
+        elif p["id"] != "ninguno":
+            p["manejo"] = ("Entrega a humano por defecto. Con el solver opt-in (PLUGINS_MX_CAPTCHA_SOLVER=2captcha, apagado "
+                           "por defecto) los portales conectados consultan en vivo; los anti-bots de red no se evaden.")
     salidas[por_path] = salidas[WEB / "api/portales-coverage.json"] = dump(portales)
 
     sys.path.insert(0, str(MCP_DIR))
@@ -369,7 +372,7 @@ def main():
     previo = json.loads(mun_path.read_text())
     municipios = [cm.get_municipio_config(e, m) for e in cm.listar_estados() for m in cm.listar_municipios_estado(e)]
     salidas[mun_path] = salidas[WEB / "api/municipios.json"] = dump({
-        "$schema": previo.get("$schema"), "version": FECHA, "license": previo.get("license"),
+        "$schema": previo.get("$schema"), "version": FECHA, "license": "Apache-2.0",
         "source": "mcp-servers/shared/catalogo_municipios_mx.py (discovery 2026-06)",
         "documentation": previo.get("documentation"),
         "total": len(municipios),

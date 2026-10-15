@@ -1,1 +1,20 @@
-{"mcpServers": {"cofepris_aviso": {"command": "python", "args": ["-m", "mp_cofepris_aviso_funcionamiento.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
+{
+  "mcpServers": {
+    "cofepris_aviso": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_cofepris_aviso_funcionamiento.server"
+      ],
+      "env": {
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      }
+    }
+  }
+}

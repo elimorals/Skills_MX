@@ -1,0 +1,688 @@
+{
+  "name": "plugins-mx",
+  "owner": {
+    "name": "Elías Rashid Morales Mendoza",
+    "email": "elimoralsmendox@gmail.com"
+  },
+  "metadata": {
+    "description": "Plugins de Claude Code, skills y MCP servers para operar una PyME o profesión en México.",
+    "version": "0.3.0"
+  },
+  "plugins": [
+    {
+      "name": "core-mexico",
+      "source": "./core-mexico",
+      "description": "Plugin base con capacidades fundamentales para operación en México: emisión de CFDI 4.0, cálculo de IVA y retenciones, validación de RFC, formato de moneda MXN, templates de WhatsApp Business, y cumplimiento LFPDPPP. Dependencia obligatoria de todos los plugins verticales del monorepo plugins-mx.",
+      "version": "0.1.0",
+      "keywords": [
+        "mexico",
+        "latam",
+        "cfdi",
+        "sat",
+        "whatsapp-business",
+        "iva",
+        "retenciones",
+        "lfpdppp",
+        "compliance-mx"
+      ]
+    },
+    {
+      "name": "agencia-marketing-mx",
+      "source": "./agencia-marketing-mx",
+      "description": "Plugin para agencias de marketing digital operando en México. Genera reportes mensuales de cliente con KPIs por canal, optimiza campañas de Meta/Google/TikTok con detección de fatiga creativa, escribe copy mexicano que convierte (evita 'español neutro' robótico), gestiona community management con tono de marca, y estructura briefings creativos. Construido sobre core-mexico para facturación, cobranza y compliance.",
+      "version": "0.1.0",
+      "keywords": [
+        "agencia",
+        "marketing",
+        "digital",
+        "mexico",
+        "meta-ads",
+        "google-ads",
+        "tiktok-ads",
+        "community-management",
+        "copy"
+      ]
+    },
+    {
+      "name": "agente-seguros-mx",
+      "source": "./agente-seguros-mx",
+      "description": "Plugin para agentes y promotores de seguros independientes en México (autorizados CNSF). Cubre cartera de pólizas multi-ramo (auto, GMM, vida, daños, fianzas) con vencimientos automatizados vía WhatsApp, cálculo y CFDI de comisiones recibidas de aseguradoras (régimen 612 PFAE típicamente o 626 RESICO PF), comparador de pólizas para presentar al cliente, gestión de siniestros con seguimiento end-to-end, renovaciones con recordatorio 60-30-7 días, dispersión de subagentes con CFDI por comisión a su nombre, y compliance LISF + UMA por ramo. Cubre AXA, GNP, Quálitas, Mapfre, MetLife, Allianz, Inbursa, BUPA. Construido sobre core-mexico + gmm-asegurado-mx.",
+      "version": "0.1.0",
+      "keywords": [
+        "agente-seguros",
+        "polizas",
+        "comisiones",
+        "renovacion",
+        "siniestros",
+        "CNSF",
+        "auto",
+        "GMM",
+        "vida",
+        "mexico"
+      ]
+    },
+    {
+      "name": "airbnb-host-mx",
+      "source": "./airbnb-host-mx",
+      "description": "Plugin para hosts de Airbnb y plataformas de alquiler corto plazo (Vrbo, Booking) en México. Cubre tracking de reservas, ingresos por noche, ISH (Impuesto Sobre Hospedaje estatal típico 3-4%), retenciones de la plataforma (Art. 113-A LISR 4% ISR + 8% IVA), CFDI al huésped si lo pide, cumplimiento regulatorio CDMX (registro RAB obligatorio desde 2025), gastos deducibles (limpieza, mantenimiento, servicios), y reporte mensual de ocupación. Score original del research: 8.2/10.",
+      "version": "0.1.0",
+      "keywords": [
+        "airbnb",
+        "vrbo",
+        "booking",
+        "host",
+        "hospedaje",
+        "ISH",
+        "art-113-A",
+        "RAB",
+        "ocupacion"
+      ]
+    },
+    {
+      "name": "arrendador-residencial-mx",
+      "source": "./arrendador-residencial-mx",
+      "description": "Plugin dedicado al arrendador residencial mexicano (PF dueño de 1-10 propiedades). Distinto a inmobiliaria-mx (corredores): aquí el usuario es el dueño directo. Cubre screening de inquilinos con Buró de Crédito (con autorización LFPDPPP), contrato CCDF/CCF residencial, cobranza mensual escalada (sin quemar la relación continua), CFDI mensual uso D04 (casa habitación) régimen 612 o 626, actualización anual de renta por INPC, tracking de gastos deducibles (predial, mantenimiento), y cierre de contrato. Score original del research: 9.3/10. Mercado: ~2M arrendadores.",
+      "version": "0.1.0",
+      "keywords": [
+        "arrendamiento",
+        "arrendador",
+        "renta",
+        "inquilino",
+        "residencial",
+        "mexico",
+        "CCDF",
+        "INPC",
+        "buro-credito",
+        "uso-D04"
+      ]
+    },
+    {
+      "name": "clinica-salud-mx",
+      "source": "./clinica-salud-mx",
+      "description": "Plugin para clínicas multiconsultorio con varios médicos en México (médico-general + especialistas + auxiliares). Cubre gestión multi-médico (agenda compartida, comisión por médico), expedientes pacientes accesibles por todos los médicos autorizados, facturación a paciente o aseguradora, inventario de medicamentos + insumos, y dashboard ejecutivo de la clínica. Extiende consultorio-especialista-mx. Score: 8.3/10.",
+      "version": "0.1.0",
+      "keywords": [
+        "clinica",
+        "salud",
+        "multimedico",
+        "consultorio",
+        "GMM",
+        "inventario-medicamentos",
+        "panel-medicos"
+      ]
+    },
+    {
+      "name": "colegios-mx",
+      "source": "./colegios-mx",
+      "description": "Plugin para colegios, kinders, primarias, secundarias y prepas privadas operando en México. Cobranza profesional de colegiaturas con escalado a padres morosos (templates específicos por etapa), comunicación masiva con padres vía WhatsApp Business templates (avisos, calificaciones, juntas, eventos), generación de constancias académicas conforme SEP/CCT, y emisión de CFDI de colegiaturas con uso D10 cumpliendo Art. 151 LISR para deducibilidad por padres. Construido sobre core-mexico.",
+      "version": "0.1.0",
+      "keywords": [
+        "colegio",
+        "escuela",
+        "kinder",
+        "primaria",
+        "secundaria",
+        "preparatoria",
+        "preescolar",
+        "mexico",
+        "SEP",
+        "colegiaturas",
+        "padres-familia"
+      ]
+    },
+    {
+      "name": "conductor-plataforma-mx",
+      "source": "./conductor-plataforma-mx",
+      "description": "Plugin para conductores de plataformas digitales (Uber, DiDi, Cabify, InDriver) en México. Cubre tracking de ingresos por plataforma, cálculo fiscal específico (régimen 626 RESICO PF típicamente, retención plataforma al 8% ISR + 8% IVA art. 113-A LISR), CFDI de retención que la plataforma emite, deducciones específicas (gasolina, mantenimiento auto, app subscriptions), IMSS-PIA (Programa de Incorporación Anticipada), y aviso anual al SAT del régimen. Score original del research: 8.8/10. Mercado: 1M+ conductores MX.",
+      "version": "0.1.0",
+      "keywords": [
+        "uber",
+        "didi",
+        "cabify",
+        "indriver",
+        "conductor",
+        "chofer",
+        "RESICO",
+        "art-113-A-LISR",
+        "IMSS-PIA"
+      ]
+    },
+    {
+      "name": "constructora-mx",
+      "source": "./constructora-mx",
+      "description": "Plugin para constructoras, ferreterías de obra, transportistas de materiales y desarrolladores inmobiliarios PyME en México. Cubre CFDI con complemento Carta Porte 3.x (obligatorio para autotransporte federal y para construcción que mueve materiales), avance de obra por estimaciones (CFDI por estimación con anexo de avance), retenciones a subcontratistas REPSE 6% IVA + 4% ISR según vigencia, complemento de servicios de construcción, gestión de contratos a precio alzado vs administración, dispersión de pagos a cuadrilla con CFDI Nómina, y manejo de mermas/desperdicio en presupuesto. Cumplimiento SAT autotransporte + REPSE + IMSS construcción. Construido sobre core-mexico + nomina-pymes-mx.",
+      "version": "0.1.0",
+      "keywords": [
+        "constructora",
+        "obra-civil",
+        "carta-porte",
+        "REPSE",
+        "estimacion",
+        "subcontratistas",
+        "autotransporte",
+        "mexico"
+      ]
+    },
+    {
+      "name": "consultorio-especialista-mx",
+      "source": "./consultorio-especialista-mx",
+      "description": "Plugin para médicos especialistas con consultorio privado en México (cardiólogos, dermatólogos, pediatras, gastroenterólogos, ortopedistas, etc.). Cubre agenda de pacientes, expediente clínico NOM-004, receta electrónica COFEPRIS, cobranza de consultas, dashboard mensual, gestión de estudios solicitados. Diferencia clave vs telemedicina-mx: enfoque PRESENCIAL con consultorio físico. Score original: 8.3/10. Mercado: ~80k especialistas en MX.",
+      "version": "0.1.0",
+      "keywords": [
+        "medico",
+        "especialista",
+        "consultorio",
+        "salud",
+        "COFEPRIS",
+        "NOM-004",
+        "expediente-clinico",
+        "receta"
+      ]
+    },
+    {
+      "name": "cripto-fiscal-mx",
+      "source": "./cripto-fiscal-mx",
+      "description": "Plugin para personas físicas mexicanas que operan criptomonedas (trading, holding, DeFi, NFTs). Cubre tracking operaciones por exchange (Bitso, Binance, Coinbase, Kraken), wallets self-custody (MetaMask, Ledger via blockchain explorers), cálculo costo base FIFO, permutas gravables cripto-cripto, staking + airdrops + NFTs, riesgo CARF 2026 (TODO exchange reportará al SAT), generación reporte para declaración anual ISR y expediente de pruebas para auditoría SAT. Score research: 8.7/10. Mercado: ~5M wallets MX.",
+      "version": "0.2.0",
+      "keywords": [
+        "cripto",
+        "bitcoin",
+        "ethereum",
+        "bitso",
+        "binance",
+        "CARF",
+        "ISR-cripto",
+        "FIFO",
+        "permuta-cripto",
+        "NFT",
+        "staking",
+        "DeFi",
+        "self-custody",
+        "etherscan",
+        "airdrop"
+      ]
+    },
+    {
+      "name": "crowdfunding-itf-mx",
+      "source": "./crowdfunding-itf-mx",
+      "description": "Plugin para participantes en plataformas IFC (Instituciones Financiamiento Colectivo) reguladas por Ley Fintech. Cubre 3 perfiles: emprendedor solicitante, inversor P2P, operador IFC. Comparador plataformas, fiscal rendimientos, tope $100k PF, compliance CNBV. Score 7.5/10.",
+      "version": "0.1.0",
+      "keywords": [
+        "crowdfunding",
+        "IFC",
+        "Ley-Fintech",
+        "CNBV",
+        "P2P",
+        "ITF",
+        "tope-100k"
+      ]
+    },
+    {
+      "name": "despacho-contable-mx",
+      "source": "./despacho-contable-mx",
+      "description": "Plugin para contadores y despachos contables en México que llevan la contabilidad de N clientes (PF + PM). Cubre gestión multi-RFC, calendario fiscal por cliente (pagos provisionales, anuales, IMSS, IDSE), facturación recurrente del despacho, comunicación con clientes, y dashboard ejecutivo del despacho. Score: 7.9/10. Mercado: ~40k despachos en MX.",
+      "version": "0.1.0",
+      "keywords": [
+        "contador",
+        "despacho",
+        "contable",
+        "multi-cliente",
+        "calendario-fiscal",
+        "iva-iret",
+        "pago-provisional"
+      ]
+    },
+    {
+      "name": "despacho-legal-mx",
+      "source": "./despacho-legal-mx",
+      "description": "Plugin para despachos jurídicos en México: facturación a clientes corporativos y PFs con honorarios CFDI D01 (régimen 612 PFAE) o servicios CFDI G03, gestión de retenciones específicas del régimen, contratos de prestación de servicios profesionales con cláusulas mercantiles vigentes, expediente de cliente con resguardo LFPDPPP (datos sensibles requieren consentimiento expreso por sector legal), seguimiento de procesos judiciales con bitácora de actuaciones, cobranza escalonada para defensa/litigios con tarifas de éxito (cuota litis). Cubre abogados litigantes, fiscalistas, mercantilistas, laboralistas. Construido sobre core-mexico.",
+      "version": "0.1.0",
+      "keywords": [
+        "despacho-legal",
+        "abogado",
+        "litigio",
+        "fiscal",
+        "mercantil",
+        "notaria",
+        "honorarios",
+        "cuota-litis",
+        "mexico"
+      ]
+    },
+    {
+      "name": "donatarias-ongs-mx",
+      "source": "./donatarias-ongs-mx",
+      "description": "Plugin para donatarias autorizadas (Art. 79 LISR). Cubre CFDI D04 a donantes, declaración anual transparencia (31 mayo), reporte mensual donativos efectivo > $100k (LFPRH), renovación anual autorización SAT. Score 7.5/10. Mercado: ~9,500 donatarias.",
+      "version": "0.1.0",
+      "keywords": [
+        "donataria",
+        "ONG",
+        "transparencia",
+        "D04",
+        "LFPRH",
+        "Art-79",
+        "Anexo-14"
+      ]
+    },
+    {
+      "name": "ecommerce-mx",
+      "source": "./ecommerce-mx",
+      "description": "Plugin para operadores de ecommerce en México que venden en Mercado Libre, Shopify, Amazon MX y/o tienda propia. Cubre gestión de listings multimarketplace, pricing dinámico considerando comisiones de cada canal, inventario sincronizado para evitar overselling, paquetería local (Estafeta, DHL MX, FedEx MX, paqueteX), y emisión de CFDI por venta. Construido sobre core-mexico + MCPs mp_mercado_libre, mp_shopify_mx, mp_amazon_mx_seller.",
+      "version": "0.1.0",
+      "keywords": [
+        "ecommerce",
+        "mercado-libre",
+        "shopify",
+        "amazon-mx",
+        "omnichannel",
+        "paqueteria",
+        "inventario",
+        "marketplace",
+        "mexico",
+        "ventas-online"
+      ]
+    },
+    {
+      "name": "educacion-particular-b2c-mx",
+      "source": "./educacion-particular-b2c-mx",
+      "description": "Plugin para creadores de cursos online B2C en México (tutores, academias, bootcamps, coaches). Inscripción alumnos, CFDI mensual G03 (o D10 con IEDU si RVOE), cobranza recurrente, tracking progreso, certificados PDF. Score 7.5/10. Mercado: 80k creadores.",
+      "version": "0.1.0",
+      "keywords": [
+        "cursos",
+        "tutor",
+        "academia",
+        "online",
+        "G03",
+        "D10",
+        "IEDU",
+        "B2C"
+      ]
+    },
+    {
+      "name": "energia-solar-pyme-mx",
+      "source": "./energia-solar-pyme-mx",
+      "description": "Plugin para PyMEs con paneles solares interconectados a CFE. Cubre lectura factura CFE bidireccional (consumo + inyección), cálculo crédito kWh acumulado, validación contra errores facturación, ROI del sistema, calendario tarifa GDMTH. Score 7.5/10.",
+      "version": "0.1.0",
+      "keywords": [
+        "solar",
+        "CFE",
+        "bidireccional",
+        "GDMTH",
+        "net-metering",
+        "kWh-credito",
+        "fotovoltaico"
+      ]
+    },
+    {
+      "name": "freelancers-mx",
+      "source": "./freelancers-mx",
+      "description": "Plugin para freelancers, consultores y agencias unipersonales operando en México. Cubre cotizaciones MXN con IVA y retenciones correctas, propuestas comerciales con scope/deliverables/payment terms, cobranza profesional (5 etapas de escalamiento), onboarding de cliente con captura fiscal completa, y cálculo de pago provisional ISR para regímenes PFAE y RESICO. Construido sobre core-mexico para CFDI 4.0, IVA/retenciones, validación RFC y WhatsApp Business.",
+      "version": "0.1.0",
+      "keywords": [
+        "freelancer",
+        "freelance",
+        "consultor",
+        "consultoria",
+        "mexico",
+        "cotizacion",
+        "propuesta",
+        "cobranza",
+        "RESICO",
+        "PFAE"
+      ]
+    },
+    {
+      "name": "geriatria-cuidado-mayor-mx",
+      "source": "./geriatria-cuidado-mayor-mx",
+      "description": "Plugin para residencias de adultos mayores, day-care geriátrico, cuidadores a domicilio y familias mexicanas que cuidan ancianos en casa. Cubre expediente geriátrico integral con NOM-167-SSA1 (asistencia social), tracking de medicamentos con vencimiento y adherencia al tratamiento crónico (diabetes, hipertensión, alzheimer), agenda de cuidadores en turnos con CFDI Nómina 4.0 + IMSS si formal, comunicación distribuida familiar (varios hijos sincronizados sobre el estado del adulto mayor), gestión de pensiones IMSS/ISSSTE/AFORE con seguimiento de cobro, recordatorios de citas médicas con transporte, y compliance LFPDPPP datos sensibles + capacidad jurídica (poderes notariales cuando hay demencia). Construido sobre core-mexico + paciente-mx.",
+      "version": "0.1.0",
+      "keywords": [
+        "geriatria",
+        "adulto-mayor",
+        "cuidado-domicilio",
+        "residencia",
+        "alzheimer",
+        "pension-imss",
+        "cuidadores",
+        "NOM-167",
+        "mexico"
+      ]
+    },
+    {
+      "name": "gmm-asegurado-mx",
+      "source": "./gmm-asegurado-mx",
+      "description": "Plugin para el asegurado de Gastos Médicos Mayores (GMM) en México. Cubre status de póliza vigente, cálculo deducible + coaseguro al usar, autorizaciones médicas pre-evento, comparador de aseguradoras (GNP, AXA, MetLife, MAPFRE, Banorte), renovación anual, declaración hospitalización. Mercado: ~7M asegurados GMM individuales. Score: 7.5/10.",
+      "version": "0.1.0",
+      "keywords": [
+        "gmm",
+        "gastos-medicos",
+        "asegurado",
+        "deducible",
+        "coaseguro",
+        "poliza",
+        "renovacion"
+      ]
+    },
+    {
+      "name": "importadores-mx",
+      "source": "./importadores-mx",
+      "description": "Plugin para PYMES importadoras: cotizador pre-importación (IGI + IVA + DTA + prevalidación), catálogo TIGIE, comparador INCOTERMS, tracking pedimentos, acreditación IVA, compliance padrón importadores, IMMEX básico. Score 7.5/10. Mercado: 50k importadores.",
+      "version": "0.1.0",
+      "keywords": [
+        "importador",
+        "pedimento",
+        "TIGIE",
+        "INCOTERMS",
+        "IVA-importacion",
+        "IMMEX",
+        "RGCE",
+        "agente-aduanal"
+      ]
+    },
+    {
+      "name": "inmobiliaria-mx",
+      "source": "./inmobiliaria-mx",
+      "description": "Plugin para corredores inmobiliarios, brokers, agencias inmobiliarias e inmobiliarias en México. Cubre contratos de arrendamiento residencial y comercial siguiendo Código Civil Federal y Código Civil CDMX, screening de inquilinos con Buró + referencias + ingresos, análisis de comparables de zona, ficha del inmueble con datos catastrales, cálculo de comisiones de corredor y honorarios. Construido sobre core-mexico + mp_inmuebles24 + mp_vivanuncios.",
+      "version": "0.1.0",
+      "keywords": [
+        "inmobiliaria",
+        "corredor",
+        "broker",
+        "renta",
+        "venta",
+        "arrendamiento",
+        "mexico",
+        "screening-inquilinos",
+        "comparables-zona",
+        "comisiones-corredor"
+      ]
+    },
+    {
+      "name": "laboratorio-clinico-mx",
+      "source": "./laboratorio-clinico-mx",
+      "description": "Plugin para laboratorios clínicos pequeños y medianos (≤50 muestras/día típico PyME) en México. Cubre recepción de muestra con etiquetado de tubos y cadena de custodia (crítico para que los resultados no se confundan entre pacientes), tracking de procesamiento por etapa (recepción → procesamiento → control de calidad → liberación), entrega de resultados al paciente y al médico referente con firma del químico responsable, integración con médicos referentes con sistema de comisiones (típico 5-15% al médico), CFDI a paciente o aseguradora con código de procedimiento SAT, compliance COFEPRIS (registro sanitario del laboratorio + procedimientos validados) y NOM-007-SSA3 sobre laboratorios clínicos. Construido sobre core-mexico + clinica-salud-mx.",
+      "version": "0.1.0",
+      "keywords": [
+        "laboratorio-clinico",
+        "analisis-clinicos",
+        "muestras",
+        "COFEPRIS",
+        "NOM-007-SSA3",
+        "medico-referente",
+        "QFB",
+        "mexico"
+      ]
+    },
+    {
+      "name": "migracion-extranjeros-mx",
+      "source": "./migracion-extranjeros-mx",
+      "description": "Plugin para extranjeros viviendo en México que necesitan gestionar trámites migratorios (visa, residencia temporal/permanente, FMM, renovaciones), regularización, asesoría laboral para extranjeros, e integración fiscal. Mercado: ~1.5M extranjeros con residencia formal. Score: 7.5/10.",
+      "version": "0.1.0",
+      "keywords": [
+        "migracion",
+        "INM",
+        "residencia",
+        "visa",
+        "FMM",
+        "extranjero",
+        "regularizacion"
+      ]
+    },
+    {
+      "name": "nomina-pymes-mx",
+      "source": "./nomina-pymes-mx",
+      "description": "Plugin para PyMEs con 1-50 empleados que pagan sueldos régimen 605. Cubre alta/baja empleados IMSS-IDSE, cálculo ISR salarios Art. 96 LISR + subsidio empleo, cuotas IMSS obrero-patronales (5 ramos), INFONAVIT 5%, CFDI Nómina 4.0 + Complemento 1.2 Revisión E (vigente desde 29 dic 2025), aguinaldo (15 días mínimo Art. 87 LFT), PTU (10% utilidad), vacaciones (12+2/año), generador archivo SUA. Mercado: 600k PyMEs. Score research: alto.",
+      "version": "0.1.0",
+      "keywords": [
+        "nomina",
+        "CFDI-nomina",
+        "complemento-1.2",
+        "IMSS",
+        "IDSE",
+        "SUA",
+        "INFONAVIT",
+        "ISR-salarios",
+        "PyME",
+        "patron",
+        "aguinaldo",
+        "PTU",
+        "vacaciones"
+      ]
+    },
+    {
+      "name": "notarias-mx",
+      "source": "./notarias-mx",
+      "description": "Plugin para notarías y oficinas notariales en México. Cubre agenda citas notariales, registro de escrituras (compraventa, testamento, poder, sociedad), cálculo ISABI (Impuesto Sobre Adquisición Bienes Inmuebles) + DOF (Derechos sobre Operaciones Financieras) por estado, honorarios notariales, cobranza, dashboard. Score research: 8.0/10. Mercado: ~5,500 notarías en MX.",
+      "version": "0.1.0",
+      "keywords": [
+        "notaria",
+        "notario",
+        "escritura",
+        "testamento",
+        "ISABI",
+        "compraventa",
+        "poderes",
+        "sociedad"
+      ]
+    },
+    {
+      "name": "paciente-mx",
+      "source": "./paciente-mx",
+      "description": "Plugin para el paciente / consumidor de salud en México. Cubre gestión de citas con múltiples médicos, expediente personal de salud (uso del paciente), tracking de medicamentos (recordatorios), estudios médicos (laboratorios), CFDIs D01 deducibles, gestión de GMM. Combina enfoque para pacientes regulares + adultos mayores (geriatria-mx) + uso laboratorios. Score: 7.5/10.",
+      "version": "0.1.0",
+      "keywords": [
+        "paciente",
+        "salud",
+        "citas",
+        "medicamentos",
+        "laboratorio",
+        "geriatria",
+        "expediente-personal"
+      ]
+    },
+    {
+      "name": "pf-anual-mx",
+      "source": "./pf-anual-mx",
+      "description": "Plugin dedicado para la declaración anual ISR de personas físicas en México. Cubre los 3 regímenes principales (PFAE 612, RESICO PF 626, Asalariado+honorarios 605+612). Orquesta recopilación masiva de CFDIs del año via mp_sat_portal, identificación automática de deducciones personales aplicables (Art. 151 LISR), cálculo ISR con tarifa Art. 96, cruces con bancos para detectar depósitos sin facturar, y generación de borrador presentable. Genera revenue desde abril (deadline 30 abril). Mercado: ~5M declarantes anuales obligados. Score original del research: 9.5/10.",
+      "version": "0.1.0",
+      "keywords": [
+        "declaracion-anual",
+        "ISR",
+        "PFAE",
+        "RESICO",
+        "deducciones-personales",
+        "mexico",
+        "SAT",
+        "Art.151",
+        "Art.96-LISR"
+      ]
+    },
+    {
+      "name": "psicoterapia-mx",
+      "source": "./psicoterapia-mx",
+      "description": "Plugin para psicólogos/psicoterapeutas en práctica privada en México. Cubre agenda de sesiones, expediente psicológico confidencial (con cifrado AES-256 extra estricto, datos sensibles LGPDPPSO), consentimiento informado terapéutico, cobranza recurrente con plantillas empáticas, dashboard mensual. Score research: 7.8/10. ~50k psicólogos clínicos en MX.",
+      "version": "0.1.0",
+      "keywords": [
+        "psicologo",
+        "psicoterapia",
+        "psicologia",
+        "salud-mental",
+        "LGPDPPSO",
+        "confidencialidad"
+      ]
+    },
+    {
+      "name": "restaurante-mx",
+      "source": "./restaurante-mx",
+      "description": "Plugin para restaurantes tradicionales, dark kitchens, cafeterías de especialidad, bares y food trucks en México. Cubre ingeniería de menú (margen + popularidad), control de inventario con merma proyectada, distribución de propinas a meseros (10% propinable cliente, 100% empleado), integración con aggregators delivery (Rappi, DiDi Food, UberEats) con sus comisiones distintas (25-35%), y emisión de CFDI público global B2C consolidado. Construido sobre core-mexico.",
+      "version": "0.1.0",
+      "keywords": [
+        "restaurante",
+        "dark-kitchen",
+        "cafeteria",
+        "bar",
+        "food-truck",
+        "mexico",
+        "menu-engineering",
+        "rappi",
+        "ubereats",
+        "didi-food",
+        "propinas",
+        "cfdi-global"
+      ]
+    },
+    {
+      "name": "salon-mx",
+      "source": "./salon-mx",
+      "description": "Plugin para salones de belleza, estéticas, spas y barberías en México. Cubre gestión de agenda (citas, no-shows, walk-ins), tarifario por servicio con cálculo de comisiones por estilista, paquetes y membresías recurrentes, recordatorios WhatsApp para no-shows, retención de clientes con programa de loyalty, y emisión de CFDI por servicio. Construido sobre core-mexico.",
+      "version": "0.1.0",
+      "keywords": [
+        "salon",
+        "estetica",
+        "spa",
+        "barberia",
+        "belleza",
+        "mexico",
+        "agenda-citas",
+        "comisiones-estilistas",
+        "loyalty",
+        "no-shows"
+      ]
+    },
+    {
+      "name": "servicios-publicos-mx",
+      "source": "./servicios-publicos-mx",
+      "description": "Plugin para gestión integral de facturas de servicios públicos en México: CFE (electricidad), agua, predial municipal, gas natural, drenaje. Lectura PDF facturas, detección anomalías consumo (fugas, sobrecargos), alertas vencimientos, CFDI deducible. Útil para PyMEs y hogares con múltiples servicios. Score: 7.8/10.",
+      "version": "0.1.0",
+      "keywords": [
+        "cfe",
+        "agua",
+        "predial",
+        "gas",
+        "servicios-publicos",
+        "factura",
+        "anomalia-consumo"
+      ]
+    },
+    {
+      "name": "sucesion-empresa-familiar-mx",
+      "source": "./sucesion-empresa-familiar-mx",
+      "description": "Plugin para familias mexicanas con patrimonio significativo: diagnóstico patrimonial, simulador donación vs herencia vs trust, cálculo ISR donaciones por relación familiar (cónyuges + ascendientes/descendientes EXENTOS), plan testamentario, protocolo familiar. Score 7.5/10. Mercado: ~500k familias.",
+      "version": "0.1.0",
+      "keywords": [
+        "sucesion",
+        "herencia",
+        "donacion",
+        "testamento",
+        "empresa-familiar",
+        "Art-93-LISR",
+        "patrimonio"
+      ]
+    },
+    {
+      "name": "talleres-mx",
+      "source": "./talleres-mx",
+      "description": "Plugin para talleres mecánicos, servicios automotrices, electromecánicos y refaccionarias con servicio en México. Flujo diagnóstico → cotización → autorización del cliente → orden de trabajo → entrega con garantía, todo orquestado por WhatsApp Business para que cliente apruebe trabajos remotamente con foto/video del problema. Cubre garantías de servicio (PROFECO 30-90 días mínimo según tipo), órdenes de trabajo con desglose mano de obra + refacciones, manejo de refacciones con CFDI a tu RFC para deducción del cliente, política de auto detenido y manejo de objeción. Construido sobre core-mexico.",
+      "version": "0.1.0",
+      "keywords": [
+        "taller",
+        "mecanico",
+        "automotriz",
+        "servicio",
+        "refacciones",
+        "diagnostico",
+        "mexico",
+        "PROFECO"
+      ]
+    },
+    {
+      "name": "telemedicina-mx",
+      "source": "./telemedicina-mx",
+      "description": "Plugin para médicos, psicólogos y profesionales de salud que ofrecen CONSULTAS REMOTAS en México. Cubre receta electrónica COFEPRIS (con bloqueo automático Grupos I-II), expediente clínico NOM-004 cifrado, consentimiento informado digital, agenda virtual con integración Zoom/Meet, CFDI uso D01, recordatorios WhatsApp, validación cédula profesional. Compliant con Reforma LGS enero 2026. Score research: 8.5/10. Mercado: ~35k profesionales de salud que migraron a telemedicina post-COVID.",
+      "version": "0.1.0",
+      "keywords": [
+        "telemedicina",
+        "consulta-remota",
+        "COFEPRIS",
+        "NOM-004",
+        "NOM-024",
+        "receta-electronica",
+        "expediente-clinico",
+        "psicologia",
+        "salud",
+        "LGPDPPSO"
+      ]
+    },
+    {
+      "name": "tienda-omnicanal-mx",
+      "source": "./tienda-omnicanal-mx",
+      "description": "Plugin para tiendas mexicanas que venden en múltiples canales simultáneamente: ecommerce propio + Mercado Libre + Amazon MX + Shopify + tienda física. Resuelve la sincronización de inventario en tiempo real, pricing dinámico por canal con margen objetivo, órdenes consolidadas en un solo inbox, devoluciones cruzadas (compré online recojo en tienda), y dashboard unificado de ingresos. Extiende ecommerce-mx con orquestación multi-canal. Score original del research: 8.5/10. Mercado: 500k tiendas con presencia multi-canal.",
+      "version": "0.1.0",
+      "keywords": [
+        "omnicanal",
+        "multicanal",
+        "ecommerce",
+        "mercadolibre",
+        "amazon",
+        "shopify",
+        "tienda-fisica",
+        "sync-inventario",
+        "mexico"
+      ]
+    },
+    {
+      "name": "tramites-vehiculares-mx",
+      "source": "./tramites-vehiculares-mx",
+      "description": "Plugin para personas con vehículos en México (40M+ vehículos registrados). Cubre seguimiento integral de obligaciones por entidad federativa: multas (CDMX/EdoMex/MTY/otros), verificación vehicular obligatoria semestral, refrendo anual, tenencia (estados que aún cobran), trámites de placas y tarjeta de circulación, y consulta de adeudos. Detecta vencimientos próximos y sugiere acciones. Score original del research: 9.0/10.",
+      "version": "0.1.0",
+      "keywords": [
+        "vehiculo",
+        "auto",
+        "multas",
+        "verificacion",
+        "tenencia",
+        "refrendo",
+        "placas",
+        "mexico",
+        "cdmx",
+        "edomex",
+        "monterrey"
+      ]
+    },
+    {
+      "name": "veterinaria-mx",
+      "source": "./veterinaria-mx",
+      "description": "Plugin para clínicas veterinarias, pet shops con servicio médico, hospitales veterinarios y servicios pet en México. Cubre expediente clínico de mascota (historial, vacunas, alergias), calendario de vacunación con recordatorios WhatsApp 7d/24h antes, tarifario por servicio veterinario (consulta, cirugía, hospitalización, estética canina), protocolo de urgencias 24h, y emisión de CFDI por servicio. Construido sobre core-mexico.",
+      "version": "0.1.0",
+      "keywords": [
+        "veterinaria",
+        "veterinario",
+        "clinica-veterinaria",
+        "pet-care",
+        "mascotas",
+        "mexico",
+        "vacunacion",
+        "urgencias-vet",
+        "expediente-clinico"
+      ]
+    },
+    {
+      "name": "wedding-mx",
+      "source": "./wedding-mx",
+      "description": "Plugin para wedding planners, proveedores de bodas (banquete, decoración, música, video) y haciendas-de-eventos en México. Cubre cotización de boda completa con desglose (300-500 invitados promedio MX), timeline operativo del evento (D-90 a D+30), gestión de proveedores con presupuesto vs gastado, onboarding novios con captura fiscal completa, contrato de servicios PF/PM con cláusulas anti-cancelación. Construido sobre core-mexico.",
+      "version": "0.1.0",
+      "keywords": [
+        "wedding",
+        "boda",
+        "wedding-planner",
+        "novios",
+        "evento",
+        "mexico",
+        "banquete",
+        "proveedores-evento",
+        "timeline-boda",
+        "contrato-servicios"
+      ]
+    }
+  ]
+}

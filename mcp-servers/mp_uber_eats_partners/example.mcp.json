@@ -1,8 +1,17 @@
 {
   "mcpServers": {
     "uber_eats_partners": {
-      "command": "python",
-      "args": ["-m", "mp_uber_eats_partners.server"],
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_uber_eats_partners.server"
+      ],
       "env": {
         "UBER_EATS_CLIENT_ID": "${UBER_EATS_CLIENT_ID:-}",
         "UBER_EATS_CLIENT_SECRET": "${UBER_EATS_CLIENT_SECRET:-}",

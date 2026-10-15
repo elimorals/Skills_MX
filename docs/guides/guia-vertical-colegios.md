@@ -4,7 +4,7 @@
 
 **Audiencia**: directores administrativos, dueños de colegio, equipo administrativo.
 
-**Pre-lectura**: [guia-instalacion.md](guia-instalacion.md), advertencia de [estado-real.md](estado-real.md).
+**Pre-lectura**: [guia-instalacion.md](guia-instalacion.md), advertencia de la auditoría histórica [estado-real-2026-06.md](../historial/estado-real-2026-06.md).
 
 ---
 
@@ -103,7 +103,7 @@ Claude → Para cada familia:
         - Valida forma de pago electrónica (no efectivo)
         - Construye CFDI con UsoCFDI D10
         - Agrega complemento InsEduc
-        - Timbra (mock o PAC real)
+        - Timbra (datos de ejemplo `simulated: true` sin credenciales, o PAC real)
         - Genera XML + PDF
         - Manda WA al padre con link de descarga
         
@@ -269,6 +269,6 @@ Publicar listas de morosos, exponer al padre frente a otros padres, daño moral.
 
 ## Ver también
 
-- [estado-real.md](estado-real.md) — colegios-mx tiene score 4.2/9 (más bajo)
-- [plan-afinacion.md](plan-afinacion.md) — semanas 25-36 para llevar a producción
-- [compliance-checklist.md](compliance-checklist.md) — checklist educativo
+- [estado-real-2026-06.md](../historial/estado-real-2026-06.md) — auditoría histórica (junio 2026: colegios-mx 4.2/9)
+- [plan-afinacion.md](../plan-afinacion.md) — plan de afinación de junio de 2026 (histórico)
+- [compliance-checklist.md](../operational/compliance-checklist.md) — checklist educativo

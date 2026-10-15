@@ -9,14 +9,14 @@
 #
 # Programar en crontab:
 #   # Día 5 de cada mes a las 03:00 AM (servidor en hora CDMX)
-#   0 3 5 * * /Users/elias/Documents/Trabajo/skills/scripts/crons/mantenimiento-mensual-portales.sh
+#   0 3 5 * * /ruta/a/Skills_MX/scripts/crons/mantenimiento-mensual-portales.sh
 #
 # Setup macOS launchd: ver `scripts/crons/com.plugins-mx.mantenimiento-portales.plist`
 
 set -euo pipefail
 
 # Configuración
-REPO_ROOT="${REPO_ROOT:-/Users/elias/Documents/Trabajo/skills}"
+REPO_ROOT="${REPO_ROOT:-/ruta/a/Skills_MX}"
 SCRIPTS_DIR="$REPO_ROOT/scripts"
 MCP_DIR="$REPO_ROOT/mcp-servers"
 OUTPUT_DIR="$REPO_ROOT/.cache/mantenimiento-mensual"

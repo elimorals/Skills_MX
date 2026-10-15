@@ -117,7 +117,8 @@ button {
 
 .strip-id { font-weight: 700; color: var(--c-maize); }
 .strip-dot { opacity: 0.5; }
-.strip-live { margin-left: auto; display: inline-flex; align-items: center; gap: 0.5rem; }
+.strip-live { margin-left: auto; display: inline-flex; align-items: center; gap: 0.75rem; }
+.strip-live .pulse { flex-shrink: 0; }
 
 .pulse {
   width: 6px;
@@ -234,6 +235,8 @@ button {
   font-size: 12px;
   letter-spacing: 0.02em;
   transition: all 0.3s var(--ease-out);
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .nav-cta:hover {
@@ -1404,6 +1407,10 @@ button {
 
 @media (max-width: 768px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
 }
 
 .footer-col {
@@ -1898,3 +1905,12 @@ button {
     opacity: 1 !important;
   }
 }
+
+/* ---- Móvil: ningún contenido ensancha la página ---- */
+/* Textos monoespaciados largos (firmas de tools, claves, rutas) se parten en vez de desbordar. */
+:where(.mono, .mono-strong, .tool-sig, code) { overflow-wrap: anywhere; }
+:where(.tool-sig) { max-width: 100%; }
+/* Los bloques de código hacen scroll propio. */
+:where(pre, .code, .g-code) { max-width: 100%; overflow-x: auto; }
+/* Hijos de grid/flex: que no impongan su ancho mínimo de contenido. */
+:where(main, section, article, header, footer, aside, nav, div, li, figure) { min-width: 0; }

@@ -1,1 +1,20 @@
-{"mcpServers": {"ine_verificacion": {"command": "python", "args": ["-m", "mp_ine_verificacion.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
+{
+  "mcpServers": {
+    "ine_verificacion": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_ine_verificacion.server"
+      ],
+      "env": {
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      }
+    }
+  }
+}

@@ -24,11 +24,11 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/elias/Documents/Trabajo/skills/scripts/refresh-banxico-tcs.sh</string>
+        <string>__REPO__/scripts/refresh-banxico-tcs.sh</string>
     </array>
 
     <key>WorkingDirectory</key>
-    <string>/Users/elias/Documents/Trabajo/skills</string>
+    <string>__REPO__</string>
 
     <key>StandardOutPath</key>
     <string>/tmp/plugins-mx-banxico-tcs.log</string>

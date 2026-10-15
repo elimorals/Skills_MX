@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06-13)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Validación MCPs a producción — 2026-06-13
 
 > Auditoría exhaustiva con Playwright MCP de los MCPs que faltaban validar

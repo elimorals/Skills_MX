@@ -2,6 +2,16 @@
 
 Plugin para vendedores online en México que operan en uno o más marketplaces (Mercado Libre, Shopify, Amazon MX) + canales propios.
 
+## Instalación
+
+```bash
+/plugin marketplace add elimorals/Skills_MX
+/plugin install core-mexico --marketplace elimorals/Skills_MX   # base de todos los verticales
+/plugin install ecommerce-mx --marketplace elimorals/Skills_MX
+```
+
+Los MCPs del plugin se descargan solos con [`uv`](https://docs.astral.sh/uv/) la primera vez. Sin credenciales responden datos de ejemplo marcados `simulated: true`; con credenciales, los errores del proveedor se propagan. Estado por MCP: [`mcp-servers/CATALOGO.md`](../mcp-servers/CATALOGO.md).
+
 ## Casos de uso
 
 - **Seller Mercado Libre**: optimizar listings, mantener reputación, pricing competitivo vs comisión 13-17%
@@ -40,13 +50,13 @@ Plugin para vendedores online en México que operan en uno o más marketplaces (
 
 ## MCPs requeridos
 
-Configurados en `.mcp.json`:
-- `core-mexico` (heredado): banxico, facturama, mercadopago, conekta, sat_portal
-- Propios: `mp_mercado_libre`, `mp_shopify_mx` (Tier B), `mp_amazon_mx_seller` (futuro)
+- Propio (en `.mcp.json`): `shopify_mx` (`mp_shopify_mx`)
+- Heredados de `core-mexico`: banxico, facturama, mercadopago, mercadolibre (`mp_mercado_libre`), conekta, sat_portal
+- Disponible en el monorepo, sin declarar en este plugin: `mp_amazon_mx_seller`
 
 ## Setup
 
-1. Instalar plugin: incluido en monorepo `plugins-mx`
+1. Instalar el plugin (ver Instalación)
 2. Heredar `core-mexico` (declarado en `compatibility.requires`)
 3. Configurar credenciales en `.env`:
    ```bash
@@ -56,11 +66,11 @@ Configurados en `.mcp.json`:
    SHOPIFY_SHOP=tienda.myshopify.com
    SHOPIFY_ACCESS_TOKEN=...
    ```
-4. Sin credenciales corre en mock con datos demo
+4. Sin credenciales, los MCPs responden datos de ejemplo marcados `simulated: true`; con credenciales, los errores del proveedor se propagan
 
 ## Estado actual
 
-⚠ **Scaffolding (v0.1.0)** — skills lint-passing pero no validados con seller MX real. Score honesto promedio estimado: 4.5/9 (ver `docs/estado-real.md` cuando se actualice para este vertical).
+⚠ **Scaffolding (v0.1.0)** — skills lint-passing pero no validados con seller MX real. Score honesto promedio estimado: 4.5/9 (estado de los MCPs en `mcp-servers/CATALOGO.md`).
 
 ## Validaciones pendientes para producción
 

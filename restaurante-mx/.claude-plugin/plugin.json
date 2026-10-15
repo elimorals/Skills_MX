@@ -20,28 +20,5 @@
     "didi-food",
     "propinas",
     "cfdi-global"
-  ],
-  "skills": [
-    "skills/menu-ingenieria-margen",
-    "skills/inventario-merma",
-    "skills/propinas-distribucion",
-    "skills/delivery-aggregators",
-    "skills/cfdi-publico-global",
-    "skills/cfdi-emision",
-    "skills/iva-retenciones-mx",
-    "skills/rfc-validacion",
-    "skills/whatsapp-business-mx",
-    "skills/compliance-lfpdppp",
-    "skills/mxn-formato"
-  ],
-  "commands": [
-    "commands/ingenieria-menu.md",
-    "commands/cierre-caja.md",
-    "commands/sync-aggregators.md",
-    "commands/distribuir-propinas.md"
-  ],
-  "compatibility": {
-    "claudeCode": ">=1.0.0",
-    "requires": ["core-mexico"]
-  }
+  ]
 }

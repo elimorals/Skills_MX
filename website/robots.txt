@@ -95,7 +95,6 @@ Sitemap: https://skills-mexico.vercel.app/sitemap.xml
 # Archivos auxiliares para LLMs y agentes
 # /llms.txt          — Mapa del sitio en formato llmstxt.org
 # /llms-full.txt     — Contenido completo en texto plano
-# /.well-known/agents.json   — Manifest A2A
 # /.well-known/ai-plugin.json — Manifest OpenAI plugin
 # /mcp-manifest.json — Servidores MCP públicos
-# /openapi.json      — Especificación de la API
+# /openapi.json      — Describe los JSON estáticos (no hay API REST)

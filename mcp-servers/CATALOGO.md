@@ -6,7 +6,7 @@
 El estado de cada MCP sale de la sección "Estado real" de su README. La tabla de abajo la genera `scripts/generar-estado-mcps.py`; no se edita a mano.
 
 <!-- estado-mcps:inicio -->
-## Estado a 2026-10-14 (oleada 1: mock → real)
+### Estado a 2026-10-14 (oleada 1: mock → real)
 
 Generado por `scripts/generar-estado-mcps.py` desde la sección "Estado real" de cada README. 83 MCPs, 417 tools.
 

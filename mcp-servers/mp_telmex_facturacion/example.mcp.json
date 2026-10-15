@@ -1,8 +1,17 @@
 {
   "mcpServers": {
     "telmex_fact": {
-      "command": "python",
-      "args": ["-m", "mp_telmex_facturacion.server"],
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_telmex_facturacion.server"
+      ],
       "env": {
         "TELMEX_RFC": "${{ TELMEX_RFC:- }}",
         "TELMEX_PASSWORD": "${{ TELMEX_PASSWORD:- }}"

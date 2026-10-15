@@ -98,7 +98,7 @@ tax = await shopify_calculate_tax_mx(
 ## Tests
 
 ```bash
-cd /Users/elias/Documents/Trabajo/skills/mcp-servers
+cd mcp-servers   # desde la raíz del clon
 .venv/bin/python -m pytest mp_shopify_mx/tests/ -q
 ```
 

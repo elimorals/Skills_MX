@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Brief para abogado mercantilista — validación de contratos comerciales
 
 **Fecha**: 2026-06-12
@@ -104,5 +106,5 @@ Idealmente:
 
 ## 6. Datos del proyecto
 
-- **Repositorio**: `/Users/elias/Documents/Trabajo/skills/`
+- **Repositorio**: `https://github.com/elimorals/Skills_MX`
 - **Contacto**: Elías Rashid Morales Mendoza — elimoralsmendox@gmail.com

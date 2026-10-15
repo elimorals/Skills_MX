@@ -9,7 +9,7 @@
 #
 # Ajustar PATH_REPO con la ruta real del repo.
 
-PATH_REPO=/Users/elias/Documents/Trabajo/skills
+PATH_REPO=/ruta/a/Skills_MX
 SHELL=/bin/bash
 LOG_DIR=/tmp
 

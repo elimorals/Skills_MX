@@ -4,7 +4,7 @@
 
 **Audiencia**: usuarios que van a exponer plugins a clientes reales.
 
-**Pre-lectura**: [seguridad.md](seguridad.md), [glosario-fiscal-mx.md](glosario-fiscal-mx.md).
+**Pre-lectura**: [seguridad.md](../architecture/seguridad.md), [glosario-fiscal-mx.md](../reference/glosario-fiscal-mx.md).
 
 ---
 
@@ -243,5 +243,5 @@ Si llega auditoría/queja/demanda, estos documentos te protegen:
 ## Ver también
 
 - `_shared/compliance-lfpdppp/SKILL.md` — plantillas y procedimientos
-- [seguridad.md](seguridad.md) — manejo técnico de credenciales y datos
-- [estado-real.md](estado-real.md) — score honesto por skill
+- [seguridad.md](../architecture/seguridad.md) — manejo técnico de credenciales y datos
+- [estado-real-2026-06.md](../historial/estado-real-2026-06.md) — auditoría histórica de scores por skill

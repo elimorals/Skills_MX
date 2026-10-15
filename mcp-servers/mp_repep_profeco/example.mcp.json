@@ -1,1 +1,20 @@
-{"mcpServers": {"repep_profeco": {"command": "python", "args": ["-m", "mp_repep_profeco.server"], "env": {"PLUGINS_MX_MOCK": "1"}}}}
+{
+  "mcpServers": {
+    "repep_profeco": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-project",
+        "--quiet",
+        "--with",
+        "plugins-mx-mcp-servers @ git+https://github.com/elimorals/Skills_MX@main#subdirectory=mcp-servers",
+        "python",
+        "-m",
+        "mp_repep_profeco.server"
+      ],
+      "env": {
+        "PLUGINS_MX_MOCK": "${PLUGINS_MX_MOCK:-}"
+      }
+    }
+  }
+}

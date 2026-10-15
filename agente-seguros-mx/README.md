@@ -2,6 +2,16 @@
 
 Plugin para agentes y promotores de seguros independientes autorizados CNSF en México. Cubre múltiples ramos: auto, GMM, vida, daños, fianzas. Construido sobre `core-mexico` + `gmm-asegurado-mx`.
 
+## Instalación
+
+```bash
+/plugin marketplace add elimorals/Skills_MX
+/plugin install core-mexico --marketplace elimorals/Skills_MX   # base de todos los verticales
+/plugin install agente-seguros-mx --marketplace elimorals/Skills_MX
+```
+
+Los MCPs del plugin se descargan solos con [`uv`](https://docs.astral.sh/uv/) la primera vez. Sin credenciales responden datos de ejemplo marcados `simulated: true`; con credenciales, los errores del proveedor se propagan. Estado por MCP: [`mcp-servers/CATALOGO.md`](../mcp-servers/CATALOGO.md).
+
 ## Skills propios (5)
 
 | Skill | Propósito |

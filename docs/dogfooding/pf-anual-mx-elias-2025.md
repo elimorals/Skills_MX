@@ -1,3 +1,5 @@
+> **Documento histórico (2026-06)**: las cifras y el diseño mock-first no son vigentes; ver [README.md](../../README.md).
+
 # Dogfooding `pf-anual-mx` — declaración personal Elías 2025
 
 **Objetivo**: ser TU PROPIO primer caso real de `pf-anual-mx`. Antes de marzo-abril 2027 (temporada anual oficial), correr el workflow completo con TUS CFDIs reales del ejercicio 2025 y comparar contra cálculo de contador.
