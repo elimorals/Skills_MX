@@ -5,6 +5,16 @@ Plugin para PyMEs mexicanas que pagan **sueldos régimen 605**.
 > Spec: `docs/specs/08-vertical-nomina-pymes-mx.md`
 > Mercado: ~600k PyMEs con empleados.
 
+## Instalación
+
+```bash
+/plugin marketplace add elimorals/Skills_MX
+/plugin install core-mexico --marketplace elimorals/Skills_MX   # base de todos los verticales
+/plugin install nomina-pymes-mx --marketplace elimorals/Skills_MX
+```
+
+Los MCPs del plugin se descargan solos con [`uv`](https://docs.astral.sh/uv/) la primera vez. Sin credenciales responden datos de ejemplo marcados `simulated: true`; con credenciales, los errores del proveedor se propagan. Estado por MCP: [`mcp-servers/CATALOGO.md`](../mcp-servers/CATALOGO.md).
+
 ## Cobertura
 
 - ✅ **CFDI Nómina 4.0 + Complemento 1.2 Revisión E** (vigente desde 29 dic 2025)
