@@ -67,7 +67,7 @@ Categorías típicas:
 - **Uso normal** (arrendador absorbe): rayones menores, marcas de muebles en paredes, deterioro pintura por sol/aire
 - **Daño deducible**: agujeros en paredes, manchas grandes que requieren repintar, electrodomésticos descompuestos por mal uso, vidrios rotos, mascotas que dañaron
 
-⚠ Sin pruebas (fotos comparativas, recibos de reparación), inquilino puede reclamar y SAT/jueces tienden a favorecer al inquilino.
+⚠ Sin pruebas (fotos comparativas, recibos de reparación), el inquilino puede reclamar y el juez no tendrá base para validar el descuento.
 
 ### Paso 5 — Devolución del depósito
 
@@ -92,7 +92,7 @@ Recordar al inquilino:
 
 #### Si NO renueva o nuevo inquilino:
 - Marcar propiedad como vacante en tracker
-- Iniciar publicación (vía `mp_inmuebles24`)
+- Iniciar publicación (tool `inm24_publicar_listing` del MCP `mp_inmuebles24`; estado del MCP: sin verificar → si falla, publicar manualmente)
 - Considerar mejoras antes del próximo inquilino (pintura general)
 - Próximo flujo: nuevo screening con `screening-inquilino-completo`
 
@@ -118,7 +118,7 @@ Recordar al inquilino:
   "deposito_a_devolver_mxn": "9000.00",
   "fecha_devolucion_planeada": "2026-09-15",
   "decision_post_cierre": "buscar_nuevo_inquilino",
-  "siguiente_skill_recomendado": "publicar-en-inmuebles24",
+  "siguiente_paso_recomendado": "inm24_publicar_listing",
   "vigencia_validada": false
 }
 ```
@@ -127,7 +127,7 @@ Recordar al inquilino:
 
 | Caso | Acción |
 |---|---|
-| Inquilino se va sin aviso (abandono) | Documentar antes de re-entrar (testigos), declarar abandono al notario, depósito puede quedar como compensación |
+| Inquilino se va sin aviso (abandono) | No re-entrar por cuenta propia: pedir fe de hechos notarial y asesoría para recuperar la posesión por vía judicial; el depósito se aplica a adeudos documentados |
 | Daños mayores (vidrios rotos, paredes destruidas) | Documentar todo, posiblemente requiere demanda — abogado |
 | Inquilino reclama daños que no son su responsabilidad | Fotos comparativas son clave — sin ellas, mediar |
 | Mascotas no autorizadas que dañaron | Depósito + posible aviso a próximo arrendador |
@@ -140,11 +140,12 @@ Recordar al inquilino:
 - `actualizacion-renta-anual` (si renueva)
 - `contrato-arrendamiento-residencial` (si renueva)
 - `mp_inmuebles24` (si busca nuevo inquilino)
-- `mp_meta_whatsapp` (notificaciones)
+- WhatsApp manual (no hay MCP de WhatsApp en el repo)
 
 ## ⚠ Compliance
 
 - Fotos comparativas SON la principal prueba en disputa
 - Devolución de depósito debe documentarse (recibo + transferencia)
 - Si descuento es alto (> 20% del depósito): explicar por escrito con presupuestos
-- Conservar todos los recibos por 5 años (prescripción)
+- Conservar recibos y CFDIs 5 años (Art. 30 CFF)
+- `vigencia_validada: false`: abogado revisa descuentos altos o disputas

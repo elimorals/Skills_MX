@@ -16,7 +16,7 @@ allowed-tools: Read, Write
 
 - Screening del inquilino aprobado (output de `screening-inquilino-completo`)
 - Propiedad registrada en tracker
-- Aviso de privacidad firmado por inquilino (Art. 16 LFPDPPP)
+- Aviso de privacidad entregado al inquilino (Arts. 15-16 LFPDPPP 2025)
 
 ## Inputs
 
@@ -37,7 +37,7 @@ allowed-tools: Read, Write
     "rfc": "...",
     "nombre_completo": "...",
     "direccion": "...",
-    "regimen_fiscal": "612"  // o "626 RESICO PF"
+    "regimen_fiscal": "606"  // o "626 RESICO PF"
   },
   "inquilino": {
     "rfc": "...",
@@ -77,21 +77,21 @@ allowed-tools: Read, Write
 Inmueble situado en [dirección]. Uso exclusivo casa habitación (Art. 2398 CCDF).
 
 ### 2. Vigencia
-[fecha_inicio] al [fecha_fin]. Si no se prorroga ni desocupa al vencimiento, se entiende prorrogado por **tácita reconducción** mes a mes (Art. 2487 CCDF) hasta que cualquier parte avise con 30 días.
+[fecha_inicio] al [fecha_fin]. En CDMX la duración mínima para vivienda es de 1 año, forzoso para el arrendador y voluntario para el arrendatario (Art. 2448-C CCDF). Si no se prorroga ni desocupa al vencimiento, se entiende prorrogado por **tácita reconducción** mes a mes (Art. 2487 CCDF) hasta que cualquier parte avise con 30 días.
 
 ### 3. Renta mensual
 - Monto: $X MXN
 - Día de cobro: día Y del mes
 - Forma de pago: transferencia SPEI a la CLABE [...]
 - Si efectivo: en domicilio del arrendador antes del día Y
-- Recargo por mora: 5% mensual del monto pendiente (Art. 2424 CCDF — equivalente legal)
-- **CFDI**: el arrendador emite CFDI tipo I uso D04 dentro de los 5 días posteriores al cobro
+- Interés moratorio pactado (moderado: un juez puede reducir intereses usurarios)
+- **CFDI**: el arrendador emite CFDI tipo I (uso S01 si el inquilino es PF que vive ahí; G03 si es PM) — ver `cfdi-arrendamiento-mensual`
 
 ### 4. Actualización anual de renta
 - Mecanismo: INPC anual del INEGI (variación últimos 12 meses)
 - Fecha: aniversario del contrato
 - Comunicación: 30 días previos al inquilino
-- Si actualización > 10% nominal: revisar con abogado por posible reclamo CONDUSEF / INDEP
+- CDMX: el incremento anual no puede exceder la inflación del año anterior (Art. 2448-D CCDF, reforma Gaceta 28-08-2024; SCJN la validó en feb-2026, AR 546/2025)
 
 ### 5. Depósito en garantía
 - Monto equivalente a 1 mes (estándar) o más si screening lo justifica
@@ -102,8 +102,8 @@ Inmueble situado en [dirección]. Uso exclusivo casa habitación (Art. 2398 CCDF
 - Plazo de devolución: 30 días post-entrega
 
 ### 6. Mantenimiento
-- Arrendador: estructural, instalaciones mayores (Art. 2412 fr. II CCDF)
-- Inquilino: cuidado ordinario, reparaciones menores hasta $500 MXN (Art. 2412 fr. III)
+- Arrendador: conservar el inmueble en estado de servir, reparaciones necesarias (Art. 2412 fr. II CCDF)
+- Inquilino: cuidado ordinario y reparaciones menores por uso (Art. 2425 CCDF); fijar en el contrato un monto tope para "reparaciones menores"
 - Servicios (luz, agua, gas, internet): a cargo del inquilino
 
 ### 7. Uso exclusivo casa-habitación
@@ -113,10 +113,10 @@ Inmueble situado en [dirección]. Uso exclusivo casa habitación (Art. 2398 CCDF
 
 ### 8. Terminación anticipada
 - Cualquier parte puede dar por terminado con aviso de 60 días + pago de penalización
-- Penalización: 1 mes de renta + intereses pendientes (Art. 2484 CCDF)
+- Penalización pactada (p. ej. 1 mes de renta) + rentas e intereses pendientes. En CDMX el plazo forzoso de 1 año obliga al arrendador, no al inquilino (Art. 2448-C)
 
-### 9. Causas de rescisión (Art. 2489-2491 CCDF)
-- Falta de pago de 2 mensualidades consecutivas
+### 9. Causas de rescisión (Art. 2489 CCDF)
+- Falta de pago de la renta (pactar cuántas mensualidades; p. ej. 2 consecutivas)
 - Daño doloso al inmueble
 - Uso distinto al pactado
 - Sub-arrendamiento sin consentimiento
@@ -166,14 +166,14 @@ Estructura:
 
 ## Dependencias
 
-- `mp_facturama_extendido` (CFDI uso D04)
+- `mp_facturama_extendido` (CFDI mensual, ver `cfdi-arrendamiento-mensual`)
 - Output de `screening-inquilino-completo`
 - Tracker de propiedades
 
 ## ⚠ Compliance legal
 
-- **Cláusulas vigentes CDMX al 2026-06**. Revisar Reforma de Inquilinato vigente.
+- **Cláusulas revisadas al 2026-10-15** contra la reforma CDMX de 2024 (Arts. 2448-C, 2448-D). El registro obligatorio de contratos (Art. 2448-F) está pendiente de resolución en la SCJN: **verificar** su estado antes de firmar.
 - Para estados diferentes a CDMX: **consultar abogado local**
 - LFPDPPP: aviso de privacidad obligatorio + firmado por inquilino
-- En caso de litigio, contrato vale como prueba documental (Art. 1391 CCDF)
+- En caso de litigio, el contrato firmado es la prueba documental principal; firma ante testigos o ratificación ante notario la refuerza
 - `vigencia_validada: false` — abogado certifica antes de imprimir

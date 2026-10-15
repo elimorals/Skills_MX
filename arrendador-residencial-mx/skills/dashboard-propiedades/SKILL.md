@@ -23,7 +23,7 @@ allowed-tools: Read, Write
    ├ Vacantes: 1 (Polanco — 45 días)
    └ En remodelación: 0
 
-💰 Ingresos mes actual: $42,500 / $58,000 esperado (73%)
+💰 Cobrado mes actual: $12,000 / $42,500 esperado de las 3 rentadas (28%)
 📅 Pagos pendientes: 2 propiedades (D+7, D+15)
 ⚠ Alertas: 1 contrato vence en 45 días
 ```
@@ -39,9 +39,9 @@ allowed-tools: Read, Write
 
 ### Alertas activas
 
-1. 🔴 Cdmx Sur: D+15 sin pago — invocar `cobranza-mensual-renta` nivel 3
-2. 🟡 Roma Nte 1B: D+7 — invocar nivel 2
-3. 🟡 Polanco: vacante 45 días — sugerir bajar renta o publicar en más portales (`mp_inmuebles24` para comparables)
+1. 🔴 Cdmx Sur: D+15 sin pago — invocar `cobranza-mensual-renta` nivel 4 (formal)
+2. 🟡 Roma Nte 1B: D+7 — invocar nivel 3 (firme)
+3. 🟡 Polanco: vacante 45 días — sugerir bajar renta o publicar en más portales (`inm24_buscar_comparables_zona` del MCP `mp_inmuebles24`, estado sin verificar)
 4. 📅 Roma Nte 1A: contrato vence 2026-08-15 — iniciar renovación 60 días antes
 
 ### Métricas anuales (acumulado)
@@ -57,7 +57,7 @@ allowed-tools: Read, Write
 
 - Tracker local de propiedades: `~/.local/share/plugins-mx/arrendador/<rfc_hash>/propiedades.json`
 - Tracker pagos: `~/.local/share/plugins-mx/arrendador/<rfc_hash>/pagos.jsonl`
-- `mp_bancos_mx` (cruce para confirmar pagos automático)
+- `mp_bancos_mx` (cruce de pagos; hoy es un esqueleto sin datos reales → usar estado de cuenta exportado por el usuario)
 - `mp_facturama_extendido` (CFDIs emitidos)
 
 ## Schema tracker
@@ -83,15 +83,15 @@ allowed-tools: Read, Write
 
 | Caso | Acción |
 |---|---|
-| Propiedad sin inquilino > 60 días | Sugerir bajar renta + invocar `mp_inmuebles24` para comparables |
-| Renta no actualizada en > 12 meses | Sugerir `actualizacion-renta-anual` |
-| Inquilino paga depósito directo a cuenta antes de notificar | Cruce automático con `mp_bancos_mx` detecta |
+| Propiedad sin inquilino > 60 días | Sugerir bajar renta + `inm24_buscar_comparables_zona` (o `comparador-renta-zona-dinamica`) |
+| Renta no actualizada en > 12 meses | Sugerir `actualizacion-renta-anual` (en CDMX con tope = inflación del año anterior) |
+| Inquilino paga directo a cuenta sin avisar | Conciliar contra el estado de cuenta del usuario |
 | Propiedad heredada mid-ejercicio | Caso fiscal especial — derivar a contador |
 
 ## Dependencias
 
 - Tracker local (creado por skills/workflow al onboard propiedad)
-- `mp_bancos_mx` (opcional, para cruce automático de pagos)
+- `mp_bancos_mx` (opcional; esqueleto, sin cruce automático real todavía)
 
 ## ⚠ Privacy
 
